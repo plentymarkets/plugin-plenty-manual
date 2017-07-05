@@ -1,0 +1,32 @@
+{% extends getPartial('page-design') %}
+
+{% set lang = services.sessionStorage.getLang() %}
+{% set pageTitle = currentPage.title %}
+
+{% block PartialHead %}
+    <meta name="description" content="{{ currentPage.description }}">
+    <meta name="keywords" content="{{ currentPage.keywords }}">
+{% endblock %}
+
+{% block Navigation %}
+    {% include "PlentyManual::Partials.Navigation" %}
+{% endblock %}
+
+{% block PageBody %}
+    <div class="container textcontent">
+        <div class="row">
+            {% include [contentTemplate, "PlentyManual::Partials.404"] ignore missing %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block Footer %}
+    {% include "PlentyManual::Partials.Footer" %}
+
+    <div class="to-top-wrapper" data-fn="to-top-wrapper">
+        <a class="btn btn-secondary btn-only-icon" href="#top">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            <span class="sr-only"></span>
+        </a>
+    </div>
+{% endblock %}

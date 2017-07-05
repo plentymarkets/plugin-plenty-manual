@@ -1,0 +1,29 @@
+{% macro printForm( additionalClasses ) %}
+
+    {% set query = request.get("q") %}
+
+    <form class="banner-form {{ additionalClasses }}" method="GET" action="/search">
+        <label class="sr-only" for="bannerSearchInput">{{ trans("PlentyManual::Manual.doSearch") }}</label>
+        <div class="input-group input-group-lg">
+            <input class="form-control" id="bannerSearchInput" type="text"{% if query %} value="{{ query }}"{% endif %} name="q" placeholder="{{ trans("PlentyManual::Manual.enterSearchText") }}">
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" type="submit"><i class="fa fa-search" aria-hidden="true"></i> <span class="sr-only">{{ trans("PlentyManual::Manual.doSearch") }}</span></button>
+            </span>
+        </div>
+    </form>
+
+{% endmacro %}
+
+{% macro printBanner( bgImg, large ) %}
+    {% import _self as SearchBar %}
+    <div class="d-flex align-items-center bg-fixed bg-cover{% if large %} banner-vh-3{% else %} banner-st-1{% endif %}"
+         style="background-image: url('{{ bgImg }}');">
+        <div class="container{% if large %} py-4{% endif %}">
+            {% if large %}
+                {{ SearchBar.printForm("mt-4") }}
+            {% else %}
+                {{ SearchBar.printForm("mt-5") }}
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}
