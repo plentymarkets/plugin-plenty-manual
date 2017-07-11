@@ -2,7 +2,7 @@
 {% set lang = services.sessionStorage.getLang() %}
 
 <header class="plenty-navbar fixed-top" data-tg="sticky-container-below" data-fn="anchor-offset-elem">
-    <nav class="container">
+    <nav class="container navbar-container">
         <button class="plenty-navbar-toggler"
                 type="button"
                 aria-controls="navbarNavDropdown"
@@ -20,75 +20,73 @@
         <div class="plenty-navbar-collapse" id="navbarNavDropdown" data-tg="navbar-collapse">
             <ul class="plenty-navbar-nav main-navbar-nav">
                 <li class="hidden-nav-desktop">
-                    <a class="" href="#"><i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">{{ trans("PlentyManual::Manual.home") }}</span></a>
+                    <a class="" href="/"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;<span class="sr-only">{{ trans("PlentyManual::Manual.home") }}</span></a>
                 </li>
                 {{ NavList.print( pages ) }}
             </ul>
+        </div>
 
-            <ul class="plenty-navbar-nav icon-navbar-nav plenty-navbar-nav-allmedia">
-                <li class="dropdown-big">
-                    <a class=""
-                       id="navbarSearchToggle"
-                       href="javascript:void(0);"
-                       data-fn="dropdown-multilevel"
-                       aria-haspopup="true"
-                       aria-expanded="false">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                        {# TODO: i18n #}
-                        <span class="sr-only">{{ trans("PlentyManual::Manual.theSearch") }}</span>
-                    </a>
-                    <ul class="" aria-labelledby="navbarSearchToggle">
-                        <li class="dropdown-item-container">
+        <div class="collapse-backdrop" data-fn="toggle" data-fn-target="[data-tg='navbar-collapse']"></div>
 
-                            <form class="dropdown-form" method="GET" action="/search">
-                                <label class="sr-only" for="navbarSearchInput">{{ trans("PlentyManual::Manual.doSearch") }}</label>
+        <ul class="plenty-navbar-nav icon-navbar-nav plenty-navbar-nav-allmedia">
+            <li class="dropdown-big">
+                <a class=""
+                   id="navbarSearchToggle"
+                   href="javascript:void(0);"
+                   data-fn="dropdown-multilevel"
+                   aria-haspopup="true"
+                   aria-expanded="false">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <span class="sr-only">{{ trans("PlentyManual::Manual.theSearch") }}</span>
+                </a>
+                <ul class="" aria-labelledby="navbarSearchToggle">
+                    <li class="dropdown-item-container">
 
-                                <div class="input-group input-group-lg">
-                                    <input class="form-control"
-                                           id="navbarSearchInput"
-                                           type="text"
-                                           name="q"
-                                           placeholder="{{ trans("PlentyManual::Manual.enterSearchText") }}">
-                                    <span class="input-group-btn">
+                        <form class="dropdown-form" method="GET" action="/search">
+                            <label class="sr-only" for="navbarSearchInput">{{ trans("PlentyManual::Manual.doSearch") }}</label>
+
+                            <div class="input-group input-group-lg">
+                                <input class="form-control"
+                                       id="navbarSearchInput"
+                                       type="text"
+                                       name="q"
+                                       placeholder="{{ trans("PlentyManual::Manual.enterSearchText") }}">
+                                <span class="input-group-btn">
                                             <button class="btn btn-secondary" type="submit">
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                                 <span class="sr-only">{{ trans("PlentyManual::Manual.doSearch") }}</span>
                                             </button>
                                     </span>
-                                </div>
+                            </div>
 
-                            </form>
-                        </li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a class="plenty-dropdown-toggle"
-                       id="navbarLangToggle"
-                       href="javascript:void(0);"
-                       data-fn="dropdown-multilevel"
-                       aria-haspopup="true"
-                       aria-expanded="false">
+                        </form>
+                    </li>
+                </ul>
+            </li>
+            <li class="">
+                <a class="plenty-dropdown-toggle"
+                   id="navbarLangToggle"
+                   href="javascript:void(0);"
+                   data-fn="dropdown-multilevel"
+                   aria-haspopup="true"
+                   aria-expanded="false">
                         <span class="plenticon-flag-{% if lang == "de" %}de{% else %}uk{% endif %}" aria-hidden="true">
                             <i></i>
                         </span>
-                        <span class="sr-only">
+                    <span class="sr-only">
                             {{ trans("PlentyManual::Manual.selectLanguage") }}
-                            ({{ trans("PlentyManual::Manual.thisLang") }})
+                        ({{ trans("PlentyManual::Manual.thisLang") }})
                         </span>
-                    </a>
-                    <ul class="ul-right" aria-labelledby="navbarLangToggle">
-                        <li class="">
-                            <a class="" href="/{% if lang == "de" %}en{% else %}de{% endif %}">
+                </a>
+                <ul class="ul-right" aria-labelledby="navbarLangToggle">
+                    <li class="">
+                        <a class="" href="/{% if lang == "de" %}en{% else %}de{% endif %}">
                                 <span class="plenticon-flag-{% if lang == "de" %}uk{% else %}de{% endif %} mr-2" aria-hidden="true">
                                     <i></i>
                                 </span>{{ trans("PlentyManual::Manual.otherLang") }}</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-backdrop"></li>
-            </ul>
-        </div>
-
-        <div class="collapse-backdrop" data-fn="toggle" data-fn-target="[data-tg='navbar-collapse']"></div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </nav>
 </header>

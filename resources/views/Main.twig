@@ -1,4 +1,5 @@
 {% extends getPartial('page-design') %}
+{% import "PlentyManual::Macros.Breadcrumbs" as Breadcrumbs %}
 
 {% set lang = services.sessionStorage.getLang() %}
 {% set pageTitle = currentPage.title %}
@@ -13,11 +14,20 @@
 {% endblock %}
 
 {% block PageBody %}
-    <div class="container textcontent">
-        <div class="row">
-            {% include [contentTemplate, "PlentyManual::Partials.404"] ignore missing %}
+    {% if currentPage %}
+        <div class="container textcontent">
+            <div class="row">
+                <div class="col-12 col-md-9">
+                    {{ Breadcrumbs.print( currentPage.url ) }}
+                </div>
+            </div>
+            <div class="row">
+                {% include [contentTemplate, "PlentyManual::Partials.404"] ignore missing %}
+            </div>
         </div>
-    </div>
+    {% else %}
+        {% include "PlentyManual::Partials.404" %}
+    {% endif %}
 {% endblock %}
 
 {% block Footer %}

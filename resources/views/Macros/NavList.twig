@@ -1,23 +1,9 @@
 {% macro print( pages, depth = 0, parentUrl = "/" ) %}
     {% import _self as NavList %}
-    {% set break = false %}
-
-    {% if depth > 0 %}
-        <li class="nav-item-back">
-            <a class=""
-               href="/"
-               aria-label="{{ trans("PlentyManual::Manual.closeLevel") }}"
-               data-label="{{ trans("PlentyManual::Manual.back") }}"
-               data-fn="dropdown-multilevel-close"></a>
-        </li>
-    {% endif %}
 
     {% for page in pages %}
-        {% set columns = 4 %}
-        {% if page.children|length == 3 %}{% set columns = 3 %}{% endif %}
-        {% if page.children|length == 2 %}{% set columns = 2 %}{% endif %}
 
-        <li class="{% if depth == 0 %}dropdown-big columns-{{ columns }} {% endif %}{% if page.isActive or page.isOpen %}active{% endif %}{% if break %} hidden-nav-desktop{% endif %}">
+        <li class="{% if page.isActive or page.isOpen %}active{% endif %}">
             <a class="{% if page.hasChildren %}plenty-dropdown-toggle{% endif %}"
                id="{{ page.id }}"
                href="{{ page.url }}"
@@ -26,23 +12,29 @@
                     {% if page.hasChildren %}aria-expanded="false"{% endif %}
             >{{ page.title }}</a>
 
-            {% if page.hasChildren %}
-                <ul class="" aria-labelledby="{{ page.id }}">
-                    {{ NavList.print( page.children, depth + 1, page.url ) }}
+            {% if page.hasChildren or page.navAlias %}
+                <ul aria-labelledby="{{ page.id }}">
+                    <li class="nav-item-back">
+                        <a class=""
+                           href="#"
+                           aria-label="{{ trans("PlentyManual::Manual.closeLevel") }}"
+                           data-label="{{ trans("PlentyManual::Manual.back") }}"
+                           data-fn="dropdown-multilevel-close"></a>
+                    </li>
+
+                    {% if page.navAlias %}
+                        <li>
+                            <a href="{{ page.url }}">{{ page.navAlias }}</a>
+                        </li>
+                    {% endif %}
+
+                    {% if page.hasChildren %}
+                        {{ NavList.print( page.children, depth + 1, page.url ) }}
+                    {% endif %}
                 </ul>
             {% endif %}
         </li>
 
-        {% if page.navBreak %}
-            <li class="hidden-nav-mobile">
-                <a class="nav-link-highlight" href="{{ parentUrl }}"><i class="fa fa-plus" aria-hidden="true"></i> {{ page.navBreak }}</a>
-            </li>
-            {% set break = true %}
-        {% endif %}
     {% endfor %}
-
-    {% if depth == 0 %}
-        <li class="nav-backdrop"></li>
-    {% endif %}
 
 {% endmacro %}
