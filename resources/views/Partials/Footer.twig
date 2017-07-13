@@ -1,3 +1,5 @@
+{% set lang = services.sessionStorage.getLang() %}
+
 <footer class="page-footer" data-tg="sticky-container-above">
 
     <hr>
@@ -9,90 +11,27 @@
         </div>
 
         <div class="row">
-
+            {% for i in 1..4 %}
             <div class="col-md-3">
                 <div>
-                    <strong>Erste Schritte</strong>
+                    <strong>{{ trans("PlentyManual::Footer.footer_" ~ i ) }}</strong>
                 </div>
-                <hr class="my-1">
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#">Grundeistellungen</a>
-                    </li>
-                    <li>
-                        <a href="#">Schnelleinstieg</a>
-                    </li>
-                    <li>
-                        <a href="#">Benutzer verwalten</a>
-                    </li>
-                    <li>
-                        <a href="#">Allgemeine Funktionen</a>
-                    </li>
-                </ul>
-            </div>
 
-            <div class="col-md-3">
-                <div>
-                    <strong>Serviceangebot</strong>
-                </div>
-                <hr class="my-1">
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#">Video-Tutorials</a>
-                    </li>
-                    <li>
-                        <a href="#">Forum</a>
-                    </li>
-                    <li>
-                        <a href="#">Systemeinrichtung &amp; Consulting</a>
-                    </li>
-                    <li>
-                        <a href="#">Workshops &amp; Webinare</a>
-                    </li>
-                </ul>
-            </div>
+                <hr class="mr-1" />
 
-            <div class="col-md-3">
-                <div>
-                    <strong>Partnerangebot</strong>
-                </div>
-                <hr class="my-1">
                 <ul class="list-unstyled">
-                    <li>
-                        <a href="#">Partneragenturen</a>
-                    </li>
-                    <li>
-                        <a href="#">Projektbörse</a>
-                    </li>
-                    <li>
-                        <a href="#">Partneragentur werden</a>
-                    </li>
+                    {% for j in 1..9 %}
+                        {% set label = trans("PlentyManual::Footer.footer_" ~ i ~ "_" ~ j ) %}
+                        {% set link = trans("PlentyManual::Footer.footer_" ~ i ~ "_" ~ j ~ "_link" ) %}
+                        {% if label %}
+                            <li>
+                                <a href="{{ link }}">{{ label }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
             </div>
-
-            <div class="col-md-3">
-                <div>
-                    <strong>Produkt</strong>
-                </div>
-                <hr class="my-1">
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#">Produkt-Übersicht</a>
-                    </li>
-                    <li>
-                        <a href="#">Tour</a>
-                    </li>
-                    <li>
-                        <a href="#">Preise</a>
-                    </li>
-                    <li>
-                        <a href="#">Referenzen</a>
-                    </li>
-                    <li>
-                        <a href="#">Gratis Testen</a>
-                    </li>
-                </ul>
-            </div>
+            {% endfor %}
 
         </div>
 
@@ -117,14 +56,14 @@
 
         <div class="row small">
             <div class="col">
-                © Copyright 2017 <a href="https://www.plentymarkets.eu" target="_blank">plentymarkets GmbH</a>
+                © Copyright {{ "now" | date("Y") }} <a href="{{ trans("PlentyManual::Links.plentymarkets") }}" target="_blank">{{ trans("PlentyManual::Manual.plentymarketsCompany") }}</a>
             </div>
             <div class="col text-right">
-                <a href="https://www.plentymarkets.eu/unternehmen/agb/">AGB</a>
+                <a href="{{ trans("PlentyManual::Links.termsAndConditions") }}">{{ trans("PlentyManual::Manual.termsAndConditions") }}</a>
                 |
-                <a href="https://www.plentymarkets.eu/unternehmen/datenschutz/">Datenschutz</a>
+                <a href="{{ trans("PlentyManual::Links.privacyPolicy") }}">{{ trans("PlentyManual::Manual.privacyPolicy") }}</a>
                 |
-                <a href="https://www.plentymarkets.eu/unternehmen/impressum/">Impressum</a>
+                <a href="{{ trans("PlentyManual::Links.legalDisclosure") }}">{{ trans("PlentyManual::Manual.legalDisclosure") }}</a>
             </div>
         </div>
 

@@ -1,4 +1,5 @@
 {% import "PlentyManual::Macros.SearchBar" as SearchBar %}
+{% set lang = services.sessionStorage.getLang() %}
 
 <main id="main">
 
@@ -6,10 +7,25 @@
 
     <section class="container mt-4 search-section">
 
-        <h1 class="display-3 text-center">404 – Seite nicht gefunden!</h1>
+        <h1 class="display-3 text-center">
+            {% if lang == "de" %}
+                404 – Seite nicht gefunden!
+            {% else %}
+                404 - Page not found!
+            {% endif %}
+        </h1>
 
         <div class="text-center">
-            <a class="btn btn-lg btn-danger" href="/"><span>Zur Startseite</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="btn btn-lg btn-danger" href="/">
+                <span>
+                    {% if lang == "de" %}
+                        Zur Startseite
+                    {% else %}
+                        Back to start page
+                    {% endif %}
+                </span>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
         </div>
 
     </section>
