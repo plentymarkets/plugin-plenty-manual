@@ -1,0 +1,841 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_filtering_log_entries"><span>1.</span><span> Filtering log entries</span></a></li>
+<li><a href="#_process_email"><span>2.</span><span> Process: Email</span></a></li>
+<li><a href="#_dhl_fulfillment_log_entries"><span>3.</span><span> DHL Fulfillment log entries</span></a>
+<ul class="sectlevel2">
+<li><a href="#_dhlfulfillment_itemmaster"><span>3.1.</span><span> DHLFulfillment ItemMaster</span></a></li>
+<li><a href="#_dhlfulfillment_deliveryadvice"><span>3.2.</span><span> DHLFulfillment DeliveryAdvice</span></a></li>
+<li><a href="#_dhlfulfillment_deliveryreceipt"><span>3.3.</span><span> DHLFulfillment DeliveryReceipt</span></a></li>
+<li><a href="#_dhlfulfillment_stockadjustment"><span>3.4.</span><span> DHLFulfillment StockAdjustment</span></a></li>
+<li><a href="#_dhlfulfillment_inventory"><span>3.5.</span><span> DHLFulfillment Inventory</span></a></li>
+<li><a href="#_dhlfulfillment_order"><span>3.6.</span><span> DHLFulfillment Order</span></a></li>
+<li><a href="#_dhlfulfillment_transport"><span>3.7.</span><span> DHLFulfillment Transport</span></a></li>
+<li><a href="#_dhlfulfillment_orderreturned"><span>3.8.</span><span> DHLFulfillment OrderReturned</span></a></li>
+<li><a href="#_dhlfulfillment_ordercanceled"><span>3.9.</span><span> DHLFulfillment OrderCanceled</span></a></li>
+</ul>
+</li>
+<li><a href="#_atriga_log_entries"><span>4.</span><span> atriga log entries</span></a>
+<ul class="sectlevel2">
+<li><a href="#_atriga"><span>4.1.</span><span> atriga</span></a></li>
+<li><a href="#_atrigapaymax"><span>4.2.</span><span> atrigapaymax</span></a></li>
+</ul>
+</li>
+<li><a href="#_dpd_cloud_webservice_log_entries"><span>5.</span><span> DPD Cloud Webservice log entries</span></a>
+<ul class="sectlevel2">
+<li><a href="#_cloud_userdata_noaccess"><span>5.1.</span><span> CLOUD_USERDATA_NOACCESS</span></a></li>
+<li><a href="#_cloud_address"><span>5.2.</span><span> CLOUD_ADDRESS</span></a></li>
+<li><a href="#_cloud_api_order"><span>5.3.</span><span> CLOUD_API_ORDER</span></a></li>
+</ul>
+</li>
+<li><a href="#_paypal_log_entries"><span>6.</span><span> PayPal log entries</span></a>
+<ul class="sectlevel2">
+<li><a href="#_cronpaypalsettlement"><span>6.1.</span><span> CronPayPalSettlement</span></a></li>
+<li><a href="#_paypalsettlement"><span>6.2.</span><span> PayPalSettlement</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>API log</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The menu <strong>Data exchange » API log</strong> contains a history of both internal processes and external processes that run via interfaces. There is an entry for every process.<br>
+This menu contains a general API log and 4 additional tabs. The <strong>SOAP log</strong> tab contains a record of who carried out which SOAP calls. It indicates when the calls were carried out and how. The <strong>SOAP statistics</strong> tab lists access data. The Amazon API log tab lists every Amazon log entry individually. Some entries contain more detailed information as well. If you click on the folder icon next to an Amazon entry in the <strong>API log</strong> tab, then you will also be redirected to the Amazon API log tab. The Shipping center API log tab contains information about shipments that were registered in the shipping center.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_filtering_log_entries">1. Filtering log entries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default, entries are sorted in descending order by their ID. The entries can be filtered so that fewer search results are displayed in the list. You can filter entries with a specific API name or date.</p>
+</div>
+<div class="paragraph instruction">
+<p>Filtering log entries with a specific name:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data exchange » API log</strong>.</p>
+</li>
+<li>
+<p>Select a format from the drop-down menu <strong>Process</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> to carry out the search.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Format is not listed</div>
+<div class="paragraph">
+<p>The formats are not included in the <strong>Process</strong> drop-down menu until the process has been carried out once and therefore has been logged. If a particular format is not included in the list, then it means that the process has not been carried out yet or that this particular error has not occurred.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Filtering log entries with a specific date:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data exchange » API log</strong>.</p>
+</li>
+<li>
+<p>Select a <strong>date</strong> from the calendar.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> to carry out the search.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Of course, both filters can be used together if you only want to see the entries that have a specific API name and a specific date.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_process_email">2. Process: Email</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Email</strong> process contains error messages that relate to emails, e.g. when emails cannot be sent or when email accounts or addresses are not configured correctly. The process is added to the drop-down menu when such an error occurs for the first time. The following information is displayed in an error message, e.g. if an email could not be sent: customer ID, order ID and the provider’s error message. This information is also displayed in the log entry.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Error sending email. CustomerId: 136 OrderId: 550 (Code 535): 5.7.8 Error: authentication failed: UGFzc3dvcmQ6</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The email was not sent. The authentication failed due to incorrect parameters in the email account, e.g. an incorrect password or user name.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Error sending email. CustomerId: 153 OrderId: 103 (Code 0): stream_socket_client(): unable to connect to tcp://mail.servername.com:XXX (Connection refused)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The email was not sent due to an incorrect port entry. XXX = Port</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="_dhl_fulfillment_log_entries">3. DHL Fulfillment log entries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter provides information about all of the log entries that relate to DHL Fulfillment. Information is transferred to DHL Fulfillment when some processes are carried out. There are 3 events for the entries that relate to such processes. There are also processes that query information from DHL Fulfillment. There is one event for such processes.</p>
+</div>
+<div class="sect2">
+<h3 id="_dhlfulfillment_itemmaster">3.1. DHLFulfillment ItemMaster</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when item master data is registered. The entry itself does not indicate whether the items were successfully transferred or not. There are 3 possible events for this entry. The events provide information about the exact status of the data transfer.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Successfully transmitted ItemMaster</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The item master data was transferred. A separate event indicates how many orders were correctly registered.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Could not transmit ItemMaster</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The item master data was not transferred.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Count ItemMaster: xxx entries done and xxx errors!</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Indicates the number of items that were transferred and the number of items that were not transferred.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_dhlfulfillment_deliveryadvice">3.2. DHLFulfillment DeliveryAdvice</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when information is transferred. This information relates to reordered items that will be delivered soon. The entry itself does not indicate whether the information was successfully transferred or not. There are 3 possible events for this entry. The events provide information about the exact status of the data transfer. The Parameter column lists the reorder IDs.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Successfully transmitted DeliveryAdvices!</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The reorders were transferred. A separate event indicates how many reorders were correctly registered.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Could not transmit DeliveryAdvices</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The reorders were not transferred.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Count DeliveryAdvice: xxx entries done and xxx errors!</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Indicates the number of reorders that were registered and the number of reorders that were not registered.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_dhlfulfillment_deliveryreceipt">3.3. DHLFulfillment DeliveryReceipt</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when reorders are marked as delivered. There is 1 possible event for this entry. The event indicates how many reorders were marked as delivered. However, the information does not indicate whether the reorder was delivered in full. The <strong><a href=":/">reorder</a></strong> itself indicates which items were delivered.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>DHLFulfillment Delivery Receipt! Count Entries: xxx</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The number of reorders that were marked as delivered.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_dhlfulfillment_stockadjustment">3.4. DHLFulfillment StockAdjustment</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when stock is adjusted. There is 1 possible event for this entry. The event indicates how many stock adjustments were made.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Processed StockAdjustment! Count Entries: xxx</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Number of stock adjustments.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_dhlfulfillment_inventory">3.5. DHLFulfillment Inventory</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when the current stock is queried, i.e. when inventory is taken. There is 1 possible event for this entry. The event indicates how many stocks were synchronized.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Processed Inventory! Count Entries: xxx</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The number of items for which stock was synchronized.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_dhlfulfillment_order">3.6. DHLFulfillment Order</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when orders are registered. There are 3 possible events for this entry. The events provide information about the exact status of the registration. The Parameter column lists the order IDs.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Successfully transmitted Order!</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The orders were transferred. A separate event indicates how many orders were correctly registered.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Could not transmit Orders</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The orders were not transferred.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Count Order: xxx entries done and xxx errors!</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Indicates the number of orders that were registered and the number of orders that were not registered.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If it was not possible to register an order and the registration process was carried out again, then plentymarkets will automatically change the order ID when the order is registered. This is because DHL Fulfillment only accepts an order ID once, even if the registration was not successful. Nonetheless, the Parameter column lists the correct order ID in plentymarkets. However, the file that is displayed in the Process column contains the ID that was used when registering the order with DHL Fulfillment.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dhlfulfillment_transport">3.7. DHLFulfillment Transport</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when orders are sent. There is 1 possible event for this entry. The event indicates whether or not the order was sent. In some cases, an order is split into several delivery orders. This is the case if some items can be sent earlier than others or if an order is always shipped in multiple packages. The Parameter column lists the order IDs and delivery order IDs. If delivery orders were created, then a slash (/) is used to separate the delivery order from the order. For example, 1957/1956 means that a delivery order with the ID 1957 was created for an order with the ID 1956.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Processed Transport! Count Entries: xxx, Count Errors: xxx</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Count Entries</strong> = The number of orders that were sent.<br>
+<strong>Count Errors</strong> = The number of sent orders that could not be assigned to an order. There are several different reasons why this can happen. For example, if the order was not found in the system or if only some of the items were sent, i.e. if the order was not shipped in full. If only some of the items were shipped with DHL Fulfillment, then a delivery order will be created for the items that were already shipped.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_dhlfulfillment_orderreturned">3.8. DHLFulfillment OrderReturned</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when returns are queried. There is 1 possible event for this entry. The event provides information about the returns that were queried. The Parameter column lists order IDs. These are the orders for which returns were created.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Processed OrderReturned! Count Entries: xxx, Count Errors: xxx</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Count Entries</strong> = The number of returns that were created in plentymarkets.<br>
+<strong>Count Errors</strong> = The number of queried DHL Fulfillment returns for which it was not possible to create a return in your system. There are many reasons why this can happen. For example, it may not have been possible to find the main order that the return was supposed to be created for. This could be because the main order was deleted, etc.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_dhlfulfillment_ordercanceled">3.9. DHLFulfillment OrderCanceled</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when cancellations are queried, i.e. when DHL Fulfillment cancels the order. There are many reasons why DHL Fulfillment may cancel an order. For example, if the items are incorrect. There is 1 possible event for this entry. The event provides information about the cancellations that were queried. The Parameter column lists order IDs. These are the orders for which cancellations were created in your system.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Processed OrderCanceled! Count Entries: xxx, Count Errors: xxx</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Count Entries</strong> = The number of cancellations that were created in plentymarkets.<br>
+<strong>Count Errors</strong> = The number of queried DHL Fulfillment cancellations for which it was not possible to create a cancellation in your system. There are many reasons why this can happen. For example, it may not have been possible to find the main order that the cancellation was supposed to be created for. This could be because the main order was deleted, etc.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_atriga_log_entries">4. atriga log entries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter provides information about all of the log entries that relate to atriga and atrigapaymax.</p>
+</div>
+<div class="sect2">
+<h3 id="_atriga">4.1. atriga</h3>
+<div class="paragraph">
+<p>The atriga log entries provide information about the products that were activated.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>atriga request</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Request to atriga. This checks whether the product atrigapaymax was activated.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>atriga response</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Answer from atriga. This specifies whether atrigapaymax was activated.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_atrigapaymax">4.2. atrigapaymax</h3>
+<div class="paragraph">
+<p>The atrigapaymax log entries provide information about the credit rating.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Atrigapaymax request</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Request to atrigapaymax. This requests a credit rating.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Atrigapaymax response</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Answer from atrigapaymax. This gives the results of the credit rating.<br>
+The response includes an error if the credit rating fails. If an error occurs, then a negative credit rating - <strong><a href="/en/basics/data-exchange/api-log#50">red credit rating</a></strong> - will be displayed in the customer data record.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_dpd_cloud_webservice_log_entries">5. DPD Cloud Webservice log entries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter provides information about the log entries that relate to DPD Cloud Webservice. Click on the <strong>Shipping centre API log</strong> tab and select the <strong>DPDCloudWebservice</strong> process.</p>
+</div>
+<div class="sect2">
+<h3 id="_cloud_userdata_noaccess">5.1. CLOUD_USERDATA_NOACCESS</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when access is denied.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Message</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_USERDATA_NOACCESS_SHIPMENTSERVICE</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>No access rights to the shipping service.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_USERDATA_NOACCESS_COD</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>No access rights to the shipping service <strong>Cash on delivery</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_USERDATA_NOACCESS_PREDICT</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>No access rights to the shipping service <strong>Predict</strong>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_cloud_address">5.2. CLOUD_ADDRESS</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when address data is missing or incorrect. It is also possible that a parameter exceeded the maximum character length. The table lists several examples. However, the list is not exhaustive.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Message</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_ADDRESS_PHONE</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The telephone number is missing or incorrect. Format: 5 to 20 characters.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_ADDRESS_NEEDMAIL</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The email address is missing. You are required to specify the recipient’s email address.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_STATE_STATESHORT</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The country in ISO3166-2 format: exactly 2 characters.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_ADDRESS_COMPANYANDNAMEEMPTY</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Company or name required.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_API_ORDER_WEIGHT</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Maximum weight exceeded. 31.5 kg can be shipped at maximum.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_cloud_api_order">5.3. CLOUD_API_ORDER</h3>
+<div class="paragraph">
+<p>This entry is recorded in the log when errors occur while registering shipping orders.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_API_ORDER_MAXORDERS</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The maximum number of registered shipping orders was exceeded. It is not possible to register multiple shipments at the same time.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_API_ORDER_SHIPSERVICE</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Invalid shipping service.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_API_ORDER_CODAMOUNT</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Invalid cash on delivery amount. This must be between 1.00 and 5000.00 Euro.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_API_ORDER_EXPRESS_DEU_COUNTRY</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The selected express option is only available for Germany.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CLOUD_API_ORDER_CODPURPOSE</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The cash on delivery reference contains too many characters. No more than 14 characters are allowed.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_paypal_log_entries">6. PayPal log entries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter provides information about all of the log entries that relate to retrieving the <strong><a href="/en/basics/data-exchange/api-log#7">PayPal settlement report</a></strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="_cronpaypalsettlement">6.1. CronPayPalSettlement</h3>
+<div class="paragraph">
+<p>The CronPayPalSettlement log entries relate to connecting with the PayPal SFTP server.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PayPal SFTP connection established</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Indicates that the connection to the PayPal SFTP server was established.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PayPal SFTP xxx files downloaded</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Indicates the number of CSV files that were downloaded.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PayPal SFTP no files found in /ppreports/outgoing directory</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Indicates that no files were found to download.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PayPal SFTP disconnect</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Indicates that the connection to the server was ended.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PayPal SFTP Exception: …​</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Returns the server’s error message when an error occurs.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_paypalsettlement">6.2. PayPalSettlement</h3>
+<div class="paragraph">
+<p>The PayPalSettlement log entries relate to the transactions that are included in the settlement reports. The PayPal transaction ID is displayed in plentymarkets. It is listed as the designated use for a <strong><a href="/en/basics/data-exchange/api-log#2">payment</a></strong>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Event</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>The settlement report xxx contains xxx lines and xxx transactions.</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Indicates the number of lines in the report and the transactions that are included in the report. This event neither specifies whether the transactions were already processed nor how they were processed.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>xxx of xxx transactions were successfully assigned. xxx transactions were not assigned.</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Indicates the total number of transactions in a settlement report. It also specifies how many of these transactions were assigned to an order and how many were not. There are two different reasons why a transaction is not assigned. On the one hand, the transaction may not match any of the orders that were found. On the other hand, the payment may have already been assigned to the order and therefore, the transaction in the file is no longer assigned.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>The settlement report xxx could not be opened.</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>This message is displayed if the file no longer exists or if the file can no longer be read.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Transaction xxx was assigned.</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>This message is displayed for every assigned transaction. The transaction belongs to the settlement report that was named by the previous event <strong>The settlement report xxx contains xxx lines and xxx transactions</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Transaction xxx was not assigned.</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>This message is displayed for every transaction that was not assigned. The transaction belongs to the settlement report that was named by the previous event <strong>The settlement report xxx contains xxx lines and xxx transactions</strong>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>

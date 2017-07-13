@@ -1,0 +1,428 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#_abhängigkeiten_beim_buchen_des_warenausgangs"><span>1.</span><span> Abhängigkeiten beim Buchen des Warenausgangs</span></a></li>
+<li><a href="#_warenausgang_automatisch_buchen"><span>2.</span><span> Warenausgang automatisch buchen</span></a>
+<ul class="sectlevel2">
+<li><a href="#_warenausgang_automatisch_beim_eingeben_der_paketnummer_buchen"><span>2.1.</span><span> Warenausgang automatisch beim Eingeben der Paketnummer buchen</span></a></li>
+<li><a href="#_warenausgang_automatisch_beim_erstellen_der_rechnung_buchen"><span>2.2.</span><span> Warenausgang automatisch beim Erstellen der Rechnung buchen</span></a></li>
+</ul>
+</li>
+<li><a href="#_warenausgang_bei_stornierungen_retouren_und_gewährleistungen"><span>3.</span><span> Warenausgang bei Stornierungen, Retouren und Gewährleistungen</span></a>
+<ul class="sectlevel2">
+<li><a href="#_stornierungen"><span>3.1.</span><span> Stornierungen</span></a></li>
+<li><a href="#_retouren"><span>3.2.</span><span> Retouren</span></a></li>
+<li><a href="#_gewährleistungen"><span>3.3.</span><span> Gewährleistungen</span></a></li>
+</ul>
+</li>
+<li><a href="#_warenausgang_manuell_buchen"><span>4.</span><span> Warenausgang manuell buchen</span></a>
+<ul class="sectlevel2">
+<li><a href="#_warenausgang_in_der_auftragsübersicht_buchen"><span>4.1.</span><span> Warenausgang in der Auftragsübersicht buchen</span></a></li>
+<li><a href="#_warenausgang_im_geöffneten_auftrag_buchen"><span>4.2.</span><span> Warenausgang im geöffneten Auftrag buchen</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>Waren ausbuchen</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der Warenausgang ist neben dem Wareneingang das zweite zentrale Ereignis Ihrer Warenwirtschaft. Nur wenn Wareneingänge und Warenausgänge korrekt gebucht werden, stimmen die im System geführten Warenbestände auch mit den tatsächlichen physischen Lagerbeständen überein. <br>
+Hauptgrund für Warenausgänge ist das Ausliefern von Aufträgen, aber auch andere Lagerentnahmen müssen korrekt erfasst werden. Zudem bedürfen Sonderfälle wie Stornierungen, Retouren und Gewährleistungen einer besonderen Beachtung, da diese sonst systematisch Fehlbestände in Ihrem Lager erzeugen können. <br>
+Das Buchen des Warenausgangs kann manuell oder automatisch erfolgen. Das manuelle Buchen je Auftrag erfordert jedoch einen hohen Einzelaufwand und birgt die Gefahr, dass dieser wichtige Schritt nicht systematisch ausgeführt wird. Wenn Sie das Buchen automatisieren, wird ein Auslöser benötigt, d.h. Sie müssen wissen, was bei Ihnen vor dem Warenausgang erfolgt.
+Geben Sie die Paketnummer ein, bevor der Warenausgang gebucht wird? Dann nutzen Sie z.B. die Eingabe einer Paketnummer als Auslöser für das Buchen des Warenausgangs. Am Ende dieser Seite finden Sie das manuelle Buchen, damit Sie im Einzelfall die Aktion manuell ausführen können. Wenn beispielsweise ein Kunde Waren direkt bei Ihnen abholt, gibt es keine Paketnummer und der Auslöser fehlt. In einem solchen Fall kann das manuelle Buchen am einzelnen Auftrag notwendig sein.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_abhängigkeiten_beim_buchen_des_warenausgangs">1. Abhängigkeiten beim Buchen des Warenausgangs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Es gibt zwei Punkte, die für das Verstehen der Arbeitsweise Ihres Systems besonders wichtig sind:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Warenausgang buchen</strong> ist eine Aktion und kein Auftragsstatus.</p>
+</li>
+<li>
+<p>Status 7&nbsp;– <strong>Warenausgang gebucht</strong> lässt sich nicht umkehren.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>Unterschied zwischen der Aktion Warenausgang buchen und dem Status Warenausgang gebucht
+Mit der Auslieferung von Aufträgen muss der Warenausgang gebucht werden, damit der Warenbestand reduziert wird.
+Das Buchen des Warenausgangs ist eine Aktion und nicht nur eine Statusänderung. Die Aktion <strong>Warenausgang buchen</strong> sorgt dafür, dass der Warenbestand reduziert wird und der Status eines Auftrags in Status 7&nbsp;– <strong>Warenausgang gebucht</strong> wechselt. Wenn jedoch nur der Status eines Auftrags in Status 7&nbsp;– <strong>Warenausgang gebucht</strong> geändert wird, löst das nicht die Aktion <strong>Warenausgang buchen</strong> aus. Deshalb wird bei einem reinen Statuswechsel auch der Bestand nicht reduziert und die Bestandsführung wird fehlerhaft.</p>
+</div>
+<div class="paragraph subhead">
+<p>Statusbereich 7 ist endgültig
+Aufträge im Statusbereich 7.0 bis 7.9, bei denen der Warenausgang gebucht wurde, lassen sich nicht mehr auf einen Status kleiner als 7.0 setzen.<br>
+Warenausgang zurücksetzen: Wenn Sie das Buchen des Warenausgangs zurücksetzen, ist eine Statusänderung nach unten wieder möglich. Gleichzeitig erhalten Sie auch die Option, den Auftrag zu löschen, um z. B. einen neuen bzw. korrigierten Auftrag anzulegen. Wenn Dokumente wie eine Rechnung existieren, löschen Sie den Auftrag nicht, sondern stornieren ihn und legen Sie Korrekturdokumente an, um dem Finanzamt bei einer Prüfung alle Nachweise und Dokumente vorlegen zu können.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_warenausgang_automatisch_buchen">2. Warenausgang automatisch buchen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Damit das Tagesgeschäft Ihres Online-Handels möglichst effizient und gleichzeitig fehlerlos vonstattengeht, ist es sinnvoll, Routineaufgaben wie das Buchen des Warenausgangs zu automatisieren.
+plentymarkets bietet hierfür verschiedene Möglichkeiten. Wählen Sie das für Ihre Arbeitsweise am besten geeignete Vorgehen. Nachfolgend werden zwei mögliche Vorgehen beschrieben: das Buchen des Warenausgangs beim Erstellen der Rechnung und beim Eingeben der Paketnummer.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Kein manuelles Buchen bei eingestellter Automatik vornehmen</div>
+<div class="paragraph">
+<p>Das System arbeitet Aufträge der Reihe nach ab.
+So ist sichergestellt, dass der Kunde, der zuerst bestellt hat, auch zuerst seine Bestellung erhält.
+Wenn Sie manuell den Warenausgang für einen Auftrag buchen, der sich in einem Status kleiner als 5, &lt; 5 Freigabe Versand, befindet oder den Sie manuell auf Status 5 oder höher gesetzt haben, heben Sie die Automatik auf und das System arbeitet die Aufträge nicht mehr korrekt ab.
+Je nachdem, wie viele Aufträge zwischen dem eigentlich vom System als Nächsten bearbeiteten Auftrag und dem von Ihnen manuell bearbeiteten Auftrag liegen, kann die Automatik über Wochen oder Monate fehlerhaft arbeiten.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="_warenausgang_automatisch_beim_eingeben_der_paketnummer_buchen">2.1. Warenausgang automatisch beim Eingeben der Paketnummer buchen</h3>
+<div class="paragraph">
+<p>Das Buchen des Warenausgangs beim Eingaben der Paketnummer hat den Vorteil, dass die Versandetiketten erst am Ende des Fulfillment-Prozesses erstellt werden. So kann davon ausgegangen werden, dass alle Aufträge, zu denen ein Versandetikett mit Paketnummer vorliegt, sich auch wirklich im Versand befinden.</p>
+</div>
+<div class="paragraph">
+<p>Das Buchen des Warenausgangs lässt sich mithilfe einer Ereignisaktion automatisieren. Zusätzlich kann mittels derselben Ereignisaktion auch eine E-Mail mit der Versandbestätigung an den Kunden gesendet werden.
+Der Versand der E-Mail kann auch mit einer separaten Ereignisaktion erfolgen. Nach dem Einrichten der Ereignisaktion wird das Importieren der Paketnummern beschrieben.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Buchen des Warenausgangs beim Eingeben der Paketnummer:</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Aufträge » Ereignisaktionen</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Ereignisaktion hinzufügen</strong>. <br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie einen Namen ein.</p>
+</li>
+<li>
+<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 1.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle 1 vor.</p>
+</li>
+<li>
+<p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 1. Ereignisaktion zum automatischen Buchen des Warenausgangs beim Eingeben der Paketnummer</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Ereignis</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftragsänderung: Paketnummer</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 1</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Auftragstyp</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Aktion</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Warenausgang buchen</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Um das Speichern der Paketnummern im Auftrag zu automatisieren und nicht jede Paketnummer manuell im Auftrag einzugeben, importieren Sie die Paketnummern.
+Der schnellste und einfachste Weg, die täglich neu erzeugten Paketnummern auch täglich in Ihr System zurückzuschreiben, führt über das Untermenü <strong>Aufträge &gt; Fulfillment &gt; Tab: Import Paketnummern</strong>.
+Idealerweise haben Sie für die Auftragsbearbeitung eine <strong><a href="/auftragsabwicklung/auftraege/auftragsdokumente/pickliste">Pickliste</a></strong> erstellt und ausgedruckt, dort bereits alle bearbeiteten Aufträge abgehakt und die kleinen Barcodestreifen Ihrer Versandetiketten neben den Auftrag geklebt.</p>
+</div>
+<div class="paragraph instruction">
+<p>Paketnummern einscannen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie Das Menü <strong>Aufträge &gt; Fulfillment &gt; Tab: Import Paketnummern</strong>.</p>
+</li>
+<li>
+<p>Wählen Sie das Untermenü <strong>Listen-Import</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie unter <strong>Auftrags-ID</strong> in die erste Zeile.</p>
+</li>
+<li>
+<p>Scannen Sie die Auftrags-ID.</p>
+</li>
+<li>
+<p>Springen Sie unter <strong>Paketnummer</strong> in die erste Zeile.</p>
+</li>
+<li>
+<p>Scannen Sie die Paketnummer.</p>
+</li>
+<li>
+<p>Fahren Sie mit weiteren Aufträgen genauso fort.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>plentymarkets speichert nun die Paketnummer im Auftrag, was die soeben eingerichtete Ereignisaktion auslöst, sodass der Warenausgang gebucht und eine Versandbestätigung an den Kunden verschickt wird.
+Beim Buchen des Warenausgangs wird durch das System automatisch der Auftragsstatus <strong>Warenausgang gebucht</strong> gesetzt.
+Es handelt sich hierbei um einen Systemautomatismus.
+Sie können den Status nutzen, um zu prüfen, ob nach dem Import alle Warenausgänge gebucht wurden.</p>
+</div>
+<div class="paragraph">
+<p>Eine weitere Möglichkeit, die Paketnummern zu importieren, ist per <strong><a href="/auftragsabwicklung/fulfillment/dokumente-erzeugen#900">CSV-Datei</a></strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_warenausgang_automatisch_beim_erstellen_der_rechnung_buchen">2.2. Warenausgang automatisch beim Erstellen der Rechnung buchen</h3>
+<div class="paragraph">
+<p>Das automatische Buchen des Warenausgangs beim Erstellen der Rechnung, setzt voraus, dass Sie ohne Rechnung keine Ware ausliefern. Allerdings ist eine Rechnung nicht in jedem Fall die Garantie für einen realen Warenausgang. Bei der Zahlungsart Vorkasse kommt es z.B. vor, dass die Rechnung vor dem Warenausgang erstellt wird. Ein weiterer Fall, in dem die Rechnung erstellt wurde, aber kein Warenausgang erfolgt, liegt dann vor, wenn beim Kommissionieren festgestellt wird, dass Ware beschädigt ist und daher nicht ausgeliefert wird.
+Wenn Sie sich für diese Vorgehensweise entscheiden, filtern Sie auch nach Zahlungsarten, um so z.B. Vorkasse auszuschließen.</p>
+</div>
+<div class="paragraph">
+<p>Das automatische Buchen des Warenausgangs beim Erstellen von Rechnungen erfolgt über eine Ereignisaktion. Legen Sie diese folgendermaßen an:</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Buchen des Warenausgangs beim Erstellen der Rechnung:</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Aufträge » Ereignisaktionen</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Ereignisaktion hinzufügen</strong>. <br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie einen Namen ein.</p>
+</li>
+<li>
+<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 2.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle 2 vor.</p>
+</li>
+<li>
+<p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 2. Ereignisaktion zum automatischen Buchen des Warenausgangs beim Erstellen einer Rechnung</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Ereignis</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Dokumente: Rechnung generiert</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 1</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Auftragstyp</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 2</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Zahlungsart</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Aktion</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Warenausgang buchen</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_warenausgang_bei_stornierungen_retouren_und_gewährleistungen">3. Warenausgang bei Stornierungen, Retouren und Gewährleistungen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Zuletzt noch einige Hinweise zu den Sonderfällen <strong>Stornierungen</strong>, <strong>Retouren</strong> sowie <strong>Gewährleistungen</strong> und ihre Auswirkungen auf die Warenbestandsführung.</p>
+</div>
+<div class="sect2">
+<h3 id="_stornierungen">3.1. Stornierungen</h3>
+<div class="paragraph">
+<p>Wird ein Auftrag vor dem Warenausgang widerrufen, setzen Sie diesen manuell auf den Status 8&nbsp;– <strong>Storniert</strong>. Wenn ein Auftrag storniert wird, werden die reservierten Warenbestände wieder freigegeben. Ein Auftrag kann nur so lange storniert werden, wie kein Warenausgang gebucht wurde. <br>
+Was reservierter Bestand ist und wann Ihr System Bestand reserviert, erfahren Sie unter <strong><a href="/warenwirtschaft/warenbestaende-verwalten">Warenbestände verwalten</a></strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_retouren">3.2. Retouren</h3>
+<div class="paragraph">
+<p>Wird ein Auftrag erst nach dem Warenausgang widerrufen bzw. stellt der Kunde fest, dass er den Artikel doch nicht möchte und sendet ihn zurück, handelt es sich um eine <strong>Retoure</strong>. Legen Sie in diesem Fall eine Retoure zum Auftrag an. <br>
+Wenn Sie eine Retoure anlegen, öffnet sich ein Fenster, in dem Sie einen Retourengrund angeben und die retournierten Artikel auswählen.
+Die Retoure erhält eine eigene Auftrags-ID.
+Der Warenbestand wird nicht automatisch zurückgebucht, denn die zurückgesandten Artikel können defekt oder unvollständig sein.
+Stellt sich nach dem Prüfen heraus, dass Sie retournierte Artikel wieder verkaufen können, buchen Sie den Warenbestand manuell ins System zurück.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/warenwirtschaft/assets/DE-Waren-ausbuchen-01.png" alt="DE Waren ausbuchen 01">
+</div>
+<div class="title">Abbildung 1. Retourengrund und retournierte Artikel angeben</div>
+</div>
+<div class="paragraph">
+<p>Wie Sie Retouren anlegen und Warenbestand zurückbuchen, erfahren Sie ausführlich unter <strong><a href="/auftragsabwicklung/auftraege/auftraege-verwalten#retoure">Retoure</a></strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gewährleistungen">3.3. Gewährleistungen</h3>
+<div class="paragraph">
+<p>Die Vorgehensweise bei Gewährleistungen ist der Vorgehensweise bei Retouren ähnlich. In beiden Fällen erhalten Sie Waren eines Auftrags zurück, bei dem der Warenausgang gebucht ist. Bei einer Gewährleistung ist der Artikel meist defekt. Kunden möchten im Fall einer Gewährleistung entweder einen Ersatzartikel oder den Rechnungsbetrag erstattet bekommen (Gutschrift). Da der Artikel bei Gewährleistungen meist defekt ist, wird der retournierte Artikel im Regelfall nicht wieder eingebucht. Jedoch ist häufig eine zweite Lieferung mit eigener Auftrags-ID und eigenem Warenausgang notwendig.</p>
+</div>
+<div class="paragraph">
+<p>Wie Sie Gewährleistungen anlegen, erfahren Sie ausführlich unter <strong><a href="/auftragsabwicklung/auftraege/auftraege-verwalten#gewaehrleistung">Gewährleistung</a></strong>.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_warenausgang_manuell_buchen">4. Warenausgang manuell buchen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Das manuelle Buchen des Warenausgangs muss für jeden Auftrag separat erfolgen und erfordert einen hohen Zeitaufwand. Sie haben zwei Möglichkeiten, den Warenausgang manuell zu buchen. Jedoch ist es sinnvoll, das Buchen des Warenausgangs wie beschrieben zu automatisieren.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Kein manuelles Buchen bei eingestellter Automatik vornehmen</div>
+<div class="paragraph">
+<p>Das System arbeitet Aufträge der Reihe nach ab.
+So ist sichergestellt, dass der Kunde, der zuerst bestellt hat, auch zuerst seine Bestellung erhält.
+Wenn Sie manuell den Warenausgang für einen Auftrag buchen, der sich in einem Status kleiner als 5, &lt; 5 Freigabe Versand, befindet oder den Sie manuell auf Status 5 oder höher gesetzt haben, heben Sie die Automatik auf und das System arbeitet die Aufträge nicht mehr korrekt ab.
+Je nachdem, wie viele Aufträge zwischen dem eigentlich vom System als Nächsten bearbeiteten Auftrag und dem von Ihnen manuell bearbeiteten Auftrag liegen, kann die Automatik über Wochen oder Monate fehlerhaft arbeiten.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="_warenausgang_in_der_auftragsübersicht_buchen">4.1. Warenausgang in der Auftragsübersicht buchen</h3>
+<div class="paragraph">
+<p>Bei Aufträgen, bei denen der Warenausgang noch offen ist, wird direkt in der Auftragsübersicht ein Symbol zum Buchen des Warenausgangs angezeigt (Bild 4).
+Wurde der Warenausgang bereits gebucht, wird das Symbol mit einem Häkchen daran in der Titelzeile des Auftrags angezeigt.</p>
+</div>
+<div class="paragraph">
+<p>Ein Klick auf <strong>Warenausgang buchen</strong> bucht den Warenausgang mit aktuellem Datum.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/warenwirtschaft/assets/DE-Waren-ausbuchen-02.png" alt="DE Waren ausbuchen 02">
+</div>
+<div class="title">Abbildung 2. Manuelles Buchen des Warenausgangs in der Auftragsübersicht</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_warenausgang_im_geöffneten_auftrag_buchen">4.2. Warenausgang im geöffneten Auftrag buchen</h3>
+<div class="paragraph">
+<p>In einem geöffneten Auftrag sehen Sie im Tab <strong>Einstellungen</strong> unter <strong>Warenausgang</strong>, ob der Warenausgang gebucht oder nicht gebucht ist.
+Wenn der Warenausgang noch nicht gebucht wurde, wird ein Symbol zum Buchen des Warenausgangs angezeigt (Bild 5, Pfeil).
+Hier können Sie auch ein vom aktuellem Datum abweichendes Ausgangsdatum eintragen, falls der Warenausgang nachträglich zum tatsächlichen Warenausgang gebucht werden muss.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/warenwirtschaft/assets/DE-Waren-ausbuchen-03.png" alt="DE Waren ausbuchen 03">
+</div>
+<div class="title">Abbildung 3. Manuelles Buchen des Warenausgangs im geöffneten Auftrag</div>
+</div>
+</div>
+</div>
+</div>
+</main>

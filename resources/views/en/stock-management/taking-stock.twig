@@ -1,0 +1,631 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> Registering stocktaking with the export and import functions</span></a>
+<ul class="sectlevel2">
+<li><a href="#200"><span>1.1.</span><span> Exporting stock</span></a></li>
+<li><a href="#300"><span>1.2.</span><span> Editing stock quantities</span></a></li>
+<li><a href="#400"><span>1.3.</span><span> Importing stocks</span></a></li>
+</ul>
+</li>
+<li><a href="#500"><span>2.</span><span> Taking stock while stocktaking mode is active</span></a>
+<ul class="sectlevel2">
+<li><a href="#600"><span>2.1.</span><span> Activating the stocktaking mode</span></a></li>
+<li><a href="#700"><span>2.2.</span><span> Exporting stock</span></a></li>
+<li><a href="#800"><span>2.3.</span><span> Clearing stock while stocktaking mode is active</span></a></li>
+<li><a href="#900"><span>2.4.</span><span> Booking stock</span></a></li>
+<li><a href="#1000"><span>2.5.</span><span> Deactivating the stocktaking mode</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>Taking stock</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Taking stock, or taking inventory, is the process of checking how much stock is in a warehouse at a particular time. Both the target and the actual stock are analyzed in the process. This is done with the help of a stock index, which lists the stock of every item.</p>
+</div>
+<div class="paragraph">
+<p>This page teaches you how to take stock. You will learn how to use the <strong>Data exchange</strong> menu to take stock. Then you will also learn how the <strong>stocktaking mode</strong> works and how to use this mode to completely delete and rebook your entire stock.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. Registering stocktaking with the export and import functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The stocktaking via data exchange requires several steps. First you need to export the current stock quantities saved in your system. Next you need to edit the stock quantities so that they reflect the actual quantities available in your warehouse and then you need to reimport the corrected data into your system. You can either work in the file that you exported or you can make a copy of that file to ecit the actual quantities.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Getting to know the data format Stock and testing the data exchange</div>
+<div class="paragraph">
+<p>Please pay attention to the notes specified on the <a href="/en/basics/data-exchange/data-formats/stock"><strong>Stock</strong></a> data format page of the manual – especially before you start to overwrite the stock quantities in your system. To test the import use a test file that only contains one variation and overwrite the stock of that variation. This way you can easily check the result and see if it turned out as desired.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="200">1.1. Exporting stock</h3>
+<div class="paragraph">
+<p>In the first step, go to <strong>Data exchange » Export » Dynamic export</strong> and use the data format <strong>Stock</strong> to export your current stock.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">The stock export is for one warehouse only</div>
+<div class="paragraph">
+<p>The data format <strong>Stock</strong> can only export the stock of one warehouse at a time. You can select the warehouse from the warehouseID filter. Click on the <strong>Filter</strong> tab of the data format. If you do not select any warehouse, then the warehouse with the lowest ID will be selected by default.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Carrying out the data export:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <a href="/en/basics/data-exchange/exporting-data"><strong>Data exchange » Export » Dynamic export</strong></a>.</p>
+</li>
+<li>
+<p>Open the submenu for the data format <a href="/en/basics/data-exchange/data-formats/stock"><strong>Stock</strong></a> or set this <strong><a href="/en/basics/data-exchange/data-formats#2-2">data format</a></strong> up if the submenu is not yet available.</p>
+</li>
+<li>
+<p>Select the settings for the data export.</p>
+</li>
+<li>
+<p>Click on the <strong>Filter</strong> tab.</p>
+</li>
+<li>
+<p>Select a warehouse from the <strong>WarehouseID</strong> drop-down menu. <br>
+→ The warehouse with the lowest warehouse ID is selected by default.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Click on <strong>Export data</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">What is the difference between the data field <strong>WarehouseID</strong> and the <strong>WarehouseID</strong> filter?</div>
+<div class="paragraph">
+<p>The <strong>WarehouseID</strong> filter let’s you define from which warehouse the stock will be exported. The <strong>WarehouseID</strong> data field simply contains the ID of a warehouse. The <strong>WarehouseID</strong> data field does not influence the content of the export.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You will receive a CSV file, which you will need to edit and then import again afterwards.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="300">1.2. Editing stock quantities</h3>
+<div class="paragraph">
+<p>Now you need to edit the file that you just exported. When taking stock you need to count the actual stock in your warehouse and compare it to the quantities saved as physical stock in your system. The quantities displayed in <strong>Stock</strong> column of your <strong>Stock</strong> data export are the physical stock saved in your system.</p>
+</div>
+<div class="paragraph instruction">
+<p>Making changes to the stock file:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Determine the actual stock.</p>
+</li>
+<li>
+<p>Open the stock file that you exported.</p>
+</li>
+<li>
+<p>Enter the actual stock into the <strong>Stock</strong> column.</p>
+</li>
+<li>
+<p>Save the changes to the file.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="400">1.3. Importing stocks</h3>
+<div class="paragraph">
+<p>The file now contains the corrected stock values and needs to be imported back into your plentymarkets system. A CSV file or text file is used for the import.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">The physical stock will be overwritten!</div>
+<div class="paragraph">
+<p>The import will overwrite the current physical stock and this means the stock that was overwritten can not be restored. Reserved stock quantities remain untouched and will not be imported. If you do not want to import your entire stock, because you only need to add incoming stock to correct your stock quantities, you can also add incoming stock via data import. Use the special format <strong><a href="/en/basics/data-exchange/data-formats/incomingitems">IncomingItems</a></strong> to add incoming stock.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Carrying out the data import:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <a href="/en/basics/data-exchange/importing-data"><strong>Data exchange » Import » Dynamic import</strong></a>.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 1 and select the settings as desired.</p>
+</li>
+<li>
+<p>Click on <strong>Import</strong>.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Import settings for dynamic import</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Field separator</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select the separator.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Format</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select the data format Stock.<br>
+If you have set up several stock formats and the file contains the warehouse ID column then the import will only change the stock quantities for the warehouse specified by the ID.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Warehouse</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>If the file that you want to import does not include a <strong>WarehouseID</strong> column, then the import will overwrite the stock of the warehouse that you have selected here. If the file includes a <strong>WarehouseID</strong> column and the ID in the column is 1 or higher, then your setting will not have an impact on the import. Instead the import will be carried out based on the ID. The ID allows you to import stock for several warehouses at once.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Barcode</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The barcode is an optional field for synchronisation. Select the barcode format that should be used to synchronise the variation included in your file with the variations in your system. If the information included in the file do not match a variation in your system, then the row in the file will be skipped. It is not necessary to select a barcode for data synchronisation if the variation ID is included in the file. The variation ID is unique and is therefore enough to match the data.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>File</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select the file that you wish to import.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can see detailed information about the data import in the <strong>Data exchange » Import » Dynamic import » Submenu: Processing status</strong> menu.</p>
+</div>
+<div class="paragraph">
+<p>You can see the corrections that you made during the stocktaking process by opening the item and clicking on <strong>Tab: Stock » Tab: Item movement</strong>.
+In addition the import will be listed as an entry in the <strong>Stock » Incoming items</strong> menu. You can open the entry to see a list of the item that were changed (image 1).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/stock-management/assets/EN-taking-stock-01.png" alt="EN taking stock 01">
+</div>
+<div class="title">Figure 1. list of variations that received stock</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="500">2. Taking stock while stocktaking mode is active</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There is an option in the warehouse settings called <strong>Active stocktaking mode</strong>. You can use it to freeze the stock of a warehouse while you are busy taking stock. While the stocktaking mode is active the physical stock remains the same and no item movements will be registered nor will stock be newly calculated. <br>
+Taking stock while the stocktaking mode is active can be carried out in 4 steps. First you need to activate the stocktaking mode. Next you need to export the current stock. Then you need to clear all stock and book the new stock quantities in. While the stocktaking mode is active your system will not change the stock quantities saved in a variation’s data record. When you have booked in the new stock quantities and then you deactivate the stocktaking mode, your new stock quantities will be saved for variations. The old stock quantity will be overwritten. While stocktaking mode is active your reserved stock will still be calculated correctly. This means that stock will be reserved whenever you receive a new order. When you use the stocktaking mode, you need to know the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>While the stocktaking mode is active, the physical stock remains frozen and this may lead to overselling.</p>
+</li>
+<li>
+<p>Nonetheless, you should not book stock out either, if the stocktaking mode is active, because the stock will not be calculated.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Deactivate the stocktaking mode only if you have already booked in the new stock quantities</div>
+<div class="paragraph">
+<p>If you deactivate the stocktaking mode while your stock is cleared, listings and offers on markets may be deactivated. To avoid that offers are aborted you need to book in the new stock quantities first and then deactivate the stocktaking mode.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="600">2.1. Activating the stocktaking mode</h3>
+<div class="paragraph">
+<p>Activate the stocktaking mode for the warehouse that you want to carry out the stocktaking in. The stocktaking mode will freeze all stock quantities of the warehouse.</p>
+</div>
+<div class="paragraph instruction">
+<p>Activating the stocktaking mode:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Settings » Stock » Warehouse » Select warehouse » Submenu: Settings</strong></p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>active stocktaking mode</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the setting.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/stock-management/assets/EN-taking-stock-02.png" alt="EN taking stock 02">
+</div>
+<div class="title">Figure 2. activating the stocktaking mode</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">A warehouse that is in stocktaking mode will be labeled</div>
+<div class="paragraph">
+<p>Additional information is added to the name of your warehouse. Depending on how long the warehouse’s name is, either <strong>(INVENTORY MOD)</strong>, <strong>(INVENTORY)</strong> or <strong>(I)</strong> is added to the end of the name. This way, you can tell that the warehouse is currently in stocktaking mode.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/stock-management/assets/EN-taking-stock-03.png" alt="EN taking stock 03">
+</div>
+<div class="title">Figure 3. identifying a warehouse that is in stocktaking mode</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="700">2.2. Exporting stock</h3>
+<div class="paragraph">
+<p>Activate the stocktaking mode for the warehouse that you want to carry out the stocktaking in. To do so, use the data format <strong>Stock</strong>. You need one export per warehouse.</p>
+</div>
+<div class="paragraph instruction">
+<p>Exporting stock:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <a href="/en/basics/data-exchange/exporting-data"><strong>Data exchange » Export » Dynamic export</strong></a>.</p>
+</li>
+<li>
+<p>Click on the <strong>New data format</strong> tab.</p>
+</li>
+<li>
+<p>Select the data format type <strong>Stock</strong>.</p>
+</li>
+<li>
+<p>Enter a name for the data format.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 2 and select the settings as desired. <br>
+→ Further data fields and filters are optional.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Data fields that are required for stocktaking</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Import procedure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>VariationID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Contains the ID of a variation and is required for stock synchronisation.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Stock</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Contains the physical stock and the import procedure setting <strong>Import</strong> ensures that the physical stock will be overwritten if the file is imported.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>WarehouseID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Contains the ID of a warehouse and ensures that the stock can be assigned to a warehouse.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>LocationID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Contains the ID of a storage location and ensures that the stock can be assigned to a storage location.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>VariationString</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Contains the name of a variation. This data field can often help to easily identify variations.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><div><div class="paragraph">
+<p>Filter tab of the data format</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>WarehouseID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Defines the warehouse that the stock is exported from. If you do not select any warehouse, then the stock of the warehouse with the lowest ID will be exported.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="800">2.3. Clearing stock while stocktaking mode is active</h3>
+<div class="paragraph">
+<p>As a first step you will now clear all your stocks and item movements. The reserved stock quantities are preserved. Make a copy of the file that you just exported.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Export serves as backup of your stock quantities before you clear them</div>
+<div class="paragraph">
+<p>This process deletes all of the stock and item movements! This means that the warehouse will be completly cleared of any digital stock. Therefore, be sure to copy your stock export and to leave the original without any changes until you have successfully completed the process (see section 2.1). This file can help you to restore your stock if an error occurs.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Clearing stock:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the copy of your stock export.</p>
+</li>
+<li>
+<p>Enter 0 into the <strong>Stock</strong> data field of each variation.</p>
+</li>
+<li>
+<p>Save the file.</p>
+</li>
+<li>
+<p>Go to <strong>Data exchange » Import » Dynamic import</strong>.</p>
+</li>
+<li>
+<p>Under <strong>format</strong>, select the data format Stock, which you used for your export.</p>
+</li>
+<li>
+<p>Pay attention to the information given in table 3.</p>
+</li>
+<li>
+<p>Select the <strong>file</strong> that is filled with 0 for the stock.</p>
+</li>
+<li>
+<p>Click on <strong>Import</strong>.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. dynamic import of the <strong>Stock</strong> format</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Field separator</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select a separator</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Format</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select the data format Stock.<br>
+If you have set up several stock formats and the file contains the warehouse ID column then the import will only change the stock quantities for the warehouse specified by the ID.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Warehouse</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Can be left empty because the WarehouseID column should be included in the data export and therefore also in the import file. <br>
+If the file that you want to import does not include a <strong>WarehouseID</strong> column, then the import will overwrite the stock of the warehouse that you have selected here. If the file includes a <strong>WarehouseID</strong> column and the ID in the column is 1 or higher, then your setting will not have an impact on the import. Instead the import will be carried out based on the ID. The ID allows you to import stock for several warehouses at once.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Barcode</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Can remain empty for this import. <br>
+The barcode is an optional field for synchronisation. Select the barcode format that should be used to synchronise the variation included in your file with the variations in your system. If the information included in the file do not match a variation in your system, then the row in the file will be skipped. It is not necessary to select a barcode for data synchronisation if the variation ID is included in the file. The variation ID is unique and is therefore enough to match the data.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>File</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select the file that you wish to import.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="900">2.4. Booking stock</h3>
+<div class="paragraph">
+<p>Now you will import the stock quantities that you counted during the stocktaking into your system. To do so, use the data format Stock. Open the stock file that you filled in 0 for every stock. Enter the current physical stock of each variation into the stock column and save the file with the current stock quantities. The physical stock must be entered into the <strong>Stock</strong> column.</p>
+</div>
+<div class="paragraph instruction">
+<p>Booking stock:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the copy of your stock export.</p>
+</li>
+<li>
+<p>Enter the actual stock quantity into the <strong>Stock</strong> data field of each variation.</p>
+</li>
+<li>
+<p>Save the file that now contains the current stock.</p>
+</li>
+<li>
+<p>Go to <strong>Data exchange » Import » Dynamic import</strong>.</p>
+</li>
+<li>
+<p>Select the same data format Stock that you have used for the export.</p>
+</li>
+<li>
+<p>Pay attention to the information given in table 3.</p>
+</li>
+<li>
+<p>Select the <strong>file</strong> that is filled with your current stock quantities.</p>
+</li>
+<li>
+<p>Click on <strong>Import</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1000">2.5. Deactivating the stocktaking mode</h3>
+<div class="paragraph">
+<p>Last you need to deactivate the stocktaking mode and when you do this, the stock that you just imported will be saved for each variation.</p>
+</div>
+<div class="paragraph instruction">
+<p>Deactivating the stocktaking mode:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Settings » Stock » Warehouse » Select warehouse » Submenu: Settings</strong></p>
+</li>
+<li>
+<p>Remove the check mark next to the option <strong>Stocktaking mode active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the setting. <br>
+→ Your physical stock will be recalculated.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Deactivate the stocktaking mode only if you have really completed all steps of the stocktaking process. If you deactivate the stocktaking mode early, stock may be calculated wrong and offers and markets may be ended without your intention to actually end them.</p>
+</div>
+</div>
+</div>
+</div>
+</main>

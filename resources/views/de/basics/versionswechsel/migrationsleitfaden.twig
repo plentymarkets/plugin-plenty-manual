@@ -1,0 +1,2210 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#10"><span>1.</span><span> Überblick über die neue Artikelarchitektur</span></a></li>
+<li><a href="#_ausblick"><span>2.</span><span> Ausblick</span></a></li>
+<li><a href="#200"><span>3.</span><span> Voraussetzungen für die Migration</span></a></li>
+<li><a href="#20"><span>4.</span><span> Migration</span></a>
+<ul class="sectlevel2">
+<li><a href="#21"><span>4.1.</span><span> Migration der Artikeldaten</span></a>
+<ul class="sectlevel3">
+<li><a href="#_migrationsmuster"><span>4.1.1.</span><span> Migrationsmuster</span></a></li>
+<li><a href="#22"><span>4.1.2.</span><span> Besonderheiten</span></a></li>
+</ul>
+</li>
+<li><a href="#26"><span>4.2.</span><span> Migration der Preisspalten</span></a></li>
+</ul>
+</li>
+<li><a href="#30"><span>5.</span><span> Vorbereitungen im Detail</span></a>
+<ul class="sectlevel2">
+<li><a href="#_systemeinstellungen_vor_dem_wechsel_auf_plentymarkets_7"><span>5.1.</span><span> Systemeinstellungen vor dem Wechsel auf plentymarkets 7</span></a>
+<ul class="sectlevel3">
+<li><a href="#35"><span>5.1.1.</span><span> Migrationseinstellungen vornehmen</span></a></li>
+<li><a href="#38"><span>5.1.2.</span><span> Muster für neue Variantennummern festlegen</span></a></li>
+</ul>
+</li>
+<li><a href="#_artikeldaten"><span>5.2.</span><span> Artikeldaten</span></a>
+<ul class="sectlevel3">
+<li><a href="#55"><span>5.2.1.</span><span> EAN/GTIN prüfen</span></a></li>
+<li><a href="#50"><span>5.2.2.</span><span> Einheiten prüfen</span></a></li>
+<li><a href="#_kategorieverknüpfungen_prüfen"><span>5.2.3.</span><span> Kategorieverknüpfungen prüfen</span></a></li>
+</ul>
+</li>
+<li><a href="#_preisspalten"><span>5.3.</span><span> Preisspalten</span></a>
+<ul class="sectlevel3">
+<li><a href="#60"><span>5.3.1.</span><span> Preisspalten-Kombinationen prüfen</span></a></li>
+<li><a href="#70"><span>5.3.2.</span><span> Währungseinstellungen prüfen</span></a></li>
+<li><a href="#80"><span>5.3.3.</span><span> Preisspalten der Herkünfte abgleichen</span></a></li>
+<li><a href="#90"><span>5.3.4.</span><span> Preissichtbarkeit in Bezug auf Kundenklassen prüfen</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#210"><span>6.</span><span> Termin für Migration vereinbaren</span></a></li>
+<li><a href="#_nach_der_migration"><span>7.</span><span> Nach der Migration</span></a>
+<ul class="sectlevel2">
+<li><a href="#100"><span>7.1.</span><span> GTIN korrigieren (nur bei GTIN mit führenden Nullen)</span></a></li>
+<li><a href="#_grundpreisangabe_für_listings_zuordnen"><span>7.2.</span><span> Grundpreisangabe für Listings zuordnen</span></a></li>
+<li><a href="#_vorbereitungen_für_den_datenaustausch_via_soap_api"><span>7.3.</span><span> Vorbereitungen für den Datenaustausch via SOAP API</span></a>
+<ul class="sectlevel3">
+<li><a href="#_preise_für_soap_zuordnen"><span>7.3.1.</span><span> Preise für SOAP zuordnen</span></a></li>
+<li><a href="#_barcodes_für_soap_zuordnen"><span>7.3.2.</span><span> Barcodes für SOAP zuordnen</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_übersicht_der_wichtigsten_änderungen"><span>8.</span><span> Übersicht der wichtigsten Änderungen</span></a></li>
+<li><a href="#_migrationsstand_märkte"><span>9.</span><span> Migrationsstand Märkte</span></a></li>
+<li><a href="#_migrationshinweis_mention_schnittstelle"><span>10.</span><span> Migrationshinweis Mention-Schnittstelle</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>Migrationsleitfaden</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Diese Seite enthält wichtige Informationen zur Migration auf plentymarkets 7. Für plentymarkets 7 wurde die Artikelarchitektur grundlegend überarbeitet. Auf dieser Seite wird kurz die neue Architektur erläutert und ein Ausblick auf die weiteren Verbesserungen gegeben, die sich zurzeit noch in der Umsetzung befinden. Des Weiteren wird der Ablauf der Migration beschrieben. Sie erfahren, welche Vorbereitungen Sie treffen müssen, um Ihr System für die Migration vorzubereiten. Beachten Sie, dass eine Migration nicht rückgängig gemacht werden kann. Wenn Sie die hier beschriebenen Vorbereitungen nicht treffen, kann dies einen erheblichen Korrekturaufwand für Sie nach der Migration bedeuten. Im schlimmsten Fall kann es zu einem Verlust von Daten kommen. Lesen Sie daher die folgenden Informationen aufmerksam und bereiten Sie Ihre Daten wie hier beschrieben für die Migration vor.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">SOAP API nur mit plentymarkets 7 Classic Tarif</div>
+<div class="paragraph">
+<p>Ab dem Wechsel auf plentymarkets 7 ist die SOAP-API nur für Kunden mit Classic-Tarif nutzbar. Kunden mit Zero-Vertrag können die SOAP-API nicht mehr nutzen. Die REST-API steht allen plentymarkets 7 Kunden zur Verfügung.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">plentymarkets 7 ist nicht mit externen Mandanten und dem shopware Connector kompatibel</div>
+<div class="paragraph">
+<p>plentymarkets 7 ist aktuell nicht mit externen Mandanten und dem shopware Connector kompatibel. Wenn Sie einen externen Mandanten bzw. den shopware Connector verwenden, ist daher ein Wechsel auf plentymarkets 7 zurzeit nicht möglich.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10">1. Überblick über die neue Artikelarchitektur</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In der neuen Artikelarchitektur ist ein Artikel der vollständige Datensatz einer Hauptvariante sowie sämtlicher dazugehöriger Varianten. Ein Artikel besteht also aus globalen Daten, die für alle Varianten des Artikels gelten (Artikeldaten), und aus Daten, die pro Variante verwaltet werden (Variantendaten).</p>
+</div>
+<div class="paragraph">
+<p>Artikeldaten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Globale Einstellungen (Zustand, Hersteller, Altersfreigabe, etc.)</p>
+</li>
+<li>
+<p>Texte</p>
+</li>
+<li>
+<p>Merkmale</p>
+</li>
+<li>
+<p>Cross-Selling-Einstellungen</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Variantendaten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Bilder</p>
+</li>
+<li>
+<p>Marktplatz-Sichtbarkeit</p>
+</li>
+<li>
+<p>Verkaufspreise</p>
+</li>
+<li>
+<p>Barcodes</p>
+</li>
+<li>
+<p>Einheiten</p>
+</li>
+<li>
+<p>Lager</p>
+</li>
+<li>
+<p>Bestand</p>
+</li>
+<li>
+<p>Kategorien</p>
+</li>
+<li>
+<p>Lieferanten</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Jeder Artikel verfügt über eine nicht löschbare Hauptvariante. Diese Hauptvariante ist nicht identisch mit dem Artikel, sondern unterscheidet sich von den anderen möglichen Varianten eines Artikels lediglich dadurch, dass Eigenschaften von ihr an weitere Varianten des Artikels vererbt werden können. Die Hauptvariante kann selbst eine kaufbare Variante sein oder als virtuelle Variante dienen, um die weiteren Varianten des Artikels zu verwalten.</p>
+</div>
+<div class="paragraph">
+<p>Bild 1 zeigt eine schematische Darstellung der Artikelarchitektur in plentymarkets 7.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/versionswechsel/assets/DE-artikelarchitektur-1.png" alt="DE artikelarchitektur 1">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Bild 1: Aktueller Stand der neuen Artikelarchitektur</em></p>
+</div>
+<div class="paragraph">
+<p>Die neue Artikelarchitektur bietet zahlreiche Vorteile. Wichtigstes Ziel war noch mehr Flexibilität bei der Verwaltung und Pflege der Preise, der Artikeldaten und vor allem auch der Varianten. Eine kurze Übersicht der Neuerungen und Vorteile finden Sie nachfolgend.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Preissets mit den Preisspalten wurden durch Verkaufspreise ersetzt. Diese Verkaufspreise werden zentral definiert und verwaltet und Varianten zugewiesen. Dieses Konzept vereinfacht die Preispflege und bietet Ihnen gleichzeitig deutlich mehr Flexibilität bei der selektiven Preisgestaltung. Beispielsweise werden die Mengenrabattstaffeln von Artikeln und Kundenklassen zu Verkaufspreisen migriert. Dies erlaubt Ihnen noch mehr Flexibilität bei der Preisstaffelung.</p>
+</li>
+<li>
+<p>Mehr Flexibilität bei der Arbeit mit Varianten. Anders als bisher können für Varianten eigene Werte z.B. für Maße und Gewichte, Versandkosten, sonstige Kosten und Lieferanten hinterlegt werden. Um den Pflegeaufwand bei sehr ähnlichen Varianten zu minimieren, haben wir gleichzeitig die Möglichkeit geschaffen, Daten von der Hauptvariante an die Varianten zu vererben.</p>
+</li>
+<li>
+<p>Vererbung bestimmter Artikeldaten der Hauptvariante an die dazugehörigen Varianten. Damit reduzieren Sie Ihren Pflegeaufwand, ohne Abstriche bei der Flexibilität zu machen. Die Vererbung ermöglicht es Ihnen, Varianteneigenschaften zentral an der Hauptvariante zu verwalten und so die Werte vieler Varianten gleichzeitig zu aktualisieren. Beim Erstellen von Varianten werden viele Einstellungen der Hauptvariante automatisch auf die Varianten übertragen. Auch bei einer späteren Bearbeitung der Hauptvariante erben die Varianten automatisch die neuen Einstellungen, wenn die Vererbung aktiviert ist. Gleichzeitig können Sie die Vererbung jedoch auch an der Variante deaktivieren und so individuelle Einstellungen vornehmen.</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_ausblick">2. Ausblick</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>plentymarkets setzt auf agile Softwareentwicklung. Das bedeutet, dass Neuerungen nicht wie in klassischen Entwicklungszyklen als "große Würfe" veröffentlicht werden. Stattdessen werden Projekte in kleinere Einzelprojekte bzw. Inkremente heruntergebrochen, die in kürzeren, aber regelmäßigen Abständen veröffentlicht werden. Da die Artikelstruktur fast alle anderen Bereiche von plentymarkets beeinflusst, stellt in diesem Fall das kleinstmögliche Inkrement dennoch eine umfassende Umstrukturierung dar. Trotzdem setzen wir beim Artikelumbau auf agile Softwareentwicklung und stellen in der aktuellen Version einen ersten Zwischenstand vor. Er erlaubt Ihnen, sich mit der neuen Struktur vertraut zu machen, während wir weitere Verbesserungen planen und nach und nach auf agile Weise veröffentlichen. Für die nächsten Inkremente haben wir uns folgende Themen vorgenommen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pflege von Namen, Kurzbeschreibung, Beschreibung etc. pro Variante und ggf. auch pro Variante und Mandant</p>
+</li>
+<li>
+<p>Definition von Merkmalen pro Variante</p>
+</li>
+<li>
+<p>Pflege von Preisen pro Kunde</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Bild 2 zeigt das Ziel, die Datenpflege auf Variantenebene auf die Artikeltexte und Merkmale zu erweitern.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/versionswechsel/assets/DE-artikelarchitektur-2.png" alt="DE artikelarchitektur 2">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Bild 2: Ausblick Datenpflege auf Variantenebene</em></p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="200">3. Voraussetzungen für die Migration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Beachten Sie die folgenden Voraussetzungen für eine Migration Ihres Systems auf plentymarkets 7.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Hosting</strong>: Ihr System muss auf AWS gehostet sein. plentymarkets 7 kann nicht auf einem eigenen Server oder der plentymarkets eigenen Cloud (Cluster) genutzt werden.<br>
+→ Sie können Ihr System vor der Migration auf AWS <a href="/basics/arbeiten-mit-plentymarkets/plentymarkets-konto/umzug"><strong>umziehen</strong></a>, wenn die Hauptdomain bei plentymarkets gehostet ist.</p>
+</li>
+<li>
+<p><strong>SOAP</strong>: Eigene SOAP-Anbindungen und SOAP-Anbindungen von Partnern oder Agenturen müssen vor der Migration auf ihre Stable 7-Tauglichkeit geprüft werden. Fragen Sie den Entwickler oder die Agentur, ob die Anbindung Stable 7-fähig ist.</p>
+</li>
+<li>
+<p><strong>Shopware Connector</strong>: plentymarkets 7 ist aktuell nicht mit externen Mandanten und dem shopware Connector kompatibel. Wenn Sie einen externen Mandanten bzw. den shopware Connector verwenden, ist daher ein Wechsel auf plentymarkets 7 aktuell nicht möglich.</p>
+</li>
+<li>
+<p><strong>Externe Mandanten</strong>: plentymarkets 7 ist aktuell nicht mit externen Mandanten kompatibel. Wenn Sie einen externen Mandanten verwenden, ist daher ein Wechsel auf plentymarkets 7 aktuell nicht möglich.</p>
+</li>
+<li>
+<p><strong>plentymarkets Shipping</strong>: plentymarkets Shipping ist nicht mit plentymarkets 7 kompatibel und wird nicht mehr unterstützt. Wechseln Sie auf den aktuellen <a href="https://www.plentymarkets.eu/software/downloads/plentymarkets-client"><strong>plentymarkets-Client</strong></a>.</p>
+</li>
+<li>
+<p><strong>Marktplätze</strong>: In plentymarkets 7 sind noch nicht alle Marktplätze funktionsfähig. Prüfen Sie vor der Migration die <a href="/basics/versionswechsel"><strong>Liste</strong></a> der noch nicht migrierten Marktplätze.</p>
+</li>
+<li>
+<p><strong>Vorbereitungen</strong>: Arbeiten Sie diesen Migrationsleitfaden durch und treffen Sie die darin beschriebenen Vorbereitungen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Beachten Sie außerdem, dass die SOAP-API ab dem Wechsel auf plentymarkets 7 nur für Kunden mit Classic-Tarif nutzbar ist. Kunden mit Zero-Vertrag können die SOAP-API nicht mehr nutzen. Die REST-API steht allen plentymarkets 7 Kunden zur Verfügung.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="20">4. Migration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im folgenden Kapitel wird beschrieben, wie Ihre Daten in die neue Artikelarchitektur migriert werden. Zur besseren Übersichtlichkeit ist diese Migrationsbeschreibung in die Unterbereiche <strong>Artikeldaten</strong> und <strong>Preisspalten</strong> unterteilt. In beiden Bereichen sind teilweise Vorarbeiten Ihrerseits erforderlich. Diese Vorarbeiten werden in diesem Kapitel nur kurz umrissen, eine genaue Anleitung finden Sie im Kapitel <strong><a href="/basics/versionswechsel/migrationsleitfaden#30">Vorbereitungen im Detail</a></strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="21">4.1. Migration der Artikeldaten</h3>
+<div class="sect3">
+<h4 id="_migrationsmuster">4.1.1. Migrationsmuster</h4>
+<div class="paragraph">
+<p>Die Migration der Artikeldaten in die neue Artikelarchitektur erfolgt grundsätzlich nach dem folgenden Muster:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Migrierter Datentyp</th>
+<th class="tableblock halign-left valign-top">Verhalten</th>
+<th class="tableblock halign-left valign-top">Ausnahmen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Stammartikel (Artikel ohne Varianten) ⇒ Hauptvariante</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Einstellungen bzw. Daten des Artikels werden übernommen.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Variante ⇒ Variante</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Einstellungen bzw. Daten der Variante werden übernommen.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Varianten ohne Einstellungen<br>
+⇒ Variante</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Einstellungen bzw. Daten der Hauptvariante werden übernommen.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Artikel-/Variantennummer wird nur einmal vergeben.<br>
+Für alle weiteren Varianten werden neue Variantennummern generiert (siehe unten).</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 1: Migration von Artikeldaten</em></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Nicht alle Datenformate werden migriert</div>
+<div class="paragraph">
+<p>Aufgrund der neuen Artikeldatenstruktur werden nicht alle Item-Datenformate des Menüs <strong>Datenaustausch » Dynamischer Export</strong> migriert. Nicht kompatible Datenformate werden bei der Migration entfernt.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph subhead">
+<p>Ausnahme: Artikel-/Variantennummern
+In der neuen Artikelarchitektur ist die Variantennummer systemweit eindeutig. Bei der Migration werden daher in bestimmten Fällen neue Variantennummern vergeben. Die Migration läuft nach dem folgenden Muster ab:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top"><strong>Artikel-/Variantennummer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neuer Pfad</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Varianten-ID » Tab: Einstellungen</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sonderfall 1:<br>
+Artikel/Varianten ohne Artikel-/Variantennummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pro Variante wird eine neue, eindeutige Variantennummer generiert. Diese Variantennummer wird nach dem Muster aus Präfix und nächster Variantennummer vergeben, das vor der Migration im Menü <strong><a href="/artikel/artikel-verwalten#15">Einstellungen » Artikel » Grundeinstellungen</a></strong> über die Einstellungen <strong>Präfix für neue Variantennummern (ab plentymarkets 7)</strong> und <strong>Nächste Variantennummer (ab plentymarkets 7)</strong> festgelegt wurde.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sonderfall 2:<br>
+Artikel/Varianten mit gleicher Artikel-/Variantennummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die zuerst migrierte Variante übernimmt die Artikel-/Variantennummer. Für alle weiteren Varianten wird eine neue, eindeutige Variantennummer generiert. Diese Variantennummer wird nach dem Muster vergeben, das vor der Migration in den <a href="/basics/versionswechsel/migrationsleitfaden#35"><strong>Migrationseinstellungen</strong></a> des Menüs <strong>Einstellungen » Grundeinstellungen » Migration</strong> über die Einstellung <strong>Doppelte Nummern</strong> festgelegt wurde.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sonderfall 3:<br>
+Artikel mit mehreren Preissets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aus einer Variante können mehrere Varianten entstehen. Bei dem zuerst migrierten Preisset übernimmt die Variante die Artikel-/Variantennummer. Für alle weiteren Varianten wird eine neue, eindeutige Variantennummer generiert. Diese Variantennummer wird nach dem Muster vergeben, das vor der Migration in den <a href="/basics/versionswechsel/migrationsleitfaden#35"><strong>Migrationseinstellungen</strong></a> des Menüs <strong>Einstellungen » Grundeinstellungen » Migration</strong> über die Einstellung <strong>Doppelte Nummern</strong> festgelegt wurde.<br>
+<strong>Hinweis:</strong> Bei der Migration eines Artikels mit mehreren Preissets, in denen <strong>Inhalt</strong> und <strong>Einheit</strong> identisch sind, wird nur das erste Preisset migriert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vorbereitungen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/basics/versionswechsel/migrationsleitfaden#35"><strong>Migrationseinstellungen</strong></a> vornehmen/prüfen.<br>
+Einstellungen <strong>Präfix für neue Variantennummern (ab plentymarkets 7)</strong> und <strong>Nächste Variantennummer (ab plentymarkets 7)</strong> im Menü <strong><a href="/artikel/artikel-verwalten#15">Einstellungen » Artikel » Grundeinstellungen</a></strong> festlegen.<br>
+<a href="/basics/versionswechsel/migrationsleitfaden#50"><strong>Prüfen</strong></a>, ob es Artikel mit mehreren Preissets gibt, bei denen für mehrere Preissets die gleiche Einheit und der gleiche Inhalt hinterlegt wurden. Einheit und Inhalt der zusätzlichen Preissets ändern.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 2: Migration der Artikel-/Variantennummern</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="22">4.1.2. Besonderheiten</h4>
+<div class="paragraph subhead">
+<p><strong>Einheit 1</strong> und <strong>Einheit 2</strong>
+In der neuen Artikelarchitektur werden die Felder <strong>Einheit 1</strong> und <strong>Einheit 2</strong> durch das Feld <strong>Variantenname</strong> ersetzt. Wie der Inhalt dieser Felder migriert wird, legen Sie in den <a href="/basics/versionswechsel/migrationsleitfaden#35"><strong>Migrationseinstellungen</strong></a> fest. Die Migration erfolgt nach dem folgenden Muster:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top"><strong>Einheit 1</strong>, <strong>Einheit 2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neuer Pfad</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Varianten-ID » Tab: Einstellungen</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verhalten</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abhängig von den gewählten <a href="/basics/versionswechsel/migrationsleitfaden#35"><strong>Migrationseinstellungen</strong></a> wird entweder eine der beiden Einheiten verworfen oder beide Felder werden zusammengeführt.<br>
+Werden die Felder <strong>Einheit 1</strong> und <strong>Einheit 2</strong> zum Feld <strong>Variantenname</strong> zusammengeführt, wird der Inhalt beider Felder mit dem in den <a href="/basics/versionswechsel/migrationsleitfaden#35"><strong>Migrationseinstellungen</strong></a> festgelegten Trennzeichen in das Feld <strong>Variantenname</strong> eingefügt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vorbereitungen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Einheiten <a href="/basics/versionswechsel/migrationsleitfaden#50"><strong>prüfen</strong></a> und Trennzeichen festlegen. Ggf. die Felder <strong>Einheit 1</strong> und/oder <strong>Einheit 2</strong> ändern.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 3: Migration der Felder <strong>Einheit 1</strong> und <strong>Einheit 2</strong></em></p>
+</div>
+<div class="paragraph subhead">
+<p>Webshop-Sichtbarkeit
+Die Sichtbarkeit im Webshop wird nun über die Mandanten-Sichtbarkeit gesteuert. Es gibt keine zentrale Einstellung mehr, die die Sichtbarkeit des Artikels im Webshop steuert. Stattdessen wird die Mandanten-Sichtbarkeit im Tab <strong>Verfügbarkeit</strong> der Variante definiert.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top"><strong>Webshop-Sichtbarkeit</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neuer Pfad</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Varianten-ID » Tab: Verfügbarkeit</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vorbereitungen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keine</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 4: Migration der Webshop-Verfügbarkeit</em></p>
+</div>
+<div class="paragraph subhead">
+<p>GTIN1 bis GTIN4, ISBN[#25]</p>
+</div>
+<div class="paragraph">
+<p>In der neuen Artikelarchitektur werden EAN/GTIN und ISBN als Barcode-Definitionen hinterlegt. Eine Begrenzung der Anzahl von GTIN/ISBN gibt es nicht mehr. Sie können also pro Variante beliebig viele Barcode-Definitionen hinterlegen. Bei der Migration werden fünf Barcode-Definitionen angelegt, um die derzeitigen GTIN und ISBN abzubilden. Die Migration erfolgt nach dem folgenden Muster:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top"><strong>GTIN1</strong> bis <strong>GTIN4</strong>, <strong>ISBN</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Neuer Pfad</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Varianten-ID » Tab: Einstellungen</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verhalten</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikel:</strong> Vorhandene GTIN1 bis GTIN4 und ISBN werden als Barcodes der Hauptvariante angelegt.<br>
+<strong>Varianten:</strong> Vorhandene GTIN1 bis GTIN4 werden als Barcodes der Variante angelegt. Für Varianten ohne GTIN wird kein Barcode angelegt, d.h. die GTIN des Artikels werden nicht berücksichtigt.<br>
+Zuordnung der vorhandenen GTIN bei der Migration:<br>
+<strong>GTIN13</strong>, wenn 13 Zeichen und nur Ziffern.<br>
+<strong>UPC</strong>, wenn 12 Zeichen und nur Ziffern.<br>
+<strong>GTIN128</strong> bei sonstiger Länge und nur Ziffern.<br>
+<strong>Code128</strong> bei allen anderen Zeichenlängen, die mindestens ein Zeichen enthalten, das keine Ziffer ist.<br>
+<strong><em>Hinweis:</em></strong> Bei der Migration der GTIN werden führende Nullen abgeschnitten. Da sich hierdurch die Zeichenlänge des Codes ändert, wird die GTIN nicht als GTIN-Datensatz migriert, sondern als Code128 oder UPC angelegt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vorbereitungen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/basics/versionswechsel/migrationsleitfaden#100"><strong>Prüfen</strong></a>, ob EAN/GTIN mit führenden Nullen vorhanden sind.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 5: Migration von GTIN1 bis GTIN4/ISBN</em></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="26">4.2. Migration der Preisspalten</h3>
+<div class="paragraph">
+<p>Die bisherigen Preissets mit Preisspalten werden in der neuen Artikelarchitektur durch Verkaufspreise ersetzt. Diese Verkaufspreise werden im Menü <strong>Einstellungen » Artikel » Verkaufspreise</strong> definiert. An den Varianten werden die Preise in den verschiedenen Verkaufspreisen hinterlegt. Die neuen Verkaufspreise setzen sich aus folgenden Einstellungen zusammen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Herkunft</p>
+</li>
+<li>
+<p>Währung</p>
+</li>
+<li>
+<p>Kundenklasse</p>
+</li>
+<li>
+<p>Mandant (Shop)</p>
+</li>
+<li>
+<p>Amazon-Konten</p>
+</li>
+<li>
+<p>eBay-Konten</p>
+</li>
+<li>
+<p>Lieferland</p>
+</li>
+<li>
+<p>Preistyp</p>
+</li>
+<li>
+<p>Artikelmenge, ab der der Preis gilt</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Den eigentlichen Preis, also den Betrag, für einen Verkaufspreis tragen Sie an den Varianten ein. Bisher wurden Preise aus einer Kombination von Einstellungen in verschiedenen Bereichen errechnet (Tabelle 6). Aus diesen Einstellungen werden nun Ihre neuen Verkaufspreise erstellt. Die Anzahl der erstellten Verkaufspreise ist also von der Komplexität der bisherigen Einstellungen abhängig. Bei der Migration werden die Preisspalten mit der folgenden Priorität analysiert, um die neuen Verkaufspreise zu ermitteln:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Prio</th>
+<th class="tableblock halign-left valign-top">Preisspalten-Definition</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+<th class="tableblock halign-left valign-top">Vorbereitungen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Aufträge » Auftragsherkunft</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Preisspalte der Auftragsherkunft hat höchste Priorität für Herkünfte größer/gleich 2.0.<br>
+<strong>Ausnahme:</strong> Herkünfte mit konten-/plattformabhängigen Preisspalten, z.B. eBay, Amazon</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Eingestellte Preisspalten im Menü <strong>Auftragsherkunft</strong> mit der am Marktplatz hinterlegten Preisspalte <a href="/basics/versionswechsel/migrationsleitfaden#80"><strong>vergleichen und ggf. vereinheitlichen</strong></a>.<br>
+<strong>Fallback:</strong> Bei Herkünften mit eigenen Preisspalten bei den Einstellungen (z.B. Shopgate), bei denen der Standardpreis eingestellt ist, wird, wenn unter <strong>Einstellungen » Aufträge » Auftragsherkünfte</strong> eine Preisspalte explizit angegeben ist, diese Einstellung und nicht der Standardpreis herangezogen.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Aufträge » Zahlung » Währungen</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Option <strong>Währungsumrechnung</strong> beachten:<br>
+<strong>Verwende Preisspalte</strong> = Betrag in der Preisspalte wird übernommen.<br>
+<strong>Live-Umrechnung</strong> = Betrag in der Preisspalte wird mit aktuellem Wechselkurs umgerechnet.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Einstellung <strong>Währungsumrechnung</strong> aller Mandanten prüfen. Haben verschiedene Mandanten verschiedene Einstellungen, prüfen, ob es sinnvoll ist, diese Einstellung <strong><a href="/basics/versionswechsel/migrationsleitfaden#70">zu vereinheitlichen</a></strong>, um die Anzahl der neu erstellten Verkaufspreise zu reduzieren.</p>
+</li>
+<li>
+<p>Bei Mandanten mit Einstellung "Verwende Preisspalte":<br>
+<strong><a href="/basics/versionswechsel/migrationsleitfaden#75">Prüfen</a></strong>, welche Preisspalten im Menü <strong>Einstellungen » Aufträge » Zahlung » Währungen</strong> mit Währungen verknüpft sind. Sicherstellen, dass an allen Artikeln in diesen Preisspalten Beträge hinterlegt sind.<br>
+<strong>Wichtig:</strong> Ist kein Betrag hinterlegt, wird bei gleicher Währung der Standardpreis der Variante übernommen. Je nach Wechselkurs kann dies zu stark abweichenden neuen Preisen führen.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Kunden » Kundenklassen</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Greift, wenn Preisspalten für Auftragsherkunft und Währungen keine Rolle spielen.<br>
+<strong>Hinweis:</strong> Mengenrabatte werden ab sofort nicht mehr bei den Kundenklassen, sondern als Verkaufspreise definiert.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Pro vorhandene und benutzte Sichtbarkeit (<strong>Zeige jedem</strong>, <strong>Nur B2C-Kunden</strong>, <strong>Nur B2B-Kunden</strong>) wird ein Verkaufspreis pro Preisspalte angelegt. Daher Einstellung <strong>Preissichtbarkeit</strong> in Bezug auf die <a href="/basics/versionswechsel/migrationsleitfaden#90"><strong>Kundenklassen prüfen</strong></a>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Mandant (Shop) » Mandant wählen » Webshop » Grundeinstellungen</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Greift nur, wenn keine anderen Einstellungen höhere Priorität haben.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Eingestellte Preisspalten in den Bereichen <strong><a href="/basics/versionswechsel/migrationsleitfaden#60">Herkunft, Währung, Kundenklasse, Mandant (Shop) prüfen</a></strong>. Ist dieselbe Preisspalte in mehr als einem Bereich eingestellt, werden diese Einstellungen kombiniert. Diese Kombinationen dahingehend prüfen, dass sich daraus kein unerwünschtes neues Verhalten ergibt.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 6: Priorität bei der Erstellung von Verkaufspreisen</em></p>
+</div>
+<div class="paragraph">
+<p>Die Preisspalten werden einzeln zu Verkaufspreisen migriert. Zunächst werden dabei der Standardpreis mit den vorhandenen Einstellungskombinationen anhand der oben beschriebenen Priorität migriert und daraus die relevanten Verkaufspreise erstellt. Danach werden alle weiteren benutzten Preisspalten, d.h. Preisspalte 1, Preisspalte 2 etc., einzeln migriert. Preisspalten, die nirgendwo genutzt werden und in keinem Artikel einen Preis enthalten, werden nicht migriert.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="30">5. Vorbereitungen im Detail</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Tipp: Artikeldaten prüfen und ggf. aktualisieren</div>
+<div class="paragraph">
+<p>Prüfen Sie vor der Migration die Aktualität Ihrer Artikeldaten. Löschen Sie alte Testartikel und prüfen Sie vor allem die Preise. Dies vereinfacht die Datenmigration und reduziert Ihren Pflegeaufwand nach der Migration.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Für eine reibungslose Migration Ihrer Artikeldaten müssen Sie die in diesem Kapitel beschriebenen Vorbereitungen treffen. Führen Sie diese Vorbereitungen unbedingt vor der Migration Ihrer Artikeldaten aus, da sonst ein hoher Korrekturaufwand nach der Migration entsteht. Es kann sogar der Verlust von Daten die Folge sein.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Die hier beschriebenen Einstellungen und Vorbereitungen nehmen Sie bereits vor der Migration in Ihrer aktuellen plentymarkets 6 Version vor.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="_systemeinstellungen_vor_dem_wechsel_auf_plentymarkets_7">5.1. Systemeinstellungen vor dem Wechsel auf plentymarkets 7</h3>
+<div class="sect3">
+<h4 id="35">5.1.1. Migrationseinstellungen vornehmen</h4>
+<div class="paragraph">
+<p>Nehmen Sie die folgenden Migrationseinstellungen vor, bevor Sie auf plentymarkets 7 wechseln.</p>
+</div>
+<div class="paragraph instruction">
+<p>Migrationseinstellungen vornehmen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Grundeinstellungen » Migration</strong>.</p>
+</li>
+<li>
+<p>Klappen Sie <strong>Artikel (Einstellungen für den Wechsel auf plentymarkets 7)</strong> auf.<br>
+→ Die Migrationseinstellungen werden eingeblendet.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie Tabelle 7.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Hauptvariante erstellen</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Wählen, ob für Artikel mit Varianten eine Hauptvariante aus den Artikeldaten erstellt werden soll.<br>
+<strong>Ja</strong> (Standardeinstellung) = Eine zusätzliche Variante wird erstellt, an der die Artikeldaten hinterlegt werden. Diese Variante wird zur Hauptvariante.<br>
+<strong>Beispiel:</strong> Aus einem Artikel mit 4 Varianten werden nach der Migration 5 Varianten. Der ehemalige Artikel wird zur Hauptvariante.<br>
+<strong>Nein</strong> = Die am Artikel gespeicherten Daten werden verworfen.<br>
+<strong>Beispiel:</strong> Aus einem Artikel mit 4 Varianten werden nach der Migration 4 Varianten. Eine der ehemaligen Varianten wird zur Hauptvariante.<br>
+<strong>Wichtig:</strong> Bei Auswahl der Option <strong>Nein</strong> werden die Artikeldaten nicht migriert. Die Daten werden verworfen. Bei Marktplätzen (z.B. Amazon, Zalando, Allyouneed) mit einer Parent-Child-Artikelbeziehung findet kein Abgleich zwischen plentymarkets und dem Marktplatz statt. Wir empfehlen daher die Standardeinstellung <strong>Ja</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Zusammenführung Einheit 1 + 2</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Felder Einheit 1 und Einheit 2 werden bei der Migration zum Feld <strong>Variantenname</strong> zusammengefasst.<br>
+Wählen, wie die Einheiten migriert werden sollen:<br>
+<strong>Einheit 1 + Einheit 2</strong> = Inhalt der Felder wird in der Reihenfolge <strong>Einheit 1</strong><strong>Einheit 2</strong> zusammengefasst. Trennzeichen mit Option <strong>Trennzeichen bei Zusammenfassen Einheit 1 + 2</strong> festlegen.<br>
+<strong>Einheit 2 + Einheit 1</strong> = Inhalt der Felder wird in der Reihenfolge <strong>Einheit 2</strong><strong>Einheit 1</strong> zusammengefasst. Trennzeichen mit Option <strong>Trennzeichen bei Zusammenfassen Einheit 1 + 2</strong> festlegen.<br>
+<strong>Einheit 1</strong> = Nur Inhalt der Felder <strong>Einheit 1</strong> wird migriert. Inhalt der Felder <strong>Einheit 2</strong> wird nicht migriert.<br>
+<strong>Einheit 2</strong> = Nur Inhalt der Felder <strong>Einheit 2</strong> wird migriert. Inhalt der Felder <strong>Einheit 1</strong> wird nicht migriert.<br></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Trennzeichen für Zusammenführung Einheit 1 + 2</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Bei Auswahl der Optionen <strong>Einheit 1 + Einheit 2</strong> oder <strong>Einheit 2 + Einheit 1</strong>:<br>
+Trennzeichen eingeben, die zwischen den beiden Einheiten eingefügt werden sollen. Als Trennzeichen können beliebe Kombinationen aus Leerzeichen, Zeichen (Komma, Semikolon, Schrägstrich etc.) und Buchstaben eingegeben werden.<br>
+<strong>Hinweis:</strong> Der Inhalt des Felds wird direkt übernommen, Leerzeichen müssen also eingegeben werden, wenn sie als Bestandteil der Trennzeichen eingefügt werden sollen.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Doppelte Nummern</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>In plentymarkets 7 ist die Variantennummer systemweit eindeutig. Bei doppelt vergebenen Artikel-/Variantennummern übernimmt die zuerst migrierte Variante die vorhandene Nummer. Für alle weiteren Varianten wird eine neue, eindeutige Variantennummer vergeben. Festlegen, nach welchem Muster diese Variantennummern vergeben werden sollen.<br>
+<strong>Neue Nummer generieren</strong> = Die zuerst migrierte Variante übernimmt die Artikel-/Variantennummer. Für die weiteren Varianten werden neue Nummern generiert. Im Menü <strong><a href="/artikel/artikel-verwalten#15">Einstellungen » Artikel » Grundeinstellungen</a></strong> das Muster aus Präfix und nächster Variantennummer festlegen, nach dem diese Nummern generiert werden sollen.<br>
+<strong>Vorhandene durch Counter eindeutig machen</strong> = Die zuerst migrierte Variante übernimmt die Artikel-/Variantennummer. Für alle weiteren Varianten wird an diese Nummer eine aufsteigende Zahl angefügt, um sie eindeutig zu machen.<br>
+<strong>Beispiel:</strong> Die Artikel-/Variantennummer XY12345 befindet sich dreimal im System. Bei der Migration werden drei Varianten angelegt. Diese neuen Varianten haben die Variantennummern XY12345, XY123452 und XY123453.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 7: Migrationseinstellungen</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="38">5.1.2. Muster für neue Variantennummern festlegen</h4>
+<div class="paragraph">
+<p>Gehen Sie wie unten beschrieben vor, um vor dem Wechsel auf plentymarkets 7 festzulegen, nach welchem Muster neue Variantennummern erstellt werden sollen.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Artikel » Grundeinstellungen</strong>.</p>
+</li>
+<li>
+<p>Nehmen Sie Einstellungen für <strong>Präfix für neue Variantennummern (ab plentymarkets 7)</strong> und <strong>Nächste Variantennummer (ab plentymarkets 7)</strong> vor. Beachten Sie Tabelle 8.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Präfix für neue Variantennummern (ab plentymarkets 7)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Präfix eingeben, das beim Generieren neuer Variantennummern vorangestellt werden soll. Ist das Feld leer, wird das Präfix <strong>NEW-</strong> verwendet.<br>
+<strong>Hinweis:</strong> Einstellung greift erst ab plentymarkets 7.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Nächste Variantennummer (ab plentymarkets 7)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Variantennummer eingeben, die als Nächstes vergeben werden soll. Alle weiteren neuen Variantennummern werden aufsteigend ab dieser Nummer generiert.<br>
+Die angezeigte nächste Variantennummer wird aktualisiert, sobald eine neue Variantennummer generiert wurde. Es wird also immer die Variantennummer angezeigt, die beim Erstellen der nächsten Variante vergeben wird.<br>
+<strong>Hinweis:</strong> Einstellung greift erst ab plentymarkets 7.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 8: Muster für nächste Variantennummer</em></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_artikeldaten">5.2. Artikeldaten</h3>
+<div class="sect3">
+<h4 id="55">5.2.1. EAN/GTIN prüfen</h4>
+<div class="paragraph">
+<p>Bei der Migration der EAN/GTIN werden führende Nullen abgeschnitten. Da sich hierdurch die Zeichenlänge des Codes ändert, wird die EAN/GTIN nicht als GTIN migriert, sondern als Code128 oder UPC angelegt. Prüfen Sie daher vor der Migration, ob GTIN mit einer oder mehreren führenden Nullen im System vorhanden sind. Wenn EAN mit führenden Nullen existieren, korrigieren Sie diese GTIN <a href="/basics/versionswechsel/migrationsleitfaden#100"><strong>nach der Migration</strong></a>.</p>
+</div>
+<div class="paragraph">
+<p>Gehen Sie wie unten beschrieben vor, um die EAN-/GTIN-Daten zu exportieren.</p>
+</div>
+<div class="paragraph instruction">
+<p>EAN-Daten exportieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Datenaustausch » Export » Dynamischer Export</strong>.</p>
+</li>
+<li>
+<p>Erstellen Sie ein neues <strong><a href="/basics/datenaustausch/daten-exportieren">Datenformat</a></strong> des Datenformat-Typs <a href="/basics/datenaustausch/datenformate/item"><strong>Item</strong></a>.<br>
+→ Die empfohlenen Einstellungen für Datenfelder und Aktionen entnehmen Sie Tabelle 9.</p>
+</li>
+<li>
+<p>Öffnen Sie die CSV-Datei.</p>
+</li>
+<li>
+<p>Prüfen Sie die GTIN.<br>
+❏ Sind GTIN vorhanden, die mit einer oder mehreren Nullen beginnen?<br>
+→ Wenn keine GTIN mit führenden Nullen vorhanden sind, besteht kein Handlungsbedarf.</p>
+</li>
+<li>
+<p>Wenn GTIN mit führenden Nullen vorhanden sind, speichern Sie die CSV-Datei. Sie benötigen diese GTIN-Daten, um die GTIN <a href="/basics/versionswechsel/migrationsleitfaden#100"><strong>nach der Migration</strong></a> zu korrigieren.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Aktion</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ItemId</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Keine</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Artikel-ID</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ItemEAN</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Keine</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>GTIN-Code eines Artikels</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ItemEAN2</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Keine</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Weiterer GTIN-Code eines Artikels</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ItemEAN3</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Keine</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Weiterer GTIN-Code eines Artikels</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ItemEAN4</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Keine</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Weiterer GTIN-Code eines Artikels</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 9: Datenfelder Datenformat <strong>Item</strong></em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="50">5.2.2. Einheiten prüfen</h4>
+<div class="paragraph">
+<p>Bei der Migration der Preissets stellen die Einheiten eine Besonderheit dar und erfordern daher Ihre Aufmerksamkeit.</p>
+</div>
+<div class="paragraph subhead">
+<p>Felder "Einheit 1" und "Einheit 2" prüfen
+Die Felder <strong>Einheit 1</strong> und <strong>Einheit 2</strong> werden in der neuen Artikelarchitektur durch das Feld <strong>Variantenname</strong> ersetzt.  In den <a href="/basics/versionswechsel/migrationsleitfaden#35"><strong>Migrationseinstellungen</strong></a> legen Sie fest, ob der Inhalt nur eines Feldes oder beider Felder migriert wird. Sollen beide Felder migriert werden, geben Sie die Trennzeichen ein, die bei der Migration zwischen den Einheiten eingefügt werden sollen. Prüfen Sie daher vor der Migration, welche Trennzeichen geeignet sind, damit der zusammengesetzte Variantenname, der sich hieraus ergibt, Ihren Anforderungen entspricht. Passen Sie ggf. den Inhalt der Felder <strong>Einheit 1</strong> und/oder <strong>Einheit 2</strong> an.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Alt</th>
+<th class="tableblock halign-left valign-top">Neu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit 1:</strong> 50 g<br>
+<strong>Einheit 2:</strong> 60,00 € je 1000 g<br>
+<strong>Zusammenführung Einheit 1 + 2</strong>: Einheit 1 + Einheit 2<br>
+<strong>Trennzeichen für Zusammenführung Einheit 1 + 2</strong>: "; " (d.h. Semikolon+Leerzeichen)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Variantenname:</strong> 50 g; 60,00 € je 1000 g</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 10: Beispiel für Migration der Felder <strong>Einheit 1</strong> und <strong>Einheit 2</strong></em></p>
+</div>
+<div class="paragraph subhead">
+<p>Felder "Einheit" und "Inhalt" prüfen
+In der alten Artikelarchitektur wurden Artikel durch eine SKU, die sich aus <strong>Artikel-ID</strong>, <strong>Preis-ID</strong> und <strong>Varianten-ID</strong> zusammensetzte, eindeutig gekennzeichnet. In der neuen Architektur wird die Varianten-ID zum eindeutigen Bezeichner. In der neuen Architektur darf allerdings eine Variante in der Konstellation <strong>AttributeValueSetID</strong> + <strong>Einheit</strong> + <strong>Inhalt</strong> nur einmal vorkommen. Bei der Migration von Artikeln mit mehreren Preissets, in denen <strong>Inhalt</strong> und <strong>Einheit</strong> identisch sind, wird nur das erste Preisset migriert. Alle weiteren Preissets des Artikels verfallen. Prüfen Sie daher, ob es Artikel mit mehreren Preissets gibt, bei denen für mehrere Preissets die gleiche Einheit und der gleiche Inhalt hinterlegt wurden. Ändern Sie die Einheit und den Inhalt der zusätzlichen Preissets.</p>
+</div>
+<div class="paragraph">
+<p>Das folgende Beispiel verdeutlicht die vor der Migration erforderlichen Anpassungen anhand von Zigarillopackungen.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Preisset 1</th>
+<th class="tableblock halign-left valign-top">Preisset 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Packung mit 20 Zigarillos</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Packung mit 5 Zigarillos</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Preis</strong>: 5,80 Euro</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Preis</strong>: 1,80 Euro</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit</strong>: Päckchen</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit</strong>: Päckchen</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Inhalt</strong>: 1</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Inhalt</strong>: 1</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit 1</strong>: 20</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit 1</strong>: 5</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit 2</strong>: Zigarillos</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit 2</strong>: Zigarillos</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 11: Beispiel für identische Inhalte bei <strong>Inhalt</strong> und <strong>Einheit</strong></em></p>
+</div>
+<div class="paragraph">
+<p>In diesem Beispiel ist es sinnvoll, die <strong>Einheit</strong> auf <strong>Stück</strong> und als <strong>Inhalt</strong> für das Preisset 1 <strong>20</strong> und für das Preisset 2 <strong>5</strong> einzugeben. Den Inhalt der Felder <strong>Einheit 1</strong> und <strong>Einheit 2</strong> löschen Sie. Der neue Datensatz sieht dann wie folgt aus:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Preisset 1</th>
+<th class="tableblock halign-left valign-top">Preisset 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Packung mit 20 Zigarillos</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Packung mit 5 Zigarillos</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Preis</strong>: 5,80 Euro</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Preis</strong>: 1,80 Euro</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit</strong>: Stück</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit</strong>: Stück</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Inhalt</strong>: 20</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Inhalt</strong>: 5</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit 1</strong>:</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit 1</strong>:</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit 2</strong>:</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einheit 2</strong>:</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 12: Beispiel für angepasste Inhalte bei <strong>Inhalt</strong> und <strong>Einheit</strong></em></p>
+</div>
+<div class="paragraph subhead">
+<p>Vorgehensweise
+Prüfen Sie, ob es Artikel mit mehreren Preissets gibt, bei denen für mehrere Preissets die gleiche Einheit und der gleiche Inhalt hinterlegt sind. Führen Sie dazu einen dynamischen Export mit dem Datenformat <a href="/basics/datenaustausch/datenformate/_itemprice"><strong>ItemPrice</strong></a> aus. Gehen Sie dazu wie unten beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Einheiten prüfen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Datenaustausch » Export » Dynamischer Export</strong>.</p>
+</li>
+<li>
+<p>Erstellen Sie ein neues <strong><a href="/basics/datenaustausch/daten-exportieren">Datenformat</a></strong> des Datenformat-Typs <a href="/basics/datenaustausch/datenformate/_itemprice"><strong>ItemPrice</strong></a>.<br>
+→ Die empfohlenen Einstellungen für Datenfelder und Aktionen entnehmen Sie Tabelle 13.</p>
+</li>
+<li>
+<p>Exportieren Sie das Datenformat.</p>
+</li>
+<li>
+<p>Sortieren Sie die exportierten Daten nach der Spalte <strong>ItemID</strong>, um Artikel mit mehreren Preissets zu ermitteln.</p>
+</li>
+<li>
+<p>Prüfen Sie bei allen Artikeln mit mehreren Preissets den Inhalt der Felder <strong>Inhalt</strong> und <strong>Einheit</strong>.<br>
+❏ Ist der Inhalt der Spalten <strong>Unit</strong> und <strong>Lot</strong> bei mehreren Preissets identisch?</p>
+</li>
+<li>
+<p>Passen Sie den Inhalt der Spalten bei identischem Inhalt an (siehe Beispiel oben).</p>
+</li>
+<li>
+<p>Prüfen Sie nun für alle Artikel den Inhalt der Spalten <strong>Unit 0</strong> und <strong>Unit 1</strong>.<br>
+❏ Benötigen Sie den Inhalt beider Spalten?<br>
+❏ Wenn ja, können diese Felder ohne Änderungen in einem Feld zusammengeführt werden?<br>
+❏ Welche Reihenfolge ist geeignet? <strong>Einheit 1 + Einheit 2</strong> oder <strong>Einheit 2 + Einheit 1</strong>?<br>
+❏ Welche Trennzeichen sind geeignet, um den Inhalt zusammenzuführen?</p>
+</li>
+<li>
+<p>Passen Sie den Inhalt der Spalten ggf. so an, dass sie zusammengeführt eine sinnvolle Einheit ergeben.</p>
+</li>
+<li>
+<p>Speichern Sie die Änderungen an der CSV-Datei.</p>
+</li>
+<li>
+<p><strong><a href="/basics/datenaustausch/daten-importieren">Importieren</a></strong> Sie die CSV-Datei zurück in plentymarkets, wenn Sie Änderungen vorgenommen haben.</p>
+</li>
+<li>
+<p>Nehmen Sie im Menü <strong>Einstellungen » Grundeinstellungen » Migration</strong> geeignete Einstellungen für die Optionen <strong>Zusammenführung Einheit 1 + 2</strong> und <strong>Trennzeichen für Zusammenführung Einheit 1 + 2</strong> vor.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Aktion</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ItemID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Abgleich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Artikel-ID</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PriceID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Abgleich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>ID des Preissets<br>
+<strong>Hinweis:</strong> Aktion <strong>Abgleich</strong> wählen, da sonst pro Artikel nur Preisset 1 exportiert wird.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Position</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Keine</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Sortierung mehrerer Preissets</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Price</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Preis des Artikels</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Price1</strong> bis <strong>Price12</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Preis 1 bis Preis 12 des Artikels</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Unit</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Standardeinheit</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Lot</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Inhalt; definiert die Verpackungseinheiten von "unit", die pro Einheit enthalten sind.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Unit0</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Einheit 1</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Unit1</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Einheit 2</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 13: Datenfelder Datenformat <strong>ItemPrice</strong></em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_kategorieverknüpfungen_prüfen">5.2.3. Kategorieverknüpfungen prüfen</h4>
+<div class="paragraph">
+<p>In plentymarkets 7 müssen Artikel mit mindestens einer Kategorie verknüpft sein. Artikel, die nicht mit einer Kategorie verknüpft sind, werden nicht im Webshop angezeigt. Stellen Sie daher vor der Migration sicher, dass alle Artikel mit einer Kategorie verknüpft sind. Gehen Sie wie unten beschrieben vor, um zu prüfen, ob alle Artikel mit Kategorien verknüpft sind.</p>
+</div>
+<div class="paragraph instruction">
+<p>Kategorieverknüpfungen prüfen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Artikel » Artikel bearbeiten</strong>.</p>
+</li>
+<li>
+<p>Setzen Sie den Filter <strong>Inaktiv</strong> auf <strong>ALLE</strong>.</p>
+</li>
+<li>
+<p>Aktivieren Sie den Filter <strong>ohne Kategorie suchen</strong>.<br>
+→ Alle Artikel ohne Kategorieverknüpfung werden angezeigt.</p>
+</li>
+<li>
+<p>Ordnen Sie vor der Migration allen Artikeln ohne Kategorieverknüpfungen entweder manuell oder per Gruppenfunktion eine Kategorie zu.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_preisspalten">5.3. Preisspalten</h3>
+<div class="sect3">
+<h4 id="60">5.3.1. Preisspalten-Kombinationen prüfen</h4>
+<div class="paragraph">
+<p>Bei der Migration werden die verschiedenen Einstellungen für Preisspalten kombiniert, um die neuen Verkaufspreise zu bilden. Prüfen Sie daher vor der Migration die in den Bereichen <strong>Auftragsherkunft</strong>, <strong>Währungen</strong>, <strong>Kundenklassen</strong> und <strong>Mandant (Shop)</strong> hinterlegten Preisspalten. Ist dieselbe Preisspalte in mehr als einem Bereich eingestellt, kann sich aus dieser Kombination ein unerwünschtes neues Verhalten ergeben. Prüfen Sie daher die Logik dieser Kombinationen. Gehen Sie dazu wie unten beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Preisspalten-Kombinationen prüfen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie die in Tabelle 15 aufgeführten Menüs.</p>
+</li>
+<li>
+<p>Notieren Sie sich die dort hinterlegten Preisspalten.</p>
+</li>
+<li>
+<p>Vergleichen Sie die notierten Preisspalten.<br>
+❏ Ist dieselbe Preisspalte in mehr als einem Bereich eingestellt?<br>
+❏ Entspricht die Logik, die sich aus dieser Kombination ergibt, Ihren Anforderungen?</p>
+</li>
+<li>
+<p>Passen Sie die Einstellungen bei Bedarf an.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Pfad</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Aufträge » Auftragsherkunft</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Einstellung in Spalte <strong>Preisspalte</strong> aller Herkünfte prüfen.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Aufträge » Zahlung » Währungen</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Einstellung in Dropdown-Menü <strong>Preisspalte</strong> aller Währungen prüfen.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Kunden » Kundenklassen</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Einstellung <strong>Preisspalte</strong> aller Kundenklassen prüfen.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Mandant (Shop) » Mandant wählen » Webshop » Grundeinstellungen</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Einstellung <strong>Preisspalte</strong> aller Mandanten prüfen.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 15: Menüpfade für Preisspalten</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="70">5.3.2. Währungseinstellungen prüfen</h4>
+<div class="paragraph subhead">
+<p>Währungsumrechnung bei mehreren Mandanten
+Bei der Migration der Preissets werden unter Umständen viele Verkaufspreise angelegt. Wenn Sie mit mehreren Mandanten arbeiten, sollten Sie vor der Migration die Einstellung <strong>Währungsumrechnung</strong> aller Mandanten prüfen. Wenn bei einigen Mandanten die Einstellung <strong>Verwende Preisspalte</strong> und bei anderen die Einstellung <strong>Live-Umrechnung</strong> eingestellt ist, prüfen Sie, ob diese Einstellungen korrekt sind. Vereinheitlichen Sie wenn sinnvoll die Einstellungen, um die Anzahl der neu erstellten Verkaufspreise zu reduzieren. Folgendes Vorgehen wird empfohlen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Währungseinstellungen prüfen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie die Menüs <strong>Einstellungen » Mandant (Shop) » Mandant wählen » Webshop » Währung</strong> aller Mandanten.</p>
+</li>
+<li>
+<p>Notieren Sie sich die Einstellung bei <strong>Währungsumrechnung</strong> aller Mandanten.</p>
+</li>
+<li>
+<p>Vergleichen Sie die Einstellungen.<br>
+❏ Entsprechen die Einstellungen Ihren Anforderungen?</p>
+</li>
+<li>
+<p>Vereinheitlichen Sie wenn sinnvoll die Einstellungen.<br>
+→ Wenn Sie Änderungen an der Einstellung <strong>Währungsumrechnung</strong> vornehmen, müssen Sie auch die damit verbundenen Preise anpassen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph subhead">
+<p>Währungseinstellungen bei Mandanten mit Einstellung "Verwende Preisspalte"[#75]</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Nur bei Mandanten mit der Einstellung "Verwende Preisspalte"</div>
+<div class="paragraph">
+<p>Die Währungseinstellungen müssen Sie nur prüfen, wenn Sie Mandanten haben, bei denen im Menü <strong>Einstellungen » Mandant (Shop) » Mandant wählen » Webshop » Währung</strong> die Option <strong>Währungsumrechnung</strong> auf <strong>Verwende Preisspalte</strong> steht.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Für Mandanten mit der Einstellung <strong>Verwende Preisspalte</strong> prüfen Sie nun, welche Preise im Menü <strong>Einstellungen » Aufträge » Zahlung » Währungen</strong> mit Währungen verknüpft sind. Stellen Sie dann sicher, dass an allen Artikeln für diese Preise Beträge hinterlegt sind. Ist kein Betrag hinterlegt, wird der Standardpreis der Variante übernommen. Die Währung bleibt jedoch gleich. Je nach Wechselkurs kann dies zu stark abweichenden Preisen führen. Gehen Sie wie unten beschrieben vor, um die Einstellungen zu prüfen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Währungseinstellungen bei Mandanten mit Einstellung "Verwende Preisspalte" prüfen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie die Menüs <strong>Einstellungen » Mandant (Shop) » Mandant wählen » Webshop » Währung</strong> aller Mandanten.</p>
+</li>
+<li>
+<p>Notieren Sie sich die Mandanten mit der Einstellung "Verwende Preisspalte" für die Option <strong>Währungsumrechnung</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Aufträge » Zahlung » Währungen</strong>.</p>
+</li>
+<li>
+<p>Notieren Sie sich die Währungen, denen ein anderer Preis als der Standardpreis zugeordnet wurde, und den zugeordneten Preis.</p>
+</li>
+<li>
+<p>Öffnen Sie das Menü <strong>Datenaustausch » Export » Dynamischer Export</strong>.</p>
+</li>
+<li>
+<p>Erstellen Sie ein neues <strong><a href="/basics/datenaustausch/daten-exportieren">Datenformat</a></strong> des Datenformat-Typs <a href="/basics/datenaustausch/datenformate/_itemprice"><strong>ItemPrice</strong></a>.<br>
+→ Die empfohlenen Einstellungen für Datenfelder und Aktionen entnehmen Sie Tabelle 16a.</p>
+</li>
+<li>
+<p>Exportieren Sie das Datenformat.</p>
+</li>
+<li>
+<p>Erstellen Sie ein neues <strong><a href="/basics/datenaustausch/daten-exportieren">Datenformat</a></strong> des Datenformat-Typs <a href="/basics/datenaustausch/datenformate/item"><strong>Item</strong></a>.<br>
+→ Die empfohlenen Einstellungen für Datenfelder und Aktionen entnehmen Sie Tabelle 16b.</p>
+</li>
+<li>
+<p>Öffnen Sie beide CSV-Dateien.</p>
+</li>
+<li>
+<p>Filtern Sie die Daten der Datei <strong>Item</strong> nach den gesuchten Mandanten (Spalte <strong>ItemStoreIDs</strong>).</p>
+</li>
+<li>
+<p>Filtern Sie die Daten der Datei <strong>ItemPrice</strong> nach den Preisen, die Sie in Schritt 4 notiert haben.</p>
+</li>
+<li>
+<p>Vergleichen Sie die gefilterten Artikel-IDs der beiden Dokumente.<br>
+❏ Sind für alle diese Preise Beträge hinterlegt?<br>
+→ Sind keine Beträge hinterlegt, wird für den Preis der Standardpreis der Variante übernommen. Die Währung bleibt gleich.</p>
+</li>
+<li>
+<p>Prüfen Sie für Artikel ohne Beträge, ob der Standardpreis in der eingestellten Währung Ihren Anforderungen entspricht. Hinterlegen Sie sonst den gewünschten Preis in der Datei <strong>ItemPrice</strong>.</p>
+</li>
+<li>
+<p>Speichern Sie Ihre Änderungen an der CSV-Datei.</p>
+</li>
+<li>
+<p><strong><a href="/basics/datenaustausch/daten-importieren">Importieren</a></strong> Sie die CSV-Datei <strong>ItemPrice</strong> zurück in plentymarkets, wenn Sie Änderungen vorgenommen haben.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Aktion</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ItemId</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Abgleich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Artikel-ID</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PriceId</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Abgleich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>ID des Preissets<br>
+<strong>Hinweis:</strong> Aktion <strong>Abgleich</strong> wählen, da sonst pro Artikel nur Preisset 1 exportiert wird.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Position</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Keine</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Sortierung mehrerer Preissets</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Price</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Preis des Artikels</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Price1</strong> bis <strong>Price12</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Preis 1 bis Preis 12 des Artikels</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 16a: Datenfelder Datenformat <strong>ItemPrice</strong></em></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Aktion</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ItemId</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Abgleich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Artikel-ID</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ItemStoreIDs</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Keine</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>IDs der Mandanten</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 16b: Datenfelder Datenformat <strong>Item</strong></em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="80">5.3.3. Preisspalten der Herkünfte abgleichen</h4>
+<div class="paragraph">
+<p>Vergleichen Sie die im Menü <strong>Einstellungen » Aufträge » Auftragsherkunft</strong> hinterlegten Preisspalten mit der Einstellung bei Herkünften mit eigenen Preisspalten und vereinheitlichen Sie diese Einstellungen, wenn sie voneinander abweichen. Diese Herkünfte sind:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon</p>
+</li>
+<li>
+<p>Flubit</p>
+</li>
+<li>
+<p>Fruugo</p>
+</li>
+<li>
+<p>eBay</p>
+</li>
+<li>
+<p>Hitmeister</p>
+</li>
+<li>
+<p>Allyouneed</p>
+</li>
+<li>
+<p>Neckermann</p>
+</li>
+<li>
+<p>Otto</p>
+</li>
+<li>
+<p>Shopgate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Fallback:</strong> Bei Herkünften mit eigenen Preisspalten an den Einstellungen (z.B. Shopgate), bei denen der Standardpreis eingestellt ist, wird, wenn unter <strong>Einstellungen » Aufträge » Auftragsherkünfte</strong> eine Preisspalte explizit angegeben ist, diese Einstellung und nicht der Standardpreis migriert.</p>
+</div>
+<div class="paragraph">
+<p>Gehen Sie wie unten beschrieben vor, um die eingestellten Preisspalten zu prüfen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Preisspalten der Herkünfte abgleichen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Aufträge » Auftragsherkunft</strong>.</p>
+</li>
+<li>
+<p>Notieren Sie sich die eingestellte Preisspalte für die oben aufgeführten Marktplätze.</p>
+</li>
+<li>
+<p>Öffnen Sie die in Tabelle 17 aufgeführten Menüs.<br>
+❏ Stimmen die dort eingestellten Preisspalten mit den notierten Einstellungen überein?</p>
+</li>
+<li>
+<p>Passen Sie die Einstellungen bei Bedarf an.</p>
+</li>
+<li>
+<p>Prüfen Sie auch die Preise und passen Sie sie ggf. an, wenn Sie Änderungen an den Einstellungen vornehmen.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Marktplatz</th>
+<th class="tableblock halign-left valign-top">Pfad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Amazon</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Märkte » Amazon » Grundeinstellungen</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Flubit</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Märkte » Flubit » Grundeinstellungen</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Fruugo</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Märkte » Fruugo » Grundeinstellungen</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>eBay</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Märkte » eBay » Grundeinstellungen</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Hitmeister</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Märkte » Hitmeister » Grundeinstellungen</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Allyouneed</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Märkte » Allyouneed » Grundeinstellungen</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Neckermann</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Märkte » Neckermann » Neckermann Österreich Enterprise<br>
+Einstellungen » Märkte » Neckermann » Neckermann Österreich Cross-Docking</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Otto</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Märkte » Otto » Integration</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Shopgate</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Einstellungen » Märkte » Shopgate</strong></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 17: Marktplätze mit eigenen Preisspalten</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="90">5.3.4. Preissichtbarkeit in Bezug auf Kundenklassen prüfen</h4>
+<div class="paragraph">
+<p>Bei der Migration der Preise wird pro vorhandene und benutzte Sichtbarkeit, d.h. <strong>Zeige jedem</strong>, <strong>Nur B2C-Kunden</strong> und <strong>Nur B2B-Kunden</strong>, ein Verkaufspreis pro Preisspalte angelegt. Es entstehen also bis zu drei Verkaufspreise pro Preisspalte. Prüfen Sie daher vor der Migration die Einstellung <strong>Preissichtbarkeit</strong> in Bezug auf die Kundenklassen. Gehen Sie dazu wie unten beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Preissichtbarkeit in Bezug auf Kundenklassen prüfen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Datenaustausch » Export » Dynamischer Export</strong>.</p>
+</li>
+<li>
+<p>Erstellen Sie ein neues <strong><a href="/basics/datenaustausch/daten-exportieren">Datenformat</a></strong> des Datenformat-Typs <a href="/basics/datenaustausch/datenformate/_itemprice"><strong>ItemPrice</strong></a>.<br>
+→ Die empfohlenen Einstellungen für Datenfelder und Aktionen entnehmen Sie Tabelle 18.</p>
+</li>
+<li>
+<p>Exportieren Sie das Datenformat.</p>
+</li>
+<li>
+<p>Prüfen Sie die Werte in der Spalte <strong>PriceShowOnly</strong>.<br>
+❏ Ist die Sichtbarkeit auf bestimmte Kundenklassen beschränkt?<br>
+❏ Entsprechen diese Beschränkungen Ihren Anforderungen?<br>
+❏ Können Einstellungen vereinheitlicht werden?</p>
+</li>
+<li>
+<p>Passen Sie ggf. Einstellungen an.</p>
+</li>
+<li>
+<p>Speichern Sie Ihre Änderungen an der CSV-Datei.</p>
+</li>
+<li>
+<p><strong><a href="/basics/datenaustausch/daten-importieren">Importieren</a></strong> Sie die CSV-Datei zurück in plentymarkets, wenn Sie Änderungen vorgenommen haben.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Aktion</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ItemId</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Abgleich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Artikel-ID</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PriceId</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Abgleich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>ID des Preissets<br>
+<strong>Hinweis:</strong> Aktion <strong>Abgleich</strong> wählen, da sonst pro Artikel nur Preisset 1 exportiert wird.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Position</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Keine</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Sortierung mehrerer Preissets</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Price</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Preis des Artikels</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Price1</strong> bis <strong>Price12</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Preis 1 bis Preis 12 des Artikels</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PriceShowOnly</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Beschränke Preisset auf:<br>
+<strong>0</strong> = Alle<br>
+<strong>1</strong> = B2C-Kunden<br>
+<strong>2</strong> = B2B-Kunden</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 18: Datenfelder Datenformat <strong>ItemPrice</strong></em></p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="210">6. Termin für Migration vereinbaren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nachdem Sie die in diesem Leitfaden beschriebenen Vorbereitungen getroffen haben, vereinbaren Sie über unser Ticket-System einen Termin für die Migration auf plentymarkets 7. Gehen Sie wie unten beschrieben vor, um ein Ticket zu erstellen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Termin für Migration vereinbaren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Start » plentymarkets-Konto » Support-Ticket</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie im Bereich <strong>Ticket</strong> auf <strong>Neues Ticket anlegen</strong>.</p>
+</li>
+<li>
+<p>Geben Sie einen Titel ein, der Ihre Anfrage kurz definiert.</p>
+</li>
+<li>
+<p>Wählen Sie <strong>Auf plentymarkets 7 wechseln</strong> aus der Dropdown-Liste.<br>
+→ Weitere Optionen werden eingeblendet.</p>
+</li>
+<li>
+<p>Wählen Sie das plentymarkets System aus der Dropdown-Liste, das migriert werden soll.</p>
+</li>
+<li>
+<p>Wählen Sie, ob Sie <strong>plentymarkets 7 Stable</strong> oder <strong>plentymarkets 7 Beta</strong> nutzen möchten.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Anlegen</strong>, um das Ticket zu erstellen.<br>
+→ Das Ticket wird erstellt und ein plentymarkets Mitarbeiter wird Sie über das weitere Vorgehen informieren.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Systemerreichbarkeit während der Migration</div>
+<div class="paragraph">
+<p>Während der Migration ist Ihr System nicht erreichbar. Bei kleineren Systemen dauert die Migration ca. 15 Minuten. Bei großen Systemen ist Ihr System bis zu mehrere Stunden nicht erreichbar.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_nach_der_migration">7. Nach der Migration</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="100">7.1. GTIN korrigieren (nur bei GTIN mit führenden Nullen)</h3>
+<div class="paragraph">
+<p>Bei der Migration der EAN/GTIN werden führende Nullen abgeschnitten. Da sich hierdurch die Zeichenlänge des Codes ändert, wird die EAN/GTIN nicht als GTIN migriert, sondern als Code128 oder UPC angelegt. Nach der Migration müssen Sie daher die als Code128 oder UPC importierten GTIN korrigieren. Das Datenformat <strong>Item</strong> ist nicht mit plentymarkets 7 kompatibel. Daher müssen Sie die Korrektur manuell vornehmen. Gehen Sie dazu wie unten beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>GTIN mit führenden Nullen korrigieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Datenaustausch » Export » Dynamischer Export</strong>.</p>
+</li>
+<li>
+<p>Erstellen Sie ein neues <strong><a href="/basics/datenaustausch/daten-exportieren">Datenformat</a></strong> des Datenformat-Typs <a href="/basics/datenaustausch/datenformate/variationbarcode"><strong>VariationBarcode</strong></a>.<br>
+→ Die empfohlenen Einstellungen für Datenfelder und Aktionen entnehmen Sie Tabelle 19.</p>
+</li>
+<li>
+<p>Öffnen Sie die CSV-Datei des Exports <strong>VariationBarcode</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie die CSV-Datei des Exports <strong>Item</strong>, die Sie vor der Migration gespeichert haben.</p>
+</li>
+<li>
+<p>Korrigieren Sie die inkorrekt importieren GTIN in der CSV-Datei des Exports <strong>VariationBarcode</strong>.<br>
+→ <strong>Tipp:</strong> Um viele GTIN-Codes zu korrigieren, empfehlen wir den automatischen Abgleich mit dem alten Export über die Excel-Funktion <strong><a href="https://forum.plentymarkets.com/t/excel-tabelle-vergleichen/19235/2" target="_blank">SVERWEIS</a></strong>.</p>
+</li>
+<li>
+<p>Speichern Sie die Änderungen in der CSV-Datei des Exports <strong>VariationBarcode</strong>.</p>
+</li>
+<li>
+<p><strong><a href="/basics/datenaustausch/daten-importieren">Importieren</a></strong> Sie die CSV-Datei des Exports <strong>VariationBarcode</strong> zurück in plentymarkets.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Aktion</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>BarcodeID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>ID des Barcodes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>BarcodeName</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Keine</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Barcode-Name</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>BarcodeType</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Keine</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Barcode-Typ</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Code</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Import</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Code</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>VariationNumber</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Abgleich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Variantennummer</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 19: Datenfelder Datenformat <strong>VariationBarcode</strong></em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_grundpreisangabe_für_listings_zuordnen">7.2. Grundpreisangabe für Listings zuordnen</h3>
+<div class="paragraph">
+<p>Nach der Migration muss im Menü <strong>Listings » Listings bearbeiten » Market-Listing öffnen » Tab: Base</strong> einmalig die Einstellung <strong>Grundpreisangabe ergänzen</strong> neu hinterlegt werden. Verwenden Sie dazu das Datenformat <strong>ItemListingMarket</strong> mit dem Datenfeld <strong>BasicPriceInText</strong>, um diese Einstellung für alle Listings durchzuführen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vorbereitungen_für_den_datenaustausch_via_soap_api">7.3. Vorbereitungen für den Datenaustausch via SOAP API</h3>
+<div class="paragraph">
+<p>Bevor Sie in plentymarkets 7 die ersten Calls ausführen, müssen Sie einige Parameter zuordnen. Die Vorbereitungen für den Datenaustausch via SOAP API nehmen Sie also erst nach der Migration Ihres Systems auf plentymarkets 7, aber vor der ersten Verwendung der SOAP API vor. plentymarkets 7 bietet Ihnen insgesamt eine größere Flexibilität. So ist z.B. die Anzahl der GTIN nicht mehr begrenzt. GTIN und andere internationale Artikelnummern werden jetzt als Barcodes geführt. Jedoch ist durch diese größere Flexibilität bei Preisen und Barcodes eine pauschale Zuordnung der Parameter nicht möglich. Die Zuordnung nimmt nur einige Minuten in Anspruch und erfolgt im eigens dafür vorgesehen Menü <strong>SOAP-Migration</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Die SOAP API-Version 115 wurde für die Arbeit mit plentymarkets 7 angepasst. Wenn Sie in plentymarkets 7 Daten via SOAP austauschen möchten, verwenden Sie deshalb die SOAP API 115.</p>
+</div>
+<div class="sect3">
+<h4 id="_preise_für_soap_zuordnen">7.3.1. Preise für SOAP zuordnen</h4>
+<div class="paragraph">
+<p>Ihre bisherigen Preise wurden zu Verkaufspreisen migriert. Nach welchem Muster dabei vorgegangen wurde und wie sich die neuen Preise zusammensetzten, wird weiter <strong><a href="/basics/versionswechsel/migrationsleitfaden#26">oben</a></strong> in diesem Leitfaden beschrieben. Ihre Verkaufspreise finden Sie in plentymarkets 7 im Menü <strong>Einstellungen » Artikel » Verkaufspreise</strong>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Preise zuordnen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Grundeinstellungen » API » SOAP-Migration</strong>.</p>
+</li>
+<li>
+<p>Klappen Sie <strong>Preise</strong> auf.</p>
+</li>
+<li>
+<p>Wählen Sie für jeden Preis, den Sie über die SOAP-Schnittstelle austauschen möchten, einen Verkaufspreis.<br>
+→ Der interne Name des Verkaufspreises wird im Dropdown-Menü angezeigt.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_barcodes_für_soap_zuordnen">7.3.2. Barcodes für SOAP zuordnen</h4>
+<div class="paragraph">
+<p>Ihre bisherigen GTIN, ISBN usw. wurden zu Barcodes migriert. Nach welchem Muster dabei vorgegangen wurde, wird weiter <strong><a href="/basics/versionswechsel/migrationsleitfaden#25">oben</a></strong> in diesem Leitfaden beschrieben. Ihre neuen Barcode-Definitionen finden Sie in plentymarkets 7 im Menü <strong>Einstellungen » Artikel » Barcode</strong>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Barcodes zuordnen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Grundeinstellungen » API » SOAP-Migration</strong>.</p>
+</li>
+<li>
+<p>Klappen Sie <strong>Barcodes</strong> auf.</p>
+</li>
+<li>
+<p>Wählen Sie für jede GTIN, die Sie über die SOAP-Schnittstelle austauschen möchten, einen Barcode.<br>
+→ Der Name des Barcodes wird im Dropdown-Menü angezeigt.</p>
+</li>
+<li>
+<p>Wählen Sie einen Barcode, der als ISBN übertragen werden soll.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_übersicht_der_wichtigsten_änderungen">8. Übersicht der wichtigsten Änderungen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eine Übersicht der wichtigsten Änderungen finden Sie <strong><a href="/basics/versionswechsel/aenderungen">hier</a></strong>.</p>
+</div>
+<div class="paragraph">
+<p>In diesem Handbuchbereich finden Sie wichtige Informationen zu der Migration auf plentymarkets 7 und den nötigen Vorbereitungen sowie eine kurze Übersicht der Änderungen.<br>
+Auf dieser Handbuchseite sind Bereiche aufgeführt, die noch nicht in plentymarkets 7 migriert wurden. Wie bereits angekündigt, stehen Ihnen bei Fragen zur neuen Artikelarchitektur auch unsere Entwickler gern mit Rat und Tat zur Seite. Auch Feedback nehmen sie in unserem Forum gern entgegen.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_migrationsstand_märkte">9. Migrationsstand Märkte</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wir haben bereits die relevantesten Märkte in plentymarkets 7 migriert. Selbstverständlich werden alle weiteren Märkte zeitnah in plentymarkets 7 zur Verfügung gestellt. Märkte, die über SOAP an plentymarkets angebunden sind, werden erst nach der Migration des SOAP-Bereichs zur Verfügung stehen. Der folgenden Tabelle entnehmen Sie den aktuellen Status der einzelnen Märkte.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Migriert</th>
+<th class="tableblock halign-left valign-top">Migration folgt in Kürze</th>
+<th class="tableblock halign-left valign-top">Migration erfolgt durch Online-Marktplatz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Amazon (außer BMVD)<br>
+Allyouneed<br>
+Cdiscount<br>
+DaWanda<br>
+eBay<br>
+Flubit<br>
+Fruugo<br>
+Gimahhot<br>
+real.de/Hitmeister<br>
+Hood<br>
+Kauflux<br>
+La Redoute<br>
+Mercateo<br>
+OTTO<br>
+Plus.de<br>
+Rakuten<br>
+ricardo<br>
+Shopgate<br>
+Yatego<br>
+Zalando<br>
+Neckermann<br>
+PIXmania<br>
+Preisportale</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>grosshandel.eu<br>
+Hertie<br>
+Restposten.de<br>
+SumoNet</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Tab. 1: Migrationsstatus der Märkte</em></p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_migrationshinweis_mention_schnittstelle">10. Migrationshinweis Mention-Schnittstelle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Mention-Schnittstelle ist momentan noch nicht auf plentymarkets 7 migriert.</p>
+</div>
+</div>
+</div>
+</main>

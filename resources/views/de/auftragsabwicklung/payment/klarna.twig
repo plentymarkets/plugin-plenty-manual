@@ -1,0 +1,866 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#10"><span>1.</span><span> Wichtige Hinweise</span></a>
+<ul class="sectlevel2">
+<li><a href="#20"><span>1.1.</span><span> Rechnungskauf</span></a></li>
+<li><a href="#30"><span>1.2.</span><span> Ratenkauf</span></a></li>
+<li><a href="#40"><span>1.3.</span><span> Voraussetzungen für Klarna in verschiedenen Ländern</span></a></li>
+</ul>
+</li>
+<li><a href="#50"><span>2.</span><span> Bei Klarna registrieren</span></a></li>
+<li><a href="#60"><span>3.</span><span> Klarna in plentymarkets einrichten</span></a></li>
+<li><a href="#70"><span>4.</span><span> Zahlungsarten aktivieren</span></a></li>
+<li><a href="#80"><span>5.</span><span> Sozialversicherungsnummer hinterlegen</span></a></li>
+<li><a href="#90"><span>6.</span><span> Versandbestätigungen automatisch senden</span></a></li>
+<li><a href="#100"><span>7.</span><span> Retouren automatisch senden</span></a></li>
+<li><a href="#110"><span>8.</span><span> Stornierungen automatisch senden</span></a></li>
+<li><a href="#120"><span>9.</span><span> Klarna-Auftrag bearbeiten</span></a></li>
+<li><a href="#130"><span>10.</span><span> Waren versenden</span></a>
+<ul class="sectlevel2">
+<li><a href="#140"><span>10.1.</span><span> Rechnung erstellen</span></a></li>
+<li><a href="#150"><span>10.2.</span><span> Teillieferung</span></a></li>
+<li><a href="#160"><span>10.3.</span><span> Komplettlieferung</span></a></li>
+<li><a href="#170"><span>10.4.</span><span> Wartende Bestellung (Pending)</span></a></li>
+</ul>
+</li>
+<li><a href="#180"><span>11.</span><span> Template für den Ratenkauf anpassen</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>Klarna</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Klarna ist Europas führender Anbieter von rechnungsbasierten Zahlungslösungen im Internethandel. Wir geben Ihnen mit der Integration von Klarna die Möglichkeit, Ihren Kunden die Zahlung auf Rechnung oder Ratenkauf anzubieten – und das ganz ohne Risiko, weder für Ihre Kunden, noch für Ihren Webshop. Sowohl die Zahlungsart <strong><a href="/auftragsabwicklung/payment/klarna#20">Klarna Rechnung</a></strong> als auch der <strong><a href="/auftragsabwicklung/payment/klarna#30">Klarna Ratenkauf</a></strong> sind in Deutschland, Österreich und den Niederlanden nur für Privatpersonen verfügbar. Erlauben Sie die Zahlungsarten deshalb auch nur in <strong><a href="/crm/kundendaten-verwalten#100">Kundenklassen</a></strong> für Privatkunden.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10">1. Wichtige Hinweise</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In diesem Kapitel erhalten Sie wichtige Hinweise zur Integration des Zahlungsanbieters in plentymarkets. Sind alle Einstellungen korrekt vorgenommen, können Sie aus plentymarkets den Versand von Aufträgen, (Teil-)Retouren und Stornos an Klarna übermitteln. Die Klarna-Rechnung wird nach Buchen des Warenausgangs direkt im Auftrag hinterlegt.</p>
+</div>
+<div class="paragraph">
+<p>Um die Abwicklung der Klarna-Bestellungen so einfach wie möglich zu halten, sind ein paar wichtige Punkte zu beachten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Das Buchen des Warenausgangs sollte immer mit dem tatsächlichen <strong><a href="/auftragsabwicklung/payment/klarna#100">Versand</a></strong> der Ware einhergehen, da mit dieser Aktion die 14-tägige Zahlungsfrist für den Endkunden beginnt.</p>
+</li>
+<li>
+<p><strong><a href="/auftragsabwicklung/payment/klarna#100">Retouren</a></strong> sollten umgehend an Klarna gemeldet werden, um Mahnungen zu vermeiden.</p>
+</li>
+<li>
+<p>Wählt der Kunde Klarna Rechnung als Zahlungsart, versenden Sie immer die Rechnung, je nach <strong><a href="/auftragsabwicklung/payment/klarna#100">Workflow</a></strong> per E-Mail oder mit dem Paket.<br>
+Wurde Klarna Ratenkauf gewählt, verschicken Sie keine Rechnung, da der Kunde seine Sammelrechnung monatlich direkt von Klarna erhält.</p>
+</li>
+<li>
+<p>Sollte der Kunde seine <strong><a href="/auftragsabwicklung/payment/klarna#100">Bestellung stornieren</a></strong>, setzen Sie diese umgehend auf den Status <strong>storniert</strong>, damit der Warenkorbwert nicht länger für den Kunden reserviert ist.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="20">1.1. Rechnungskauf</h3>
+<div class="paragraph">
+<p>Mit <strong>Klarna Rechnung</strong> können Ihre Kunden einfach einkaufen, weil sie anstelle langwieriger Anmeldeprozesse nur wenige, unsensible Daten eingeben müssen. Außerdem bekommt der Kunde die Ware zuerst geliefert und zahlt später, was den Einkauf sicherer macht. In einer TNS-Infratest-Studie geben 59% der weniger aktiven Onlineshopper die Tatsache, dass sie nach Warenerhalt zahlen wollen, als Grund für den seltenen Interneteinkauf an. Weitere Details zum Rechnungskauf finden Sie bei Klarna unter <a href="https://www.klarna.com/de/verkaeufer/mit-rechnung-verkaufen" target="_blank"><strong>Rechnung und Ratenkauf</strong></a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/auftragsabwicklung/payment/assets/DE-Zahlungsarten-Klarna-01.png" alt="DE Zahlungsarten Klarna 01">
+</div>
+<div class="title">Abbildung 1. Info: Klarna-Rechnungskauf</div>
+</div>
+<div class="paragraph subhead">
+<p>Bestellvorgang
+Nach dem Abschluss der Bestellung wird der Auftrag an Klarna gesendet. Sofern eine positive Antwort von Klarna erfolgt, wird der Auftrag angelegt. Der Kunde erhält eine Erfolgsmeldung. Sollte es zu einem Fehler kommen oder die Zahlungsanfrage abgelehnt werden, wird der Auftrag nicht angelegt. Der Kunde erhält in der Bestellübersicht eine Fehlermeldung.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="30">1.2. Ratenkauf</h3>
+<div class="paragraph">
+<p>Die Zahlungsart <strong>Klarna Ratenkauf</strong> ermöglicht Ihren Kunden, einen Einkauf in monatlichen Raten zu bezahlen. Eine Information zum <a href="/auftragsabwicklung/payment/klarna#180"><strong>Ratenpreis</strong></a> wird im <strong>Warenkorb/Bestellvorgang</strong> sowie den <strong>Artikeldetails</strong> angezeigt, wenn Sie das Layout Ihres Webshops anpassen. Im Bestellvorgang wird je nach Rechnungsbetrag der Ratenpreis automatisch berechnet und angezeigt. Weitere Details zum Ratenkauf finden Sie bei Klarna unter <a href="https://www.klarna.com/de/verkaeufer/mit-rechnung-verkaufen" target="_blank"><strong>Rechnung und Ratenkauf</strong></a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/auftragsabwicklung/payment/assets/DE-Zahlungsarten-Klarna-02.png" alt="DE Zahlungsarten Klarna 02">
+</div>
+<div class="title">Abbildung 2. Info: Klarna-Ratenkauf</div>
+</div>
+<div class="paragraph subhead">
+<p>Bestellvorgang
+Beim Auswählen der Zahlungsart <strong>Klarna Ratenkauf</strong> kann der Kunde direkt die Laufzeit wählen und die entsprechende Rate einsehen. Nach dem Abschluss der Bestellung wird der Auftrag an Klarna gesendet. Sofern eine positive Antwort von Klarna erfolgt, wird der Auftrag angelegt und der Kunde erhält eine entsprechende Erfolgsmeldung. Sollte es zu einem Fehler kommen oder die Zahlungsanfrage abgelehnt werden, wird der Auftrag nicht angelegt und der Kunde erhält in der Bestellübersicht eine entsprechende Fehlermeldung.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="40">1.3. Voraussetzungen für Klarna in verschiedenen Ländern</h3>
+<div class="paragraph">
+<p>Klarna steht für folgende Länder zur Verfügung:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deutschland</p>
+</li>
+<li>
+<p>Österreich</p>
+</li>
+<li>
+<p>Niederlande</p>
+</li>
+<li>
+<p>Dänemark</p>
+</li>
+<li>
+<p>Finnland</p>
+</li>
+<li>
+<p>Norwegen</p>
+</li>
+<li>
+<p>Schweden</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Um Klarna mit den Zugangsdaten für den Versand in unterschiedliche Länder einzurichten, müssen für den Webshop <strong><a href="/auftragsabwicklung/payment/waehrungen">Währung</a></strong> und <strong><a href="/omni-channel/online-shop/mandanten-einrichten/mehrsprachiger-webshop">Sprache</a></strong> gewählt sein.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="50">2. Bei Klarna registrieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Zur Registrierung bei Klarna nehmen Sie per E-Mail Kontakt zu <a href="mailto:verkauf@klarna.com"><strong>Klarna</strong></a> auf. Sie erhalten die Zugangsdaten, die Sie für die Einrichtung von Klarna in plentymarkets benötigen.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="60">3. Klarna in plentymarkets einrichten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gehen Sie wie unten beschrieben vor, um die Schnittstelle zu Klarna einzurichten. Diese steht für die Zahlungsarten <strong>Klarna Rechnung</strong> und <strong>Klarna Ratenkauf</strong> zur Verfügung.</p>
+</div>
+<div class="paragraph instruction">
+<p>Schnittstelle zu Klarna einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Aufträge » Zahlung » Zahlungsarten</strong>.</p>
+</li>
+<li>
+<p>Aktivieren Sie die Einstellung <strong>Auch inaktive zeigen</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>International » Klarna</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Klarna Rechnung</strong> bzw. <strong>Klarna Ratenkauf</strong>.<br>
+→ Das Tab <strong>Einstellungen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Wechseln Sie in das Tab <strong>Schnittstelle</strong>.</p>
+</li>
+<li>
+<p>Klappen Sie den Mandanten auf.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in Tabelle 1.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 1. Schnittstelle zu Klarna einrichten</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div><div class="paragraph">
+<p>Mandant (Shop)-Optionen</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Zugangsdaten für alle Mandanten (Shops) aktivieren</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Option ist nur sichtbar, wenn Mandanten eingerichtet sind.<br>
+<strong>Ja</strong> = Die Zugangsdaten werden für alle Mandanten (Shops) übernommen, unabhängig davon, was in den Zugangsdaten-Menüs eingegeben wurde.<br>
+<strong>Nein</strong> = Die gleichen Zugangsdaten wie für den Standard-Webshop können für weitere Mandanten (Shops) eingegeben werden. Alternativ separate Zugangsdaten für weitere Mandanten (Shops) anfordern.<br>
+Shops, bei denen keine Zugangsdaten hinterlegt wurden, können mit Klarna nicht genutzt werden.<br>
+Zur Unterstützung mehrerer Mandanten muss im Menü <strong><a href="/omni-channel/online-shop/mandanten-einrichten/webshop#grundeinstellungen">Einstellungen » Mandant (Shop) » Standard » Webshop » Grundeinstellungen</a></strong> für die Option <strong>Login</strong> die Einstellung <strong>Login in jedem einzelnen Shop ermöglichen</strong> aktiviert sein.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>checkOrderStatus</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Nur bei Zahlungsart <strong>Klarna Rechnung</strong>.<br>
+<strong>Zahnrad</strong> klicken, um manuell zu prüfen, ob Aufträge mit schwebender Bonitätsanfrage genehmigt wurden. Diese Aufträge werden ansonsten täglich automatisch abgefragt.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Melden Sie sich noch heute bei Klarna an</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Link zur Registrierung bei Klarna.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Sozialversicherungsnummer Freitextfeld</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Freitextfeld wählen, das für den Eintrag der <strong><a href="/auftragsabwicklung/payment/klarna#80">Sozialversicherungsnummer</a></strong> eingerichtet wurde.<br>
+<strong><em>Wichtig:</em></strong> Die Angabe der Sozialversicherungsnummer ist für die Länder Dänemark, Finnland, Norwegen und Schweden für Kunden Pflicht.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Standard-Land</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Standard-Land wählen.<br>
+<strong><em>Wichtig:</em></strong> In plentymarkets ist Klarna für die <a href="/auftragsabwicklung/fulfillment/versand-vorbereiten#100"><strong>Lieferländer</strong></a> Deutschland, Österreich, Niederlande, Dänemark, Finnland, Norwegen und Schweden verfügbar. Das heißt, dass nur Kunden mit Wohnsitz in diesen Ländern Aufträge über Klarna bezahlen können.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>eID;<br>
+Shared secret</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Landesspezifische Zugangsdaten eingeben, wie von Klarna bei der Registrierung erhalten.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Rechnungsversand</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Rechnungsversand wählen.<br>
+<strong>Rechnung drucken und dem Paket beilegen</strong> = Rechnung wird vom Händler gedruckt und dem Paket beigelegt.<br>
+<strong>Rechnung automatisch durch Klarna per E-Mail versenden</strong> = Klarna versendet die Rechnung automatisch per E-Mail. Die Beilage einer Rechnung im Paket ist nicht mehr nötig.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Kampagnen aktualisieren</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Nur bei Zahlungsart <strong>Klarna Ratenkauf</strong>.<br>
+Auf <strong>Kampagnen aktualisieren</strong> klicken, um die Tabelle im Bereich <strong>Klarna-Kampagnen</strong> zu aktualisieren.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Klarna-Kampagnen</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Übersicht mit Informationen zu den Klarna-Kampagnen (Bild 3).</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/auftragsabwicklung/payment/assets/DE-Zahlungsarten-Klarna-03.png" alt="DE Zahlungsarten Klarna 03">
+</div>
+<div class="title">Abbildung 3. Kampagnen aktualisieren</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="70">4. Zahlungsarten aktivieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Für Klarna stehen Ihnen die Zahlungsarten Rechungskauf und Ratenkauf zur Verfügung, die Sie im Menü <strong><a href="/auftragsabwicklung/payment/zahlungsarten-verwalten#20">Einstellungen » Aufträge » Zahlung » Zahlungsarten</a></strong> aktivieren. Prüfen Sie zudem die Einstellungen für <strong>Erlaubte Zahlungsarten</strong> in den <strong><a href="/auftragsabwicklung/payment/zahlungsarten-verwalten#30">Kundenklassen</a></strong> und für <strong>Gesperrte Zahlungsarten</strong> in den <strong><a href="/auftragsabwicklung/fulfillment/versand-vorbereiten#1000">Versandprofilen</a></strong>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="80">5. Sozialversicherungsnummer hinterlegen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Für die Länder Dänemark, Finnland, Norwegen und Schweden ist die Angabe der Sozialversicherungsnummer für Kunden Pflicht. Um dieses Pflichtfeld für diese Länder zur Verfügung zu stellen, haben Sie die Möglichkeit, ein Textfeld einzurichten, das im Zahlungsprozess angezeigt wird.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Keine Anpassungen am aktiven Design vornehmen</div>
+<div class="paragraph">
+<p>Nehmen Sie keine Änderungen an Ihrem aktiven Design vor. Bevor Sie Änderungen an Ihrem Design vornehmen, legen Sie eine Sicherungskopie an, damit Sie jederzeit wieder zum Ursprungszustand zurückgelangen.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Textfeld einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>CMS » Webdesign</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>Layout &gt; PageDesign</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf das Template <strong>PageDesignPrepareMainColumn</strong>.</p>
+</li>
+<li>
+<p>Suchen Sie nach der Variable <strong>ShowInvoiceAddressPersonalId</strong>.</p>
+</li>
+<li>
+<p>Ändern Sie den Wert von <strong>false</strong> auf <strong>true</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.<br>
+→ Das Textfeld wird im Bestellprozess unter <strong>Optionale Felder</strong> angezeigt.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Um den Namen des Textfelds zu ändern, gehen Sie wie im folgenden beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Name des Textfelds ändern:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>CMS » Webdesign</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>Layout &gt; Checkout</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf das Template <strong>CheckoutCustomerInvoice</strong>.</p>
+</li>
+<li>
+<p>Suchen Sie nach der Variable <strong>ShowInvoiceAddressPersonalId</strong>.</p>
+</li>
+<li>
+<p>Ersetzen Sie im Code-Block im Tag <strong>Label</strong> den Eintrag <strong>Personen ID</strong> mit dem von Ihnen gewünschten Namen.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="90">6. Versandbestätigungen automatisch senden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Damit Klarna über den Versand der Artikel, die Stornierung von Aufträgen und Retouren informiert sowie die Rechnung erstellt bzw. gelöscht wird, erstellen Sie die nachfolgend beschriebenen Ereignisaktionen. Beachten Sie, dass die Ereignisaktionen auch für Ratenkauf angelegt werden müssen. Die Funktionalität sollte vor Live-Schaltung mit Ihrem Ansprechpartner der Klarna-Integrationsabteilung getestet werden. Richten Sie eine <a href="/basics/automatisierung/ereignisaktionen"><strong>Ereignisaktion</strong></a> ein, um Versandbestätigungen automatisch zu versenden, nachdem der Warenausgang gebucht wurde.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Aufträge » Ereignisaktionen</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Ereignisaktion hinzufügen</strong>.<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie einen Namen ein.</p>
+</li>
+<li>
+<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 2.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle 2 vor.</p>
+</li>
+<li>
+<p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 2. Ereignisaktion zum automatischen Senden von Versandbestätigungen an Klarna</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Ereignis</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftragsänderung: Warenausgang gebucht</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 1</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Auftragstyp</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 2</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Zahlungsart</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Klarna Ratenkauf</strong><br>
+<strong>Klarna Rechnung innerhalb 14 Tage zahlbar</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Aktion</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Versand &gt; Versandbestätigung an Klarna senden</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Wenn Sie den Warenausgang mit Hilfe eines Statuswechsels buchen möchten, wählen Sie als Ereignis die Einstellung <strong>Statuswechsel</strong> und dann den gewünschten Status.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Tipp</div>
+<div class="paragraph">
+<p>Mit der Versandbestätigung erfährt Klarna, dass die Bestellung versendet wurde. Dies wiederum aktiviert die Erstellung der Rechnung, die im Anschluss automatisiert als PDF-Datei im Auftrag hinterlegt wird. Wenn Sie die Rechnung früher benötigen, stellen Sie ein früheres Ereignis ein. Stellen Sie jedoch sicher, dass die Ware auch tatsächlich versendet wird.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">7. Retouren automatisch senden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Richten Sie eine <a href="/basics/automatisierung/ereignisaktionen"><strong>Ereignisaktion</strong></a> ein, um Retouren automatisch an Klarna zu senden. Weitere Details zum Anlegen von Retouren finden Sie auf der Handbuchseite <strong><a href="/auftragsabwicklung/auftraege/auftraege-verwalten#retoure">Retoure</a></strong>.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Aufträge » Ereignisaktionen</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Ereignisaktion hinzufügen</strong>.<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie einen Namen ein.</p>
+</li>
+<li>
+<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 3.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle 3 vor.</p>
+</li>
+<li>
+<p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 3. Ereignisaktion zum automatischen Senden von Retouren an Klarna</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Ereignis</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftragsanlage: Neue Retoure (durch Kunde)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 1</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Auftragstyp</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Retoure</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 2</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Zahlungsart</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Klarna Ratenkauf</strong><br>
+<strong>Klarna Rechnung innerhalb 14 Tage zahlbar</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Aktion</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Retoure &gt; Retoure an Klarna senden</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="110">8. Stornierungen automatisch senden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Richten Sie eine <a href="/basics/automatisierung/ereignisaktionen"><strong>Ereignisaktion</strong></a> ein, um Klarna automatisch über Stornierungen zu informieren.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Aufträge » Ereignisaktionen</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Ereignisaktion hinzufügen</strong>.<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie einen Namen ein.</p>
+</li>
+<li>
+<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 4.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle 4 vor.</p>
+</li>
+<li>
+<p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 4. Ereignisaktion zum automatischen Senden von Stornierungen an Klarna</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Ereignis</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftragsänderung: Statuswechsel</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Status für <strong>stornierte Aufträge</strong> wählen.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 1</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Auftragstyp</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 2</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Zahlungsart</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Klarna Ratenkauf</strong><br>
+<strong>Klarna Rechnung innerhalb 14 Tage zahlbar</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Aktion</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Auftrag &gt; Rechnung von Klarna löschen</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="120">9. Klarna-Auftrag bearbeiten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sie können einen Klarna-Auftrag bis zur Buchung des Warenausgangs noch ändern, z.B. die Menge eines Artikels reduzieren. Außerdem ist es möglich, Artikel zu löschen. Der Rechnungsbetrag wird dann angepasst. Sie können die Werte nur reduzieren, nicht erhöhen. Es dürfen einem bestehenden Auftrag keine weiteren Artikel hinzugefügt werden. Da noch keine endgültige Rechnung erzeugt wurde, ist es vor Buchung des Warenausgangs problemlos möglich, einen Klarna-Auftrag zu löschen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Auftrag löschen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Aufträge » Aufträge bearbeiten</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Klarna-Auftrag.<br>
+→ Das Tab <strong>Übersicht</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Auftrag löschen</strong>.<br>
+→ Der Auftrag wird gelöscht.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="130">10. Waren versenden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Versenden Sie die Ware umgehend, da das 14-tägige Zahlungsziel des Kunden mit der Aktivierung der Klarna-Rechnung beginnt. Beachten Sie auch, dass die Ware ausschließlich an die Adresse versendet werden darf, die auf der Klarna-Rechnung steht. Wird der Warenausgang gebucht, erfolgt die Rechnungsstellung.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Klarna-Aufträge werden nicht an DHL Fulfillment übertragen</div>
+<div class="paragraph">
+<p>Die Auftragsübergabe von mit Klarna bezahlten Aufträgen an <a href="/auftragsabwicklung/fulfillment/versand-vorbereiten#4800"><strong>DHL Fulfillment</strong></a> ist noch nicht möglich. Es können nur Aufträge mit einem vorhandenen Rechnungsdokument an DHL Fulfillment übertragen werden. Klarna übermittelt die Rechnung jedoch erst nach Warenausgang an plentymarkets.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="140">10.1. Rechnung erstellen</h3>
+<div class="paragraph">
+<p>Mit der Versandbestätigung an Klarna bzw. sobald der Warenausgang gebucht wird, erzeugt das System eine Klarna-Rechnung mit den aktuellen Daten. Die Rechnung steht als PDF-Dokument über den Link <strong>Rechnungsnummer</strong> (Bild 4) oder im Tab <strong>Belege</strong> des Auftrags zur Verfügung und kann ausgedruckt und dem Paket beigelegt werden. Über eine von Ihnen eingerichtete Ereignisaktion kann im Anschluss an den Warenausgang die Rechnung über eine E-Mail-Vorlage <strong>Klarna-Rechnung für Endkunde</strong> automatisch an den Kunden gesendet werden.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/auftragsabwicklung/payment/assets/DE-Zahlungsarten-Klarna-04.png" alt="DE Zahlungsarten Klarna 04">
+</div>
+<div class="title">Abbildung 4. Klarna-Rechnung nach Versandbestätigung an Klarna in der Auftragsübersicht verfügbar</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/auftragsabwicklung/payment/assets/DE-Zahlungsarten-Klarna-05.png" alt="DE Zahlungsarten Klarna 05">
+</div>
+<div class="title">Abbildung 5. Klarna-Rechnung nach Versandbestätigung an Klarna im Tab <strong>Belege</strong> verfügbar</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Keine Rechnungsänderung möglich</div>
+<div class="paragraph">
+<p>Beachten Sie, dass Rechnungsänderungen, z.B. die Änderung der Anschrift, nicht möglich sind. Die Rechnung im Tab <strong>Belege</strong> darf auch nicht gelöscht werden, wenn sich der Auftrag im Status 7 <strong>Warenausgang gebucht</strong> befindet.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Rechnung herunterladen, ausdrucken und beilegen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicken Sie in der <strong>Auftragsübersicht</strong> (Bild 4) oder im Auftrag im Tab <strong>Belege</strong> unter <strong>Dokumente</strong> (Bild 5) auf den Link der Rechnung, um die Rechnung herunterzuladen.</p>
+</li>
+<li>
+<p>Speichern Sie die Rechnung und drucken Sie sie aus.</p>
+</li>
+<li>
+<p>Legen Sie die Rechnung in das Paket.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="150">10.2. Teillieferung</h3>
+<div class="paragraph">
+<p>Wenn sich die Bestellung ändert oder z.B. ein Artikel nicht mehr verfügbar ist, können Sie die Artikel noch anpassen. <strong><a href="/auftragsabwicklung/payment/klarna#120">Bearbeiten Sie den Auftrag</a></strong>, bevor Sie den Warenausgang buchen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="160">10.3. Komplettlieferung</h3>
+<div class="paragraph">
+<p>Wenn ein Artikel nicht verfügbar, aber nachbestellt ist, warten Sie, bis die Nachbestellung eingetroffen ist, bevor Sie den Warenausgang buchen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="170">10.4. Wartende Bestellung (Pending)</h3>
+<div class="paragraph">
+<p>Eine wartende Bestellung wird mit <strong>Status 3</strong> in der Auftragsübersicht angezeigt.</p>
+</div>
+<div class="paragraph">
+<p>Um die Akzeptanzrate zu erhöhen, erhalten Bestellungen, die von Klarna nicht direkt genehmigt werden können, den Status <strong>Pending</strong> (wartende Bestellung). Diese Bestellungen sehen Sie in der Übersicht des Auftrags im <strong>Status 3</strong> (Bild 6) und halten diese vorerst zurück. Innerhalb der nächsten maximal 24 Stunden werden die wartenden Bestellungen manuell von Klarna geprüft. Durch einen integrierten Cronjob wird der Status dieser Bestellungen stündlich bei Klarna abgefragt.<br>
+Wird die Bestellung im Nachgang genehmigt, sehen Sie diese als normalen Auftrag. Wird die Bestellung abgelehnt, wird sie als abgelehnt angezeigt. Sie können dem Kunden dann eine andere Zahlungsart anbieten.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/auftragsabwicklung/payment/assets/DE-Zahlungsarten-Klarna-06.png" alt="DE Zahlungsarten Klarna 06">
+</div>
+<div class="title">Abbildung 6. Bestellung in Warteposition</div>
+</div>
+<div class="paragraph">
+<p>Die E-Mail, mit der Sie dem Kunden eine andere Zahlungsart anbieten, sollte einen Link zum Checkout des Warenkorbs (Platzhalter: [URL_Checkout]) enthalten. Der Kunde erhält über diesen Link die Möglichkeit, eine andere Zahlungsart für die Bestellung zu wählen.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="180">11. Template für den Ratenkauf anpassen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Um den Ratenpreis auf der Produktseite und in der Artikelauflistung anzuzeigen, muss das Template <strong>ItemViewSingleItem</strong> angepasst werden. Sie können zudem das Klarna Ratenkauf-Logo in die Darstellung integrieren. Das Logo finden Sie auf der <a href="https://klarna.com/campaign/rebranding/?lang=german" target="_blank"><strong>Klarna-Integrationsseite</strong></a>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Template für den Ratenkauf anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>CMS » Webdesign</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>Layout » ItemView</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf das Template <strong>ItemViewSingleItem</strong>.</p>
+</li>
+<li>
+<p>Fügen Sie das Code-Beispiel in das Template ein.</p>
+</li>
+<li>
+<p>Ersetzen Sie <strong>SHOP-ID</strong> mit der von Klarna zugewiesenen Shop-ID.<br>
+→ Die Shop-ID verwenden Sie auch im Backend beim Einrichten der Zahlungsarten.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph subhead">
+<p>Beispiel-Code für die Anzeige des Ratenpreises</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty" data-lang="plenty">Ratenkauf ab $KlarnaRate EUR/Monat
+
+&lt;script type="text/javascript" src="https://static.klarna.com:444/external/js/klarnapart.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+       addKlarnaPartPaymentEvent(function() { InitKlarnaPartPaymentElements('klarna_rate', 'SHOP-ID', 'de'); });
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</main>

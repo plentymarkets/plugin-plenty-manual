@@ -1,0 +1,1052 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#10"><span>1.</span><span> Important notes</span></a>
+<ul class="sectlevel2">
+<li><a href="#20"><span>1.1.</span><span> Payment process with PAYONE</span></a></li>
+<li><a href="#30"><span>1.2.</span><span> Incoming payments</span></a></li>
+<li><a href="#40"><span>1.3.</span><span> Available PAYONE payment methods</span></a></li>
+</ul>
+</li>
+<li><a href="#50"><span>2.</span><span> Registering with PAYONE</span></a></li>
+<li><a href="#60"><span>3.</span><span> Setting up PAYONE in plentymarkets</span></a>
+<ul class="sectlevel2">
+<li><a href="#70"><span>3.1.</span><span> Setting up the address validation</span></a></li>
+<li><a href="#80"><span>3.2.</span><span> Setting up the credit rating</span></a></li>
+<li><a href="#90"><span>3.3.</span><span> Setting up interfaces for PAYONE payment methods</span></a></li>
+<li><a href="#100"><span>3.4.</span><span> Setting up SEPA for debit</span></a></li>
+</ul>
+</li>
+<li><a href="#110"><span>4.</span><span> Activating payment methods</span></a></li>
+<li><a href="#115"><span>5.</span><span> Displaying PAYONE in the online store</span></a></li>
+<li><a href="#120"><span>6.</span><span> Automatically sending shipping confirmations</span></a></li>
+<li><a href="#130"><span>7.</span><span> Automatically sending refunds</span></a></li>
+<li><a href="#140"><span>8.</span><span> Using PAYONE for Shopware</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>PAYONE</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>PAYONE is a payment provider with a large variety of <a href="/en/order-processing/payment/payone#40"><strong>payment methods</strong></a>. This page contains information on how to set up the interfaces to PAYONE and how to display PAYONE in the online store.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10">1. Important notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter provides you with important information about integrating the payment provider in plentymarkets.</p>
+</div>
+<div class="sect2">
+<h3 id="20">1.1. Payment process with PAYONE</h3>
+<div class="paragraph">
+<p>The payment process varies depending on the respective PAYONE payment method and is described in detail for all <a href="/en/order-processing/payment/payone#40"><strong>available payment methods</strong></a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="30">1.2. Incoming payments</h3>
+<div class="paragraph">
+<p>The incoming payment is booked immediately for credit cards and online bank transfers. The incoming payment is not booked for cash in advance, cash on delivery or invoice until the corresponding status was transmitted with the <a href="/en/order-processing/payment/payone#50"><strong>transaction status URL</strong></a>. The incoming payment will not be booked for cash on delivery or invoice until shipping was confirmed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="40">1.3. Available PAYONE payment methods</h3>
+<div class="paragraph">
+<p>Below you will find an overview of the PAYONE payment methods that are available for plentymarkets. They are displayed along with the corresponding System ID in parentheses.</p>
+</div>
+<div class="paragraph subhead">
+<p>Credit / debit cards (3000)
+Once the customer has selected one of the following payment methods, he or she will be prompted to enter his or her credit card data. This data will be directly sent to PAYONE for pre-validation. The data will not be saved with the seller. If a card participates in 3D-Secure, then the customer will see a corresponding note after having completed the order. The note will inform the customer that he or she still has to click on a link to verify the card. The customer will be forwarded to a corresponding page after having clicked on the link. Once the process has been confirmed or cancelled, the customer will be returned to the online store.</p>
+</div>
+<div class="paragraph">
+<p>The following payment methods are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Visa (3010)</p>
+</li>
+<li>
+<p>MasterCard (3020)</p>
+</li>
+<li>
+<p>American Express (3030)</p>
+</li>
+<li>
+<p>Carte Bleue (3040)</p>
+</li>
+<li>
+<p>Diners Club (3050)</p>
+</li>
+<li>
+<p>Discover (3060)</p>
+</li>
+<li>
+<p>JCB (3070)</p>
+</li>
+<li>
+<p>Maestro (3080)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>Online bank transfers (3200)
+Once the customer has selected one of the following payment methods, he or she will be prompted to enter his or her bank transfer data. This bank transfer data will be sent directly to PAYONE for pre-validation. The data will not be saved with the seller. Once the order has been completed, the customer will be forwarded to the corresponding payment provider page. The customer has to follow the steps described. Once the process has been confirmed or cancelled, the customer will be returned to the online store.</p>
+</div>
+<div class="paragraph">
+<p>The following payment methods are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sofort Überweisung (3210)</p>
+</li>
+<li>
+<p>giropay (3220)</p>
+</li>
+<li>
+<p>eps (3230) - only for Austria</p>
+</li>
+<li>
+<p>PostFinance E-Finance (3240)</p>
+</li>
+<li>
+<p>PostFinance Card (3250)</p>
+</li>
+<li>
+<p>iDEAL (3260) - only for the Netherlands</p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>e-Wallet (3400)
+Once the order has been completed, the customer will be forwarded to the payment provider. He or she will need to log in there and confirm the data. Once the process has been confirmed or cancelled, the customer will be returned to the online store.</p>
+</div>
+<div class="paragraph">
+<p>The following payment methods are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>PayPal (3410)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>Account-based payment methods (3500)
+Once the customer has selected the payment method <strong>debit</strong>, he or she will be prompted to enter his or her bank data in an entry form. This data will be sent directly to PAYONE. A plausibility check will be carried out. The data will not be saved with the seller. The payment will be triggered once the order has been completed.</p>
+</div>
+<div class="paragraph">
+<p>The following payment methods are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Debit (3510)</p>
+</li>
+<li>
+<p>Invoice (3520)</p>
+</li>
+<li>
+<p>Cash in advance (3530)</p>
+</li>
+<li>
+<p>Cash on delivery (3540)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>PAYONE: Purchase on invoice (3600)
+Once the order has been completed, the order will be sent to the payment provider, e.g. <a href="/en/order-processing/payment/klarna"><strong>Klarna</strong></a>. As soon as positive feedback is received, the order will be saved. The customer will receive a confirmation message. If an error occurs or the payment request is rejected, the order will not be saved. The customer will receive an error message in the order overview.</p>
+</div>
+<div class="paragraph">
+<p>The following payment methods are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klarna payment on invoice (3610)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>PAYONE: Purchase on consumer credit (3700)
+When selecting e.g. Klarna account as the payment method, the customer can see the intervals and the instalments directly. Once the order has been completed, the order will be sent. As soon as positive feedback is received, the order will be saved and the customer will receive a confirmation message. If an error occurs or the payment request is rejected, the order will not be saved. The customer will receive an error message in the order overview.</p>
+</div>
+<div class="paragraph">
+<p>The following payment methods are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klarna account (3710)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="50">2. Registering with PAYONE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You need to register with PAYONE before setting it up in plentymarkets. Register with PAYONE and set up an account there. Fill out the <a href="https://www.payone.de/en/contact/request-a-quote/" target="_blank"><strong>form</strong></a> on the PAYONE website. You will receive the access data that you need for the configuration in plentymarkets. Then, save the transaction status URL according to the following pattern in the PAYONE back end:</p>
+</div>
+<div class="paragraph">
+<p><strong>YOUR_DOMAIN/plenty/api/payone.php</strong></p>
+</div>
+<div class="paragraph">
+<p>Change this URL to match your store’s domain name and save it in your account in the PAYONE back end area.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="60">3. Setting up PAYONE in plentymarkets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Proceed as follows to set up the interface to PAYONE in plentymarkets.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up the interface to PAYONE:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Settings » Orders » Payment » Payment methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the setting <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>International</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>PAYONE</strong>.<br>
+→ The <strong>Settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Expand the client.</p>
+</li>
+<li>
+<p>Carry out the settings as desired. Pay attention to the information given in table 1.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. setting up the PAYONE interface</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Customer number</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter the <strong>merchant ID</strong> that you received from PAYONE.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Payment gateway ID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter the <strong>gateway ID</strong> that you received from PAYONE.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Sub account ID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter the sub account ID that is found in the <strong>ACCOUNTS</strong> area on PAYONE.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Key</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter the <strong>key</strong> that you received from PAYONE.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Active test mode</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select <strong>Yes</strong> to activate the test mode. Select <strong>No</strong> to deactivate the test mode. The interface is in live mode.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Shopware PAYONE authorization</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Activate if you want to use PAYONE for <a href="https://docs.google.com/document/d/10mPeV3xqx4We71dYQdPmJK2qvb21Rpym6FG_tKwHKfc/edit#heading=h.h38ew7hip4tl" target="_blank"><strong>Shopware (German link)</strong></a>. For further information, refer to <strong><a href="/en/order-processing/payment/payone#140">Using PAYONE for Shopware</a></strong>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="70">3.1. Setting up the address validation</h3>
+<div class="paragraph">
+<p>Set up an address validation if needed. During address validation, any errors entered into the address fields will be recognised and corrected automatically if this option has been selected. Furthermore, the address validation ensures additional security regarding the customer’s identity.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up the address validation:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Settings » Orders » Payment » Payment methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the setting <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>International</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>PAYONE</strong>.<br>
+→ The <strong>Settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Expand the <strong>Address validation</strong> area.</p>
+</li>
+<li>
+<p>Carry out the settings as desired. Pay attention to the information given in table 2.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. setting up the address validation</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Active</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select <strong>Yes</strong> to activate the address validation.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Active test mode</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select <strong>Yes</strong> to activate the test mode. Select <strong>No</strong> to deactivate the test mode. The address validation is in live mode.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Invoice address;<br>
+Delivery address</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select the address validation type.<br>
+<strong>Basic</strong> = Address will be checked.<br>
+<strong>do not check</strong> = The address will not be checked.<br>
+<strong>Person (only possible in Germany)</strong> = In addition to the address, the name will also be checked.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Automatic correction</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Activate automatic correction.<br>
+<strong>Yes</strong> = Errors will be corrected automatically during address entry.<br>
+<strong>No</strong> = Errors will not be corrected automatically during address entry.<br>
+<strong>User decision</strong> = The user decides if a suggested correction is accepted or not.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Error characteristics</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select whether the check should be cancelled or continued if an error occurs.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Minimum value of items</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter a minimum value from which the address validation should be carried out. This entry is optional.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Maximum value of items</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter a maximum value up to which the address validation should be carried out. This entry is optional.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Validity</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter a numerical value in days for which the check should be valid. Customers who are making several orders in this time period will not be checked after the second time.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Person status mapping</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Assign the desired traffic light values to the options.<br>
+<strong>GREEN</strong> = Immaculate credit ranking, lowest risk for payment failures.<br>
+<strong>YELLOW</strong> = Tolerant but increases the risk<br>
+<strong>RED</strong> = Highest risk, as the highest payment failures are to be expected.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="80">3.2. Setting up the credit rating</h3>
+<div class="paragraph">
+<p>Set up a credit rating if needed. Use the credit ranking e.g. to make only certain payment methods available to customers. In the case of a negative credit ranking, you could prohibit payment on invoice, you could stop the order or determine a maximum order value that may not be exceeded.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up the credit rating:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Settings » Orders » Payment » Payment methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the setting <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>International</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>PAYONE</strong>.<br>
+→ The <strong>Settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Expand the <strong>Credit rating</strong> area.</p>
+</li>
+<li>
+<p>Carry out the settings as desired. Pay attention to the information given in table 3.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. setting up the credit rating</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Active</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select <strong>Yes</strong> to activate the credit rating.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Active test mode</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select <strong>Yes</strong> to activate the test mode. Select <strong>No</strong> to deactivate the test mode. The credit rating is in live mode.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Validation type</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select validation criteria.<br>
+<strong>Infoscore (hard criteria)</strong> = Checks only for proven payment problems, e.g. foreclosure etc.<br>
+<strong>Infoscore (all properties)</strong> = All credit rating criteria is checked, e.g. orders for payments.<br>
+<strong>Infoscore (all properties + Boni Score)</strong> = All credit rating criteria is checked, e.g. orders for payments. In addition, a score value is used for checking. The score value (between 100 and 990) is calculated based on different customer characteristics, e.g. occupation and place of residence.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Default value for new customers</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select a traffic light value for the credit rating which is used as a default value for new customers.<br>
+<strong>GREEN</strong> = Immaculate credit ranking, lowest risk for payment failures.<br>
+<strong>YELLOW</strong> = Tolerant but increases the risk<br>
+<strong>RED</strong> = Highest risk, as the highest payment failures are to be expected.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Validity</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter a numerical value in days for which the check should be valid. Customers who are making several orders in this time period will not be checked after the second time.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Minimum value of items</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter a minimum value from which the credit rating should be carried out. This entry is optional.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Maximum value of items</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter a maximum value up to which the address validation should be carried out. This entry is optional.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Error characteristics</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select whether the check should be cancelled or continued if an error occurs.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>A/B testing</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Activate and enter a value to check the credit rating on a random basis. For example, enter a 3 if only every third process is to be checked.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="90">3.3. Setting up interfaces for PAYONE payment methods</h3>
+<div class="paragraph">
+<p>There are further options for the interfaces of the different PAYONE payment methods. The most important options are described below.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up interfaces for PAYONE payment methods:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Settings » Orders » Payment » Payment methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the setting <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>International</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>PAYONE</strong>.</p>
+</li>
+<li>
+<p>Click on the folder of the payment method.<br>
+→ The <strong>Interface</strong> tab will open.</p>
+</li>
+<li>
+<p>Expand the client.</p>
+</li>
+<li>
+<p>Carry out the settings as desired. Pay attention to the information given in table 4.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. further interface options for PAYONE payment methods</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Use global settings</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Use the global settings of the interface.<br>
+<strong>YES</strong> = Apply the settings of the main interface (table 1). These options will then be hidden in the interface.<br>
+<strong>NO</strong> = Create a separate account with its own access data.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Permitted traffic light colour</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The strictest regulations and the lowest risk for payment failures apply for <strong>green</strong>. <strong>Yellow</strong> indicates a higher risk of payment failures. <strong>Red</strong>indicates the highest risk, as the highest payment failures are to be expected.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Klarna settings</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter values as received from Klarna, e.g. the country specific <strong>Klarna shop ID</strong>, the <strong>Klarna campaign code</strong> or the <strong>Klarna campaign name</strong>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="100">3.4. Setting up SEPA for debit</h3>
+<div class="paragraph">
+<p>If you want to offer the payment method <strong>Debit</strong> in the folder <strong>account-based payment method</strong> with PAYONE, then you also have to set up SEPA. To do this, proceed as described below.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up SEPA (debit):</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Settings » Orders » Payment » Payment methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the setting <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>International</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>PAYONE</strong>.</p>
+</li>
+<li>
+<p>Click on the folder <strong>account-based payment method</strong>.<br>
+→ The <strong>Interface</strong> tab will open.</p>
+</li>
+<li>
+<p>Expand the client.</p>
+</li>
+<li>
+<p>Carry out the settings as desired. Pay attention to the information given in table 5.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. setting up SEPA (debit)</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>show additional account number / sort code</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select <strong>YES</strong> so that customers can enter their account number and sort code along with the SEPA data, IBAN and BIC.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Grant of a mandate</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select <strong>YES</strong> to create a mandate. This mandate will be displayed to the customer and must be accepted.<br>
+Granting a mandate is subject to costs. It is not possible to request the POS block list along with this.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Download mandate as PDF</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select <strong>YES</strong> so that customers can download the mandate as a PDF document in the <strong>My account area</strong> of the online store.<br>
+You can only select this option if you booked the product <strong>SEPA-Mandate als PDF</strong> (SEPA mandates as PDF) from PAYONE.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="110">4. Activating payment methods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For PAYONE, a large variety of payment methods is available. Go to <strong><a href="/en/order-processing/payment/managing-payment-methods#20">Settings » Orders » Payment » Payment methods</a></strong> to activate the payment methods.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="115">5. Displaying PAYONE in the online store</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the <strong>CMS</strong> menu, you can customise the text that is displayed during the order process when customers select the payment method PAYONE. In addition, you will find out where to customise the design by modifying the CSS. You can customise the forms for credit card data and online bank transfers. For further information, refer to the <a href="/en/omni-channel/online-store/cms#web-design-editing-the-web-design-order-process-checkout"><strong>Checkout</strong></a> page.</p>
+</div>
+<div class="paragraph instruction">
+<p>Customising the online forms:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CMS » Web design</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>Order process » Checkout</strong>.</p>
+</li>
+<li>
+<p>Expand a <strong>PAYONE payment method</strong>.</p>
+</li>
+<li>
+<p>Enter a text into the <strong>Text in front of</strong> or <strong>Text behind</strong> field.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can also customise the order confirmation form. For further information, refer to the <strong><a href="/en/omni-channel/online-store/cms#web-design-editing-the-web-design-order-process-order-confirmation">Order confirmation</a></strong> page.</p>
+</div>
+<div class="paragraph instruction">
+<p>Customising the order confirmation:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CMS » Web design</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>Order process » Order confirmation</strong>.</p>
+</li>
+<li>
+<p>Expand a <strong>PAYONE payment method</strong>.</p>
+</li>
+<li>
+<p>Enter a text into the <strong>Text in front of</strong> or <strong>Text behind</strong> field.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can find the CSS for the PAYONE payment methods in the <strong>CMS » Web design » Layout » CSS » CSSOrder</strong> menu.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="120">6. Automatically sending shipping confirmations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up an <a href="/en/basics/automation/event-procedures"><strong>event procedure</strong></a> to automatically send shipping confirmations to PAYONE when the outgoing items are booked.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Settings » Orders » Event procedures</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 6.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 6 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. event procedure for sending automatic shipping confirmations to PAYONE</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Event</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Order change: Outgoing items booked</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 1</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Order &gt; Order type</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Order</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 2</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Order &gt; Payment method</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PAYONE payment method</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Procedure</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Shipping &gt; Send shipping confirmation to PAYONE</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="130">7. Automatically sending refunds</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To send refunds automatically, an <strong><a href="/en/order-processing/orders/managing-sales-orders#order-status">order status</a></strong> for credit notes is required. You can use one of the standard statuses or set up your own order status. This status is then only assigned to completed credit notes. These credit notes must not be changed after creation.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Condition for refunds</div>
+<div class="paragraph">
+<p>In order to send PAYONE refunds from credit notes, a shipping confirmation must have already been sent to PAYONE.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Set up an <a href="/en/basics/automation/event-procedures"><strong>event procedure</strong></a> to automatically send refunds to PAYONE.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Settings » Orders » Event procedures</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 7.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 7 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 7. event procedure for sending automatic refunds to PAYONE</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Event</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Order change: Status change</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select a status for the <strong>Refund to PAYONE</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 1</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Order &gt; Order type</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Credit note</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Filter 2</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Order &gt; Payment method</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PAYONE payment method</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Procedure</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Payment methods &gt; Send credit note to PAYONE</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="140">8. Using PAYONE for Shopware</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to use PAYONE with Shopware, save the <a href="/en/order-processing/payment/payone#50"><strong>transaction status URL</strong></a> in the Shopware plugin. Save the URL to the Shopware system in the back end of PAYONE.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">PAYONE cannot be used simultaneously</div>
+<div class="paragraph">
+<p>If you want to use PAYONE with Shopware, then you cannot simultaneously use it in the plentymarkets online store.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>The interaction with <a href="http://github.com/plentymarkets/plentymarkets-shopware-connector"><strong>Shopware</strong></a> works as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The order is created in Shopware.</p>
+</li>
+<li>
+<p>The order will be transmitted from Shopware to plentymarkets.</p>
+</li>
+<li>
+<p>The payment will be imported once the order has been marked as paid in Shopware.</p>
+</li>
+<li>
+<p>The order will be processed within the <strong>Orders</strong> menu in plentymarkets. The processing steps carried out here are preparation for shipping, actual shipping etc.<br>
+→ For this, you will need to set up the event procedure for <a href="/en/order-processing/payment/payone#120"><strong>shipping confirmations</strong></a>.</p>
+</li>
+<li>
+<p>If needed, a credit note can be created in the plentymarkets system.<br>
+→ For this, you will need to set up the event procedure for <a href="/en/order-processing/payment/payone#130"><strong>refunds</strong></a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>

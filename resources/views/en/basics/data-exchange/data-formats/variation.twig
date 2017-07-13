@@ -1,0 +1,652 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#10"><span>1.</span><span> Important notes</span></a></li>
+<li><a href="#20"><span>2.</span><span> The 1:n problem</span></a></li>
+<li><a href="#30"><span>3.</span><span> Overview of the data fields</span></a></li>
+<li><a href="#40"><span>4.</span><span> Overview of the synchronisation fields</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>Variation</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The data format <strong>Variation</strong> is used to export, edit and import variation data. Create and export the data format in the <strong>Data exchange » Export » Dynamic export</strong> menu. Import the data format in the <strong>Data exchange » Import » Dynamic import</strong> menu. The <strong><a href="/en/basics/data-exchange/exporting-data">Exporting data</a></strong> and <strong><a href="/en/basics/data-exchange/importing-data">Importing data</a></strong> pages of the manual describe how you export and import the data format.</p>
+</div>
+<div class="paragraph">
+<p>Pay close attention to the exact spelling of the data fields. The data cannot be processed if the data fields are spelled incorrectly.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10">1. Important notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each variation is given a number (ID) and as such is also uniquely defined by the data field <strong>VariationID</strong>. The following three scenarios could occur for the export and import:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the field <strong>VariationID</strong> is neither exported along with the export of variation fields nor imported later on, then new variations will be created with available variation IDs.</p>
+</li>
+<li>
+<p>If the data record <strong>VariationID</strong> is exported and later imported again, then changes will be made to the corresponding variations.</p>
+</li>
+<li>
+<p>If variation data is imported with variation IDs that do not yet exist in plentymarkets, then new variations will be created with these variation IDs.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the import procedure <strong>Synchronisation</strong> is selected in the data export settings, then the variation data will be synchronised during the import.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="20">2. The 1:n problem</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The 1:n problem, i.e. one to n, occurs when several characteristics were defined for one variation. The following characteristics can be allocated to a variation multiple times in plentymarkets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Sales prices</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Every sales price is uniquely defined by the field <strong>SalesPriceID</strong>. If this ID is not specified, then a new sales price will always be added and the existing prices will be deleted. If available, the existing price will be changed.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Categories</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>One variation can be available in multiple categories at the same time. However, if category data fields (CategoryLevel) were entered during the import, then all of the previous category links for this variation will be deleted.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Use the data format Category for new categories</div>
+<div class="paragraph">
+<p>It is not possible to use the data format <strong>Variation</strong> for creating new categories. With the data format <strong>Variation</strong>, you can only create new category links within the variation. Use the data format <strong><a href="/en/basics/data-exchange/data-formats/category">Category</a></strong> instead to create new categories.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Item images</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This data format allows you to import external images with the help of URLs. Existing item images will be replaced in the process. If multiple item images are imported, then these item images have to be separated by a comma without spaces when they are entered. If you do not want to replace the existing images, then import the <strong><a href="/en/item/managing-items#680">images</a></strong> via FTP upload.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="30">3. Overview of the data fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Table 1 explains the data fields for the <strong>Variation</strong> data format in alphabetical order as well as filter options that you set in the <strong>Filter</strong> tab of the data format.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field name</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+<th class="tableblock halign-left valign-top">Filter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Active</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Active variations<br>
+<strong>N</strong> = No<br>
+<strong>Y</strong> = Yes</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>AttributeValueSetID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Internal ID; determines the variation type<br>
+<strong><em>Example</em></strong>: ID 1 = colour red, size XL; ID 2 = colour green, size XL.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>AutoStockInvisible</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Automatically invisible in the online store. Set online store to 0 if no stock is available.<br>
+<strong>0</strong> = No<br>
+<strong>1</strong> = Yes</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>AutoStockNoStockIcon</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The variation’s availability icon<br>
+<strong>0</strong> = Has to be deactivated manually<br>
+<strong>1</strong> = Hide when there is no net stock</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>AutoStockPositiveStockIcon</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The variation’s availability icon<br>
+<strong>0</strong> = Has to be activated manually<br>
+<strong>1</strong> = Display when the net stock is positive</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>AutoStockVisible</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Automatically visible in the online store. Set store to 1 if the stock is available.<br>
+<strong>0</strong> = No<br>
+<strong>1</strong> = Yes</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Availability</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Availability of the variation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>AvailableUntil</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Available until</strong><br>
+The setting is found under <strong>Item » Edit item » Open item » Open variation » Tab: Settings</strong> in the <strong>Availability</strong> area.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CreatedTimestamp</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Date and time when the variation was created. Format: dd.mm.yyyy hh:mm<br>
+<strong><em>Note</em></strong>: The field is only available for the export.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>VariationNumber</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Variation number</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Activate the filter, select the operator and enter the value.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>CustomsPercent</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Percentage of the customs duties</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>DeleteVariation</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>1</strong> = Deletes the variation<br>
+Deletes the variation when the value 1 is entered.<br>
+<strong><em>Note:</em></strong> Main variations cannot be deleted.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>EstimatedAvailability</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Availability in supply</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ExternalID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>External variation ID</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Activate the filter, select the operator and enter the value.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ExtraShippingCharge1</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Extra shipping charge 1</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ExtraShippingCharge2</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Extra shipping charge 2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>HeightMM</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Height in mm</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>IntervalOrderQuantity</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Interval order quantity</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>isHiddenInCategoryList</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Y</strong> = Variation is not visible in item list<br>
+<strong>N</strong> = Variation is visible in item list</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ItemID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Unique item ID; maximum numerical value 2^31</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Activate the filter, select the operator and enter the value.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>LastUpdateTimestamp</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Last change, date and time. Format: dd.mm.yyyy hh:mm</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>LengthMM</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Length in mm</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>LimitOrderByStockSelect</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Limit variation to stock<br>
+<strong>0</strong> = No limitation<br>
+<strong>1</strong> = Limited to net stock<br>
+<strong>2</strong> = Do not administer stock for this variation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>MainWarehouse</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The main warehouse’s ID reference number. The setting is found under <strong>Item » Edit item » Open item » Open variation » Tab: Settings</strong> in the <strong>Shipping</strong> area.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>MaximumOrderQuantity</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Maximum order quantity for one order<br>
+The value <strong>0</strong> is selected by default; with the value <strong>0</strong>, the maximum order quantity is unlimited.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>MinimumOrderQuantity</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Minimu order quantity per order</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Model</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Model name</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>OperatingCostsPercent</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Percentage of the entire operating costs</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PackingUnitType</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Type of packaging for packing units</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PackingUnits</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Packing units; numerical value</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Picking</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Order picking</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Position</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>This position number is used to sort the variation within the variation list in the online store.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PriceCalculationID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>ID of the calculated price; decimal value</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>PurchasePrice</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Purchase price (net)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ReleaseDate</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Release date, format YYYY-MM-DD HH:MM:SS</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>StorageCosts</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Storage costs</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>TransportationCosts</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Transportation costs</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>UnitID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>ID of the unit; ID lists are found in the menu <strong>Settings » Item » Units</strong>.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>UnitContent</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Quantity contained within the unit</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>UnitLoadDevice</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Pallet type</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>UnitsContained</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Units contained</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>VATID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>VAT number</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>VariationID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Variation ID</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Activate the filter, select the operator and enter the value.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>VariationName</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Name of the variation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>VariationAttributes</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>List of the attributes that are linked to the variation; ID list can be found in the menu <strong>Settings » Item » Attributes</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>WeightG</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The gross weight (with packaging) in grams; numerical value</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>WeightNetG</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The net weight (without packaging) in grams; numerical value</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>WidthMM</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Width in mm</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Table 1: data fields of the data format <strong>Variation</strong></em></p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="40">4. Overview of the synchronisation fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The data fields that are listed in table 2 are available for <a href="/en/basics/data-exchange/importing-data#25"><strong>data synchronisation</strong></a>. These data fields are compulsory synchronisation fields. At least one of the data fields from the following table must be selected for synchronisation. For the selected data field, select the option <strong>Synchronisation</strong> as <strong>Import procedure</strong>.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field name</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>VariationNumber</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Variation number</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ExternalID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>External variation ID</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>VariationID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Variation ID</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Table 2: data fields with the import procedure set to <strong>Synchronisation</strong></em></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Field VariationID</div>
+<div class="paragraph">
+<p>The field <strong>VariationID</strong> is usually a mandatory synchronisation field. However, this field does not necessarily have to be used for this data format. You can use any of the fields listed. One field is sufficient for the synchronisation.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</main>
