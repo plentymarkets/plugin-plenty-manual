@@ -2,18 +2,20 @@
 
 namespace PlentyManual\Services;
 
+use Plenty\Plugin\ConfigRepository;
 use IO\Services\SessionStorageService;
 
 class SearchService
 {
-    const ES_HOST = "52.57.243.156:9269";
-    const SNIPPET_LENGTH = 250;
-
     private $type;
+    private $host;
+    private $snippetLength;
 
-    public function __construct( SessionStorageService $sessionStorage )
+    public function __construct( SessionStorageService $sessionStorage, ConfigRepository $config )
     {
         $this->type = "manual_" . $sessionStorage->getLang();
+        $this->host = $config->get('PlentyManual.search.es_host');
+        $this->snippetLength = $config->get('PlentyManual.search.snippet_length');
     }
 
     public function search(
@@ -53,7 +55,7 @@ class SearchService
                         "post_tags" => ["</em>"],
                         "fields" => [
                             "sections.title" => ["number_of_fragments" => 0],
-                            "sections.content" => ["number_of_fragments" => 1, "fragment_size" => self::SNIPPET_LENGTH]
+                            "sections.content" => ["number_of_fragments" => 1, "fragment_size" => $this->snippetLength]
                         ]
                     ]
                 ]
@@ -94,14 +96,13 @@ class SearchService
                 "post_tags" => ["</em>"],
                 "fields" => [
                     "title" => ["number_of_fragments" => 0],
-                    "description" => ["number_of_fragments" => 1, "fragment_size" => self::SNIPPET_LENGTH]
+                    "description" => ["number_of_fragments" => 1, "fragment_size" => $this->snippetLength]
                 ]
             ]
         ];
 
-        $host = self::ES_HOST;
         $from = ($page - 1) * $itemsPerPage ;
-        $cHandle = curl_init( "{$host}/{$this->type}/_search?size={$itemsPerPage}&from{$from}" );
+        $cHandle = curl_init( "{$this->host}/{$this->type}/_search?size={$itemsPerPage}&from{$from}" );
         curl_setopt( $cHandle, CURLOPT_POST, true );
         curl_setopt( $cHandle, CURLOPT_RETURNTRANSFER, true );
         curl_setopt( $cHandle, CURLOPT_POSTFIELDS, json_encode( $mainQuery ) );
@@ -152,7 +153,7 @@ class SearchService
             }
             if ( $doc["description"] === null )
             {
-                $doc["description"] = $this->trim( $hit["_source"]["description"], self::SNIPPET_LENGTH );
+                $doc["description"] = $this->trim( $hit["_source"]["description"], $this->snippetLength );
             }
 
             $sections = [];
@@ -162,7 +163,7 @@ class SearchService
                     "id" => $inner_hit["_source"]["id"],
                     "url" => $inner_hit["_source"]["url"],
                     "title" => $inner_hit["highlight"]["sections.title"][0],
-                    "content" => $this->trim( $inner_hit["highlight"]["sections.content"][0], self::SNIPPET_LENGTH )
+                    "content" => $this->trim( $inner_hit["highlight"]["sections.content"][0], $this->snippetLength )
                 ];
 
                 if ( $sec["title"] === null )
@@ -171,7 +172,7 @@ class SearchService
                 }
                 if ( $sec["content"] === null )
                 {
-                    $sec["content"] = $this->trim( $inner_hit["_source"]["content"], self::SNIPPET_LENGTH );
+                    $sec["content"] = $this->trim( $inner_hit["_source"]["content"], $this->snippetLength );
                 }
                 array_push( $sections, $sec );
             }
@@ -183,7 +184,7 @@ class SearchService
         return $result;
     }
 
-    function trim( string $text = null, int $length = self::SNIPPET_LENGTH )
+    function trim( string $text = null, int $length = 250 )
     {
         if ( $text === null )
         {
