@@ -58,7 +58,7 @@ class ContentController extends Controller
     public function showStartpage(): string
     {
         return $this->twig->render(
-            "PlentyManual::StartPage",
+            "PlentyManual::Startpage",
             [
                 "pages" => $this->pageService->getPages()
             ]
