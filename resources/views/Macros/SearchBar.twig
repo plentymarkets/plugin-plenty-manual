@@ -14,10 +14,10 @@
 
 {% endmacro %}
 
-{% macro printBanner( bgImgLr, bgImg, large ) %}
+{% macro printBanner( bgImgSmall, bgImgLarge, additionalClasses ) %}
     {% import _self as SearchBar %}
-    <div class="d-flex align-items-center bg-fixed bg-cover bg-33c{% if large %} banner-vh-3{% else %} banner-st-1{% endif %}"
-         style="background-image: url('{{ bgImgLr }}');" data-fn="lazyload" data-src="{{ bgImg }}">
+    <div class="d-flex align-items-center bg-fixed bg-cover{% if additionalClasses %} additionalClasses{% endif %}"
+         style="background-image: url('{{ bgImgSmall }}');"{% if bgImgLarge %} data-fn="lazyload" data-src="{{ bgImgLarge }}"{% endif %}>
         <div class="container{% if large %} py-4{% endif %}">
             {% if large %}
                 {{ SearchBar.printForm("mt-4") }}
