@@ -3288,6 +3288,20 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
+						"id" => "5ab2ac10fcc9abfb61702a4a494b8ba8",
+						"path" => "omni-channel/online-shop/ceres-einrichten",
+						"position" => 40,
+						"urlName" => "ceres-einrichten",
+						"url" => "/omni-channel/online-shop/ceres-einrichten",
+						"level" => 3,
+						"title" => "Ceres einrichten",
+						"keywords" => "Webshop, Mandant, Standard, Ceres, Plugin",
+						"description" => "",
+						"navAlias" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "03c8267cd442ef017f91615385a4b637",
 						"path" => "omni-channel/online-shop/cms",
 						"position" => 150,
