@@ -2375,20 +2375,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "fff646ab828c650a788e0102f885603d",
-						"path" => "omni-channel/multi-channel/billiger-de-asien",
-						"position" => 25,
-						"urlName" => "billiger-de-asien",
-						"url" => "/omni-channel/multi-channel/billiger-de-asien",
-						"level" => 3,
-						"title" => "billiger.de Asien",
-						"keywords" => "billiger.de, Marktplatz, Asien",
-						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz billiger.de Asien in Ihrem plentymarkets System ein.",
-						"navAlias" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "72f632e43ef06b4ea8f986352fb6ebac",
 						"path" => "omni-channel/multi-channel/bol-com",
 						"position" => 28,
@@ -6803,20 +6789,6 @@ class Metadata {
 						"title" => "Amazon",
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Amazon in your plentymarkets system.",
-						"navAlias" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "16caef4ade480a38566d815f1c00f7ee",
-						"path" => "omni-channel/multi-channel/billiger-de-asia",
-						"position" => 25,
-						"urlName" => "billiger-de-asia",
-						"url" => "/en/omni-channel/multi-channel/billiger-de-asia",
-						"level" => 3,
-						"title" => "billiger.de Asia",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market billiger.de Asia in your plentymarkets system.",
 						"navAlias" => "",
 						"children" => [],
 						"hasChildren" => false
