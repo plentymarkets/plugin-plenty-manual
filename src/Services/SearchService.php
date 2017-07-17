@@ -102,7 +102,7 @@ class SearchService
         ];
 
         $from = ($page - 1) * $itemsPerPage ;
-        $cHandle = curl_init( "{$this->host}/{$this->type}/_search?size={$itemsPerPage}&from{$from}" );
+        $cHandle = curl_init( "{$this->host}/{$this->type}/_search?size={$itemsPerPage}&from={$from}" );
         curl_setopt( $cHandle, CURLOPT_POST, true );
         curl_setopt( $cHandle, CURLOPT_RETURNTRANSFER, true );
         curl_setopt( $cHandle, CURLOPT_POSTFIELDS, json_encode( $mainQuery ) );
