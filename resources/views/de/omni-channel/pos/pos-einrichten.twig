@@ -42,6 +42,11 @@
 <ul class="sectlevel2">
 <li><a href="#700"><span>7.1.</span><span> Verkaufspreis für POS-Aufträge erstellen</span></a></li>
 <li><a href="#550"><span>7.2.</span><span> Verkaufspreis mit Varianten verknüpfen</span></a></li>
+<li><a href="#800"><span>7.3.</span><span> Rundungsverhalten für Kassenaufträge festlegen</span></a>
+<ul class="sectlevel3">
+<li><a href="#_beispielrechnung"><span>7.3.1.</span><span> Beispielrechnung</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#90"><span>8.</span><span> Standardkunden für POS-Aufträge erstellen</span></a></li>
@@ -82,6 +87,21 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Mit plentymarkets POS integrieren Sie den stationären Handel mühelos in plentymarkets.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">POS-Einstellung nicht im laufenden Betrieb ändern</div>
+<div class="paragraph">
+<p>Ändern Sie die POS-Einstellungen nicht im laufenden Betrieb. Wenn Sie dennoch Änderungen an den POS-Einstellungen vornehmen, fordern Sie Kassenbenutzer auf, sich aus der App ausloggen und wieder einloggen, da es sonst vor allem bei einer Änderung der Rundungseinstellungen zu Unstimmigkeiten in den Gesamtbeträgen kommt.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div><div class="sect1">
@@ -1541,6 +1561,181 @@ Zwischenberichte enthalten folgende Informationen:<br></p>
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="800">7.3. Rundungsverhalten für Kassenaufträge festlegen</h3>
+<div class="paragraph">
+<p>Beträge werden auf plentymarkets POS Kassenbelegen grundsätzlich mit 2 Nachkommastellen dargestellt. Über die Einstellungen im plentymarkets Backend steuern Sie, ob die Preise in den Aufträge auch im Hintergrund auf 2 Nachkommastellen gerundet oder ob mit 4 Nachkommastellen gerechnet werden soll. Das Rundungsverhalten für Aufträge, die über plentymarkets POS Kassen generiert werden, wird über die folgenden 3 Optionen gesteuert:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 10. Erforderliche Optionen für Rundungsverhalten bei Kassenaufträgen</caption>
+<colgroup>
+<col style="width: 91.4893%;">
+<col style="width: 4.2553%;">
+<col style="width: 4.2554%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Menü</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Mögliche Einstellungen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Einstellungen » Mandant (Shop) » Mandant wählen » Standorte » Standort wählen » Buchhaltung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl Nachkommstellen bei Preisen</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>2</p>
+</li>
+<li>
+<p>4</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Einstellungen » Mandant (Shop) » Mandant wählen » Standorte » Standort wählen » Buchhaltung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nur Gesamtpreise runden</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Ja</p>
+</li>
+<li>
+<p>Nein</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Einstellungen » Mandant (Shop) » Mandant wählen » POS » Kasse wählen » Tab: Beleg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identische Auftragspositionen</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Einzeln darstellen</p>
+</li>
+<li>
+<p>Zusammenfassen</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Aus diesen Einstellungen ergeben sich 6 Einstellungskombinationen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Auftragspositionen einzeln darstellen, Einzelpreise auf 2 Nachkommastellen runden</p>
+</li>
+<li>
+<p>Auftragspositionen einzeln darstellen, Einzelpreise auf 4 Nachkommastellen runden</p>
+</li>
+<li>
+<p>Auftragspositionen einzeln darstellen, Gesamtpreise auf 4 Nachkommastellen runden</p>
+</li>
+<li>
+<p>Auftragspositionen zusammenfassen, Einzelpreise auf 2 Nachkommastellen runden</p>
+</li>
+<li>
+<p>Auftragspositionen zusammenfassen, Einzelpreise auf 4 Nachkommastellen runden</p>
+</li>
+<li>
+<p>Auftragspositionen zusammenfassen, Gesamtpreise auf 4 Nachkommastellen runden</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Abhängig von den gewählten Einstellungen kommt es zu unterschiedlichen Gesamtbeträgen. Beachten Sie, dass sich die Abweichungen potenzieren, je mehr Artikel mit Rundungsbedarf pro Auftrag/Beleg verkauft werden.</p>
+</div>
+<div class="sect3">
+<h4 id="_beispielrechnung">7.3.1. Beispielrechnung</h4>
+<div class="paragraph">
+<p>Die folgende Tabelle zeigt eine Beispielrechnung, um die Rundungsabweichungen zu verdeutlichen, die sich aus den verschiedenen Einstellungskombinationen ergeben.</p>
+</div>
+<div class="paragraph">
+<p>Die Beispielrechnung beruht auf den folgenden Daten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Berechnungsbasis: Artikel zum Preis von 4,545 Euro</p>
+</li>
+<li>
+<p>Rechnung 1: Verkauf von 10 Artikeln</p>
+</li>
+<li>
+<p>Rechnung 2: Verkauf von 10 Artikeln mit 5 % Positionsrabatt</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 11. Beispielrechnung bei einem Artikelpreis mit 4 Nachkommastellen</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Gewählte Einstellungen</th>
+<th class="tableblock halign-left valign-top">Rechnung 1 (4,545 Euro x 10) Gesamtpreis auf Beleg</th>
+<th class="tableblock halign-left valign-top">Rechnung 2 (4,545 Euro x 10 - 5%) Gesamtpreis auf Beleg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl Nachkommastellen = 2 <br>
+Auftragspositionen = Einzeln darstellen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">45,50 Euro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43,20 Euro</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl Nachkommastellen = 4 <br>
+Nur Gesamtpreise runden = Nein<br>
+Auftragspositionen = Einzeln darstellen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">45,45 Euro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43,18 Euro</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl Nachkommastellen = 4<br>
+Nur Gesamtpreise runden = Ja<br>
+Auftragspositionen = Einzeln darstellen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">45,45 Euro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43,18 Euro</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl Nachkommastellen = 2<br>
+Auftragspositionen = Zusammenfassen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43,50 Euro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43,20 Euro</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl Nachkommastellen = 4<br>
+Nur Gesamtpreise runden = Nein<br>
+Auftragspositionen = Zusammenfassen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">45,45 Euro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43,18 Euro</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl Nachkommastellen = 4<br>
+Nur Gesamtpreise runden = Ja<br>
+Auftragspositionen = Zusammenfassen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">45,50 Euro</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">43,18 Euro</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Detaillierte Informationen und weitere Rechnungsbeispiele zum Rundungsverhalten finden Sie auch auf der Handbuchseite <a href="#auftragsabwicklung/auftraege/buchhaltung"><strong>Buchhaltung</strong></a>.</p>
+</div>
+</div>
+</div>
 </div>
 </div><div class="sect1">
 <h2 id="90">8. Standardkunden für POS-Aufträge erstellen</h2>
@@ -1575,7 +1770,7 @@ Zwischenberichte enthalten folgende Informationen:<br></p>
 <p>Klicken Sie auf <strong>Neu</strong>.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß Tabelle 10 vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle 12 vor.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -1592,7 +1787,7 @@ Zwischenberichte enthalten folgende Informationen:<br></p>
 </ol>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 10. Standardkunden für POS-Aufträge erstellen</caption>
+<caption class="title">Tabelle 12. Standardkunden für POS-Aufträge erstellen</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1706,13 +1901,13 @@ PLZ</strong>;<br>
 <p>Geben Sie einen Namen ein.</p>
 </li>
 <li>
-<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 11.</p>
+<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 13.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß Tabelle 11 vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle 13 vor.</p>
 </li>
 <li>
 <p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
@@ -1725,7 +1920,7 @@ PLZ</strong>;<br>
 </div>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 11. Ereignisaktion zum automatischen Buchen des Warenausgangs beim Erstellen eines POS-Auftrags</caption>
+<caption class="title">Tabelle 13. Ereignisaktion zum automatischen Buchen des Warenausgangs beim Erstellen eines POS-Auftrags</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1825,7 +2020,7 @@ PLZ</strong>;<br>
 <p>Öffnen Sie das Menü <strong>plentymarkets App  » Einstellungen » POS beta</strong>.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen vor. Beachten Sie Tabelle 12.</p>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie Tabelle 14.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.<br>
@@ -1834,7 +2029,7 @@ PLZ</strong>;<br>
 </ol>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 12. Kasse mit Mobilgerät koppeln</caption>
+<caption class="title">Tabelle 14. Kasse mit Mobilgerät koppeln</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2028,7 +2223,7 @@ PLZ</strong>;<br>
 </div>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 13. Ereignisaktion zum automatischen Senden des Kassenbelegs</caption>
+<caption class="title">Tabelle 15. Ereignisaktion zum automatischen Senden des Kassenbelegs</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2105,7 +2300,7 @@ PLZ</strong>;<br>
 <p>Öffnen Sie das Menü <strong>Aufträge » POS » Kassenjournal</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 14.</p>
+<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 16.</p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Suchen</strong>.<br>
@@ -2114,7 +2309,7 @@ PLZ</strong>;<br>
 </ol>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 14. Menü <strong>Kassenjournal</strong></caption>
+<caption class="title">Tabelle 16. Menü <strong>Kassenjournal</strong></caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2313,7 +2508,7 @@ Um Belege eines benutzerdefinierten Zeitraums anzuzeigen, die Option <strong>Dat
 <p>Öffnen Sie das Menü <strong>Aufträge » POS » Kassenjournal</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 14.</p>
+<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 16.</p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Suchen</strong>.<br>
@@ -2338,7 +2533,7 @@ Um Belege eines benutzerdefinierten Zeitraums anzuzeigen, die Option <strong>Dat
 <p>Öffnen Sie das Menü <strong>Aufträge » POS » Kassenjournal</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 14.</p>
+<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 16.</p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Suchen</strong>.<br>

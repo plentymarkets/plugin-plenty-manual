@@ -267,7 +267,7 @@ class Metadata {
 				"title" => "Datenaustausch",
 				"keywords" => "Datenaustausch, Datenformate, Datenexport, Datenimport, SOAP-API, REST-API, API-Log",
 				"description" => "Erfahren Sie, welche Datenformate Sie für den Export und Import nutzen, welche Schnittstellen es gibt und wie Sie Protokolle einsehen.",
-				"navAlias" => "",
+				"navAlias" => "Übersicht",
 				"children" => 				[
 					[
 						"id" => "21a09a6fa59254e3068e75b7f516966c",
@@ -2248,20 +2248,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "e28721a8292f939462b3872ddc8bb378",
-				"path" => "artikel/geschenk-service",
-				"position" => 30,
-				"urlName" => "geschenk-service",
-				"url" => "/artikel/geschenk-service",
-				"level" => 2,
-				"title" => "Geschenk-Service",
-				"keywords" => "Webshop, Mandant, Geschenk-Service",
-				"description" => "",
-				"navAlias" => "",
-				"children" => [],
-				"hasChildren" => false
 			],
 			[
 				"id" => "dd091dcd406884c4ce846584ae75e2c6",
@@ -6723,20 +6709,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "177ae623ffb84a316d5dd5c890de87d2",
-				"path" => "item/gift-service",
-				"position" => 60,
-				"urlName" => "gift-service",
-				"url" => "/en/item/gift-service",
-				"level" => 2,
-				"title" => "Gift service",
-				"keywords" => "Online store, Client, Gift service",
-				"description" => "",
-				"navAlias" => "",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
