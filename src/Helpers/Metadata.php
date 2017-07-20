@@ -4291,7 +4291,7 @@ class Metadata {
 		"title" => "CRM",
 		"keywords" => "Kundendaten verwalten, Ticketsystem nutzen, E-Mails versenden, Newsletter versenden",
 		"description" => "Erfahren Sie, wie Sie Kundendaten verwalten, das Ticketsystem für Ihre Kundenkommunikation nutzen und E-Mails und Newsletter versenden.",
-		"navAlias" => "",
+		"navAlias" => "Übersicht",
 		"children" => 		[
 			[
 				"id" => "800555862d4750fde6b174a6c529502b",
@@ -4616,7 +4616,7 @@ class Metadata {
 				"title" => "Data exchange",
 				"keywords" => "",
 				"description" => "",
-				"navAlias" => "",
+				"navAlias" => "Overview",
 				"children" => 				[
 					[
 						"id" => "4b740f5b81e500a4530cb84503aca6fe",
