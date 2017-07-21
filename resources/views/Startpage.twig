@@ -2,10 +2,20 @@
 {% import "PlentyManual::Macros.SearchBar" as SearchBar %}
 
 {% set lang = services.sessionStorage.getLang() %}
-{% set pageTitle = "plenty Knowledge" %}
+{% if lang == "de" %}
+    {% set pageTitle = "plentymarkets Online-Handbuch & passende Dokumentation" %}
+{% else %}
+    {% set pageTitle = "plentymarkets online manual & documentation" %}
+{% endif %}
 
 {% block PartialHead %}
     <meta name="robots" content="index, nofollow">
+    {% if lang == "de" %}
+        <meta name="description" content="Im plentymarkets Handbuch findest du zu jedem Bereich unserer Software eine passende Erklärung. Jetzt nachschlagen!">
+    {% else %}
+        <meta name="description" content="The plentymarkets manual provides answers to all of your questions concerning the functions of our software. Check it out!">
+    {% endif %}
+    <link rel="canonical" href="https://knowledge.plentymarkets.com/{% if lang == "en" %}en{% endif %}" />
 {% endblock %}
 
 {% block Navigation %}
@@ -294,4 +304,16 @@
 
 {% block Footer %}
     {% include "PlentyManual::Partials.Footer" %}
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "https://www.knowledge.plentymarkets.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.knowledge.plentymarkets.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
 {% endblock %}
