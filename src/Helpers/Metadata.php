@@ -3194,7 +3194,7 @@ class Metadata {
 								"url" => "/omni-channel/online-shop/extras/trusted-shops",
 								"level" => 4,
 								"title" => "Trusted Shops",
-								"keywords" => "",
+								"keywords" => "trust, trustedshops, excellence, classic",
 								"description" => "",
 								"navAlias" => "",
 								"children" => [],
@@ -4163,7 +4163,7 @@ class Metadata {
 		"title" => "Warenwirtschaft",
 		"keywords" => "Waren, Wareneingang, Warenausgang, Warenwirtschaft, Bestand, Bestandsautomatik, Warenbestand",
 		"description" => "",
-		"navAlias" => "",
+		"navAlias" => "Übersicht",
 		"children" => 		[
 			[
 				"id" => "f56ebddcd70cf0c60da1fac89d08fead",
@@ -8568,7 +8568,7 @@ class Metadata {
 		"title" => "Stock management",
 		"keywords" => "Stock, Stock management",
 		"description" => "",
-		"navAlias" => "",
+		"navAlias" => "Overview",
 		"children" => 		[
 			[
 				"id" => "60a4d808e6f1fab6a690ca7f92a224de",
