@@ -4411,7 +4411,7 @@ class Metadata {
 						"path" => "basics/first-steps/plugins",
 						"position" => 40,
 						"urlName" => "plugins",
-						"url" => "/basics/first-steps/plugins",
+						"url" => "/en/basics/first-steps/plugins",
 						"level" => 3,
 						"title" => "Managing plugins",
 						"keywords" => "plugins, extensions, features",
