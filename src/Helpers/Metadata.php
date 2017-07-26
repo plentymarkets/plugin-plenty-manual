@@ -3154,7 +3154,7 @@ class Metadata {
 						"url" => "/omni-channel/online-shop/ceres-einrichten",
 						"level" => 3,
 						"title" => "Ceres einrichten",
-						"keywords" => "Webshop, Mandant, Standard, Ceres, Plugin",
+						"keywords" => "Webshop, Mandant, Standard, Ceres, Plugin, Standard-Lieferland, Standard-Versandart, Standard-Versandprofil, Standard-Zahlungsart",
 						"description" => "",
 						"navAlias" => "",
 						"children" => [],
