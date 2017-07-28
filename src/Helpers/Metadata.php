@@ -4652,36 +4652,39 @@ class Metadata {
 		"path" => "basics",
 		"position" => 10,
 		"urlName" => "basics",
-		"url" => "/basics",
+		"url" => "/en/basics",
 		"level" => 1,
 		"title" => "Basics",
 		"keywords" => "",
 		"description" => "",
 		"navAlias" => "",
+		"linkListInto" => "Welcome to the topic Basics. The following information is available:",
 		"children" => 		[
 			[
 				"id" => "1bebf4291d1d2ab239d184db65f77a9c",
 				"path" => "basics/first-steps",
 				"position" => 10,
 				"urlName" => "first-steps",
-				"url" => "/basics/first-steps",
+				"url" => "/en/basics/first-steps",
 				"level" => 2,
 				"title" => "First steps",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich First steps. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
 						"id" => "2c1083da0150ab642a5b2bc867485767",
 						"path" => "basics/first-steps/system-requirements",
 						"position" => 10,
 						"urlName" => "system-requirements",
-						"url" => "/basics/first-steps/system-requirements",
+						"url" => "/en/basics/first-steps/system-requirements",
 						"level" => 3,
 						"title" => "System requirements",
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic System requirements. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4696,6 +4699,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Learn how to use plentymarkets.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Quick start. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4710,6 +4714,7 @@ class Metadata {
 						"keywords" => "Master data",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Master data. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4724,6 +4729,7 @@ class Metadata {
 						"keywords" => "plugins, extensions, features",
 						"description" => "How to manage plugins in the plentymarkets back end.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing plugins. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4741,6 +4747,7 @@ class Metadata {
 				"keywords" => "",
 				"description" => "Working with plentymarkets: Here you will find information about managing user accounts, setting up general functions and customising the user account. You will also find the quick start.",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Working with plentymarkets. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "6b2cabc57d972cd98e4e5e5741c6563f",
@@ -4753,6 +4760,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Working with plentymarkets: Manage user accounts, create new users and edit existing user accounts in the plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing user accounts. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4767,6 +4775,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Working with plentymarkets: Set up your preferred shortcuts and your personal signature and customise your own user account in the plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Customising the user account. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4781,6 +4790,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic plentymarkets account. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4795,6 +4805,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Working with plentymarkets: Add menus as favourites, customise the menu layout and use further general functions that may be helpful for your everyday work with plentymarkets.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Using general functions. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4809,6 +4820,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Tasks. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4823,6 +4835,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Find out how create backups and import backed up plentymarkets data.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Backing up data. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4837,6 +4850,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Adjust the homepage of your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Dashboard. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4851,6 +4865,7 @@ class Metadata {
 						"keywords" => "Printer, plentymarkets client",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Printer. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4865,6 +4880,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Editors. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4879,6 +4895,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Calendar. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4887,12 +4904,13 @@ class Metadata {
 						"path" => "basics/working-with-plentymarkets/tags",
 						"position" => 110,
 						"urlName" => "tags",
-						"url" => "/basics/working-with-plentymarkets/tags",
+						"url" => "/en/basics/working-with-plentymarkets/tags",
 						"level" => 3,
 						"title" => "Tags",
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Tags. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4910,6 +4928,7 @@ class Metadata {
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "Overview",
+				"linkListInto" => "Welcome to the topic Data exchange. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "4b740f5b81e500a4530cb84503aca6fe",
@@ -4922,6 +4941,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Learn how to export predefined and customised data formats as well as data formats for price search engines.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Exporting data. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4936,6 +4956,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Importing data. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4950,6 +4971,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Learn which data formats are available in plentymarkets for dynamic import and export.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Data formats. The following information is available:",
 						"children" => 						[
 							[
 								"id" => "862e608aff0b254b26b0b3138b600108",
@@ -4962,6 +4984,7 @@ class Metadata {
 								"keywords" => "Data format",
 								"description" => "Data format Attribute",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Attribute. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4976,6 +4999,7 @@ class Metadata {
 								"keywords" => "Data format",
 								"description" => "Data format AttributeItemVariation",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic AttributeItemVariation. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4990,6 +5014,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "CampaignCoupon",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic CampaignCoupon. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5004,6 +5029,7 @@ class Metadata {
 								"keywords" => "Data format",
 								"description" => "Data format Category",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Category. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5018,6 +5044,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic CreditNote. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5032,6 +5059,7 @@ class Metadata {
 								"keywords" => "Data format Customer, customer master data",
 								"description" => "Use the data format Customer to export, edit and import your customer master data.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Customer. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5046,6 +5074,7 @@ class Metadata {
 								"keywords" => "Data format CustomerNewsletter",
 								"description" => "Use the data format CustomerNewsletter to export, edit and import customer data that was entered for the newsletter.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic CustomerNewsletter. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5060,6 +5089,7 @@ class Metadata {
 								"keywords" => "Data format CustomerNote, notes",
 								"description" => "Use the data format CustomerNote to export, edit and import notes that are saved in the customer data.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic CustomerNote. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5074,6 +5104,7 @@ class Metadata {
 								"keywords" => "Data format CustomerProperty, customer properties",
 								"description" => "Use the data format CustomerProperty to export, edit and import customer properties.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic CustomerProperty. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5088,6 +5119,7 @@ class Metadata {
 								"keywords" => "Data format CustomerPropertyLink, customer properties and values",
 								"description" => "Use the data format CustomerPropertyLink to export, edit and import customer properties and the values saved for your customers.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic CustomerPropertyLink. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5102,6 +5134,7 @@ class Metadata {
 								"keywords" => "Data format CustomerSet, create customer data record",
 								"description" => "Use the data format CustomerSet to create new customer data records.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic CustomerSet. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5116,6 +5149,7 @@ class Metadata {
 								"keywords" => "Data format",
 								"description" => "Data format EbayTitleMatch",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic EbayTitleMatch. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5130,6 +5164,7 @@ class Metadata {
 								"keywords" => "Data format",
 								"description" => "Data format EbayPartsFitment",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic EbayPartsFitment. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5144,6 +5179,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Facet. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5158,6 +5194,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic FacetReference. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5172,6 +5209,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "Special format IncomingItems",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic IncomingItems. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5186,6 +5224,7 @@ class Metadata {
 								"keywords" => "Data format",
 								"description" => "Data format Item",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Item. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5200,6 +5239,7 @@ class Metadata {
 								"keywords" => "Data format",
 								"description" => "Data format ItemBundle",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemBundle. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5214,6 +5254,7 @@ class Metadata {
 								"keywords" => "Data format",
 								"description" => "Data format ItemCategories",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemCategories. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5228,6 +5269,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "Data format ItemCrossSelling",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemCrossSelling. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5236,12 +5278,13 @@ class Metadata {
 								"path" => "basics/data-exchange/data-formats/itemdealer",
 								"position" => 150,
 								"urlName" => "itemdealer",
-								"url" => "/basics/data-exchange/data-formats/itemdealer",
+								"url" => "/en/basics/data-exchange/data-formats/itemdealer",
 								"level" => 4,
 								"title" => "ItemDealer",
 								"keywords" => "Data format",
 								"description" => "Data format ItemDealer",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemDealer. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5256,6 +5299,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemImage. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5264,12 +5308,13 @@ class Metadata {
 								"path" => "basics/data-exchange/data-formats/itemimagename",
 								"position" => 152,
 								"urlName" => "itemimagename",
-								"url" => "/basics/data-exchange/data-formats/itemimagename",
+								"url" => "/en/basics/data-exchange/data-formats/itemimagename",
 								"level" => 4,
 								"title" => "ItemImageName",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemImageName. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5278,12 +5323,13 @@ class Metadata {
 								"path" => "basics/data-exchange/data-formats/itemimagereference",
 								"position" => 153,
 								"urlName" => "itemimagereference",
-								"url" => "/basics/data-exchange/data-formats/itemimagereference",
+								"url" => "/en/basics/data-exchange/data-formats/itemimagereference",
 								"level" => 4,
 								"title" => "ItemImageReference",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemImageReference. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5298,6 +5344,7 @@ class Metadata {
 								"keywords" => "Data format ItemListingMarket",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemListingMarket. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5312,6 +5359,7 @@ class Metadata {
 								"keywords" => "Data format ItemListingMarketEbay",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemListingMarketEbay. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5326,6 +5374,7 @@ class Metadata {
 								"keywords" => "Data format ItemListingMarketHistory",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemListingMarketHistory. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5340,6 +5389,7 @@ class Metadata {
 								"keywords" => "Data format ItemListingMarketHood",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemListingMarketHood. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5354,6 +5404,7 @@ class Metadata {
 								"keywords" => "Data format ItemListingMarketRicardo",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemListingMarketRicardo. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5368,6 +5419,7 @@ class Metadata {
 								"keywords" => "Data format ItemListingMarketText",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemListingMarketText. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5382,6 +5434,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "Special format ItemParcelServicePreset",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemParcelServicePreset. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5396,6 +5449,7 @@ class Metadata {
 								"keywords" => "Data format",
 								"description" => "Data format ItemPrice",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemPrice. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5404,12 +5458,13 @@ class Metadata {
 								"path" => "basics/data-exchange/data-formats/itemproperties",
 								"position" => 175,
 								"urlName" => "itemproperties",
-								"url" => "/basics/data-exchange/data-formats/itemproperties",
+								"url" => "/en/basics/data-exchange/data-formats/itemproperties",
 								"level" => 4,
 								"title" => "ItemProperties",
 								"keywords" => "Data format",
 								"description" => "Data format ItemProperties",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemProperties. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5418,12 +5473,13 @@ class Metadata {
 								"path" => "basics/data-exchange/data-formats/itemwarehouse",
 								"position" => 180,
 								"urlName" => "itemwarehouse",
-								"url" => "/basics/data-exchange/data-formats/itemwarehouse",
+								"url" => "/en/basics/data-exchange/data-formats/itemwarehouse",
 								"level" => 4,
 								"title" => "ItemWarehouse",
 								"keywords" => "Data format",
 								"description" => "Data format ItemWarehouse",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemWarehouse. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5432,12 +5488,13 @@ class Metadata {
 								"path" => "basics/data-exchange/data-formats/order",
 								"position" => 190,
 								"urlName" => "order",
-								"url" => "/basics/data-exchange/data-formats/order",
+								"url" => "/en/basics/data-exchange/data-formats/order",
 								"level" => 4,
 								"title" => "Order",
 								"keywords" => "Data format",
 								"description" => "Data format Order",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Order. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5452,6 +5509,7 @@ class Metadata {
 								"keywords" => "OrderComplete, Data format, Data export, Data exchange",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic OrderComplete. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5466,6 +5524,7 @@ class Metadata {
 								"keywords" => "Data format; OrderItems",
 								"description" => "Data format OrderItems",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic OrderItems. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5480,6 +5539,7 @@ class Metadata {
 								"keywords" => "OrderListForFulfillment, Datenformat, Daten-Export, Datenexport",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic OrderListForFulfillment. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5494,6 +5554,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Producer. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5508,6 +5569,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic SerialKeys. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5522,6 +5584,7 @@ class Metadata {
 								"keywords" => "Stock",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Stock. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5536,6 +5599,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "Data format Variation",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Variation. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5550,6 +5614,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "VariationBarcode",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic VariationBarcode. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5564,6 +5629,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "Data format VariationBundle",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic VariationBundle. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5578,6 +5644,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic VariationCategories. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5592,6 +5659,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "Data format VariationMarketIdentNumber",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic VariationMarketIdentNumber. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5606,6 +5674,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "Data format VariationMarketLink",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic VariationMarketLink. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5620,6 +5689,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic VariationSalesPrice. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5634,6 +5704,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic VariationSKU. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5648,6 +5719,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "Data format VariationSupplier",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic VariationSupplier. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5662,6 +5734,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "Data format VariationWarehouse",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic VariationWarehouse. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5676,6 +5749,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "Data format VariationWebstoreLink",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic VariationWebstoreLink. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5690,6 +5764,7 @@ class Metadata {
 								"keywords" => "Data format",
 								"description" => "Data format Warehouse",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Warehouse. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -5707,6 +5782,7 @@ class Metadata {
 						"keywords" => "Settings, Basic settings, API data",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic API data. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5721,6 +5797,7 @@ class Metadata {
 						"keywords" => "plentymarkets API, API Log, API",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic API log. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5735,6 +5812,7 @@ class Metadata {
 						"keywords" => "Dropbox",
 						"description" => "Dropbox",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Dropbox. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5743,12 +5821,13 @@ class Metadata {
 						"path" => "basics/data-exchange/ftp-access",
 						"position" => 70,
 						"urlName" => "ftp-access",
-						"url" => "/basics/data-exchange/ftp-access",
+						"url" => "/en/basics/data-exchange/ftp-access",
 						"level" => 3,
 						"title" => "FTP access",
 						"keywords" => "Webshop, Mandant, FTP-Zugang",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic FTP access. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5760,24 +5839,26 @@ class Metadata {
 				"path" => "basics/automation",
 				"position" => 40,
 				"urlName" => "automation",
-				"url" => "/basics/automation",
+				"url" => "/en/basics/automation",
 				"level" => 2,
 				"title" => "Automation",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Automation. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
 						"id" => "865d35b28d557bf2867550dc7a8a037e",
 						"path" => "basics/automation/processes",
 						"position" => 10,
 						"urlName" => "processes",
-						"url" => "/basics/automation/processes",
+						"url" => "/en/basics/automation/processes",
 						"level" => 3,
 						"title" => "Processes",
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Processes. Hier finden Sie folgende Informationen:",
 						"children" => 						[
 							[
 								"id" => "3db646d4adfc55457d9201084b4c0580",
@@ -5790,6 +5871,7 @@ class Metadata {
 								"keywords" => "Setting up processes, Settings, Client",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Setting up processes. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5804,6 +5886,7 @@ class Metadata {
 								"keywords" => "Carrying out processes, Client, running processes, running a process,",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Running processes. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5818,6 +5901,7 @@ class Metadata {
 								"keywords" => "work steps, processes",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Work steps. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5832,6 +5916,7 @@ class Metadata {
 								"keywords" => "Aktionen, Prozesse, Client",
 								"description" => "Overview of the procedures and control elements that can be configured in the plentymarkets Client.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Procedures/control elements. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5846,6 +5931,7 @@ class Metadata {
 								"keywords" => "Sub-procedures, processes, client",
 								"description" => "Overview of the sub-procedures that can be configured in the plentymarkets Client.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Sub-procedures. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5860,6 +5946,7 @@ class Metadata {
 								"keywords" => "Processes, Procedures, Troubleshooting",
 								"description" => "Specify how processes are to be continued when errors occur.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Troubleshooting. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -5877,6 +5964,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Installing plentyBase",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Installing plentyBase. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5891,6 +5979,7 @@ class Metadata {
 						"keywords" => "plentymarkets Client, Installation, Download",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic plentymarkets Client. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5905,6 +5994,7 @@ class Metadata {
 						"keywords" => "Automating processes, Best Practice, Orders",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Automating processes. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5919,6 +6009,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Procedure manager. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5933,6 +6024,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Event procedures. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5944,12 +6036,13 @@ class Metadata {
 				"path" => "basics/version-upgrade",
 				"position" => 50,
 				"urlName" => "version-upgrade",
-				"url" => "/basics/version-upgrade",
+				"url" => "/en/basics/version-upgrade",
 				"level" => 2,
 				"title" => "Version upgrade",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Version upgrade. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "59da52574c990bc110e3981eb6fa3f03",
@@ -5962,6 +6055,7 @@ class Metadata {
 						"keywords" => "plentymarkets 7, Migration, Migration guide",
 						"description" => "Guide for migrating to plentymarkets 7",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Migration guide. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5976,6 +6070,7 @@ class Metadata {
 						"keywords" => "plentymarkets 7, Changes, Items, Variations",
 						"description" => "Overview of changes to the item architecture in plentymarkets 7",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Changes. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5993,30 +6088,33 @@ class Metadata {
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Statistics. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "95e9d49bb171e13fa430d57c622fc3c0",
 						"path" => "basics/statistics/general-statistics",
 						"position" => 10,
 						"urlName" => "general-statistics",
-						"url" => "/basics/statistics/general-statistics",
+						"url" => "/en/basics/statistics/general-statistics",
 						"level" => 3,
 						"title" => "General statistics",
 						"keywords" => "Statistik,Allgemeine Statistiken",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic General statistics. The following information is available:",
 						"children" => 						[
 							[
 								"id" => "965998b236da7760b55d4272dab56152",
 								"path" => "basics/statistics/general-statistics/revenue",
 								"position" => 10,
 								"urlName" => "revenue",
-								"url" => "/basics/statistics/general-statistics/revenue",
+								"url" => "/en/basics/statistics/general-statistics/revenue",
 								"level" => 4,
 								"title" => "Revenue",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Revenue. The following information is available:",
 								"children" => 								[
 									[
 										"id" => "0928884c008b42249aa07c2916ce5b12",
@@ -6029,6 +6127,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Total revenue. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6043,6 +6142,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Returns / credit notes / cancellations. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6057,6 +6157,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Revenue item group. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6071,6 +6172,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Revenue referrer item. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6085,6 +6187,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Revenue referrer order. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6099,6 +6202,7 @@ class Metadata {
 										"keywords" => "Revenue, Sales representative, Statistics",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Revenue sales representative. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6113,6 +6217,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Revenue producers. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6127,6 +6232,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Revenue by category. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6141,6 +6247,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Revenues by countries of delivery. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6155,6 +6262,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Revenue shipping region. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6169,6 +6277,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Revenue by payment method. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6183,6 +6292,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Shipping costs. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6197,6 +6307,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Shopping cart development. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									]
@@ -6208,12 +6319,13 @@ class Metadata {
 								"path" => "basics/statistics/general-statistics/processes",
 								"position" => 20,
 								"urlName" => "processes",
-								"url" => "/basics/statistics/general-statistics/processes",
+								"url" => "/en/basics/statistics/general-statistics/processes",
 								"level" => 4,
 								"title" => "Processes",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Processes. The following information is available:",
 								"children" => 								[
 									[
 										"id" => "bacd649201083f2f82d52bad07526ec0",
@@ -6226,6 +6338,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Processing times. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6240,6 +6353,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Pending amounts. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6254,6 +6368,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Current sales orders. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6268,6 +6383,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Shipping orders. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									]
@@ -6279,12 +6395,13 @@ class Metadata {
 								"path" => "basics/statistics/general-statistics/sales-orders",
 								"position" => 30,
 								"urlName" => "sales-orders",
-								"url" => "/basics/statistics/general-statistics/sales-orders",
+								"url" => "/en/basics/statistics/general-statistics/sales-orders",
 								"level" => 4,
 								"title" => "Sales orders",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Sales orders. The following information is available:",
 								"children" => 								[
 									[
 										"id" => "753ad01bb31e52182b7de28a702076e7",
@@ -6297,6 +6414,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Sales order items. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6311,6 +6429,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Reasons of returns. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6325,6 +6444,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Sent E-mail templates. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									]
@@ -6336,12 +6456,13 @@ class Metadata {
 								"path" => "basics/statistics/general-statistics/item",
 								"position" => 40,
 								"urlName" => "item",
-								"url" => "/basics/statistics/general-statistics/item",
+								"url" => "/en/basics/statistics/general-statistics/item",
 								"level" => 4,
 								"title" => "Item",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Item. The following information is available:",
 								"children" => 								[
 									[
 										"id" => "1957c7d340ac6e215b0a4900b1f36f7d",
@@ -6354,6 +6475,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Sold quantities / returns. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6368,6 +6490,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Tops / Flops. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6382,6 +6505,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Sold item quantities. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									]
@@ -6393,12 +6517,13 @@ class Metadata {
 								"path" => "basics/statistics/general-statistics/warehouse",
 								"position" => 50,
 								"urlName" => "warehouse",
-								"url" => "/basics/statistics/general-statistics/warehouse",
+								"url" => "/en/basics/statistics/general-statistics/warehouse",
 								"level" => 4,
 								"title" => "Warehouse",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Warehouse. The following information is available:",
 								"children" => 								[
 									[
 										"id" => "4739d8100bdfce047c0a135b7d446145",
@@ -6411,6 +6536,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Current stock. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6425,6 +6551,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Reorder levels. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6433,12 +6560,13 @@ class Metadata {
 										"path" => "basics/statistics/general-statistics/warehouse/stock",
 										"position" => 30,
 										"urlName" => "stock",
-										"url" => "/basics/statistics/general-statistics/warehouse/stock",
+										"url" => "/en/basics/statistics/general-statistics/warehouse/stock",
 										"level" => 5,
 										"title" => "Stock",
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Stock. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6453,6 +6581,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Incoming items by date. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6461,12 +6590,13 @@ class Metadata {
 										"path" => "basics/statistics/general-statistics/warehouse/value-of-items-by-supplier",
 										"position" => 50,
 										"urlName" => "value-of-items-by-supplier",
-										"url" => "/basics/statistics/general-statistics/warehouse/value-of-items-by-supplier",
+										"url" => "/en/basics/statistics/general-statistics/warehouse/value-of-items-by-supplier",
 										"level" => 5,
 										"title" => "Value of items by supplier",
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Value of items by supplier. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6481,6 +6611,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Item revenue. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6495,6 +6626,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Value of items. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6509,6 +6641,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Incoming items by supplier. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6523,6 +6656,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Customs list for outgoing items. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									]
@@ -6534,12 +6668,13 @@ class Metadata {
 								"path" => "basics/statistics/general-statistics/customers",
 								"position" => 70,
 								"urlName" => "customers",
-								"url" => "/basics/statistics/general-statistics/customers",
+								"url" => "/en/basics/statistics/general-statistics/customers",
 								"level" => 4,
 								"title" => "Customers",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Customers. The following information is available:",
 								"children" => 								[
 									[
 										"id" => "d11556f32a1e2547973c666fff46530a",
@@ -6552,6 +6687,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Revenue customer class. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6566,6 +6702,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Consumer behaviour. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6580,6 +6717,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Top / Flop customers. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									]
@@ -6591,12 +6729,13 @@ class Metadata {
 								"path" => "basics/statistics/general-statistics/tickets",
 								"position" => 80,
 								"urlName" => "tickets",
-								"url" => "/basics/statistics/general-statistics/tickets",
+								"url" => "/en/basics/statistics/general-statistics/tickets",
 								"level" => 4,
 								"title" => "Tickets",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Tickets. The following information is available:",
 								"children" => 								[
 									[
 										"id" => "3bedb1512324e19ae297fdc9d6a33d9d",
@@ -6609,6 +6748,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Tickets by status. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6617,12 +6757,13 @@ class Metadata {
 										"path" => "basics/statistics/general-statistics/tickets/tickets-by-current-status",
 										"position" => 15,
 										"urlName" => "tickets-by-current-status",
-										"url" => "/basics/statistics/general-statistics/tickets/tickets-by-current-status",
+										"url" => "/en/basics/statistics/general-statistics/tickets/tickets-by-current-status",
 										"level" => 5,
 										"title" => "Tickets by current status",
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Tickets by current status. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									],
@@ -6637,6 +6778,7 @@ class Metadata {
 										"keywords" => "",
 										"description" => "",
 										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Tickets by system state. The following information is available:",
 										"children" => [],
 										"hasChildren" => false
 									]
@@ -6651,12 +6793,13 @@ class Metadata {
 						"path" => "basics/statistics/item-statistics",
 						"position" => 20,
 						"urlName" => "item-statistics",
-						"url" => "/basics/statistics/item-statistics",
+						"url" => "/en/basics/statistics/item-statistics",
 						"level" => 3,
 						"title" => "Item statistics",
 						"keywords" => "Statistiken,Artikelstatistiken",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Item statistics. The following information is available:",
 						"children" => 						[
 							[
 								"id" => "5b0578cd69e6b245c5d2fe811f9364d9",
@@ -6669,6 +6812,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Returns. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -6677,12 +6821,13 @@ class Metadata {
 								"path" => "basics/statistics/item-statistics/revenue-by-date",
 								"position" => 20,
 								"urlName" => "revenue-by-date",
-								"url" => "/basics/statistics/item-statistics/revenue-by-date",
+								"url" => "/en/basics/statistics/item-statistics/revenue-by-date",
 								"level" => 4,
 								"title" => "Revenue by date",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Revenue by date. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -6691,12 +6836,13 @@ class Metadata {
 								"path" => "basics/statistics/item-statistics/revenue-by-referrer",
 								"position" => 30,
 								"urlName" => "revenue-by-referrer",
-								"url" => "/basics/statistics/item-statistics/revenue-by-referrer",
+								"url" => "/en/basics/statistics/item-statistics/revenue-by-referrer",
 								"level" => 4,
 								"title" => "Revenue by referrer",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Revenue by referrer. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -6705,12 +6851,13 @@ class Metadata {
 								"path" => "basics/statistics/item-statistics/revenue-by-country-of-delivery",
 								"position" => 40,
 								"urlName" => "revenue-by-country-of-delivery",
-								"url" => "/basics/statistics/item-statistics/revenue-by-country-of-delivery",
+								"url" => "/en/basics/statistics/item-statistics/revenue-by-country-of-delivery",
 								"level" => 4,
 								"title" => "Revenue by country of delivery",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Revenue by country of delivery. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -6719,12 +6866,13 @@ class Metadata {
 								"path" => "basics/statistics/item-statistics/revenue-by-multishop",
 								"position" => 50,
 								"urlName" => "revenue-by-multishop",
-								"url" => "/basics/statistics/item-statistics/revenue-by-multishop",
+								"url" => "/en/basics/statistics/item-statistics/revenue-by-multishop",
 								"level" => 4,
 								"title" => "Revenue by multishop",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Revenue by multishop. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -6733,12 +6881,13 @@ class Metadata {
 								"path" => "basics/statistics/item-statistics/revenue-by-variants",
 								"position" => 60,
 								"urlName" => "revenue-by-variants",
-								"url" => "/basics/statistics/item-statistics/revenue-by-variants",
+								"url" => "/en/basics/statistics/item-statistics/revenue-by-variants",
 								"level" => 4,
 								"title" => "Revenue by variants",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Revenue by variants. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -6747,12 +6896,13 @@ class Metadata {
 								"path" => "basics/statistics/item-statistics/stock",
 								"position" => 70,
 								"urlName" => "stock",
-								"url" => "/basics/statistics/item-statistics/stock",
+								"url" => "/en/basics/statistics/item-statistics/stock",
 								"level" => 4,
 								"title" => "Stock",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Stock. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -6767,6 +6917,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Incoming items by date. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -6775,12 +6926,13 @@ class Metadata {
 								"path" => "basics/statistics/item-statistics/value-of-items",
 								"position" => 100,
 								"urlName" => "value-of-items",
-								"url" => "/basics/statistics/item-statistics/value-of-items",
+								"url" => "/en/basics/statistics/item-statistics/value-of-items",
 								"level" => 4,
 								"title" => "Value of items",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Value of items. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -6789,12 +6941,13 @@ class Metadata {
 								"path" => "basics/statistics/item-statistics/value-of-items-by-supplier",
 								"position" => 110,
 								"urlName" => "value-of-items-by-supplier",
-								"url" => "/basics/statistics/item-statistics/value-of-items-by-supplier",
+								"url" => "/en/basics/statistics/item-statistics/value-of-items-by-supplier",
 								"level" => 4,
 								"title" => "Value of items by supplier",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Value of items by supplier. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -6806,12 +6959,13 @@ class Metadata {
 						"path" => "basics/statistics/customer-statistics",
 						"position" => 30,
 						"urlName" => "customer-statistics",
-						"url" => "/basics/statistics/customer-statistics",
+						"url" => "/en/basics/statistics/customer-statistics",
 						"level" => 3,
 						"title" => "Customer statistics",
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Customer statistics. The following information is available:",
 						"children" => 						[
 							[
 								"id" => "658e91cea1d8d1b1df8fcf53038c3968",
@@ -6824,6 +6978,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Total revenue. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -6838,6 +6993,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Revenue by category. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -6852,6 +7008,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Revenue referrer order. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -6863,12 +7020,13 @@ class Metadata {
 						"path" => "basics/statistics/statistics",
 						"position" => 70,
 						"urlName" => "statistics",
-						"url" => "/basics/statistics/statistics",
+						"url" => "/en/basics/statistics/statistics",
 						"level" => 3,
 						"title" => "Statistics",
 						"keywords" => "Store, Client, Web visitor statistics, Tracking",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Statistics. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -6889,6 +7047,7 @@ class Metadata {
 		"keywords" => "",
 		"description" => "",
 		"navAlias" => "",
+		"linkListInto" => "Welcome to the topic Items. The following information is available:",
 		"children" => 		[
 			[
 				"id" => "c1b444c5e01ad2a5abeff5125ab1d808",
@@ -6901,6 +7060,7 @@ class Metadata {
 				"keywords" => "",
 				"description" => "Learn how to create and manage items in plentymarkets.",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing items. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -6915,6 +7075,7 @@ class Metadata {
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Categories. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "c13ff71dbf19ee9558de3d72e29b1cba",
@@ -6927,6 +7088,7 @@ class Metadata {
 						"keywords" => "categories, item, content",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Editing categories. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -6941,6 +7103,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Editing categories of the type Item. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -6955,6 +7118,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Editing categories of the type Content. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -6969,6 +7133,7 @@ class Metadata {
 						"keywords" => "Category type Container, categories, plentymarkets",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Editing categories of the type Container. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -6983,6 +7148,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Multilingual category pages. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -6991,12 +7157,13 @@ class Metadata {
 						"path" => "item/categories/discounts",
 						"position" => 45,
 						"urlName" => "discounts",
-						"url" => "/item/categories/discounts",
+						"url" => "/en/item/categories/discounts",
 						"level" => 3,
 						"title" => "Category discounts",
 						"keywords" => "Store, Client, Categories, Discounts",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Category discounts. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -7011,24 +7178,26 @@ class Metadata {
 		"path" => "omni-channel",
 		"position" => 30,
 		"urlName" => "omni-channel",
-		"url" => "/omni-channel",
+		"url" => "/en/omni-channel",
 		"level" => 1,
 		"title" => "Omni-Channel",
 		"keywords" => "",
 		"description" => "",
 		"navAlias" => "",
+		"linkListInto" => "Welcome to the topic Omni-Channel. The following information is available:",
 		"children" => 		[
 			[
 				"id" => "1d59ab36b1474037ec6c09e81e365102",
 				"path" => "omni-channel/multi-channel",
 				"position" => 10,
 				"urlName" => "multi-channel",
-				"url" => "/omni-channel/multi-channel",
+				"url" => "/en/omni-channel/multi-channel",
 				"level" => 2,
 				"title" => "Multi-Channel",
 				"keywords" => "",
 				"description" => "Multi-Channel in plentymarkets: Setting up interfaces to all available sales channels, such as markets and price comparison portals.",
 				"navAlias" => "Overview",
+				"linkListInto" => "Welcome to the topic Multi-Channel. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "7b0c81fccd804d676dcfeeff6d97cc22",
@@ -7041,6 +7210,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Allyouneed in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Allyouneed. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7055,6 +7225,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Amazon in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Amazon. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7069,6 +7240,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market bol.com in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic bol.com. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7083,6 +7255,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Cdiscount in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Cdiscount. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7097,6 +7270,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Check24 in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Check24. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7111,6 +7285,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market DaWanda in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic DaWanda. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7125,6 +7300,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market eBay in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic eBay. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7139,6 +7315,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Flubit in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Flubit. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7153,6 +7330,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Fruugo in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Fruugo. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7167,6 +7345,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market grosshandel.eu in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic grosshandel.eu. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7181,6 +7360,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Hood in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Hood. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7195,6 +7375,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market idealo Checkout in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic idealo Checkout. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7203,12 +7384,13 @@ class Metadata {
 						"path" => "omni-channel/multi-channel/kauflux",
 						"position" => 130,
 						"urlName" => "kauflux",
-						"url" => "/omni-channel/multi-channel/kauflux",
+						"url" => "/en/omni-channel/multi-channel/kauflux",
 						"level" => 3,
 						"title" => "Kauflux",
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Kauflux in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Kauflux. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7223,6 +7405,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market La Redoute in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic La Redoute. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7237,6 +7420,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Mercateo in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Mercateo. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7251,6 +7435,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Neckermann Austria in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Neckermann.at. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7259,12 +7444,13 @@ class Metadata {
 						"path" => "omni-channel/multi-channel/otto",
 						"position" => 170,
 						"urlName" => "otto",
-						"url" => "/omni-channel/multi-channel/otto",
+						"url" => "/en/omni-channel/multi-channel/otto",
 						"level" => 3,
 						"title" => "OTTO",
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market OTTO in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic OTTO. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7279,6 +7465,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market PIXmania in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic PIXmania. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7293,6 +7480,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the markets Plus.de and GartenXXL.de in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Plus.de and GartenXXL.de. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7307,6 +7495,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Rakuten in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Rakuten. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7321,6 +7510,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market real,de in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic real.de. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7335,6 +7525,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Restposten.de in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Restposten.de. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7349,6 +7540,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market ricardo.ch in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic ricardo.ch. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7363,6 +7555,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Shopgate in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Shopgate. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7377,6 +7570,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Yatego in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Yatego. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7391,6 +7585,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Zalando in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Zalando. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -7408,6 +7603,7 @@ class Metadata {
 				"keywords" => "Online store, Client (store)",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Online store. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "681432d84eb02f035e83e00b98337422",
@@ -7420,6 +7616,7 @@ class Metadata {
 						"keywords" => "Store, Client, Standard",
 						"description" => "",
 						"navAlias" => "Setting up clients",
+						"linkListInto" => "Welcome to the topic Clients. The following information is available:",
 						"children" => 						[
 							[
 								"id" => "c61557b0f6fa176271cd1c53bc629436",
@@ -7432,6 +7629,7 @@ class Metadata {
 								"keywords" => "Locations, Accounting, Headquarters",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Locations. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7446,6 +7644,7 @@ class Metadata {
 								"keywords" => "Store settings",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Online store. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7460,6 +7659,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Multilingual online store. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7474,6 +7674,7 @@ class Metadata {
 								"keywords" => "Store, Client, Item layouts, Basic settings",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Item layouts. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7482,12 +7683,13 @@ class Metadata {
 								"path" => "omni-channel/online-store/setting-up-clients/item-sorting",
 								"position" => 50,
 								"urlName" => "item-sorting",
-								"url" => "/omni-channel/online-store/setting-up-clients/item-sorting",
+								"url" => "/en/omni-channel/online-store/setting-up-clients/item-sorting",
 								"level" => 4,
 								"title" => "Item sorting",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Item sorting. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7502,6 +7704,7 @@ class Metadata {
 								"keywords" => "Online store, Client, Order process",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Order process. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7516,6 +7719,7 @@ class Metadata {
 								"keywords" => "Mein Konto",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic My account. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7530,6 +7734,7 @@ class Metadata {
 								"keywords" => "Module",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Modules. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -7541,24 +7746,26 @@ class Metadata {
 						"path" => "omni-channel/online-store/extras",
 						"position" => 20,
 						"urlName" => "extras",
-						"url" => "/omni-channel/online-store/extras",
+						"url" => "/en/omni-channel/online-store/extras",
 						"level" => 3,
 						"title" => "Extras",
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Extras. The following information is available:",
 						"children" => 						[
 							[
 								"id" => "bb224b394c14c39f9b65291b06d61d61",
 								"path" => "omni-channel/online-store/extras/address-doctor",
 								"position" => 10,
 								"urlName" => "address-doctor",
-								"url" => "/omni-channel/online-store/extras/address-doctor",
+								"url" => "/en/omni-channel/online-store/extras/address-doctor",
 								"level" => 4,
 								"title" => "AddressDoctor",
 								"keywords" => "AddressDoctor, Access data",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic AddressDoctor. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7573,6 +7780,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic BeezUP. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7587,6 +7795,7 @@ class Metadata {
 								"keywords" => "bit.ly, twitter, plentymarkets",
 								"description" => "Use bit.ly to directly shorten the URLs that plentymarkets automatically generates via the procedure manager, e.g. for Twitter messages.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic bit.ly. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7601,6 +7810,7 @@ class Metadata {
 								"keywords" => "Online store, Client, Cliplister",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Cliplister. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7615,6 +7825,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Customer feedback. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7623,12 +7834,13 @@ class Metadata {
 								"path" => "omni-channel/online-store/extras/easymarketing",
 								"position" => 60,
 								"urlName" => "easymarketing",
-								"url" => "/omni-channel/online-store/extras/easymarketing",
+								"url" => "/en/omni-channel/online-store/extras/easymarketing",
 								"level" => 4,
 								"title" => "EASYMARKETING",
 								"keywords" => "easymarketing",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic EASYMARKETING. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7643,6 +7855,7 @@ class Metadata {
 								"keywords" => "econda",
 								"description" => "The econda Shop Monitor is a fully integrated e-commerce data center to professionally analyze and optimize your online store.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic econda. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7657,6 +7870,7 @@ class Metadata {
 								"keywords" => "eKomi, Client, Store",
 								"description" => "Use eKomi to set up authentic customer opinions in your online store, thus significantly increasing your conversion rate.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic eKomi. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7671,6 +7885,7 @@ class Metadata {
 								"keywords" => "Elmar, External services, Store, Client",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Elmar. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7679,12 +7894,13 @@ class Metadata {
 								"path" => "omni-channel/online-store/extras/etracker",
 								"position" => 100,
 								"urlName" => "etracker",
-								"url" => "/omni-channel/online-store/extras/etracker",
+								"url" => "/en/omni-channel/online-store/extras/etracker",
 								"level" => 4,
 								"title" => "etracker",
 								"keywords" => "etracker",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic etracker. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7699,6 +7915,7 @@ class Metadata {
 								"keywords" => "Facebook, Online store, Social Media",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Facebook. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7713,6 +7930,7 @@ class Metadata {
 								"keywords" => "Faceted search, Store search",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Faceted search. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7727,6 +7945,7 @@ class Metadata {
 								"keywords" => "Store, Client, Familienkarte Hessen",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Family card Hesse. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7735,12 +7954,13 @@ class Metadata {
 								"path" => "omni-channel/online-store/extras/findologic",
 								"position" => 140,
 								"urlName" => "findologic",
-								"url" => "/omni-channel/online-store/extras/findologic",
+								"url" => "/en/omni-channel/online-store/extras/findologic",
 								"level" => 4,
 								"title" => "FINDOLOGIC",
 								"keywords" => "FINDOLOGIC, Online store, Services",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic FINDOLOGIC. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7755,6 +7975,7 @@ class Metadata {
 								"keywords" => "Legal information, Händlerbund",
 								"description" => "plentymarkets integration: Set up the interface to Händlerbund and the rating tool in plentymarkets.",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Händlerbund. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7769,6 +7990,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic IT-Recht Kanzlei. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7783,6 +8005,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Janolaw. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7791,12 +8014,13 @@ class Metadata {
 								"path" => "omni-channel/online-store/extras/language-packages",
 								"position" => 180,
 								"urlName" => "language-packages",
-								"url" => "/omni-channel/online-store/extras/language-packages",
+								"url" => "/en/omni-channel/online-store/extras/language-packages",
 								"level" => 4,
 								"title" => "Language packages",
 								"keywords" => "Webshop, Mandant, Sprachpakete",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Language packages. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7805,12 +8029,13 @@ class Metadata {
 								"path" => "omni-channel/online-store/extras/lionbridge",
 								"position" => 190,
 								"urlName" => "lionbridge",
-								"url" => "/omni-channel/online-store/extras/lionbridge",
+								"url" => "/en/omni-channel/online-store/extras/lionbridge",
 								"level" => 4,
 								"title" => "Lionbridge",
 								"keywords" => "Lionbridge",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Lionbridge. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7825,6 +8050,7 @@ class Metadata {
 								"keywords" => "Online store, Client, Live shopping",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Live shopping. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7833,12 +8059,13 @@ class Metadata {
 								"path" => "omni-channel/online-store/extras/picalike",
 								"position" => 210,
 								"urlName" => "picalike",
-								"url" => "/omni-channel/online-store/extras/picalike",
+								"url" => "/en/omni-channel/online-store/extras/picalike",
 								"level" => 4,
 								"title" => "picalike",
 								"keywords" => "Online store, Client, picalike",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic picalike. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7853,6 +8080,7 @@ class Metadata {
 								"keywords" => "Protected Shops, Online store, Client (store)",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Protected Shops. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7867,6 +8095,7 @@ class Metadata {
 								"keywords" => "Store, Client, Social Media",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Social Media. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7881,6 +8110,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Sweepstakes. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7889,12 +8119,13 @@ class Metadata {
 								"path" => "omni-channel/online-store/extras/testberichte-de",
 								"position" => 250,
 								"urlName" => "testberichte-de",
-								"url" => "/omni-channel/online-store/extras/testberichte-de",
+								"url" => "/en/omni-channel/online-store/extras/testberichte-de",
 								"level" => 4,
 								"title" => "Testberichte.de",
 								"keywords" => "Testberichte, Services, Client",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Testberichte.de. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7903,12 +8134,13 @@ class Metadata {
 								"path" => "omni-channel/online-store/extras/treepodia",
 								"position" => 260,
 								"urlName" => "treepodia",
-								"url" => "/omni-channel/online-store/extras/treepodia",
+								"url" => "/en/omni-channel/online-store/extras/treepodia",
 								"level" => 4,
 								"title" => "Treepodia",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Treepodia. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7923,6 +8155,7 @@ class Metadata {
 								"keywords" => "trust, trustedshops, excellence, classic",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Trusted Shops. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7931,12 +8164,13 @@ class Metadata {
 								"path" => "omni-channel/online-store/extras/twenga",
 								"position" => 280,
 								"urlName" => "twenga",
-								"url" => "/omni-channel/online-store/extras/twenga",
+								"url" => "/en/omni-channel/online-store/extras/twenga",
 								"level" => 4,
 								"title" => "Twenga",
 								"keywords" => "Twenga",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Twenga. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7951,6 +8185,7 @@ class Metadata {
 								"keywords" => "Store, Client, Twitter",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Twitter. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7965,6 +8200,7 @@ class Metadata {
 								"keywords" => "Universal Analytics, Tracking",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Universal Analytics. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7973,12 +8209,13 @@ class Metadata {
 								"path" => "omni-channel/online-store/extras/yoochoose",
 								"position" => 310,
 								"urlName" => "yoochoose",
-								"url" => "/omni-channel/online-store/extras/yoochoose",
+								"url" => "/en/omni-channel/online-store/extras/yoochoose",
 								"level" => 4,
 								"title" => "YOOCHOOSE",
 								"keywords" => "yoochoose, cross-selling, recommendations",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic YOOCHOOSE. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -7996,6 +8233,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic CMS. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8010,6 +8248,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic CMS syntax. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -8027,6 +8266,7 @@ class Metadata {
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic POS. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "e9391bbf40aa18884433f85ddec311b8",
@@ -8039,6 +8279,7 @@ class Metadata {
 						"keywords" => "plentymarkets POS, POS, till, till system",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Integrating plentymarkets POS. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8053,6 +8294,7 @@ class Metadata {
 						"keywords" => "plentymarkets POS, point of sale, POS, plentymarkets POS, Pos user",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic plentymarkets POS for POS users. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -8070,6 +8312,7 @@ class Metadata {
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Order referrer. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -8081,12 +8324,13 @@ class Metadata {
 		"path" => "order-processing",
 		"position" => 40,
 		"urlName" => "order-processing",
-		"url" => "/order-processing",
+		"url" => "/en/order-processing",
 		"level" => 1,
 		"title" => "Order processing",
 		"keywords" => "",
 		"description" => "",
 		"navAlias" => "",
+		"linkListInto" => "Welcome to the topic Order processing. The following information is available:",
 		"children" => 		[
 			[
 				"id" => "f6997ca2c35288b2c116b7ac600e9d72",
@@ -8099,6 +8343,7 @@ class Metadata {
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Orders. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "302a9a3d9bf1db1ab9da57230b9d88e8",
@@ -8111,6 +8356,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing orders. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8125,18 +8371,20 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Fulfillment. The following information is available:",
 						"children" => 						[
 							[
 								"id" => "df9aa18c5b934040c9a0db1eb0d7102f",
 								"path" => "order-processing/orders/order-documents/generating-invoices",
 								"position" => 10,
 								"urlName" => "generating-invoices",
-								"url" => "/order-processing/orders/order-documents/generating-invoices",
+								"url" => "/en/order-processing/orders/order-documents/generating-invoices",
 								"level" => 4,
 								"title" => "Generating invoices",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Generating invoices. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -8145,12 +8393,13 @@ class Metadata {
 								"path" => "order-processing/orders/order-documents/generating-delivery-notes",
 								"position" => 30,
 								"urlName" => "generating-delivery-notes",
-								"url" => "/order-processing/orders/order-documents/generating-delivery-notes",
+								"url" => "/en/order-processing/orders/order-documents/generating-delivery-notes",
 								"level" => 4,
 								"title" => "Generating delivery notes",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Generating delivery notes. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -8159,12 +8408,13 @@ class Metadata {
 								"path" => "order-processing/orders/order-documents/generating-credit-notes",
 								"position" => 35,
 								"urlName" => "generating-credit-notes",
-								"url" => "/order-processing/orders/order-documents/generating-credit-notes",
+								"url" => "/en/order-processing/orders/order-documents/generating-credit-notes",
 								"level" => 4,
 								"title" => "Generating credit notes",
 								"keywords" => "Credit note",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Generating credit notes. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -8179,6 +8429,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Pick list. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -8193,6 +8444,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Warehouse pick list. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -8207,6 +8459,7 @@ class Metadata {
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Packing list. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -8215,12 +8468,13 @@ class Metadata {
 								"path" => "order-processing/orders/order-documents/data-medium-exchange-export",
 								"position" => 60,
 								"urlName" => "data-medium-exchange-export",
-								"url" => "/order-processing/orders/order-documents/data-medium-exchange-export",
+								"url" => "/en/order-processing/orders/order-documents/data-medium-exchange-export",
 								"level" => 4,
 								"title" => "Data medium exchange export",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Data medium exchange export. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -8229,12 +8483,13 @@ class Metadata {
 								"path" => "order-processing/orders/order-documents/generating-dunning-letters",
 								"position" => 90,
 								"urlName" => "generating-dunning-letters",
-								"url" => "/order-processing/orders/order-documents/generating-dunning-letters",
+								"url" => "/en/order-processing/orders/order-documents/generating-dunning-letters",
 								"level" => 4,
 								"title" => "Generating dunning letters",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Generating dunning letters. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -8243,12 +8498,13 @@ class Metadata {
 								"path" => "order-processing/orders/order-documents/generating-an-entry-certificate-gelangensbestaetigung",
 								"position" => 94,
 								"urlName" => "generating-an-entry-certificate-gelangensbestaetigung",
-								"url" => "/order-processing/orders/order-documents/generating-an-entry-certificate-gelangensbestaetigung",
+								"url" => "/en/order-processing/orders/order-documents/generating-an-entry-certificate-gelangensbestaetigung",
 								"level" => 4,
 								"title" => "Generating an entry certificate (Gelangensbestätigung)",
 								"keywords" => "Entry certificate (Gelangensbestätigung)",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Generating an entry certificate (Gelangensbestätigung). The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -8257,12 +8513,13 @@ class Metadata {
 								"path" => "order-processing/orders/order-documents/generating-a-return-label",
 								"position" => 96,
 								"urlName" => "generating-a-return-label",
-								"url" => "/order-processing/orders/order-documents/generating-a-return-label",
+								"url" => "/en/order-processing/orders/order-documents/generating-a-return-label",
 								"level" => 4,
 								"title" => "Generating a return label",
 								"keywords" => "Return label",
 								"description" => "",
 								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Generating a return label. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -8280,6 +8537,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Multi-orders. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8294,6 +8552,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Scheduler. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8308,6 +8567,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Coupons. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8316,12 +8576,13 @@ class Metadata {
 						"path" => "order-processing/orders/document-archive",
 						"position" => 70,
 						"urlName" => "document-archive",
-						"url" => "/order-processing/orders/document-archive",
+						"url" => "/en/order-processing/orders/document-archive",
 						"level" => 3,
 						"title" => "Document archive",
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Document archive. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -8339,6 +8600,7 @@ class Metadata {
 				"keywords" => "Payment providers, payment methods, payments",
 				"description" => "Payment in plentymarkets: Manage payments and set up interfaces for payment methods and payment providers.",
 				"navAlias" => "Overview",
+				"linkListInto" => "Welcome to the topic Payment. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "b39fb4f54271be295a26d35eb5832dc1",
@@ -8351,6 +8613,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Payment in plentymarkets: Set up and activate payment methods in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing payment methods. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8365,6 +8628,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Payment in plentymarkets: Learn more about incoming and outgoing payments.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing payments. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8379,6 +8643,7 @@ class Metadata {
 						"keywords" => "Bank, Bank details, EBICS, SEPA, SEPA direct debit mandate",
 						"description" => "Payment in plentymarkets: Manage your bank details and the bank details of your customers. Set up EBICS and SEPA in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing bank details. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8393,6 +8658,7 @@ class Metadata {
 						"keywords" => "currency, standard currency, live conversion",
 						"description" => "Payment in plentymarkets: Configure currencies in your plentymarkets system and change the display options of currencies in the online store.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Configuring currencies. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8407,6 +8673,7 @@ class Metadata {
 						"keywords" => "PayPal, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to PayPal in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic PayPal. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8421,6 +8688,7 @@ class Metadata {
 						"keywords" => "PayPal Plus, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to PayPal PLUS in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic PayPal PLUS. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8435,6 +8703,7 @@ class Metadata {
 						"keywords" => "Amazon Payments Advanced, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Amazon Payments Advanced in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Amazon Payments Advanced. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8449,6 +8718,7 @@ class Metadata {
 						"keywords" => "Klarna, Klarna invoice, Klarna account, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Klarna in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Klarna. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8463,6 +8733,7 @@ class Metadata {
 						"keywords" => "Klarna Checkout UK, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Klarna Checkout UK in plentymarkets.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Klarna Checkout UK. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8477,6 +8748,7 @@ class Metadata {
 						"keywords" => "Klarna Checkout, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Klarna Checkout in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Klarna Checkout. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8491,6 +8763,7 @@ class Metadata {
 						"keywords" => "sofortueberweisung, payment methods",
 						"description" => "Payment in plentymarkets: Set up the interface to SOFORT Überweisung in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic SOFORT Überweisung. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8505,6 +8778,7 @@ class Metadata {
 						"keywords" => "PAYONE, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to PAYONE in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic PAYONE. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8519,6 +8793,7 @@ class Metadata {
 						"keywords" => "Sage Pay, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Sage Pay in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Sage Pay. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8533,6 +8808,7 @@ class Metadata {
 						"keywords" => "BillSAFE. payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to BillSAFE in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic BillSAFE. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8547,6 +8823,7 @@ class Metadata {
 						"keywords" => "BitPay, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to BitPay in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic BitPay. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8561,6 +8838,7 @@ class Metadata {
 						"keywords" => "ConCardis, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to ConCardis in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic ConCardis. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8575,6 +8853,7 @@ class Metadata {
 						"keywords" => "ExperCash, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to ExperCash in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic ExperCash. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8589,6 +8868,7 @@ class Metadata {
 						"keywords" => "heidelpay, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to heidelpay in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic heidelpay. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8603,6 +8883,7 @@ class Metadata {
 						"keywords" => "Masterpayment, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Masterpayment in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Masterpayment. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8617,6 +8898,7 @@ class Metadata {
 						"keywords" => "Paymorrow, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Paymorrow in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Paymorrow. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8631,6 +8913,7 @@ class Metadata {
 						"keywords" => "Payolution, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Payolution in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Payolution. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8645,6 +8928,7 @@ class Metadata {
 						"keywords" => "POSTPAY, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to POSTPAY in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic POSTPAY. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8659,6 +8943,7 @@ class Metadata {
 						"keywords" => "Saferpay, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Saferpay in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Saferpay. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8673,6 +8958,7 @@ class Metadata {
 						"keywords" => "Santander Consumer Bank, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Santander Consumer Bank in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Santander Consumer Bank. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8687,6 +8973,7 @@ class Metadata {
 						"keywords" => "UPG, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to UPG in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic UPG. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8701,6 +8988,7 @@ class Metadata {
 						"keywords" => "Skrill, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Skrill in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Skrill. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8715,6 +9003,7 @@ class Metadata {
 						"keywords" => "Wirecard, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Wirecard in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Wirecard. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8729,6 +9018,7 @@ class Metadata {
 						"keywords" => "Worldpay, payment method",
 						"description" => "Payment in plentymarkets: Set up the interface to Worldpay in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Worldpay. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8743,6 +9033,7 @@ class Metadata {
 						"keywords" => "ADU-Inkasso, debt collection service provider",
 						"description" => "Payment in plentymarkets: Set up the debt collection service provider ADU-Inkasso in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic ADU-Inkasso. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8757,6 +9048,7 @@ class Metadata {
 						"keywords" => "arvato, arvato infoscore, debt collection service provider, credit rating",
 						"description" => "Payment in plentymarkets: Set up the debt collection service provider arvato and the credit rating service arvato infoscore in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic arvato. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8771,6 +9063,7 @@ class Metadata {
 						"keywords" => "atriga, atrigapaymax, debt collection service provider, credit rating",
 						"description" => "Payment in plentymarkets: Set up the debt collection service provider atriga and the credit rating service atrigapaymax in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic atriga. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8785,6 +9078,7 @@ class Metadata {
 						"keywords" => "mediafinanz, debt collection service provider",
 						"description" => "Payment in plentymarkets: Set up the interface to the debt collection service provider mediafinanz in your plentymarkets system.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic mediafinanz. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -8802,6 +9096,7 @@ class Metadata {
 				"keywords" => "Preparing the shipment, using the shipping centre, generating documents",
 				"description" => "In this area, you will find all relevant information about shipping service providers, fulfilment service providers, shipping processes and shipping profiles.",
 				"navAlias" => "Overview",
+				"linkListInto" => "Welcome to the topic Fulfilment. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "473fe2fce29ec3d890d097c6f3768ea4",
@@ -8814,6 +9109,7 @@ class Metadata {
 						"keywords" => "Shipping service provider, fulfilment service provider, countries of delivery, regions, shipping profiles, table of shipping charges, shipping package, shipping costs, DHL Packstation, tracking URL",
 						"description" => "Learn how to set up shipping profiles, shipping packages and shipping service providers in plentymarkets.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Preparing the shipment. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8828,6 +9124,7 @@ class Metadata {
 						"keywords" => "Shipping centre, shipping order, polling file, shipping package, label",
 						"description" => "Learn how to register shipping orders and how to generate polling files and labels.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Using the shipping centre. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8842,6 +9139,7 @@ class Metadata {
 						"keywords" => "Shipping label, address label, list of delivery addresses, package number import, delivery list, barcode scanner",
 						"description" => "Learn how to export the list of delivery addresses, import package numbers, set up address labels and generate delivery lists.",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Generating documents. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -8862,6 +9160,7 @@ class Metadata {
 		"keywords" => "Stock, Stock management",
 		"description" => "",
 		"navAlias" => "Overview",
+		"linkListInto" => "Welcome to the topic Stock management. The following information is available:",
 		"children" => 		[
 			[
 				"id" => "60a4d808e6f1fab6a690ca7f92a224de",
@@ -8874,6 +9173,7 @@ class Metadata {
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Setting up a warehouse. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -8888,6 +9188,7 @@ class Metadata {
 				"keywords" => "booking stock, cancelling stock reservations, booking items, registering stock, new stock, adding stock",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing incoming items. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -8902,6 +9203,7 @@ class Metadata {
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing stock. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -8916,6 +9218,7 @@ class Metadata {
 				"keywords" => "reorder",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing reorders. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "8f1a761b79ced29acb7b1077660cb0e0",
@@ -8928,6 +9231,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Splitting reorders into work steps. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -8942,6 +9246,7 @@ class Metadata {
 						"keywords" => "return, undelivered stock, pending deliveries, backlog list",
 						"description" => "",
 						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing backlog lists. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -8959,6 +9264,7 @@ class Metadata {
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Booking items out. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -8973,6 +9279,7 @@ class Metadata {
 				"keywords" => "stock-taking, inventory taking, physical stock",
 				"description" => "",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Taking stock. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -8990,6 +9297,7 @@ class Metadata {
 		"keywords" => "Managing customer data, using the ticket system, sending emails",
 		"description" => "Learn how to manage your customer data, how to use the ticket system for your customer communication and how to send emails and newsletters.",
 		"navAlias" => "",
+		"linkListInto" => "Welcome to the topic CRM. The following information is available:",
 		"children" => 		[
 			[
 				"id" => "de807e43ceaa63263eef9f1b3809584d",
@@ -9002,6 +9310,7 @@ class Metadata {
 				"keywords" => "Customer class, customer type, customer data record, edit customers, customer search, delete customer, activity index, AR list, discount system, VAT number",
 				"description" => "Learn how to create and manage your customer data in plentymarkets.",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing customer data. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -9016,6 +9325,7 @@ class Metadata {
 				"keywords" => "Ticket system, ticket, role, type, status, signature, complimentary close, message, comment, template, child ticket, event procedure, procedure manager",
 				"description" => "Learn how to use the ticket system in plentymarkets for your customer communication.",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Using the ticket system. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -9030,6 +9340,7 @@ class Metadata {
 				"keywords" => "Access data, HTML design, information service, email template, template variables, template functions, automatic email, event procedure, aborted purchase email, emails, email, e-mail, e-mails",
 				"description" => "Learn how to set up email templates and automatically send emails to your customers.",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Sending emails. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -9044,6 +9355,7 @@ class Metadata {
 				"keywords" => "Double opt-in method, email template, email folder, newsletter access data, CleverReach, Newsletter2Go, newsletter",
 				"description" => "Learn how to send newsletters to your customers with Newsletter2Go, CleverReach or the newsletters that is integrated in plentymarkets.",
 				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Sending newsletters. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			]
