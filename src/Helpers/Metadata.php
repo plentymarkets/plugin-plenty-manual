@@ -9296,7 +9296,7 @@ class Metadata {
 		"title" => "CRM",
 		"keywords" => "Managing customer data, using the ticket system, sending emails",
 		"description" => "Learn how to manage your customer data, how to use the ticket system for your customer communication and how to send emails and newsletters.",
-		"navAlias" => "",
+		"navAlias" => "Overview",
 		"linkListInto" => "Welcome to the topic CRM. The following information is available:",
 		"children" => 		[
 			[
