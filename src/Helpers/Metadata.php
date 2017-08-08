@@ -4605,7 +4605,7 @@ class Metadata {
 				"url" => "/crm/e-mails-versenden",
 				"level" => 2,
 				"title" => "E-Mails versenden",
-				"keywords" => "Zugangsdaten, HTML-Design, Infodienst, E-Mail-Vorlage, Template-Variablen, Template-Funktionen, automatische E-Mail, Ereignisaktion, Kaufabbruch-E-Mail",
+				"keywords" => "Zugangsdaten, HTML-Design, Infodienst, E-Mail-Vorlage, Email-Vorlage, Email, E-Mail, Template-Variable, Template-Variablen, Template-Funktionen, automatische E-Mail, Ereignisaktion, Kaufabbruch-E-Mail",
 				"description" => "Erfahren Sie, wie Sie E-Mail-Vorlagen einrichten und E-Mails automatisiert an Ihre Kunden versenden.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich E-Mails versenden. Hier finden Sie folgende Informationen:",
