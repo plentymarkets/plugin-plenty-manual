@@ -3405,7 +3405,7 @@ class Metadata {
 								"url" => "/omni-channel/online-shop/webshop-einrichten/mehrsprachiger-webshop",
 								"level" => 4,
 								"title" => "Mehrsprachiger Webshop",
-								"keywords" => "",
+								"keywords" => "Multilingualismus, Multilingualität",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Mehrsprachiger Webshop. Hier finden Sie folgende Informationen:",
