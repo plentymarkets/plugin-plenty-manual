@@ -4,6 +4,9 @@
 
     <form class="banner-form display-3 {{ additionalClasses }}" method="GET" action="/search/">
         <label class="sr-only" for="bannerSearchInput">{{ trans("PlentyManual::Manual.doSearch") }}</label>
+        {% if results is defined %}
+            <input type="hidden" name="s" value="{{ results.itemsPerPage }}">
+        {% endif %}
         <div class="input-group input-group-lg">
             <input class="form-control" id="bannerSearchInput" type="text"{% if query %} value="{{ query }}"{% endif %} name="q" placeholder="{{ trans("PlentyManual::Manual.enterSearchText") }}">
             <span class="input-group-btn">

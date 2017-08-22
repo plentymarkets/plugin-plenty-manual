@@ -10,27 +10,27 @@
 {% endblock %}
 
 {% block PageBody %}
-<main id="main">
-    {{ SearchBar.printBanner( plugin_path("PlentyManual")~'/images/_layout/girl-with-notebook-sitting-on-desk-darken-lr.jpg', plugin_path("PlentyManual")~'/images/_layout/girl-with-notebook-sitting-on-desk-darken.jpg', 'banner-st-1 bg-33c' ) }}
-    <section class="container mt-4 search-section">
-        <h1 class="text-center">{{ trans("PlentyManual::Manual.theSearch") }}</h1>
-        <div class="lead">
-            {{ trans("PlentyManual::Manual.searchFor") }} <strong>"{{ query }}"</strong>
-        </div>
+    <main id="main">
+        {{ SearchBar.printBanner( plugin_path("PlentyManual")~'/images/_layout/girl-with-notebook-sitting-on-desk-darken-lr.jpg', plugin_path("PlentyManual")~'/images/_layout/girl-with-notebook-sitting-on-desk-darken.jpg', 'banner-st-1 bg-33c' ) }}
+        <section class="container mt-4 search-section">
+            <h1 class="text-center">{{ trans("PlentyManual::Manual.theSearch") }}</h1>
+            <div class="lead">
+                {{ trans("PlentyManual::Manual.searchFor") }} <strong>"{{ query }}"</strong>
+            </div>
 
-        <div class="row search-header">
-            <div class="col-md">
+            <div class="row search-header">
+                <div class="col-md">
                 <span class="d-block mt-2">
                     {% if results.hitsTotal == 0 %}
                         {{ trans("PlentyManual::Manual.noSearchResults") }}
                     {% else %}
                         {{ trans(
-                            "PlentyManual::Manual.searchResultRange",
-                            {
-                                "from": '<span class="search-item-from">' ~ results.hitsStart ~ '</span>',
-                                "to": '<span class="search-item-till">' ~ results.hitsEnd ~ '</span>',
-                                "total": '<span class="search-item-total">' ~ results.hitsTotal ~ '</span>'
-                            }
+                        "PlentyManual::Manual.searchResultRange",
+                        {
+                            "from": '<span class="search-item-from">' ~ results.hitsStart ~ '</span>',
+                            "to": '<span class="search-item-till">' ~ results.hitsEnd ~ '</span>',
+                            "total": '<span class="search-item-total">' ~ results.hitsTotal ~ '</span>'
+                        }
                         ) | raw }}
                         {#
                         <span class="search-item-from">{{ results.hitsStart }}</span>
@@ -39,107 +39,107 @@
                         #}
                     {% endif %}
                 </span>
-            </div>
-            {% if results.hitsTotal > 10 %}
-            <div class="col-md mt-2 mt-md-0">
-                <form class="form-inline justify-content-md-end" action="/search/" method="GET">
-                    <label class="mr-2 mb-0" for="searchResultsEachPage">{{ trans("PlentyManual::Manual.resultsPerPage") }}</label>
-                    <input type="hidden" name="q" value="{{ query }}">
-                    <input type="hidden" name="p" value="{{ results.currentPage }}">
-                    <select class="custom-select" name="s" id="searchResultsEachPage" data-fn="submit-on-change">
-                        <option value="10"{% if results.itemsPerPage == 10 %} selected{% endif %}>10</option>
-                        <option value="25"{% if results.itemsPerPage == 25 %} selected{% endif %}>25</option>
-                        <option value="50"{% if results.itemsPerPage == 50 %} selected{% endif %}>50</option>
-                    </select>
-                </form>
-            </div>
-            {% endif %}
-        </div>
-
-        <hr class="mt-2">
-
-        {% if results.hitsTotal > 0 %}
-            <section class="row search-result-list">
-                <div class="col-12 col-lg-10 col-xs-8">
-                    <h2 class="sr-only">{{ trans("PlentyManual::Manual.searchResults") }}</h2>
-                    {% for hit in results.hits %}
-                        <article class="search-result-item">
-
-                            <header>
-                                <h3><a href="{{ hit.url }}">{{ hit.title | raw }}</a></h3>
-                                {{ Breadcrumbs.print( hit.url ) }}
-                            </header>
-
-                            <div class="search-result-item-description">
-                                <p>{{ hit.description | raw }}</p>
-                            </div>
-
-                            <div class="search-result-item-details">
-                                <ul class="list-unstyled">
-                                    {% for section in hit.sections %}
-                                        <li>
-                                            <h4><a href="{{ section.url }}">{{ section.title | raw }}</a></h4>
-                                            <p>{{ section.content | raw }}</p>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-
-                        </article>
-                    {% endfor %}
                 </div>
-            </section>
+                {% if results.hitsTotal > 10 %}
+                    <div class="col-md mt-2 mt-md-0">
+                        <form class="form-inline justify-content-md-end" action="/search/" method="GET">
+                            <label class="mr-2 mb-0" for="searchResultsEachPage">{{ trans("PlentyManual::Manual.resultsPerPage") }}</label>
+                            <input type="hidden" name="q" value="{{ query }}">
+                            <input type="hidden" name="p" value="{{ results.currentPage }}">
+                            <select class="custom-select" name="s" id="searchResultsEachPage" data-fn="submit-on-change">
+                                <option value="10"{% if results.itemsPerPage == 10 %} selected{% endif %}>10</option>
+                                <option value="25"{% if results.itemsPerPage == 25 %} selected{% endif %}>25</option>
+                                <option value="50"{% if results.itemsPerPage == 50 %} selected{% endif %}>50</option>
+                            </select>
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
 
-            <hr class="mb-2">
-        {% endif %}
+            <hr class="mt-2">
 
-        <nav class="">
+            {% if results.hitsTotal > 0 %}
+                <section class="row search-result-list">
+                    <div class="col-12 col-lg-10 col-xs-8">
+                        <h2 class="sr-only">{{ trans("PlentyManual::Manual.searchResults") }}</h2>
+                        {% for hit in results.hits %}
+                            <article class="search-result-item">
 
-            <ul class="list-unstyled d-flex flex-row justify-content-between mb-5">
+                                <header>
+                                    <h3><a href="{{ hit.url }}">{{ hit.title | raw }}</a></h3>
+                                    {{ Breadcrumbs.print( hit.url ) }}
+                                </header>
 
-                {% if results.maxPages > 1 %}
-                <li class="">
-                    <a class="btn btn-secondary{% if results.currentPage == 1 %} invisible{% endif %}"
-                            {% if results.currentPage == 1 %} aria-hidden="true"{% endif %}
-                       href="/search/?q={{ query | url_encode }}&p={{ results.currentPage - 1 }}&s={{ results.itemsPerPage }}">
-                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                        <span class="hidden-sm-down">
+                                <div class="search-result-item-description{% if hit.cutBefore %} cut-before{% endif %}{% if hit.cutAfter %} cut-after{% endif %}">
+                                    <p>{{ hit.description | raw }}</p>
+                                </div>
+
+                                <div class="search-result-item-details">
+                                    <ul class="list-unstyled">
+                                        {% for section in hit.sections %}
+                                            <li>
+                                                <h4><a href="{{ section.url }}">{{ section.title | raw }}</a></h4>
+                                                <p class="{% if section.cutBefore %}cut-before {% endif %}{% if section.cutAfter %}cut-after{% endif %}">{{ section.content | raw }}</p>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+
+                            </article>
+                        {% endfor %}
+                    </div>
+                </section>
+
+                <hr class="mb-2">
+            {% endif %}
+
+            <nav class="">
+
+                <ul class="list-unstyled d-flex flex-row justify-content-between mb-5">
+
+                    {% if results.maxPages > 1 %}
+                        <li class="">
+                            <a class="btn btn-secondary{% if results.currentPage == 1 %} invisible{% endif %}"
+                                    {% if results.currentPage == 1 %} aria-hidden="true"{% endif %}
+                               href="/search/?q={{ query | url_encode }}&p={{ results.currentPage - 1 }}&s={{ results.itemsPerPage }}">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                <span class="hidden-sm-down">
                             {{ trans("PlentyManual::Manual.prevPage") }}
                         </span>
-                    </a>
-                </li>
-                <li class="">
-                    <form action="/search/" method="GET">
-                        <input type="hidden" name="q" value="{{ query }}">
-                        <input type="hidden" name="s" value="{{ results.itemsPerPage }}">
+                            </a>
+                        </li>
+                        <li class="">
+                            <form action="/search/" method="GET">
+                                <input type="hidden" name="q" value="{{ query }}">
+                                <input type="hidden" name="s" value="{{ results.itemsPerPage }}">
 
-                        <span class="hidden-sm-down">{{ trans("PlentyManual::Manual.resultsPageRange_page") }} </span>
-                        <select class="custom-select btn-secondary" data-fn="submit-on-change" name="p">
-                            {% for i in 1..results.maxPages %}
-                                <option value="{{ i }}"{% if results.currentPage == i %} selected{% endif %}>{{ i }}</option>
-                            {% endfor %}
-                        </select>
-                        <span> {{ trans("PlentyManual::Manual.resultsPageRange_of") }} {{ results.maxPages }}</span>
-                    </form>
-                </li>
-                <li class="">
-                    <a class="btn btn-secondary{% if results.currentPage == results.maxPages %} invisible{% endif %}"
-                            {% if results.currentPage == results.maxPage %} aria-hidden="true"{% endif %}
-                       href="/search/?q={{ query | url_encode }}&p={{ results.currentPage + 1 }}&s={{ results.itemsPerPage }}">
-                        <span class="hidden-sm-down">{{ trans("PlentyManual::Manual.nextPage") }}</span>
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                    </a>
-                </li>
-                {% else %}
-                    <li>
-                        <span class="hidden-sm-down">{{ trans("PlentyManual::Manual.resultsPageRange_page") }} </span>1 {{ trans("PlentyManual::Manual.resultsPageRange_of") }} 1
-                    </li>
-                {% endif %}
-            </ul>
+                                <span class="hidden-sm-down">{{ trans("PlentyManual::Manual.resultsPageRange_page") }} </span>
+                                <select class="custom-select btn-secondary" data-fn="submit-on-change" name="p">
+                                    {% for i in 1..results.maxPages %}
+                                        <option value="{{ i }}"{% if results.currentPage == i %} selected{% endif %}>{{ i }}</option>
+                                    {% endfor %}
+                                </select>
+                                <span> {{ trans("PlentyManual::Manual.resultsPageRange_of") }} {{ results.maxPages }}</span>
+                            </form>
+                        </li>
+                        <li class="">
+                            <a class="btn btn-secondary{% if results.currentPage == results.maxPages %} invisible{% endif %}"
+                                    {% if results.currentPage == results.maxPage %} aria-hidden="true"{% endif %}
+                               href="/search/?q={{ query | url_encode }}&p={{ results.currentPage + 1 }}&s={{ results.itemsPerPage }}">
+                                <span class="hidden-sm-down">{{ trans("PlentyManual::Manual.nextPage") }}</span>
+                                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <span class="hidden-sm-down">{{ trans("PlentyManual::Manual.resultsPageRange_page") }} </span>1 {{ trans("PlentyManual::Manual.resultsPageRange_of") }} 1
+                        </li>
+                    {% endif %}
+                </ul>
 
-        </nav>
-    </section>
-</main>
+            </nav>
+        </section>
+    </main>
 {% endblock %}
 
 

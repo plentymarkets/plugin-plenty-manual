@@ -144,7 +144,9 @@ class SearchService
                 "title" => $hit["highlight"]["title"][0],
                 "description" => $hit["highlight"]["description"][0],
                 "url" => $hit["_source"]["url"],
-                "sections" => []
+                "sections" => [],
+                "cutBefore" => false,
+                "cutAfter" => false
             ];
 
             if ( $doc["title"] === null )
@@ -156,6 +158,20 @@ class SearchService
                 $doc["description"] = $this->trim( $hit["_source"]["description"], $this->snippetLength );
             }
 
+//            if ( strip_tags( $doc["description"] ) !== substr( $hit["_source"]["description"], 0, strlen( strip_tags( $doc["description"] ) ) ) )
+            if ( !$this->startsWith( $doc["description"], $hit["_source"]["description"] ) )
+            {
+                $doc["cutBefore"] = true;
+            }
+
+//            if ( strip_tags( $doc["description"] ) !== substr( $hit["_source"]["description"], strlen($hit["_source"]["description"]) - strlen( strip_tags( $doc["description"] ) ) ) )
+            if ( !$this->endsWith( $doc["description"], $hit["_source"]["description"] ) )
+            {
+                $doc["cutAfter"] = true;
+            }
+
+
+
             $sections = [];
             foreach ( $hit["inner_hits"]["sections"]["hits"]["hits"] as $inner_hit )
             {
@@ -163,7 +179,9 @@ class SearchService
                     "id" => $inner_hit["_source"]["id"],
                     "url" => $inner_hit["_source"]["url"],
                     "title" => $inner_hit["highlight"]["sections.title"][0],
-                    "content" => $this->trim( $inner_hit["highlight"]["sections.content"][0], $this->snippetLength )
+                    "content" => $this->trim( $inner_hit["highlight"]["sections.content"][0], $this->snippetLength ),
+                    "cutBefore" => false,
+                    "cutAfter" => false
                 ];
 
                 if ( $sec["title"] === null )
@@ -174,6 +192,19 @@ class SearchService
                 {
                     $sec["content"] = $this->trim( $inner_hit["_source"]["content"], $this->snippetLength );
                 }
+
+//                if ( trim( strip_tags( $sec["content"] ) ) !== substr( trim($inner_hit["_source"]["content"]), 0, strlen( trim( strip_tags( $sec["content"] ) ) ) ) )
+                if ( !$this->startsWith( $sec["content"], $inner_hit["_source"]["content"] ) )
+                {
+                    $sec["cutBefore"] = true;
+                }
+
+//                if ( trim( strip_tags( $sec["content"] ) ) !== substr( $inner_hit["_source"]["content"], strlen( trim( $inner_hit["_source"]["content"]) ) - strlen( trim( strip_tags( $sec["content"] ) ) ) ) )
+                if ( !$this->endsWith( $sec["content"], $inner_hit["_source"]["content"] ) )
+                {
+                    $sec["cutAfter"] = true;
+                }
+
                 array_push( $sections, $sec );
             }
 
@@ -184,13 +215,27 @@ class SearchService
         return $result;
     }
 
+    function startsWith( $str, $cmp )
+    {
+        $str = trim( strip_tags( $str ) );
+        $cmp = trim( strip_tags( $cmp ) );
+        return $str === substr( $cmp, 0, strlen( $str ) );
+    }
+
+    function endsWith( $str, $cmp )
+    {
+        $str = trim( strip_tags( $str ) );
+        $cmp = trim( strip_tags( $cmp ) );
+        return $str === substr( $cmp, strlen( $cmp ) - strlen( $str ) );
+    }
+
     function trim( string $text = null, int $length = 250 )
     {
         if ( $text === null )
         {
             return null;
         }
-        while ( preg_match( '/^[^\w<>\/]/', $text ) )
+        while ( preg_match( '/^[^\wäöüÄÖÜß<>\/]/', $text ) )
         {
             $text = substr( $text, 1 );
         }
