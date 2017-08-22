@@ -5961,7 +5961,7 @@ class Metadata {
 						"url" => "/en/basics/automation/installing-plentybase",
 						"level" => 3,
 						"title" => "Installing plentyBase",
-						"keywords" => "",
+						"keywords" => "plentyBase, processes, printer, printing, Installing printer, run processes, execute processes, automation, print history",
 						"description" => "Installing plentyBase",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Installing plentyBase. The following information is available:",
