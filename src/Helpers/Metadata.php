@@ -9121,7 +9121,7 @@ class Metadata {
 						"url" => "/en/order-processing/fulfilment/preparing-the-shipment",
 						"level" => 3,
 						"title" => "Preparing the shipment",
-						"keywords" => "Shipping service provider, fulfilment service provider, countries of delivery, regions, shipping profiles, table of shipping charges, shipping package, shipping costs, DHL Packstation, tracking URL",
+						"keywords" => "Shipping service provider, fulfilment service provider, fulfilment, countries of delivery, regions, shipping profile, shipping profiles, table of shipping charges, shipping package, shipping costs, DHL Packstation, tracking URL, cbc logistics, c.b.c logistics, DHL, DHL Easylog, DHL Freight, DHL Intraship, DHL Versenden, DHL plentymarkets Import, DHL Retoure, DHL Retoure with enclosed return labels, DHL Retoure Online, DHL Supply Chain, DHL UK, DPD, DPD Cloud Webservice, DPD DELISprint, EasyPAK, GLS, GLS Germany, Hermes, Hermes two-man handling, Hermes ProfiPaketService, Hermes professional parcel service, MyDPD Business / iloxx, NetDespatch, Royal Mail, UK Mail, Parcelforce Worldwide, Swiss Post, UPS, DHL Fulfillment, IDS Logistik, iLOPACK, Fulfilment by Amazon, FBA",
 						"description" => "Learn how to set up shipping profiles, shipping packages and shipping service providers in plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Preparing the shipment. The following information is available:",
