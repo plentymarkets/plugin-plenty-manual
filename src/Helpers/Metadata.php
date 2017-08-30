@@ -4419,7 +4419,7 @@ class Metadata {
 						"url" => "/auftragsabwicklung/fulfillment/dokumente-erzeugen",
 						"level" => 3,
 						"title" => "Dokumente erzeugen",
-						"keywords" => "Versandlabel, Adressetikett, Lieferanschriftenliste, Paketnummernimport, Einlieferungsliste, Barcodescanner",
+						"keywords" => "Versandlabel, , Versandetikett, Adressetikett, Lieferanschriftenliste, Paketnummernimport, Paketnummer, Paketnummern, Einlieferungsliste, Barcodescanner",
 						"description" => "Erfahren Sie, wie Sie die Lieferanschriftenliste exportieren, Paketnummern importieren, Adressetiketten einrichten und Einlieferungslisten generieren.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Dokumente erzeugen. Hier finden Sie folgende Informationen:",
