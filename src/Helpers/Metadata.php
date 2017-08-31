@@ -4635,7 +4635,7 @@ class Metadata {
 				"url" => "/crm/newsletter-versenden",
 				"level" => 2,
 				"title" => "Newsletter versenden",
-				"keywords" => "Double-Opt-In-Funktion, E-Mail-Vorlage, E-Mail-Ordner, Newsletter-Zugangsdaten, CleverReach, Newsletter2Go",
+				"keywords" => "Double-Opt-In-Funktion, Double-opt, E-Mail-Vorlage, E-Mail-Ordner, Newsletter-Zugangsdaten, CleverReach, Newsletter2Go",
 				"description" => "Erfahren Sie, wie Sie Newsletter mit Newsletter2Go, CleverReach oder mit dem in plentymarkets integrierten Newsletter an Ihre Kunden versenden.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Newsletter versenden. Hier finden Sie folgende Informationen:",
