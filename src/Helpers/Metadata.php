@@ -220,7 +220,7 @@ class Metadata {
 						"url" => "/basics/arbeiten-mit-plentymarkets/drucker",
 						"level" => 3,
 						"title" => "Drucker",
-						"keywords" => "Drucker, plentymarkets Client",
+						"keywords" => "Drucker, plentyBase, Druckereinstellungen, Drucker konfigurieren",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Drucker. Hier finden Sie folgende Informationen:",
