@@ -4498,9 +4498,9 @@ class Metadata {
 				"url" => "/warenwirtschaft/nachbestellungen-verwalten",
 				"level" => 2,
 				"title" => "Nachbestellungen verwalten",
-				"keywords" => "",
+				"keywords" => "Nachbestellung, Nachbestellungen",
 				"description" => "",
-				"navAlias" => "",
+				"navAlias" => "Waren nachbestellen",
 				"linkListInto" => "Willkommen im Themenbereich Nachbestellungen verwalten. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
