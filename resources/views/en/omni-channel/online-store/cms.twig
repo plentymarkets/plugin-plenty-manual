@@ -240,6 +240,8 @@
 <li><a href="#_components_of_the_individual_order_process_in_callisto_light"><span>Components of the individual order process in Callisto Light</span></a></li>
 <li><a href="#_content_of_the_order_steps"><span>Content of the order steps</span></a></li>
 <li><a href="#_validating_the_order_data"><span>Validating the order data</span></a></li>
+<li><a href="#10000"><span>Setting up Google reCAPTCHA for the customer registration</span></a></li>
+<li><a href="#10020"><span>Setting up Google reCAPTCHA for guest orders</span></a></li>
 </ul>
 </li>
 <li><a href="#web-design-editing-the-web-design-order-process-checkout"><span>Checkout</span></a>
@@ -7461,6 +7463,200 @@ Container_CheckoutShippingProfilesList()</p>
 </div>
 <div class="paragraph">
 <p><em>Code example 5: the template <strong>ValidatorPlaceOrder</strong></em></p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="10000">Setting up Google reCAPTCHA for the customer registration</h6>
+<div class="paragraph">
+<p>Set up Google reCAPTCHA for the customer registration in your online store. First, register your online store to use <a href="https://www.google.com/recaptcha/admin#list" target="_blank" rel="noopener"><strong>Google reCAPTCHA</strong></a>. Then, enter the website key and the secret key for your online store.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up Google reCAPTCHA:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Settings » Client (store) » Standard » Online store » Basic settings</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Yes</strong> under <strong>Request Google reCAPTCHA in registration</strong>.</p>
+</li>
+<li>
+<p>Enter the <strong>Google reCAPTCHA Website key</strong> ein.</p>
+</li>
+<li>
+<p>Enter the <strong>Google reCAPTCHA Secret key</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="sect6">
+<h7 id="10010">Editing the Registration category</h7>
+<div class="paragraph">
+<p>Next add the template function <code>GetCaptcha()</code> as well as the following code example in the <strong>Registration</strong> category.</p>
+</div>
+<div class="paragraph instruction">
+<p>Editing the <strong>Registration</strong> category:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Categories</strong>.</p>
+</li>
+<li>
+<p>Open the design’s folder, e.g. the folder for Callisto Light 3.</p>
+</li>
+<li>
+<p>Open the <strong>Registration</strong> category.</p>
+</li>
+<li>
+<p>Click on the <strong>Description 1</strong> tab.</p>
+</li>
+<li>
+<p>Insert the <code>&#123;&#37; GetCaptcha() &#37;&#125;</code> template function above the <strong>Register</strong> button.</p>
+</li>
+<li>
+<p>Search for the code <code>plenty.AuthenticationService.registerCustomer();</code>.</p>
+</li>
+<li>
+<p>Replace the code with <code>registration();</code>.</p>
+</li>
+<li>
+<p>Search for <code>&lt;script&gt;</code>.</p>
+</li>
+<li>
+<p>Insert the following code example within the script area.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>function registration(){
+var res = plenty.AuthenticationService.registerCustomer();
+
+if(typeof res !== 'undefined'){
+
+
+if(res.status == 400 &amp;&amp; typeof grecaptcha !== 'undefined'){
+grecaptcha.reset();
+}
+
+}</pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Parameters for the GetCaptcha() function</div>
+<div class="paragraph">
+<p>The following parameters are available for the <code>GetCaptcha()</code> function:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>GetCaptcha('normal')</code>: Default value for the normal Google reCAPTCHA.</p>
+</li>
+<li>
+<p><code>GetCaptcha('compact')</code>: Parameter for the compact Google reCAPTCHA.</p>
+</li>
+<li>
+<p><code>GetCaptcha('invisible')</code>: Parameter for the invisible Google reCAPTCHA.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="10020">Setting up Google reCAPTCHA for guest orders</h6>
+<div class="paragraph">
+<p>You can also set up Google reCAPTCHA for guest orders in your online store.</p>
+</div>
+<div class="sect6">
+<h7 id="10030">Editing CheckoutCustomerInvoiceAddress</h7>
+<div class="paragraph">
+<p>Carry out the following changes in the <strong>CheckoutCustomerInvoiceAddress</strong> template first.</p>
+</div>
+<div class="paragraph instruction">
+<p>Editing CheckoutCustomerInvoiceAddress:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CMS » Web design » Layout » Checkout » CheckoutCustomerInvoiceAddress</strong>.</p>
+</li>
+<li>
+<p>Search for <code>&lt;/form&gt;</code>.</p>
+</li>
+<li>
+<p>Insert the <code>&#123;&#37; GetCaptcha() &#37;&#125;</code> template function above the <code>&lt;/form&gt;</code> tag.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect6">
+<h7 id="10040">Editing the Address category</h7>
+<div class="paragraph">
+<p>Next, edit the <strong>Address</strong> category.</p>
+</div>
+<div class="paragraph instruction">
+<p>Editing the <strong>Address</strong> category:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Categories</strong>.</p>
+</li>
+<li>
+<p>Open the design’s folder, e.g. the folder for Callisto Light 3.</p>
+</li>
+<li>
+<p>Open the <strong>Address</strong> category.</p>
+</li>
+<li>
+<p>Click on the <strong>Description 1</strong> tab.</p>
+</li>
+<li>
+<p>Search for the code <code>plenty.CheckoutService.registerGuest().done(function()</code>.</p>
+</li>
+<li>
+<p>Replace the four lines of code with the following code example.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>plenty.CheckoutService.registerGuest().done(function() {
+    // change tab if success
+    plenty.NavigatorService.continueChange( targetContainer );
+
+    }).fail(function(){
+
+    if(typeof grecaptcha !== 'undefined'){
+        grecaptcha.reset();
+    }
+
+});</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
