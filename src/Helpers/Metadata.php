@@ -3653,7 +3653,7 @@ class Metadata {
 						"title" => "Auftragsdokumente",
 						"keywords" => "",
 						"description" => "",
-						"navAlias" => "",
+						"navAlias" => "Übersicht",
 						"linkListInto" => "Willkommen im Themenbereich Auftragsdokumente. Hier finden Sie folgende Informationen:",
 						"children" => 						[
 							[
