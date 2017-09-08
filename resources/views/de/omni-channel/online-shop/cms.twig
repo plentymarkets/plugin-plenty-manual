@@ -250,6 +250,8 @@
 <li><a href="#_bestandteile_des_individuellen_bestellvorgangs_in_callisto_light"><span>Bestandteile des Individuellen Bestellvorgangs in Callisto Light</span></a></li>
 <li><a href="#_inhalte_der_bestellschritte"><span>Inhalte der Bestellschritte</span></a></li>
 <li><a href="#_prüfung_der_bestelldaten"><span>Prüfung der Bestelldaten</span></a></li>
+<li><a href="#10000"><span>Google reCAPTCHA für Kundenregistrierung einrichten</span></a></li>
+<li><a href="#10020"><span>Google reCAPTCHA für Gastbestellung einrichten</span></a></li>
 </ul>
 </li>
 <li><a href="#webdesign-webdesign-bearbeiten-bestellvorgang-kaufabwicklung"><span>Kaufabwicklung</span></a>
@@ -7648,6 +7650,200 @@ Container_CheckoutShippingProfilesList()</p>
 </div>
 <div class="paragraph">
 <p><em>Codebeispiel 5: Template <strong>ValidatorPlaceOrder</strong></em></p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="10000">Google reCAPTCHA für Kundenregistrierung einrichten</h6>
+<div class="paragraph">
+<p>Richten Sie Google reCAPTCHA für die Kundenregistrierung im Webshop ein. Registrieren Sie Ihren Webshop zunächst für die Verwendung von <a href="https://www.google.com/recaptcha/admin#list" target="_blank" rel="noopener"><strong>Google reCAPTCHA</strong></a>. Geben Sie anschließend den Websiteschlüssel und den Geheimen Schlüssel für Ihren Webshop ein.</p>
+</div>
+<div class="paragraph instruction">
+<p>Google reCAPTCHA einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Einstellungen » Mandant (Shop) » Standard » Webshop » Grundeinstellungen</strong>.</p>
+</li>
+<li>
+<p>Wählen Sie <strong>Ja</strong> unter <strong>Google reCAPTCHA in Registrierung abfragen</strong>.</p>
+</li>
+<li>
+<p>Geben Sie den <strong>Google reCAPTCHA Websiteschlüssel</strong> ein.</p>
+</li>
+<li>
+<p>Geben Sie den <strong>Google reCAPTCHA Geheimer Schlüssel</strong> ein.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="sect6">
+<h7 id="10010">Kategorie Kundenregistrierung anpassen</h7>
+<div class="paragraph">
+<p>Fügen Sie anschließend die Template-Funktion <code>GetCaptcha()</code> sowie das nachfolgende Code-Beispiel in der Kategorie <strong>Registrierung</strong> ein.</p>
+</div>
+<div class="paragraph instruction">
+<p>Kategorie <strong>Kundenregistrierung</strong> anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Artikel » Kategorien</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner des Designs, das Sie bearbeiten möchten, z.B. Callisto Light 3.</p>
+</li>
+<li>
+<p>Öffnen Sie die Kategorie <strong>Registrierung</strong>.</p>
+</li>
+<li>
+<p>Wechseln Sie in das Tab <strong>Beschreibung 1</strong>.</p>
+</li>
+<li>
+<p>Fügen Sie die Template-Funktion <code>&#123;&#37; GetCaptcha() &#37;&#125;</code> oberhalb des Buttons <strong>Registrierung abschließen</strong> ein.</p>
+</li>
+<li>
+<p>Suchen Sie den Code <code>plenty.AuthenticationService.registerCustomer();</code>.</p>
+</li>
+<li>
+<p>Ersetzen Sie den Code durch <code>registration();</code>.</p>
+</li>
+<li>
+<p>Suchen Sie nach <code>&lt;script&gt;</code>.</p>
+</li>
+<li>
+<p>Fügen Sie innerhalb des Script-Bereichs das folgende Code-Beispiel ein.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>function registration(){
+var res = plenty.AuthenticationService.registerCustomer();
+
+if(typeof res !== 'undefined'){
+
+
+if(res.status == 400 &amp;&amp; typeof grecaptcha !== 'undefined'){
+grecaptcha.reset();
+}
+
+}</pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Parameter für die Funktion GetCaptcha()</div>
+<div class="paragraph">
+<p>Folgende Parameter stehen Ihnen für die Funktion <code>GetCaptcha()</code> zur Verfügung:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>GetCaptcha('normal')</code>: Standardwert für das normale Google reCAPTCHA.</p>
+</li>
+<li>
+<p><code>GetCaptcha('compact')</code>: Parameter für das kompakte Google reCAPTCHA.</p>
+</li>
+<li>
+<p><code>GetCaptcha('invisible')</code>: Parameter für das unsichtbare Google reCAPTCHA.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="10020">Google reCAPTCHA für Gastbestellung einrichten</h6>
+<div class="paragraph">
+<p>Sie können Google reCAPTCHA auch für Gastbestellungen im Webshop einrichten.</p>
+</div>
+<div class="sect6">
+<h7 id="10030">CheckoutCustomerInvoiceAddress anpassen</h7>
+<div class="paragraph">
+<p>Nehmen Sie dafür zunächst Änderungen am Template <strong>CheckoutCustomerInvoiceAddress</strong> vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>CheckoutCustomerInvoiceAddress anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>CMS » Webdesign » Layout » Checkout » CheckoutCustomerInvoiceAddress</strong>.</p>
+</li>
+<li>
+<p>Suchen Sie nach <code>&lt;/form&gt;</code>.</p>
+</li>
+<li>
+<p>Fügen Sie die Template-Funktion <code>&#123;&#37; GetCaptcha() &#37;&#125;</code> oberhalb des <code>&lt;/form&gt;</code>-Tags ein.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect6">
+<h7 id="10040">Kategorie Anschrift anpassen</h7>
+<div class="paragraph">
+<p>Passen Sie anschließend die Kategorie <strong>Anschrift</strong> an.</p>
+</div>
+<div class="paragraph instruction">
+<p>Kategorie <strong>Anschrift</strong> anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Artikel » Kategorien</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner des Designs, das Sie bearbeiten möchten, z.B. Callisto Light 3.</p>
+</li>
+<li>
+<p>Öffnen Sie die Kategorie <strong>Anschrift</strong>.</p>
+</li>
+<li>
+<p>Wechseln Sie in das Tab <strong>Beschreibung 1</strong>.</p>
+</li>
+<li>
+<p>Suchen Sie den Code <code>plenty.CheckoutService.registerGuest().done(function()</code>.</p>
+</li>
+<li>
+<p>Ersetzen Sie den 4-zeiligen Code-Block durch das nachfolgende Code-Beispiel.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>plenty.CheckoutService.registerGuest().done(function() {
+    // change tab if success
+    plenty.NavigatorService.continueChange( targetContainer );
+
+    }).fail(function(){
+
+    if(typeof grecaptcha !== 'undefined'){
+        grecaptcha.reset();
+    }
+
+});</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
