@@ -7724,15 +7724,16 @@ Container_CheckoutShippingProfilesList()</p>
 <div class="listingblock">
 <div class="content">
 <pre>function registration(){
-var res = plenty.AuthenticationService.registerCustomer();
+    var res = plenty.AuthenticationService.registerCustomer();
 
-if(typeof res !== 'undefined'){
+    if(typeof res !== 'undefined'){
 
+        if(res.status == 400 &amp;&amp; typeof grecaptcha !== 'undefined'){
+            grecaptcha.reset();
+        }
 
-if(res.status == 400 &amp;&amp; typeof grecaptcha !== 'undefined'){
-grecaptcha.reset();
-}
-
+    }
+    return false;
 }</pre>
 </div>
 </div>
