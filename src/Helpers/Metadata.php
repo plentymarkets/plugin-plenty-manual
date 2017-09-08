@@ -9157,6 +9157,21 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Generating documents. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "53392281160bdf7d391d7185f783a3f4",
+						"path" => "order-processing/fulfilment/pick-list",
+						"position" => 40,
+						"urlName" => "pick-list",
+						"url" => "/en/order-processing/fulfilment/pick-list",
+						"level" => 3,
+						"title" => "Pick list",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Pick list. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
