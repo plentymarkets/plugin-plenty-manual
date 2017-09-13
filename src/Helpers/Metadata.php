@@ -8291,7 +8291,7 @@ class Metadata {
 						"url" => "/en/omni-channel/pos/integrating-plentymarkets-pos",
 						"level" => 3,
 						"title" => "Integrating plentymarkets POS",
-						"keywords" => "plentymarkets POS, POS, till, till system",
+						"keywords" => "plentymarkets POS, POS, till, till system, mobile POS, mobile device",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Integrating plentymarkets POS. The following information is available:",
