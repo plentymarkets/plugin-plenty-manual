@@ -4,9 +4,12 @@ namespace PlentyManual\Services;
 
 use Plenty\Plugin\ConfigRepository;
 use IO\Services\SessionStorageService;
+use Plenty\Plugin\Log\Loggable;
 
 class SearchService
 {
+    use Loggable;
+    
     private $type;
     private $host;
     private $snippetLength;
@@ -100,9 +103,14 @@ class SearchService
                 ]
             ]
         ];
-
+        
         $from = ($page - 1) * $itemsPerPage ;
-        $cHandle = curl_init( "{$this->host}/{$this->type}/_search?size={$itemsPerPage}&from={$from}" );
+        $url = "{$this->host}/{$this->type}/_search?size={$itemsPerPage}&from={$from}";
+        
+        $cHandle = curl_init( $url );
+    
+        $this->getLogger("search_result")->error('url', ['value' => $url]);
+        
         curl_setopt( $cHandle, CURLOPT_POST, true );
         curl_setopt( $cHandle, CURLOPT_RETURNTRANSFER, true );
         curl_setopt( $cHandle, CURLOPT_POSTFIELDS, json_encode( $mainQuery ) );
@@ -112,6 +120,11 @@ class SearchService
         curl_close( $cHandle );
 
         $result = json_decode( $response, true );
+        
+        $this->getLogger("search_result")->error('items_per_page', ['value' => $itemsPerPage]);
+        $this->getLogger("search_result")->error('response', ['value' => $response]);
+        $this->getLogger("search_result")->error('result', ['value' => $result]);
+        
         return $this->readSearchResults( $result, $page, $itemsPerPage );
     }
 
