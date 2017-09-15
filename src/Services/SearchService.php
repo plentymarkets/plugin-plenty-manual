@@ -52,14 +52,6 @@ class SearchService
                 "inner_hits" => [
                     "_source" => [
                         "includes" => [ "id", "url", "title", "content" ]
-                    ],
-                    "highlight" => [
-                        "pre_tags" => ["<em class=\"search-item-keyword\">"],
-                        "post_tags" => ["</em>"],
-                        "fields" => [
-                            "sections.title" => ["number_of_fragments" => 0],
-                            "sections.content" => ["number_of_fragments" => 1, "fragment_size" => $this->snippetLength]
-                        ]
                     ]
                 ]
             ]
@@ -92,14 +84,6 @@ class SearchService
                         $documentQuery
                     ],
                     "tie_breaker" => 0.3
-                ]
-            ],
-            "highlight" => [
-                "pre_tags" => ["<em class=\"search-item-keyword\">"],
-                "post_tags" => ["</em>"],
-                "fields" => [
-                    "title" => ["number_of_fragments" => 0],
-                    "description" => ["number_of_fragments" => 1, "fragment_size" => $this->snippetLength]
                 ]
             ]
         ];
