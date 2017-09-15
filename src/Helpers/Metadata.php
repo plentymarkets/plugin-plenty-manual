@@ -5929,7 +5929,7 @@ class Metadata {
 								"level" => 4,
 								"title" => "Sub-procedures",
 								"keywords" => "Sub-procedures, processes, client",
-								"description" => "Overview of the sub-procedures that can be configured in the plentymarkets Client.",
+								"description" => "Overview of the sub-procedures that can be configured in plentymarkets.",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Sub-procedures. The following information is available:",
 								"children" => [],
