@@ -18,7 +18,7 @@ class SearchService
     {
         $this->type = "manual_" . $sessionStorage->getLang();
         $this->host = $config->get('PlentyManual.search.es_host');
-        $this->snippetLength = $config->get('PlentyManual.search.snippet_length');
+        $this->snippetLength = (int)$config->get('PlentyManual.search.snippet_length');
     }
 
     public function search(
