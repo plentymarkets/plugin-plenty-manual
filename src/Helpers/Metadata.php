@@ -5267,7 +5267,7 @@ class Metadata {
 								"level" => 4,
 								"title" => "ItemCrossSelling",
 								"keywords" => "",
-								"description" => "Data format ItemCrossSelling",
+								"description" => "data format ItemCrossSelling",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic ItemCrossSelling. The following information is available:",
 								"children" => [],
