@@ -8723,6 +8723,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "d517b64dbefa08c2d06a4988379a7b20",
+						"path" => "order-processing/payment/amazon-pay",
+						"position" => 12,
+						"urlName" => "amazon-pay",
+						"url" => "/en/order-processing/payment/amazon-pay",
+						"level" => 3,
+						"title" => "Amazon Pay",
+						"keywords" => "Amazon Pay, Amazon Payments Advanced, payment method",
+						"description" => "Payment in plentymarkets: Set up the interface to Amazon Pay in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Amazon Pay. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "0b455693e48afce6f08ba37bbd3f70af",
 						"path" => "order-processing/payment/amazon-payments-advanced",
 						"position" => 12,
@@ -8993,21 +9008,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "21484af48d9f5da743fdd8119c57c213",
-						"path" => "order-processing/payment/upg",
-						"position" => 60,
-						"urlName" => "upg",
-						"url" => "/en/order-processing/payment/upg",
-						"level" => 3,
-						"title" => "UPG",
-						"keywords" => "UPG, payment method",
-						"description" => "Payment in plentymarkets: Set up the interface to UPG in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic UPG. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "627375d3cf505c353c0135320fd242c6",
 						"path" => "order-processing/payment/skrill",
 						"position" => 60,
@@ -9019,6 +9019,21 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Set up the interface to Skrill in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Skrill. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "21484af48d9f5da743fdd8119c57c213",
+						"path" => "order-processing/payment/upg",
+						"position" => 60,
+						"urlName" => "upg",
+						"url" => "/en/order-processing/payment/upg",
+						"level" => 3,
+						"title" => "UPG",
+						"keywords" => "UPG, payment method",
+						"description" => "Payment in plentymarkets: Set up the interface to UPG in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic UPG. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
