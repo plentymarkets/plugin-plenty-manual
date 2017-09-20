@@ -8723,21 +8723,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "0b455693e48afce6f08ba37bbd3f70af",
-						"path" => "order-processing/payment/amazon-payments-advanced",
-						"position" => 12,
-						"urlName" => "amazon-payments-advanced",
-						"url" => "/en/order-processing/payment/amazon-payments-advanced",
-						"level" => 3,
-						"title" => "Amazon Payments Advanced",
-						"keywords" => "Amazon Payments Advanced, payment method",
-						"description" => "Payment in plentymarkets: Set up the interface to Amazon Payments Advanced in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Amazon Payments Advanced. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "47ab99cd6042fed902980c9c095626a2",
 						"path" => "order-processing/payment/klarna",
 						"position" => 13,
@@ -8753,21 +8738,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "de4f8d3dfc0867f551b940b4d45459b9",
-						"path" => "order-processing/payment/klarna-checkout-uk",
-						"position" => 20,
-						"urlName" => "klarna-checkout-uk",
-						"url" => "/en/order-processing/payment/klarna-checkout-uk",
-						"level" => 3,
-						"title" => "Klarna Checkout UK",
-						"keywords" => "Klarna Checkout UK, payment method",
-						"description" => "Payment in plentymarkets: Set up the interface to Klarna Checkout UK in plentymarkets.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Klarna Checkout UK. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "643399d8ab51f558d64357da60b8554c",
 						"path" => "order-processing/payment/klarna-checkout",
 						"position" => 20,
@@ -8779,6 +8749,21 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Set up the interface to Klarna Checkout in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Klarna Checkout. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "de4f8d3dfc0867f551b940b4d45459b9",
+						"path" => "order-processing/payment/klarna-checkout-uk",
+						"position" => 20,
+						"urlName" => "klarna-checkout-uk",
+						"url" => "/en/order-processing/payment/klarna-checkout-uk",
+						"level" => 3,
+						"title" => "Klarna Checkout UK",
+						"keywords" => "Klarna Checkout UK, payment method",
+						"description" => "Payment in plentymarkets: Set up the interface to Klarna Checkout UK in plentymarkets.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Klarna Checkout UK. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
