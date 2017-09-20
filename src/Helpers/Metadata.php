@@ -3991,21 +3991,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "0e8adbb5bd181e277263d0d9003a074e",
-						"path" => "auftragsabwicklung/payment/amazon-payments-advanced",
-						"position" => 12,
-						"urlName" => "amazon-payments-advanced",
-						"url" => "/auftragsabwicklung/payment/amazon-payments-advanced",
-						"level" => 3,
-						"title" => "Amazon Payments Advanced",
-						"keywords" => "Amazon Payments Advanced, Zahlungsart",
-						"description" => "Payment in plentymarkets: Richten Sie die Schnittstelle zu Amazon Payments Advanced in Ihrem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Amazon Payments Advanced. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "c6f95c79d0103034772f5612287da679",
 						"path" => "auftragsabwicklung/payment/klarna",
 						"position" => 13,
