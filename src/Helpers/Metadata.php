@@ -8404,24 +8404,9 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "a4225a4a586e7ae2e3ac48f82913aa89",
-				"path" => "crm/using-the-ticket-system",
-				"position" => 20,
-				"urlName" => "using-the-ticket-system",
-				"url" => "/en/crm/using-the-ticket-system",
-				"level" => 2,
-				"title" => "Using the ticket system",
-				"keywords" => "Ticket system, ticket, role, type, status, signature, complimentary close, message, comment, template, child ticket, event procedure, procedure manager",
-				"description" => "Learn how to use the ticket system in plentymarkets for your customer communication.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Using the ticket system. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "f25c257a334731a874174b9311a6f8ab",
 				"path" => "crm/sending-emails",
-				"position" => 30,
+				"position" => 20,
 				"urlName" => "sending-emails",
 				"url" => "/en/crm/sending-emails",
 				"level" => 2,
@@ -8430,6 +8415,21 @@ class Metadata {
 				"description" => "Learn how to set up email templates and automatically send emails to your customers.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Sending emails. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "a4225a4a586e7ae2e3ac48f82913aa89",
+				"path" => "crm/using-the-ticket-system",
+				"position" => 30,
+				"urlName" => "using-the-ticket-system",
+				"url" => "/en/crm/using-the-ticket-system",
+				"level" => 2,
+				"title" => "Using the ticket system",
+				"keywords" => "Ticket system, ticket, role, type, status, signature, complimentary close, message, comment, template, child ticket, event procedure, procedure manager",
+				"description" => "Learn how to use the ticket system in plentymarkets for your customer communication.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Using the ticket system. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
