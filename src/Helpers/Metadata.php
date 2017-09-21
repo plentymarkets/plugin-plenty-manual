@@ -6479,6 +6479,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "10b39db73fd6182c38a664510eb1877e",
+						"path" => "order-processing/orders/managing-orders",
+						"position" => 20,
+						"urlName" => "managing-orders",
+						"url" => "/en/order-processing/orders/managing-orders",
+						"level" => 3,
+						"title" => "Managing orders",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing orders. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "30910c4dbbff0d8d7105eacf198c1b67",
 						"path" => "order-processing/orders/order-documents",
 						"position" => 30,
