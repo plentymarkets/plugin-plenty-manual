@@ -4033,21 +4033,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "91b09702e2383ca19c9e7ff99da9219b",
-								"path" => "basics/data-exchange/data-formats/attributeitemvariation",
-								"position" => 20,
-								"urlName" => "attributeitemvariation",
-								"url" => "/en/basics/data-exchange/data-formats/attributeitemvariation",
-								"level" => 4,
-								"title" => "AttributeItemVariation",
-								"keywords" => "Data format",
-								"description" => "Data format AttributeItemVariation",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic AttributeItemVariation. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "c630e80a6184c5b8b8244f50cfcf069c",
 								"path" => "basics/data-exchange/data-formats/campaigncoupon",
 								"position" => 30,
@@ -4243,21 +4228,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "a0db2e2209640441ea916981963c6f9b",
-								"path" => "basics/data-exchange/data-formats/incomingitems",
-								"position" => 105,
-								"urlName" => "incomingitems",
-								"url" => "/en/basics/data-exchange/data-formats/incomingitems",
-								"level" => 4,
-								"title" => "IncomingItems",
-								"keywords" => "",
-								"description" => "Special format IncomingItems",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic IncomingItems. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "572101d500ff1f218f9309b86c9e6d4f",
 								"path" => "basics/data-exchange/data-formats/item",
 								"position" => 110,
@@ -4273,36 +4243,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "aaaaa842748f35a123c7b33826f1ca80",
-								"path" => "basics/data-exchange/data-formats/itembundle",
-								"position" => 120,
-								"urlName" => "itembundle",
-								"url" => "/en/basics/data-exchange/data-formats/itembundle",
-								"level" => 4,
-								"title" => "ItemBundle",
-								"keywords" => "Data format",
-								"description" => "Data format ItemBundle",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic ItemBundle. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "eef07df7666ecfaf077f289074fd1d2a",
-								"path" => "basics/data-exchange/data-formats/itemcategories",
-								"position" => 130,
-								"urlName" => "itemcategories",
-								"url" => "/en/basics/data-exchange/data-formats/itemcategories",
-								"level" => 4,
-								"title" => "ItemCategories",
-								"keywords" => "Data format",
-								"description" => "Data format ItemCategories",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic ItemCategories. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "76b3a5684f008ca0d7ad3a03a3dbb5f8",
 								"path" => "basics/data-exchange/data-formats/itemcrossselling",
 								"position" => 140,
@@ -4314,21 +4254,6 @@ class Metadata {
 								"description" => "data format ItemCrossSelling",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic ItemCrossSelling. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "d61f9dd090b26bd0b609724d4eb099b3",
-								"path" => "basics/data-exchange/data-formats/itemdealer",
-								"position" => 150,
-								"urlName" => "itemdealer",
-								"url" => "/en/basics/data-exchange/data-formats/itemdealer",
-								"level" => 4,
-								"title" => "ItemDealer",
-								"keywords" => "Data format",
-								"description" => "Data format ItemDealer",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic ItemDealer. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4468,36 +4393,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "513a77e6fc8c29218733f268bf7673a1",
-								"path" => "basics/data-exchange/data-formats/itemparcelservicepreset",
-								"position" => 165,
-								"urlName" => "itemparcelservicepreset",
-								"url" => "/en/basics/data-exchange/data-formats/itemparcelservicepreset",
-								"level" => 4,
-								"title" => "ItemParcelServicePreset",
-								"keywords" => "",
-								"description" => "Special format ItemParcelServicePreset",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic ItemParcelServicePreset. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "92f77e76b34015f153e5fd71859e4277",
-								"path" => "basics/data-exchange/data-formats/itemprice",
-								"position" => 170,
-								"urlName" => "itemprice",
-								"url" => "/en/basics/data-exchange/data-formats/itemprice",
-								"level" => 4,
-								"title" => "ItemPrice",
-								"keywords" => "Data format",
-								"description" => "Data format ItemPrice",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic ItemPrice. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "658c22e0babdce2084e5a7441b0ba7a3",
 								"path" => "basics/data-exchange/data-formats/itemproperties",
 								"position" => 175,
@@ -4509,21 +4404,6 @@ class Metadata {
 								"description" => "Datenformat ItemProperties",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic ItemProperties. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "f04fb1cd5cd68c69200fcd2e15f22f12",
-								"path" => "basics/data-exchange/data-formats/itemwarehouse",
-								"position" => 180,
-								"urlName" => "itemwarehouse",
-								"url" => "/en/basics/data-exchange/data-formats/itemwarehouse",
-								"level" => 4,
-								"title" => "ItemWarehouse",
-								"keywords" => "Data format",
-								"description" => "Data format ItemWarehouse",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic ItemWarehouse. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
