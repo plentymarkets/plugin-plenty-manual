@@ -50,7 +50,7 @@
 </ul>
 </li>
 <li><a href="#95"><span>8.</span><span> Standardkunden für POS-Aufträge erstellen</span></a></li>
-<li><a href="#220"><span>9.</span><span> Dummy-Artikel für Barverkauf erstellen</span></a></li>
+<li><a href="#220"><span>9.</span><span> Dummy-Artikel erstellen</span></a></li>
 <li><a href="#_gutscheinverkauf_vorbereiten"><span>10.</span><span> Gutscheinverkauf vorbereiten</span></a>
 <ul class="sectlevel2">
 <li><a href="#_freitextfeld_vorbereiten"><span>10.1.</span><span> Freitextfeld vorbereiten</span></a>
@@ -439,6 +439,18 @@ Häkchen nicht gesetzt = Aktive und inaktive Varianten sind in der Kasse verfüg
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warenbestand bei Stornierung zurückbuchen</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Aktivieren, um den Warenbestand bei einer Stornierung automatisch zurückzubuchen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Bedienung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Preisabfrage wenn Artikelpreis 0</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aktivieren, um die manuelle Preiseingabe zu öffnen, wenn beim Kassieren ein 0-Euro-Artikel gewählt wird.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Favoriten mit Menge 1 hinzufügen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aktivieren, um beim Kassieren Favoriten automatisch mit der Menge 1 in den POS-Warenkorb zu legen. Artikel mehrmals in den Warenkorb legen, um die Anzahl zu erhöhen.<br>
+<strong><em>Tipp:</em></strong> Für Favoriten, die über die Artikelsuche hinzugefügt werden, wird die Menge weiterhin manuell eingegeben.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1696,26 +1708,81 @@ PLZ</strong>;<br>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="220">9. Dummy-Artikel für Barverkauf erstellen</h2>
+<h2 id="220">9. Dummy-Artikel erstellen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Im Tagesgeschäft kommt es vor, dass Artikel verkauft werden sollen, für die kein Datensatz im System besteht. Um diese Artikel trotzdem kassieren zu können, erstellen Sie Dummy-Artikel. Der Kassenbenutzer fügt dann den Dummy-Artikel zum POS-Warenkorb hinzu und passt den Namen und den Preis der Artikelposition an. Sie benötigen dazu einen Dummy-Artikel für jeden MwSt.-Satz, der für die Produkte Ihres Portfolios fällig wird. Wählen Sie beim Erstellen dieser Artikel im Tab <strong>Einstellungen</strong> der Variante für die Option <strong>Beschränkung</strong> die Einstellung <strong>Keinen WB für diese Variante führen</strong> und speichern Sie den Artikel, damit die Einstellung wirksam wird. Weitere Informationen zum Erstellen von Artikeln finden Sie auf der Handbuchseite <a href="/artikel/artikel-verwalten"><strong>Artikel verwalten</strong></a>.</p>
+<p>Im Tagesgeschäft kommt es vor, dass Artikel verkauft werden sollen, für die es keinen Datensatz im System gibt. Zum Beispiel wird häufig für Diversartikel kein Datensatz angelegt. Um diese Artikel trotzdem kassieren zu können, erstellen Sie Dummy-Artikel. Kassenbenutzer fügen dann den Dummy-Artikel zum POS-Warenkorb hinzu und passen den Preis und optional den Namen der Artikelposition an.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Wichtig"></i>
-</td>
-<td class="content">
-<div class="title">Berechtigungen für POS-Funktionen aktivieren</div>
 <div class="paragraph">
-<p>Damit Kassenbenutzer mit Dummy-Artikeln arbeiten können, aktivieren Sie im Menü <strong>Einstellungen » Grundeinstellungen » Benutzer » Konten » Konto öffnen » Tab: Berechtigung » Tab: Mobile</strong> im Bereich <strong>POS-Funktionen</strong> die Berechtigungen <strong>Preis bearbeiten</strong> und <strong>Artikelposition umbenennen</strong>.</p>
+<p>Die folgenden Vorbereitungen sind nötig, um mit Dummy-Artikeln zu arbeiten.</p>
 </div>
-</td>
+<div class="ulist">
+<ul>
+<li>
+<p>Einen Dummy-Artikel für jeden Umsatzsteuersatz erstellen, der für die Produkte Ihres Portfolios relevant sind. Wenn Sie Artikel mit 19% und 7% verkaufen, benötigen Sie also zwei Dummy-Artikel.</p>
+</li>
+<li>
+<p>Option <strong>Preisabfrage wenn Artikelpreis 0</strong> aktivieren, damit Kassenbenutzer den Preis manuell eingeben können.</p>
+</li>
+<li>
+<p>Kassenbenutzern Rechte zum Bearbeiten von Preisen erteilen.</p>
+</li>
+<li>
+<p>Kassenbenutzern Rechte zum Umbenennen von Artikelpositionen erteilen (optional).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die erforderlichen Einstellungen werden in Tabelle 13 kurz erläutert. Die  Zwischenüberschriften der Tabelle geben an, in welchem Menü Sie die Einstellung vornehmen.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 13. Empfohlene Einstellungen für Dummy-Artikel</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
 </tr>
-</tbody></table>
-</div>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Artikel » Artikel bearbeiten » Neuen Artikel erstellen » Tab: Einstellungen</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beschränkung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option <strong>Keinen WB für diese Variante führen</strong> wählen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Preis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verkaufspreis für Kasse wählen und Preis <strong>0,00</strong> Euro eingeben.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Umsatzsteuer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Umsatzsteuersatz eingeben, der für den Dummy-Artikel gelten soll.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Einstellungen » Mandant (Shop) » Mandant öffnen » POS » Kasse öffnen</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Preisabfrage wenn Artikelpreis 0</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Option aktivieren.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Einstellungen » Grundeinstellungen » Benutzer » Konten » Konto öffnen » Tab: Berechtigung » Tab: Mobile » POS-Funktionen</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Preis bearbeiten</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recht für Kassenbenutzer aktivieren, damit Kassenbenutzer den Preis anpassen können.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikelposition umbenennen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recht für Kassenbenutzer aktivieren, wenn Kassenbenutzer den Namen von Dummy-Artikeln anpassen können sollen.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div><div class="sect1">
 <h2 id="_gutscheinverkauf_vorbereiten">10. Gutscheinverkauf vorbereiten</h2>
@@ -1749,7 +1816,7 @@ PLZ</strong>;<br>
 </ul>
 </div>
 <div class="paragraph">
-<p>Diese Schritte werden hier kurz erläutert. Eine detaillierte Anleitung zum Erstellen von Gutscheinen finden Sie auf der Handbuchseite <a href="https://knowledge.plentymarkets.com/auftragsabwicklung/auftraege/gutscheine" class="bare">https://knowledge.plentymarkets.com/auftragsabwicklung/auftraege/gutscheine</a>.</p>
+<p>Diese Schritte werden hier kurz erläutert. Eine detaillierte Anleitung zum Erstellen von Gutscheinen finden Sie auf der Handbuchseite <strong><a href="/auftragsabwicklung/auftraege/gutscheine">Gutscheine</a></strong>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1786,7 +1853,7 @@ PLZ</strong>;<br>
 </li>
 <li>
 <p>Geben Sie in das Feld <strong>Feldbezeichnung</strong> die Bezeichnung <strong>Kampagne ID</strong> ein.<br>
-<em>*Hinweis:*</em> Achten Sie auf die Schreibweise. Der Name <strong>Kampagne ID</strong> ist nur in der Schreibweise mit Leerzeichen gültig.</p>
+<strong><em>Hinweis:</em></strong> Achten Sie auf die Schreibweise. Der Name <strong>Kampagne ID</strong> ist nur in der Schreibweise mit Leerzeichen gültig.</p>
 </li>
 <li>
 <p>Wählen Sie den Datentyp <strong>Zahl</strong>.</p>
@@ -1842,7 +1909,7 @@ PLZ</strong>;<br>
 <p>Klicken Sie auf <strong>Neue Kampagne</strong>.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen vor. Beachten Sie Tabelle 13.</p>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie Tabelle 14.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen. <br>
@@ -1851,7 +1918,7 @@ PLZ</strong>;<br>
 </ol>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 13. Einstellungen für POS-Verkaufsgutscheinkampagnen</caption>
+<caption class="title">Tabelle 14. Einstellungen für POS-Verkaufsgutscheinkampagnen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2110,7 +2177,7 @@ PLZ</strong>;<br>
 → Der Artikel wird erstellt und zur weiteren Bearbeitung geöffnet.</p>
 </li>
 <li>
-<p>Nehmen Sie die weiteren Einstellungen vor. Beachten Sie Tabelle 14.</p>
+<p>Nehmen Sie die weiteren Einstellungen vor. Beachten Sie Tabelle 15.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -2118,7 +2185,7 @@ PLZ</strong>;<br>
 </ol>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 14. Artikeleinstellungen für Verkaufsgutscheine</caption>
+<caption class="title">Tabelle 15. Artikeleinstellungen für Verkaufsgutscheine</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2225,13 +2292,13 @@ PLZ</strong>;<br>
 <p>Geben Sie einen Namen ein.</p>
 </li>
 <li>
-<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 15.</p>
+<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 16.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß Tabelle 15 vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle 16 vor.</p>
 </li>
 <li>
 <p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
@@ -2244,7 +2311,7 @@ PLZ</strong>;<br>
 </div>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 15. Ereignisaktion zum automatischen Buchen des Warenausgangs beim Erstellen eines POS-Auftrags</caption>
+<caption class="title">Tabelle 16. Ereignisaktion zum automatischen Buchen des Warenausgangs beim Erstellen eines POS-Auftrags</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2344,7 +2411,7 @@ PLZ</strong>;<br>
 <p>Öffnen Sie das Menü <strong>plentymarkets App  » Einstellungen » POS beta</strong>.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen vor. Beachten Sie Tabelle 16.</p>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie Tabelle 17.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.<br>
@@ -2353,7 +2420,7 @@ PLZ</strong>;<br>
 </ol>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 16. Kasse mit Mobilgerät koppeln</caption>
+<caption class="title">Tabelle 17. Kasse mit Mobilgerät koppeln</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2504,13 +2571,13 @@ PLZ</strong>;<br>
 <p>Geben Sie einen Namen ein.</p>
 </li>
 <li>
-<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 16.</p>
+<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 18.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß Tabelle 16 vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle 18 vor.</p>
 </li>
 <li>
 <p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
@@ -2523,7 +2590,7 @@ PLZ</strong>;<br>
 </div>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 17. Ereignisaktion zum automatischen Senden des Kassenbelegs</caption>
+<caption class="title">Tabelle 18. Ereignisaktion zum automatischen Senden des Kassenbelegs</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2600,7 +2667,7 @@ PLZ</strong>;<br>
 <p>Öffnen Sie das Menü <strong>Aufträge » POS » Kassenjournal</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 17.</p>
+<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 19.</p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Suchen</strong>.<br>
@@ -2609,7 +2676,7 @@ PLZ</strong>;<br>
 </ol>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 18. Menü <strong>Kassenjournal</strong></caption>
+<caption class="title">Tabelle 19. Menü <strong>Kassenjournal</strong></caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2728,7 +2795,7 @@ Um Belege eines benutzerdefinierten Zeitraums anzuzeigen, die Option <strong>Dat
 <p>Öffnen Sie das Menü <strong>Aufträge » POS » Kassenjournal</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 16.</p>
+<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 19.</p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Suchen</strong>.<br>
@@ -2753,7 +2820,7 @@ Um Belege eines benutzerdefinierten Zeitraums anzuzeigen, die Option <strong>Dat
 <p>Öffnen Sie das Menü <strong>Aufträge » POS » Kassenjournal</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 16.</p>
+<p>Wählen Sie die Filter. Beachten Sie die Erläuterungen in Tabelle 19.</p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Suchen</strong>.<br>
