@@ -50,7 +50,7 @@
 </ul>
 </li>
 <li><a href="#95"><span>8.</span><span> Creating a default customer for POS orders</span></a></li>
-<li><a href="#220"><span>9.</span><span> Creating a dummy item for cash sales</span></a></li>
+<li><a href="#220"><span>9.</span><span> Creating dummy items</span></a></li>
 <li><a href="#_preparing_gift_card_sales"><span>10.</span><span> Preparing gift card sales</span></a>
 <ul class="sectlevel2">
 <li><a href="#_preparing_the_free_text_field"><span>10.1.</span><span> Preparing the free text field</span></a>
@@ -103,7 +103,7 @@
 </aside>
 
 <main class="col-12 col-md-9 pull-md-3" id="main">
-    <h1>Integrating plentymarkets POS</h1><div id="preamble">
+    <h1>Integrating POS</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>plentymarkets POS allows you to integrate your bricks and mortar shop seamlessly both with your online presence and your plentymarkets system.</p>
@@ -440,6 +440,20 @@ No check mark = Active and inactive variations are available for this POS and ca
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reverse stock if order is cancelled</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Activate to reverse stock automatically if the order is cancelled.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Operation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query price if price is 0</strong><br>
+(app version 1.5.19 and higher)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate to enter the price manually if an item with a price of 0 is added to a POS order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add favourites with quantity 1</strong><br>
+(app version 1.5.19 and higher)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate to select a quantity of 1 for favourites added to a POS order. Add the item to shopping cart again to increase the quantity.<br>
+<strong><em>Tip:</em></strong> The quantity of favourites that were added via the item search must still be entered manually.</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -465,7 +479,7 @@ No check mark = Active and inactive variations are available for this POS and ca
 <p>Open the POS.</p>
 </li>
 <li>
-<p>Open the <strong>Favourites</strong> tab.</p>
+<p>Click on the <strong>Favourites</strong> tab.</p>
 </li>
 <li>
 <p>Click on the <strong>Add variation</strong> tab.<br>
@@ -607,7 +621,7 @@ No check mark = Active and inactive variations are available for this POS and ca
 <p>Place a check mark next to the components to be shown on the POS’s receipts.</p>
 </li>
 <li>
-<p>Carry out the settings as desired. Pay attention to the explanations given in table 4.</p>
+<p>Carry out the settings as desired. Pay attention to the information given in table 4.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
@@ -839,7 +853,7 @@ Cat food CaTasty Deluxe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb
 <p>Click on the <strong>Mobile</strong> tab.</p>
 </li>
 <li>
-<p>Activate the POS functions that the POS user should have access to. Pay attention to the explanations given in table 5.</p>
+<p>Activate the POS functions that the POS user should have access to. Pay attention to the information given in table 5.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -1327,7 +1341,7 @@ X reports contain the following information:<br></p>
 → The <strong>New</strong> tab will open.</p>
 </li>
 <li>
-<p>Pay attention to the explanations given in table 9 and carry out the settings as desired.</p>
+<p>Pay attention to the information given in table 9 and carry out the settings as desired.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -1693,26 +1707,81 @@ Postcode</strong>;<br>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="220">9. Creating a dummy item for cash sales</h2>
+<h2 id="220">9. Creating dummy items</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You may find that items are to be sold that do not have a data record in plentymarkets. Create a dummy item to be able to sell these items anyway. The POS user then adds the dummy item to the POS shopping cart and edits the name and price of the item. To do so, you need a dummy item for each of the VAT rates that apply to the products in your portfolio. When you create this item, go to the <strong>Settings</strong> tab of the variation and for the option <strong>Limitation</strong> select the setting <strong>Do not administer stock for this variation</strong>. Save the item for this setting to take effect. For further information about creating items, refer to the <a href="/en/item/managing-items"><strong>Managing items</strong></a> page of the manual.</p>
+<p>You may find that items are to be sold for which no data record exists in plentymarkets. For instance, it is often too labour intensive to create data records for miscellaneous items or remnants. Create a dummy item to be able to sell these items anyway. POS users can then add the dummy item to the POS shopping cart and modify the price and/or the name of the order item.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="title">Activating rights for POS functions</div>
 <div class="paragraph">
-<p>To allow POS users to work with dummy items, go to <strong>Settings » Basic settings » User » Accounts » Open account » Tab: Right » Tab: Mobile</strong>. In the <strong>POS functions</strong> area, activate the rights <strong>Edit price</strong> and <strong>Rename order item</strong>.</p>
+<p>The following preparations are required to work with dummy items.</p>
 </div>
-</td>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a dummy item for each VAT rate you need for your product portfolio. As such, if you sell items with 19% and 7% VAT, you need two dummy items.</p>
+</li>
+<li>
+<p>Activate the option <strong>Query price if price is 0</strong> so POS users can enter the price manually.</p>
+</li>
+<li>
+<p>Assign POS users the right to edit prices.</p>
+</li>
+<li>
+<p>Assign POS users the right to rename order items (optional).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The required settings are described in table 13. The subheadings indicate the menu in which the settings are carried out.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 13. Recommended settings for dummy items</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
-</tbody></table>
-</div>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Item » Edit Item » Edit item » Create new item » Tab: Settings</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limitation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Do not administer stock for this variation</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Price</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the sales price used for the POS and enter the price <strong>0.00</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VAT</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the VAT rate to be used for the dummy item.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Settings » Client (store) » Open client (store) » POS » Open POS</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query price if price is 0</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate option.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Settings » Basic settings » User » Accounts » Open account » Tab: Right » Tab: Mobile » POS functions</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Edit price</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate the right for POS users to allow them to edit prices.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rename order item</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate the right for POS users if you want POS users to be able to edit the name of dummy items.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div><div class="sect1">
 <h2 id="_preparing_gift_card_sales">10. Preparing gift card sales</h2>
@@ -1746,7 +1815,7 @@ Postcode</strong>;<br>
 </ul>
 </div>
 <div class="paragraph">
-<p>These steps are described here. Find more detailed information on gift cards and coupons on the <a href="https://knowledge.plentymarkets.com/en/order-processing/orders/coupons" class="bare">https://knowledge.plentymarkets.com/en/order-processing/orders/coupons</a> page of the manual.</p>
+<p>These steps are described here. Find more detailed information on gift cards and coupons on the <strong><a href="/en/order-processing/orders/coupons">Coupons</a></strong> page of the manual.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1783,7 +1852,7 @@ Postcode</strong>;<br>
 </li>
 <li>
 <p>In the <strong>Field name</strong> field, enter <strong>Kampaign ID</strong>.<br>
-<em>*Note:*</em> Pay attention to the correct spelling. The name <strong>Kampagne ID</strong> is valid only as specified here.</p>
+<strong><em>Note:</em></strong> Pay attention to the correct spelling. The name <strong>Kampagne ID</strong> is valid only as specified here.</p>
 </li>
 <li>
 <p>Select the data type <strong>number</strong>.</p>
@@ -1839,7 +1908,7 @@ Postcode</strong>;<br>
 <p>Click on <strong>New campaign</strong>.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the information given in table 13.</p>
+<p>Carry out the settings. Pay attention to the information given in table 14.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings. <br>
@@ -1848,7 +1917,7 @@ Postcode</strong>;<br>
 </ol>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 13. Settings for POS gift card campaigns</caption>
+<caption class="title">Table 14. Settings for POS gift card campaigns</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2107,7 +2176,7 @@ Postcode</strong>;<br>
 → The item is created and opened for editing.</p>
 </li>
 <li>
-<p>Carry out the additional settings. Pay attention to the information given in table 14.</p>
+<p>Carry out the additional settings. Pay attention to the information given in table 15.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -2115,7 +2184,7 @@ Postcode</strong>;<br>
 </ol>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 14. Item settings for gift cards</caption>
+<caption class="title">Table 15. Item settings for gift cards</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2222,13 +2291,13 @@ Postcode</strong>;<br>
 <p>Enter the name.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> listed in table 15.</p>
+<p>Select the <strong>Event</strong> listed in table 16.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
 </li>
 <li>
-<p>Carry out the settings as desired. Pay attention to the information given in table 15.</p>
+<p>Carry out the settings as desired. Pay attention to the information given in table 16.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong>.</p>
@@ -2241,7 +2310,7 @@ Postcode</strong>;<br>
 </div>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 15. Event procedure for booking outgoing items for POS orders</caption>
+<caption class="title">Table 16. Event procedure for booking outgoing items for POS orders</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2341,7 +2410,7 @@ Postcode</strong>;<br>
 <p>Go to <strong>plentymarkets App » Settings » POS beta</strong>.</p>
 </li>
 <li>
-<p>Carry out the settings as desired. Pay attention to the explanations given in table 16.</p>
+<p>Carry out the settings as desired. Pay attention to the information given in table 17.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
@@ -2350,7 +2419,7 @@ Postcode</strong>;<br>
 </ol>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 16. Linking a POS to a device</caption>
+<caption class="title">Table 17. Linking a POS to a device</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2501,13 +2570,13 @@ Postcode</strong>;<br>
 <p>Enter a name.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> listed in table 16.</p>
+<p>Select the <strong>event</strong> listed in table 18.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
 </li>
 <li>
-<p>Carry out the settings as desired. Pay attention to the information given in table 16.</p>
+<p>Carry out the settings as desired. Pay attention to the information given in table 18.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong>.</p>
@@ -2520,7 +2589,7 @@ Postcode</strong>;<br>
 </div>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 17. Event procedure for automatically sending receipts</caption>
+<caption class="title">Table 18. Event procedure for automatically sending receipts</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2597,7 +2666,7 @@ Postcode</strong>;<br>
 <p>Go to <strong>Orders » POS » Cash journal</strong>.</p>
 </li>
 <li>
-<p>Select the filters. Pay attention to the information given in table 17.</p>
+<p>Select the filters. Pay attention to the information given in table 19.</p>
 </li>
 <li>
 <p>Click on <strong>Search</strong>.<br>
@@ -2606,7 +2675,7 @@ Postcode</strong>;<br>
 </ol>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 18. <strong>Cash journal</strong> menu</caption>
+<caption class="title">Table 19. <strong>Cash journal</strong> menu</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2725,7 +2794,7 @@ To only show receipts of a custom period, select <strong>Date selection</strong>
 <p>Go to <strong>Orders » POS » Cash journal</strong>.</p>
 </li>
 <li>
-<p>Select filters. Pay attention to the information given in table 16.</p>
+<p>Select filters. Pay attention to the information given in table 19.</p>
 </li>
 <li>
 <p>Click on <strong>Search</strong>.<br>
@@ -2750,7 +2819,7 @@ To only show receipts of a custom period, select <strong>Date selection</strong>
 <p>Go to <strong>Orders » POS » Cash journal</strong>.</p>
 </li>
 <li>
-<p>Select filters. Pay attention to the information given in table 16.</p>
+<p>Select filters. Pay attention to the information given in table 19.</p>
 </li>
 <li>
 <p>Click on <strong>Search</strong>.<br>
