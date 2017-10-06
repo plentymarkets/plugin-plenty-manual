@@ -387,7 +387,7 @@
 <div class="sect2">
 <h3 id="500">2.3. Loading eBay shop categories</h3>
 <div class="paragraph">
-<p>Import the eBay shop categories to plentymarkets or synchronise them in this area. Categories can be selected in a listing or transferred to listings using listing templates. In order to display categories in a template, the <strong>$eBayStoreNavigation</strong> variable must be used in layout templates. For further information, refer to the <strong><a href="/en/omni-channel/multi-channel/ebay#2800">Managing layout templates</a></strong> chapter.</p>
+<p>Import the eBay shop categories to plentymarkets or synchronise them in this area. Categories can be selected in a listing or transferred to listings using listing templates. In order to display categories in a template, the <strong>&#123;&#37; GetListingStoreCategories() &#37;&#125;</strong> function must be used in layout templates. For further information, refer to the <strong><a href="/en/omni-channel/multi-channel/ebay#2800">Managing layout templates</a></strong> chapter.</p>
 </div>
 <div class="paragraph instruction">
 <p>Loading eBay shop categories:</p>
@@ -2680,16 +2680,30 @@ Make sure that the images used are available via URL. To do so, upload the image
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="wrapper clearfix"&gt;
-	&#123;&#37; if $EbayStoreNavigation &#37;&#125;
-		&#123;&#37; $_listingWidth = '400px' &#37;&#125;
-		&#123;&#37; $_menuWidth = '200px' &#37;&#125;
+	&#123;&#37; $_categories = GetListingStoreCategories('tree') &#37;&#125;
 
-		&lt;div class="menu" style="width: $_menuWidth; float: left;"&gt;
-			$EbayStoreNavigation
-		&lt;/div&gt;
-	&#123;&#37; else &#37;&#125;
-		&#123;&#37; $_listingWidth = '100%' &#37;&#125;
+&lt;ul&gt;
+&#123;&#37; for $_levelOneCategory in $_categories &#37;&#125;
+	&lt;li&gt;
+	&#123;&#37; $_name  = $_levelOneCategory['name'] &#37;&#125;
+	&#123;&#37; $_url = $_levelOneCategory['url'] &#37;&#125;
+
+	&lt;a href="$_url"&gt;$_name&lt;/a&gt;
+
+	&#123;&#37; if count($_levelOneCategory['children']) &#37;&#125;
+		&lt;ul class="children"&gt;
+			&#123;&#37; for $_levelTwoCategory in $_levelOneCategory['children'] &#37;&#125;
+				&lt;li class="child-level"&gt;
+					&#123;&#37; $_name = $_levelTwoCategory['name'] &#37;&#125;
+					&#123;&#37; $_url = $_levelTwoCategory['url'] &#37;&#125;
+					&lt;a href="$_url"&gt;$_name&lt;/a&gt;
+				&lt;/li&gt;
+			&#123;&#37; endfor &#37;&#125;
+		&lt;/ul&gt;
 	&#123;&#37; endif &#37;&#125;
+	&lt;/li&gt;
+&#123;&#37; endfor &#37;&#125;
+&lt;/ul&gt;
 
 	&lt;div style="width: $_listingWidth; float: left;" class="listing-content"&gt;
 		&lt;h1&gt;&#123;&#37; GetItemName(1) &#37;&#125;&lt;/h1&gt;
@@ -3157,14 +3171,6 @@ Usually e.g. for food items a unit price as well as the unit or a reference quan
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>Fixed price (buy it now)</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p><strong>$EbayStoreNavigation</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>eBay shop category link list</p>
 </div></div></td>
 </tr>
 <tr>
