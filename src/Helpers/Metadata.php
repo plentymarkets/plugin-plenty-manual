@@ -4393,6 +4393,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "92f77e76b34015f153e5fd71859e4277",
+								"path" => "basics/data-exchange/data-formats/itemprice",
+								"position" => 170,
+								"urlName" => "itemprice",
+								"url" => "/en/basics/data-exchange/data-formats/itemprice",
+								"level" => 4,
+								"title" => "ItemPrice",
+								"keywords" => "Data format",
+								"description" => "Data format ItemPrice",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic ItemPrice. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "658c22e0babdce2084e5a7441b0ba7a3",
 								"path" => "basics/data-exchange/data-formats/itemproperties",
 								"position" => 175,
@@ -5152,6 +5167,21 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
+			],
+			[
+				"id" => "2805c2760faf6a5256308dfb6c9b0dfe",
+				"path" => "item/give-aways-free-gifts",
+				"position" => 40,
+				"urlName" => "give-aways-free-gifts",
+				"url" => "/en/item/give-aways-free-gifts",
+				"level" => 2,
+				"title" => "Give-aways",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Give-aways. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
@@ -6344,6 +6374,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Orders. The following information is available:",
 				"children" => 				[
 					[
+						"id" => "b872719c817e1661c61bb999f13cc77d",
+						"path" => "order-processing/orders/accounting",
+						"position" => 10,
+						"urlName" => "accounting",
+						"url" => "/en/order-processing/orders/accounting",
+						"level" => 3,
+						"title" => "Accounting",
+						"keywords" => "accounting, price rounding",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Accounting. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "10b39db73fd6182c38a664510eb1877e",
 						"path" => "order-processing/orders/managing-orders",
 						"position" => 20,
@@ -6721,21 +6766,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "643399d8ab51f558d64357da60b8554c",
-						"path" => "order-processing/payment/klarna-checkout",
-						"position" => 20,
-						"urlName" => "klarna-checkout",
-						"url" => "/en/order-processing/payment/klarna-checkout",
-						"level" => 3,
-						"title" => "Klarna Checkout",
-						"keywords" => "Klarna Checkout, payment method",
-						"description" => "Payment in plentymarkets: Set up the interface to Klarna Checkout in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Klarna Checkout. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "de4f8d3dfc0867f551b940b4d45459b9",
 						"path" => "order-processing/payment/klarna-checkout-uk",
 						"position" => 20,
@@ -6747,6 +6777,21 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Set up the interface to Klarna Checkout UK in plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Klarna Checkout UK. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "643399d8ab51f558d64357da60b8554c",
+						"path" => "order-processing/payment/klarna-checkout",
+						"position" => 20,
+						"urlName" => "klarna-checkout",
+						"url" => "/en/order-processing/payment/klarna-checkout",
+						"level" => 3,
+						"title" => "Klarna Checkout",
+						"keywords" => "Klarna Checkout, payment method",
+						"description" => "Payment in plentymarkets: Set up the interface to Klarna Checkout in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Klarna Checkout. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -6961,21 +7006,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "627375d3cf505c353c0135320fd242c6",
-						"path" => "order-processing/payment/skrill",
-						"position" => 60,
-						"urlName" => "skrill",
-						"url" => "/en/order-processing/payment/skrill",
-						"level" => 3,
-						"title" => "Skrill",
-						"keywords" => "Skrill, payment method",
-						"description" => "Payment in plentymarkets: Set up the interface to Skrill in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Skrill. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "21484af48d9f5da743fdd8119c57c213",
 						"path" => "order-processing/payment/upg",
 						"position" => 60,
@@ -6987,6 +7017,21 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Set up the interface to UPG in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic UPG. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "627375d3cf505c353c0135320fd242c6",
+						"path" => "order-processing/payment/skrill",
+						"position" => 60,
+						"urlName" => "skrill",
+						"url" => "/en/order-processing/payment/skrill",
+						"level" => 3,
+						"title" => "Skrill",
+						"keywords" => "Skrill, payment method",
+						"description" => "Payment in plentymarkets: Set up the interface to Skrill in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Skrill. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7032,21 +7077,6 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Set up the debt collection service provider ADU-Inkasso in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic ADU-Inkasso. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "92a43508b9dfd80943dc12dbfaccc894",
-						"path" => "order-processing/payment/arvato",
-						"position" => 71,
-						"urlName" => "arvato",
-						"url" => "/en/order-processing/payment/arvato",
-						"level" => 3,
-						"title" => "arvato",
-						"keywords" => "arvato, arvato infoscore, debt collection service provider, credit rating",
-						"description" => "Payment in plentymarkets: Set up the debt collection service provider arvato and the credit rating service arvato infoscore in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic arvato. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
