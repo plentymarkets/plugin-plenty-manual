@@ -707,6 +707,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "1c78e392a2b74f8bf5e6d485a33edb8b",
+								"path" => "basics/datenaustausch/datenformate/itemprice",
+								"position" => 170,
+								"urlName" => "itemprice",
+								"url" => "/basics/datenaustausch/datenformate/itemprice",
+								"level" => 4,
+								"title" => "ItemPrice",
+								"keywords" => "Datenformat",
+								"description" => "Datenformat ItemPrice",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich ItemPrice. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "40615f8baccbdbd7b60b652ac3f9a708",
 								"path" => "basics/datenaustausch/datenformate/itemproperties",
 								"position" => 175,
@@ -1474,11 +1489,11 @@ class Metadata {
 				"urlName" => "gratis-zugaben-freiartikel",
 				"url" => "/artikel/gratis-zugaben-freiartikel",
 				"level" => 2,
-				"title" => "Gratis-Zugaben/Freiartikel",
+				"title" => "Gratiszugaben",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Gratis-Zugaben/Freiartikel. Hier finden Sie folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Gratiszugaben. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -3361,21 +3376,6 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richten Sie den Inkassodienstleister ADU-Inkasso in Ihrem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich ADU-Inkasso. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "b6d0b8741b68957c098c4fe53c52640a",
-						"path" => "auftragsabwicklung/payment/arvato",
-						"position" => 71,
-						"urlName" => "arvato",
-						"url" => "/auftragsabwicklung/payment/arvato",
-						"level" => 3,
-						"title" => "arvato",
-						"keywords" => "arvato, arvato infoscore, Inkassodienstleister, Bonitätsprüfung",
-						"description" => "Payment in plentymarkets: Richten Sie den Inkassodienstleister arvato und die Bonitätsprüfung arvato infoscore in Ihrem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich arvato. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
