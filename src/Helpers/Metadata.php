@@ -2624,21 +2624,6 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich POS für Kassenbenutzer. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "8c60a0dd66af6eb2203eca02995769fd",
-						"path" => "omni-channel/pos/plentymarkets-pos-in-oesterreich-einrichten",
-						"position" => 20,
-						"urlName" => "plentymarkets-pos-in-oesterreich-einrichten",
-						"url" => "/omni-channel/pos/plentymarkets-pos-in-oesterreich-einrichten",
-						"level" => 3,
-						"title" => "plentymarkets POS in Österreich einrichten",
-						"keywords" => "plentymarkets POS, POS, Österreich, AT, Kasse, Kassensystem, Kassen, Kassenjournal, Kassenbuch, Registrierkassensicherheitsverordnung, RKSV",
-						"description" => "plentymarkets POS in Österreich einrichten",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich plentymarkets POS in Österreich einrichten. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
