@@ -959,16 +959,30 @@ Make sure that the images used are available via URL. To do so, upload the image
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="wrapper clearfix"&gt;
-	&#123;&#37; if $EbayStoreNavigation &#37;&#125;
-		&#123;&#37; $_listingWidth = '400px' &#37;&#125;
-		&#123;&#37; $_menuWidth = '200px' &#37;&#125;
+	&#123;&#37; $_categories = GetListingStoreCategories('tree') &#37;&#125;
 
-		&lt;div class="menu" style="width: $_menuWidth; float: left;"&gt;
-			$EbayStoreNavigation
-		&lt;/div&gt;
-	&#123;&#37; else &#37;&#125;
-		&#123;&#37; $_listingWidth = '100%' &#37;&#125;
+&lt;ul&gt;
+&#123;&#37; for $_levelOneCategory in $_categories &#37;&#125;
+	&lt;li&gt;
+	&#123;&#37; $_name  = $_levelOneCategory['name'] &#37;&#125;
+	&#123;&#37; $_url = $_levelOneCategory['url'] &#37;&#125;
+
+	&lt;a href="$_url"&gt;$_name&lt;/a&gt;
+
+	&#123;&#37; if count($_levelOneCategory['children']) &#37;&#125;
+		&lt;ul class="children"&gt;
+			&#123;&#37; for $_levelTwoCategory in $_levelOneCategory['children'] &#37;&#125;
+				&lt;li class="child-level"&gt;
+					&#123;&#37; $_name = $_levelTwoCategory['name'] &#37;&#125;
+					&#123;&#37; $_url = $_levelTwoCategory['url'] &#37;&#125;
+					&lt;a href="$_url"&gt;$_name&lt;/a&gt;
+				&lt;/li&gt;
+			&#123;&#37; endfor &#37;&#125;
+		&lt;/ul&gt;
 	&#123;&#37; endif &#37;&#125;
+	&lt;/li&gt;
+&#123;&#37; endfor &#37;&#125;
+&lt;/ul&gt;
 
 	&lt;div style="width: $_listingWidth; float: left;" class="listing-content"&gt;
 		&lt;h1&gt;&#123;&#37; GetItemName(1) &#37;&#125;&lt;/h1&gt;
