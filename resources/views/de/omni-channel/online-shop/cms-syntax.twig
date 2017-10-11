@@ -5571,13 +5571,14 @@ $LoopRevPosition[1]</code></pre>
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
 	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
 
-	if (array_key_exists("Price", $_array))
+	$_array = arsort($_array);
+	for ($_key, $_value in $_array)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		print($_key.":".$_value."&amp;nbsp;&amp;nbsp;&amp;nbsp;");
 	}
 &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Outputs: Name:Couch Red   Price:400 €   Id:100    #}</code></pre>
 </div>
 </div>
 </div>
@@ -5605,13 +5606,14 @@ $LoopRevPosition[1]</code></pre>
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
 	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
 
-	if (array_key_exists("Price", $_array))
+	$_array = asort($_array);
+	for ($_key, $_value in $_array)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		print($_key.":".$_value."&amp;nbsp;&amp;nbsp;&amp;nbsp;");
 	}
 &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Outputs: Id:100   Price:400 €   Name:Couch Red    #}</code></pre>
 </div>
 </div>
 </div>
@@ -5671,15 +5673,18 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+    $_array = [1,2,3,4];
+    $_result = count($_array);
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+    # $_result == 4
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+
+    if(count($_array) &gt; 0)
+    {
+        print("My list contains at least one entry.");
+    }
+
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -5705,15 +5710,57 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+	# API data
+	$_apiFunction = "ratingstars";
+	$_svStoreID = "5675";
+	$_apiKey = "28ea3dc072c326691814641c3daf5b7e";
 
-	if (array_key_exists("Price", $_array))
+	# Builds API URL retrieved
+	$_apiUrl = "https://api.shopvote.de/ratings/v1/"
+			   . $_apiFunction . "/"
+			   . $_svStoreID . "/"
+			   . $_apiKey;
+
+	# Initializes Curl session
+	$_ch = curl_init();
+
+	# Prepares Useragent options as strings
+	$_opt = "SVApiV1; L25ext for ShopID ";
+	$_opt .= $_svStoreID;
+
+	# Sets options for Curl session
+	curl_setopt( $_ch , "CURLOPT_USERAGENT" , $_opt );
+	curl_setopt( $_ch , "CURLOPT_HEADER" , false );
+	curl_setopt( $_ch , "CURLOPT_RETURNTRANSFER" , 1 );
+	curl_setopt( $_ch , "CURLOPT_URL" , $_apiUrl);
+
+	# Runs Curl session and stores result
+	$_output = curl_exec($_ch);
+
+	# Closes Curl session
+	curl_close($_ch);
+
+	# If return value can be converted to simpleXML element,
+	# element is cached and different values written to variables.
+	if (simplexml_load_string($_output) != null)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		$_xml = simplexml_load_string($_output);
+		$_storename = $_xml-&gt;name;
+		$_storeprofile = $_xml-&gt;profile;
+		$_storeurl = $_xml-&gt;storeurl;
+		$_rating_stars = $_xml-&gt;rating_summary-&gt;rating_value[0];
+		$_rating_value = $_xml-&gt;rating_summary-&gt;rating_value[1];
+		$_rating_count = $_xml-&gt;rating_summary-&gt;ratings_count;
+		$_positive_rating_count = $_xml-&gt;rating_summary-&gt;ratings_positive;
+		$_neutral_rating_count = $_xml-&gt;rating_summary-&gt;ratings_neutral;
+		$_negative_rating_count = $_xml-&gt;rating_summary-&gt;ratings_negative;
 	}
 &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Output of cached variables with appropriate text #}
+&lt;div&gt;
+	ShopVote rating of $_storeurl: $_rating_value (that are $_ratingstarts / 5 Stars) out of $_rating_count ratings.
+&lt;/div&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -5739,15 +5786,57 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+	# API data
+	$_apiFunction = "ratingstars";
+	$_svStoreID = "5675";
+	$_apiKey = "28ea3dc072c326691814641c3daf5b7e";
 
-	if (array_key_exists("Price", $_array))
+	# Builds API URL retrieved
+	$_apiUrl = "https://api.shopvote.de/ratings/v1/"
+			   . $_apiFunction . "/"
+			   . $_svStoreID . "/"
+			   . $_apiKey;
+
+	# Initializes Curl session
+	$_ch = curl_init();
+
+	# Prepares Useragent options as strings
+	$_opt = "SVApiV1; L25ext for ShopID ";
+	$_opt .= $_svStoreID;
+
+	# Sets options for Curl session
+	curl_setopt( $_ch , "CURLOPT_USERAGENT" , $_opt );
+	curl_setopt( $_ch , "CURLOPT_HEADER" , false );
+	curl_setopt( $_ch , "CURLOPT_RETURNTRANSFER" , 1 );
+	curl_setopt( $_ch , "CURLOPT_URL" , $_apiUrl);
+
+	# Runs Curl session and stores result
+	$_output = curl_exec($_ch);
+
+	# Closes Curl session
+	curl_close($_ch);
+
+	# If return value can be converted to simpleXML element,
+	# element is cached and different values written to variables.
+	if (simplexml_load_string($_output) != null)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		$_xml = simplexml_load_string($_output);
+		$_storename = $_xml-&gt;name;
+		$_storeprofile = $_xml-&gt;profile;
+		$_storeurl = $_xml-&gt;storeurl;
+		$_rating_stars = $_xml-&gt;rating_summary-&gt;rating_value[0];
+		$_rating_value = $_xml-&gt;rating_summary-&gt;rating_value[1];
+		$_rating_count = $_xml-&gt;rating_summary-&gt;ratings_count;
+		$_positive_rating_count = $_xml-&gt;rating_summary-&gt;ratings_positive;
+		$_neutral_rating_count = $_xml-&gt;rating_summary-&gt;ratings_neutral;
+		$_negative_rating_count = $_xml-&gt;rating_summary-&gt;ratings_negative;
 	}
 &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Output of cached variables with appropriate text #}
+&lt;div&gt;
+	ShopVote rating of $_storeurl: $_rating_value (that are $_ratingstarts / 5 Stars) out of $_rating_count ratings.
+&lt;/div&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -5773,15 +5862,57 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+	# API data
+	$_apiFunction = "ratingstars";
+	$_svStoreID = "5675";
+	$_apiKey = "28ea3dc072c326691814641c3daf5b7e";
 
-	if (array_key_exists("Price", $_array))
+	# Builds API URL retrieved
+	$_apiUrl = "https://api.shopvote.de/ratings/v1/"
+			   . $_apiFunction . "/"
+			   . $_svStoreID . "/"
+			   . $_apiKey;
+
+	# Initializes Curl session
+	$_ch = curl_init();
+
+	# Prepares Useragent options as strings
+	$_opt = "SVApiV1; L25ext for ShopID ";
+	$_opt .= $_svStoreID;
+
+	# Sets options for Curl session
+	curl_setopt( $_ch , "CURLOPT_USERAGENT" , $_opt );
+	curl_setopt( $_ch , "CURLOPT_HEADER" , false );
+	curl_setopt( $_ch , "CURLOPT_RETURNTRANSFER" , 1 );
+	curl_setopt( $_ch , "CURLOPT_URL" , $_apiUrl);
+
+	# Runs Curl session and stores result
+	$_output = curl_exec($_ch);
+
+	# Closes Curl session
+	curl_close($_ch);
+
+	# If return value can be converted to simpleXML element,
+	# element is cached and different values written to variables.
+	if (simplexml_load_string($_output) != null)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		$_xml = simplexml_load_string($_output);
+		$_storename = $_xml-&gt;name;
+		$_storeprofile = $_xml-&gt;profile;
+		$_storeurl = $_xml-&gt;storeurl;
+		$_rating_stars = $_xml-&gt;rating_summary-&gt;rating_value[0];
+		$_rating_value = $_xml-&gt;rating_summary-&gt;rating_value[1];
+		$_rating_count = $_xml-&gt;rating_summary-&gt;ratings_count;
+		$_positive_rating_count = $_xml-&gt;rating_summary-&gt;ratings_positive;
+		$_neutral_rating_count = $_xml-&gt;rating_summary-&gt;ratings_neutral;
+		$_negative_rating_count = $_xml-&gt;rating_summary-&gt;ratings_negative;
 	}
 &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Output of cached variables with appropriate text #}
+&lt;div&gt;
+	ShopVote rating of $_storeurl: $_rating_value (that are $_ratingstarts / 5 Stars) out of $_rating_count ratings.
+&lt;/div&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -5807,15 +5938,57 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+	# API data
+	$_apiFunction = "ratingstars";
+	$_svStoreID = "5675";
+	$_apiKey = "28ea3dc072c326691814641c3daf5b7e";
 
-	if (array_key_exists("Price", $_array))
+	# Builds API URL retrieved
+	$_apiUrl = "https://api.shopvote.de/ratings/v1/"
+			   . $_apiFunction . "/"
+			   . $_svStoreID . "/"
+			   . $_apiKey;
+
+	# Initializes Curl session
+	$_ch = curl_init();
+
+	# Prepares Useragent options as strings
+	$_opt = "SVApiV1; L25ext for ShopID ";
+	$_opt .= $_svStoreID;
+
+	# Sets options for Curl session
+	curl_setopt( $_ch , "CURLOPT_USERAGENT" , $_opt );
+	curl_setopt( $_ch , "CURLOPT_HEADER" , false );
+	curl_setopt( $_ch , "CURLOPT_RETURNTRANSFER" , 1 );
+	curl_setopt( $_ch , "CURLOPT_URL" , $_apiUrl);
+
+	# Runs Curl session and stores result
+	$_output = curl_exec($_ch);
+
+	# Closes Curl session
+	curl_close($_ch);
+
+	# If return value can be converted to simpleXML element,
+	# element is cached and different values written to variables.
+	if (simplexml_load_string($_output) != null)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		$_xml = simplexml_load_string($_output);
+		$_storename = $_xml-&gt;name;
+		$_storeprofile = $_xml-&gt;profile;
+		$_storeurl = $_xml-&gt;storeurl;
+		$_rating_stars = $_xml-&gt;rating_summary-&gt;rating_value[0];
+		$_rating_value = $_xml-&gt;rating_summary-&gt;rating_value[1];
+		$_rating_count = $_xml-&gt;rating_summary-&gt;ratings_count;
+		$_positive_rating_count = $_xml-&gt;rating_summary-&gt;ratings_positive;
+		$_neutral_rating_count = $_xml-&gt;rating_summary-&gt;ratings_neutral;
+		$_negative_rating_count = $_xml-&gt;rating_summary-&gt;ratings_negative;
 	}
 &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Output of cached variables with appropriate text #}
+&lt;div&gt;
+	ShopVote rating of $_storeurl: $_rating_value (that are $_ratingstarts / 5 Stars) out of $_rating_count ratings.
+&lt;/div&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -5841,15 +6014,12 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+	$_array = ["Item 1", "Item 2", "Item 3"];
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+	$_current = current($_array);
+	print($_current);
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -5874,16 +6044,7 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_10">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
-
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
-
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty"></code></pre>
 </div>
 </div>
 </div>
@@ -5908,16 +6069,7 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_11">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
-
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
-
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty"></code></pre>
 </div>
 </div>
 </div>
@@ -5959,16 +6111,10 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_12">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; $_string = 'A "quote" is &lt;b&gt;bold&lt;/b&gt;' &#37;&#125;
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
-
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Outputs: A &amp;quot;quote&amp;quot; is &amp;lt;b&amp;gt;bold&amp;lt;/b&amp;gt;  #}
+&#123;&#37; htmlentities($_string, $ENT_QUOTES) &#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -5994,15 +6140,14 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+	$_itemList = ["Item1", "Item 2", "Item 3", "Item 4"];
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
+	$_itemString = implode(", ", $_itemList);
 &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Outputs: Item 1, Item 2, Item 3, Item 4  #}
+
+$_itemString</code></pre>
 </div>
 </div>
 </div>
@@ -6027,16 +6172,13 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_14">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; $_os = ["Mac", "NT", "Irix", "Linux"] &#37;&#125;
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+&#123;&#37; if in_array("Mac", $_os) &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+Got Mac
+
+&#123;&#37; endif &#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6061,16 +6203,30 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_15">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; $_array = ["item1", "item2"] &#37;&#125;
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+&#123;&#37; if is_array($_array) &#37;&#125;
+    is an array &lt;br /&gt;
+&#123;&#37; else &#37;&#125;
+    is NOT an array &lt;br /&gt;
+&#123;&#37; endif &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+
+&#123;&#37; $_string = "Some text" &#37;&#125;
+
+&#123;&#37; if is_array($_string) &#37;&#125;
+    is an array &lt;br /&gt;
+&#123;&#37; else &#37;&#125;
+    is NOT an array &lt;br /&gt;
+&#123;&#37; endif &#37;&#125;
+
+
+{# Outputs:
+
+is an array
+is NOT an array
+
+#}</code></pre>
 </div>
 </div>
 </div>
@@ -6095,16 +6251,26 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_16">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; $_array = ["42", 1337, 2471, "not numeric"] &#37;&#125;
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+&#123;&#37; for $_i in $_array &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	&#123;&#37; if is_numeric($_i) &#37;&#125;
+		$_i is numeric &lt;br /&gt;
+	&#123;&#37; else &#37;&#125;
+		$_i is NOT numeric &lt;br /&gt;
+	&#123;&#37; endif &#37;&#125;
+
+&#123;&#37; endfor &#37;&#125;
+
+{# Outputs:
+
+42 is numeric
+1337 is numeric
+2471 is numeric
+not numeric is NOT numeric
+
+#}</code></pre>
 </div>
 </div>
 </div>
@@ -6129,16 +6295,33 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_17">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; $_array = [true, false, 'abc', '23', 23, '23.5', 23.5, '', ' ', '0', 0] &#37;&#125;
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+&#123;&#37; for $_i in $_array &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+    &#123;&#37; if is_string($_i) &#37;&#125;
+        $_i is a string &lt;br /&gt;
+    &#123;&#37; else &#37;&#125;
+        $_i is NOT a string &lt;br /&gt;
+    &#123;&#37; endif &#37;&#125;
+
+&#123;&#37; endfor &#37;&#125;
+
+{# Outputs:
+
+1 is NOT a string
+is NOT a string
+abc is a string
+23 is a string
+23 is NOT a string
+23.5 is a string
+23.5 is NOT a string
+is a string
+is a string
+0 is a string
+0 is NOT a string
+
+#}</code></pre>
 </div>
 </div>
 </div>
@@ -6163,16 +6346,7 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_18">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
-
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
-
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty"></code></pre>
 </div>
 </div>
 </div>
@@ -6197,16 +6371,7 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_19">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
-
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
-
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty"></code></pre>
 </div>
 </div>
 </div>
@@ -6234,13 +6399,14 @@ $LoopRevPosition[1]</code></pre>
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
 	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
 
-	if (array_key_exists("Price", $_array))
+	$_array = krsort($_array);
+	for ($_key, $_value in $_array)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		print($_key.":".$_value."&amp;nbsp;&amp;nbsp;&amp;nbsp;");
 	}
 &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Outputs: Price:400 €   Name:Couch Red   Id:100    #}</code></pre>
 </div>
 </div>
 </div>
@@ -6266,15 +6432,16 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
+$_array = ksort($_array);
+for ($_key, $_value in $_array)
+{
+print($_key.":".$_value."&amp;nbsp;&amp;nbsp;&amp;nbsp;");
+}
 &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Outputs: Id:100   Name:Couch Red   Price:400 €    #}</code></pre>
 </div>
 </div>
 </div>
@@ -6300,15 +6467,19 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+	$_encriptedPassword = "94a9e05da7d36da78ebcede30f38311a";
 
-	if (array_key_exists("Price", $_array))
+	$_password = "SeCuR3PasSw0rD";
+
+	$_mD5Value = md5($_password);
+
+	if ($_mD5Value == $_encriptedPassword)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		print("You password is correct!");
 	}
-&#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	#Outputs: You password is correct!
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6334,15 +6505,27 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
 
-	if (array_key_exists("Price", $_array))
+	$_array = ["Item3","item2","Item4","Item1"];
+
+	for ($_value in $_array)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		print($_value);
+		print(" ");
 	}
-&#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	print(" sorted: ");
+
+	$_sortedArray = natcasesort($_array);
+
+	for ($_value in $_sortedArray)
+	{
+		print($_value);
+		print(" ");
+	}
+
+	#Outputs: Item3 item2 Item4 Item1 sorted: Item1 item2 Item3 Item4
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6368,15 +6551,28 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
 
-	if (array_key_exists("Price", $_array))
+	$_array = ["Item3","item2","Item4","Item1"];
+
+	for ($_value in $_array)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		print($_value);
+		print(" ");
 	}
-&#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	print(" sorted: ");
+
+	$_sortedArray = natsort($_array);
+
+	for ($_value in $_sortedArray)
+	{
+		print($_value);
+		print(" ");
+	}
+
+	#Outputs: Item3 item2 Item4 Item1 sorted: Item1 Item3 Item4 item2
+
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6402,15 +6598,17 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+	$_string = "This is a text that has linebreaks.
+				To show them on web it has to be converted.";
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	$_webString = nl2br($_string);
+
+	print($_webString);
+
+	#Output: This is a text that has linebreaks.&lt;br&gt;To show them on web it has to be converted.
+
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6435,16 +6633,23 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_26">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; $_number = 1234.56 &#37;&#125;
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+{# english notation (default) #}
+&#123;&#37; $_english_format_number = number_format($_number) &#37;&#125;
+{# 1,235 #}
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+
+{# French notation #}
+&#123;&#37; $_nombre_format_francais = number_format($_number, 2, ',', ' ') &#37;&#125;
+{# 1 234,56 #}
+
+
+&#123;&#37; $_number = 1234.5678 &#37;&#125;
+
+{# english notation without thousands separator #}
+&#123;&#37; $_english_format_number = number_format($_number, 2, '.', '') &#37;&#125;
+{# 1234.57 #}</code></pre>
 </div>
 </div>
 </div>
@@ -6470,15 +6675,16 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+	# Outputs With this function I can print text without closing the block!
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+	print("With this function I can print text without closing the block! ");
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	$_text = "It can print the value of ownvars too.";
+
+	# Outputs: It can print the value of ownvars too.
+
+	print($_text);
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6521,15 +6727,27 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
 
-	if (array_key_exists("Price", $_array))
+	$_array = ["Item3","item2","Item4","Item1"];
+
+	for ($_value in $_array)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		print($_value);
+		print(" ");
 	}
-&#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	print(" sorted: ");
+
+	$_sortedArray = rsort($_array);
+
+	for ($_value in $_sortedArray)
+	{
+		print($_value);
+		print(" ");
+	}
+
+	#Outputs: Item3 item2 Item4 Item1 sorted: item2 Item4 Item3 Item1
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6555,15 +6773,12 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+	#
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	simplexml_load_string();
+
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6589,15 +6804,28 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
 
-	if (array_key_exists("Price", $_array))
+	$_array = ["Item3","item2","Item4","Item1"];
+
+	for ($_value in $_array)
 	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
+		print($_value);
+		print(" ");
 	}
-&#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	print(" sorted: ");
+
+	$_sortedArray = sort($_array);
+
+	for ($_value in $_sortedArray)
+	{
+		print($_value);
+		print(" ");
+	}
+
+	#Outputs: Item3 item2 Item4 Item1 sorted: Item1 Item3 Item4 item2
+
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6623,15 +6851,14 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+	$_itemString = "Item1, Item 2, Item 3, Item 4";
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
+	$_newItemString = str_replace(", ", " - ", $_itemString);
 &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Outputs: Item 1 - Item 2 - Item 3 - Item 4  #}
+
+$_newItemString</code></pre>
 </div>
 </div>
 </div>
@@ -6657,15 +6884,16 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+	$_text = "This is a text that has html-Tags.&lt;br&gt; You do not want these tags if you parse something in the text.";
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	$_clearText = strip_tags($_text);
+
+	print($_clearText);
+
+	# Outputs : This is a text that has html-Tags. You do not want these tags if you parse something in the text.
+
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6691,15 +6919,16 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+	$_text = "I wrote this text";
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+	$_pos = stripos($_text, "i");
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	# Outputs: The first occurence of the letter 'i' is on position 0. It is NOT case sensitive!
+
+	print("The first occurence of the letter 'i' is on position ");
+	print($_pos);
+	print(". It is NOT case sensitive!");
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6724,16 +6953,13 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_34">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; $_string = "abcdef" &#37;&#125;
+&#123;&#37; strlen($_string) &#37;&#125;
+{# Outputs: 6 #}
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
-
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+&#123;&#37; $_string = " ab cd " &#37;&#125;
+&#123;&#37; strlen($_string) &#37;&#125;
+{# Outputs: 7 #}</code></pre>
 </div>
 </div>
 </div>
@@ -6759,15 +6985,16 @@ $LoopRevPosition[1]</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+	$_text = "I wrote this text";
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+	$_pos = strpos($_text, "i");
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+	# Outputs: The first occurence of the letter 'i' is on position 10. It IS case sensitive!
+
+	print("The first occurence of the letter 'i' is on position ");
+	print($_pos);
+	print(". It IS case sensitive!");
+&#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6792,16 +7019,10 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_36">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; $_string = "Mary Had A Little Lamb and She LOVED It So" &#37;&#125;
+&#123;&#37; $_string = strtolower($_string) &#37;&#125;
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
-
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+&lt;strong&gt;$_string&lt;/strong&gt; {# Prints &lt;strong&gt;mary had a little lamb and she loved it so&lt;/strong&gt; #}</code></pre>
 </div>
 </div>
 </div>
@@ -6826,16 +7047,24 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_37">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; strtotime("now") &#37;&#125;
+&#123;&#37; strtotime("10 September 2000") &#37;&#125;
+&#123;&#37; strtotime("+1 day") &#37;&#125;
+&#123;&#37; strtotime("+1 week") &#37;&#125;
+&#123;&#37; strtotime("next Thursday") &#37;&#125;
+&#123;&#37; strtotime("last Monday") &#37;&#125;
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Prints something like: 11.09.2014 #}
+
+&#123;&#37; $_timeNextThursday = strtotime("next Thursday") &#37;&#125;
+&#123;&#37; date("d.m.Y", $_timeNextThursday) &#37;&#125;
+
+
+{# Prints: 23.07.1980 #}
+
+&#123;&#37; $_someDate = strtotime("1980-07-23") &#37;&#125;
+&#123;&#37; date("d.m.Y", $_someDate) &#37;&#125;</code></pre>
 </div>
 </div>
 </div>
@@ -6860,16 +7089,10 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_38">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; $_string = "Mary Had A Little Lamb and She LOVED It So" &#37;&#125;
+&#123;&#37; $_string = strtoupper($_string) &#37;&#125;
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
-
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+&lt;strong&gt;$_string&lt;/strong&gt; {# Prints &lt;strong&gt;MARY HAD A LITTLE LAMB AND SHE LOVED IT SO&lt;/strong&gt; #}</code></pre>
 </div>
 </div>
 </div>
@@ -6894,16 +7117,13 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_39">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
-
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
-
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; $_rest = substr("abcdef", 0, -1) &#37;&#125;  {# returns "abcde" #}
+&#123;&#37; $_rest = substr("abcdef", 2, -1) &#37;&#125;  {# returns "cde" #}
+&#123;&#37; $_rest = substr("abcdef", 4, -4) &#37;&#125;  {# returns false #}
+&#123;&#37; $_rest = substr("abcdef", -3, -1) &#37;&#125; {# returns "de" #}
+&#123;&#37; $_rest = substr("abcdef", -1) &#37;&#125;     {# returns "f" #}
+&#123;&#37; $_rest = substr("abcdef", -2) &#37;&#125;     {# returns "ef" #}
+&#123;&#37; $_rest = substr("abcdef", -3, 1) &#37;&#125;  {# returns "d" #}</code></pre>
 </div>
 </div>
 </div>
@@ -6928,16 +7148,11 @@ $LoopRevPosition[1]</code></pre>
 <h5 id="_beispiele_40">Beispiele</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37;
-	$_array = {"Id":"100","Name":"Couch Red","Price":"400 €"};
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; $_string = "  Hello World  " &#37;&#125;
 
-	if (array_key_exists("Price", $_array))
-	{
-		print("Der Artikel ".$_array["Name"]." kostet ".$_array["Price"]);
-	}
-&#37;&#125;
+&#123;&#37; $_string = trim($_string) &#37;&#125;
 
-{# Outputs: Der Artikel Couch Red kostet 400 €  #}</code></pre>
+{# Returns "Hello World" #}</code></pre>
 </div>
 </div>
 </div>
