@@ -5063,6 +5063,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "7fcc66e11870404498338975e984e6cf",
+				"path" => "item/managing-categories",
+				"position" => 20,
+				"urlName" => "managing-categories",
+				"url" => "/en/item/managing-categories",
+				"level" => 2,
+				"title" => "Managing categories",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing categories. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "35f11d5c836bf16d253e92f9e0f8f15b",
 				"path" => "item/categories",
 				"position" => 30,
