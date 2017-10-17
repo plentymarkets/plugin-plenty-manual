@@ -4354,7 +4354,7 @@ class Metadata {
 								"url" => "/en/basics/data-exchange/data-formats/ordercomplete",
 								"level" => 4,
 								"title" => "OrderComplete",
-								"keywords" => "OrderComplete, Data format, Data export, Data exchange",
+								"keywords" => "OrderComplete, data format, data export, data exchange",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic OrderComplete. The following information is available:",
