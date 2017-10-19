@@ -3551,6 +3551,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "a61bb34674affc5ac8aff96fa3110fac",
+				"path" => "crm/kontakte-verwalten",
+				"position" => 15,
+				"urlName" => "kontakte-verwalten",
+				"url" => "/crm/kontakte-verwalten",
+				"level" => 2,
+				"title" => "Kontakte verwalten",
+				"keywords" => "Kontakt, Kunde, Adressen, Rechnungsadresse, Lieferadresse, primär,",
+				"description" => "Erfahren Sie, wie Sie in plentymarkets Kontakte erstellen und verwalten.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Kontakte verwalten. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "d826c8e91918039182611cd4ff1f3efe",
 				"path" => "crm/e-mails-versenden",
 				"position" => 20,
