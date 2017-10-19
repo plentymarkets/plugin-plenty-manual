@@ -7176,6 +7176,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "bc1df6c695b5441ec1487fd1e8ef36cb",
+				"path" => "crm/managing-contacts",
+				"position" => 15,
+				"urlName" => "managing-contacts",
+				"url" => "/en/crm/managing-contacts",
+				"level" => 2,
+				"title" => "Managing contacts",
+				"keywords" => "contact, customer, address, addresses, invoice address, delivery address, primary,",
+				"description" => "Learn how to manage contacts in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing contacts. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "f25c257a334731a874174b9311a6f8ab",
 				"path" => "crm/sending-emails",
 				"position" => 20,
