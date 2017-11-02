@@ -2338,24 +2338,9 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "5ab2ac10fcc9abfb61702a4a494b8ba8",
-						"path" => "omni-channel/online-shop/ceres-einrichten",
-						"position" => 40,
-						"urlName" => "ceres-einrichten",
-						"url" => "/omni-channel/online-shop/ceres-einrichten",
-						"level" => 3,
-						"title" => "Ceres einrichten",
-						"keywords" => "Webshop, Mandant, Standard, Ceres, Plugin, Standard-Lieferland, Standard-Versandart, Standard-Versandprofil, Standard-Zahlungsart",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Ceres einrichten. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "5d619cf0a6ca81b2bf9c8a628c76f6b0",
 						"path" => "omni-channel/online-shop/webshop-einrichten",
-						"position" => 50,
+						"position" => 40,
 						"urlName" => "webshop-einrichten",
 						"url" => "/omni-channel/online-shop/webshop-einrichten",
 						"level" => 3,
@@ -2457,6 +2442,36 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
+					],
+					[
+						"id" => "5ab2ac10fcc9abfb61702a4a494b8ba8",
+						"path" => "omni-channel/online-shop/ceres-einrichten",
+						"position" => 50,
+						"urlName" => "ceres-einrichten",
+						"url" => "/omni-channel/online-shop/ceres-einrichten",
+						"level" => 3,
+						"title" => "Ceres einrichten",
+						"keywords" => "Webshop, Mandant, Standard, Ceres, Plugin, Standard-Lieferland, Standard-Versandart, Standard-Versandprofil, Standard-Zahlungsart",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Ceres einrichten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "a20f94cdaea9273f0f7ea3b2ff250565",
+						"path" => "omni-channel/online-shop/feedbacks-verwalten",
+						"position" => 60,
+						"urlName" => "feedbacks-verwalten",
+						"url" => "/omni-channel/online-shop/feedbacks-verwalten",
+						"level" => 3,
+						"title" => "Feedbacks verwalten",
+						"keywords" => "Kundenrezension, Kunden-Feedback, Rezension, Feedback",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Feedbacks verwalten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					],
 					[
 						"id" => "03c8267cd442ef017f91615385a4b637",
