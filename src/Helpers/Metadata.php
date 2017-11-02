@@ -6127,6 +6127,21 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Setting up Ceres. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "bc4d9c589f66b7b81737c0c3880c6f69",
+						"path" => "omni-channel/online-store/managing-feedbacks",
+						"position" => 60,
+						"urlName" => "managing-feedbacks",
+						"url" => "/en/omni-channel/online-store/managing-feedbacks",
+						"level" => 3,
+						"title" => "Managing feedbacks",
+						"keywords" => "Customer review, Customer feedback, Rating, Feedback, Review",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing feedbacks. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
