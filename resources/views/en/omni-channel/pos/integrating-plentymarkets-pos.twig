@@ -4,7 +4,7 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#10"><span>1.</span><span> Supported hardware</span></a></li>
+<li><a href="#10"><span>1.</span><span> Supported hardware for plentymarkets POS</span></a></li>
 <li><a href="#20"><span>2.</span><span> Booking a plentymarkets POS</span></a></li>
 <li><a href="#30"><span>3.</span><span> Setting up a POS for a client</span></a>
 <ul class="sectlevel2">
@@ -30,7 +30,12 @@
 <li><a href="#_unlocking_a_pos_user"><span>4.5.</span><span> Unlocking a POS user</span></a></li>
 </ul>
 </li>
-<li><a href="#700"><span>5.</span><span> Activating payment methods for POS orders</span></a></li>
+<li><a href="#700"><span>5.</span><span> Activating payment methods for POS orders</span></a>
+<ul class="sectlevel2">
+<li><a href="#_activating_plentymarkets_payment_methods"><span>5.1.</span><span> Activating plentymarkets payment methods</span></a></li>
+<li><a href="#_linking_payment_terminals"><span>5.2.</span><span> Linking payment terminals</span></a></li>
+</ul>
+</li>
 <li><a href="#180"><span>6.</span><span> Creating the shipping method Pickup</span></a>
 <ul class="sectlevel2">
 <li><a href="#190"><span>6.1.</span><span> Creating a shipping service provider for pickup</span></a></li>
@@ -50,7 +55,7 @@
 </ul>
 </li>
 <li><a href="#95"><span>8.</span><span> Creating a default customer for POS orders</span></a></li>
-<li><a href="#220"><span>9.</span><span> Creating dummy items</span></a></li>
+<li><a href="#220"><span>9.</span><span> Creating a dummy item</span></a></li>
 <li><a href="#_preparing_gift_card_sales"><span>10.</span><span> Preparing gift card sales</span></a>
 <ul class="sectlevel2">
 <li><a href="#_preparing_the_free_text_field"><span>10.1.</span><span> Preparing the free text field</span></a>
@@ -125,7 +130,7 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="10">1. Supported hardware</h2>
+<h2 id="10">1. Supported hardware for plentymarkets POS</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>plentymarkets POS supports the following hardware.</p>
@@ -231,7 +236,7 @@ Small, Normal, Large and X-Large. You can find out the DPI of your mobile device
 <p>EPSON TM-M30</p>
 </li>
 <li>
-<p>EPSON TM-T88V-i</p>
+<p>EPSON TM-T88V-i (QR code printing)</p>
 </li>
 </ul>
 </div></div></td>
@@ -269,6 +274,30 @@ Small, Normal, Large and X-Large. You can find out the DPI of your mobile device
 <ul>
 <li>
 <p>EPSON DM-D30</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Card terminals</strong></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Requires a payment provider contract</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="ulist">
+<ul>
+<li>
+<p>Ingenico iPP480 with printer (operating mode <strong>ZVT</strong>, connection type <strong>TCP/IP</strong>) - requires the <a href="https://marketplace.plentymarkets.com/en/plugins/payment/ingenicozvt_5140" target="_blank" rel="noopener">Ingenico ZVT plugin</a></p>
+</li>
+<li>
+<p>SumUp Air - requires the <a href="https://marketplace.plentymarkets.com/en/plugins/payment/sumup_5141" target="_blank" rel="noopener">SumUp plugin</a><br>
+<strong><em>Note:</em></strong> You need to activate access to location (geolocation positioning) on the mobile device on which the plentymarkets app is installed to use the SumUp Air with plentymarkets POS.</p>
+</li>
+<li>
+<p>Miura payment terminal (requires a plentyPOS contract)</p>
 </li>
 </ul>
 </div></div></td>
@@ -444,13 +473,11 @@ No check mark = Active and inactive variations are available for this POS and ca
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Operation</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query price if price is 0</strong><br>
-(app version 1.5.19 and higher)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Query price if price is 0.00</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Activate to enter the price manually if an item with a price of 0 is added to a POS order.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add favourites with quantity 1</strong><br>
-(app version 1.5.19 and higher)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add favourites with quantity 1</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Activate to select a quantity of 1 for favourites added to a POS order. Add the item to shopping cart again to increase the quantity.<br>
 <strong><em>Tip:</em></strong> The quantity of favourites that were added via the item search must still be entered manually.</p></td>
 </tr>
@@ -1035,6 +1062,8 @@ X reports contain the following information:<br></p>
 </div><div class="sect1">
 <h2 id="700">5. Activating payment methods for POS orders</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_activating_plentymarkets_payment_methods">5.1. Activating plentymarkets payment methods</h3>
 <div class="paragraph">
 <p>Now activate the payment methods you need for POS orders. Note that payment methods must be permitted for customer classes in another menu. For further information, refer to <strong><a href="/en/order-processing/payment/managing-payment-methods#30">Permitting the payment method in a customer class</a></strong>.</p>
 </div>
@@ -1145,6 +1174,26 @@ X reports contain the following information:<br></p>
 </td>
 </tr>
 </tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_linking_payment_terminals">5.2. Linking payment terminals</h3>
+<div class="paragraph">
+<p>Some card terminals can be linked to plentymarkets POS by provisioning plugins in the plentymarkets back end. plentymarkets POS currently support the following card terminals:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://marketplace.plentymarkets.com/en/plugins/payment/ingenicozvt_5140" target="_blank" rel="noopener">Ingenico devices via ZVT interface</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.plentymarkets.com/en/plugins/payment/sumup_5141" target="_blank" rel="noopener">SumUp Air</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the user guide of the plugin for details.</p>
+</div>
 </div>
 </div>
 </div><div class="sect1">
@@ -1707,7 +1756,7 @@ Postcode</strong>;<br>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="220">9. Creating dummy items</h2>
+<h2 id="220">9. Creating a dummy item</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You may find that items are to be sold for which no data record exists in plentymarkets. For instance, it is often too labour intensive to create data records for miscellaneous items or remnants. Create a dummy item to be able to sell these items anyway. POS users can then add the dummy item to the POS shopping cart and modify the price and/or the name of the order item.</p>
@@ -2373,6 +2422,16 @@ Postcode</strong>;<br>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Now, install the plentymarkets App on your mobile device.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><a href="https://play.google.com/store/apps/details?id=eu.plentymarkets.mobile&amp;hl=en" target="_blank" rel="noopener">plentymarkets App in Google Play</a></strong></p>
+</li>
+<li>
+<p><strong><a href="https://itunes.apple.com/app/plentymarkets/id957702618" target="_blank" rel="noopener">plentymarkets App in iTunes</a></strong></p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock warning">
 <table>
