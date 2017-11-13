@@ -2591,9 +2591,9 @@ class Metadata {
 				"url" => "/auftragsabwicklung/auftraege",
 				"level" => 2,
 				"title" => "Aufträge",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
+				"keywords" => "Aufträge verwalten, Auftragstypen, Buchhaltung, Dokumente, Steuer",
+				"description" => "Erfahren Sie, wie Sie Ihre Buchhaltung einrichten, Dokumente einrichten und generieren sowie Aufträge verwalten.",
+				"navAlias" => "Übersicht",
 				"linkListInto" => "Willkommen im Themenbereich Aufträge. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
