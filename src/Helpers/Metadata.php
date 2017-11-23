@@ -542,6 +542,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "bcc71866fc25a97f8e0b921988022a03",
+								"path" => "basics/datenaustausch/datenformate/incomingitems",
+								"position" => 107,
+								"urlName" => "incomingitems",
+								"url" => "/basics/datenaustausch/datenformate/incomingitems",
+								"level" => 4,
+								"title" => "IncomingItems",
+								"keywords" => "Datenformat, Importformat, Wareneingang",
+								"description" => "Spezialformat IncomingItem zum Buchen von Wareneingängen",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich IncomingItems. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "2426fab8293137b434753c973ce2aa88",
 								"path" => "basics/datenaustausch/datenformate/item",
 								"position" => 110,
