@@ -4182,6 +4182,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "a0db2e2209640441ea916981963c6f9b",
+								"path" => "basics/data-exchange/data-formats/incomingitems",
+								"position" => 107,
+								"urlName" => "incomingitems",
+								"url" => "/en/basics/data-exchange/data-formats/incomingitems",
+								"level" => 4,
+								"title" => "IncomingItems",
+								"keywords" => "data format, special format, data import",
+								"description" => "Special format IncomingItems for booking new incoming items",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic IncomingItems. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "572101d500ff1f218f9309b86c9e6d4f",
 								"path" => "basics/data-exchange/data-formats/item",
 								"position" => 110,
