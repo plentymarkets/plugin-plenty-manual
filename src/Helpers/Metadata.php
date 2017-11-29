@@ -722,6 +722,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "a2293cb824b9d39a792925a50a5c0bb6",
+								"path" => "basics/datenaustausch/datenformate/stockmovement",
+								"position" => 165,
+								"urlName" => "stockmovement",
+								"url" => "/basics/datenaustausch/datenformate/stockmovement",
+								"level" => 4,
+								"title" => "StockMovement",
+								"keywords" => "Datenformat",
+								"description" => "Datenformat StockMovement",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich StockMovement. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "1c78e392a2b74f8bf5e6d485a33edb8b",
 								"path" => "basics/datenaustausch/datenformate/itemprice",
 								"position" => 170,
