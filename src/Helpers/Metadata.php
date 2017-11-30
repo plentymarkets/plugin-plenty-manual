@@ -4512,6 +4512,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "97f8404061bee2f38ccbd8adf097b286",
+								"path" => "basics/data-exchange/data-formats/stockmovement",
+								"position" => 225,
+								"urlName" => "stockmovement",
+								"url" => "/en/basics/data-exchange/data-formats/stockmovement",
+								"level" => 4,
+								"title" => "StockMovement",
+								"keywords" => "Data format",
+								"description" => "Data format StockMovement",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic StockMovement. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "6b8c485d7bb64f7f05a27d6267a852a1",
 								"path" => "basics/data-exchange/data-formats/variation",
 								"position" => 230,
