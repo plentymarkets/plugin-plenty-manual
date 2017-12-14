@@ -1392,6 +1392,21 @@ class Metadata {
 		"linkListInto" => "Willkommen im Themenbereich Artikel. Hier finden Sie folgende Informationen:",
 		"children" => 		[
 			[
+				"id" => "9d3f6102e243f36976bb3df6f334bb32",
+				"path" => "artikel/artikelstruktur-kennenlernen",
+				"position" => 5,
+				"urlName" => "artikelstruktur-kennenlernen",
+				"url" => "/artikel/artikelstruktur-kennenlernen",
+				"level" => 2,
+				"title" => "Artikelstruktur kennenlernen",
+				"keywords" => "Artikelstruktur, Artikel, Varianten",
+				"description" => "Erfahren Sie mehr über die Artikelstruktur von plentymarkets 7.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Artikelstruktur kennenlernen. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "8c2a3fa7200cba571c55ea653d0615d0",
 				"path" => "artikel/artikel-verwalten",
 				"position" => 10,
