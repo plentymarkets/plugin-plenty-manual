@@ -5068,11 +5068,11 @@ class Metadata {
 				"urlName" => "introducing-items",
 				"url" => "/en/item/introducing-items",
 				"level" => 2,
-				"title" => "Introduction",
+				"title" => "Introducing items",
 				"keywords" => "Item structure, items, variations",
 				"description" => "Get to know the item structure in plentymarkets 7.",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Introduction. The following information is available:",
+				"linkListInto" => "Welcome to the topic Introducing items. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
