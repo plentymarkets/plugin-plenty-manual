@@ -5051,16 +5051,31 @@ class Metadata {
 	[
 		"id" => "447b7147e84be512208dcc0995d67ebc",
 		"path" => "item",
-		"position" => 20,
+		"position" => 10,
 		"urlName" => "item",
 		"url" => "/en/item",
 		"level" => 1,
 		"title" => "Items",
 		"keywords" => "",
-		"description" => "",
+		"description" => "Get to know items in plentymarkets.",
 		"navAlias" => "",
 		"linkListInto" => "Welcome to the topic Items. The following information is available:",
 		"children" => 		[
+			[
+				"id" => "16f2ae6b1d1793b5732572dce1003d31",
+				"path" => "item/introducing-items",
+				"position" => 5,
+				"urlName" => "introducing-items",
+				"url" => "/en/item/introducing-items",
+				"level" => 2,
+				"title" => "Introduction",
+				"keywords" => "Item structure, items, variations",
+				"description" => "Get to know the item structure in plentymarkets 7.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Introduction. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
 			[
 				"id" => "c1b444c5e01ad2a5abeff5125ab1d808",
 				"path" => "item/managing-items",
