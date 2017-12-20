@@ -2649,7 +2649,7 @@ class Metadata {
 						"url" => "/auftragsabwicklung/auftraege/buchhaltung",
 						"level" => 3,
 						"title" => "Buchhaltung",
-						"keywords" => "Buchhaltung, Preise runden",
+						"keywords" => "Buchhaltung, Preise runden, Lieferschwellen, Lieferschwelle, Standort, Niederlassung, Versandland",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Buchhaltung. Hier finden Sie folgende Informationen:",
