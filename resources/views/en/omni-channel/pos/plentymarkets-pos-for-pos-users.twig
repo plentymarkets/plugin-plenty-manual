@@ -56,6 +56,9 @@
 <li><a href="#_booking_a_till_count_discrepancy"><span>8.3.2.</span><span> Booking a till count discrepancy</span></a></li>
 </ul>
 </li>
+<li><a href="#260"><span>8.4.</span><span> Creating a Z2 receipt (Austria)</span></a></li>
+<li><a href="#_selling_items_with_a_faulty_signature_unit"><span>8.5.</span><span> Selling items with a faulty signature unit</span></a></li>
+<li><a href="#270"><span>8.6.</span><span> Creating a Kontrollbeleg (control receipt) for tax authorities</span></a></li>
 </ul>
 </li>
 <li><a href="#240"><span>9.</span><span> Changing POS orders in the plentymarkets back end</span></a></li>
@@ -566,7 +569,7 @@
 <td class="content">
 <div class="title">Email receipts to customers</div>
 <div class="paragraph">
-<p>You can email receipts to customers automatically when a receipt is generated. To do so, you need to <a href="/en/omni-channel/pos/integrating-plentymarkets-pos#70"><strong>create an event procedure</strong></a> in the plentymarkets back end. Note that for POS orders created in the offline mode, the event procedure will only take effect once the POS order is uploaded.</p>
+<p>You can email receipts to customers automatically when a receipt is generated. To do so, you need to <a href="/en/omni-channel/pos/integrating-plentymarkets-pos#70">create an event procedure</a> in the plentymarkets back end. Note that for POS orders created in the offline mode, the event procedure will only take effect once the POS order is uploaded.</p>
 </div>
 </td>
 </tr>
@@ -872,7 +875,7 @@
 </li>
 <li>
 <p>Add the items to be returned by scanning them or using the item search.<br>
-→ If the price paid differs from the current price of the item, <a href="/en/omni-channel/pos/plentymarkets-pos-for-pos-users#140"><strong>adjust the price of the item</strong></a>.</p>
+→ If the price paid differs from the current price of the item, <a href="/en/omni-channel/pos/plentymarkets-pos-for-pos-users#140">adjust the price of the item</a>.</p>
 </li>
 <li>
 <p>Optionally, add a note to the return:</p>
@@ -983,7 +986,7 @@
 <div class="sect2">
 <h3 id="220">8.1. Creating an x report</h3>
 <div class="paragraph">
-<p>Use X reports to get an overview of the revenue generated for this POS since the last Z report during the day. You can create any number of X reports. X reports are not imported to plentymarkets, i.e. their creation is not documented.</p>
+<p>Use X reports to gain insights into the revenue generated for this POS since the last Z report during the day. You can create any number of X reports. X reports are not imported to plentymarkets, i.e. their creation is not documented.</p>
 </div>
 <div class="paragraph">
 <p>X reports contain the following information:</p>
@@ -1094,7 +1097,8 @@
 <p>Tap <strong>Create Z report</strong>.
 → The Z report is imported to plentymarkets and saved in the <strong>Orders » Document archive</strong> menu.<br>
 → The Z report is printed.<br>
-→ The daily revenue is reset to 0.</p>
+→ The daily revenue is reset to 0.
+→ For POS located in Austria, a zero receipt is created and saved in the cash journal.</p>
 </li>
 </ol>
 </div>
@@ -1155,7 +1159,7 @@
 </li>
 <li>
 <p>Tap <strong>Save till count</strong>.<br>
-→ A till count report is created and saved in the <strong>Orders » Document archive</strong>.</p>
+→ A till count report is created and saved in the <strong>Orders » Document archive</strong> menu.</p>
 </li>
 <li>
 <p><strong><em>Optional:</em></strong> Tab <strong>Print till count report</strong> to print the report.</p>
@@ -1191,11 +1195,95 @@
 <ol class="arabic">
 <li>
 <p>After saving the till count, tap <strong>Book difference</strong> to save the actual cash on hand as the new expected cash on hand.<br>
-→ A deposit or withdrawal is created for the discrepancy with the reason <strong>Till count discrepancy</strong> and saved in the <strong>Orders » Document archive » POS receipt</strong>.<br>
+→ A deposit or withdrawal is created for the discrepancy with the reason <strong>Till count discrepancy</strong> and saved in the <strong>Orders » Document archive » POS receipt</strong> menu.<br>
 → The actual cash on hand is saved as the new expected cash on hand.</p>
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="260">8.4. Creating a Z2 receipt (Austria)</h3>
+<div class="paragraph">
+<p>A Z2 receipt is a monthly signed control receipt with an amount of zero (0.00). The RKSV requires you to create a Z2 receipt at the end of each month. The Z2 report for the month of December also serves as an end of year report.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a Z2 receipt (Austria):</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log into the plentymarkets App.</p>
+</li>
+<li>
+<p>In the menu bar, tap the <strong>menu symbol</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>POS</strong>.<br>
+→ The POS menu is displayed.</p>
+</li>
+<li>
+<p>Tap <strong>Z2 receipt (AT)</strong>.<br>
+→ The Z2 receipt is printed.<br>
+→ The Z2 receipt is imported to plentymarkets and saved in the <strong>Orders » Document archive</strong> menu.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_selling_items_with_a_faulty_signature_unit">8.5. Selling items with a faulty signature unit</h3>
+<div class="literalblock">
+<div class="content">
+<pre>The RKSV stipulates what you need to do if the POS's signature unit fails temporarily or permanently.</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Document the time the unit stops working.</p>
+</li>
+<li>
+<p>If possible, move on to a POS with a functional signature unit.</p>
+</li>
+<li>
+<p>If no other POS is available, you can use the POS with the defect signature unit. All receipts are marked <strong>Sicherheitseinrichtung ausgefallen</strong> (Security unit failed).</p>
+</li>
+<li>
+<p>Once the signature unit is functional again, a collective receipt is created and printed in plentymarkets POS automatically.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These are recommendations that can help you adhere to the RKSV. Check with your supervisor how to proceed if the signature unit fails.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="270">8.6. Creating a Kontrollbeleg (control receipt) for tax authorities</h3>
+<div class="paragraph">
+<p>In the case of a POS inspection by Austrian tax authorities, you need to be able to generate a zero amount control receipt (Kontrollbeleg) on the spot. This control receipt allows tax inspectors to validate the signature on the POS receipts on site in your store using an app. You do not need any additional user rights to create a control receipt.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a Kontrollbeleg (control receipt) on demand:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log into the plentymarkets App.</p>
+</li>
+<li>
+<p>In the menu bar, tap the <strong>menu symbol</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>POS</strong>.<br>
+→ The POS menu is displayed.</p>
+</li>
+<li>
+<p>Tap <strong>Control receipt</strong>.<br>
+→ Der control receipt is printed.<br>
+→ The control receipt is imported to plentymarkets and saved in the <strong>Orders » Document archive</strong> menu.<br>
+<strong><em>Note:</em></strong> The investigator can keep the control receipt as evidence.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
