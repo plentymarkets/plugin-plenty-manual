@@ -6334,7 +6334,7 @@ class Metadata {
 						"url" => "/en/order-processing/orders/accounting",
 						"level" => 3,
 						"title" => "Accounting",
-						"keywords" => "accounting, price rounding",
+						"keywords" => "accounting, price rounding, delivery thresholds, delivery threshold, location, subsidiary, shipping country",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Accounting. The following information is available:",
