@@ -5570,21 +5570,6 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Clients. The following information is available:",
 						"children" => 						[
 							[
-								"id" => "c61557b0f6fa176271cd1c53bc629436",
-								"path" => "omni-channel/online-store/setting-up-clients/locations",
-								"position" => 10,
-								"urlName" => "locations",
-								"url" => "/en/omni-channel/online-store/setting-up-clients/locations",
-								"level" => 4,
-								"title" => "Locations",
-								"keywords" => "Locations, Accounting, Headquarters",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Locations. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "f8e582fca28a16ec4e9cba30ed1aa448",
 								"path" => "omni-channel/online-store/setting-up-clients/online-store",
 								"position" => 20,
