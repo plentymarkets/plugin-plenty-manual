@@ -7303,8 +7303,36 @@ Container_CheckoutShippingProfilesList()</p>
 <div class="paragraph">
 <p>Next add the template function <code>GetCaptcha()</code> as well as the following code example in the <strong>Registration</strong> category.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Parameters for the GetCaptcha() function</div>
+<div class="paragraph">
+<p>The following parameters are available for the <code>GetCaptcha()</code> function:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>GetCaptcha('normal')</code>: Default value for the normal Google reCAPTCHA.</p>
+</li>
+<li>
+<p><code>GetCaptcha('compact')</code>: Parameter for the compact Google reCAPTCHA.</p>
+</li>
+<li>
+<p><code>GetCaptcha('invisible')</code>: Parameter for the invisible Google reCAPTCHA.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 <div class="paragraph instruction">
-<p>Editing the <strong>Registration</strong> category:</p>
+<p>Editing the <strong>Registration</strong> category for normal or compact Google reCAPTCHA:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -7321,7 +7349,7 @@ Container_CheckoutShippingProfilesList()</p>
 <p>Click on the <strong>Description 1</strong> tab.</p>
 </li>
 <li>
-<p>Insert the <code>&#123;&#37; GetCaptcha() &#37;&#125;</code> template function above the <strong>Register</strong> button.</p>
+<p>Insert the <code>&#123;&#37; GetCaptcha('normal') &#37;&#125;</code> or <code>&#123;&#37; GetCaptcha('compact') &#37;&#125;</code> template function above the <strong>Register</strong> button.</p>
 </li>
 <li>
 <p>Search for the code <code>plenty.AuthenticationService.registerCustomer();</code>.</p>
@@ -7356,33 +7384,58 @@ Container_CheckoutShippingProfilesList()</p>
 }</pre>
 </div>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Parameters for the GetCaptcha() function</div>
-<div class="paragraph">
-<p>The following parameters are available for the <code>GetCaptcha()</code> function:</p>
+<div class="paragraph instruction">
+<p>Editing the <strong>Registration</strong> category for invisible Google reCAPTCHA:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>GetCaptcha('normal')</code>: Default value for the normal Google reCAPTCHA.</p>
+<p>Go to <strong>Item » Categories</strong>.</p>
 </li>
 <li>
-<p><code>GetCaptcha('compact')</code>: Parameter for the compact Google reCAPTCHA.</p>
+<p>Open the design’s folder, e.g. the folder for Callisto Light 3.</p>
 </li>
 <li>
-<p><code>GetCaptcha('invisible')</code>: Parameter for the invisible Google reCAPTCHA.</p>
+<p>Open the <strong>Registration</strong> category.</p>
 </li>
-</ul>
+<li>
+<p>Click on the <strong>Description 1</strong> tab.</p>
+</li>
+<li>
+<p>Insert the <code>&#123;&#37; GetCaptcha('invisible') &#37;&#125;</code> template function above the <strong>Register</strong> button.</p>
+</li>
+<li>
+<p>Search for the code <code>plenty.AuthenticationService.registerCustomer();</code>.</p>
+</li>
+<li>
+<p>Replace the code with <code>grecaptcha.execute();</code>.</p>
+</li>
+<li>
+<p>Search for <code>&lt;script&gt;</code>.</p>
+</li>
+<li>
+<p>Insert the following code example within the script area.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
 </div>
-</td>
-</tr>
-</tbody></table>
+<div class="listingblock">
+<div class="content">
+<pre>function registration(){
+    var res = plenty.AuthenticationService.registerCustomer();
+
+    if(typeof res !== 'undefined'){
+
+        if(res.status == 400 &amp;&amp; typeof grecaptcha !== 'undefined'){
+            grecaptcha.reset();
+        }
+
+    }
+    return false;
+}</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7397,7 +7450,7 @@ Container_CheckoutShippingProfilesList()</p>
 <p>Carry out the following changes in the <strong>CheckoutCustomerInvoiceAddress</strong> template first.</p>
 </div>
 <div class="paragraph instruction">
-<p>Editing CheckoutCustomerInvoiceAddress:</p>
+<p>Editing CheckoutCustomerInvoiceAddress for normal or compact Google reCAPTCHA:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -7408,7 +7461,26 @@ Container_CheckoutShippingProfilesList()</p>
 <p>Search for <code>&lt;/form&gt;</code>.</p>
 </li>
 <li>
-<p>Insert the <code>&#123;&#37; GetCaptcha() &#37;&#125;</code> template function above the <code>&lt;/form&gt;</code> tag.</p>
+<p>Insert the <code>&#123;&#37; GetCaptcha('normal') &#37;&#125;</code> or <code>&#123;&#37; GetCaptcha('compact') &#37;&#125;</code> template function above the <code>&lt;/form&gt;</code> tag.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Editing CheckoutCustomerInvoiceAddress for invisible Google reCAPTCHA:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CMS » Web design » Layout » Checkout » CheckoutCustomerInvoiceAddress</strong>.</p>
+</li>
+<li>
+<p>Search for <code>&lt;/form&gt;</code>.</p>
+</li>
+<li>
+<p>Insert the <code>&#123;&#37; GetCaptcha('invisible') &#37;&#125;</code> template function above the <code>&lt;/form&gt;</code> tag.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -7422,7 +7494,7 @@ Container_CheckoutShippingProfilesList()</p>
 <p>Next, edit the <strong>Address</strong> category.</p>
 </div>
 <div class="paragraph instruction">
-<p>Editing the <strong>Address</strong> category:</p>
+<p>Editing the <strong>Address</strong> category for normal or compact Google reCAPTCHA:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -7462,6 +7534,63 @@ Container_CheckoutShippingProfilesList()</p>
     }
 
 });</pre>
+</div>
+</div>
+<div class="paragraph instruction">
+<p>Editing the <strong>Address</strong> category for invisible Google reCAPTCHA:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Categories</strong>.</p>
+</li>
+<li>
+<p>Open the design’s folder, e.g. the folder for Callisto Light 3.</p>
+</li>
+<li>
+<p>Open the <strong>Address</strong> category.</p>
+</li>
+<li>
+<p>Click on the <strong>Description 1</strong> tab.</p>
+</li>
+<li>
+<p>Search for the code <code>plenty.CheckoutService.registerGuest().done(function()</code>.</p>
+</li>
+<li>
+<p>Replace the code with <code>grecaptcha.execute();</code>.</p>
+</li>
+<li>
+<p>Search for <code>&lt;script&gt;</code>.</p>
+</li>
+<li>
+<p>Insert the following code example within the script area.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>function registration() {
+
+    plenty.CheckoutService.registerGuest().done(function() {
+    // change tab if success
+
+        var targetContainer = {id:"shipping-payment", index:2};
+
+        plenty.NavigatorService.continueChange(targetContainer);
+
+
+    }).fail(function(){
+
+        if(typeof grecaptcha !== 'undefined'){
+            grecaptcha.reset();
+        }
+
+    });
+
+}</pre>
 </div>
 </div>
 </div>
