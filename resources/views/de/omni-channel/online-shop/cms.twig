@@ -7480,8 +7480,36 @@ Container_CheckoutShippingProfilesList()</p>
 <div class="paragraph">
 <p>Fügen Sie anschließend die Template-Funktion <code>GetCaptcha()</code> sowie das nachfolgende Code-Beispiel in der Kategorie <strong>Registrierung</strong> ein.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Parameter für die Funktion GetCaptcha()</div>
+<div class="paragraph">
+<p>Folgende Parameter stehen Ihnen für die Funktion <code>GetCaptcha()</code> zur Verfügung:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>GetCaptcha('normal')</code>: Standardwert für das normale Google reCAPTCHA.</p>
+</li>
+<li>
+<p><code>GetCaptcha('compact')</code>: Parameter für das kompakte Google reCAPTCHA.</p>
+</li>
+<li>
+<p><code>GetCaptcha('invisible')</code>: Parameter für das unsichtbare Google reCAPTCHA.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 <div class="paragraph instruction">
-<p>Kategorie <strong>Kundenregistrierung</strong> anpassen:</p>
+<p>Kategorie <strong>Kundenregistrierung</strong> für normales oder kompaktes Google reCAPTCHA anpassen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -7498,7 +7526,7 @@ Container_CheckoutShippingProfilesList()</p>
 <p>Wechseln Sie in das Tab <strong>Beschreibung 1</strong>.</p>
 </li>
 <li>
-<p>Fügen Sie die Template-Funktion <code>&#123;&#37; GetCaptcha() &#37;&#125;</code> oberhalb des Buttons <strong>Registrierung abschließen</strong> ein.</p>
+<p>Fügen Sie die Template-Funktion <code>&#123;&#37; GetCaptcha('normal') &#37;&#125;</code> bzw. <code>&#123;&#37; GetCaptcha('compact') &#37;&#125;</code> oberhalb des Buttons <strong>Registrierung abschließen</strong> ein.</p>
 </li>
 <li>
 <p>Suchen Sie den Code <code>plenty.AuthenticationService.registerCustomer();</code>.</p>
@@ -7533,33 +7561,58 @@ Container_CheckoutShippingProfilesList()</p>
 }</pre>
 </div>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-tip" title="Hinweis"></i>
-</td>
-<td class="content">
-<div class="title">Parameter für die Funktion GetCaptcha()</div>
-<div class="paragraph">
-<p>Folgende Parameter stehen Ihnen für die Funktion <code>GetCaptcha()</code> zur Verfügung:</p>
+<div class="paragraph instruction">
+<p>Kategorie <strong>Kundenregistrierung</strong> für unsichtbares Google reCAPTCHA anpassen:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><code>GetCaptcha('normal')</code>: Standardwert für das normale Google reCAPTCHA.</p>
+<p>Öffnen Sie das Menü <strong>Artikel » Kategorien</strong>.</p>
 </li>
 <li>
-<p><code>GetCaptcha('compact')</code>: Parameter für das kompakte Google reCAPTCHA.</p>
+<p>Öffnen Sie den Ordner des Designs, das Sie bearbeiten möchten, z.B. Callisto Light 3.</p>
 </li>
 <li>
-<p><code>GetCaptcha('invisible')</code>: Parameter für das unsichtbare Google reCAPTCHA.</p>
+<p>Öffnen Sie die Kategorie <strong>Registrierung</strong>.</p>
 </li>
-</ul>
+<li>
+<p>Wechseln Sie in das Tab <strong>Beschreibung 1</strong>.</p>
+</li>
+<li>
+<p>Fügen Sie die Template-Funktion <code>&#123;&#37; GetCaptcha('invisible') &#37;&#125;</code> oberhalb des Buttons <strong>Registrierung abschließen</strong> ein.</p>
+</li>
+<li>
+<p>Suchen Sie den Code <code>plenty.AuthenticationService.registerCustomer();</code>.</p>
+</li>
+<li>
+<p>Ersetzen Sie den Code durch <code>grecaptcha.execute();</code>.</p>
+</li>
+<li>
+<p>Suchen Sie nach <code>&lt;script&gt;</code>.</p>
+</li>
+<li>
+<p>Fügen Sie innerhalb des Script-Bereichs das folgende Code-Beispiel ein.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
 </div>
-</td>
-</tr>
-</tbody></table>
+<div class="listingblock">
+<div class="content">
+<pre>function registration(){
+    var res = plenty.AuthenticationService.registerCustomer();
+
+    if(typeof res !== 'undefined'){
+
+        if(res.status == 400 &amp;&amp; typeof grecaptcha !== 'undefined'){
+            grecaptcha.reset();
+        }
+
+    }
+    return false;
+}</pre>
+</div>
 </div>
 </div>
 </div>
@@ -7574,7 +7627,7 @@ Container_CheckoutShippingProfilesList()</p>
 <p>Nehmen Sie dafür zunächst Änderungen am Template <strong>CheckoutCustomerInvoiceAddress</strong> vor.</p>
 </div>
 <div class="paragraph instruction">
-<p>CheckoutCustomerInvoiceAddress anpassen:</p>
+<p>CheckoutCustomerInvoiceAddress für normales oder kompaktes Google reCAPTCHA anpassen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -7585,7 +7638,26 @@ Container_CheckoutShippingProfilesList()</p>
 <p>Suchen Sie nach <code>&lt;/form&gt;</code>.</p>
 </li>
 <li>
-<p>Fügen Sie die Template-Funktion <code>&#123;&#37; GetCaptcha() &#37;&#125;</code> oberhalb des <code>&lt;/form&gt;</code>-Tags ein.</p>
+<p>Fügen Sie die Template-Funktion <code>&#123;&#37; GetCaptcha('normal') &#37;&#125;</code> oder <code>&#123;&#37; GetCaptcha('compact') &#37;&#125;</code> oberhalb des <code>&lt;/form&gt;</code>-Tags ein.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>CheckoutCustomerInvoiceAddress für unsichtbares Google reCAPTCHA anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>CMS » Webdesign » Layout » Checkout » CheckoutCustomerInvoiceAddress</strong>.</p>
+</li>
+<li>
+<p>Suchen Sie nach <code>&lt;/form&gt;</code>.</p>
+</li>
+<li>
+<p>Fügen Sie die Template-Funktion <code>&#123;&#37; GetCaptcha('invisible') &#37;&#125;</code> oberhalb des <code>&lt;/form&gt;</code>-Tags ein.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -7599,7 +7671,7 @@ Container_CheckoutShippingProfilesList()</p>
 <p>Passen Sie anschließend die Kategorie <strong>Anschrift</strong> an.</p>
 </div>
 <div class="paragraph instruction">
-<p>Kategorie <strong>Anschrift</strong> anpassen:</p>
+<p>Kategorie <strong>Anschrift</strong> für normales oder kompaktes Google reCAPTCHA anpassen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -7639,6 +7711,63 @@ Container_CheckoutShippingProfilesList()</p>
     }
 
 });</pre>
+</div>
+</div>
+<div class="paragraph instruction">
+<p>Kategorie <strong>Anschrift</strong> für unsichtbares Google reCAPTCHA anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Artikel » Kategorien</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner des Designs, das Sie bearbeiten möchten, z.B. Callisto Light 3.</p>
+</li>
+<li>
+<p>Öffnen Sie die Kategorie <strong>Anschrift</strong>.</p>
+</li>
+<li>
+<p>Wechseln Sie in das Tab <strong>Beschreibung 1</strong>.</p>
+</li>
+<li>
+<p>Suchen Sie den Code <code>plenty.CheckoutService.registerGuest().done(function()</code>.</p>
+</li>
+<li>
+<p>Ersetzen Sie den Code durch <code>grecaptcha.execute();</code>.</p>
+</li>
+<li>
+<p>Suchen Sie nach <code>&lt;script&gt;</code>.</p>
+</li>
+<li>
+<p>Fügen Sie innerhalb des Script-Bereichs das folgende Code-Beispiel ein.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>function registration() {
+
+    plenty.CheckoutService.registerGuest().done(function() {
+    // change tab if success
+
+        var targetContainer = {id:"shipping-payment", index:2};
+
+        plenty.NavigatorService.continueChange(targetContainer);
+
+
+    }).fail(function(){
+
+        if(typeof grecaptcha !== 'undefined'){
+            grecaptcha.reset();
+        }
+
+    });
+
+}</pre>
 </div>
 </div>
 </div>
