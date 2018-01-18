@@ -2547,6 +2547,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich CMS-Syntax. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "5ce419e783ac54785b26c440812fb8e9",
+						"path" => "omni-channel/online-shop/best-practices",
+						"position" => 200,
+						"urlName" => "best-practices",
+						"url" => "/omni-channel/online-shop/best-practices",
+						"level" => 3,
+						"title" => "Best Practices",
+						"keywords" => "Webshop, Mandant, Standard, Ceres, Plugin",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
