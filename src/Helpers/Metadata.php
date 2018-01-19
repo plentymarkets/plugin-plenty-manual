@@ -7181,10 +7181,10 @@ class Metadata {
 				"url" => "/en/stock-management/new-incoming-items",
 				"level" => 2,
 				"title" => "Managing incoming items",
-				"keywords" => "booking stock, cancelling stock reservations, booking items, registering stock, new stock, adding stock, intake, stock intake, goods receipt, goods received",
+				"keywords" => "Book stock, approve stock booking, book incoming items, incoming items, stock booking, stock registration, inventory registration",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Managing incoming items. The following information is available:",
+				"linkListInto" => "Willkommen im Themenbereich Managing incoming items. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			],
