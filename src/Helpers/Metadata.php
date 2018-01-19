@@ -6232,6 +6232,21 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Managing feedbacks. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "d65357e4edcf8ebc6520cf26b66b0ebb",
+						"path" => "omni-channel/online-store/best-practices",
+						"position" => 200,
+						"urlName" => "best-practices",
+						"url" => "/en/omni-channel/online-store/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: Ceres",
+						"keywords" => "online store, client, standard, Ceres, plugin",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Ceres. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
