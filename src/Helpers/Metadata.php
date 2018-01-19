@@ -6244,7 +6244,7 @@ class Metadata {
 						"keywords" => "online store, client, standard, Ceres, plugin",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Ceres. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Welcome to the topic Best Practices: Ceres. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
