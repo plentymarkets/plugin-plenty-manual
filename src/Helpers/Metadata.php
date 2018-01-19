@@ -2555,11 +2555,11 @@ class Metadata {
 						"urlName" => "best-practices",
 						"url" => "/omni-channel/online-shop/best-practices",
 						"level" => 3,
-						"title" => "Best Practices",
+						"title" => "Best Practices: Ceres",
 						"keywords" => "Webshop, Mandant, Standard, Ceres, Plugin",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Ceres. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
