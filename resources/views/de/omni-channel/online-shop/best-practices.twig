@@ -4,7 +4,7 @@
             <div id="toc" class="toc">
 <div id="toctitle">Inhalt</div>
 <ul class="sectlevel1">
-<li><a href="#filter"><span>1.</span><span> Filter in Ceres einrichten</span></a>
+<li><a href="#filter"><span>1.</span><span> Filter einrichten</span></a>
 <ul class="sectlevel2">
 <li><a href="#_attribut_anlegen"><span>1.1.</span><span> Attribut anlegen</span></a></li>
 <li><a href="#_attribut_mit_artikel_verknüpfen"><span>1.2.</span><span> Attribut mit Artikel verknüpfen</span></a></li>
@@ -13,11 +13,21 @@
 <li><a href="#_plugin_bereitstellen"><span>1.5.</span><span> Plugin bereitstellen</span></a></li>
 </ul>
 </li>
-<li><a href="#bestellmerkmale"><span>2.</span><span> Bestellmerkmale in Ceres einrichten</span></a>
+<li><a href="#bestellmerkmale"><span>2.</span><span> Bestellmerkmale einrichten</span></a>
 <ul class="sectlevel2">
 <li><a href="#_bestellmerkmal_anlegen"><span>2.1.</span><span> Bestellmerkmal anlegen</span></a></li>
 <li><a href="#_bestellmerkmal_mit_artikel_verknüpfen"><span>2.2.</span><span> Bestellmerkmal mit Artikel verknüpfen</span></a></li>
 <li><a href="#_plugin_bereitstellen_2"><span>2.3.</span><span> Plugin bereitstellen</span></a></li>
+</ul>
+</li>
+<li><a href="#checkout"><span>3.</span><span> Ceres-Checkout in Callisto einrichten</span></a>
+<ul class="sectlevel2">
+<li><a href="#_routen_verwalten"><span>3.1.</span><span> Routen verwalten</span></a></li>
+<li><a href="#_bestellabwicklung_anpassen"><span>3.2.</span><span> Bestellabwicklung anpassen</span></a></li>
+<li><a href="#_backlinks_setzen"><span>3.3.</span><span> Backlinks setzen</span></a></li>
+<li><a href="#_rechtliche_angaben_anpassen"><span>3.4.</span><span> Rechtliche Angaben anpassen</span></a></li>
+<li><a href="#_theme"><span>3.5.</span><span> Theme</span></a></li>
+<li><a href="#_zahlungsarten_im_neuen_und_alten_checkout"><span>3.6.</span><span> Zahlungsarten im neuen und alten Checkout</span></a></li>
 </ul>
 </li>
 </ul>
@@ -34,7 +44,7 @@
 </div>
 </div>
 </div><div class="sect1 adoc">
-<h2 id="filter">1. Filter in Ceres einrichten</h2>
+<h2 id="filter">1. Filter einrichten</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Filter werden in Ceres mithilfe von Attributen und Merkmalen abgebildet. In diesem Best Practice wird beschrieben, wie der Filter <strong>Farbe</strong> mit den zwei Werten <strong>Rot</strong> und <strong>Schwarz</strong> in der Kategorie-Ansicht des Webshops angezeigt wird. Passende Filter werden in der Kategorie-Ansicht nur eingeblendet, wenn es auch Artikel gibt, die mit diesen Filterwerten verknüpft sind.</p>
@@ -227,7 +237,7 @@
 </div>
 </div>
 </div><div class="sect1 adoc">
-<h2 id="bestellmerkmale">2. Bestellmerkmale in Ceres einrichten</h2>
+<h2 id="bestellmerkmale">2. Bestellmerkmale einrichten</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In diesem Best Practice richten wir ein Merkmal ein, mit dem man einen <strong>Text</strong> eingeben kann, der auf ein T-Shirt gedruckt werden soll. Bei einer Eingabe wird ein Aufpreis auf das Produkt berechnet.</p>
@@ -359,6 +369,381 @@
 <img src="{{plugin_path('PlentyManual')}}/images/_best-practices/omni-channel/online-shop/assets/bp-ceres-bestellmerkmale-warenkorb.png" alt="bp ceres bestellmerkmale warenkorb">
 </div>
 <div class="title">Bild 7. Artikelansicht im Warenkorb</div>
+</div>
+</div>
+</div>
+</div><div class="sect1 adoc">
+<h2 id="checkout">3. Ceres-Checkout in Callisto einrichten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Du willst den neuen Checkout mit seiner Plugin-Fähigkeit und individuellen Anpassbarkeit in deinem Callisto-Webshop nutzen? Kein Problem – im Folgenden erfährst du Schritt für Schritt, was dafür nötig ist.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Das Wichtigste vorab …​</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Dieses Best Practice beschreibt die Einrichtung des Ceres-Checkouts in ein Callisto-Template mit <strong>individuellem Bestellvorgang</strong>. Kopiere dir bitte dein Design und führe keine Anpassungen an deinem aktiven Layout durch.</p>
+</li>
+<li>
+<p>Um den Ceres-Checkout zu nutzen, benötigst du neben deinem Callisto-Webshop die aktuellen Versionen der Plugins <a href="https://marketplace.plentymarkets.com/plugins/templates/Ceres_4697" target="_blank" rel="noopener">Ceres</a> und <a href="https://marketplace.plentymarkets.com/plugins/templates/IO_4696" target="_blank" rel="noopener">IO</a>. Beide findest du im plentyMarketplace.</p>
+</li>
+<li>
+<p>Beachte bitte, dass Plugins ausschließlich mit dem neuen Backend Terra kompatibel sind.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="_routen_verwalten">3.1. Routen verwalten</h3>
+<div class="paragraph">
+<p>Ceres baut auf der Logik des Plugins IO auf. Um den Checkout so zu nutzen, dass alle Links zwischen Callisto und Ceres korrekt funktionieren, verfährst du wie im Folgenden beschrieben.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Im Vorschaumodus arbeiten</div>
+<div class="paragraph">
+<p>Führe die Änderungen zuerst im <a href="/basics/erste-schritte/plugins#50">Vorschaumodus Stage</a> aus, bevor du sie in deinen Webshop übernimmst.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Einstellungen in IO vornehmen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Plugins » Plugin-Übersicht</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>IO</strong>.<br>
+→ Das Plugin wird geöffnet.</p>
+</li>
+<li>
+<p>Klicke im Verzeichnisbaum auf <strong>Konfiguration</strong>.</p>
+</li>
+<li>
+<p>Wechsle in das Tab <strong>Routing</strong>.</p>
+</li>
+<li>
+<p>Klicke das Häkchen bei <strong>All</strong>.<br>
+→ Alle Routen werden deaktiviert.</p>
+</li>
+<li>
+<p>Aktiviere die Routen <strong>/checkout</strong>, <strong>/confirmation</strong>, <strong>/login</strong>, <strong>register</strong> sowie <strong>/place-order &amp; /execute-payment</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Einstellungen in Ceres vornehmen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Plugins » Plugin-Übersicht</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ceres</strong>.<br>
+→ Das Plugin wird geöffnet.</p>
+</li>
+<li>
+<p>Klicke im Verzeichnisbaum auf <strong>Konfiguration</strong>.<br>
+→ Das Tab <strong>Global</strong> ist bereits vorausgewählt.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Enable Callisto route pattern for items</strong>.<br>
+→ Die Callisto-Routen werden etabliert.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.<br>
+→ Der Ceres-Checkout ist in Ihrem Callisto-Webshop aktiv.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bestellabwicklung_anpassen">3.2. Bestellabwicklung anpassen</h3>
+<div class="paragraph">
+<p>Für die Bestellabwicklung müssen Änderungen an den Kategorien vorgenommen werden. Gehe dazu wie folgt vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Kategorien erstellen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Artikel » Kategorien</strong>.</p>
+</li>
+<li>
+<p>Erstelle eine neue Hauptkategorie mit dem Namen <strong>login</strong>.</p>
+</li>
+<li>
+<p>Öffne die Kategorie <strong>login</strong>.</p>
+</li>
+<li>
+<p>Wähle den Kategorietyp <strong>Container</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+<li>
+<p>Erstelle eine neue Hauptkategorie mit dem Namen <strong>checkout</strong>.</p>
+</li>
+<li>
+<p>Öffne die Kategorie <strong>checkout</strong>.</p>
+</li>
+<li>
+<p>Wähle den Kategorietyp <strong>Container</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Anschließend verknüpfst du die neuen Kategorien mit den Bestellschritten von Callisto.</p>
+</div>
+<div class="paragraph instruction">
+<p>Bestellvorgang anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>CMS » Webdesign</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Einstellungen</strong>.<br>
+→ Das Menü <strong>Design-Einstellungen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Wechsle in das Tab <strong>Mandanten</strong>.</p>
+</li>
+<li>
+<p>Wähle den Mandanten, für den du die Änderungen vornehmen willst.</p>
+</li>
+<li>
+<p>Wechsle in das Tab <strong>Bestellvorgang</strong>.</p>
+</li>
+<li>
+<p>Klicke neben <strong>2. Bestellschritt</strong> auf <strong>Suchen</strong>.</p>
+</li>
+<li>
+<p>Wähle die zuvor erstellte Kategorie <strong>login</strong>.</p>
+</li>
+<li>
+<p>Klicke neben <strong>3. Bestellschritt</strong> auf <strong>Suchen</strong>.</p>
+</li>
+<li>
+<p>Wähle die zuvor erstellte Kategorie <strong>checkout</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Wenn du nun aus dem Warenkorb zur Kasse gehst, wirst du auf den Ceres-Checkout weitergeleitet, der alle neuen Funktionen wie z.B. Payment-Plugins wie PayPal ermöglicht.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_backlinks_setzen">3.3. Backlinks setzen</h3>
+<div class="paragraph">
+<p>Damit ein nicht angemeldeter Benutzer nach dem Klick auf <strong>Zur Kasse</strong> vom Login weiter zur Bestellabwicklung geleitet wird, müssen Änderungen am Callisto-Code vorgenommen werden. Gehe dazu vor wie im Folgenden beschrieben.</p>
+</div>
+<div class="paragraph instruction">
+<p>Backlinks für den Warenkorb setzen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Artikel » Kategorien</strong>.</p>
+</li>
+<li>
+<p>Klappe deine Callisto-Kategorie auf.</p>
+</li>
+<li>
+<p>Klicke auf die Kategorie <strong>Warenkorb</strong>.</p>
+</li>
+<li>
+<p>Wechsle in das Tab <strong>Beschreibung 1</strong>.</p>
+</li>
+<li>
+<p>Suche den Code <code>&#123;&#37; if ( $CustomerID ) { Link_Checkout(3); } else { Link_Checkout(2); } &#37;&#125;</code>.</p>
+</li>
+<li>
+<p>Ersetze den Code durch <code>&#123;&#37; if( $CustomerID ) { $_check = Link_Checkout(3); $_backlink = ''; } else { $_check = Link_Checkout(2); $_backlink = '?backlink=/checkout'; } &#37;&#125; $_check.$_backlink</code>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Backlinks für die Warenkorbvorschau setzen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>CMS » Webdesign » Layout » ItemView » ItemViewBasketPreviewList</strong>.</p>
+</li>
+<li>
+<p>Suche den Code <code>&#123;&#37; if ( $CustomerID ) { Link_Checkout(3); } else { Link_Checkout(2); } &#37;&#125;</code>.</p>
+</li>
+<li>
+<p>Ersetze den Code durch <code>&#123;&#37; if( $CustomerID ) { $_check = Link_Checkout(3); $_backlink = ''; } else { $_check = Link_Checkout(2); $_backlink = '?backlink=/checkout'; } &#37;&#125; $_check.$_backlink</code>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Backlinks für das Warenkorb-Overlay setzen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>CMS » Webdesign » Layout » ItemView » ItemViewItemToBasketConfirmationOverlay</strong>.</p>
+</li>
+<li>
+<p>Suche den Code <code>&#123;&#37; if ( $CustomerID ) { Link_Checkout(3); } else { Link_Checkout(2); } &#37;&#125;</code>.</p>
+</li>
+<li>
+<p>Ersetze den Code durch <code>&#123;&#37; if( $CustomerID ) { $_check = Link_Checkout(3); $_backlink = ''; } else { $_check = Link_Checkout(2); $_backlink = '?backlink=/checkout'; } &#37;&#125; $_check.$_backlink</code>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rechtliche_angaben_anpassen">3.4. Rechtliche Angaben anpassen</h3>
+<div class="paragraph">
+<p>Die vier rechtlich relevanten Angaben <strong>AGB</strong>, <strong>Datenschutzerklärung</strong>, <strong>Impressum</strong> und <strong>Widerrufsrecht</strong> müssen neu verknüpft werden, um weiterhin korrekt angezeigt zu werden.</p>
+</div>
+<div class="paragraph instruction">
+<p>AGB anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Artikel » Kategorien</strong>.</p>
+</li>
+<li>
+<p>Klappe deine Callisto-Kategorie auf.</p>
+</li>
+<li>
+<p>Kopiere die Kategorie <strong>AGB</strong> als Hauptkategorie.<br>
+→ Die neue Hauptkategorie <strong>AGB</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib als <strong>URL-Name</strong> der Kategorie <strong>gtc</strong> ein.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Datenschutzerklärung anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Artikel » Kategorien</strong>.</p>
+</li>
+<li>
+<p>Klappe deine Callisto-Kategorie auf.</p>
+</li>
+<li>
+<p>Kopiere die Kategorie <strong>Datenschutz</strong> als Hauptkategorie.<br>
+→ Die neue Hauptkategorie <strong>Datenschutz</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib als <strong>URL-Name</strong> der Kategorie <strong>privacy-policy</strong> ein.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Impressum anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Artikel » Kategorien</strong>.</p>
+</li>
+<li>
+<p>Klappe deine Callisto-Kategorie auf.</p>
+</li>
+<li>
+<p>Kopiere die Kategorie <strong>Impressum</strong> als Hauptkategorie.<br>
+→ Die neue Hauptkategorie <strong>Impressum</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib als <strong>URL-Name</strong> der Kategorie <strong>legal-disclosure</strong> ein.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Widerrufsrecht anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Artikel » Kategorien</strong>.</p>
+</li>
+<li>
+<p>Klappe deine Callisto-Kategorie auf.</p>
+</li>
+<li>
+<p>Kopiere die Kategorie <strong>Widerrufsrecht</strong> als Hauptkategorie.<br>
+→ Die neue Hauptkategorie <strong>Widerrufsrecht</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib als <strong>URL-Name</strong> der Kategorie <strong>cancellation-rights</strong> ein.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_theme">3.5. Theme</h3>
+<div class="paragraph">
+<p>Du hast deinen Callisto-Webshop bereits nach deinen individuellen Bedürfnissen gestaltet und befürchtest, dass das Ceres-Design nicht damit harmoniert? Es ist ein Leichtes, das <a href="https://marketplace.plentymarkets.com/plugins/themes/ceresvanilla_5025" target="_blank" rel="noopener">Vanilla-Theme</a> für Ceres herunterzuladen und dein Design darin zu hinterlegen, um deinen gesamten Shop in der gewohnten Optik erstrahlen zu lassen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zahlungsarten_im_neuen_und_alten_checkout">3.6. Zahlungsarten im neuen und alten Checkout</h3>
+<div class="paragraph">
+<p>Beachte bitte, dass im Ceres-Checkout keine der alten Zahlungsarten aus Callisto mehr verfügbar sind, sondern nur noch die neuen Payment-Plugins. Du musst daher mindestens ein <a href="https://marketplace.plentymarkets.com/plugins/payment/" target="_blank" rel="noopener">Payment-Plugin</a> installieren, um deinen Kunden weiterhin eine Bezahlmöglichkeit zur Verfügung zu stellen.</p>
 </div>
 </div>
 </div>
