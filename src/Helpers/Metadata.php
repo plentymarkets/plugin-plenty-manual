@@ -3086,7 +3086,7 @@ class Metadata {
 						"url" => "/auftragsabwicklung/payment/sofortueberweisung",
 						"level" => 3,
 						"title" => "SOFORT Überweisung",
-						"keywords" => "sofort überweisung, Zahlungsart",
+						"keywords" => "sofort überweisung, Zahlungsart, sofortüberweisung, sofortueberweisung",
 						"description" => "Payment in plentymarkets: Richten Sie die Schnittstelle zu SOFORT Überweisung in Ihrem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich SOFORT Überweisung. Hier finden Sie folgende Informationen:",
