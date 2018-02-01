@@ -1537,8 +1537,39 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Martkplatz real.de in Ihrem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich real.de. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
+						"children" => 						[
+							[
+								"id" => "8a5eb4b6c651d76d6b7e4c9d5ae01224",
+								"path" => "omni-channel/multi-channel/real-de/real-de-einrichten",
+								"position" => 4,
+								"urlName" => "real-de-einrichten",
+								"url" => "/omni-channel/multi-channel/real-de/real-de-einrichten",
+								"level" => 4,
+								"title" => "real.de einrichten",
+								"keywords" => "",
+								"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Martkplatz real.de in Ihrem plentymarkets System ein.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich real.de einrichten. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "a76bd216cbcbfea8f4f898c91632b10c",
+								"path" => "omni-channel/multi-channel/real-de/best-practices",
+								"position" => 100,
+								"urlName" => "best-practices",
+								"url" => "/omni-channel/multi-channel/real-de/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: real.de",
+								"keywords" => "real.de, Multi-Channel",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: real.de. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					],
 					[
 						"id" => "7b0c81fccd804d676dcfeeff6d97cc22",
