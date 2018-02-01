@@ -1526,52 +1526,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "628b7d3d8311c34be8b129001e889843",
-						"path" => "omni-channel/multi-channel/real-de",
-						"position" => 4,
-						"urlName" => "real-de",
-						"url" => "/omni-channel/multi-channel/real-de",
-						"level" => 3,
-						"title" => "real.de",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Martkplatz real.de in Ihrem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich real.de. Hier finden Sie folgende Informationen:",
-						"children" => 						[
-							[
-								"id" => "8a5eb4b6c651d76d6b7e4c9d5ae01224",
-								"path" => "omni-channel/multi-channel/real-de/real-de-einrichten",
-								"position" => 4,
-								"urlName" => "real-de-einrichten",
-								"url" => "/omni-channel/multi-channel/real-de/real-de-einrichten",
-								"level" => 4,
-								"title" => "real.de einrichten",
-								"keywords" => "",
-								"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Martkplatz real.de in Ihrem plentymarkets System ein.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich real.de einrichten. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "a76bd216cbcbfea8f4f898c91632b10c",
-								"path" => "omni-channel/multi-channel/real-de/best-practices",
-								"position" => 100,
-								"urlName" => "best-practices",
-								"url" => "/omni-channel/multi-channel/real-de/best-practices",
-								"level" => 4,
-								"title" => "Best Practices: real.de",
-								"keywords" => "real.de, Multi-Channel",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practices: real.de. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							]
-						],
-						"hasChildren" => true
-					],
-					[
 						"id" => "7b0c81fccd804d676dcfeeff6d97cc22",
 						"path" => "omni-channel/multi-channel/allyouneed",
 						"position" => 10,
@@ -1643,21 +1597,6 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz DaWanda in Ihrem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich DaWanda. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "718020f26a406812de127194fd5760f9",
-						"path" => "omni-channel/multi-channel/etsy",
-						"position" => 55,
-						"urlName" => "etsy",
-						"url" => "/omni-channel/multi-channel/etsy",
-						"level" => 3,
-						"title" => "Etsy",
-						"keywords" => "Etsy, Marktplatz",
-						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz DaWanda in Ihrem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Etsy. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
