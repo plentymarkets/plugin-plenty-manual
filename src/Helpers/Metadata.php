@@ -1492,8 +1492,39 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Amazon in Ihrem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Amazon. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
+						"children" => 						[
+							[
+								"id" => "133ed17e8f07fedaf608a2afdfe0eed0",
+								"path" => "omni-channel/multi-channel/amazon/amazon-einrichten",
+								"position" => 1,
+								"urlName" => "amazon-einrichten",
+								"url" => "/omni-channel/multi-channel/amazon/amazon-einrichten",
+								"level" => 4,
+								"title" => "Amazon",
+								"keywords" => "Amazon, FBA, MFN, Prime, NextDay, SecondDay, Marktplatz, SKU, Multi-Channel, Amazon Business",
+								"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Amazon in Ihrem plentymarkets System ein.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Amazon. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "bda5865b4298d75a013f0f29654bb74b",
+								"path" => "omni-channel/multi-channel/amazon/best-practices",
+								"position" => 2,
+								"urlName" => "best-practices",
+								"url" => "/omni-channel/multi-channel/amazon/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: Amazon",
+								"keywords" => "Amazon, Multi-Channel, Prime, FBA",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: Amazon. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					],
 					[
 						"id" => "a5b8f4521c3bb21a2f2a9ad6e748db19",
