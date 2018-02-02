@@ -1488,8 +1488,8 @@ class Metadata {
 						"url" => "/omni-channel/multi-channel/amazon",
 						"level" => 3,
 						"title" => "Amazon",
-						"keywords" => "Amazon, FBA, MFN, Prime, NextDay, SecondDay, Marktplatz, SKU, Multi-Channel, Amazon Business",
-						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Amazon in Ihrem plentymarkets System ein.",
+						"keywords" => "Amazon, Multi-Channel, FBA, Prime, MFN",
+						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Amazon. Hier finden Sie folgende Informationen:",
 						"children" => 						[
