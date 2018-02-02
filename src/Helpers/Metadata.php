@@ -1534,12 +1534,43 @@ class Metadata {
 						"url" => "/omni-channel/multi-channel/ebay",
 						"level" => 3,
 						"title" => "eBay",
-						"keywords" => "eBay, Marktplatz, Listing, Layout-Vorlage",
-						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz eBay in Ihrem plentymarkets System ein.",
+						"keywords" => "eBay, Multi-Channel, eBay Plus, Listings",
+						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich eBay. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
+						"children" => 						[
+							[
+								"id" => "e904b0befff2555c032aebd439c74aff",
+								"path" => "omni-channel/multi-channel/ebay/ebay-einrichten",
+								"position" => 1,
+								"urlName" => "ebay-einrichten",
+								"url" => "/omni-channel/multi-channel/ebay/ebay-einrichten",
+								"level" => 4,
+								"title" => "eBay einrichten",
+								"keywords" => "eBay, Marktplatz, Listing, Layout-Vorlage",
+								"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz eBay in Ihrem plentymarkets System ein.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich eBay einrichten. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "02b1f02457368c76396b711a5f665b7a",
+								"path" => "omni-channel/multi-channel/ebay/best-practices",
+								"position" => 2,
+								"urlName" => "best-practices",
+								"url" => "/omni-channel/multi-channel/ebay/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: eBay",
+								"keywords" => "eBay, Multi-Channel, ebay Plus, Listings",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: eBay. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					],
 					[
 						"id" => "4035c800eea87f534d97dec9a16e1cab",
