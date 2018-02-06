@@ -1500,11 +1500,11 @@ class Metadata {
 								"urlName" => "amazon-einrichten",
 								"url" => "/omni-channel/multi-channel/amazon/amazon-einrichten",
 								"level" => 4,
-								"title" => "Amazon",
+								"title" => "Amazon einrichten",
 								"keywords" => "Amazon, FBA, MFN, Prime, NextDay, SecondDay, Marktplatz, SKU, Multi-Channel, Amazon Business",
 								"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Amazon in Ihrem plentymarkets System ein.",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Amazon. Hier finden Sie folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Amazon einrichten. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							],
