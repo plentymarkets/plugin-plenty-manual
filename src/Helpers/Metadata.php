@@ -1841,6 +1841,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich rakuten.de. Hier finden Sie folgende Informationen:",
 						"children" => 						[
 							[
+								"id" => "c807f2541a759493d957377ce9444bcd",
+								"path" => "omni-channel/multi-channel/rakuten/rakuten-einrichten",
+								"position" => 1,
+								"urlName" => "rakuten-einrichten",
+								"url" => "/omni-channel/multi-channel/rakuten/rakuten-einrichten",
+								"level" => 4,
+								"title" => "Rakuten einrichten",
+								"keywords" => "Rakuten, Marktplatz",
+								"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Rakuten in Ihrem plentymarkets System ein.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Rakuten einrichten. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "e8de4ede58ce65ee9d8f1e7072824869",
 								"path" => "omni-channel/multi-channel/rakuten/best-practices",
 								"position" => 2,
@@ -1852,21 +1867,6 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Best Practices: Rakuten.de. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "c807f2541a759493d957377ce9444bcd",
-								"path" => "omni-channel/multi-channel/rakuten/rakuten-einrichten",
-								"position" => 3,
-								"urlName" => "rakuten-einrichten",
-								"url" => "/omni-channel/multi-channel/rakuten/rakuten-einrichten",
-								"level" => 4,
-								"title" => "Rakuten einrichten",
-								"keywords" => "Rakuten, Marktplatz",
-								"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Rakuten in Ihrem plentymarkets System ein.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Rakuten einrichten. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							]
