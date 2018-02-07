@@ -1,15 +1,537 @@
 <aside class="col-12 col-md-3 push-md-9">
     <div class="sticky-wrapper">
         <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
-            
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#fehlermeldungen"><span>1.</span><span> Allyouneed - Fehlercodes im Artikelexport</span></a></li>
+</ul>
+</div>
         </div>
     </div>
 </aside>
 
 <main class="col-12 col-md-9 pull-md-3" id="main">
-    <h1>Best Practices: Allyouneed</h1><div class="paragraph">
+    <h1>Best Practices: Allyouneed</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
 <p>Hier findest du Best Practices zu dem Marktplatz <strong>Allyouneed</strong>.</p>
-</div><div id="fehlermeldungen" class="paragraph adoc">
-<p>Unresolved directive in &lt;stdin&gt; - include::../../../_best-practices/omni-channel/multi-channel/allyouneed/bp-ayn-fehlermeldungen.adoc[leveloffset=1]</p>
+</div>
+</div>
+</div><div class="sect1 adoc">
+<h2 id="fehlermeldungen">1. Allyouneed - Fehlercodes im Artikelexport</h2>
+<div class="sectionbody">
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: “Attribute link for attribute ID X not set.”</div>
+<div class="content">
+<div class="paragraph">
+<p>Diese Fehlermeldung bezieht sich auf die Attributverknüpfung.</p>
+</div>
+<div class="paragraph">
+<p>Damit plentymarkets Attribute korrekt mit Attributen von Allyouneed in Verbindung gebracht werden können, müssen diese verknüpft werden. Besteht diese Verknüpfung nicht, kommt es zu der obigen Fehlermeldung.</p>
+</div>
+<div class="paragraph">
+<p>Die Verknüpfung wird unter <strong>System » Artikel » Attribute » Attribut öffnen mit der ID X » Attributverknüpfung » Allyouneed.com</strong> gesetzt.</p>
+</div>
+<div id="Attributsverknuepfung-AYN" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/omni-channel/multi-channel/allyouneed/assets/bp-ayn-attribut.png" alt="bp ayn attribut">
+</div>
+<div class="title">Bild 1. Attributsverknüpfung bei Allyouneed</div>
+</div>
+<div class="paragraph">
+<p>Dort muss das entsprechende Pendant zum Attribut auf Allyouneed ausgewählt werden.
+Die Attributwerte können ebenfalls für Allyouneed übersetzt werden. Wenn diese nicht gesetzt werden, dann wird der Name des Wertes übermittelt.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: “Availability is not enabled.”</div>
+<div class="content">
+<div class="paragraph">
+<p>Diese Fehlermeldung bezieht sich auf die Artikelverfügbarkeit der Variante.</p>
+</div>
+<div class="paragraph">
+<p>Unter <strong>System » Märkte » Allyouneed » Einstellungen</strong> kann eingestellt werden, dass nur bestimmte Varianten mit einer bestimmten Artikelverfügbarkeit exportiert werden:</p>
+</div>
+<div id="Artikelverfuegbarkeit-AYN" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/omni-channel/multi-channel/allyouneed/assets/bp-ayn-artikelverfuegbarkeit.png" alt="bp ayn artikelverfuegbarkeit">
+</div>
+<div class="title">Bild 2. Artikelverfügbarkeit bei Allyouneed</div>
+</div>
+<div class="paragraph">
+<p>Es können mehrere Artikelverfügbarkeiten gewählt werden. Zur Auswahl stehen die Option “ALLE” und die 10 Artikelverfügbarkeiten die unter <strong>System » Artikel » Verfügbarkeit</strong> konfiguriert werden können. Angezeigt wird der <strong>Name</strong> der Artikelverfügbarkeit.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Hinweis</div>
+<div class="paragraph">
+<p>Ist der Name der Artikelverfügbarkeit leer, wird eine leere Zeile angezeigt, die trotzdem ausgewählt werden kann.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Hat die Variante zum Zeitpunkt des Exportes eine Artikelverfügbarkeit, die nicht für den Export freigegeben ist, dann wird der Fehler: “Availability is not enabled.” ausgegeben.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Hinweis</div>
+<div class="paragraph">
+<p>Artikel die bereits auf dem Marktplatz aktiv waren, werden gelöscht, wenn es beim Bestandsupdate (Stock update) einen Fehler gibt. Die Artikelverfügbarkeit kann also genutzt werden, um Artikel automatisch auf Allyouneed zu entfernen, deren Artikelverfügbarkeit sich in Abhängigkeit vom Bestand ändert.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlercode 1095</div>
+<div class="content">
+<div class="paragraph">
+<p>Die volle Fehlermeldung von Allyouneed lautet:</p>
+</div>
+<div class="paragraph">
+<p><code>INVALID_MODIFICATION: Die Kategorie X.X.X.X kann nicht genutzt werden, da es Unterkategorien gibt. (Code: 1095)</code></p>
+</div>
+<div class="paragraph">
+<p>Dies bedeutet, dass die gesetzte Kategorieverknüpfung unter <strong>System » Märkte » Allyouneed » Kategorieverknüpfung</strong> nicht legal ist. Es muss immer die unterste mögliche Kategorieebene genommen werden. Prüft die Kategorieverknüpfungen für alle, am Artikel hinterlegten Kategorien.
+Es ist ebenfalls möglich, dass die Kategoriestruktur bei Allyouneed erneuert wurde und deswegen neue Unterkategorien existieren, die jetzt verknüpft werden müssen.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlercode 100</div>
+<div class="content">
+<div class="paragraph">
+<p>Die volle Fehlermeldung von Allyouneed lautet:</p>
+</div>
+<div class="paragraph">
+<p><code>INVALID_DATA: Die angegebene EAN ‘1234567890123’ wird bereits in Produkt ‘274’ verwendet. EAN dürfen nur in Varianten doppelt vergeben werden. Nähere Informationen finden Sie unter <a href="https://portal.allyouneed.com/hilfe-downloads/downloads-dokumentationen/fehlermeldung-xml/" class="bare">https://portal.allyouneed.com/hilfe-downloads/downloads-dokumentationen/fehlermeldung-xml/</a> (Code: 100)</code></p>
+</div>
+<div class="paragraph">
+<p>Diese Fehlermeldung erscheint, wenn mehrere Produkte mit der selben EAN zu Allyouneed übertragen werden.</p>
+</div>
+<div class="paragraph">
+<p>Um Herauszufinden, welche Varianten betroffen sind, kann die Fehlermeldungen wie folgt, am Beispiel der abgebildeten Fehlermeldung, ausgewertet werden:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>EAN ‘1234567890123’</strong> Nach diesem Barcode könnt ihr suchen um mögliche Dopplungen im System zu finden.</p>
+</li>
+<li>
+<p><strong>Produkt ‘274’</strong> - Dies ist die SKU der Variante, die auf Allyouneed gelistet wurde und jetzt wegen der gleichen EAN den Artikelexport der anderen Artikel blockiert.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Um den Fehler zu beheben, gibt es jetzt zwei Optionen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dafür sorgen, dass die EAN bei allen Varianten eindeutig ist, die zum selben Marktplatz übertragen werden.</p>
+</li>
+<li>
+<p>Für Varianten mit gleicher EAN keine EAN übertragen. Dazu müsst Ihr unter <strong>System » Artikel » Barcode</strong> mindestens zwei Barcodes pflegen. Einen der für die Auftragsherkunft Allyouneed freigegeben ist und einen, der dies nicht ist.
+Bei allen Artikeln, bei denen die EAN nicht übertragen werden soll. Muss dann die EAN in dem Barcode gepflegt werden, der nicht freigegeben ist.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlercode 200</div>
+<div class="content">
+<div class="paragraph">
+<p>Die volle Fehlermeldung von Allyouneed lautet:</p>
+</div>
+<div class="paragraph">
+<p><code>INVALID_DATA: Es konnte kein passendes Produkt zu diesem Angebot gefunden werden. Nähere Informationen finden Sie unter <a href="https://portal.allyouneed.com/hilfe-downloads/downloads-dokumentationen/fehlermeldung-xml/" class="bare">https://portal.allyouneed.com/hilfe-downloads/downloads-dokumentationen/fehlermeldung-xml/</a> (Code: 200)</code></p>
+</div>
+<div class="paragraph">
+<p>Diese Fehlermeldung erscheint, wenn ein Angebot zu Allyouneed übertragen wurde, zu dem noch kein Produkt existiert.</p>
+</div>
+<div class="paragraph">
+<p>Es gibt zwei Möglichkeiten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Unter <strong>System » Märkte » Allyouneed » Artikel-Export</strong> gibt es einen Fehler zum Catalog export.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Dieser muss dann behoben werden, damit das Produkt online gehen kann.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Unter <strong>System » Märkte » Allyouneed » Artikel-Export</strong> gibt es keinen Fehler zum Catalog export.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Das Produkt wurde erfolgreich übertragen, die Erstellung des Angebots wurde aber angefordert, bevor das Produkt online war. Das Produkt kann entweder manuell gelistet werden oder sollte nach einer weiteren Nacht automatisch online gehen.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Weitere Infos zum Unterschied zwischen Produkt und Angebot sind <a href="https://forum.plentymarkets.com/t/allyouneed-artikelexport-unterschied-produkt-und-angebot/58922">hier</a> zu finden.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlercode 203</div>
+<div class="content">
+<div class="paragraph">
+<p>Die volle Fehlermeldung von Allyouneed lautet:</p>
+</div>
+<div class="paragraph">
+<p><code>INVALID_DATA: Es existiert bereits ein Angebot zu diesem Produkt ‘XXXX’. Nähere Informationen finden Sie unter<a href="https://portal.allyouneed.com/hilfe-downloads/downloads-dokumentationen/fehlermeldung-xml/" class="bare">https://portal.allyouneed.com/hilfe-downloads/downloads-dokumentationen/fehlermeldung-xml/</a> (Code: 203)</code></p>
+</div>
+<div class="paragraph">
+<p>Diese Fehlermeldung erscheint, wenn mehrere Produkte mit der selben EAN zu Allyouneed übertragen werden.</p>
+</div>
+<div class="paragraph">
+<p>Um Herauszufinden, welche Varianten betroffen sind, kann die Fehlermeldungen wie folgt, am Beispiel der abgebildeten Fehlermeldung, ausgewertet werden:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Produkt ‘XXXX’</strong> - Dies ist die SKU der Variante, die auf Allyouneed gelistet wurde und jetzt wegen der gleichen EAN den Artikelexport der anderen Artikel blockiert.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Um den Fehler zu beheben, gibt es jetzt zwei Optionen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dafür sorgen, dass die EAN bei allen Varianten eindeutig ist, die zum selben Marktplatz übertragen werden</p>
+</li>
+<li>
+<p>Für Varianten mit gleicher EAN keine EAN übertragen. Dazu müsst Ihr unter <strong>System » Artikel » Barcode</strong> mindestens zwei Barcodes pflegen. Einen der für die Auftragsherkunft Allyouneed freigegeben ist und einen, der dies nicht ist.
+Bei allen Artikeln, bei denen die EAN nicht übertragen werden soll. Muss dann die EAN in dem Barcode gepflegt werden, der nicht freigegeben ist.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlercode 206</div>
+<div class="content">
+<div class="paragraph">
+<p>Die volle Fehlermeldung von Allyouneed lautet:</p>
+</div>
+<div class="paragraph">
+<p><code>INVALID_DATA: Es gibt bereits ein Produkt mit einer anderen productId ‘XXXX’, das zu den angegebenen Daten ‘EAN:YYYYYYYYYYYYY ZZZ:typ=12.5 kg’ passt. Es ist nicht erlaubt ein identisches Produkt mehrfach anzulegen. Nähere Informationen finden Sie unter <a href="https://portal.allyouneed.com/hilfe-downloads/downloads-dokumentationen/fehlermeldung-xml/" class="bare">https://portal.allyouneed.com/hilfe-downloads/downloads-dokumentationen/fehlermeldung-xml/</a> (Code: 206)`</code></p>
+</div>
+<div class="paragraph">
+<p>Diese Fehlermeldung erscheint, wenn mehrere Produkte mit der selben EAN zu Allyouneed übertragen werden.</p>
+</div>
+<div class="paragraph">
+<p>Um Herauszufinden, welche Varianten betroffen sind, kann die Fehlermeldungen wie folgt, am Beispiel der abgebildeten Fehlermeldung, ausgewertet werden:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>productId 'XXXX’</strong> - Die genannte productId entspricht der SKU der Variante, bei der der Fehler aufgetreten ist.</p>
+</li>
+<li>
+<p><strong>Daten 'EAN:YYYYYYYYYYYYY ZZZ:typ=12.5 kg’</strong> - Die Daten beziehen sich auf das Produkt, das bereits auf Allyouneed gelistet wurde und den Abgleich blockiert. Das Produkt findest Ihr bei plenty Anhand der Daten:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>EAN:YYYYYYYYYYYYY</p>
+</li>
+<li>
+<p>ZZZ ⇒ Artikel-ID bei plenty</p>
+</li>
+<li>
+<p>typ=12.5 kg ⇒ bei plenty verknüpftes Attribut</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Um den Fehler zu beheben, gibt es jetzt zwei Optionen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dafür sorgen, dass die EAN bei allen Varianten eindeutig ist, die zum selben Marktplatz übertragen werden.</p>
+</li>
+<li>
+<p>Für Varianten mit gleicher EAN keine EAN übertragen. Dazu müsst Ihr unter <strong>System » Artikel » Barcode</strong> mindestens zwei Barcodes pflegen. Einen der für die Auftragsherkunft Allyouneed freigegeben ist und einen, der dies nicht ist.
+Bei allen Artikeln, bei denen die EAN nicht übertragen werden soll. Muss dann die EAN in dem Barcode gepflegt werden, der nicht freigegeben ist.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlermeldung "Short description is missing"</div>
+<div class="content">
+<div class="paragraph">
+<p>Diese Fehlermeldung bezieht sich auf den Vorschautext.</p>
+</div>
+<div class="paragraph">
+<p>Die Kurzbeschreibung ist bei Allyouneed Pflicht. Wir übertragen dafür den Vorschautext des Artikels aus dem <strong>Tab: Texte</strong> oder, wenn dieser nicht gesetzt ist, den Artikelnamen. Ist beides nicht gesetzt, dann erscheint diese Fehlermeldung.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlermeldung "Product name is missing"</div>
+<div class="content">
+<div class="paragraph">
+<p>Diese Fehlermeldung bezieht sich auf den Artikelnamen.</p>
+</div>
+<div class="paragraph">
+<p>Unter <strong>System » Märkte » Allyouneed » Einstellungen » Grundkonfiguration</strong> definiert Ihr, welcher Artikelname verwendet werden soll. Wenn dieser Name im <strong>Tab: Texte</strong> des Artikels nicht gepflegt wurde, erscheint diese Fehlermeldung.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlermeldung "Category link is missing"</div>
+<div class="content">
+<div class="paragraph">
+<p>Diese Fehlermeldung bezieht sich auf die Kategorieverknüpfungen der Kategorien der Variante.</p>
+</div>
+<div class="paragraph">
+<p>Die Kategorieverknüpfung muss für den Export gesetzt sein. Dazu muss mindestens eine der Kategorien der Variante unter <strong>System » Märkte » Allyouneed » Kategorieverknüpfung</strong> verknüpft worden sein.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlercode 402</div>
+<div class="content">
+<div class="paragraph">
+<p>Die volle Fehlermeldung von Allyouneed lautet:</p>
+</div>
+<div class="paragraph">
+<p><code>INVALID_DATA: Es wurde kein Produkt/Angebot mit dieser productId gefunden. Nähere Informationen finden Sie unter <a href="https://portal.allyouneed.com/hilfe-downloads/downloads-dokumentationen/fehlermeldung-xml/" class="bare">https://portal.allyouneed.com/hilfe-downloads/downloads-dokumentationen/fehlermeldung-xml/</a> (Code: 402)</code></p>
+</div>
+<div class="paragraph">
+<p>Diese Fehlermeldung erscheint, wenn wir versucht haben den Artikel zu löschen, aber es bei Allyouneed weder Produkte noch Angebote mit dieser SKU (productId) gefunden wurde. Wir gehen davon aus, dass dieses Produkt nicht mehr auf Allyouneed existiert. Ein weiterer Löschversuch wird nicht übernommen.</p>
+</div>
+<div class="paragraph">
+<p>Wenn das erwartete Produkt noch auf Allyouneed existiert, dann weichen die SKUs voneinander ab. Dieses Produkt muss dann manuell bei Allyouneed gelöscht werden.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlercode 1040</div>
+<div class="content">
+<div class="paragraph">
+<p>Die volle Fehlermeldung von Allyouneed lautet:</p>
+</div>
+<div class="paragraph">
+<p><code>PRODUCT_NOT_FOUND: Das Produkt konnte nicht angelegt werden. Es exisitert keine Beschreibung für dieses Produkt. (Code: 1040)</code></p>
+</div>
+<div class="paragraph">
+<p>Diese Fehlermeldung erscheint, wenn ein Angebot zu Allyouneed übertragen wurde, zu dem noch kein Produkt existiert.</p>
+</div>
+<div class="paragraph">
+<p>Es gibt zwei Möglichkeiten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Unter <strong>System » Märkte » Allyouneed » Artikel-Export</strong> gibt es einen Fehler zum Catalog export.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Dieser muss dann behoben werden, damit das Produkt online gehen kann.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Unter <strong>System » Märkte » Allyouneed » Artikel-Export</strong> gibt es keinen Fehler zum Catalog export.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Das Produkt wurde erfolgreich übertragen, die Erstellung des Angebots wurde aber angefordert, bevor das Produkt online war. Das Produkt kann entweder manuell gelistet werden oder sollte nach einer weiteren Nacht automatisch online gehen.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Weitere Infos zum Unterschied zwischen Produkt und Angebot sind <a href="https://forum.plentymarkets.com/t/allyouneed-artikelexport-unterschied-produkt-und-angebot/58922">hier</a> zu finden.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlermeldung "Delivery time is missing"</div>
+<div class="content">
+<div class="paragraph">
+<p>Diese Fehlermeldung bezieht sich auf den errechneten Versandzeit der Variante.</p>
+</div>
+<div class="paragraph">
+<p>Diese Fehlermeldung sollte nur erscheinen, wenn kein Wert für die Versandzeit berechnet werden konnte.
+Wenn diese Fehlermeldung auftaucht, dann meldet Euch bitte hier mit der entsprechenden Varianten-ID als Beispiel.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlermeldung "Stock is missing"</div>
+<div class="content">
+<div class="paragraph">
+<p>Diese Fehlermeldung bezieht sich auf den errechneten Bestand der Variante.</p>
+</div>
+<div class="paragraph">
+<p>Diese Fehlermeldung sollte nur erscheinen, wenn kein Wert für den Bestand berechnet werden konnte. Wenn diese Fehlermeldung auftaucht, dann meldet Euch bitte hier mit der entsprechenden Varianten-ID als Beispiel</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlermeldung "SKU is not set"</div>
+<div class="content">
+<div class="paragraph">
+<p>Diese Fehlermeldung bezieht sich auf die automatische Generierung der SKU beim Export.</p>
+</div>
+<div class="paragraph">
+<p>Beim Export wird geprüft, ob es bereits eine SKU für die Variante gibt oder nicht. Wenn es noch keine SKU gibt, dann wird versucht diese anzulegen.
+Bei der automatischen Anlage wird die SKU auf Basis der Varianten-ID angelegt.
+Wenn bereits eine andere Variante diese SKU für den Marktplatz Allyouneed hinterlegt hat, dann schlägt die automatische Generierung fehl, da diese SKU pro Marktplatz und Variante eindeutig sein muss.</p>
+</div>
+<div class="paragraph">
+<p>Wenn Ihr auf diesen Fehler stoßt, dann prüft bitte über die Artikelsuche unter <strong>Artikel → Artikel bearbeiten</strong> mit den folgenden Filtern, ob die SKU wirklich bereits vergeben ist:</p>
+</div>
+<table id="FilterSKU" class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 1. Filter einstellen</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Einstellung</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tabellentyp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Varianten</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SKU (Suchtext)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Varianten-ID der Variante, bei der dieser Fehler angezeigt wird.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SKU (Auftragsherkunft)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allyouneed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aktiv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Wenn die SKU bereits vergeben war, dann müsst Ihr die SKU an dem neuen Artikel händisch vergeben. Dies könnt Ihr in der jeweiligen Variante im <strong>Tab: Verfügbarkeit</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Wenn die SKU noch nicht vergeben ist, dann meldet Euch bitte hier mit der entsprechenden Varianten-ID als Beispiel.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlermeldung "EAN/ISBN is not valid"</div>
+<div class="content">
+<div class="paragraph">
+<p>Wenn Ihr eine EAN oder ISBN am Artikel vergebt, dann muss diese bei Allyouneed immer 13 Stellen haben. Wenn dies beim Export nicht der Fall ist erscheint diese Fehlermeldung.</p>
+</div>
+<div class="paragraph">
+<p>Um dies zu beheben, gibt es zwei Möglichkeiten:
+. Die EAN/ISBN entsprechend anpassen.
+. Die EAN/ISBN nicht zu Allyouneed übertragen.</p>
+</div>
+<div class="paragraph">
+<p>Die zweite Variante ist möglich, da die unterschiedlichen Barcodes für die Marktplätze freigeschaltet werden können, wie z.B. auch die Verkaufspreise. Geht dazu unter <strong>System » Artikel » Barcode</strong> und öffnet einen Barcode.
+An dem jeweiligen Barcode kann jetzt definiert werden, für welche Auftragsherkunft dieser gültig ist:</p>
+</div>
+<div id="Barcode-AYN" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/omni-channel/multi-channel/allyouneed/assets/bp-ayn-barcode.png" alt="bp ayn barcode">
+</div>
+<div class="title">Bild 3. Herkunft der Barcodes</div>
+</div>
+<div class="paragraph">
+<p>Es wäre also möglich zwei Barcodes anzulegen. Einer ist für Allyouneed freigegeben und einer nicht. Bei dem bisherigen Barcode würdet ihr also jetzt die Verknüpfung entfernen und einen neuen Barcode anlegen, der mit Allyouneed verknüpft ist.</p>
+</div>
+<div class="paragraph">
+<p>Über den dynamischen Ex- und Import des Formats <a href="https://knowledge.plentymarkets.com/basics/datenaustausch/datenformate/variationbarcode">VariationBarcode</a> könnt Ihr dann alle Barcodes, die 13 Stellen haben, in den neuen Barcode kopieren, damit diese Barcodes weiterhin zu Allyouneed übertragen werden.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Fehlermeldung: Fehlermeldung "Price is missing"</div>
+<div class="content">
+<div class="paragraph">
+<p>Diese Fehlermeldung bezieht sich auf den Verkaufspreis der Variante.</p>
+</div>
+<div class="paragraph">
+<p>Wenn diese Fehlermeldung erscheint, dann gibt es zwei Mögliche Fehlerquellen.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Der entsprechende Verkaufspreis wurde an der Variante auf 0.00 € gesetzt.</p>
+</li>
+<li>
+<p>Es ist kein Verkaufspreis an der Variante hinterlegt, der auch mit Allyouneed verknüpft wurde.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Bei der zweiten Möglichkeit kann dies wie folgt geprüft werden indem Ihr zu <strong>System » Artikel » Verkaufspreise</strong> geht, den Filter <strong>Herkunft</strong> auf <strong>Allyouneed</strong> stellt und die Suche benutzt.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Wenn in der Suche <strong>kein</strong> Verkaufspreis gefunden wurde, dann ist auch noch kein Verkaufspreis definiert.
+In diesem Fall muss ein Verkaufspreis in den Einstellungen für die Herkunft Allyouneed aktiviert werden. Es darf kein <strong>Preistyp</strong> aktiviert sein.</p>
+</li>
+<li>
+<p>Wenn in der Suche ein Verkaufspreis gefunden wurde, dann kontrolliert bitte in allen gefundenen Verkaufspreisen, ob</p>
+<div class="ulist">
+<ul>
+<li>
+<p>in den Einstellungen beim <strong>Preistyp</strong> eine Option angehakt wurde (Es darf keine aktiviert sein!)</p>
+</li>
+<li>
+<p>der Verkaufspreis bei der Variante gepflegt wurde.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 </div>
 </main>
