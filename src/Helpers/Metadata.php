@@ -1573,21 +1573,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "7b0c81fccd804d676dcfeeff6d97cc22",
-						"path" => "omni-channel/multi-channel/allyouneed",
-						"position" => 10,
-						"urlName" => "allyouneed",
-						"url" => "/omni-channel/multi-channel/allyouneed",
-						"level" => 3,
-						"title" => "Allyouneed",
-						"keywords" => "Allyouneed, Marktplatz",
-						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Allyouneed in Ihrem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Allyouneed. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "72f632e43ef06b4ea8f986352fb6ebac",
 						"path" => "omni-channel/multi-channel/bol-com",
 						"position" => 28,
@@ -1874,6 +1859,52 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
+						"id" => "7b0c81fccd804d676dcfeeff6d97cc22",
+						"path" => "omni-channel/multi-channel/allyouneed",
+						"position" => 200,
+						"urlName" => "allyouneed",
+						"url" => "/omni-channel/multi-channel/allyouneed",
+						"level" => 3,
+						"title" => "Allyouneed",
+						"keywords" => "Allyouneed, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Allyouneed. Hier finden Sie folgende Informationen:",
+						"children" => 						[
+							[
+								"id" => "4077a1ec84c9fb60239bce8c69de2121",
+								"path" => "omni-channel/multi-channel/allyouneed/best-practices",
+								"position" => 2,
+								"urlName" => "best-practices",
+								"url" => "/omni-channel/multi-channel/allyouneed/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: Allyouneed",
+								"keywords" => "Allyouneed, Multi-Channel",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: Allyouneed. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "ff354f5aa1bf3dd3c7bc33880ee550ea",
+								"path" => "omni-channel/multi-channel/allyouneed/allyouneed-einrichten",
+								"position" => 10,
+								"urlName" => "allyouneed-einrichten",
+								"url" => "/omni-channel/multi-channel/allyouneed/allyouneed-einrichten",
+								"level" => 4,
+								"title" => "Allyouneed",
+								"keywords" => "Allyouneed, Marktplatz",
+								"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Allyouneed in Ihrem plentymarkets System ein.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Allyouneed. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
+					],
+					[
 						"id" => "628b7d3d8311c34be8b129001e889843",
 						"path" => "omni-channel/multi-channel/real-de",
 						"position" => 200,
@@ -1993,6 +2024,52 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Zalando. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "946059644f1564396c3568bb75476cc6",
+						"path" => "omni-channel/multi-channel/neckermann",
+						"position" => 300,
+						"urlName" => "neckermann",
+						"url" => "/omni-channel/multi-channel/neckermann",
+						"level" => 3,
+						"title" => "Neckermann.at",
+						"keywords" => "neckermann.at, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Neckermann.at. Hier finden Sie folgende Informationen:",
+						"children" => 						[
+							[
+								"id" => "c9e52c6271b44ac56e0b6d906f5bc4d9",
+								"path" => "omni-channel/multi-channel/neckermann/best-practices",
+								"position" => 9,
+								"urlName" => "best-practices",
+								"url" => "/omni-channel/multi-channel/neckermann/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: Neckermann.at",
+								"keywords" => "neckermann, Multi-Channel",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: Neckermann.at. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "08317e742f8cc084594e531109f6923b",
+								"path" => "omni-channel/multi-channel/neckermann/neckermann-at-einrichten",
+								"position" => 160,
+								"urlName" => "neckermann-at-einrichten",
+								"url" => "/omni-channel/multi-channel/neckermann/neckermann-at-einrichten",
+								"level" => 4,
+								"title" => "Neckermann.at",
+								"keywords" => "Neckermann.at, Marktplatz",
+								"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Neckermann Österreich in Ihrem plentymarkets System ein.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Neckermann.at. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					]
 				],
 				"hasChildren" => true
