@@ -3624,6 +3624,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Dokumente erzeugen. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "782ee982a2e42e19d03c0bd46b315258",
+						"path" => "auftragsabwicklung/fulfillment/best-practices-ups",
+						"position" => 40,
+						"urlName" => "best-practices-ups",
+						"url" => "/auftragsabwicklung/fulfillment/best-practices-ups",
+						"level" => 3,
+						"title" => "Best Practices: UPS",
+						"keywords" => "UPS, United Parcel Service, Versandanmeldung, Versandabwicklung, Fehler, Fehlermeldung, Fehlercode, 120110, 120101, 120209, 120109, 120500, 120124, 120122, 10001",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: UPS. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
