@@ -1450,6 +1450,21 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Gratiszugaben. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "0101d2c29d8a17f12cddb077843948ae",
+				"path" => "artikel/best-practices",
+				"position" => 100,
+				"urlName" => "best-practices",
+				"url" => "/artikel/best-practices",
+				"level" => 2,
+				"title" => "Best Practices: Artikel und Kategorien",
+				"keywords" => "Webshop, Mandant, Artikel, Sichtbarkeit, Verfügbarkeit, Checkliste",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Best Practices: Artikel und Kategorien. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
