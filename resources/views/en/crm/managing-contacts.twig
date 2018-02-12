@@ -72,9 +72,33 @@
 <li><a href="#2600"><span>14.</span><span> Editing access data</span></a>
 <ul class="sectlevel2">
 <li><a href="#2700"><span>14.1.</span><span> Changing the password</span></a></li>
-<li><a href="#2800"><span>14.2.</span><span> Sending a link to change the password</span></a></li>
+<li><a href="#2800"><span>14.2.</span><span> Sending a link to change password</span></a></li>
 <li><a href="#2900"><span>14.3.</span><span> Unblocking the login</span></a></li>
 <li><a href="#3000"><span>14.4.</span><span> Opening the My account area of the contact</span></a></li>
+</ul>
+</li>
+<li><a href="#4000"><span>15.</span><span> Managing properties</span></a>
+<ul class="sectlevel2">
+<li><a href="#4100"><span>15.1.</span><span> Creating a property</span></a></li>
+<li><a href="#4200"><span>15.2.</span><span> Editing a property</span></a></li>
+<li><a href="#4300"><span>15.3.</span><span> Searching for a property</span></a></li>
+<li><a href="#4400"><span>15.4.</span><span> Deleting a property</span></a>
+<ul class="sectlevel3">
+<li><a href="#4500"><span>15.4.1.</span><span> Deleting a property</span></a></li>
+<li><a href="#4600"><span>15.4.2.</span><span> Deleting multiple properties</span></a></li>
+</ul>
+</li>
+<li><a href="#4700"><span>15.5.</span><span> Grouping properties</span></a>
+<ul class="sectlevel3">
+<li><a href="#4800"><span>15.5.1.</span><span> Assigning properties to a group</span></a></li>
+<li><a href="#4900"><span>15.5.2.</span><span> Deleting property groups</span></a>
+<ul class="sectlevel4">
+<li><a href="#_deleting_a_property_group"><span>Deleting a property group</span></a></li>
+<li><a href="#5000"><span>Deleting multiple property groups</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -95,7 +119,7 @@
 <td class="content">
 <div class="title">Note about the "Managing contacts" page of the manual</div>
 <div class="paragraph">
-<p>This page of the manual describes all settings that are available in the <strong>CRM » Contacts</strong> menu in the Terra back end using the centralised login. The <a href="/en/crm/managing-customer-data">Managing customer data</a> page of the manual that describes the settings in the <strong>CRM » Edit customers</strong> and <strong>System »Customers</strong> menus will be simultaneously available. Once the new <strong>CRM » Contacts</strong> menu has completely replaced the old <strong>CRM » Edit customers</strong> menu, the <strong>CRM » Edit customers</strong> menu as well as the <strong>Managing customer data</strong> page of the manual will be removed.</p>
+<p>This page of the manual describes all settings that are available in the <strong>CRM » Contacts</strong> menu in the Terra back end using the centralised login. The <a href="/en/crm/managing-customer-data">Managing customer data</a> page of the manual that describes the settings in the <strong>CRM » Edit customers</strong> and <strong>System » CRM</strong> menus will be simultaneously available. Once the new <strong>CRM » Contacts</strong> menu has completely replaced the old <strong>CRM » Edit customers</strong> menu, the <strong>CRM » Edit customers</strong> menu as well as the <strong>Managing customer data</strong> page of the manual will be removed.</p>
 </div>
 </td>
 </tr>
@@ -133,7 +157,7 @@
 <h2 id="50">1. Setting up the visibility for variable user</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In order that the <strong>CRM » Contacts</strong> menu is visible for users with the user class <strong>Variable</strong>, the menu must be activated in the user account. For users with the user class <strong>Admin</strong>, the <strong>CRM » Contacts</strong> menu is activated by default.</p>
+<p>In order that the <strong>CRM » Contacts</strong> menu is visible for users with the user class <strong>Variable</strong>, the menu must be activated in the user account. For users with the user class <strong>Admin</strong>, the <strong>CRM » Contacts</strong> menu is activated by default. Since the new user interface of the <strong>CRM » Contacts</strong> menu is retrieved via REST, additional rights have to be activated in the <strong>REST API</strong> menu. The following describes which rights must be at least activated. You can of course activate further rights for variable users.</p>
 </div>
 <div class="paragraph instruction">
 <p>Setting up the visibility for variable user:</p>
@@ -156,7 +180,40 @@
 <p>Expand the <strong>CRM</strong> area.</p>
 </li>
 <li>
-<p>Activate the <strong>Contacts</strong> option.</p>
+<p>Activate the <strong>Contacts</strong> options.</p>
+</li>
+<li>
+<p>Click on the <strong>REST API</strong> tab.</p>
+</li>
+<li>
+<p>Expand the <strong>Accounts</strong> area.</p>
+</li>
+<li>
+<p>Expand the <strong>Address</strong> area.</p>
+</li>
+<li>
+<p>Activate the <strong>Show address</strong> option.</p>
+</li>
+<li>
+<p>Expand the <strong>Type of address option</strong> area.</p>
+</li>
+<li>
+<p>Activate the <strong>Show type of address option</strong> option.</p>
+</li>
+<li>
+<p>Expand the <strong>Contact</strong> area.</p>
+</li>
+<li>
+<p>Expand the <strong>Contact address</strong> area.</p>
+</li>
+<li>
+<p>Activate the <strong>Show contact address</strong> option.</p>
+</li>
+<li>
+<p>Expand the <strong>Address type</strong> area.</p>
+</li>
+<li>
+<p>Activate the <strong>Show address type</strong> option.</p>
 </li>
 <li>
 <p><strong>Save</strong> the setting.</p>
@@ -173,7 +230,7 @@
 <div class="sect2">
 <h3 id="100">2.1. Creating a contact</h3>
 <div class="paragraph">
-<p>Proceed as described below to create a new contact. Add contact options such as email addresses, telephone numbers and, if required, the VAT number. You can also create a new contact, for example, while taking an order over the phone or while filling out a written order. It is also possible to save the contact details of interested parties here. When creating a contact, the system will automatically assign an ID. This ID cannot be changed.</p>
+<p>Proceed as described below to create a new contact. Add contact options such as email addresses and telephone numbers. You can also create a new contact, for example, while taking an order over the phone or while filling out a written order. It is also possible to save the contact details of interested parties here. When creating a contact, the system will automatically assign an ID. This ID cannot be changed.</p>
 </div>
 <div class="paragraph instruction">
 <p>Creating a contact:</p>
@@ -257,7 +314,7 @@ Only those clients will be displayed that have a name entered for them in the <s
 <p><strong>Language</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Select the language for the contact. For example, invoice documents will be sent in this language if you created a template in this language.</p>
+<p>Select the language for the contact. If you have created a template in the <strong>System » Client » Select client » Email » Templates</strong> menu in the same language that you have selected here, email templates will be sent to the contact in this language.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -265,7 +322,7 @@ Only those clients will be displayed that have a name entered for them in the <s
 <p><strong>Type</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Select the type. The types <strong>Customer</strong>, <strong>Sales representative</strong>, <strong>Supplier</strong>, <strong>Partner</strong>, <strong>Manufacturer</strong> and <strong>Interested party</strong> can be selected by default. Create further types in the <a href="/en/crm/managing-customer-data#300">System » CRM » Types</a> menu.</p>
+<p>Select the type. The types <strong>Customer</strong>, <strong>Sales representative</strong>, <strong>Supplier</strong>, <strong>Partner</strong>, <strong>Manufacturer</strong> and <strong>Interested party</strong> can be selected by default. Create further types in the <a href="/en/crm/managing-contacts#300">System » CRM » Types</a> menu.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -273,7 +330,7 @@ Only those clients will be displayed that have a name entered for them in the <s
 <p><strong>Class</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Select the class. Classes serve as an internal distinction between customers and which discount will be granted this class, for example. Go to <a href="/en/crm/managing-customer-data#100">System » CRM » Customer classes</a> to create further classes. If you want to offer different prices to end customers and sellers in the online store, then this can be done with the <strong>Display of the prices in the online store</strong> option in the configuration of the classes. For end customers (B2C), the gross prices are displayed in the online store. For sellers (B2B), the net prices are displayed in the online store.<br>
+<p>Select the class. Classes serve as an internal distinction between customers and which discount will be granted this class, for example. Go to <a href="/en/crm/managing-contacts#100">System » CRM » Customer classes</a> to create further classes. If you want to offer different prices to end customers and sellers in the online store, then this can be done with the <strong>Display of the prices in the online store</strong> option in the configuration of the classes. It is very common that gross prices are displayed for end customers (B2C) in the online store and net prices for sellers (B2B).<br>
 Empty option = No assignment to a class<br>
 <strong><em>Important:</em></strong> If there is no assignment to a class, the contact will be automatically assigned to the class with the lowest position. As the price display in the online store is configured for each class, check this option for the class with the position 1 so that the correct price is displayed during automatic assignments.</p>
 </div></div></td>
@@ -291,7 +348,7 @@ Empty option = No assignment to a class<br>
 <p><strong>Customer number</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Enter a customer number for the contact. It is a good idea to plan how you want your contacts to be numbered, e.g. consecutively. Customer numbers are not assigned automatically.</p>
+<p>Enter a customer number for the contact, if required. Customer numbers can be assigned for internal purposes. They will not be saved automatically. You decide whether and how you would like to use customer numbers.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -299,7 +356,7 @@ Empty option = No assignment to a class<br>
 <p><strong>Owner</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Select the owner for the contact. If you do not want to select an owner, select the empty option.</p>
+<p>Select the owner for the contact. If you do not want to select an owner, select the empty option. Only owners for whom the <strong>Customer</strong> option has been activated can be selected from the drop-down menu. Go to <strong>System » Settings » User » Account » Open user » Tab: Owner</strong> to activate owners.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -345,7 +402,7 @@ If the option is activated, the contact will be blocked and can no longer log in
 <p><strong>Sub-type</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Select a sub-type, e.g. work, private or contact person from the drop-down menu.</p>
+<p>Select the sub-type from the drop-down menu, e.g. business or private.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -353,7 +410,7 @@ If the option is activated, the contact will be blocked and can no longer log in
 <p><strong>Value</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Enter the value.</p>
+<p>Enter the value, e.g. the business email address.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -577,13 +634,28 @@ If the option is activated, the contact will be blocked and can no longer log in
 → The detail view of the contact will open.</p>
 </li>
 <li>
-<p>In the <strong>Contact options</strong> area, click in the line of the account type (Type:&nbsp;<strong>Account</strong>,&nbsp;sub-type:&nbsp;<strong>Guest</strong>,&nbsp;value:&nbsp;<strong>1</strong>) on <strong>Delete contact option</strong>.</p>
+<p>In the <strong>Contact options</strong> area, click in the line of the account type (type:&nbsp;<strong>Account</strong>, subtype:&nbsp;<strong>Guest</strong>, value:&nbsp;<strong>1</strong>) on <strong>Delete contact option</strong>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
 → The account type will be changed from <strong>Guest account</strong> to <strong>Regular account</strong> in the history of the contact.</p>
 </li>
 </ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Inform the contact</div>
+<div class="paragraph">
+<p>Send your customer an email and inform him or her about the change. He or she can then create a password to be able to log into your online store.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 <div class="sect2">
@@ -1027,7 +1099,7 @@ It is possible to activate both options if the new address is the primary invoic
 → The detail view of the address will open.</p>
 </li>
 <li>
-<p>Carry out the changes as desired. Pay attention to the information given in <a href="#table-add-address">Table 5</a> in the <a href="/en/crm/managing-contacts#700">Adding an address</a> chapter as well as to the information about the toolbar given in table <a href="#table-edit-address">Table 6</a>.</p>
+<p>Carry out the changes as desired. Pay attention to the information given in <a href="#table-add-address">Table 5</a> in the <a href="/en/crm/managing-contacts#700">Adding an address</a> chapter as well as to the information about the toolbar given in <a href="#table-edit-address">Table 6</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -1588,7 +1660,7 @@ If the delivery address has been defined as primary, this can be undone by click
 <h2 id="1710">10. Managing documents</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the following sub-chapters, you will learn how to upload, display, download and delete documents.</p>
+<p>In the following sub-chapters, you will learn how to upload, display, download and delete documents. The documents that you have uploaded in this menu are only visible in your plentymarkets back end and cannot be accessed by your contacts.</p>
 </div>
 <div class="sect2">
 <h3 id="1720">10.1. Uploading a document</h3>
@@ -2352,7 +2424,7 @@ Select the option from the drop-down menu.<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="2800">14.2. Sending a link to change the password</h3>
+<h3 id="2800">14.2. Sending a link to change password</h3>
 <div class="paragraph">
 <p>Send your contact an email template containing a link in order that he or she can change the password in your online store. It is required that you have linked an email template containing the template function <strong>&#123;&#37; Link_ChangePassword() &#37;&#125;</strong> to change the password with the event <strong>Send customer email to change password</strong>. Carry out this setting in the <strong>System » Client » Select client » Email » Automatic</strong> menu.</p>
 </div>
@@ -2360,7 +2432,7 @@ Select the option from the drop-down menu.<br>
 <p>For further information about sending emails automatically, refer to the <a href="/en/crm/sending-emails#2300">Sending emails</a> page of the manual.</p>
 </div>
 <div class="paragraph instruction">
-<p>Sending a link to change the password:</p>
+<p>Sending a link to change password:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2448,6 +2520,562 @@ Select the option from the drop-down menu.<br>
 → The My account area of the contact in the online store will open.</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="4000">15. Managing properties</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Properties are frequently occurring information that you can use in different areas of plentymarkets. Properties are centrally managed in the <strong>System » Settings » Properties</strong> menu.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Important notes about the contact properties</div>
+<div class="paragraph">
+<p>Note that contact properties in the <strong>CRM » Contacts » Open contact » View: Properties</strong> will only be available in a short while. The properties can then be added and displayed in the plentymarkets back end only. That means that it will not be possible for the contact to save data in your online store, e.g. during the order process or when he or she registers in your online store. This functionality is currently being developed.</p>
+</div>
+<div class="paragraph">
+<p>You can, however, already create properties in the <strong>System » Settings » Properties</strong> menu and also add values for the properties.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Important:</em></strong> A migration is planned for the properties that you created in the past in the <strong>System » CRM » Properties</strong> menu. That means that you do not have to transfer these properties to the new <strong>System » Settings » Properties</strong> menu. We will inform you about the point in time in the <a href="https://forum.plentymarkets.com/c/changelog" target="_blank" rel="noopener">Changelog</a> category of the plentymarkets forum.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="4100">15.1. Creating a property</h3>
+<div class="paragraph">
+<p>Go to <strong>System » Settings » Properties</strong> to create properties that you will later use for characterising your contacts.</p>
+</div>
+<div class="paragraph">
+<p>Proceed as described below to create a property.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a property:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Settings » Properties</strong>.<br>
+→ The overview of the properties will open.</p>
+</li>
+<li>
+<p>Click on <strong>Add property</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Contact</strong> option from the <strong>Section</strong> drop-down menu.</p>
+</li>
+<li>
+<p>Carry out the additional settings. Pay attention to the information given in <a href="#table-create-property">Table 10</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The property is created and opened for editing.</p>
+</li>
+</ol>
+</div>
+<table id="table-create-property" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 10. Creating properties</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Section</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a section from the drop-down menu where the property should be used.<br>
+ <br>
+ <br>
+<strong>Contact</strong> = Property will be used for contacts.<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Property type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the property type from the drop-down menu.<br>
+<strong>None</strong> = No property type<br>
+<strong>Whole number</strong> = Allows to enter a whole number.<br>
+<strong>Decimal number</strong> = Allows to enter a number with decimal places.<br>
+<strong>Selection</strong> = Allows to select multiple options.<br>
+<strong>Short text</strong> = Enter short text.<br>
+ <br>
+<strong>Text</strong> = Enter text.<br>
+ <br>
+<strong>Text</strong> = Allows to enter a date.<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the name for the property.<br>
+ <br>
+<strong><em>Note:</em></strong> The name of the system language is displayed by default. After the property has been created, you can save the name in English. Further languages are planned.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the description of the property.<br>
+<strong><em>Note:</em></strong> The description of the system language is displayed by default. After the property has been created, you can save the description in English. Further languages are planned.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Group</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a property group from the drop-down menu to assign the property to this group. This is optional.<br>
+<strong><em>Tip:</em></strong> Click on <strong>Add property group</strong> to create a group.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Position</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the position number for the property. Properties are sorted by the position number in ascending order.<br>
+<strong><em>Tip:</em></strong> Count by tens when creating position numbers. This will allow you to easily add new properties in between.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="4200">15.2. Editing a property</h3>
+<div class="paragraph">
+<p>Properties are centrally managed in the <strong>System » Settings » Properties</strong> menu. Change the settings that are described in <a href="#table-create-property">Table 10</a>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Editing a property:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Settings » Properties</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> to display all properties or select filters to limit the search results.</p>
+</li>
+<li>
+<p>Click on the property.<br>
+→ The <strong>General</strong> tab will open.</p>
+</li>
+<li>
+<p>Edit the settings. Pay attention to the information given in <a href="#table-edit-property">Table 11</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-edit-property" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 11. Editing a property</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>General</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Position</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the new position to change the order of the properties.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mandatory field</strong> (currently without function)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate this option to make sure that the property will be a mandatory entry. Mandatory fields are displayed in bold in the detail view of the contact in the <strong>Properties</strong> area and in the order process.<br>
+<strong><em>Note:</em></strong> This setting is currently without function.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order process</strong> (currently without function)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate this option to make sure that the property will be displayed in the order process.<br>
+<strong><em>Note:</em></strong> This setting is currently without function.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Customer registration</strong> (currently without function)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate this option to make sure that the property will be displayed in the customer registration.<br>
+<strong><em>Note:</em></strong> This setting is currently without function.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong>;<br>
+<strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For multilingualism, enter name and description for other languages.<br>
+<strong><em>Note:</em></strong> Currently, names and descriptions can only be saved in German and English. Further languages are planned.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Visibility</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client (store)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select one or more clients (stores) that the property should be activated for.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Visibility</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select one or more types that the property should be visible for.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Values</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only visible for property type <strong>Selection</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the values that should be displayed in the drop-down menu.<br>
+Click on <strong>Add value</strong> to create a value.<br>
+<strong>Name</strong> = Enter a name for the property value.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="4300">15.3. Searching for a property</h3>
+<div class="paragraph">
+<p>Properties are centrally managed in the <strong>System » Settings » Properties</strong> menu. After opening the menu, start the search to display the properties. In order to search for specific properties, enter a search term in the search fields. The drop-down menus will help you to search for properties that share specific criteria. You can combine as many search filters as you like.</p>
+</div>
+<div class="paragraph instruction">
+<p>Searching for a property:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Settings » Properties</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Filter</strong> view, enter the search term in the search field or set the filter options in the drop-down menus. Pay attention to the information given in <a href="#table-filter-properties">Table 12</a>.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong>.<br>
+→ The properties that correspond to the search criteria entered will be displayed.</p>
+</li>
+<li>
+<p>Click in the line of the property.<br>
+→ The detail view of the property will open.</p>
+</li>
+</ol>
+</div>
+<table id="table-filter-properties" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 12. Filters for the properties</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Search</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Click on <strong>Search</strong> without selecting any filter settings. This will display all properties. Alternatively, limit the search results by using filters and click on <strong>Search</strong>. The properties found will be listed in the overview.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Reset</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Resets the filter criteria that was entered.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>ID</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Each property automatically receives a consecutive and unique ID.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Name</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Enter the name to search for the property with this name. It is also possible to search only for parts of the name.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Language</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select a language to only display properties for which a name has been saved in this language.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Group</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select the group to only display properties that are assigned to this group.<br>
+Select <strong>Not grouped</strong> to only display properties that are not assigned to a group.<br>
+Select <strong>Grouped</strong> to only display properties that are assigned to a group.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Section</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select a section to only display properties that are used in this section.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p><strong>Property type</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Select a property type to only display properties of this type.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="4400">15.4. Deleting a property</h3>
+<div class="paragraph">
+<p>You can delete one or more properties at the same time.</p>
+</div>
+<div class="sect3">
+<h4 id="4500">15.4.1. Deleting a property</h4>
+<div class="paragraph">
+<p>Proceed as described below to irreversibly delete a property if it is no longer needed.</p>
+</div>
+<div class="paragraph instruction">
+<p>Deleting a property:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Settings » Properties</strong>.</p>
+</li>
+<li>
+<p>Start the search and, if required, select filters to restrict the search results.</p>
+</li>
+<li>
+<p>Click on the property.<br>
+→ The detail view of the property will open.</p>
+</li>
+<li>
+<p>Click on <strong>Delete property</strong>.<br>
+→ A window will open and you need to confirm your decision.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.<br>
+→ The property will be deleted and removed from the overview.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="4600">15.4.2. Deleting multiple properties</h4>
+<div class="paragraph">
+<p>Proceed as described below to irreversibly delete multiple properties if they are no longer needed.</p>
+</div>
+<div class="paragraph instruction">
+<p>Deleting multiple properties:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Settings » Properties</strong>.</p>
+</li>
+<li>
+<p>Start the search and, if required, select filters to restrict the search results.</p>
+</li>
+<li>
+<p>Activate the properties that you want to delete.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.<br>
+→ A window will open and you need to confirm your decision.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.<br>
+→ The selected properties will be deleted and removed from the overview.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="4700">15.5. Grouping properties</h3>
+<div class="paragraph">
+<p>Create property groups to summarise multiple properties. Proceed as described below to create a property group.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a property group:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Settings » Properties » Property groups</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add property group</strong>.</p>
+</li>
+<li>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-create-property-group">Table 13</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The property group will be created.</p>
+</li>
+</ol>
+</div>
+<table id="table-create-property-group" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 13. Creating a new property group</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the name for the property group.<br>
+<strong><em>Note:</em></strong> The name of the system language is displayed by default. After the property group has been created, you can save the name in English. Further languages are planned.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the description for the property group.<br>
+<strong><em>Note:</em></strong> The description of the system language is displayed by default. After the property group has been created, you can save the description in English. Further languages are planned.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Position</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the position number for the property group. Properties are sorted by the position number in ascending order.<br>
+<strong><em>Tip:</em></strong> Count by tens when creating position numbers. This will allow you to easily add new property groups in between.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Group type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the group type from the drop-down menu. This option determines how properties of the type <strong>Empty</strong> are displayed in the order process.<br>
+<strong>None</strong> = Properties will not be grouped by default.<br>
+<strong>Single selection</strong> = One of the grouped properties can be selected from the drop-down menu.<br>
+<strong>Multiselect</strong> = Multiple properties can be selected.<br>
+<strong><em>Note:</em></strong> This option only applies for properties of the type <strong>None</strong> for which the <strong>Order process</strong> option has been activated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Surcharge type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the surcharge type from the drop-down menu.<br>
+<strong>Flat</strong> = The surcharge will be entered as flat amount.<br>
+<strong>Flat</strong> = The surcharge will be entered as percentage.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="4800">15.5.1. Assigning properties to a group</h4>
+<div class="paragraph">
+<p>Proceed as described below to assign one or more properties to a property group.</p>
+</div>
+<div class="paragraph instruction">
+<p>Assigning properties to a group:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Settings » Properties</strong>.</p>
+</li>
+<li>
+<p>Start the search and, if required, select filters to restrict the search results.</p>
+</li>
+<li>
+<p>Activate the properties that you want to assign to the group.</p>
+</li>
+<li>
+<p>Click on <strong>Assign property group</strong>.<br>
+→ A drop-down menu of the property groups will be displayed.</p>
+</li>
+<li>
+<p>Select the property group from the drop-down menu.</p>
+</li>
+<li>
+<p>Click on <strong>Group function</strong>.<br>
+→ The selected properties will be assigned to the property group.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="4900">15.5.2. Deleting property groups</h4>
+<div class="paragraph">
+<p>You can delete one or more property groups at the same time. Properties that are assigned to groups will remain unaffected when deleting property groups.</p>
+</div>
+<div class="sect4">
+<h5 id="_deleting_a_property_group">Deleting a property group</h5>
+<div class="paragraph">
+<p>Proceed as described below to irreversibly delete a property group if it is no longer needed.</p>
+</div>
+<div class="paragraph instruction">
+<p>Deleting a property group:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Settings » Properties » Property groups</strong>.</p>
+</li>
+<li>
+<p>Start the search and, if required, select filters to restrict the search results.</p>
+</li>
+<li>
+<p>Click on the property group.<br>
+→ The detail view of the property group will open.</p>
+</li>
+<li>
+<p>Click on <strong>Delete group</strong>.<br>
+→ A window will open and you need to confirm your decision.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.<br>
+→ The property group will be deleted and removed from the overview.<br>
+<strong><em>Note:</em></strong> When you delete a property group, the properties that are assigned to the group will not be deleted.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="5000">Deleting multiple property groups</h5>
+<div class="paragraph">
+<p>Proceed as described below to irreversibly delete multiple property groups if they are no longer needed.</p>
+</div>
+<div class="paragraph instruction">
+<p>Deleting multiple property groups:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Settings » Properties » Property groups</strong>.</p>
+</li>
+<li>
+<p>Start the search and, if required, select filters to restrict the search results.</p>
+</li>
+<li>
+<p>Activate the property groups that you want to delete.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.<br>
+→ A window will open and you need to confirm your decision.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.<br>
+→ The selected property groups will be deleted and removed from the overview.<br>
+<strong><em>Note:</em></strong> When you delete a property group, the properties that are assigned to the group will not be deleted.</p>
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 </div>
