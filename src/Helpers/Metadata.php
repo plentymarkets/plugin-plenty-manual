@@ -1459,7 +1459,7 @@ class Metadata {
 				"url" => "/artikel/best-practices",
 				"level" => 2,
 				"title" => "Best Practices: Artikel und Kategorien",
-				"keywords" => "Webshop, Mandant, Artikel, Sichtbarkeit, Verfügbarkeit, Checkliste",
+				"keywords" => "Webshop, Mandant, Artikel, Kategorien, Sichtbarkeit, Verfügbarkeit, Checkliste, FAQ",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Artikel und Kategorien. Hier finden Sie folgende Informationen:",
