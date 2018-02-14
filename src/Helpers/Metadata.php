@@ -7519,7 +7519,7 @@ class Metadata {
 				"url" => "/en/crm/managing-contacts",
 				"level" => 2,
 				"title" => "Managing contacts",
-				"keywords" => "contact, customer, address, addresses, invoice address, delivery address, primary,",
+				"keywords" => "contact, customer, address, addresses, invoice address, delivery address, primary, company, companies, guest account, regular account, properties, access data, change password, unblock login",
 				"description" => "Learn how to manage contacts in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Managing contacts. The following information is available:",
