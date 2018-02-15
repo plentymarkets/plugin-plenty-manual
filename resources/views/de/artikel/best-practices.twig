@@ -21,6 +21,24 @@
 <li><a href="#_ist_die_kategorie_in_den_einstellungen_des_systems_aktiviert"><span>2.3.</span><span> Ist die Kategorie in den Einstellungen des Systems aktiviert?</span></a></li>
 <li><a href="#_ist_eine_variante_mit_der_kategorie_verknüpft"><span>2.4.</span><span> Ist eine Variante mit der Kategorie verknüpft?</span></a></li>
 <li><a href="#_ist_die_ebenentiefe_korrekt_definiert"><span>2.5.</span><span> Ist die Ebenentiefe korrekt definiert?</span></a></li>
+<li><a href="#anlegen"><span>2.6.</span><span> Best Practice für die Variantenanlage über Elastic-Sync</span></a>
+<ul class="sectlevel3">
+<li><a href="#voraussetzungen"><span>2.6.1.</span><span> Voraussetzungen</span></a></li>
+<li><a href="#infos"><span>2.6.2.</span><span> Infos</span></a></li>
+<li><a href="#aufbau_der_datei"><span>2.6.3.</span><span> Aufbau der Datei</span></a>
+<ul class="sectlevel4">
+<li><a href="#_allgemein"><span>Allgemein</span></a></li>
+<li><a href="#_variantennummern"><span>Variantennummern</span></a></li>
+<li><a href="#_attribute"><span>Attribute</span></a></li>
+<li><a href="#_bilder"><span>Bilder</span></a></li>
+<li><a href="#_kategorieverknüpfungen"><span>Kategorieverknüpfungen</span></a></li>
+</ul>
+</li>
+<li><a href="#abgleich"><span>2.6.4.</span><span> Abgleich</span></a></li>
+<li><a href="#mapping"><span>2.6.5.</span><span> Mapping</span></a></li>
+<li><a href="#zweites_mapping"><span>2.6.6.</span><span> Zweites Mapping</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -227,8 +245,294 @@ Führt man keinen Bestand oder nutzt keine Beschränkung, brauchen die Varianten
 </tr>
 </tbody></table>
 </div>
-<div id="anlegen" class="paragraph adoc">
-<p>Unresolved directive in &lt;stdin&gt; - include::../_best-practices/Item/ElasticSync/artikel_mit_varianten_anlegen.adoc[leveloffset=1]</p>
+</div>
+<div class="sect2 adoc">
+<h3 id="anlegen">2.6. Best Practice für die Variantenanlage über Elastic-Sync</h3>
+<div class="paragraph">
+<p>In diesem Beitrag bieten wir dir ein Best Practice für die Artikelanlage via Elastic Sync. Du solltest mit der generellen Funktionsweise von Elastic Sync vertraut sein. Allgemeine Infos zum Plugin findest du in der Plugin-Beschreibung im
+<a href="https://marketplace.plentymarkets.com/plugins/integration/ElasticSync_4750" target="_blank" rel="noopener">Marketplace</a>.</p>
+</div>
+<div class="paragraph">
+<p>Auch unsere <a href="https://www.plentymarkets.eu/knowledge/video-tutorials/datenuebernahme/vereinfache-deine-datenimporte-mit-dem-elasticsync-plugin/a-4890/?autoplay=1" target="_blank" rel="noopener">Videotutorials</a> bieten Hilfen und Infos zu ElasticSync.</p>
+</div>
+<div class="paragraph">
+<p><a href="#voraussetzungen">Voraussetzungen</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#infos">Infos</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#aufbau_der_Datei">Aufbau der Datei</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#abgleich">Abgleich</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#mapping">Mapping</a></p>
+</div>
+<div class="paragraph">
+<p><a href="#zweites_mapping">zweites Mapping</a></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="voraussetzungen">2.6.1. Voraussetzungen</h4>
+<div class="paragraph">
+<p>Im System müssen folgende Daten vorhanden sein, um wie hier beschrieben Artikel und Varianten über Elastic Sync zu importieren:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Attribute</p>
+</li>
+<li>
+<p>Attributwerte</p>
+</li>
+<li>
+<p>Kategorien</p>
+</li>
+<li>
+<p>Verkaufspreise</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="infos">2.6.2. Infos</h4>
+<div class="paragraph">
+<p>Im <strong>Dashboard</strong> findest du den <strong>Cache-löschen-Button</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/Item/ElasticSync/assets/Cacheloeschen.png" alt="Cacheloeschen">
+</div>
+<div class="title">Bild 10. Cache-löschen-Button im Dashobard.</div>
+</div>
+<div class="paragraph">
+<p>Mit diesem Button kannst du einmal pro Stunde den Elastic-Sync-Cache zurücksetzen, damit du eine Datei ohne vorherige Änderung erneut importieren kannst.</p>
+</div>
+<div class="paragraph">
+<p>Ein weiterer hilfreicher Button ist der <strong>Testlauf-Button</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/Item/ElasticSync/assets/Testlauf.png" alt="Testlauf">
+</div>
+<div class="title">Bild 11. Gut geeignet um Syncs zu testen.</div>
+</div>
+<div class="paragraph">
+<p>Damit werden die ersten 10 Zeilen der Datei ohne Cache importiert. So kannst du prüfen, ob alle Werte korrekt zugeordnet wurden, bevor du den Sync mit allen Zeilen startest.</p>
+</div>
+<div class="paragraph">
+<p>Gültige Werte für Felder im Mapping findest du in der Plugin-Beschreibung.</p>
+</div>
+<div class="paragraph">
+<p>Unter <strong>Daten &gt;&gt; Log</strong> können Fehlermeldungen zum Sync eingesehen werden</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="aufbau_der_datei">2.6.3. Aufbau der Datei</h4>
+<div class="paragraph">
+<p>Folgende
+<a href="https://plenty-item.plentymarkets-cloud02.com/ElasticSync/BestPracticeArticleSync.csv" target="_blank" rel="noopener">Beispieldatei</a> wurde für den Sync genutzt.</p>
+</div>
+<div class="sect4">
+<h5 id="_allgemein">Allgemein</h5>
+<div class="paragraph">
+<p>Die Daten, die <strong>global</strong> am Artikel gepflegt werden, wie z.B. <strong>der Hersteller, Markierung etc.</strong> werden in der Zeile der Hauptvariante hinterlegt.</p>
+</div>
+<div class="paragraph">
+<p>Daten, die <strong>variantenbezogen</strong> sind, müssen in die entsprechenden Zeilen der Varianten eingetragen werden.</p>
+</div>
+<div class="paragraph">
+<p>Wichtig bei der Anlage der Varianten ist, dass der Aufbau der Attribute und Werte so in der Datei hinterlegt sind, wie es im Mapping eingestellt ist.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_variantennummern">Variantennummern</h5>
+<div class="paragraph">
+<p>In unserem Beispiel legen wir eine Hauptvariante mit 4 Varianten an. Als Zuordnung für die Varianten nutzen wir die Hauptvariantennummer.</p>
+</div>
+<div class="paragraph">
+<p>Da der Sync die Daten zeilenweise importiert, steht die Hauptvariante ganz oben in der Datei.</p>
+</div>
+<div class="paragraph">
+<p>Dort hinterlegen wir manuell die  Variantennummer im gleichnamigen Feld. Das Feld <strong>Hauptvariantennummer</strong> bleibt leer.</p>
+</div>
+<div class="paragraph">
+<p>Diese Variantennummer wird nun wiederum bei den Varianten in das Feld <strong>Hauptvariantennummer</strong> geschrieben, damit Sie eine Zuordnung zur Hauptvariante haben und nicht als Einzelartikel angelegt werden.</p>
+</div>
+<div class="paragraph">
+<p>Die Variantennummern der Untervarianten können ebenfalls eingetragen werden. Wenn das Feld frei gelassen wird, generiert das System die Nummern automatisch.</p>
+</div>
+<div class="paragraph">
+<p>Es sieht in der Datei dann so aus.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/Item/ElasticSync/assets/HVnummer.png" alt="HVnummer">
+</div>
+<div class="title">Bild 12. Eintragung der Nummern bei Hauptvariante und Varianten</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Variantennummern müssen eindeutig sein!</div>
+<div class="paragraph">
+<p>Sowohl die Nummer der Hauptvariante, als auch die Nummer der Untervarianten müssen eindeutig sein. Der Import schlägt fehl, wenn Nummern merhfach vergeben werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_attribute">Attribute</h5>
+<div class="paragraph">
+<p>In unserem Beispiel haben wir <strong>Attributauswahlkombination</strong> gewählt:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/Item/ElasticSync/assets/Attribute.png" alt="Attribute">
+</div>
+<div class="title">Bild 13. Erstellen von Varianten via Attributauswahlkombination</div>
+</div>
+<div class="paragraph">
+<p>Die oberste Zeile der Hauptvariante hat dabei keine Kombination erhalten, damit Sie keine Attributverknüpfung erhählt.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Hauptvariante ohne Attribute</div>
+<div class="paragraph">
+<p>Wenn man mit Variantenartikeln arbeitet und der Hauptvariante keine Attribute zuweist, ist man später flexibler in der Variantenerstellung. Gibt man der Hauptvariante ebenfalls eine Attributverknüpfung, kann man Varianten ausschließlich mit den verknüpften Attributen erzeugen.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_bilder">Bilder</h5>
+<div class="paragraph">
+<p>In unserem Sync importieren wir die Bilder-URLs in 2 getrennten Spalten und Mappings. Dies kann auch in einer Spalte mit kommagetrennten URLs geschehen.
+Dazu muss das Feld <strong>Multi-URL</strong> im Mapping gewählt werden. Das Format der URL wird wie folgt hinterlegt: <strong>image1url;positionImage1,image2url;positionImage2</strong></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_kategorieverknüpfungen">Kategorieverknüpfungen</h5>
+<div class="paragraph">
+<p>Zum Verknüpfen mehrerer Kategorien müssen mehrere Mappings angelegt. Weiterhin muss darauf geachtet werden, dass bei den Kategorieverknüpfungen der komplette Pfad angegeben wird. Die Ebenen werden dabei mit einem Semikolon getrennt.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/Item/ElasticSync/assets/Kategorieverknuepfung.png" alt="Kategorieverknuepfung">
+</div>
+<div class="title">Bild 14. Die Schreibweisen von Trennzeichen und Pfad sind wichtig für den Import.</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Mapping und Datei</div>
+<div class="paragraph">
+<p>Achte darauf, dass die Werte in der Datei auch mit dem Mapping übereinstimmen. Dabei geht es darum, dass du z.B. bei dem Feld Standardkategorie die ID oder den Namen im Mapping wählen kannst. In der CSV muss dann auch entsprechend die ID oder der Name stehen. Es geht nicht, dass im Mapping die ID, aber in der Datei der Name genutzt wird.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="abgleich">2.6.4. Abgleich</h4>
+<div class="paragraph">
+<p>Für den Abgleich ist wichtig, dass ein variantenspezifisches Abgleichfeld genutzt wird. Dafür eignet sich z.B. die Variantennummer oder auch die Varianten-ID.</p>
+</div>
+<div class="paragraph">
+<p>Als Aktion muss eingestellt werden, dass versucht wird, einen neuen Datensatz anzulegen, wenn kein Abgleich stattfinden konnte.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mapping">2.6.5. Mapping</h4>
+<div class="paragraph">
+<p>Im Mapping verknüpfen wir über den Button <strong>Werte bestimmen</strong> die Felder aus der CSV-Datei mit den Feldern aus plentymarkets.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/Item/ElasticSync/assets/Wertebestimmen.png" alt="Wertebestimmen">
+</div>
+<div class="title">Bild 15. Ein Mapping muss angelegt werden, ohne Mapping, kein Import.</div>
+</div>
+<div class="paragraph">
+<p>Es empfiehlt sich, nur die Felder ins Mapping aufzunehmen, die tatsächlich übergeben werden sollen. Überflüssige Felder sollten vermieden werden, da das zu Fehlern führen kann.</p>
+</div>
+<div class="paragraph">
+<p>Für die Artikelanlage mit Varianten gibt es Pflichtfelder, die als Minimum im Mapping enthalten sein müssen, damit der Sync funktioniert. Dabei handelt es sich um folgende Felder:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Standardkategorie</p>
+</li>
+<li>
+<p>Hauptvariantennummer</p>
+</li>
+<li>
+<p>Variantennummer</p>
+</li>
+<li>
+<p>Will man Bestand importieren, müssen folgende  Werte im Mapping enthalten sein:
+Lager, Menge, Lagerort</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="zweites_mapping">2.6.6. Zweites Mapping</h4>
+<div class="paragraph">
+<p>Die Mappings werden nacheinander abgearbeitet. Das heißt, dass unser zweites Mapping nach dem Ersten durchgeführt wird.</p>
+</div>
+<div class="paragraph">
+<p>Über ein weiteres Mapping wollen wir nun eine zweite Kategorie und ein weiteres Bild hinterlegen.</p>
+</div>
+<div class="paragraph">
+<p>Im Mapping selbst bestimmen wir erneut die Werte und mappen die URL und den Namen der Kategorie mit der jeweils zweiten Spalte aus unserer Datei.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/Item/ElasticSync/assets/ZweitesMapping.png" alt="ZweitesMapping">
+</div>
+<div class="title">Bild 16. Weitere Mappings werden analog zum ersten angelegt.</div>
+</div>
+<div class="paragraph">
+<p>Der Sync ist jetzt einsatzbereit und kann gestartet werden.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Testlauf</div>
+<div class="paragraph">
+<p>Wir empfehlen, beim erstmaligen Sync vorab den Testlauf zu nutzen. So kann man prüfen, ob der Sync ordnungsgemäß läuft. Sollten sich  Fehler eingeschlichen haben, kann man diese vor der kompletten Ausführung noch korrigieren.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 </div>
 </div>
 </div>
