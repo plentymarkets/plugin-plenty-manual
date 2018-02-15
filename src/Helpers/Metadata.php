@@ -3933,6 +3933,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "33a5b3c3b533406983986c5f3fa40a90",
+						"path" => "basics/first-steps/master-data",
+						"position" => 20,
+						"urlName" => "master-data",
+						"url" => "/en/basics/first-steps/master-data",
+						"level" => 3,
+						"title" => "Managing master data",
+						"keywords" => "master data, company data, company name, VAT number",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing master data. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "a93b7c549a2f7cd11f0d628365ce460b",
 						"path" => "basics/first-steps/quick-start",
 						"position" => 20,
@@ -3944,21 +3959,6 @@ class Metadata {
 						"description" => "Learn how to use plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Quick start. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "33a5b3c3b533406983986c5f3fa40a90",
-						"path" => "basics/first-steps/master-data",
-						"position" => 30,
-						"urlName" => "master-data",
-						"url" => "/en/basics/first-steps/master-data",
-						"level" => 3,
-						"title" => "Master data",
-						"keywords" => "Master data",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Master data. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
