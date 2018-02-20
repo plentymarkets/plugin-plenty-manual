@@ -1234,32 +1234,17 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "d0739a0892dbdd7f16614806398bc419",
-								"path" => "basics/automatisierung/prozesse/best-practices",
-								"position" => 100,
-								"urlName" => "best-practices",
-								"url" => "/basics/automatisierung/prozesse/best-practices",
-								"level" => 4,
-								"title" => "FAQ: Erste Hilfe bei Prozessen",
-								"keywords" => "Erste Hilfe, Client, plentymarkets Client, Client-Probleme, plentyBase, Prozesse, Prozessprobleme, alles kaputt, SOS Prozesse",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "b405fffc0b37cfc376f265841f570016",
 								"path" => "basics/automatisierung/prozesse/FAQ",
 								"position" => 100,
 								"urlName" => "FAQ",
 								"url" => "/basics/automatisierung/prozesse/FAQ",
 								"level" => 4,
-								"title" => "FAQ: Erste Hilfe für Prozesse und plentyBase",
+								"title" => "Erste Hilfe für Prozesse und plentyBase",
 								"keywords" => "Erste Hilfe, Client, plentymarkets Client, Client-Probleme, plentyBase, Prozesse, Prozessprobleme, alles kaputt, SOS Prozesse",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich FAQ: Erste Hilfe für Prozesse und plentyBase. Hier finden Sie folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Erste Hilfe für Prozesse und plentyBase. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -1346,11 +1331,11 @@ class Metadata {
 								"urlName" => "faq_client",
 								"url" => "/basics/automatisierung/plentymarkets-client/faq_client",
 								"level" => 4,
-								"title" => "FAQ: Erste Hilfe bei Problemen mit dem plentymarkets Client",
+								"title" => "Erste Hilfe für den plentymarkets Client",
 								"keywords" => "Erste Hilfe Client, Client, plentymarkets Client, Client-Probleme, Clientprobleme, alles kaputt, SOS Client",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich FAQ: Erste Hilfe bei Problemen mit dem plentymarkets Client. Hier finden Sie folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Erste Hilfe für den plentymarkets Client. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							]
