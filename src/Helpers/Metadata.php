@@ -1247,6 +1247,21 @@ class Metadata {
 								"linkListInto" => "",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "b405fffc0b37cfc376f265841f570016",
+								"path" => "basics/automatisierung/prozesse/FAQ",
+								"position" => 100,
+								"urlName" => "FAQ",
+								"url" => "/basics/automatisierung/prozesse/FAQ",
+								"level" => 4,
+								"title" => "FAQ: Erste Hilfe für Prozesse und plentyBase",
+								"keywords" => "Erste Hilfe, Client, plentymarkets Client, Client-Probleme, plentyBase, Prozesse, Prozessprobleme, alles kaputt, SOS Prozesse",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich FAQ: Erste Hilfe für Prozesse und plentyBase. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
@@ -1323,8 +1338,24 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alt: plentymarkets Client. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
+						"children" => 						[
+							[
+								"id" => "6914550b1695467c603d04347abeefe0",
+								"path" => "basics/automatisierung/plentymarkets-client/faq_client",
+								"position" => 1,
+								"urlName" => "faq_client",
+								"url" => "/basics/automatisierung/plentymarkets-client/faq_client",
+								"level" => 4,
+								"title" => "FAQ: Erste Hilfe bei Problemen mit dem plentymarkets Client",
+								"keywords" => "Erste Hilfe Client, Client, plentymarkets Client, Client-Probleme, Clientprobleme, alles kaputt, SOS Client",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich FAQ: Erste Hilfe bei Problemen mit dem plentymarkets Client. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					]
 				],
 				"hasChildren" => true
@@ -2245,21 +2276,6 @@ class Metadata {
 										"description" => "",
 										"navAlias" => "",
 										"linkListInto" => "Willkommen im Themenbereich Cliplister einrichten. Hier finden Sie folgende Informationen:",
-										"children" => [],
-										"hasChildren" => false
-									],
-									[
-										"id" => "b2fee8eb477213f9290e2ceb17c08934",
-										"path" => "omni-channel/online-shop/webshop-einrichten/extras/easymarketing",
-										"position" => 50,
-										"urlName" => "easymarketing",
-										"url" => "/omni-channel/online-shop/webshop-einrichten/extras/easymarketing",
-										"level" => 5,
-										"title" => "EASYMARKETING",
-										"keywords" => "easymarketing, Mandant, Webshop",
-										"description" => "",
-										"navAlias" => "",
-										"linkListInto" => "Willkommen im Themenbereich EASYMARKETING. Hier finden Sie folgende Informationen:",
 										"children" => [],
 										"hasChildren" => false
 									],
