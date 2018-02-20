@@ -1232,6 +1232,21 @@ class Metadata {
 								"linkListInto" => "Willkommen im Themenbereich Fehlerbehandlung. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "d0739a0892dbdd7f16614806398bc419",
+								"path" => "basics/automatisierung/prozesse/best-practices",
+								"position" => 100,
+								"urlName" => "best-practices",
+								"url" => "/basics/automatisierung/prozesse/best-practices",
+								"level" => 4,
+								"title" => "FAQ: Erste Hilfe bei Prozessen",
+								"keywords" => "Erste Hilfe, Client, plentymarkets Client, Client-Probleme, plentyBase, Prozesse, Prozessprobleme, alles kaputt, SOS Prozesse",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
