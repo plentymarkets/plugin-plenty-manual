@@ -5950,21 +5950,6 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "f245188c8d53df177324b60f4504cfbd",
-										"path" => "omni-channel/online-store/setting-up-clients/extras/easymarketing",
-										"position" => 60,
-										"urlName" => "easymarketing",
-										"url" => "/en/omni-channel/online-store/setting-up-clients/extras/easymarketing",
-										"level" => 5,
-										"title" => "EASYMARKETING",
-										"keywords" => "easymarketing",
-										"description" => "",
-										"navAlias" => "",
-										"linkListInto" => "Welcome to the topic EASYMARKETING. The following information is available:",
-										"children" => [],
-										"hasChildren" => false
-									],
-									[
 										"id" => "f508343ee51ce1139a6808a58b270636",
 										"path" => "omni-channel/online-store/setting-up-clients/extras/econda",
 										"position" => 70,
