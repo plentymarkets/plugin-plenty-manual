@@ -1247,6 +1247,21 @@ class Metadata {
 								"linkListInto" => "Willkommen im Themenbereich Erste Hilfe für Prozesse und plentyBase. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "d0739a0892dbdd7f16614806398bc419",
+								"path" => "basics/automatisierung/prozesse/best-practices",
+								"position" => 110,
+								"urlName" => "best-practices",
+								"url" => "/basics/automatisierung/prozesse/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: Beispielprozesse",
+								"keywords" => "Prozesse, Beispielprozesse",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: Beispielprozesse. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
