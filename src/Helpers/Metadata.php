@@ -3065,6 +3065,21 @@ class Metadata {
 								"linkListInto" => "Willkommen im Themenbereich Rücksendeschein erzeugen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "740870dfea0e393a905206969a5f7b96",
+								"path" => "auftragsabwicklung/auftraege/auftragsdokumente/best-pratices",
+								"position" => 100,
+								"urlName" => "best-pratices",
+								"url" => "/auftragsabwicklung/auftraege/auftragsdokumente/best-pratices",
+								"level" => 4,
+								"title" => "Best Practices: Sammel-PDF erstellen",
+								"keywords" => "",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: Sammel-PDF erstellen. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
@@ -3838,6 +3853,21 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Inventur vornehmen. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "6d26fde8ac3c4b0228a1e920be990f66",
+				"path" => "warenwirtschaft/best-pratices",
+				"position" => 80,
+				"urlName" => "best-pratices",
+				"url" => "/warenwirtschaft/best-pratices",
+				"level" => 2,
+				"title" => "Best Practices: Bestand umbuchen / korrigieren",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Best Practices: Bestand umbuchen / korrigieren. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			]
