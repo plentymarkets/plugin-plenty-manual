@@ -198,21 +198,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "07bca1cff06ae5089474d8e01f6e5246",
-						"path" => "basics/arbeiten-mit-plentymarkets/dashboard",
-						"position" => 70,
-						"urlName" => "dashboard",
-						"url" => "/basics/arbeiten-mit-plentymarkets/dashboard",
-						"level" => 3,
-						"title" => "Dashboard",
-						"keywords" => "Startseite, Startseite anpassen",
-						"description" => "Passen Sie die Startseite des plentymarkets Systems an.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Dashboard. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "b27ccfa0ef637217cbd2c4bf4e1a7590",
 						"path" => "basics/arbeiten-mit-plentymarkets/drucker",
 						"position" => 80,
