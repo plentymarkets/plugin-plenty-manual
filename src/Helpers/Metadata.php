@@ -5377,7 +5377,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Managing items",
 				"keywords" => "Cross-selling, manufacturers, barcodes",
-				"description" => "Lern how to create and manage items in plentymarkets.",
+				"description" => "Learn how to create and manage items in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Managing items. The following information is available:",
 				"children" => [],
