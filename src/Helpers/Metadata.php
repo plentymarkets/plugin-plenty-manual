@@ -168,6 +168,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "ef9e34cc2f5bbe5036c483d3bc01cfe2",
+						"path" => "basics/arbeiten-mit-plentymarkets/aufgaben-und-kalender",
+						"position" => 50,
+						"urlName" => "aufgaben-und-kalender",
+						"url" => "/basics/arbeiten-mit-plentymarkets/aufgaben-und-kalender",
+						"level" => 3,
+						"title" => "Aufgaben und Kalender verwalten",
+						"keywords" => "Aufgabe, Aufgaben, Ticketaufgabe, Ticketaufgaben, Ticket-Aufgabe, Kalender, Termin, Eigner, Berechtigung, Zugriffsrecht, Leserecht, Schreibrecht, CalDAV, caldav, CALDAV, CalDAV-Schnittstelle, Kalender synchronisieren, externes Kalender-Tool,",
+						"description" => "Erfahren Sie, wie Sie Aufgaben und Kalender in plenytmarkets verwalten.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Aufgaben und Kalender verwalten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "afee6639b4d3153b20c68674c72e8e78",
 						"path" => "basics/arbeiten-mit-plentymarkets/aufgaben",
 						"position" => 50,
