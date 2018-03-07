@@ -183,21 +183,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "afee6639b4d3153b20c68674c72e8e78",
-						"path" => "basics/arbeiten-mit-plentymarkets/aufgaben",
-						"position" => 50,
-						"urlName" => "aufgaben",
-						"url" => "/basics/arbeiten-mit-plentymarkets/aufgaben",
-						"level" => 3,
-						"title" => "Aufgaben",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Aufgaben. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "04b3f95682c09b05df973b4d3dfbf3b8",
 						"path" => "basics/arbeiten-mit-plentymarkets/backup",
 						"position" => 60,
@@ -239,21 +224,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Editoren. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "61631ed7e1e62013f4b608337b66a6e4",
-						"path" => "basics/arbeiten-mit-plentymarkets/kalender",
-						"position" => 100,
-						"urlName" => "kalender",
-						"url" => "/basics/arbeiten-mit-plentymarkets/kalender",
-						"level" => 3,
-						"title" => "Kalender",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Kalender. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
