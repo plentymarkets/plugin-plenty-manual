@@ -7415,6 +7415,21 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Best Practices: DHL. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "70a7e882e85bced6b32f6ed8b0d6bf72",
+						"path" => "order-processing/fulfilment/best-practices-ups",
+						"position" => 40,
+						"urlName" => "best-practices-ups",
+						"url" => "/en/order-processing/fulfilment/best-practices-ups",
+						"level" => 3,
+						"title" => "Best Practices: UPS",
+						"keywords" => "Keine Auftragsdaten, no order data, Kein Wert gefunden, no value found, 120110, missing or invalid Shipper AttentionName, 120101, Missing or invalid Shipper Name, 120209, Missing or invalid Ship to phone number, 120109, Missing or invalid shipper phone number, 120500, Missing or invalid service code, 120124, The requested service is unavailable between the selected locations, UPS Services, 120122, customer number, Code 1, Der Vorgang konnte nicht korrekt durchgeführt werden. Bitte Dateneingabe prüfen., 10001, The XML document is not well formed",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Best Practices: UPS. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
