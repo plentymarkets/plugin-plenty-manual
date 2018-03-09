@@ -4130,21 +4130,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "81453e86ef99f558ff84afcf558009ee",
-						"path" => "basics/working-with-plentymarkets/tasks",
-						"position" => 50,
-						"urlName" => "tasks",
-						"url" => "/en/basics/working-with-plentymarkets/tasks",
-						"level" => 3,
-						"title" => "Tasks",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Tasks. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "4fcde34e5e97e8ed5c8abdd534a99831",
 						"path" => "basics/working-with-plentymarkets/backup",
 						"position" => 60,
@@ -4201,21 +4186,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Editors. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "796347fbbde89bbda89729dc62650db8",
-						"path" => "basics/working-with-plentymarkets/calendar",
-						"position" => 100,
-						"urlName" => "calendar",
-						"url" => "/en/basics/working-with-plentymarkets/calendar",
-						"level" => 3,
-						"title" => "Calendar",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Calendar. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
