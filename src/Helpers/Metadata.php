@@ -4122,7 +4122,7 @@ class Metadata {
 						"url" => "/en/basics/working-with-plentymarkets/tasks-and-calendars",
 						"level" => 3,
 						"title" => "Managing tasks and calendars",
-						"keywords" => "task, tasks, ticket task, ticket tasks, calendar, appointment, owner, right, access right, read, write, read &amp; write, CalDAV, caldav, CALDAV, CalDAV interface, synchronise calendar, external calendar tool",
+						"keywords" => "task, tasks, ticket task, ticket tasks, calendar, appointment, meeting, owner, right, access right, read, write, read &amp; write, read and write, CalDAV, caldav, CALDAV, CalDAV interface, synchronise calendar, external calendar tool",
 						"description" => "Learn how to manage tasks and calendars in plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Managing tasks and calendars. The following information is available:",
