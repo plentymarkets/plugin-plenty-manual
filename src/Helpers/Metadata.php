@@ -5834,21 +5834,6 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Online store. The following information is available:",
 				"children" => 				[
 					[
-						"id" => "c2b7ba9512e669845e48ab3ca2e4ad74",
-						"path" => "omni-channel/online-store/setting-up-ceres",
-						"position" => 10,
-						"urlName" => "setting-up-ceres",
-						"url" => "/en/omni-channel/online-store/setting-up-ceres",
-						"level" => 3,
-						"title" => "Setting up Ceres",
-						"keywords" => "online store, client, standard, Ceres, plugin, default country of delivery, default shipping method, default shipping profile, default payment method",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Setting up Ceres. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "bc4d9c589f66b7b81737c0c3880c6f69",
 						"path" => "omni-channel/online-store/managing-feedbacks",
 						"position" => 20,
@@ -5860,6 +5845,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Managing feedbacks. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "c2b7ba9512e669845e48ab3ca2e4ad74",
+						"path" => "omni-channel/online-store/setting-up-ceres",
+						"position" => 50,
+						"urlName" => "setting-up-ceres",
+						"url" => "/en/omni-channel/online-store/setting-up-ceres",
+						"level" => 3,
+						"title" => "Setting up Ceres",
+						"keywords" => "online store, client, standard, Ceres, plugin, default country of delivery, default shipping method, default shipping profile, default payment method",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Setting up Ceres. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
