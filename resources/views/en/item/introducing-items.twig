@@ -1,0 +1,576 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_what_is_an_item"><span>1.</span><span> What is an item?</span></a></li>
+<li><a href="#_what_is_a_variation"><span>2.</span><span> What is a variation?</span></a></li>
+<li><a href="#_how_does_inheritance_work"><span>3.</span><span> How does inheritance work?</span></a>
+<ul class="sectlevel2">
+<li><a href="#_individual_inheritance"><span>3.1.</span><span> Individual inheritance</span></a></li>
+<li><a href="#_1_to_n_inheritance"><span>3.2.</span><span> 1-to-n inheritance</span></a></li>
+<li><a href="#_controlling_inheritance_behaviour"><span>3.3.</span><span> Controlling inheritance behaviour</span></a></li>
+<li><a href="#_inheritance_when_the_main_variation_is_switched"><span>3.4.</span><span> Inheritance when the main variation is switched</span></a></li>
+</ul>
+</li>
+<li><a href="#_what_is_linked_data"><span>4.</span><span> What is linked data?</span></a>
+<ul class="sectlevel3">
+<li><a href="#_categories"><span>4.1.</span><span> Categories</span></a></li>
+<li><a href="#_units"><span>4.2.</span><span> Units</span></a></li>
+<li><a href="#_attribute"><span>4.3.</span><span> Attribute</span></a></li>
+<li><a href="#_properties"><span>4.4.</span><span> Properties</span></a></li>
+<li><a href="#_shipping_profiles"><span>4.5.</span><span> Shipping profiles</span></a></li>
+<li><a href="#_manufacturers"><span>4.6.</span><span> Manufacturers</span></a></li>
+<li><a href="#_sales_prices"><span>4.7.</span><span> Sales prices</span></a>
+<ul class="sectlevel3">
+<li><a href="#_what_is_a_sales_price"><span>4.7.1.</span><span> What is a sales price?</span></a></li>
+<li><a href="#_what_is_a_price"><span>4.7.2.</span><span> What is a price?</span></a></li>
+<li><a href="#_what_discounts_are_available"><span>4.7.3.</span><span> What discounts are available?</span></a></li>
+<li><a href="#_what_is_a_price_calculation"><span>4.7.4.</span><span> What is a price calculation?</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>Introducing items</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This introduction provides an overview of the item structure in plentymarkets 7.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_what_is_an_item">1. What is an item?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the plentymarkets item structure, an item is a data container that consists of global data and at least one main variation. The global data applies to all variations of the item and are referred to as item data or data that is saved on the item level.</p>
+</div>
+<div class="paragraph">
+<p>Item data:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Global settings (condition, manufacturer, age rating, etc.)</p>
+</li>
+<li>
+<p>Texts (name, descriptions, technical data, etc.)</p>
+</li>
+<li>
+<p>Properties</p>
+</li>
+<li>
+<p>Cross-selling settings</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Every item has a main variation that cannot be deleted. In addition, items can have an unlimited number of additional variations. The data saved for variation also is referred to as variation data. Variation data is saved for each variation separately, i.e. on the variation level.</p>
+</div>
+<div class="paragraph">
+<p>Variation data:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Images</p>
+</li>
+<li>
+<p>Market availability</p>
+</li>
+<li>
+<p>Sales prices</p>
+</li>
+<li>
+<p>Barcodes</p>
+</li>
+<li>
+<p>Units</p>
+</li>
+<li>
+<p>Warehouses</p>
+</li>
+<li>
+<p>Stock</p>
+</li>
+<li>
+<p>Categories</p>
+</li>
+<li>
+<p>Suppliers</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#image-plentymarkets-item-structure">Figure 1</a> shows a schematic representation of the item structure in plentymarkets.</p>
+</div>
+<div id="image-plentymarkets-item-structure" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/item/assets/item-structure.png" alt="item structure">
+</div>
+<div class="title">Figure 1. plentymarkets item structure</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_what_is_a_variation">2. What is a variation?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Variations are different versions of an item. Whereas items are data containers, variations represent the actual products that customers can buy. Items are used to group and manage variations with similar characteristics. In plentymarkets, you can create variations either based on different variations of unit and content or by working with attributes:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Variation</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Combination of unit/content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variations differ from each other in terms of quantity and unit only<br>
+- Soap: 100ml, 250ml, 500ml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Combination of attribute values</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variations can be distinguished from each other based on other attribute values, i.e.<br>
+- Couch: Colour (red, black, brown) = 1 attribute<br>
+- Quilt: Colour (yellow, green), Size (Single, Double) = 2 attributes<br>
+- Shoes: Colour (black, brown), Size (5, 6, 7), Width (narrow, normal) = 3 attributes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You do not need to create variations f your product portfolio does not lend itself to grouping products with similar characteristics. However, it is worth remembering that because items are not sellable products, your product is equivalent to the main variation, not to the item itself. The main variation can either be a sellable product or can be virtual. A virtual main variation is used to manage the other variations of the item using the inheritance feature.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_how_does_inheritance_work">3. How does inheritance work?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The main variation of an item differs from the other variations of an item because some of its settings can be passed on, i.e. inherited, to the other variations. As such, the main variation is a parent variation that passes on settings to its children. By default, this inheritance function is active. When a new variation is created for an item, this variation inherits the inheritable settings of the main variation by default if no other data is saved.</p>
+</div>
+<div class="paragraph">
+<p>There are two types of inheritance in plentymarkets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Individual inheritance</p>
+</li>
+<li>
+<p>1-to-n inheritance</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both types of inheritance are described in more detail below.</p>
+</div>
+<div class="sect2">
+<h3 id="_individual_inheritance">3.1. Individual inheritance</h3>
+<div class="paragraph">
+<p>Individual inheritance means that one setting is passed from the main variation to the variation. The following settings are inherited individually:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Availability settings</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Availability</p>
+</li>
+<li>
+<p>Available if net stock is positive</p>
+</li>
+<li>
+<p>Not available if net stock is 0 or negative</p>
+</li>
+<li>
+<p>Store: visible if net stock is positive</p>
+</li>
+<li>
+<p>Store: invisible if net stock is 0 or negative</p>
+</li>
+<li>
+<p>Invisible: in item list</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Dimensions</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Length/Width/Height</p>
+</li>
+<li>
+<p>Weight gross</p>
+</li>
+<li>
+<p>Weight net</p>
+</li>
+<li>
+<p>Show unit price</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Costs</p>
+<div class="ulist">
+<ul>
+<li>
+<p>VAT</p>
+</li>
+<li>
+<p>Net purchase price</p>
+</li>
+<li>
+<p>Net transportation costs</p>
+</li>
+<li>
+<p>Net storage costs</p>
+</li>
+<li>
+<p>Customs</p>
+</li>
+<li>
+<p>Operating costs</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Shipping</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Order picking</p>
+</li>
+<li>
+<p>Main warehouse</p>
+</li>
+<li>
+<p>Pallet type</p>
+</li>
+<li>
+<p>Packing units</p>
+</li>
+<li>
+<p>Extra shipping charge 1</p>
+</li>
+<li>
+<p>Extra shipping charge 2</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_1_to_n_inheritance">3.2. 1-to-n inheritance</h3>
+<div class="paragraph">
+<p>1-to-n inheritance means that the variation either inherits the complete data set for a setting or none of those settings. The following settings are inherited in their entirety:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sales prices</p>
+</li>
+<li>
+<p>Categories</p>
+</li>
+<li>
+<p>Suppliers</p>
+</li>
+<li>
+<p>Warehouses</p>
+</li>
+<li>
+<p>Markets</p>
+</li>
+<li>
+<p>Client availability</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>1-to-n inheritance is activated automatically if at least one of the inherited values is changed for the variation or if a new value is added to the variation. When you deactivate inheritance, the inherited settings are saved at the variation level. If you reactivate inheritance, the settings saved for the variation are deleted and replaced with the main variation’s settings.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_controlling_inheritance_behaviour">3.3. Controlling inheritance behaviour</h3>
+<div class="paragraph">
+<p>When a variation is created, it will inherit settings from the main variation. If you want to use different settings for the variation, then you will need to deactivate the inheritance function for the variation and carry out new settings.</p>
+</div>
+<div class="paragraph">
+<p><a href="#table-inheritance-settings">Table 1</a> shows the different types of variation settings that can be inherited. The table lists the visual appearance, the behaviour and the process for deactivating the inheritance.</p>
+</div>
+<table id="table-inheritance-settings" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Inheritance settings</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type of setting</th>
+<th class="tableblock halign-left valign-top">Display</th>
+<th class="tableblock halign-left valign-top">Deactivation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Drop-down list</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The first value in the drop-down list represents the one set for the main variation. Inherited values are displayed in grey font. Empty fields can also be inherited.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inheritance is deactivated as soon as you select a value that differs from the main variation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Checkbox</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inherited check boxes can have three states:<br>
+<strong>Activated</strong> = Check mark<br>
+<strong>Deactivated</strong> = No check mark<br>
+<strong>Inherited</strong> = Red and crossed out with additional check box showing the main variation’s setting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click on the crossed out check mark to deactivate inheritance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Text field</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inherited values are displayed in grey font. Empty fields can also be inherited.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inheritance is automatically deactivated if a text field is cleared, filled with text or if the inherited content is edited.<br>
+If you want to have an empty value in the variation, you need to leave the field blank in the main variation and manage this data on the variation level instead.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Text fields with 1:n links</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inherited values are displayed in grey font.<br>
+Either all or none of the data is inherited. It is not possible to only inherit some of the data.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the button in the header area to deactivate the inheritance.<br>
+ The inheritance is automatically deactivated if a value is changed or added to the variation. Unchanged values are inherited and saved directly for the variation. If the inheritance is activated again, then all of the values will be deleted and taken from the main variation again.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_inheritance_when_the_main_variation_is_switched">3.4. Inheritance when the main variation is switched</h3>
+<div class="paragraph">
+<p>You can turn a different variation of an item into the main variation. The inheritable values of the new main variation are compared to the values of the other variations of the item. When you switch the main variation, all values are saved and the following inheritance logic is applied:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For values that are identical to the values of the new main variation, inheritance is activated automatically.</p>
+</li>
+<li>
+<p>Values that are not identical to those of the new main variation are saved with the variation, i.e. inheritance is not activated.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_what_is_linked_data">4. What is linked data?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To make item management more flexible, some data is managed centrally in the <strong>System » Settings » Item</strong> menu and then linked to items or variations. This allows you to centrally manage this data, reducing your administrative work. The following data is managed centrally:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Categories</p>
+</li>
+<li>
+<p>Units</p>
+</li>
+<li>
+<p>Attributes</p>
+</li>
+<li>
+<p>Properties</p>
+</li>
+<li>
+<p>Shipping profiles</p>
+</li>
+<li>
+<p>Manufacturers</p>
+</li>
+<li>
+<p>Barcodes</p>
+</li>
+<li>
+<p>Suppliers</p>
+</li>
+<li>
+<p>Sales prices</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The most important types of linked data are described below.</p>
+</div>
+<div class="sect3">
+<h4 id="_categories">4.1. Categories</h4>
+<div class="paragraph">
+<p>Categories are used to group products in the online store. Variations can be linked to an unlimited number of categories. However, a default category must be specified when an item is created. You can change the default category at any time. However, a variation must always have a default category.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_units">4.2. Units</h4>
+<div class="paragraph">
+<p>Units define the content of variations. These units are managed centrally. The units are linked to the variation and a quantity is saved. There are 52 units saved in plentymarkets by default. These units are based on the ISO code. However, additional units can be saved in the <strong>System » Item » Units</strong> menu.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_attribute">4.3. Attribute</h4>
+<div class="paragraph">
+<p>Attributes allow you to abstract and centrally manage product features. You can create an unlimited number of attributes in the <strong>System » Item » Attributes</strong>. For each attribute, you also can create an unlimited number of attribute values. As described above, these attributes can be used to create variations.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_properties">4.4. Properties</h4>
+<div class="paragraph">
+<p>Properties are passive characteristics of a product that are not used to create variations of an item. With properties, you can highlight features of products, e.g. technical details such as Bluetooth or Wi-Fi, etc. Properties are not linked to stock.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Properties in plentymarkets</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Property type</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>None</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No property type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Integer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to enter a whole number in the item’s <strong>Properties</strong> tab, e.g. a size.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Decimal number</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to enter a number with decimal places in the item’s <strong>Properties</strong> tab, e.g. a measurement.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Text</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to enter text in the item’s <strong>Properties</strong> tab.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selection</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a selection list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>File</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows you to upload a file in the item’s <strong>Properties</strong> tab.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_shipping_profiles">4.5. Shipping profiles</h4>
+<div class="paragraph">
+<p>Shipping profiles contain the shipping options that are offered in you online store. Shipping profiles are managed centrally and linked to items. No shipping profile is linked by default when you create an item. Activate at least one shipping profile per item. Otherwise the shipping costs may not be calculated correctly.</p>
+</div>
+<div class="paragraph">
+<p>As such, the shipping costs of a variation are based on the shipping profile that is linked to the item. However, to allow you to charge higher shipping costs for large or bulky products, you can define extra shipping charges for a variation. These extra shipping charges only are applied if the option <strong>Item extra shipping charge</strong> is activated in the shipping profile.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_manufacturers">4.6. Manufacturers</h4>
+<div class="paragraph">
+<p>Manufacturer data also is managed centrally in the plentymarkets settings and linked to items. The central manufacturer data record contains the name, contact data and market specific IDs for the manufacturer.</p>
+</div>
+<div class="paragraph">
+<p>Some manufacturers charge commissions when you sell their products via certain channels. To account for this, you can save a commission percentage for a manufacturer. Commissions are saved based on client and referrer.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sales_prices">4.7. Sales prices</h3>
+<div class="paragraph">
+<p>plentymarkets price management is very flexible. A distinction is made between sales prices and prices. In this section, you can find out more about this concept and the ways that you can offer discounts to your customers in plentymarkets.</p>
+</div>
+<div class="sect3">
+<h4 id="_what_is_a_sales_price">4.7.1. What is a sales price?</h4>
+<div class="paragraph">
+<p>Like items, sales prices are data containers that allow you to centrally manage the characteristics to be applied to a price. As such, a sales price is a combination of settings and conditions that determine the price at which a variation is sold.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_is_a_price">4.7.2. What is a price?</h4>
+<div class="paragraph">
+<p>In contrast to this abstract concept of a sales price, the price is the actual monetary amount at which a variation is sold if the conditions defined by the sales price are met. You can assign an unlimited number of sales price to a variation. To do so, you first link a sales price to the variation. For each sales price, you then save a price for the variation. This price is applied, i.e. the customer can buy the variation at that price, if the conditions defined for the sales price are met.</p>
+</div>
+<div class="paragraph">
+<p>By default, the combinations of sales price and price are passed on from the main variation to the other variations of the item. In other words, all variations of an item are assigned the same combination of sales price and price if the user does not save any other data for the variation. Inheritance of all sales prices of the variation is deactivated as soon as a setting that differs from the inherited values is saved for the variation. When inheritance is reactivated, all sales prices and prices saved for the variation are replaced by the inherited values.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_discounts_are_available">4.7.3. What discounts are available?</h4>
+<div class="paragraph">
+<p>The prices of a variation saved in plentymarkets can be influences by the following additional settings in other plentymarkets modules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Discount based on method of payment</p>
+</li>
+<li>
+<p>Category discount</p>
+</li>
+<li>
+<p>Customer class discount</p>
+</li>
+<li>
+<p>Redeeming a coupon</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_is_a_price_calculation">4.7.4. What is a price calculation?</h4>
+<div class="paragraph">
+<p>Price calculations allow you to update the prices of variations automatically based on specific criteria. Price calculations will automatically be taken into account for saved prices of a variation.</p>
+</div>
+<div class="paragraph">
+<p>Price calculations are saved in the <strong>Settings » Item » Price calculations</strong> menu. The following data saved for the variation can be included in a price calculation:</p>
+</div>
+<div class="paragraph">
+<p>By applying the price calculation, the sales price specified as the <strong>Price source</strong> is changed. The following costs can be added to this source price:</p>
+</div>
+<div class="paragraph">
+<p>Transportation costs = The transportation costs saved for the variation are added to the source price.<br>
+Storage costs = The storage costs saved for the variation are added to the source price.<br>
+Customs = The customs costs saved for the variation are added to the source price.<br>
+Operating costs = The operating costs saved for the variation are added to the source price.<br>
+VAT = The VAT saved for the variation is added to the source price.</p>
+</div>
+<div class="paragraph">
+<p>Price source and additional costs are now linked to selected sales prices. By selecting specific combinations of client (store), referrer, operator and operand you can create very specific price calculations.</p>
+</div>
+<div class="paragraph">
+<p>The centrally managed price calculations are linked to products at the variation level. If inheritance is active, these prices are passed from the main variation to the other variations of the item as normal.</p>
+</div>
+<div class="paragraph">
+<p>When a price calculation is linked to a variation, a manufacturer commission also is added if the conditions defined for this commission apply.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>

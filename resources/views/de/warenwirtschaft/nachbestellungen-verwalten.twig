@@ -96,16 +96,14 @@
 <p>Die Einstellung bestimmt, wie der Bestellmengenvorschlag berechnet wird.<br>
 Sie können wählen zwischen:<br>
 <strong>Meldebestand - Nettobestand - bestellte Menge</strong> oder<br>
-<strong>(Meldebestand - Nettobestand - bestellte Menge) + (Durchschnittsverbrauch * (Wiederbeschaffungszeit + Lagerreichweite))</strong><br></p>
-</div>
-<div class="paragraph">
-<p>+
-Berechnungsparameter Bestellmengenvorschlag:</p>
+<strong>(Meldebestand - Nettobestand - bestellte Menge) + (Durchschnittsverbrauch * (Wiederbeschaffungszeit + Lagerreichweite))</strong><br>
+<br>
+Berechnungsparameter für den Bestellmengenvorschlag:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Meldebestand</strong> = Bestandsmenge, bei der nachbestellt werden soll. Der Meldebestand wird im Tab <strong>Lager</strong> einer Variante eingetragen.</p>
+<p><strong>Meldebestand</strong> = Bestandsmenge, bei der nachbestellt werden soll. Beachten Sie die Erläuterungen zum <a href="#500">statischen und dynamischen Meldebestand</a>.</p>
 </li>
 <li>
 <p><strong>Nettobestand</strong> = Verkaufbare Menge des Lagerbestands.</p>
@@ -245,7 +243,7 @@ Wenn die Option auf <strong>splitten</strong> steht, werden die <strong>Basisart
 <p><strong>4 - Geliefert</strong></p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Alle Artikel wurden in der bestellten Anzahl geliefert. Wenn die bestellte Ware in mehreren Schritten gebucht wurde, wird der Status automatisch gesetzt, sobald die Nachbestellung vollständig gebucht ist&nbsp;– siehe Kapitel <strong><a href="/warenwirtschaft/nachbestellungen-verwalten#1700">Teillieferung einbuchen</a></strong>.</p>
+<p>Alle Artikel wurden in der bestellten Anzahl geliefert. Wenn die bestellte Ware in mehreren Schritten gebucht wurde, wird der Status automatisch gesetzt, sobald die Nachbestellung vollständig gebucht ist&nbsp;– siehe Kapitel <a href="/warenwirtschaft/nachbestellungen-verwalten#1700">Teillieferung einbuchen</a>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -466,7 +464,8 @@ Im Beispiel ist der Name "Bestellschein an Lieferant".</p>
 <h2 id="500">5. Meldebestand einer Variante festlegen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mit dem Meldebestand legen Sie fest, bei welcher Menge einer Variante Sie eine Nachbestellung veranlassen möchten. Im <strong>Tab: Lager</strong> einer Variante geben Sie den <strong>Meldebestand</strong> an. Zunächst ist die Menge 0 gespeichert, sodass erst dann eine Meldung erfolgt, wenn der komplette Bestand verkauft ist. Wenn Sie den Meldebestand bei 0 belassen, unterscheidet er sich im Grunde nicht von einem Nettobestand 0 und bietet Ihnen somit keine zusätzlichen Funktionen. Wenn Sie den Meldebestand sinnvoll nutzen möchten, tragen Sie einen Wert ein, der größer als 0 ist.</p>
+<p>Der Meldebestand zeigt an, bei welcher Menge einer Variante eine Nachbestellung veranlasst werden sollte. Sie können statische Werte für den Meldebestand pflegen oder den neuen dynamischen Meldebestand nutzen. Die Implementierung des dynamischen Meldebestands ist jedoch noch nicht vollumfänglich. Beachten Sie den Hinweis am Ende dieses Kapitels.<br>
+Im <strong>Tab: Lager</strong> einer Variante können Sie einen statischen <strong>Meldebestand</strong> eintragen. Zunächst ist die Menge 0 gespeichert, sodass erst dann eine Meldung erfolgt, wenn der komplette Bestand verkauft ist. Wenn Sie den Meldebestand bei 0 belassen, unterscheidet er sich im Grunde nicht von einem Nettobestand 0 und bietet Ihnen somit keine zusätzlichen Funktionen. Wenn Sie den Meldebestand sinnvoll nutzen möchten, tragen Sie einen Wert ein, der größer als 0 ist.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -515,7 +514,33 @@ Im Beispiel ist der Name "Bestellschein an Lieferant".</p>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>Wenn weder eine Mindestabnahme noch ein Meldebestand für eine Variante eingetragen ist, beträgt der Vorschlag 0.</p>
+<p>Wenn weder eine Mindestabnahme noch ein Meldebestand für eine Variante eingetragen ist, beträgt der Bestellmengenvorschlag 0.</p>
+</div>
+<div id="dynamischerMeldebestand" class="paragraph subhead">
+<p>Aktuelle Umsetzung des dynamischen Meldebestand</p>
+</div>
+<div class="paragraph">
+<p>Pro Lager können Sie entscheiden, ob Sie den dynamischen Meldebestand nutzen oder nicht. Wenn Sie den dynamischen Meldebestand nutzen, berechnet Ihr System den dynamischen Meldebestand jede Nacht im Hintergrund. Dieser berechnete dynamische Meldebestand wird noch in keinem Feld dargestellt, d.h. Sie sehen den Wert nicht. Die Differenz zum Meldebestand, MeldΔ, basiert jedoch auf dem berechneten Meldebestand. Die Differenz wird Ihnen z.B. in der Bestandsübersicht angezeigt. So können Sie anhand der Differenz absehen wann eine Nachbestellung erfolgen sollte.
+Wenn Sie den dynamischen Meldebestand nutzen, dürfen Sie manuell keinen statischen Meldebestand eintragen. Belassen Sie den Meldebestand für die Varianten in dem Lager auf 0. Wenn ein Meldebestand größer als 0 gespeichert ist, wird die Berechnung nicht ausgeführt.</p>
+</div>
+<div class="paragraph">
+<p>Der dynamische Meldebestand wird jede Nacht anhand der folgenden Formel berechnet:</p>
+</div>
+<div class="paragraph">
+<p>\(\mbox{Dynamischer Meldebestand} = {(\mbox{Ø Abverkauf} \cdot \mbox{Lagerreichweite}) + (\mbox{Ø Abverkauf} \cdot \mbox{kürzeste Lieferzeit})}\)</p>
+</div>
+<div class="paragraph">
+<p>Ø Abverkauf = durschnittlich verkaufte Menge<br>
+kürzeste Lieferzeit = kürzeste Lieferzeit einer Variante egal von welchem Lieferanten</p>
+</div>
+<div class="paragraph">
+<p>Die Differenz zum dynamischen Meldebestand (MeldΔ), die Ihnen auch dargestellt wird, berechnet sich folgendermaßen:</p>
+</div>
+<div class="paragraph">
+<p>\(\mbox{MeldΔ} = {(\mbox{dynamischer Meldebestand} - (\mbox{Nettobestand} + (\mbox{nachbestellte Menge})}\)</p>
+</div>
+<div class="paragraph">
+<p>Die Einstellung für den dynamischen Meldebestand treffen Sie für jedes Lager in den <a href="/warenwirtschaft/lager-einrichten/#Meldebestand_Variante_Lager">Lagereinstellungen</a>.</p>
 </div>
 </div>
 </div><div class="sect1">
@@ -865,7 +890,7 @@ Die dritte Möglichkeit besteht darin, eine Nachbestellung für einzelne Variant
 <p>Die Auswahl der Sprachvariante des Dokuments erfolgt anhand der Sprache Ihres Lieferanten. Die Sprache ist im Tab <strong>Kundendaten</strong> des Lieferanten gespeichert. Wenn in der Sprache des Lieferanten keine Vorlage eingerichtet wurde, wird die Vorlage in der Standardsprache Ihres Systems zum Erzeugen des Dokuments verwendet.</p>
 </div>
 <div class="paragraph">
-<p>Beachten Sie dazu auch die Erklärungen auf der Handbuchseite <strong><a href="/auftragsabwicklung/auftraege/auftragsdokumente">Dokumente</a></strong>.</p>
+<p>Beachten Sie dazu auch die Erklärungen auf der Handbuchseite <a href="/auftragsabwicklung/auftraege/auftragsdokumente">Dokumente</a>.</p>
 </div>
 </td>
 </tr>
@@ -1073,7 +1098,7 @@ Wenn eine Bestellung bereits ausgelöst wurde, besteht die Möglichkeit, bei nac
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/warenwirtschaft/assets/DE-Nachbestellungen-verwalten-01.png" alt="DE Nachbestellungen verwalten 01">
 </div>
-<div class="title">Abbildung 1. Teilmenge; Lagerort und Lieferschein buchen</div>
+<div class="title">Bild 1. Teilmenge; Lagerort und Lieferschein buchen</div>
 </div>
 <div class="paragraph">
 <p>Wenn Sie zu einer Nachbestellung alle Teillieferungen erhalten und eingebucht haben, wechselt der Status automatisch von <strong>Teilweise geliefert</strong> oder <strong>Geliefert</strong> in den Status <strong>Gebucht</strong>. Der Buchungsvorgang erhält eine ID und durch einen Klick auf die ID gelangen Sie in den dazugehörigen Wareneingang. Wenn Sie für eine Variante mehr eingebucht haben, als bestellt wurde, erhält die Variante in der Nachbestellung automatisch die Kennzeichnung überliefert.</p>
@@ -1090,7 +1115,7 @@ Wenn eine Bestellung bereits ausgelöst wurde, besteht die Möglichkeit, bei nac
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/warenwirtschaft/assets/DE-Nachbestellungen-verwalten-02.png" alt="DE Nachbestellungen verwalten 02">
 </div>
-<div class="title">Abbildung 2. Artikel stornieren</div>
+<div class="title">Bild 2. Artikel stornieren</div>
 </div>
 <div class="paragraph instruction">
 <p>Ware stornieren:</p>
@@ -1120,7 +1145,7 @@ Wenn eine Bestellung bereits ausgelöst wurde, besteht die Möglichkeit, bei nac
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/warenwirtschaft/assets/DE-Nachbestellungen-verwalten-03.png" alt="DE Nachbestellungen verwalten 03">
 </div>
-<div class="title">Abbildung 3. Stornierte Varianten in einer Nachbestellung</div>
+<div class="title">Bild 3. Stornierte Varianten in einer Nachbestellung</div>
 </div>
 </div>
 </div><div class="sect1">
@@ -1133,7 +1158,7 @@ Wenn eine Bestellung bereits ausgelöst wurde, besteht die Möglichkeit, bei nac
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/warenwirtschaft/assets/DE-Nachbestellungen-verwalten-04.png" alt="DE Nachbestellungen verwalten 04">
 </div>
-<div class="title">Abbildung 4. Fälschlicherweise gelieferte Varianten einbuchen</div>
+<div class="title">Bild 4. Fälschlicherweise gelieferte Varianten einbuchen</div>
 </div>
 <div class="paragraph instruction">
 <p>Fehllieferung buchen:</p>
