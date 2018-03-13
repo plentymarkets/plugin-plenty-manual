@@ -3649,7 +3649,7 @@ class Metadata {
 						"url" => "/auftragsabwicklung/fulfillment/versand-center",
 						"level" => 3,
 						"title" => "Versand-Center nutzen",
-						"keywords" => "Versand-Center, Versandauftrag anmelden, Polling-Datei, Versandpaket, Label, Tagesabschlussliste, Auftragszusammenfassung, Retourenetikett",
+						"keywords" => "Versand-Center, Versandauftrag anmelden, Polling-Datei, Polling, Versandpaket, Label, Tagesabschlussliste, Auftragszusammenfassung, Retourenetikett",
 						"description" => "Erfahren Sie, wie Sie Versandaufträge anmelden und Polling-Dateien und Labels erzeugen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Versand-Center nutzen. Hier finden Sie folgende Informationen:",
