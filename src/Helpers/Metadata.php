@@ -4849,6 +4849,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "caa5ebb205781f7bae0744d16566d3e3",
+								"path" => "basics/data-exchange/data-formats/variationadditionalsku",
+								"position" => 235,
+								"urlName" => "variationadditionalsku",
+								"url" => "/en/basics/data-exchange/data-formats/variationadditionalsku",
+								"level" => 4,
+								"title" => "VariationAdditionalSKU",
+								"keywords" => "",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic VariationAdditionalSKU. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "1680da945e6c0ce748d5819961de9735",
 								"path" => "basics/data-exchange/data-formats/variationbarcode",
 								"position" => 240,
