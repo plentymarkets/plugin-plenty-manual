@@ -872,21 +872,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "6b2981ff546c981f4ee44c1c7c630aa2",
-								"path" => "basics/datenaustausch/datenformate/VariationAdditionalSKU",
-								"position" => 235,
-								"urlName" => "VariationAdditionalSKU",
-								"url" => "/basics/datenaustausch/datenformate/VariationAdditionalSKU",
-								"level" => 4,
-								"title" => "VariationAdditionalSKU",
-								"keywords" => "",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich VariationAdditionalSKU. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "8a1da39ea36a4c05932fca35c31cf00f",
 								"path" => "basics/datenaustausch/datenformate/variationbarcode",
 								"position" => 240,
