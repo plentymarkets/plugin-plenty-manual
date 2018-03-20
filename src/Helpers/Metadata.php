@@ -3896,7 +3896,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Kontakte verwalten",
 				"keywords" => "Kontakt, Kunde, Adresse, Adressen, Rechnungsadresse, Lieferadresse, primär, Firmen, Firma, Gastzugang, regulärer Zugang, Events, Eigenschaften, Zugangsdaten, Passwort ändern, Passwortänderung, Login entsperren",
-				"description" => "Erfahren Sie, wie Sie in plentymarkets Kontakte erstellen und verwalten.",
+				"description" => "Erfahren Sie, wie Sie in plentymarkets Kontakte, Adressen und Firmen verwalten.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Kontakte verwalten. Hier finden Sie folgende Informationen:",
 				"children" => [],
