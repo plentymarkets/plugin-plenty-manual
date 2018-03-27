@@ -1885,11 +1885,42 @@ class Metadata {
 						"level" => 3,
 						"title" => "idealo Direktkauf",
 						"keywords" => "idealo, Direktkauf, Marktplatz",
-						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Idealo Direktkauf in Ihrem plentymarkets System ein.",
+						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich idealo Direktkauf. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
+						"children" => 						[
+							[
+								"id" => "a62f5ba998b3fa4208a698fa1c816ec1",
+								"path" => "omni-channel/multi-channel/idealo/idealo-einrichten",
+								"position" => 10,
+								"urlName" => "idealo-einrichten",
+								"url" => "/omni-channel/multi-channel/idealo/idealo-einrichten",
+								"level" => 4,
+								"title" => "idealo Direktkauf einrichten",
+								"keywords" => "idealo, Direktkauf, Marktplatz",
+								"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Idealo Direktkauf in Ihrem plentymarkets System ein.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich idealo Direktkauf einrichten. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "7d2f9539e998bb6c083f8750e9ad5165",
+								"path" => "omni-channel/multi-channel/idealo/best-practices",
+								"position" => 20,
+								"urlName" => "best-practices",
+								"url" => "/omni-channel/multi-channel/idealo/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: idealo",
+								"keywords" => "idealo, Multi-Channel",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: idealo. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					],
 					[
 						"id" => "eeb0022deb6b605e5bf555b668081c9d",
