@@ -5611,6 +5611,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "628b7d3d8311c34be8b129001e889843",
+						"path" => "omni-channel/multi-channel/real-de",
+						"position" => 40,
+						"urlName" => "real-de",
+						"url" => "/en/omni-channel/multi-channel/real-de",
+						"level" => 3,
+						"title" => "real.de",
+						"keywords" => "real, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic real.de. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "a5b8f4521c3bb21a2f2a9ad6e748db19",
 						"path" => "omni-channel/multi-channel/ebay",
 						"position" => 50,
@@ -5802,21 +5817,6 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the markets Plus.de and GartenXXL.de in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Plus.de and GartenXXL.de. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "628b7d3d8311c34be8b129001e889843",
-						"path" => "omni-channel/multi-channel/real-de",
-						"position" => 205,
-						"urlName" => "real-de",
-						"url" => "/en/omni-channel/multi-channel/real-de",
-						"level" => 3,
-						"title" => "real.de",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market real,de in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic real.de. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
