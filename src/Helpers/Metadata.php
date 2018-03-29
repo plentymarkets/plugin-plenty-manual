@@ -5478,11 +5478,11 @@ class Metadata {
 								"urlName" => "amazon-setup",
 								"url" => "/en/omni-channel/multi-channel/amazon/amazon-setup",
 								"level" => 4,
-								"title" => "Amazon",
+								"title" => "Setting up Amazon in plentymarkets",
 								"keywords" => "",
 								"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Amazon in your plentymarkets system.",
 								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Amazon. The following information is available:",
+								"linkListInto" => "Welcome to the topic Setting up Amazon in plentymarkets. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
