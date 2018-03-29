@@ -5622,8 +5622,39 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic real.de. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
+						"children" => 						[
+							[
+								"id" => "7bc893387d02941fbaf44a5de07a3a60",
+								"path" => "omni-channel/multi-channel/real-de/real-setup",
+								"position" => 1,
+								"urlName" => "real-setup",
+								"url" => "/en/omni-channel/multi-channel/real-de/real-setup",
+								"level" => 4,
+								"title" => "Setting up real.de in plentymarkets",
+								"keywords" => "",
+								"description" => "Multi-Channel in plentymarkets: Set up the interface to the market real,de in your plentymarkets system.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Setting up real.de in plentymarkets. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "a76bd216cbcbfea8f4f898c91632b10c",
+								"path" => "omni-channel/multi-channel/real-de/best-practices",
+								"position" => 2,
+								"urlName" => "best-practices",
+								"url" => "/en/omni-channel/multi-channel/real-de/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: real.de",
+								"keywords" => "real.de, Multi-Channel",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Best Practices: real.de. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					],
 					[
 						"id" => "a5b8f4521c3bb21a2f2a9ad6e748db19",
@@ -5712,8 +5743,39 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic idealo Checkout. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
+						"children" => 						[
+							[
+								"id" => "935068f1923af4df12266c441712c3fd",
+								"path" => "omni-channel/multi-channel/idealo-checkout/idealo-setup",
+								"position" => 10,
+								"urlName" => "idealo-setup",
+								"url" => "/en/omni-channel/multi-channel/idealo-checkout/idealo-setup",
+								"level" => 4,
+								"title" => "Setting up idealo Checkout in plentymarkets",
+								"keywords" => "",
+								"description" => "Multi-Channel in plentymarkets: Set up the interface to the market idealo Checkout in your plentymarkets system.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Setting up idealo Checkout in plentymarkets. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "f59dc531d74c7f85f9db489b2dbe4f86",
+								"path" => "omni-channel/multi-channel/idealo-checkout/best-practices",
+								"position" => 20,
+								"urlName" => "best-practices",
+								"url" => "/en/omni-channel/multi-channel/idealo-checkout/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: idealo",
+								"keywords" => "idealo, Item",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Best Practices: idealo. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					],
 					[
 						"id" => "eeb0022deb6b605e5bf555b668081c9d",
