@@ -5520,6 +5520,52 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "4035c800eea87f534d97dec9a16e1cab",
+						"path" => "omni-channel/multi-channel/rakuten",
+						"position" => 30,
+						"urlName" => "rakuten",
+						"url" => "/en/omni-channel/multi-channel/rakuten",
+						"level" => 3,
+						"title" => "rakuten.de",
+						"keywords" => "rakuten.de, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic rakuten.de. The following information is available:",
+						"children" => 						[
+							[
+								"id" => "c0d21006baa4928912e8343befb15bf8",
+								"path" => "omni-channel/multi-channel/rakuten/rakuten-setup",
+								"position" => 1,
+								"urlName" => "rakuten-setup",
+								"url" => "/en/omni-channel/multi-channel/rakuten/rakuten-setup",
+								"level" => 4,
+								"title" => "Setting up Rakuten in plentymarkets",
+								"keywords" => "Rakuten, marketplace",
+								"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Rakuten in your plentymarkets system.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Setting up Rakuten in plentymarkets. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "e8de4ede58ce65ee9d8f1e7072824869",
+								"path" => "omni-channel/multi-channel/rakuten/best-practices",
+								"position" => 2,
+								"urlName" => "best-practices",
+								"url" => "/en/omni-channel/multi-channel/rakuten/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: rakuten.de",
+								"keywords" => "rakuten.de, Multi-Channel",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
+					],
+					[
 						"id" => "025d4dcf6a16cee406cbdf8adc70356c",
 						"path" => "omni-channel/multi-channel/cdiscount",
 						"position" => 30,
@@ -5756,21 +5802,6 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the markets Plus.de and GartenXXL.de in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Plus.de and GartenXXL.de. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "4035c800eea87f534d97dec9a16e1cab",
-						"path" => "omni-channel/multi-channel/rakuten",
-						"position" => 200,
-						"urlName" => "rakuten",
-						"url" => "/en/omni-channel/multi-channel/rakuten",
-						"level" => 3,
-						"title" => "Rakuten",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Rakuten in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Rakuten. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
