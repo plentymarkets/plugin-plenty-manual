@@ -7720,7 +7720,7 @@ class Metadata {
 				"url" => "/en/crm/managing-customer-data",
 				"level" => 2,
 				"title" => "Managing customer data",
-				"keywords" => "Customer class, customer type, customer data record, edit customers, customer search, delete customer, activity index, AR list, discount system, VAT number",
+				"keywords" => "customer class, customer type, customer data record, edit customer, search for customer, delete customer, activity index, account receivables, discount system, VAT number",
 				"description" => "Learn how to create and manage your customer data in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Managing customer data. The following information is available:",
