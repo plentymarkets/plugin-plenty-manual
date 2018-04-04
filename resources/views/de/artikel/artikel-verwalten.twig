@@ -68,10 +68,11 @@
 <li><a href="#660"><span>6.</span><span> Artikelbilder verwalten</span></a>
 <ul class="sectlevel2">
 <li><a href="#670"><span>6.1.</span><span> Artikelbilder einrichten</span></a></li>
-<li><a href="#680"><span>6.2.</span><span> Artikelbilder per FTP-Server hochladen</span></a>
+<li><a href="#670b"><span>6.2.</span><span> Größe von Artikelbildern festlegen</span></a></li>
+<li><a href="#680"><span>6.3.</span><span> Artikelbilder per FTP-Server hochladen</span></a>
 <ul class="sectlevel3">
-<li><a href="#_artikelbilddateien_für_den_ftp_import_benennen"><span>6.2.1.</span><span> Artikelbilddateien für den FTP-Import benennen</span></a></li>
-<li><a href="#685"><span>6.2.2.</span><span> Artikelbilder per FTP-Server importieren</span></a></li>
+<li><a href="#bilder-benennen"><span>6.3.1.</span><span> Artikelbilddateien für den FTP-Import benennen</span></a></li>
+<li><a href="#685"><span>6.3.2.</span><span> Artikelbilder per FTP-Server importieren</span></a></li>
 </ul>
 </li>
 </ul>
@@ -1808,12 +1809,31 @@ GTIN 128</strong></p></td>
 <h2 id="660">6. Artikelbilder verwalten</h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>Artikelbilder werden auf S3 gespeichert und über den CDN-Service CloudFront von AWS ausgeliefert. CDN steht für Content Delivery Network und ermöglicht eine komplett skalierbare Auslieferung der Artikelbilder. Dank CDN wird nur das Originalbild gespeichert. Erst wenn ein Bild aufgerufen wird, wird es in den definierten Dimensionen erstellt und im CDN-Cache von CloudFront gespeichert.</p>
+</div>
+<div class="paragraph">
 <p>Erfahren Sie, welche Einstellungen Sie für Ihre Artikelbilder vornehmen können und wie Sie Bilder per FTP hochladen.</p>
 </div>
 <div class="sect2">
 <h3 id="670">6.1. Artikelbilder einrichten</h3>
 <div class="paragraph">
-<p>Im Menü <strong>System » Artikel » Bilder</strong> nehmen Sie Grundeinstellungen für Ihre Artikelbilder vor. Dazu gehören Einstellungen zum Import und Export von Bildern, die Bildgrößen und die Bildnamen.</p>
+<p>Im Menü <strong>System » Artikel » Bilder » Einstellungen</strong> nehmen Sie die folgenden Einstellungen für Artikelbilder vor:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Import und Export</p>
+</li>
+<li>
+<p>Platzhalterbilder</p>
+</li>
+<li>
+<p>Größe von Attributbildern</p>
+</li>
+<li>
+<p>Bildnamen</p>
+</li>
+</ul>
 </div>
 <div class="paragraph instruction">
 <p>Einstellungen für Artikelbilder vornehmen:</p>
@@ -1821,26 +1841,25 @@ GTIN 128</strong></p></td>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffnen Sie das Menü <strong>System » Artikel » Bilder</strong>.</p>
+<p>Öffnen Sie das Menü <strong>System » Artikel » Bilder » Einstellungen</strong>.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-bilder-einstellungen">Tabelle 12</a>.<br>
-<strong><em>Hinweis:</em></strong> Je nach Anzahl der Bilder kann das Ändern der Bildgrößen mehrere Stunden dauern. Während der Neuberechnung werden die Bilder im plentymarkets Backend nicht angezeigt und können im plentymarkets Backend nicht geöffnet werden.</p>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie die Erläuterungen in <a href="#tabelle-bildeinstellungen">Tabelle 12</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
 </li>
 </ol>
 </div>
-<table id="tabelle-bilder-einstellungen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 12. Einstellungen für Bilder</caption>
+<table id="tabelle-bildeinstellungen" class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 12. Bildeinstellungen</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Einstellungen</th>
+<th class="tableblock halign-left valign-top">Einstellung</th>
 <th class="tableblock halign-left valign-top">Erläuterung</th>
 </tr>
 </thead>
@@ -1850,7 +1869,7 @@ GTIN 128</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exportiere Artikelbild-Position</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Positionsnummer des Artikelbildes für den Bildexport, z.B. zu einem Marktplatz, wählen.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positionsnummer des Artikelbildes für den Bildexport wählen, z.B. für den Export zu einem Marktplatz.<br>
 Die Position wird im Tab <a href="/artikel/artikel-verwalten#90">Bilder</a> des Artikels eingestellt.</p></td>
 </tr>
 <tr>
@@ -1859,68 +1878,158 @@ Die Position wird im Tab <a href="/artikel/artikel-verwalten#90">Bilder</a> des 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bildernamen des FTP-Imports</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob die Dateinamen der importierten Bilder die <strong>Artikel-ID</strong> oder die <strong>Varianten-Nr.</strong> enthalten. Weitere Informationen finden Sie im Kapitel <a href="/artikel/artikel-verwalten#680">Artikelbilder per FTP-Server importieren</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Platzhalter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob die Dateinamen von per FTP-Server importierten Bilder die <strong>Artikel-ID</strong> oder die <strong>Varianten-Nr.</strong> enthalten. Weitere Informationen finden Sie im Kapitel <a href="/artikel/artikel-verwalten#680">Artikelbilder per FTP-Server importieren</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Platzhalterbild-URL</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URL für ein Platzhalterbild eingeben, das angezeigt wird, wenn Artikelbilder nicht angezeigt werden können. Platzhalterbild in der <a href="/omni-channel/online-shop/webshop-einrichten/cms#bilder-galerie">Bildergalerie</a> hochladen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL für ein Platzhalterbild eingeben. Das Platzhalterbild wird angezeigt, wenn Artikelbilder nicht angezeigt werden können. Platzhalterbild in der <a href="/omni-channel/online-shop/webshop-einrichten/cms#bilder-galerie">Bildergalerie</a> hochladen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Platzhaltervorschaubild-URL</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URL für ein Platzhalterbild eingeben, das angezeigt wird, wenn Vorschaubilder nicht angezeigt werden können. Platzhalterbild in der <a href="/omni-channel/online-shop/webshop-einrichten/cms#bilder-galerie">Bildergalerie</a> hochladen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL für ein Platzhalterbild für Vorschaubilder eingeben. Das Platzhalterbild wird angezeigt, wenn Vorschaubilder nicht angezeigt werden können. Platzhalterbild in der <a href="/omni-channel/online-shop/webshop-einrichten/cms#bilder-galerie">Bildergalerie</a> hochladen.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Größen</strong></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Attributbilder</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikelbild maximale Breite (Pixel)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wert in Pixeln eingeben. Standardmäßig ist der Wert <strong>3000</strong> voreingestellt. Die Template-Variablen <strong>$Image[1]</strong> bis <strong>$Image[25]</strong> zeigen Artikelbilder im Webshop an.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max. Höhe in Pixeln</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximale Höhe in Pixeln für Attributbilder eingeben. Standardmäßig ist der Wert <strong>40</strong> eingestellt.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikelbild maximale Höhe (Pixel)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wert in Pixeln eingeben. Standardmäßig ist der Wert <strong>3000</strong> voreingestellt.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max. Breite in Pixeln</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximale Breite in Pixeln für Attributbilder eingeben. Standardmäßig ist der Wert <strong>40</strong> eingestellt.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mittelgroßes Artikelbild maximale Breite (Pixel)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wert in Pixeln eingeben. Standardmäßig ist der Wert <strong>370</strong> voreingestellt. Die Template-Variablen <strong>$MiddleSizeImage[1]</strong> bis <strong>$MiddleSizeImage[25]</strong> zeigen mittelgroße Artikelbilder im Webshop an.</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Name</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mittelgroßes Artikelbild maximale Höhe (Pixel)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wert in Pixeln eingeben. Standardmäßig ist der Wert <strong>450</strong> voreingestellt.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Originalname</strong>;<br>
+<strong>Artikel-ID</strong>;<br>
+<strong>Artikel-Nr.</strong>;<br>
+<strong>Name 1</strong> - <strong>Name 3</strong>;<br>
+<strong>Keywords</strong>;<br>
+<strong>Model</strong>;<br>
+<strong>Freitextfeld 1</strong> - <strong>Freitextfeld 20</strong>;<br>
+<strong>Eigenes Präfix</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter wählen, die im Namen des Bildes enthalten sein sollen und die Position festlegen, an der der Parameter im Namen geführt wird. Parameter werden im Bildnamen durch Bindestriche getrennt. Die Angabe der <strong>Artikel-ID</strong> oder der <strong>Artikelnummer</strong> ist Pflicht. Der Bildname ist auf eine Länge von 32 Zeichen beschränkt.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikelattributbild max. Breite (Pixel)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wert in Pixeln eingeben. Standardmäßig ist der Wert <strong>40</strong> voreingestellt.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Präfix</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ein eigenes Präfix eingeben, das in Bildnamen eingefügt wird.<br>
+<strong><em>Hinweis:</em></strong> Das eingegebene Präfix wird nur in den Bildnamen eingefügt, wenn in der Dropdown-Liste <strong>Präfix</strong> eine Position gewählt wurde.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="670b">6.2. Größe von Artikelbildern festlegen</h3>
+<div class="paragraph">
+<p>Im Menü <strong>System » Artikel » Bilder » Größen</strong> nehmen Sie Einstellungen für jede Bildgröße fest.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>preview</strong> = Vorschaubild</p>
+</li>
+<li>
+<p><strong>secondPreview</strong> = Zweites Vorschaubild</p>
+</li>
+<li>
+<p><strong>middle</strong> = Mittlere Bildgröße</p>
+</li>
+<li>
+<p><strong>full</strong> = Volle Bildgröße</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Größe von Artikelbildern festlegen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Artikel » Bilder » Größen</strong>.</p>
+</li>
+<li>
+<p>Nehmen Sie für jede Bildgröße die Einstellungen vor. Beachten Sie die Erläuterungen in <a href="#tabelle-bildgroessen">Tabelle 13</a>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-bildgroessen" class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 13. Bildgrößen festlegen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bezeichnung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interne Bezeichnung eingeben, die für diese Größe verwendet wird.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikelattributbild max. Höhe (Pixel)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wert in Pixeln eingeben. Standardmäßig ist der Wert <strong>40</strong> voreingestellt.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ordnername</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Ordnername für diese Bildgröße. Der Ordnername ist nicht änderbar und ist Bestandteil der URL des Artikelbilds.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximale Breite (Pixel) des Vorschaubildes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wert in Pixeln eingeben. Standardmäßig ist der Wert <strong>150</strong> voreingestellt. Die Template-Variablen <strong>$PreviewImage[1]</strong> bis <strong>$PreviewImage[25]</strong> zeigen Vorschaubilder im Webshop an.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Höhe in Pixeln</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Höhe in Pixeln eingeben, in der Bilder dieser Größe ausgeliefert werden.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximale Höhe (Pixel) des Vorschaubildes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wert in Pixeln eingeben. Standardmäßig ist der Wert <strong>150</strong> voreingestellt.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Breite in Pixeln</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Breite in Pixeln eingeben, in der Bilder dieser Größe ausgeliefert werden.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximale Breite (Pixel) des zweiten Vorschaubildes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wert in Pixeln eingeben. Standardmäßig ist der Wert <strong>0</strong> voreingestellt.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max. Cache-Lebensdauer in Tagen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl der Tage eingeben, die erstellte Bilder im CloudFront-Cache gespeichert werden. Der Zeitpunkt gilt ab dem ersten Aufruf des Bildes in dieser Größe.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximale Höhe (Pixel) des zweiten Vorschaubildes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wert in Pixeln eingeben. Standardmäßig ist der Wert <strong>0</strong> voreingestellt.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Metadaten (EXIF, XMP, IPTC) vom Orginalbild übernehmen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob die Metadaten des Originalbilds übernommen werden.<br>
+Metadaten sind z.B. Beschreibungstexte, Geodaten (GPS) und Rotation.<br>
+Aktiviert = Für skalierte Bilder dieser Größe werden die Metadaten des Originalbilds übernommen.<br>
+<strong><em>Tipp:</em></strong> Besonders für Vorschaubilder kann es sinnvoll sein, die Metadaten nicht mit auszuliefern, um Ladezeit und Datenvolumen zu optimieren.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Bildernamen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nicht vergrößern</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob Originalbilder vergrößert werden.<br>
+Aktiviert = Wenn das Originalbild kleiner ist als die für diese Größe definierten Dimensionen, wird das Bild auf diese Größe skaliert.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter für Bildname</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter wählen, die im Namen des Bildes enthalten sein sollen und Positionen festlegen, an denen die Parameter im Namen geführt werden. Parameter werden im Bildnamen durch Bindestriche getrennt. Die Angabe der <strong>Artikel-ID</strong> oder der <strong>Artikelnummer</strong> ist Pflicht. Der Bildname ist auf eine Länge von 32 Zeichen beschränkt.</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">JPG</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Qualität in Prozent</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Komprimierung von Originalbildern im JPG-Format in Prozent eingeben. Eine Komprimierung verringert die Ladezeiten und trägt zu besseren Pagespeed-Werten bei.<br>
+<strong><em>Tipp:</em></strong> Eine Komprimierung von 80&nbsp;% führt in der Regel zu keinem sichtbaren Qualitätsverlust.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Progressiv</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob Bilder dieser Größe bei Aufruf der Seite sofort angezeigt werden.<br>
+Aktiviert = Beim Aufruf der Seite ist das Bild sofort in geringer Auflösung verfügbar. Die Qualität des Bildes wird während des Seitenaufbaus nach und nach verbessert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">PNG</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Komprimierungslevel (0-9)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Komprimierungslevel für PNG-Dateien wählen.<br>
+0 = Geringste Komprimierung<br>
+9 = Höchste Komprimierung<br>
+PNG ist ein verlustfreies Format. Deshalb werden Bilder im PNG-Format immer in derselben Qualität dargestellt. Bei einem höheren Komprimierungslevel benötigt der Browser aber mehr Zeit, um die Komprimierung des Bildes wiederherzustellen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Progressiv</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob Bilder dieser Größe bei Aufruf der Seite sofort angezeigt werden.<br>
+Aktiviert = Beim Aufruf der Seite ist das Bild sofort in geringer Auflösung verfügbar. Die Qualität des Bildes wird während des Seitenaufbaus nach und nach verbessert.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1931,10 +2040,10 @@ Die Position wird im Tab <a href="/artikel/artikel-verwalten#90">Bilder</a> des 
 <i class="fa icon-note" title="Anmerkung"></i>
 </td>
 <td class="content">
-<div class="title">Bilder-Cache leeren</div>
+<div class="title">CDN-Cache invalidieren</div>
 <div class="paragraph">
-<p>Wenn Sie im Menü <strong>System » Artikel » Bilder</strong> Änderungen vornehmen, kann es sein, dass Ihre Bilder noch immer mit den alten Einstellungen angezeigt werden, da sich die Änderungen im Cache befinden. Klicken Sie in diesem Fall auf <strong>Bilder-Cache leeren</strong>, um die Änderungen schneller anzuzeigen.<br>
-Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, wenn es nötig ist. Um das System während des laufenden Prozesses möglichst wenig zu beeinträchtigen, empfehlen wir, die Funktion z.B. nachts auszuführen.</p>
+<p>Wenn Sie im Menü <strong>System » Artikel » Bilder</strong> Änderungen vornehmen, kann es sein, dass die Bilder noch immer mit den alten Einstellungen angezeigt werden, da sich die Änderungen im Cache befinden. Klicken Sie in diesem Fall auf <strong>CDN-Cache invalidieren</strong>, um die Änderungen schneller anzuzeigen. Die Cache-Invalidierung erfolgt durch CloudFront.
+Nach dem Invalidieren des Caches wird jedes Bild bzw. jede Größe beim nächsten Aufruf neu erstellt.</p>
 </div>
 </td>
 </tr>
@@ -1942,14 +2051,14 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 </div>
 </div>
 <div class="sect2">
-<h3 id="680">6.2. Artikelbilder per FTP-Server hochladen</h3>
+<h3 id="680">6.3. Artikelbilder per FTP-Server hochladen</h3>
 <div class="paragraph">
 <p>Jedes plentymarkets System verfügt über einen eigenen <a href="/basics/datenaustausch/ftp-zugang">FTP-Server</a>. Auf diesem FTP-Server liegt der Ordner <strong>upload_article_image_XXXX</strong> (XXXX = plentyID), in den Sie Artikelbilder laden können. Der Ordner wird alle 60 Minuten auf Änderungen geprüft. Neue, korrekt benannte Bilder werden automatisch den richtigen Artikeln zugeordnet. Zum Hochladen von Dateien benötigen Sie ein FTP-Programm und Ihre FTP-Login-Daten.</p>
 </div>
 <div class="sect3">
-<h4 id="_artikelbilddateien_für_den_ftp_import_benennen">6.2.1. Artikelbilddateien für den FTP-Import benennen</h4>
+<h4 id="bilder-benennen">6.3.1. Artikelbilddateien für den FTP-Import benennen</h4>
 <div class="paragraph">
-<p>Im Menü <strong>System » Artikel » Bilder</strong> legen Sie über die Option <strong>Bildernamen des FTP-Imports</strong> fest, ob die Dateinamen von Artikelbildern die Artikel-ID oder die Varianten-Nr. enthalten. Abhängig von dieser Einstellung benennen Sie die Dateien entweder mit der Artikel-ID oder der Varianten-Nr.</p>
+<p>Im Menü <strong>System » Artikel » Bilder » Einstellungen</strong> legen Sie über die Option <strong>Bildernamen des FTP-Imports</strong> fest, ob die Dateinamen von Artikelbildern die Artikel-ID oder die Varianten-Nr. enthalten. Abhängig von dieser Einstellung benennen Sie die Dateien entweder mit der Artikel-ID oder der Variantennummer.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1979,14 +2088,14 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 </ul>
 </div>
 <div class="paragraph">
-<p>Leerzeichen und Sonderzeichen sind nicht zulässig. Beim Hochladen der Bilddatei werden Leerzeichen und Sonderzeichen durch Bindestriche (-) ersetzt.</p>
+<p>Leerzeichen und andere Sonderzeichen sind nicht zulässig. Beim Hochladen der Bilddatei werden Leerzeichen und Sonderzeichen durch Bindestriche (-) ersetzt.</p>
 </div>
 </td>
 </tr>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>Wenn Sie mehrere Bilder pro Artikel hochladen möchten, nummerieren Sie die Dateien über ein Suffix durch. Dabei muss die Bildnummer der Artikel-ID bzw. Varianten-Nr. mit drei Bindestrichen, also <strong>---</strong>, nachgestellt werden. Pro Artikel sind bis zu 100 Bilder bei einer Nummerierung von 0 bis 99 möglich.</p>
+<p>Wenn Sie mehrere Bilder pro Artikel hochladen möchten, nummerieren Sie die Dateien über ein Suffix durch. Dabei muss die Bildnummer der Artikel-ID bzw. Varianten-Nr. mit drei Bindestrichen, also mit <strong>---</strong>, nachgestellt werden. Pro Artikel sind bis zu 100 Bilder bei einer Nummerierung von 0 bis 99 möglich.</p>
 </div>
 <div class="paragraph instruction">
 <p>Beispiel:</p>
@@ -1995,7 +2104,7 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 <p>Sie möchten Bilder für einen Artikel mit der Artikel-ID 4562 und der Variantennummer AQ3957 hochladen.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 13. Beispiele für FTP-konforme Benennung von Artikelbildern</caption>
+<caption class="title">Tabelle 14. Beispiele für FTP-konforme Benennung von Artikelbildern</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2078,9 +2187,9 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 </table>
 </div>
 <div class="sect3">
-<h4 id="685">6.2.2. Artikelbilder per FTP-Server importieren</h4>
+<h4 id="685">6.3.2. Artikelbilder per FTP-Server importieren</h4>
 <div class="paragraph">
-<p>Gehen Sie wie hier beschrieben vor, um die Artikelbilder per FTP-Server zu importieren.</p>
+<p>Gehen Sie wie hier beschrieben vor, um Artikelbilder per FTP-Server zu importieren.</p>
 </div>
 <div class="paragraph instruction">
 <p>Artikelbilder per FTP importieren:</p>
@@ -2091,10 +2200,16 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 <p>Kopieren Sie die Artikelbilder, die Sie hochladen möchten, in einen Ordner auf Ihrer Festplatte.</p>
 </li>
 <li>
+<p>Prüfen Sie die <a href="#bilder-benennen">Namen der Bildateien</a>.</p>
+</li>
+<li>
+<p>Passen Sie die Namen der Bilddateien wenn nötig an.</p>
+</li>
+<li>
 <p>Wählen Sie in Ihrem FTP-Programm den Zielordner <strong>upload_article_image_XXXX</strong> (XXXX = plentyID).</p>
 </li>
 <li>
-<p>Wählen Sie im Bereich <strong>Upload</strong> des FTP-Programms die Dateien, die zum Upload bestimmt sind.</p>
+<p>Wählen Sie im Bereich <strong>Upload</strong> des FTP-Programms die Dateien.</p>
 </li>
 <li>
 <p>Starten Sie den Upload.<br>
@@ -2144,7 +2259,7 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 → Das Tab <strong>Neu</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-verkaufspreis-erstellen">Tabelle 14</a> vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-verkaufspreis-erstellen">Tabelle 15</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -2152,7 +2267,7 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 </ol>
 </div>
 <table id="tabelle-verkaufspreis-erstellen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 14. Neuen Verkaufspreis erstellen</caption>
+<caption class="title">Tabelle 15. Neuen Verkaufspreis erstellen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2284,7 +2399,7 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 <p>Öffnen Sie das Menü <strong>System » Artikel » Verkaufspreise</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die <strong>Filter</strong>. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-verkaufspreise-filtern">Tabelle 15</a>.</p>
+<p>Wählen Sie die <strong>Filter</strong>. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-verkaufspreise-filtern">Tabelle 16</a>.</p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Suchen</strong>.<br>
@@ -2293,7 +2408,7 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 </ol>
 </div>
 <table id="tabelle-verkaufspreise-filtern" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 15. Verkaufspreise filtern</caption>
+<caption class="title">Tabelle 16. Verkaufspreise filtern</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2385,7 +2500,7 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 → Die neue Preiskalkulation wird geöffnet.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-preiskalkulation-erstellen">Tabelle 16</a> vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-preiskalkulation-erstellen">Tabelle 17</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -2393,7 +2508,7 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 </ol>
 </div>
 <table id="tabelle-preiskalkulation-erstellen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 16. Preiskalkulation erstellen</caption>
+<caption class="title">Tabelle 17. Preiskalkulation erstellen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2523,7 +2638,7 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 → Das Tab der Einheit wird geöffnet.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-einheiten-bearbeiten">Tabelle 17</a>.</p>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-einheiten-bearbeiten">Tabelle 18</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -2531,7 +2646,7 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 </ol>
 </div>
 <table id="tabelle-einheiten-bearbeiten" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 17. Einheiten bearbeiten</caption>
+<caption class="title">Tabelle 18. Einheiten bearbeiten</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2595,7 +2710,7 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 <p>Klappen Sie den Bereich <strong>Neue Vorlage</strong> auf.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen vor. Beachten Sie <a href="#tabelle-etikettenvorlage-erstellen">Tabelle 18</a>.</p>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie <a href="#tabelle-etikettenvorlage-erstellen">Tabelle 19</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.<br>
@@ -2604,7 +2719,7 @@ Dieser Prozess kann einige Zeit dauern. Führen Sie die Funktion daher nur aus, 
 </ol>
 </div>
 <table id="tabelle-etikettenvorlage-erstellen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 18. Etikettenvorlage erstellen</caption>
+<caption class="title">Tabelle 19. Etikettenvorlage erstellen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2895,7 +3010,7 @@ Artikelanzahl</strong></p></td>
 <p>Öffnen Sie das Menü <strong>System » Artikel » Einstellungen</strong>.</p>
 </li>
 <li>
-<p>Nehmen Sie Einstellungen für <strong>Präfix für neue Variantennummern</strong> und <strong>Nächste Variantennummer</strong> vor. Beachten Sie <a href="#tabelle-muster-variantennummer">Tabelle 19</a>.</p>
+<p>Nehmen Sie Einstellungen für <strong>Präfix für neue Variantennummern</strong> und <strong>Nächste Variantennummer</strong> vor. Beachten Sie <a href="#tabelle-muster-variantennummer">Tabelle 20</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -2903,7 +3018,7 @@ Artikelanzahl</strong></p></td>
 </ol>
 </div>
 <table id="tabelle-muster-variantennummer" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 19. Muster für nächste Variantennummer</caption>
+<caption class="title">Tabelle 20. Muster für nächste Variantennummer</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2957,7 +3072,7 @@ Artikelanzahl</strong></p></td>
 <p>Wählen Sie eine Kategorie.</p>
 </li>
 <li>
-<p>Nehmen Sie ggf. weitere Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-standardartikel-erstellen">Tabelle 20</a>.</p>
+<p>Nehmen Sie ggf. weitere Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-standardartikel-erstellen">Tabelle 21</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.<br>
@@ -2984,7 +3099,7 @@ Artikelanzahl</strong></p></td>
 </tbody></table>
 </div>
 <table id="tabelle-standardartikel-erstellen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 20. Artikel des Typs <strong>Standard</strong> erstellen</caption>
+<caption class="title">Tabelle 21. Artikel des Typs <strong>Standard</strong> erstellen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3128,7 +3243,7 @@ Artikelanzahl</strong></p></td>
 → Das Tab <strong>Global</strong> des Artikels wird geöffnet.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-globale-artikeleinstellungen">Tabelle 21</a>.</p>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-globale-artikeleinstellungen">Tabelle 22</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -3136,7 +3251,7 @@ Artikelanzahl</strong></p></td>
 </ol>
 </div>
 <table id="tabelle-globale-artikeleinstellungen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 21. Globale Einstellungen am Artikel vornehmen</caption>
+<caption class="title">Tabelle 22. Globale Einstellungen am Artikel vornehmen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3322,7 +3437,7 @@ Zustand API</strong></p></td>
 <p>Wählen Sie die Sprache.</p>
 </li>
 <li>
-<p>Geben Sie die Artikeltexte ein. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-artikeltexte-eingeben">Tabelle 22</a>.</p>
+<p>Geben Sie die Artikeltexte ein. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-artikeltexte-eingeben">Tabelle 23</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -3330,7 +3445,7 @@ Zustand API</strong></p></td>
 </ol>
 </div>
 <table id="tabelle-artikeltexte-eingeben" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 22. Artikeltexte eingeben</caption>
+<caption class="title">Tabelle 23. Artikeltexte eingeben</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3361,7 +3476,7 @@ Die Länge des Artikelnamens ist auf 240 Zeichen begrenzt. Der Artikelname wird 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Vorschautext</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vorschautext eingeben. Der Vorschautext ist ein kurzer Text, der in Artikellisten angezeigt werden kann.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vorschautext eingeben. Der Vorschautext ist ein kurzer Text, der in Artikellisten angezeigt werden kann. Dieser kann im HTML-Format oder als Klartext eingegeben werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikeltext</strong></p></td>
@@ -3440,7 +3555,7 @@ Die Länge des Artikelnamens ist auf 240 Zeichen begrenzt. Der Artikelname wird 
 <p>Geben Sie eine Feldbezeichnung ein.</p>
 </li>
 <li>
-<p>Wählen Sie den Datentyp. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-freitextfelder-definieren">Tabelle 23</a>.</p>
+<p>Wählen Sie den Datentyp. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-freitextfelder-definieren">Tabelle 24</a>.</p>
 </li>
 <li>
 <p>Geben Sie die Zeichenlänge ein.</p>
@@ -3451,7 +3566,7 @@ Die Länge des Artikelnamens ist auf 240 Zeichen begrenzt. Der Artikelname wird 
 </ol>
 </div>
 <table id="tabelle-freitextfelder-definieren" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 23. Freitextfelder definieren</caption>
+<caption class="title">Tabelle 24. Freitextfelder definieren</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3538,7 +3653,7 @@ Die Länge des Artikelnamens ist auf 240 Zeichen begrenzt. Der Artikelname wird 
 → Die Merkmale werden im Bereich <strong>Merkmale</strong> angezeigt.</p>
 </li>
 <li>
-<p>Nehmen Sie ggf. weitere Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-merkmal-verknuepfen">Tabelle 24</a>.</p>
+<p>Nehmen Sie ggf. weitere Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-merkmal-verknuepfen">Tabelle 25</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -3546,7 +3661,7 @@ Die Länge des Artikelnamens ist auf 240 Zeichen begrenzt. Der Artikelname wird 
 </ol>
 </div>
 <table id="tabelle-merkmal-verknuepfen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 24. Merkmal mit Artikel des Typs Standard verknüpfen</caption>
+<caption class="title">Tabelle 25. Merkmal mit Artikel des Typs Standard verknüpfen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3660,7 +3775,7 @@ Die Länge des Artikelnamens ist auf 240 Zeichen begrenzt. Der Artikelname wird 
 → Die Datei wird hochgeladen und in der Übersicht angezeigt.</p>
 </li>
 <li>
-<p>Nehmen Sie weitere Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-artikelbild-hochladen">Tabelle 25</a>.</p>
+<p>Nehmen Sie weitere Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-artikelbild-hochladen">Tabelle 26</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.<br>
@@ -3669,7 +3784,7 @@ Die Länge des Artikelnamens ist auf 240 Zeichen begrenzt. Der Artikelname wird 
 </ol>
 </div>
 <table id="tabelle-artikelbild-hochladen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 25. Artikelbild hochladen</caption>
+<caption class="title">Tabelle 26. Artikelbild hochladen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3797,7 +3912,7 @@ Name</strong></p></td>
 → Die Datei wird hochgeladen und in der Übersicht angezeigt.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-datei-hochladen">Tabelle 26</a> vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-datei-hochladen">Tabelle 27</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -3808,7 +3923,7 @@ Name</strong></p></td>
 <p>Ziehen Sie alternativ eine oder mehrere Dateien per Drag &amp; Drop-Funktion in den Bereich <strong>Neues Dokument einfügen</strong>.</p>
 </div>
 <table id="tabelle-datei-hochladen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 26. Datei hochladen</caption>
+<caption class="title">Tabelle 27. Datei hochladen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4001,7 +4116,7 @@ Name</strong></p></td>
 → Das Fenster <strong>Artikel-Gruppenfunktion</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-mehrere-artikel-bearbeiten">Tabelle 27</a> vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-mehrere-artikel-bearbeiten">Tabelle 28</a> vor.</p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Ausführen</strong>, um die Einstellungen auf die Artikel anzuwenden.</p>
@@ -4009,7 +4124,7 @@ Name</strong></p></td>
 </ol>
 </div>
 <table id="tabelle-mehrere-artikel-bearbeiten" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 27. Artikel per <strong>Gruppenfunktion</strong> oder per <strong>Stapelverarbeitung</strong> bearbeiten</caption>
+<caption class="title">Tabelle 28. Artikel per <strong>Gruppenfunktion</strong> oder per <strong>Stapelverarbeitung</strong> bearbeiten</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4119,10 +4234,10 @@ Markierung 2</strong></p></td>
 <p>Öffnen Sie das Menü <strong>Artikel » Stapelverarbeitung</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die Filter gemäß <a href="#tabelle-stapelverarbeitung-filter">Tabelle 28</a>.</p>
+<p>Wählen Sie die Filter gemäß <a href="#tabelle-stapelverarbeitung-filter">Tabelle 29</a>.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-mehrere-artikel-bearbeiten">Tabelle 27</a> vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-mehrere-artikel-bearbeiten">Tabelle 28</a> vor.</p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Anwenden</strong>, um die Einstellungen an den Artikeln vorzunehmen.</p>
@@ -4130,7 +4245,7 @@ Markierung 2</strong></p></td>
 </ol>
 </div>
 <table id="tabelle-stapelverarbeitung-filter" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 28. Filteroptionen für die <strong>Stapelverarbeitung</strong></caption>
+<caption class="title">Tabelle 29. Filteroptionen für die <strong>Stapelverarbeitung</strong></caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4291,7 +4406,7 @@ Markierung 2</strong></p></td>
 → Das Tab <strong>Einstellungen</strong> der Hauptvariante wird geöffnet.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen im Bereich <strong>Grundeinstellungen</strong> vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-hauptvariante-grundeinstellungen">Tabelle 29</a>.</p>
+<p>Nehmen Sie die Einstellungen im Bereich <strong>Grundeinstellungen</strong> vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-hauptvariante-grundeinstellungen">Tabelle 30</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -4299,7 +4414,7 @@ Markierung 2</strong></p></td>
 </ol>
 </div>
 <table id="tabelle-hauptvariante-grundeinstellungen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 29. Grundeinstellungen an der Hauptvariante vornehmen</caption>
+<caption class="title">Tabelle 30. Grundeinstellungen an der Hauptvariante vornehmen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4354,7 +4469,7 @@ Markierung 2</strong></p></td>
 <p>Öffnen Sie das Menü <strong>System » Artikel » Verfügbarkeit</strong>.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-verfuegbarkeitsangaben-festlegen">Tabelle 30</a> vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-verfuegbarkeitsangaben-festlegen">Tabelle 31</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -4362,7 +4477,7 @@ Markierung 2</strong></p></td>
 </ol>
 </div>
 <table id="tabelle-verfuegbarkeitsangaben-festlegen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 30. Verfügbarkeitsangaben festlegen</caption>
+<caption class="title">Tabelle 31. Verfügbarkeitsangaben festlegen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4478,7 +4593,7 @@ Wenn die Webshop-Symbole nach Änderungen nicht korrekt im Webshop angezeigt wer
 → Das Tab <strong>Einstellungen</strong> der Hauptvariante wird geöffnet.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen im Bereich <strong>Verfügbarkeit</strong> gemäß <a href="#tabelle-hauptvariante-verfuegbarkeit">Tabelle 31</a> vor.</p>
+<p>Nehmen Sie die Einstellungen im Bereich <strong>Verfügbarkeit</strong> gemäß <a href="#tabelle-hauptvariante-verfuegbarkeit">Tabelle 32</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -4486,7 +4601,7 @@ Wenn die Webshop-Symbole nach Änderungen nicht korrekt im Webshop angezeigt wer
 </ol>
 </div>
 <table id="tabelle-hauptvariante-verfuegbarkeit" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 31. Verfügbarkeit der Hauptvariante einstellen</caption>
+<caption class="title">Tabelle 32. Verfügbarkeit der Hauptvariante einstellen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4768,7 +4883,7 @@ Ist die Option <strong>Nicht verfügbar wenn kein Netto-WB</strong> bzw. <strong
 → Das Tab <strong>Einstellungen</strong> der Hauptvariante wird geöffnet.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen im Bereich <strong>Maße</strong> gemäß <a href="#tabelle-haupvariante-masse">Tabelle 32</a> vor.</p>
+<p>Nehmen Sie die Einstellungen im Bereich <strong>Maße</strong> gemäß <a href="#tabelle-haupvariante-masse">Tabelle 33</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -4776,7 +4891,7 @@ Ist die Option <strong>Nicht verfügbar wenn kein Netto-WB</strong> bzw. <strong
 </ol>
 </div>
 <table id="tabelle-haupvariante-masse" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 32. Maße der Hauptvariante angeben</caption>
+<caption class="title">Tabelle 33. Maße der Hauptvariante angeben</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4838,7 +4953,7 @@ Nicht aktiviert = Der Grundpreis der Variante wird nicht im Webshop angezeigt.<b
 → Das Tab <strong>Einstellungen</strong> der Hauptvariante wird geöffnet.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen im Bereich <strong>Kosten</strong> gemäß <a href="#tabelle-hauptvariante-kosten">Tabelle 33</a> vor.</p>
+<p>Nehmen Sie die Einstellungen im Bereich <strong>Kosten</strong> gemäß <a href="#tabelle-hauptvariante-kosten">Tabelle 34</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -4846,7 +4961,7 @@ Nicht aktiviert = Der Grundpreis der Variante wird nicht im Webshop angezeigt.<b
 </ol>
 </div>
 <table id="tabelle-hauptvariante-kosten" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 33. Kosten der Hauptvariante angeben</caption>
+<caption class="title">Tabelle 34. Kosten der Hauptvariante angeben</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4913,7 +5028,7 @@ Der EK netto wird u.a. für die <a href="/artikel/artikel-verwalten#910">Preiska
 → Das Tab <strong>Einstellungen</strong> der Hauptvariante wird geöffnet.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen im Bereich <strong>Versand</strong> gemäß <a href="#tabelle-hauptvariante-versanddaten">Tabelle 34</a> vor.</p>
+<p>Nehmen Sie die Einstellungen im Bereich <strong>Versand</strong> gemäß <a href="#tabelle-hauptvariante-versanddaten">Tabelle 35</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -4921,7 +5036,7 @@ Der EK netto wird u.a. für die <a href="/artikel/artikel-verwalten#910">Preiska
 </ol>
 </div>
 <table id="tabelle-hauptvariante-versanddaten" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 34. Versanddaten der Hauptvariante eingeben</caption>
+<caption class="title">Tabelle 35. Versanddaten der Hauptvariante eingeben</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5105,7 +5220,7 @@ Portoaufschlag 2</strong></p></td>
 → Die Eigenschaften werden im Bereich <strong>Eigenschaften</strong> angezeigt.</p>
 </li>
 <li>
-<p>Geben Sie einen Wert für die Eigenschaft an. Beachten Sie die Erläuterungen in <a href="#tabelle-eigenschaften-verknuepfen">Tabelle 35</a>.</p>
+<p>Geben Sie einen Wert für die Eigenschaft an. Beachten Sie die Erläuterungen in <a href="#tabelle-eigenschaften-verknuepfen">Tabelle 36</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -5113,7 +5228,7 @@ Portoaufschlag 2</strong></p></td>
 </ol>
 </div>
 <table id="tabelle-eigenschaften-verknuepfen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 35. Eigenschaft verknüpfen</caption>
+<caption class="title">Tabelle 36. Eigenschaft verknüpfen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5187,7 +5302,7 @@ Portoaufschlag 2</strong></p></td>
 → Standardmäßig wird die Standardsprache zur Bearbeitung angezeigt.</p>
 </li>
 <li>
-<p>Geben Sie den Wert ein. Beachten Sie die Erläuterungen in <a href="#tabelle-texte-verknuepfen">Tabelle 36</a>.</p>
+<p>Geben Sie den Wert ein. Beachten Sie die Erläuterungen in <a href="#tabelle-texte-verknuepfen">Tabelle 37</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -5202,7 +5317,7 @@ Portoaufschlag 2</strong></p></td>
 </ol>
 </div>
 <table id="tabelle-texte-verknuepfen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 36. Texte verknüpfen</caption>
+<caption class="title">Tabelle 37. Texte verknüpfen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5273,7 +5388,7 @@ Eigenschaften des Typs <strong>Text</strong> werden im unteren Bereich des Tabs 
 → Der Lieferant wird hinzugefügt und in der Liste angezeigt.</p>
 </li>
 <li>
-<p>Geben Sie die Lieferantendaten gemäß <a href="#tabelle-hauptvariante-lieferanten">Tabelle 37</a> ein.</p>
+<p>Geben Sie die Lieferantendaten gemäß <a href="#tabelle-hauptvariante-lieferanten">Tabelle 38</a> ein.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -5281,7 +5396,7 @@ Eigenschaften des Typs <strong>Text</strong> werden im unteren Bereich des Tabs 
 </ol>
 </div>
 <table id="tabelle-hauptvariante-lieferanten" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 37. Lieferantendaten der Hauptvariante angeben</caption>
+<caption class="title">Tabelle 38. Lieferantendaten der Hauptvariante angeben</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5356,7 +5471,7 @@ Eigenschaften des Typs <strong>Text</strong> werden im unteren Bereich des Tabs 
 → Das Lager wird hinzugefügt und in der Liste angezeigt.</p>
 </li>
 <li>
-<p>Geben Sie die Lagerinformationen gemäß <a href="#tabelle-hauptvariante-lager">Tabelle 38</a> ein.</p>
+<p>Geben Sie die Lagerinformationen gemäß <a href="#tabelle-hauptvariante-lager">Tabelle 39</a> ein.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -5364,7 +5479,7 @@ Eigenschaften des Typs <strong>Text</strong> werden im unteren Bereich des Tabs 
 </ol>
 </div>
 <table id="tabelle-hauptvariante-lager" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 38. Lagerinformationen der Hauptvariante angeben</caption>
+<caption class="title">Tabelle 39. Lagerinformationen der Hauptvariante angeben</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5656,7 +5771,7 @@ Hier eingegebene Werte gelten für die Marktplätze <a href="/omni-channel/multi
 → Das Fenster <strong>Varianten-Gruppenfunktion</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Aktivieren Sie das Kontrollkästchen links neben der Option, die Sie bearbeiten möchten. Beachten Sie <a href="#tabelle-mehrere-varianten-bearbeiten">Tabelle 39</a>.</p>
+<p>Aktivieren Sie das Kontrollkästchen links neben der Option, die Sie bearbeiten möchten. Beachten Sie <a href="#tabelle-mehrere-varianten-bearbeiten">Tabelle 40</a>.</p>
 </li>
 <li>
 <p>Legen Sie fest, ob die Option an den markierten Varianten aktiviert oder deaktiviert werden soll.<br>
@@ -5671,7 +5786,7 @@ Hier eingegebene Werte gelten für die Marktplätze <a href="/omni-channel/multi
 </ol>
 </div>
 <table id="tabelle-mehrere-varianten-bearbeiten" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 39. Varianten per <strong>Gruppenfunktion</strong> oder per <strong>Stapelverarbeitung</strong> bearbeiten</caption>
+<caption class="title">Tabelle 40. Varianten per <strong>Gruppenfunktion</strong> oder per <strong>Stapelverarbeitung</strong> bearbeiten</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5883,10 +5998,10 @@ Kontrollkästchen rechts neben <strong>Eigenschaften</strong> nicht aktiviert = 
 <p>Wechseln Sie in das Tab <strong>Varianten</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die Filter gemäß <a href="#tabelle-variantenfilter-stapelverarbeitung">Tabelle 40</a>.</p>
+<p>Wählen Sie die Filter gemäß <a href="#tabelle-variantenfilter-stapelverarbeitung">Tabelle 41</a>.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-mehrere-varianten-bearbeiten">Tabelle 39</a> vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-mehrere-varianten-bearbeiten">Tabelle 40</a> vor.</p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Anwenden</strong>, um die Einstellungen an den Varianten vorzunehmen.</p>
@@ -5894,7 +6009,7 @@ Kontrollkästchen rechts neben <strong>Eigenschaften</strong> nicht aktiviert = 
 </ol>
 </div>
 <table id="tabelle-variantenfilter-stapelverarbeitung" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 40. Filteroptionen für die <strong>Stapelverarbeitung</strong> von Varianten</caption>
+<caption class="title">Tabelle 41. Filteroptionen für die <strong>Stapelverarbeitung</strong> von Varianten</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -6050,7 +6165,7 @@ Markierung 2</strong></p></td>
 <p>Öffnen Sie das Menü <strong>Artikel » Artikel bearbeiten</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die <strong>Filter</strong>. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-artikel-varianten-filtern">Tabelle 41</a>.<br>
+<p>Wählen Sie die <strong>Filter</strong>. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-artikel-varianten-filtern">Tabelle 42</a>.<br>
 → Der Filter <strong>Aktiv</strong> steht standardmäßig auf <strong>Ja</strong>.</p>
 </li>
 <li>
@@ -6060,7 +6175,7 @@ Markierung 2</strong></p></td>
 </ol>
 </div>
 <table id="tabelle-artikel-varianten-filtern" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 41. Artikel und Varianten filtern</caption>
+<caption class="title">Tabelle 42. Artikel und Varianten filtern</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -6362,7 +6477,7 @@ Update bis</strong></p></td>
 <p>Wechseln Sie in das Tab <strong>Varianten</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die <strong>Filter</strong>. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-varianten-filtern">Tabelle 42</a>.</p>
+<p>Wählen Sie die <strong>Filter</strong>. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-varianten-filtern">Tabelle 43</a>.</p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Suchen</strong>.<br>
@@ -6371,7 +6486,7 @@ Update bis</strong></p></td>
 </ol>
 </div>
 <table id="tabelle-varianten-filtern" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 42. Varianten filtern</caption>
+<caption class="title">Tabelle 43. Varianten filtern</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -6415,10 +6530,10 @@ Update bis</strong></p></td>
 <div class="sect2">
 <h3 id="385">21.6. Suchindex einrichten</h3>
 <div class="paragraph">
-<p>Ein Suchindex ist nötig, damit Artikel bei der Artikelsuche im plentymarkets Backend und im Webshop besser gefunden werden. Der Suchindex wird automatisch beim Erstellen neuer Artikel aufgebaut. Wenn Sie Artikel importieren, wird der Suchindex über Nacht aktualisiert und steht am folgenden Tag zur Verfügung. Im Menü <strong>System » Artikel » Suchindex</strong> können Sie die Aktualisierung des Suchindex auch manuell starten. Im Tab <strong>Artikelstamm</strong> sehen Sie, wie viele Artikel insgesamt vom Suchindex erfasst werden. Im Tab <strong>Artikelmerkmale</strong> sehen Sie, wie viele Artikel mit Merkmalen vom Suchindex erfasst werden. <a href="#tabelle-suchindex-uebersicht">Tabelle 43</a> erläutert die Übersicht im Menü <strong>Suchindex</strong>.</p>
+<p>Ein Suchindex ist nötig, damit Artikel bei der Artikelsuche im plentymarkets Backend und im Webshop besser gefunden werden. Der Suchindex wird automatisch beim Erstellen neuer Artikel aufgebaut. Wenn Sie Artikel importieren, wird der Suchindex über Nacht aktualisiert und steht am folgenden Tag zur Verfügung. Im Menü <strong>System » Artikel » Suchindex</strong> können Sie die Aktualisierung des Suchindex auch manuell starten. Im Tab <strong>Artikelstamm</strong> sehen Sie, wie viele Artikel insgesamt vom Suchindex erfasst werden. Im Tab <strong>Artikelmerkmale</strong> sehen Sie, wie viele Artikel mit Merkmalen vom Suchindex erfasst werden. <a href="#tabelle-suchindex-uebersicht">Tabelle 44</a> erläutert die Übersicht im Menü <strong>Suchindex</strong>.</p>
 </div>
 <table id="tabelle-suchindex-uebersicht" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 43. Informationen in der Übersicht</caption>
+<caption class="title">Tabelle 44. Informationen in der Übersicht</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -6655,7 +6770,7 @@ Merkmalsuchindex aufbauen</strong></p></td>
 <p>Wählen Sie eine Kategorie.</p>
 </li>
 <li>
-<p>Nehmen Sie ggf. weitere Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-standardartikel-erstellen">Tabelle 20</a>.</p>
+<p>Nehmen Sie ggf. weitere Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-standardartikel-erstellen">Tabelle 21</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.<br>
@@ -6824,7 +6939,7 @@ Sie möchten je ein Handtuch und Badetuch im Paket in unterschiedlichen Farben v
 <p>Wählen Sie den Typ <strong>Set</strong>.</p>
 </li>
 <li>
-<p>Nehmen Sie die weiteren Einstellungen vor. Beachten Sie <a href="#tabelle-setartikel-erstellen">Tabelle 44</a>.</p>
+<p>Nehmen Sie die weiteren Einstellungen vor. Beachten Sie <a href="#tabelle-setartikel-erstellen">Tabelle 45</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.<br>
@@ -6848,7 +6963,7 @@ Sie möchten je ein Handtuch und Badetuch im Paket in unterschiedlichen Farben v
 </tbody></table>
 </div>
 <table id="tabelle-setartikel-erstellen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 44. Artikel des Typs Set erstellen</caption>
+<caption class="title">Tabelle 45. Artikel des Typs Set erstellen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -6904,7 +7019,7 @@ Sie möchten je ein Handtuch und Badetuch im Paket in unterschiedlichen Farben v
 <p>Öffnen Sie den Artikel des Typs <strong>Set</strong>.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-setartikel-bearbeiten">Tabelle 45</a>.</p>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-setartikel-bearbeiten">Tabelle 46</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -6912,7 +7027,7 @@ Sie möchten je ein Handtuch und Badetuch im Paket in unterschiedlichen Farben v
 </ol>
 </div>
 <table id="tabelle-setartikel-bearbeiten" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 45. Artikel des Typs Set bearbeiten</caption>
+<caption class="title">Tabelle 46. Artikel des Typs Set bearbeiten</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -7233,13 +7348,13 @@ Wie Sie Artikellisten vom Typ <strong>Cross-Selling</strong> anlegen, erfahren S
 <p>Setzen Sie Häkchen bei Artikeln, um sie als Cross-Selling-Artikel hinzuzufügen.</p>
 </li>
 <li>
-<p>Klicken Sie auf die passende <strong>Beziehung</strong>. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-cross-selling-beziehung-wahlen">Tabelle 46</a>.<br>
+<p>Klicken Sie auf die passende <strong>Beziehung</strong>. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-cross-selling-beziehung-wahlen">Tabelle 47</a>.<br>
 → Die Artikel werden hinzugefügt und im Tab <strong>Cross-Selling-Artikel</strong> angezeigt.</p>
 </li>
 </ol>
 </div>
 <table id="tabelle-cross-selling-beziehung-wahlen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 46. Cross-Selling-Beziehung wählen</caption>
+<caption class="title">Tabelle 47. Cross-Selling-Beziehung wählen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -7469,13 +7584,13 @@ Wie Sie Artikellisten vom Typ <strong>Cross-Selling</strong> anlegen, erfahren S
 <p>Wechseln Sie in das Tab <strong>Filter</strong>.</p>
 </li>
 <li>
-<p>Nehmen Sie die Filtereinstellungen gemäß <a href="#tabelle-shop-aktion-verknuepfen">Tabelle 47</a> vor.</p>
+<p>Nehmen Sie die Filtereinstellungen gemäß <a href="#tabelle-shop-aktion-verknuepfen">Tabelle 48</a> vor.</p>
 </li>
 <li>
 <p>Wechseln Sie in das Tab <strong>Aktion</strong>.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen für die Aktion gemäß <a href="#tabelle-shop-aktion-verknuepfen">Tabelle 47</a> vor.</p>
+<p>Nehmen Sie die Einstellungen für die Aktion gemäß <a href="#tabelle-shop-aktion-verknuepfen">Tabelle 48</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.<br>
@@ -7484,7 +7599,7 @@ Wie Sie Artikellisten vom Typ <strong>Cross-Selling</strong> anlegen, erfahren S
 </ol>
 </div>
 <table id="tabelle-shop-aktion-verknuepfen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 47. Artikel mit Shop-Aktion verknüpfen</caption>
+<caption class="title">Tabelle 48. Artikel mit Shop-Aktion verknüpfen</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -7773,12 +7888,12 @@ Markierung 2</strong></p></td>
 → Die gefilterten Seriennummern werden angezeigt.</p>
 </li>
 <li>
-<p>Nehmen Sie die weiteren Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-seriennummern-bearbeiten">Tabelle 48</a></p>
+<p>Nehmen Sie die weiteren Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-seriennummern-bearbeiten">Tabelle 49</a></p>
 </li>
 </ol>
 </div>
 <table id="tabelle-seriennummern-bearbeiten" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 48. Seriennummern bearbeiten</caption>
+<caption class="title">Tabelle 49. Seriennummern bearbeiten</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -7867,13 +7982,13 @@ Markierung 2</strong></p></td>
 <p>Tragen Sie einen Namen ein.</p>
 </li>
 <li>
-<p>Wählen Sie das <strong>Ereignis</strong> gemäß <a href="#tabelle-ereignisaktion-seriennummern-zuordnen">Tabelle 49</a>.</p>
+<p>Wählen Sie das <strong>Ereignis</strong> gemäß <a href="#tabelle-ereignisaktion-seriennummern-zuordnen">Tabelle 50</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
 </li>
 <li>
-<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-ereignisaktion-seriennummern-zuordnen">Tabelle 49</a> vor.</p>
+<p>Nehmen Sie die Einstellungen gemäß <a href="#tabelle-ereignisaktion-seriennummern-zuordnen">Tabelle 50</a> vor.</p>
 </li>
 <li>
 <p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
@@ -7886,7 +8001,7 @@ Markierung 2</strong></p></td>
 </div>
 </div>
 <table id="tabelle-ereignisaktion-seriennummern-zuordnen" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 49. Ereignisaktion zum automatischen Zuordnen von Seriennummern</caption>
+<caption class="title">Tabelle 50. Ereignisaktion zum automatischen Zuordnen von Seriennummern</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
