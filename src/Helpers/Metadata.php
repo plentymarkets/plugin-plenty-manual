@@ -5900,21 +5900,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "e04771b6c0ad8a096f8f963079eec01e",
-						"path" => "omni-channel/multi-channel/neckermann-at",
-						"position" => 160,
-						"urlName" => "neckermann-at",
-						"url" => "/en/omni-channel/multi-channel/neckermann-at",
-						"level" => 3,
-						"title" => "Neckermann.at",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Neckermann Austria in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Neckermann.at. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "57f93cbd356620112cddb4f1beaffc8a",
 						"path" => "omni-channel/multi-channel/otto",
 						"position" => 170,
