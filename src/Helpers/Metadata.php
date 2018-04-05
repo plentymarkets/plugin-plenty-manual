@@ -5444,21 +5444,6 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Multi-Channel. The following information is available:",
 				"children" => 				[
 					[
-						"id" => "7b0c81fccd804d676dcfeeff6d97cc22",
-						"path" => "omni-channel/multi-channel/allyouneed",
-						"position" => 10,
-						"urlName" => "allyouneed",
-						"url" => "/en/omni-channel/multi-channel/allyouneed",
-						"level" => 3,
-						"title" => "Allyouneed",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Allyouneed in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Allyouneed. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "60feab254e650fa5035aee1b25cf0b1f",
 						"path" => "omni-channel/multi-channel/amazon",
 						"position" => 20,
@@ -5685,6 +5670,52 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Flubit. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "7b0c81fccd804d676dcfeeff6d97cc22",
+						"path" => "omni-channel/multi-channel/allyouneed",
+						"position" => 60,
+						"urlName" => "allyouneed",
+						"url" => "/en/omni-channel/multi-channel/allyouneed",
+						"level" => 3,
+						"title" => "Allyouneed",
+						"keywords" => "Allyouneed, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Allyouneed. The following information is available:",
+						"children" => 						[
+							[
+								"id" => "ce75a0f7f1928b608c18666d70b05493",
+								"path" => "omni-channel/multi-channel/allyouneed/allyouneed-setup",
+								"position" => 1,
+								"urlName" => "allyouneed-setup",
+								"url" => "/en/omni-channel/multi-channel/allyouneed/allyouneed-setup",
+								"level" => 4,
+								"title" => "Allyouneed",
+								"keywords" => "Allyouneed, marketplace",
+								"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Allyouneed in your plentymarkets system.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Allyouneed. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "4077a1ec84c9fb60239bce8c69de2121",
+								"path" => "omni-channel/multi-channel/allyouneed/best-practices",
+								"position" => 2,
+								"urlName" => "best-practices",
+								"url" => "/en/omni-channel/multi-channel/allyouneed/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: Allyouneed",
+								"keywords" => "Allyouneed, Multi-Channel, error messages",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Best Practices: Allyouneed. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					],
 					[
 						"id" => "d7e38338329a5fadef50c1d4de5200e9",
