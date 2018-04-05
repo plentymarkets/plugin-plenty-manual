@@ -5854,6 +5854,52 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "946059644f1564396c3568bb75476cc6",
+						"path" => "omni-channel/multi-channel/neckermann",
+						"position" => 160,
+						"urlName" => "neckermann",
+						"url" => "/en/omni-channel/multi-channel/neckermann",
+						"level" => 3,
+						"title" => "Neckermann.at",
+						"keywords" => "neckermann.at, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Neckermann.at. The following information is available:",
+						"children" => 						[
+							[
+								"id" => "4258f9612d1779752e37d950ba1a1559",
+								"path" => "omni-channel/multi-channel/neckermann/neckermann-at-setup",
+								"position" => 1,
+								"urlName" => "neckermann-at-setup",
+								"url" => "/en/omni-channel/multi-channel/neckermann/neckermann-at-setup",
+								"level" => 4,
+								"title" => "Neckermann.at",
+								"keywords" => "Neckermann.at, marketplace",
+								"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Neckermann Austria in your plentymarkets system.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Neckermann.at. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "c9e52c6271b44ac56e0b6d906f5bc4d9",
+								"path" => "omni-channel/multi-channel/neckermann/best-practices",
+								"position" => 2,
+								"urlName" => "best-practices",
+								"url" => "/en/omni-channel/multi-channel/neckermann/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: Neckermann.at",
+								"keywords" => "neckermann, Multi-Channel",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Best Practices: Neckermann.at. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
+					],
+					[
 						"id" => "e04771b6c0ad8a096f8f963079eec01e",
 						"path" => "omni-channel/multi-channel/neckermann-at",
 						"position" => 160,
