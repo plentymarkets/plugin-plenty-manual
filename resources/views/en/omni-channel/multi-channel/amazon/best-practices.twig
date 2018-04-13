@@ -19,6 +19,13 @@
 </li>
 </ul>
 </li>
+<li><a href="#europeanmarketplaceaccount"><span>2.</span><span> Error message: Request is throttled</span></a>
+<ul class="sectlevel2">
+<li><a href="#_what_does_request_is_throttled_mean"><span>2.1.</span><span> What does “Request is throttled” mean?</span></a></li>
+<li><a href="#_major_cause_of_the_error"><span>2.2.</span><span> Major cause of the error:</span></a></li>
+<li><a href="#_how_to_solve_the_error"><span>2.3.</span><span> How to solve the error:</span></a></li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -201,6 +208,101 @@ Also consider the following note:</p>
 </tr>
 </tbody></table>
 </div>
+</div>
+</div>
+</div>
+</div><div class="sect1 adoc">
+<h2 id="europeanmarketplaceaccount">2. Error message: Request is throttled</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This BestPractice page covers the error “Request is throttled” and how to solve it.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="_what_does_request_is_throttled_mean">2.1. What does “Request is throttled” mean?</h3>
+<div class="paragraph">
+<p>For each procedure, such as order import, shipping confirmations, stock synchronisation etc., the number of requests is limited by Amazon (Maximum Request Quota). If the maximum number of requests is exceeded, the procedure will be blocked. Further requests will then be rejected by Amazon. After a certain amount of time, little by little new capacities are enabled for the procedure (The Leaky Bucket Algorithm), and the transfer is enabled once again.</p>
+</div>
+<div class="paragraph">
+<p>For more information on this topic, see <strong>&lt;&lt;<a href="http://docs.developer.amazonservices.com/en_DE/dev_guide/DG_Throttling.html" class="bare">http://docs.developer.amazonservices.com/en_DE/dev_guide/DG_Throttling.html</a>, Throttling: Limits to how often you can submit requests&gt;&gt;</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_major_cause_of_the_error">2.2. Major cause of the error:</h3>
+<div class="paragraph">
+<p>This error often occurs because if you use a European Amazon marketplace account, a configuration in the plentymarkets system causes too many requests to be sent by this Amazon account.</p>
+</div>
+<div class="paragraph">
+<p><strong>Background</strong>: This means that within <strong>System » Markets » Amazon » Settings</strong> multiple Amazon accounts have been deposited for different platforms which all “aim” at the same European marketplace account.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Those accounts always have the same merchant ID. Several options have been selected in one or multiple accounts.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Amazon platforms which are often summarised in one European marketplace account (as of 15 May 2017):</p>
+</div>
+<div class="paragraph">
+<p>Amazon.de, Amazon.fr, Amazon.it, Amazon.es, Amazon.co.uk</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This error might also occur if you use further external programs which access your Amazon account and “overflow” your account in combination with plentymarkets.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_to_solve_the_error">2.3. How to solve the error:</h3>
+<div class="paragraph">
+<p>If you use a European Amazon marketplace account, it is useful to activate procedures for only one marketplace account deposited in plentymarkets within <strong>System » Markets » Amazon » Settings</strong>. Otherwise, the data traffic of those procedures will be transferred for each Amazon account that is deposited in plentymarkets and has the same merchant ID.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Procedures which often cause this error and which should therefore not be activated multiple times:</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Order import</p>
+</li>
+<li>
+<p>Stock synchronisation</p>
+</li>
+<li>
+<p>Stock changes</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p><strong>P.S.:</strong> An Amazon.com account does not count as a platform of a European marketplace account.</p>
 </div>
 </div>
 </div>
