@@ -464,7 +464,7 @@ Im Beispiel ist der Name "Bestellschein an Lieferant".</p>
 <h2 id="500">5. Meldebestand einer Variante festlegen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Der Meldebestand zeigt an, bei welcher Menge einer Variante eine Nachbestellung veranlasst werden sollte. Sie können statische Werte für den Meldebestand pflegen oder den neuen dynamischen Meldebestand nutzen. Die Implementierung des dynamischen Meldebestands ist jedoch noch nicht vollumfänglich. Beachten Sie den Hinweis am Ende dieses Kapitels.<br>
+<p>Der Meldebestand zeigt an, bei welcher Menge einer Variante eine Nachbestellung veranlasst werden sollte. Sie können feste Werte für den Meldebestand pflegen, d.h. der Meldebestand ist statisch, oder den neuen dynamischen Meldebestand nutzen. Die Implementierung des dynamischen Meldebestands ist jedoch noch nicht vollumfänglich. Beachten Sie den Hinweis am Ende dieses Kapitels.<br>
 Im <strong>Tab: Lager</strong> einer Variante können Sie einen statischen <strong>Meldebestand</strong> eintragen. Zunächst ist die Menge 0 gespeichert, sodass erst dann eine Meldung erfolgt, wenn der komplette Bestand verkauft ist. Wenn Sie den Meldebestand bei 0 belassen, unterscheidet er sich im Grunde nicht von einem Nettobestand 0 und bietet Ihnen somit keine zusätzlichen Funktionen. Wenn Sie den Meldebestand sinnvoll nutzen möchten, tragen Sie einen Wert ein, der größer als 0 ist.</p>
 </div>
 <div class="admonitionblock tip">
@@ -476,14 +476,14 @@ Im <strong>Tab: Lager</strong> einer Variante können Sie einen statischen <stro
 <td class="content">
 <div class="title">Lager hinzufügen, um Meldebestand einzutragen</div>
 <div class="paragraph">
-<p>Ein Meldebestand lässt sich nur eingeben, wenn der Variante ein Lager zugeordnet ist. Wenn kein Lager zugeordnet ist, fügen Sie zunächst das Lager hinzu.</p>
+<p>Ein statischer Meldebestand lässt sich nur eingeben, wenn der Variante ein Lager zugeordnet ist. Wenn kein Lager zugeordnet ist, fügen Sie zunächst das Lager hinzu.</p>
 </div>
 </td>
 </tr>
 </tbody></table>
 </div>
 <div class="paragraph instruction">
-<p>Meldebestand festlegen:</p>
+<p>Statischen Meldebestand eintragen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -520,8 +520,22 @@ Im <strong>Tab: Lager</strong> einer Variante können Sie einen statischen <stro
 <p>Aktuelle Umsetzung des dynamischen Meldebestand</p>
 </div>
 <div class="paragraph">
-<p>Pro Lager können Sie entscheiden, ob Sie den dynamischen Meldebestand nutzen oder nicht. Wenn Sie den dynamischen Meldebestand nutzen, berechnet Ihr System den dynamischen Meldebestand jede Nacht im Hintergrund. Dieser berechnete dynamische Meldebestand wird noch in keinem Feld dargestellt, d.h. Sie sehen den Wert nicht. Die Differenz zum Meldebestand, MeldΔ, basiert jedoch auf dem berechneten Meldebestand. Die Differenz wird Ihnen z.B. in der Bestandsübersicht angezeigt. So können Sie anhand der Differenz absehen wann eine Nachbestellung erfolgen sollte.
-Wenn Sie den dynamischen Meldebestand nutzen, dürfen Sie manuell keinen statischen Meldebestand eintragen. Belassen Sie den Meldebestand für die Varianten in dem Lager auf 0. Wenn ein Meldebestand größer als 0 gespeichert ist, wird die Berechnung nicht ausgeführt.</p>
+<p>Pro Lager können Sie entscheiden, ob Sie den dynamischen Meldebestand nutzen oder nicht. Wenn Sie den dynamischen Meldebestand nutzen, berechnet Ihr System den dynamischen Meldebestand jede Nacht im Hintergrund. Dieser berechnete dynamische Meldebestand wird noch in keinem Feld dargestellt, d.h. Sie sehen den Wert nicht. Die Differenz zum Meldebestand, MeldΔ, basiert jedoch auf dem berechneten Meldebestand. Die Differenz wird Ihnen z.B. in der Bestandsübersicht angezeigt. So können Sie anhand der Differenz absehen wann eine Nachbestellung erfolgen sollte.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Wenn dynamischer Meldebestand genutzt wird, keinen statischen Meldebestand pflegen</div>
+<div class="paragraph">
+<p>Wenn Sie den dynamischen Meldebestand nutzen, dürfen Sie manuell keinen statischen Meldebestand eintragen. Belassen Sie den Meldebestand für die Varianten in dem Lager auf 0. Wenn ein Meldebestand größer als 0 gespeichert ist, wird die Berechnung des dynamischen Meldebestands nicht ausgeführt.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
 <p>Der dynamische Meldebestand wird jede Nacht anhand der folgenden Formel berechnet:</p>
@@ -530,11 +544,20 @@ Wenn Sie den dynamischen Meldebestand nutzen, dürfen Sie manuell keinen statisc
 <p>\(\mbox{Dynamischer Meldebestand} = {(\mbox{Ø Abverkauf} \cdot \mbox{Lagerreichweite}) + (\mbox{Ø Abverkauf} \cdot \mbox{kürzeste Lieferzeit})}\)</p>
 </div>
 <div class="paragraph">
-<p>Ø Abverkauf = durschnittlich verkaufte Menge<br>
-kürzeste Lieferzeit = kürzeste Lieferzeit einer Variante egal von welchem Lieferanten</p>
+<p>Erläuterung der Formelparameter:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ø Abverkauf = durschnittlich verkaufte Menge</p>
+</li>
+<li>
+<p>kürzeste Lieferzeit = kürzeste Lieferzeit einer Variante egal von welchem Lieferanten</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Die Differenz zum dynamischen Meldebestand (MeldΔ), die Ihnen auch dargestellt wird, berechnet sich folgendermaßen:</p>
+<p>Die Differenz zum dynamischen Meldebestand (MeldΔ) wird im System dargestellt und berechnet sich folgendermaßen:</p>
 </div>
 <div class="paragraph">
 <p>\(\mbox{MeldΔ} = {(\mbox{dynamischer Meldebestand} - (\mbox{Nettobestand} + (\mbox{nachbestellte Menge})}\)</p>
