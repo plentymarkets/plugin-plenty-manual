@@ -5649,12 +5649,43 @@ class Metadata {
 						"url" => "/en/omni-channel/multi-channel/ebay",
 						"level" => 3,
 						"title" => "eBay",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market eBay in your plentymarkets system.",
+						"keywords" => "eBay, Multi-Channel, eBay Plus, Listings",
+						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic eBay. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
+						"children" => 						[
+							[
+								"id" => "fc5aaaad17e77575154e420fa1257963",
+								"path" => "omni-channel/multi-channel/ebay/ebay-setup",
+								"position" => 1,
+								"urlName" => "ebay-setup",
+								"url" => "/en/omni-channel/multi-channel/ebay/ebay-setup",
+								"level" => 4,
+								"title" => "eBay",
+								"keywords" => "",
+								"description" => "Multi-Channel in plentymarkets: Set up the interface to the market eBay in your plentymarkets system.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic eBay. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "02b1f02457368c76396b711a5f665b7a",
+								"path" => "omni-channel/multi-channel/ebay/best-practices",
+								"position" => 2,
+								"urlName" => "best-practices",
+								"url" => "/en/omni-channel/multi-channel/ebay/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: eBay",
+								"keywords" => "eBay, Multi-Channel, ebay Plus, Listings",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Best Practices: eBay. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					],
 					[
 						"id" => "2a8209a9638f33769bb6662659e2ef71",
