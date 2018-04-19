@@ -13,14 +13,20 @@
 <li><a href="#1400"><span>1.1.3.</span><span> Abgleich festlegen</span></a></li>
 <li><a href="#1500"><span>1.1.4.</span><span> Zuordnung erstellen</span></a></li>
 <li><a href="#1600"><span>1.1.5.</span><span> Importdaten eingrenzen</span></a></li>
-<li><a href="#1700"><span>1.1.6.</span><span> Sync testen und Daten importieren</span></a></li>
-<li><a href="#1800"><span>1.1.7.</span><span> Sync-Verlauf einsehen</span></a></li>
+<li><a href="#1620"><span>1.1.6.</span><span> Sync-Logs einsehen</span></a></li>
 </ul>
 </li>
-<li><a href="#1900"><span>1.2.</span><span> Sync vom Typ Artikel einrichten</span></a></li>
-<li><a href="#2000"><span>1.3.</span><span> Sync vom Typ Aufträge einrichten</span></a></li>
-<li><a href="#2100"><span>1.4.</span><span> Sync vom Typ Kategorie einrichten</span></a></li>
-<li><a href="#2200"><span>1.5.</span><span> Sync vom Typ Kontakte, Firmen und Adressen einrichten</span></a></li>
+<li><a href="#1630"><span>1.2.</span><span> Sync kopieren</span></a>
+<ul class="sectlevel3">
+<li><a href="#1640"><span>1.2.1.</span><span> Sync exportieren/importieren</span></a></li>
+<li><a href="#1700"><span>1.2.2.</span><span> Sync testen und Daten importieren</span></a></li>
+</ul>
+</li>
+<li><a href="#_rest_api_elasticsync"><span>1.3.</span><span> REST-API &amp; ElasticSync</span></a></li>
+<li><a href="#1900"><span>1.4.</span><span> Sync vom Typ Artikel einrichten</span></a></li>
+<li><a href="#2000"><span>1.5.</span><span> Sync vom Typ Aufträge einrichten</span></a></li>
+<li><a href="#2100"><span>1.6.</span><span> Sync vom Typ Kategorie einrichten</span></a></li>
+<li><a href="#2200"><span>1.7.</span><span> Sync vom Typ Kontakte, Firmen und Adressen einrichten</span></a></li>
 </ul>
 </li>
 <li><a href="#5"><span>2.</span><span> Daten per dynamischen Import importieren</span></a></li>
@@ -58,7 +64,7 @@ auszuführen. Ein Import kann manuell oder automatisiert erfolgen.</p>
 <div class="sect3">
 <h4 id="1200">1.1.1. Sync erstellen</h4>
 <div class="paragraph">
-<p>Syncs erstellen, bearbeiten und verwalten Sie im Menü <strong>Daten » ElasticSync</strong>. Ein Sync dient dazu, die Daten einer per FTP oder HTTP zugänglichen Datei Daten in plentymarkets zuzuordnen und zu importieren. Beim Erstellen des Syncs speichern Sie Informationen zur Datenquelle. Wichtig für einen Sync ist außerdem, dass Sie Daten für den Abgleich festlegen und zuordnen, welche Daten Ihrer Datei welchen Daten in plentymarkets entsprechen. Mit dem Abgleich bestimmen Sie, anhand welcher Daten versucht wird zu identifizieren, ob bereits ein Datensatz besteht oder nicht. Mit der Zuordnung legen Sie fest, welche Spalte Ihrer Datei welchem Datenfeld in plentymarkets entspricht. Am Ende legen Sie ein Importintervall fest. Gehen Sie wie beschrieben vor, um einen Sync zu erstellen.</p>
+<p>Syncs erstellen, bearbeiten und verwalten Sie im Menü <strong>Daten » ElasticSync</strong>. Hier sehen Sie eine Übersicht aller Syncs. Ein Sync dient dazu, die Daten einer per FTP oder HTTP zugänglichen Datei Daten in plentymarkets zuzuordnen und zu importieren. Beim Erstellen des Syncs speichern Sie Informationen zur Datenquelle. Wichtig für einen Sync ist außerdem, dass Sie Daten für den Abgleich festlegen und zurodnen welche Daten Ihrer Datei welchen Daten in plentymarkets entsprechen. Mit dem Abgleich bestimmen Sie, anhand welcher Daten versucht wird zu identifizieren, ob bereits ein Datensatz besteht oder nicht. Mit der Zuordnung legen Sie fest, welche Spalte Ihrer Datei welchem Datenfeld in plentymarkets entspricht. Am Ende legen Sie ein Importintervall fest. Gehen Sie wie beschrieben vor, um einen Sync zu erstellen.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -139,21 +145,35 @@ auszuführen. Ein Import kann manuell oder automatisiert erfolgen.</p>
 <p><strong>Notizen</strong> = Wählen, um Notizdaten zu importieren.</p>
 </li>
 <li>
-<p><strong>Aufträge</strong> = Wählen, um <a href="/basics/datenaustausch/daten-importieren#2000">Auftragsdaten</a> zu importieren.</p>
+<p><strong>Aufträge</strong> = Wählen, um Auftragsdaten zu importieren.</p>
 </li>
 <li>
-<p><strong>Kontakte, Firmen und Adressen</strong> = Wählen, um <a href="/basics/datenaustausch/daten-importieren#2200">Kontakt-, Firmen- und Adressdaten</a> zu importieren.</p>
+<p><strong>Kontakte, Firmen und Adressen</strong> = Wählen, um Kontakt-, Firmen- und Adressdaten zu importieren, siehe Sync-Typ Kontakte, Firmen und Adressen auf dieser Seite.</p>
+</li>
+<li>
+<p><strong>Warehouse</strong> = Wählen, um Lagerorte zu importieren.</p>
 </li>
 </ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Quelle</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Import</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Datentyp</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dateiformat der Importdatei wählen.<br>
 Aktuell ist jedoch nur die Auswahl <strong>CSV</strong> verfügbar, da nur CSV-Dateien importiert werden können.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beginne ab Zeile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ab welcher Zeile der Datei Daten importiert werden sollen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kopfzeile enthalten</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob die Importdatei eine Kopfzeile enthält.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Trennzeichen</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Trennzeichen</p></td>
@@ -180,8 +200,7 @@ Aktuell ist jedoch nur die Auswahl <strong>CSV</strong> verfügbar, da nur CSV-D
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeichensatz der Datei oder <strong>Automatisch erkennen</strong> wählen.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Beginne ab Zeile</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ab welcher Zeile der Datei Daten importiert werden sollen.</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Quelle</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Quelle</p></td>
@@ -190,13 +209,16 @@ Aktuell ist jedoch nur die Auswahl <strong>CSV</strong> verfügbar, da nur CSV-D
 Je Option werden weitere Einstellungen sichtbar:</p>
 </div>
 <div class="paragraph">
-<p><strong>FTP</strong> = Host, Benutzername, Passwort und Dateiname werden als Einstellungen sichtbar</p>
+<p><strong>FTP</strong> = Host,Port, Benutzername, Passwort und Dateiname werden als Einstellungen sichtbar</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>Host: Host des FTP-Servers eingegeben<br>
 Tipp: plentymarkets FTP-Zugang nutzen.</p>
+</li>
+<li>
+<p>Port: Port des FTP-Servers. Wenn kein Port eingetragen ist, wird der Standard-Port (22) verwendet.</p>
 </li>
 <li>
 <p>Benutzer: Benutzer für FTP-Zugang eingeben</p>
@@ -206,6 +228,9 @@ Tipp: plentymarkets FTP-Zugang nutzen.</p>
 </li>
 <li>
 <p>Dateiname: Pfad und Name der Datei eingeben, aus der Daten importiert werden sollen</p>
+</li>
+<li>
+<p>Datei nach erfolgreichem Import in Archiv verschieben: Wenn diese Option aktiv ist, wird nach erfolgreichem Import die Importdatei automatisch in einen neuen Ordner <strong>Archiv</strong> auf dem FTP-Verzeichnis verschoben.</p>
 </li>
 </ul>
 </div>
@@ -484,20 +509,145 @@ Wichtig: Die Datei wird auf einem öffentlichen Bucket auf S3 gespeichert. Jeder
 </div>
 </div>
 <div class="sect3">
-<h4 id="1700">1.1.6. Sync testen und Daten importieren</h4>
+<h4 id="1620">1.1.6. Sync-Logs einsehen</h4>
 <div class="paragraph">
-<p>In der Sync-Übersicht können Sie Syncs testen und ausführen. Die Sync-Übersicht erreichen Sie über das Menü <strong>Daten » ElasticSync</strong>.</p>
+<p>Für jeden ausgeführten Sync werden Log-Einträge angelegt, die Sie einsehen können.</p>
 </div>
+<div class="paragraph instruction">
+<p>Logs einsehen:</p>
 </div>
-<div class="sect3">
-<h4 id="1800">1.1.7. Sync-Verlauf einsehen</h4>
-<div class="paragraph">
-<p>In der Sync-Übersicht können Sie den Verlauf Ihrer ausgeführten Syncs einsehen. Die Sync-Übersicht erreichen Sie über das Menü <strong>Daten » ElasticSync</strong>.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Daten » ElasticSync</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Logs</strong>.<br>
+→ Die Logs der Syncs werden angezeigt.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="1900">1.2. Sync vom Typ Artikel einrichten</h3>
+<h3 id="1630">1.2. Sync kopieren</h3>
+<div class="paragraph">
+<p>Sie können Syncs einzeln oder mehrere gleichzeitig kopieren. So können Sie bereits gut konfigurierte Syncs nutzen, um schnell einen neuen Sync anzulegen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Sync kopieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Daten » ElasticSync</strong>.</p>
+</li>
+<li>
+<p>Makieren Sie ein oder mehrere Syncs.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Sync kopieren</strong>.<br>
+→ Der Sync wurde kopiert. Einem kopierten Sync wird <strong>(copy)</strong> hinzugefügt.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="1640">1.2.1. Sync exportieren/importieren</h4>
+<div class="paragraph">
+<p>Syncs können importiert und exportiert werden. So können Sie sowohl Syncs lokal sichern als auch Syncs von anderen Nutzern importieren.</p>
+</div>
+<div class="paragraph instruction">
+<p>Sync exportieren/importieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Daten » ElasticSync</strong>.</p>
+</li>
+<li>
+<p>Makieren Sie ein oder mehrere Syncs.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Sync exportieren</strong>.<br>
+→ Der Sync wird automatisch heruntergeladen.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Sync importieren</strong>.<br>
+→ Die Option <strong>Sync importieren</strong> wird unterhalb des Menü aufgeklappt.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Datei wählen</strong>.<br>
+→ Das Datei-Browser wird geöffnet.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Datei hochladen</strong> und wählen Sie die Datei aus.</p>
+</li>
+<li>
+<p>Makieren Sie die gewünschte Datei im Datei-Browser und klicken Sie auf <strong>wählen</strong>.<br>
+→ Die Datei wird hinzugefügt.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Import</strong>.<br>
+→ Der Sync wurde importiert.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Syncs aus einem anderen plentymarkets System importieren</div>
+<div class="paragraph">
+<p>Wenn Sie Syncs aus einem anderen plentymarkets System importiert, müssen Sie Ihren Abgleich und die Zuordnung anpassen. Es können nur <strong>.json</strong> Dateien importiert werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="1700">1.2.2. Sync testen und Daten importieren</h4>
+<div class="paragraph">
+<p>Sie können einen Sync testen und ausführen. Das Testen erlaubt es Ihnen schnell festzustellen, ob Ihre Datei korrekt importiert werden kann.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Syncs testen</div>
+<div class="paragraph">
+<p>Wenn Sie <strong>Sync testen</strong> wählen, werden nur die ersten zehn Zeilen der Importdatei importiert.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rest_api_elasticsync">1.3. REST-API &amp; ElasticSync</h3>
+<div class="paragraph">
+<p>ElasticSync kann per REST-API angesprochen werden. Folgende Rest calls können Sie verwenden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sync anlegen: POST - /rest/elasticsync/sync/{syncId}/import</p>
+</li>
+<li>
+<p>Alle Syncs abrufen: GET - /rest/elasticsync/all_syncs</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1900">1.4. Sync vom Typ Artikel einrichten</h3>
 <div class="paragraph">
 <p>Mit Syncs des Typs <strong>Artikel</strong> importieren Sie Artikel- und Variantendaten.</p>
 </div>
@@ -1309,7 +1459,7 @@ oder</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="2000">1.3. Sync vom Typ Aufträge einrichten</h3>
+<h3 id="2000">1.5. Sync vom Typ Aufträge einrichten</h3>
 <div class="paragraph">
 <p>Mit Syncs des Typs Aufträge importieren Sie Auftragsdaten.</p>
 </div>
@@ -1926,7 +2076,7 @@ oder</p>
 </table>
 </div>
 <div class="sect2">
-<h3 id="2100">1.4. Sync vom Typ Kategorie einrichten</h3>
+<h3 id="2100">1.6. Sync vom Typ Kategorie einrichten</h3>
 <div class="paragraph">
 <p>Mit Syncs des Typs Kategorie importieren Sie Kategoriedaten.</p>
 </div>
@@ -2108,7 +2258,7 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 </div>
 </div>
 <div class="sect2">
-<h3 id="2200">1.5. Sync vom Typ Kontakte, Firmen und Adressen einrichten</h3>
+<h3 id="2200">1.7. Sync vom Typ Kontakte, Firmen und Adressen einrichten</h3>
 <div class="paragraph">
 <p>Voraussetzung für die Nutzung des Plugins:</p>
 </div>
