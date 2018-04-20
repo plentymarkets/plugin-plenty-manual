@@ -281,7 +281,7 @@ class Metadata {
 						"url" => "/basics/datenaustausch/daten-importieren",
 						"level" => 3,
 						"title" => "Daten importieren",
-						"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
+						"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
 						"description" => "Erfahren Sie, wie Sie Datenformate erstellen und den dynamischen Import nutzen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Daten importieren. Hier finden Sie folgende Informationen:",
