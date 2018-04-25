@@ -160,7 +160,7 @@ class Metadata {
 						"url" => "/basics/arbeiten-mit-plentymarkets/allgemeine-funktionen",
 						"level" => 3,
 						"title" => "Allgemeine Funktionen nutzen",
-						"keywords" => "",
+						"keywords" => "Schnellzugriff, Vollbildmodus, Vollbild, Webshop, Favorit, Favoriten, Benutzer, Benutzerbild, Benutzerbilder, Support, Menüansicht, Drucker, gravatar, Gravatar",
 						"description" => "Arbeiten mit plentymarkets: Fügen Sie Menüs als Favoriten hinzu, passen Sie die Menüansicht an und nutzen Sie weitere allgemeine Funktionen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Allgemeine Funktionen nutzen. Hier finden Sie folgende Informationen:",
