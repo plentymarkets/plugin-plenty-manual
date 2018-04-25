@@ -3132,21 +3132,6 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Payment. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
-						"id" => "332e0c4430870713e5b16da29c5ba537",
-						"path" => "auftragsabwicklung/payment/best_practices_payment",
-						"position" => 0,
-						"urlName" => "best_practices_payment",
-						"url" => "/auftragsabwicklung/payment/best_practices_payment",
-						"level" => 3,
-						"title" => "Best Practices: Payment",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "c59bba14a70985a6e689bff37ebdedc4",
 						"path" => "auftragsabwicklung/payment/zahlungsarten-verwalten",
 						"position" => 1,
@@ -3203,6 +3188,21 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Konfigurieren Sie Währungen in Ihrem plentymarkets System und passen Sie die Anzeige der Währung im Webshop an.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Währungen konfigurieren. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "332e0c4430870713e5b16da29c5ba537",
+						"path" => "auftragsabwicklung/payment/best_practices_payment",
+						"position" => 7,
+						"urlName" => "best_practices_payment",
+						"url" => "/auftragsabwicklung/payment/best_practices_payment",
+						"level" => 3,
+						"title" => "Best Practices: Payment",
+						"keywords" => "EBICS, FAQ, Konto, Bankbuchung, Vorkasse, Überweisung, HBCI, IBAN, Zahlung, PayPal, PayPal Plus, Ceres, Plugin, Callisto",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Payment. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
