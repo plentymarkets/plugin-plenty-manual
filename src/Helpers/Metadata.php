@@ -542,21 +542,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "729c2799834016d10d58bcd33cf9d6af",
-								"path" => "basics/datenaustausch/datenformate/itemcrossselling",
-								"position" => 140,
-								"urlName" => "itemcrossselling",
-								"url" => "/basics/datenaustausch/datenformate/itemcrossselling",
-								"level" => 4,
-								"title" => "ItemCrossSelling",
-								"keywords" => "",
-								"description" => "Datenformat ItemCrossSelling",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich ItemCrossSelling. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "730466f71769c872f3f4f3b19893cb54",
 								"path" => "basics/datenaustausch/datenformate/itemimage",
 								"position" => 151,
@@ -703,21 +688,6 @@ class Metadata {
 								"description" => "Datenformat ItemPrice",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ItemPrice. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "40615f8baccbdbd7b60b652ac3f9a708",
-								"path" => "basics/datenaustausch/datenformate/itemproperties",
-								"position" => 175,
-								"urlName" => "itemproperties",
-								"url" => "/basics/datenaustausch/datenformate/itemproperties",
-								"level" => 4,
-								"title" => "ItemProperties",
-								"keywords" => "Datenformat",
-								"description" => "Datenformat ItemProperties",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich ItemProperties. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -917,21 +887,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "b0a826e577a038c67e7d5d54d2de8c8c",
-								"path" => "basics/datenaustausch/datenformate/variationmarketidentnumber",
-								"position" => 270,
-								"urlName" => "variationmarketidentnumber",
-								"url" => "/basics/datenaustausch/datenformate/variationmarketidentnumber",
-								"level" => 4,
-								"title" => "VariationMarketIdentNumber",
-								"keywords" => "",
-								"description" => "Datenformat VariationMarketIdentNumber",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich VariationMarketIdentNumber. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "9ba648439fa36424905b2f318d713c05",
 								"path" => "basics/datenaustausch/datenformate/variationmarketlink",
 								"position" => 280,
@@ -1003,21 +958,6 @@ class Metadata {
 								"description" => "Datenformat VariationWarehouse",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich VariationWarehouse. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "136a0e9dd11495760b17149cac7df37a",
-								"path" => "basics/datenaustausch/datenformate/variationwebstorelink",
-								"position" => 320,
-								"urlName" => "variationwebstorelink",
-								"url" => "/basics/datenaustausch/datenformate/variationwebstorelink",
-								"level" => 4,
-								"title" => "VariationWebstoreLink",
-								"keywords" => "",
-								"description" => "Datenformat VariationWebstoreLink",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich VariationWebstoreLink. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							],
