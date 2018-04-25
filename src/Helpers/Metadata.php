@@ -1405,6 +1405,21 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Statistik. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "d4abe90ba1b6e3d48b2f8e0ee29718e6",
+				"path" => "basics/dsgvo",
+				"position" => 100,
+				"urlName" => "dsgvo",
+				"url" => "/basics/dsgvo",
+				"level" => 2,
+				"title" => "DSGVO",
+				"keywords" => "DSGVO, dsgvo, Datenschutz, Datenschutzgrundverordnung, Datenschutzgrund-Verordnung, Verfahrensverzeichnis, verarbeitende Tätigkeiten, Verzeichnis, 25. Mai 2018, personenbezogene Daten, Verfahrensdokumentation",
+				"description" => "Laden Sie über diese Seite einen Auszug des Verzeichnisses der Verarbeitungstätigkeiten innerhalb der Software plentymarkets gemäß der DSGVO herunter.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich DSGVO. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
