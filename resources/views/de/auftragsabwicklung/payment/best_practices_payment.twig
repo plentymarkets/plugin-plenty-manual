@@ -1,0 +1,389 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#ebics"><span>1.</span><span> FAQ: EBICS-Plugin</span></a>
+<ul class="sectlevel2">
+<li><a href="#_erste_schritte_wie_benutze_ich_das_ebics_plugin"><span>1.1.</span><span> Erste Schritte: Wie benutze ich das EBICS-Plugin?</span></a></li>
+<li><a href="#_wie_lege_ich_ein_neues_konto_an"><span>1.2.</span><span> Wie lege ich ein neues Konto an?</span></a></li>
+<li><a href="#_ich_benutze_ebics_bereits_wieso_soll_ich_auf_das_plugin_wechseln"><span>1.3.</span><span> Ich benutze EBICS bereits. Wieso soll ich auf das Plugin wechseln?</span></a></li>
+<li><a href="#_es_werden_keine_zahlungen_abgerufen_was_kann_ich_tun"><span>1.4.</span><span> Es werden keine Zahlungen abgerufen. Was kann ich tun?</span></a></li>
+<li><a href="#_die_bank_stellt_das_transaktionsfile_um_x_uhr_bereit_warum_wird_dieses_erst_später_von_plenty_abgerufen"><span>1.5.</span><span> Die Bank stellt das Transaktionsfile um X Uhr bereit. Warum wird dieses erst später von plenty abgerufen?</span></a></li>
+<li><a href="#_was_bedeuten_die_felder_tagesumsatz_und_vormerkposten"><span>1.6.</span><span> Was bedeuten die Felder “Tagesumsatz” und “Vormerkposten”?</span></a></li>
+<li><a href="#_was_ist_der_unterschied_zwischen_camt_und_mt"><span>1.7.</span><span> Was ist der Unterschied zwischen CAMT und MT?</span></a></li>
+</ul>
+</li>
+<li><a href="#paypal"><span>2.</span><span> Erste Hilfe: Probleme mit der PayPal-Kontoverknüpfung</span></a>
+<ul class="sectlevel2">
+<li><a href="#_ceres_paypal_plugin"><span>2.1.</span><span> Ceres: PayPal-Plugin</span></a></li>
+<li><a href="#_callisto_paypal_plus"><span>2.2.</span><span> Callisto: PayPal PLUS</span></a></li>
+<li><a href="#_callisto_paypal"><span>2.3.</span><span> Callisto: PayPal</span></a></li>
+<li><a href="#_anmerkungen"><span>2.4.</span><span> Anmerkungen</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>Best Practices: Payment</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>:stem:latexmath
+:keywords: EBICS, FAQ, Konto, Bankbuchung, Vorkasse, Überweisung, HBCI, IBAN, Zahlung, PayPal, PayPal Plus, Ceres, Plugin, Callisto
+:position: 7</p>
+</div>
+<div class="paragraph">
+<p>Hier findest du Best Practices zu den Themen <strong>EBICS-Plugin</strong> und <strong>PayPal</strong>.</p>
+</div>
+</div>
+</div><div class="sect1 adoc">
+<h2 id="ebics">1. FAQ: EBICS-Plugin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In unserem Marketplace erhaltet ihr alle wichtigen Infos zu unserem <a href="https://marketplace.plentymarkets.com/plugins/payment/EBICS_5098" target="_blank" rel="noopener">EBICS-Plugin</a>.
+Ihr könnt euch auch gerne noch den <a href="https://www.plentymarkets.eu/blog/plentyCommunity-Projekt-EBICS-Komplett-auf-den-Anwender-ausgerichtet/b-1941/" target="_blank" rel="noopener">Blog-Beitrag</a> zum Plugin durchlesen, um alles Wissenswerte zu erfahren.</p>
+</div>
+<div class="sect2">
+<h3 id="_erste_schritte_wie_benutze_ich_das_ebics_plugin">1.1. Erste Schritte: Wie benutze ich das EBICS-Plugin?</h3>
+<div class="paragraph">
+<p>Für das EBICS-Plugin, sowie alle anderen Plugins, wird Plentymarkets 7 vorausgesetzt.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">HINWEIS</div>
+<div class="paragraph">
+<p>Um ein Konto anzulegen, muss zuerst das EBICS-Modul über den Konfigurator gebucht werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<h6 id="_anforderungen_um_das_plugin_zu_nutzen" class="discrete">Anforderungen um das Plugin zu nutzen</h6>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="/basics/erste-schritte/plugins#10">Plugin kaufen</a></p>
+</li>
+<li>
+<p><a href="/basics/erste-schritte/plugins#20">Plugin installieren</a></p>
+</li>
+<li>
+<p><a href="/basics/erste-schritte/plugins#50">Plugin bereitstellen</a></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wie_lege_ich_ein_neues_konto_an">1.2. Wie lege ich ein neues Konto an?</h3>
+<div class="paragraph">
+<p>Zuerst wird ein neues Konto mit den Daten vom Bankschreiben angelegt.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">HINWEIS</div>
+<div class="paragraph">
+<p>Prüfe bei der Auswahl der Bank, ob die URL und der Hostparameter / -name mit der vom Bankschreiben übereinstimmt.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Über den Button <strong>Konto initialisieren</strong> werden die Schlüssel generiert und der INI- und HIA-Call ausgeführt.
+Anschließend kann der INI-Brief erstellt werden. Dies erfolgt über einen direkten pdf-Download im Browser.
+Achte bitte darauf, dass die Pop-Ups dabei nicht blockiert werden.
+Der INI-Brief sollte direkt oder zeitnah unterschrieben und an die Bank übermittelt werden.
+Die Bank schaltet das Konto frei, wenn alles ordnungsgemäß durchgeführt wurde.
+Über <strong>Konto-Initialisierung abschließen (HPB)</strong> wird die Initialisierung nach der Bank-Freigabe abgeschlossen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ich_benutze_ebics_bereits_wieso_soll_ich_auf_das_plugin_wechseln">1.3. Ich benutze EBICS bereits. Wieso soll ich auf das Plugin wechseln?</h3>
+<div class="paragraph">
+<p>Das EBICS-Tool für den Zahlungsabruf läuft stabiler als in der alten EBICS-Integration.
+Weiterhin wird das Tool, sowie das Plugin, fortlaufend weiterentwickelt.
+Die alte EBICS-Schnittstelle ist nicht mehr wartungsfähig.
+Bereits vorhandene Konten können ganz einfach in das Plugin migriert werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_es_werden_keine_zahlungen_abgerufen_was_kann_ich_tun">1.4. Es werden keine Zahlungen abgerufen. Was kann ich tun?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Inaktive Geschäftsvorfälle über den Menüpunkt <strong>Geschäftsvorfälle</strong> laden</p>
+</li>
+<li>
+<p>Geschäftsvorfälle nach Wunsch aktivieren</p>
+</li>
+<li>
+<p>Überprüfen, ob Vormerkposten und Tagesumsätze das richtige Format nutzen</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_die_bank_stellt_das_transaktionsfile_um_x_uhr_bereit_warum_wird_dieses_erst_später_von_plenty_abgerufen">1.5. Die Bank stellt das Transaktionsfile um X Uhr bereit. Warum wird dieses erst später von plenty abgerufen?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Abruf erfolgt täglich über einen Servercron</p>
+</li>
+<li>
+<p>Der Zahlungsabruf erfolgt meistens spät am Abend oder in der Nacht</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_was_bedeuten_die_felder_tagesumsatz_und_vormerkposten">1.6. Was bedeuten die Felder “Tagesumsatz” und “Vormerkposten”?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Tagesumsatz = bestätigte Buchung, die einmal am Tag bereitgestellt wird</p>
+</li>
+<li>
+<p>Vormerkposten = autorisierte Buchung, die mehrmals am Tag bereitgestellt wird und den Zahlungseingang reserviert</p>
+</li>
+<li>
+<p>Der Vormerkposten wird durch die bestätigte Buchung aufgehoben</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">HINWEIS</div>
+<div class="paragraph">
+<p>Tagesumsatz und Vormerkposten sollten immer das selbe Format besitzen, da sonst Fehler bei der Zahlungszuweisung auftreten.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_was_ist_der_unterschied_zwischen_camt_und_mt">1.7. Was ist der Unterschied zwischen CAMT und MT?</h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Die Formate CAMT und MT im Vergleich</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">CAMT</th>
+<th class="tableblock halign-left valign-top">MT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Feld IBAN in Kontoeinstellungen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IBAN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kontonummer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transaktionsfiles</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardisiertes Format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bankenspezifisches Format</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Weitere Infos zu den Formaten erhaltet ihr auch in diesem <a href="https://forum.plentymarkets.com/t/vormerkposten-camt052-oder-mt942-bei-postbank-taeglich-abruf-um-13-uhr-und-17-uhr-moeglich/120442/2" target="_blank" rel="noopener">Forumsbeitrag</a>.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1 adoc">
+<h2 id="paypal">2. Erste Hilfe: Probleme mit der PayPal-Kontoverknüpfung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Allgemein empfehlen wir für die Kontoverknüpfung den Browser einmal zu wechseln.
+Des Weiteren sollte grundsätzlich überprüft werden, ob es Probleme mit dem PayPal-Konto gibt.
+Möglicherweise wurde die E-Mail noch nicht bestätigt, PayPal Plus wurde für das Konto noch nicht freigeschaltet oder es wurde noch kein Passwort gesetzt.</p>
+</div>
+<div class="sect2">
+<h3 id="_ceres_paypal_plugin">2.1. Ceres: PayPal-Plugin</h3>
+<div class="paragraph">
+<p>Bitte überprüfe zu allererst, ob die aktuellste Version des PayPal-Plugins installiert und bereitgestellt ist.</p>
+</div>
+<h6 id="_fehlerbeschreibung" class="discrete">Fehlerbeschreibung</h6>
+<div class="paragraph">
+<p>Die Rückleitung zum System ist fehlerhaft. Es erscheint nur der Button "Zur PayPal-Einrichtung".</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/auftragsabwicklung/Payment/assets/PP-Plugin_Fehler_1.png" alt="Plugin Fehlermeldung 1">
+</div>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> <strong>Lösung 1):</strong> Bitte wechsel den Browser und versuche es erneut. plentymarkets unterstützt die Browser Google Chrome und Mozilla Firefox.</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> <strong>Lösung 2):</strong> Es existiert noch eine API-Berechtigung im PayPal-Konto. Bitte entferne die Berechtigung für plentymarkets. Die API-Berechtigung ist unter folgender URL zu finden: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_profile-api-list-auths" class="bare">https://www.paypal.com/cgi-bin/webscr?cmd=_profile-api-list-auths</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">HINWEIS</div>
+<div class="paragraph">
+<p>Durch das Entfernen der API-Berechtigung werden alle verknüpften PayPal-Konten im plentymarkets System gelöst. Sollte für den Marktplatz <strong>eBay</strong> ein PayPal-Konto verknüpft sein, muss das entsprechende Konto bei der PayPal-Schnittstelle erneut verknüpft werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<h6 id="_fehlerbeschreibung_2" class="discrete">Fehlerbeschreibung</h6>
+<div class="paragraph">
+<p>Nach der Weiterleitung soll ein neues Geschäftskonto eingerichtet werden.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/auftragsabwicklung/Payment/assets/PP-Plugin_Fehler_2.png" alt="Plugin Fehlermeldung 2">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Lösung:</strong> Bitte überprüfe, ob die Daten bei “PayPal-Konto hinzufügen” korrekt hinterlegt wurden.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/auftragsabwicklung/Payment/assets/PP-Plugin_Dateneingabe.png" alt="Plugin Daten">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>E-Mail:</strong> Hier soll die E-Mail hinterlegt werden, die für den PayPal-Login verwendet wird.<br>
+<strong>Umgebung:</strong> Einstellung, ob das Konto für die Testumgebung oder Live-Umgebung genutzt wird.<br>
+<strong>PayPal Plus:</strong> Haken nur setzen, wenn das Konto für PayPal Plus freigeschaltet ist.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_callisto_paypal_plus">2.2. Callisto: PayPal PLUS</h3>
+<div class="paragraph">
+<p>Bitte überprüfe, ob das PayPal-Konto für PayPal Plus freigeschaltet ist.</p>
+</div>
+<h6 id="_fehlerbeschreibung_3" class="discrete">Fehlerbeschreibung</h6>
+<div class="paragraph">
+<p>Nach dem PayPal-Login gibt es eine Fehlermeldung, bzw. die Rückleitung zu plentymarkets ist fehlerhaft.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/auftragsabwicklung/Payment/assets/PPP_Fehler_1.png" alt="PayPal PLUS Fehler 1">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/auftragsabwicklung/Payment/assets/PPP_Fehler_2.jpg" alt="PayPal PLUS Fehler 2">
+</div>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> <strong>Lösung 1):</strong> Nach dem PayPal-Login folgende URL manuell in die Adresszeile des Browsers eingeben und aufrufen: <a href="https://www.paypal.com/DE/merchantsignup/partner/grantPermissionOauth" class="bare">https://www.paypal.com/DE/merchantsignup/partner/grantPermissionOauth</a></p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> <strong>Lösung 2):</strong> Es existiert noch eine API-Berechtigung im PayPal-Konto. Bitte entferne die Berechtigung für plentymarkets. Die API-Berechtigung ist unter folgender URL zu finden: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_profile-api-list-auths" class="bare">https://www.paypal.com/cgi-bin/webscr?cmd=_profile-api-list-auths</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">HINWEIS</div>
+<div class="paragraph">
+<p>Die Kontoverknüpfung der PayPal-Schnittstelle geht beim Entfernen der API-Berechtigung verloren. Die Vernüpfung muss anschließend erneut durchgeführt werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> <strong>Lösung: 3)</strong> Sollten alle anderen Schritte nicht funktionieren, kann die Kontoverknüpfung noch über das Classic Backend durchgeführt werden:<br>
+<a href="https://ihr-plentyshop.de/plenty/ui/admin.html" class="bare">https://ihr-plentyshop.de/plenty/ui/admin.html</a> <strong>» Ersetze “ihr-plentyshop” durch die Adresse des Webshops.</strong></p>
+</li>
+</ul>
+</div>
+<h6 id="_fehlerbeschreibung_4" class="discrete">Fehlerbeschreibung</h6>
+<div class="paragraph">
+<p>Beim Speichern der Schnittstellen-Einstellungen erscheint <strong>Code 87: Kontodaten können nicht abgerufen werden</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Lösung:</strong> Bitte hinterlege im Feld <strong>URL zu Ihrem Logo</strong> eine https-URL. Die Meldung erscheint, weil das PayPal Webprofil nicht gespeichert werden kann. Das Konto ist trotzdem korrekt verknüpft.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_callisto_paypal">2.3. Callisto: PayPal</h3>
+<h6 id="_fehlerbeschreibung_5" class="discrete">Fehlerbeschreibung</h6>
+<div class="paragraph">
+<p>Der Button für die Kontoverknüpfung fehlt.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Lösung:</strong> Bitte speichere die Schnittstellen-Einstellungen einmal. Anschließend wird der Button angezeigt.</p>
+</li>
+</ul>
+</div>
+<h6 id="_fehlerbeschreibung_6" class="discrete">Fehlerbeschreibung</h6>
+<div class="paragraph">
+<p>Nach der Rückleitung erscheint die Meldung <strong>"Es ist ein Fehler aufgetreten"</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Lösung:</strong> Möglicherweise muss die E-Mail noch bestätigt werden: <a href="https://www.paypal.de/emailbestaetigung" class="bare">https://www.paypal.de/emailbestaetigung</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_anmerkungen">2.4. Anmerkungen</h3>
+<div class="paragraph">
+<p>Sollten euch Probleme bei der Kontoverknüpfung auffallen, die im Handbuch nicht aufgelistet sind, dann erstellt dafür bitte ein neues Thema im <a href="https://forum.plentymarkets.com/c/payment" target="_blank" rel="noopener">Forum</a>. Wir kümmern uns darum die Erste Hilfe anschließend mit den neuen Lösungsvorschlägen zu ergänzen.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
