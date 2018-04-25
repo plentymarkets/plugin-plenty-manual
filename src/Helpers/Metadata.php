@@ -4138,7 +4138,7 @@ class Metadata {
 						"url" => "/en/basics/working-with-plentymarkets/general-functions",
 						"level" => 3,
 						"title" => "Using general functions",
-						"keywords" => "",
+						"keywords" => "quick access, full screen mode, full screen, fullscreen, online store, store, favourite, favourites, user, user image, user images, support, menu, menu arrangement, printer, gravatar, Gravatar",
 						"description" => "Working with plentymarkets: Add menus as favourites, customise the menu layout and use further general functions that may be helpful for your everyday work with plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Using general functions. The following information is available:",
