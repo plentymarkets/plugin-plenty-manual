@@ -213,21 +213,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "454e73465ad874c1f16b1381ff66e5b9",
-						"path" => "basics/arbeiten-mit-plentymarkets/editor",
-						"position" => 90,
-						"urlName" => "editor",
-						"url" => "/basics/arbeiten-mit-plentymarkets/editor",
-						"level" => 3,
-						"title" => "Editoren",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Editoren. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "c6b59c2e0ff81b46669d94fd7b6a45e7",
 						"path" => "basics/arbeiten-mit-plentymarkets/tags",
 						"position" => 110,
