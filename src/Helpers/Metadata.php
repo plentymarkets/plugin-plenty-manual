@@ -4146,21 +4146,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "dde11be771578c5afea25ebd198465db",
-						"path" => "basics/working-with-plentymarkets/editor",
-						"position" => 90,
-						"urlName" => "editor",
-						"url" => "/en/basics/working-with-plentymarkets/editor",
-						"level" => 3,
-						"title" => "Editors",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Editors. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "42391ba17005b71e747dabc5e2db8f27",
 						"path" => "basics/working-with-plentymarkets/tags",
 						"position" => 110,
