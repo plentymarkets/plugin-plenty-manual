@@ -3184,7 +3184,7 @@ class Metadata {
 						"url" => "/auftragsabwicklung/payment/best_practices",
 						"level" => 3,
 						"title" => "Best Practices",
-						"keywords" => "EBICS, FAQ, Konto, Bankbuchung, Vorkasse, Überweisung, HBCI, IBAN, Zahlung, PayPal, PayPal Plus, Ceres, Plugin, Callisto",
+						"keywords" => "EBICS, FAQ, Konto, Bankbuchung, Vorkasse, Überweisung, HBCI, IBAN, Zahlung, PayPal, PayPal Plus, Ceres, Plugin, Callisto, Onboarding, CAMT, MT",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices. Hier finden Sie folgende Informationen:",
