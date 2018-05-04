@@ -106,13 +106,14 @@
 <li><a href="#1000"><span>16.</span><span> Kassenbelege über andere Drucker drucken (ab Version 1.7.10)</span></a>
 <ul class="sectlevel2">
 <li><a href="#1010"><span>16.1.</span><span> plentyBase installieren und einrichten</span></a></li>
-<li><a href="#1020"><span>16.2.</span><span> plentyBase Drucker für Kassenbelege speichern</span></a></li>
-<li><a href="#1030"><span>16.3.</span><span> Troubleshooting: Fehler bei plentyBase Druckern</span></a>
+<li><a href="#1020"><span>16.2.</span><span> Drucker für Kassenbelege speichern</span></a></li>
+<li><a href="#1030"><span>16.3.</span><span> Troubleshooting: Fehler bei Druckern</span></a>
 <ul class="sectlevel3">
 <li><a href="#1040"><span>16.3.1.</span><span> Fall 1: In den Kasseneinstellungen können keine Drucker gewählt werden</span></a></li>
 <li><a href="#1050"><span>16.3.2.</span><span> Fall 2: Drucker sind in den Kasseneinstellungen gespeichert, aber nicht erreichbar</span></a></li>
 </ul>
 </li>
+<li><a href="#1060"><span>16.4.</span><span> Testseite drucken</span></a></li>
 </ul>
 </li>
 <li><a href="#250"><span>17.</span><span> Senden des Kassenbelegs an Bestandskunden einrichten</span></a>
@@ -3074,7 +3075,7 @@ PLZ</strong>;<br>
 <p>Standardmäßig werden alle Kassenbelege über den Bondrucker gedruckt, den Sie im Menü <strong>plentymarkets App » Einstellungen » POS</strong> über die Option <strong>Bondrucker</strong> festlegen. Zusätzlich können Sie aber Kassenbelege auch auf anderen Druckern ausdrucken. Zum Beispiel kann es sinnvoll sein, Belege auf einem DIN-A4-Drucker statt auf Thermopapier zu drucken, die länger aufbewahrt werden müssen.</p>
 </div>
 <div class="paragraph">
-<p>Um zusätzliche Drucker zu nutzen, benötigen Sie einen im Netzwerk zugänglichen Rechner, der mit einem oder mehreren Druckern verbunden ist, über die Sie die Kassenbelege drucken möchten. Auf diesem Rechner installieren Sie das Plugin <a href="https://marketplace.plentymarkets.com/plugins/integration/plentyBase_5053" target="_blank" rel="noopener">plentyBase</a>. plentyBase dient dazu, eine Verbindung zwischen der plentymarkets App und dem lokalen Rechner herzustellen. So kann die Kasse auf die Drucker zugreifen, auf die auch der lokale Rechner zugreifen kann. Auf dieser Handbuchseite werden Drucker, auf die Sie über den lokalen Rechner zugreifen, als plentyBase Drucker bezeichnet.</p>
+<p>Um zusätzliche Drucker zu nutzen, benötigen Sie einen im Netzwerk zugänglichen Rechner, der mit einem oder mehreren Druckern verbunden ist, über die Sie die Kassenbelege drucken möchten. Auf diesem Rechner installieren Sie das Plugin <a href="https://marketplace.plentymarkets.com/plugins/integration/plentyBase_5053" target="_blank" rel="noopener">plentyBase</a>. plentyBase dient dazu, eine Verbindung zwischen der plentymarkets App und dem lokalen Rechner herzustellen. So kann die Kasse auf die Drucker zugreifen, auf die auch der lokale Rechner zugreifen kann. Im plentymarkets Backend konfigurieren Sie diese Drucker im Menü <strong>System » Einstellungen » Drucker</strong>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -3094,10 +3095,10 @@ PLZ</strong>;<br>
 <div class="sect2">
 <h3 id="1010">16.1. plentyBase installieren und einrichten</h3>
 <div class="paragraph">
-<p>plentyBase ist ein von plentymarkets entwickeltes Plugin. Anders als die meisten anderen plentymarkets Plugins wird plentyBase jedoch nicht im plentymarkets Backend aktiviert. Stattdessen wird plentyBase auf einem lokalen Rechner installiert und ausgeführt. plentyBase stellt eine Schnittstelle bereit, über die Sie aus dem plentymarkets Backend und/oder der plentymarkets App die Drucker nutzen können, die an den Computer angeschlossen sind. Auf dieser Handbuchseite werden Drucker, auf die Sie über den lokalen Rechner zugreifen, deshalb als plentyBase Drucker bezeichnet.</p>
+<p>plentyBase ist ein von plentymarkets entwickeltes Plugin. Anders als die meisten anderen plentymarkets Plugins wird plentyBase jedoch nicht im plentymarkets Backend aktiviert. Stattdessen wird plentyBase auf einem lokalen Rechner installiert und ausgeführt. plentyBase stellt eine Schnittstelle bereit, über die Sie aus dem plentymarkets Backend und/oder der plentymarkets App die Drucker nutzen können, die an den Computer angeschlossen sind.</p>
 </div>
 <div class="paragraph">
-<p>Damit die plentyBase Drucker in der plentymarkets App verfügbar sind, müssen die folgenden Vorraussetzungen erfüllt sein:</p>
+<p>Damit die Drucker in der plentymarkets App verfügbar sind, müssen die folgenden Vorraussetzungen erfüllt sein:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3118,13 +3119,16 @@ PLZ</strong>;<br>
 <p>Die Verbindungsdaten von plentyBase müssen in der plentymarkets App gespeichert sein.<br>
 → Wie Sie die plentyBase Verbindungsdaten in der App speichern, erfahren Sie in der Beschreibung des Plugins <a href="https://marketplace.plentymarkets.com/plugins/integration/plentyBase_5053#140." target="_blank" rel="noopener">plentyBase</a>.</p>
 </li>
+<li>
+<p>Die Drucker müssen im plentymarkets Backend im Menü <strong>System » Einstellungen » Drucker</strong> konfiguriert sein.</p>
+</li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="1020">16.2. plentyBase Drucker für Kassenbelege speichern</h3>
+<h3 id="1020">16.2. Drucker für Kassenbelege speichern</h3>
 <div class="paragraph">
-<p>Nachdem Sie plentyBase installiert und eingerichtet haben und die plentyBase Verbindungsdaten in der plentymarkets App gespeichert haben, können Sie im Menü <strong>plentymarkets App » Einstellungen » POS</strong> im Bereich <strong>Drucker</strong> die über plentyBase verfügbaren Drucker wählen.</p>
+<p>Nachdem Sie plentyBase eingerichtet haben, können Sie im Menü <strong>plentymarkets App » Einstellungen » POS</strong> im Bereich <strong>Drucker</strong> die im plentymarkets Backend konfigurierten Drucker wählen.</p>
 </div>
 <div class="paragraph">
 <p>Gehen Sie wie unten beschrieben vor, um festzulegen, welche Kassenbelege über welchen Drucker gedruckt werden sollen.</p>
@@ -3149,7 +3153,7 @@ PLZ</strong>;<br>
 </ol>
 </div>
 <table id="tabelle-POS-drucker" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 19. plentyBase Drucker für Kassenbelege festlegen</caption>
+<caption class="title">Tabelle 19. Drucker für Kassenbelege festlegen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3164,7 +3168,7 @@ PLZ</strong>;<br>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Standard-Drucker</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">In der Dropdown-Liste den Standard-Drucker für die Kasse wählen. Standardmäßig ist der Bondrucker vorausgewählt.<br>
-<strong><em>Hinweis:</em></strong> In der Dropdown-Liste werden der Bondrucker und die plentyBase Drucker im Netzwerk angezeigt, auf die die Kasse Zugriff hat.
+<strong><em>Hinweis:</em></strong> In der Dropdown-Liste werden der Bondrucker und die Drucker im Netzwerk angezeigt, auf die die Kasse Zugriff hat.
 Wenn in der Dropdown-Liste außer dem Bondrucker und dem Standarddrucker keine Drucker angezeigt werden, wird es Zeit für ein <a href="#1040">Troubleshooting</a>.</p></td>
 </tr>
 <tr>
@@ -3178,14 +3182,14 @@ Wenn in der Dropdown-Liste außer dem Bondrucker und dem Standarddrucker keine D
 <strong>Retourenbeleg</strong>;<br>
 <strong>Gutschriftbeleg</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Standard-Drucker ist vorausgewählt. Wenn alle Kassenbelege auf dem Standard-Drucker gedruckt werden sollen, sind keine weiteren Einstellungen erforderlich. Sonst in den Dropdown-Listen der einzelnen Kassenbelege den Drucker wählen, auf dem der Beleg gedruckt werden soll.<br>
-<strong><em>Hinweis:</em></strong> In den Dropdown-Listen werden der Bondrucker und die plentyBase Drucker im Netzwerk angezeigt, auf die die Kasse Zugriff hat.
+<strong><em>Hinweis:</em></strong> In den Dropdown-Listen werden der Bondrucker und die Drucker im Netzwerk angezeigt, auf die die Kasse Zugriff hat.
 Wenn in den Dropdown-Listen außer dem Bondrucker und dem Standarddrucker keine Drucker angezeigt werden, wird es Zeit für ein <a href="#1040">Troubleshooting</a>.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1030">16.3. Troubleshooting: Fehler bei plentyBase Druckern</h3>
+<h3 id="1030">16.3. Troubleshooting: Fehler bei Druckern</h3>
 <div class="sect3">
 <h4 id="1040">16.3.1. Fall 1: In den Kasseneinstellungen können keine Drucker gewählt werden</h4>
 <div class="paragraph">
@@ -3211,6 +3215,9 @@ Wenn in den Dropdown-Listen außer dem Bondrucker und dem Standarddrucker keine 
 <p>Ist plentyBase auf dem Rechner gestartet?<br>
 <strong><em>Empfehlung:</em></strong> Konfigurieren Sie plentyBase so, dass plentyBase beim Starten des Rechners automatisch gestartet wird.</p>
 </li>
+<li>
+<p>Wurde der Drucker im plentymarkets Backend <a href="#basics/arbeiten-mit-plentymarkets/drucker">gespeichert und konfiguriert</a>?</p>
+</li>
 </ul>
 </div>
 </div>
@@ -3234,11 +3241,46 @@ Wenn in den Dropdown-Listen außer dem Bondrucker und dem Standarddrucker keine 
 <p>Ist plentyBase auf dem Rechner gestartet?</p>
 </li>
 <li>
-<p>Wurden vor Kurzem die plentyBase Konfigurationseinstellungen geändert, z.B. der HTTP-Port oder der Access Token? <br>
+<p>Wurden vor Kurzem die plentyBase Konfigurationseinstellungen geändert, z.B. der HTTP-Port oder der Access Token?<br>
 → Wenn ja, wurden die neuen Einstellungen in der plentymarkets App gespeichert?</p>
+</li>
+<li>
+<p>Wurde die Druckerkonfiguration aus dem plentymarkets Backend entfernt?<br>
+→ Drucker konfigurieren Sie im Menü <strong>System » Einstellungen » Drucker</strong>.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1060">16.4. Testseite drucken</h3>
+<div class="paragraph instruction">
+<p>Testseite drucken:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie die plentymarkets App.</p>
+</li>
+<li>
+<p>Öffnen Sie das Menü <strong>plentymarkets App » Einstellungen » POS</strong>.</p>
+</li>
+<li>
+<p>Tippen Sie oben rechts auf das Menü-Symbol.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Testdruck</strong>.<br>
+→ Das Fenster <strong>Testdruck</strong> wird angezeigt.</p>
+</li>
+<li>
+<p>Wählen Sie in der Dropdown-Liste den Beleg, für den Sie das Drucken testen möchten.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Testseite drucken</strong>.<br>
+→ Eine Testseite wird gedruckt.<br>
+→ Wenn keine Testseite gedruckt wird, prüfen Sie die Einstellungen wie im <a href="#1050">Troubleshooting-Fall 2</a> beschrieben.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
