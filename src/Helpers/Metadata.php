@@ -2830,6 +2830,21 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Aufträge. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
+						"id" => "b0bad699c3e3d06857483543deb43669",
+						"path" => "auftragsabwicklung/auftraege/scheduler",
+						"position" => 0,
+						"urlName" => "scheduler",
+						"url" => "/auftragsabwicklung/auftraege/scheduler",
+						"level" => 3,
+						"title" => "Scheduler",
+						"keywords" => "Scheduler, Abo, Abonnement, Abo-Modul, Scheduler-Auftrag, Durchlauf, Abo-Aufträge, Abo-Auftrag, Intervall, Mindestlaufzeit, Abo-Funktion, IsSubscriptionItem, SchedulerDateSelector, SchedulerInterval, SchedulerRepeating,",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Scheduler. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "2765375f5b56bc330443490e41b29c36",
 						"path" => "auftragsabwicklung/auftraege/buchhaltung",
 						"position" => 10,
@@ -3052,21 +3067,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Sammelaufträge. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "b0bad699c3e3d06857483543deb43669",
-						"path" => "auftragsabwicklung/auftraege/scheduler",
-						"position" => 50,
-						"urlName" => "scheduler",
-						"url" => "/auftragsabwicklung/auftraege/scheduler",
-						"level" => 3,
-						"title" => "Scheduler",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Scheduler. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
