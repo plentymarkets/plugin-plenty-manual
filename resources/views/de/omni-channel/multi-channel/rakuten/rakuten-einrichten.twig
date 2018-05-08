@@ -27,7 +27,12 @@
 <li><a href="#170"><span>7.</span><span> Versandbestätigungen automatisch senden</span></a></li>
 <li><a href="#1800"><span>8.</span><span> Retouren automatisch senden</span></a></li>
 <li><a href="#1900"><span>9.</span><span> Stornierungen automatisch senden</span></a></li>
-<li><a href="#2000"><span>10.</span><span> API-Log abrufen</span></a></li>
+<li><a href="#2000"><span>10.</span><span> Log und API-Log abrufen</span></a>
+<ul class="sectlevel2">
+<li><a href="#_log_abrufen"><span>10.1.</span><span> Log abrufen</span></a></li>
+<li><a href="#_api_log_abrufen"><span>10.2.</span><span> API-Log abrufen</span></a></li>
+</ul>
+</li>
 <li><a href="#2100"><span>11.</span><span> FAQ</span></a></li>
 </ul>
 </div>
@@ -1125,10 +1130,90 @@ Verwendungszweck 2: Vor- und Zuname</p>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="2000">10. API-Log abrufen</h2>
+<h2 id="2000">10. Log und API-Log abrufen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Im Menü <strong>Daten » API-Log » Tab: API-Log</strong> finden Sie eine Historie über Vorgänge, die über die Rakuten-Schnittstelle ausgeführt wurden. Das Format <strong>Rakuten</strong> steht Ihnen für Rakuten zur Verfügung.</p>
+<p>In den Menüs <strong>Daten » Log</strong> und <strong>Daten » API-Log</strong> finden Sie eine Historie über Vorgänge, die über die Rakuten-Schnittstelle ausgeführt wurden.<br>
+Im <strong>Log</strong> finden Sie eine Übersicht über Ereignisaktionen und im <strong>API-Log</strong> finden Sie eine Übersicht über Auftragsimporte.</p>
+</div>
+<div class="sect2">
+<h3 id="_log_abrufen">10.1. Log abrufen</h3>
+<div class="paragraph">
+<p>Öffnen Sie das Menü <strong>Daten » Log</strong>, um eine Übersicht über Ereignisaktionen aufzurufen, die über die Rakuten-Schnittstelle ausgeführt wurden.</p>
+</div>
+<div class="paragraph instruction">
+<p>Logeinträge für Rakuten.de aufrufen</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Daten » Log</strong>.</p>
+</li>
+<li>
+<p>Wählen Sie den Identifikator <strong>Rakuten.de</strong> aus der Dropdown-Liste <strong>Identifikator</strong>.</p>
+</li>
+<li>
+<p>Wählen Sie ggf. einen Filter aus der Dropdown-Liste <strong>Referenztyp</strong>, um nur Einträge eines bestimmten Referenztyps zu erhalten. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-referenztypen">Tabelle 9</a>.</p>
+</li>
+<li>
+<p>Wählen Sie ggf. einen Filter aus der Dropdown-Liste <strong>Referenzwert</strong>, um nur Einträge eines bestimmten Referenzwerts zu erhalten. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-referenztypen">Tabelle 9</a>.</p>
+</li>
+<li>
+<p>Wählen Sie ggf. ein Datum, um nur Einträge eines bestimmten Tages zu erhalten.</p>
+</li>
+<li>
+<p>Wählen Sie ggf. eine Uhrzeit, um nur Einträge einer bestimmten Uhrzeit zu erhalten.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Suche</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Nutzen Sie die folgenden Referenztypen und Referenzwerte, um die Suchergebnisse zu filtern.</p>
+</div>
+<table id="tabelle-referenztypen" class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 9. Referenztypen und Referenzwerte für Rakuten.de</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Referenztyp</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+<th class="tableblock halign-left valign-top">Referenzwerte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>action</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtert nach Ereignisaktionen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen Sie einen Referenzwert, um nach Ereignisaktionen eines bestimmten Typs zu suchen.<br>
+<strong>SendOrderStatusInLogistics</strong> = Filtert nach Ereignisaktionen des Typs <strong>Versandvorbereitung an Rakuten melden</strong>.<br>
+<strong>SendOrderStatusShipped</strong> = Filtert nach Ereignisaktionen des Typs <strong>Versandbestätigung an Rakuten senden</strong>.<br>
+<strong>SendOrderTrackingData</strong> = Filtert nach Ereignisaktionen des Typs <strong>Sendungsverfolgung an Rakuten senden</strong>.<br>
+<strong>SendOrderStatusCanceled</strong> = Filtert nach Ereignisaktionen des Typs <strong>Stornierung an Rakuten senden</strong>.<br>
+<strong>SendOrderStatusReturned</strong> = Filtert nach Ereignisaktionen des Typs <strong>Retoure an Rakuten senden</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>externalOrderId</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtert nach Einträgen zu einer spezifischen externen Auftrags-ID.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>orderId</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtert nach Einträgen zu einer spezifischen Auftrags-ID.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_api_log_abrufen">10.2. API-Log abrufen</h3>
+<div class="paragraph">
+<p>Öffnen Sie das Menü <strong>Daten » API-Log » Tab: API-Log</strong>, um eine Übersicht über Auftragsimporte zu erhalten, die über die Rakuten-Schnittstelle ausgeführt wurden. Das Format <strong>Rakuten</strong> steht Ihnen für Rakuten zur Verfügung.</p>
 </div>
 <div class="paragraph instruction">
 <p>API-Log abrufen:</p>
@@ -1136,7 +1221,7 @@ Verwendungszweck 2: Vor- und Zuname</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffnen Sie das Menü <strong>Daten » API-Log</strong>.</p>
+<p>Öffnen Sie das Menü <strong>Daten » API-Log » Tab: API-Log</strong>.</p>
 </li>
 <li>
 <p>Wählen Sie das Format <strong>Rakuten</strong> aus der Dropdown-Liste <strong>Vorgang</strong>.</p>
@@ -1151,6 +1236,7 @@ Verwendungszweck 2: Vor- und Zuname</p>
 <p>Klicken Sie auf <strong>Suchen</strong>, um die Ergebnisse anzuzeigen.</p>
 </li>
 </ol>
+</div>
 </div>
 </div>
 </div><div class="sect1">
