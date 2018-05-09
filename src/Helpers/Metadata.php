@@ -1332,6 +1332,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "44168a90b860a18ee186e41b41b49edf",
+				"path" => "basics/interne-IDs",
+				"position" => 95,
+				"urlName" => "interne-IDs",
+				"url" => "/basics/interne-IDs",
+				"level" => 2,
+				"title" => "Interne IDs in plentymarkets",
+				"keywords" => "plenty interne IDs, IDs, interne IDs, plentyeigene IDs, plenty-eigene IDs, plentymarkets IDs",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Interne IDs in plentymarkets. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "d4abe90ba1b6e3d48b2f8e0ee29718e6",
 				"path" => "basics/dsgvo",
 				"position" => 100,
@@ -1439,6 +1454,21 @@ class Metadata {
 			]
 		],
 		"hasChildren" => true
+	],
+	[
+		"id" => "4acf6223c6fd36dbde6aba76f3d1b7bc",
+		"path" => "entwurf-eigenschaften-2",
+		"position" => 10,
+		"urlName" => "entwurf-eigenschaften-2",
+		"url" => "/entwurf-eigenschaften-2",
+		"level" => 1,
+		"title" => "Entwurf_Eigenschaften",
+		"keywords" => "",
+		"description" => "",
+		"navAlias" => "",
+		"linkListInto" => "Willkommen im Themenbereich Entwurf_Eigenschaften. Hier finden Sie folgende Informationen:",
+		"children" => [],
+		"hasChildren" => false
 	],
 	[
 		"id" => "4f7ae9b42224f9fb697246ba00cfa8bc",
