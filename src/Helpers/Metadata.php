@@ -1456,21 +1456,6 @@ class Metadata {
 		"hasChildren" => true
 	],
 	[
-		"id" => "4acf6223c6fd36dbde6aba76f3d1b7bc",
-		"path" => "entwurf-eigenschaften-2",
-		"position" => 10,
-		"urlName" => "entwurf-eigenschaften-2",
-		"url" => "/entwurf-eigenschaften-2",
-		"level" => 1,
-		"title" => "Entwurf_Eigenschaften",
-		"keywords" => "",
-		"description" => "",
-		"navAlias" => "",
-		"linkListInto" => "Willkommen im Themenbereich Entwurf_Eigenschaften. Hier finden Sie folgende Informationen:",
-		"children" => [],
-		"hasChildren" => false
-	],
-	[
 		"id" => "4f7ae9b42224f9fb697246ba00cfa8bc",
 		"path" => "omni-channel",
 		"position" => 20,
