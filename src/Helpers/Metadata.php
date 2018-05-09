@@ -5232,6 +5232,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Statistics. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "f411190efebb50137f120c4429c8deb6",
+				"path" => "basics/gdpr",
+				"position" => 100,
+				"urlName" => "gdpr",
+				"url" => "/en/basics/gdpr",
+				"level" => 2,
+				"title" => "GDPR",
+				"keywords" => "EU regulation, GDPR, gdpr, general data protection regulation, dsgvo, data protection, personal data, person-related data, record of processing activities, processing directory, processing activities, directory, May 25, processing documentation",
+				"description" => "Download an abriged version of the record of processing activities within the software plentymarkets according to GDPR.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic GDPR. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
