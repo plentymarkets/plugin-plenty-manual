@@ -3577,7 +3577,22 @@
 <ul class="sectlevel3">
 <li><a href="#_voraussetzungen_2"><span>8.2.1.</span><span> Voraussetzungen</span></a></li>
 <li><a href="#_kategorie_typ_container"><span>8.2.2.</span><span> Kategorie-Typ: Container</span></a></li>
-<li><a href="#_bestelldaten_durch_validatoren_prüfen"><span>8.2.3.</span><span> Bestelldaten durch Validatoren prüfen</span></a></li>
+<li><a href="#_aufbau_des_individuellen_bestellvorgangs_in_callisto_light"><span>8.2.3.</span><span> Aufbau des Individuellen Bestellvorgangs in Callisto Light</span></a>
+<ul class="sectlevel4">
+<li><a href="#_bestellschritte_konfigurieren"><span>Bestellschritte konfigurieren</span></a></li>
+<li><a href="#_bestellschritte_verlinken"><span>Bestellschritte verlinken</span></a></li>
+<li><a href="#_bestellschritte_anzeigen"><span>Bestellschritte anzeigen</span></a></li>
+<li><a href="#_zu_bestellschritten_springen"><span>Zu Bestellschritten springen</span></a></li>
+<li><a href="#_bestellschritte_mithilfe_der_plentymarketscmstools_wechseln"><span>Bestellschritte mithilfe der&nbsp;plentymarketsCMSTools wechseln</span></a></li>
+</ul>
+</li>
+<li><a href="#_zahlungsdienstleister_einbinden"><span>8.2.4.</span><span> Zahlungsdienstleister einbinden</span></a>
+<ul class="sectlevel4">
+<li><a href="#_zahlungsarten_grundlegend_einrichten"><span>Zahlungsarten grundlegend einrichten</span></a></li>
+<li><a href="#_zahlungsart_übertragen"><span>Zahlungsart übertragen</span></a></li>
+</ul>
+</li>
+<li><a href="#_bestelldaten_durch_validatoren_prüfen"><span>8.2.5.</span><span> Bestelldaten durch Validatoren prüfen</span></a></li>
 </ul>
 </li>
 <li><a href="#fallbeispiele-e-mail-bei-positivem-warenbestand"><span>8.3.</span><span> E-Mail bei verfügbarem Artikel</span></a>
@@ -45860,15 +45875,161 @@ Auf dieser Seite wird Ihnen anhand des vorkonfigurierten individuellen Bestellvo
 <div class="paragraph">
 <p>Mit dem individuellen Bestellvorgang wurden Kategorien des Typs <strong>Container</strong> eingeführt. Kategorien dieses Typs besitzen die besondere Fähigkeit auf alle globalen Template-Variablen und Funktionen der Checkout-Templates aus dem Bereich <strong>CMS » Webdesign » Checkout</strong> zurückgreifen zu können. Dadurch ist es möglich den Bestellvorgang mithilfe von Kategorien abzubilden und dabei keinerlei Templates (beispielsweise CheckoutMethodsOfPaymentList) zu verwenden. Die benötigten Daten können über REST-Calls abgerufen werden. Die Kategorien Ihrer Bestellschritte müssen in den <strong>Design-Einstellungen</strong> eines Designs im Menü *CMS » Webdesign*hinterlegt werden. Eine kurze Einführung wie Sie die Kategorien hinterlegen, finden Sie unter <a href="/omni-channel/online-shop/webshop-einrichten/cms#webdesign-webdesign-bearbeiten-bestellvorgang-individueller-bestellvorgang">Individueller Bestellvorgang</a> in unserem Handbuch.</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_aufbau_des_individuellen_bestellvorgangs_in_callisto_light">8.2.3. Aufbau des Individuellen Bestellvorgangs in Callisto Light</h4>
 <div class="paragraph">
-<p>Für Login z.B. Müsste man Funktion Link_Login() verwenden. Wenn leer bleibt, kommen die alten Methoden zum Einsatz die man nicht gestalten kann. Um z.B. eine Loginseite zu bauen, kann man restcall machen, in den man Pw und email steckt.</p>
+<p>Im Standarddesign <strong>Callisto Light</strong> ist der Bestellvorgang in acht Schritte aufgeteilt. Diese acht Schritte sind Kategorien des Typs <strong>Container.</strong> Der erste Schritt ist der Warenkorb selbst, danach folgt die Anmeldung, in der der Kunde entscheidet, ob er als Gast zur Kasse geht oder als registrierter Benutzer. Danach folgt der Schritt Kasse. Die Kategorie <strong>Kasse</strong> beinhaltet die nachfolgenden vier Bestellschritte und in ihr wird die Abfolge dieser vier Bestellschritte geregelt. Die Kategorie <strong>Kasse*wird im individuellen Bestellvorgang des Standarddesigns Callisto Light als Kopfzeile und Fortschrittsanzeige genutzt, anhand derer der Kunde sieht in welchem Schritt er sich befindet. Die 4 Bestellschritte, deren Abfolge in der Kategorie Kasse geregelt ist, sind die *Bestelldetails,</strong> die <strong>Anschrift</strong>, der Schritt <strong>Zahlung &amp; Versand</strong> sowie die <strong>Bestellübersicht &amp; Kaufabwicklung</strong>. In den Bestelldetails werden beispielsweise Sonderwünsche oder Gutschein-Codes eingetragen. In den 2 anschließenden Schritten müssen die Rechnungs- und Versandadresse und die Auswahl der Zahlungs- und Versandart angegeben werden. Im letzten und abschließenden Schritt wird die Gesamtbestellung zusammengefasst. Der gesamte Vorgang besteht aus Kategorien des Typs <strong>Container</strong>, die hier eine entscheidende Rolle spielen, da nur Kategorien des Typs <strong>Container</strong> Zugriff auf die Template-Variablen und -Funktionen der Checkout-Templates haben.<br>
+In den Design-Einstellungen, in denen Sie die Bestellschritte hinzufügen, geben Sie im Grunde auch schon eine Reihenfolge vor, aber in der Kategorie *Kasse*kann diese Reihenfolge noch einmal etwas variiert werden, indem hier die Bestellschritte in einer anderen Reihenfolge aufgerufen werden.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/DE-CMS-CheckoutIndicator.png" alt="Fortschrittsanzeige der Bestellschritte">
+</div>
+<div class="title">Bild 1. Fortschrittsanzeige der Bestellschritte</div>
+</div>
+<div class="sect4">
+<h5 id="_bestellschritte_konfigurieren">Bestellschritte konfigurieren</h5>
+<div class="paragraph">
+<p>Damit die oben abgebildete Fortschrittsanzeige der Bestellschritte in Ihrem Design korrekt arbeitet, müssen diese zunächst in den Design-Einstellungen konfiguriert werden.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Wählen Sie im plentymarkets Administrationsbereich den Menüpunkt <strong>CMS » Webdesign</strong></p>
+</li>
+<li>
+<p>Klicken Sie auf das Zahnrad (Einstellungen), um zu den Design-Einstellungen zu gelangen (neues Fenster)</p>
+</li>
+<li>
+<p>Wählen Sie nun <strong>Tab:Mandanten</strong> und wählen Sie in der linken Spalte einen Mandanten aus</p>
+</li>
+<li>
+<p>Wählen Sie in der rechten Seite <strong>Tab:Bestellvorgang</strong> um Bestellschritte zu konfigurieren</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_bestellschritte_verlinken">Bestellschritte verlinken</h5>
+<div class="paragraph">
+<p>Im individuellen Bestellvorgang ist es möglich, neben den Bestellschritten, die Seiten für <strong>Login</strong>, <strong>Logout</strong>, <strong>Kundenregistrierung</strong>, <strong>Passwort vergessen</strong> und <strong>Bestellbestätigung</strong>, ebenfalls durch Kategorien, selbst zu gestalten. Kategorien eines Designs finden Sie im Menü <strong>Artikel » Kategorien</strong> im Ordner Ihres Designs. Um auf eine einzelne Kategorie zu verlinken, nutzen Sie die übliche Template-Funktion <strong>Link($_CategoryId)</strong> in Verbindung mit einem <strong>a-Tag</strong>. Für ausgewählte Bereiche gibt es spezielle vordefinierte Template-Funktionen, mit denen auf die hinterlegten Kategorien verwiesen werden kann.</p>
+</div>
+<div class="paragraph instruction">
+<p>Für ausgewählte Bereiche stehen Ihnen vordefinierte Template-Funktionen zur Verfügung:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 4. vordefinierte Template-Funktionen für Login, Logout, Kundenregistrierung, Passwort vergessen und Bestellbestätigung</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Funktionsaufruf</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link_CustomerRegistration()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kundenregistrierung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link_LostPassword()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Passwort vergessen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link_OrderConfirmation()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bestellbestätigung</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Folgendes Code-Beispiel kombiniert die Template-Funktionen <strong>Link</strong> und <strong>Link_CustomerRegistration</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">{# Direkte Verlinkung auf beliebige Kategorie durch die Link-Funktion #}
+&lt;a class="iconLink" href="&#123;&#37; Link($_categoryId) &#37;&#125;"&gt;&lt;span class="glyphicon glyphicon-question-sign"&gt;&lt;/span&gt;Weiter&lt;/a&gt;
+
+{# ... #}
+
+{# 	Verlinkung zur Kategorie zum Anfordern eines neuen Passworts.
+ #	Die Kategorie muss vorher in den Einstellungen für den individuellen Bestellvorgang hinterlegt werden.
+ #}
+&lt;a class="iconLink" href="&#123;&#37; Link_LostPassword() &#37;&#125;"&gt;&lt;span class="glyphicon glyphicon-question-sign"&gt;&lt;/span&gt;&amp;nbsp;Passwort vergessen?&lt;/a&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_bestellschritte_anzeigen">Bestellschritte anzeigen</h5>
+<div class="paragraph">
+<p>Im Standarddesign <strong>Callisto Light</strong> werden die Schritte des Bestellvorgangs durch JavaScript ein- und ausgeblendet. Das Laden der Inhalte geschieht bereits beim Aufruf der Seite durch den Funktionsaufruf <strong>CategoryContentBody($_CategoryId)</strong>. Die Sichtbarkeit der Container-Kategorien wird durch die <strong>plentymarketsCMSTools</strong> über das individuelle Attribut <strong>data-plenty-checkout-id</strong> geregelt, dem die ID des anzuzeigenden Inhalt übergeben wird.<br>
+Das untenstehende Code-Beispiel zeigt, wie der Inhalt der Kategorien im Callisto Light Design geladen wird.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">{# Ausschnitt der Anzeigelogik des callisto_light_2 Bestellvorgangs #}
+&lt;div class="container" data-plenty-checkout-id="addresses" ...&gt;
+	&#123;&#37; $_id = CheckoutStepPageID(5) &#37;&#125; {# Ermitteln der ID einer Kategorie des gegebenen Bestellschritts. #}
+	&#123;&#37; CategoryContentBody($_id) &#37;&#125; {# Laden des Inhalts einer Kategorie mit der zuvor ermittelten ID #}
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_zu_bestellschritten_springen">Zu Bestellschritten springen</h5>
+<div class="paragraph">
+<p>Wenn Sie in den <strong>Design-Einstellungen</strong> unter <strong>Tab:Mandanten » Tab:Bestellvorgang</strong> Ihre Bestellschritte hinzugefügt haben, ist eine Möglichkeit durch die Bestellschritte zu navigieren, indem Sie in Ihren Kategorien die Template-Funktion <strong>FormOpenCheckout($_htmlID, true)</strong> verwenden. Der Aufruf dieser Template-Funktion beginnt den inkrementellen Durchlauf der im Bestellvorgang hinterlegten Kategorien.<br>
+Der erste Parameter der Template-Funktion steht für die ID eines klickbaren Elements. Im zweiten Parameter wird angegeben, ob beim Klick des Elements, zum nächsten Schritt des Bestellvorgangs gesprungen werden oder der aktive Schritt neu geladen werden soll. Wenn Sie den Wert <strong>true*eintragen</strong>,* lädt der Folgeschritt des Bestellvorgangs, während <strong>false</strong> einen Seiten-Reload der aktuellen Seite verursacht.</p>
 </div>
 <div class="paragraph">
-<p>PaymentInformation: PreparePayment muss erfolgen für -&gt; MethodOfPaymentId muss erstmal über rest übergeben werden. Möglichkeiten die vom Server zurück kommen: 1. Zahlungsarten können redirect zurückgenben, dann muss weiterleitung erfolgen 2. Addition COntent (z.b. iframe) 3. Es kommt nichts zurück, man kommt direkt weiter (z.b. Nachnahme) ChechoutPrepareBacklinkUrl sagt z.b. Paypal, wo er hinspringen soll, wenn Paypal mit seinem Zahlungsgedöns fertig ist. Um einen Auftrag anzulegen muss ich PlaceOrder ausführen. Sollte immer gesetzt werden: Wo soll ich hinspringen wenn bei der weiterleitung fertig ist. Es muss eine primäre URL für die Zahlungsarten geben, weil Dienstleister das teilweise brauchen. D.h., wenn ich die Zahlungsarten auf verschiedene Seiten aufgeteilt habe, muss ich eine davon als primäre Seite deklarieren. PaymentInfromation: Contetn ist der gesamte Rahmen InformationFrame ist, wie son payment aussehen soll Formular für Bankinformation kann man in *Details verwenden PaymentInformation sollten immer befüllt werden -&gt; nicht mit Kategorie Container verwendbar KreditCardInfo fliegt raus nicht in Doku erwähnen</p>
+<p>Code-Beispiel für die Benutzung der Template-Funktion <strong>FormOpenCheckout()</strong></p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">{# Beispiel des "Weiter"-Button im callisto_light_2 Bestellvorgang #}
+
+&#123;&#37; FormOpenCheckout("next", true) &#37;&#125; {# 1. Parameter: HTML-ID des Elements, 2. Parameter: zum Weiterleiten (true) oder Neuladen (false) #}
+&lt;div class="text-right"&gt;
+	&lt;button class="btn btn-primary btn-lg btn-block-xs" id="next"&gt;
+		&lt;span&gt;Weiter&lt;/span&gt;&lt;span class="glyphicon glyphicon-chevron-right" aria-hidden="true"&gt;&lt;/span&gt;
+	&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_bestellschritte_mithilfe_der_plentymarketscmstools_wechseln">Bestellschritte mithilfe der&nbsp;plentymarketsCMSTools wechseln</h5>
 <div class="paragraph">
-<p>bedenke: so schreiben, als ob ich es jmd erzähle, der es noch nicht kennt. Mit Template MethodsOfPayment beginnen
-////Um alle verfügbaren Zahlungsarten auszugeben, wird in <strong>Callisto Light</strong> das Template <strong>CheckoutMethodsOfPayment</strong> verwendet. Im Template wird eine Liste aus Input-Feldern des Typs <strong>radio</strong> erzeugt.<br>
+<p>Das Standarddesign <strong>Callisto Light</strong> setzt verstärkt auf den Einsatz des Scripts <a href="https://github.com/plentymarkets/plenty-cms-library" target="_blank" rel="noopener">plentymarketsCMSTools.js</a>. Das Script ist ein Opensource-Projekt von <strong>plenty*markets und kann auf GitHub.com geklont und nach Belieben manipuliert werden.<br>
+Im individuellen Bestellvorgang wird über das individuelle Attribut *data-plenty-checkout-href</strong> der Weiter-Button mit einer Direktive der plentymarketsCMSTools verbunden. Die Direktive inkrementiert den Index der die Sichtbarkeit der Kategorien des Bestellvorgangs regelt.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_zahlungsdienstleister_einbinden">8.2.4. Zahlungsdienstleister einbinden</h4>
+<div class="paragraph">
+<p>Dienstleister wie Klarna, Paypal oder Amazon Payment verwenden verschiedene Verfahren, um Kaufabwicklungen zu ermöglichen. In einigen Fällen wird ein IFrame eingebunden und in anderen Fällen zur Seite des Dienstleisters weitergeleitet. Das plentymarkets CMS stellt Ihnen Template-Variablen und -Funktionen zur Verfügung, die es Ihnen einfach machen, den jeweiligen Dienstleister für Ihre Kunden bereit zu stellen. Wenn Sie in Ihrem plentymarkets System unter <strong>System » Aufträge » Zahlung » Zahlungsarten</strong> einen Zahlungsdienstleister (z.B. Klarna) konfiguriert haben, können Sie die Template-Variable oder -Funktion für die entsprechende Zahlungsart verwenden.</p>
+</div>
+<div class="sect4">
+<h5 id="_zahlungsarten_grundlegend_einrichten">Zahlungsarten grundlegend einrichten</h5>
+<div class="paragraph">
+<p>Einige Einstellungen sind für jede Zahlungsart gleich und haben zunächst nicht unmittelbar mit der Anzeige im Webshop zu tun. So müssen für jede Zahlungsart Zugangsdaten eingetragen und festgelegt werden, ob sie generell aktiv ist, unter welchen Namen sie angezeigt werden soll, für welche Lieferländer sie erlaubt ist und für welchen Mandanten sie gilt. Je nach Dienstleister sind im Tab <strong>Schnittstelle</strong> unter <strong>System » Aufträge » Zahlung » Zahlungsarten</strong> weitere Einstellungen notwendig.<br>
+Falls Ihnen im ersten Moment keine Zahlungsarten angezeigt werden, achten Sie bitte darauf, dass das Feld <strong>Auch inaktive anzeigen</strong> im unteren Bereich der Seite aktiviert ist.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/DE-CMS-Zahlungsarten.png" alt="Einstellungen der Zahlungsarten">
+</div>
+<div class="title">Bild 2. Einstellungen der Zahlungsarten</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_zahlungsart_übertragen">Zahlungsart übertragen</h5>
+<div class="paragraph">
+<p>Um alle verfügbaren Zahlungsarten auszugeben, wird in <strong>Callisto Light</strong> das Template <strong>CheckoutMethodsOfPayment</strong> verwendet. Im Template wird eine Liste aus Input-Feldern des Typs <strong>radio</strong> erzeugt.<br>
 Ein OnChange-Event sorgt für die Kommunikation mit dem Server und überträgt die vom Benutzer ausgewählte Zahlungsart, durch den Funktionsaufruf <strong>plenty.CheckoutService.setMethodOfPayment()</strong>. Die Funktion gehört zu den plentymarketsCMStools und führt die nötigen REST-Calls für diese Operation aus.</p>
 </div>
 <div class="paragraph">
@@ -45887,8 +46048,9 @@ Ein OnChange-Event sorgt für die Kommunikation mit dem Server und überträgt d
 </div>
 </div>
 </div>
+</div>
 <div class="sect3">
-<h4 id="_bestelldaten_durch_validatoren_prüfen">8.2.3. Bestelldaten durch Validatoren prüfen</h4>
+<h4 id="_bestelldaten_durch_validatoren_prüfen">8.2.5. Bestelldaten durch Validatoren prüfen</h4>
 <div class="paragraph">
 <p>Mit den Validatoren des plentymarkets CMS können Sie die Eingaben Ihrer Kunden im Bestellprozess auf Richtigkeit überprüfen. Alle eingegebenen Daten werden vom Server validiert, bevor sie in der Datenbank abgelegt werden. Beispielsweise werden E-Mail-Adressen auf Richtigkeit ihres Formats untersucht oder Eingabefelder wie Straße und Hausnummer auf sinnvolle Ziffern- oder Buchstabenfolgen geprüft.<br>
 Die Validatoren finden Sie in Ihrem plentymarkets System unter <strong>CMS » Webdesign » Layout » Validator</strong>.</p>
@@ -45897,7 +46059,7 @@ Die Validatoren finden Sie in Ihrem plentymarkets System unter <strong>CMS » We
 <p>Folgende Validatoren sind für den Bestellvorgang wichtig:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 4. Wichtige Validatoren für den Bestellvorgang</caption>
+<caption class="title">Tabelle 5. Wichtige Validatoren für den Bestellvorgang</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -45960,7 +46122,7 @@ Die Validatoren finden Sie in Ihrem plentymarkets System unter <strong>CMS » We
 <p>Mögliche Template-Variablen und -Funktionen für eine E-Mail-Vorlage zur Artikelverfügbarkeit:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 5. Mögliche Template-Variablen/-Funktionen für eine E-Mail-Vorlage zur Artikelverfügbarkeit</caption>
+<caption class="title">Tabelle 6. Mögliche Template-Variablen/-Funktionen für eine E-Mail-Vorlage zur Artikelverfügbarkeit</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -46316,7 +46478,7 @@ $ItemPrice EUR &lt;/p&gt;
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/DE-CMS-BestPractice-ArtikelvariantenDyn-01-SI.png" alt="DE CMS BestPractice ArtikelvariantenDyn 01 SI">
 </div>
-<div class="title">Bild 1. Beispielansicht für dynamische Artikelpreise</div>
+<div class="title">Bild 3. Beispielansicht für dynamische Artikelpreise</div>
 </div>
 <div class="paragraph instruction">
 <p>Artikelpreise dynamisch anzeigen:</p>
@@ -46427,7 +46589,7 @@ $ItemPrice EUR &lt;/p&gt;
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/DE-CMS-BestPractice-ArtikelvariantenDyn-02-SI.png" alt="DE CMS BestPractice ArtikelvariantenDyn 02 SI">
 </div>
-<div class="title">Bild 2. Beispielcode für dynamische Artikelbilder</div>
+<div class="title">Bild 4. Beispielcode für dynamische Artikelbilder</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -46913,7 +47075,7 @@ In unserem Beispiel verwenden wir die beiden Platzhalter <strong>Name1</strong> 
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/individueller-seitentitel-artikel.png" alt="Individueller Seitentitel bei Artikeln definieren">
 </div>
-<div class="title">Bild 3. Quelltext des Artikels Ledersessel Berlin Calling nach der Implementierung des Codes</div>
+<div class="title">Bild 5. Quelltext des Artikels Ledersessel Berlin Calling nach der Implementierung des Codes</div>
 </div>
 <div class="paragraph">
 <p>+</p>
@@ -46944,7 +47106,7 @@ In diesem Beispiel wird der Seitentitel aus dem Kategorienamen und dem Webstoren
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/individueller-seitentitel-kategorien.png" alt="Individueller Seitentitel bei Kategorien definieren">
 </div>
-<div class="title">Bild 4. Quelltext der Kategorie <strong>Wohnzimmer » Sessel</strong> nach der Implementierung des Codes</div>
+<div class="title">Bild 6. Quelltext der Kategorie <strong>Wohnzimmer » Sessel</strong> nach der Implementierung des Codes</div>
 </div>
 </div>
 </div>
@@ -47138,18 +47300,18 @@ Wählen Sie die Option <strong>Immer anhängen</strong>, wenn alle URLs Ihrer Ro
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/DE-Einstell-Mandant-Stand-SEO-URL-Aufbau.png" alt="DE Einstell Mandant Stand SEO URL Aufbau">
 </div>
-<div class="title">Bild 5. Menü <strong>URL-Aufbau&nbsp;» Artikel</strong></div>
+<div class="title">Bild 7. Menü <strong>URL-Aufbau&nbsp;» Artikel</strong></div>
 </div>
 <div class="paragraph">
 <p><strong>URL-Aufbau konfigurieren:</strong>
 . Öffnen Sie das Menü <strong>System » Mandant » Mandant wählen » SEO » URL-Aufbau » Artikel</strong>.
-. Nehmen Sie die Einstellungen gemäß <a href="#tabelle-einstellungen-menue-url-aufbau">Tabelle 6</a> vor.
+. Nehmen Sie die Einstellungen gemäß <a href="#tabelle-einstellungen-menue-url-aufbau">Tabelle 7</a> vor.
 . <strong>Speichern</strong> Sie die Einstellungen.<br>
 → Der Vorgang kann einige Zeit dauern.
 . Schließen Sie Ihren Webshop und öffnen Sie ihn neu, damit die Änderungen wirksam werden.</p>
 </div>
 <table id="tabelle-einstellungen-menue-url-aufbau" class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 6. Einstellungen im Menü <strong>URL-Aufbau</strong></caption>
+<caption class="title">Tabelle 7. Einstellungen im Menü <strong>URL-Aufbau</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -47201,7 +47363,7 @@ Bei der Einstellung <strong>Name 2</strong> wird für Artikel, bei denen unter <
 <p><strong>Kategorieseiten*Beachten Sie die folgenden Erläuterungen, um Ihre Landingpages möglichst mit Clean-URLs anzulegen. Die Einträge im Tab *Einstellungen</strong> einer Kategorieseite haben folgende Funktion:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 7. Optionen im Tab <strong>Einstellungen</strong> einer Kategorieseite</caption>
+<caption class="title">Tabelle 8. Optionen im Tab <strong>Einstellungen</strong> einer Kategorieseite</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -47228,7 +47390,7 @@ Bei der Einstellung <strong>Name 2</strong> wird für Artikel, bei denen unter <
 </tbody>
 </table>
 <div class="paragraph">
-<p><strong>Artikeleinstellungen*In der Artikelbearbeitung hat die Option *Seitenname</strong> im Tab <strong>Texte</strong> einen direkten Einfluss auf die Gestaltung der Artikel-URL. Der Inhalt wird wiederum von den Einstellungen der Option <strong>Artikelname für URL</strong> im Menü <strong>Artikel</strong> unter <strong>URL-Aufbau</strong> gesteuert (<a href="#tabelle-einstellungen-menue-url-aufbau">Tabelle 6</a>). D.h. was Sie dort vorgeben, wird beim Anlegen des Artikels automatisch in die URL integriert.</p>
+<p><strong>Artikeleinstellungen*In der Artikelbearbeitung hat die Option *Seitenname</strong> im Tab <strong>Texte</strong> einen direkten Einfluss auf die Gestaltung der Artikel-URL. Der Inhalt wird wiederum von den Einstellungen der Option <strong>Artikelname für URL</strong> im Menü <strong>Artikel</strong> unter <strong>URL-Aufbau</strong> gesteuert (<a href="#tabelle-einstellungen-menue-url-aufbau">Tabelle 7</a>). D.h. was Sie dort vorgeben, wird beim Anlegen des Artikels automatisch in die URL integriert.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -47566,7 +47728,7 @@ Sie benötigen die Variablen <strong>CurrentCategoryID[Level1-6]==CategoryID</st
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/DE-Mandant-Std-SEO-robots-01-SI.png" alt="DE Mandant Std SEO robots 01 SI">
 </div>
-<div class="title">Bild 6. Einträge in der <strong>robots.txt</strong>-Datei</div>
+<div class="title">Bild 8. Einträge in der <strong>robots.txt</strong>-Datei</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -47730,13 +47892,13 @@ Sie benötigen die Variablen <strong>CurrentCategoryID[Level1-6]==CategoryID</st
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/Mandant-Std-SEO-sitemap-01-SI.png" alt="Mandant Std SEO sitemap 01 SI">
 </div>
-<div class="title">Bild 7. <strong>Sitemap-Daten</strong> konfigurieren</div>
+<div class="title">Bild 9. <strong>Sitemap-Daten</strong> konfigurieren</div>
 </div>
 <div class="paragraph">
 <p>Die folgende Tabelle erläutert die Funktionen im Menü <strong>System » Mandant » Mandant wählen » SEO » sitemap.xml</strong>:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Tabelle 8. Funktionen zur Bearbeitung der <strong>Sitemap</strong>-Daten</caption>
+<caption class="title">Tabelle 9. Funktionen zur Bearbeitung der <strong>Sitemap</strong>-Daten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -47887,7 +48049,7 @@ Sie müssen lediglich ein Benutzerkonto bei Google anlegen und Ihre URL hinterle
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/Mandant-Std-SEO-GoogleSitemaps-01-SI.png" alt="Mandant Std SEO GoogleSitemaps 01 SI">
 </div>
-<div class="title">Bild 8. Google <strong>Webmaster-Tools</strong></div>
+<div class="title">Bild 10. Google <strong>Webmaster-Tools</strong></div>
 </div>
 <div class="paragraph">
 <p>*Ihre Webseite bestätigen*Sie werden nun aufgefordert, Ihre Seite zu bestätigen.</p>
@@ -47901,17 +48063,17 @@ Sie müssen lediglich ein Benutzerkonto bei Google anlegen und Ihre URL hinterle
 <p>Klicken Sie auf das Tab <strong>Alternative Methoden</strong>.</p>
 </li>
 <li>
-<p>Wählen Sie die Option <strong>HTML-Tag</strong> aus (<a href="#bild-html-tag-kopieren">Bild 9</a>).</p>
+<p>Wählen Sie die Option <strong>HTML-Tag</strong> aus (<a href="#bild-html-tag-kopieren">Bild 11</a>).</p>
 </li>
 <li>
-<p>Kopieren Sie den Code (<a href="#bild-html-tag-kopieren">Bild 9</a>, Pfeil) in die Zwischenablage (Strg + c bzw. cmd + c).</p>
+<p>Kopieren Sie den Code (<a href="#bild-html-tag-kopieren">Bild 11</a>, Pfeil) in die Zwischenablage (Strg + c bzw. cmd + c).</p>
 </li>
 <li>
 <p>Fügen Sie den Code im Menü <strong>CMS » Webdesign » Layout » PageDesign</strong> in das Template <strong>PageDesignContent</strong> ein.<br>
 → Um Fehler auszuschließen, können Sie den Code zusätzlich noch in das <strong>Seitenlayout PageDesignCheckout</strong> kopieren.</p>
 </li>
 <li>
-<p>Klicken Sie nun in Ihrem Google-Konto auf den Button <strong>Bestätigen</strong> (<a href="#bild-html-tag-kopieren">Bild 9</a>, links unten).</p>
+<p>Klicken Sie nun in Ihrem Google-Konto auf den Button <strong>Bestätigen</strong> (<a href="#bild-html-tag-kopieren">Bild 11</a>, links unten).</p>
 </li>
 </ol>
 </div>
@@ -47919,7 +48081,7 @@ Sie müssen lediglich ein Benutzerkonto bei Google anlegen und Ihre URL hinterle
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/Mandant-Std-SEO-GoogleSitemaps-02-SI.png" alt="Mandant Std SEO GoogleSitemaps 02 SI">
 </div>
-<div class="title">Bild 9. <strong>HTML-Tag</strong> kopieren</div>
+<div class="title">Bild 11. <strong>HTML-Tag</strong> kopieren</div>
 </div>
 <div class="paragraph">
 <p><strong>Verschlüsselte Webseite*Wenn Sie für Ihre Webseite ein <a href="/basics/arbeiten-mit-plentymarkets/plentymarkets-konto#ssl-zertifikat">SSL-Zertifikat</a> verwenden, fügen Sie die URL zusätzlich mit dem Schema *https</strong> hinzu.</p>
@@ -47936,7 +48098,7 @@ Sie müssen lediglich ein Benutzerkonto bei Google anlegen und Ihre URL hinterle
 <p>Wählen Sie die <strong>Startseite</strong> Ihres Accounts.</p>
 </li>
 <li>
-<p>Klicken Sie auf den Button <strong>Website hinzufügen</strong> (<a href="#bild-webseite-https-einstellen">Bild 10</a>, rechts oben).</p>
+<p>Klicken Sie auf den Button <strong>Website hinzufügen</strong> (<a href="#bild-webseite-https-einstellen">Bild 12</a>, rechts oben).</p>
 </li>
 <li>
 <p>Tragen Sie die <strong>URL</strong> der Webseite mit dem Schema <strong>https</strong> ein.</p>
@@ -47950,7 +48112,7 @@ Sie müssen lediglich ein Benutzerkonto bei Google anlegen und Ihre URL hinterle
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/Mandant-Std-SEO-GoogleSitemaps-03-SI.png" alt="Mandant Std SEO GoogleSitemaps 03 SI">
 </div>
-<div class="title">Bild 10. Webseite mit <strong>https</strong>-Schema einstellen</div>
+<div class="title">Bild 12. Webseite mit <strong>https</strong>-Schema einstellen</div>
 </div>
 <div class="paragraph">
 <p>*Sitemaps bei Google einreichen*Gehen Sie wie nachfolgend beschrieben vor, um eine Sitemap bei der Google Search Console hinzuzufügen.</p>
@@ -47967,7 +48129,7 @@ Sie müssen lediglich ein Benutzerkonto bei Google anlegen und Ihre URL hinterle
 <p>Wählen Sie den Menüpunkt <strong>Crawling » Sitemaps</strong>.</p>
 </li>
 <li>
-<p>Klicken Sie in diesem Bereich oben rechts auf <strong>Sitemap hinzufügen</strong> (<a href="#bild-google-sitemap">Bild 11</a>).<br>
+<p>Klicken Sie in diesem Bereich oben rechts auf <strong>Sitemap hinzufügen</strong> (<a href="#bild-google-sitemap">Bild 13</a>).<br>
 → Das Bearbeitungsfenster wird eingeblendet.</p>
 </li>
 <li>
@@ -47982,7 +48144,7 @@ Sie müssen lediglich ein Benutzerkonto bei Google anlegen und Ihre URL hinterle
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-shop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/Mandant-Std-SEO-GoogleSitemaps-04-SI.png" alt="Mandant Std SEO GoogleSitemaps 04 SI">
 </div>
-<div class="title">Bild 11. Google <strong>Sitemap hinzufügen</strong></div>
+<div class="title">Bild 13. Google <strong>Sitemap hinzufügen</strong></div>
 </div>
 </div>
 </div>
