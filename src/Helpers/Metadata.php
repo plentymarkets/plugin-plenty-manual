@@ -1375,6 +1375,21 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Kontaktformular in Callisto. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "887f017076c09457dbf0e99c83c612b2",
+				"path" => "basics/best-practices-callisto-kontaktformular",
+				"position" => 110,
+				"urlName" => "best-practices-callisto-kontaktformular",
+				"url" => "/basics/best-practices-callisto-kontaktformular",
+				"level" => 2,
+				"title" => "Best Practices: Kontaktformular in Callisto (DSGVO)",
+				"keywords" => "Callisto, DSGVO, anpassen, Kontaktformular anpassen, Datenschutzerklärung, Eingabefeld, Standard-Layout",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Best Practices: Kontaktformular in Callisto (DSGVO). Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
