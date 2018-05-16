@@ -1360,6 +1360,21 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich DSGVO. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "fa4c6799fb9b22ee4242ad3ea2988b5e",
+				"path" => "basics/best-practices-callisto",
+				"position" => 110,
+				"urlName" => "best-practices-callisto",
+				"url" => "/basics/best-practices-callisto",
+				"level" => 2,
+				"title" => "Best Practices: Kontaktformular in Callisto",
+				"keywords" => "Callisto, DSGVO, anpassen, Kontaktformular anpassen, Datenschutzerklärung, Eingabefeld, Standard-Layout",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Best Practices: Kontaktformular in Callisto. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
