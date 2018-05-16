@@ -5506,36 +5506,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "617dff33e24098b4db1bb90d3b8249f4",
-						"path" => "omni-channel/multi-channel/check24",
-						"position" => 35,
-						"urlName" => "check24",
-						"url" => "/en/omni-channel/multi-channel/check24",
-						"level" => 3,
-						"title" => "Check24",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Check24 in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Check24. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "a9b25c85df01a0718cc4897222e53ec0",
-						"path" => "omni-channel/multi-channel/dawanda",
-						"position" => 40,
-						"urlName" => "dawanda",
-						"url" => "/en/omni-channel/multi-channel/dawanda",
-						"level" => 3,
-						"title" => "DaWanda",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market DaWanda in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic DaWanda. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "628b7d3d8311c34be8b129001e889843",
 						"path" => "omni-channel/multi-channel/real-de",
 						"position" => 40,
@@ -5580,6 +5550,21 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
+					],
+					[
+						"id" => "a9b25c85df01a0718cc4897222e53ec0",
+						"path" => "omni-channel/multi-channel/dawanda",
+						"position" => 40,
+						"urlName" => "dawanda",
+						"url" => "/en/omni-channel/multi-channel/dawanda",
+						"level" => 3,
+						"title" => "DaWanda",
+						"keywords" => "",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market DaWanda in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic DaWanda. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
 					],
 					[
 						"id" => "a5b8f4521c3bb21a2f2a9ad6e748db19",
@@ -5628,21 +5613,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "2a8209a9638f33769bb6662659e2ef71",
-						"path" => "omni-channel/multi-channel/flubit",
-						"position" => 60,
-						"urlName" => "flubit",
-						"url" => "/en/omni-channel/multi-channel/flubit",
-						"level" => 3,
-						"title" => "Flubit",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Flubit in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Flubit. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "7b0c81fccd804d676dcfeeff6d97cc22",
 						"path" => "omni-channel/multi-channel/allyouneed",
 						"position" => 60,
@@ -5689,6 +5659,21 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
+						"id" => "2a8209a9638f33769bb6662659e2ef71",
+						"path" => "omni-channel/multi-channel/flubit",
+						"position" => 60,
+						"urlName" => "flubit",
+						"url" => "/en/omni-channel/multi-channel/flubit",
+						"level" => 3,
+						"title" => "Flubit",
+						"keywords" => "",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Flubit in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Flubit. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "d7e38338329a5fadef50c1d4de5200e9",
 						"path" => "omni-channel/multi-channel/fruugo",
 						"position" => 70,
@@ -5715,6 +5700,21 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market grosshandel.eu in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic grosshandel.eu. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "617dff33e24098b4db1bb90d3b8249f4",
+						"path" => "omni-channel/multi-channel/check24",
+						"position" => 90,
+						"urlName" => "check24",
+						"url" => "/en/omni-channel/multi-channel/check24",
+						"level" => 3,
+						"title" => "Check24",
+						"keywords" => "Check24, Market, Marketplace",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Check24 in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Check24. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
