@@ -5633,7 +5633,7 @@ class Metadata {
 								"url" => "/en/omni-channel/multi-channel/allyouneed/allyouneed-setup",
 								"level" => 4,
 								"title" => "Allyouneed",
-								"keywords" => "Allyouneed, marketplace",
+								"keywords" => "Allyouneed, Market, Marketplace",
 								"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Allyouneed in your plentymarkets system.",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Allyouneed. The following information is available:",
