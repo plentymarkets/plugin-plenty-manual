@@ -5674,21 +5674,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "2a8209a9638f33769bb6662659e2ef71",
-						"path" => "omni-channel/multi-channel/flubit",
-						"position" => 60,
-						"urlName" => "flubit",
-						"url" => "/en/omni-channel/multi-channel/flubit",
-						"level" => 3,
-						"title" => "Flubit",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Flubit in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Flubit. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "d7e38338329a5fadef50c1d4de5200e9",
 						"path" => "omni-channel/multi-channel/fruugo",
 						"position" => 70,
@@ -5730,6 +5715,21 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Check24 in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Check24. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "2a8209a9638f33769bb6662659e2ef71",
+						"path" => "omni-channel/multi-channel/flubit",
+						"position" => 100,
+						"urlName" => "flubit",
+						"url" => "/en/omni-channel/multi-channel/flubit",
+						"level" => 3,
+						"title" => "Flubit",
+						"keywords" => "Flubit, Market, Marketplace",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Flubit in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Flubit. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
