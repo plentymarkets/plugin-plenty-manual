@@ -3858,6 +3858,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "b83a783d6adcbe14af05a8d7b6d22042",
+				"path" => "warenwirtschaft/mhd-charge-verwalten",
+				"position" => 60,
+				"urlName" => "mhd-charge-verwalten",
+				"url" => "/warenwirtschaft/mhd-charge-verwalten",
+				"level" => 2,
+				"title" => "MHD/Charge verwalten",
+				"keywords" => "MHD, Charge, Mindesthaltbarkeitsdatum, Mindersthaltbarkeit, Chargen",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich MHD/Charge verwalten. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "665626451ff6f89adacd9e1cb681b808",
 				"path" => "warenwirtschaft/inventur-vornehmen",
 				"position" => 70,
