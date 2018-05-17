@@ -1362,17 +1362,17 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "887f017076c09457dbf0e99c83c612b2",
-				"path" => "basics/best-practices-callisto-kontaktformular",
+				"id" => "ac6e1a6883e2371459eb9ccba56526f1",
+				"path" => "basics/best-practices-callisto-dsgvo",
 				"position" => 110,
-				"urlName" => "best-practices-callisto-kontaktformular",
-				"url" => "/basics/best-practices-callisto-kontaktformular",
+				"urlName" => "best-practices-callisto-dsgvo",
+				"url" => "/basics/best-practices-callisto-dsgvo",
 				"level" => 2,
-				"title" => "Best Practices: Kontaktformular in Callisto (DSGVO)",
-				"keywords" => "Callisto, DSGVO, anpassen, Kontaktformular anpassen, Datenschutzerklärung, Eingabefeld, Standard-Layout",
+				"title" => "Best Practices: Callisto und DSGVO",
+				"keywords" => "Callisto, DSGVO, anpassen, Kontaktformular anpassen, Newsletter-Anmeldung, Datenschutzerklärung, Eingabefeld, Standard-Layout",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Best Practices: Kontaktformular in Callisto (DSGVO). Hier finden Sie folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Best Practices: Callisto und DSGVO. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -3843,21 +3843,6 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
-				"id" => "0bdeda38d639888a8ddb6c91e432b85f",
-				"path" => "warenwirtschaft/waren-ausbuchen",
-				"position" => 60,
-				"urlName" => "waren-ausbuchen",
-				"url" => "/warenwirtschaft/waren-ausbuchen",
-				"level" => 2,
-				"title" => "Waren ausbuchen",
-				"keywords" => "Warenausgang",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Waren ausbuchen. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "b83a783d6adcbe14af05a8d7b6d22042",
 				"path" => "warenwirtschaft/mhd-charge-verwalten",
 				"position" => 60,
@@ -3869,6 +3854,21 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich MHD/Charge verwalten. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "0bdeda38d639888a8ddb6c91e432b85f",
+				"path" => "warenwirtschaft/waren-ausbuchen",
+				"position" => 60,
+				"urlName" => "waren-ausbuchen",
+				"url" => "/warenwirtschaft/waren-ausbuchen",
+				"level" => 2,
+				"title" => "Waren ausbuchen",
+				"keywords" => "Warenausgang",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Waren ausbuchen. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			],
