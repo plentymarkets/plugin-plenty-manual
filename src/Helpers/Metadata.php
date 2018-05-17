@@ -5279,6 +5279,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "af263bf66909487971d1b4e170ae6ca4",
+				"path" => "basics/internal-IDs",
+				"position" => 95,
+				"urlName" => "internal-IDs",
+				"url" => "/en/basics/internal-IDs",
+				"level" => 2,
+				"title" => "Internal IDs in plentymarkets",
+				"keywords" => "plenty internal IDs, IDs, internal IDs, plenty IDs, own IDs, plentymarkets IDs",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Internal IDs in plentymarkets. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "f411190efebb50137f120c4429c8deb6",
 				"path" => "basics/gdpr",
 				"position" => 100,
