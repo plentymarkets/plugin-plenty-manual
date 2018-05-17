@@ -24,6 +24,11 @@
 <li><a href="#1200"><span>12.</span><span> FAQ</span></a>
 <ul class="sectlevel2">
 <li><a href="#130"><span>12.1.</span><span> Error message type: PRODUCT_NOT_FOUND</span></a></li>
+<li><a href="#140"><span>12.2.</span><span> Error message type: INVALID_MODIFICATION</span></a></li>
+<li><a href="#150"><span>12.3.</span><span> Error message type: MARKETPLACE_CATEGORY_NOT_FOUND</span></a></li>
+<li><a href="#160"><span>12.4.</span><span> Error message type: VARIANT_GROUP_NOT_FOUND</span></a></li>
+<li><a href="#170"><span>12.5.</span><span> Error message type: INVALID_DATA</span></a></li>
+<li><a href="#180"><span>12.6.</span><span> Error message type: plenty</span></a></li>
 </ul>
 </li>
 </ul>
@@ -247,10 +252,10 @@ Pay attention to the tax rates settings in the <a href="/en/en/order-processing/
 → A list with all available markets is displayed.</p>
 </li>
 <li>
-<p>Activate the option <strong>Allyouneed</strong>.</p>
+<p>Place a check mark next to the option <strong>Allyouneed</strong>.</p>
 </li>
 <li>
-<p>Activate the option <strong>Web API</strong>.</p>
+<p>Place a check mark next to the option <strong>Web API</strong>.</p>
 </li>
 <li>
 <p>Click on <strong>Add</strong>.<br>
@@ -456,12 +461,12 @@ Pay attention to the tax rates settings in the <a href="/en/en/order-processing/
 <div class="sect2">
 <h3 id="700">8.1. Creating a property for the condition</h3>
 <div class="paragraph">
-<p>The Allyouneed market has a separate section for <a href="https://portal.allyouneed.com/verkaufen-mit-allyouneed/highlights-vorteile/b-ware.html" target="_blank" rel="noopener">selling factory seconds</a> (B-Ware). You have two possibilities to list there:</p>
+<p>The Allyouneed market has a separate section for <a href="https://portal.allyouneed.com/verkaufen-mit-allyouneed/highlights-vorteile/b-ware.html" target="_blank" rel="noopener">selling factory seconds</a> (B-Ware). You have to possibilities to list there:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Go to <strong>Item » Tab: Other » Tab: Others</strong> and select <strong>Factory seconds</strong> in the <strong>Condition for API</strong> drop-down list.</p>
+<p>Go to <strong>Item » Edit Item » Open item » Tab: Global</strong>. In the section <strong>Basic settings</strong>, select <strong>Factory seconds</strong> from the drop-down list <strong>Condition for API</strong>.</p>
 </li>
 <li>
 <p>Create a <a href="/en/item/managing-items#500">property</a> for the condition. The advantage of creating a property is that the property can be used for other conditions such as <strong>display item</strong>.</p>
@@ -698,7 +703,7 @@ Pay attention to the tax rates settings in the <a href="/en/en/order-processing/
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Countries of delivery</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Do not select a country of delivery.<br>
- You cannot use the payment method in your online store. Therefore, this payment method is only activated in plentymarkets. It is not completely configured.</p></td>
+You cannot use the payment method in your online store. Therefore, this payment method is only activated in plentymarkets. It is not completely configured.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Logo</strong></p></td>
@@ -713,7 +718,7 @@ Pay attention to the tax rates settings in the <a href="/en/en/order-processing/
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Upload logo</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If <strong>Show upload logo</strong> has been selected from the <strong>Logo</strong> drop-down list, you can upload an external logo here.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <strong>Show upload logo</strong> has been selected from the <strong>Logo</strong> drop-down list, upload an external logo here.<br>
  Click on <strong>Upload files</strong> and select the logo that you want to upload for the payment method. Permitted data formats: GIF, PNG and JPG.</p></td>
 </tr>
 <tr>
@@ -723,7 +728,7 @@ Pay attention to the tax rates settings in the <a href="/en/en/order-processing/
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Costs: Flat rate or percentage</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If the payment method results in additional costs, enter the percentage value or flat rate value. The choice depends on the conditions of your contract. <strong>Important</strong>: Do not enter a value into both fields.<br>
-For further information, refer to the <a href="#en/basics/statistics">Statistics</a> page of the manual. For an example of flat rate and percentage costs, refer to the <a href="#en/order-processing/payment/managing-payment-methods">Managing payment methods</a> page of the manual.</p></td>
+For further information, refer to the <a href="#en/basics/statistics">Statistics</a> page of the manual. For an example of flat rate and percentage costs, refer to the <a href="/en/en/order-processing/payment/managing-payment-methods#20">Managing payment methods</a> page of the manual.</p></td>
 </tr>
 </tbody>
 </table>
@@ -818,125 +823,206 @@ For further information, refer to the <a href="/en/en/order-processing/payment/m
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="130">12.1. Error message type: PRODUCT_NOT_FOUND</h3>
-<div class="paragraph instruction">
-<p>Product could not be found. (Code: 1005)<br>
-Product could not be created. No description exists for this product. (Code: 1040)</p>
-</div>
-<div class="paragraph indented">
+<div class="openblock collapseBox">
+<div class="title">Product could not be found. (Code: 1005) / Product could not be created. No description exists for this product. (Code: 1040)</div>
+<div class="content">
+<div class="paragraph">
 <p>These messages indicate that Allyouneed has not saved any data for this EAN yet and that the item cannot be created without a description.<br>
-→ Enter a description and save the categories.[.instruction]
-The product could not be clearly assigned. Add further identifiers. (Code: 4026)</p>
+→ Enter a description and save the categories.</p>
 </div>
-<div class="paragraph indented">
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">The product could not be clearly assigned. Add further identifiers. (Code: 4026)</div>
+<div class="content">
+<div class="paragraph">
 <p>This message indicates that multiple sellers have already listed the item with different specifications.<br>
 → Contact Allyouneed and ask them to combine the items or transfer your description and category links.<br>
 Another reason might be that you have saved multiple price sets for this item in plentymarkets.<br>
-→ Only one price set can be transferred. Delete the other price sets in plentymarkets, remove the item from Allyouneed and transfer the item again.[#1400]
-===  Error message type: INVALID_MODIFICATION</p>
+→ Only one price set can be transferred. Delete the other price sets in plentymarkets, remove the item from Allyouneed and transfer the item again.</p>
 </div>
-<div class="paragraph instruction">
-<p>The product cannot be updated or created due to ambiguous identifiers for the product. (Code: 4010)</p>
 </div>
-<div class="paragraph indented">
+</div>
+</div>
+<div class="sect2">
+<h3 id="140">12.2. Error message type: INVALID_MODIFICATION</h3>
+<div class="openblock collapseBox">
+<div class="title">The product cannot be updated or created due to ambiguous identifiers for the product. (Code: 4010)</div>
+<div class="content">
+<div class="paragraph">
 <p>This message indicates that the manufacturer data does not match the EAN that was transferred. For example, "Gigaset" was transferred as the manufacturer. However, it is saved as "Siemens AG" in the Allyouneed catalogue.<br>
-→ Check your manufacturer data and contact Allyouneed if necessary.[.instruction]
-A product with identical manufacturer data was found. (Code: 4025)</p>
+→ Check your manufacturer data and contact Allyouneed if necessary.</p>
 </div>
-<div class="paragraph indented">
-<p>Contact Allyouneed.[.instruction]
-Product 'xxx' with Allyouneed ID 'xxx' could not be matched with product 'xxx'. (Code: 4023)</p>
 </div>
-<div class="paragraph indented">
+</div>
+<div class="openblock collapseBox">
+<div class="title">A product with identical manufacturer data was found. (Code: 4025)</div>
+<div class="content">
+<div class="paragraph">
+<p>This error message indicates that the manufacturer data is wrong. Contact Allyouneed.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Product 'xxx' with Allyouneed ID 'xxx' could not be matched with product 'xxx'. (Code: 4023)</div>
+<div class="content">
+<div class="paragraph">
 <p>This error message indicates that the item is included in the Allyouneed catalogue but could not be assigned to it because the item has already been listed with this account.<br>
-→ Delete the item from the Allyouneed account. The item should be listed correctly when it is transferred again.[.instruction]
-Marketplace category cannot be mapped because you are not the originator of this product.</p>
+→ Delete the item from the Allyouneed account. The item should be listed correctly when it is transferred again.</p>
 </div>
-<div class="paragraph indented">
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Marketplace category cannot be mapped because you are not the originator of this product.</div>
+<div class="content">
+<div class="paragraph">
 <p>This error message indicates that the item with this EAN is already included in the Allyouneed catalogue, but it is listed in a different category.<br>
-→ If this message is not followed by "PRODUCT_NOT_FOUND”, then it is simply a warning and the item is listed anyway. However, the item is not listed with your description. Instead, it is listed with the description in the Allyouneed catalogue.[.instruction]
-The EAN is already in use. It is only possible to use EANs several times if the products contain different manufacturer data or variation attributes. (Code: 4027)</p>
+→ If this message is not followed by "PRODUCT_NOT_FOUND”, then it is simply a warning and the item is listed anyway. However, the item is not listed with your description. Instead, it is listed with the description in the Allyouneed catalogue.</p>
 </div>
-<div class="paragraph indented">
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">The EAN is already in use. It is only possible to use EANs several times if the products contain different manufacturer data or variation attributes. (Code: 4027)</div>
+<div class="content">
+<div class="paragraph">
 <p>This error message indicates that the item has already been transferred to Allyouneed with this account. However, the specified IDs ("own product number") do not match.<br>
-→ Delete the item from the Allyouneed account. The item should be listed correctly when it is transferred again.[.instruction]
-The product xxx could not be assigned to the variation group xxx because the mandatory attribute values could not be found. (Code: 5019)</p>
+→ Delete the item from the Allyouneed account. The item should be listed correctly when it is transferred again.</p>
 </div>
-<div class="paragraph indented">
-<p>This error message indicates that a different seller has already transferred the item with variations and that your item does not have any variations or has different variations saved for it.[.instruction]
-The EAN cannot be changed. You have not created the product 'xxx' (mpid: xxx). (Code: 4002)</p>
 </div>
-<div class="paragraph indented">
+</div>
+<div class="openblock collapseBox">
+<div class="title">The product xxx could not be assigned to the variation group xxx because the mandatory attribute values could not be found. (Code: 5019)</div>
+<div class="content">
+<div class="paragraph">
+<p>This error message indicates that a different seller has already transferred the item with variations and that your item does not have any variations or has different variations saved for it.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">The EAN cannot be changed. You have not created the product 'xxx' (mpid: xxx). (Code: 4002)</div>
+<div class="content">
+<div class="paragraph">
 <p>This error message indicates that the item was already linked to an item from the Allyouneed catalogue and that it is therefore not possible to change the EAN.<br>
-→ Delete the item from the account on Allyouneed or contact Allyouneed.[.instruction]
-Not possible to update physical product. Product with the same ManufacturerName and AID found in the system.</p>
+→ Delete the item from the account on Allyouneed or contact Allyouneed.</p>
 </div>
-<div class="paragraph indented">
-<p>Delete the item from the account on Allyouneed. The item should be listed correctly when it is transferred again.[.instruction]
-An unknown error occurred, please contact Allyouneed support, with this xmlfile.</p>
 </div>
-<div class="paragraph indented">
-<p>This message indicates that the attribute links are incorrect. For example, only numbers might be permitted as values but letters were entered as well. Or if a combination of attributes does not fit together, e.g. if an attribute for "shoes" was combined with an attribute for "hats".[.instruction]
-Invalid variation attributes for product "xyz". Check whether the variation group/attribute configuration corresponds to your product data. (Code: 5008)</p>
 </div>
-<div class="paragraph indented">
-<p>This error message indicates that no attribute group was assigned to the attribute for Allyouneed.<br>
-→ Carry out the steps listed in the <a href="/en/en/item/managing-items#440">Linking attributes</a> chapter.[#1500]
-===  Error message type: MARKETPLACE_CATEGORY_NOT_FOUND</p>
+<div class="openblock collapseBox">
+<div class="title">Not possible to update physical product. Product with the same ManufacturerName and AID found in the system.</div>
+<div class="content">
+<div class="paragraph">
+<p>Delete the item from the account on Allyouneed. The item should be listed correctly when it is transferred again.</p>
 </div>
-<div class="paragraph instruction">
-<p>Market category 'c' was not found. (Code: 1003)</p>
 </div>
-<div class="paragraph indented">
-<p>This error message indicates that an error occurred while linking the categories.<br>
-→ Check whether the category ID that was entered is correct. You may simply have made a typo while entering the ID.[#1600]
-===  Error message type: VARIANT_GROUP_NOT_FOUND</p>
 </div>
-<div class="paragraph instruction">
-<p>Variation group 'xxx' was not found. (Code: 5009)</p>
+<div class="openblock collapseBox">
+<div class="title">An unknown error occurred, please contact Allyouneed support, with this xmlfile.</div>
+<div class="content">
+<div class="paragraph">
+<p>This message indicates that the attribute links are incorrect. For example, only numbers might be permitted as values but letters were entered as well. Or if a combination of attributes does not fit together, e.g. if an attribute for "shoes" was combined with an attribute for "hats".</p>
 </div>
-<div class="paragraph indented">
-<p>This error message is a consequence of the error "Failed to create variation group (Code: 50026)".<br>
-→ Contact Allyouneed.[#1700]
-===  Error message type: INVALID_DATA</p>
 </div>
-<div class="paragraph instruction">
-<p>Not valid or missing required variant attribute values for DescriptionProduct with code 'xxx'. Variant group: xxx. Required attribute 'memoryCapacity'.</p>
 </div>
-<div class="paragraph indented">
-<p>This error message indicates that the attributes were not linked correctly or that a different seller has already transferred the item with variations and that your item does not have any variations saved for it.[.instruction]
-Invalid price &lt;0&gt;. The price must be a positive decimal number. (Code: 1015)</p>
-</div>
-<div class="paragraph indented">
-<p>This error message indicates that no price was saved.<br>
-→ Save a price for the item in the item data.[.instruction]
-Duplicate variant attribute values found for physical product with code $xyz inside a variant group - code: xyz</p>
-</div>
-<div class="paragraph indented">
-<p>This error message indicates that there are duplicate attribute values or that multiple item attributes were linked with various, non-compatible Allyouneed attribute groups.<br>
-→ For further information about Allyouneed groups, refer to the <a href="/en/en/item/managing-items#440">Linking attributes</a> chapter.[#1800]
-===  Error message type: plenty</p>
-</div>
-<div class="paragraph instruction">
-<p>missing "marketplaceCategory"</p>
-</div>
-<div class="paragraph indented">
-<p>This error message indicates that there is neither an EAN nor a description/category link that the item can be listed with.<br>
-→ Save an EAN and description in the item data and link the categories.[.instruction]
-missing "name"</p>
-</div>
-<div class="paragraph indented">
-<p>This error message indicates that the item does not have a name.<br>
-→ Enter a name in the item data.[.instruction]
-missing "productId"</p>
-</div>
-<div class="paragraph indented">
-<p>This error message indicates that an ID is missing.<br>
-→ Contact plentymarkets.[.instruction]
-missing "attribute group code"</p>
-</div>
-<div class="paragraph indented">
+<div class="openblock collapseBox">
+<div class="title">Invalid variation attributes for product "xyz". Check whether the variation group/attribute configuration corresponds to your product data. (Code: 5008)</div>
+<div class="content">
+<div class="paragraph">
 <p>This error message indicates that no attribute group was assigned to the attribute for Allyouneed.<br>
 → Carry out the steps listed in the <a href="/en/en/item/managing-items#440">Linking attributes</a> chapter.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="150">12.3. Error message type: MARKETPLACE_CATEGORY_NOT_FOUND</h3>
+<div class="openblock collapseBox">
+<div class="title">Market category 'c' was not found. (Code: 1003)</div>
+<div class="content">
+<div class="paragraph">
+<p>This error message indicates that an error occurred while linking the categories.<br>
+→ Check whether the category ID that was entered is correct. You may simply have made a typo while entering the ID.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="160">12.4. Error message type: VARIANT_GROUP_NOT_FOUND</h3>
+<div class="openblock collapseBox">
+<div class="title">Variation group 'xxx' was not found. (Code: 5009)</div>
+<div class="content">
+<div class="paragraph">
+<p>This error message is a consequence of the error "Failed to create variation group (Code: 50026)".<br>
+→ Contact Allyouneed.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="170">12.5. Error message type: INVALID_DATA</h3>
+<div class="openblock collapseBox">
+<div class="title">Not valid or missing required variant attribute values for DescriptionProduct with code 'xxx'. Variant group: xxx. Required attribute 'memoryCapacity'.</div>
+<div class="content">
+<div class="paragraph">
+<p>This error message indicates that the attributes were not linked correctly or that a different seller has already transferred the item with variations and that your item does not have any variations saved for it.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Invalid price &lt;0&gt;. The price must be a positive decimal number. (Code: 1015)</div>
+<div class="content">
+<div class="paragraph">
+<p>This error message indicates that no price was saved.<br>
+→ Save a price for the item in the item data.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Duplicate variant attribute values found for physical product with code $xyz inside a variant group - code: xyz</div>
+<div class="content">
+<div class="paragraph">
+<p>This error message indicates that there are duplicate attribute values or that multiple item attributes were linked with various, non-compatible Allyouneed attribute groups.<br>
+→ For further information about Allyouneed groups, refer to the <a href="/en/en/item/managing-items#440">Linking attributes</a> chapter.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="180">12.6. Error message type: plenty</h3>
+<div class="openblock collapseBox">
+<div class="title">missing "marketplaceCategory"</div>
+<div class="content">
+<div class="paragraph">
+<p>This error message indicates that there is neither an EAN nor a description/category link that the item can be listed with.<br>
+→ Save an EAN and description in the item data and link the categories.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">missing "name"</div>
+<div class="content">
+<div class="paragraph">
+<p>This error message indicates that the item does not have a name.<br>
+→ Enter a name in the item data.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">missing "productId"</div>
+<div class="content">
+<div class="paragraph">
+<p>This error message indicates that an ID is missing.<br>
+→ Contact plentymarkets.</p>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">missing "attribute group code"</div>
+<div class="content">
+<div class="paragraph">
+<p>This error message indicates that no attribute group was assigned to the attribute for Allyouneed.<br>
+→ Carry out the steps listed in the <a href="/en/en/item/managing-items#440">Linking attributes</a> chapter.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
