@@ -5506,21 +5506,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "025d4dcf6a16cee406cbdf8adc70356c",
-						"path" => "omni-channel/multi-channel/cdiscount",
-						"position" => 30,
-						"urlName" => "cdiscount",
-						"url" => "/en/omni-channel/multi-channel/cdiscount",
-						"level" => 3,
-						"title" => "Cdiscount",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Cdiscount in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Cdiscount. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "628b7d3d8311c34be8b129001e889843",
 						"path" => "omni-channel/multi-channel/real-de",
 						"position" => 40,
@@ -5700,6 +5685,21 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Fruugo in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Fruugo. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "025d4dcf6a16cee406cbdf8adc70356c",
+						"path" => "omni-channel/multi-channel/cdiscount",
+						"position" => 80,
+						"urlName" => "cdiscount",
+						"url" => "/en/omni-channel/multi-channel/cdiscount",
+						"level" => 3,
+						"title" => "Cdiscount",
+						"keywords" => "Cdiscount, Market, Marketplace",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Cdiscount in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Cdiscount. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
