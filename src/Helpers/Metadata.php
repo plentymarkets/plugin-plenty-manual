@@ -5460,21 +5460,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "72f632e43ef06b4ea8f986352fb6ebac",
-						"path" => "omni-channel/multi-channel/bol-com",
-						"position" => 28,
-						"urlName" => "bol-com",
-						"url" => "/en/omni-channel/multi-channel/bol-com",
-						"level" => 3,
-						"title" => "bol.com",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market bol.com in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic bol.com. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "4035c800eea87f534d97dec9a16e1cab",
 						"path" => "omni-channel/multi-channel/rakuten",
 						"position" => 30,
@@ -5687,6 +5672,21 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
+					],
+					[
+						"id" => "72f632e43ef06b4ea8f986352fb6ebac",
+						"path" => "omni-channel/multi-channel/bol-com",
+						"position" => 70,
+						"urlName" => "bol-com",
+						"url" => "/en/omni-channel/multi-channel/bol-com",
+						"level" => 3,
+						"title" => "bol.com",
+						"keywords" => "bol.com, bol, Market, Marketplace",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market bol.com in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic bol.com. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
 					],
 					[
 						"id" => "d7e38338329a5fadef50c1d4de5200e9",
