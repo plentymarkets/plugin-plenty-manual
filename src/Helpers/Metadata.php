@@ -5527,7 +5527,7 @@ class Metadata {
 								"level" => 4,
 								"title" => "Setting up real.de in plentymarkets",
 								"keywords" => "",
-								"description" => "Multi-Channel in plentymarkets: Set up the interface to the market real,de in your plentymarkets system.",
+								"description" => "Multi-Channel in plentymarkets: Set up the interface to the market real.de in your plentymarkets system.",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Setting up real.de in plentymarkets. The following information is available:",
 								"children" => [],
