@@ -27,7 +27,12 @@
 <li><a href="#170"><span>7.</span><span> Automatically sending shipping confirmations</span></a></li>
 <li><a href="#1800"><span>8.</span><span> Automatically sending returns</span></a></li>
 <li><a href="#1900"><span>9.</span><span> Automatically sending cancellations</span></a></li>
-<li><a href="#2000"><span>10.</span><span> Viewing the API log</span></a></li>
+<li><a href="#2000"><span>10.</span><span> Viewing the log and the API log</span></a>
+<ul class="sectlevel2">
+<li><a href="#_viewing_the_log"><span>10.1.</span><span> Viewing the log</span></a></li>
+<li><a href="#_viewing_the_api_log"><span>10.2.</span><span> Viewing the API log</span></a></li>
+</ul>
+</li>
 <li><a href="#2100"><span>11.</span><span> FAQ</span></a></li>
 </ul>
 </div>
@@ -436,7 +441,7 @@ Property type: <strong>No</strong></p>
 <p>Carry out the settings. Pay attention to the information given in table 2.</p>
 </li>
 <li>
-<p>Carry out further settings for item filters and format settings. Pay attention to the information given in table 5 in the <a href="/en/en/basics/data-exchange/exporting-data#60">Exporting data</a> page of the manual.</p>
+<p>Carry out further settings for item filters and format settings. Pay attention to the information given in table 5 on the <a href="/en/en/basics/data-exchange/exporting-data#60">Exporting data page of the manual*</a></p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
@@ -466,7 +471,7 @@ Property type: <strong>No</strong></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select the type from the drop-down list. Currently, <strong>Item</strong> is the only available option. Further options will be available soon.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the type <strong>item</strong> from the drop-down list.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
@@ -477,16 +482,36 @@ Property type: <strong>No</strong></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a number. If you want to transfer more than 10,000 data records to rakuten.de, then the output file will not be generated again for another 24 hours. This is to save resources.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Generate cache file</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place a check mark if you want to transfer more than 9,999 data records to the price search engine. We recommend that you do not activate this setting for more than 20 export formats. This is to ensure a high performance of the elastic export.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Provisioning</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>URL</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Token,<br>
-URL</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>File name,</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The file name must have the ending <strong>.csv</strong> for Rakuten.de to be able to import the file successfully.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Token</strong>,<br>
+<strong>URL</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If you have selected the option <strong>URL</strong> under <strong>Provisioning</strong>, then click on <strong>Generate token</strong>. The token is entered automatically. The URL is entered automatically if the token was generated under <strong>Token</strong>. Give this URL to Rakuten.de in order to export the items.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Format settings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Product URL</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose the URL that you wish to transfer to Rakuten.de. You can choose between the item’s URL and the variation’s URL. URLs of variations can only be transferred in combination with the Ceres store.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a client. This setting is used for the URL structure.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>URL parameter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a suffix for the product URL if this is required for the export. This character string will be added to the product URL if you have activated the <strong>transfer</strong> option for the product URL further up.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order referrer</strong></p></td>
@@ -495,6 +520,84 @@ URL</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Marketplace account</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If you export item data for the first time, the account selected here is considered when generating an SKU.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Language</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the language from the drop-down list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select Name 1, Name 2 or Name 3. These names are saved in the <strong>Texts</strong> tab of the item. Enter a number into the <strong>Maximum number of characters (def. Text)</strong> field if desired. This specifies how many characters are exported for the item name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Preview text</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This option does not affect Rakuten.de.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the text that you want to transfer as description.<br>
+Enter a number into the <strong>Maximum number of characters (def. Text)</strong> field if desired. This specifies how many characters are exported for the description.<br>
+ Activate the option <strong>Remove HTML tags</strong> if you want HTML tags to be removed during the export.<br>
+If you only want to allow specific HTML tags to be exported, then enter these tags into the field  <strong>Permitted HTML tags, separated by comma (def. Text)</strong>. Use commas to separate multiple tags.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Target country</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the target country from the drop-down list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Barcode</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the ISBN or an EAN from the drop-down list. The barcode has to be linked to the order referrer selected above. If the barcode is not linked to the order referrer it will not be exported.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Image</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Position 0</strong> or <strong>First image</strong> to export this image.<br>
+* Position 0* = An image with position 0 is transferred.<br>
+* First image* = The first image is transferred.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Image position of the energy label</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the position of the energy label. Every image that should be transferred as an energy label must have this position.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stock buffer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The stock buffer for variations with limitation to the net stock. Enter a number. The stock is reduced by the value of this number.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stock for variation without stock limitation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The stock for variations without stock limitation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stock for variations with no stock administration</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The stock for variations without stock administration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Live currency conversion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate this option to convert the price into the currency of the selected country of delivery. The price has to be released for the corresponding currency.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retail price</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select gross price or net price from the drop-down list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Offer price</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate to transfer the offer price.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>RRP</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate to transfer the RRP.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping costs</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate this option if you want to use the shipping costs that are saved in a configuration. If this option is activated, then you are able to select the configuration and the payment method from the drop-down lists.<br>
+ Activate the option <strong>Transfer flat rate shipping charge</strong> if you want to use a fixed shipping charge. If this option is activated, a value has to be entered in the line underneath.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VAT note</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter text. This amount includes the VAT but does not include shipping.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item availability</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate the <strong>overwrite</strong> option and enter item availabilities into the fields <strong>1</strong> to <strong>10</strong>. The fields represent the IDs of the availabilities. This overwrites the item availabilities that are saved in the menu <strong>System » Item » Item availability</strong>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -698,7 +801,7 @@ Therefore, you have to overwrite the delivery period in the elastic export for R
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Costs: Flat rate or percentage</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If the payment method results in additional costs, enter the percentage value or the flat rate value. The choice depends on the conditions of your contract. <strong>Important</strong>: Do not enter a value into both fields.<br>
-For further information, refer to the <a href="#en/basics/statistics">Statistics</a> page of the manual. For an example of flat rate and percentage costs, refer to the <a href="#en/order-processing/payment/managing-payment-methods">Managing payment methods</a> page of the manual.</p></td>
+For further information, refer to the <a href="/en/en/basics/statistics">Statistics</a> page of the manual. For an example of flat rate and percentage costs, refer to the <a href="/en/en/order-processing/payment/managing-payment-methods#20">Managing payment methods</a> page of the manual.</p></td>
 </tr>
 </tbody>
 </table>
@@ -712,7 +815,7 @@ For further information, refer to the <a href="#en/basics/statistics">Statistics
 <div class="title">Permitting the payment method in customer classes</div>
 <div class="paragraph">
 <p>Go to <strong>System » CRM » Classes</strong> to activate or deactivate <strong>Permitted payment methods</strong>.<br>
-For further information, refer to the <a href="/en/en/order-processing/payment/managing-payment-methods#30">Permitting the payment method in a customer class</a> chapter of the manual.</p>
+For further information, refer to the <a href="/en/en/order-processing/payment/managing-payment-methods#30">Permitting the payment method in a customer class</a> chapter.</p>
 </div>
 </td>
 </tr>
@@ -1125,10 +1228,90 @@ Designated use 2: First name &amp; surname</p>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="2000">10. Viewing the API log</h2>
+<h2 id="2000">10. Viewing the log and the API log</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The menu <strong>Data » API log » Tab: API log</strong> contains a history of processes that run via the Rakuten interface. The <strong>Rakuten</strong> format is available for Rakuten.</p>
+<p>The menus <strong>Data » Log</strong> and <strong>Data » API log</strong> contain a history of processes that run via the Rakuten interface.<br>
+The <strong>log</strong> contains an overview of event procedures and the <strong>API log</strong> contains an overview of order imports.</p>
+</div>
+<div class="sect2">
+<h3 id="_viewing_the_log">10.1. Viewing the log</h3>
+<div class="paragraph">
+<p>Open the menu <strong>Data » Log</strong> to retrieve an overview of event procedures that run via the Rakuten interface.</p>
+</div>
+<div class="paragraph instruction">
+<p>Viewing log entries for Rakuten.de</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Log</strong>.</p>
+</li>
+<li>
+<p>Select the identifier <strong>Rakuten.de</strong> from the drop-down list <strong>Identifier</strong>.</p>
+</li>
+<li>
+<p>Select a filter from the drop-down list <strong>Reference type</strong> if you only want to see entries for a specific reference type. Pay attention to the information given in <a href="#table-reference-types">Table 9</a>.</p>
+</li>
+<li>
+<p>Select a filter from the drop-down list <strong>Reference value</strong> if you only want to see entries for a specific reference value. Pay attention to the information given in <a href="#table-reference-types">Table 9</a>.</p>
+</li>
+<li>
+<p>Select a date if you only want to see entries for a specific day.</p>
+</li>
+<li>
+<p>Select a time if you only want to see entries for a specific time of day.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use the following reference types and reference values to filter the search results.</p>
+</div>
+<table id="table-reference-types" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 9. Reference types and reference values for Rakuten.de</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Reference type</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+<th class="tableblock halign-left valign-top">Reference value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>action</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters the search results for event procedures.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a reference value to search for event procedures of a specific type.<br>
+<strong>SendOrderStatusInLogistics</strong> = Filters for event procedures of the type <strong>Send preparation for shipping to Rakuten</strong>.<br>
+<strong>SendOrderStatusShipped</strong> = Filters for event procedures of the type <strong>Send shipping confirmation to Rakuten</strong>.<br>
+<strong>SendOrderTrackingData</strong> = Filters for event procedures of the type <strong>Send tracking information to Rakuten</strong>.<br>
+<strong>SendOrderStatusCanceled</strong> = Filters for event procedures of the type <strong>Send cancellation to Rakuten</strong>.<br>
+<strong>SendOrderStatusReturned</strong> = Filters for event procedures of the type <strong>Send return to Rakuten</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>externalOrderID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters the search results for entries of a specific external order ID.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>orderID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters the search results for entries of a specific order ID.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_viewing_the_api_log">10.2. Viewing the API log</h3>
+<div class="paragraph">
+<p>Open the menu <strong>Data » API log » Tab: API log</strong> to retrieve an overview of order imports that run via the Rakuten interface. The <strong>Rakuten</strong> format is available for Rakuten.</p>
 </div>
 <div class="paragraph instruction">
 <p>Viewing the API log:</p>
@@ -1136,7 +1319,7 @@ Designated use 2: First name &amp; surname</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <strong>Data » API log</strong>.</p>
+<p>Go to <strong>Data » API log » Tab: API log</strong>.</p>
 </li>
 <li>
 <p>Select the <strong>Rakuten</strong> format from the <strong>Process</strong> drop-down list.</p>
@@ -1151,6 +1334,7 @@ Designated use 2: First name &amp; surname</p>
 <p>Click on <strong>Search</strong> to display the results.</p>
 </li>
 </ol>
+</div>
 </div>
 </div>
 </div><div class="sect1">
