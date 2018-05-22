@@ -12,6 +12,7 @@
 </ul>
 </li>
 <li><a href="#best-practices-callisto-newsletter-anmeldung"><span>2.</span><span> Newsletter-Anmeldung auf der Startseite anpassen</span></a></li>
+<li><a href="#best-practices-callisto-einwilligung-checkbox"><span>3.</span><span> Checkbox zur Einwilligung der Datenübertragung an Versanddienstleister in Callisto einbinden</span></a></li>
 </ul>
 </div>
         </div>
@@ -176,6 +177,53 @@ $(document).ready(function(){
 </div>
 <div class="paragraph">
 <p>Die Texte können beliebig angepasst werden und sind in dem neu eingefügten Code Snippet zu finden.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="best-practices-callisto-einwilligung-checkbox">3. Checkbox zur Einwilligung der Datenübertragung an Versanddienstleister in Callisto einbinden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im Folgenden findet ihr eine Anleitung zur Einbindung einer Checkbox, mit der der Endkunde die Weitergabe seiner Daten an Versanddienstleister akzeptieren kann.</p>
+</div>
+<div class="paragraph">
+<p>Öffnet das Menü <strong>Artikel » Kategorien » callisto_light_3_5 » Bestellübersicht &amp; Kaufabschluss » Beschreibung 1</strong>.
+Dieser Pfad kann, abhängig von eurer Kategorienstruktur, in eurem System abweichen. Der oben aufgeführte Pfad bezieht sich auf die Kategorien, die standardmäßig in plentymarkets Systemen hinterlegt sind.</p>
+</div>
+<div class="paragraph">
+<p>Sucht im Code die Checkbox für die Altersverifikation, indem ihr nach <strong>GetGlobal("ValidateAgeRestrictionCheck")</strong> sucht und fügt unter dem folgenden &#123;&#37; endif &#37;&#125; den folgenden Code ein:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>{# DHL AGREEMENT #}
+	&#123;&#37; if $CheckoutShippingProfileID == 10 &#37;&#125;
+		&lt;li class="checkbox" data-plenty-validate="{min: 1, max: 1}"&gt;
+			&lt;label&gt;
+				&lt;input type="checkbox" name="DHLDataCheck" value="1"&gt; Ich bin damit einverstanden, dass meine E-Mail-Adresse bzw. meine Telefonnummer an DHL, Charles-de-Gaulle-Straße 20 53113 Bonn weitergegeben wird, damit der Paketdienstleister vor der Zustellung der Ware zum Zwecke der Abstimmung eines Liefertermins per E-Mail oder Telefon Kontakt mit mir aufnehmen kann bzw. Statusinformationen zur Sendungszustellung übermitteln kann. Meine diesbezüglich erteilte Einwilligung kann ich jederzeit widerrufen.
+			&lt;/label&gt;
+		&lt;/li&gt;
+    &#123;&#37; endif &#37;&#125;</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Die Versandprofil ID 10 muss hierbei mit dem Versandprofil in eurem System korrespondieren, für welches ihr die Einwilligung braucht. Passt dabei den Text und die Adresse des jeweiligen Versanddienstleisters an.</p>
+</div>
+<div class="paragraph">
+<p>Sucht nun im Code in Beschreibung 1 nach <strong>GetGlobal("ShowAgeRestrictionCheck")</strong> und fügt den den oben aufgeführten Code ein weiteres Mal unter dem darauffolgenden &#123;&#37; endif &#37;&#125; ein.</p>
+</div>
+<div class="paragraph">
+<p>Die Checkbox erscheint nur dann im Checkout, wenn das entsprechende Versandprofil ausgewählt wurde. Für jeden Versender, für den es nötig ist, muss eine gesonderte Checkbox angelegt werden. Dabei ist zu beachten, dass im Code an der Stelle <strong>name=</strong> jeder Checkbox ein einzigartiger Name zugeteilt wird, bspw. <strong>DPDDataCheck</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Besten Dank an Forumsnutzer wdsrakoe, der diese Lösung in <a href="https://forum.plentymarkets.com/t/dsgvo-e-mail-adresse-an-dhl-nur-mit-einwilligung/329771/5" target="_blank" rel="noopener">diesem</a> Forumsbeitrag vorgestellt hat.</p>
 </div>
 </div>
 </div>

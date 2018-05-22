@@ -1369,7 +1369,7 @@ class Metadata {
 				"url" => "/basics/best-practices-callisto-dsgvo",
 				"level" => 2,
 				"title" => "Best Practices: Callisto und DSGVO",
-				"keywords" => "Callisto, DSGVO, anpassen, Kontaktformular anpassen, Newsletter-Anmeldung, Datenschutzerklärung, Eingabefeld, Standard-Layout",
+				"keywords" => "Callisto, DSGVO, anpassen, Kontaktformular anpassen, Newsletter-Anmeldung, Datenschutzerklärung, Eingabefeld, Standard-Layout, Datenübermittlung, Versanddienstleister, Einwilligung",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Callisto und DSGVO. Hier finden Sie folgende Informationen:",
