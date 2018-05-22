@@ -5875,7 +5875,7 @@ class Metadata {
 								"url" => "/en/omni-channel/multi-channel/neckermann/neckermann-at-setup",
 								"level" => 4,
 								"title" => "Neckermann.at",
-								"keywords" => "Neckermann.at, marketplace",
+								"keywords" => "Neckermann.at, marketplace, market",
 								"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Neckermann Austria in your plentymarkets system.",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Neckermann.at. The following information is available:",
