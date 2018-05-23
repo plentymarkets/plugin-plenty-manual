@@ -5674,21 +5674,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "d7e38338329a5fadef50c1d4de5200e9",
-						"path" => "omni-channel/multi-channel/fruugo",
-						"position" => 70,
-						"urlName" => "fruugo",
-						"url" => "/en/omni-channel/multi-channel/fruugo",
-						"level" => 3,
-						"title" => "Fruugo",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Fruugo in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Fruugo. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "025d4dcf6a16cee406cbdf8adc70356c",
 						"path" => "omni-channel/multi-channel/cdiscount",
 						"position" => 80,
@@ -5745,6 +5730,21 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Flubit in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Flubit. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "d7e38338329a5fadef50c1d4de5200e9",
+						"path" => "omni-channel/multi-channel/fruugo",
+						"position" => 110,
+						"urlName" => "fruugo",
+						"url" => "/en/omni-channel/multi-channel/fruugo",
+						"level" => 3,
+						"title" => "Fruugo",
+						"keywords" => "Fruugo, Market, Marketplace",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Fruugo in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Fruugo. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
