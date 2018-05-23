@@ -246,17 +246,48 @@ class Metadata {
 					[
 						"id" => "b9f1402ab6f1c55c5c95201819805df4",
 						"path" => "basics/datenaustausch/ElasticSync",
-						"position" => 20,
+						"position" => 30,
 						"urlName" => "ElasticSync",
 						"url" => "/basics/datenaustausch/ElasticSync",
 						"level" => 3,
-						"title" => "Daten mit ElasticSync importieren",
-						"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
-						"description" => "Erfahren Sie, wie Sie Datenformate erstellen und den dynamischen Import nutzen.",
+						"title" => "ElasticSync",
+						"keywords" => "ElasticSync, Export, Import",
+						"description" => "Erfahren Sie, wie Sie das Plugin ElasticSync nutzen, um Daten in plentymarkets zu importieren.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
+						"linkListInto" => "Willkommen im Themenbereich ElasticSync. Hier finden Sie folgende Informationen:",
+						"children" => 						[
+							[
+								"id" => "f446188f29319bd631858252c1d590ed",
+								"path" => "basics/datenaustausch/ElasticSync/ElasticSync",
+								"position" => 10,
+								"urlName" => "ElasticSync",
+								"url" => "/basics/datenaustausch/ElasticSync/ElasticSync",
+								"level" => 4,
+								"title" => "Daten mit ElasticSync importieren",
+								"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
+								"description" => "Erfahren Sie, wie Sie Datenformate erstellen und den dynamischen Import nutzen.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "4144d216976ec60ad15cb583751063cf",
+								"path" => "basics/datenaustausch/ElasticSync/best-practices",
+								"position" => 100,
+								"urlName" => "best-practices",
+								"url" => "/basics/datenaustausch/ElasticSync/best-practices",
+								"level" => 4,
+								"title" => "Best Practices: ElasticSync",
+								"keywords" => "ElasticSync, Import, Artikel, Artikelanlage, Best Practice, automatisiert",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: ElasticSync. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					],
 					[
 						"id" => "e94156b13999930271f05d45f7993055",
@@ -1052,21 +1083,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich FTP-Zugang. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "50a5f0bf7f66005aaa13ac34e0469da0",
-						"path" => "basics/datenaustausch/best-practices",
-						"position" => 100,
-						"urlName" => "best-practices",
-						"url" => "/basics/datenaustausch/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: ElasticSync",
-						"keywords" => "ElasticSync, Import, Artikel, Artikelanlage, Best Practice, automatisiert",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: ElasticSync. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
