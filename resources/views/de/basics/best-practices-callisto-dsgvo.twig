@@ -13,6 +13,7 @@
 </li>
 <li><a href="#best-practices-callisto-newsletter-anmeldung"><span>2.</span><span> Newsletter-Anmeldung auf der Startseite anpassen</span></a></li>
 <li><a href="#best-practices-callisto-einwilligung-checkbox"><span>3.</span><span> Checkbox zur Einwilligung der Datenübertragung an Versanddienstleister in Callisto einbinden</span></a></li>
+<li><a href="#best-practice-google-analytics-opt-out"><span>4.</span><span> Google Analytics Opt-out Cookie setzen</span></a></li>
 </ul>
 </div>
         </div>
@@ -179,7 +180,7 @@ $(document).ready(function(){
 <p>Die Texte können beliebig angepasst werden und sind in dem neu eingefügten Code Snippet zu finden.</p>
 </div>
 </div>
-</div><div class="sect1">
+</div><div class="sect1 adoc">
 <h2 id="best-practices-callisto-einwilligung-checkbox">3. Checkbox zur Einwilligung der Datenübertragung an Versanddienstleister in Callisto einbinden</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -215,6 +216,49 @@ Dieser Pfad kann, abhängig von eurer Kategorienstruktur, in eurem System abweic
 </div>
 <div class="paragraph">
 <p>Besten Dank an Forumsnutzer wdsrakoe, der diese Lösung in <a href="https://forum.plentymarkets.com/t/dsgvo-e-mail-adresse-an-dhl-nur-mit-einwilligung/329771/5" target="_blank" rel="noopener">diesem</a> Forumsbeitrag vorgestellt hat.</p>
+</div>
+</div>
+</div><div class="sect1 adoc">
+<h2 id="best-practice-google-analytics-opt-out">4. Google Analytics Opt-out Cookie setzen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In diesem HowTo wird beschrieben, wie man auf der Seite <strong>Datenschutzerklärung</strong> einen Link einfügt, über den das gesamte Tracking für Google Analytics deaktiviert werden kann.</p>
+</div>
+<div class="paragraph">
+<p>Hierfür wird folgendes Script in den Containern <strong>PageDesginContent</strong>, <strong>PageDesingMyAccount</strong>, und <strong>PageDesignCheckout</strong> direkt nach dem Tag <strong>&lt;head&gt;</strong> eingefügt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;script&gt;
+
+var gaProperty = 'UA-XXXXXXXXX-X';
+var disableStr = 'ga-disable-' + gaProperty;
+if (document.cookie.indexOf(disableStr + '=true') &gt; -1) {
+  window[disableStr] = true;
+}
+function gaOptout() {
+  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+  window[disableStr] = true;
+}
+
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Hierbei muss darauf geachtet werden, dass der Part <strong>UA-XXXXXXXXX-X</strong> durch deine Daten angepasst wird.</p>
+</div>
+<div class="paragraph">
+<p>In der verknüpften Kategorie für die Datenschutzerklärung wird noch folgenden Part eingefügt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;a
+onclick="alert('Google Analytics wurde deaktiviert');"
+href="javascript:gaOptout()"&gt;Google Analytics deaktivieren&lt;/a&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wenn der Kunde den eingefügten Link drückt, wird das Tracking für den weiteren Besuch des Kunden deaktiviert.</p>
 </div>
 </div>
 </div>
