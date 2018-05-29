@@ -5872,21 +5872,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "eeb0022deb6b605e5bf555b668081c9d",
-						"path" => "omni-channel/multi-channel/kauflux",
-						"position" => 130,
-						"urlName" => "kauflux",
-						"url" => "/en/omni-channel/multi-channel/kauflux",
-						"level" => 3,
-						"title" => "Kauflux",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Kauflux in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Kauflux. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "9cb19a5c01172fc6bfe8b8f5fbfff8a5",
 						"path" => "omni-channel/multi-channel/laredoute",
 						"position" => 140,
@@ -5913,6 +5898,21 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Mercateo in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Mercateo. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "eeb0022deb6b605e5bf555b668081c9d",
+						"path" => "omni-channel/multi-channel/kauflux",
+						"position" => 160,
+						"urlName" => "kauflux",
+						"url" => "/en/omni-channel/multi-channel/kauflux",
+						"level" => 3,
+						"title" => "Kauflux",
+						"keywords" => "Kauflux, Market, Marketplace",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Kauflux in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Kauflux. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
