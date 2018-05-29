@@ -7726,7 +7726,7 @@ class Metadata {
 				"keywords" => "Book stock, approve stock booking, book incoming items, incoming items, stock booking, stock registration, inventory registration",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Managing incoming items. Hier finden Sie folgende Informationen:",
+				"linkListInto" => "Welcome to the topic Managing incoming items. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -7809,12 +7809,12 @@ class Metadata {
 			[
 				"id" => "338582b580255bb2b901aff001478c4c",
 				"path" => "stock-management/taking-stock",
-				"position" => 60,
+				"position" => 70,
 				"urlName" => "taking-stock",
 				"url" => "/en/stock-management/taking-stock",
 				"level" => 2,
 				"title" => "Taking stock",
-				"keywords" => "stock-taking, inventory taking, physical stock",
+				"keywords" => "inventory taking, stock-taking, inventory, stocktaking",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Taking stock. The following information is available:",
