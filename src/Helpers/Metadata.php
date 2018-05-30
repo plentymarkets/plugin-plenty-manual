@@ -2852,7 +2852,7 @@ class Metadata {
 						"url" => "/omni-channel/pos/pos-einrichten",
 						"level" => 3,
 						"title" => "POS einrichten",
-						"keywords" => "plentymarkets POS, POS, Kasse, Kassensystem, Kassen, IDEA-Export, IDEA, GoBD, Kassenjournal, Kassenbuch, GoBD konform, Registrierkasse, RKSV, DEP-Export, mobile Kasse, mobile Registrierkasse, Smartphone-Kasse, Kasse Sicherheitseinrichtung, Vertrauensdiensteanbieter POS, Vertrauensdiensteanbieter Kasse, Registrierkassensicherheitsverordnung, Kasse Österreich, POS Österreich, rechtssichere Kasse, RKSV-konform, plentyPOS, RKSV, Startbeleg, QR-Code, mobile Kassa, Kassasoftware, Kassensoftware, Kassa-Software, Kassen-Software",
+						"keywords" => "plentymarkets POS, POS, Kasse, Kassensystem, Kassen, IDEA-Export, IDEA, GoBD, Kassenjournal, Kassenbuch, GoBD konform, Registrierkasse, RKSV, DEP-Export, mobile Kasse, mobile Registrierkasse, Smartphone-Kasse, Kasse Sicherheitseinrichtung, Vertrauensdiensteanbieter POS, Vertrauensdiensteanbieter Kasse, Registrierkassensicherheitsverordnung, Kasse Österreich, POS Österreich, rechtssichere Kasse, RKSV-konform, plentyPOS, RKSV, Startbeleg, QR-Code, mobile Kassa, Kassasoftware, Kassensoftware, Kassa-Software, Kassen-Software, Laufkundschaft, Laufkunden",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich POS einrichten. Hier finden Sie folgende Informationen:",
