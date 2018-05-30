@@ -265,7 +265,7 @@ class Metadata {
 								"level" => 4,
 								"title" => "Daten mit ElasticSync importieren",
 								"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
-								"description" => "Erfahren Sie, wie Sie Datenformate erstellen und den dynamischen Import nutzen.",
+								"description" => "Erfahren Sie, wie Sie mit dem Plugin ElasticSync Daten in plentymarkets importieren.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren. Hier finden Sie folgende Informationen:",
 								"children" => [],
