@@ -2470,7 +2470,7 @@ class Metadata {
 										"url" => "/omni-channel/online-shop/webshop-einrichten/extras/haendlerbund",
 										"level" => 5,
 										"title" => "Händlerbund",
-										"keywords" => "Rechtliche Angaben, Händlerbund",
+										"keywords" => "Rechtliche Angaben, Händlerbund, REST, API, SOAP, AGBs, AGB, Rechtstext",
 										"description" => "plentymarkets Integration: Richten Sie die Schnittstelle zu Händlerbund und das Bewertungstool in plentymarkets ein.",
 										"navAlias" => "",
 										"linkListInto" => "Willkommen im Themenbereich Händlerbund. Hier finden Sie folgende Informationen:",
