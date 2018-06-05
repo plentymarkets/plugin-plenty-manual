@@ -5446,6 +5446,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic GDPR. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "f8b5b768f6411569801a0423ea70f3aa",
+				"path" => "basics/eol",
+				"position" => 200,
+				"urlName" => "eol",
+				"url" => "/en/basics/eol",
+				"level" => 2,
+				"title" => "EOL: End of software maintenance and provisioning",
+				"keywords" => "EOL, end, software maintenance, provisoning, plentymarkets version 6, plentymarkets Client, Mobile Warehouse, SOAP API, Classic back end, Webshop, Callisto, old CMS",
+				"description" => "This page lists an overview of the end dates of software maintenance and provisioning within plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic EOL: End of software maintenance and provisioning. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
