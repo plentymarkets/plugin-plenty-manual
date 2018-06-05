@@ -1437,6 +1437,21 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Callisto und DSGVO. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "f8b5b768f6411569801a0423ea70f3aa",
+				"path" => "basics/eol",
+				"position" => 200,
+				"urlName" => "eol",
+				"url" => "/basics/eol",
+				"level" => 2,
+				"title" => "Übersicht EOL: Beendigung Softwarepflege und Bereitstellung",
+				"keywords" => "EOL, Beendigung, Softwarepflege, Bereitstellung, plentymarkets Version 6, plentymarkets Client, Mobile Warehouse, SOAP-API, Classic-Backend, Webshop, Callisto, altes CMS",
+				"description" => "Auf dieser Seite finden Sie eine Übersicht mit den Enddaten von Softwarepflege und Bereitstellung der Funktionen und Bereiche in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Übersicht EOL: Beendigung Softwarepflege und Bereitstellung. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
