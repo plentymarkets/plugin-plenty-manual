@@ -21,14 +21,16 @@
 <li><a href="#1000"><span>9.</span><span> Zahlungsart aktivieren</span></a></li>
 <li><a href="#1100"><span>10.</span><span> Versand einrichten</span></a></li>
 <li><a href="#1150"><span>11.</span><span> SKU manuell festlegen</span></a></li>
-<li><a href="#1200"><span>12.</span><span> FAQ</span></a>
+<li><a href="#1160"><span>12.</span><span> Retouren automatisch senden</span></a></li>
+<li><a href="#1170"><span>13.</span><span> Gutschriften automatisch senden</span></a></li>
+<li><a href="#1200"><span>14.</span><span> FAQ</span></a>
 <ul class="sectlevel2">
-<li><a href="#130"><span>12.1.</span><span> Fehlermeldungen vom Typ PRODUCT_NOT_FOUND</span></a></li>
-<li><a href="#140"><span>12.2.</span><span> Fehlermeldungen vom Typ INVALID_MODIFICATION</span></a></li>
-<li><a href="#150"><span>12.3.</span><span> Fehlermeldungen vom Typ MARKETPLACE_CATEGORY_NOT_FOUND</span></a></li>
-<li><a href="#160"><span>12.4.</span><span> Fehlermeldungen vom Typ VARIANT_GROUP_NOT_FOUND</span></a></li>
-<li><a href="#170"><span>12.5.</span><span> Fehlermeldungen vom Typ INVALID_DATA</span></a></li>
-<li><a href="#180"><span>12.6.</span><span> Fehlermeldungen vom Typ plenty</span></a></li>
+<li><a href="#130"><span>14.1.</span><span> Fehlermeldungen vom Typ PRODUCT_NOT_FOUND</span></a></li>
+<li><a href="#140"><span>14.2.</span><span> Fehlermeldungen vom Typ INVALID_MODIFICATION</span></a></li>
+<li><a href="#150"><span>14.3.</span><span> Fehlermeldungen vom Typ MARKETPLACE_CATEGORY_NOT_FOUND</span></a></li>
+<li><a href="#160"><span>14.4.</span><span> Fehlermeldungen vom Typ VARIANT_GROUP_NOT_FOUND</span></a></li>
+<li><a href="#170"><span>14.5.</span><span> Fehlermeldungen vom Typ INVALID_DATA</span></a></li>
+<li><a href="#180"><span>14.6.</span><span> Fehlermeldungen vom Typ plenty</span></a></li>
 </ul>
 </li>
 </ul>
@@ -184,7 +186,7 @@ Einstellungen zu Steuersätzen im Menü <a href="/auftragsabwicklung/auftraege/b
 <div class="ulist">
 <ul>
 <li>
-<p>Stündliche Übertragung von bis zu 750 neuen Artikel und Artikeländerungen</p>
+<p>Tägliche Übertragung von neuen Artikeln und Artikeländerungen</p>
 </li>
 <li>
 <p>Stündlicher Abgleich von Auftragsstatus</p>
@@ -193,10 +195,16 @@ Einstellungen zu Steuersätzen im Menü <a href="/auftragsabwicklung/auftraege/b
 <p>Stündlicher Auftragsimport</p>
 </li>
 <li>
+<p>Stündliche Versandbestätigung für Aufträge, bei denen der Warenausgang gebucht wurde</p>
+</li>
+<li>
 <p>Stündliche Stornierung von Aufträgen mit einem Status größer [8] und kleiner [9]</p>
 </li>
 <li>
-<p>Stündlicher Bestandsabgleich</p>
+<p>Täglicher Bestandsabgleich von allen Beständen</p>
+</li>
+<li>
+<p>stündlicher Abgleich von Angebotsdaten (z.B. geänderte Bestände, Preise)</p>
 </li>
 <li>
 <p>Tägliche Löschung von nicht mehr vorhandenen Artikeln auf dem Marktplatz</p>
@@ -819,10 +827,166 @@ Weitere Informationen finden Sie im Kapitel <strong><a href="/auftragsabwicklung
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1200">12. FAQ</h2>
+<h2 id="1160">12. Retouren automatisch senden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Richten Sie eine <a href="/basics/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um Retouren automatisch an Allyouneed zu senden.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic instruction">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Ereignisaktion hinzufügen</strong>.<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Tragen Sie einen Namen ein.</p>
+</li>
+<li>
+<p>Wählen Sie das Ereignis gemäß Tabelle <a href="#tabelle-ereignisaktion-retoure">Tabelle 3</a>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle <a href="#tabelle-ereignisaktion-retoure">Tabelle 3</a> vor.</p>
+</li>
+<li>
+<p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="tabelle-ereignisaktion-retoure" class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 3. Ereignisaktion zum automatischen Senden von Retouren an Allyouneed</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsanlage: Neue Retoure</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retoure</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Allyouneed</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retoure &gt; Retoure an Allyouneed senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1170">13. Gutschriften automatisch senden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wenn Sie eine Zahlung bereits erhalten haben und dem Kunden das Geld per Gutschrift erstatten möchten, richten Sie eine <a href="/basics/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um Gutschriften automatisch an Allyouneed zu senden.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic instruction">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Ereignisaktion hinzufügen</strong>.<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Tragen Sie einen Namen ein.</p>
+</li>
+<li>
+<p>Wählen Sie das Ereignis gemäß Tabelle <a href="#tabelle-ereignisaktion-gutschrift">Tabelle 4</a>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen gemäß  Tabelle <a href="#tabelle-ereignisaktion-gutschrift">Tabelle 4</a> vor.</p>
+</li>
+<li>
+<p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="tabelle-ereignisaktion-gutschrift" class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 4. Ereignisaktion zum automatischen Senden von Gutschriften an Allyouneed</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsanlage: Neue Gutschrift</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gutschrift</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Allyouneed</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zahlungsarten &gt; Gutschrift an Allyouneed senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1200">14. FAQ</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="130">12.1. Fehlermeldungen vom Typ PRODUCT_NOT_FOUND</h3>
+<h3 id="130">14.1. Fehlermeldungen vom Typ PRODUCT_NOT_FOUND</h3>
 <div class="openblock collapseBox">
 <div class="title">Das Produkt wurde nicht gefunden. (Code: 1005) / Das Produkt konnte nicht angelegt werden. Es existiert keine Beschreibung für dieses Produkt. (Code: 1040)</div>
 <div class="content">
@@ -845,7 +1009,7 @@ Eine weitere Ursache kann sein, dass Sie in plentymarkets mehrere Preissets für
 </div>
 </div>
 <div class="sect2">
-<h3 id="140">12.2. Fehlermeldungen vom Typ INVALID_MODIFICATION</h3>
+<h3 id="140">14.2. Fehlermeldungen vom Typ INVALID_MODIFICATION</h3>
 <div class="openblock collapseBox">
 <div class="title">Es ist nicht möglich das Produkt zu aktualisieren oder zu erstellen, auf Grund zweideutiger Identifikatoren für das Produkt. (Code: 4010)</div>
 <div class="content">
@@ -934,7 +1098,7 @@ Eine weitere Ursache kann sein, dass Sie in plentymarkets mehrere Preissets für
 </div>
 </div>
 <div class="sect2">
-<h3 id="150">12.3. Fehlermeldungen vom Typ MARKETPLACE_CATEGORY_NOT_FOUND</h3>
+<h3 id="150">14.3. Fehlermeldungen vom Typ MARKETPLACE_CATEGORY_NOT_FOUND</h3>
 <div class="openblock collapseBox">
 <div class="title">Die Marktplatz-Kategorie 'c' wurde nicht gefunden. (Code: 1003)</div>
 <div class="content">
@@ -946,7 +1110,7 @@ Eine weitere Ursache kann sein, dass Sie in plentymarkets mehrere Preissets für
 </div>
 </div>
 <div class="sect2">
-<h3 id="160">12.4. Fehlermeldungen vom Typ VARIANT_GROUP_NOT_FOUND</h3>
+<h3 id="160">14.4. Fehlermeldungen vom Typ VARIANT_GROUP_NOT_FOUND</h3>
 <div class="openblock collapseBox">
 <div class="title">Die Variantengruppe 'xxx' wurde nicht gefunden. (Code: 5009)</div>
 <div class="content">
@@ -958,7 +1122,7 @@ Eine weitere Ursache kann sein, dass Sie in plentymarkets mehrere Preissets für
 </div>
 </div>
 <div class="sect2">
-<h3 id="170">12.5. Fehlermeldungen vom Typ INVALID_DATA</h3>
+<h3 id="170">14.5. Fehlermeldungen vom Typ INVALID_DATA</h3>
 <div class="openblock collapseBox">
 <div class="title">Not valid or missing required variant attribute values for DescriptionProduct with code 'xxx'. Variant group: xxx. Required attribute 'memoryCapacity'.</div>
 <div class="content">
@@ -987,7 +1151,7 @@ Eine weitere Ursache kann sein, dass Sie in plentymarkets mehrere Preissets für
 </div>
 </div>
 <div class="sect2">
-<h3 id="180">12.6. Fehlermeldungen vom Typ plenty</h3>
+<h3 id="180">14.6. Fehlermeldungen vom Typ plenty</h3>
 <div class="openblock collapseBox">
 <div class="title">missing "marketplaceCategory"</div>
 <div class="content">
