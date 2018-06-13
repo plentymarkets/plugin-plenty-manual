@@ -2952,6 +2952,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "a09e2a62b03e6017a0a934c22123ac8a",
+						"path" => "auftragsabwicklung/auftraege/grundeinstellungen",
+						"position" => 10,
+						"urlName" => "grundeinstellungen",
+						"url" => "/auftragsabwicklung/auftraege/grundeinstellungen",
+						"level" => 3,
+						"title" => "Grundeinstellungen",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Grundeinstellungen. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "056be040a0a3bc7a6e10603bccaff056",
 						"path" => "auftragsabwicklung/auftraege/auftraege-verwalten",
 						"position" => 20,
