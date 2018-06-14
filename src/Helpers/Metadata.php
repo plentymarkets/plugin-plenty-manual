@@ -4268,6 +4268,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "3ee081b85a7936f91c9417537612bbe0",
+						"path" => "basics/working-with-plentymarkets/data-cleansing",
+						"position" => 55,
+						"urlName" => "data-cleansing",
+						"url" => "/en/basics/working-with-plentymarkets/data-cleansing",
+						"level" => 3,
+						"title" => "Carrying out data cleansing",
+						"keywords" => "cleansing, data cleansing, data clean-up, data cleanup, data purge, delete automatically, delete addresses, delete unused addresses",
+						"description" => "Learn how to automatically delete data records in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Carrying out data cleansing. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "4fcde34e5e97e8ed5c8abdd534a99831",
 						"path" => "basics/working-with-plentymarkets/backup",
 						"position" => 60,
