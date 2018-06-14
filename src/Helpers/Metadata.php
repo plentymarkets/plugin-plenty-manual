@@ -5858,21 +5858,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "45fe65bcf2f6fe061a0ea525592be124",
-						"path" => "omni-channel/multi-channel/grosshandel",
-						"position" => 90,
-						"urlName" => "grosshandel",
-						"url" => "/en/omni-channel/multi-channel/grosshandel",
-						"level" => 3,
-						"title" => "grosshandel.eu",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market grosshandel.eu in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic grosshandel.eu. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "2a8209a9638f33769bb6662659e2ef71",
 						"path" => "omni-channel/multi-channel/flubit",
 						"position" => 100,
@@ -5962,6 +5947,21 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
+					],
+					[
+						"id" => "45fe65bcf2f6fe061a0ea525592be124",
+						"path" => "omni-channel/multi-channel/grosshandel",
+						"position" => 130,
+						"urlName" => "grosshandel",
+						"url" => "/en/omni-channel/multi-channel/grosshandel",
+						"level" => 3,
+						"title" => "grosshandel.eu",
+						"keywords" => "grosshandel.eu, Market, Marketplace",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market grosshandel.eu in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic grosshandel.eu. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
 					],
 					[
 						"id" => "eeb0022deb6b605e5bf555b668081c9d",
@@ -6100,21 +6100,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "2dcde1cb9f774a8e493571f600dc3ee7",
-						"path" => "omni-channel/multi-channel/restposten-de",
-						"position" => 210,
-						"urlName" => "restposten-de",
-						"url" => "/en/omni-channel/multi-channel/restposten-de",
-						"level" => 3,
-						"title" => "Restposten.de",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Restposten.de in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Restposten.de. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "41a047cc781e1b153bd5c2f6737fe322",
 						"path" => "omni-channel/multi-channel/ricardo-ch",
 						"position" => 220,
@@ -6126,6 +6111,21 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market ricardo.ch in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic ricardo.ch. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "2dcde1cb9f774a8e493571f600dc3ee7",
+						"path" => "omni-channel/multi-channel/restposten-de",
+						"position" => 230,
+						"urlName" => "restposten-de",
+						"url" => "/en/omni-channel/multi-channel/restposten-de",
+						"level" => 3,
+						"title" => "Restposten.de",
+						"keywords" => "Restposten, Restposten.de, Market, Marketplace",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Restposten.de in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Restposten.de. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
