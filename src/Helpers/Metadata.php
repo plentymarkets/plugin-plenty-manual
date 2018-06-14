@@ -3299,21 +3299,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "49800a2096bd11edfdf7875349fd3443",
-						"path" => "auftragsabwicklung/payment/best_practices_ebics",
-						"position" => 6,
-						"urlName" => "best_practices_ebics",
-						"url" => "/auftragsabwicklung/payment/best_practices_ebics",
-						"level" => 3,
-						"title" => "Best Practices: EBICS-Plugin",
-						"keywords" => "EBICS, FAQ, Konto, Bankbuchung, Vorkasse, Überweisung, HBCI, IBAN, Zahlung, Plugin, CAMT, MT",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: EBICS-Plugin. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "3bbfc8349115cec56e4432b47ea7a1f0",
 						"path" => "auftragsabwicklung/payment/best_practices_paypal",
 						"position" => 7,
@@ -3389,21 +3374,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "95c3e8de4b3530f259f3f484a8530cd0",
-						"path" => "auftragsabwicklung/payment/klarna-checkout-uk",
-						"position" => 20,
-						"urlName" => "klarna-checkout-uk",
-						"url" => "/auftragsabwicklung/payment/klarna-checkout-uk",
-						"level" => 3,
-						"title" => "Klarna Checkout UK",
-						"keywords" => "Klarna Checkout UK, Zahlungsart",
-						"description" => "Payment in plentymarkets: Richten Sie die Schnittstelle zu Klarna Checkout UK in plentymarkets ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Klarna Checkout UK. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "9c445a02969a170c3c113df6cd663f91",
 						"path" => "auftragsabwicklung/payment/klarna-checkout",
 						"position" => 20,
@@ -3415,6 +3385,21 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richten Sie die Schnittstelle zu Klarna Checkout in Ihrem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Klarna Checkout. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "95c3e8de4b3530f259f3f484a8530cd0",
+						"path" => "auftragsabwicklung/payment/klarna-checkout-uk",
+						"position" => 20,
+						"urlName" => "klarna-checkout-uk",
+						"url" => "/auftragsabwicklung/payment/klarna-checkout-uk",
+						"level" => 3,
+						"title" => "Klarna Checkout UK",
+						"keywords" => "Klarna Checkout UK, Zahlungsart",
+						"description" => "Payment in plentymarkets: Richten Sie die Schnittstelle zu Klarna Checkout UK in plentymarkets ein.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Klarna Checkout UK. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
