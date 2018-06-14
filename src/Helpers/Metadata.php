@@ -183,6 +183,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "5b19ec4fd78658c5a2a2a1e42ea35408",
+						"path" => "basics/arbeiten-mit-plentymarkets/datenbereinigung",
+						"position" => 55,
+						"urlName" => "datenbereinigung",
+						"url" => "/basics/arbeiten-mit-plentymarkets/datenbereinigung",
+						"level" => 3,
+						"title" => "Datenbereinigung durchführen",
+						"keywords" => "Bereinigung, Daten-Bereinigung, Datenbereinigung, automatisch löschen, Adressen löschen, ungenutzte Adressen löschen",
+						"description" => "Erfahren Sie, wie Sie in plentymarkets automatisch Daten bereinigen.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Datenbereinigung durchführen. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "04b3f95682c09b05df973b4d3dfbf3b8",
 						"path" => "basics/arbeiten-mit-plentymarkets/backup",
 						"position" => 60,
