@@ -3359,21 +3359,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "8f63b34b46787a3e51f57d36ee4ea3f6",
-						"path" => "auftragsabwicklung/payment/ebics-plugin_faq",
-						"position" => 10,
-						"urlName" => "ebics-plugin_faq",
-						"url" => "/auftragsabwicklung/payment/ebics-plugin_faq",
-						"level" => 3,
-						"title" => "Best Practices: EBICS",
-						"keywords" => "EBICS, Plugin, FAQ, Konto, Bankbuchungen, Vorkasse, Überweisung, HBCI, IBAN, Zahlungen",
-						"description" => "Die wichtigsten Fragen und Antworten zum EBICS-Plugin.",
-						"navAlias" => "",
-						"linkListInto" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "866f2cb1e91f7c9d61c56c6aa21d2007",
 						"path" => "auftragsabwicklung/payment/paypal-plus",
 						"position" => 11,
