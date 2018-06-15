@@ -6130,21 +6130,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "0c30e44e3ef83887861b3825a84f31ce",
-						"path" => "omni-channel/multi-channel/plus-gartenxxl",
-						"position" => 190,
-						"urlName" => "plus-gartenxxl",
-						"url" => "/en/omni-channel/multi-channel/plus-gartenxxl",
-						"level" => 3,
-						"title" => "Plus.de and GartenXXL.de",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the markets Plus.de and GartenXXL.de in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Plus.de and GartenXXL.de. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "57f93cbd356620112cddb4f1beaffc8a",
 						"path" => "omni-channel/multi-channel/otto",
 						"position" => 200,
@@ -6156,6 +6141,21 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market OTTO in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic OTTO. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "0c30e44e3ef83887861b3825a84f31ce",
+						"path" => "omni-channel/multi-channel/plus-gartenxxl",
+						"position" => 220,
+						"urlName" => "plus-gartenxxl",
+						"url" => "/en/omni-channel/multi-channel/plus-gartenxxl",
+						"level" => 3,
+						"title" => "Plus.de and GartenXXL.de",
+						"keywords" => "Plus.de, GartenXXL.de, Plus, GartenXXL, Market, Marketplace",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the markets Plus.de and GartenXXL.de in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Plus.de and GartenXXL.de. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
