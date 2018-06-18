@@ -315,6 +315,21 @@ class Metadata {
 								"linkListInto" => "Willkommen im Themenbereich Best Practices: ElasticSync. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "d98b2fb01e9da2b5f2719a7a6b73ac52",
+								"path" => "basics/datenaustausch/ElasticSync/FormatDesigner",
+								"position" => 500,
+								"urlName" => "FormatDesigner",
+								"url" => "/basics/datenaustausch/ElasticSync/FormatDesigner",
+								"level" => 4,
+								"title" => "FormatDesigner",
+								"keywords" => "Format, FormatDesigner, Format Designer, Formatdesigner, Format designen, Datenfeld, Datenfelder, Format anlegen, Format bearbeiten",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich FormatDesigner. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
