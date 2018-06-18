@@ -4343,6 +4343,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "1946c4a1f09dee0521957d5440c6dcc4",
+						"path" => "basics/working-with-plentymarkets/datalog",
+						"position" => 90,
+						"urlName" => "datalog",
+						"url" => "/en/basics/working-with-plentymarkets/datalog",
+						"level" => 3,
+						"title" => "Menu data log",
+						"keywords" => "log, logs, data log, log entries, log level, reference type, reference value, configure logs",
+						"description" => "Find out how to search for log entries.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Menu data log. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "42391ba17005b71e747dabc5e2db8f27",
 						"path" => "basics/working-with-plentymarkets/tags",
 						"position" => 110,
