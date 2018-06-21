@@ -323,11 +323,11 @@ class Metadata {
 								"urlName" => "FormatDesigner",
 								"url" => "/basics/datenaustausch/ElasticSync/FormatDesigner",
 								"level" => 4,
-								"title" => "Daten mit dem FormatDesigner exportieren",
+								"title" => "Daten mit FormatDesigner exportieren",
 								"keywords" => "Format, FormatDesigner, Format Designer, Formatdesigner, Format designen, Datenfeld, Datenfelder, Format anlegen, Format bearbeiten, Daten exportieren",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Daten mit dem FormatDesigner exportieren. Hier finden Sie folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Daten mit FormatDesigner exportieren. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							]
