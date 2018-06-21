@@ -280,11 +280,11 @@ class Metadata {
 						"urlName" => "ElasticSync",
 						"url" => "/basics/datenaustausch/ElasticSync",
 						"level" => 3,
-						"title" => "ElasticSync",
+						"title" => "ElasticSync/FormatDesigner",
 						"keywords" => "ElasticSync, Export, Import",
 						"description" => "Erfahren Sie, wie Sie das Plugin ElasticSync nutzen, um Daten in plentymarkets zu importieren.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich ElasticSync. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich ElasticSync/FormatDesigner. Hier finden Sie folgende Informationen:",
 						"children" => 						[
 							[
 								"id" => "f446188f29319bd631858252c1d590ed",
