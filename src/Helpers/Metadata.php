@@ -1291,7 +1291,7 @@ class Metadata {
 						"url" => "/basics/automatisierung/plentybase-installieren",
 						"level" => 3,
 						"title" => "plentyBase installieren",
-						"keywords" => "plentyBase, Prozesse, Drucken, Drucker installieren, Prozesse ausführen, Automatisierung, Druckverlauf, Druckhistorie, plentymarkets Client",
+						"keywords" => "plentyBase, Prozesse, Drucken, Drucker installieren, Prozesse ausführen, Automatisierung, Druckverlauf, Druckhistorie, plentymarkets Client, Base, base",
 						"description" => "plentyBase installieren",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich plentyBase installieren. Hier finden Sie folgende Informationen:",
@@ -2926,11 +2926,11 @@ class Metadata {
 						"urlName" => "pos-kassenbenutzer",
 						"url" => "/omni-channel/pos/pos-kassenbenutzer",
 						"level" => 3,
-						"title" => "POS für Kassenbenutzer",
-						"keywords" => "plentymarkets POS, Kasse, POS, plentymarkets Kasse, Kassenbenutzer, POS-Benutzer, Katzenbenutzer",
+						"title" => "POS für Kassenpersonal",
+						"keywords" => "plentymarkets POS, Kasse, POS, plentymarkets Kasse, Kassenbenutzer, POS-Benutzer, Katzenpersonal, Kassenpersonal, Kassierer",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich POS für Kassenbenutzer. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich POS für Kassenpersonal. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
