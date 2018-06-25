@@ -6205,21 +6205,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "41a047cc781e1b153bd5c2f6737fe322",
-						"path" => "omni-channel/multi-channel/ricardo-ch",
-						"position" => 220,
-						"urlName" => "ricardo-ch",
-						"url" => "/en/omni-channel/multi-channel/ricardo-ch",
-						"level" => 3,
-						"title" => "ricardo.ch",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market ricardo.ch in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic ricardo.ch. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "2dcde1cb9f774a8e493571f600dc3ee7",
 						"path" => "omni-channel/multi-channel/restposten-de",
 						"position" => 230,
@@ -6231,6 +6216,21 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Restposten.de in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Restposten.de. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "41a047cc781e1b153bd5c2f6737fe322",
+						"path" => "omni-channel/multi-channel/ricardo-ch",
+						"position" => 240,
+						"urlName" => "ricardo-ch",
+						"url" => "/en/omni-channel/multi-channel/ricardo-ch",
+						"level" => 3,
+						"title" => "ricardo.ch",
+						"keywords" => "ricardo, Listing, Market, Marketplace, Layout template",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market ricardo.ch in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic ricardo.ch. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
