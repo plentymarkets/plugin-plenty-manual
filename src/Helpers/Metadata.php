@@ -3047,7 +3047,7 @@ class Metadata {
 								"url" => "/auftragsabwicklung/auftraege/auftragsdokumente/rechnungen-erzeugen",
 								"level" => 4,
 								"title" => "Rechnungen erzeugen",
-								"keywords" => "",
+								"keywords" => "Rechnung, Rechnungen erzeugen, PDF-Vorlage, Fulfillment, Auftragsdokumente, Auftragsabwicklung",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Rechnungen erzeugen. Hier finden Sie folgende Informationen:",
