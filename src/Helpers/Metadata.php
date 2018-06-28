@@ -7176,7 +7176,7 @@ class Metadata {
 								"url" => "/en/order-processing/orders/order-documents/packing-list",
 								"level" => 4,
 								"title" => "Packing list",
-								"keywords" => "",
+								"keywords" => "Packing list, PDF template, Fulfilment, Order document, Order documents, Order processing, Generating a packing list",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Packing list. The following information is available:",
