@@ -3122,7 +3122,7 @@ class Metadata {
 								"url" => "/auftragsabwicklung/auftraege/auftragsdokumente/packliste",
 								"level" => 4,
 								"title" => "Packliste",
-								"keywords" => "",
+								"keywords" => "Packliste, PDF-Vorlage, Fulfillment, Auftragsdokument, Auftragsdokumente, Auftragsabwicklung, Packliste erzeugen",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Packliste. Hier finden Sie folgende Informationen:",
