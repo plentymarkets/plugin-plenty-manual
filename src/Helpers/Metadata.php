@@ -7101,7 +7101,7 @@ class Metadata {
 								"url" => "/en/order-processing/orders/order-documents/generating-invoices",
 								"level" => 4,
 								"title" => "Generating invoices",
-								"keywords" => "",
+								"keywords" => "Invoice, Generating invoices, PDF template, Fulfilment, Order documents, Order processing",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating invoices. The following information is available:",
