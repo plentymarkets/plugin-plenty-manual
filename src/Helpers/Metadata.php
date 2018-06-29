@@ -7116,7 +7116,7 @@ class Metadata {
 								"url" => "/en/order-processing/orders/order-documents/generating-delivery-notes",
 								"level" => 4,
 								"title" => "Generating delivery notes",
-								"keywords" => "",
+								"keywords" => "Delivery notes, Generating delivery notes, Delivery, PDF template, Fulfilment, Order processing,",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating delivery notes. The following information is available:",
