@@ -3152,7 +3152,7 @@ class Metadata {
 								"url" => "/auftragsabwicklung/auftraege/auftragsdokumente/mahnungen-erzeugen",
 								"level" => 4,
 								"title" => "Mahnungen erzeugen",
-								"keywords" => "",
+								"keywords" => "Mahnung, Mahnungen erzeugen,",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Mahnungen erzeugen. Hier finden Sie folgende Informationen:",
