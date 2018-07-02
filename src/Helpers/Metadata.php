@@ -7206,7 +7206,7 @@ class Metadata {
 								"url" => "/en/order-processing/orders/order-documents/generating-dunning-letters",
 								"level" => 4,
 								"title" => "Generating dunning letters",
-								"keywords" => "",
+								"keywords" => "Dunning letter, Generating dunning letters, Fulfilment, Order documents, Order processing",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating dunning letters. The following information is available:",
