@@ -3077,7 +3077,7 @@ class Metadata {
 								"url" => "/auftragsabwicklung/auftraege/auftragsdokumente/gutschriften-erzeugen",
 								"level" => 4,
 								"title" => "Gutschriften erzeugen",
-								"keywords" => "Gutschrift",
+								"keywords" => "Gutschrift, Gutschriften erzeugen, Korrekturbeleg, Korrekturbelege erzeugen",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Gutschriften erzeugen. Hier finden Sie folgende Informationen:",
