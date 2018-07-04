@@ -5993,21 +5993,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "f75aabff134880bdf51b1f5b4d393bde",
-						"path" => "omni-channel/multi-channel/hood",
-						"position" => 120,
-						"urlName" => "hood",
-						"url" => "/en/omni-channel/multi-channel/hood",
-						"level" => 3,
-						"title" => "Hood",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Hood in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Hood. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "510da3dc91e9ee7db5d1ab356c1da1ba",
 						"path" => "omni-channel/multi-channel/idealo-checkout",
 						"position" => 125,
@@ -6065,6 +6050,21 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market grosshandel.eu in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic grosshandel.eu. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "f75aabff134880bdf51b1f5b4d393bde",
+						"path" => "omni-channel/multi-channel/hood",
+						"position" => 140,
+						"urlName" => "hood",
+						"url" => "/en/omni-channel/multi-channel/hood",
+						"level" => 3,
+						"title" => "Hood",
+						"keywords" => "Hood, Market, Marketplace, Listing, Layout template",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Hood in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Hood. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
