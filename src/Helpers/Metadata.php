@@ -7131,7 +7131,7 @@ class Metadata {
 								"url" => "/en/order-processing/orders/order-documents/generating-credit-notes",
 								"level" => 4,
 								"title" => "Generating credit notes",
-								"keywords" => "Credit note",
+								"keywords" => "Credit note, Generating credit notes, Adjustment form, Generating adjustment forms",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating credit notes. The following information is available:",
