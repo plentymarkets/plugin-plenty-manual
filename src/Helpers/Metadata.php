@@ -1370,6 +1370,21 @@ class Metadata {
 								"linkListInto" => "Willkommen im Themenbereich Erste Hilfe für den plentymarkets Client. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "86712d017d8d6814340581be7fdd2569",
+								"path" => "basics/automatisierung/plentymarkets-client/wechsel_base",
+								"position" => 20,
+								"urlName" => "wechsel_base",
+								"url" => "/basics/automatisierung/plentymarkets-client/wechsel_base",
+								"level" => 4,
+								"title" => "Wechsel zu plentyBase",
+								"keywords" => "Prozesse, Automatisierung, Beispielprozesse, plentyBase, base, Wechsel, Client",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Wechsel zu plentyBase. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
