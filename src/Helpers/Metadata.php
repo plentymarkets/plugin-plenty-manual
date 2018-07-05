@@ -7244,17 +7244,17 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "df836d62e5e7ef51940631018c56ed8e",
-								"path" => "order-processing/orders/order-documents/generating-a-return-label",
+								"id" => "3d5287229ef08f9e483e762767542c15",
+								"path" => "order-processing/orders/order-documents/generating-return-slips",
 								"position" => 96,
-								"urlName" => "generating-a-return-label",
-								"url" => "/en/order-processing/orders/order-documents/generating-a-return-label",
+								"urlName" => "generating-return-slips",
+								"url" => "/en/order-processing/orders/order-documents/generating-return-slips",
 								"level" => 4,
-								"title" => "Generating a return label",
-								"keywords" => "Return label",
+								"title" => "Generating return slips",
+								"keywords" => "Return slip, Generating return slips, Fulfilment, Order processing, Order documents, Return, Return delivery",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Generating a return label. The following information is available:",
+								"linkListInto" => "Welcome to the topic Generating return slips. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
