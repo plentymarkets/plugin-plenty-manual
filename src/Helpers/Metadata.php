@@ -3077,7 +3077,7 @@ class Metadata {
 								"url" => "/auftragsabwicklung/auftraege/auftragsdokumente/lieferscheine-erzeugen",
 								"level" => 4,
 								"title" => "Lieferscheine erzeugen",
-								"keywords" => "Lieferschein, Lieferscheine erzeugen, Lieferung, PDF-Vorlage, Fulfillment, Auftragsdokumente, Auftragsabwicklung,",
+								"keywords" => "Lieferschein, Lieferscheine erzeugen, Lieferung, PDF-Vorlage, Fulfillment, Auftragsdokumente, Auftragsabwicklung",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Lieferscheine erzeugen. Hier finden Sie folgende Informationen:",
