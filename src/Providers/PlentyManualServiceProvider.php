@@ -7,8 +7,8 @@ use Plenty\Plugin\Templates\Twig;
 use PlentyManual\Extensions\TwigManualExtension;
 
 /**
- * Class IOServiceProvider
- * @package IO\Providers
+ * Class PlentyManualServiceProvider
+ * @package PlentyManual\Providers
  */
 class PlentyManualServiceProvider extends ServiceProvider
 {

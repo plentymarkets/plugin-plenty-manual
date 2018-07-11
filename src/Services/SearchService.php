@@ -2,8 +2,8 @@
 
 namespace PlentyManual\Services;
 
+use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 use Plenty\Plugin\ConfigRepository;
-use IO\Services\SessionStorageService;
 
 class SearchService
 {
@@ -11,9 +11,10 @@ class SearchService
     private $host;
     private $snippetLength;
 
-    public function __construct( SessionStorageService $sessionStorage, ConfigRepository $config )
+    public function __construct( FrontendSessionStorageFactoryContract $sessionStorage, ConfigRepository $config )
     {
-        $this->type = "manual_" . $sessionStorage->getLang();
+        $lang = $sessionStorage->getLocaleSettings()->language ?? 'de';
+        $this->type = "manual_" . $lang;
         $this->host = $config->get('PlentyManual.search.es_host');
         $this->snippetLength = $config->get('PlentyManual.search.snippet_length');
     }
