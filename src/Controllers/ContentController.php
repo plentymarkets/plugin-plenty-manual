@@ -2,11 +2,11 @@
 
 namespace PlentyManual\Controllers;
 
+use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 use Plenty\Plugin\Controller;
 use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Templates\Twig;
 use PlentyManual\Services\PageService;
-use IO\Services\SessionStorageService;
 use PlentyManual\Services\SearchService;
 
 class ContentController extends Controller
@@ -17,13 +17,14 @@ class ContentController extends Controller
     private $request;
     private $sessionStorage;
 
-    public function __construct( Twig $twig, SessionStorageService $sessionStorage, PageService $pageService, Request $request )
+    public function __construct( Twig $twig, FrontendSessionStorageFactoryContract $sessionStorage, PageService $pageService, Request $request )
     {
         $this->twig = $twig;
-        $this->lang = $sessionStorage->getLang();
+        $this->lang = $sessionStorage->getLocaleSettings()->language ?? 'de';
         $this->pageService = $pageService;
         $this->request = $request;
         $this->sessionStorage = $sessionStorage;
+        parent::__construct();
     }
 
     public function showContent( string $contentPath ):string
@@ -33,9 +34,10 @@ class ContentController extends Controller
         return $this->twig->render(
             "PlentyManual::Main",
             [
-                "contentTemplate" => "PlentyManual::" . $this->lang . "." . implode( ".", explode( "/", $contentPath ) ),
-                "currentPage" => $currentPage,
-                "pages" => $pages
+                "contentTemplate"   => "PlentyManual::" . $this->lang . "." . implode( ".", explode( "/", $contentPath ) ),
+                "currentPage"       => $currentPage,
+                "pages"             => $pages,
+                "lang"              => $this->sessionStorage->getLocaleSettings()->language ?? 'de'
             ]
         );
     }
@@ -49,10 +51,10 @@ class ContentController extends Controller
 
         if ( !is_null( $itemsPerPage ) )
         {
-            $this->sessionStorage->setSessionValue("manual_search_items_per_page", $itemsPerPage);
+            $this->sessionStorage->getPlugin()->setValue("manual_search_items_per_page", $itemsPerPage);
         }
 
-        $itemsPerPage = (int)$this->sessionStorage->getSessionValue("manual_search_items_per_page");
+        $itemsPerPage = (int)$this->sessionStorage->getPlugin()->getValue("manual_search_items_per_page");
 
         if ( is_null( $itemsPerPage ) || $itemsPerPage <= 0 )
         {
@@ -63,9 +65,10 @@ class ContentController extends Controller
         return $this->twig->render(
             "PlentyManual::SearchResults",
             [
-                "pages" => $this->pageService->getPages(),
-                "query" => $query,
-                "results" => $results
+                "pages"     => $this->pageService->getPages(),
+                "query"     => $query,
+                "results"   => $results,
+                "lang"      => $this->sessionStorage->getLocaleSettings()->language ?? 'de'
             ]
         );
     }
@@ -75,7 +78,8 @@ class ContentController extends Controller
         return $this->twig->render(
             "PlentyManual::Startpage",
             [
-                "pages" => $this->pageService->getPages()
+                "pages" => $this->pageService->getPages(),
+                "lang"              => $this->sessionStorage->getLocaleSettings()->language ?? 'de'
             ]
         );
     }

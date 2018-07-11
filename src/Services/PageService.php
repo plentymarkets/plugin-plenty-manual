@@ -2,16 +2,16 @@
 
 namespace PlentyManual\Services;
 
+use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 use PlentyManual\Helpers\Metadata;
-use IO\Services\SessionStorageService;
 
 class PageService
 {
     private $lang = "de";
 
-    public function __construct( SessionStorageService $sessionStorage )
+    public function __construct( FrontendSessionStorageFactoryContract $sessionStorage )
     {
-        $this->lang = $sessionStorage->getLang();
+        $this->lang = $sessionStorage->getLocaleSettings()->language ?? 'de';
     }
 
     public function getPages( string $activePageId = null )

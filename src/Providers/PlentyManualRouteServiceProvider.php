@@ -17,7 +17,7 @@ class PlentyManualRouteServiceProvider extends RouteServiceProvider
 
         $router->get('search', 'PlentyManual\Controllers\ContentController@showSearchResults');
 
-        $router->get('/{contentPath}', 'PlentyManual\Controllers\ContentController@showContent')
+        $router->get('{contentPath}', 'PlentyManual\Controllers\ContentController@showContent')
                ->where('contentPath', '.*');
     }
 }
