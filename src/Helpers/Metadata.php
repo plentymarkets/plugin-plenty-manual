@@ -7025,11 +7025,11 @@ class Metadata {
 						"urlName" => "plentymarkets-pos-for-pos-users",
 						"url" => "/en/omni-channel/pos/plentymarkets-pos-for-pos-users",
 						"level" => 3,
-						"title" => "plentymarkets POS for POS users",
+						"title" => "POS for POS users",
 						"keywords" => "plentymarkets POS, point of sale, POS, plentymarkets point of sale, plentyPOS, POS user, POS users, cashier, till",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic plentymarkets POS for POS users. The following information is available:",
+						"linkListInto" => "Welcome to the topic POS for POS users. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
