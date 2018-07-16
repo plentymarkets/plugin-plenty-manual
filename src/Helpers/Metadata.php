@@ -2966,21 +2966,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "8e0b7ba198d0d660f73432ac4f87f250",
-				"path" => "omni-channel/auftragsherkunft",
-				"position" => 40,
-				"urlName" => "auftragsherkunft",
-				"url" => "/omni-channel/auftragsherkunft",
-				"level" => 2,
-				"title" => "Auftragsherkunft",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Auftragsherkunft. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
@@ -3238,21 +3223,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "9c191ea0bf64cf3b4a599d96c437bc2c",
-						"path" => "auftragsabwicklung/auftraege/sammelauftraege",
-						"position" => 40,
-						"urlName" => "sammelauftraege",
-						"url" => "/auftragsabwicklung/auftraege/sammelauftraege",
-						"level" => 3,
-						"title" => "Sammelaufträge",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Sammelaufträge. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "e907d73a4a256013f4d65347b9739d5d",
 						"path" => "auftragsabwicklung/auftraege/auftragsherkunft",
 						"position" => 40,
@@ -3264,6 +3234,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Auftragsherkunft. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "9c191ea0bf64cf3b4a599d96c437bc2c",
+						"path" => "auftragsabwicklung/auftraege/sammelauftraege",
+						"position" => 40,
+						"urlName" => "sammelauftraege",
+						"url" => "/auftragsabwicklung/auftraege/sammelauftraege",
+						"level" => 3,
+						"title" => "Sammelaufträge",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Sammelaufträge. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
