@@ -47,7 +47,26 @@
 </ul>
 </li>
 <li><a href="#173"><span>5.</span><span> Auftrag stornieren</span></a></li>
-<li><a href="#175"><span>6.</span><span> Retoure buchen</span></a></li>
+<li><a href="#175"><span>6.</span><span> Retoure buchen</span></a>
+<ul class="sectlevel2">
+<li><a href="#_retoure_mit_zuordnung_zum_hauptauftrag_buchen_ab_version_1_8"><span>6.1.</span><span> Retoure mit Zuordnung zum Hauptauftrag buchen (ab Version 1.8)</span></a>
+<ul class="sectlevel3">
+<li><a href="#_vollständige_retoure_alle_artikel_eines_auftrags_zurücknehmen"><span>6.1.1.</span><span> Vollständige Retoure: Alle Artikel eines Auftrags zurücknehmen</span></a>
+<ul class="sectlevel4">
+<li><a href="#_teilretoure_retourenartikel_scannen"><span>Teilretoure: Retourenartikel scannen</span></a></li>
+</ul>
+</li>
+<li><a href="#_teilretoure_bestimmte_artikel_eines_auftrags_zurücknehmen"><span>6.1.2.</span><span> Teilretoure: Bestimmte Artikel eines Auftrags zurücknehmen</span></a>
+<ul class="sectlevel4">
+<li><a href="#_teilretoure_retourenartikel_manuell_wählen"><span>Teilretoure: Retourenartikel manuell wählen</span></a></li>
+</ul>
+</li>
+<li><a href="#_preis_von_retourenartikeln_ändern"><span>6.1.3.</span><span> Preis von Retourenartikeln ändern</span></a></li>
+</ul>
+</li>
+<li><a href="#_retoure_ohne_zuordnung_zum_hauptauftrag_buchen"><span>6.2.</span><span> Retoure ohne Zuordnung zum Hauptauftrag buchen</span></a></li>
+</ul>
+</li>
 <li><a href="#180"><span>7.</span><span> Einlagen und Entnahmen buchen</span></a>
 <ul class="sectlevel2">
 <li><a href="#190"><span>7.1.</span><span> Einlage buchen</span></a></li>
@@ -1065,10 +1084,241 @@
 <h2 id="175">6. Retoure buchen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Über eine Kasse gebuchte Retouren werden im plentymarkets Backend als Retoure ohne Hauptauftrag erstellt. Gehen Sie wie unten beschrieben vor, um eine Retoure zu buchen.</p>
+<p>Wenn Kunden Artikel zurückgeben möchten, haben Sie zwei Möglichkeiten, eine Retoure zu buchen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sie rufen den Originalauftrag auf und führen die Retoure über diesen ursprünglichen Hauptauftrag durch (ab Version 1.8).</p>
+</li>
+<li>
+<p>Wenn der Hauptauftrag nicht bekannt ist oder nicht geöffnet werden kann, erstellen Sie eine Retoure ohne Hauptauftrag.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Erstattung nur in bar möglich</div>
+<div class="paragraph">
+<p>Aus technischen Gründen kann der Retourenbetrag aktuell nur in bar an Kunden ausgezahlt werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="_retoure_mit_zuordnung_zum_hauptauftrag_buchen_ab_version_1_8">6.1. Retoure mit Zuordnung zum Hauptauftrag buchen (ab Version 1.8)</h3>
+<div class="paragraph">
+<p>Wenn die Auftrags-ID oder die Belegnummer (externe Auftragsnummer) des ursprünglichen Hauptauftrags bekannt ist, rufen Sie diesen Hauptauftrag auf und wickeln die Retoure über diesen Auftrag ab. Gehen Sie wie unten beschrieben vor, um eine Retoure mit Zuordnung zum Hauptauftrag zu buchen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Verkaufsgutscheine sind von Retoure ausgeschlossen</div>
+<div class="paragraph">
+<p>Kunden können Verkaufsgutscheine nicht zurückgeben. Daher werden Verkaufsgutscheine in der Retourenansicht ausgegraut angezeigt.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect3">
+<h4 id="_vollständige_retoure_alle_artikel_eines_auftrags_zurücknehmen">6.1.1. Vollständige Retoure: Alle Artikel eines Auftrags zurücknehmen</h4>
+<div class="paragraph instruction">
+<p>Alle Artikel eines Auftrags zurücknehmen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tippen Sie im Menü <strong>POS</strong> auf <strong>Retoure</strong>.<br>
+→ Die Retourenansicht wird geöffnet.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Auftrag suchen</strong>.<br>
+→ Die Auftragssuche wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie in das Feld <strong>Externe Auftragsnummer</strong> die Belegnummer ein.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Suchen</strong>.<br>
+→ Die Auftragsdaten werden angezeigt.</p>
+</li>
+<li>
+<p>Prüfen Sie, dass Sie alle Auftragspositionen tatsächlich erhalten haben.</p>
+</li>
+<li>
+<p>Streichen Sie auf dem Kassenbeleg die zurückgegebenen Artikel durch.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Retoure erstellen</strong>.<br>
+→ Im plentymarkets Backend wird eine Retoure und eine Gutschrift erstellt und mit dem Hauptauftrag verknüpft.</p>
+</li>
+<li>
+<p>Zahlen Sie den Retourenbetrag aus.</p>
+</li>
+</ol>
+</div>
+<div class="sect4">
+<h5 id="_teilretoure_retourenartikel_scannen">Teilretoure: Retourenartikel scannen</h5>
+<div class="paragraph instruction">
+<p>Teilretoure, Retourenartikel scannen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tippen Sie im Menü <strong>POS</strong> auf <strong>Retoure</strong>.<br>
+→ Die Retourenansicht wird geöffnet.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Auftrag suchen</strong>.<br>
+→ Die Auftragssuche wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie in das Feld <strong>Externe Auftragsnummer</strong> die Belegnummer ein.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Suchen</strong>.<br>
+→ Die Auftragsdaten werden angezeigt.<br>
+→ Alle Auftragspositionen des Auftrags werden für die Retoure vorgemerkt.</p>
+</li>
+<li>
+<p>Scannen Sie den Barcode der Artikel, die die Kundin zurückgeben möchte.<br>
+<strong><em>Hinweis:</em></strong> Sobald Sie einen Artikel scannen, werden alle anderen Artikel aus der Retoure entfernt. Der gescannte Artikel wird mit der Menge <strong>1</strong> zur Retoure hinzugefügt. Jeder Artikel, der zurückgegeben werden soll, muss also einzeln gescannt werden.</p>
+</li>
+<li>
+<p>Streichen Sie auf dem Kassenbeleg die zurückgegebenen Artikel durch.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Retoure erstellen</strong>.<br>
+→ Im plentymarkets Backend wird eine Retoure und eine Gutschrift erstellt und mit dem Hauptauftrag verknüpft.</p>
+</li>
+<li>
+<p>Zahlen Sie den Retourenbetrag aus.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_teilretoure_bestimmte_artikel_eines_auftrags_zurücknehmen">6.1.2. Teilretoure: Bestimmte Artikel eines Auftrags zurücknehmen</h4>
+<div class="paragraph">
+<p>Wenn Sie im Bereich <strong>Retoure</strong> einen Auftrag öffnen, werden alle Auftragspositionen des Auftrags für die Retoure vorgemerkt. Sie müssen also die Auftragspositionen aus der Retoure entfernen, die die Kundin nicht zurückgeben möchte.</p>
+</div>
+<div class="sect4">
+<h5 id="_teilretoure_retourenartikel_manuell_wählen">Teilretoure: Retourenartikel manuell wählen</h5>
+<div class="paragraph instruction">
+<p>Teilretoure, Retourenartikel manuell wählen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tippen Sie im Menü <strong>POS</strong> auf <strong>Retoure</strong>.<br>
+→ Die Retourenansicht wird geöffnet.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Auftrag suchen</strong>.<br>
+→ Die Auftragssuche wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie in das Feld <strong>Externe Auftragsnummer</strong> die Belegnummer ein.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Suchen</strong>.<br>
+→ Die Auftragsdaten werden angezeigt.<br>
+→ Alle Auftragspositionen werden für die Retoure vorgemerkt.</p>
+</li>
+<li>
+<p>Entfernen Sie die Artikel aus der Retoure, die nicht zurückgegeben werden sollen.<br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Um die gesamte Menge einer Auftragsposition aus der Retoure zu entfernen:<br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tippen Sie auf den Papierkorb neben der Auftragsposition.<br></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Um eine Teilmenge einer Auftragsposition aus der Retoure zu entfernen:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tippen Sie auf die Auftragsposition.<br>
+→ Weitere Optionen werden eingeblendet.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Menge ändern</strong>.<br>
+→ Das Fenster <strong>Menge ändern</strong> wird angezeigt.</p>
+</li>
+<li>
+<p>Geben Sie die Anzahl des Artikels ein, die zurückgegeben wird.<br>
+→ Die Menge der Auftragsposition wird aktualisiert.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Ändern Sie bei Bedarf die Menge weiterer Auftragspositionen.</p>
+</li>
+<li>
+<p>Streichen Sie auf dem Kassenbeleg die zurückgegebenen Artikel durch.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Retoure erstellen</strong>.<br>
+→ Im plentymarkets Backend wird eine Retoure und eine Gutschrift erstellt und mit dem Hauptauftrag verknüpft.</p>
+</li>
+<li>
+<p>Zahlen Sie den Retourenbetrag aus.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_preis_von_retourenartikeln_ändern">6.1.3. Preis von Retourenartikeln ändern</h4>
+<div class="paragraph">
+<p>Wenn nicht der volle Kaufpreis erstattet werden soll, zum Beispiel, weil Artikel beschädigt sind, ändern Sie den Preis einer Auftragsposition.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tippen Sie in der Retoure auf die Auftragsposition.<br>
+→ Weitere Optionen werden eingeblendet.</p>
+</li>
+<li>
+<p>Tippen Sie auf <strong>Einzelpreis ändern</strong>, um den Einzelpreis der Auftragsposition zu ändern, oder auf <strong>Gesamtpreis ändern</strong>, um den Gesamtpreis der Auftragsposition zu ändern.<br>
+→ Der Preis der Auftragsposition wird aktualisiert.</p>
+</li>
+<li>
+<p>Schließen Sie die Retoure wie gewohnt ab.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_retoure_ohne_zuordnung_zum_hauptauftrag_buchen">6.2. Retoure ohne Zuordnung zum Hauptauftrag buchen</h3>
+<div class="paragraph">
+<p>In Fällen, in denen der Hauptauftrag nicht bekannt ist oder nicht aufgerufen werden kann, bietet plentymarkets POS auch die Möglichkeit, eine Retoure zu erstellen, die keinem Hauptauftrag zugeordnet ist. Das bedeutet, dass datentechnisch keine Verbindung zwischen dem ursprünglichen Auftrag und der Retoure besteht. Gehen Sie wie unten beschrieben vor, um eine Retoure ohne Zuordnung zum Hauptauftrag zu buchen.</p>
 </div>
 <div class="paragraph instruction">
-<p>Retoure buchen:</p>
+<p>Retoure ohne Zuordnung zum Hauptauftrag buchen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1082,7 +1332,7 @@
 → Wenn der gezahlte Preis vom aktuellen Preis des Artikels abweicht, <a href="/omni-channel/pos/pos-kassenbenutzer#140">passen Sie den Preis des Artikels an</a>.</p>
 </li>
 <li>
-<p>Fügen Sie optional eine Notiz zur Retoure hinzu:</p>
+<p><strong><em>Optional:</em></strong> Fügen Sie eine Notiz zur Retoure hinzu:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1107,14 +1357,18 @@
 </div>
 </li>
 <li>
-<p>Wenn alle Retourenartikel erfasst wurden, tippen Sie auf das grün hinterlegte Häkchen.<br>
+<p>Wenn Sie alle Retourenartikel eingegeben haben, tippen Sie auf den grün hinterlegten Pfeil.<br>
 → Die Gesamtsumme der Retoure wird angezeigt.</p>
 </li>
 <li>
 <p>Tippen Sie auf <strong>Retoure abschließen</strong>.<br>
-→ Im plentymarkets Backend wird eine Retoure ohne Hauptauftrag erstellt.</p>
+→ Im plentymarkets Backend werden eine Retoure und eine Gutschrift ohne Hauptauftrag erstellt.</p>
+</li>
+<li>
+<p>Zahlen Sie den Retourenbetrag aus.</p>
 </li>
 </ol>
+</div>
 </div>
 </div>
 </div><div class="sect1">
