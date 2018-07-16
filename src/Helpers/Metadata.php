@@ -302,6 +302,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "d98b2fb01e9da2b5f2719a7a6b73ac52",
+								"path" => "basics/datenaustausch/ElasticSync/FormatDesigner",
+								"position" => 20,
+								"urlName" => "FormatDesigner",
+								"url" => "/basics/datenaustausch/ElasticSync/FormatDesigner",
+								"level" => 4,
+								"title" => "Daten mit FormatDesigner exportieren",
+								"keywords" => "Format, FormatDesigner, Format Designer, Formatdesigner, Format designen, Datenfeld, Datenfelder, Format anlegen, Format bearbeiten, Daten exportieren",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Daten mit FormatDesigner exportieren. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "4144d216976ec60ad15cb583751063cf",
 								"path" => "basics/datenaustausch/ElasticSync/best-practices",
 								"position" => 100,
@@ -313,21 +328,6 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Best Practices: ElasticSync. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "d98b2fb01e9da2b5f2719a7a6b73ac52",
-								"path" => "basics/datenaustausch/ElasticSync/FormatDesigner",
-								"position" => 500,
-								"urlName" => "FormatDesigner",
-								"url" => "/basics/datenaustausch/ElasticSync/FormatDesigner",
-								"level" => 4,
-								"title" => "Daten mit FormatDesigner exportieren",
-								"keywords" => "Format, FormatDesigner, Format Designer, Formatdesigner, Format designen, Datenfeld, Datenfelder, Format anlegen, Format bearbeiten, Daten exportieren",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Daten mit FormatDesigner exportieren. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							]
