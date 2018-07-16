@@ -3012,21 +3012,6 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Aufträge. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
-						"id" => "2765375f5b56bc330443490e41b29c36",
-						"path" => "auftragsabwicklung/auftraege/buchhaltung",
-						"position" => 10,
-						"urlName" => "buchhaltung",
-						"url" => "/auftragsabwicklung/auftraege/buchhaltung",
-						"level" => 3,
-						"title" => "Buchhaltung",
-						"keywords" => "Buchhaltung, Preise runden, Lieferschwellen, Lieferschwelle, Standort, Niederlassung, Versandland",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Buchhaltung. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "a09e2a62b03e6017a0a934c22123ac8a",
 						"path" => "auftragsabwicklung/auftraege/grundeinstellungen",
 						"position" => 10,
@@ -3053,6 +3038,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Aufträge verwalten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "2765375f5b56bc330443490e41b29c36",
+						"path" => "auftragsabwicklung/auftraege/buchhaltung",
+						"position" => 20,
+						"urlName" => "buchhaltung",
+						"url" => "/auftragsabwicklung/auftraege/buchhaltung",
+						"level" => 3,
+						"title" => "Buchhaltung",
+						"keywords" => "Buchhaltung, Preise runden, Lieferschwellen, Lieferschwelle, Standort, Niederlassung, Versandland",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Buchhaltung. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -3249,6 +3249,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Sammelaufträge. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "e907d73a4a256013f4d65347b9739d5d",
+						"path" => "auftragsabwicklung/auftraege/auftragsherkunft",
+						"position" => 40,
+						"urlName" => "auftragsherkunft",
+						"url" => "/auftragsabwicklung/auftraege/auftragsherkunft",
+						"level" => 3,
+						"title" => "Auftragsherkunft",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Auftragsherkunft. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
