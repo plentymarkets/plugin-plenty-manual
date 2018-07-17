@@ -2332,6 +2332,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "381a8bc36efb1c9b37a3f171ed2020a8",
+						"path" => "omni-channel/online-shop/io-einrichten",
+						"position" => 120,
+						"urlName" => "io-einrichten",
+						"url" => "/omni-channel/online-shop/io-einrichten",
+						"level" => 3,
+						"title" => "IO einrichten",
+						"keywords" => "Webshop, Mandant, Standard, Ceres, Plugin, IO, io, Routen, Template, Konfiguration",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich IO einrichten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "5d619cf0a6ca81b2bf9c8a628c76f6b0",
 						"path" => "omni-channel/online-shop/webshop-einrichten",
 						"position" => 200,
