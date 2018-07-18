@@ -6386,6 +6386,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "36aa293937225f68aaf9e4cacb5e9a34",
+						"path" => "omni-channel/online-store/setting-up-io",
+						"position" => 120,
+						"urlName" => "setting-up-io",
+						"url" => "/en/omni-channel/online-store/setting-up-io",
+						"level" => 3,
+						"title" => "Setting up IO",
+						"keywords" => "Online store, client, standard, Ceres, IO, io, routes, routing, routeing, configuration, template, plugin",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Setting up IO. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "681432d84eb02f035e83e00b98337422",
 						"path" => "omni-channel/online-store/setting-up-clients",
 						"position" => 200,
