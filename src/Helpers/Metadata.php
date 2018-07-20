@@ -90,21 +90,6 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Plugins. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "346a1f63d60fe4ea41fed387b218efe2",
-						"path" => "basics/erste-schritte/plugin-set-Karte",
-						"position" => 120,
-						"urlName" => "plugin-set-Karte",
-						"url" => "/basics/erste-schritte/plugin-set-Karte",
-						"level" => 3,
-						"title" => "Plugin Set Karte",
-						"keywords" => "Plugins, Erweiterungen, Funktionen",
-						"description" => "Plugins in plentymarkets: Plugins verwalten und plentymarkets erweitern.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Plugin Set Karte. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
