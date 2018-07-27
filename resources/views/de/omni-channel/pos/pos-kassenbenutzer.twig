@@ -55,6 +55,7 @@
 <li><a href="#_teilretoure_retourenartikel_scannen"><span>6.1.2.</span><span> Teilretoure: Retourenartikel scannen</span></a></li>
 <li><a href="#_teilretoure_retourenartikel_manuell_wählen"><span>6.1.3.</span><span> Teilretoure: Retourenartikel manuell wählen</span></a></li>
 <li><a href="#_preis_von_retourenartikeln_ändern"><span>6.1.4.</span><span> Preis von Retourenartikeln ändern</span></a></li>
+<li><a href="#_hinweise_zu_retouren_bei_kauf_auf_rechnung"><span>6.1.5.</span><span> Hinweise zu Retouren bei Kauf auf Rechnung</span></a></li>
 </ul>
 </li>
 <li><a href="#_retoure_ohne_zuordnung_zum_hauptauftrag_buchen"><span>6.2.</span><span> Retoure ohne Zuordnung zum Hauptauftrag buchen</span></a></li>
@@ -577,16 +578,16 @@
 <div class="paragraph">
 <p>Wenn im plentymarkets Backend das Plugin <strong>plentyPOS Kauf auf Rechnung</strong> aktiviert ist, können Sie Bestandskunden auch Artikel auf Rechnung verkaufen. Kunden können Artikel nur auf Rechnung kaufen, wenn ihre Kundendaten im System gespeichert sind, da über plentyPOS keine neuen Kundendaten erfasst werden können.</p>
 </div>
-<div class="admonitionblock warning">
+<div class="admonitionblock tip">
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warnung"></i>
+<i class="fa icon-tip" title="Hinweis"></i>
 </td>
 <td class="content">
 <div class="title">Retouren von auf Rechnung gekauften Artikeln</div>
 <div class="paragraph">
-<p>Aufträge mit Kauf auf Rechnung können bis zum nächsten Tagesabschluss wie gewohnt storniert werden. Aus technischen Gründen sind aktuell jedoch Retouren von nicht oder nur teilweise bezahlten Aufträgen mit Rechnungskauf noch nicht möglich. Nur vollständig bezahlte Aufträge können retourniert werden. Da Sie jedoch in der plentymarkets App nicht prüfen können, ob ein Auftrag vollständig bezahlt wurde, müssen Sie vor einer Retoure im plentymarkets Backend prüfen, ob der Auftrag tatsächlich vollständig bezahlt wurde.</p>
+<p>Aufträge mit Kauf auf Rechnung können bis zum nächsten Tagesabschluss wie gewohnt storniert werden. Auch die Retoure von auf Rechnung gekauften Artikeln ist ab Version 1.8 der plentymarkets App möglich. Bei Teilzahlung errechnet die Kasse automatisch, welchen Betrag Kunden zurückbekommen.</p>
 </div>
 </td>
 </tr>
@@ -1301,6 +1302,67 @@
 </li>
 </ol>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_hinweise_zu_retouren_bei_kauf_auf_rechnung">6.1.5. Hinweise zu Retouren bei Kauf auf Rechnung</h4>
+<div class="paragraph">
+<p>Wenn Sie Kunden Anzahlungen oder den Kauf auf Rechnung anbieten kann es vorkommen, dass Kunden Artikel aus Aufträgen zurückgeben möchten, die sie noch nicht oder nur teilweise bezahlt haben. plentymarkets POS berechnet automatisch, ob Sie dem Kunden Geld auszahlen sollen oder nicht. Tabelle <a href="#tabelle-POS-Retoure-Rechnung">Tabelle 4</a> verdeutlicht die Berechnung, die im Hintergrund stattfindet, damit Sie sie Kunden bei Bedarf erklären können.</p>
+</div>
+<table id="tabelle-POS-Retoure-Rechnung" class="tableblock frame-all grid-all spread">
+<caption class="title">Tabelle 4. Retourenfälle bei Kauf auf Rechnung</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Rechnungsstatus</th>
+<th class="tableblock halign-left valign-top">Teilretoure</th>
+<th class="tableblock halign-left valign-top">Vollretoure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nicht bezahlt</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Kunde bekommt kein Geld zurück.<br>
+Im Hintergrund wird eine Gutschrift für zurückgegebenen Artikel erstellt.<br>
+<strong><em>Tipp:</em></strong> Der Rechnungsbetrag, den der Kunde noch bezahlen muss, steht auf dem Gutschriftsbeleg.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Kunde bekommt kein Geld zurück.<br>
+Im Hintergrund wird eine Gutschrift für den vollen Rechnungsbetrag erstellt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Teilweise bezahlt</strong></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Die Kasse errechnet automatisch, ob und wenn ja wie viel Geld der Kunde zurück bekommt. Vereinfacht lautet die Formel "Offener Rechnungsbetrag minus Preis der zurückgegebenen Artikel".</p>
+</div>
+<div class="paragraph">
+<p>Bei Teilzahlung sind die folgenden Fälle möglich:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Zurückgegebene Artikel kosten weniger als der noch offene Rechnungsbetrag = Der Kunde bekommt kein Geld zurück.<br>
+Der offene Rechnungsbetrag wird angepasst (Noch offener Betrag minus Preis des zurückgegebenen Artikels).<br>
+Eine Gutschrift über den Preis des zurückgegebenen Artikels wird erstellt.<br></p>
+</li>
+<li>
+<p>Preis der zurückgegebenen Artikel entspricht dem noch offenen Rechnungsbetrag = Der Kunde bekommt kein Geld zurück.<br>
+Eine Gutschrift über den Preis des zurückgegebenen Artikels wird erstellt.<br></p>
+</li>
+<li>
+<p>Zurückgegebene Artikel kosten mehr als der noch offene Rechnungsbetrag = Der Kunde bekommt die Differenz aus offenem Betrag minus Preis des zurückgegebenen Artikels zurück. <br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Im Hintergrund wird bei der Retoure eine Gutschrift für die zurückgegebenen Artikel erstellt. Dabei stimmen der Gutschriftsbetrag und der ausgezahlte Betrag nicht unbedingt überein. Wenn der ausgezahlte Betrag nicht mit dem Gutschriftsbetrag übereinstimmt, ist der ausbezahlte Betrag auf dem Gutschriftsbeleg vermerkt.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Kunde bekommt den Betrag zurück, den er bisher bezahlt hat.<br>
+Der Gutschriftbetrag ist gleich dem vollen Rechnungsbetrag.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
