@@ -76,7 +76,7 @@
 </li>
 <li><a href="#2000"><span>16.</span><span> Setting up a sync of the Order type</span></a>
 <ul class="sectlevel2">
-<li><a href="#2010"><span>16.1.</span><span> Fields for item matching</span></a></li>
+<li><a href="#2010"><span>16.1.</span><span> Fields for matching order data</span></a></li>
 <li><a href="#2020"><span>16.2.</span><span> Fields for order mapping</span></a></li>
 </ul>
 </li>
@@ -3629,7 +3629,7 @@ file</p></td>
 <p>With syncs of the type <strong>Order</strong>, you import order data.</p>
 </div>
 <div class="sect2">
-<h3 id="2010">16.1. Fields for item matching</h3>
+<h3 id="2010">16.1. Fields for matching order data</h3>
 <div class="paragraph">
 <p>Currently, there is only one matching field for identifying orders. The following matching field is available:</p>
 </div>
@@ -3645,6 +3645,21 @@ file</p></td>
 <h3 id="2020">16.2. Fields for order mapping</h3>
 <div class="paragraph">
 <p><a href="#table-mapping-fields-orders">Table 35</a> explains the fields that are available for mapping order data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Mandatory fields for importing order data</div>
+<div class="paragraph">
+<p>Pay attention to the fields marked as <strong>Mandatory</strong> in <a href="#table-mapping-fields-order">[table-mapping-fields-order]</a>. If these fields are not activated, order data are not correctly mapped.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <table id="table-mapping-fields-orders" class="tableblock frame-all grid-all spread">
 <caption class="title">Table 35. Mapping fields for order import</caption>
@@ -3665,7 +3680,8 @@ file</p></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Order</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type ID<br>
+<strong>Mandatory</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>Order types represent different business events. The following types are available:</p>
@@ -3716,7 +3732,8 @@ file</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the owner. An owner is a user who is assigned as owner. The ID of the owner thus corresponds to the ID of the user. The user ID can be found in the <strong>System » Settings » User » Accounts</strong> menu. Orders can be assigned to an owner. This is optional.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PlentyID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PlentyID<br>
+<strong>Mandatory</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the client. The plentyID can be found in the <strong>System » Client » Select client » Settings</strong> menu.</p></td>
 </tr>
@@ -3729,7 +3746,8 @@ file</p></td>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Order item</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type<br>
+<strong>Mandatory</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>The order item types represent different cost positions of an order. The costs involved can be negative or positive. The ID of the order item type is expected by default. The types that are available, are listed with their type ID. If your column does not contain the IDs, carry out the mapping yourself.</p>
@@ -3781,7 +3799,8 @@ file</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The ID of the referrer is expected by default. The IDs can be found in the <strong>System » Orders » Order referrer</strong> menu. If your column does not contain the IDs, carry out the mapping yourself.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description<br>
+<strong>Mandatory</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select the column that contains the name of the order item. It is expected that the names are saved in the language of the system by default.</p></td>
 </tr>
@@ -3801,7 +3820,8 @@ file</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select the column that contains the amount of tax. The VAT amount for quantity 1 of the order item is expected by default. Whether the number is expected to be separated by a comma or a dot depends on the selected import options. Set the import options in the <strong>Matching</strong> area.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quantity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quantity<br>
+<strong>Mandatory</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select the column that contains the number of an order item.</p></td>
 </tr>
@@ -3816,7 +3836,8 @@ file</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select the column that contains the position of the order item. The position serves for the sorting within the order. It is, however, not taken into consideration yet.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Currency<br>
+<strong>Mandatory</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The ISO code of a currency, e.g. EUR for Euro, is expected by default.</p></td>
 </tr>
