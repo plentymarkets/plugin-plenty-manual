@@ -75,6 +75,7 @@
 <li><a href="#3400"><span>17.1.</span><span> Lager für Amazon FBA anlegen</span></a></li>
 <li><a href="#3500"><span>17.2.</span><span> FBA-Auftragsimport</span></a></li>
 <li><a href="#3600"><span>17.3.</span><span> FBA-Retouren automatisch importieren</span></a></li>
+<li><a href="#3650"><span>17.4.</span><span> FBA-Gutschriften automatisch importieren</span></a></li>
 </ul>
 </li>
 <li><a href="#3700"><span>18.</span><span> Amazon Multi-Channel einrichten</span></a>
@@ -512,8 +513,15 @@ Artikel mit der Einstellung <strong>Beschränkung auf Netto-Warenbestand</strong
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/auftragsabwicklung/auftraege/auftraege-verwalten"><strong>Auftragstatus</strong></a> für Retouren wählen, die nicht erfolgreich an Amazon gemeldet wurden.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Austehende Aufträge</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ausstehende Aufträge</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob ausstehende Aufträge von Amazon alle 15 Minuten importiert werden sollen, oder nie.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gutschriftenimport</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob FBA-Gutschriften in Ihr plentymarkets System importiert werden sollen. Nutzen Sie diese Option für Amazon FBA (= Versand durch Amazon). Weitere Informationen finden Sie im Kapitel <a href="#3650">FBA-Gutschriften automatisch importieren</a>.<br>
+<strong>Ja</strong> = FBA-Gutschriften werden alle 4 Stunden in Ihr plentymarkets System importiert.<br>
+<strong>Nein</strong> = Es findet kein Gutschriftenimport statt. Wenn Sie <strong>Nein</strong> wählen, erstellen Sie eine Ereignisaktion, um Retouren als Gutschriften in Ihr plentymarkets System zu importieren.<br>
+Der Gutschriftenimport ist standardmäßig deaktiviert.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Versand durch Amazon (FBA)</p></td>
@@ -1894,14 +1902,14 @@ CSV-Datei für den Auftragsimport einstellen:</p>
 <td class="content">
 <div class="title">Retouren von Amazon-Aufträgen bearbeiten</div>
 <div class="paragraph">
-<p>Natürlich müssen Sie auch bei Amazon gelegentlich mit einem Widerruf nach erfolgter Auslieferung rechnen. Die Artikel muss der Kunde direkt an Sie zurücksenden. Wie Sie in plentymarkets eine Retoure anlegen und den Warenausgang wieder zurücksetzen, lesen Sie auf der Handbuchseite <strong><a href="/warenwirtschaft/waren-ausbuchen">Warenausgang</a></strong> nach.</p>
+<p>Natürlich müssen Sie auch bei Amazon gelegentlich mit einem Widerruf nach erfolgter Auslieferung rechnen. Die Artikel muss der Kunde direkt an Sie zurücksenden. Wie Sie in plentymarkets eine Retoure anlegen und den Warenausgang wieder zurücksetzen, lesen Sie auf der Handbuchseite <a href="/warenwirtschaft/waren-ausbuchen">Warenausgang</a> nach.</p>
 </div>
 </td>
 </tr>
 </tbody></table>
 </div>
 <div class="paragraph subhead">
-<p>Rückbuchung manuell über Seller Central erledigen</p>
+<p>MFN: Rückbuchung manuell über Seller Central erledigen</p>
 </div>
 <div class="paragraph">
 <p>Da Amazon für Sie die Zahlung des Kunden in Empfang genommen hat, muss die Rückbuchung ebenfalls über Amazon erfolgen. Das müssen Sie im Auftragsordner im Seller Central erledigen.</p>
@@ -1922,7 +1930,7 @@ CSV-Datei für den Auftragsimport einstellen:</p>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>Retouren können Sie in Form von Gutschriften per Ereignisaktion an Amazon melden. Nur mit Hilfe eines Auftrags vom Typ Gutschrift kann die Rückzahlung der Artikelsumme und den Versandkosten garantiert werden. Gehen Sie dazu wie im Folgenden beschrieben vor.</p>
+<p>MFN Retouren (=Händlerversand) können Sie in Form von Gutschriften per Ereignisaktion an Amazon melden. Nur mit Hilfe eines Auftrags vom Typ Gutschrift kann die Rückzahlung der Artikelsumme und den Versandkosten garantiert werden. Gehen Sie dazu wie im Folgenden beschrieben vor.</p>
 </div>
 <div class="paragraph subhead">
 <p>Auftragsstatus anlegen</p>
@@ -2027,6 +2035,21 @@ CSV-Datei für den Auftragsimport einstellen:</p>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Filter Amazon-Herkunft</div>
+<div class="paragraph">
+<p>Wählen Sie für den Filter <strong>Auftrag &gt; Herkunft</strong> keine Amazon FBA-Herkunft, wie z.B. Amazon FBA Germany, wenn Sie den automatischen Gutschriftenimport für FBA-Gutschriften nutzen.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="3100">15.2. Ausstehende Amazon-Aufträge importieren</h3>
@@ -2394,6 +2417,49 @@ In plentymarkets wird jede FBA-Teillieferung anhand des versendenden FBA-Lagers 
 </li>
 <li>
 <p>Wählen Sie im Bereich <strong>Versand durch Amazon (FBA)</strong> für die Option <strong>Retourenimport</strong> die Einstellung <strong>Täglich</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="3650">17.4. FBA-Gutschriften automatisch importieren</h3>
+<div class="paragraph">
+<p>Nutzen Sie für Amazon FBA den Gutschriftenimport, um FBA-Gutschriften automatisch in Ihr plentymarkets System zu importieren. FBA-Gutschriften werden dann alle 4 Stunden importiert.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">FBA-Retouren nicht per Ereignisaktion als Gutschriften anlegen</div>
+<div class="paragraph">
+<p>Wenn Sie den Gutschriftenimport aktivieren, werden FBA-Gutschriften automatisch alle 4 Stunden in Ihr plentymarkets System importiert. Verwenden Sie deshalb in diesem Fall keine Ereignisaktion, um FBA-Retouren als Auftragstyp <strong>Gutschrift</strong> anzulegen.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Automatischen Gutschriftenimport aktivieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Märkte » Amazon » Einstellungen</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie das Amazon-Konto.</p>
+</li>
+<li>
+<p>Wechseln Sie in das Tab <strong>Auftragseinstellungen</strong>.</p>
+</li>
+<li>
+<p>Wählen Sie <strong>Ja</strong> für die Option <strong>Gutschriftenimport</strong>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
