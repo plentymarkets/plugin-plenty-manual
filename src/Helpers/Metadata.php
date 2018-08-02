@@ -4091,11 +4091,11 @@ class Metadata {
 				"urlName" => "best-pratices",
 				"url" => "/warenwirtschaft/best-pratices",
 				"level" => 2,
-				"title" => "Best Practices: Bestand umbuchen / korrigieren",
-				"keywords" => "Inventur, Bestand verwalten, Bestand umbuchen, Bestand korrigieren, Lager umbuchen",
+				"title" => "Best Practices: Bestand umbuchen / korrigieren / löschen",
+				"keywords" => "Inventur, Bestand verwalten, Bestand umbuchen, Bestand korrigieren, Lager umbuchen, Bestand löschen",
 				"description" => "Erfahre wie Du den Bestand eines Lagers komplett in ein anderes umbuchen kannst.",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Best Practices: Bestand umbuchen / korrigieren. Hier finden Sie folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Best Practices: Bestand umbuchen / korrigieren / löschen. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			]
