@@ -2317,6 +2317,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "25fde79d2951e7e2906cdfbd956e56e5",
+						"path" => "omni-channel/online-shop/shop-builder",
+						"position" => 55,
+						"urlName" => "shop-builder",
+						"url" => "/omni-channel/online-shop/shop-builder",
+						"level" => 3,
+						"title" => "Shop Builder einrichten",
+						"keywords" => "Webshop, Mandant, Standard, Ceres, IO, Plugin, Konfiguration, Template, Startseite, Drag and Drop, Baukasten, Shop Builder, ShopBuilder, Artikellisten",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Shop Builder einrichten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "a20f94cdaea9273f0f7ea3b2ff250565",
 						"path" => "omni-channel/online-shop/feedbacks-verwalten",
 						"position" => 60,
