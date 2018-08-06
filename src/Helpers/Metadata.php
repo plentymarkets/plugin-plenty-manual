@@ -6416,6 +6416,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "c5700ab326b77269021830872cb8407d",
+						"path" => "omni-channel/online-store/shop-builder",
+						"position" => 55,
+						"urlName" => "shop-builder",
+						"url" => "/en/omni-channel/online-store/shop-builder",
+						"level" => 3,
+						"title" => "Setting up the Shop Builder",
+						"keywords" => "Online store, client, Standard, Ceres, IO, Plugin, configuration, Template, homepage, Drag and Drop, Shop Builder, ShopBuilder, item lists, image box, carousel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Setting up the Shop Builder. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "d65357e4edcf8ebc6520cf26b66b0ebb",
 						"path" => "omni-channel/online-store/best-practices",
 						"position" => 100,
