@@ -190,7 +190,7 @@ class Metadata {
 						"url" => "/basics/arbeiten-mit-plentymarkets/datenbereinigung",
 						"level" => 3,
 						"title" => "Datenbereinigung durchführen",
-						"keywords" => "Bereinigung, Daten-Bereinigung, Datenbereinigung, automatisch löschen, Adressen löschen, ungenutzte Adressen löschen",
+						"keywords" => "Bereinigung, Daten-Bereinigung, Datenbereinigung, automatisch löschen, Adressen löschen, ungenutzte Adressen löschen, ungenutzte Kontakte löschen, Aufträge löschen, Historie löschen, IP-Adressen löschen",
 						"description" => "Erfahren Sie, wie Sie in plentymarkets automatisch Daten bereinigen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Datenbereinigung durchführen. Hier finden Sie folgende Informationen:",
