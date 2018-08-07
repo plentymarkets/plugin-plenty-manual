@@ -4395,7 +4395,7 @@ class Metadata {
 						"url" => "/en/basics/working-with-plentymarkets/data-cleansing",
 						"level" => 3,
 						"title" => "Carrying out data cleansing",
-						"keywords" => "cleansing, data cleansing, data clean-up, data cleanup, data purge, delete automatically, delete addresses, delete unused addresses",
+						"keywords" => "cleansing, data cleansing, data clean-up, data cleanup, data purge, delete automatically, delete addresses, delete unused addresses, delete unused addresses, delete orders, delete change history, delete IP addresses in the order",
 						"description" => "Learn how to automatically delete data records in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Carrying out data cleansing. The following information is available:",
