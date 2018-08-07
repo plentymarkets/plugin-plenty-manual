@@ -1260,7 +1260,42 @@ class MyThemeContext extends SingleItemContext implements ContextInterface
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in /home/jenkins/workspace/Manual Build/de/_best-practices/omni-channel/online-shop/bp-ceres-weitere-cross-selling-listen.adoc - include::assets/contexts-myThemeContext-extended.txt[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;?php
+namespace ThemeName\Contexts;
+
+use IO\Helper\ContextInterface;
+use Ceres\Contexts\SingleItemContext;
+
+use IO\Services\ItemSearch\Services\ItemSearchService;
+use IO\Services\ItemSearch\SearchPresets\CrossSellingItems;
+
+class MyThemeContext extends SingleItemContext implements ContextInterface
+{
+	public $accessory;
+  public $similar;
+
+	public function init($params)
+	{
+		parent::init($params);
+		$options = array(
+        			"itemId" =&gt; $this-&gt;item['documents'][0]['data']['item']['id'],
+        			"relation" =&gt; "Accessory"      // Nutze die Liste Zubehoer
+       		);
+     		$searchfactory = CrossSellingItems::getSearchFactory( $options );
+     		$searchfactory-&gt;setPage(1, 4); // Begrenze auf 4 Artikel
+      		$result = pluginApp(ItemSearchService::class)-&gt;getResult($searchfactory);
+      		$this-&gt;accessory = $result['documents'];
+
+    $options = array(
+              "itemId" =&gt; $this-&gt;item['documents'][0]['data']['item']['id'],
+              "relation" =&gt; "Similar"      // Nutze die Liste Ähnlich
+          );
+        $searchfactory = CrossSellingItems::getSearchFactory( $options );
+      	$searchfactory-&gt;setPage(1, 4); // Begrenze auf 4 Artikel
+        	$result = pluginApp(ItemSearchService::class)-&gt;getResult($searchfactory);
+        	$this-&gt;similar= $result['documents'];
+	}
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
