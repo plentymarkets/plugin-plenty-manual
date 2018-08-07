@@ -249,11 +249,11 @@ class Metadata {
 						"urlName" => "backend-bereiche aufrufen",
 						"url" => "/basics/arbeiten-mit-plentymarkets/backend-bereiche aufrufen",
 						"level" => 3,
-						"title" => "URLs zum Aufrufen bestimmter Backend-Bereiche",
+						"title" => "URLs zum direkten Aufrufen bestimmter Backend-Bereiche",
 						"keywords" => "Backend, Zugriff auf Backend, URL, key, Key, UI-Action, ui action, uiaction, Parameter, Terra, Variable",
 						"description" => "Erfahren Sie, wie Sie anhand von URLs in bestimmte Backend-Bereiche gelangen.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich URLs zum Aufrufen bestimmter Backend-Bereiche. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich URLs zum direkten Aufrufen bestimmter Backend-Bereiche. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
