@@ -3064,7 +3064,7 @@ class Metadata {
 						"url" => "/auftragsabwicklung/auftraege/auftraege-verwalten",
 						"level" => 3,
 						"title" => "Aufträge verwalten",
-						"keywords" => "",
+						"keywords" => "Auftragsabwicklung, Auftrag, Aufträge, Auftragsstatus, Auftragstypen, Lieferauftrag, Lieferaufträge, Auftrag manuell anlegen, Kontaktübersicht, Kundenübersicht, Retoure, Retouren, Gutschrift, Gutschriften, Gewährleistung, Gewährleistungen, Reparatur, Reparaturen, Sammelauftrag, Sammelaufträge, Scheduler, Vorbestellung, Aufträge filtern, Auftrag suchen, Aufträge suchen, Auftragsübersicht, Auftrag bearbeiten, Aufträge bearbeiten,",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Aufträge verwalten. Hier finden Sie folgende Informationen:",
