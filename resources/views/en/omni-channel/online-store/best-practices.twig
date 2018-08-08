@@ -1165,7 +1165,32 @@ Choose the layout container in which you want to display your cross-selling item
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in /home/jenkins/workspace/Manual Build/en/_best-practices/omni-channel/online-store/bp-ceres-additional-cross-selling-lists.adoc - include::assets/contexts-MyThemeContext.txt[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;?php
+namespace ThemeName\Contexts;
+
+use IO\Helper\ContextInterface;
+use Ceres\Contexts\SingleItemContext;
+
+use IO\Services\ItemSearch\Services\ItemSearchService;
+use IO\Services\ItemSearch\SearchPresets\CrossSellingItems;
+
+class MyThemeContext extends SingleItemContext implements ContextInterface
+{
+	public $accessory;
+
+	public function init($params)
+	{
+		parent::init($params);
+		$options = array(
+        			"itemId" =&gt; $this-&gt;item['documents'][0]['data']['item']['id'],
+        			"relation" =&gt; "Accessory"      // Use the accessory list
+       		);
+     		$searchfactory = CrossSellingItems::getSearchFactory( $options );
+     		$searchfactory-&gt;setPage(1, 4); // Limit to 4 items
+      		$result = pluginApp(ItemSearchService::class)-&gt;getResult($searchfactory);
+      		$this-&gt;accessory = $result['documents'];
+	}
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1179,7 +1204,11 @@ Choose the layout container in which you want to display your cross-selling item
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in /home/jenkins/workspace/Manual Build/en/_best-practices/omni-channel/online-store/bp-ceres-additional-cross-selling-lists.adoc - include::assets/contexts-boot-funktion.txt[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">$eventDispatcher-&gt;listen('IO.ctx.item', function (TemplateContainer $templateContainer, $templateData = [])
+   {
+       $templateContainer-&gt;setContext( MyThemeContext::class);
+       return false;
+   }, 0);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1221,7 +1250,42 @@ Choose the layout container in which you want to display your cross-selling item
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in /home/jenkins/workspace/Manual Build/en/_best-practices/omni-channel/online-store/bp-ceres-additional-cross-selling-lists.adoc - include::assets/contexts-MyThemeContext-extended.txt[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;?php
+namespace ThemeName\Contexts;
+
+use IO\Helper\ContextInterface;
+use Ceres\Contexts\SingleItemContext;
+
+use IO\Services\ItemSearch\Services\ItemSearchService;
+use IO\Services\ItemSearch\SearchPresets\CrossSellingItems;
+
+class MyThemeContext extends SingleItemContext implements ContextInterface
+{
+	public $accessory;
+  public $similar;
+
+	public function init($params)
+	{
+		parent::init($params);
+		$options = array(
+        			"itemId" =&gt; $this-&gt;item['documents'][0]['data']['item']['id'],
+        			"relation" =&gt; "Accessory"      // Use the list accessory
+       		);
+     		$searchfactory = CrossSellingItems::getSearchFactory( $options );
+     		$searchfactory-&gt;setPage(1, 4); // Limit to 4 items
+      		$result = pluginApp(ItemSearchService::class)-&gt;getResult($searchfactory);
+      		$this-&gt;accessory = $result['documents'];
+
+    $options = array(
+              "itemId" =&gt; $this-&gt;item['documents'][0]['data']['item']['id'],
+              "relation" =&gt; "Similar"      // Use the list similar
+          );
+        $searchfactory = CrossSellingItems::getSearchFactory( $options );
+      	$searchfactory-&gt;setPage(1, 4); // Limit to 4 items
+        	$result = pluginApp(ItemSearchService::class)-&gt;getResult($searchfactory);
+        	$this-&gt;similar= $result['documents'];
+	}
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
