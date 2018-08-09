@@ -68,7 +68,7 @@
 <li><a href="#660"><span>6.</span><span> Managing item images</span></a>
 <ul class="sectlevel2">
 <li><a href="#670"><span>6.1.</span><span> Setting up item images</span></a></li>
-<li><a href="#_saving_own_domain_for_image_urls"><span>6.2.</span><span> Saving own domain for image URLs</span></a></li>
+<li><a href="#_using_own_cdn_domain_for_image_urls"><span>6.2.</span><span> Using own CDN domain for image URLs</span></a></li>
 <li><a href="#670b"><span>6.3.</span><span> Specifying item image sizes</span></a></li>
 <li><a href="#680"><span>6.4.</span><span> Uploading item images via FTP server</span></a>
 <ul class="sectlevel3">
@@ -965,13 +965,13 @@ This option can only be used for order properties of the type <strong>none</stro
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Property type</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select the property type from the drop-down list.<br>
 <strong>None</strong> = No property type<br>
-<strong>Whole number</strong> = Allows entering a whole number.<br>
-<strong>Decimal number</strong> = Allows entering a number with decimal places.<br>
-<strong>Selection</strong> = Allows selecting multiple options. Up to 65.535 characters can be entered for each option and each value.<br>
-<strong>Short text</strong> = Allows entering a short text without formatting. Up to 65.535 characters can be entered.<br>
-<strong>Text</strong> = Allows entering and formatting a longer text. Up to 65.535 characters can be entered.<br>
-<strong>Text</strong> = Allows entering a date.<br>
-<strong>File</strong> = Allows uploading a file.</p></td>
+<strong>Whole number</strong> = Allows to enter a whole number.<br>
+<strong>Decimal number</strong> = Allows to enter a number with decimal places.<br>
+<strong>Selection</strong> = Allows to select multiple options. You can enter up to 65,535 character for each option and value.<br>
+<strong>Short text</strong> = Allows entering a text with up to 65,535 characters and no formatting.<br>
+<strong>Text</strong> = Allows entering and formatting a text with up to 65,535 characters.<br>
+<strong>Text</strong> = Allows to enter a date.<br>
+<strong>File</strong> = Allows to upload a file.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
@@ -1908,12 +1908,9 @@ The position is defined in the item’s <a href="/en/item/managing-items#90">Ima
 </table>
 </div>
 <div class="sect2">
-<h3 id="_saving_own_domain_for_image_urls">6.2. Saving own domain for image URLs</h3>
+<h3 id="_using_own_cdn_domain_for_image_urls">6.2. Using own CDN domain for image URLs</h3>
 <div class="paragraph">
-<p>Images are assigned the URL of the default CDN domain by default.</p>
-</div>
-<div class="paragraph">
-<p>However, alternatively you can use the domain of the client as the domain for image URLs and save a custom subdomain.</p>
+<p>Item images are assigned the URL of the default CDN domain by default. This means that the URLs of item images contain the domain name "plentymarkets.com”. However, instead of the default CDN domain, you can also set up the domain of the client and save a custom subdomain for item images. <a href="#table-domain-image-URLs">Table 13</a> shows the differences between the default CDN domain and an individual CDN domain. You can set up an own CDN domain for domains hosted by plentymarkets and for domains hosted by an external provider. However, note the following limitations:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1921,33 +1918,27 @@ The position is defined in the item’s <a href="/en/item/managing-items#90">Ima
 <p>You can only save individual subdomains for the main domain.</p>
 </li>
 <li>
-<p>You can only save individual subdomains for domains that are hosted by plentymarkets.</p>
-</li>
-<li>
 <p>You can only save one subdomain for each client.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><a href="#table-domain-image-URLs">Table 13</a> shows the differences between the default domain and an individual domain.</p>
-</div>
 <table id="table-domain-image-URLs" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 13. Saving own domain for image URLs</caption>
+<caption class="title">Table 13. Own domain for image URLs</caption>
 <colgroup>
 <col style="width: 25%;">
-<col style="width: 50%;">
-<col style="width: 25%;">
+<col style="width: 37.5%;">
+<col style="width: 37.5%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Domain setting</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Example URL</th>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Image URL with default domain</th>
+<th class="tableblock halign-left valign-top">Image URL with own domain</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Image URL with default domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL pattern</p></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>The URL of item images is created as follows:</p>
 </div>
@@ -1976,10 +1967,6 @@ The position is defined in the item’s <a href="/en/item/managing-items#90">Ima
 </li>
 </ol>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://<strong>cdn01.plentymarkets.com/1abcd2e3fghi</strong>/item/images/118/full/118-chair-Rio.jpg</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Image URL with own domain</p></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>A custom subdomain and the domain of the client are used: The customer hash is not shown in the URL:</p>
 </div>
@@ -2005,12 +1992,32 @@ The position is defined in the item’s <a href="/en/item/managing-items#90">Ima
 </li>
 </ol>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://<strong>cdn01.plentymarkets.com/1abcd2e3fghi</strong>/item/images/118/full/118-chair-Rio.jpg</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">https://<strong>yoursubdomain.yourstore.de</strong>/item/images/118/full/118-chair-Rio.jpg</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
 <p>Proceed as described below to save an own domain for the image URLs of a client.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#4000">For a domain hosted by plentymarkets</a></p>
+</li>
+<li>
+<p><a href="#4100">For a domain hosted by an external provider</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>Save an own domain for image URLs for a domain hosted by plentymarkets</p>
+</div>
+<div class="paragraph">
+<p>Proceed as described below to save an own domain for the image URLs of a client if your domain is hosted by plentymarkets.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -2019,7 +2026,7 @@ The position is defined in the item’s <a href="/en/item/managing-items#90">Ima
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-<div class="title">Activate the domain after the subdomain is created</div>
+<div class="title">Activate the domain after the subdomain has been created</div>
 <div class="paragraph">
 <p>It can take several hours for the subdomain to be created. The creation process is complete when green checkmarks are shown in all three columns, i.e. <strong>SSL</strong>, <strong>DNS</strong> and <strong>Cloud status</strong>. Once the subdomain is created, activate the domain.</p>
 </div>
@@ -2048,10 +2055,11 @@ The position is defined in the item’s <a href="/en/item/managing-items#90">Ima
 → A SSL certificate is created for the subdomain.<br>
 → A DNS record is created for the subdomain.<br>
 → A CloudFront instance is created.<br>
-<strong><em>Note:</em></strong> It can take several hours for the subdomain to be created. The creation process is complete when green checkmarks are shown in all three columns, i.e. <strong>SSL</strong>, <strong>DNS</strong> and <strong>Cloud status</strong>.</p>
+<strong><em>Note:</em></strong> This process can take several hours. The process is complete when green checkmarks are shown in the columns <strong>SSL</strong>, <strong>DNS</strong> and <strong>Cloud status</strong>.</p>
 </li>
 <li>
-<p>When all three checkmarks are shown, click on <strong>Activate</strong> in the <strong>Status</strong> column to activate the domain.</p>
+<p>Once all three checkmarks are shown, click on <strong>Activate</strong> in the <strong>Status</strong> column.<br>
+→ The domain is activated.</p>
 </li>
 </ol>
 </div>
@@ -2078,7 +2086,100 @@ The position is defined in the item’s <a href="/en/item/managing-items#90">Ima
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Domain</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select the domain from the drop-down list. You can only select the main domain of the client. The domain also must be hosted by plentymarkets. You cannot save a subdomain for image URLs for external domains.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the domain from the drop-down list. You can only select the main domain of the client.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph subhead">
+<p>Save an own domain for image URLs for a domain hosted by an external provider</p>
+</div>
+<div class="paragraph">
+<p>If your domain is hosted by an external provider, you need to save the DNS settings with your external domain provider. Proceed as described below to save an own domain for the image URLs of a client and save the DNS settings with the external provider.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">What is DNS?</div>
+<div class="paragraph">
+<p>DNS is short for Domain Name System. DNS makes it possible for your customers to enter the domain name instead of the numerical IP address of your online store.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Saving own domain for image URLs for an external domain:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Client » Select client » Domains</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong>.<br>
+→ The <strong>New domain</strong> window opens.</p>
+</li>
+<li>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-cdn-domain">Table 14</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ A DNS record is created for the subdomain.</p>
+</li>
+<li>
+<p>In the row of the domain entry, click <strong>DNS info</strong>.<br>
+→ The <strong>DNS info</strong> window opens.<br>
+→ The DNS settings are shown.</p>
+</li>
+<li>
+<p>Log into the service area of your domain provider.</p>
+</li>
+<li>
+<p>Copy the DNS settings shown in plentymarkets into the relevant fields of the domain provider.<br>
+→ Check the documentation of the domain provider on how to do this.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ A SSL certificate is created for the subdomain.<br>
+→ A CloudFront instance is created.<br>
+→ The DNS settings are updated.<br>
+<strong><em>Note:</em></strong> It can take up to 72 hours for the DNS settings to take effect. plentymarkets is unable to speed up this process.<br>
+→ The process is complete once green checkmarks are shown in the columns <strong>SSL</strong>, <strong>DNS</strong> and <strong>Cloud status</strong> of the <strong>System » Client » Open client » Domains</strong> menu in the plentymarkets back end.</p>
+</li>
+<li>
+<p>Once all three checkmarks are shown in the <strong>System » Clients » Open client » Domains</strong> menu, click on <strong>Activate</strong> in the <strong>Status</strong> column.<br>
+→ The domain is activated.</p>
+</li>
+</ol>
+</div>
+<table id="table-cdn-domain" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 15. Saving subdomain for image URLs</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Area</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the type of subdomain from the drop-down list. Currently, only the type <strong>CDN1</strong> is available.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Subdomain</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a custom subdomain. Valid characters are letters (a-z, A-Z), numbers (0-9), underscore (_) and hyphen (-). The first character of the subdomain must be either a letter or a number.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Domain</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the domain from the drop-down list. You can only select the main domain of the client.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2116,7 +2217,7 @@ The position is defined in the item’s <a href="/en/item/managing-items#90">Ima
 <p>Go to <strong>System » Item » Images » Sizes</strong>.</p>
 </li>
 <li>
-<p>Carry out the settings for each image size. Pay attention to the information given in <a href="#table-image-sizes">Table 15</a>.</p>
+<p>Carry out the settings for each image size. Pay attention to the information given in <a href="#table-image-sizes">Table 16</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -2124,7 +2225,7 @@ The position is defined in the item’s <a href="/en/item/managing-items#90">Ima
 </ol>
 </div>
 <table id="table-image-sizes" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 15. Setting the image sizes</caption>
+<caption class="title">Table 16. Setting the image sizes</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2269,7 +2370,7 @@ After the cache is invalidated, versions of the image in different sizes are cre
 <p>You want to upload images for an item with item ID 4562 and the variation number AQ3957.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 16. Examples of FTP compliant naming of item images</caption>
+<caption class="title">Table 17. Examples of FTP compliant naming of item images</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 25%;">
@@ -2420,7 +2521,7 @@ After the cache is invalidated, versions of the image in different sizes are cre
 → The <strong>New</strong> tab opens.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the information given in <a href="#table-create-sales-price">Table 17</a>.</p>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-create-sales-price">Table 18</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -2428,7 +2529,7 @@ After the cache is invalidated, versions of the image in different sizes are cre
 </ol>
 </div>
 <table id="table-create-sales-price" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 17. Creating a sales price</caption>
+<caption class="title">Table 18. Creating a sales price</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2557,7 +2658,7 @@ After the cache is invalidated, versions of the image in different sizes are cre
 <p>Go to <strong>System » Item » Sales prices</strong>.</p>
 </li>
 <li>
-<p>Select the <strong>filters</strong>. Pay attention to the information given in <a href="#table-filter-sales-prices">Table 18</a>.</p>
+<p>Select the <strong>filters</strong>. Pay attention to the information given in <a href="#table-filter-sales-prices">Table 19</a>.</p>
 </li>
 <li>
 <p>Click on <strong>Search</strong>.<br>
@@ -2566,7 +2667,7 @@ After the cache is invalidated, versions of the image in different sizes are cre
 </ol>
 </div>
 <table id="table-filter-sales-prices" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 18. Filtering sales prices</caption>
+<caption class="title">Table 19. Filtering sales prices</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2658,7 +2759,7 @@ After the cache is invalidated, versions of the image in different sizes are cre
 → The new price calculation will open.</p>
 </li>
 <li>
-<p>Pay attention to the information given in <a href="#table-create-price-calculation">Table 19</a>.</p>
+<p>Pay attention to the information given in <a href="#table-create-price-calculation">Table 20</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -2666,7 +2767,7 @@ After the cache is invalidated, versions of the image in different sizes are cre
 </ol>
 </div>
 <table id="table-create-price-calculation" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 19. Creating a price calculation</caption>
+<caption class="title">Table 20. Creating a price calculation</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2796,7 +2897,7 @@ After the cache is invalidated, versions of the image in different sizes are cre
 → The tab of the unit will open.</p>
 </li>
 <li>
-<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-edit-units">Table 20</a>.</p>
+<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-edit-units">Table 21</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -2804,7 +2905,7 @@ After the cache is invalidated, versions of the image in different sizes are cre
 </ol>
 </div>
 <table id="table-edit-units" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 20. Editing units</caption>
+<caption class="title">Table 21. Editing units</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -2865,7 +2966,7 @@ After the cache is invalidated, versions of the image in different sizes are cre
 <p>Expand the <strong>New template</strong> area.</p>
 </li>
 <li>
-<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-create-label-template">Table 21</a>.<br>
+<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-create-label-template">Table 22</a>.<br>
 <strong><em>Tipp:</em></strong> Save X and Y coordinates for all values that you want to be shown on the label.</p>
 </li>
 <li>
@@ -2875,7 +2976,7 @@ After the cache is invalidated, versions of the image in different sizes are cre
 </ol>
 </div>
 <table id="table-create-label-template" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 21. Creating a label template</caption>
+<caption class="title">Table 22. Creating a label template</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3018,10 +3119,10 @@ Upload images in the <a href="/en/omni-channel/online-store/setting-up-clients/c
 <div class="ulist">
 <ul>
 <li>
-<p>Generate labels for all order items of an order <a href="#3320">in the label template</a>.</p>
+<p>Generate labels for all order items of an order <a href="#3320">in the label template menu</a>.</p>
 </li>
 <li>
-<p>Generate labels using the <a href="#3330"><strong>Labels</strong> button of a variation</a>.</p>
+<p>Generate labels using the <a href="#3330">Labels</a> button of a variation.</p>
 </li>
 <li>
 <p>Create processes to <a href="/en/basics/automation/processes/procedures#150">generate item labels</a>.</p>
@@ -3181,11 +3282,11 @@ Upload images in the <a href="/en/omni-channel/online-store/setting-up-clients/c
 </li>
 <li>
 <p>Tap <strong>Search</strong>.<br>
-→ The items are shown.<br>
-<strong><em>Tip:</em></strong> If only one item is found, this item opens.<br></p>
+→ The items are shown.</p>
 </li>
 <li>
 <p>Tap the green bar of the item.<br>
+<strong><em>Tipp:</em></strong> If only one item matches, this item is shown immediately.<br>
 → The item data is shown.</p>
 </li>
 <li>
@@ -3320,7 +3421,7 @@ Upload images in the <a href="/en/omni-channel/online-store/setting-up-clients/c
 <p>Go to <strong>System » Item » Settings</strong>.</p>
 </li>
 <li>
-<p>Configure the settings <strong>Prefix for new variation numbers</strong> and <strong>Next variation number</strong>. Pay attention to the information given in <a href="#table-variation-number-pattern">Table 22</a>.</p>
+<p>Configure the settings <strong>Prefix for new variation numbers</strong> and <strong>Next variation number</strong>. Pay attention to the information given in <a href="#table-variation-number-pattern">Table 23</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -3328,7 +3429,7 @@ Upload images in the <a href="/en/omni-channel/online-store/setting-up-clients/c
 </ol>
 </div>
 <table id="table-variation-number-pattern" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 22. Pattern for the next variation number</caption>
+<caption class="title">Table 23. Pattern for the next variation number</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3382,7 +3483,7 @@ Upload images in the <a href="/en/omni-channel/online-store/setting-up-clients/c
 <p>Select a category.</p>
 </li>
 <li>
-<p>Carry out additional settings as desired. Pay attention to the information given in <a href="#table-create-default-items">Table 23</a>.</p>
+<p>Carry out additional settings as desired. Pay attention to the information given in <a href="#table-create-default-items">Table 24</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
@@ -3409,7 +3510,7 @@ Upload images in the <a href="/en/omni-channel/online-store/setting-up-clients/c
 </tbody></table>
 </div>
 <table id="table-create-default-items" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 23. Creating Default items</caption>
+<caption class="title">Table 24. Creating Default items</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3545,7 +3646,7 @@ Upload images in the <a href="/en/omni-channel/online-store/setting-up-clients/c
 → The item’s <strong>Global</strong> tab will open.</p>
 </li>
 <li>
-<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-global-item-settings">Table 24</a>.</p>
+<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-global-item-settings">Table 25</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -3553,7 +3654,7 @@ Upload images in the <a href="/en/omni-channel/online-store/setting-up-clients/c
 </ol>
 </div>
 <table id="table-global-item-settings" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 24. Changing the global settings of an item</caption>
+<caption class="title">Table 25. Changing the global settings of an item</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3729,7 +3830,7 @@ Value greater 0 = Customers can order no more that this quantity of all variatio
 <p>Select the language.</p>
 </li>
 <li>
-<p>Enter the item texts. Pay attention to the information given in <a href="#table-enter-item-texts">Table 25</a>.</p>
+<p>Enter the item texts. Pay attention to the information given in <a href="#table-enter-item-texts">Table 26</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -3737,7 +3838,7 @@ Value greater 0 = Customers can order no more that this quantity of all variatio
 </ol>
 </div>
 <table id="table-enter-item-texts" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 25. Entering item texts</caption>
+<caption class="title">Table 26. Entering item texts</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3847,7 +3948,7 @@ The maximum length of the item name is 240 characters. The item name is also use
 <p>Enter a field name.</p>
 </li>
 <li>
-<p>Select the data type. Pay attention to the information given in <a href="#table-define-free-text-fields">Table 26</a>.</p>
+<p>Select the data type. Pay attention to the information given in <a href="#table-define-free-text-fields">Table 27</a>.</p>
 </li>
 <li>
 <p>Enter the number of characters.</p>
@@ -3858,7 +3959,7 @@ The maximum length of the item name is 240 characters. The item name is also use
 </ol>
 </div>
 <table id="table-define-free-text-fields" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 26. Defining free text fields</caption>
+<caption class="title">Table 27. Defining free text fields</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3942,7 +4043,7 @@ The maximum length of the item name is 240 characters. The item name is also use
 → The properties will be displayed in the <strong>Properties</strong> area.</p>
 </li>
 <li>
-<p>Carry out additional settings as desired. Pay attention to the information given in <a href="#table-link-properties">Table 27</a>.</p>
+<p>Carry out additional settings as desired. Pay attention to the information given in <a href="#table-link-properties">Table 28</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -3950,7 +4051,7 @@ The maximum length of the item name is 240 characters. The item name is also use
 </ol>
 </div>
 <table id="table-link-properties" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 27. Linking a property to a Default item</caption>
+<caption class="title">Table 28. Linking a property to a Default item</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4056,7 +4157,7 @@ The maximum length of the item name is 240 characters. The item name is also use
 → The file is uploaded and displayed in the overview.</p>
 </li>
 <li>
-<p>Carry out the optional settings as desired. Pay attention to the information given in <a href="#table-upload-item-image">Table 28</a>.</p>
+<p>Carry out the optional settings as desired. Pay attention to the information given in <a href="#table-upload-item-image">Table 29</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
@@ -4065,7 +4166,7 @@ The maximum length of the item name is 240 characters. The item name is also use
 </ol>
 </div>
 <table id="table-upload-item-image" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 28. Uploading an item image</caption>
+<caption class="title">Table 29. Uploading an item image</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4208,7 +4309,7 @@ Files uploaded to the <strong>Media</strong> tab cannot be used in the Ceres onl
 → The file is uploaded and displayed in the overview.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the information given in <a href="#table-upload-file">Table 29</a>.</p>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-upload-file">Table 30</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -4219,7 +4320,7 @@ Files uploaded to the <strong>Media</strong> tab cannot be used in the Ceres onl
 <p>Alternatively, drag and drop new files into the <strong>Insert a new document</strong> area.</p>
 </div>
 <table id="table-upload-file" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 29. Uploading a file</caption>
+<caption class="title">Table 30. Uploading a file</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4412,7 +4513,7 @@ Files uploaded to the <strong>Media</strong> tab cannot be used in the Ceres onl
 → The <strong>Item group function</strong> window will open.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the information given in <a href="#table-edit-multiple-items">Table 30</a>.</p>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-edit-multiple-items">Table 31</a>.</p>
 </li>
 <li>
 <p>Click on <strong>Execute</strong> to carry out the item settings.</p>
@@ -4420,7 +4521,7 @@ Files uploaded to the <strong>Media</strong> tab cannot be used in the Ceres onl
 </ol>
 </div>
 <table id="table-edit-multiple-items" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 30. Editing items with the <strong>Group function</strong> or <strong>Batch processing</strong></caption>
+<caption class="title">Table 31. Editing items with the <strong>Group function</strong> or <strong>Batch processing</strong></caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4530,10 +4631,10 @@ Flag 2</strong></p></td>
 <p>Go to <strong>Item » Batch processing</strong>.</p>
 </li>
 <li>
-<p>Select the filters based on <a href="#table-batch-processing-filters">Table 31</a>.</p>
+<p>Select the filters based on <a href="#table-batch-processing-filters">Table 32</a>.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the information given in <a href="#table-edit-multiple-items">Table 30</a>.</p>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-edit-multiple-items">Table 31</a>.</p>
 </li>
 <li>
 <p>Click on <strong>Apply</strong> to apply the settings to the items.</p>
@@ -4541,7 +4642,7 @@ Flag 2</strong></p></td>
 </ol>
 </div>
 <table id="table-batch-processing-filters" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 31. Filter options for <strong>batch processing</strong></caption>
+<caption class="title">Table 32. Filter options for <strong>batch processing</strong></caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4702,7 +4803,7 @@ Flag 2</strong></p></td>
 → The <strong>Settings</strong> tab of the main variation will open.</p>
 </li>
 <li>
-<p>Carry out the settings in the <strong>Basic settings</strong> area. Pay attention to the information given in <a href="#table-main-variation-basic-settings">Table 32</a>.</p>
+<p>Carry out the settings in the <strong>Basic settings</strong> area. Pay attention to the information given in <a href="#table-main-variation-basic-settings">Table 33</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -4710,7 +4811,7 @@ Flag 2</strong></p></td>
 </ol>
 </div>
 <table id="table-main-variation-basic-settings" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 32. Carrying out basic settings for the main variation</caption>
+<caption class="title">Table 33. Carrying out basic settings for the main variation</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4765,7 +4866,7 @@ Flag 2</strong></p></td>
 <p>Go to <strong>System » Item » Availability</strong>.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the information given in <a href="#table-set-availability">Table 33</a>.</p>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-set-availability">Table 34</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -4773,7 +4874,7 @@ Flag 2</strong></p></td>
 </ol>
 </div>
 <table id="table-set-availability" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 33. Setting the availability options</caption>
+<caption class="title">Table 34. Setting the availability options</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4889,7 +4990,7 @@ If the availability is not displayed correctly in the online store after changes
 → The <strong>Settings</strong> tab of the main variation will open.</p>
 </li>
 <li>
-<p>Pay attention to the information given in <a href="#table-main-variation-availability">Table 34</a> and carry out the settings in the <strong>Availability</strong> area.</p>
+<p>Pay attention to the information given in <a href="#table-main-variation-availability">Table 35</a> and carry out the settings in the <strong>Availability</strong> area.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -4897,7 +4998,7 @@ If the availability is not displayed correctly in the online store after changes
 </ol>
 </div>
 <table id="table-main-variation-availability" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 34. Setting the main variation’s availability</caption>
+<caption class="title">Table 35. Setting the main variation’s availability</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5176,7 +5277,7 @@ If the option <strong>Not available if net stock is 0 or negative</strong> or <s
 → The <strong>Settings</strong> tab of the main variation will open.</p>
 </li>
 <li>
-<p>Pay attention to the information given in <a href="#table-main-variation-dimensions">Table 35</a> and carry out the settings in the <strong>Dimensions</strong> area.</p>
+<p>Pay attention to the information given in <a href="#table-main-variation-dimensions">Table 36</a> and carry out the settings in the <strong>Dimensions</strong> area.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -5184,7 +5285,7 @@ If the option <strong>Not available if net stock is 0 or negative</strong> or <s
 </ol>
 </div>
 <table id="table-main-variation-dimensions" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 35. Specifying the dimensions of the main variation</caption>
+<caption class="title">Table 36. Specifying the dimensions of the main variation</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5246,7 +5347,7 @@ Not activated = The variation’s unit price is not shown in the online store.<b
 → The <strong>Settings</strong> tab of the main variation will open.</p>
 </li>
 <li>
-<p>Pay attention to the information given in <a href="#table-main-variation-costs">Table 36</a> and carry out the settings in the <strong>Costs</strong> area.</p>
+<p>Pay attention to the information given in <a href="#table-main-variation-costs">Table 37</a> and carry out the settings in the <strong>Costs</strong> area.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -5254,7 +5355,7 @@ Not activated = The variation’s unit price is not shown in the online store.<b
 </ol>
 </div>
 <table id="table-main-variation-costs" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 36. Specifying the costs of the main variation</caption>
+<caption class="title">Table 37. Specifying the costs of the main variation</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5321,7 +5422,7 @@ The net purchase price e.g. is used in <a href="/en/item/managing-items#910">pri
 → The <strong>Settings</strong> tab of the main variation will open.</p>
 </li>
 <li>
-<p>Pay attention to the information given in <a href="#table-main-variation-shipping-data">Table 37</a> and carry out the settings in the <strong>Shipping</strong> area.</p>
+<p>Pay attention to the information given in <a href="#table-main-variation-shipping-data">Table 38</a> and carry out the settings in the <strong>Shipping</strong> area.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -5329,7 +5430,7 @@ The net purchase price e.g. is used in <a href="/en/item/managing-items#910">pri
 </ol>
 </div>
 <table id="table-main-variation-shipping-data" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 37. Entering the shipping data of the main variation</caption>
+<caption class="title">Table 38. Entering the shipping data of the main variation</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5513,7 +5614,7 @@ Extra shipping charge 2</strong></p></td>
 → The variation properties are displayed in the <strong>Properties</strong> area.</p>
 </li>
 <li>
-<p>Enter a value for the property. Pay attention to the information given in <a href="#table-link-properties">Table 27</a>.</p>
+<p>Enter a value for the property. Pay attention to the information given in <a href="#table-link-properties">Table 28</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -5521,7 +5622,7 @@ Extra shipping charge 2</strong></p></td>
 </ol>
 </div>
 <table id="table-link-properties" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 38. Linking a property</caption>
+<caption class="title">Table 39. Linking a property</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5595,7 +5696,7 @@ Extra shipping charge 2</strong></p></td>
 → The default language is displayed for editing by default.</p>
 </li>
 <li>
-<p>Enter a value. Pay attention to the information given in <a href="#table-link-texts">Table 39</a>.</p>
+<p>Enter a value. Pay attention to the information given in <a href="#table-link-texts">Table 40</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -5610,7 +5711,7 @@ Extra shipping charge 2</strong></p></td>
 </ol>
 </div>
 <table id="table-link-texts" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 39. Linking texts</caption>
+<caption class="title">Table 40. Linking texts</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5681,7 +5782,7 @@ Properties of the type <strong>Text</strong> are shown in the lower part of the 
 → The supplier will be added and displayed in the list.</p>
 </li>
 <li>
-<p>Enter the supplier information. Pay attention to the information given in <a href="#table-main-variation-supplier">Table 40</a>.</p>
+<p>Enter the supplier information. Pay attention to the information given in <a href="#table-main-variation-supplier">Table 41</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -5689,7 +5790,7 @@ Properties of the type <strong>Text</strong> are shown in the lower part of the 
 </ol>
 </div>
 <table id="table-main-variation-supplier" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 40. Specifying the shipping data of the main variation</caption>
+<caption class="title">Table 41. Specifying the shipping data of the main variation</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -5985,7 +6086,7 @@ Properties of the type <strong>Text</strong> are shown in the lower part of the 
 → The <strong>Variation group function</strong> window will open.</p>
 </li>
 <li>
-<p>Activate the check box to the left of the option you want to modify. Pay attention to the information given in <a href="#table-edit-multiple-variations">Table 41</a>.</p>
+<p>Activate the check box to the left of the option you want to modify. Pay attention to the information given in <a href="#table-edit-multiple-variations">Table 42</a>.</p>
 </li>
 <li>
 <p>Select if the option is to be activated or deactivated for the selected variations.<br>
@@ -6000,7 +6101,7 @@ Properties of the type <strong>Text</strong> are shown in the lower part of the 
 </ol>
 </div>
 <table id="table-edit-multiple-variations" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 41. Editing variations with the <strong>Group function</strong> or <strong>Batch processing</strong></caption>
+<caption class="title">Table 42. Editing variations with the <strong>Group function</strong> or <strong>Batch processing</strong></caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -6212,10 +6313,10 @@ Check box to the right of <strong>Properties</strong> not selected = Deactivates
 <p>Open the <strong>Variations</strong> tab.</p>
 </li>
 <li>
-<p>Select the filters based on <a href="#table-variation-filter-batch-processing">Table 42</a>.</p>
+<p>Select the filters based on <a href="#table-variation-filter-batch-processing">Table 43</a>.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the information given in <a href="#table-edit-multiple-variations">Table 41</a>.</p>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-edit-multiple-variations">Table 42</a>.</p>
 </li>
 <li>
 <p>Click on <strong>Apply</strong> to apply the settings to the variations.</p>
@@ -6223,7 +6324,7 @@ Check box to the right of <strong>Properties</strong> not selected = Deactivates
 </ol>
 </div>
 <table id="table-variation-filter-batch-processing" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 42. Filter options for <strong>batch processing</strong> of variations</caption>
+<caption class="title">Table 43. Filter options for <strong>batch processing</strong> of variations</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -6379,7 +6480,7 @@ Flag 2</strong></p></td>
 <p>Go to <strong>Item » Edit item</strong>.</p>
 </li>
 <li>
-<p>Select the <strong>filters</strong>. Pay attention to the information given in <a href="#table-filter-item-variations">Table 43</a>.<br>
+<p>Select the <strong>filters</strong>. Pay attention to the information given in <a href="#table-filter-item-variations">Table 44</a>.<br>
 → The <strong>Active</strong> filter is set to <strong>Yes</strong> by default.</p>
 </li>
 <li>
@@ -6389,7 +6490,7 @@ Flag 2</strong></p></td>
 </ol>
 </div>
 <table id="table-filter-item-variations" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 43. Searching for items and variations</caption>
+<caption class="title">Table 44. Searching for items and variations</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -6683,7 +6784,7 @@ Updated to</strong></p></td>
 <p>Open the <strong>Variations</strong> tab.</p>
 </li>
 <li>
-<p>Select the <strong>filters</strong>. Pay attention to the information given in <a href="#table-filter-variations">Table 44</a>.</p>
+<p>Select the <strong>filters</strong>. Pay attention to the information given in <a href="#table-filter-variations">Table 45</a>.</p>
 </li>
 <li>
 <p>Click on <strong>Search</strong>.<br>
@@ -6692,7 +6793,7 @@ Updated to</strong></p></td>
 </ol>
 </div>
 <table id="table-filter-variations" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 44. Filtering variations</caption>
+<caption class="title">Table 45. Filtering variations</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -6736,10 +6837,10 @@ Updated to</strong></p></td>
 <div class="sect2">
 <h3 id="385">21.6. Setting up the search index</h3>
 <div class="paragraph">
-<p>A search index is needed in order for items to be found more easily during an item search in the plentymarkets back end and in the online store. The search index will be set up automatically when new items are created. The search index will be updated the night after you imported the items and will be available the next day. In the <strong>System » Item » Search index</strong> menu, you can start updating the search index manually. In the <strong>Item catalogue</strong> tab, you can see how many items are included in the search index. In the <strong>Item properties</strong> tab, you can see how many items with properties are included in the search index. <a href="#table-search-index-overview">Table 45</a> provides information on the <strong>Search index</strong> menu.</p>
+<p>A search index is needed in order for items to be found more easily during an item search in the plentymarkets back end and in the online store. The search index will be set up automatically when new items are created. The search index will be updated the night after you imported the items and will be available the next day. In the <strong>System » Item » Search index</strong> menu, you can start updating the search index manually. In the <strong>Item catalogue</strong> tab, you can see how many items are included in the search index. In the <strong>Item properties</strong> tab, you can see how many items with properties are included in the search index. <a href="#table-search-index-overview">Table 46</a> provides information on the <strong>Search index</strong> menu.</p>
 </div>
 <table id="table-search-index-overview" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 45. Information in the overview</caption>
+<caption class="title">Table 46. Information in the overview</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -6976,7 +7077,7 @@ Set up a property search index</strong></p></td>
 <p>Select a category.</p>
 </li>
 <li>
-<p>Carry out additional settings as desired. Pay attention to the information given in <a href="#table-create-default-items">Table 23</a>.</p>
+<p>Carry out additional settings as desired. Pay attention to the information given in <a href="#table-create-default-items">Table 24</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
@@ -7145,7 +7246,7 @@ Let us assume that you want to sell a bundle consisting of a hand towel and a la
 <p>Select the type <strong>Set</strong>.</p>
 </li>
 <li>
-<p>Carry out the additional settings. Pay attention to the information given in <a href="#table-create-set-items">Table 46</a>.</p>
+<p>Carry out the additional settings. Pay attention to the information given in <a href="#table-create-set-items">Table 47</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
@@ -7169,7 +7270,7 @@ Let us assume that you want to sell a bundle consisting of a hand towel and a la
 </tbody></table>
 </div>
 <table id="table-create-set-items" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 46. Creating a Set item</caption>
+<caption class="title">Table 47. Creating a Set item</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -7225,7 +7326,7 @@ Let us assume that you want to sell a bundle consisting of a hand towel and a la
 <p>Open the <strong>Set</strong> item.</p>
 </li>
 <li>
-<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-edit-set-items">Table 47</a>.</p>
+<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-edit-set-items">Table 48</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -7233,7 +7334,7 @@ Let us assume that you want to sell a bundle consisting of a hand towel and a la
 </ol>
 </div>
 <table id="table-edit-set-items" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 47. Editing Set items</caption>
+<caption class="title">Table 48. Editing Set items</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -7554,13 +7655,13 @@ Find out how to create <strong>Cross-selling</strong> item lists on the <a href=
 <p>Place check marks next to the items that you want to add as cross-selling items.</p>
 </li>
 <li>
-<p>Click on the appropriate <strong>relation</strong>. Pay attention to the information given in <a href="#table-cross-selling-relationship">Table 48</a>.<br>
+<p>Click on the appropriate <strong>relation</strong>. Pay attention to the information given in <a href="#table-cross-selling-relationship">Table 49</a>.<br>
 → The items will be added and displayed in the <strong>Cross-selling items</strong> tab.</p>
 </li>
 </ol>
 </div>
 <table id="table-cross-selling-relationship" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 48. Selecting the cross-selling relation</caption>
+<caption class="title">Table 49. Selecting the cross-selling relation</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -7793,13 +7894,13 @@ Find out how to create <strong>Cross-selling</strong> item lists on the <a href=
 <p>Click on the <strong>Filter</strong> tab.</p>
 </li>
 <li>
-<p>Carry out the filter settings as described in <a href="#table-link-store-actions">Table 49</a>.</p>
+<p>Carry out the filter settings as described in <a href="#table-link-store-actions">Table 50</a>.</p>
 </li>
 <li>
 <p>Click on the <strong>Procedure</strong> tab.</p>
 </li>
 <li>
-<p>Carry out the procedure settings as described in <a href="#table-link-store-actions">Table 49</a>.</p>
+<p>Carry out the procedure settings as described in <a href="#table-link-store-actions">Table 50</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
@@ -7808,7 +7909,7 @@ Find out how to create <strong>Cross-selling</strong> item lists on the <a href=
 </ol>
 </div>
 <table id="table-link-store-actions" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 49. Callisto: Linking items to an online store special</caption>
+<caption class="title">Table 50. Callisto: Linking items to an online store special</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -8097,12 +8198,12 @@ Flag 2</strong></p></td>
 → The filtered serial numbers will be displayed.</p>
 </li>
 <li>
-<p>Carry out the additional settings. Pay attention to the information given in <a href="#table-edit-serial-numbers">Table 50</a>.</p>
+<p>Carry out the additional settings. Pay attention to the information given in <a href="#table-edit-serial-numbers">Table 51</a>.</p>
 </li>
 </ol>
 </div>
 <table id="table-edit-serial-numbers" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 50. Editing serial numbers</caption>
+<caption class="title">Table 51. Editing serial numbers</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -8191,13 +8292,13 @@ Flag 2</strong></p></td>
 <p>Enter a name.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> listed in <a href="#table-event-procedure-send-serial-numbers">Table 51</a>.</p>
+<p>Select the <strong>event</strong> listed in <a href="#table-event-procedure-send-serial-numbers">Table 52</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the information given in <a href="#table-event-procedure-send-serial-numbers">Table 51</a>.</p>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-event-procedure-send-serial-numbers">Table 52</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong>.</p>
@@ -8210,7 +8311,7 @@ Flag 2</strong></p></td>
 </div>
 </div>
 <table id="table-event-procedure-send-serial-numbers" class="tableblock frame-all grid-all spread">
-<caption class="title">Table 51. Event procedure for automatically assigning serial numbers</caption>
+<caption class="title">Table 52. Event procedure for automatically assigning serial numbers</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
