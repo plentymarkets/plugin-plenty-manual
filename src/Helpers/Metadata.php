@@ -7208,7 +7208,7 @@ class Metadata {
 						"url" => "/en/order-processing/orders/managing-orders",
 						"level" => 3,
 						"title" => "Managing orders",
-						"keywords" => "",
+						"keywords" => "Order processing, Order, Orders, Order status, Order types, Delivery order, Delivery orders, Manually creating orders, Contacts, Customers, Return, Returns, Credit note, Credit notes, Warranty, Warranties, Repair, Repairs, Multi-order, Multi-orders, Scheduler, Advance order, Order Search, Filter options, Order overview, Edit an order, Edit orders",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Managing orders. The following information is available:",
