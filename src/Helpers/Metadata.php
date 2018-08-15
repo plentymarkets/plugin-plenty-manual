@@ -2287,21 +2287,6 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Online-Shop. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
-						"id" => "94f5c6d366ec809ad951c3bbce9f9f5d",
-						"path" => "omni-channel/online-shop/mandanten-verwalten",
-						"position" => 20,
-						"urlName" => "mandanten-verwalten",
-						"url" => "/omni-channel/online-shop/mandanten-verwalten",
-						"level" => 3,
-						"title" => "Mandanten verwalten",
-						"keywords" => "Webshop, Mandant, Standard, Standorte, Buchhaltung, Firmensitz, Sprachpaket",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Mandanten verwalten. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "5ab2ac10fcc9abfb61702a4a494b8ba8",
 						"path" => "omni-channel/online-shop/ceres-einrichten",
 						"position" => 50,
@@ -2317,9 +2302,24 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "381a8bc36efb1c9b37a3f171ed2020a8",
+						"path" => "omni-channel/online-shop/io-einrichten",
+						"position" => 55,
+						"urlName" => "io-einrichten",
+						"url" => "/omni-channel/online-shop/io-einrichten",
+						"level" => 3,
+						"title" => "IO einrichten",
+						"keywords" => "Webshop, Mandant, Standard, Ceres, Plugin, IO, io, Routen, Template, Konfiguration",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich IO einrichten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "25fde79d2951e7e2906cdfbd956e56e5",
 						"path" => "omni-channel/online-shop/shop-builder",
-						"position" => 55,
+						"position" => 56,
 						"urlName" => "shop-builder",
 						"url" => "/omni-channel/online-shop/shop-builder",
 						"level" => 3,
@@ -2347,6 +2347,36 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "94f5c6d366ec809ad951c3bbce9f9f5d",
+						"path" => "omni-channel/online-shop/mandanten-verwalten",
+						"position" => 80,
+						"urlName" => "mandanten-verwalten",
+						"url" => "/omni-channel/online-shop/mandanten-verwalten",
+						"level" => 3,
+						"title" => "Mandanten verwalten",
+						"keywords" => "Webshop, Mandant, Standard, Standorte, Buchhaltung, Firmensitz, Sprachpaket",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Mandanten verwalten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "07d8918607af53d0a6caac74ddf0902f",
+						"path" => "omni-channel/online-shop/template-variablen-in-Ceres",
+						"position" => 99,
+						"urlName" => "template-variablen-in-Ceres",
+						"url" => "/omni-channel/online-shop/template-variablen-in-Ceres",
+						"level" => 3,
+						"title" => "ElasticSearch Ergebnisfelder",
+						"keywords" => "Elastic Search, Result fields, Template Variablen, Callisto, Ceres, Webshop",
+						"description" => "Eine Übersicht der ElasticSearch Ergebnisfelder und deren Entsprechungen in Callisto.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich ElasticSearch Ergebnisfelder. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "5ce419e783ac54785b26c440812fb8e9",
 						"path" => "omni-channel/online-shop/best-practices",
 						"position" => 100,
@@ -2358,21 +2388,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Ceres. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "381a8bc36efb1c9b37a3f171ed2020a8",
-						"path" => "omni-channel/online-shop/io-einrichten",
-						"position" => 120,
-						"urlName" => "io-einrichten",
-						"url" => "/omni-channel/online-shop/io-einrichten",
-						"level" => 3,
-						"title" => "IO einrichten",
-						"keywords" => "Webshop, Mandant, Standard, Ceres, Plugin, IO, io, Routen, Template, Konfiguration",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich IO einrichten. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
