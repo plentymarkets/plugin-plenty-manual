@@ -19,19 +19,18 @@ class ContentController extends Controller
     private $pageService;
     private $request;
     private $sessionStorage;
-    private $searchUrl;
+    private $searchUrl = "";
 
     public function __construct( 
         Twig $twig, 
         FrontendSessionStorageFactoryContract $sessionStorage,
-         PageService $pageService, 
-         Request $request, 
-         WebstoreConfigurationRepositoryContract $webstoreConfigRepo, 
-         Application $app )
+        PageService $pageService, 
+        Request $request, 
+        WebstoreConfigurationRepositoryContract $webstoreConfigRepo, 
+        Application $app )
     {
         $this->twig = $twig;
         $this->lang = $sessionStorage->getLocaleSettings()->language ?? 'de';
-        $this->searchUrl = 
         $this->pageService = $pageService;
         $this->request = $request;
         $this->sessionStorage = $sessionStorage;
