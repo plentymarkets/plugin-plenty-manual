@@ -8,6 +8,9 @@ use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Templates\Twig;
 use PlentyManual\Services\PageService;
 use PlentyManual\Services\SearchService;
+use Plenty\Modules\System\Contracts\WebstoreConfigurationRepositoryContract;
+use Plenty\Plugin\Application;
+
 
 class ContentController extends Controller
 {
@@ -16,14 +19,30 @@ class ContentController extends Controller
     private $pageService;
     private $request;
     private $sessionStorage;
+    private $searchUrl;
 
-    public function __construct( Twig $twig, FrontendSessionStorageFactoryContract $sessionStorage, PageService $pageService, Request $request )
+    public function __construct( 
+        Twig $twig, 
+        FrontendSessionStorageFactoryContract $sessionStorage,
+         PageService $pageService, 
+         Request $request, 
+         WebstoreConfigurationRepositoryContract $webstoreConfigRepo, 
+         Application $app )
     {
         $this->twig = $twig;
         $this->lang = $sessionStorage->getLocaleSettings()->language ?? 'de';
+        $this->searchUrl = 
         $this->pageService = $pageService;
         $this->request = $request;
         $this->sessionStorage = $sessionStorage;
+
+        $defaultLanguage = $webstoreConfigRepo->findByPlentyId($app->getPlentyId())->defaultLanguage;
+
+        $this->searchUrl = "/search/";
+        if ( $this->lang !== $defaultLanguage )
+        {
+            $this->searchUrl = $this->lang . "/search/";
+        }
         parent::__construct();
     }
 
@@ -37,7 +56,8 @@ class ContentController extends Controller
                 "contentTemplate"   => "PlentyManual::" . $this->lang . "." . implode( ".", explode( "/", $contentPath ) ),
                 "currentPage"       => $currentPage,
                 "pages"             => $pages,
-                "lang"              => $this->sessionStorage->getLocaleSettings()->language ?? 'de'
+                "lang"              => $this->lang,
+                "searchUrl"         => $this->searchUrl
             ]
         );
     }
@@ -68,7 +88,8 @@ class ContentController extends Controller
                 "pages"     => $this->pageService->getPages(),
                 "query"     => $query,
                 "results"   => $results,
-                "lang"      => $this->sessionStorage->getLocaleSettings()->language ?? 'de'
+                "lang"      => $this->lang,
+                "searchUrl" => $this->searchUrl
             ]
         );
     }
@@ -78,8 +99,9 @@ class ContentController extends Controller
         return $this->twig->render(
             "PlentyManual::Startpage",
             [
-                "pages" => $this->pageService->getPages(),
-                "lang"              => $this->sessionStorage->getLocaleSettings()->language ?? 'de'
+                "pages"     => $this->pageService->getPages(),
+                "lang"      => $this->lang,
+                "searchUrl" => $this->searchUrl
             ]
         );
     }
