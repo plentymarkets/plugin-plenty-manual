@@ -40,7 +40,7 @@ class ContentController extends Controller
         $this->searchUrl = "/search/";
         if ( $this->lang !== $defaultLanguage )
         {
-            $this->searchUrl = $this->lang . "/search/";
+            $this->searchUrl = "/" . $this->lang . "/search/";
         }
         parent::__construct();
     }
