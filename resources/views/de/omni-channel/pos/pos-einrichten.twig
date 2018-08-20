@@ -108,7 +108,7 @@
 <li><a href="#250"><span>16.</span><span> Senden des Kassenbelegs an Bestandskunden einrichten</span></a>
 <ul class="sectlevel2">
 <li><a href="#260"><span>16.1.</span><span> E-Mail-Vorlage erstellen</span></a></li>
-<li><a href="#270"><span>16.2.</span><span> Ereignisaktion erstellen</span></a></li>
+<li><a href="#270"><span>16.2.</span><span> Ereignisaktion für automatischen E-Mail-Versand erstellen</span></a></li>
 </ul>
 </li>
 <li><a href="#1000"><span>17.</span><span> Kassenbelege über andere Drucker drucken</span></a>
@@ -588,6 +588,13 @@ Aktiviert = Die folgenden Komfortfunktionen werden als zusätzliche Reihe im Zif
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retoure mit Hauptauftrag: Zu retournierende Auftragspositionen manuell wählen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob bei Retouren mit Hauptauftrag die Auftragspositionen beim Öffnen des Auftrags vorausgewählt sind.<br>
+Nicht aktiviert = Standardeinstellung. Beim Öffnen des Hauptauftrags sind alle Auftragspositionen für die Retoure vorausgewählt. Das Kassenpersonal entfernt die Artikel, die nicht zurückgegeben werden.<br>
+Aktiviert = Beim Öffnen des Hauptauftrags sind keine Auftragspositionen für die Retoure vorausgewählt. Das Kassenpersonal fügt die Artikel zur Retoure hinzu, die zurückgegeben werden.<br>
+<strong><em>Tipp:</em></strong> Einstellung für Kassen ohne Scanner aktivieren, über die Aufträge mit vielen Auftragspositionen abgewickelt werden.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Österreich</strong></p></td>
 </tr>
 <tr>
@@ -935,10 +942,10 @@ Katzenfutter CaTasty Deluxe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 <div class="sect2">
 <h3 id="140">5.1. Benutzerkonto für Kassenpersonal erstellen</h3>
 <div class="paragraph">
-<p>Damit neues Kassenpersonal Zugriff auf plentymarkets POS erhält, legen Sie zunächst im plentymarkets Backend <a href="/basics/arbeiten-mit-plentymarkets/benutzer-verwalten">Benutzerkonten</a> der Benutzerklasse <strong>Variabel</strong> für diese Benutzer an. Gehen Sie dazu wie unten beschrieben vor.</p>
+<p>Damit neues Kassenpersonal Zugriff auf plentymarkets POS erhält, legen Sie zunächst im plentymarkets Backend <a href="/basics/arbeiten-mit-plentymarkets/benutzer-verwalten">Benutzerkonten</a> der Benutzerklasse <strong>Variabel</strong> für diese Personen an. Gehen Sie dazu wie unten beschrieben vor.</p>
 </div>
 <div class="paragraph instruction">
-<p>Neue Kassenbenutzer erstellen:</p>
+<p>Benutzerkonto für Kassenpersonal erstellen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -950,13 +957,25 @@ Katzenfutter CaTasty Deluxe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 → Das Fenster <strong>Neuen Benutzer anlegen</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Geben Sie den <strong>Benutzernamen</strong>, den <strong>realen Namen</strong> und das <strong>Passwort</strong> ein.</p>
+<p>Geben Sie den <strong>Benutzernamen</strong> ein.</p>
+</li>
+<li>
+<p>Geben Sie den <strong>realen Namen</strong> ein.</p>
+</li>
+<li>
+<p>Geben Sie das <strong>Passwort</strong> ein.</p>
 </li>
 <li>
 <p>Wiederholen Sie das Passwort.</p>
 </li>
 <li>
-<p>Geben Sie die E-Mail-Adresse des Benutzers ein, damit er Benachrichtigungen des Systems empfängt.</p>
+<p>Geben Sie eine <strong>Neue App-PIN</strong> mit 4 bis 12 Ziffern ein.</p>
+</li>
+<li>
+<p>Wiederholen Sie die App-PIN.</p>
+</li>
+<li>
+<p>Geben Sie die E-Mail-Adresse der Kassenkraft ein, damit sie Benachrichtigungen des Systems empfängt.</p>
 </li>
 <li>
 <p>Wählen Sie die Benutzerklasse <strong>Variabel</strong>.</p>
@@ -965,6 +984,21 @@ Katzenfutter CaTasty Deluxe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
 </li>
 </ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">App-PIN für schnellen Kontowechsel</div>
+<div class="paragraph">
+<p>Die App-PIN erlaubt einen schnellen Wechsel des Benutzerkontos in bestimmten Menüs der plentymarkets App. Bei der ersten Anmeldung in der App wird aber das Passwort abgefragt. Ihr Kassenpersonal benötigt also Passwort und PIN.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 <div class="sect2">
@@ -1088,7 +1122,7 @@ Katzenfutter CaTasty Deluxe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 <div class="sect2">
 <h3 id="160">5.3. POS-Sichtbarkeit für Kassenpersonal aktivieren</h3>
 <div class="paragraph">
-<p>Im Tab <strong>Mobile</strong> legen Sie fest, welche Bereiche und Kennzahlen für variable Benutzer in der plentymarkets App sichtbar sein sollen.</p>
+<p>Im Tab <strong>Mobile</strong> legen Sie fest, welche Bereiche und Kennzahlen für Kassenpersonal der Benutzerklasse <strong>Variabel</strong> in der plentymarkets App sichtbar sein sollen.</p>
 </div>
 <div class="paragraph instruction">
 <p>App-Berechtigungen aktivieren:</p>
@@ -1111,11 +1145,11 @@ Katzenfutter CaTasty Deluxe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 <p>Aktivieren Sie im Bereich <strong>Sichtbare Funktionen</strong> die Option <strong>POS</strong>.</p>
 </li>
 <li>
-<p>Wenn der Benutzer auf weitere Bereiche der plentymarkets App zugreifen können soll, aktivieren Sie weitere Berechtigungen.</p>
+<p>Wenn die Kassenkraft auf weitere Bereiche der plentymarkets App zugreifen können soll, aktivieren Sie <a href="/omni-channel/pos/pos-einrichten#170">weitere Berechtigungen</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.<br>
-→ Der Benutzer hat Zugriff auf plentymarkets POS und kann Kassenaufträge erstellen.</p>
+→ Die Kassenkraft hat Zugriff auf plentymarkets POS und kann Kassenaufträge erstellen.</p>
 </li>
 </ol>
 </div>
@@ -1123,7 +1157,7 @@ Katzenfutter CaTasty Deluxe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 <div class="sect2">
 <h3 id="170">5.4. Berechtigungen für optionale POS-Funktionen aktivieren</h3>
 <div class="paragraph">
-<p>Damit Kassenpersonal in plentymarkets POS Preise bearbeiten, Auftragspositionen umbenennen und/oder Rabatte gewähren können, müssen Sie die Berechtigungen dazu zuweisen. Wie Sie Rollen einrichten und Benutzern zuweisen, erfahren Sie <a href="/basics/arbeiten-mit-plentymarkets/benutzer-verwalten">hier</a>. Dort schalten Sie auch weitere App-Funktionen für Benutzer frei.</p>
+<p>Damit Kassenpersonal in plentymarkets POS Preise bearbeiten, Auftragspositionen umbenennen und/oder Rabatte gewähren können, müssen Sie die Berechtigungen dazu zuweisen. Wie Sie Rollen einrichten und Benutzern zuweisen, erfahren Sie <a href="/basics/arbeiten-mit-plentymarkets/benutzer-verwalten">hier</a>. Dort schalten Sie auch weitere App-Funktionen für Kassenpersonal frei.</p>
 </div>
 <div class="paragraph">
 <p>Im plentymarkets Backend legen Sie über das Zuweisen von Rollen fest, welche POS-Funktionen Kassenpersonal verwenden darf. Dort legen Sie außerdem fest, welche weiteren Bereiche und Kennzahlen in der plentymarkets App sichtbar sein sollen.</p>
@@ -1146,7 +1180,7 @@ Katzenfutter CaTasty Deluxe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 <p>Öffnen Sie das Tab <strong>Mobile</strong>.</p>
 </li>
 <li>
-<p>Aktivieren Sie die POS-Funktionen, die dem Kassenbenutzer zur Verfügung stehen sollen. Beachten Sie <a href="#tabelle-POS-berechtigungen">Tabelle 6</a>.</p>
+<p>Aktivieren Sie die POS-Funktionen, die der Kassenkraft zur Verfügung stehen sollen. Beachten Sie <a href="#tabelle-POS-berechtigungen">Tabelle 6</a>.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.</p>
@@ -1171,7 +1205,7 @@ Katzenfutter CaTasty Deluxe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>POS</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Erteilt Benutzer Zugang zu plentymarkets POS.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gibt Kassenpersonal Zugang zu plentymarkets POS.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">POS-Funktionen</p></td>
@@ -1186,7 +1220,8 @@ Katzenfutter CaTasty Deluxe&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rabatt gewähren</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Erlaubt Kassenpersonal, Rabatte auf Auftragspositionen oder ganze Aufträge zu gewähren.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erlaubt Kassenpersonal, Rabatte auf Auftragspositionen oder ganze Aufträge zu gewähren.<br>
+<strong><em>Hinweis:</em></strong> Artikel, bei denen die Option <strong>Aktionsgutschein/POS-Rabatt</strong> auf <strong>Verboten</strong> gestellt ist, können nicht rabattiert werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kassieren</strong></p></td>
@@ -1295,7 +1330,7 @@ Zwischenberichte enthalten folgende Informationen:<br></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kunde auswählen</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Erlaubt Kassenpersonal, während des Kassierens Kundendaten aufzurufen und einen plentymarkets Bestandskunden zu wählen.<br>
-<strong><em>Hinweis:</em></strong> Damit dieses Recht greift, muss dem Benutzer im Tab <strong>REST-API</strong> auch die Berechtigung <strong>Firma » Kontakt » Adresse » Adresse anzeigen</strong> erteilt werden.</p></td>
+<strong><em>Hinweis:</em></strong> Damit dieses Recht greift, muss der Kassenkraft im Tab <strong>REST-API</strong> auch die Berechtigung <strong>Firma » Kontakt » Adresse » Adresse anzeigen</strong> erteilt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stornierung</strong></p></td>
@@ -1307,7 +1342,7 @@ Zwischenberichte enthalten folgende Informationen:<br></p>
 <div class="sect2">
 <h3 id="_gesperrte_pos_benutzer_entsperren">5.5. Gesperrte POS-Benutzer entsperren</h3>
 <div class="paragraph">
-<p>Wenn Benutzer ihr Passwort beim Login mehrmals hintereinander falsch eingegeben, wird der Benutzer eine gewisse Zeit gesperrt. Als Benutzer mit Admin-Rechten können Sie diese Sperre im plentymarkets Admin-Bereich frühzeitig aufheben.</p>
+<p>Wenn Kassenpersonal das Passwort beim Login mehrmals hintereinander falsch eingegeben, wird das Konto eine gewisse Zeit gesperrt. Wenn Sie Admin-Rechte haben, können Sie diese Sperre im plentymarkets Admin-Bereich frühzeitig aufheben.</p>
 </div>
 <div class="paragraph instruction">
 <p>Benutzer entsperren:</p>
@@ -1319,7 +1354,7 @@ Zwischenberichte enthalten folgende Informationen:<br></p>
 </li>
 <li>
 <p>Klicken Sie auf <strong>Login entsperren</strong>.<br>
-→ Der Benutzer kann sich wieder bei der plentymarkets App anmelden.</p>
+→ Die Kassenkraft kann sich wieder bei der plentymarkets App anmelden.</p>
 </li>
 </ol>
 </div>
@@ -2003,7 +2038,7 @@ Zwischenberichte enthalten folgende Informationen:<br></p>
 <div class="sect3">
 <h4 id="_beispielrechnung">9.3.1. Beispielrechnung</h4>
 <div class="paragraph">
-<p><a href="#tabelle-POS-rundungsverhalten">Tabelle 12</a> zeigt eine Beispielrechnung, um die Rundungsabweichungen zu verdeutlichen, die sich aus den verschiedenen Einstellungskombinationen ergeben.</p>
+<p><a href="#tabelle-POS-rundungsverhalten">Tabelle 12</a> zeigt eine Beispielrechnung, um die Rundungsabweichungen zu verdeutlichen, die durch die verschiedenen Einstellungskombinationen entstehen.</p>
 </div>
 <div class="paragraph">
 <p>Die Beispielrechnung beruht auf den folgenden Daten:</p>
@@ -2528,10 +2563,10 @@ PLZ</strong>;<br>
 <p>Die Kasse generiert die Gutschein-Codes automatisch</p>
 </li>
 <li>
-<p>Das Kassenpersonal hat eine Liste mit Gutschein-Codes pro Gutscheinwert, die in plentymarkets gespeichert sind. Er gibt einen Code ein. Der Gutscheinwert wird abgerufen.</p>
+<p>Das Kassenpersonal hat eine Liste mit Gutschein-Codes pro Gutscheinwert, die in plentymarkets gespeichert sind. Die Kassenkraft gibt einen Code ein. Der Gutscheinwert wird abgerufen.</p>
 </li>
 <li>
-<p>Das Kassenpersonal hat eine Liste mit Gutschein-Codes, die nicht in plentymarkets gespeichert sind. Er gibt einen Code und einen Gutscheinwert ein.</p>
+<p>Das Kassenpersonal hat eine Liste mit Gutschein-Codes, die nicht in plentymarkets gespeichert sind. Die Kassenkraft gibt einen Code und einen Gutscheinwert ein.</p>
 </li>
 </ul>
 </div>
@@ -2576,7 +2611,7 @@ PLZ</strong>;<br>
 </ul>
 </div>
 <div class="paragraph">
-<p>In diesen Fällen stellen Sie dem Kassenpersonal eine Liste mit den Gutschein-Codes bereit. Den Wert des Gutscheins gibt der Kassenbenutzer beim Kassieren als Preis für den Gutschein ein.</p>
+<p>In diesen Fällen stellen Sie dem Kassenpersonal eine Liste mit den Gutschein-Codes bereit. Den Wert des Gutscheins gibt das Kassenpersonal beim Kassieren als Preis für den Gutschein ein.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2663,7 +2698,7 @@ PLZ</strong>;<br>
 <li>
 <p><strong>Speichern</strong> Sie die Eingabe.<br>
 → Der Gutschein-Code wird gespeichert und zur Liste der Gutschein-Codes hinzugefügt.<br>
-<strong><em>Tipp:</em></strong> Mit dem Datenformat <strong>CampaignCoupon</strong> importieren Sie mehrere Gutschein-Codes gleichzeitig. Als Gutscheinwert wird dabei der <strong>Rabattwert</strong> importiert. Legen Sie also eine Kampagne pro Gutscheinwert an, wenn Sie mit dem Datenformat arbeiten möchten.</p>
+<strong><em>Tipp:</em></strong> Mit dem Datenformat <strong>CampaignCoupon</strong> importieren Sie mehrere Gutschein-Codes gleichzeitig. Als Gutscheinwert wird dabei der <strong>Rabattwert</strong> importiert. Legen Sie also pro Gutscheinwert eine eigene Kampagne an, wenn Sie mit dem Datenformat arbeiten möchten.</p>
 </li>
 <li>
 <p>Stellen Sie dem Kassenpersonal die Gutschein-Codes und Informationen zum Wert der Codes zur Verfügung.<br>
@@ -2746,7 +2781,7 @@ PLZ</strong>;<br>
 <div class="ulist">
 <ul>
 <li>
-<p>Beim Kassieren gibt der Kassenbenutzer einen in plentymarkets vorhandenen Gutschein-Code ein. Der Wert dieses Gutschein-Codes wird zum Preis des Artikels.</p>
+<p>Beim Kassieren gibt das Kassenpersonal einen in plentymarkets vorhandenen Gutschein-Code ein. Der Wert dieses Gutschein-Codes wird zum Preis des Artikels.</p>
 </li>
 <li>
 <p>Beim Kassieren generiert die Kassenbenutzerin entweder automatisch einen Code oder speichert einen eigenen Gutschein-Code und gibt einen Gutscheinwert ein.</p>
@@ -2793,8 +2828,8 @@ PLZ</strong>;<br>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.<br>
-→ <strong><em>Mit vorhandenem Gutschein-Code:</em></strong> Kassenbenutzer geben den Gutschein-Code einer Kampagne ein, die mit dem Artikel verknüpft ist. Der Artikel wird mit dem Wert des Gutschein-Codes berechnet.<br>
-→ <strong><em>Ohne vorhandenen Gutschein-Code:</em></strong> Kassenbenutzerinnen werden aufgefordert, einen Preis einzugeben, wenn sie den Artikel in den POS-Warenkorb legen.</p>
+→ <strong><em>Mit vorhandenem Gutschein-Code:</em></strong> Das Kassenpersonal gibt den Gutschein-Code einer Kampagne ein, die mit dem Artikel verknüpft ist. Der Artikel wird mit dem Wert des Gutschein-Codes berechnet.<br>
+→ <strong><em>Ohne vorhandenen Gutschein-Code:</em></strong> Das Kassenpersonal wird aufgefordert, einen Preis einzugeben, wenn der Artikel in den POS-Warenkorb gelegt wird.</p>
 </li>
 </ol>
 </div>
@@ -2827,7 +2862,7 @@ PLZ</strong>;<br>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>0%</strong> wählen.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">*Artikel » Artikel bearbeiten » Artikel öffnen » Variante öffnen » Tab: Verfügbarkeit</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Artikel » Artikel bearbeiten » Artikel öffnen » Variante öffnen » Tab: Verfügbarkeit</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Märkte</strong></p></td>
@@ -2893,7 +2928,7 @@ PLZ</strong>;<br>
 <p>Legen Sie die unten beschriebene Ereignisaktion an, um Waren automatisch auszubuchen, wenn ein Kassenauftrag erstellt wird:</p>
 </div>
 <div class="openblock collapseBox">
-<div class="title">Buchen des Warenausgangs beim Erstellen eines Kassenauftrags:</div>
+<div class="title">Buchen des Warenausgangs beim Erstellen eines Kassenauftrags</div>
 <div class="content">
 <div class="olist arabic">
 <ol class="arabic">
@@ -3189,12 +3224,12 @@ PLZ</strong>;<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="270">16.2. Ereignisaktion erstellen</h3>
+<h3 id="270">16.2. Ereignisaktion für automatischen E-Mail-Versand erstellen</h3>
 <div class="paragraph">
 <p>Erstellen Sie nun eine Ereignisaktion, über die die E-Mail-Vorlage versendet wird, wenn ein Kassenbeleg generiert wird.</p>
 </div>
 <div class="openblock collapseBox">
-<div class="title">Ereignisaktion einrichten</div>
+<div class="title">Ereignisaktion für automatischen E-Mail-Versand erstellen</div>
 <div class="content">
 <div class="olist arabic">
 <ol class="arabic">
@@ -3571,7 +3606,7 @@ Wenn in den Dropdown-Listen außer dem Bondrucker und dem Standarddrucker keine 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Benutzer</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Einen Benutzer aus der Dropdown-Liste wählen, um die Ergebnisse auf Kassenvorgänge dieses Benutzers einzugrenzen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Einen Benutzer aus der Dropdown-Liste wählen, um die Ergebnisse auf Kassenvorgänge dieser Kassenkraft einzugrenzen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zahlungsart</strong></p></td>
@@ -4022,7 +4057,7 @@ Um Belege eines benutzerdefinierten Zeitraums anzuzeigen, die Option <strong>Dat
 <div class="sect4">
 <h5 id="_berechtigungen_für_monatsbelege_erteilen">Berechtigungen für Monatsbelege erteilen</h5>
 <div class="paragraph">
-<p>Benutzer mit Admin-Rechten haben standardmäßig die Berechtigung, Monatsbelege zu erstellen. Benutzern der Benutzerklasse <strong>Variabel</strong> muss diese Berechtigung erteilt werden.</p>
+<p>Kassenpersonal mit Admin-Rechten hat standardmäßig die Berechtigung, Monatsbelege zu erstellen. Kassenpersonal mit der Benutzerklasse <strong>Variabel</strong> muss diese Berechtigung erteilt werden.</p>
 </div>
 <div class="paragraph instruction">
 <p>Benutzern Berechtigungen für Monatsbelege erteilen:</p>
@@ -4083,7 +4118,7 @@ Um Belege eines benutzerdefinierten Zeitraums anzuzeigen, die Option <strong>Dat
 <div class="sect2">
 <h3 id="930">23.5. Kontrollbeleg auf Verlangen der Finanzpolizei erstellen</h3>
 <div class="paragraph">
-<p>Bei einer Kassenrückschau durch die Finanzpolizei muss auf Verlangen ein Kontrollbeleg mit dem Betrag Null erstellt werden. Dieser Kontrollbeleg ermöglicht es dem Prüfer, die Gültigkeit der Signatur mit einer Prüf-App direkt vor Ort in Ihrem Laden zu überprüfen. Jeder Kassenbenutzer kann einen solchen <a href="/omni-channel/pos/pos-kassenbenutzer#270">Kontrollbeleg auf Verlangen</a> erstellen. Zum Erstellen des Kontrollbelegs sind keine zusätzlichen Berechtigungen erforderlich.</p>
+<p>Bei einer Kassenrückschau durch die Finanzpolizei muss auf Verlangen ein Kontrollbeleg mit dem Betrag Null erstellt werden. Dieser Kontrollbeleg ermöglicht es dem Prüfer, die Gültigkeit der Signatur mit einer Prüf-App direkt vor Ort in Ihrem Laden zu überprüfen. Jede Kassenkraft kann einen solchen <a href="/omni-channel/pos/pos-kassenbenutzer#270">Kontrollbeleg auf Verlangen</a> erstellen. Zum Erstellen des Kontrollbelegs sind keine zusätzlichen Berechtigungen erforderlich.</p>
 </div>
 </div>
 <div class="sect2">
