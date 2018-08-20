@@ -4320,10 +4320,10 @@ class Metadata {
 						"url" => "/en/basics/working-with-plentymarkets/manage-users",
 						"level" => 3,
 						"title" => "Managing user accounts",
-						"keywords" => "",
-						"description" => "Working with plentymarkets: Manage user accounts, create new users and edit existing user accounts in the plentymarkets system.",
+						"keywords" => "Owner, User, User accounts, User account, Roles, Rights, Right",
+						"description" => "Working with plentymarkets: Manage user accounts, create new user accounts and edit existing user accounts in the plentymarkets system.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Managing user accounts. The following information is available:",
+						"linkListInto" => "Willkommen im Themenbereich Managing user accounts. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
