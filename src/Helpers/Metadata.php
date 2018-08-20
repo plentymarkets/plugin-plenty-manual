@@ -1372,21 +1372,6 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Alt: plentymarkets Client. Hier finden Sie folgende Informationen:",
 						"children" => 						[
 							[
-								"id" => "6914550b1695467c603d04347abeefe0",
-								"path" => "basics/automatisierung/plentymarkets-client/faq_client",
-								"position" => 1,
-								"urlName" => "faq_client",
-								"url" => "/basics/automatisierung/plentymarkets-client/faq_client",
-								"level" => 4,
-								"title" => "Erste Hilfe für den plentymarkets Client",
-								"keywords" => "Erste Hilfe Client, Client, plentymarkets Client, Client-Probleme, Clientprobleme, alles kaputt, SOS Client",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Erste Hilfe für den plentymarkets Client. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "86712d017d8d6814340581be7fdd2569",
 								"path" => "basics/automatisierung/plentymarkets-client/wechsel_base",
 								"position" => 20,
