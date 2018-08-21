@@ -78,7 +78,7 @@
     <h1>Migrationsleitfaden</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Diese Seite enthält wichtige Informationen zur Migration auf plentymarkets 7. Für plentymarkets 7 wurde die Artikelarchitektur grundlegend überarbeitet. Auf dieser Seite wird kurz die neue Architektur erläutert und ein Ausblick auf die weiteren Verbesserungen gegeben, die sich zurzeit noch in der Umsetzung befinden. Des Weiteren wird der Ablauf der Migration beschrieben. Sie erfahren, welche Vorbereitungen Sie treffen müssen, um Ihr System für die Migration vorzubereiten. Beachten Sie, dass eine Migration nicht rückgängig gemacht werden kann. Wenn Sie die hier beschriebenen Vorbereitungen nicht treffen, kann dies einen erheblichen Korrekturaufwand für Sie nach der Migration bedeuten. Im schlimmsten Fall kann es zu einem Verlust von Daten kommen. Lesen Sie daher die folgenden Informationen aufmerksam und bereiten Sie Ihre Daten wie hier beschrieben für die Migration vor.</p>
+<p>Diese Seite enthält wichtige Informationen zur Migration auf plentymarkets 7. Für plentymarkets 7 wurde die Artikelarchitektur grundlegend überarbeitet. Auf dieser Seite wird kurz die neue Architektur erläutert und ein Ausblick auf die weiteren Verbesserungen gegeben, die sich zurzeit noch in der Umsetzung befinden. Des Weiteren wird der Ablauf der Migration beschrieben. Sie erfahren, welche Vorbereitungen Sie treffen müssen, um Ihr System für die Migration vorzubereiten. Beachten Sie, dass eine Migration nicht rückgängig gemacht werden kann. Wenn Sie die hier beschriebenen Vorbereitungen nicht treffen, müssen Sie einen erheblichen Korrekturaufwand nach der Migration in Kauf nehmen. Im schlimmsten Fall kann es zu einem Verlust von Daten kommen. Lesen Sie daher die folgenden Informationen aufmerksam und bereiten Sie Ihre Daten wie hier beschrieben für die Migration vor.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -156,7 +156,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Jeder Artikel verfügt über eine nicht löschbare Hauptvariante. Diese Hauptvariante ist nicht identisch mit dem Artikel, sondern unterscheidet sich von den anderen möglichen Varianten eines Artikels lediglich dadurch, dass Eigenschaften von ihr an weitere Varianten des Artikels vererbt werden können. Die Hauptvariante kann selbst eine kaufbare Variante sein oder als virtuelle Variante dienen, um die weiteren Varianten des Artikels zu verwalten.</p>
+<p>Jeder Artikel verfügt über eine nicht löschbare Hauptvariante. Diese Hauptvariante ist nicht identisch mit dem Artikel, sondern unterscheidet sich von den anderen möglichen Varianten eines Artikels lediglich dadurch, dass Eigenschaften von der Hauptvariante an weitere Varianten des Artikels vererbt werden können. Die Hauptvariante kann selbst eine kaufbare Variante sein oder als virtuelle Variante dienen, um die weiteren Varianten des Artikels zu verwalten.</p>
 </div>
 <div class="paragraph">
 <p>Bild 1 zeigt eine schematische Darstellung der Artikelarchitektur in plentymarkets 7.</p>
@@ -173,7 +173,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Die Preissets mit den Preisspalten wurden durch Verkaufspreise ersetzt. Diese Verkaufspreise werden zentral definiert und verwaltet und Varianten zugewiesen. Dieses Konzept vereinfacht die Preispflege und bietet Ihnen gleichzeitig deutlich mehr Flexibilität bei der selektiven Preisgestaltung. Beispielsweise werden die Mengenrabattstaffeln von Artikeln und Kundenklassen zu Verkaufspreisen migriert. Dies erlaubt Ihnen noch mehr Flexibilität bei der Preisstaffelung.</p>
+<p>Die Preissets mit den Preisspalten wurden durch Verkaufspreise ersetzt. Diese Verkaufspreise werden zentral definiert und verwaltet und Varianten zugewiesen. Dieses Konzept vereinfacht die Preispflege und bietet Ihnen gleichzeitig deutlich mehr Flexibilität bei der selektiven Preisgestaltung. Beispielsweise werden die Mengenrabattstaffeln von Artikeln und Kundenklassen zu Verkaufspreisen migriert. Diese neuen Verkaufspreise erlauben Ihnen noch mehr Flexibilität bei der Preisstaffelung.</p>
 </li>
 <li>
 <p>Mehr Flexibilität bei der Arbeit mit Varianten. Anders als bisher können für Varianten eigene Werte z.B. für Maße und Gewichte, Versandkosten, sonstige Kosten und Lieferanten hinterlegt werden. Um den Pflegeaufwand bei sehr ähnlichen Varianten zu minimieren, haben wir gleichzeitig die Möglichkeit geschaffen, Daten von der Hauptvariante an die Varianten zu vererben.</p>
@@ -226,7 +226,7 @@
 → Wenn die Hauptdomain Ihres Systems eine externe Domain ist, müssen Sie im Rahmen eines Umzugs auf die AWS-Cloud die neue IP-Adresse beim externen Domain-Provider speichern. Weitere Informationen finden Sie im <a href="https://forum.plentymarkets.com/t/leitfaden-aws-umzug/75863">Leitfaden AWS-Umzug</a>.</p>
 </li>
 <li>
-<p><strong>SOAP</strong>: Eigene SOAP-Anbindungen und SOAP-Anbindungen von Partnern oder Agenturen müssen vor der Migration auf ihre Stable 7-Tauglichkeit geprüft werden. Fragen Sie den Entwickler oder die Agentur, ob die Anbindung Stable 7-fähig ist.</p>
+<p><strong>SOAP</strong>: Eigene SOAP-Anbindungen und SOAP-Anbindungen von Partnern oder Agenturen müssen vor der Migration auf die Stable 7-Tauglichkeit geprüft werden. Fragen Sie den Entwickler oder die Agentur, ob die Anbindung Stable 7-fähig ist.</p>
 </li>
 <li>
 <p><strong>plentymarkets Shipping</strong>: plentymarkets Shipping ist nicht mit plentymarkets 7 kompatibel und wird nicht mehr unterstützt. Es wurde vollständig durch die Prozesse abgelöst.
@@ -546,7 +546,7 @@ Zuordnung der vorhandenen GTIN bei der Migration:<br>
 <li>
 <p>Bei Mandanten mit Einstellung "Verwende Preisspalte":<br>
 <a href="/basics/versionswechsel/migrationsleitfaden#75">Prüfen</a>, welche Preisspalten im Menü <strong>System » Aufträge » Zahlung » Währungen</strong> mit Währungen verknüpft sind. Sicherstellen, dass an allen Artikeln in diesen Preisspalten Beträge hinterlegt sind.<br>
-<strong>Wichtig:</strong> Ist kein Betrag hinterlegt, wird bei gleicher Währung der Standardpreis der Variante übernommen. Je nach Wechselkurs kann dies zu stark abweichenden neuen Preisen führen.</p>
+<strong>Wichtig:</strong> Ist kein Betrag hinterlegt, wird bei gleicher Währung der Standardpreis der Variante übernommen. Je nach Wechselkurs kann diese Einstellung zu stark abweichenden neuen Preisen führen.</p>
 </li>
 </ul>
 </div></div></td>
@@ -595,7 +595,7 @@ Zuordnung der vorhandenen GTIN bei der Migration:<br>
 <td class="content">
 <div class="title">Tipp: Artikeldaten prüfen und ggf. aktualisieren</div>
 <div class="paragraph">
-<p>Prüfen Sie vor der Migration die Aktualität Ihrer Artikeldaten. Löschen Sie alte Testartikel und prüfen Sie vor allem die Preise. Dies vereinfacht die Datenmigration und reduziert Ihren Pflegeaufwand nach der Migration.</p>
+<p>Prüfen Sie vor der Migration die Aktualität Ihrer Artikeldaten. Löschen Sie alte Testartikel und prüfen Sie vor allem die Preise. Diese Vorarbeit vereinfacht die Datenmigration und reduziert Ihren Pflegeaufwand nach der Migration.</p>
 </div>
 </td>
 </tr>
@@ -680,13 +680,13 @@ Wählen, wie die Einheiten migriert werden sollen:<br>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Trennzeichen für Zusammenführung Einheit 1 + 2</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bei Auswahl der Optionen <strong>Einheit 1 + Einheit 2</strong> oder <strong>Einheit 2 + Einheit 1</strong>:<br>
 Trennzeichen eingeben, die zwischen den beiden Einheiten eingefügt werden sollen. Als Trennzeichen können beliebe Kombinationen aus Leerzeichen, Zeichen (Komma, Semikolon, Schrägstrich etc.) und Buchstaben eingegeben werden.<br>
-<strong>Hinweis:</strong> Der Inhalt des Felds wird direkt übernommen, Leerzeichen müssen also eingegeben werden, wenn sie als Bestandteil der Trennzeichen eingefügt werden sollen.</p></td>
+<strong>Hinweis:</strong> Der Inhalt des Felds wird direkt übernommen. Leerzeichen müssen also eingegeben werden, wenn Leerzeichen als Bestandteil der Trennzeichen eingefügt werden sollen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Doppelte Nummern</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">In plentymarkets 7 ist die Variantennummer systemweit eindeutig. Bei doppelt vergebenen Artikel-/Variantennummern übernimmt die zuerst migrierte Variante die vorhandene Nummer. Für alle weiteren Varianten wird eine neue, eindeutige Variantennummer vergeben. Festlegen, nach welchem Muster diese Variantennummern vergeben werden sollen.<br>
 <strong>Neue Nummer generieren</strong> = Die zuerst migrierte Variante übernimmt die Artikel-/Variantennummer. Für die weiteren Varianten werden neue Nummern generiert. Im Menü <a href="/artikel/artikel-verwalten#15">System » Artikel » Einstellungen</a> das Muster aus Präfix und nächster Variantennummer festlegen, nach dem diese Nummern generiert werden sollen.<br>
-<strong>Vorhandene durch Counter eindeutig machen</strong> = Die zuerst migrierte Variante übernimmt die Artikel-/Variantennummer. Für alle weiteren Varianten wird an diese Nummer eine aufsteigende Zahl angefügt, um sie eindeutig zu machen.<br>
+<strong>Vorhandene durch Counter eindeutig machen</strong> = Die zuerst migrierte Variante übernimmt die Artikel-/Variantennummer. Für alle weiteren Varianten wird an diese Nummer eine aufsteigende Zahl angefügt, um die Nummer eindeutig zu machen.<br>
 <strong>Beispiel:</strong> Die Artikel-/Variantennummer XY12345 befindet sich dreimal im System. Bei der Migration werden drei Varianten angelegt. Diese neuen Varianten haben die Variantennummern XY12345, XY123452 und XY123453.</p></td>
 </tr>
 </tbody>
@@ -978,7 +978,7 @@ Die angezeigte nächste Variantennummer wird aktualisiert, sobald eine neue Vari
 ❏ Welche Trennzeichen sind geeignet, um den Inhalt zusammenzuführen?</p>
 </li>
 <li>
-<p>Passen Sie den Inhalt der Spalten ggf. so an, dass sie zusammengeführt eine sinnvolle Einheit ergeben.</p>
+<p>Passen Sie den Inhalt der Spalten ggf. so an, dass die Spalten zusammengeführt eine sinnvolle Einheit ergeben.</p>
 </li>
 <li>
 <p>Speichern Sie die Änderungen an der CSV-Datei.</p>
@@ -1205,7 +1205,7 @@ Die angezeigte nächste Variantennummer wird aktualisiert, sobald eine neue Vari
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>Für Mandanten mit der Einstellung <strong>Verwende Preisspalte</strong> prüfen Sie nun, welche Preise im Menü <strong>System » Aufträge » Zahlung » Währungen</strong> mit Währungen verknüpft sind. Stellen Sie dann sicher, dass an allen Artikeln für diese Preise Beträge hinterlegt sind. Ist kein Betrag hinterlegt, wird der Standardpreis der Variante übernommen. Die Währung bleibt jedoch gleich. Je nach Wechselkurs kann dies zu stark abweichenden Preisen führen. Gehen Sie wie unten beschrieben vor, um die Einstellungen zu prüfen.</p>
+<p>Für Mandanten mit der Einstellung <strong>Verwende Preisspalte</strong> prüfen Sie nun, welche Preise im Menü <strong>System » Aufträge » Zahlung » Währungen</strong> mit Währungen verknüpft sind. Stellen Sie dann sicher, dass an allen Artikeln für diese Preise Beträge hinterlegt sind. Ist kein Betrag hinterlegt, wird der Standardpreis der Variante übernommen. Die Währung bleibt jedoch gleich. Je nach Wechselkurs kann diese Einstellung zu stark abweichenden Preisen führen. Gehen Sie wie unten beschrieben vor, um die Einstellungen zu prüfen.</p>
 </div>
 <div class="paragraph instruction">
 <p>Währungseinstellungen bei Mandanten mit Einstellung "Verwende Preisspalte" prüfen:</p>
@@ -1395,7 +1395,7 @@ Die angezeigte nächste Variantennummer wird aktualisiert, sobald eine neue Vari
 <p>Passen Sie die Einstellungen bei Bedarf an.</p>
 </li>
 <li>
-<p>Prüfen Sie auch die Preise und passen Sie sie ggf. an, wenn Sie Änderungen an den Einstellungen vornehmen.</p>
+<p>Prüfen Sie auch die Preise und passen Sie die Preise ggf. an, wenn Sie Änderungen an den Einstellungen vornehmen.</p>
 </li>
 </ol>
 </div>
@@ -1548,10 +1548,10 @@ System » Märkte » Neckermann Österreich Cross-Docking</strong></p></td>
 <p>Damit SKUs für Amazon korrekt migriert werden, müssen zwingend bestimmte Einstellungen vor der Migration geprüft werden.<br></p>
 </div>
 <div class="paragraph">
-<p>Zum einen müssen Sie im Menü <strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Verfügbar</strong> prüfen, ob bei allen von Ihnen genutzten Amazon-Plattformen sowie für die <strong>Web-API</strong> der Haken gesetzt ist. Dies ist zwingend erforderlich. Andernfalls werden die SKUs in plentymarkets 7 beim Export mit einer SKU der neuen Logik erzeugt. Dies führt dazu, dass Artikel im Seller Central doppelt gelistet werden.<br></p>
+<p>Zum einen müssen Sie im Menü <strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Verfügbar</strong> prüfen, ob bei allen von Ihnen genutzten Amazon-Plattformen sowie für die <strong>Web-API</strong> der Haken gesetzt ist. Diese Einstellungen sind zwingend erforderlich. Andernfalls werden die SKUs in plentymarkets 7 beim Export mit einer SKU der neuen Logik erzeugt. Dadurch werden Artikel im Seller Central doppelt gelistet.<br></p>
 </div>
 <div class="paragraph">
-<p>Des Weiteren sollten sowohl die Einstellung <strong>Amazon-Abwicklung (FBA)</strong> als auch die Einstellung <strong>Versand durch Amazon (FBA)</strong> im Menü <strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Verfügbar</strong> aktiviert sein. Ist dies nicht der Fall, können keine FBA-SKUs migriert werden.</p>
+<p>Des Weiteren sollten sowohl die Einstellung <strong>Amazon-Abwicklung (FBA)</strong> als auch die Einstellung <strong>Versand durch Amazon (FBA)</strong> im Menü <strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Verfügbar</strong> aktiviert sein. Sind diese Einstellungen nicht aktiviert, können keine FBA-SKUs migriert werden.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1903,7 +1903,7 @@ System » Märkte » Neckermann Österreich Cross-Docking</strong></p></td>
 </div>
 <div class="paragraph">
 <p>In diesem Handbuchbereich finden Sie wichtige Informationen zu der Migration auf plentymarkets 7 und den nötigen Vorbereitungen sowie eine kurze Übersicht der Änderungen.<br>
-Auf dieser Handbuchseite sind Bereiche aufgeführt, die noch nicht in plentymarkets 7 migriert wurden. Wie bereits angekündigt, stehen Ihnen bei Fragen zur neuen Artikelarchitektur auch unsere Entwickler gern mit Rat und Tat zur Seite. Auch Feedback nehmen sie in unserem Forum gern entgegen.</p>
+Auf dieser Handbuchseite sind Bereiche aufgeführt, die noch nicht in plentymarkets 7 migriert wurden. Wie bereits angekündigt, stehen Ihnen bei Fragen zur neuen Artikelarchitektur auch unsere Entwickler gern mit Rat und Tat zur Seite. Auch Feedback nehmen unsere Entwicklungsteams in unserem Forum gern entgegen.</p>
 </div>
 </div>
 </div><div class="sect1">
