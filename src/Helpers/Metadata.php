@@ -1568,7 +1568,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Artikel verwalten",
 				"keywords" => "Cross-Selling, Hersteller, Barcodes",
-				"description" => "Erfahren Sie, wie Sie Ihre Artikel in plentymarkets anlegen und verwalten.",
+				"description" => "Erfahren Sie, wie Sie Ihre Artikel in plentymarkets erstellen und verwalten.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Artikel verwalten. Hier finden Sie folgende Informationen:",
 				"children" => [],
