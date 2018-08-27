@@ -1145,6 +1145,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich FTP-Zugang. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "7ae7da90b3ade0678bd179f78577c8b1",
+						"path" => "basics/datenaustausch/kataloge-verwalten",
+						"position" => 70,
+						"urlName" => "kataloge-verwalten",
+						"url" => "/basics/datenaustausch/kataloge-verwalten",
+						"level" => 3,
+						"title" => "Kataloge verwalten",
+						"keywords" => "Katalog, Kataloge, Katalog-Templates, Marktplatz, Marktplätze, Märkte, Verkaufskanal, Templates, Datenquellen, Zieldaten",
+						"description" => "Im Menü *Daten » Kataloge* konfigurieren Sie den Export von Variantendaten an Marktplätze.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Kataloge verwalten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
