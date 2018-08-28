@@ -5365,6 +5365,21 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic FTP access. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "0028e997d4de0c66a98503e359f1156e",
+						"path" => "basics/data-exchange/Managing-catalogs",
+						"position" => 70,
+						"urlName" => "Managing-catalogs",
+						"url" => "/en/basics/data-exchange/Managing-catalogs",
+						"level" => 3,
+						"title" => "Managing catalogs",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing catalogs. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
