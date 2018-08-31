@@ -5916,21 +5916,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "a9b25c85df01a0718cc4897222e53ec0",
-						"path" => "omni-channel/multi-channel/dawanda",
-						"position" => 50,
-						"urlName" => "dawanda",
-						"url" => "/en/omni-channel/multi-channel/dawanda",
-						"level" => 3,
-						"title" => "DaWanda",
-						"keywords" => "DaWanda, Market, Marketplace",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market DaWanda in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic DaWanda. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "a5b8f4521c3bb21a2f2a9ad6e748db19",
 						"path" => "omni-channel/multi-channel/ebay",
 						"position" => 50,
