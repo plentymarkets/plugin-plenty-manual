@@ -324,7 +324,7 @@ class Metadata {
 								"url" => "/basics/datenaustausch/ElasticSync/FormatDesigner",
 								"level" => 4,
 								"title" => "Daten mit FormatDesigner exportieren",
-								"keywords" => "Format, FormatDesigner, Format Designer, Formatdesigner, Format designen, Datenfeld, Datenfelder, Format anlegen, Format bearbeiten, Daten exportieren",
+								"keywords" => "Format, FormatDesigner, Format Designer, Formatdesigner, Format designen, Datenfeld, Datenfelder, Format erstellen, Format bearbeiten, Daten exportieren",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Daten mit FormatDesigner exportieren. Hier finden Sie folgende Informationen:",
@@ -1846,21 +1846,6 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
-					],
-					[
-						"id" => "a9b25c85df01a0718cc4897222e53ec0",
-						"path" => "omni-channel/multi-channel/dawanda",
-						"position" => 50,
-						"urlName" => "dawanda",
-						"url" => "/omni-channel/multi-channel/dawanda",
-						"level" => 3,
-						"title" => "DaWanda",
-						"keywords" => "DaWanda, Marktplatz",
-						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz DaWanda in Ihrem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich DaWanda. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
 					],
 					[
 						"id" => "7b0c81fccd804d676dcfeeff6d97cc22",
