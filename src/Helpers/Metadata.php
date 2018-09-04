@@ -5358,11 +5358,11 @@ class Metadata {
 						"urlName" => "Managing-catalogs",
 						"url" => "/en/basics/data-exchange/Managing-catalogs",
 						"level" => 3,
-						"title" => "Managing catalogs",
-						"keywords" => "",
-						"description" => "",
+						"title" => "Managing catalogues",
+						"keywords" => "Catalogue, Catalog, Catalogues, Catalogs, catalogue templates, market, markets, sales channel, templates, data sources, target data",
+						"description" => "In the *Data » Catalogue* menu allows you to configure the export of variation data to markets.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Managing catalogs. The following information is available:",
+						"linkListInto" => "Welcome to the topic Managing catalogues. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
