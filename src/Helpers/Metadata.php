@@ -3008,6 +3008,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich POS für Kassenpersonal. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "0be11c783df9e2e68a0bc913a550e9e4",
+						"path" => "omni-channel/pos/pos-best-practice",
+						"position" => 90,
+						"urlName" => "pos-best-practice",
+						"url" => "/omni-channel/pos/pos-best-practice",
+						"level" => 3,
+						"title" => "Best Practices",
+						"keywords" => "plentymarkets POS, Kasse, POS, Gutscheine, Gutscheine verkaufen, Best Practice",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
