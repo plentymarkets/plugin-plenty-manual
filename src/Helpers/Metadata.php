@@ -2060,21 +2060,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "9cb19a5c01172fc6bfe8b8f5fbfff8a5",
-						"path" => "omni-channel/multi-channel/laredoute",
-						"position" => 170,
-						"urlName" => "laredoute",
-						"url" => "/omni-channel/multi-channel/laredoute",
-						"level" => 3,
-						"title" => "La Redoute",
-						"keywords" => "La Redoute, Marktplatz",
-						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz La Redoute in Ihrem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich La Redoute. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "bd95c3fab31167c9a033817fdde44077",
 						"path" => "omni-channel/multi-channel/mercateo",
 						"position" => 180,
