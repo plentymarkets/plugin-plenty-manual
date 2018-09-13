@@ -6235,21 +6235,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "9cb19a5c01172fc6bfe8b8f5fbfff8a5",
-						"path" => "omni-channel/multi-channel/laredoute",
-						"position" => 170,
-						"urlName" => "laredoute",
-						"url" => "/en/omni-channel/multi-channel/laredoute",
-						"level" => 3,
-						"title" => "La Redoute",
-						"keywords" => "La Redoute, Marketplace, Market",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market La Redoute in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic La Redoute. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "895d7ceae21c1679b6420a8b552e43d6",
 						"path" => "omni-channel/multi-channel/pixmania",
 						"position" => 180,
