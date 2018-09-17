@@ -1,0 +1,151 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#_ohne_programmierkenntnisse_eine_schnittstelle_zu_deinem_dropshipper_schaffen"><span>1.</span><span> Ohne Programmierkenntnisse eine Schnittstelle zu deinem Dropshipper schaffen</span></a></li>
+<li><a href="#_erstellung_des_benötigten_formats"><span>2.</span><span> Erstellung des benötigten Formats</span></a></li>
+<li><a href="#_verwenden_des_erstellten_formats"><span>3.</span><span> Verwenden des erstellten Formats</span></a></li>
+<li><a href="#_übermittlung_der_exportdateien"><span>4.</span><span> Übermittlung der Exportdateien</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>Best Practices: Dropshipping und ElasticExport</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dank des Zusammenspiels unser beiden Plugins ElasticExport und ElasticSync inklusive des FormatDesigners ist der automatisierte Datenaustausch zwischen plentymarkets und zusätzlichen Systemen oder Dienstleistern jetzt ein Kinderspiel.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_ohne_programmierkenntnisse_eine_schnittstelle_zu_deinem_dropshipper_schaffen">1. Ohne Programmierkenntnisse eine Schnittstelle zu deinem Dropshipper schaffen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wenn du Services nutzen möchtest, die zwar Daten aus plentymarkets benötigen, aber nicht direkt über eine Schnittstelle angebunden werden können, dann bieten dir unsere Plugins ElasticExport und ElasticSync inklusive des FormatDesigners jetzt eine einfache und umfängliche Lösung.</p>
+</div>
+<div class="paragraph">
+<p>Wie genau das Zusammenspiel dieser beiden Plugins funktioniert, zeigen wir dir im Folgenden anhand eines Use Cases, mit dem du die Auftragsdatenübertragung zu einem lokalen Versanddienstleister ohne direkte Schnittstelle in das Drittsystem realisieren kannst.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_erstellung_des_benötigten_formats">2. Erstellung des benötigten Formats</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im ersten Schritt erstellst du das benötigte Format mit dem FormatDesigner.<br></p>
+</div>
+<div class="paragraph instruction">
+<p>Format im FormatDesigner erstellen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Daten » Formatdesigner</strong>.</p>
+</li>
+<li>
+<p>Erstelle ein neues Format vom Typ <strong>orderItem</strong>.</p>
+</li>
+<li>
+<p>Gib dem Format einen eindeutigen <strong>Namen</strong> und wähle die <strong>Trennzeichen</strong> aus, die verwendet werden sollen.</p>
+</li>
+<li>
+<p>Durch Klick auf <strong>Speichern</strong> wird das neue Format erstellt.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Im FormatDesigner kannst du dir deinen Export flexibel so zusammenstellen, wie du ihn für deinen Dienstleister brauchst. Wähle zuerst rechts die passende Kategorie aus und suche das gewünschte Feld heraus. Mit einem Klick auf das Feld wird dieses dem Format hinzugefügt und kann von dir noch individuell benannt werden. Das Feld mit dem voreingestellten Namen <strong>Custom_value</strong> kannst du beispielsweise so umbenennen, dass es in deiner Exportdatei <strong>fulfillment_Kdnr</strong> heißt.<br></p>
+</div>
+<div class="paragraph">
+<p>In diesem Beispiel verfügen wir über eine festgelegte Kundennummer bei unserem Dienstleister. Mit einem Klick auf “change value” kannst du einen festen Wert hinterlegen.<br></p>
+</div>
+<div class="paragraph">
+<p>Typische Felder, die du im Format Auftragspositionen benötigst um Dropshipping abzubilden, wären z.B. folgende:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/datenaustausch/ElasticSync/assets/bp-elasticexport-dropshipping_01.png" alt="bp elasticexport dropshipping 01">
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">DSGVO-konformes Arbeiten</div>
+<div class="paragraph">
+<p>Achte unbedingt darauf, euch bezüglich der Datenschutz-Grundverordnung (DSGVO) abzusichern. Sollte dein Dropshipper z.B. Telefonnummern oder Email-Adressen von Kunden benötigen, weil der Versand beispielsweise per Spedition erfolgt, muss dies gesondert dokumentiert werden. Dazu benötigst du die Erlaubnis der betroffenen Kunden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_verwenden_des_erstellten_formats">3. Verwenden des erstellten Formats</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im zweiten Schritt kann das im FormatDesigner erstellte Format im Elastischen Export verwendet werden.<br></p>
+</div>
+<div class="paragraph instruction">
+<p>Format im Elastischen Export verwenden:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Daten » Elastischer Export</strong>.</p>
+</li>
+<li>
+<p>Erstelle einen neuen Export durch Klick auf <strong>Neuer Export</strong>.</p>
+</li>
+<li>
+<p>Wähle den Typ <strong>Auftragspositionen</strong> aus.</p>
+</li>
+<li>
+<p>Definiere im Feld <strong>Bereitstellung</strong>, ob die Exportdatei via HTTP oder auf einem Server zur Verfügung gestellt werden soll.</p>
+</li>
+<li>
+<p>Das Feld <strong>Dateiname</strong> kann mit Platzhaltern befüllt werden. Beispiel: Bei Verwendung des Platzhalters <strong>$day$hour.csv</strong> würde die Exportdatei den jeweils aktuellen Tag und die passende Stunde als Dateinamen verwenden.</p>
+</li>
+<li>
+<p>Wähle unter <strong>Übertragung</strong> aus, wie oft die Datei exportiert werden soll.</p>
+</li>
+<li>
+<p>Nutze den <strong>Auftragspositionsfilter</strong>, um festzulegen, welche Auftragspositionen in der Exportdatei enthalten sein sollen.</p>
+</li>
+<li>
+<p>Über den Punkt <strong>Formateinstellungen</strong> hinterlegen wir noch, dass bei erfolgreichem Export der Auftragsstatus gewechselt werden soll. Dies hat den Vorteil, das der Auftrag nur einmal zum Dienstleister exportiert wird und somit nicht mehrfach versendet wird.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/datenaustausch/ElasticSync/assets/bp-elasticexport-dropshipping_02.png" alt="bp elasticexport dropshipping 02">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/datenaustausch/ElasticSyncx/assets/bp-elasticexport-dropshipping_03.png" alt="bp elasticexport dropshipping 03">
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_übermittlung_der_exportdateien">4. Übermittlung der Exportdateien</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nachdem du das Format mithilfe des FormatDesigner erstellt und die Optionen für den Elastischen Export gewählt hast, musst du nur noch entscheiden, auf welchem Weg du die Exportdatei an deinen Dropshipper übermitteln möchtest.</p>
+</div>
+<div class="paragraph">
+<p>Die Auswahl im Bereich <strong>Übertragung</strong> im Menü <strong>Daten » Elastischer Export</strong> ist hierbei entscheidend. Gibst du beispielsweise einen FTP-Server an, kann dein Dropshipper dort täglich selbst auf die Dateien zugreifen. Möchtest du deine Daten doch einmal manuell übermitteln, kannst du jederzeit über die Funktion <strong>Herunterladen</strong> im Menü <strong>Daten » Elastischer Export</strong> die jeweils aktuelle Exportdatei herunterladen und wie gewünscht weiterverarbeiten.</p>
+</div>
+</div>
+</div>
+</main>

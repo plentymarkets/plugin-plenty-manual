@@ -332,6 +332,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "fa5300040fe9ad598ba690b26edce615",
+								"path" => "basics/datenaustausch/ElasticSync/dropshipping-elasticexport-bp",
+								"position" => 40,
+								"urlName" => "dropshipping-elasticexport-bp",
+								"url" => "/basics/datenaustausch/ElasticSync/dropshipping-elasticexport-bp",
+								"level" => 4,
+								"title" => "Best Practices: Dropshipping und ElasticExport",
+								"keywords" => "Elastischer Export, Dropshipping, Dropshipper, Best Practices, FormatDesigner, Export, Daten",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: Dropshipping und ElasticExport. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "4144d216976ec60ad15cb583751063cf",
 								"path" => "basics/datenaustausch/ElasticSync/best-practices",
 								"position" => 100,
