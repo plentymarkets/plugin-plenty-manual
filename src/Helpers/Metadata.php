@@ -1620,21 +1620,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "dd091dcd406884c4ce846584ae75e2c6",
-				"path" => "artikel/gratis-zugaben-freiartikel",
-				"position" => 40,
-				"urlName" => "gratis-zugaben-freiartikel",
-				"url" => "/artikel/gratis-zugaben-freiartikel",
-				"level" => 2,
-				"title" => "Gratiszugaben",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Gratiszugaben. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "0101d2c29d8a17f12cddb077843948ae",
 				"path" => "artikel/best-practices",
 				"position" => 100,
