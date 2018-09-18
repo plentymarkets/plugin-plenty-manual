@@ -1,0 +1,109 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_creating_an_interface_with_your_drop_shipping_provider_no_coding_skills_needed"><span>1.</span><span> Creating an interface with your drop shipping provider: no coding skills needed</span></a></li>
+<li><a href="#_creating_the_necessary_format"><span>2.</span><span> Creating the necessary format</span></a></li>
+<li><a href="#_using_the_created_format"><span>3.</span><span> Using the created format</span></a></li>
+<li><a href="#_transmitting_the_export_files"><span>4.</span><span> Transmitting the export files</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>Best Practices: Drop shipping and Elastic export</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Thanks to the combination of our plugins ElasticExport and ElasticSync including the FormatDesigner, you now have the ability to easily automate data exchange between plentymarkets and additional systems or service providers.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_creating_an_interface_with_your_drop_shipping_provider_no_coding_skills_needed">1. Creating an interface with your drop shipping provider: no coding skills needed</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to use services that require data from your plentymarkets system but cannot be integrated directly via an interface, our plugins ElasticExport and Elastic Sync including the FormatDesigner offer you a simple and versatile solution.</p>
+</div>
+<div class="paragraph">
+<p>In the following, the connection and the interplay between the two plugins will be shown with the help of a use case. The use case will demonstrate how order data can be transferred to a local shipping provider without having to rely on a separate interface for data transmission.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_creating_the_necessary_format">2. Creating the necessary format</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first step consists of creating the necessary format with the help of the FormatDesigner.<br></p>
+</div>
+<div class="paragraph">
+<p>[.instruction] ¤Creating the format in the FormatDesigner:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » FormatDesigner</strong>. ¤. Create a new format of the type <strong>orderItem</strong>. ¤. Assign a distinct <strong>name</strong> to the format and select the <strong>separators</strong> that should be used. ¤. By clicking on <strong>Save</strong>, the new format is created.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use the FormatDesigner to flexibly create a data export that meets the requirements of your service provider. First, select the appropriate category and the desired field within the category on the right-hand side of the menu. By clicking on the field, it is added to the format. You can now enter an individual name for that field. For example, you can rename the field with the default name <strong>Custom_value</strong> so that it is displayed as <strong>fulfilment_custno</strong> in the final export file.<br></p>
+</div>
+<div class="paragraph">
+<p>In our example, we have a preset external customer number assigned by the shipping provider. Click on “change value” to include a fixed value.<br></p>
+</div>
+<div class="paragraph">
+<p>The following fields from the orderItem format are typically needed to manage drop shipping:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/en/basics/data-exchange/ElasticSync/assets/bp-elasticexport-dropshipping_01.png" alt="bp elasticexport dropshipping 01">
+</div>
+</div>
+<div class="paragraph">
+<p>[WARNING] ¤.Pay attention to data protection laws ¤==== ¤Make sure that you work within the legal frameworks concerning the protection of customer data. Should your drop shipping provider require data such as telephone numbers or email addresses from customers, those data need to be documented separately. To pass on such data, you have to be authorized by the respective customers to do so. ¤====</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_using_the_created_format">3. Using the created format</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the second step, the format created in the FormatDesigner is used for an Elastic export.<br></p>
+</div>
+<div class="paragraph">
+<p>[.instruction] ¤Using the format with Elastic export:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Elastic export</strong>. ¤. Click on <strong>New export</strong> to create a new export. ¤. Select the type <strong>Order item</strong>. ¤. Use the field <strong>Provisioning</strong> to determine whether the export file should be provided via HTTP or via a server. ¤. In the field <strong>File name</strong>, template variables can be entered. Example: The template variable <strong>$day$hour.csv</strong> inserts the respective date and the matching hour into the name of the export file. ¤. Use the field <strong>Transfer</strong> to select the interval in which a new file should be exported.</p>
+</li>
+<li>
+<p>Use the <strong>Order item filters</strong> to determine which order items should be included in the export file. ¤. The option below <strong>Format settings</strong> allows you to set up a status change for successfully exported orders. The advantage of a status change is that orders are only exported once and are thus only processed once by the drop shipping provider. ¤. <strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/en/basics/data-exchange/ElasticSync/assets/bp-elasticexport-dropshipping_02.png" alt="bp elasticexport dropshipping 02">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/en/basics/data-exchange/ElasticSync/assets/bp-elasticexport-dropshipping_03.png" alt="bp elasticexport dropshipping 03">
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_transmitting_the_export_files">4. Transmitting the export files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After using the FormatDesigner to create the format and selecting the options for the Elastic export, you only have to decide on how you would like to transmit the export file to your drop shipping provider.</p>
+</div>
+<div class="paragraph">
+<p>Your selection for the field <strong>Provisioning</strong> in the menu <strong>Data » Elastic export</strong> is crucial here. If you have selected an FTP server, the drop shipping provider can access data independently on that server on a daily basis. In case you want to manually transmit your data in certain cases, you can use the <strong>Download</strong> function in the menu <strong>Data » Elastic export</strong> any time to download the latest export file and process it as needed. ¤</p>
+</div>
+</div>
+</div>
+</main>

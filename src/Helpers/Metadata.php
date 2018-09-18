@@ -4537,6 +4537,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "1dd8034174dda9f101a90c36c26ffff6",
+								"path" => "basics/data-exchange/ElasticSync/best-practices-elasticexport-dropshipping",
+								"position" => 40,
+								"urlName" => "best-practices-elasticexport-dropshipping",
+								"url" => "/en/basics/data-exchange/ElasticSync/best-practices-elasticexport-dropshipping",
+								"level" => 4,
+								"title" => "Best Practices: Drop shipping and Elastic export",
+								"keywords" => "Elastic export, Drop shipping, Drop shipping provider, Best practices, FormatDesigner, Export, Data",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Best Practices: Drop shipping and Elastic export. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "ff2522559d07108609c0df1af9a37227",
 								"path" => "basics/data-exchange/ElasticSync/best-practices",
 								"position" => 100,
