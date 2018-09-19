@@ -1592,7 +1592,7 @@ class Metadata {
 			[
 				"id" => "8c2a3fa7200cba571c55ea653d0615d0",
 				"path" => "artikel/artikel-verwalten",
-				"position" => 10,
+				"position" => 100,
 				"urlName" => "artikel-verwalten",
 				"url" => "/artikel/artikel-verwalten",
 				"level" => 2,
@@ -1607,7 +1607,7 @@ class Metadata {
 			[
 				"id" => "936e54378d158f50c4c0f69474a786de",
 				"path" => "artikel/kategorien-verwalten",
-				"position" => 20,
+				"position" => 200,
 				"urlName" => "kategorien-verwalten",
 				"url" => "/artikel/kategorien-verwalten",
 				"level" => 2,
@@ -1620,9 +1620,24 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "5048a4ad595f09feaa8d204495bb8bc0",
+				"path" => "artikel/frontend-artikelsuche-verwalten",
+				"position" => 300,
+				"urlName" => "frontend-artikelsuche-verwalten",
+				"url" => "/artikel/frontend-artikelsuche-verwalten",
+				"level" => 2,
+				"title" => "Frontend-Artikelsuche verwalten",
+				"keywords" => "Facetten, Webshopsuche, Facettensuche",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Frontend-Artikelsuche verwalten. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "0101d2c29d8a17f12cddb077843948ae",
 				"path" => "artikel/best-practices",
-				"position" => 100,
+				"position" => 1000,
 				"urlName" => "best-practices",
 				"url" => "/artikel/best-practices",
 				"level" => 2,
