@@ -19,6 +19,37 @@ class Metadata {
 		"linkListInto" => "Willkommen im Themenbereich Basics. Hier finden Sie folgende Informationen:",
 		"children" => 		[
 			[
+				"id" => "611c3d2c3cb3a845d9fd48d403adcae7",
+				"path" => "basics/benutzer",
+				"position" => 10,
+				"urlName" => "benutzer",
+				"url" => "/basics/benutzer",
+				"level" => 2,
+				"title" => "Beschränkung von gleichzeitig eingeloggten Benutzern im Backend",
+				"keywords" => "gleichzeitig eingeloggt, Benutzer, User, Tarif, Tarifmodell, Tarifwechsel, mehrere Benutzer, zu viele Benutzer, zu viele User, zu viele Nutzer, Backend",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Beschränkung von gleichzeitig eingeloggten Benutzern im Backend. Hier finden Sie folgende Informationen:",
+				"children" => 				[
+					[
+						"id" => "f36c34835c52f065d77ea92000db7429",
+						"path" => "basics/benutzer/gleichzeitig-eingeloggte-benutzer",
+						"position" => 10,
+						"urlName" => "gleichzeitig-eingeloggte-benutzer",
+						"url" => "/basics/benutzer/gleichzeitig-eingeloggte-benutzer",
+						"level" => 3,
+						"title" => "Beschränkung von gleichzeitig eingeloggten Benutzern im Backend",
+						"keywords" => "gleichzeitig eingeloggt, Benutzer, User, Tarif, Tarifmodell, Tarifwechsel, mehrere Benutzer, zu viele Benutzer, zu viele User, zu viele Nutzer, Backend",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Beschränkung von gleichzeitig eingeloggten Benutzern im Backend. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
+			],
+			[
 				"id" => "7c3bcc19f53484ec97c3da301eeee11f",
 				"path" => "basics/erste-schritte",
 				"position" => 10,
@@ -2278,11 +2309,11 @@ class Metadata {
 						"urlName" => "ceres-einrichten",
 						"url" => "/omni-channel/online-shop/ceres-einrichten",
 						"level" => 3,
-						"title" => "Ceres einrichten",
+						"title" => "Ceres Webshop einrichten",
 						"keywords" => "Webshop, Mandant, Standard, Ceres, IO, Plugin, Standard-Lieferland, Standard-Versandart, Standard-Versandprofil, Standard-Zahlungsart, Positionsnummer, Konfiguration, EHI, Trusted Shops, Bestellmerkmal, Filter, Mehrsprachigkeit, Template, Kontaktseite,",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Ceres einrichten. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Ceres Webshop einrichten. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
