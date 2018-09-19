@@ -4348,15 +4348,15 @@ class Metadata {
 			[
 				"id" => "2440d572e8b9661cba6e2b4431084950",
 				"path" => "basics/user",
-				"position" => 10,
+				"position" => 15,
 				"urlName" => "user",
 				"url" => "/en/basics/user",
 				"level" => 2,
-				"title" => "Limitation of simultaneously logged in users in the back end",
+				"title" => "User",
 				"keywords" => "simultaneously logged in, user, tariff, tariff model, tariff change, several users, too many users, back end",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Limitation of simultaneously logged in users in the back end. The following information is available:",
+				"linkListInto" => "Welcome to the topic User. The following information is available:",
 				"children" => 				[
 					[
 						"id" => "8d31d44d8d7ee7793dd6135f0d08b4b1",
