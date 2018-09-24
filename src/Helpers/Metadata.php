@@ -5796,21 +5796,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "c1b444c5e01ad2a5abeff5125ab1d808",
-				"path" => "item/managing-items",
-				"position" => 10,
-				"urlName" => "managing-items",
-				"url" => "/en/item/managing-items",
-				"level" => 2,
-				"title" => "Managing items",
-				"keywords" => "Cross-selling, manufacturers, barcodes",
-				"description" => "Learn how to create and manage items in plentymarkets.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Managing items. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "7fcc66e11870404498338975e984e6cf",
 				"path" => "item/managing-categories",
 				"position" => 20,
@@ -5837,6 +5822,36 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Give-aways. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "c1b444c5e01ad2a5abeff5125ab1d808",
+				"path" => "item/managing-items",
+				"position" => 100,
+				"urlName" => "managing-items",
+				"url" => "/en/item/managing-items",
+				"level" => 2,
+				"title" => "Managing items",
+				"keywords" => "Cross-selling, manufacturers, barcodes",
+				"description" => "Learn how to create and manage items in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing items. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "765d523b420963e9e34f0696ec088d81",
+				"path" => "item/frontend-item-search",
+				"position" => 300,
+				"urlName" => "frontend-item-search",
+				"url" => "/en/item/frontend-item-search",
+				"level" => 2,
+				"title" => "Managing the front end item search",
+				"keywords" => "Facets, online store search, Faceted search, front end search, frontend search, store search",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing the front end item search. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			]
