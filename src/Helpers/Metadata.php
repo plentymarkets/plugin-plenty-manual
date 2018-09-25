@@ -1454,6 +1454,52 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
+				"id" => "f6d3f57747ffab5b590e6f58b7a7c367",
+				"path" => "basics/statistik",
+				"position" => 50,
+				"urlName" => "statistik",
+				"url" => "/basics/statistik",
+				"level" => 2,
+				"title" => "Statistik",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Statistik. Hier finden Sie folgende Informationen:",
+				"children" => 				[
+					[
+						"id" => "4bc754630d0c8d7f0b01e34161e629f8",
+						"path" => "basics/statistik/best-practices",
+						"position" => 1,
+						"urlName" => "best-practices",
+						"url" => "/basics/statistik/best-practices",
+						"level" => 3,
+						"title" => "Kennzahlen in der plentymarkets App einrichten",
+						"keywords" => "Kennzahlen, App-Statistik, verkaufte Aufträge, verkaufte Artikel, Umsatz anzeigen, neue Kunden anzeigen, Dashboard",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "d0ab87cbf8ed26e10cb5b6152cb138d4",
+						"path" => "basics/statistik/statistiken-verwalten",
+						"position" => 90,
+						"urlName" => "statistiken-verwalten",
+						"url" => "/basics/statistik/statistiken-verwalten",
+						"level" => 3,
+						"title" => "Statistiken verwalten",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Statistiken verwalten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
+			],
+			[
 				"id" => "42355c750566654c8907a723e4f884ac",
 				"path" => "basics/versionswechsel",
 				"position" => 50,
@@ -1498,21 +1544,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "f6d3f57747ffab5b590e6f58b7a7c367",
-				"path" => "basics/statistik",
-				"position" => 90,
-				"urlName" => "statistik",
-				"url" => "/basics/statistik",
-				"level" => 2,
-				"title" => "Statistik",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Statistik. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
 			],
 			[
 				"id" => "44168a90b860a18ee186e41b41b49edf",
