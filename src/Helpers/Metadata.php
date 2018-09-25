@@ -1467,21 +1467,6 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Statistik. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
-						"id" => "4bc754630d0c8d7f0b01e34161e629f8",
-						"path" => "basics/statistik/best-practices",
-						"position" => 1,
-						"urlName" => "best-practices",
-						"url" => "/basics/statistik/best-practices",
-						"level" => 3,
-						"title" => "Kennzahlen in der plentymarkets App einrichten",
-						"keywords" => "Kennzahlen, App-Statistik, verkaufte Aufträge, verkaufte Artikel, Umsatz anzeigen, neue Kunden anzeigen, Dashboard",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "d0ab87cbf8ed26e10cb5b6152cb138d4",
 						"path" => "basics/statistik/statistiken-verwalten",
 						"position" => 90,
@@ -1493,6 +1478,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Statistiken verwalten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "4bc754630d0c8d7f0b01e34161e629f8",
+						"path" => "basics/statistik/best-practices",
+						"position" => 1000,
+						"urlName" => "best-practices",
+						"url" => "/basics/statistik/best-practices",
+						"level" => 3,
+						"title" => "Best Practices",
+						"keywords" => "Kennzahlen, App-Statistik, verkaufte Aufträge, verkaufte Artikel, Umsatz anzeigen, neue Kunden anzeigen, Dashboard",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
 						"children" => [],
 						"hasChildren" => false
 					]
