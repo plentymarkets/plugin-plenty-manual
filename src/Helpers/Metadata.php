@@ -5690,6 +5690,52 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
+				"id" => "e91bd062c39a866168d81b5d098d7d60",
+				"path" => "basics/statistics",
+				"position" => 50,
+				"urlName" => "statistics",
+				"url" => "/en/basics/statistics",
+				"level" => 2,
+				"title" => "Statistics",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Statistics. The following information is available:",
+				"children" => 				[
+					[
+						"id" => "b224d9f068c3974aae4e974e13182da2",
+						"path" => "basics/statistics/managing-statistics",
+						"position" => 90,
+						"urlName" => "managing-statistics",
+						"url" => "/en/basics/statistics/managing-statistics",
+						"level" => 3,
+						"title" => "Managing statistics",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing statistics. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "58c2065448be805b60c9f64912a61f5a",
+						"path" => "basics/statistics/best-practices",
+						"position" => 100,
+						"urlName" => "best-practices",
+						"url" => "/en/basics/statistics/best-practices",
+						"level" => 3,
+						"title" => "Best Practices",
+						"keywords" => "Key figures, app statistics, orders, sold items, show revenue, show new customers, dashboard",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Best Practices. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
+			],
+			[
 				"id" => "02c2b130c0a4e362175af73e6f9fd347",
 				"path" => "basics/version-upgrade",
 				"position" => 50,
@@ -5734,21 +5780,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "e91bd062c39a866168d81b5d098d7d60",
-				"path" => "basics/statistics",
-				"position" => 90,
-				"urlName" => "statistics",
-				"url" => "/en/basics/statistics",
-				"level" => 2,
-				"title" => "Statistics",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Statistics. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
 			],
 			[
 				"id" => "af263bf66909487971d1b4e170ae6ca4",
