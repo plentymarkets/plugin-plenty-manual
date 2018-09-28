@@ -4208,21 +4208,6 @@ class Metadata {
 		"linkListInto" => "Willkommen im Themenbereich CRM. Hier finden Sie folgende Informationen:",
 		"children" => 		[
 			[
-				"id" => "800555862d4750fde6b174a6c529502b",
-				"path" => "crm/kundendaten-verwalten",
-				"position" => 10,
-				"urlName" => "kundendaten-verwalten",
-				"url" => "/crm/kundendaten-verwalten",
-				"level" => 2,
-				"title" => "Kundendaten verwalten",
-				"keywords" => "Kundenklasse, Kundentyp, Kundendatensatz, Kunden bearbeiten, Kunden suchen, Kunde löschen, Bewegungsdaten, Offene Posten, Rabattsystem, USt-IdNr.",
-				"description" => "Erfahren Sie, wie Sie Kundendaten in plentymarkets erstellen und verwalten.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Kundendaten verwalten. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "a61bb34674affc5ac8aff96fa3110fac",
 				"path" => "crm/kontakte-verwalten",
 				"position" => 15,
@@ -4279,6 +4264,21 @@ class Metadata {
 				"description" => "Erfahren Sie, wie Sie Newsletter mit Newsletter2Go, CleverReach oder mit dem in plentymarkets integrierten Newsletter an Ihre Kunden versenden.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Newsletter versenden. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "800555862d4750fde6b174a6c529502b",
+				"path" => "crm/kundendaten-verwalten",
+				"position" => 50,
+				"urlName" => "kundendaten-verwalten",
+				"url" => "/crm/kundendaten-verwalten",
+				"level" => 2,
+				"title" => "Kundendaten verwalten",
+				"keywords" => "Kundenklasse, Kundentyp, Kundendatensatz, Kunden bearbeiten, Kunden suchen, Kunde löschen, Bewegungsdaten, Offene Posten, Rabattsystem, USt-IdNr.",
+				"description" => "Erfahren Sie, wie Sie Kundendaten in plentymarkets erstellen und verwalten.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Kundendaten verwalten. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			]
