@@ -8324,21 +8324,6 @@ class Metadata {
 		"linkListInto" => "Welcome to the topic CRM. The following information is available:",
 		"children" => 		[
 			[
-				"id" => "de807e43ceaa63263eef9f1b3809584d",
-				"path" => "crm/managing-customer-data",
-				"position" => 10,
-				"urlName" => "managing-customer-data",
-				"url" => "/en/crm/managing-customer-data",
-				"level" => 2,
-				"title" => "Managing customer data",
-				"keywords" => "customer class, customer type, customer data record, edit customer, search for customer, delete customer, activity index, account receivables, discount system, VAT number",
-				"description" => "Learn how to create and manage your customer data in plentymarkets.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Managing customer data. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "bc1df6c695b5441ec1487fd1e8ef36cb",
 				"path" => "crm/managing-contacts",
 				"position" => 15,
@@ -8395,6 +8380,21 @@ class Metadata {
 				"description" => "Learn how to send newsletters to your customers with Newsletter2Go, CleverReach or the newsletters that is integrated in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Sending newsletters. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "de807e43ceaa63263eef9f1b3809584d",
+				"path" => "crm/managing-customer-data",
+				"position" => 50,
+				"urlName" => "managing-customer-data",
+				"url" => "/en/crm/managing-customer-data",
+				"level" => 2,
+				"title" => "Managing customer data",
+				"keywords" => "customer class, customer type, customer data record, edit customer, search for customer, delete customer, activity index, account receivables, discount system, VAT number",
+				"description" => "Learn how to create and manage your customer data in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing customer data. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			]
