@@ -4377,37 +4377,6 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
-				"id" => "2440d572e8b9661cba6e2b4431084950",
-				"path" => "basics/user",
-				"position" => 15,
-				"urlName" => "user",
-				"url" => "/en/basics/user",
-				"level" => 2,
-				"title" => "User",
-				"keywords" => "simultaneously logged in, user, tariff, tariff model, tariff change, several users, too many users, back end",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic User. The following information is available:",
-				"children" => 				[
-					[
-						"id" => "8d31d44d8d7ee7793dd6135f0d08b4b1",
-						"path" => "basics/user/simultaneously-logged-in-users",
-						"position" => 10,
-						"urlName" => "simultaneously-logged-in-users",
-						"url" => "/en/basics/user/simultaneously-logged-in-users",
-						"level" => 3,
-						"title" => "Limitation of simultaneously logged in users in the back end",
-						"keywords" => "simultaneously logged in, user, tariff, tariff model, tariff change, several users, too many users, back end",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Limitation of simultaneously logged in users in the back end. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					]
-				],
-				"hasChildren" => true
-			],
-			[
 				"id" => "639ea210599b4bf2b9d0c2ceac0151f6",
 				"path" => "basics/working-with-plentymarkets",
 				"position" => 20,
