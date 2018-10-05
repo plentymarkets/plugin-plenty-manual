@@ -95,37 +95,6 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
-				"id" => "611c3d2c3cb3a845d9fd48d403adcae7",
-				"path" => "basics/benutzer",
-				"position" => 15,
-				"urlName" => "benutzer",
-				"url" => "/basics/benutzer",
-				"level" => 2,
-				"title" => "Benutzer",
-				"keywords" => "gleichzeitig eingeloggt, Benutzer, User, Tarif, Tarifmodell, Tarifwechsel, mehrere Benutzer, zu viele Benutzer, zu viele User, zu viele Nutzer, Backend",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Benutzer. Hier finden Sie folgende Informationen:",
-				"children" => 				[
-					[
-						"id" => "f36c34835c52f065d77ea92000db7429",
-						"path" => "basics/benutzer/gleichzeitig-eingeloggte-benutzer",
-						"position" => 10,
-						"urlName" => "gleichzeitig-eingeloggte-benutzer",
-						"url" => "/basics/benutzer/gleichzeitig-eingeloggte-benutzer",
-						"level" => 3,
-						"title" => "Beschränkung von gleichzeitig eingeloggten Benutzern im Backend",
-						"keywords" => "gleichzeitig eingeloggt, Benutzer, User, Tarif, Tarifmodell, Tarifwechsel, mehrere Benutzer, zu viele Benutzer, zu viele User, zu viele Nutzer, Backend",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Beschränkung von gleichzeitig eingeloggten Benutzern im Backend. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					]
-				],
-				"hasChildren" => true
-			],
-			[
 				"id" => "25927cc7285110e0f7f5569caa35ec47",
 				"path" => "basics/arbeiten-mit-plentymarkets",
 				"position" => 20,
