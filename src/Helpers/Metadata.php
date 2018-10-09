@@ -2303,52 +2303,6 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Online-Shop. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
-						"id" => "97b16670a0a60275ec27d201f797be44",
-						"path" => "omni-channel/online-shop/referenz",
-						"position" => 30,
-						"urlName" => "referenz",
-						"url" => "/omni-channel/online-shop/referenz",
-						"level" => 3,
-						"title" => "Referenz",
-						"keywords" => "Webshop, Mandant (Shop), Referenz",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Referenz. Hier finden Sie folgende Informationen:",
-						"children" => 						[
-							[
-								"id" => "6d81bc21d7ebdf8f07ec941fec5faa9d",
-								"path" => "omni-channel/online-shop/referenz/bildergroessen",
-								"position" => 10,
-								"urlName" => "bildergroessen",
-								"url" => "/omni-channel/online-shop/referenz/bildergroessen",
-								"level" => 4,
-								"title" => "Bildergrößen in Ceres",
-								"keywords" => "Kategorien, Bilder, Groesse, Format, Kategorie, Ceres, Webshop, Layout",
-								"description" => "Eine Übersicht der Bildergrößen für Kategoriebilder in Ceres.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Bildergrößen in Ceres. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "a6b0e8993968da9549062eff021eaf4b",
-								"path" => "omni-channel/online-shop/referenz/template-variablen-in-Ceres",
-								"position" => 99,
-								"urlName" => "template-variablen-in-Ceres",
-								"url" => "/omni-channel/online-shop/referenz/template-variablen-in-Ceres",
-								"level" => 4,
-								"title" => "ElasticSearch Ergebnisfelder",
-								"keywords" => "Elastic Search, Result fields, Template Variablen, Callisto, Ceres, Webshop",
-								"description" => "Eine Übersicht der ElasticSearch Ergebnisfelder und deren Entsprechungen in Callisto.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich ElasticSearch Ergebnisfelder. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							]
-						],
-						"hasChildren" => true
-					],
-					[
 						"id" => "5ab2ac10fcc9abfb61702a4a494b8ba8",
 						"path" => "omni-channel/online-shop/ceres-einrichten",
 						"position" => 50,
@@ -3019,6 +2973,52 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich CMS-Syntax. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
+					],
+					[
+						"id" => "97b16670a0a60275ec27d201f797be44",
+						"path" => "omni-channel/online-shop/referenz",
+						"position" => 430,
+						"urlName" => "referenz",
+						"url" => "/omni-channel/online-shop/referenz",
+						"level" => 3,
+						"title" => "Referenz",
+						"keywords" => "Webshop, Mandant (Shop), Referenz",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Referenz. Hier finden Sie folgende Informationen:",
+						"children" => 						[
+							[
+								"id" => "6d81bc21d7ebdf8f07ec941fec5faa9d",
+								"path" => "omni-channel/online-shop/referenz/bildergroessen",
+								"position" => 10,
+								"urlName" => "bildergroessen",
+								"url" => "/omni-channel/online-shop/referenz/bildergroessen",
+								"level" => 4,
+								"title" => "Bildergrößen in Ceres",
+								"keywords" => "Kategorien, Bilder, Groesse, Format, Kategorie, Ceres, Webshop, Layout",
+								"description" => "Eine Übersicht der Bildergrößen für Kategoriebilder in Ceres.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Bildergrößen in Ceres. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "a6b0e8993968da9549062eff021eaf4b",
+								"path" => "omni-channel/online-shop/referenz/template-variablen-in-Ceres",
+								"position" => 99,
+								"urlName" => "template-variablen-in-Ceres",
+								"url" => "/omni-channel/online-shop/referenz/template-variablen-in-Ceres",
+								"level" => 4,
+								"title" => "ElasticSearch Ergebnisfelder",
+								"keywords" => "Elastic Search, Result fields, Template Variablen, Callisto, Ceres, Webshop",
+								"description" => "Eine Übersicht der ElasticSearch Ergebnisfelder und deren Entsprechungen in Callisto.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich ElasticSearch Ergebnisfelder. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							]
