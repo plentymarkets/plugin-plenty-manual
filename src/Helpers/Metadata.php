@@ -5842,21 +5842,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "2805c2760faf6a5256308dfb6c9b0dfe",
-				"path" => "item/give-aways-free-gifts",
-				"position" => 40,
-				"urlName" => "give-aways-free-gifts",
-				"url" => "/en/item/give-aways-free-gifts",
-				"level" => 2,
-				"title" => "Give-aways",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Give-aways. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "c1b444c5e01ad2a5abeff5125ab1d808",
 				"path" => "item/managing-items",
 				"position" => 100,
