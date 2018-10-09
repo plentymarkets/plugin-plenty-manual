@@ -2424,21 +2424,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "07d8918607af53d0a6caac74ddf0902f",
-						"path" => "omni-channel/online-shop/template-variablen-in-Ceres",
-						"position" => 99,
-						"urlName" => "template-variablen-in-Ceres",
-						"url" => "/omni-channel/online-shop/template-variablen-in-Ceres",
-						"level" => 3,
-						"title" => "ElasticSearch Ergebnisfelder",
-						"keywords" => "Elastic Search, Result fields, Template Variablen, Callisto, Ceres, Webshop",
-						"description" => "Eine Übersicht der ElasticSearch Ergebnisfelder und deren Entsprechungen in Callisto.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich ElasticSearch Ergebnisfelder. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "5ce419e783ac54785b26c440812fb8e9",
 						"path" => "omni-channel/online-shop/best-practices",
 						"position" => 100,
