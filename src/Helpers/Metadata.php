@@ -6515,11 +6515,11 @@ class Metadata {
 						"urlName" => "setting-up-ceres",
 						"url" => "/en/omni-channel/online-store/setting-up-ceres",
 						"level" => 3,
-						"title" => "Setting up Ceres",
+						"title" => "Setting up your Ceres online store",
 						"keywords" => "online store, client, standard, Ceres, plugin, default country of delivery, default shipping method, default shipping profile, default payment method, multilingualism, Trusted Shops, EHI, position number, filter, template, contact page, item lists, item list",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Setting up Ceres. The following information is available:",
+						"linkListInto" => "Welcome to the topic Setting up your Ceres online store. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
