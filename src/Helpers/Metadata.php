@@ -7777,21 +7777,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "f2f9866e8fc31e7f150d7e12aa3801e5",
-						"path" => "order-processing/payment/billsafe",
-						"position" => 30,
-						"urlName" => "billsafe",
-						"url" => "/en/order-processing/payment/billsafe",
-						"level" => 3,
-						"title" => "BillSAFE",
-						"keywords" => "BillSAFE. payment method",
-						"description" => "Payment in plentymarkets: Set up the interface to BillSAFE in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic BillSAFE. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "7183d828f07d70adc5ab24180e1c3cb8",
 						"path" => "order-processing/payment/bitpay",
 						"position" => 31,
