@@ -1591,21 +1591,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "a31ae78c61a6a243bf33c2d508befa15",
-				"path" => "basics/verfahrensdokumentation",
-				"position" => 150,
-				"urlName" => "verfahrensdokumentation",
-				"url" => "/basics/verfahrensdokumentation",
-				"level" => 2,
-				"title" => "Verfahrensdokumentation",
-				"keywords" => "GoBD, GOBD, gobd, steuerrechtlich, Steuerrecht, Systemdokumentation, Verfahrensdoku, Verfahrensdokumentation, Verfahrensweise, verwendete Software",
-				"description" => "Laden Sie über diese Seite die technische Systemdokumentation von plentymarkets herunter, die Anwendern von plentymarkets 7 als Grundlage zur Erstellung ihrer Verfahrensdokumentation dient.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Verfahrensdokumentation. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "f8b5b768f6411569801a0423ea70f3aa",
 				"path" => "basics/eol",
 				"position" => 200,
