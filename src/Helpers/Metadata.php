@@ -3692,21 +3692,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "85e47a063ca1bf5e9cbe09acfe9bea8e",
-						"path" => "auftragsabwicklung/payment/billsafe",
-						"position" => 30,
-						"urlName" => "billsafe",
-						"url" => "/auftragsabwicklung/payment/billsafe",
-						"level" => 3,
-						"title" => "BillSAFE",
-						"keywords" => "BillSAFE, Zahlungsart",
-						"description" => "Payment in plentymarkets: Richten Sie die Schnittstelle zu BillSAFE in Ihrem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich BillSAFE. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "407347b5753fe91bf86a48e6b73300f1",
 						"path" => "auftragsabwicklung/payment/bitpay",
 						"position" => 31,
@@ -3908,11 +3893,11 @@ class Metadata {
 						"urlName" => "worldpay",
 						"url" => "/auftragsabwicklung/payment/worldpay",
 						"level" => 3,
-						"title" => "Worldpay",
+						"title" => "WorldPay",
 						"keywords" => "Worldpay, Zahlungsart",
-						"description" => "Payment in plentymarkets: Richten Sie die Schnittstelle zu Worldpay in Ihrem plentymarkets System ein.",
+						"description" => "Payment in plentymarkets: Richten Sie die Schnittstelle zu WorldPay in Ihrem plentymarkets System ein.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Worldpay. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich WorldPay. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
