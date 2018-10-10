@@ -332,6 +332,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Tags. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "adb8d1dbadff5236c974d4d968f2cffd",
+						"path" => "basics/arbeiten-mit-plentymarkets/best-practices-arbeiten-mit-plentymarkets",
+						"position" => 1100,
+						"urlName" => "best-practices-arbeiten-mit-plentymarkets",
+						"url" => "/basics/arbeiten-mit-plentymarkets/best-practices-arbeiten-mit-plentymarkets",
+						"level" => 3,
+						"title" => "Best Practices: Arbeiten mit plentymarkets",
+						"keywords" => "Arbeiten mit plentymarkets, SSL-Zertifikat",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Arbeiten mit plentymarkets. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true

@@ -1,0 +1,768 @@
+<aside class="col-12 col-md-3 push-md-9">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#ssl-zertifikat_bestellen"><span>1.</span><span> Best Practice: SSL-Zertifikat bestellen</span></a>
+<ul class="sectlevel2">
+<li><a href="#_wissenswertes_über_die_ssl_zertifizierung"><span>1.1.</span><span> Wissenswertes über die SSL-Zertifizierung</span></a>
+<ul class="sectlevel3">
+<li><a href="#_preis_modell_der_ssl_zertifizierung"><span>1.1.1.</span><span> Preis-Modell der SSL-Zertifizierung</span></a></li>
+<li><a href="#_let_sencrypt_oder_comodo_welches_zertifikat_soll_ich_nutzen"><span>1.1.2.</span><span> Let’sEncrypt oder COMODO - Welches Zertifikat soll ich nutzen?</span></a>
+<ul class="sectlevel4">
+<li><a href="#_pro_let_sencrypt"><span>Pro Let’sEncrypt</span></a></li>
+<li><a href="#_contra_let_sencrypt"><span>Contra Let’sEncrypt</span></a></li>
+<li><a href="#_pro_comodo"><span>Pro COMODO</span></a></li>
+<li><a href="#_contra_comodo"><span>Contra COMODO</span></a></li>
+</ul>
+</li>
+<li><a href="#_domainvoraussetzungen"><span>1.1.3.</span><span> Domainvoraussetzungen</span></a></li>
+<li><a href="#_veröffentlichung_bereitstellung"><span>1.1.4.</span><span> Veröffentlichung / Bereitstellung</span></a></li>
+<li><a href="#_qualitätskontrolle_durch_die_zertifizierungsstelle"><span>1.1.5.</span><span> Qualitätskontrolle durch die Zertifizierungsstelle</span></a></li>
+<li><a href="#_gültigkeitsdauer"><span>1.1.6.</span><span> Gültigkeitsdauer</span></a>
+<ul class="sectlevel4">
+<li><a href="#_gültigkeitsdauer_für_let_sencrypt_zertifikate"><span>Gültigkeitsdauer für Let’sEncrypt-Zertifikate</span></a>
+<ul class="sectlevel5">
+<li><a href="#_let_sencrypt_kündigen"><span>Let’sEncrypt kündigen</span></a></li>
+</ul>
+</li>
+<li><a href="#_gültigkeitsdauer_für_comodo_zertifikate"><span>Gültigkeitsdauer für COMODO-Zertifikate</span></a></li>
+</ul>
+</li>
+<li><a href="#_verlängerung_des_ssl_zertifikats"><span>1.1.7.</span><span> Verlängerung des SSL-Zertifikats</span></a>
+<ul class="sectlevel4">
+<li><a href="#_verlängerung_für_let_sencrypt_zertifikate"><span>Verlängerung für Let’sEncrypt-Zertifikate</span></a></li>
+<li><a href="#_verlängerung_für_comodo_zertifikate"><span>Verlängerung für COMODO-Zertifikate</span></a></li>
+</ul>
+</li>
+<li><a href="#_gekündigte_domains_und_testdomains"><span>1.1.8.</span><span> Gekündigte Domains und Testdomains</span></a></li>
+<li><a href="#_domainvalidierte_bezogene_zertifikate"><span>1.1.9.</span><span> Domainvalidierte /-bezogene Zertifikate</span></a></li>
+<li><a href="#_domainumzug_pki_ssl_zertifikat_verschieben_transferieren"><span>1.1.10.</span><span> Domainumzug, PKI, SSL-Zertifikat verschieben / transferieren</span></a></li>
+<li><a href="#_wildcard_zertifikate"><span>1.1.11.</span><span> Wildcard-Zertifikate</span></a></li>
+</ul>
+</li>
+<li><a href="#_schritt_für_schritt_zum_ssl_zertifikat"><span>1.2.</span><span> Schritt für Schritt zum SSL-Zertifikat</span></a>
+<ul class="sectlevel3">
+<li><a href="#_ssl_zertifikat_von_let_sencrypt"><span>1.2.1.</span><span> SSL-Zertifikat von Let’sEncrypt</span></a>
+<ul class="sectlevel4">
+<li><a href="#_wie_gelange_ich_zum_bestellvorgang"><span>Wie gelange ich zum Bestellvorgang?</span></a></li>
+<li><a href="#_wie_bestelle_ich_erfolgreich_ein_ssl_zertifikat_von_let_sencrypt"><span>Wie bestelle ich erfolgreich ein SSL-Zertifikat von Let’sEncrypt?</span></a></li>
+</ul>
+</li>
+<li><a href="#_ssl_zertifikat_von_comodo"><span>1.2.2.</span><span> SSL-Zertifikat von COMODO</span></a>
+<ul class="sectlevel4">
+<li><a href="#_wie_gelange_ich_zum_bestellvorgang_2"><span>Wie gelange ich zum Bestellvorgang?</span></a></li>
+<li><a href="#_wie_bestelle_ich_erfolgreich_ein_ssl_zertifikat_von_comodo"><span>Wie bestelle ich erfolgreich ein SSL-Zertifikat von COMODO?</span></a></li>
+<li><a href="#_der_erfolgreiche_abschluss_der_bestellung_und_die_validierung_durch_den_ssl_provider"><span>Der erfolgreiche Abschluss der Bestellung und die Validierung durch den SSL-Provider</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_was_kann_bei_der_bestellung_schiefgehen"><span>1.3.</span><span> Was kann bei der Bestellung schiefgehen?</span></a>
+<ul class="sectlevel3">
+<li><a href="#_wieso_bekomme_ich_keine_erste_und_oder_zweite_bestätigungsmail"><span>1.3.1.</span><span> Wieso bekomme ich keine erste und/oder zweite Bestätigungsmail?</span></a></li>
+<li><a href="#_wieso_lautet_der_status_im_service_center_ordered"><span>1.3.2.</span><span> Wieso lautet der Status im Service-Center “ordered”?</span></a></li>
+<li><a href="#_wieso_lautet_der_status_im_service_center_cancelled"><span>1.3.3.</span><span> Wieso lautet der Status im Service-Center “cancelled”?</span></a></li>
+</ul>
+</li>
+<li><a href="#_häufig_gestellte_fragen_faq"><span>1.4.</span><span> Häufig gestellte Fragen (FAQ)</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main class="col-12 col-md-9 pull-md-3" id="main">
+    <h1>Best Practices: Arbeiten mit plentymarkets</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hier findest du Best Practices zum Thema Arbeiten mit plentymarkets.</p>
+</div>
+</div>
+</div><div class="sect1 adoc">
+<h2 id="ssl-zertifikat_bestellen">1. Best Practice: SSL-Zertifikat bestellen</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_wissenswertes_über_die_ssl_zertifizierung">1.1. Wissenswertes über die SSL-Zertifizierung</h3>
+<div class="sect3">
+<h4 id="_preis_modell_der_ssl_zertifizierung">1.1.1. Preis-Modell der SSL-Zertifizierung</h4>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+Die Bereitstellungsgebühr wird <strong>nicht</strong> für bereits erfolgreich abgeschlossene SSL-Bestellungen von COMODO-Zertifikaten erhoben.
+</td>
+</tr>
+</tbody></table>
+</div>
+<hr>
+<div class="paragraph">
+<p>Für das Bereitstellen des SSL-Zertifikates wird eine <strong>mtl. Gebühr in Höhe 2,- € netto zzgl. der Kosten des SSL-Zertifikats</strong> erhoben.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/monatlichen_kosten.png" alt="monatlichen_kosten"></span></p>
+</div>
+<hr>
+<div class="paragraph">
+<p>Demnach ergeben sich folgende jährliche Kosten je Modell in aufsteigender Reihenfolge:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Zertifikat</th>
+<th class="tableblock halign-left valign-top">Berechnung</th>
+<th class="tableblock halign-left valign-top">Kosten p.a</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">COMODO 1 Jahr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12*2 + 1*30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">54,- €</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Let’s Encrypt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12*2 + 12*0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24,- €</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">COMODO 2 Jahre</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12*2 + 1*50/2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">49,- €</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+Alle Preise wurden in <strong>netto</strong> angegeben.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_let_sencrypt_oder_comodo_welches_zertifikat_soll_ich_nutzen">1.1.2. Let’sEncrypt oder COMODO - Welches Zertifikat soll ich nutzen?</h4>
+<div class="sect4">
+<h5 id="_pro_let_sencrypt">Pro Let’sEncrypt</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Günstigstes SSL-Zertifizierungsmodell</p>
+</li>
+<li>
+<p>Voll automatisierte Verlängerung</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_contra_let_sencrypt">Contra Let’sEncrypt</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Vertrauenswürdigkeit wird im Hintergrund von der kleinen <a href="https://de.wikipedia.org/wiki/Zertifizierungsstelle">Zertifizierungsstelle</a>  (Certification Authority - kurz: CA) <a href="https://www.identrust.com">IdenTrust</a> bescheinigt – es handelt sich um keine traditionelle CA, sondern um ein Zertifikate ausstellendes Bank-Konsortium.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Offizielle Homepage: <a href="https://letsencrypt.org/" class="bare">https://letsencrypt.org/</a></p>
+</div>
+<hr>
+</div>
+<div class="sect4">
+<h5 id="_pro_comodo">Pro COMODO</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Weltweit anerkannte und über Jahre vertrauensvolle <a href="https://de.wikipedia.org/wiki/Zertifizierungsstelle">CA</a>.</p>
+</li>
+<li>
+<p>Im Falle eines Missbrauchs oder Datenverlustes besteht Garantieanspruch bei der ausstellenden CA.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_contra_comodo">Contra COMODO</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Keine automatische Verlängerung</p>
+</li>
+<li>
+<p>Zwingend strikte Einhaltung des Beschriebenen Bestellvorgangs notwendig</p>
+</li>
+<li>
+<p>Das E-Mail-Postfach <strong>hostmaster</strong>@deineDomain.tld muss angelegt und abrufbar sein</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Offizielle Homepage: <a href="https://comodosslstore.com/" class="bare">https://comodosslstore.com/</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_domainvoraussetzungen">1.1.3. Domainvoraussetzungen</h4>
+<div class="paragraph">
+<p>Ein SSL-Zertifikat muss und kann ausschließlich für die <strong>Hauptdomain</strong> des jeweiligen Hauptsystems oder Mandanten geordert werden.
+Siehe <strong>Service Center » Systeme » PID » Tab: Domain » DID » Systemverknüpfung</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/systemverknüpfung_hauptdomain.png" alt="systemverknüpfung_hauptdomain"></span></p>
+</div>
+<div class="paragraph">
+<p>Die Bestellung eines SSL-Zertifikats <strong>ist nicht möglich</strong>, wenn für die entsprechende Domain unter dem Menüpunkt Systemverknüpfung die Auswahl externer Server abgespeichert ist.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/externer_server.png" alt="externer_server"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_veröffentlichung_bereitstellung">1.1.4. Veröffentlichung / Bereitstellung</h4>
+<div class="paragraph">
+<p>Nach Bestellung eines neuen Zertifikats muss dieses durch einen regelmäßig ausgeführten <strong>Systemprozess</strong> veröffentlicht werden. <strong>Dies kann bis zu 60 Minuten dauern.</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_qualitätskontrolle_durch_die_zertifizierungsstelle">1.1.5. Qualitätskontrolle durch die Zertifizierungsstelle</h4>
+<div class="paragraph">
+<p>In Einzelfällen führt die Zertifizierungsstelle eine Qualitätskontrolle durch bevor sie SSL-Zertifikate freischaltet. Prüfe daher die auf dem Bildschirm angezeigte Bestätigungsnachricht. Eine Qualitätskontrolle dauert in der Regel bis zu 24 Stunden. Sollte der Status im Service-Center nach 24 Stunden nicht <strong>done</strong> lauten, melde Dich im Forum unter Angabe der betroffenen Domain.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gültigkeitsdauer">1.1.6. Gültigkeitsdauer</h4>
+<div class="sect4">
+<h5 id="_gültigkeitsdauer_für_let_sencrypt_zertifikate">Gültigkeitsdauer für Let’sEncrypt-Zertifikate</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>SSL-Zertifikate von <strong>Let’sEncrypt</strong> sind jeweils <strong>90 Tage</strong> gültig.</p>
+</li>
+<li>
+<p>Alle <strong>60 Tage</strong> wird das Zertifikat <strong>erneuert.</strong></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Ausstellungsdatum</th>
+<th class="tableblock halign-left valign-top">gültig bis</th>
+<th class="tableblock halign-left valign-top">Erneuerungsdatum</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27.12.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27.03.19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25.02.19</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01.01.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01.04.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">02.03.18</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">02.03.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">31.05.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01.05.18</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01.05.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30.07.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30.06.18</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30.06.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28.09.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">29.08.18</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">29.08.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27.11.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28.10.18</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28.10.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">26.01.19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">27.12.18</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect5">
+<h6 id="_let_sencrypt_kündigen">Let’sEncrypt kündigen</h6>
+<div class="paragraph">
+<p>Die Kündigung des Let’sEncrypt-Zertifikats sorgt dafür, dass keine Erneuerung stattfindet.
+Die Laufzeit des aktuell ausgestellten Zertifikats wird dadurch nicht beeinflusst.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Ausstellungsdatum</th>
+<th class="tableblock halign-left valign-top">gültig bis</th>
+<th class="tableblock halign-left valign-top">Erneuerungsdatum</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">02.03.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">31.05.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01.05.18</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01.01.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01.04.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">02.03.18</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect6">
+<h7 id="_kündigung_am_18_05_2018">Kündigung am 18.05.2018</h7>
+<div class="paragraph">
+<p>Die letzte Erneurung des SSL-Zertifikats fand am 01.05.2018 statt. Demnach ist das SSL-Zertifikat ab dem Datum 90 Tage gültig. Nach Ablauf der 90 Tage wird die entsprechende Domain nicht mehr per HTTPS ausgeliefert und wird demnach als <em>Nicht sicher</em> eingestuft.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Ausstellungsdatum</th>
+<th class="tableblock halign-left valign-top">gültig bis</th>
+<th class="tableblock halign-left valign-top">Erneuerungsdatum</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01.05.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30.07.18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entfällt wg. Kündigung</p></td>
+</tr>
+</tfoot>
+</table>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_deaktivieren.png" alt="ssl-zertifikat_deaktivieren"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_gültigkeitsdauer_für_comodo_zertifikate">Gültigkeitsdauer für COMODO-Zertifikate</h5>
+<div class="paragraph">
+<p>Die Gültigkeitsdauer von neu bestellten Zertifikaten beginnt mit dem Datum der Bestätigung der Zertifizierungsstelle. Eine eventuelle Restlaufzeit des vorherigen Zertifikats kann nicht übernommen werden.</p>
+</div>
+<div class="paragraph">
+<p>Die Laufzeit des SSL-Zertifikats wird während des Bestellprozesses zur Auswahl gestellt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1 Jahr</p>
+</li>
+<li>
+<p>2 Jahre</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_verlängerung_des_ssl_zertifikats">1.1.7. Verlängerung des SSL-Zertifikats</h4>
+<div class="sect4">
+<h5 id="_verlängerung_für_let_sencrypt_zertifikate">Verlängerung für Let’sEncrypt-Zertifikate</h5>
+<div class="paragraph">
+<p>Die Verlängerung der Let’sEncrypt-SSL-Zertifikate findet vollautomatisch statt, bis es im Service-Center durch das Entfernen des Hakens gekündigt wird.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_verlängerung_für_comodo_zertifikate">Verlängerung für COMODO-Zertifikate</h5>
+<div class="paragraph">
+<p>Ein von COMODO ausgestelltes SSL-Zertifikat verlängert sich <strong>nicht automatisch</strong>
+→ Es muss nach Ende der Laufzeit (mindestens 1 Jahr) neu geordert werden.</p>
+</div>
+<div class="paragraph">
+<p>14 Tage vor offiziellem Ablaufdatum des Zertifikats (siehe Service-Center) wird eine Erinnerungs-E-Mail an die Hostmaster-Adresse gesendet.</p>
+</div>
+<div class="paragraph">
+<p>Zusätzlich besteht die Möglichkeit, sich per E-Mail erinnern zu lassen. Eine kostenfreie Möglichkeit stellt der Dienst <a href="http://letsmonitor.org/" class="bare">http://letsmonitor.org/</a> dar.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gekündigte_domains_und_testdomains">1.1.8. Gekündigte Domains und Testdomains</h4>
+<div class="paragraph">
+<p>Für bereits <strong><em>gekündigte</em></strong> Domains, sowie für <strong><em>Startup-Domains</em></strong> bzw. <strong><em>Test-Subdomains</em></strong> (d.h. Domains mit den Bestandteilen <em>plenty-test-drive.eu, plentymarkets-x1.com, plentymarkets-cloud01/02.com</em> etc.,) können <strong><em>keine SSL-Zertifikate bestellt</em></strong><em> werden</em>*.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_domainvalidierte_bezogene_zertifikate">1.1.9. Domainvalidierte /-bezogene Zertifikate</h4>
+<div class="paragraph">
+<p>SSL-Zertifikate sind domaingebunden. Das bedeutet, dass beispielsweise bei Umstellung der Hauptdomain das aktuelle Zertifikat <em>inaktiv</em> geschaltet wird, da eine neue Hauptdomain ohne bestelltes Zertifikat vorliegt.
+Inaktiv bedeutet nicht gelöscht - Sollte die Hauptdomain erneut auf die Domain umgestellt werden, die bereits ein SSL-Zertifikat besaß, kann dieses im Service Center wieder aktiviert werden, sofern das SSL-Zertifikat noch gültig ist.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_domainumzug_pki_ssl_zertifikat_verschieben_transferieren">1.1.10. Domainumzug, PKI, SSL-Zertifikat verschieben / transferieren</h4>
+<div class="paragraph">
+<p>SSL-Zertifikate können bei einem Domainumzug zu plentymarkets <strong>nicht</strong> mitgenommen werden. Aufgrund der technischen Gegebenheiten ist die Bestellung nur innerhalb unserer <a href="https://de.wikipedia.org/wiki/Public-Key-Infrastruktur">Public-Key-Infrastruktur</a> möglich.</p>
+</div>
+<div class="paragraph">
+<p>Dies gilt für <strong><em>beide Richtungen</em></strong>. Sowohl von <strong><em>extern zu plentymarkets</em></strong>, als auch von <strong><em>plentymarkets zu extern</em></strong>. Ein über plentymarkets gebuchtes SSL-Zertifikat muss <strong><em>systemnah</em></strong> liegen und kann bei einem Domaintransfer nicht mitgenommen werden. Ein Export der Zertifikatsdaten (geheimer Private-Key) ist <strong>nicht</strong> möglich. Auch ein “Transfer” eines SSL-Zertifikats von einer Domain(-ID) auf eine andere ist nicht möglich (siehe Punkt <a href="#_veröffentlichung_bereitstellung">Section 1.1.4</a>).</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-caution" title="Achtung"></i>
+</td>
+<td class="content">
+Um die gewünschte Domain mit einem gültigen SSL-Zertifikat auszuliefern, siehe ab <a href="#_schritt_für_schritt_zum_ssl_zertifikat">Section 1.2</a>.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_wildcard_zertifikate">1.1.11. Wildcard-Zertifikate</h4>
+<div class="paragraph">
+<p>Das Ausstellen von sogenannten Wildcard-SSL-Zertifikaten ist in unserer Infrastruktur nicht möglich.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_schritt_für_schritt_zum_ssl_zertifikat">1.2. Schritt für Schritt zum SSL-Zertifikat</h3>
+<div class="sect3">
+<h4 id="_ssl_zertifikat_von_let_sencrypt">1.2.1. SSL-Zertifikat von Let’sEncrypt</h4>
+<div class="sect4">
+<h5 id="_wie_gelange_ich_zum_bestellvorgang">Wie gelange ich zum Bestellvorgang?</h5>
+<div class="paragraph">
+<p>Logge Dich über dein Backend oder den folgenden Link in Dein Service-Center ein: <a href="https://www.plentymarkets.eu/my-account/" class="bare">https://www.plentymarkets.eu/my-account/</a></p>
+</div>
+<div class="paragraph">
+<p>Für den Login benötigst Du die E-Mail-Adresse, die Du auf Deiner Rechnung findest und das dazugehörige Passwort. Wenn Du das Passwort nicht (mehr) kennst, benutze die Funktion zum Zurücksetzen des Passworts.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_wie_bestelle_ich_erfolgreich_ein_ssl_zertifikat_von_let_sencrypt">Wie bestelle ich erfolgreich ein SSL-Zertifikat von Let’sEncrypt?</h5>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Sobald der Haken gesetzt wurde erfolgt KEINE Sicherheitsabfrage - Das SSL-Zertifikat wird verbindlich bestellt.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Es ist zwingend notwendig, dass die DNS-Einstellungen der Domain, für die das SSL-Zertifikat bestellt werden soll, den Angaben in Deinem Service-Center entsprechen - siehe auch <a href="https://forum.plentymarkets.com/t/selbsthilfe-bei-dns-problemen-wie-hinterlege-ich-korrekte-dns-einstellungen/65559">Selbsthilfe bei DNS-Problemen / Wie hinterlege ich korrekte DNS-Einstellungen</a>.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_bestellen.png" alt="ssl-zertifikat_bestellen"></span></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ssl_zertifikat_von_comodo">1.2.2. SSL-Zertifikat von COMODO</h4>
+<div class="sect4">
+<h5 id="_wie_gelange_ich_zum_bestellvorgang_2">Wie gelange ich zum Bestellvorgang?</h5>
+<div class="paragraph">
+<p>Vor der Bestellung eines SSL-Zertifikates muss die E-Mail-Adresse <strong>hostmaster</strong>@<strong>deineDomain.tld</strong> angelegt werden, falls dies noch nicht geschehen ist. An diese Adresse werden die beiden im nachfolgenden Schritt beschriebenen E-Mails im Anschluss an die Bestellung versendet.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>WICHTIG:</strong>
+Falls eine Weiterleitung für die o.g. Email-Adresse eingerichtet wurde, sollte diese vorübergehend deaktiviert werden, um den Erhalt der Emails gewährleisten zu können. Im Falle eines Kontos bei <a href="https://mailbox.org" class="bare">https://mailbox.org</a></p>
+</div>
+<hr>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/mailbox_postfach_erstellen.png" alt="mailbox_postfach_erstellen"></span></p>
+</div>
+<div class="paragraph">
+<p>Um E-Mail-Konten im plentymarkets-Backend anlegen zu können, muss zunächst der E-Mail-Provider auf <a href="https://mailbox.org" class="bare">https://mailbox.org</a> gewechselt werden, <strong>oder</strong> die Anlage des Postfachs <a href="mailto:hostmaster@deineDomain.de">hostmaster@deineDomain.de</a> bei einem Mailprovider Deiner Wahl getätigt werden.
+Wie dieses Postfach eingerichtet wird haben wir hier erklärt: <a href="https://forum.plentymarkets.com/t/umzug-zu-mailbox-org-leitfaden/25678">Umzug zu mailbox.org - Leitfaden</a></p>
+</div>
+<div class="paragraph">
+<p>Anschließend loggen wir uns <strong>über das plenty-Backend</strong> ins Service-Center ein:
+<strong>Start » plentymarkets-Konto » Service-Center</strong></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/backend_service-center.png" alt="backend_service-center"></span></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_wie_bestelle_ich_erfolgreich_ein_ssl_zertifikat_von_comodo">Wie bestelle ich erfolgreich ein SSL-Zertifikat von COMODO?</h5>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<strong>WICHTIG UND UNBEDINGT BEACHTEN:</strong>
+Während des gesamten Bestellprozesses muss man mit ein und demselben Browser im Service-Center eingeloggt bleiben. Erst <strong>nachdem der Vorgang komplett</strong> abgeschlossen wurde, kann man sich ausloggen.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Nun kann der eigentliche Bestellvorgang starten. Man öffnet nun das System und die gewünschte Hauptdomain.
+<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/comodo_bestellen_service-center.png" alt="comodo_bestellen_service-center"></span></p>
+</div>
+<div class="paragraph">
+<p>Der folgende Dialog erscheint:
+<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/comodo_bestellen_service-center_bestaetigen.png" alt="comodo_bestellen_service-center_bestaetigen"></span></p>
+</div>
+<div class="paragraph">
+<p>Nach dem Klick auf <strong>“Bestellung fortsetzen”</strong> wird die erste Validierungsmail versendet:
+<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl_email_versendet.png" alt="ssl_email_versendet"></span></p>
+</div>
+<hr>
+<div class="paragraph">
+<p>In dieser Email befindet sich ein Bestätigungslink. Nach dem Anklicken dieses Links wird man automatisch ins Service-Center eingeloggt und zur Domain weitergeleitet.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title"><strong>Mögliche Fehlerquellen</strong></div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><em>Beim Klicken auf den Link wird ein anderer Browser geöffnet als der, den ich sonst immer verwende.</em></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Lösung:</strong> Führe den gesamten Bestellvorgang erneut mit dem Browser aus, der sich beim Anklicken des Bestätigungslinks geöffnet hat.
+<em>Beim Klicken auf den Link werde ich nicht automatisch ins Service-Center eingeloggt und zur Domain weitergeleitet.</em></p>
+</li>
+<li>
+<p><strong>Lösung:</strong> Es kann passieren, dass Du nach einer gewissen Zeit automatisch wegen Inaktivität ausgeloggt wirst. Logge Dich vorsichtshalber <strong>vor</strong> dem Anklicken des Links noch einmal im Service-Center ein. Weiterhin ist es ratsam ein mal den gesamten <strong>Browsercache</strong> und alle <strong>Cookies</strong> zu <strong>löschen</strong> gem. Punkt <a href="#_was_kann_bei_der_bestellung_schiefgehen">Section 1.3</a> in der nachfolgenden Anleitung: <a href="https://forum.plentymarkets.com/t/loeschen-des-lokalen-dns-cache/64288">Löschen des lokalen DNS-Cache</a></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_der_erfolgreiche_abschluss_der_bestellung_und_die_validierung_durch_den_ssl_provider">Der erfolgreiche Abschluss der Bestellung und die Validierung durch den SSL-Provider</h5>
+<div class="paragraph">
+<p>Nach Betätigung des Links in der von plentymarkets verschickten Bestätigungsmail wird man automatisch eingeloggt und zur Domain weitergeleitet.</p>
+</div>
+<div class="paragraph">
+<p>Hier muss die gewünschte Laufzeit des Zertifikats (1 Jahr / 2 Jahre) ausgesucht und der Button
+<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/button_ssl_bestellen.png" alt="button_ssl_bestellen"></span>
+betätigt werden.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_bestellen_auswahl.png" alt="ssl-zertifikat_bestellen_auswahl"></span></p>
+</div>
+<div class="paragraph">
+<p>Daraufhin erscheint folgende Meldung:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_bestellt.png" alt="ssl-zertifikat_bestellt"></span></p>
+</div>
+<hr>
+<div class="paragraph">
+<p>Im Anschluss sendet die Zertifizierungsstelle (COMODO) eine <strong>zweite</strong> E-Mail an <strong>hostmaster@deineDomain.de</strong>.
+In dieser E-Mail sind die Bestellinformationen zusammengefasst und der darin enthaltene Link mit der Bezeichnung <em>here</em> muss angeklickt werden (<strong>beachte die in <a href="#_was_kann_bei_der_bestellung_schiefgehen">Section 1.3</a> beschriebenen möglichen Fehlerquellen</strong>).
+Folge den Anweisung des Bildes.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_email_comodo.png" alt="ssl-zertifikat_email_comodo"></span></p>
+</div>
+<div class="paragraph">
+<p>Man wird auf die Bestätigungsseite der Zertifizierungsstelle geleitet:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_comodo_key.png" alt="ssl-zertifikat_comodo_key"></span></p>
+</div>
+<div class="paragraph">
+<p>Durch das Einfügen des Codes aus der E-Mail und per Klick auf <strong>Next &gt;</strong> wird die Bestellung finalisiert.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Beide E-Mails müssen unbedingt bestätigt werden!</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Sobald der Status im Service-Center <strong>done</strong> lautet, ist der Vorgang abgeschlossen und die Domain wird nach dem nächsten Systemprozess über <strong>HTTPS</strong> sicher ausgeliefert.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_status_done.png" alt="ssl-zertifikat_status_done"></span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_was_kann_bei_der_bestellung_schiefgehen">1.3. Was kann bei der Bestellung schiefgehen?</h3>
+<div class="sect3">
+<h4 id="_wieso_bekomme_ich_keine_erste_und_oder_zweite_bestätigungsmail">1.3.1. Wieso bekomme ich keine erste und/oder zweite Bestätigungsmail?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Das Postfach <a href="mailto:hostmaster@deineDomain.tld">hostmaster@deineDomain.tld</a> wurde nicht angelegt bzw. ist nicht erreichbar</p>
+</li>
+<li>
+<p>Überprüfe, ob eine Weiterleitung für das Postfach <a href="mailto:hostmaster@deineDomain.tld">hostmaster@deineDomain.tld</a> eingerichtet wurde und deaktiviere diese (vorübergehend).</p>
+</li>
+<li>
+<p>Überprüfe Deinen Spam-Ordner</p>
+</li>
+<li>
+<p>Die <strong>zweite</strong> Validierungsmail vom SSL-Provider wird erst <strong>nach</strong> Auswahl des Zertifikats versendet</p>
+</li>
+<li>
+<p>Die Bestätigungslinks wurden nicht im selben Browser bestätigt, oder die Sitzung wurde beendet.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title"><strong>Mögliche Fehlerquellen</strong></div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><em>Beim Klicken auf den Link wird ein anderer Browser geöffnet als der, den ich sonst immer verwende.</em></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Lösung:</strong> Führe den gesamten Bestellvorgang erneut mit dem Browser aus, der sich beim Anklicken des Bestätigungslinks geöffnet hat.
+<em>Beim Klicken auf den Link werde ich nicht automatisch ins Service-Center eingeloggt und zur Domain weitergeleitet.</em></p>
+</li>
+<li>
+<p><strong>Lösung:</strong> Es kann passieren, dass Du nach einer gewissen Zeit automatisch wegen Inaktivität ausgeloggt wirst. Logge Dich vorsichtshalber <strong>vor</strong> dem Anklicken des Links noch einmal im Service-Center ein. Weiterhin ist es ratsam ein mal den gesamten <strong>Browsercache</strong> und alle <strong>Cookies</strong> zu <strong>löschen</strong> gem. Punkt <a href="#_was_kann_bei_der_bestellung_schiefgehen">Section 1.3</a> in der nachfolgenden Anleitung: <a href="https://forum.plentymarkets.com/t/loeschen-des-lokalen-dns-cache/64288">Löschen des lokalen DNS-Cache</a></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_wieso_lautet_der_status_im_service_center_ordered">1.3.2. Wieso lautet der Status im Service-Center “ordered”?</h4>
+<div class="paragraph">
+<p>Der im Service-Center benannte Status <strong>ordered</strong> bedeutet, dass die erste Validierungsmail erfolgreich bestätigt wurde. Nach dem Klick auf den Button <code>Jetzt bestellen</code> wechselt der Status zu “ordered”. Der Status bleibt so lange auf “ordered”, bis die zweite Validierungsmail erfolgreich bestätigt wurde.
+Sollte das E-Mail-Konto korrekt eingerichtet sein und sich die zweite E-Mail weder im Posteingang, noch im Spam-Ordner befinden, melde Dich im nachfolgenden Thread und bitte um die erneute Einleitung zum Versand der <strong>zweiten</strong> Validierungsmail: <a href="https://forum.plentymarkets.com/t/ssl-status-ordered-2-mail-kommt-nicht/64536">Bestellung SSL - Status “ordered”, 2. Mail kommt nicht</a></p>
+</div>
+<div class="paragraph">
+<p>Erst, nachdem die zweite Validierungsmail erfolgreich bestätigt wurde, wird der Status auf done aktualisiert und die Bestellung war erfolgreich.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_wieso_lautet_der_status_im_service_center_cancelled">1.3.3. Wieso lautet der Status im Service-Center “cancelled”?</h4>
+<div class="paragraph">
+<p>Nach spätestens 4 Wochen sind die Validierungsmails ungültig und können nicht mehr bestätigt werden. Der Status wird vom Provider auf <strong>cancelled</strong> gesetzt.
+Sofern diese Frist nicht eingehalten wurde, kann im Falle einer Kontobelastung der Support im Forum kontaktiert werden. Das bereits bezahlte, aber nicht final bestätigte Zertifikat, wird gutgeschrieben.</p>
+</div>
+<div class="paragraph">
+<p>Der Bestellvorgang muss erneut durchgeführt werden.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_häufig_gestellte_fragen_faq">1.4. Häufig gestellte Fragen (FAQ)</h3>
+<div class="qlist qanda">
+<ol>
+<li>
+<p><em><strong>Ich habe LetsEncrypt bereits vor mehreren Stunden bestellt, meine Seite wird aber noch immer nicht als sicher eingestuft - Was kann ich machen?</strong></em></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Option 1:</strong> Nachdem die Bestellung im Service-Center der Status “done” erhalten hat muss der lokale Browser-Cache geleert werden (<a href="https://forum.plentymarkets.com/t/loeschen-des-lokalen-dns-cache/64288">Löschen des lokalen Browser- und/oder DNS-Cache</a>), damit das zwischengespeicherte Zertifikat aktualisiert wird.</p>
+</li>
+<li>
+<p><strong>Option 2:</strong> Evtl. liegt bei der Erreichbarkeit Deiner Domain ein Problem vor und das Zertifikat kann deswegen nicht korrekt ausgeliefert werden. Du kannst auf der nachfolgenden Seite prüfen, ob eine Installation von LetsEncrypt für Deine Domain möglich ist: <a href="https://letsdebug.net/" class="bare">https://letsdebug.net/</a> &gt;&gt; <strong>Validation method: HTTP-01</strong>. Falls dort eine Fehlermeldung ausgegeben wird kannst Du uns diese gern im Forum mitteilen, damit wir den Sachverhalt prüfen können.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><em><strong>Ich möchte von COMODO auf LetsEncrypt umsteigen - was ist zu beachten?</strong></em></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Im Falle einer Bestellung von Let’sEncrypt bei einem bereits aktiven SSL-Zertifikat von COMODO (alias RapidSSL), wird das COMODO-Zertifikat durch das von Let’sEncrypt ersetzt! Das “alte” Zertifikat wird jedoch nicht gelöscht, sondern auf inaktiv geschaltet. Eine Reaktivierung innerhalb des Gültigkeitszeitraums ist durch @plenty-Cloud möglich. Es kann sein, dass die Domain für maximal 1h als “nicht sicher” eingestuft wird, wenn das LetsEncrypt-Zertifikat gerade erst bestellt wurde, da dies nach der Bestellung angefordert, generiert und installiert werden muss. Nachdem die Bestellung im Service-Center der Status “done” erhalten hat muss der lokale Browser-Cache geleert werden, damit das zwischengespeicherte Zertifikat aktualisiert wird.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</main>
