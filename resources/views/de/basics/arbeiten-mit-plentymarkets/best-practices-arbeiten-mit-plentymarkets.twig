@@ -17,7 +17,17 @@
 <li><a href="#_contra_comodo"><span>Contra COMODO</span></a></li>
 </ul>
 </li>
-<li><a href="#_domainvoraussetzungen"><span>1.1.3.</span><span> Domainvoraussetzungen</span></a></li>
+<li><a href="#_domainvoraussetzungen"><span>1.1.3.</span><span> Domainvoraussetzungen</span></a>
+<ul class="sectlevel4">
+<li><a href="#_aktiviertes_autoscaling"><span>Aktiviertes Autoscaling</span></a>
+<ul class="sectlevel5">
+<li><a href="#_woran_erkenne_ich_aktiviertes_as"><span>Woran erkenne ich aktiviertes AS?</span></a></li>
+<li><a href="#_bei_subdomains_existierende_parent_domain"><span>Bei Subdomains: Existierende Parent-Domain</span></a></li>
+<li><a href="#_dns_einstellungen"><span>DNS-Einstellungen</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#_veröffentlichung_bereitstellung"><span>1.1.4.</span><span> Veröffentlichung / Bereitstellung</span></a></li>
 <li><a href="#_qualitätskontrolle_durch_die_zertifizierungsstelle"><span>1.1.5.</span><span> Qualitätskontrolle durch die Zertifizierungsstelle</span></a></li>
 <li><a href="#_gültigkeitsdauer"><span>1.1.6.</span><span> Gültigkeitsdauer</span></a>
@@ -106,9 +116,8 @@ Die Bereitstellungsgebühr wird <strong>nicht</strong> für bereits erfolgreich 
 <p>Für das Bereitstellen des SSL-Zertifikates wird eine <strong>mtl. Gebühr in Höhe 2,- € netto zzgl. der Kosten des SSL-Zertifikats</strong> erhoben.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/monatlichen_kosten.png" alt="monatlichen_kosten"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/assets/monatlichen_kosten.png" alt="monatlichen_kosten"></span></p>
 </div>
-<hr>
 <div class="paragraph">
 <p>Demnach ergeben sich folgende jährliche Kosten je Modell in aufsteigender Reihenfolge:</p>
 </div>
@@ -152,7 +161,7 @@ Die Bereitstellungsgebühr wird <strong>nicht</strong> für bereits erfolgreich 
 <i class="fa icon-tip" title="Hinweis"></i>
 </td>
 <td class="content">
-Alle Preise wurden in <strong>netto</strong> angegeben.
+Alle Preise sind in <strong>netto</strong> angegeben.
 </td>
 </tr>
 </tbody></table>
@@ -223,17 +232,73 @@ Alle Preise wurden in <strong>netto</strong> angegeben.
 <div class="sect3">
 <h4 id="_domainvoraussetzungen">1.1.3. Domainvoraussetzungen</h4>
 <div class="paragraph">
-<p>Ein SSL-Zertifikat muss und kann ausschließlich für die <strong>Hauptdomain</strong> des jeweiligen Hauptsystems oder Mandanten geordert werden.
-Siehe <strong>Service Center » Systeme » PID » Tab: Domain » DID » Systemverknüpfung</strong></p>
+<p>Die Domain, für die das SSL-Zertifikat bestellt werden soll, muss eine im Service-Center aktivierte Hauptdomain sein (<a href="https://knowledge.plentymarkets.com/basics/arbeiten-mit-plentymarkets/plentymarkets-konto#_systemverkn%C3%BCpfung_erstellen">Handbuch: Systemverknüpfung erstellen</a>).<br>
+Siehe <strong>Service Center » Systeme » PID » Tab: Domain » Domain-ID » Systemverknüpfung</strong></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/systemverknüpfung_hauptdomain.png" alt="systemverknüpfung_hauptdomain"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/systemverknüpfung_hauptdomain.png" alt="systemverknüpfung_hauptdomain"></span></p>
 </div>
 <div class="paragraph">
 <p>Die Bestellung eines SSL-Zertifikats <strong>ist nicht möglich</strong>, wenn für die entsprechende Domain unter dem Menüpunkt Systemverknüpfung die Auswahl externer Server abgespeichert ist.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/externer_server.png" alt="externer_server"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/externer_server.png" alt="externer_server"></span></p>
+</div>
+<div class="sect4">
+<h5 id="_aktiviertes_autoscaling">Aktiviertes Autoscaling</h5>
+<div class="paragraph">
+<p>Vereinzelt gibt es noch immer Systeme, die nicht auf <a href="https://aws.amazon.com/de/autoscaling/">Autoscaling</a> (kurz: <strong>AS</strong>) umgestellt wurden. In den meisten Fällen liegt das daran, dass die Domain nicht bei plentymarkets gehostet wird und aus diesem Grund ein manuelles Eingreifen in die DNS-Einstellungen der Domain durch den Domain-Inhaber notwendig ist.<br>
+Eine weitere Ursache ist das <strong>erstmalige</strong> Hinzufügen einer Domain an einen Mandanten-Shop. Diese werden nicht automatisch auf AS umgestellt, sondern müssen von uns im Nachhinein umgestellt werden.</p>
+</div>
+<div class="sect5">
+<h6 id="_woran_erkenne_ich_aktiviertes_as">Woran erkenne ich aktiviertes AS?</h6>
+<div class="paragraph">
+<p>Ob für das jeweilige System AS aktiviert ist oder nicht erkennt man anhand der dargestellten DNS-Einstellungen im Service-Center an der jeweiligen Domain. Systeme, die auf AS umgestellt wurden, benötigen zwingend einen CNAME-Record. Wenn dieser CNAME-Record im Service-Center nicht dargestellt wird, sondern stattdessen zwei A-Records, ist das System, bei dem zwei A-Records dargestellt werden, nicht auf AS umgestellt.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Beispiel der dargestellten DNS-Einstellungen bei einem System auf AS:
+<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/identify_set_as.png" alt="DNS-Einstellungen bei aktiviertem AS"></span></p>
+</li>
+<li>
+<p>Beispiel der dargestellten DNS-Einstellungen bei einem System <strong>ohne</strong> AS:
+<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/identify_non_set_as.png" alt="DNS-Einstellungen bei nicht aktiviertem AS"></span></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_bei_subdomains_existierende_parent_domain">Bei Subdomains: Existierende Parent-Domain</h6>
+<div class="paragraph">
+<p>Wenn ein SSL-Zertifikat für Sub-Domains bestellt werden soll, muss sichergestellt sein, dass die dazugehörige <a href="https://de.wikipedia.org/wiki/Domain_(Internet)">Parent-Domain</a> ebenfalls im Service-Center existiert und die notwendige Beziehung zueinander korrekt eingetragen ist.
+Solltet ihr die Parent-Domain bereits aus dem Service-Center entfernt haben, muss diese Parent-Domain erneut angelegt werden und, falls gewünscht, mit einem externen A-Record versehen werden, wenn diese <strong>nicht</strong> auf plentymarkets zeigen soll, sondern z.B. auf Shopware oder dergleichen (<a href="https://knowledge.plentymarkets.com/basics/arbeiten-mit-plentymarkets/plentymarkets-konto#_systemverkn%C3%BCpfung_erstellen">Handbuch: Systemverknüpfung erstellen</a>).<br>
+Erläutertes Fallbeispiel im Forum: <a href="https://forum.plentymarkets.com/t/ssl-verlaengerung-nicht-moeglich/501453/4?u=marvin.moldenhauer">SSL Verlängerung nicht möglich</a></p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_dns_einstellungen">DNS-Einstellungen</h6>
+<div class="sect6">
+<h7 id="_dns_einstellungen_gem_angaben_im_service_center">DNS-Einstellungen gem. Angaben im Service-Center</h7>
+<div class="paragraph">
+<p>Die Validierung der SSL-Bestellung erfolgt auf Dateiebene.
+Das bedeutet, dass die Domain, für die das Zertifikat bestellt werden soll, zwingend korrekt erreichbar sein muss. Dazu müssen die DNS-Einstellungen gem. den Angaben im Service-Center entsprechen.<br>
+Siehe dazu <a href="https://forum.plentymarkets.com/t/selbsthilfe-bei-dns-problemen-wie-hinterlege-ich-korrekte-dns-einstellungen/65559">Selbsthilfe bei DNS-Problemen / Wie hinterlege ich korrekte DNS-Einstellungen</a></p>
+</div>
+</div>
+<div class="sect6">
+<h7 id="_kein_aaaa_record">Kein AAAA-Record</h7>
+<div class="paragraph">
+<p>Für die Domain, für die das SSL-Zertifikat bestellt werden soll, darf kein IPv6-Eintrag (AAAA-Record) existieren.</p>
+</div>
+</div>
+<div class="sect6">
+<h7 id="_kein_negativer_caa_record">Kein negativer CAA-Record</h7>
+<div class="paragraph">
+<p>Für die Domain, für die das SSL-Zertifikat bestellt werden soll, muss sichergestellt werden, dass evtl. vorhandene <a href="https://de.wikipedia.org/wiki/DNS_Certification_Authority_Authorization">CAA-Records</a> die Bestellung von COMODO und/oder LetsEncrypt-Zertifikaten zulässt.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -376,7 +441,7 @@ Die Laufzeit des aktuell ausgestellten Zertifikats wird dadurch nicht beeinfluss
 </tfoot>
 </table>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_deaktivieren.png" alt="ssl-zertifikat_deaktivieren"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/ssl-zertifikat_deaktivieren.png" alt="ssl-zertifikat_deaktivieren"></span></p>
 </div>
 </div>
 </div>
@@ -504,7 +569,7 @@ Es ist zwingend notwendig, dass die DNS-Einstellungen der Domain, für die das S
 </tbody></table>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_bestellen.png" alt="ssl-zertifikat_bestellen"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/ssl-zertifikat_bestellen.png" alt="ssl-zertifikat_bestellen"></span></p>
 </div>
 </div>
 </div>
@@ -522,7 +587,7 @@ Falls eine Weiterleitung für die o.g. Email-Adresse eingerichtet wurde, sollte 
 </div>
 <hr>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/mailbox_postfach_erstellen.png" alt="mailbox_postfach_erstellen"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/mailbox_postfach_erstellen.png" alt="mailbox_postfach_erstellen"></span></p>
 </div>
 <div class="paragraph">
 <p>Um E-Mail-Konten im plentymarkets-Backend anlegen zu können, muss zunächst der E-Mail-Provider auf <a href="https://mailbox.org" class="bare">https://mailbox.org</a> gewechselt werden, <strong>oder</strong> die Anlage des Postfachs <a href="mailto:hostmaster@deineDomain.de">hostmaster@deineDomain.de</a> bei einem Mailprovider Deiner Wahl getätigt werden.
@@ -533,7 +598,7 @@ Wie dieses Postfach eingerichtet wird haben wir hier erklärt: <a href="https://
 <strong>Start » plentymarkets-Konto » Service-Center</strong></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/backend_service-center.png" alt="backend_service-center"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/backend_service-center.png" alt="backend_service-center"></span></p>
 </div>
 </div>
 <div class="sect4">
@@ -553,15 +618,15 @@ Während des gesamten Bestellprozesses muss man mit ein und demselben Browser im
 </div>
 <div class="paragraph">
 <p>Nun kann der eigentliche Bestellvorgang starten. Man öffnet nun das System und die gewünschte Hauptdomain.
-<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/comodo_bestellen_service-center.png" alt="comodo_bestellen_service-center"></span></p>
+<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/assets/comodo_bestellen_service-center.png" alt="comodo_bestellen_service-center"></span></p>
 </div>
 <div class="paragraph">
 <p>Der folgende Dialog erscheint:
-<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/comodo_bestellen_service-center_bestaetigen.png" alt="comodo_bestellen_service-center_bestaetigen"></span></p>
+<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/assets/comodo_bestellen_service-center_bestaetigen.png" alt="comodo_bestellen_service-center_bestaetigen"></span></p>
 </div>
 <div class="paragraph">
 <p>Nach dem Klick auf <strong>“Bestellung fortsetzen”</strong> wird die erste Validierungsmail versendet:
-<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl_email_versendet.png" alt="ssl_email_versendet"></span></p>
+<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/assets/ssl_email_versendet.png" alt="ssl_email_versendet"></span></p>
 </div>
 <hr>
 <div class="paragraph">
@@ -605,17 +670,17 @@ Während des gesamten Bestellprozesses muss man mit ein und demselben Browser im
 </div>
 <div class="paragraph">
 <p>Hier muss die gewünschte Laufzeit des Zertifikats (1 Jahr / 2 Jahre) ausgesucht und der Button
-<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/button_ssl_bestellen.png" alt="button_ssl_bestellen"></span>
+<span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/assets/button_ssl_bestellen.png" alt="button_ssl_bestellen"></span>
 betätigt werden.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_bestellen_auswahl.png" alt="ssl-zertifikat_bestellen_auswahl"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/assets/ssl-zertifikat_bestellen_auswahl.png" alt="ssl-zertifikat_bestellen_auswahl"></span></p>
 </div>
 <div class="paragraph">
 <p>Daraufhin erscheint folgende Meldung:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_bestellt.png" alt="ssl-zertifikat_bestellt"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/assets/ssl-zertifikat_bestellt.png" alt="ssl-zertifikat_bestellt"></span></p>
 </div>
 <hr>
 <div class="paragraph">
@@ -624,13 +689,13 @@ In dieser E-Mail sind die Bestellinformationen zusammengefasst und der darin ent
 Folge den Anweisung des Bildes.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_email_comodo.png" alt="ssl-zertifikat_email_comodo"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/assets/ssl-zertifikat_email_comodo.png" alt="ssl-zertifikat_email_comodo"></span></p>
 </div>
 <div class="paragraph">
 <p>Man wird auf die Bestätigungsseite der Zertifizierungsstelle geleitet:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_comodo_key.png" alt="ssl-zertifikat_comodo_key"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/assets/ssl-zertifikat_comodo_key.png" alt="ssl-zertifikat_comodo_key"></span></p>
 </div>
 <div class="paragraph">
 <p>Durch das Einfügen des Codes aus der E-Mail und per Klick auf <strong>Next &gt;</strong> wird die Bestellung finalisiert.</p>
@@ -653,7 +718,7 @@ Folge den Anweisung des Bildes.</p>
 <p>Sobald der Status im Service-Center <strong>done</strong> lautet, ist der Vorgang abgeschlossen und die Domain wird nach dem nächsten Systemprozess über <strong>HTTPS</strong> sicher ausgeliefert.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/assets/ssl-zertifikat_status_done.png" alt="ssl-zertifikat_status_done"></span></p>
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/assets/ssl-zertifikat_status_done.png" alt="ssl-zertifikat_status_done"></span></p>
 </div>
 </div>
 </div>
