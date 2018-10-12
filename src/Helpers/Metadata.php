@@ -5774,7 +5774,7 @@ class Metadata {
 				"url" => "/en/basics/internal-IDs",
 				"level" => 2,
 				"title" => "Internal IDs in plentymarkets",
-				"keywords" => "plenty internal IDs, IDs, internal IDs, plenty IDs, own IDs, plentymarkets IDs",
+				"keywords" => "plenty internal IDs, IDs, plenty IDs, unit combination ID, unit combination",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Internal IDs in plentymarkets. The following information is available:",
