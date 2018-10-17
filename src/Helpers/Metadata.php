@@ -4317,6 +4317,21 @@ class Metadata {
 		"linkListInto" => "Welcome to the topic Basics. The following information is available:",
 		"children" => 		[
 			[
+				"id" => "be5b24bba02eea1ad653b8cffc7c05e9",
+				"path" => "basics/procedural-documentation",
+				"position" => 0,
+				"urlName" => "procedural-documentation",
+				"url" => "/en/basics/procedural-documentation",
+				"level" => 2,
+				"title" => "Procedural documentation ¤:lang: en ¤include::{includedir}/_header.adoc[] ¤:description: On this page you can download the technical system documentation of plentymarkets which serves plentymarkets users only as basis for creating their procedural documentation. ¤:keywords: GoBD, GOBD, gobd, fiscal, tax law, system documentation, procedural documentation, procedure, used software ¤:position: 50",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "1bebf4291d1d2ab239d184db65f77a9c",
 				"path" => "basics/first-steps",
 				"position" => 10,
