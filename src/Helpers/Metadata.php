@@ -5660,6 +5660,21 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
+				"id" => "be5b24bba02eea1ad653b8cffc7c05e9",
+				"path" => "basics/procedural-documentation",
+				"position" => 50,
+				"urlName" => "procedural-documentation",
+				"url" => "/en/basics/procedural-documentation",
+				"level" => 2,
+				"title" => "Procedural documentation",
+				"keywords" => "",
+				"description" => "On this page you can download the technical system documentation of plentymarkets which serves plentymarkets users only as basis for creating their procedural documentation. ¤:keywords: GoBD, GOBD, gobd, fiscal, tax law, system documentation, procedural documentation, procedure, used software",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Procedural documentation. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "e91bd062c39a866168d81b5d098d7d60",
 				"path" => "basics/statistics",
 				"position" => 50,
@@ -5750,21 +5765,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "be5b24bba02eea1ad653b8cffc7c05e9",
-				"path" => "basics/procedural-documentation",
-				"position" => 50,
-				"urlName" => "procedural-documentation",
-				"url" => "/en/basics/procedural-documentation",
-				"level" => 2,
-				"title" => "Procedural documentation",
-				"keywords" => "",
-				"description" => "On this page you can download the technical system documentation of plentymarkets which serves plentymarkets users only as basis for creating their procedural documentation. ¤:keywords: GoBD, GOBD, gobd, fiscal, tax law, system documentation, procedural documentation, procedure, used software",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Procedural documentation. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
 			],
 			[
 				"id" => "af263bf66909487971d1b4e170ae6ca4",
