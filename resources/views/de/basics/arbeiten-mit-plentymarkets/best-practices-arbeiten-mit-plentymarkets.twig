@@ -22,8 +22,14 @@
 <li><a href="#_aktiviertes_autoscaling"><span>Aktiviertes Autoscaling</span></a>
 <ul class="sectlevel5">
 <li><a href="#_woran_erkenne_ich_aktiviertes_as"><span>Woran erkenne ich aktiviertes AS?</span></a></li>
+</ul>
+</li>
 <li><a href="#_bei_subdomains_existierende_parent_domain"><span>Bei Subdomains: Existierende Parent-Domain</span></a></li>
-<li><a href="#_dns_einstellungen"><span>DNS-Einstellungen</span></a></li>
+<li><a href="#_dns_einstellungen"><span>DNS-Einstellungen</span></a>
+<ul class="sectlevel5">
+<li><a href="#_dns_einstellungen_gem_angaben_im_service_center"><span>DNS-Einstellungen gem. Angaben im Service-Center</span></a></li>
+<li><a href="#_kein_aaaa_record"><span>Kein AAAA-Record</span></a></li>
+<li><a href="#_kein_negativer_caa_record"><span>Kein negativer CAA-Record</span></a></li>
 </ul>
 </li>
 </ul>
@@ -99,19 +105,6 @@
 <h3 id="_wissenswertes_über_die_ssl_zertifizierung">1.1. Wissenswertes über die SSL-Zertifizierung</h3>
 <div class="sect3">
 <h4 id="_preis_modell_der_ssl_zertifizierung">1.1.1. Preis-Modell der SSL-Zertifizierung</h4>
-<div class="admonitionblock warning">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warnung"></i>
-</td>
-<td class="content">
-Die Bereitstellungsgebühr wird <strong>nicht</strong> für bereits erfolgreich abgeschlossene SSL-Bestellungen von COMODO-Zertifikaten erhoben.
-</td>
-</tr>
-</tbody></table>
-</div>
-<hr>
 <div class="paragraph">
 <p>Für das Bereitstellen des SSL-Zertifikates wird eine <strong>mtl. Gebühr in Höhe 2,- € netto zzgl. der Kosten des SSL-Zertifikats</strong> erhoben.</p>
 </div>
@@ -235,20 +228,12 @@ Alle Preise sind in <strong>netto</strong> angegeben.
 <h4 id="_domainvoraussetzungen">1.1.3. Domainvoraussetzungen</h4>
 <div class="paragraph">
 <p>Die Domain, für die das SSL-Zertifikat bestellt werden soll, muss eine im Service-Center aktivierte Hauptdomain sein (<a href="https://knowledge.plentymarkets.com/basics/arbeiten-mit-plentymarkets/plentymarkets-konto#_systemverkn%C3%BCpfung_erstellen">Handbuch: Systemverknüpfung erstellen</a>).<br>
-Siehe <strong>Service Center » Systeme » PID » Tab: Domain » Domain-ID » Systemverknüpfung</strong></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/systemverknüpfung_hauptdomain.png" alt="systemverknüpfung_hauptdomain">
-</div>
+Siehe <strong>Service Center » Systeme » PID » Tab: Domain » Domain-ID » Systemverknüpfung</strong><br>
+image::_best-practices/cloud/ssl-zertifikat/assets/systemverknüpfung_hauptdomain.png[systemverknüpfung_hauptdomain]</p>
 </div>
 <div class="paragraph">
-<p>Die Bestellung eines SSL-Zertifikats <strong>ist nicht möglich</strong>, wenn für die entsprechende Domain unter dem Menüpunkt Systemverknüpfung die Auswahl externer Server abgespeichert ist.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/cloud/ssl-zertifikat/assets/externer_server.png" alt="externer_server">
-</div>
+<p>Die Bestellung eines SSL-Zertifikats <strong>ist nicht möglich</strong>, wenn für die entsprechende Domain unter dem Menüpunkt Systemverknüpfung die Auswahl externer Server abgespeichert ist.<br>
+image::_best-practices/cloud/ssl-zertifikat/assets/externer_server.png[externer_server]</p>
 </div>
 <div class="sect4">
 <h5 id="_aktiviertes_autoscaling">Aktiviertes Autoscaling</h5>
@@ -264,45 +249,45 @@ Eine weitere Ursache ist das <strong>erstmalige</strong> Hinzufügen einer Domai
 <div class="ulist">
 <ul>
 <li>
-<p>Beispiel der dargestellten DNS-Einstellungen bei einem System auf AS:
-image::_best-practices/cloud/ssl-zertifikat/assets/identify_set_as.png[DNS-Einstellungen bei aktiviertem AS, 300]</p>
+<p>Beispiel der dargestellten DNS-Einstellungen bei einem System auf AS:<br>
+image::_best-practices/cloud/ssl-zertifikat/assets/identify_set_as.png[DNS-Einstellungen bei aktiviertem AS]</p>
 </li>
 <li>
-<p>Beispiel der dargestellten DNS-Einstellungen bei einem System <strong>ohne</strong> AS:
-image::_best-practices/cloud/ssl-zertifikat/assets/identify_non_set_as.png[DNS-Einstellungen bei nicht aktiviertem AS, 300]</p>
+<p>Beispiel der dargestellten DNS-Einstellungen bei einem System <strong>ohne</strong> AS:<br>
+image::_best-practices/cloud/ssl-zertifikat/assets/identify_non_set_as.png[DNS-Einstellungen bei nicht aktiviertem AS]</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_bei_subdomains_existierende_parent_domain">Bei Subdomains: Existierende Parent-Domain</h6>
+</div>
+<div class="sect4">
+<h5 id="_bei_subdomains_existierende_parent_domain">Bei Subdomains: Existierende Parent-Domain</h5>
 <div class="paragraph">
 <p>Wenn ein SSL-Zertifikat für Sub-Domains bestellt werden soll, muss sichergestellt sein, dass die dazugehörige <a href="https://de.wikipedia.org/wiki/Domain_(Internet)">Parent-Domain</a> ebenfalls im Service-Center existiert und die notwendige Beziehung zueinander korrekt eingetragen ist.
 Solltet ihr die Parent-Domain bereits aus dem Service-Center entfernt haben, muss diese Parent-Domain erneut angelegt werden und, falls gewünscht, mit einem externen A-Record versehen werden, wenn diese <strong>nicht</strong> auf plentymarkets zeigen soll, sondern z.B. auf Shopware oder dergleichen (<a href="https://knowledge.plentymarkets.com/basics/arbeiten-mit-plentymarkets/plentymarkets-konto#_systemverkn%C3%BCpfung_erstellen">Handbuch: Systemverknüpfung erstellen</a>).<br>
 Erläutertes Fallbeispiel im Forum: <a href="https://forum.plentymarkets.com/t/ssl-verlaengerung-nicht-moeglich/501453/4?u=marvin.moldenhauer">SSL Verlängerung nicht möglich</a></p>
 </div>
 </div>
+<div class="sect4">
+<h5 id="_dns_einstellungen">DNS-Einstellungen</h5>
 <div class="sect5">
-<h6 id="_dns_einstellungen">DNS-Einstellungen</h6>
-<div class="sect6">
-<h7 id="_dns_einstellungen_gem_angaben_im_service_center">DNS-Einstellungen gem. Angaben im Service-Center</h7>
+<h6 id="_dns_einstellungen_gem_angaben_im_service_center">DNS-Einstellungen gem. Angaben im Service-Center</h6>
 <div class="paragraph">
 <p>Die Validierung der SSL-Bestellung erfolgt auf Dateiebene.
 Das bedeutet, dass die Domain, für die das Zertifikat bestellt werden soll, zwingend korrekt erreichbar sein muss. Dazu müssen die DNS-Einstellungen gem. den Angaben im Service-Center entsprechen.<br>
 Siehe dazu <a href="https://forum.plentymarkets.com/t/selbsthilfe-bei-dns-problemen-wie-hinterlege-ich-korrekte-dns-einstellungen/65559">Selbsthilfe bei DNS-Problemen / Wie hinterlege ich korrekte DNS-Einstellungen</a></p>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_kein_aaaa_record">Kein AAAA-Record</h7>
+<div class="sect5">
+<h6 id="_kein_aaaa_record">Kein AAAA-Record</h6>
 <div class="paragraph">
 <p>Für die Domain, für die das SSL-Zertifikat bestellt werden soll, darf kein IPv6-Eintrag (AAAA-Record) existieren.</p>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_kein_negativer_caa_record">Kein negativer CAA-Record</h7>
+<div class="sect5">
+<h6 id="_kein_negativer_caa_record">Kein negativer CAA-Record</h6>
 <div class="paragraph">
 <p>Für die Domain, für die das SSL-Zertifikat bestellt werden soll, muss sichergestellt werden, dass evtl. vorhandene <a href="https://de.wikipedia.org/wiki/DNS_Certification_Authority_Authorization">CAA-Records</a> die Bestellung von COMODO und/oder LetsEncrypt-Zertifikaten zulässt.</p>
-</div>
 </div>
 </div>
 </div>
