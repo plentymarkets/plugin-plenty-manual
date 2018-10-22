@@ -3518,11 +3518,11 @@ class Metadata {
 						"urlName" => "waehrungen",
 						"url" => "/auftragsabwicklung/payment/waehrungen",
 						"level" => 3,
-						"title" => "Währungen konfigurieren",
+						"title" => "Währungen verwalten",
 						"keywords" => "Währung, Standard-Währung, Live-Umrechnung",
 						"description" => "Payment in plentymarkets: Konfigurieren Sie Währungen in Ihrem plentymarkets System und passen Sie die Anzeige der Währung im Webshop an.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Währungen konfigurieren. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Währungen verwalten. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
