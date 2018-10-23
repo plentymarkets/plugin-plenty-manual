@@ -2082,11 +2082,11 @@ class Metadata {
 						"urlName" => "idealo",
 						"url" => "/omni-channel/multi-channel/idealo",
 						"level" => 3,
-						"title" => "idealo Direktkauf",
+						"title" => "idealo",
 						"keywords" => "idealo, Direktkauf, Marktplatz",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich idealo Direktkauf. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich idealo. Hier finden Sie folgende Informationen:",
 						"children" => 						[
 							[
 								"id" => "a62f5ba998b3fa4208a698fa1c816ec1",
