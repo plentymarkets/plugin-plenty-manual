@@ -4578,11 +4578,11 @@ class Metadata {
 						"urlName" => "ElasticSync",
 						"url" => "/en/basics/data-exchange/ElasticSync",
 						"level" => 3,
-						"title" => "ElasticSync/FormatDesigner",
+						"title" => "ElasticSync and FormatDesigner",
 						"keywords" => "ElasticSync, Export, Import",
 						"description" => "Learn how to use the plugin ElasticSync to import data into plentymarkets.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic ElasticSync/FormatDesigner. The following information is available:",
+						"linkListInto" => "Welcome to the topic ElasticSync and FormatDesigner. The following information is available:",
 						"children" => 						[
 							[
 								"id" => "aaf4c372aa76087aa187a31a21b092d6",
@@ -4606,11 +4606,11 @@ class Metadata {
 								"urlName" => "FormatDesigner",
 								"url" => "/en/basics/data-exchange/ElasticSync/FormatDesigner",
 								"level" => 4,
-								"title" => "Exporting data using FormatDesigner",
+								"title" => "Creating data formats with FormatDesigner",
 								"keywords" => "Format, FormatDesigner, Format Designer, Formatdesigner, Export, data fields, data field, create a format, creating a format, editing a format, exporting data",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Exporting data using FormatDesigner. The following information is available:",
+								"linkListInto" => "Welcome to the topic Creating data formats with FormatDesigner. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
