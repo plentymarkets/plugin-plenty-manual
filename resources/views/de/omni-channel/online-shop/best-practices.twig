@@ -1161,7 +1161,7 @@ Nun wählen Sie den Layout-Container, in dem Sie die Artikelliste anzeigen lasse
 <h2 id="weitere-cross-selling-listen">6. Weitere Cross-Selling Artikellisten anzeigen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Da Ceres nativ nur eine Cross-Selling Artikelliste gleichzeitig abbildet, erfährst du in diesem Best Practice, welche Anpassungen erforderlich sind, damit du mehrere unterschiedliche Cross-Selling Artikellisten in deinem Ceres Webshop verwenden kannst. Diese Anleitung richtet sich primär an erfahrene Nutzer und Nutzerinnen, da die Einbindung von mehreren Cross-Selling Listen gegenwärtig über ein eigens angepasstes Theme-Plugin geschehen muss.</p>
+<p>Da Ceres derzeit nur eine Cross-Selling Artikelliste gleichzeitig abbildet, erfährst du in diesem Best Practice, welche Anpassungen erforderlich sind, damit du mehrere unterschiedliche Cross-Selling Artikellisten in deinem Ceres Webshop verwenden kannst. Diese Anleitung richtet sich primär an erfahrene Nutzer und Nutzerinnen, da die Einbindung von mehreren Cross-Selling Listen gegenwärtig über ein eigens angepasstes Theme-Plugin geschehen muss.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1248,18 +1248,19 @@ class MyThemeContext extends SingleItemContext implements ContextInterface
 <div class="paragraph">
 <p>Füge den folgenden Code vor dem schließenden <strong>&lt;/single-item&gt;</strong>-Tag in der Komponente ein:</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div slot="CrossSellingAccessory"&gt;
-	{{ component("Ceres::Containers.Components.ContainerItemList") }}
-	&#123;&#37; if accessory|length &gt; 0 &#37;&#125;
-        		&lt;div class="crossSelling"&gt;
-        			&lt;span class="h3"&gt;Das passt dazu:&lt;/span&gt;
-        			&lt;container-item-list :items="{{ accessory| json_encode }}"&gt;&lt;/container-item-list&gt;
-      		&lt;/div&gt;
-	&#123;&#37; endif &#37;&#125;
-   &lt;/div&gt;</code></pre>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Diese Seite wird gerade überarbeitet. Das Code-Beispiel wird im Laufe des Tages wieder sichtbar sein.</p>
 </div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
 <p>Passe gegebenenfalls die Überschrift an. Nachdem der Slot für die Cross-Selling Liste definiert wurde, kannst du ihn über <code>&lt;slot name="CrossSellingAccessory"&gt;&lt;/slot&gt;</code> in der gewünschten Komponente (/resources/views/Item/Components/) einbauen. Wo du den Code eingeben musst, ist davon abhängig an welcher Stelle der Artikelansicht die Artikelliste erscheinen soll.</p>
