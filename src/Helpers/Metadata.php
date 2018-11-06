@@ -393,6 +393,36 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "a8ac211be27bc1233c67fc3369da1027",
+								"path" => "basics/datenaustausch/ElasticSync/ElasticSync (Beta)",
+								"position" => 10,
+								"urlName" => "ElasticSync (Beta)",
+								"url" => "/basics/datenaustausch/ElasticSync/ElasticSync (Beta)",
+								"level" => 4,
+								"title" => "Daten mit ElasticSync importieren",
+								"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
+								"description" => "Erfahren Sie, wie Sie mit ElasticSync Daten in plentymarkets importieren.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "46676e60e4dbc22e9e31b064790b90c9",
+								"path" => "basics/datenaustausch/ElasticSync/ElasticSync (Plugin)",
+								"position" => 10,
+								"urlName" => "ElasticSync (Plugin)",
+								"url" => "/basics/datenaustausch/ElasticSync/ElasticSync (Plugin)",
+								"level" => 4,
+								"title" => "Daten mit ElasticSync importieren",
+								"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
+								"description" => "Erfahren Sie, wie Sie mit dem Plugin ElasticSync Daten in plentymarkets importieren.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "d98b2fb01e9da2b5f2719a7a6b73ac52",
 								"path" => "basics/datenaustausch/ElasticSync/FormatDesigner",
 								"position" => 20,
