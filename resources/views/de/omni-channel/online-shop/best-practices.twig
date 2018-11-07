@@ -50,19 +50,12 @@
 <li><a href="#_cross_selling_artikellisten_im_webshop_anzeigen"><span>5.2.</span><span> Cross-Selling-Artikellisten im Webshop anzeigen</span></a></li>
 </ul>
 </li>
-<li><a href="#weitere-cross-selling-listen"><span>6.</span><span> Weitere Cross-Selling Artikellisten anzeigen</span></a>
+<li><a href="#umstieg-von-callisto"><span>6.</span><span> Umstieg von Callisto auf Ceres</span></a>
 <ul class="sectlevel2">
-<li><a href="#_context_klasse_erstellen"><span>6.1.</span><span> Context-Klasse erstellen</span></a></li>
-<li><a href="#_singleitemview_twig_anpassen"><span>6.2.</span><span> SingleItemView.twig anpassen</span></a></li>
-<li><a href="#_weitere_cross_selling_listen_einbauen"><span>6.3.</span><span> Weitere Cross-Selling-Listen einbauen</span></a></li>
-</ul>
-</li>
-<li><a href="#umstieg-von-callisto"><span>7.</span><span> Umstieg von Callisto auf Ceres</span></a>
-<ul class="sectlevel2">
-<li><a href="#_neues_plugin_set_anlegen"><span>7.1.</span><span> Neues Plugin-Set anlegen</span></a></li>
-<li><a href="#_plugin_set_einrichten"><span>7.2.</span><span> Plugin-Set einrichten</span></a></li>
-<li><a href="#_ceres_webshop_im_vorschaumodus_testen"><span>7.3.</span><span> Ceres Webshop im Vorschaumodus testen</span></a></li>
-<li><a href="#_ceres_webshop_produktiv_schalten"><span>7.4.</span><span> Ceres Webshop produktiv schalten</span></a></li>
+<li><a href="#_neues_plugin_set_anlegen"><span>6.1.</span><span> Neues Plugin-Set anlegen</span></a></li>
+<li><a href="#_plugin_set_einrichten"><span>6.2.</span><span> Plugin-Set einrichten</span></a></li>
+<li><a href="#_ceres_webshop_im_vorschaumodus_testen"><span>6.3.</span><span> Ceres Webshop im Vorschaumodus testen</span></a></li>
+<li><a href="#_ceres_webshop_produktiv_schalten"><span>6.4.</span><span> Ceres Webshop produktiv schalten</span></a></li>
 </ul>
 </li>
 </ul>
@@ -1155,188 +1148,20 @@ Nun wählen Sie den Layout-Container, in dem Sie die Artikelliste anzeigen lasse
 </tr>
 </tbody></table>
 </div>
-</div>
-</div>
-</div><div class="sect1 adoc">
-<h2 id="weitere-cross-selling-listen">6. Weitere Cross-Selling Artikellisten anzeigen</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Da Ceres nativ nur eine Cross-Selling Artikelliste gleichzeitig abbildet, erfährst du in diesem Best Practice, welche Anpassungen erforderlich sind, damit du mehrere unterschiedliche Cross-Selling Artikellisten in deinem Ceres Webshop verwenden kannst. Diese Anleitung richtet sich primär an erfahrene Nutzer und Nutzerinnen, da die Einbindung von mehreren Cross-Selling Listen gegenwärtig über ein eigens angepasstes Theme-Plugin geschehen muss.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-note" title="Anmerkung"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Bitte beachte dass du deinem Theme im Menü <strong>Plugins » Plugin Übersicht</strong> eine Positionsnummer zuweist, die zwischen <strong>IO</strong> und <strong>Ceres</strong> liegt.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-<div class="sect2">
-<h3 id="_context_klasse_erstellen">6.1. Context-Klasse erstellen</h3>
-<div class="paragraph">
-<p>Da die Einbindung der Cross-Selling Listen über die Erweiterung der SingleItem-Context-Klasse erfolgt, musst du zunächst eine PHP Context-Klasse in deinem Theme erstellen.</p>
-</div>
-<div class="paragraph">
-<p>Lege in deinem Theme zunächst einen Ordner <strong>Contexts</strong> im <strong>src</strong> Ordner an. In dem Contexts-Ordner erstellst du nun eine PHP-Datei für deine eigene Context-Klasse, beispielsweise MyThemeContext.php.</p>
-</div>
-<div class="paragraph">
-<p>Im nächsten Schritt fügst du den folgenden Code in diese Datei ein. Die erste Cross-Selling-Artikelliste, die wir hier einbauen, ist vom Typ Zubehör:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;?php
-namespace ThemeName\Contexts;
-
-use IO\Helper\ContextInterface;
-use Ceres\Contexts\SingleItemContext;
-
-use IO\Services\ItemSearch\Services\ItemSearchService;
-use IO\Services\ItemSearch\SearchPresets\CrossSellingItems;
-
-class MyThemeContext extends SingleItemContext implements ContextInterface
-{
-	public $accessory;
-
-	public function init($params)
-	{
-		parent::init($params);
-		$options = array(
-        			"itemId" =&gt; $this-&gt;item['documents'][0]['data']['item']['id'],
-        			"relation" =&gt; "Accessory"      // Nutze die Liste Zubehoer
-       		);
-     		$searchfactory = CrossSellingItems::getSearchFactory( $options );
-     		$searchfactory-&gt;setPage(1, 4); // Begrenze auf 4 Artikel
-      		$result = pluginApp(ItemSearchService::class)-&gt;getResult($searchfactory);
-      		$this-&gt;accessory = $result['documents'];
-	}
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Nun speicherst du diese Datei und passt nun in 2 Schritten den Provider in deinem Theme an. Öffne die Datei des Providers unter dem Pfad <strong>/src/Providers/MyThemeServiceProvider.php</strong>.</p>
-</div>
-<div class="paragraph">
-<p>Füge oben in der Datei die Zeile <code>use Theme\Contexts\MyThemeContext;</code> ein, damit der neu erstellte Kontext vom ServiceProvider berücksichtigt wird.</p>
-</div>
-<div class="paragraph">
-<p>Zusätzlich fügst du nun innerhalb der <strong>boot</strong> Funktion folgenden Code ein:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">$eventDispatcher-&gt;listen('IO.ctx.item', function (TemplateContainer $templateContainer, $templateData = [])
-   {
-       $templateContainer-&gt;setContext( MyThemeContext::class);
-       return false;
-   }, 0);</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Speichere die Datei. Damit sind die Vorbereitungen für deine Context-Klasse abgeschlossen.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_singleitemview_twig_anpassen">6.2. SingleItemView.twig anpassen</h3>
-<div class="paragraph">
-<p>Um nun Cross-Selling-Listen in der Artikeleinzelansicht auszugeben, musst du die <strong>&lt;single-item&gt;-Komponente</strong> in einem Theme anpassen. In der Ordnerstruktur des unveränderten Ceres liegt die Datei unter <strong>/resources/views/item/SingleItemView.twig</strong>; diese muss von deinem Theme überschrieben werden, damit die von dir vorgenommenen Änderungen bei einem Update von Ceres und IO nicht verloren gehen.</p>
-</div>
-<div class="paragraph">
-<p>Füge den folgenden Code vor dem schließenden <strong>&lt;/single-item&gt;</strong>-Tag in der Komponente ein:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div slot="CrossSellingAccessory"&gt;
-	{{ component("Ceres::Containers.Components.ContainerItemList") }}
-	&#123;&#37; if accessory|length &gt; 0 &#37;&#125;
-        		&lt;div class="crossSelling"&gt;
-        			&lt;span class="h3"&gt;Das passt dazu:&lt;/span&gt;
-        			&lt;container-item-list :items="{{ accessory| json_encode }}"&gt;&lt;/container-item-list&gt;
-      		&lt;/div&gt;
-	&#123;&#37; endif &#37;&#125;
-   &lt;/div&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Passe gegebenenfalls die Überschrift an. Nachdem der Slot für die Cross-Selling Liste definiert wurde, kannst du ihn über <code>&lt;slot name="CrossSellingAccessory"&gt;&lt;/slot&gt;</code> in der gewünschten Komponente (/resources/views/Item/Components/) einbauen. Wo du den Code eingeben musst, ist davon abhängig an welcher Stelle der Artikelansicht die Artikelliste erscheinen soll.</p>
-</div>
-<div class="paragraph">
-<p>Sobald das Plugin-Set erneut gespeichert und bereitgestellt wurde, wird die Cross-Selling-Artikelliste vom Typ Zubehör an der gewählten Stelle angezeigt.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_weitere_cross_selling_listen_einbauen">6.3. Weitere Cross-Selling-Listen einbauen</h3>
-<div class="paragraph">
-<p>Um eine weitere Cross-Selling-Liste in Ceres darzustellen, muss die ursprünglich erstelle Context-Klasse erweitert werden:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;?php
-namespace ThemeName\Contexts;
-
-use IO\Helper\ContextInterface;
-use Ceres\Contexts\SingleItemContext;
-
-use IO\Services\ItemSearch\Services\ItemSearchService;
-use IO\Services\ItemSearch\SearchPresets\CrossSellingItems;
-
-class MyThemeContext extends SingleItemContext implements ContextInterface
-{
-	public $accessory;
-  public $similar;
-
-	public function init($params)
-	{
-		parent::init($params);
-		$options = array(
-        			"itemId" =&gt; $this-&gt;item['documents'][0]['data']['item']['id'],
-        			"relation" =&gt; "Accessory"      // Nutze die Liste Zubehoer
-       		);
-     		$searchfactory = CrossSellingItems::getSearchFactory( $options );
-     		$searchfactory-&gt;setPage(1, 4); // Begrenze auf 4 Artikel
-      		$result = pluginApp(ItemSearchService::class)-&gt;getResult($searchfactory);
-      		$this-&gt;accessory = $result['documents'];
-
-    $options = array(
-              "itemId" =&gt; $this-&gt;item['documents'][0]['data']['item']['id'],
-              "relation" =&gt; "Similar"      // Nutze die Liste Ähnlich
-          );
-        $searchfactory = CrossSellingItems::getSearchFactory( $options );
-      	$searchfactory-&gt;setPage(1, 4); // Begrenze auf 4 Artikel
-        	$result = pluginApp(ItemSearchService::class)-&gt;getResult($searchfactory);
-        	$this-&gt;similar= $result['documents'];
-	}
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Hier wurde unter <code>public $accessory;</code> zusätzlich <code>public $similar;</code> eingefügt; um die Cross-Selling-Liste vom Typ <strong>Ersatzteil</strong> darzustellen, müsste hier <code>public $replacementPart</code> verwendet werden.</p>
-</div>
-<div class="paragraph">
-<p>Weiterhin wurde unterhalb von <code>$this→accessory = $result[0]['documents'];</code> ein zusätzlicher Codeblock eingefügt, bei dem <code>"relation" ⇒ "Accessory"</code> durch <code>"relation" ⇒ "Similar"</code> ersetzt wurde; für Listen vom Typ Ersatzteil verwendest du hier <code>"relation" ⇒ "ReplacementPart"</code>.</p>
-</div>
-<div class="paragraph">
-<p>Wie oben beschrieben, erstellst du nun noch einen neuen Slot in der &lt;single-item&gt;-Komponente und rufst diesen an der gewünschten Stelle auf.</p>
-</div>
-<hr>
-<div class="paragraph">
-<p>Danke an Jens Volke für das Vorformulieren dieses HowTos. Den ursprünglichen Beitrag findet ihr hier im <a href="https://forum.plentymarkets.com/t/howto-weitere-cross-selling-listen-anzeigen-aehnliche-artikel-zubehoer-ersatzteil/495795" target="_blank" rel="noopener">Forum</a></p>
+<div id="weitere-cross-selling-listen" class="paragraph adoc">
+<p>Unresolved directive in &lt;stdin&gt; - include::../../_best-practices/omni-channel/online-shop/bp-ceres-weitere-cross-selling-listen.adoc[leveloffset=1]</p>
 </div>
 </div>
 </div>
 </div><div class="sect1 adoc">
-<h2 id="umstieg-von-callisto">7. Umstieg von Callisto auf Ceres</h2>
+<h2 id="umstieg-von-callisto">6. Umstieg von Callisto auf Ceres</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In diesem Best Practice erfährst du, welche Dinge du beachten musst, damit dein Callisto Webshop ohne Probleme weiterlaufen kann, während du deinen <a href="/omni-channel/online-shop/ceres-einrichten">Ceres Shop</a> einrichtest.
 Die Nummern in den Schritt-für-Schritt Anleitungen beziehen sich auf die durchnummerierten Elemente in den darunter aufgeführten Screenshots.</p>
 </div>
 <div class="sect2">
-<h3 id="_neues_plugin_set_anlegen">7.1. Neues Plugin-Set anlegen</h3>
+<h3 id="_neues_plugin_set_anlegen">6.1. Neues Plugin-Set anlegen</h3>
 <div class="paragraph">
 <p>Damit du einen Ceres Shop im Vorschau-Modus aufsetzen kannst, ohne dass dein Callisto Shop in irgendeiner Weise davon betroffen ist, musst du zunächst ein neues <a href="/basics/erste-schritte/plugins#30">Plugin-Set</a> erstellen.</p>
 </div>
@@ -1390,7 +1215,7 @@ Die Nummern in den Schritt-für-Schritt Anleitungen beziehen sich auf die durchn
 </div>
 </div>
 <div class="sect2">
-<h3 id="_plugin_set_einrichten">7.2. Plugin-Set einrichten</h3>
+<h3 id="_plugin_set_einrichten">6.2. Plugin-Set einrichten</h3>
 <div class="paragraph">
 <p>Nachdem du die Plugins <strong>Ceres</strong> und <strong>IO</strong> <a href="https://marketplace.plentymarkets.com/plugins/templates" target="_blank" rel="noopener">gekauft</a> hast, <strong>installierst und aktivierst</strong> du diese nun für das erstellte Plugin-Set.</p>
 </div>
@@ -1464,7 +1289,7 @@ Wie du Änderungen an deinem Webshop im Vorschaumodus testest, erfährst du im F
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ceres_webshop_im_vorschaumodus_testen">7.3. Ceres Webshop im Vorschaumodus testen</h3>
+<h3 id="_ceres_webshop_im_vorschaumodus_testen">6.3. Ceres Webshop im Vorschaumodus testen</h3>
 <div class="paragraph">
 <p>Damit du deine Änderungen jederzeit im Webshop nachverfolgen kannst, bietet dir die <strong>Plugin Übersicht</strong> die Option, deinen Shop im Vorschaumodus aufzurufen.
 Bevor du deinen Ceres Shop im Vorschaumodus aufrufst, solltest du dein Plugin-Set erneut über den Button <strong>Speichern &amp; Plugin-Set veröffentlichen</strong> bereitstellen.</p>
@@ -1508,7 +1333,7 @@ Bevor du deinen Ceres Shop im Vorschaumodus aufrufst, solltest du dein Plugin-Se
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ceres_webshop_produktiv_schalten">7.4. Ceres Webshop produktiv schalten</h3>
+<h3 id="_ceres_webshop_produktiv_schalten">6.4. Ceres Webshop produktiv schalten</h3>
 <div class="paragraph">
 <p>Wenn alle deine Tests im Vorschaumodus abgeschlossen sind und du nun deinen Callisto Shop durch Ceres ersetzen willst, aktivierst du das Plugin-Set für den jeweiligen Mandanten. Diese Verknüpfung kann, falls nötig, auch wieder aufgehoben werden. Du kannst also jederzeit zu deinem alten Webshop zurückwechseln.</p>
 </div>
