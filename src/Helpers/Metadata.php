@@ -378,36 +378,6 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich ElasticSync und FormatDesigner. Hier finden Sie folgende Informationen:",
 						"children" => 						[
 							[
-								"id" => "f8da46702381dd512f1f509dd00b566c",
-								"path" => "basics/datenaustausch/ElasticSync/elastic-sync-beta",
-								"position" => 10,
-								"urlName" => "elastic-sync-beta",
-								"url" => "/basics/datenaustausch/ElasticSync/elastic-sync-beta",
-								"level" => 4,
-								"title" => "Daten mit ElasticSync importieren (Beta)",
-								"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
-								"description" => "Erfahren Sie, wie Sie mit ElasticSync Daten in plentymarkets importieren.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren (Beta). Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "9f05cc4463b2a24e2fd8ac78e45b3445",
-								"path" => "basics/datenaustausch/ElasticSync/elastic-sync-plugin",
-								"position" => 15,
-								"urlName" => "elastic-sync-plugin",
-								"url" => "/basics/datenaustausch/ElasticSync/elastic-sync-plugin",
-								"level" => 4,
-								"title" => "Daten mit ElasticSync importieren (Plugin)",
-								"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
-								"description" => "Erfahren Sie, wie Sie mit dem Plugin ElasticSync Daten in plentymarkets importieren.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren (Plugin). Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "2f0aad74826ba10f0c52f3611d978137",
 								"path" => "basics/datenaustausch/ElasticSync/elastic-sync",
 								"position" => 15,
