@@ -393,21 +393,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "2f0aad74826ba10f0c52f3611d978137",
-								"path" => "basics/datenaustausch/ElasticSync/elastic-sync",
-								"position" => 15,
-								"urlName" => "elastic-sync",
-								"url" => "/basics/datenaustausch/ElasticSync/elastic-sync",
-								"level" => 4,
-								"title" => "Daten mit ElasticSync importieren",
-								"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
-								"description" => "Erfahren Sie, wie Sie mit dem Plugin ElasticSync Daten in plentymarkets importieren.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "a3100927b815fe91b36a1a0f128999ea",
 								"path" => "basics/datenaustausch/ElasticSync/ElasticSync-plugin",
 								"position" => 15,
