@@ -4600,6 +4600,36 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "4926e84a6dc2f592c56de5b2a13f7522",
+								"path" => "basics/data-exchange/ElasticSync/ElasticSync-beta",
+								"position" => 10,
+								"urlName" => "ElasticSync-beta",
+								"url" => "/en/basics/data-exchange/ElasticSync/ElasticSync-beta",
+								"level" => 4,
+								"title" => "Importing data with ElasticSync (Beta)",
+								"keywords" => "Importing data, import data, data import, ElasticSync, sync, Elastic Sync, synchronise, synchronisation, data format, data formats, dynamic import, mapping, matching, import option, import data",
+								"description" => "Learn how to import data with ElasticSync.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Importing data with ElasticSync (Beta). The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "c8ad5c3261ec3e84ce945eb65b71f563",
+								"path" => "basics/data-exchange/ElasticSync/ElasticSync-plugin",
+								"position" => 15,
+								"urlName" => "ElasticSync-plugin",
+								"url" => "/en/basics/data-exchange/ElasticSync/ElasticSync-plugin",
+								"level" => 4,
+								"title" => "Importing data with ElasticSync (Plugin)",
+								"keywords" => "Importing data, import data, data import, ElasticSync, sync, Elastic Sync, synchronise, synchronisation, data format, data formats, dynamic import, mapping, matching, import option, import data",
+								"description" => "Learn how to import data using the plugin ElasticSync.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Importing data with ElasticSync (Plugin). The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "832d5b25cda6911764634644cb5c2382",
 								"path" => "basics/data-exchange/ElasticSync/FormatDesigner",
 								"position" => 20,
