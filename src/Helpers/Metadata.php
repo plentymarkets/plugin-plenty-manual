@@ -1675,7 +1675,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Artikel verwalten",
 				"keywords" => "Cross-Selling, Hersteller, Barcodes",
-				"description" => "Erfahren Sie, wie Sie Ihre Artikel in plentymarkets erstellen und verwalten.",
+				"description" => "Erfahren Sie, wie Sie Artikel in plentymarkets erstellen und verwalten.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Artikel verwalten. Hier finden Sie folgende Informationen:",
 				"children" => [],
@@ -1684,7 +1684,7 @@ class Metadata {
 			[
 				"id" => "936e54378d158f50c4c0f69474a786de",
 				"path" => "artikel/kategorien-verwalten",
-				"position" => 200,
+				"position" => 100,
 				"urlName" => "kategorien-verwalten",
 				"url" => "/artikel/kategorien-verwalten",
 				"level" => 2,
@@ -1697,9 +1697,24 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "29a2eeb6bc46aa8ea676513bc07dc637",
+				"path" => "artikel/multipacks-pakete-sets-verwalten",
+				"position" => 500,
+				"urlName" => "multipacks-pakete-sets-verwalten",
+				"url" => "/artikel/multipacks-pakete-sets-verwalten",
+				"level" => 2,
+				"title" => "Multipacks, Artikelpakete und Sets verwalten",
+				"keywords" => "Varianten gruppieren, Produkte zusammenfassen, Kombiangebote, Varianten kombinieren",
+				"description" => "Erfahren Sie, wie Sie Varianten in plentymarkets kombinieren, um sie im Paket zu verkaufen.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Multipacks, Artikelpakete und Sets verwalten. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "5048a4ad595f09feaa8d204495bb8bc0",
 				"path" => "artikel/frontend-artikelsuche-verwalten",
-				"position" => 300,
+				"position" => 800,
 				"urlName" => "frontend-artikelsuche-verwalten",
 				"url" => "/artikel/frontend-artikelsuche-verwalten",
 				"level" => 2,
