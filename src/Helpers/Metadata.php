@@ -5931,6 +5931,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Managing the front end item search. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "24a5b70973a0f60cf507ad3343600456",
+				"path" => "item/combining-products",
+				"position" => 500,
+				"urlName" => "combining-products",
+				"url" => "/en/item/combining-products",
+				"level" => 2,
+				"title" => "Managing multipacks, item bundles and sets",
+				"keywords" => "Grouping variations, combining variations, combining products, combination offers, combined offers",
+				"description" => "Find out how to combine variations in plentymarkets to sell them in bundles.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing multipacks, item bundles and sets. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
