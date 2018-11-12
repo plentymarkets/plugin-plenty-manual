@@ -5918,24 +5918,9 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "765d523b420963e9e34f0696ec088d81",
-				"path" => "item/frontend-item-search",
-				"position" => 300,
-				"urlName" => "frontend-item-search",
-				"url" => "/en/item/frontend-item-search",
-				"level" => 2,
-				"title" => "Managing the front end item search",
-				"keywords" => "Facets, online store search, Faceted search, front end search, frontend search, store search",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Managing the front end item search. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "24a5b70973a0f60cf507ad3343600456",
 				"path" => "item/combining-products",
-				"position" => 500,
+				"position" => 300,
 				"urlName" => "combining-products",
 				"url" => "/en/item/combining-products",
 				"level" => 2,
@@ -5944,6 +5929,21 @@ class Metadata {
 				"description" => "Find out how to combine variations in plentymarkets to sell them in bundles.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Managing multipacks, item bundles and sets. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "765d523b420963e9e34f0696ec088d81",
+				"path" => "item/frontend-item-search",
+				"position" => 500,
+				"urlName" => "frontend-item-search",
+				"url" => "/en/item/frontend-item-search",
+				"level" => 2,
+				"title" => "Managing the front end item search",
+				"keywords" => "Facets, online store search, Faceted search, front end search, frontend search, store search",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing the front end item search. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			]
