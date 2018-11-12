@@ -1667,6 +1667,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "936e54378d158f50c4c0f69474a786de",
+				"path" => "artikel/kategorien-verwalten",
+				"position" => 10,
+				"urlName" => "kategorien-verwalten",
+				"url" => "/artikel/kategorien-verwalten",
+				"level" => 2,
+				"title" => "Kategorien verwalten",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Kategorien verwalten. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "8c2a3fa7200cba571c55ea653d0615d0",
 				"path" => "artikel/artikel-verwalten",
 				"position" => 100,
@@ -1678,21 +1693,6 @@ class Metadata {
 				"description" => "Erfahren Sie, wie Sie Artikel in plentymarkets erstellen und verwalten.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Artikel verwalten. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "936e54378d158f50c4c0f69474a786de",
-				"path" => "artikel/kategorien-verwalten",
-				"position" => 100,
-				"urlName" => "kategorien-verwalten",
-				"url" => "/artikel/kategorien-verwalten",
-				"level" => 2,
-				"title" => "Kategorien verwalten",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Kategorien verwalten. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			],
