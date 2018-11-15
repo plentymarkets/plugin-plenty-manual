@@ -6602,7 +6602,7 @@ class Metadata {
 					[
 						"id" => "c5700ab326b77269021830872cb8407d",
 						"path" => "omni-channel/online-store/shop-builder",
-						"position" => 55,
+						"position" => 56,
 						"urlName" => "shop-builder",
 						"url" => "/en/omni-channel/online-store/shop-builder",
 						"level" => 3,
