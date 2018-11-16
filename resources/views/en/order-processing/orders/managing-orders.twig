@@ -74,14 +74,11 @@
 </li>
 <li><a href="#800"><span>8.</span><span> Working with multi-orders</span></a>
 <ul class="sectlevel2">
-<li><a href="#810"><span>8.1.</span><span> Basic settings</span></a></li>
-<li><a href="#820"><span>8.2.</span><span> Multi-order per customer</span></a></li>
-<li><a href="#830"><span>8.3.</span><span> Multi-order per customer class</span></a></li>
-<li><a href="#_generating_a_multi_order"><span>8.4.</span><span> Generating a multi-order</span></a></li>
-<li><a href="#_generating_one_multi_order_per_customer_class"><span>8.5.</span><span> Generating one multi-order per customer class</span></a></li>
-<li><a href="#840"><span>8.6.</span><span> Generating one multi-order per customer</span></a></li>
-<li><a href="#850"><span>8.7.</span><span> Generating a multi-invoice</span></a></li>
-<li><a href="#860"><span>8.8.</span><span> Multi credit note</span></a></li>
+<li><a href="#810"><span>8.1.</span><span> Carrying out basic settings for multi-orders</span></a></li>
+<li><a href="#820"><span>8.2.</span><span> Creating a multi-order per customer class</span></a></li>
+<li><a href="#830"><span>8.3.</span><span> Creating a multi-order per customer</span></a></li>
+<li><a href="#840"><span>8.4.</span><span> Generating a multi-invoice</span></a></li>
+<li><a href="#850"><span>8.5.</span><span> Generating a multi credit note</span></a></li>
 </ul>
 </li>
 <li><a href="#900"><span>9.</span><span> Working with schedulers</span></a>
@@ -547,7 +544,7 @@ For example, if an order in status <strong>5.0</strong> has two delivery orders,
 <td class="content">
 <div class="title">Creating delivery orders for all items in the main order</div>
 <div class="paragraph">
-<p>We recommend to create delivery orders for <strong>all</strong> items included in the main order. One or several items remaining in the main order without being assigned to a delivery order may cause problems in your plentymarkets system.</p>
+<p>We recommend creating delivery orders for <strong>all</strong> items included in the main order. One or several items remaining in the main order without being assigned to a delivery order may cause problems in your plentymarkets system.</p>
 </div>
 <div class="paragraph">
 <p>In addition, the quantity you indicate for <strong>DelOrdQua</strong> (quantity to be transferred to the delivery order) must not exceed the quantity indicated for <strong>Unass.Quantity</strong> (unassigned quantity).</p>
@@ -1279,7 +1276,7 @@ Before generating return slips, the document template <strong><a href="/en/order
 <td class="content">
 <div class="title">Creating a credit note order in the main order or in a return order</div>
 <div class="paragraph">
-<p>If a customer has already paid for an order and decides against the purchase before you have shipped the goods and booked outgoing items, we recommend to generate a credit note including all order items in the main order and to cancel the original main order.</p>
+<p>If a customer has already paid for an order and decides against the purchase before you have shipped the goods and booked outgoing items, we recommend generating a credit note including all order items in the main order and to cancel the original main order.</p>
 </div>
 <div class="paragraph">
 <p>In case payment, outgoing items and delivery have already taken place and a <a href="/en/order-processing/orders/managing-orders#400">return order</a> or a <a href="/en/order-processing/orders/managing-orders#700">repair</a> is created, the credit note order is generated directly in the corresponding return order or repair.</p>
@@ -1889,10 +1886,15 @@ Since repairs constitute a separate order type, you can use the <strong>Overview
 <h2 id="800">8. Working with multi-orders</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Go to <strong>System » Orders » Order types » Multi-order</strong> to configure the basic settings for <strong><a href="/en/order-processing/orders/multi-orders">multi-orders</a></strong>. The settings in this menu are the basic settings for all multi-orders. For example, you can specify which order types and order statuses should be available for multi-orders.</p>
+<p>You can combine unpaid orders in a multi-order. Use the menu <strong>Orders » Edit orders</strong> or the tab <strong>Orders</strong> within a contact to search for such orders with the help of the search filter <strong>Order status</strong>, e.g. by searching for orders in status <strong>[3] Waiting for payment</strong>. Thus, there are two different possibilites for creating multi-orders. Both possibilities are described in the following chapters. With both options, unpaid orders are always combined in a multi-order in the menu <strong>Orders » Multi-orders</strong>. Multi-invoices are then created in the <strong>Receipts</strong> tab of a multi-order.</p>
+</div>
+<div class="sect2">
+<h3 id="810">8.1. Carrying out basic settings for multi-orders</h3>
+<div class="paragraph">
+<p>Carry out the basic settings for multi-orders in the <strong>System » Orders » Order types » Multi-order</strong>. In this menu, you define details such as the order types and order statuses for which multi-orders can then be created.</p>
 </div>
 <div class="paragraph instruction">
-<p>Configuring multi-orders:</p>
+<p>Carrying out basic settings for multi-orders:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1908,7 +1910,7 @@ Since repairs constitute a separate order type, you can use the <strong>Overview
 </ol>
 </div>
 <table id="table-multi-order-options" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. Options for setting up multi-orders</caption>
+<caption class="title">Table 8. Basic settings for multi-orders</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1920,60 +1922,40 @@ Since repairs constitute a separate order type, you can use the <strong>Overview
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order types</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select which order types should be available for multi-orders (multiple selection possible). It is only possible to use the order types listed here for multi-orders.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select which order types should be available for multi-orders. Multiple selections are possible. Only the listed order types <strong>Order</strong>, <strong>Warranty</strong> and <strong>Repair</strong> can be combined in multi-orders.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item text</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select which options you want to use for the <strong>item text</strong> column of the stock units that belong to a multi-order (multiple selection possible). The selected options will be listed separately for each individual order within the multi-order. This ensures that the options can easily be connected to the correct customers and orders.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select which options are used for the <strong>item text</strong> column of the stock units that belong to a multi-order. Multiple selections are possible. The selected options will be listed separately for each individual order within the multi-order. This ensures that the options can easily be connected to the correct customers and orders.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sort orders by</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select how the individual orders should be sorted within the multi-order. These orders can be sorted by their order ID or the date when outgoing items were shipped. Each of these options can be chosen in ascending or descending order.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select how individual orders are sorted within a multi-order. Only one selection is possible. Orders can be sorted by their order ID (<strong>Order ID ascending</strong> or <strong>Order ID descending</strong>) or their date of outgoing items (<strong>Outgoing items ascending</strong> or <strong>Outgoing items descending</strong>).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order status of orders</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select which status of orders should be taken into consideration for multi-orders (multiple selection possible). We recommend creating an individual order status to specifically target orders that are intended for multi-orders.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the status orders have to be in to be considered for multi-orders. Multiple selections are possible. Depending on your work flow, we recommend creating an individual order status to target specific orders that are intended for multi-orders.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order status of credit notes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select which status of credit notes should be taken into consideration for multi credit notes (multiple selection possible).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the status credit note orders have to be in to be considered for multi-orders. Multiple selections are possible.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Use the menu <strong>Orders » Multi-orders</strong> to gather unpaid orders and compile them into one multi-order. It is possible to generate multi-orders for specific customers or for specific customer classes. You will be able to generate multi-invoices within the multi-orders.</p>
-</div>
-<div class="sect2">
-<h3 id="810">8.1. Basic settings</h3>
-<div class="paragraph">
-<p>Go to <strong>System » Orders » Order types » Multi-order</strong> and edit the basic settings for multi-orders before you begin working with this function. Furthermore, go to <strong><a href="/en/order-processing/orders/basic-settings">System » Orders » Settings</a></strong> and use the option <strong>Standard status for multi-order</strong> to specify which order status should be given to multi-orders when they are generated. The status <strong>[13] Multi-order</strong> is recommended. The following case examples illustrate how to work with this function.</p>
+<p>Furthermore, go to <strong><a href="/en/order-processing/orders/basic-settings">System » Orders » Settings</a></strong> and use the option <strong>Standard status for multi-order</strong> to specify which order status should be given to multi-orders when they are generated. The status <strong>[13] Multi-order</strong> is available by default. In addition, select a status for multi credit notes. The status <strong>[14] Multi credit note</strong> is available by default.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="820">8.2. Multi-order per customer</h3>
+<h3 id="820">8.2. Creating a multi-order per customer class</h3>
 <div class="paragraph">
-<p>Some customers may not want to pay every invoice individually, but would rather pay one large invoice each month or each quarter. The orders are processed as normal and the items are sent. However, the orders remain unpaid for. When you are ready to generate a multi-order for the customer, open the customer data record and click on the <strong>Multi-order</strong> icon. A multi-invoice can then be generated within the multi-order’s <strong>Receipts</strong> tab.</p>
+<p>Some companies may not want to receive an invoice every time one of their employees make a purchase in your online store. Rather, the company prefers one monthly invoice for all of its employees' purchases. Set up a special customer class for this situation. The invoice recipient is specified by saving a customer ID in the customer class. The multi-invoice is generated directly within the corresponding multi-order and sent to this invoice recipient.<br></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="830">8.3. Multi-order per customer class</h3>
 <div class="paragraph">
-<p>Some companies may not want to receive an invoice every time one of their employees purchases something in your online store. Rather, the company may prefer one monthly invoice for all of its employees' purchases. Set up a special customer class for this situation. The invoice recipient is specified by saving a customer ID in the customer class. The multi-invoice is generated directly within the corresponding multi-order and sent to this invoice recipient.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_generating_a_multi_order">8.4. Generating a multi-order</h3>
-<div class="paragraph">
-<p>It is only possible to create a multi-order for orders that have not been paid yet. Go to <strong>Orders » Edit orders</strong> or open a customer data record and click on the <strong>Orders</strong> tab. Then use the <strong>Order status</strong> filter to search for unpaid orders. For example, you can search for orders that are in status <strong>[3] Waiting for payment</strong>. There are two different ways to generate multi-orders. Both methods are explained below.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_generating_one_multi_order_per_customer_class">8.5. Generating one multi-order per customer class</h3>
-<div class="paragraph">
-<p>Go to <strong>Orders » Multi-orders</strong> to generate a multi-order for a particular customer class and time period. All of the unpaid orders will be collected for the customer class and put together in a multi-order. In the customer class settings, use the <strong>Customer ID</strong> option to specify which customer should be owner of this customer class. In other words, which customer should receive the multi-invoice. Depending on the workflow in your own company, it may be a good idea to create special <a href="/en/crm/managing-contacts#15">customer classes</a> for multi-orders.</p>
+<p>Go to <strong>Orders » Multi-orders</strong> to create a multi-order for a specific customer class and a fixed time period. This way, all unpaid orders belonging to the customer class are combined in one multi-order. Use the Option <strong>Customer ID</strong> in the customer class settings to determine a customer representing the customer class and functioning as the recipient of the multi-invoice. According to your work flow, we recommend creating specific <a href="/en/crm/managing-contacts#15">customer classes</a> for multi-orders.</p>
 </div>
 <div class="paragraph instruction">
-<p>Generating a multi-order for a customer class:</p>
+<p>Creating a multi-order for a customer class:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1984,20 +1966,20 @@ Since repairs constitute a separate order type, you can use the <strong>Overview
 <p>Open the <strong>Generate multi-orders</strong> submenu.</p>
 </li>
 <li>
-<p>Select the <strong>Customer class</strong> and a <strong>Period</strong> (optional).<br>
-→ The time period refers to the date when the order was received.</p>
+<p>Select the <strong>Customer class</strong> and an optional <strong>Period</strong>. The time period refers to the date when the order was received.</p>
 </li>
 <li>
-<p>Click on the <strong>gear-wheel icon</strong> to generate a multi-order.</p>
+<p>Click on the <strong>gear-wheel icon</strong>.<br>
+→ The multi-order is created.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="840">8.6. Generating one multi-order per customer</h3>
+<h3 id="830">8.3. Creating a multi-order per customer</h3>
 <div class="paragraph">
-<p>Open a specific customer data record to generate a multi-invoice for this customer.
-There you will find the function directly in the header of the <strong>Customer data</strong> tab. Click on the <strong>Multi-order</strong> icon to generate a multi-order that includes all of the currently unpaid orders.</p>
+<p>A customer prefers to pay for multiple orders at the same time once a month instead of paying several separate invoices.<br>
+In this case, go to <strong>CRM » Contacts</strong> to create a multi-order in the contact data. Open a specific contact and click on <strong>New multi-order</strong> in the menu on the left. A multi-order including all unpaid orders of the contact is then automatically created.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2008,7 +1990,7 @@ There you will find the function directly in the header of the <strong>Customer 
 <td class="content">
 <div class="title">Tip: Check orders</div>
 <div class="paragraph">
-<p>If you want to check whether a customer still has unpaid orders that could be included in a multi-order, then you can search for this customer’s unpaid orders in the <strong>Orders</strong> tab.</p>
+<p>Use the tab <strong>Orders</strong> in the contact data to look for unpaid orders to make sure that suitable orders are available for creating a multi-order,</p>
 </div>
 </td>
 </tr>
@@ -2016,18 +1998,29 @@ There you will find the function directly in the header of the <strong>Customer 
 </div>
 </div>
 <div class="sect2">
-<h3 id="850">8.7. Generating a multi-invoice</h3>
+<h3 id="840">8.4. Generating a multi-invoice</h3>
 <div class="paragraph">
-<p>In this chapter, you will learn how to configure and generate multi-invoices. It is only possible to create multi-invoices within the corresponding multi-orders.</p>
+<p>This chapter explains how to generate multi-invoices. Multi-invoices can only be generated in the corresponding multi-order.<br>
+The first step consists of setting up a document template for multi-invoices in the <strong>System » Client » Select client » Locations » Select location » Documents » Multi-invoice</strong> menu. In this menu, you can specify detailed settings for the document and you can also save a <a href="/en/order-processing/orders/order-documents">document template</a> in the form of a PDF file. Customize the template as desired. Default values are already available in the basic settings of the document template. If needed, you can transfer further settings, e.g. from the document template <strong>Invoice</strong> to complete the values. Further information and instructions for setting up the document template are available on the <a href="/en/order-processing/orders/order-documents">Order documents</a> page of the manual.<br>
+After having set up a document template for multi-invoices, you can generate a multi-invoice in the <strong>Receipts</strong> tab of a multi-order.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Incoming payments for multi-orders</div>
+<div class="paragraph">
+<p>If a customer pays a multi-invoice and the multi-order is marked as paid, the incoming payment is <strong>not</strong> automatically booked in the separate orders that are combined in the multi-order. Thus, you have to book incoming payments manually in the respective orders.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
-<p>You can configure multi-invoices in the <strong><a href="/en/order-processing/orders/basic-settings">System » Client » Select client » Locations » Select location » Documents » Multi-invoice</a></strong> menu. In this menu, you can specify detailed settings for the document and you can also save a <strong><a href="/en/order-processing/orders/order-documents">document template</a></strong> in the form of a PDF file. Customize the template as desired. For example, you may want to copy the values that are saved in the <strong>Invoice</strong> template and then make adjustments to these values as needed here.</p>
-</div>
-<div class="paragraph">
-<p>A multi-invoice can be generated within the multi-order’s <strong>Receipts</strong> tab.</p>
-</div>
-<div class="paragraph">
-<p>The event procedures menu contains an event called <strong>Multi-order generated</strong> and a corresponding procedure called <strong>Generate multi-invoice</strong>. Proceed as described below to create an event procedure for automatically generating multi-invoices.</p>
+<p>Use the event procedures available in your plentymarkets system to automatically generate a multi-invoice as soon as a multi-order is created. Proceed as follows to set up the event procedure:</p>
 </div>
 <div class="paragraph instruction">
 <p>Creating an event procedure for multi-invoices:</p>
@@ -2038,20 +2031,52 @@ There you will find the function directly in the header of the <strong>Customer 
 <p>Go to <strong>System » Orders » Events</strong>.</p>
 </li>
 <li>
-<p>Click on the <strong>green plus icon</strong> in the lower left corner to create a new event procedure.</p>
+<p>Click on the <strong>green plus</strong> in the lower left corner to create a new event procedure.</p>
 </li>
 <li>
-<p>Enter a name, e.g. <strong>Generate multi-invoices</strong>.</p>
+<p>Enter a name in the editing window, e.g. <strong>Generate multi-invoices</strong>.</p>
 </li>
 <li>
-<p>Select <strong>Order generation &gt; New multi-order</strong> as the <strong>event</strong>.</p>
+<p>Select <strong>Order generation &gt; New multi-order</strong> as the <strong>Event</strong>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
-→ The event procedure will be created.</p>
+→ The event procedure is created.</p>
 </li>
 <li>
-<p>Click on the green plus icon to add a procedure of the procedure type <strong>Documents &gt; Generate multi-invoice</strong>. Within this procedure, you can select when the payment is due and determine an early payment discount.</p>
+<p>Click on the <strong>green plus</strong> to add a procedure of the procedure type <strong>Documents &gt; Generate multi-invoice</strong>. Within this procedure, you can select when the payment is due and determine an early payment discount.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.
+→ The window <strong>Create new event procedure</strong> opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#table-event-procedure-multi-invoice-automatic">Table 9</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#table-event-procedure-multi-invoice-automatic">Table 9</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong>.</p>
@@ -2062,13 +2087,37 @@ There you will find the function directly in the header of the <strong>Customer 
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="860">8.8. Multi credit note</h3>
-<div class="paragraph">
-<p>Go to <strong><a href="/en/order-processing/orders/multi-orders">Orders » Multi-orders</a></strong> to generate a multi credit note.</p>
 </div>
+<table id="table-event-procedure-multi-invoice-automatic" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Event procedure "Automatically generating a multi-invoice"</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order generation &gt; New multi-order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Documents &gt; Generate multi-invoice</strong><br></p>
+<p class="tableblock"><strong><em>Important</em></strong>: Within the procedure, you can determine values for <strong>Payment due</strong> and an <strong>Early payment discount</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="850">8.5. Generating a multi credit note</h3>
 <div class="paragraph">
-<p>All of the credit notes for a customer class will be saved together in a multi credit note. Depending on the workflow in your own company, it may be a good idea to create special <a href="/en/crm/managing-contacts#15">customer classes</a> for multi credit notes.</p>
+<p>Multi credit notes are genereated in the menu <strong>Orders » Multi-orders</strong>.<br>
+All credit notes for a customer class are combined in a multi credit note. Depending on your workflow, we recommend creating specific <a href="/en/crm/managing-contacts#15">customer classes</a> for multi credit notes.</p>
 </div>
 <div class="paragraph instruction">
 <p>Generating a multi credit note for a customer class:</p>
@@ -2082,11 +2131,11 @@ There you will find the function directly in the header of the <strong>Customer 
 <p>Open the <strong>Generate multi credit notes</strong> submenu.</p>
 </li>
 <li>
-<p>Select the <strong>Customer class</strong> and a <strong>Period</strong> (optional).<br>
-→ The time period refers to the date when the credit note was received.</p>
+<p>Select the <strong>Customer class</strong> and an optional <strong>Period</strong>. The time period refers to the date when the credit note was received.</p>
 </li>
 <li>
-<p>Click on the <strong>gear-wheel icon</strong> to generate a multi credit note.</p>
+<p>Click on the <strong>gear-wheel icon</strong>.<br>
+→ The multi credit note is generated.</p>
 </li>
 </ol>
 </div>
@@ -2135,10 +2184,10 @@ There you will find the function directly in the header of the <strong>Customer 
 </ol>
 </div>
 <div class="paragraph">
-<p><a href="#table-basic-settings-scheduler">Table 9</a> explains the settings in the <strong>System » Orders » Scheduler</strong> menu:</p>
+<p><a href="#table-basic-settings-scheduler">Table 10</a> explains the settings in the <strong>System » Orders » Scheduler</strong> menu:</p>
 </div>
 <table id="table-basic-settings-scheduler" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. Basic settings for the scheduler module</caption>
+<caption class="title">Table 10. Basic settings for the scheduler module</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2207,7 +2256,7 @@ There you will find the function directly in the header of the <strong>Customer 
 <div class="sect2">
 <h3 id="930">9.3. Categorizing subscription items</h3>
 <div class="paragraph">
-<p>You have different options for integrating subscription items in your stock. It is recommended that you create a <strong><a href="/en/item/managing-categories">category</a></strong> for subscription items only and link all items desired to this category. Another option is that you create the items again as <strong><a href="/en/item/managing-items#320">item bundles</a></strong> so that they are linked to the main item. This is important for reasons of stock-keeping.</p>
+<p>You have different options for integrating subscription items in your stock. We recommend creating a <strong><a href="/en/item/managing-categories">category</a></strong> for subscription items only and link all items desired to this category. Another option is that you create the items again as <strong><a href="/en/item/managing-items#320">item bundles</a></strong> so that they are linked to the main item. This is important for reasons of stock-keeping.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2294,10 +2343,10 @@ There you will find the function directly in the header of the <strong>Customer 
 </ol>
 </div>
 <div class="paragraph">
-<p><a href="#table-template-variables-scheduler">Table 10</a> explains the template variables needed to insert the subscription function into the online store:</p>
+<p><a href="#table-template-variables-scheduler">Table 11</a> explains the template variables needed to insert the subscription function into the online store:</p>
 </div>
 <table id="table-template-variables-scheduler" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. Template variables for the scheduler module</caption>
+<caption class="title">Table 11. Template variables for the scheduler module</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2371,7 +2420,7 @@ The icon is displayed at the far right of each line. You have to generate an ord
 <p>Go to <strong>Orders » Scheduler » Scheduled orders</strong>.</p>
 </li>
 <li>
-<p>Enter the search term in the search field or set the desired filter options in the drop-down lists. The filter options are described in <a href="#table-filter-scheduler-search">Table 11</a>.</p>
+<p>Enter the search term in the search field or set the desired filter options in the drop-down lists. The filter options are described in <a href="#table-filter-scheduler-search">Table 12</a>.</p>
 </li>
 <li>
 <p>Click on <strong>Search</strong>.<br>
@@ -2380,7 +2429,7 @@ The icon is displayed at the far right of each line. You have to generate an ord
 </ol>
 </div>
 <table id="table-filter-scheduler-search" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. Searching for scheduled orders</caption>
+<caption class="title">Table 12. Searching for scheduled orders</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2533,7 +2582,7 @@ The icon is displayed at the far right of each line. You have to generate an ord
 </ol>
 </div>
 <div class="paragraph">
-<p>The editing window is divided into 3 tabs. The settings that are found in the <strong>Base</strong> tab are described in <a href="#table-settings-tab-base">Table 12</a>. The settings in the <strong>Item</strong> tab relate to the subscribed items. The <strong>Customer</strong> tab includes information about the customer from the <strong>Customers</strong> menu.</p>
+<p>The editing window is divided into 3 tabs. The settings that are found in the <strong>Base</strong> tab are described in <a href="#table-settings-tab-base">Table 13</a>. The settings in the <strong>Item</strong> tab relate to the subscribed items. The <strong>Customer</strong> tab includes information about the customer from the <strong>Customers</strong> menu.</p>
 </div>
 <div class="sect3">
 <h4 id="_tab_base">9.10.1. Tab: Base</h4>
@@ -2541,7 +2590,7 @@ The icon is displayed at the far right of each line. You have to generate an ord
 <p>The following parameters of a subscription are displayed in the <strong>Base</strong> tab:</p>
 </div>
 <table id="table-settings-tab-base" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. Settings in the <strong>Base</strong> tab of a scheduler</caption>
+<caption class="title">Table 13. Settings in the <strong>Base</strong> tab of a scheduler</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2678,7 +2727,7 @@ The client that is selected determines which <a href="/en/order-processing/order
 <p>Click on <strong>New</strong>.</p>
 </li>
 <li>
-<p>Pay attention to the explanations given in <a href="#table-settings-tab-base">Table 12</a> and carry out the settings as desired.</p>
+<p>Pay attention to the explanations given in <a href="#table-settings-tab-base">Table 13</a> and carry out the settings as desired.</p>
 </li>
 <li>
 <p>Click on the save icon to save the settings.<br>
@@ -3212,7 +3261,7 @@ For example, if you enter the number 3 into the <strong>Order ID</strong> field 
 <td class="content">
 <div class="title">Status search filter</div>
 <div class="paragraph">
-<p>If you are searching for one or several orders with the help of one of the search fields, set the search option <strong>Status</strong> correctly. If you are searching for a specific invoice number, we recommend that you select <strong>ALL</strong> as the status option, since the order could have already been delivered or could have a status beyond <strong>7</strong>. Hence, it is important not to forget that only orders which match all selected criteria are displayed. If you can not find an order despite having entered the exact ID, you might have forgotten to select <strong>ALL</strong> for the search option <strong>Status</strong>.</p>
+<p>If you are searching for one or several orders with the help of one of the search fields, set the search option <strong>Status</strong> correctly. If you are searching for a specific invoice number, we recommend selecting <strong>ALL</strong> as the status option, since the order could have already been delivered or could have a status beyond <strong>7</strong>. Hence, it is important not to forget that only orders which match all selected criteria are displayed. If you can not find an order despite having entered the exact ID, you might have forgotten to select <strong>ALL</strong> for the search option <strong>Status</strong>.</p>
 </div>
 </td>
 </tr>
@@ -3222,7 +3271,7 @@ For example, if you enter the number 3 into the <strong>Order ID</strong> field 
 <div class="sect2">
 <h3 id="1320">12.2. Filtering by customer data, item data and invoice numbers</h3>
 <div class="paragraph">
-<p>If you are searching for specific customer or item data, then it is recommended that you use the search fields <strong>Customer data</strong> and <strong>Item data</strong>. You can enter search terms as well as numbers into these fields. You can use the <strong>Customer data</strong> field to search for customer names and zip codes. However, you can not search for telephone numbers. Search terms entered into the <strong>Item data</strong> field will be searched for in the fields item ID, item number and name. However, the fields containing description texts (short_description, description) will not be browsed. When searching for <strong>Invoice numbers</strong>, you can also search for external invoice numbers.</p>
+<p>If you are searching for specific customer or item data, then it is recommend using the search fields <strong>Customer data</strong> and <strong>Item data</strong>. You can enter search terms as well as numbers into these fields. You can use the <strong>Customer data</strong> field to search for customer names and zip codes. However, you can not search for telephone numbers. Search terms entered into the <strong>Item data</strong> field will be searched for in the fields item ID, item number and name. However, the fields containing description texts (short_description, description) will not be browsed. When searching for <strong>Invoice numbers</strong>, you can also search for external invoice numbers.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3620,7 +3669,7 @@ The <strong>Book outgoing items</strong> icon will disappear once this procedure
 <div class="sect2">
 <h3 id="1530">14.3. Tab: Overview</h3>
 <div class="paragraph">
-<p>The most important order parameters are found in the <strong>Overview</strong> tab. Here, you receive information about the price, shipping costs, VAT, status etc. at a glance. <a href="#table-order-overview-tab-options">Table 13</a> lists the options available in the overview tab of an order.</p>
+<p>The most important order parameters are found in the <strong>Overview</strong> tab. Here, you receive information about the price, shipping costs, VAT, status etc. at a glance. <a href="#table-order-overview-tab-options">Table 14</a> lists the options available in the overview tab of an order.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -3638,7 +3687,7 @@ The <strong>Book outgoing items</strong> icon will disappear once this procedure
 </tbody></table>
 </div>
 <table id="table-order-overview-tab-options" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 13. Options in the <strong>overview</strong> tab of an order</caption>
+<caption class="title">Table 14. Options in the <strong>overview</strong> tab of an order</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3768,10 +3817,10 @@ It is important to assign a storage location for pick lists and packing lists.<b
 <div class="sect2">
 <h3 id="1540">14.4. Tab: Settings</h3>
 <div class="paragraph">
-<p>An order’s basic parameters are saved in the <strong>Settings</strong> tab, for example the <strong>Status</strong>, <strong>Referrer</strong> and <strong>Payment method</strong>. <a href="#table-order-tab-settings">Table 14</a> lists the available parameters.</p>
+<p>An order’s basic parameters are saved in the <strong>Settings</strong> tab, for example the <strong>Status</strong>, <strong>Referrer</strong> and <strong>Payment method</strong>. <a href="#table-order-tab-settings">Table 15</a> lists the available parameters.</p>
 </div>
 <table id="table-order-tab-settings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 14. Options in the <strong>Settings</strong> tab of an order</caption>
+<caption class="title">Table 15. Options in the <strong>Settings</strong> tab of an order</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4251,7 +4300,7 @@ Partial quantities are displayed as <strong>delivered</strong> if they were book
 → The current date is selected by default. However, you can change the date if needed. You are required to select a date for this group function.</p>
 </li>
 <li>
-<p>Click on <strong>Apply</strong> to carry out the procedure.</p>
+<p>Click on <strong>Apply</strong>  to carry out the procedure.</p>
 </li>
 </ol>
 </div>
