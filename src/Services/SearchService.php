@@ -129,7 +129,7 @@ class SearchService
      */
     private function serverCall($requestArray)
     {
-        if(isset($requestArray['itemsPerPage']) && isset($requestArray['from']) && trim($requestArray['itemsPerPage']) != '' && trim($requestArray['from']) != '')
+        if((isset($requestArray['itemsPerPage']) && trim($requestArray['itemsPerPage']) != '') || (isset($requestArray['from']) && trim($requestArray['from']) != ''))
             $cHandle = curl_init( "{$requestArray['host']}/{$requestArray['type']}/_search?size={$requestArray['itemsPerPage']}&from={$requestArray['from']}" );
         else
             $cHandle = curl_init( "{$requestArray['host']}/{$requestArray['type']}/_search?" );
