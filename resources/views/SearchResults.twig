@@ -26,25 +26,34 @@
 
             <div class="row search-header">
                 <div class="col-md">
-                <span class="d-block mt-2">
-                    {% if results.hitsTotal == 0 %}
-                        {{ trans("PlentyManual::Manual.noSearchResults") }}
-                    {% else %}
-                        {{ trans(
-                        "PlentyManual::Manual.searchResultRange",
-                        {
-                            "from": '<span class="search-item-from">' ~ results.hitsStart ~ '</span>',
-                            "to": '<span class="search-item-till">' ~ results.hitsEnd ~ '</span>',
-                            "total": '<span class="search-item-total">' ~ results.hitsTotal ~ '</span>'
-                        }
-                        ) | raw }}
-                        {#
-                        <span class="search-item-from">{{ results.hitsStart }}</span>
-                        bis <span class="search-item-till">{{ results.hitsEnd }}</span>
-                        von <span class="search-item-count">{{ results.hitsTotal }}</span> Suchergebnissen
-                        #}
-                    {% endif %}
-                </span>
+                    <div class="d-block mt-2">
+                        {% if results.hitsTotal == 0 %}
+                                {{ trans("PlentyManual::Manual.noSearchResults") }}
+                                {% if results.suggestions is not empty %}
+                                <p class="mt-2">
+                                    {{ trans("PlentyManual::Manual.suggestions") }}:
+
+                                    {% for suggestion in results.suggestions %}
+                                        <a class="badge badge-primary mr-1" style="font-size: 90%;" href="?q={{ suggestion | replace({' ': '+'}) }}">{{ suggestion }}</a>
+                                    {% endfor %}
+                                {% endif %}
+                                </p>
+                        {% else %}
+                            {{ trans(
+                            "PlentyManual::Manual.searchResultRange",
+                            {
+                                "from": '<span class="search-item-from">' ~ results.hitsStart ~ '</span>',
+                                "to": '<span class="search-item-till">' ~ results.hitsEnd ~ '</span>',
+                                "total": '<span class="search-item-total">' ~ results.hitsTotal ~ '</span>'
+                            }
+                            ) | raw }}
+                            {#
+                            <span class="search-item-from">{{ results.hitsStart }}</span>
+                            bis <span class="search-item-till">{{ results.hitsEnd }}</span>
+                            von <span class="search-item-count">{{ results.hitsTotal }}</span> Suchergebnissen
+                            #}
+                        {% endif %}
+                    </div>
                 </div>
                 {% if results.hitsTotal > 10 %}
                     <div class="col-md mt-2 mt-md-0">
