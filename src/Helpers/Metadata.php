@@ -7400,24 +7400,9 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "952f5d79c3de254d1ae63a6a1b09d9d5",
-						"path" => "order-processing/orders/multi-orders",
-						"position" => 40,
-						"urlName" => "multi-orders",
-						"url" => "/en/order-processing/orders/multi-orders",
-						"level" => 3,
-						"title" => "Multi-orders",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Multi-orders. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "30910c4dbbff0d8d7105eacf198c1b67",
 						"path" => "order-processing/orders/order-documents",
-						"position" => 50,
+						"position" => 30,
 						"urlName" => "order-documents",
 						"url" => "/en/order-processing/orders/order-documents",
 						"level" => 3,
@@ -7579,6 +7564,21 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
+					],
+					[
+						"id" => "952f5d79c3de254d1ae63a6a1b09d9d5",
+						"path" => "order-processing/orders/multi-orders",
+						"position" => 40,
+						"urlName" => "multi-orders",
+						"url" => "/en/order-processing/orders/multi-orders",
+						"level" => 3,
+						"title" => "Multi-orders",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Multi-orders. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
 					],
 					[
 						"id" => "91c0dd49202a0cac944b9ed6ef106a45",
