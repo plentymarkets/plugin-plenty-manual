@@ -4615,6 +4615,21 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic ElasticSync and FormatDesigner. The following information is available:",
 						"children" => 						[
 							[
+								"id" => "c8ad5c3261ec3e84ce945eb65b71f563",
+								"path" => "basics/data-exchange/ElasticSync/ElasticSync-plugin",
+								"position" => 0,
+								"urlName" => "ElasticSync-plugin",
+								"url" => "/en/basics/data-exchange/ElasticSync/ElasticSync-plugin",
+								"level" => 4,
+								"title" => "",
+								"keywords" => "",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "4926e84a6dc2f592c56de5b2a13f7522",
 								"path" => "basics/data-exchange/ElasticSync/ElasticSync-beta",
 								"position" => 10,
@@ -4626,21 +4641,6 @@ class Metadata {
 								"description" => "Learn how to import data with ElasticSync.",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Importing data with ElasticSync (Beta). The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "c8ad5c3261ec3e84ce945eb65b71f563",
-								"path" => "basics/data-exchange/ElasticSync/ElasticSync-plugin",
-								"position" => 15,
-								"urlName" => "ElasticSync-plugin",
-								"url" => "/en/basics/data-exchange/ElasticSync/ElasticSync-plugin",
-								"level" => 4,
-								"title" => "Importing data with ElasticSync (Plugin)",
-								"keywords" => "Importing data, import data, data import, ElasticSync, sync, Elastic Sync, synchronise, synchronisation, data format, data formats, dynamic import, mapping, matching, import option, import data",
-								"description" => "Learn how to import data using the plugin ElasticSync.",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Importing data with ElasticSync (Plugin). The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5794,17 +5794,17 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "7da5839855e35dd7487bc8c2924851bf",
-						"path" => "basics/version-upgrade/changes",
+						"id" => "f7a0f6d35739da36618ef470afc2cf56",
+						"path" => "basics/version-upgrade/version-cycle",
 						"position" => 20,
-						"urlName" => "changes",
-						"url" => "/en/basics/version-upgrade/changes",
+						"urlName" => "version-cycle",
+						"url" => "/en/basics/version-upgrade/version-cycle",
 						"level" => 3,
-						"title" => "Changes",
-						"keywords" => "plentymarkets 7, Changes, Items, Variations",
-						"description" => "Overview of changes to the item architecture in plentymarkets 7",
+						"title" => "Changing state of development",
+						"keywords" => "",
+						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Changes. The following information is available:",
+						"linkListInto" => "Welcome to the topic Changing state of development. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
