@@ -67,6 +67,7 @@ class PageService
         {
             foreach( $pages as $p )
             {
+                $page = null;
                 if( $p["urlName"] === $lvl )
                 {
                     $page = $p;
