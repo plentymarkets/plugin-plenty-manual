@@ -3373,21 +3373,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "856a5d11b977e2630f1a43c7c547c0c4",
-								"path" => "auftragsabwicklung/auftraege/auftragsdokumente/dta-export",
-								"position" => 100,
-								"urlName" => "dta-export",
-								"url" => "/auftragsabwicklung/auftraege/auftragsdokumente/dta-export",
-								"level" => 4,
-								"title" => "DTA-Export",
-								"keywords" => "",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich DTA-Export. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "740870dfea0e393a905206969a5f7b96",
 								"path" => "auftragsabwicklung/auftraege/auftragsdokumente/best-pratices",
 								"position" => 110,
