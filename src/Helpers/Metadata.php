@@ -7546,21 +7546,6 @@ class Metadata {
 								"linkListInto" => "Welcome to the topic Generating return slips. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
-							],
-							[
-								"id" => "a1735acf97e8736139f73a98d7da7e40",
-								"path" => "order-processing/orders/order-documents/data-medium-exchange-export",
-								"position" => 100,
-								"urlName" => "data-medium-exchange-export",
-								"url" => "/en/order-processing/orders/order-documents/data-medium-exchange-export",
-								"level" => 4,
-								"title" => "Data medium exchange export",
-								"keywords" => "",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Data medium exchange export. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
