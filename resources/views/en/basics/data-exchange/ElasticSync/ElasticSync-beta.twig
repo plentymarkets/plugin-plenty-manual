@@ -10,12 +10,19 @@
 <li><a href="#1300"><span>2.</span><span> Setting the import options</span></a></li>
 <li><a href="#1400"><span>3.</span><span> Setting the matching</span></a></li>
 <li><a href="#1500"><span>4.</span><span> Creating the mapping</span></a></li>
-<li><a href="#1600"><span>5.</span><span> Filtering import data</span></a></li>
-<li><a href="#1620"><span>6.</span><span> Viewing the sync logs</span></a></li>
-<li><a href="#1630"><span>7.</span><span> Copying syncs</span></a></li>
-<li><a href="#1640"><span>8.</span><span> Exporting and importing a sync</span></a></li>
-<li><a href="#1700"><span>9.</span><span> Testing the sync and importing data</span></a></li>
-<li><a href="#1720"><span>10.</span><span> Activating/deactivating mappings</span></a></li>
+<li><a href="#1510"><span>5.</span><span> Activating lines of a mapping for the import</span></a></li>
+<li><a href="#1520"><span>6.</span><span> Replacing values with the RegEx function</span></a>
+<ul class="sectlevel2">
+<li><a href="#_example_1"><span>6.1.</span><span> Example 1:</span></a></li>
+<li><a href="#_example_2"><span>6.2.</span><span> Example 2:</span></a></li>
+</ul>
+</li>
+<li><a href="#1600"><span>7.</span><span> Filtering import data</span></a></li>
+<li><a href="#1620"><span>8.</span><span> Viewing the sync logs</span></a></li>
+<li><a href="#1630"><span>9.</span><span> Copying syncs</span></a></li>
+<li><a href="#1640"><span>10.</span><span> Exporting and importing a sync</span></a></li>
+<li><a href="#1700"><span>11.</span><span> Testing the sync and importing data</span></a></li>
+<li><a href="#1720"><span>12.</span><span> Activating/deactivating mappings</span></a></li>
 </ul>
 </li>
 <li><a href="#_sync_types"><span>Sync types</span></a>
@@ -539,7 +546,135 @@ Depending on the selected option, the following settings are displayed:</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1600">5. Filtering import data</h2>
+<h2 id="1510">5. Activating lines of a mapping for the import</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the <strong>Mapping</strong> section, you can activate all lines for the import with just one click. Alternatively, you can decide individually for each line whether you want it to be active or inactive, thus, whether it should be considered in the import or not.</p>
+</div>
+<div class="paragraph instruction">
+<p>Activating lines for the import:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » ElasticSync</strong>.<br>
+→ The overview opens.</p>
+</li>
+<li>
+<p>Click on a Sync.<br>
+→ The <strong>Mapping</strong> overview opens.</p>
+</li>
+<li>
+<p>Click on a mapping.<br>
+→ The mapping opens.</p>
+</li>
+<li>
+<p>On the left, click on <strong>Activate all</strong>, in order to consider all lines in the import.</p>
+</li>
+<li>
+<p>Alternatively, in a line, click on <strong>Activate line</strong> in order to just consider this line in the import.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">View of the mapping</div>
+<div class="paragraph">
+<p>On the left side of the mapping you can see the import data of the CSV file that have to be mapped on the plentymarkets page. The plentymarkets data fields are shown on the right. The preview displays the first 6 values of the CSV file.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1520">6. Replacing values with the RegEx function</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to consider a CSV file during the import as desired, the so-called RegEx function can be applied. Thanks to this function, data is manipulated during the import through commands. Thus, no changes need to be made to the CSV file anymore.</p>
+</div>
+<div class="paragraph">
+<p>The following two examples will give an overview of the process.</p>
+</div>
+<div class="sect2">
+<h3 id="_example_1">6.1. Example 1:<br></h3>
+<div class="paragraph">
+<p><strong>Input</strong>: “24.12.2017”<br>
+<strong>Search pattern</strong>: /^(＼d+)＼.(＼d+)＼.(＼d+)$/<br>
+<strong>Replace pattern</strong>: $3﹣$2﹣$1<br>
+<strong>Result</strong>: “2017-12-24”<br></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_example_2">6.2. Example 2:<br></h3>
+<div class="paragraph">
+<p><strong>Input</strong>: “Doe, John”<br>
+<strong>Search pattern</strong>: /^(＼w+), (＼w+)$/<br>
+<strong>Replace pattern</strong>: $2 $1<br>
+<strong>Result</strong>: “John Doe”<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Explanation of the examples</strong>:<br>
+Right at the beginning, there is the input. In a first step, the pattern to be searched for is inserted as search pattern. Afterwards, in the replace pattern, it is changed in such a way that it is output during the import as required. Finally, the result is output in the desired pattern which will be considered in the CSV file.</p>
+</div>
+<div class="paragraph instruction">
+<p>Replacing values:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » ElasticSync</strong>.</p>
+</li>
+<li>
+<p>Click on a Sync.<br>
+→ The mapping opens.</p>
+</li>
+<li>
+<p>In the field <strong>Source</strong>, select the value <strong>Regular expression</strong>.<br>
+→ The options for <strong>Regular expression</strong> open.</p>
+</li>
+<li>
+<p>In the field <strong>Value</strong>, enter the column name of the CSV file (e.g. Package number, Order ID etc.)</p>
+</li>
+<li>
+<p>In the field <strong>Search</strong>, enter the Search pattern.</p>
+</li>
+<li>
+<p>In the field <strong>Replace</strong>, enter the Replace pattern.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The data fields are updated.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Info about RegEx</div>
+<div class="paragraph">
+<p>For further information on the RegEx function, see <a href="http://php.net/manual/en/reference.pcre.pattern.syntax.php" target="_blank" rel="noopener">this</a> page or <a href="https://regexr.com/" target="_blank" rel="noopener">this</a> page. On the latter, the RegEx engine setting has to be changed to PCRE, which can be done in the dropdown menu on the top right where Javascript is preset.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1600">7. Filtering import data</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can use filters to limit the data to be imported. You find the filters in the <strong>Mapping</strong> area.</p>
@@ -601,7 +736,7 @@ Depending on the selected option, the following settings are displayed:</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1620">6. Viewing the sync logs</h2>
+<h2 id="1620">8. Viewing the sync logs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Log entries are created for each sync that is carried out. You can view these log entries.</p>
@@ -622,7 +757,7 @@ Depending on the selected option, the following settings are displayed:</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1630">7. Copying syncs</h2>
+<h2 id="1630">9. Copying syncs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>It is possible to copy one sync or multiple syncs at the same time. In this way, you can use syncs that you have already configured in order to quickly create a new sync.</p>
@@ -646,7 +781,7 @@ Depending on the selected option, the following settings are displayed:</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1640">8. Exporting and importing a sync</h2>
+<h2 id="1640">10. Exporting and importing a sync</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can import and export syncs. Furthermore, you can save syncs locally and import syncs from other users.</p>
@@ -704,7 +839,7 @@ Depending on the selected option, the following settings are displayed:</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1700">9. Testing the sync and importing data</h2>
+<h2 id="1700">11. Testing the sync and importing data</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>It is possible to test and carry out syncs. Testing allows you to quickly know whether your file can be imported correctly.</p>
@@ -726,7 +861,7 @@ Depending on the selected option, the following settings are displayed:</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1720">10. Activating/deactivating mappings</h2>
+<h2 id="1720">12. Activating/deactivating mappings</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you manage several mappings in the same sync, you can deactivate or activate specific mappings of the sync in the mapping overview using "activate-mapping". New mappings are active by default.</p>
