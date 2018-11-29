@@ -4059,11 +4059,11 @@ class Metadata {
 						"urlName" => "best-practices-geoblocking",
 						"url" => "/auftragsabwicklung/fulfillment/best-practices-geoblocking",
 						"level" => 3,
-						"title" => "Best Practices: Versandartwahl/"Geoblocking"",
+						"title" => "Best Practices: Versandartwahl/Geoblocking",
 						"keywords" => "geoblocking, best practices",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Versandartwahl/"Geoblocking". Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Versandartwahl/Geoblocking. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
