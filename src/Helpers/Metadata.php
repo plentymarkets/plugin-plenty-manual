@@ -8321,6 +8321,21 @@ class Metadata {
 				"linkListInto" => "",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "ba825a2fbf26c6fe4c25feecc5bbad84",
+				"path" => "stock-management/best-practices-correcting-stock",
+				"position" => 80,
+				"urlName" => "best-practices-correcting-stock",
+				"url" => "/en/stock-management/best-practices-correcting-stock",
+				"level" => 2,
+				"title" => "Best Practices: Correcting / Redistributing/ Deleting stock",
+				"keywords" => "Stocktaking, manage stock, redistribute stock, correct stock, redistribute warehouse, delete stock",
+				"description" => "Find out how to completely redistribute stock of one warehouse to another one.",
+				"navAlias" => "",
+				"linkListInto" => "",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
