@@ -8187,21 +8187,6 @@ class Metadata {
 		"linkListInto" => "Welcome to the topic Stock management. The following information is available:",
 		"children" => 		[
 			[
-				"id" => "3c73237037ae48e1a6b2b9e72a8c3794",
-				"path" => "stock-management/best-practice-correcting-stock",
-				"position" => 0,
-				"urlName" => "best-practice-correcting-stock",
-				"url" => "/en/stock-management/best-practice-correcting-stock",
-				"level" => 2,
-				"title" => "Best Practice: Correcting / Redistributing/ Deleting stock ¤:lang: en ¤:description: Find out how to completely redistribute stock of one warehouse to another one. ¤:keywords: Stocktaking, manage stock, redistribute stock, correct stock, redistribute warehouse, delete stock ¤:position: 10",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "60a4d808e6f1fab6a690ca7f92a224de",
 				"path" => "stock-management/setting-up-a-warehouse",
 				"position" => 10,
@@ -8319,6 +8304,21 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Taking stock. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "3c73237037ae48e1a6b2b9e72a8c3794",
+				"path" => "stock-management/best-practice-correcting-stock",
+				"position" => 80,
+				"urlName" => "best-practice-correcting-stock",
+				"url" => "/en/stock-management/best-practice-correcting-stock",
+				"level" => 2,
+				"title" => "Best Practice: Correcting / Redistributing/ Deleting stock",
+				"keywords" => "Stocktaking, manage stock, redistribute stock, correct stock, redistribute warehouse, delete stock",
+				"description" => "Find out how to completely redistribute stock of one warehouse to another one.",
+				"navAlias" => "",
+				"linkListInto" => "",
 				"children" => [],
 				"hasChildren" => false
 			]
