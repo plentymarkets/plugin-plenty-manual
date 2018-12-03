@@ -8314,11 +8314,11 @@ class Metadata {
 				"urlName" => "best-practices-correcting-stock",
 				"url" => "/en/stock-management/best-practices-correcting-stock",
 				"level" => 2,
-				"title" => "Best Practices: Correcting / Redistributing/ Deleting stock",
-				"keywords" => "Stocktaking, manage stock, redistribute stock, correct stock, redistribute warehouse, delete stock",
-				"description" => "Find out how to completely redistribute stock of one warehouse to another one.",
+				"title" => "Best Practices: Correcting / Transferring / Deleting stock",
+				"keywords" => "Stocktaking, manage stock, transfer stock, correct stock, transfer warehouse, delete stock",
+				"description" => "Find out how to completely transfer stock of one warehouse to another one.",
 				"navAlias" => "",
-				"linkListInto" => "",
+				"linkListInto" => "Welcome to the topic Best Practices: Correcting / Transferring / Deleting stock. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			]
