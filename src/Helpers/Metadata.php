@@ -8321,6 +8321,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Best Practices: Correcting / Transferring / Deleting stock. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "cb51296003c0f2ff75a0cb33f6a20d62",
+				"path" => "stock-management/best-practices",
+				"position" => 80,
+				"urlName" => "best-practices",
+				"url" => "/en/stock-management/best-practices",
+				"level" => 2,
+				"title" => "Best Practices: Correcting / Transferring / Deleting stock",
+				"keywords" => "Stocktaking, manage stock, transfer stock, correct stock, transfer warehouse, delete stock",
+				"description" => "Find out how to completely transfer stock of one warehouse to another one.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Best Practices: Correcting / Transferring / Deleting stock. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
