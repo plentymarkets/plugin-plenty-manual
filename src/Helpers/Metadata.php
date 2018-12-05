@@ -4586,6 +4586,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "d124f0dc4d9b29dd8611f79c6dd70f46",
+						"path" => "basics/working-with-plentymarkets/accessing-back-end-areas",
+						"position" => 90,
+						"urlName" => "accessing-back-end-areas",
+						"url" => "/en/basics/working-with-plentymarkets/accessing-back-end-areas",
+						"level" => 3,
+						"title" => "Accessing back end with URL",
+						"keywords" => "back end, access back end, URL, key, UI action, uiaction, parameter, Terra, variables",
+						"description" => "This manual page provides you with information how to access specific back end areas by using URLs.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Accessing back end with URL. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "42391ba17005b71e747dabc5e2db8f27",
 						"path" => "basics/working-with-plentymarkets/tags",
 						"position" => 110,
