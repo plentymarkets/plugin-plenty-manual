@@ -3,28 +3,28 @@
 
     {% for page in pages %}
 
-        <li class="{% if page.isActive or page.isOpen %}active{% endif %}">
-            <a class="{% if page.hasChildren %}plenty-dropdown-toggle{% endif %}"
-               id="{{ page.id }}"
-               href="{{ page.url }}"
-               data-fn="dropdown-multilevel"
-               {% if page.hasChildren %}aria-haspopup="true"{% endif %}
-                    {% if page.hasChildren %}aria-expanded="false"{% endif %}
+        <li class="{% if page.isActive or page.isOpen %}open{% endif %}">
+            <a class="docs-nav-link{% if page.hasChildren %} plenty-dropdown-toggle{% endif %}{% if page.isActive or page.isOpen %} active{% endif %}"
+                id="{{ page.id }}"
+                href="{{ page.url }}"
+                {# TODO: check if initial open, adapt class & aria #}
+                {% if page.hasChildren %}
+                    data-fn="expandable-item-trigger"
+                    aria-haspopup="true"
+                {% endif %}
+                {% if page.isOpen %}
+                    aria-expanded="true"
+                {% else %}
+                    aria-expanded="false"
+                {% endif %}
             >{{ page.title }}</a>
 
             {% if page.hasChildren or page.navAlias %}
                 <ul aria-labelledby="{{ page.id }}">
-                    <li class="nav-item-back">
-                        <a class=""
-                           href="#"
-                           aria-label="{{ trans("PlentyManual::Manual.closeLevel") }}"
-                           data-label="{{ trans("PlentyManual::Manual.back") }}"
-                           data-fn="dropdown-multilevel-close"></a>
-                    </li>
-
                     {% if page.navAlias %}
+                        {# TODO: what is this? #}
                         <li>
-                            <a href="{{ page.url }}">{{ page.navAlias }}</a>
+                            <a class="docs-nav-link" href="{{ page.url }}">{{ page.navAlias }}</a>
                         </li>
                     {% endif %}
 
