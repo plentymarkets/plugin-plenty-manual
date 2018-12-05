@@ -3247,7 +3247,7 @@ class Metadata {
 								"title" => "Rechnungen erzeugen",
 								"keywords" => "Rechnung, Rechnungen erzeugen, PDF-Vorlage, Fulfillment, Skonto, Auftragsdokumente, Auftragsabwicklung",
 								"description" => "",
-								"navAlias" => "Rechnung",
+								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Rechnungen erzeugen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
@@ -3262,7 +3262,7 @@ class Metadata {
 								"title" => "Gutschriften erzeugen",
 								"keywords" => "Gutschrift, Gutschriften erzeugen, Korrekturbeleg, Korrekturbelege erzeugen",
 								"description" => "",
-								"navAlias" => "Gutschrift",
+								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Gutschriften erzeugen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
@@ -3277,7 +3277,7 @@ class Metadata {
 								"title" => "Mahnungen erzeugen",
 								"keywords" => "Mahnung, Mahnungen erzeugen, Auftragsabwicklung, Auftragsdokumente",
 								"description" => "",
-								"navAlias" => "Mahnung",
+								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Mahnungen erzeugen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
@@ -3292,7 +3292,7 @@ class Metadata {
 								"title" => "Lieferscheine erzeugen",
 								"keywords" => "Lieferschein, Lieferscheine erzeugen, Lieferung, PDF-Vorlage, Fulfillment, Auftragsdokumente, Auftragsabwicklung",
 								"description" => "",
-								"navAlias" => "Lieferschein",
+								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Lieferscheine erzeugen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
@@ -3307,7 +3307,7 @@ class Metadata {
 								"title" => "Pickliste erzeugen",
 								"keywords" => "Pickliste, PDF-Vorlage, Fulfillment, Auftragsdokument, Auftragsdokumente, Auftragsabwicklung, Pickliste erzeugen, Pickliste löschen, Lager",
 								"description" => "",
-								"navAlias" => "Pickliste",
+								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Pickliste erzeugen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
@@ -3322,7 +3322,7 @@ class Metadata {
 								"title" => "Lager-Pickliste erzeugen",
 								"keywords" => "Lager-Pickliste, PDF-Vorlage, Fulfillment, Auftragsdokument, Auftragsdokumente, Auftragsabwicklung, Lager-Pickliste erzeugen, Lager",
 								"description" => "",
-								"navAlias" => "Lager-Pickliste",
+								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Lager-Pickliste erzeugen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
@@ -3337,7 +3337,7 @@ class Metadata {
 								"title" => "Packliste erzeugen",
 								"keywords" => "Packliste, PDF-Vorlage, Fulfillment, Auftragsdokument, Auftragsdokumente, Auftragsabwicklung, Packliste erzeugen",
 								"description" => "",
-								"navAlias" => "Packliste",
+								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Packliste erzeugen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
@@ -3352,7 +3352,7 @@ class Metadata {
 								"title" => "Gelangensbestätigungen erzeugen",
 								"keywords" => "Gelangensbestätigung, Gelangensbestätigungen erzeugen, Fulfillment, Auftragsdokumente, Auftragsabwicklung, Lieferung, Auslandslieferung",
 								"description" => "",
-								"navAlias" => "Gelangensbestätigung",
+								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Gelangensbestätigungen erzeugen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
@@ -3367,7 +3367,7 @@ class Metadata {
 								"title" => "Rücksendescheine erzeugen",
 								"keywords" => "Rücksendeschein, Rücksendescheine erzeugen, Fulfillment, Auftragsabwicklung, Auftragsdokumente, Rücksendung, Retoure",
 								"description" => "",
-								"navAlias" => "Rücksendeschein",
+								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Rücksendescheine erzeugen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
