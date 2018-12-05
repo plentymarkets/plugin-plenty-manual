@@ -7422,7 +7422,7 @@ class Metadata {
 								"title" => "Generating invoices",
 								"keywords" => "Invoice, Generating invoices, PDF template, Fulfilment, Order documents, Order processing",
 								"description" => "",
-								"navAlias" => "Invoice",
+								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating invoices. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
@@ -7437,7 +7437,7 @@ class Metadata {
 								"title" => "Generating credit notes",
 								"keywords" => "Credit note, Generating credit notes, Adjustment form, Generating adjustment forms",
 								"description" => "",
-								"navAlias" => "Credit note",
+								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating credit notes. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
@@ -7452,7 +7452,7 @@ class Metadata {
 								"title" => "Generating dunning letters",
 								"keywords" => "Dunning letter, Generating dunning letters, Order processing, Order documents",
 								"description" => "",
-								"navAlias" => "Dunning letter",
+								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating dunning letters. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
@@ -7467,7 +7467,7 @@ class Metadata {
 								"title" => "Generating delivery notes",
 								"keywords" => "Delivery note, Generating delivery notes, Delivery, PDF template, Fulfilment, Order Documents, Order processing",
 								"description" => "",
-								"navAlias" => "Delivery note",
+								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating delivery notes. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
@@ -7482,7 +7482,7 @@ class Metadata {
 								"title" => "Generating pick lists",
 								"keywords" => "Pick list, PDF template, Order document, Order documents, Order processing, Generating a pick list, Deleting a pick list, Warehouse",
 								"description" => "",
-								"navAlias" => "Pick list",
+								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating pick lists. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
@@ -7497,7 +7497,7 @@ class Metadata {
 								"title" => "Generating warehouse pick lists",
 								"keywords" => "Warehouse pick list, PDF template, Fulfilment, Order document, Order documents, Order processing, Generating a warehouse pick list, warehouse",
 								"description" => "",
-								"navAlias" => "Warehouse pick list",
+								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating warehouse pick lists. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
@@ -7512,7 +7512,7 @@ class Metadata {
 								"title" => "Generating packing lists",
 								"keywords" => "Packing list, PDF template, Fulfilment, Order document, Order documents, Order processing, Generating a packing list",
 								"description" => "",
-								"navAlias" => "Packing list",
+								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating packing lists. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
@@ -7524,11 +7524,11 @@ class Metadata {
 								"urlName" => "generating-an-entry-certificate-gelangensbestaetigung",
 								"url" => "/en/order-processing/orders/order-documents/generating-an-entry-certificate-gelangensbestaetigung",
 								"level" => 4,
-								"title" => "Generating entry certificates (Gelangensbestätigungen)",
+								"title" => "Generating entry certificates",
 								"keywords" => "Entry certificate, Gelangensbestätigung, Fulfilment, Order documents, Order processing, Delivery, Export delivery",
 								"description" => "",
-								"navAlias" => "Entry certificate (Gelangensbestätigung)",
-								"linkListInto" => "Welcome to the topic Generating entry certificates (Gelangensbestätigungen). The following information is available:",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Generating entry certificates. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7542,7 +7542,7 @@ class Metadata {
 								"title" => "Generating return slips",
 								"keywords" => "Return slip, Generating return slips, Fulfilment, Order processing, Order documents, Return, Return delivery",
 								"description" => "",
-								"navAlias" => "Return slip",
+								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Generating return slips. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
