@@ -7214,6 +7214,37 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
+					],
+					[
+						"id" => "c30d0d5b11b05d5a837cc9e7b9ef2524",
+						"path" => "omni-channel/online-store/reference",
+						"position" => 430,
+						"urlName" => "reference",
+						"url" => "/en/omni-channel/online-store/reference",
+						"level" => 3,
+						"title" => "Reference",
+						"keywords" => "Online store, Client (Shop), Reference",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Reference. The following information is available:",
+						"children" => 						[
+							[
+								"id" => "c264e873c7878c4b5be57b9406599f5e",
+								"path" => "omni-channel/online-store/reference/images-sizes",
+								"position" => 10,
+								"urlName" => "images-sizes",
+								"url" => "/en/omni-channel/online-store/reference/images-sizes",
+								"level" => 4,
+								"title" => "Image sizes in Ceres",
+								"keywords" => "Kategorien, Bilder, Groesse, Format, Kategorie, Ceres, Webshop, Layout",
+								"description" => "Eine Übersicht der Bildergrößen für Kategoriebilder in Ceres.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Image sizes in Ceres. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					]
 				],
 				"hasChildren" => true
