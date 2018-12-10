@@ -7242,6 +7242,21 @@ class Metadata {
 								"linkListInto" => "Willkommen im Themenbereich Image sizes in Ceres. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "5846bdb2d2517dfa46af95fcbbb5c8e2",
+								"path" => "omni-channel/online-store/reference/template-variables-in-ceres",
+								"position" => 99,
+								"urlName" => "template-variables-in-ceres",
+								"url" => "/en/omni-channel/online-store/reference/template-variables-in-ceres",
+								"level" => 4,
+								"title" => "ElasticSearch result fields",
+								"keywords" => "Elastic Search, Result fields, Template Variablen, Callisto, Ceres, Webshop",
+								"description" => "Eine Übersicht der ElasticSearch Ergebnisfelder und deren Entsprechungen in Callisto.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich ElasticSearch result fields. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
