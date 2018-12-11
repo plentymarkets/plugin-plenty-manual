@@ -419,10 +419,12 @@ class SearchService
                 "suggestion_content_".$index => [
                     "phrase" => [
                         "field" => "sections.content",
-                        "real_word_error_likelihood" => 0.5,
+                        "real_word_error_likelihood" => 0.95,
                         "max_errors" => 0.95,
                         "confidence" => 1.0,
                         "size" => 3,
+                        "gram_size" => 1,
+                        "shard_size" => 1,
                         "highlight" => [
                             "pre_tag" => "<em>",
                             "post_tag" => "</em>"
@@ -445,10 +447,12 @@ class SearchService
                 "suggestion_description_".$index => [
                     "phrase" => [
                         "field" => "description",
-                        "real_word_error_likelihood" => 0.5,
+                        "real_word_error_likelihood" => 0.95,
                         "max_errors" => 0.95,
                         "confidence" => 1.0,
                         "size" => 4,
+                        "gram_size" => 1,
+                        "shard_size" => 1,
                         "highlight" => [
                             "pre_tag" => "<em>",
                             "post_tag" => "</em>"
