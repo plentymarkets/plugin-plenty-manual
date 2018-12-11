@@ -1450,6 +1450,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "d5eeb01383ec61e31792aa0c7c360568",
+						"path" => "basics/automatisierung/best-practices-automatisierung",
+						"position" => 40,
+						"urlName" => "best-practices-automatisierung",
+						"url" => "/basics/automatisierung/best-practices-automatisierung",
+						"level" => 3,
+						"title" => "Best Practices: Ereignisaktionen und Aktionsmanager",
+						"keywords" => "Vorgänge automatisieren, Automatisierung, Best Practice, Aufträge, Ereignisaktionen, Aktionsmanager",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Ereignisaktionen und Aktionsmanager. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "3b065389f533bde1babad2d75f14947b",
 						"path" => "basics/automatisierung/aktionsmanager",
 						"position" => 50,
