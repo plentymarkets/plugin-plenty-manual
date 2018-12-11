@@ -1435,21 +1435,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "09d4cec0571c99899d59a833280d9502",
-						"path" => "basics/automatisierung/vorgaenge-automatisieren",
-						"position" => 40,
-						"urlName" => "vorgaenge-automatisieren",
-						"url" => "/basics/automatisierung/vorgaenge-automatisieren",
-						"level" => 3,
-						"title" => "Vorgänge automatisieren",
-						"keywords" => "Vorgänge automatisieren, Best Practice, Aufträge",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Vorgänge automatisieren. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "3b065389f533bde1babad2d75f14947b",
 						"path" => "basics/automatisierung/aktionsmanager",
 						"position" => 50,
