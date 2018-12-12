@@ -289,21 +289,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "5b9010a65347ea5636317059117218e5",
-						"path" => "basics/arbeiten-mit-plentymarkets/datenlog",
-						"position" => 90,
-						"urlName" => "datenlog",
-						"url" => "/basics/arbeiten-mit-plentymarkets/datenlog",
-						"level" => 3,
-						"title" => "Menü-Datenlog",
-						"keywords" => "Log, Logs, Daten-Log, Log-Einträge, Log-Level, Referenztyp, Referenzwert, Logs konfigurieren",
-						"description" => "Erfahren Sie, wie Sie nach Log-Einträgen suchen können.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Menü-Datenlog. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "18dbd8fc90233aca34dfbe5cdf9a8aa6",
 						"path" => "basics/arbeiten-mit-plentymarkets/backend-bereiche-aufrufen",
 						"position" => 90,
@@ -315,6 +300,21 @@ class Metadata {
 						"description" => "Erfahren Sie, wie Sie anhand von URLs in bestimmte Backend-Bereiche gelangen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Backend-Bereich mit URL aufrufen. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "5b9010a65347ea5636317059117218e5",
+						"path" => "basics/arbeiten-mit-plentymarkets/datenlog",
+						"position" => 90,
+						"urlName" => "datenlog",
+						"url" => "/basics/arbeiten-mit-plentymarkets/datenlog",
+						"level" => 3,
+						"title" => "Menü-Datenlog",
+						"keywords" => "Log, Logs, Daten-Log, Log-Einträge, Log-Level, Referenztyp, Referenzwert, Logs konfigurieren",
+						"description" => "Erfahren Sie, wie Sie nach Log-Einträgen suchen können.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Menü-Datenlog. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
