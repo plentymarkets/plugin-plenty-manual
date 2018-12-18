@@ -205,11 +205,11 @@ class Metadata {
 						"urlName" => "plentymarkets-konto",
 						"url" => "/basics/arbeiten-mit-plentymarkets/plentymarkets-konto",
 						"level" => 3,
-						"title" => "plentymarkets Konto",
+						"title" => "Ihr plentymarkets Konto",
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich plentymarkets Konto. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Ihr plentymarkets Konto. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
