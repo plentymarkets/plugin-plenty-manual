@@ -329,7 +329,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Arbeiten mit plentymarkets",
 				"keywords" => "",
-				"description" => "Arbeiten mit plentymarkets: Hier finden Sie die Seiten Benutzer verwalten, allgemeine Funktionen, Benutzerkonto personalisieren und den Schnelleinstieg.",
+				"description" => "Arbeiten mit plentymarkets: Hier finden Sie die Seiten Benutzer verwalten, allgemeine Funktionen und Benutzerkonto personalisieren.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Arbeiten mit plentymarkets. Hier finden Sie folgende Informationen:",
 				"children" => 				[
