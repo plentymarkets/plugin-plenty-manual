@@ -1648,6 +1648,37 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
+				"id" => "c349aed1ec37dba6931ebde613b20f94",
+				"path" => "basics/plugins",
+				"position" => 45,
+				"urlName" => "plugins",
+				"url" => "/basics/plugins",
+				"level" => 2,
+				"title" => "Plugins",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Plugins. Hier finden Sie folgende Informationen:",
+				"children" => 				[
+					[
+						"id" => "420a6fc1628fa665a831111c13dd619e",
+						"path" => "basics/plugins/plugins",
+						"position" => 30,
+						"urlName" => "plugins",
+						"url" => "/basics/plugins/plugins",
+						"level" => 3,
+						"title" => "Plugins verwalten",
+						"keywords" => "Plugins, Erweiterungen, Funktionen",
+						"description" => "So verwalten Sie Plugins im plentymarkets Backend.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Plugins verwalten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
+			],
+			[
 				"id" => "f6d3f57747ffab5b590e6f58b7a7c367",
 				"path" => "basics/statistik",
 				"position" => 50,
