@@ -64,6 +64,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "ee4f842a167dec492ed10febf9fc7f9f",
+				"path" => "schnelleinstieg/schnelleinstieg-warenwirtschaft",
+				"position" => 40,
+				"urlName" => "schnelleinstieg-warenwirtschaft",
+				"url" => "/schnelleinstieg/schnelleinstieg-warenwirtschaft",
+				"level" => 2,
+				"title" => "Lager und Lieferant einrichten",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Lager und Lieferant einrichten. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "73dad0bd241b5fa51e711ae4a97ecd0e",
 				"path" => "schnelleinstieg/schnelleinstieg-warenwirschaft",
 				"position" => 40,
