@@ -3219,9 +3219,24 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Referenz. Hier finden Sie folgende Informationen:",
 						"children" => 						[
 							[
+								"id" => "a9351ebb48ffbd2582e307fd99f8025d",
+								"path" => "omni-channel/online-shop/referenz/ceres-3-update",
+								"position" => 10,
+								"urlName" => "ceres-3-update",
+								"url" => "/omni-channel/online-shop/referenz/ceres-3-update",
+								"level" => 4,
+								"title" => "Themes auf Ceres 3.0 updaten",
+								"keywords" => "Ceres, Webshop, Theme, Themes, Layout, Plugin, Update, Version, Change",
+								"description" => "Diese Anleitung hilft Theme-Entwicklern dabei, ihre Themes auf Ceres 3.0 anzupassen.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Themes auf Ceres 3.0 updaten. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "6d81bc21d7ebdf8f07ec941fec5faa9d",
 								"path" => "omni-channel/online-shop/referenz/bildergroessen",
-								"position" => 10,
+								"position" => 20,
 								"urlName" => "bildergroessen",
 								"url" => "/omni-channel/online-shop/referenz/bildergroessen",
 								"level" => 4,
