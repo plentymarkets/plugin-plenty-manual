@@ -1537,21 +1537,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "04cbbdffe94cdce5e89c8ac640073194",
-								"path" => "basics/automatisierung/prozesse/fehlerfall",
-								"position" => 60,
-								"urlName" => "fehlerfall",
-								"url" => "/basics/automatisierung/prozesse/fehlerfall",
-								"level" => 4,
-								"title" => "Fehlerbehandlung",
-								"keywords" => "Prozesse, Aktionen, Fehlerfall",
-								"description" => "Legen Sie fest, wie Prozesse im Fehlerfall weiter ausgeführt werden sollen.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Fehlerbehandlung. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "b405fffc0b37cfc376f265841f570016",
 								"path" => "basics/automatisierung/prozesse/FAQ",
 								"position" => 100,
