@@ -4401,6 +4401,21 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Bestand umbuchen / korrigieren / löschen. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "f6563315244d4db5da2851b775f0ca45",
+				"path" => "warenwirtschaft/best-practices-warenbestand-sichern",
+				"position" => 90,
+				"urlName" => "best-practices-warenbestand-sichern",
+				"url" => "/warenwirtschaft/best-practices-warenbestand-sichern",
+				"level" => 2,
+				"title" => "Best Practices: Warenbestand täglich sichern",
+				"keywords" => "Inventur, Bestand verwalten, Warenbestand sichern, Warenbestand zu einem Zeitpunkt, Warenbestand ermitteln",
+				"description" => "Erfahre wie Du deinen Warenbestand täglich sichern kannst.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Best Practices: Warenbestand täglich sichern. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
