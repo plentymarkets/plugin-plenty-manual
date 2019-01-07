@@ -5791,6 +5791,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "ff1cd803bb5d2a52b62cb0899982fc1e",
+						"path" => "basics/automation/procedure-manager",
+						"position" => 30,
+						"urlName" => "procedure-manager",
+						"url" => "/en/basics/automation/procedure-manager",
+						"level" => 3,
+						"title" => "Procedure manager",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Procedure manager. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "a12411b5e14d433f017ace53289a4445",
 						"path" => "basics/automation/best-practices-automation",
 						"position" => 40,
@@ -5802,21 +5817,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Best Practices: Event procedures and Procedure manager. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "ff1cd803bb5d2a52b62cb0899982fc1e",
-						"path" => "basics/automation/procedure-manager",
-						"position" => 50,
-						"urlName" => "procedure-manager",
-						"url" => "/en/basics/automation/procedure-manager",
-						"level" => 3,
-						"title" => "Procedure manager",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Procedure manager. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
