@@ -50,7 +50,9 @@
 <li><a href="#290"><span>4.3.</span><span> Voraussetzungen für das Buchen eines SSL-Zertifikats</span></a>
 <ul class="sectlevel3">
 <li><a href="#_domain"><span>4.3.1.</span><span> Domain</span></a></li>
-<li><a href="#_bei_externen_domains_dns_einstellungen"><span>4.3.2.</span><span> Bei externen Domains: DNS-Einstellungen</span></a></li>
+<li><a href="#_aktiviertes_autoscaling"><span>4.3.2.</span><span> Aktiviertes Autoscaling</span></a></li>
+<li><a href="#_bei_subdomains_vorhandene_parent_domain"><span>4.3.3.</span><span> Bei Subdomains: Vorhandene Parent-Domain</span></a></li>
+<li><a href="#_bei_externen_domains_dns_einstellungen"><span>4.3.4.</span><span> Bei externen Domains: DNS-Einstellungen</span></a></li>
 </ul>
 </li>
 <li><a href="#300"><span>4.4.</span><span> Kostenpflichtige SSL-Zertifikate verwalten</span></a>
@@ -1233,7 +1235,56 @@ Speichern Sie außerdem im Menü <a href="/auftragsabwicklung/payment/bankdaten-
 </div>
 </div>
 <div class="sect3">
-<h4 id="_bei_externen_domains_dns_einstellungen">4.3.2. Bei externen Domains: DNS-Einstellungen</h4>
+<h4 id="_aktiviertes_autoscaling">4.3.2. Aktiviertes Autoscaling</h4>
+<div class="paragraph">
+<p>Vereinzelt gibt es Systeme, die nicht auf <a href="https://aws.amazon.com/de/autoscaling/">Autoscaling</a> (AS) umgestellt wurden. In den meisten Fällen liegt das daran, dass die Domain nicht bei plentymarkets gehostet wird. Aus diesem Grund muss die Person, der die Domain gehört, die DNS-Einstellungen der Domain manuell anpassen.
+Eine weitere mögliche Ursache ist, dass eine Domain erstmalig zu einem Mandanten hinzugeführt wurde. Diese Mandanten werden dann nicht automatisch auf Autoscaling umgestellt. Der plentymarkets Support muss Autoscaling manuell aktivieren.</p>
+</div>
+<div class="paragraph">
+<p>Gehen Sie wie unten beschreiben vor, um zu prüfen, ob für das System Autoscaling aktiviert ist.</p>
+</div>
+<div class="paragraph instruction">
+<p>Autoscaling-Status prüfen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Start » Service-Center</strong>.<br>
+<strong><em>Tipp:</em></strong> Zeigen Sie dazu mit der Maus auf das plentymarkets Logo oben links.<br>
+→ Das Service-Center wird in einem neuen Browser-Tab geöffnet.</p>
+</li>
+<li>
+<p>Klicken Sie auf das blaue <strong>Plus</strong> des Systems.<br>
+→ Die verfügbaren Tabs werden eingeblendet.</p>
+</li>
+<li>
+<p>Wechseln Sie in das Tab <strong>Domain</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf das blaue Plus der Domain, für die Sie DNS-Einstellungen abrufen möchten.<br>
+→  Die DNS-Einstellungen werden angezeigt.</p>
+</li>
+<li>
+<p>Prüfen Sie in der Spalte <strong>DNS Record Type</strong>, ob für die Domain ein CNAME-Eintrag vorhanden ist.<br>
+→ Wenn ein CNAME-Eintrag vorhanden ist, ist Autoscaling aktiviert. Ein SSL-Zertifikat kann bestellt werden.<br>
+→ Wenn kein CNAME-Eintrag vorhanden ist, sondern nur zwei A-Records, ist Autoscaling nicht aktiviert.</p>
+</li>
+<li>
+<p>Wenn Autoscaling nicht aktiviert ist, bitten Sie den plentymarkets Support über das Link:https://forum.plentymarkets.com/t/46996/[plentymarkets Forum], Autoscaling zu aktivieren.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bei_subdomains_vorhandene_parent_domain">4.3.3. Bei Subdomains: Vorhandene Parent-Domain</h4>
+<div class="paragraph">
+<p>Wenn Sie ein SSL-Zertifikat für eine Subdomain bestellen möchten, muss auch die Parent-Domain im Service-Center existieren. Auch die Beziehung zwischen Domain und Subdomain muss im Service-Center korrekt eingetragen sein.<br>
+→ Prüfen Sie die Einstellungen im plentymarkets Service-Center.<br>
+→ Wenn die Parent-Domain aus dem Service-Center entfernt wurde, legen Sie die Parent-Domain neu an. Wenn diese Parent-Domain nicht auf plentymarkets zeigen soll, sondern z.B. auf Shopware, versehen Sie die Parent-Domain mit einem externen A-Record, indem Sie eine <a href="/basics/arbeiten-mit-plentymarkets/plentymarkets-konto#210a">Systemverknüpfung erstellen</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bei_externen_domains_dns_einstellungen">4.3.4. Bei externen Domains: DNS-Einstellungen</h4>
 <div class="ulist">
 <ul>
 <li>
