@@ -2116,39 +2116,8 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Allyouneed. Hier finden Sie folgende Informationen:",
-						"children" => 						[
-							[
-								"id" => "ff354f5aa1bf3dd3c7bc33880ee550ea",
-								"path" => "omni-channel/multi-channel/allyouneed/allyouneed-einrichten",
-								"position" => 1,
-								"urlName" => "allyouneed-einrichten",
-								"url" => "/omni-channel/multi-channel/allyouneed/allyouneed-einrichten",
-								"level" => 4,
-								"title" => "Allyouneed einrichten",
-								"keywords" => "Allyouneed, Marktplatz",
-								"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Allyouneed in Ihrem plentymarkets System ein.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Allyouneed einrichten. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "4077a1ec84c9fb60239bce8c69de2121",
-								"path" => "omni-channel/multi-channel/allyouneed/best-practices",
-								"position" => 2,
-								"urlName" => "best-practices",
-								"url" => "/omni-channel/multi-channel/allyouneed/best-practices",
-								"level" => 4,
-								"title" => "Best Practices: Allyouneed",
-								"keywords" => "Allyouneed, Multi-Channel, Fehlermeldungen",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practices: Allyouneed. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							]
-						],
-						"hasChildren" => true
+						"children" => [],
+						"hasChildren" => false
 					],
 					[
 						"id" => "72f632e43ef06b4ea8f986352fb6ebac",
