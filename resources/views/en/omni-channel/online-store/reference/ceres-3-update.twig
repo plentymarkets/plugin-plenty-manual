@@ -1,0 +1,175 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel0">
+<li><a href="#_updating_themes_to_ceres_3_0"><span>Updating themes to Ceres 3.0</span></a>
+<ul class="sectlevel1">
+<li><a href="#_removed_directives"><span>1.</span><span> Removed directives</span></a></li>
+<li><a href="#_added_components"><span>2.</span><span> Added components</span></a></li>
+<li><a href="#_removed_and_changed_components"><span>3.</span><span> Removed and changed components</span></a></li>
+<li><a href="#_further_adjustments"><span>4.</span><span> Further adjustments</span></a></li>
+<li><a href="#_bootstrap_4_stable_adjustments"><span>5.</span><span> Bootstrap 4 stable adjustments</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Updating themes to Ceres 3.0</h1><h1 id="_updating_themes_to_ceres_3_0" class="sect0">Updating themes to Ceres 3.0</h1><div class="paragraph">
+<p>The major release of Ceres 3.0 in mid-<strong>January</strong> includes a number of changes to the code that are of particular importance for <strong>theme developers</strong>, since they necessitate adjustments to the themes. This manual page explains which components and directives have been removed from Ceres and which adjustments are necessary for your theme to work properly.<br>
+This page serves to highlight the largest sources of potential errors. Please take a look at the current version comparison on <a href="https://github.com/plentymarkets/plugin-ceres/compare/2.17.0…​2.17.1" target="_blank" rel="noopener">GitHub</a> for a complete overview of the changes.</p>
+</div><div class="sect1">
+<h2 id="_removed_directives">1. Removed directives</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following directives have been globally <strong>removed</strong> in Ceres 3.0:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>v-render-category</p>
+</li>
+<li>
+<p>v-is-loading-watcher</p>
+</li>
+<li>
+<p>v-update-sidenav-selection</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Furthermore, the directive <strong>v-hover-mega-menu</strong> has been renamed and is now called <strong>v-navigation-touch-handler</strong>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_added_components">2. Added components</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The componen <strong>Ceres::ItemList.Components.CategoryItem</strong> refers to the item tile and is no longer used by Ceres 3.0. The item tile had formerly been included by the now obsolete component <strong>Ceres::ItemList.Components.ItemList</strong>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_removed_and_changed_components">3. Removed and changed components</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following components have been removed or are now included via Twig:</p>
+</div>
+<div class="paragraph">
+<p><strong>Removed:</strong>
+- Ceres::ItemList.Components.ItemList
+- Ceres::ItemList.Components.CategoryImageCarousel
+- Ceres::Category.Item.Partials.CategoryListItem</p>
+</div>
+<div class="paragraph">
+<p><strong>Changed:</strong>
+- Ceres::ItemList.Components.ItemListSorting » Ceres::Category.Item.Partials.ItemSorting
+- Ceres::ItemList.Components.ItemsPerPage » Ceres::Category.Item.Partials.ItemsPerPage
+- Ceres::ItemList.Components.Pagination » Ceres::Category.Item.Partials.Pagination</p>
+</div>
+<div class="paragraph">
+<p>The following code examples demonstrate which lines in your code might have to be removed, so that removed components are not accidentally called upon, and which command serves to implement the function in Ceres 3.0. The adjustments refer to the two files <strong>/resources/views/ItemList/ItemListView.twig</strong> and <strong>/resources/views/Category/Item/CategoryItem.twig</strong>. The three periods […​] are to be understood as omissions, since the relevant lines of code do not necessarily have to directly follow in sequence. The parameters used in the code snippets can, of course, deviate from the ones used in your theme.</p>
+</div>
+<div class="paragraph">
+<p><strong>ItemSorting</strong>
+<em>The following lines have to be removed:</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">{{ component( "Ceres::ItemList.Components.ItemListSorting" ) }}
+[...]
+&lt;item-list-sorting template="#vue-item-list-sorting" :sorting-list="{{ searchOptions.sorting | json_encode }}" :default-sorting="{{ searchOptions.defaultSorting | json_encode }}"&gt;&lt;/item-list-sorting&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Add:</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; include "Ceres::Category.Item.Partials.ItemSorting" with { 'sortingData': searchOptions.sorting, 'selectedSorting': itemSorting } &#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>ItemsPerPage</strong>
+<em>The following lines have to be removed:</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">{{ component( "Ceres::ItemList.Components.ItemsPerPage" ) }}
+[...]
+&lt;items-per-page template="#vue-items-per-page" :pagination-values="{{ searchOptions.itemsPerPage | json_encode }}"&gt;&lt;/items-per-page&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Add:</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; include "Ceres::Category.Item.Partials.ItemsPerPage" with { 'itemsPerPage': searchOptions.itemsPerPage, 'selectedValue': itemsPerPage } &#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Pagination</strong>
+<em>The following lines have to be removed:</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">{{ component( "Ceres::ItemList.Components.Pagination") }}
+...
+&lt;pagination template="#vue-pagination"&gt;&lt;/pagination&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Add:</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; include "Ceres::Category.Item.Partials.Pagination" &#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_further_adjustments">4. Further adjustments</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>In the file <strong>resources/views/PageDesign/Partials/Header/Header.twig</strong>, the pagination call now includes the parameters via <strong>with</strong>:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&#123;&#37; include "Ceres::Category.Item.Partials.Pagination" with { 'currentPage': page } &#37;&#125;</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the file <strong>resources/views/PageDesign/Partials/Header/Header.twig</strong>, the <strong>script</strong> must now be included, since elements might disappear behind the header:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&#123;&#37; set scriptId = uid() &#37;&#125;
+&lt;script id="{{ scriptId }}"&gt;
+    document.getElementById("vue-app").style.marginTop = document.getElementById("page-header").getBoundingClientRect().height + 'px';
+    document.getElementById("{{ scriptId }}").remove();
+&lt;/script&gt;</pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_bootstrap_4_stable_adjustments">5. Bootstrap 4 stable adjustments</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page will shortly be expanded and will list the adjustments that are necessary in order to adapt themes for Bootstrap 4 stable.</p>
+</div>
+</div>
+</div>
+</main>

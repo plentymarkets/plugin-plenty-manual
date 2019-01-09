@@ -7378,6 +7378,21 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Reference. The following information is available:",
 						"children" => 						[
 							[
+								"id" => "3041c73ae5187dda91e25c5255e9a630",
+								"path" => "omni-channel/online-store/reference/ceres-3-update",
+								"position" => 10,
+								"urlName" => "ceres-3-update",
+								"url" => "/en/omni-channel/online-store/reference/ceres-3-update",
+								"level" => 4,
+								"title" => "Updating themes to Ceres 3.0",
+								"keywords" => "Ceres, online store, Theme, Themes, Layout, Plugin, Update, Version, Change",
+								"description" => "This manual page explains how to asjust your theme to Ceres 3.0.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Updating themes to Ceres 3.0. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "c264e873c7878c4b5be57b9406599f5e",
 								"path" => "omni-channel/online-store/reference/images-sizes",
 								"position" => 10,
