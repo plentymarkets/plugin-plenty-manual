@@ -4696,11 +4696,11 @@ class Metadata {
 						"urlName" => "datalog",
 						"url" => "/en/basics/working-with-plentymarkets/datalog",
 						"level" => 3,
-						"title" => "Menu data log",
+						"title" => "Data log",
 						"keywords" => "log, logs, data log, log entries, log level, reference type, reference value, configure logs",
 						"description" => "Find out how to search for log entries.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Menu data log. The following information is available:",
+						"linkListInto" => "Welcome to the topic Data log. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
