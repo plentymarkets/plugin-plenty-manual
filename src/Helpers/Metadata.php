@@ -475,11 +475,11 @@ class Metadata {
 						"urlName" => "datenlog",
 						"url" => "/basics/arbeiten-mit-plentymarkets/datenlog",
 						"level" => 3,
-						"title" => "Menü-Datenlog",
+						"title" => "Daten-Log",
 						"keywords" => "Log, Logs, Daten-Log, Log-Einträge, Log-Level, Referenztyp, Referenzwert, Logs konfigurieren",
 						"description" => "Erfahren Sie, wie Sie nach Log-Einträgen suchen können.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Menü-Datenlog. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Daten-Log. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
