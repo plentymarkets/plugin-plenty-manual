@@ -558,6 +558,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "f446188f29319bd631858252c1d590ed",
+								"path" => "basics/datenaustausch/ElasticSync/ElasticSync",
+								"position" => 10,
+								"urlName" => "ElasticSync",
+								"url" => "/basics/datenaustausch/ElasticSync/ElasticSync",
+								"level" => 4,
+								"title" => "Daten mit ElasticSync importieren",
+								"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
+								"description" => "Erfahren Sie, wie Sie mit ElasticSync Daten in plentymarkets importieren.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "a3100927b815fe91b36a1a0f128999ea",
 								"path" => "basics/datenaustausch/ElasticSync/ElasticSync-plugin",
 								"position" => 15,
@@ -569,6 +584,21 @@ class Metadata {
 								"description" => "Erfahren Sie, wie Sie mit dem Plugin ElasticSync Daten in plentymarkets importieren.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren (Plugin). Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "9b0e538e7b3ee5d6da0c4c9eb5e5e4e1",
+								"path" => "basics/datenaustausch/ElasticSync/ElasticSync-plugin-(veraltet)",
+								"position" => 15,
+								"urlName" => "ElasticSync-plugin-(veraltet)",
+								"url" => "/basics/datenaustausch/ElasticSync/ElasticSync-plugin-(veraltet)",
+								"level" => 4,
+								"title" => "Daten mit ElasticSync importieren (Plugin) (veraltet)",
+								"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
+								"description" => "Erfahren Sie, wie Sie mit dem Plugin ElasticSync Daten in plentymarkets importieren.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren (Plugin) (veraltet). Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							],
