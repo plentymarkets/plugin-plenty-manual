@@ -4764,36 +4764,6 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic ElasticSync and FormatDesigner. The following information is available:",
 						"children" => 						[
 							[
-								"id" => "c8ad5c3261ec3e84ce945eb65b71f563",
-								"path" => "basics/data-exchange/ElasticSync/ElasticSync-plugin",
-								"position" => 0,
-								"urlName" => "ElasticSync-plugin",
-								"url" => "/en/basics/data-exchange/ElasticSync/ElasticSync-plugin",
-								"level" => 4,
-								"title" => "",
-								"keywords" => "",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "4926e84a6dc2f592c56de5b2a13f7522",
-								"path" => "basics/data-exchange/ElasticSync/ElasticSync-beta",
-								"position" => 10,
-								"urlName" => "ElasticSync-beta",
-								"url" => "/en/basics/data-exchange/ElasticSync/ElasticSync-beta",
-								"level" => 4,
-								"title" => "Importing data with ElasticSync (Beta)",
-								"keywords" => "Importing data, import data, data import, ElasticSync, sync, Elastic Sync, synchronise, synchronisation, data format, data formats, dynamic import, mapping, matching, import option, import data",
-								"description" => "Learn how to import data with ElasticSync.",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Importing data with ElasticSync (Beta). The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "aaf4c372aa76087aa187a31a21b092d6",
 								"path" => "basics/data-exchange/ElasticSync/ElasticSync",
 								"position" => 10,
