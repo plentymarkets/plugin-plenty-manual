@@ -4824,6 +4824,36 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "aaf4c372aa76087aa187a31a21b092d6",
+								"path" => "basics/data-exchange/ElasticSync/ElasticSync",
+								"position" => 10,
+								"urlName" => "ElasticSync",
+								"url" => "/en/basics/data-exchange/ElasticSync/ElasticSync",
+								"level" => 4,
+								"title" => "Importing data with ElasticSync",
+								"keywords" => "Importing data, import data, data import, ElasticSync, sync, Elastic Sync, synchronise, synchronisation, data format, data formats, dynamic import, mapping, matching, import option, import data",
+								"description" => "Learn how to import data with ElasticSync.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Importing data with ElasticSync. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "3e9b8ddcec0839670cf13c68e0ed2e86",
+								"path" => "basics/data-exchange/ElasticSync/ElasticSync-plugin-(deprecated)",
+								"position" => 15,
+								"urlName" => "ElasticSync-plugin-(deprecated)",
+								"url" => "/en/basics/data-exchange/ElasticSync/ElasticSync-plugin-(deprecated)",
+								"level" => 4,
+								"title" => "Importing data with ElasticSync (Plugin) (deprecated)",
+								"keywords" => "Importing data, import data, data import, ElasticSync, sync, Elastic Sync, synchronise, synchronisation, data format, data formats, dynamic import, mapping, matching, import option, import data",
+								"description" => "Learn how to import data using the plugin ElasticSync.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Importing data with ElasticSync (Plugin) (deprecated). The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "832d5b25cda6911764634644cb5c2382",
 								"path" => "basics/data-exchange/ElasticSync/FormatDesigner",
 								"position" => 20,
