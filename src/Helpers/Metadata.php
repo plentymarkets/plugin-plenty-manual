@@ -4741,11 +4741,11 @@ class Metadata {
 						"urlName" => "printer",
 						"url" => "/en/basics/working-with-plentymarkets/printer",
 						"level" => 3,
-						"title" => "Printer",
+						"title" => "Managing printers",
 						"keywords" => "Printer, plentyBase",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Printer. The following information is available:",
+						"linkListInto" => "Welcome to the topic Managing printers. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4786,11 +4786,11 @@ class Metadata {
 						"urlName" => "tags",
 						"url" => "/en/basics/working-with-plentymarkets/tags",
 						"level" => 3,
-						"title" => "Tags",
+						"title" => "Managing tags",
 						"keywords" => "tag, tags, create tag",
 						"description" => "Learn how to manage tags in plentymarkets.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Tags. The following information is available:",
+						"linkListInto" => "Welcome to the topic Managing tags. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
