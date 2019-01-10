@@ -692,6 +692,21 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
+										"id" => "72e84f4f57cbe77b83d83ecb94a9b556",
+										"path" => "basics/datenaustausch/export-import/datenformate/campaign",
+										"position" => 29,
+										"urlName" => "campaign",
+										"url" => "/basics/datenaustausch/export-import/datenformate/campaign",
+										"level" => 5,
+										"title" => "Campaign",
+										"keywords" => "",
+										"description" => "Campaign",
+										"navAlias" => "",
+										"linkListInto" => "Willkommen im Themenbereich Campaign. Hier finden Sie folgende Informationen:",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
 										"id" => "7bd067748917636f11c7326363709e79",
 										"path" => "basics/datenaustausch/export-import/datenformate/campaigncoupon",
 										"position" => 30,
@@ -703,6 +718,36 @@ class Metadata {
 										"description" => "CampaignCoupon",
 										"navAlias" => "",
 										"linkListInto" => "Willkommen im Themenbereich CampaignCoupon. Hier finden Sie folgende Informationen:",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
+										"id" => "05e2843d26d6d42eed5cccf10b88ffbc",
+										"path" => "basics/datenaustausch/export-import/datenformate/campaigncouponcontact",
+										"position" => 31,
+										"urlName" => "campaigncouponcontact",
+										"url" => "/basics/datenaustausch/export-import/datenformate/campaigncouponcontact",
+										"level" => 5,
+										"title" => "CampaignCouponContact",
+										"keywords" => "",
+										"description" => "CampaignCouponContact",
+										"navAlias" => "",
+										"linkListInto" => "Willkommen im Themenbereich CampaignCouponContact. Hier finden Sie folgende Informationen:",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
+										"id" => "42a3921b4f4d2e7bd5556ee3e3788a1f",
+										"path" => "basics/datenaustausch/export-import/datenformate/campaigncouponorder",
+										"position" => 32,
+										"urlName" => "campaigncouponorder",
+										"url" => "/basics/datenaustausch/export-import/datenformate/campaigncouponorder",
+										"level" => 5,
+										"title" => "CampaignCouponOrder",
+										"keywords" => "",
+										"description" => "CampaignCouponOrder",
+										"navAlias" => "",
+										"linkListInto" => "Willkommen im Themenbereich CampaignCouponOrder. Hier finden Sie folgende Informationen:",
 										"children" => [],
 										"hasChildren" => false
 									],
