@@ -656,7 +656,7 @@ class Metadata {
 								"url" => "/basics/datenaustausch/export-import/daten-exportieren",
 								"level" => 4,
 								"title" => "Daten über dynamischen Export exportieren",
-								"keywords" => "FiBu, Finanzbuchhaltung, Syska, Collmex, Xero, BMECat, Preissuchmaschinen, Elastischer Export, Warenbestände exportieren",
+								"keywords" => "FiBu, Finanzbuchhaltung, Syska, Collmex, Xero, BMECat, Preissuchmaschinen, Warenbestände exportieren",
 								"description" => "Erfahren Sie, wie Sie vorkonfigurierte und individualisierbare Datenformate sowie Datenformate für Preissuchmaschinen exportieren.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Daten über dynamischen Export exportieren. Hier finden Sie folgende Informationen:",
@@ -1416,6 +1416,21 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
+					],
+					[
+						"id" => "17cbfc9002d3a51e94287d2ca81f54c1",
+						"path" => "basics/datenaustausch/elastischer-export",
+						"position" => 30,
+						"urlName" => "elastischer-export",
+						"url" => "/basics/datenaustausch/elastischer-export",
+						"level" => 3,
+						"title" => "Elastischer Export",
+						"keywords" => "Export, elastisch, Elastic Export",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Elastischer Export. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					],
 					[
 						"id" => "784187571a743b9c07796edb32d8e13e",
