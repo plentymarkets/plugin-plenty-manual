@@ -6355,21 +6355,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "7b0c81fccd804d676dcfeeff6d97cc22",
-						"path" => "omni-channel/multi-channel/allyouneed",
-						"position" => 60,
-						"urlName" => "allyouneed",
-						"url" => "/en/omni-channel/multi-channel/allyouneed",
-						"level" => 3,
-						"title" => "Allyouneed",
-						"keywords" => "Allyouneed, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Allyouneed. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "72f632e43ef06b4ea8f986352fb6ebac",
 						"path" => "omni-channel/multi-channel/bol-com",
 						"position" => 70,
