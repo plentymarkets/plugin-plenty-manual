@@ -7831,7 +7831,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Payment",
 				"keywords" => "Payment providers, payment methods, payments",
-				"description" => "Payment in plentymarkets: Manage payments and set up interfaces for payment methods and payment providers.",
+				"description" => "Payment in plentymarkets: Manage payments and integrate payment methods and payment providers.",
 				"navAlias" => "Overview",
 				"linkListInto" => "Welcome to the topic Payment. The following information is available:",
 				"children" => 				[
