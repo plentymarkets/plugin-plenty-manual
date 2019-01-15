@@ -5898,7 +5898,7 @@ class Metadata {
 					[
 						"id" => "3de210212333b626a90b395705f3b25e",
 						"path" => "basics/automation/event-procedures",
-						"position" => 60,
+						"position" => 40,
 						"urlName" => "event-procedures",
 						"url" => "/en/basics/automation/event-procedures",
 						"level" => 3,
