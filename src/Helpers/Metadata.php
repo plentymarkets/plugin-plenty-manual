@@ -4793,6 +4793,21 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Managing tags. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "e2e95bcaf88284aeddc8372714675551",
+						"path" => "basics/working-with-plentymarkets/boards",
+						"position" => 120,
+						"urlName" => "boards",
+						"url" => "/en/basics/working-with-plentymarkets/boards",
+						"level" => 3,
+						"title" => "Managing boards",
+						"keywords" => "Board, Boards",
+						"description" => "Learn how to manage boards in plentymarkets.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing boards. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
