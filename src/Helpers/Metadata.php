@@ -3348,11 +3348,11 @@ class Metadata {
 						"urlName" => "pos-best-practice",
 						"url" => "/omni-channel/pos/pos-best-practice",
 						"level" => 3,
-						"title" => "Best Practices",
+						"title" => "Best Practices: POS",
 						"keywords" => "plentymarkets POS, Kasse, POS, Gutscheine, Gutscheine verkaufen, Best Practice",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: POS. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
