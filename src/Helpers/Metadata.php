@@ -6170,6 +6170,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Managing the front end item search. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "30cdf0284dc918841f5689fc63980ab9",
+				"path" => "item/checking-data-status",
+				"position" => 600,
+				"urlName" => "checking-data-status",
+				"url" => "/en/item/checking-data-status",
+				"level" => 2,
+				"title" => "Checking status of item data",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Checking status of item data. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
