@@ -636,6 +636,21 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
+						"id" => "17cbfc9002d3a51e94287d2ca81f54c1",
+						"path" => "basics/datenaustausch/elastischer-export",
+						"position" => 30,
+						"urlName" => "elastischer-export",
+						"url" => "/basics/datenaustausch/elastischer-export",
+						"level" => 3,
+						"title" => "Elastischer Export",
+						"keywords" => "Export, elastisch, Elastic Export",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Elastischer Export. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "e94156b13999930271f05d45f7993055",
 						"path" => "basics/datenaustausch/export-import",
 						"position" => 30,
@@ -1418,21 +1433,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "17cbfc9002d3a51e94287d2ca81f54c1",
-						"path" => "basics/datenaustausch/elastischer-export",
-						"position" => 30,
-						"urlName" => "elastischer-export",
-						"url" => "/basics/datenaustausch/elastischer-export",
-						"level" => 3,
-						"title" => "Elastischer Export",
-						"keywords" => "Export, elastisch, Elastic Export",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Elastischer Export. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "784187571a743b9c07796edb32d8e13e",
 						"path" => "basics/datenaustausch/api-daten",
 						"position" => 40,
@@ -1933,6 +1933,21 @@ class Metadata {
 				"description" => "Erfahren Sie, wie Sie Varianten in plentymarkets kombinieren, um sie im Paket zu verkaufen.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Multipacks, Artikelpakete und Sets verwalten. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "d78153a74ce3acf505bf9f2231dfa13a",
+				"path" => "artikel/artikeldaten-status-pruefen",
+				"position" => 600,
+				"urlName" => "artikeldaten-status-pruefen",
+				"url" => "/artikel/artikeldaten-status-pruefen",
+				"level" => 2,
+				"title" => "Aktualität von Artikeldaten prüfen",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Aktualität von Artikeldaten prüfen. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			],
