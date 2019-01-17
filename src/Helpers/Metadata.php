@@ -4290,6 +4290,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Postleitzahlenfilter. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "1db888f68def12afea8758146788fe8c",
+						"path" => "auftragsabwicklung/fulfillment/best-practices-postcode-filter",
+						"position" => 70,
+						"urlName" => "best-practices-postcode-filter",
+						"url" => "/auftragsabwicklung/fulfillment/best-practices-postcode-filter",
+						"level" => 3,
+						"title" => "Best Practices: Postleitzahlenfilter",
+						"keywords" => "Ereignisaktion, Filter, Postleitzahl, Postleitzahlen",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Postleitzahlenfilter. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
