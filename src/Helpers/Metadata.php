@@ -4275,6 +4275,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Versandartwahl/Geoblocking. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "8d0484b51d274eb3b380020d974e962d",
+						"path" => "auftragsabwicklung/fulfillment/best-practice-postcode-filter",
+						"position" => 70,
+						"urlName" => "best-practice-postcode-filter",
+						"url" => "/auftragsabwicklung/fulfillment/best-practice-postcode-filter",
+						"level" => 3,
+						"title" => "Best Practices: Postleitzahlenfilter",
+						"keywords" => "Ereignisaktion, Filter, Postleitzahl, Postleitzahlen",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Postleitzahlenfilter. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
