@@ -6298,11 +6298,11 @@ class Metadata {
 						"urlName" => "rakuten",
 						"url" => "/en/omni-channel/multi-channel/rakuten",
 						"level" => 3,
-						"title" => "rakuten.de",
+						"title" => "Rakuten",
 						"keywords" => "rakuten.de, Multi-Channel",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic rakuten.de. The following information is available:",
+						"linkListInto" => "Welcome to the topic Rakuten. The following information is available:",
 						"children" => 						[
 							[
 								"id" => "c0d21006baa4928912e8343befb15bf8",
