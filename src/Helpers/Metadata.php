@@ -2109,11 +2109,11 @@ class Metadata {
 						"urlName" => "rakuten",
 						"url" => "/omni-channel/multi-channel/rakuten",
 						"level" => 3,
-						"title" => "rakuten.de",
+						"title" => "Rakuten",
 						"keywords" => "rakuten.de, Multi-Channel",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich rakuten.de. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Rakuten. Hier finden Sie folgende Informationen:",
 						"children" => 						[
 							[
 								"id" => "c807f2541a759493d957377ce9444bcd",
