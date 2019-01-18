@@ -5679,6 +5679,21 @@ class Metadata {
 									]
 								],
 								"hasChildren" => true
+							],
+							[
+								"id" => "904659903880fd107af590c2a68463da",
+								"path" => "basics/data-exchange/export-import/elastic-export",
+								"position" => 30,
+								"urlName" => "elastic-export",
+								"url" => "/en/basics/data-exchange/export-import/elastic-export",
+								"level" => 4,
+								"title" => "Elastic export",
+								"keywords" => "Export, elastic, Elastic Export",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Elastic export. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
