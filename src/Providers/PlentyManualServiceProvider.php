@@ -5,6 +5,8 @@ namespace PlentyManual\Providers;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Templates\Twig;
 use PlentyManual\Extensions\TwigManualExtension;
+use Plenty\Modules\Cron\Services\CronContainer;
+use PlentyManual\Cron\BrokenLinksCron;
 
 /**
  * Class PlentyManualServiceProvider
@@ -24,9 +26,11 @@ class PlentyManualServiceProvider extends ServiceProvider
      * boot twig extensions and services
      * @param Twig $twig
      */
-    public function boot(Twig $twig)
+    public function boot(Twig $twig, CronContainer $cronContainer)
     {
         $twig->addExtension('Twig_Extensions_Extension_Intl');
         $twig->addExtension( TwigManualExtension::class );
+
+        $cronContainer->add( CronContainer::DAILY, BrokenLinksCron::class);
     }
 }
