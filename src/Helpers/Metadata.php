@@ -4856,6 +4856,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Data exchange. The following information is available:",
 				"children" => 				[
 					[
+						"id" => "8202ec007b0aedcd05559a5ebfab30f6",
+						"path" => "basics/data-exchange/elastic-export",
+						"position" => 30,
+						"urlName" => "elastic-export",
+						"url" => "/en/basics/data-exchange/elastic-export",
+						"level" => 3,
+						"title" => "Elastic export",
+						"keywords" => "Export, elastic, Elastic Export",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Elastic export. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "1c8f0aaed445c9ce0840752f65627dbf",
 						"path" => "basics/data-exchange/ElasticSync",
 						"position" => 30,
@@ -5679,39 +5694,9 @@ class Metadata {
 									]
 								],
 								"hasChildren" => true
-							],
-							[
-								"id" => "904659903880fd107af590c2a68463da",
-								"path" => "basics/data-exchange/export-import/elastic-export",
-								"position" => 30,
-								"urlName" => "elastic-export",
-								"url" => "/en/basics/data-exchange/export-import/elastic-export",
-								"level" => 4,
-								"title" => "Elastic export",
-								"keywords" => "Export, elastic, Elastic Export",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Elastic export. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
-					],
-					[
-						"id" => "8202ec007b0aedcd05559a5ebfab30f6",
-						"path" => "basics/data-exchange/elastic-export",
-						"position" => 30,
-						"urlName" => "elastic-export",
-						"url" => "/en/basics/data-exchange/elastic-export",
-						"level" => 3,
-						"title" => "Elastic export",
-						"keywords" => "Export, elastic, Elastic Export",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Elastic export. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
 					],
 					[
 						"id" => "648c5b03f5e7a278a80ec82f57c198d2",
