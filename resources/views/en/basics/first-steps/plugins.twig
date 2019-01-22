@@ -5,7 +5,7 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#purchasing-marketplace-plugins"><span>1.</span><span> Purchasing marketplace plugins</span></a></li>
-<li><a href="#adding-git-plugins"><span>2.</span><span> Adding your own plugins from git</span></a>
+<li><a href="#adding-git-plugins"><span>2.</span><span> Adding plugins via Git</span></a>
 <ul class="sectlevel2">
 <li><a href="#_deleting_a_git_repository"><span>2.1.</span><span> Deleting a Git repository</span></a></li>
 </ul>
@@ -102,13 +102,43 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="adding-git-plugins">2. Adding your own plugins from git</h2>
+<h2 id="adding-git-plugins">2. Adding plugins via Git</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you cannot find the plugin you need on the plentyMarketplace, you can also add your own plugins to your plentymarkets system. To add a plugin to plentymarkets that is managed by Git versioning, proceed as follows.</p>
+<p>If you cannot find the plugin you need on plentyMarketplace, you can also add plugins from Git repositories. External developers may provide their plugins this way. For more information on available plugins, contact these developers directly. You can find an overview of certified partners <a href="https://www.plentymarkets.eu/service/partneragenturen/search/plugin-30/?aoff=s" target="_blank" rel="noopener">here</a>, post in the search/offer <a href="https://forum.plentymarkets.com/c/suche-biete/suche-biete-plugins" target="_blank" rel="noopener">category</a> on the forums or create a <a href="https://marketplace.plentymarkets.com/plentyprojects" target="_blank" rel="noopener">new enquiry</a> on plentyMarketplace.</p>
+</div>
+<div class="paragraph">
+<p>For private repositories, you need a personal access token in addition to the repository URL. This page only describes how to generate a personal access token on GitHub. However, the process is similar on other sites like GitLab. Refer to the respective site’s documentation for details.</p>
 </div>
 <div class="paragraph instruction">
-<p>Adding a Git repository to plentymarkets:</p>
+<p>Creating a personal access token for private repositories:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to your <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">token settings</a> on GitHub.</p>
+</li>
+<li>
+<p>Click on <strong>Generate new token</strong>.
+→ GitHub will ask you to confirm your password.</p>
+</li>
+<li>
+<p>Enter a <strong>Token description</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Select scopes</strong>, activate <strong>repo:status</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Generate token</strong>.
+→ GitHub will generate a new token. You will need this token in the next step, so either stay on the page or save the token locally. If you save the token, remember to delete it again once you have added the plugin to your system.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now you have everything you need to add the plugin to your plentymarkets system.</p>
+</div>
+<div class="paragraph instruction">
+<p>Adding a Git plugin to plentymarkets</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -117,16 +147,34 @@
 </li>
 <li>
 <p>Click on <strong>Add new Repository</strong>.<br>
-→ The options for the repository settings are displayed.</p>
+→ The repository settings are displayed.</p>
 </li>
 <li>
-<p>Enter the necessary information for the Git repository. Pay attention to the explanations given in &lt;tabelle-git-plugins-hinzufuegen&gt;.</p>
+<p>Enter the repository URL and user name, as well as the access token you generated earlier, into the respective fields.</p>
 </li>
 <li>
-<p><strong>Save</strong> the settings.<br>
-→ The connection to the Git repository is checked and established. The success message <strong>Repository saved.</strong> appears.</p>
+<p>Enter the branch you want to check out during installation. By default, plentymarkets checks out the master branch, but you should check with the plugin developer which branch name to enter and update the field accordingly.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.
+→ plentymarkets checks and establishes the connection to the Git repository.</p>
 </li>
 </ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Public repositories</div>
+<div class="paragraph">
+<p>When adding a public repository, you do not need to enter any real credentials as user name and token. However, the respective text fields must not be empty, so enter an arbitrary values, e.g. "guest".</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <table id="table-adding-git-plugins" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Adding git plugins</caption>
@@ -151,14 +199,13 @@
 For public repositories, enter any value into the field, e.g. <strong>guest</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password or token</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The password is part of the user data of the provider (e.g. GitHub) for the Git repository.<br>
-For public repositories, enter any value into the field, e.g. <strong>guest</strong>.<br>
-If two factor authentication has been activated, a token is needed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Token</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The token is part of the user data of the provider (e.g. GitHub) for the Git repository. You can create new tokens in your provider’s settings.<br>
+For public repositories, enter any value into the field, e.g. <strong>guest</strong>.<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name of branch to be installed (must contain valid plugin.json file).</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Git repository has to include a valid Plugin.json file. This input is required for the initial installation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Git repository has to include a valid plugin.json file. This input is required for the initial installation.</p></td>
 </tr>
 </tbody>
 </table>
