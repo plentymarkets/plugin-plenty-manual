@@ -5,7 +5,7 @@
 <div id="toctitle">Inhalt</div>
 <ul class="sectlevel1">
 <li><a href="#marketplace-plugins-kaufen"><span>1.</span><span> Marketplace-Plugins kaufen</span></a></li>
-<li><a href="#git-plugins-hinzufuegen"><span>2.</span><span> Eigene Git-Plugins hinzufügen</span></a>
+<li><a href="#git-plugins-hinzufuegen"><span>2.</span><span> Plugins über Git hinzufügen</span></a>
 <ul class="sectlevel2">
 <li><a href="#_git_repository_löschen"><span>2.1.</span><span> Git-Repository löschen</span></a></li>
 </ul>
@@ -102,13 +102,43 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="git-plugins-hinzufuegen">2. Eigene Git-Plugins hinzufügen</h2>
+<h2 id="git-plugins-hinzufuegen">2. Plugins über Git hinzufügen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Alternativ zum plentyMarketplace können Sie der Oberfläche Ihres plentymarkets Systems auch eigene Plugins hinzufügen. Gehen Sie wie unten beschrieben vor, um ein über die <a href="/basics/erste-schritte/plugins#90">Git-Versionierung</a> verwaltetes Plugin in plentymarkets hinzuzufügen.</p>
+<p>Wenn Sie plentymarkets erweitern möchten, aber kein Plugin mit der entsprechenden Funktionalität auf plentyMarketplace finden, haben Sie die Möglichkeit, Ihrem System Plugins über Git hinzuzufügen. Manche externe Entwickler bieten Plugins auf diesem Wege an. Wenn Sie weitere Informationen zu so verfügbaren Plugins erhalten möchten, sollten Sie direkt mit Entwicklern Kontakt aufnehmen. Nutzen Sie dafür entweder die <a href="https://www.plentymarkets.eu/service/partneragenturen/search/plugin-30/?aoff=s" target="_blank" rel="noopener">Partnerübersicht</a>, schreiben Sie eine Nachricht in der Forumskategorie <a href="https://forum.plentymarkets.com/c/suche-biete/suche-biete-plugins" target="_blank" rel="noopener">Suche/Biete</a> oder erstellen Sie eine <a href="https://marketplace.plentymarkets.com/plentyprojects" target="_blank" rel="noopener">neue Projektanfrage</a> auf plentyMarketplace.</p>
+</div>
+<div class="paragraph">
+<p>Handelt es sich um ein privates Repository, wird zusätzlich zur URL des Repositorys ein persönlicher Zugriffstoken benötigt. Hier wird nur beschrieben, wie Sie einen solchen Token auf GitHub erzeugen können, auf anderen Seiten wie GitLab ist der Vorgang jedoch ähnlich. Wenn Sie solch eine Seite nutzen und weitere Informationen benötigen, ziehen Sie bitte die Dokumentation der entsprechenden Seite zu Rate.</p>
 </div>
 <div class="paragraph instruction">
-<p>Git-Repository zur plentymarkets Oberfläche hinzufügen:</p>
+<p>Einen persönlichen Zugriffstoken für private Repositorys erzeugen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie die <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">Tokeneinstellungen</a> auf GitHub.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Generate new token</strong>.
+→ Geben Sie Ihr Passwort ein, um fortzufahren.</p>
+</li>
+<li>
+<p>Geben Sie in das Feld <strong>Token description</strong> eine Beschreibung ein.</p>
+</li>
+<li>
+<p>Aktivieren Sie im Menü <strong>Select scopes</strong> das Kontrollkästchen <strong>repo:status</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Generate token</strong>.
+→ Es wird ein neuer Token erzeugt. Dieser wird im nächsten Schritt benötigt, also lassen Sie die Seite geöffnet oder speichern Sie den Token lokal. Wenn Sie den Token speichern, sollten Sie ihn nach dem Hinzufügen des Plugins wieder löschen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Damit haben Sie jetzt alle notwendigen Informationen, um das Git-Plugin Ihrem plentymarkets System hinzuzufügen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Git-Plugin dem System hinzufügen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -116,17 +146,35 @@
 <p>Öffnen Sie das Menü <strong>Plugins » Git</strong>.</p>
 </li>
 <li>
-<p>Klicken Sie links auf <strong>Neues Repository hinzufügen</strong>.<br>
-→ Die Optionen für die Repository-Einstellungen werden angezeigt.</p>
+<p>Klicken Sie auf <strong>Neues Repository hinzufügen</strong>.<br>
+→ Die Repository-Einstellungen werden angezeigt.</p>
 </li>
 <li>
-<p>Geben Sie die erforderlichen Daten für das Git-Repository ein. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-git-plugins-hinzufuegen">Tabelle 1</a>.</p>
+<p>Geben Sie die URL des Repositorys, Ihren Benutzernamen sowie den zuvor erzeugten Zugriffstoken in die dafür vorgesehenen Felder ein.</p>
+</li>
+<li>
+<p>Geben Sie den Branch an, der für die Installation verwendet werden soll. Standardmäßig ist hier der master-Branch angegeben, Sie sollten sich aber vom Entwickler des Plugins bestätigen lassen, welches der richtige Branch ist und das Feld entsprechend aktualisieren.</p>
 </li>
 <li>
 <p><strong>Speichern</strong> Sie die Einstellungen.<br>
-→ Die Verbindung zum Git-Repository wird geprüft und hergestellt. Es erscheint die Meldung <strong>Repository gespeichert.</strong>.</p>
+→ Die Verbindung zum Git-Repository wird geprüft und hergestellt.</p>
 </li>
 </ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Öffentliche Repositorys</div>
+<div class="paragraph">
+<p>Bei öffentlichen Repositorys müssen keine tatsächlichen Zugangsdaten als Benutzername und Token eingegeben werden. Die beiden Felder dürfen aber auch nicht leer sein. Geben Sie also jeweils eine beliebige Zeichenfolge ein, beispielsweise „Gast“.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <table id="tabelle-git-plugins-hinzufuegen" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 1. Git-Plugins hinzufügen</caption>
@@ -151,10 +199,9 @@
 Bei öffentlichen Repositories einen beliebigen Wert in das Feld eingeben, z.B. <strong>Gast</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Passwort oder Token</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Das Passwort ist Bestandteil der Benutzerdaten des Anbieters (z.B. GitHub) für das Git-Repository.<br>
-Bei öffentlichen Repositories einen beliebigen Wert in das Feld eingeben, z.B. <strong>Gast</strong>.<br>
-Ein Token wird benötigt, wenn die Zwei-Faktor-Authentifizierung beim Anbieter aktiviert wurde.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Token</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Token ist Bestandteil der Benutzerdaten des Anbieters (z.B. GitHub) für das Git-Repository. Neue Tokens können in den Einstellungen des Anbieters erzeugt werden.<br>
+Bei öffentlichen Repositories einen beliebigen Wert in das Feld eingeben, z.B. <strong>Gast</strong>.<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name des zu installierenden Branch (muss gültige plugin.json-Datei enthalten).</strong></p></td>
