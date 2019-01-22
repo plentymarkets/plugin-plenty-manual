@@ -7,7 +7,10 @@
 <li><a href="#marketplace-plugins-kaufen"><span>1.</span><span> Marketplace-Plugins kaufen</span></a></li>
 <li><a href="#git-plugins-hinzufuegen"><span>2.</span><span> Plugins über Git hinzufügen</span></a>
 <ul class="sectlevel2">
-<li><a href="#_git_repository_löschen"><span>2.1.</span><span> Git-Repository löschen</span></a></li>
+<li><a href="#git-plugins-hinzufuegen"><span>2.1.</span><span> Git-Plugins zum System hinzufügen</span></a></li>
+<li><a href="#git-branches"><span>2.2.</span><span> Zwischen Branches eines Git-Plugins wechseln</span></a></li>
+<li><a href="#git-commits"><span>2.3.</span><span> Auf Commits wechseln</span></a></li>
+<li><a href="#git-plugins-loeschen"><span>2.4.</span><span> Git-Plugins aus dem System entfernen</span></a></li>
 </ul>
 </li>
 <li><a href="#plugin-sets-verwalten"><span>3.</span><span> Plugin-Übersicht - Plugin-Sets verwalten</span></a></li>
@@ -177,7 +180,7 @@
 </tbody></table>
 </div>
 <table id="tabelle-git-plugins-hinzufuegen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Git-Plugins hinzufügen</caption>
+<caption class="title">Tabelle 1. Tabellenansicht des Menüs <strong>Plugins &gt;&gt; Git</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -190,18 +193,30 @@
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Neues Repository hinzufügen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Öffnet eine Ansicht, in der Einstellungen für ein neues Repository vorgenommen werden können.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Git-Repositorys</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Öffnet eine Ansicht, in der Einstellungen für das ausgewählte Repository vorgenommen werden können.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Löschen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entfernt das Repository aus dem System. Nicht auswählbar, wenn das Plugin noch in mindestens einem Plugin-Set installiert ist.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Repository-URL</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS oder HTTP URL des Git-Repositorys.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Benutzername</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Benutzername ist Bestandteil der Benutzerdaten des Anbieters (z.B. GitHub) für das Git-Repository.<br>
-Bei öffentlichen Repositories einen beliebigen Wert in das Feld eingeben, z.B. <strong>Gast</strong>.</p></td>
+Bei öffentlichen Repositorys einen beliebigen Wert in das Feld eingeben, z.B. <strong>Gast</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Token</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Token ist Bestandteil der Benutzerdaten des Anbieters (z.B. GitHub) für das Git-Repository. Neue Tokens können in den Einstellungen des Anbieters erzeugt werden.<br>
-Bei öffentlichen Repositories einen beliebigen Wert in das Feld eingeben, z.B. <strong>Gast</strong>.<br></p></td>
+Bei öffentlichen Repositorys einen beliebigen Wert in das Feld eingeben, z.B. <strong>Gast</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name des zu installierenden Branch (muss gültige plugin.json-Datei enthalten).</strong></p></td>
@@ -209,10 +224,189 @@ Bei öffentlichen Repositories einen beliebigen Wert in das Feld eingeben, z.B. 
 </tr>
 </tbody>
 </table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Tabellenansicht des Menüs <strong>Plugins &gt;&gt; Plugin-Übersicht &gt;&gt; Plugin-Detailansicht &gt;&gt; Git</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fetch</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lädt alle Commits der ausgewählten Branch herunter. Die Liste der Commits wird entsprechend aktualisiert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pull</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lädt alle Commits der ausgewählten Branch herunter und aktualisiert alle Dateien. Die Liste der Commits wird entsprechend aktualisiert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Branch</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dropdown-Menü, mit dem zwischen Branches des Repositorys gewechselt werden kann. Der aktuell ausgewählte Branch wird angezeigt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Commit-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Textfeld für die Auswahl bestimmter Commits.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Checkout</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wechselt Branch auf die im Textfeld eingegebe Commit-ID, falls diese im Repository vorhanden ist.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Commits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durch Klicken kann der Commit wie über <strong>Checkout</strong> ausgewählt werden. Bestätigung notwendig.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Commit-ID in Zwischenablage kopieren.</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die ID des Commits wird in die Zwischenablage kopiert und kann dann in das Feld <strong>Commit-ID</strong> eingefügt werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auf GitHub ansehen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Öffnet die in dem Commit vorgenommenen Änderungen in einem neuen Tab.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
-<h3 id="_git_repository_löschen">2.1. Git-Repository löschen</h3>
+<h3 id="git-plugins-hinzufuegen">2.1. Git-Plugins zum System hinzufügen</h3>
+<div class="paragraph instruction">
+<p>Git-Repository hinzufügen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Plugins &gt;&gt; Git</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Neues Repository hinzufügen</strong>.<br>
+→ Die Ansicht <strong>Repository Einstellungen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie in das Feld <strong>Repository URL</strong> die URL des Git-Repositorys ein, das Sie hinzufügen möchten.</p>
+</li>
+<li>
+<p>Geben Sie in das Feld <strong>Benutzername</strong> den Namen Ihres Git-Kontos ein. Wenn Sie ein öffentliches Repository hinzufügen, geben Sie eine beliebige Zeichenfolge ein.</p>
+</li>
+<li>
+<p>Geben Sie in das Feld <strong>Passwort oder Token</strong> das mit dem Namen assoziierte Passwort oder den mit dem Namen assoziierten Token ein. Wenn Sie ein öffentliches Repository hinzufügen, geben Sie eine beliebige Zeichenfolge ein.</p>
+</li>
+<li>
+<p>Geben Sie in das Feld <strong>Branchname für Installation (Muss valide plugin.json enthalten)</strong> den Namen des Branches ein, auf den Sie standardmäßig zugreifen möchten. Standardmäßig ist <strong>master</strong> angegeben. Sie können nach der Installation zwischen den Branches des Repositorys wechseln. Beachten Sie, dass der ausgewählte Branch eine gültige plugin.json-Datei enthalten muss. Weitere Informationen zur plugin.json-Datei finden Sie auf unserer <a href="https://developers.plentymarkets.com/marketplace/plugin-requirements#marketplace-pluginjson" target="_blank" rel="noopener">Entwicklerseite</a> (nur auf Englisch verfügbar).</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">plugin.json-Datei</div>
 <div class="paragraph">
-<p>Im Menü <strong>Plugins » Git</strong> können Repositories über <strong>Löschen</strong> gelöscht werden, wenn das Plugin in allen Sets deaktiviert wurde.</p>
+<p>Wenn ein Plugin keine gültige plugin.json-Datei enthält, führt dies beim Bereitstellen von plugin-Sets zu Fehlern. Deshalb wird beim Hinzufügen von Plugins über Git bereits überprüft, ob eine solche gültige Datei vorliegt.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="git-branches">2.2. Zwischen Branches eines Git-Plugins wechseln</h3>
+<div class="paragraph">
+<p>Es ist üblich, in einem Git-Repository mit verschiedenen Branches zu arbeiten, um Änderungen an Dateien vorzunehmen, ohne dass diese Änderungen direkte Auswirkungen auf die eigentliche Codebasis haben. Dadurch kann neuer Code vor dem tatsächlichen Implementieren nochmal überprüft werden. Auch in plentymarkets ist es möglich, mit verschiedenen Branches eines Repositorys zu arbeiten.</p>
+</div>
+<div class="paragraph instruction">
+<p>Branch wechseln:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Plugins &gt;&gt; Plugin-Übersicht</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf das Plugin-Set, das Sie bearbeiten möchten.<br>
+→ Der Bereich, in dem Sie das ausgewählte Plugin-Set bearbeiten können, wird geöffnet.</p>
+</li>
+<li>
+<p>Klicken Sie auf das Git-Plugin, das Sie bearbeiten möchten.<br>
+→ Die Plugin-Detailansicht wird geöffnet.</p>
+</li>
+<li>
+<p>Öffnen Sie im Menübaum das Menü <strong>Git</strong>.</p>
+</li>
+<li>
+<p>Wählen Sie aus dem Dropdown-Menü <strong>Branch</strong> den Branch aus, zu dem Sie wechseln möchten.<br>
+→ Eine Meldung bestätigt, dass das Wechseln des Branches erfolgreich war. Die Einstellungen werden automatisch gespeichert.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Bei der Auswahl des Branches handelt es sich um eine lokale Einstellungen. Das heißt, es kann für dasselbe Plugin in jedem Set ein anderer Branch ausgewählt werden. Somit können Sie beispielsweise den stabilen Branch in Ihrem aktiven Plugin-Set verwenden und gleichzeitig in einem inaktiven Set auf einem anderen Branch ein neues Feature testen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="git-commits">2.3. Auf Commits wechseln</h3>
+<div class="paragraph">
+<p>Wenn Sie eine andere Version Ihres Repositorys aktivieren möchten, für diese Version aber keinen eigenen Branch erstellt haben, können Sie auch auf einzelne Commits zugreifen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Auf Commits wechseln:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Plugins &gt;&gt; Plugin-Übersicht</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf das Plugin-Set, das Sie bearbeiten möchten.<br>
+→ Der Bereich, in dem Sie das ausgewählte Plugin-Set bearbeiten können, wird geöffnet.</p>
+</li>
+<li>
+<p>Klicken Sie auf das Git-Plugin, das Sie bearbeiten möchten.<br>
+→ Die Plugin-Detailansicht wird geöffnet.</p>
+</li>
+<li>
+<p>Öffnen Sie im Menübaum das Menü <strong>Git</strong>.</p>
+</li>
+<li>
+<p>Kopieren Sie die Commit-ID des Commits, auf den Sie wechseln möchten. In der Detailansicht werden die letzten 50 Commits für den ausgewählten Branch angezeigt. Sie können die Commit-ID kopieren, indem Sie in der Zeile des gewünschten Commits auf <strong>Commit-ID in Zwischenablage kopieren.</strong> klicken. Wenn Sie auf einen Commit wechseln möchten, der mehr als 50 Commits zurückliegt, können Sie die gleichen Schritte in der Commits-Übersicht Ihres Git-Repositorys durchführen.</p>
+</li>
+<li>
+<p>Fügen Sie die kopierte ID in das Feld <strong>Commit-ID</strong> ein.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Checkout</strong>.<br>
+→ <strong><em>Oder</em></strong>: Wenn Sie auf einen der letzten 50 Commits wechseln möchten, können Sie auch auf den Namen des Commits klicken und den Wechsel durch Klicken auf <strong>Ok</strong> bestätigen.<br>
+→ Eine Meldung bestätigt, dass das Wechseln auf den eingegeben Commit erfolgreich war und als Branch wird <strong>Head@Commit-ID</strong> angezeigt. Die Einstellungen werden automatisch gespeichert.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="git-plugins-loeschen">2.4. Git-Plugins aus dem System entfernen</h3>
+<div class="paragraph">
+<p>Wenn ein Git-Plugin nicht mehr benötigt wird, können Sie es komplett aus dem System entfernen. Beachten Sie, dass Plugins nur gelöscht werden können, wenn sie in keinem Plugin-Set mehr installiert sind.</p>
+</div>
+<div class="paragraph instruction">
+<p>Git-Repository löschen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>Plugins &gt;&gt; Git</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Löschen</strong>, um das entsprechende Repository aus dem System zu entfernen.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -223,7 +417,7 @@ Bei öffentlichen Repositories einen beliebigen Wert in das Feld eingeben, z.B. 
 <p>Die nachfolgende Tabelle enthält eine Liste aller Elemente des Menüs <strong>Plugin-Übersicht</strong> sowie eine kurze Beschreibung dieser Elemente. Außerdem finden Sie in diesem Abschnitt Anweisungen zu der Erstellung, Bearbeitung und Löschung von Plugin-Sets.</p>
 </div>
 <table id="tabelle-plugin-uebersicht" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 2. Tabellenansicht des Menüs <strong>Plugin » Plugin-Übersicht</strong></caption>
+<caption class="title">Tabelle 3. Tabellenansicht des Menüs <strong>Plugin » Plugin-Übersicht</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
