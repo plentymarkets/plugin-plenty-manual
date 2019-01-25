@@ -381,7 +381,7 @@ class SearchService
 
         $suggestArray = array();
 
-        $itemsNb = count($suggestArrayData) / 2;
+        $result = array();
 
         if(isset($suggestArrayData["suggest"]))
         {
@@ -395,12 +395,30 @@ class SearchService
                 array_push($suggestArray, $suggestion["text"]);
             }
 
-            $result = array_unique($suggestArray);
+            foreach ($suggestArrayData["suggest"]["suggestion_title_content_1"][0]["options"] as $suggestion)
+            {
+                array_push($suggestArray, $suggestion["text"]);
+            }
+
+            foreach ($suggestArrayData["suggest"]["suggestion_title_1"][0]["options"] as $suggestion)
+            {
+                array_push($suggestArray, $suggestion["text"]);
+            }
+
+            $resultTemp = array_unique($suggestArray);
+
+            foreach($resultTemp as $key => $value)
+            {
+                $result = $this->searchForWords($value);
+            }
 
             return $result;
         }
-
-        return  $this->createArrayForSuggestion($suggestArrayData, $itemsNb);
+        else
+        {
+            $itemsNb = count($suggestArrayData) / 4;
+            return  $this->createArrayForSuggestion($suggestArrayData, $itemsNb);
+        }
 
 
     }
@@ -421,7 +439,7 @@ class SearchService
                         "field" => "sections.content",
                         "real_word_error_likelihood" => 0.95,
                         "max_errors" => 0.95,
-                        "confidence" => 1.0,
+                        "confidence" => 2.0,
                         "size" => 3,
                         "gram_size" => 1,
                         "shard_size" => 1,
@@ -449,7 +467,7 @@ class SearchService
                         "field" => "description",
                         "real_word_error_likelihood" => 0.95,
                         "max_errors" => 0.95,
-                        "confidence" => 1.0,
+                        "confidence" => 2.0,
                         "size" => 4,
                         "gram_size" => 1,
                         "shard_size" => 1,
@@ -467,6 +485,62 @@ class SearchService
                             ],
                             "params" => [
                                 "field_name" => "description"
+                            ],
+                            "prune" => true
+                        ]
+                    ]
+                ],
+                "suggestion_title_content_".$index => [
+                    "phrase" => [
+                        "field" => "sections.title",
+                        "real_word_error_likelihood" => 0.95,
+                        "max_errors" => 0.95,
+                        "confidence" => 2.0,
+                        "size" => 4,
+                        "gram_size" => 1,
+                        "shard_size" => 1,
+                        "highlight" => [
+                            "pre_tag" => "<em>",
+                            "post_tag" => "</em>"
+                        ],
+                        "collate" => [
+                            "query" => [
+                                "inline" => [
+                                    "match" => [
+                                        "" => ""
+                                    ]
+                                ]
+                            ],
+                            "params" => [
+                                "field_name" => "sections.title"
+                            ],
+                            "prune" => true
+                        ]
+                    ]
+                ],
+                "suggestion_title_".$index => [
+                    "phrase" => [
+                        "field" => "title",
+                        "real_word_error_likelihood" => 0.95,
+                        "max_errors" => 0.95,
+                        "confidence" => 2.0,
+                        "size" => 4,
+                        "gram_size" => 1,
+                        "shard_size" => 1,
+                        "highlight" => [
+                            "pre_tag" => "<em>",
+                            "post_tag" => "</em>"
+                        ],
+                        "collate" => [
+                            "query" => [
+                                "inline" => [
+                                    "match" => [
+                                        "" => ""
+                                    ]
+                                ]
+                            ],
+                            "params" => [
+                                "field_name" => "title"
                             ],
                             "prune" => true
                         ]
@@ -494,66 +568,129 @@ class SearchService
 
         $suggestedArrayDescriptionTemp = array();
 
+        $suggestedArrayTitleContentTemp = array();
+
+        $suggestedArrayTitleTemp = array();
+
+
         for($index = 1; $index <= $itemsNb; $index++)
         {
-            if(empty($suggestionArray["suggestion_content_".$index][0]["options"]))
+            if(empty($suggestionArray["suggestion_content_".$index][0]["options"]) && empty($suggestionArray["suggestion_description_".$index][0]["options"]) && empty($suggestionArray["suggestion_title_content_".$index][0]["options"]) && empty($suggestionArray["suggestion_title_".$index][0]["options"]))
             {
                 array_push($arrayTemp, $suggestionArray["suggestion_content_".$index][0]["text"]);
-            }
 
-            foreach ($suggestionArray["suggestion_content_".$index][0]["options"] as $suggestion)
+                $suggestedArrayContentTemp[$index] = $arrayTemp;
+
+                $suggestedArrayDescriptionTemp[$index] = $arrayTemp;
+
+                $suggestedArrayTitleContentTemp[$index] = $arrayTemp;
+
+                $suggestedArrayTitleTemp[$index] =   $arrayTemp;
+
+                $arrayTemp = array();
+
+            }
+            else
             {
-                array_push($arrayTemp, $suggestion["text"]);
+
+                $suggestionMissing = array();
+
+                foreach ($suggestionArray["suggestion_content_".$index][0]["options"] as $suggestion)
+                {
+                    array_push($arrayTemp, $suggestion["text"]);
+                }
+
+                if(empty($suggestionMissing) && !empty($arrayTemp))
+                {
+                    $suggestionMissing = $arrayTemp;
+                }
+
+                $suggestedArrayContentTemp[$index] = $arrayTemp;
+
+                $arrayTemp = array();
+
+                foreach ($suggestionArray["suggestion_description_".$index][0]["options"] as $suggestion)
+                {
+                    array_push($arrayTemp, $suggestion["text"]);
+                }
+
+                if(empty($suggestionMissing) && !empty($arrayTemp))
+                {
+                    $suggestionMissing = $arrayTemp;
+                }
+
+                $suggestedArrayDescriptionTemp[$index] = $arrayTemp;
+
+                $arrayTemp = array();
+
+                foreach ($suggestionArray["suggestion_title_content_".$index][0]["options"] as $suggestion)
+                {
+                    array_push($arrayTemp, $suggestion["text"]);
+                }
+
+                if(empty($suggestionMissing) && !empty($arrayTemp))
+                {
+                    $suggestionMissing = $arrayTemp;
+                }
+
+                $suggestedArrayTitleContentTemp[$index] = $arrayTemp;
+
+                $arrayTemp = array();
+
+                foreach ($suggestionArray["suggestion_title_".$index][0]["options"] as $suggestion)
+                {
+                    array_push($arrayTemp, $suggestion["text"]);
+                }
+
+                if(empty($suggestionMissing) && !empty($arrayTemp))
+                {
+                    $suggestionMissing = $arrayTemp;
+                }
+
+                $suggestedArrayTitleTemp[$index] = $arrayTemp;
+
+                $arrayTemp = array();
+
+                if(empty($suggestionArray["suggestion_content_".$index][0]["options"]))
+                {
+                    $suggestedArrayContentTemp[$index] = $suggestionMissing;
+                }
+
+                if(empty($suggestionArray["suggestion_description_".$index][0]["options"]))
+                {
+                    $suggestedArrayDescriptionTemp[$index] = $suggestionMissing;
+
+                }
+
+                if(empty($suggestionArray["suggestion_title_content_".$index][0]["options"]))
+                {
+                    $suggestedArrayTitleContentTemp[$index] = $suggestionMissing;
+                }
+
+                if(empty($suggestionArray["suggestion_title_".$index][0]["options"]))
+                {
+                    $suggestedArrayTitleTemp[$index] = $suggestionMissing;
+                }
+
             }
 
-            $suggestedArrayContentTemp[$index] = $arrayTemp;
-
-            $arrayTemp = array();
-
         }
 
-        for($index = 1; $index <= $itemsNb; $index++)
+        $suggestionArrayTemp = $this->createCombinedSuggestionArray($suggestedArrayTitleTemp, $suggestedArrayDescriptionTemp, $suggestedArrayContentTemp, $suggestedArrayTitleContentTemp);
+
+        foreach($suggestionArrayTemp as $key => $value)
         {
-            if(empty($suggestionArray["suggestion_description_".$index][0]["options"]))
-            {
-                array_push($arrayTemp, $suggestionArray["suggestion_description_".$index][0]["text"]);
-            }
-
-            foreach ($suggestionArray["suggestion_description_".$index][0]["options"] as $suggestion)
-            {
-                array_push($arrayTemp, $suggestion["text"]);
-            }
-
-            $suggestedArrayDescriptionTemp[$index] = $arrayTemp;
-
-            $arrayTemp = array();
-
+            $suggestionsTemp[$key] = $this->searchForWords($value);
         }
 
-        $suggestedArrayContent = $this->createCombinedArray($suggestedArrayContentTemp[1], $suggestedArrayContentTemp[2]);
+        $suggestionArray = $this->createCombinedArray($suggestionsTemp[0], $suggestionsTemp[1]);
 
-        for($i = 3; $i <= count($suggestedArrayContentTemp); $i++)
+        for($i = 2; $i < count($suggestionsTemp); $i++)
         {
-            $suggestedArrayContent = $this->createCombinedArray($suggestedArrayContentTemp, $suggestedArrayContentTemp[$i]);
+            $suggestionArray = $this->createCombinedArray($suggestionArray, $suggestionsTemp[$i]);
         }
 
-        $suggestArray = $suggestedArrayContent;
-
-        $suggestedArrayDescription = $this->createCombinedArray($suggestedArrayDescriptionTemp[1], $suggestedArrayDescriptionTemp[2]);
-
-        for($i = 3; $i <= count($suggestedArrayDescriptionTemp); $i++)
-        {
-            $suggestedArrayDescription = $this->createCombinedArray($suggestedArrayDescription, $suggestedArrayDescriptionTemp[$i]);
-        }
-
-        foreach ($suggestedArrayDescription as $key => $value)
-        {
-            array_push($suggestArray, $value);
-        }
-
-        $result = array_unique($suggestArray);
-
-        return $result;
+        return $suggestionArray;
 
     }
 
@@ -580,4 +717,227 @@ class SearchService
         return $resultArray;
 
     }
+
+    /**
+     * @param $suggestedArrayTitleTemp
+     * @param $suggestedArrayDescriptionTemp
+     * @param $suggestedArrayContentTemp
+     * @param $suggestedArrayTitleContentTemp
+     * @return array
+     */
+    private function createCombinedSuggestionArray($suggestedArrayTitleTemp, $suggestedArrayDescriptionTemp, $suggestedArrayContentTemp, $suggestedArrayTitleContentTemp)
+    {
+
+        $suggestArray = array();
+
+        foreach($suggestedArrayTitleTemp as $key => $value)
+        {
+            array_push($suggestArray, $value[0]);
+        }
+
+        foreach($suggestedArrayDescriptionTemp as $key => $value)
+        {
+            array_push($suggestArray, $value[0]);
+        }
+
+        foreach($suggestedArrayContentTemp as $key => $value)
+        {
+            array_push($suggestArray, $value[0]);
+        }
+
+        foreach($suggestedArrayTitleContentTemp as $key => $value)
+        {
+            array_push($suggestArray, $value[0]);
+        }
+
+        $result = array_unique($suggestArray);
+
+
+        return $result;
+    }
+
+    /**
+     * @param $query
+     * @return array
+     */
+    private function searchForWords($query)
+    {
+        $conjunctive = true;
+        $operator = $conjunctive ? "and" : "or";
+        $sectionQuery = [
+            "nested" => [
+                "path" => "sections",
+                "query" => [
+                    "dis_max" => [
+                        "queries" => [
+                            [
+                                "match" => [
+                                    "sections.title" => [ "query" => $query, "operator" => $operator ]
+                                ]
+                            ],
+                            [
+                                "match" => [
+                                    "sections.content" => [ "query" => $query, "operator" => $operator ]
+                                ]
+                            ]
+                        ],
+                        "tie_breaker" => 0.3
+                    ]
+                ],
+                "inner_hits" => [
+                    "_source" => [
+                        "includes" => [ "id", "url", "title", "content" ]
+                    ],
+                    "highlight" => [
+                        "pre_tags" => ["<p>"],
+                        "post_tags" => ["</p>"],
+                        "fields" => [
+                            "sections.title" => ["number_of_fragments" => 0],
+                            "sections.content" => ["number_of_fragments" => 1, "fragment_size" => $this->snippetLength]
+                        ]
+                    ]
+                ]
+            ]
+        ];
+
+        $documentQuery = [
+            "dis_max" => [
+                "queries" => [
+                    [
+                        "match" => [
+                            "title" => [ "query" => $query, "operator" => $operator ]
+                        ]
+                    ],
+                    [
+                        "match" => [
+                            "description" => [ "query" => $query, "operator" => $operator ]
+                        ]
+                    ]
+                ],
+                "tie_breaker" => 0.3
+            ],
+        ];
+
+        $mainQuery = [
+            "_source" => ["url", "title", "description"],
+            "query" => [
+                "dis_max" => [
+                    "queries" => [
+                        $sectionQuery,
+                        $documentQuery
+                    ],
+                    "tie_breaker" => 0.3
+                ]
+            ],
+            "highlight" => [
+                "pre_tags" => ["<p>"],
+                "post_tags" => ["</p>"],
+                "fields" => [
+                    "title" => ["number_of_fragments" => 0],
+                    "description" => ["number_of_fragments" => 1, "fragment_size" => $this->snippetLength]
+                ]
+            ]
+        ];
+
+
+        $requestArray = array('host' => $this->host,
+            'type' => $this->type,
+            'Query' => $mainQuery);
+
+        $resultTemp = $this->serverCall($requestArray);
+
+        return $this->extractHighlights($resultTemp);;
+
+    }
+
+    /**
+     * @param $resultData
+     * @return array
+     */
+    private function extractHighlights($resultData)
+    {
+        $pattern = "/<p>(.*?)<\/p>/";
+
+        $highlights = array();
+
+        $result = array();
+
+        foreach( $resultData["hits"]["hits"] as $hit )
+        {
+
+            if(isset($hit["highlight"]["title"]))
+            {
+                foreach ($hit["highlight"]["title"] as $title)
+                {
+                    if(preg_match($pattern,$title,$matches))
+                    {
+                        $tempVariable = $this->removeHighlight($matches[0]);
+                        array_push($highlights, $tempVariable);
+                    }
+                }
+            }
+
+            if(isset($hit["highlight"]["description"]))
+            {
+                foreach ($hit["highlight"]["description"] as $description)
+                {
+                    if(preg_match($pattern,$description,$matches))
+                    {
+                        $tempVariable = $this->removeHighlight($matches[0]);
+                        array_push($highlights, $tempVariable);
+                    }
+                }
+            }
+
+
+            foreach($hit["inner_hits"]["sections"]["hits"]["hits"] as $innerHit)
+            {
+                if(isset($innerHit["highlight"]["sections.content"]))
+                {
+                    foreach ($innerHit["highlight"]["sections.content"] as $content)
+                    {
+                        if(preg_match($pattern,$content,$matches))
+                        {
+                            $tempVariable = $this->removeHighlight($matches[0]);
+                            array_push($highlights, $tempVariable);
+                        }
+                    }
+                }
+
+                if(isset($innerHit["highlight"]["sections.title"]))
+                {
+                    foreach ($innerHit["highlight"]["sections.title"] as $titleContent)
+                    {
+                        if(preg_match($pattern,$titleContent,$matches))
+                        {
+                            $tempVariable = $this->removeHighlight($matches[0]);
+                            array_push($highlights, $tempVariable);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        $resultTemp = array_unique($highlights);
+
+        foreach($resultTemp as $value)
+        {
+            array_push($result, $value);
+        }
+
+        return $result;
+    }
+
+    /**
+     * @param $value
+     * @return string
+     */
+    private function removeHighlight($value)
+    {
+        $result = str_replace("<p>","",$value);
+        $result = str_replace("</p>","", $result);
+        return strtolower($result);
+    }
+
 }
