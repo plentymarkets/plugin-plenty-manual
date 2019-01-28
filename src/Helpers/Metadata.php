@@ -7593,21 +7593,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "dffa5fb5e542930d40349edb15100c11",
-				"path" => "omni-channel/order-referrer",
-				"position" => 40,
-				"urlName" => "order-referrer",
-				"url" => "/en/omni-channel/order-referrer",
-				"level" => 2,
-				"title" => "Order referrer",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Order referrer. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
