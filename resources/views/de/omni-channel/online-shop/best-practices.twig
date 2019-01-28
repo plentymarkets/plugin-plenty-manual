@@ -1250,7 +1250,15 @@ class MyThemeContext extends SingleItemContext implements ContextInterface
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in ../../_best-practices/omni-channel/online-shop/bp-ceres-weitere-cross-selling-listen.adoc - include::assets/contexts-single-item-code.txt[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div slot="CrossSellingAccessory"&gt;
+	{{ component("Ceres::Containers.Components.ContainerItemList") }}
+	&#123;&#37; if accessory|length &gt; 0 &#37;&#125;
+        		&lt;div class="crossSelling"&gt;
+        			&lt;span class="h3"&gt;Das passt dazu:&lt;/span&gt;
+        			&lt;container-item-list :items="{{ accessory|json_encode }}"&gt;&lt;/container-item-list&gt;
+      		&lt;/div&gt;
+	&#123;&#37; endif &#37;&#125;
+   &lt;/div&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1267,7 +1275,42 @@ class MyThemeContext extends SingleItemContext implements ContextInterface
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in ../../_best-practices/omni-channel/online-shop/bp-ceres-weitere-cross-selling-listen.adoc - include::assets/contexts-MyThemeContext-extended.html[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;?php
+namespace ThemeName\Contexts;
+
+use IO\Helper\ContextInterface;
+use Ceres\Contexts\SingleItemContext;
+
+use IO\Services\ItemSearch\Services\ItemSearchService;
+use IO\Services\ItemSearch\SearchPresets\CrossSellingItems;
+
+class MyThemeContext extends SingleItemContext implements ContextInterface
+{
+	public $accessory;
+  public $similar;
+
+	public function init($params)
+	{
+		parent::init($params);
+		$options = array(
+        			"itemId" =&gt; $this-&gt;item['documents'][0]['data']['item']['id'],
+        			"relation" =&gt; "Accessory"      // Nutze die Liste Zubehoer
+       		);
+     		$searchfactory = CrossSellingItems::getSearchFactory( $options );
+     		$searchfactory-&gt;setPage(1, 4); // Begrenze auf 4 Artikel
+      		$result = pluginApp(ItemSearchService::class)-&gt;getResult($searchfactory);
+      		$this-&gt;accessory = $result['documents'];
+
+    $options = array(
+              "itemId" =&gt; $this-&gt;item['documents'][0]['data']['item']['id'],
+              "relation" =&gt; "Similar"      // Nutze die Liste Ähnlich
+          );
+        $searchfactory = CrossSellingItems::getSearchFactory( $options );
+      	$searchfactory-&gt;setPage(1, 4); // Begrenze auf 4 Artikel
+        	$result = pluginApp(ItemSearchService::class)-&gt;getResult($searchfactory);
+        	$this-&gt;similar= $result['documents'];
+	}
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
