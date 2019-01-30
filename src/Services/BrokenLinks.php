@@ -15,8 +15,11 @@ class BrokenLinks
     private $manualHelper;
 
     const RECIPIENTS = [
-      'daniel.borza@plentydevelopment.com',
-      'doku@plentymarkets.com'
+        'doku@plentymarkets.com'
+    ];
+
+    const RECIPIENT_DEV = [
+        'daniel.borza@plentydevelopment.com'
     ];
 
     public function __construct(ConfigRepository $config,
@@ -32,8 +35,6 @@ class BrokenLinks
      */
     public function run()
     {
-        $subject = "No Broken Links";
-
         $result = [
             "German" => [],
             "English" => []
@@ -45,37 +46,50 @@ class BrokenLinks
 
         $result["English"] = $this->brokenLinksArray("en");
 
-        $mailContent = "English broken links:".$break;
-
         if(empty($result["English"]))
         {
-            $mailContent .= "No broken links on English index!".$break;
+            $mailContent = "No broken links on English index!".$break;
+            $mailContentDev = "No broken links on English index!".$break;
         }
         else
         {
+            $nbOfLinks = count($result["English"]);
+            $mailContent = "English broken links: ". $nbOfLinks .$break;
+            $mailContentDev = "English broken links: ". $nbOfLinks .$break;
+
             foreach ($result["English"] as $link)
             {
-                $mailContent .= $link.$break;
+                $mailContent .= $link["url"].$break;
+                $mailContentDev .= $link["url"].$break;
+                $mailContentDev .= $link["ID"].$break;
             }
         }
 
-        $mailContent .= "German broken links:".$break;
         if(empty($result["German"]))
         {
             $mailContent .= "No broken links on German index!".$break;
+            $mailContentDev .= "No broken links on German index!".$break;
         }
         else
         {
+            $nbOfLinks = count($result["German"]);
+            $mailContent .= "German broken links: ". $nbOfLinks .$break;
+            $mailContentDev .= "German broken links: ". $nbOfLinks .$break;
+
             foreach ($result["German"] as $link)
             {
-                $mailContent .= $link.$break;
+                $mailContent .= $link["url"].$break;
+                $mailContentDev .= $link["url"].$break;
+                $mailContentDev .= $link["ID"].$break;
             }
         }
 
         if (\strpos($mailContent, 'http') !== false)
+        {
             $subject = "Broken Links";
-
-        $this->manualHelper->sendMail($mailContent, self::RECIPIENTS, $subject);
+            $this->manualHelper->sendMail($mailContentDev, self::RECIPIENT_DEV, $subject);
+            $this->manualHelper->sendMail($mailContent, self::RECIPIENTS, $subject);
+        }
 
         return $result;
     }
@@ -148,16 +162,11 @@ class BrokenLinks
             "urls" => []
         ];
 
-        if($lang === "de")
-            $langAdd = '';
-        else
-            $langAdd = '/'.$lang;
-
         foreach($resultData["hits"]["hits"] as $hit)
         {
             $doc = [
                 "ID" => $hit["_id"],
-                "url" => "https://knowledge.plentymarkets.com".$langAdd.$hit["_source"]["url"],
+                "url" => "https://knowledge.plentymarkets.com".$hit["_source"]["url"],
             ];
 
             array_push($result["urls"], $doc);
@@ -183,7 +192,7 @@ class BrokenLinks
             $checkUrl = $this->getPageByPath( $url["url"], $pages);
 
             if ($checkUrl === null)
-                array_push($brokenLinksList, $url["url"]);
+                array_push($brokenLinksList, $url);
         }
 
         return $brokenLinksList;
