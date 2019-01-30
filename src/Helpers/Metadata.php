@@ -6678,11 +6678,11 @@ class Metadata {
 						"urlName" => "plus-gartenxxl",
 						"url" => "/en/omni-channel/multi-channel/plus-gartenxxl",
 						"level" => 3,
-						"title" => "Plus.de and GartenXXL.de",
-						"keywords" => "Plus.de, GartenXXL.de, Plus, GartenXXL, Market, Marketplace",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the markets Plus.de and GartenXXL.de in your plentymarkets system.",
+						"title" => "Netto, GartenXXL.de, and GartenXXL.at",
+						"keywords" => "GartenXXL.de, GartenXXL.at, Netto, Market",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the markets Netto Marken-Discount, GartenXXL.de and GartenXXL.at in your plentymarkets system.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Plus.de and GartenXXL.de. The following information is available:",
+						"linkListInto" => "Welcome to the topic Netto, GartenXXL.de, and GartenXXL.at. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7603,9 +7603,9 @@ class Metadata {
 				"url" => "/en/order-processing/orders",
 				"level" => 2,
 				"title" => "Orders",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
+				"keywords" => "Managing orders, Order types, Accounting, Documents, Taxes",
+				"description" => "Learn how to set up your accounting and document templates and how to manage orders in plentymarkets.",
+				"navAlias" => "Overview",
 				"linkListInto" => "Welcome to the topic Orders. The following information is available:",
 				"children" => 				[
 					[
@@ -7803,21 +7803,6 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
-					],
-					[
-						"id" => "952f5d79c3de254d1ae63a6a1b09d9d5",
-						"path" => "order-processing/orders/multi-orders",
-						"position" => 40,
-						"urlName" => "multi-orders",
-						"url" => "/en/order-processing/orders/multi-orders",
-						"level" => 3,
-						"title" => "Multi-orders",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Multi-orders. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
 					],
 					[
 						"id" => "60564f4b4234ab2d8944e7e363676bdb",
