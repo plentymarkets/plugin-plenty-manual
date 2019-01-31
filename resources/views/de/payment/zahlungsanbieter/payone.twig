@@ -1,0 +1,917 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#10"><span>1.</span><span> Wichtige Hinweise</span></a>
+<ul class="sectlevel2">
+<li><a href="#20"><span>1.1.</span><span> Bezahlvorgang mit PAYONE</span></a></li>
+<li><a href="#30"><span>1.2.</span><span> Zahlungseingänge</span></a></li>
+<li><a href="#40"><span>1.3.</span><span> Verfügbare PAYONE-Zahlungsarten</span></a></li>
+</ul>
+</li>
+<li><a href="#50"><span>2.</span><span> Bei PAYONE registrieren</span></a></li>
+<li><a href="#60"><span>3.</span><span> PAYONE in Callisto einrichten</span></a>
+<ul class="sectlevel2">
+<li><a href="#70"><span>3.1.</span><span> Adressprüfung einrichten</span></a></li>
+<li><a href="#80"><span>3.2.</span><span> Bonitätsprüfung einrichten</span></a></li>
+<li><a href="#90"><span>3.3.</span><span> Schnittstellen für PAYONE-Zahlungsarten einrichten</span></a></li>
+<li><a href="#100"><span>3.4.</span><span> SEPA für Lastschrift einrichten</span></a></li>
+</ul>
+</li>
+<li><a href="#110"><span>4.</span><span> Zahlungsarten aktivieren</span></a></li>
+<li><a href="#115"><span>5.</span><span> PAYONE im Callisto Webshop anzeigen</span></a></li>
+<li><a href="#120"><span>6.</span><span> Versandbestätigungen automatisch senden</span></a></li>
+<li><a href="#130"><span>7.</span><span> Rückerstattungen automatisch senden</span></a></li>
+<li><a href="#140"><span>8.</span><span> PAYONE für Shopware verwenden</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Alter Webshop: PAYONE</h1><div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Einrichtung der Schnittstelle nur in Callisto Shops</div>
+<div class="paragraph">
+<p>Diese Handbuchseite beschreibt ausschließlich die Einrichtung der Schnittstelle <strong>PAYONE</strong> für Callisto Shops. Für die Verwendung von <strong>PAYONE</strong> in Ceres Shops erhalten Sie ausführliche Informationen in der Beschreibung des Plugins im <a href="https://marketplace.plentymarkets.com/plugins/payment/Payone_5434" target="_blank" rel="noopener">plentyMarketplace</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>PAYONE ist ein Zahlungsanbieter mit einer breiten Palette an <a href="/auftragsabwicklung/payment/payone#40">Zahlungsarten</a>. Erfahren Sie auf dieser Seite, wie Sie Schnittstellen zu PAYONE einrichten und PAYONE im Webshop anzeigen.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10">1. Wichtige Hinweise</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In diesem Kapitel erhalten Sie wichtige Hinweise zur Integration des Zahlungsanbieters in plentymarkets.</p>
+</div>
+<div class="sect2">
+<h3 id="20">1.1. Bezahlvorgang mit PAYONE</h3>
+<div class="paragraph">
+<p>Der Bezahlvorgang variiert für die unterschiedlichen Zahlungsarten bei PAYONE und wird bei den <a href="/auftragsabwicklung/payment/payone#40">verfügbaren Zahlungsarten</a> detailliert beschrieben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="30">1.2. Zahlungseingänge</h3>
+<div class="paragraph">
+<p>Der Zahlungseingang für Kreditkarten und Onlineüberweisungen wird nach erfolgreichem Abschluss sofort gebucht. Bei Vorkasse, Nachnahme und Rechnung wird der Zahlungseingang erst gebucht, wenn der entsprechende Status über die <a href="/auftragsabwicklung/payment/payone#50">Transaktionsstatus-URL</a> übermittelt wurde. Bei den Zahlungsarten Nachnahme und Rechnung wird der Zahlungseingang erst gebucht, wenn der Versand bestätigt wurde.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="40">1.3. Verfügbare PAYONE-Zahlungsarten</h3>
+<div class="paragraph">
+<p>Nachfolgend finden Sie eine Übersicht der für plentymarkets verfügbaren PAYONE-Zahlungsarten mit der System-ID in Klammern.</p>
+</div>
+<div class="paragraph subhead">
+<p>Kredit-/Debitkarten (3000)</p>
+</div>
+<div class="paragraph">
+<p>Nach der Auswahl einer der nachfolgenden Zahlungsarten wird der Kunde dazu aufgefordert, seine Kreditkartendaten einzugeben. Die Kreditkarten werden zur Vorvalidierung direkt an PAYONE gesendet. Die Daten werden nicht beim Händler gespeichert. Sollte eine Karte am 3D-Secure teilnehmen, erhält der Kunde nach Abschluss der Bestellung einen entsprechenden Hinweis, dass er seine Karte noch durch Klick auf einen Link verifizieren muss. Beim Klick auf den Link wird der Kunde auf eine entsprechende Seite weitergeleitet. Bei Bestätigung oder Abbruch wird der Kunde zurück in den Webshop geleitet.</p>
+</div>
+<div class="paragraph">
+<p>Folgende Zahlungsarten sind verfügbar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Visa (3010)</p>
+</li>
+<li>
+<p>MasterCard (3020)</p>
+</li>
+<li>
+<p>American Express (3030)</p>
+</li>
+<li>
+<p>Carte Bleue (3040)</p>
+</li>
+<li>
+<p>Diners Club (3050)</p>
+</li>
+<li>
+<p>Discover (3060)</p>
+</li>
+<li>
+<p>JCB (3070)</p>
+</li>
+<li>
+<p>Maestro (3080)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>Online-Überweisungen (3200)</p>
+</div>
+<div class="paragraph">
+<p>Nach Auswahl einer der folgenden Zahlungsarten wird der Kunde aufgefordert, seine Überweisungsdaten einzugeben. Die Überweisungsdaten werden direkt an PAYONE zur Vorvalidierung gesendet. Die Daten werden nicht beim Händler gespeichert. Nach Abschluss der Bestellung wird der Kunde auf die entsprechende Seite des Zahlungsanbieters weitergeleitet. Dort muss der Kunde den beschriebenen Schritten folgen. Bei Bestätigung oder Abbruch wird der Kunde zurück in den Webshop geleitet.</p>
+</div>
+<div class="paragraph">
+<p>Folgende Zahlungsarten sind verfügbar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sofort Überweisung (3210)</p>
+</li>
+<li>
+<p>giropay (3220)</p>
+</li>
+<li>
+<p>eps (3230) - nur für Österreich</p>
+</li>
+<li>
+<p>PostFinance E-Finance (3240)</p>
+</li>
+<li>
+<p>PostFinance Card (3250)</p>
+</li>
+<li>
+<p>iDEAL (3260) - nur für Niederlande</p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>e-Wallet (3400)</p>
+</div>
+<div class="paragraph">
+<p>Nach Abschluss der Bestellung wird der Kunde zum Zahlungsanbieter weitergeleitet, um sich einzuloggen und die Daten zu bestätigen. Nach der Bestätigung oder bei Abbruch wird der Kunde zurück in den Webshop geleitet.</p>
+</div>
+<div class="paragraph">
+<p>Folgende Zahlungsarten sind verfügbar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>PayPal (3410)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>Kontobasierte Zahlungsarten (3500)</p>
+</div>
+<div class="paragraph">
+<p>Der Kunde wird nach Auswahl der Zahlungsart <strong>Lastschrift</strong> aufgefordert, seine Bankdaten in einem Eingabeformular zu hinterlegen. Die Daten werden direkt an PAYONE übermittelt. Eine Plausibilitätskontrolle wird durchgeführt. Die Daten werden nicht beim Händler gespeichert. Die Zahlung wird nach Abschluss der Bestellung veranlasst.</p>
+</div>
+<div class="paragraph">
+<p>Folgende Zahlungsarten sind verfügbar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lastschrift (3510)</p>
+</li>
+<li>
+<p>Offene Rechnung (3520)</p>
+</li>
+<li>
+<p>Vorkasse (3530)</p>
+</li>
+<li>
+<p>Nachnahme (3540)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>PAYONE: Kauf auf Rechnung (3600)</p>
+</div>
+<div class="paragraph">
+<p>Nach Abschluss der Bestellung wird der Auftrag an den Zahlungsanbieter, z.B. <a href="/auftragsabwicklung/payment/klarna">Klarna</a>, gesendet. Wenn eine positive Antwort erfolgt, wird der Auftrag angelegt. Der Kunde erhält eine Erfolgsmeldung. Kommt es zu einem Fehler oder wird die Zahlungsanfrage abgelehnt, wird der Auftrag nicht angelegt. Der Kunde erhält in der Bestellübersicht eine Fehlermeldung.</p>
+</div>
+<div class="paragraph">
+<p>Folgende Zahlungsarten sind verfügbar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klarna Rechnungskauf (3610)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph subhead">
+<p>PAYONE: Finanzierung (3700)</p>
+</div>
+<div class="paragraph">
+<p>Beim Auswählen der Zahlungsart, z.B. Klarna Ratenkauf, kann der Kunde direkt die Laufzeit wählen und die entsprechende Rate einsehen. Nach Abschluss der Bestellung wird der Auftrag gesendet. Sofern eine positive Antwort erfolgt, wird der Auftrag angelegt und der Kunde erhält eine Erfolgsmeldung. Kommt es zu einem Fehler oder wird die Zahlungsanfrage abgelehnt, wird der Auftrag nicht angelegt. Der Kunde erhält in der Bestellübersicht eine Fehlermeldung.</p>
+</div>
+<div class="paragraph">
+<p>Folgende Zahlungsarten sind verfügbar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Klarna Ratenkauf (3710)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="50">2. Bei PAYONE registrieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bevor Sie PAYONE in plentymarkets verwenden können, müssen Sie sich dort registrieren. Registrieren Sie sich bei PAYONE, indem Sie dort einen Account einrichten. Füllen Sie das <a href="https://www.payone.de/kontakt/angebot-anfordern/" target="_blank" rel="noopener">Formular</a> auf der PAYONE-Website aus. Sie erhalten dann die Zugangsdaten, die Sie für die Konfiguration in plentymarkets benötigen. Anschließend hinterlegen Sie die Transaktionsstatus-URL nach folgendem Muster im PAYONE-Backend:</p>
+</div>
+<div class="paragraph">
+<p><strong>IHRE_DOMAIN/plenty/api/payone.php</strong></p>
+</div>
+<div class="paragraph">
+<p>Diese URL passen Sie gemäß dem Domainnamen Ihres Shops an und hinterlegen sie in Ihrem Account im PAYONE-Backend.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="60">3. PAYONE in Callisto einrichten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Um die Schnittstelle zu PAYONE für Ihren Callisto Shop in plentymarkets einzurichten, gehen Sie wie im Folgenden beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Schnittstelle zu PAYONE einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Aufträge » Zahlung » Zahlungsarten</strong>.</p>
+</li>
+<li>
+<p>Aktivieren Sie die Einstellung <strong>Auch inaktive zeigen</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>International</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>PAYONE</strong>.<br>
+→ Das Tab <strong>Schnittstelle</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Klappen Sie den Mandanten auf.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-schnittstelleneinrichtung-payone">Tabelle 1</a>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-schnittstelleneinrichtung-payone" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. PAYONE-Schnittstelle einrichten</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kundennummer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Merchant-ID</strong> eingeben, wie von PAYONE erhalten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zahlungsportal-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Portal-ID</strong> eingeben, wie von PAYONE erhalten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sub-Account-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Sub-Accounts gemäß Bereich <strong>ACCOUNTS</strong> bei PAYONE eingeben.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schlüssel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key</strong> eingeben, wie von PAYONE erhalten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Testmodus aktiv</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ja</strong> wählen, um den Testmodus zu aktivieren. <strong>Nein</strong> wählen, um den Testmodus zu deaktivieren. Die Schnittstelle ist dann im Live-Modus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shopware PAYONE-Autorisierung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aktivieren, wenn PAYONE für <a href="https://docs.google.com/document/d/10mPeV3xqx4We71dYQdPmJK2qvb21Rpym6FG_tKwHKfc/edit#heading=h.h38ew7hip4tl" target="_blank" rel="noopener">Shopware</a> verwendet werden soll. Weitere Informationen finden Sie unter <a href="/auftragsabwicklung/payment/payone#140">PAYONE für Shopware verwenden</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="70">3.1. Adressprüfung einrichten</h3>
+<div class="paragraph">
+<p>Bei Bedarf richten Sie außerdem eine Adressprüfung ein. Bei der Adressprüfung werden u.a. Fehler in der Adresseingabe erkannt und auf Wunsch automatisch korrigiert. Außerdem gewährleistet die Adressprüfung zusätzliche Sicherheit hinsichtlich der Identität des Kunden.</p>
+</div>
+<div class="paragraph instruction">
+<p>Adressprüfung einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Aufträge » Zahlung » Zahlungsarten</strong>.</p>
+</li>
+<li>
+<p>Aktivieren Sie die Einstellung <strong>Auch inaktive zeigen</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>International</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>PAYONE</strong>.<br>
+→ Das Tab <strong>Schnittstelle</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Klappen Sie den Bereich <strong>Adressprüfung</strong> auf.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-einrichtung-adresspruefung-payolution">Tabelle 2</a>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-einrichtung-adresspruefung-payolution" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Adressprüfung einrichten</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktiv</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ja</strong> wählen, um die Adressprüfung zu aktivieren.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Testmodus aktiv</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ja</strong> wählen, um den Testmodus zu aktivieren. <strong>Nein</strong> wählen, um den Testmodus zu deaktivieren. Die Adressprüfung ist dann im Live-Modus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rechnungsadresse;<br>
+Lieferadresse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Art der Adressprüfung wählen.<br>
+<strong>Basic</strong> = Die Adresse wird geprüft.<br>
+<strong>Nicht prüfen</strong> = Die Adresse wird nicht geprüft.<br>
+<strong>Person (nur für Deutschland möglich)</strong> = Zusätzlich zur Adresse wird der Name geprüft.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Automatische Korrektur</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatische Korrektur aktivieren.<br>
+<strong>JA</strong> = Fehler werden bei der Adresseingabe automatisch korrigiert.<br>
+<strong>NEIN</strong> = Fehler werden bei der Adresseingabe nicht automatisch korrigiert.<br>
+<strong>Benutzereingabe</strong> = Der Benutzer kann entscheiden, ob eine vorgeschlagene Korrektur angenommen werden soll.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fehlerverhalten</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob der Prüfvorgang bei einem Fehler abgebrochen oder fortgesetzt werden soll.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minimaler Warenwert</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimalbetrag eingeben, ab dem eine Adressprüfung erfolgen soll. Die Eingabe ist optional.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximaler Warenwert</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximalbetrag eingeben, bis zu dem eine Adressprüfung erfolgen soll. Die Eingabe ist optional.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gültigkeit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zahlenwert in Tagen eingeben, die eine Prüfung gültig sein soll. In diesem Zeitraum werden Kunden, die mehrfach bestellen, ab dem zweiten Vorgang nicht nochmals geprüft.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Personstatusmapping</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Den Optionen die gewünschten Ampelwerte zuordnen.<br>
+<strong>GRÜN</strong> = Einwandfreie Bonität, geringstes Risiko für Zahlungsausfälle.<br>
+<strong>GELB</strong> = Toleranter, erhöht aber das Risiko.<br>
+<strong>ROT</strong> = Höchstes Risiko. Bei diesem Wert sind die höchsten Zahlungsausfälle zu erwarten.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="80">3.2. Bonitätsprüfung einrichten</h3>
+<div class="paragraph">
+<p>Bei Bedarf richten Sie außerdem eine Bonitätsprüfung ein. Über die Bonitätsprüfung können Sie z.B. Kunden nur bestimmte Zahlungsarten zur Verfügung stellen. So können Sie bei einer negativen Bonitätsauskunft zum Beispiel die Zahlung per Rechnung unterbinden, eine Bestellung nicht zulassen oder einen maximalen Warenwert festlegen, der nicht überschritten werden darf.</p>
+</div>
+<div class="paragraph instruction">
+<p>Bonitätsprüfung einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Aufträge » Zahlung » Zahlungsarten</strong>.</p>
+</li>
+<li>
+<p>Aktivieren Sie die Einstellung <strong>Auch inaktive zeigen</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>International</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>PAYONE</strong>.<br>
+→ Das Tab <strong>Schnittstelle</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Klappen Sie den Bereich <strong>Bonitätsprüfung</strong> auf.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-einrichtung-bonitaetspruefung-payone">Tabelle 3</a>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-einrichtung-bonitaetspruefung-payone" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Bonitätsprüfung einrichten</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktiv</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ja</strong> wählen, um die Bonitätsprüfung zu aktivieren.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Testmodus aktiv</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ja</strong> wählen, um den Testmodus zu aktivieren. <strong>Nein</strong> wählen, um den Testmodus zu deaktivieren. Die Bonitätsprüfung ist dann im Live-Modus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Prüfungsart</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prüfungskriterien wählen.<br>
+<strong>Inforscore (harte Kriterien)</strong> = Prüfung nur auf nachgewiesene Zahlungsprobleme, z.B. Zwangsvollstreckung des Kunden etc.<br>
+<strong>Infoscore (alle Merkmale)</strong> = Prüfung auf alle Bonitätskriterien, z.B. auch unklare, wie Mahnbescheide.<br>
+<strong>Infoscore (alle Merkmale + Boniscore)</strong> = Prüfung auf alle Bonitätskriterien, z.B. auch unklare, wie Mahnbescheide. Zusätzlich wird ein Scorewert zur Prüfung herangezogen. Der Scorewert (zwischen 100 und 990) wird anhand verschiedener Merkmale des Kunden ermittelt, z.B. Beruf und Wohnort.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Standardwert für Neukunden</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ampelwert für Bonitätsprüfung wählen, die als Standardwert für Neukunden verwendet wird.<br>
+<strong>GRÜN</strong> = Einwandfreie Bonität, geringstes Risiko für Zahlungsausfälle.<br>
+<strong>GELB</strong> = Toleranter, erhöht aber das Risiko.<br>
+<strong>ROT</strong> = Höchstes Risiko. Bei diesem Wert sind die höchsten Zahlungsausfälle zu erwarten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gültigkeit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zahlenwert in Tagen eingeben, die eine Prüfung gültig sein soll. Für diesen Zeitraum werden Kunden, die mehrfach bestellen, ab dem zweiten Vorgang nicht nochmals geprüft.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minimaler Warenwert</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimalbetrag eingeben, ab dem eine Bonitätsprüfung erfolgen soll. Die Eingabe ist optional.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximaler Warenwert</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximalbetrag eingeben, bis zu dem eine Bonitätsprüfung erfolgen soll. Die Eingabe ist optional.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fehlerverhalten</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob der Prüfvorgang bei einem Fehler abgebrochen oder fortgesetzt werden soll.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>A/B Test</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aktivieren und Wert eingeben, um stichprobenartig eine Bonitätsprüfung durchzuführen. Wenn z.B. nur jeder 3. Vorgang geprüft werden soll, eine 3 eingeben.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="90">3.3. Schnittstellen für PAYONE-Zahlungsarten einrichten</h3>
+<div class="paragraph">
+<p>Für die Schnittstellen der verschiedenen PAYONE-Zahlungsarten gibt es weitere Optionen. Die wichtigsten Optionen werden nachfolgend erläutert.</p>
+</div>
+<div class="paragraph instruction">
+<p>Schnittstellen für PAYONE-Zahlungsarten einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Aufträge » Zahlung » Zahlungsarten</strong>.</p>
+</li>
+<li>
+<p>Aktivieren Sie die Einstellung <strong>Auch inaktive zeigen</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>International</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>PAYONE</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf den Ordner der Zahlungsart.<br>
+→ Das Tab <strong>Schnittstelle</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Klappen Sie den Mandanten auf.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-optionen-schnittstelle-payone">Tabelle 4</a>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-optionen-schnittstelle-payone" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Weitere Optionen der Schnittstellen für PAYONE-Zahlungsarten</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nutze globale Einstellungen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Globale Einstellungen der Schnittstelle nutzen.<br>
+<strong>JA</strong> = Einstellungen der Hauptschnittstelle (<a href="#tabelle-schnittstelleneinrichtung-payone">Tabelle 1</a>) übernehmen. Diese Optionen werden dann in der Schnittstelle ausgeblendet.<br>
+<strong>NEIN</strong> = Separaten Account mit eigenen Zugangsdaten einzurichten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zugelassener Ampelwert</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Für <strong>Grün</strong> gelten die strengsten Richtlinien und somit das geringste Risiko für Zahlungsausfälle. <strong>Gelb</strong> bedeutet ein erhöhtes Risiko für Zahlungsausfälle. <strong>Rot</strong> bedeutet das höchste Risiko, da bei diesem Wert die höchsten Zahlungsausfälle zu erwarten sind.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Klarna-Einstellungen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Werte eingeben, wie von Klarna erhalten, z.B. die länderbezogene <strong>Klarna Shop-ID</strong>, den <strong>Klarna Kampagnen-Code</strong> oder den <strong>Klarna Kampagnen-Namen</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="100">3.4. SEPA für Lastschrift einrichten</h3>
+<div class="paragraph">
+<p>Wenn Sie im Ordner <strong>Kontobasierte Zahlungsart</strong> die Zahlungsart <strong>Lastschrift</strong> über PAYONE anbieten möchten, ist es zusätzlich nötig, SEPA dafür einzurichten. Gehen Sie wie nachfolgend beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>SEPA (Lastschrift) einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Aufträge » Zahlung » Zahlungsarten</strong>.</p>
+</li>
+<li>
+<p>Aktivieren Sie die Einstellung <strong>Auch inaktive zeigen</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>International</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>PAYONE</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf den Ordner <strong>Kontobasierte Zahlungsarten</strong>.<br>
+→ Das Tab <strong>Schnittstelle</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Klappen Sie den Mandanten auf.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen vor. Beachten Sie dazu die Erläuterungen in <a href="#tabelle-einrichtung-sepa-payone">Tabelle 5</a>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-einrichtung-sepa-payone" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. SEPA (Lastschrift) einrichten</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>zusätzliche Kontonummer/Bankleitzahl anzeigen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>JA</strong> wählen, um zusätzlich zur Eingabe der SEPA-Daten, IBAN und BIC die Eingabe von Kontonummer und Bankleitzahl zu ermöglichen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mandatserteilung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>JA</strong> wählen, um ein Mandat zu erstellen, das den Kunden angezeigt wird und das von den Kunden akzeptieren werden muss.<br>
+Bei der Mandatserteilung handelt es sich um einen kostenpflichtigen Abruf. Eine Abfrage der POS-Sperrliste ist in diesem Zusammenhang nicht möglich.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Download Mandat als PDF</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>JA</strong> wählen, um dem Kunden ein PDF-Dokument des Mandats im <strong>Mein Konto</strong>-Bereich zum Download zur Verfügung zu stellen.<br>
+Die Option <strong>Download Mandat als PDF</strong> kann nur gewählt werden, wenn bei PAYONE das Produkt <strong>SEPA-Mandate als PDF</strong> gebucht wurde.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="110">4. Zahlungsarten aktivieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Für PAYONE steht Ihnen eine Vielzahl von Zahlungsarten zur Verfügung, die Sie im Menü <a href="/auftragsabwicklung/payment/zahlungsarten-verwalten#20">System » Aufträge » Zahlung » Zahlungsarten</a> aktivieren. Prüfen Sie zudem die Einstellungen für <strong>Erlaubte Zahlungsarten</strong> in den <a href="/auftragsabwicklung/payment/zahlungsarten-verwalten#30">Kundenklassen</a> und für <strong>Gesperrte Zahlungsarten</strong> in den <a href="/auftragsabwicklung/fulfillment/versand-vorbereiten#1000">Versandprofilen</a>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="115">5. PAYONE im Callisto Webshop anzeigen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im Menü <strong>CMS</strong> haben Sie die Möglichkeit, die Texte anzupassen, die einem Käufer im Bestellvorgang bei der Zahlungsart PAYONE angezeigt werden. Außerdem erfahren Sie, wo Sie das Design über das CSS anpassen können. Das Formular für Kreditkartendaten sowie das Formular für Online-Überweisungen passen Sie wie folgt an. Weitere Informationen finden Sie auch unter <a href="/omni-channel/online-shop/webshop-einrichten/cms#webdesign-webdesign-bearbeiten-bestellvorgang-kaufabwicklung">Kaufabwicklung</a>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Online-Eingabeformular anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>CMS » Webdesign</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>Bestellvorgang » Kaufabwicklung</strong>.</p>
+</li>
+<li>
+<p>Klappen Sie eine <strong>PAYONE-Zahlungsart</strong> auf.</p>
+</li>
+<li>
+<p>Geben Sie einen Text in das Feld <strong>Text vor</strong> bzw. <strong>Text nach</strong> ein.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Das Formular für die Bestellbestätigung passen Sie wie folgt an. Weitere Informationen finden Sie auch unter <a href="/omni-channel/online-shop/webshop-einrichten/cms#webdesign-webdesign-bearbeiten-bestellvorgang-bestellbestaetigung">Bestellbestätigung</a>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Bestellbestätigung anpassen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>CMS » Webdesign</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie den Ordner <strong>Bestellvorgang » Bestellbestätigung</strong>.</p>
+</li>
+<li>
+<p>Klappen Sie eine <strong>PAYONE-Zahlungsart</strong> auf.</p>
+</li>
+<li>
+<p>Geben Sie einen Text in das Feld <strong>Text vor</strong> bzw. <strong>Text nach</strong> ein.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Das CSS für die verschiedenen PAYONE-Zahlungsarten finden Sie unter <strong>CMS » Webdesign » Layout » CSS » CSSOrder</strong>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="120">6. Versandbestätigungen automatisch senden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Richten Sie eine <a href="/basics/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um Versandbestätigungen automatisch an PAYONE zu versenden, nachdem der Warenausgang gebucht wurde.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Ereignisaktion hinzufügen</strong>.<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie einen Namen ein.</p>
+</li>
+<li>
+<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 6.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle 6 vor.</p>
+</li>
+<li>
+<p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 6. Ereignisaktion zum automatischen Senden von Versandbestätigungen an PAYONE</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Warenausgang gebucht</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Zahlungsart</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PAYONE-Zahlungsart</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Versand &gt; Versandbestätigung an PAYONE senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="130">7. Rückerstattungen automatisch senden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Um Rückerstattungen automatisch zu senden, benötigen Sie einen <a href="/auftragsabwicklung/auftraege/auftraege-verwalten">Auftragsstatus</a> für Gutschriften. Sie können einen Standardstatus verwenden oder einen eigenen Auftragsstatus erstellen. Nur fertig bearbeitete Gutschriften erhalten diesen Status. Diese Gutschriften dürfen nach dem Anlegen nicht geändert werden.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Bedingung für Rückerstattungen</div>
+<div class="paragraph">
+<p>Rückerstattungen aus Gutschriften können nur an PAYONE gesendet werden, wenn vorher erfolgreich eine Versandbestätigung an PAYONE gesendet wurde.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Richten Sie eine <a href="/basics/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um Rückerstattungen automatisch an PAYONE zu senden.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Ereignisaktion hinzufügen</strong>.<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie einen Namen ein.</p>
+</li>
+<li>
+<p>Wählen Sie das <strong>Ereignis</strong> gemäß Tabelle 7.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+<li>
+<p>Nehmen Sie die Einstellungen gemäß Tabelle 7 vor.</p>
+</li>
+<li>
+<p>Setzen Sie ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 7. Ereignisaktion zum automatischen Senden von Rückerstattungen an PAYONE</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Statuswechsel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status für die <strong>Rückerstattung an PAYONE</strong> wählen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gutschrift</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Zahlungsart</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PAYONE-Zahlungsart</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zahlungsarten &gt; Gutschrift an PAYONE senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="140">8. PAYONE für Shopware verwenden</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Für eine Nutzung mit Shopware hinterlegen Sie die <a href="/auftragsabwicklung/payment/payone#50">Transaktionsstatus-URL</a> im Shopware-Plugin. Im Backend von PAYONE hinterlegen Sie die URL zum Shopware-System.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">PAYONE nicht parallel nutzbar</div>
+<div class="paragraph">
+<p>Wenn Sie PAYONE mit Shopware nutzen möchten, ist eine gleichzeitige Nutzung im plentymarkets Webshop nicht möglich.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Die Interaktion mit dem Shopsystem <a href="http://github.com/plentymarkets/plentymarkets-shopware-connector" target="_blank" rel="noopener">Shopware</a> hat folgenden Ablauf:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Auftrag wird in Shopware angelegt.</p>
+</li>
+<li>
+<p>Über den Export von Shopware zu plentymarkets kommt der Auftrag in Ihr plentymarkets-System.</p>
+</li>
+<li>
+<p>Wenn der Auftrag bei Shopware als bezahlt markiert ist, wird die Zahlung importiert.</p>
+</li>
+<li>
+<p>Der Auftrag wird im Menü <strong>Aufträge</strong> in plentymarkets bearbeitet (Versandvorbereitung, Warenausgang etc.).<br>
+→ Hierfür muss die Ereignisaktion für <a href="/auftragsabwicklung/payment/payone#120">Versandbestätigungen</a> eingerichtet sein.</p>
+</li>
+<li>
+<p>Bei Bedarf kann im plentymarkets System eine Gutschrift angelegt werden.<br>
+→ Hierfür muss die Ereignisaktion für <a href="/auftragsabwicklung/payment/payone#130">Rückerstattungen</a> eingerichtet sein.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
