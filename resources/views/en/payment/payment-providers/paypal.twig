@@ -1,0 +1,464 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#10"><span>1.</span><span> Important notes</span></a></li>
+<li><a href="#20"><span>2.</span><span> Registering with PayPal</span></a></li>
+<li><a href="#30"><span>3.</span><span> Setting up PayPal for Callisto</span></a></li>
+<li><a href="#40"><span>4.</span><span> Activating the payment method</span></a></li>
+<li><a href="#50"><span>5.</span><span> Activating the PayPal instant payment notification (IPN)</span></a></li>
+<li><a href="#60"><span>6.</span><span> Setting up UTF-8 encoding</span></a></li>
+<li><a href="#70"><span>7.</span><span> Blocking direct payments to your email address</span></a></li>
+<li><a href="#80"><span>8.</span><span> Setting up the PayPal settlement report</span></a></li>
+<li><a href="#80"><span>9.</span><span> Refunding the total amount and automatically sending it to PayPal</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Old online store: PayPal</h1><div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Integration only for Callisto online stores</div>
+<div class="paragraph">
+<p>This page only contains instructions for integrating <strong>PayPal</strong> in Callisto online stores. For further information on using <strong>PayPal</strong> in Ceres online stores, refer to the detailed information in the plugin description available in the <a href="https://marketplace.plentymarkets.com/en/plugins/payment/PayPal_4690" target="_blank" rel="noopener">plentyMarketplace</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>PayPal is not only used as a payment method in order processing on markets like eBay or Amazon, but also as a payment method for orders in the online store. plentymarkets offers the payment method PayPal, which helps you to process payments in the online store and during checkout. For further general information about PayPal, refer to the PayPal <a href="https://www.paypal.com/uk/webapps/mpp/home" target="_blank" rel="noopener">website</a>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10">1. Important notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After the customer has added an item to the shopping cart (on the 'AfterArticle2Basket' page), a button will be displayed that will forward the customer directly to PayPal. The customer then has to log into PayPal. After confirming the payment there, the customer will automatically be forwarded back to the online store in order to enter the invoice address. If the customer is not logged into the online store, a new customer will be created. In this case, the customer has the possibility to change this data accordingly. The customer will then go through the rest of the order process as usual. The payment by PayPal will not be triggered before the order has been completed.</p>
+</div>
+<div class="paragraph">
+<p>This process can also be started directly from the shopping cart, if the customer clicks on the corresponding button there. Furthermore, the customer can select PayPal when selecting the payment method during the checkout. In these cases, the customer will also be forwarded to the PayPal page and go through the same process as described above.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="20">2. Registering with PayPal</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First register with <a href="https://www.paypal.com/gb/merchantsignup/applicationChecklist?signupType=CREATE_NEW_ACCOUNT&amp;productIntentId=wp_standard" target="_blank" rel="noopener">PayPal</a>. You can set up email addresses for payments of each client (store). All payments initiated by plentymarkets will be sent to the first email address. If you wish to save different email addresses for particular stores, add an account to each client (store) when <a href="/en/order-processing/payment/paypal#30">setting up the interface</a>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="30">3. Setting up PayPal for Callisto</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Proceed as follows to set up the interface to PayPal for your Callisto online store in plentymarkets.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up the PayPal interface:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Payment » Methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the setting <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>International</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>PayPal</strong>.<br>
+→ The <strong>Settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>Interface</strong> tab.</p>
+</li>
+<li>
+<p>Expand the client.</p>
+</li>
+<li>
+<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-setup-paypal-interface">Table 1</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Click on <strong>Add account</strong>.<br>
+→ You will be forwarded to PayPal.</p>
+</li>
+<li>
+<p>Log in.</p>
+</li>
+<li>
+<p>Confirm that plentymarkets should be allowed to access your PayPal account. <br>
+→ You will be redirected back to your plentymarkets system.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-setup-paypal-interface" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. setting up the PayPal interface</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>URL to your logo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A HTTPS URL that leads to your logo. Use a valid format, e.g. .gif, .jpg or .png. The image may not exceed a maximum size of 190 pixels in width and 60 pixels in height. PayPal cuts off images that are larger. PayPal places your logo at the very top of the shopping cart overview.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shopping cart border</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The hexadecimal HTML code of the main colour of your corporate identity. The colour fades to white in a frame around the shopping cart overview in the PayPal checkout user interface.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Time of PayPal payment collection</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sale (immediate debit)</strong> = Collect payment immediately after the order has been completed.<br>
+<strong>Authorization &amp; Capture</strong> = <strong>Auth</strong> is triggered when the order is completed. <strong>Capture</strong> is triggered when the order is shipped. This means that payment is only collected when <strong>Capture</strong> is triggered.<br>
+<strong>Order (OrderAuthCapture procedure)</strong> = <strong>Auth</strong> is triggered when an order consisting of multiple partial deliveries is completed. <strong>Capture</strong> is triggered for each partial delivery when the order is shipped. This means that partial payment is only collected when <strong>Capture</strong> is triggered.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Standard (use for all clients)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only visible if clients (stores) were set up. Activate to apply the account settings saved for the main store by clicking on <strong>Add account</strong> for all clients (shops). This setting is dominant over the settings saved for each client. Deactivate to use separate access data for your clients (stores). Online stores that do not have account settings saved for them cannot be used with PayPal.<br>
+Go to <a href="/en/omni-channel/online-store/setting-up-clients/online-store">System » Client » Select client » Online store » Settings</a> and make sure that you have selected the option <strong>Enable login for every store</strong> in the line <strong>Login</strong>. This makes it possible to support several clients.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="40">4. Activating the payment method</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up and activate the <a href="/en/order-processing/payment/managing-payment-methods#20">payment method</a> PayPal in your plentymarkets system.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Caution: PayPal’s terms and conditions</div>
+<div class="paragraph">
+<p>Setting up a <strong>surcharge</strong> for accepting payment with PayPal conflicts with PayPal’s General Terms and Conditions.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="50">5. Activating the PayPal instant payment notification (IPN)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>plentymarkets actively queries PayPal for new payments every three hours. The last 48 hours are requested. However, this time interval is too large for most sellers. You can decrease this interval with the PayPal option <strong>Instant payment notification (IPN)</strong>.</p>
+</div>
+<div class="paragraph">
+<p>For payments in the plentymarkets online store and checkout, the instant payment notification will be automatically activated. If your customers pay onto your PayPal account from other markets like eBay checkout, then you should activate the IPN as the global setting for your PayPal account. This also ensures that payments, which have been pending for several days, as may be the case for <strong>transfer via PayPal</strong>, will end up in your plentymarkets system.</p>
+</div>
+<div class="paragraph instruction">
+<p>Activating the PayPal IPN function:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in with your email address at PayPal.</p>
+</li>
+<li>
+<p>Go to <strong>Summary » Seller preferences » Instant payment notifications</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Choose IPN Settings</strong> in the screen that opens next.</p>
+</li>
+<li>
+<p>Activate the option.</p>
+</li>
+<li>
+<p>Enter the following address as the notification URL:<br>
+<strong><a href="https://www.MY-SHOP-ADDRESS.co.uk/plenty/api/payment_notification.php?payment=PayPal" class="bare">https://www.MY-SHOP-ADDRESS.co.uk/plenty/api/payment_notification.php?payment=PayPal</a></strong><br>
+Replace <strong>www.MY-SHOP-ADDRESS.co.uk</strong> with your own store domain.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This address also works if you use the PayPal standard integration or if you do not offer PayPal as a payment method in your online store.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">SSL certificate</div>
+<div class="paragraph">
+<p>Use the URL with http instead of https if you do not use SSL encryption in your online store. We recommend that you use an <a href="/en/basics/working-with-plentymarkets/plentymarkets-account#ssl-certificate">SSL certificate</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/order-processing/payment/assets/EN-Payment-Methods-PayPal-01.png" alt="EN Payment Methods PayPal 01">
+</div>
+<div class="title">Figure 1. activating IPN</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="60">6. Setting up UTF-8 encoding</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You have to carry out the following settings in your PayPal account to ensure that UTF-8 encoding, e.g. Chinese characters, is displayed correctly.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up UTF-8 encoding:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in with your email address at PayPal.</p>
+</li>
+<li>
+<p>Go to <strong>Summary » Seller preferences</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>PayPal button language encoding</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>More Options</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>UTF-8</strong> option from the <strong>Encoding</strong> drop-down list (<a href="#image-encoding-options-paypal">Figure 2</a>).</p>
+</li>
+<li>
+<p>Select <strong>Yes</strong> for the option Do you want to use the same encoding for data sent from PayPal to you.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div id="image-encoding-options-paypal" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/order-processing/payment/assets/EN-Payment-Methods-PayPal-02.png" alt="EN Payment Methods PayPal 02">
+</div>
+<div class="title">Figure 2. more encoding options for PayPal</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="70">7. Blocking direct payments to your email address</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Another setting in your PayPal account can be very useful for sellers: <strong>blocking direct payments to your email address</strong>. Using the function <strong>send money</strong>, all PayPal customers are able to send payments to email addresses as they desire. In this case, a delivery address does not have to be saved and this will overrule the seller protection. You can block this type of payment in your PayPal settings.</p>
+</div>
+<div class="paragraph instruction">
+<p>Blocking direct payments to email addresses:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in with your email address at PayPal.</p>
+</li>
+<li>
+<p>Go to <strong>Summary » Seller preferences » Block payments</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Update</strong>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Initiate payments from the Pay Anyone subtab of the Send Money tab</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/order-processing/payment/assets/EN-Payment-Methods-PayPal-03.png" alt="EN Payment Methods PayPal 03">
+</div>
+<div class="title">Figure 3. Payment Receiving Preferences</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="80">8. Setting up the PayPal settlement report</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The PayPal settlement report is used for assigning PayPal payments to orders. The report includes all of the payments for a specific day. The settlement report is the most reliable way to assign payments to orders, especially if you have a large number of PayPal payments. You need to create an extra PayPal account and generate your own user name in order to access the FTP server from which the settlement reports are loaded. Enter the access data for this account in plentymarkets.</p>
+</div>
+<div class="paragraph instruction">
+<p>Entering the access data:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Payment » Methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the setting <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>International</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>PayPal</strong>.<br>
+→ The <strong>Settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>Settlement report</strong> tab.</p>
+</li>
+<li>
+<p>Enter your <strong>User name</strong>.</p>
+</li>
+<li>
+<p>Enter the <strong>Password</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The settlement report will automatically be retrieved 1 time per day.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Open the document archive to view the settlement reports that were retrieved. The report includes a list of payments that were automatically assigned. It is not necessary to view the reports in order for data to be assigned.</p>
+</div>
+<div class="paragraph instruction">
+<p>Viewing the settlement report:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Orders » Document archive</strong>.</p>
+</li>
+<li>
+<p>Select the option <strong>Settlement report</strong> from the drop-down list <strong>Document</strong>.<br>
+→ The rest of the settings are optional.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The <a href="/en/basics/data-exchange/api-log#6">API log</a> includes entries that relate to connecting with the PayPal SFTP server and to the number of transactions included in the settlement report.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="80">9. Refunding the total amount and automatically sending it to PayPal</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is possible to refund customers the total purchase amount by creating an order of the type <strong>Credit note</strong>. Credit notes will automatically be assigned to the payment.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a credit note to refund the total amount:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Orders » Edit orders</strong>.</p>
+</li>
+<li>
+<p>Open the desired PayPal order.</p>
+</li>
+<li>
+<p>In the <strong>Overview</strong> tab, click on the <strong>Credit note …​</strong> drop-down list and then select <strong>create</strong>.<br>
+→ The credit note will be created.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Then create an <a href="/en/basics/automation/event-procedures">event procedure</a> to automatically send the refunds to PayPal.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> listed in table 2.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 2 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. event procedure for automatically sending refunds to PayPal</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order generation: New credit note</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PayPal</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment methods &gt; Send refund to PayPal</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>

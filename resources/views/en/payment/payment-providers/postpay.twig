@@ -1,0 +1,538 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#10"><span>1.</span><span> Important notes</span></a></li>
+<li><a href="#20"><span>2.</span><span> Registering with POSTPAY</span></a></li>
+<li><a href="#30"><span>3.</span><span> Setting up POSTPAY for Callisto</span></a></li>
+<li><a href="#40"><span>4.</span><span> Activating the payment method</span></a></li>
+<li><a href="#50"><span>5.</span><span> Saving a URL for the push service</span></a></li>
+<li><a href="#60"><span>6.</span><span> Manually creating a credit note for a POSTPAY order</span></a></li>
+<li><a href="#70"><span>7.</span><span> Automatically sending shipping confirmations</span></a></li>
+<li><a href="#80"><span>8.</span><span> Automatically sending returns</span></a></li>
+<li><a href="#90"><span>9.</span><span> Automatically sending credit notes</span></a></li>
+<li><a href="#100"><span>10.</span><span> Automatically sending cancellations</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Old online store: POSTPAY</h1><div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Integration only for Callisto online stores</div>
+<div class="paragraph">
+<p>This page only contains instructions for integrating <strong>POSTPAY</strong> in Callisto online stores. The following instructions are not valid for Ceres online stores!</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p><a href="http://www.postpay.de/de/p/postpay/postpay.html" target="_blank" rel="noopener">POSTPAY</a> (only available in German) is a payment service offered by Deutsche Post. This service provider allows you to offer your customers a payment and order process that is already used by many Deutsche Post customers. POSTPAY offers the payment methods <strong>Direct debit</strong>, <strong>Cash in advance</strong>, <strong>Giropay</strong>, <strong>Sofortbanking</strong>, <strong>Credit card</strong> and <strong>Purchase on invoice</strong>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10">1. Important notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter provides you with important information about integrating the payment provider in plentymarkets.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Order generation</div>
+<div class="paragraph">
+<p>An order is not generated in plentymarkets until the incoming payment is received. In other words, the order is not yet created during the order process when the customer clicks on the <strong>POSTPAY</strong> button in the shopping cart.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph subhead">
+<p>Payment process</p>
+</div>
+<div class="paragraph">
+<p>After confirming the order, the customer will be redirected to the POSTPAY website. The customer logs into their POSTPAY account, selects a payment option and confirms the payment. The customer may have to enter their invoice and delivery address on POSTPAY. It depends on whether the customer has already gone through the checkout process in your online store and selected POSTPAY as the payment method or whether the customer clicked on the POSTPAY button in the shopping cart without logging in.</p>
+</div>
+<div class="paragraph">
+<p>Here is an overview of both variations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The customer logged into your online store and has already entered the invoice and delivery address. This data will automatically be entered when the customer is forwarded to POSTPAY. However, the customer can still change this data if desired.</p>
+</li>
+<li>
+<p>The customer has not logged into your online store and clicks on the POSTPAY button in the shopping cart. The customer is forwarded to POSTPAY where they can log in using the POSTPAY data. The primary payment method and the address are already saved there. The purchase can be completed with only one click. If the customer does not already have a POSTPAY account, they have to enter the invoice and delivery addresses here.</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="20">2. Registering with POSTPAY</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you already have an <a href="https://de.allyouneed.com/de/customerlogin.html" target="_blank" rel="noopener">Allyouneed.com</a> seller contract, you do not need to register again. You can directly begin to <a href="/en/order-processing/payment/postpay#30">set up POSTPAY</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you do not have a contract yet, register with <a href="https://de.allyouneed.com/de/dealer/page/selfsignup/step1?ssu=postpay" target="_blank" rel="noopener">POSTPAY</a> (German only). Afterwards you will receive the Allyouneed.com &amp; POSTPAY seller contract by post or by email. Sign the contract and send it back. Add information about the beneficial owner and the legal representative. Your account will be activated once it was checked by POSTPAY. You will receive an email confirmation that includes your access data. You need the access data to set up the interface in plentymarkets.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="30">3. Setting up POSTPAY for Callisto</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Proceed as described below to set up the interface to POSTPAY for your Callisto online store in plentymarkets.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up the POSTPAY interface:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Payment » Methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the setting <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>DE</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>POSTPAY</strong>.<br>
+→ The <strong>Settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>Interface</strong> tab.</p>
+</li>
+<li>
+<p>Expand the client.</p>
+</li>
+<li>
+<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-setup-postpay-interface">Table 1</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-setup-postpay-interface" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. setting up the POSTPAY interface</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the user name that you received from POSTPAY.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the password that you received from POSTPAY.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activate test mode</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate the test mode and check the POSTPAY functions before working live with the system.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activate access data for all clients (stores)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only visible if clients (stores) were set up. Activate to apply the account settings saved for the main store by clicking on <strong>Add account</strong> for all clients (shops). This setting is dominant over the settings saved for each client. Deactivate to use separate access data for your clients (stores). Online stores that do not have account settings saved for them cannot be used with POSTPAY.<br>
+Go to <a href="/en/omni-channel/online-store/setting-up-clients/online-store">System » Client » Select client » Online store » Settings</a> and make sure that you have selected the option <strong>Enable login for every store</strong> in the line <strong>Login</strong>. This makes it possible to support several clients.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="40">4. Activating the payment method</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up and activate the POSTPAY <a href="/en/order-processing/payment/managing-payment-methods#20">payment method</a> in the <strong>Settings</strong> tab of the payment method. In addition, check the settings for <strong>Permitted payment methods</strong> in the <a href="/en/order-processing/payment/managing-payment-methods#30">customer classes</a> and for <strong>Blocked payment methods</strong> in the <a href="/en/order-processing/fulfilment/preparing-the-shipment#1000">shipping profiles</a>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="50">5. Saving a URL for the push service</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Log into POSTPAY with your access data and enter the <strong>URL for the push service</strong> in the tab <strong>Verwaltung</strong> (administration). This URL tells POSTPAY where payment confirmations should be sent to. The URL is structured as follows:</p>
+</div>
+<div class="paragraph">
+<p><strong>YOUR_DOMAIN/plenty/api/payment_notification.php?payment=postpay&amp;</strong></p>
+</div>
+<div class="paragraph">
+<p>Change this URL so that it matches your store’s domain. Save the URL on <strong>POSTPAY</strong>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="60">6. Manually creating a credit note for a POSTPAY order</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It may be necessary to create credit notes for individual orders that are processed with POSTPAY. You can send individual credit note amounts to POSTPAY.</p>
+</div>
+<div class="paragraph instruction">
+<p>Sending a credit note to POSTPAY:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Orders » Edit orders</strong>.</p>
+</li>
+<li>
+<p>Open the POSTPAY order. <br>
+→ The <strong>Overview</strong> tab will open.</p>
+</li>
+<li>
+<p>Select the option <strong>create</strong> from the <strong>Credit note…​</strong> drop-down list.<br>
+→ The credit note will be created.</p>
+</li>
+<li>
+<p>Open the newly created credit note.</p>
+</li>
+<li>
+<p>Click on the <strong>Settings</strong> tab.</p>
+</li>
+<li>
+<p>Enter the amount into the <strong>Send POSTPAY credit note</strong> field.</p>
+</li>
+<li>
+<p>Click on <strong>Send POSTPAY credit note</strong>.<br>
+→ The credit note will be sent to POSTPAY.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="70">7. Automatically sending shipping confirmations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up an <a href="/en/basics/automation/event-procedures">event procedure</a> to automatically send shipping confirmations when the outgoing items are booked.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 2.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 2 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. event procedure for sending automatic shipping confirmations to POSTPAY</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Outgoing items booked</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>POSTPAY</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping &gt; Send shipping confirmation to POSTPAY</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="80">8. Automatically sending returns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up an <a href="/en/basics/automation/event-procedures">event procedure</a> to automatically send returns to POSTPAY. For further information about creating returns, refer to the <a href="/en/order-processing/orders/managing-sales-orders#return">Return</a> page of the manual.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 3.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 3 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. event procedure for automatically sending returns to POSTPAY</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order generation: New return (by customer)</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Return</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>POSTPAY</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Return &gt; Send return to POSTPAY</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="90">9. Automatically sending credit notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To send credit notes automatically, an <a href="/en/order-processing/orders/managing-sales-orders#order-status">order status</a> for credit notes is required. You can use one of the standard statuses or set up your own order status. This status is then only assigned to completed credit notes. These credit notes must not be changed after creation. Set up an <a href="/en/basics/automation/event-procedures">event procedure</a> to automatically send credit notes to POSTPAY.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 4.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 4 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. event procedure for automatically sending credit notes to POSTPAY</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the status for the <strong>credit note to POSTPAY</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Credit note</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>POSTPAY</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment methods &gt; Send credit note to POSTPAY</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="100">10. Automatically sending cancellations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up an <a href="/en/basics/automation/event-procedures">event procedure</a> to automatically inform POSTPAY of cancellations.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 5.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 5 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. event procedure for automatically sending cancellations to POSTPAY</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select status for <strong>cancelled orders</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>POSTPAY</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment methods &gt; Send cancellation to POSTPAY</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>

@@ -1,0 +1,593 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_faceted_search_with_plentymarkets"><span>1.</span><span> Faceted search with plentymarkets</span></a></li>
+<li><a href="#_configuration"><span>2.</span><span> Configuration</span></a>
+<ul class="sectlevel2">
+<li><a href="#_creating_facets"><span>2.1.</span><span> Creating facets</span></a></li>
+<li><a href="#_configuring_facets"><span>2.2.</span><span> Configuring facets</span></a>
+<ul class="sectlevel3">
+<li><a href="#_tab_settings"><span>2.2.1.</span><span> Tab: Settings</span></a></li>
+<li><a href="#_tab_name"><span>2.2.2.</span><span> Tab: Name</span></a></li>
+</ul>
+</li>
+<li><a href="#_linking_facets_to_values_and_images"><span>2.3.</span><span> Linking facets to values and images</span></a>
+<ul class="sectlevel3">
+<li><a href="#_tab_values"><span>2.3.1.</span><span> Tab: Values</span></a></li>
+<li><a href="#_tab_images"><span>2.3.2.</span><span> Tab: Images</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_full_text_search_tab_search_index"><span>3.</span><span> Full text search - Tab: Search index</span></a>
+<ul class="sectlevel2">
+<li><a href="#_tab_boost"><span>3.1.</span><span> Tab: Boost</span></a></li>
+<li><a href="#_tab_keyword"><span>3.2.</span><span> Tab: Keyword</span></a></li>
+<li><a href="#_tab_description"><span>3.3.</span><span> Tab: Description</span></a></li>
+</ul>
+</li>
+<li><a href="#_linking_facets_in_the_online_store"><span>4.</span><span> Linking facets in the online store</span></a></li>
+<li><a href="#_adding_the_faceted_search_to_the_cms"><span>5.</span><span> Adding the faceted search to the CMS</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Faceted search</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>System » Client » Settings » Services » Faceted search</strong></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Old: CMS &amp; online store</div>
+<div class="paragraph">
+<p>This manual page describes functions that pertain to the old plentymarkets online shop <strong>Callisto</strong>. For information regarding the online store template <strong>Ceres</strong>, please refer to the <a href="/en/omni-channel/online-store/setting-up-ceres">Setting up Ceres page</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Facets are the various filter possibilities that are used to narrow down search results in the online store by specific criteria (facets). The faceted search has the advantage that search results are not necessarily limited by the selected criteria. Rather, the criteria are always searched for in the entire database. In other words, users are led through the search process intuitively and search results do not have to be faked if customers select criteria that are not helpful. Offer customers the faceted search to improve usability in your online store. The search only has a one hour delay in data synchronisation, so it is always up-to-date.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_faceted_search_with_plentymarkets">1. Faceted search with plentymarkets</h2>
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Availability</div>
+<div class="paragraph">
+<p>Customers who have a plentymarkets Cloud contract can use the configurator to book the faceted search. This module is not available for own server systems.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You can customise the filter navigation and design it individually in your CMS. The faceted search gives customers many more options than are included in other searches, e.g. the property search. Facets are not only used to find which items in a category have a specific property. Rather, they are also used to narrow down the item search by the following criteria:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>by a desired price range</p>
+</li>
+<li>
+<p>by attributes and properties</p>
+</li>
+<li>
+<p>by the item availability</p>
+</li>
+<li>
+<p>by the producer</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In plentymarkets, these four facet types are combined with other values to determine the filter results. The more facets and values that you use, the more comprehensive the filters will be. The next chapters teach you how that works exactly.</p>
+</div>
+<div id="image-faceted-search-online-store" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-store/setting-up-clients/extras/assets/EN-Client-Global-Services-Facets-01.png" alt="EN Client Global Services Facets 01">
+</div>
+<div class="title">Figure 1. example of the faceted search in the online store</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Linking items to facets</div>
+<div class="paragraph">
+<p>You do not have to directly link items to the individual facets. Rather, items are automatically assigned to facets. This is done by <a href="/en/omni-channel/online-store/setting-up-clients/extras/faceted-search#2-3">giving facets values</a> that are then saved in the item data record.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_configuration">2. Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This function is configured in several different steps. First, facets are created. Then their settings are customised further. Finally, they are linked to the desired values. Furthermore, you need to go to <strong>System » Client » Select client » Online store » Item search</strong> and select the option <strong>Faceted search</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="_creating_facets">2.1. Creating facets</h3>
+<div class="paragraph">
+<p>First, you need to create different facets for the search, e.g. the facet "Color" with the type <strong>Attribute/property</strong>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a new facet:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Client » Settings » Services » Faceted search</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>New</strong> to add a new facet.</p>
+</li>
+<li>
+<p>Enter a <strong>name</strong> for the facet in the system’s language.</p>
+</li>
+<li>
+<p>Select a <strong>type</strong> from the drop-down list. Pay attention to the explanations given in <a href="#table-facet-types">Table 1</a>.</p>
+</li>
+<li>
+<p>Enter the *position*a where the faacet should appear in the online store.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-facet-types" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. available facet types</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Facet type</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Price</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Facets of the type <strong>Price</strong> do not have to be linked to values. Rather, customers can filter from the smallest to the largest price within a category.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute/property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Facets of the type <strong>Attribute/property</strong> are linked to the attributes and properties in your system. They are used to create diverse filters, e.g. colors, sizes etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Availability</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Facets of the type <strong>Availability</strong>, e.g. "ships within 24 hours", are linked to the availabilities found under <a href="/en/omni-channel/online-store/setting-up-clients/extras/faceted-search#180">System » Item » Availability</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Manufacturer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Facets of the type <strong>Manufacturer</strong>, e.g. "Adidas", are linked to the manufacturers found under <a href="/en/omni-channel/online-store/setting-up-clients/extras/faceted-search#560">System » Item » Manufacturers</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_configuring_facets">2.2. Configuring facets</h3>
+<div class="paragraph">
+<p>The facet opens when it is created. There are four tabs for carrying out additional settings and linking values. This chapter explains the settings in the tabs <strong>Settings</strong> and <strong>Name</strong>. Explanations of the tabs <strong>Values</strong> and <strong>Images</strong> are found in <a href="/en/omni-channel/online-store/setting-up-clients/extras/faceted-search#2-3">chapter 2.3</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_tab_settings">2.2.1. Tab: Settings</h4>
+<div class="paragraph">
+<p>Carry out the settings as described below.</p>
+</div>
+<div class="paragraph instruction">
+<p>Editing facets:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Client » Settings » Services » Faceted search</strong>.</p>
+</li>
+<li>
+<p>Open the facet.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in <a href="#table-editing-facets">Table 2</a> and configure the <strong>Settings</strong> tab as desired.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-editing-facets" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. editing facets; tab <strong>Settings</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates which type was selected when the facet was created. The type cannot be changed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sorting</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Determines how the search results should be sorted. Depending on which option is selected, items will either be sorted by <strong>relevance</strong>, <strong>position number</strong> or alphabetically from <strong>A-Z</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Position</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates which position was selected when the facet was created. The position can be changed here.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CSS class</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a CSS name. This name will be made available as a template variable in the CMS menu so that every facet can be saved as an individual class.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selection type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose the selection type.<br>
+<strong>Restricting</strong> = Further limits the filter with the selected value. All items will be displayed that have this value and that fulfill the criteria of any previously selected filters.<br>
+<strong>Multiple</strong> = Makes it possible for multiple search results to be displayed together. For example, this option makes it possible for customers to select multiple manufacturers. The manufacturers' items will all be displayed together.<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minimum number of hits</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the minimum number of results that a facet value needs to have in order to be displayed in the online store.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximum number of facet values shown</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the maximum number of facet values that will be displayed per facet. A maximum of 250 facet values can be displayed.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_tab_name">2.2.2. Tab: Name</h4>
+<div class="paragraph">
+<p>Use the <strong>Name</strong> tab to enter facet names in all of the languages that are offered in your online store. The translations that are entered here will be used for the specified languages.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_linking_facets_to_values_and_images">2.3. Linking facets to values and images</h3>
+<div class="paragraph">
+<p>Carry out the settings in the tabs <strong>Values</strong> and <strong>Images</strong> as described below.</p>
+</div>
+<div class="sect3">
+<h4 id="_tab_values">2.3.1. Tab: Values</h4>
+<div class="paragraph">
+<p>Use the <strong>Values</strong> tab to link facets to different values. For example, if you have a color facet of the type <strong>Attribute/property</strong>, then create the values e.g. white, black, red, blue, etc and link these values with the existing item attributes and properties in your system. To do so, proceed as follows.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a new value:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Client » Settings » Services » Faceted search</strong>.</p>
+</li>
+<li>
+<p>Open the facet that you want to add values to.</p>
+</li>
+<li>
+<p>Click on the <strong>Values</strong> tab.</p>
+</li>
+<li>
+<p>Click on the <strong>green plus icon</strong> in the bottom left corner to add a new value.</p>
+</li>
+<li>
+<p>Enter a <strong>name</strong> for the value in the system’s language.</p>
+</li>
+<li>
+<p>Enter a <strong>position</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The new value will be created.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The values that were created are displayed on the left. Further define the values in the next steps and link these values with information from your system. In the example of the type <strong>Attribute/property</strong>, it is especially useful that attributes and properties are grouped together in one filter in your system and can thus be displayed together in the search result.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Name and Settings tabs within a value</div>
+<div class="paragraph">
+<p>Use the value’s <strong>Name</strong> tab to save names for the value in different languages. <br>
+Use the value’s <strong>Settings</strong> tab to save a <strong>Position</strong> and <strong>CSS class</strong> for the value, just as was also done for the facet (<a href="#table-editing-facets">Table 2</a>).<br>
+The following section explains how to link the values.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Linking facets to values:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Client » Settings » Services » Faceted search</strong>.</p>
+</li>
+<li>
+<p>Open the facet that you want to add values to.</p>
+</li>
+<li>
+<p>Click on the <strong>Values</strong> tab.</p>
+</li>
+<li>
+<p>Click on the value that you want to link.</p>
+</li>
+<li>
+<p>Click on the <strong>Link</strong> tab.</p>
+</li>
+<li>
+<p>Select the attribute or property that you want to link from the list.</p>
+</li>
+<li>
+<p>Click on <strong>Link</strong> in the bottom left corner.<br>
+→ The attribute or property will be linked to the facet’s value.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Values that were linked are displayed with a <strong>green check mark</strong>. Values that were not linked are displayed with a <strong>red x</strong>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tab_images">2.3.2. Tab: Images</h4>
+<div class="paragraph">
+<p>Use the <strong>Images</strong> tab to link the facets and their values to images. For example, this is useful if you want to use logos rather than names to list producers in your online store.</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_full_text_search_tab_search_index">3. Full text search - Tab: Search index</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <strong>Search index</strong> tab to specify various criteria that improve the full text search in your online store. This full text search is much more tolerant of errors than the standard item search in plentymarkets. For example, the faceted search can recognise search terms that include typos. Customers do not have to enter the exact item or manufacturer name in order to see results. For example, customers would still find the manufacturer "adidas" even if they incorrectly entered "addidas" or "adids". Items that are manufactured by this manufacturer would still be displayed in the search results. Configure the following 3 tabs for this:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use the <strong>Boost</strong> tab to specify how the four areas <strong>Keywords 1</strong>, <strong>Keywords 2</strong>, <strong>Name</strong> or <strong>Full text</strong> should be prioritised when displaying search results.</p>
+</li>
+<li>
+<p>The <strong>Keyword</strong> tab is used to specify which texts belong to the areas <strong>Keywords 1 and 2</strong>. The <strong>Name</strong> section refers to the item names in this online store.</p>
+</li>
+<li>
+<p>Use the <strong>Description</strong> tab to specify which texts should be taken into consideration in the <strong>Full text</strong> area.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_tab_boost">3.1. Tab: Boost</h3>
+<div class="paragraph">
+<p>Enter a number into each field of the <strong>Boost</strong> tab. This specifies how each area should be prioritised when displaying search results. To do so, proceed as follows.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/omni-channel/online-store/setting-up-clients/extras/assets/EN-Client-Global-Services-Facets-02.png" alt="EN Client Global Services Facets 02">
+</div>
+<div class="title">Figure 2. search index; <strong>Boost</strong> tab</div>
+</div>
+<div class="paragraph instruction">
+<p>Specifying the boost:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Client » Settings » Services » Faceted search</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>Search index</strong> tab.<br>
+→ The <strong>Boost</strong> tab opens automatically.</p>
+</li>
+<li>
+<p>Enter a number between 1 and 100 into each field. The higher the number, the more this area will be prioritised in the search results. Results will be displayed first for the area with the highest number.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tab_keyword">3.2. Tab: Keyword</h3>
+<div class="paragraph">
+<p>Use the <strong>Keyword</strong> tab to assign the various texts to the areas <strong>Keyword 1</strong> or <strong>Keyword 2</strong>. These texts will be prioritised according to the number that was entered in the Boost tab.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Settings in the Keyword tab</div>
+<div class="paragraph">
+<p>Select which area (priority) each of the texts listed here should be assigned to. The numbers next to <strong>Category 1 - 6</strong> specify the category level. We recommend prioritising the higher levels over the lower ones.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tab_description">3.3. Tab: Description</h3>
+<div class="paragraph">
+<p>Use the <strong>Description</strong> tab to specify which of the item’s texts should be analyzed for the <strong>Full text</strong> area.</p>
+</div>
+<div class="paragraph instruction">
+<p>Choosing the descriptions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Client » Settings » Services » Faceted search</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>Search index</strong> tab.</p>
+</li>
+<li>
+<p>Click on the <strong>Description</strong> tab.</p>
+</li>
+<li>
+<p>Place a <strong>check mark</strong> next to the texts that should be taken into consideration for the search in the <strong>Full text</strong> area.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_linking_facets_in_the_online_store">4. Linking facets in the online store</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you have created your facets, link them in the default online store or in a client (store). This is done by making them available as filters. Decide which facets are relevant for each client (store) and which ones are not. Changes that you make here will go into effect in real time. Proceed as follows to link facets to a store.</p>
+</div>
+<div class="paragraph">
+<p>Go to <strong>System » Client » Select client » Services » Facet links</strong> to configure the settings. Select which store you want to link to the facets.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Price facet</div>
+<div class="paragraph">
+<p>Only one price facet can be linked per store.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Linking facets in the online store:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Client » Select client » Services » Facet links</strong>.</p>
+</li>
+<li>
+<p>Select which facets you want to link to this store from the list on the left.</p>
+</li>
+<li>
+<p>Click on <strong>Link facet</strong> in the bottom left corner.<br>
+→ The facet will be linked in the online store.</p>
+</li>
+<li>
+<p>Repeat this process for all remaining facets that should be linked here.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Facets that were linked are displayed with a <strong>green check mark</strong>. Facets that were not linked are displayed with a <strong>red x</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Option: Make images available</div>
+<div class="paragraph">
+<p>Check mark = Images that are linked to the facets will be displayed in the online store.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_adding_the_faceted_search_to_the_cms">5. Adding the faceted search to the CMS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The faceted search is defined in the template <strong>NavigationFacetsList</strong>. The template <strong>NavigationFacetsList</strong> is part of our standard design, Callisto Light. This template includes code that you can use to create a faceted search as displayed in <a href="#image-faceted-search-online-store">Figure 1</a>. Of course, this code can be modified as needed.<br>
+Use the template function <a href="/en/omni-channel/online-store/cms-syntax#web-design-navigation-container-navigationfacetslist">Container_NavigationFacetsList</a> to insert the template <strong>NavigationFacetsList</strong> into the desired area of your online store. To do so, proceed as follows.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Recommended templates</div>
+<div class="paragraph">
+<p>We recommend using the template function <strong>Container_NavigationFacetsList</strong> in <strong>ItemViewCategoriesList</strong> and <strong>ItemViewSearchResultsList</strong>. These templates are found in the menu <strong>CMS » Web design » Folder: Layout » Folder: ItemView</strong>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Adding the faceted search to the CMS:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <a href="/en/omni-channel/online-store/setting-up-clients/cms#web-design">CMS » Web design</a>.</p>
+</li>
+<li>
+<p>Open the desired template.</p>
+</li>
+<li>
+<p>Insert the template function <strong>Container_NavigationFacetsList</strong> into the template to display the faceted search.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Repeat the steps above if you want to insert the template function into additional templates.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>

@@ -1,0 +1,587 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#10"><span>1.</span><span> Important notes</span></a></li>
+<li><a href="#20"><span>2.</span><span> Registering with Paymorrow</span></a></li>
+<li><a href="#30"><span>3.</span><span> Setting up Paymorrow for Callisto</span></a></li>
+<li><a href="#40"><span>4.</span><span> Register the RSA certificate</span></a></li>
+<li><a href="#50"><span>5.</span><span> Activating the payment method</span></a></li>
+<li><a href="#60"><span>6.</span><span> Customising the invoice template for Paymorrow orders</span></a></li>
+<li><a href="#70"><span>7.</span><span> Automatically sending invoices</span></a></li>
+<li><a href="#80"><span>8.</span><span> Automatically sending credit notes</span></a></li>
+<li><a href="#90"><span>9.</span><span> Automatically sending cancellations</span></a></li>
+<li><a href="#100"><span>10.</span><span> Checking the order status</span></a>
+<ul class="sectlevel2">
+<li><a href="#110"><span>10.1.</span><span> Order process completed and payment successful through Paymorrow</span></a></li>
+<li><a href="#120"><span>10.2.</span><span> Paymorrow payment method rejected</span></a></li>
+<li><a href="#130"><span>10.3.</span><span> Order value limits were not observed (minimum or maximum)</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Old online store: Paymorrow</h1><div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Integration only for Callisto online stores</div>
+<div class="paragraph">
+<p>This page only contains instructions for integrating <strong>Paymorrow</strong> in Callisto online stores. The following instructions are not valid for Ceres online stores!</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Paymorrow is a specialised service provider, which processes payment on invoice for online sellers. Paymorrow makes fair eCommerce with payment on invoice possible for both parties. Customers pay the amount to Paymorrow. They have a payment deadline of 4 weeks. Paymorrow will transfer the accrued payments to the dealer’s account in particular intervals (e.g. weekly). Payment failures are insured and will be replaced by Paymorrow’s insurance company in a timely manner. Paymorrow is only available in German.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10">1. Important notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You need to have an <a href="/en/basics/working-with-plentymarkets/plentymarkets-account#ssl-certificate">SSL certificate</a> in order to correctly use the payment method.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Mandatory fields for manual order generation</div>
+<div class="paragraph">
+<p>The fields <strong>Telephone number</strong> and <strong>Date of birth</strong> are mandatory when generating orders manually. Check to make sure that information was saved in these fields when creating an order. Furthermore, the <strong>names</strong> have to be written out completely, abbreviations are not permitted. Otherwise, the check carried out by Paymorrow will fail.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="20">2. Registering with Paymorrow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to set up Paymorrow in plentymarkets, you will need an acceptance contract with Paymorrow and the necessary access data. In the Paymorrow <a href="http://www.paymorrow.de/onlinehaendler/integration/index.php" target="_blank" rel="noopener">seller area</a>, you will find the necessary instructions related to the contract.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="30">3. Setting up Paymorrow for Callisto</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Proceed as described below to set up the interface to Paymorrow for your Callisto online store in plentymarkets.</p>
+</div>
+<div class="paragraph">
+<p>If needed, request a test account from <a href="mailto:technik@paymorrow.de">technik@paymorrow.de</a> and carry out a few test transactions before you set up the access data. Paymorrow provides a German <strong><a href="https://www.plentymarkets.co.uk/documents/category/2611/Abnahmeprotokoll-paymorrow.pdf" target="_blank" rel="noopener">PDF document</a></strong> for this procedure, which you have to fill out in order to receive the access data. The procedure is also described in this document. For the test mode, authentication is done via a separate <a href="/en/order-processing/payment/paymorrow#40">RSA certificate registration</a>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up the interface to Paymorrow:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Payment » Methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the setting <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>DE</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Paymorrow V2</strong>.<br>
+→ The <strong>Interface</strong> tab will open.</p>
+</li>
+<li>
+<p>Expand the client.</p>
+</li>
+<li>
+<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-interface-setup-paymorrow">Table 1</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-interface-setup-paymorrow" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. setting up the interface to Paymorrow</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Merchant ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the merchant ID that you received from Paymorrow.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Test merchant ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the merchant ID for the test mode that you received from Paymorrow.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activate iframe</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate to use the Iframe.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minimum order value</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a minimum limit for having invoice as the payment method with Paymorrow (optional). Use the decimal point as a separator for decimal numbers.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximum order value</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a maximum limit for having invoice as the payment method with Paymorrow (optional). Use the decimal point as a separator for decimal numbers.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activate test mode</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate the test mode to test the exchange of data between plentymarkets and Paymorrow without the need for actual transactions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Client (store) options</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activate access data for all clients (stores)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only visible if clients (stores) were set up. Activate to apply the account settings saved for the main store by clicking on <strong>Add account</strong> for all clients (shops). This setting is dominant over the settings saved for each client. Deactivate to use separate access data for your clients (stores). Online stores that do not have account settings saved for them cannot be used with Paymorrow.<br>
+Go to <a href="/en/omni-channel/online-store/setting-up-clients/online-store">System » Client » Select client » Online store » Settings</a> and make sure that you have selected the option <strong>Enable login for every store</strong> in the line <strong>Login</strong>. This makes it possible to support several clients.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>RSA certificate registration</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Test certificate registration</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displaying the test certificate registration: Activate test mode and save the settings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Live certificate registration</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activated by default. If the <strong>Test certificate registration</strong> option is displayed: Deactivate test mode and save the settings.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="40">4. Register the RSA certificate</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Instead of a password, a RSA certificate is used to activate the interface for both the test and the live mode. Depending on the mode, a different button for registering is displayed. The live mode is activated by default. Proceed as follows to activate the test mode and register the test certificate.</p>
+</div>
+<div class="paragraph instruction">
+<p>Registering the test certificate:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Payment » Methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the setting <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>DE</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Paymorrow V2</strong>.<br>
+→ The <strong>Interface</strong> tab will open.</p>
+</li>
+<li>
+<p>Expand the client.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Activate test mode</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The test mode will be activated.</p>
+</li>
+<li>
+<p>Expand the <strong>RSA certificate registration</strong> area.</p>
+</li>
+<li>
+<p>Click on <strong>Test-Zertifikatregistrierung</strong> (Test certificate registration). <br>
+→ The <strong>Test certificate registration</strong> window will open and the certificate is generated.</p>
+</li>
+<li>
+<p>Enter the initialisation code.</p>
+</li>
+<li>
+<p>Click on <strong>Registrierung</strong> (Registration).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For registering the live certificate, deactivate the test mode and repeat the previous steps.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="50">5. Activating the payment method</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up and activate the Paymorrow <a href="/en/order-processing/payment/managing-payment-methods#20">payment methods</a> payment on invoice and direct debit in the <strong>Settings</strong> tab of the payment methods. In addition, check the settings for <strong>Permitted payment methods</strong> in the <a href="/en/order-processing/payment/managing-payment-methods#30">customer classes</a> and for <strong>Blocked payment methods</strong> in the <a href="/en/order-processing/fulfilment/preparing-the-shipment#1000">shipping profiles</a>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="60">6. Customising the invoice template for Paymorrow orders</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you use Paymorrow and you generate invoices for the orders that are paid for with Paymorrow invoices, then make sure to display Paymorrow’s bank details on the invoice rather than your own bank details. This is done automatically with a payment instruction. Proceed as described below to use your own <a href="/en/order-processing/orders/order-documents#170">PDF template</a>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Respect the payment instruction width</div>
+<div class="paragraph">
+<p>In order to display the bank details of Paymorrow correctly on your invoice, save a width of 120 millimetres for the payment instruction in the <strong>System » Client » Select client » Locations » Select location » Documents » Invoice</strong> menu.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Using own PDF template:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Client » Select client » Locations » Select location » Documents » Invoice</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>PDF template</strong> tab.</p>
+</li>
+<li>
+<p>Click on the <strong>New template</strong> tab.</p>
+</li>
+<li>
+<p>Select <strong>Paymorrow</strong> from the drop-down list to save the template for Paymorrow.</p>
+</li>
+<li>
+<p>Use the <strong>File</strong> area to select the PDF file on your computer.</p>
+</li>
+<li>
+<p>Click on <strong>Open</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The PDF file will be uploaded and listed in the <strong>Templates</strong> tab.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Before sending invoices to customers, find out whether customers already receive invoices from Paymorrow. In other words, make sure the customer does not receive 2 invoices.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="70">7. Automatically sending invoices</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up event procedures to inform Paymorrow of outgoing items, credit notes and cancellations. For this to work correctly, the documents need to be created in the order’s <strong>Receipts</strong> tab. Set up an <a href="/en/basics/automation/event-procedures">event procedure</a> to automatically send invoices to Paymorrow and to report outgoing items to Paymorrow.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Paymorrow only</div>
+<div class="paragraph">
+<p>Only set up the event procedures for the payment method Paymorrow. Otherwise unintended messages could be triggered. If you select multiple payment methods in the <strong>filter</strong> tab, then the message that was triggered for Paymorrow will also be sent to all of the other payment providers that were activated.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 2.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 2 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. event procedure for automatically sending invoices to Paymorrow</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Outgoing items booked</strong><br>
+Documents: Invoice generated</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Paymorrow payment on invoice</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment methods &gt; Send invoice to Paymorrow</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="80">8. Automatically sending credit notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If a customer sends back some or all of the items, then you must create a credit note and report this to Paymorrow in order to keep the customer from receiving a dunning letter from Paymorrow. Set up an <a href="/en/basics/automation/event-procedures">event procedure</a> to automatically send credit notes to Paymorrow.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 3.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 3 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. event procedure for automatically sending credit notes to Paymorrow</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Credit note</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Paymorrow payment on invoice</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment methods &gt; Send credit note to Paymorrow</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="90">9. Automatically sending cancellations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If an order was cancelled, then the status has to match the settings under <strong>System » Orders » Settings</strong> so that the cancelled operation will also be communicated to Paymorrow. Set up an <a href="/en/basics/automation/event-procedures">event procedure</a> to automatically send cancellations to Paymorrow.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 4.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 4 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. event procedure for automatically sending cancellations to Paymorrow</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select status for <strong>cancelled orders</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Paymorrow payment on invoice</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment methods &gt; Send cancellation to Paymorrow</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="100">10. Checking the order status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At the end of the order process, your customer will receive the information that you will now process the order. A few examples follow, which provide explanations of the various order statuses.</p>
+</div>
+<div class="sect2">
+<h3 id="110">10.1. Order process completed and payment successful through Paymorrow</h3>
+<div class="paragraph">
+<p>The customer has completed the order and has initiated payment through Paymorrow. The order is now in <strong>status 5</strong> (cleared for shipping). The items can be shipped. Once Paymorrow receives the invoice, the payment deadline is 30 days. Your customer must pay the invoice to Paymorrow within this time period.</p>
+</div>
+<div class="paragraph">
+<p>Once a week (providing that sales figures are generated), you will receive an account statement via email, which includes the following documents:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Accounting confirmation of individual items (Excel file)</p>
+</li>
+<li>
+<p>Cancellations of individual items (Excel file)</p>
+</li>
+<li>
+<p>Accounting (PDF file)</p>
+</li>
+<li>
+<p>Invoice of your Paymorrow fees (PDF file)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="120">10.2. Paymorrow payment method rejected</h3>
+<div class="paragraph">
+<p>The payment method Paymorrow was rejected. The order overview will display the message <strong>No payments</strong> under <strong>Incoming payment</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="130">10.3. Order value limits were not observed (minimum or maximum)</h3>
+<div class="paragraph">
+<p>In this case, the payment method Paymorrow cannot be selected. One of the limits that was set for orders was not observed. The permitted range for orders will be shown. In the example (<a href="#image-order-value-limit-not-observed">Figure 1</a>), the minimum was set to 20 Euro and the maximum was set to 20,000 Euro.</p>
+</div>
+<div id="image-order-value-limit-not-observed" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/order-processing/payment/assets/DE-Zahlungsarten-paymorrow.png" alt="DE Zahlungsarten paymorrow">
+</div>
+<div class="title">Figure 1. order value; limits were not observed</div>
+</div>
+</div>
+</div>
+</div>
+</main>
