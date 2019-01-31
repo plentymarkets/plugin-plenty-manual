@@ -4392,11 +4392,11 @@ class Metadata {
 				"urlName" => "plugins",
 				"url" => "/plugins/plugins",
 				"level" => 2,
-				"title" => "Plugins verwalten",
+				"title" => "Plugins einrichten",
 				"keywords" => "Plugins, Erweiterungen, Funktionen",
 				"description" => "So richten Sie Plugins im plentymarkets Backend ein.",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Plugins verwalten. Hier finden Sie folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Plugins einrichten. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			]
