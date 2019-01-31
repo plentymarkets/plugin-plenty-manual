@@ -4588,21 +4588,6 @@ class Metadata {
 ];
     const EN = [
 	[
-		"id" => "1193e3f22a29775583c286fa1c8258b4",
-		"path" => "first-steps",
-		"position" => 10,
-		"urlName" => "first-steps",
-		"url" => "/en/first-steps",
-		"level" => 1,
-		"title" => "First steps",
-		"keywords" => "",
-		"description" => "",
-		"navAlias" => "",
-		"linkListInto" => "Willkommen im Themenbereich First steps. Hier finden Sie folgende Informationen:",
-		"children" => [],
-		"hasChildren" => false
-	],
-	[
 		"id" => "a96216a022e662217f2b961371af897c",
 		"path" => "quick-start",
 		"position" => 10,
@@ -5118,21 +5103,6 @@ class Metadata {
 			]
 		],
 		"hasChildren" => true
-	],
-	[
-		"id" => "ce60cca4344cef8b9336e01eb2eb80f5",
-		"path" => "order-processing",
-		"position" => 40,
-		"urlName" => "order-processing",
-		"url" => "/en/order-processing",
-		"level" => 1,
-		"title" => "Order processing",
-		"keywords" => "",
-		"description" => "",
-		"navAlias" => "",
-		"linkListInto" => "Welcome to the topic Order processing. The following information is available:",
-		"children" => [],
-		"hasChildren" => false
 	],
 	[
 		"id" => "d62e8969949c5785c9a169c4c3015335",
