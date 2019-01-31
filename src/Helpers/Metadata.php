@@ -1417,11 +1417,11 @@ class Metadata {
 				"urlName" => "zahlungsanbieter",
 				"url" => "/payment/zahlungsanbieter",
 				"level" => 2,
-				"title" => "Payment",
+				"title" => "Zahlungsanbieter",
 				"keywords" => "Zahlungsanbieter, Zahlungsarten, Zahlungen",
 				"description" => "Payment in plentymarkets: Schnittstellen zu Zahlungsarten und Zahlungsanbietern einrichten.",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Payment. Hier finden Sie folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Zahlungsanbieter. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
 						"id" => "7a989b1bdfd633e752bcdb36c488730f",
