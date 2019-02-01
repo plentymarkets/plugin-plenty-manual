@@ -1245,21 +1245,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "d72668cf18ab2bf09d2534a28dcf6b1b",
-				"path" => "auftraege/sammelauftraege",
-				"position" => 60,
-				"urlName" => "sammelauftraege",
-				"url" => "/auftraege/sammelauftraege",
-				"level" => 2,
-				"title" => "Sammelaufträge",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Sammelaufträge. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "de4537b69b62acef8db2eb7ede9e7264",
 				"path" => "auftraege/scheduler",
 				"position" => 70,
