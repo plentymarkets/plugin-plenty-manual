@@ -7050,24 +7050,9 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
-				"id" => "aa4e296da19b800a7be84e6348b51f08",
-				"path" => "data/api-data",
-				"position" => 40,
-				"urlName" => "api-data",
-				"url" => "/en/data/api-data",
-				"level" => 2,
-				"title" => "API data",
-				"keywords" => "Settings, Basic settings, API data",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic API data. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "796d2645730ecbb545e3d0cf3193e276",
 				"path" => "data/api-log",
-				"position" => 50,
+				"position" => 40,
 				"urlName" => "api-log",
 				"url" => "/en/data/api-log",
 				"level" => 2,
@@ -7082,7 +7067,7 @@ class Metadata {
 			[
 				"id" => "e0e3ab9aa046fb9d1fcefa484b73d73c",
 				"path" => "data/datalog",
-				"position" => 60,
+				"position" => 50,
 				"urlName" => "datalog",
 				"url" => "/en/data/datalog",
 				"level" => 2,
@@ -7097,7 +7082,7 @@ class Metadata {
 			[
 				"id" => "fd12be59d194b8ad1b90a14b6e4d2649",
 				"path" => "data/data-cleansing",
-				"position" => 70,
+				"position" => 60,
 				"urlName" => "data-cleansing",
 				"url" => "/en/data/data-cleansing",
 				"level" => 2,
@@ -7112,7 +7097,7 @@ class Metadata {
 			[
 				"id" => "ee5f42c02fa8c8a81bf2d6b0b956fbfb",
 				"path" => "data/backup",
-				"position" => 80,
+				"position" => 70,
 				"urlName" => "backup",
 				"url" => "/en/data/backup",
 				"level" => 2,
@@ -7125,24 +7110,9 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "e8722700b6ed038d11881a04ecfce98a",
-				"path" => "data/dropbox",
-				"position" => 90,
-				"urlName" => "dropbox",
-				"url" => "/en/data/dropbox",
-				"level" => 2,
-				"title" => "Dropbox",
-				"keywords" => "Dropbox",
-				"description" => "Dropbox",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Dropbox. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "e91c27a4378610eff2df199b3cc1a8eb",
 				"path" => "data/ftp-access",
-				"position" => 100,
+				"position" => 80,
 				"urlName" => "ftp-access",
 				"url" => "/en/data/ftp-access",
 				"level" => 2,
