@@ -2858,24 +2858,9 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
-				"id" => "313f6e0e37ff432c1748478cf0c5f5a6",
-				"path" => "daten/api-daten",
-				"position" => 40,
-				"urlName" => "api-daten",
-				"url" => "/daten/api-daten",
-				"level" => 2,
-				"title" => "API-Daten",
-				"keywords" => "Einstellungen, Grundeinstellungen, API-Daten",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich API-Daten. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "ebd5e32cda802bb2d4da2c1ea116c646",
 				"path" => "daten/api-log",
-				"position" => 50,
+				"position" => 40,
 				"urlName" => "api-log",
 				"url" => "/daten/api-log",
 				"level" => 2,
@@ -2890,7 +2875,7 @@ class Metadata {
 			[
 				"id" => "9fea4d116762a3c08ebb539acb022825",
 				"path" => "daten/datenlog",
-				"position" => 60,
+				"position" => 50,
 				"urlName" => "datenlog",
 				"url" => "/daten/datenlog",
 				"level" => 2,
@@ -2905,7 +2890,7 @@ class Metadata {
 			[
 				"id" => "79a80c214c69390c5b6fd653015d7107",
 				"path" => "daten/datenbereinigung",
-				"position" => 70,
+				"position" => 60,
 				"urlName" => "datenbereinigung",
 				"url" => "/daten/datenbereinigung",
 				"level" => 2,
@@ -2920,7 +2905,7 @@ class Metadata {
 			[
 				"id" => "5ca6c986efb9e82262760558ecb00bb3",
 				"path" => "daten/backup",
-				"position" => 80,
+				"position" => 70,
 				"urlName" => "backup",
 				"url" => "/daten/backup",
 				"level" => 2,
@@ -2933,24 +2918,9 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "ca1c3b4ee8df53ee8ecfcd99c074b0d4",
-				"path" => "daten/dropbox",
-				"position" => 90,
-				"urlName" => "dropbox",
-				"url" => "/daten/dropbox",
-				"level" => 2,
-				"title" => "Dropbox",
-				"keywords" => "Dropbox",
-				"description" => "Dropbox",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Dropbox. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "fcc0accf19977120f47d6653283a8026",
 				"path" => "daten/ftp-zugang",
-				"position" => 100,
+				"position" => 80,
 				"urlName" => "ftp-zugang",
 				"url" => "/daten/ftp-zugang",
 				"level" => 2,
