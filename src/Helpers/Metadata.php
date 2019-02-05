@@ -6221,15 +6221,15 @@ class Metadata {
 					[
 						"id" => "b1616fc7406749a515ed85639dfddf42",
 						"path" => "data/importing-data/ElasticSync",
-						"position" => 0,
+						"position" => 10,
 						"urlName" => "ElasticSync",
 						"url" => "/en/data/importing-data/ElasticSync",
 						"level" => 3,
-						"title" => "",
-						"keywords" => "",
-						"description" => "",
+						"title" => "Importing data with ElasticSync",
+						"keywords" => "Importing data, import data, data import, ElasticSync, sync, Elastic Sync, synchronise, synchronisation, data format, data formats, dynamic import, mapping, matching, import option, import data",
+						"description" => "Find out how to import data in plentymarkets using ElasticSync.",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Importing data with ElasticSync. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7138,21 +7138,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "e91c27a4378610eff2df199b3cc1a8eb",
-				"path" => "data/ftp-access",
-				"position" => 80,
-				"urlName" => "ftp-access",
-				"url" => "/en/data/ftp-access",
-				"level" => 2,
-				"title" => "FTP access",
-				"keywords" => "Online store, Client, FTP server, FTP access",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic FTP access. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
