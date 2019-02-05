@@ -4,12 +4,42 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_configuring_processes"><span>1.</span><span> Configuring processes</span></a>
+<li><a href="#10"><span>1.</span><span> Processes in plentymarkets</span></a>
 <ul class="sectlevel2">
-<li><a href="#_new_process"><span>1.1.</span><span> New process</span></a></li>
-<li><a href="#_exporting_importing_and_copying_processes"><span>1.2.</span><span> Exporting, importing and copying processes</span></a></li>
-<li><a href="#_context_menu"><span>1.3.</span><span> Context menu</span></a></li>
-<li><a href="#_adding_elements"><span>1.4.</span><span> Adding elements</span></a></li>
+<li><a href="#20"><span>1.1.</span><span> What is a work step?</span></a></li>
+<li><a href="#30"><span>1.2.</span><span> What is a procedure?</span></a></li>
+<li><a href="#40"><span>1.3.</span><span> What is a control element?</span></a></li>
+<li><a href="#50"><span>1.4.</span><span> What is a sub-procedure?</span></a></li>
+</ul>
+</li>
+<li><a href="#60"><span>2.</span><span> Creating a process</span></a>
+<ul class="sectlevel2">
+<li><a href="#70"><span>2.1.</span><span> Creating a work step</span></a>
+<ul class="sectlevel3">
+<li><a href="#80"><span>2.1.1.</span><span> Creating a work step “Order group processing”</span></a></li>
+<li><a href="#90"><span>2.1.2.</span><span> Filters of the work step Order group processing</span></a></li>
+<li><a href="#100"><span>2.1.3.</span><span> Creating a work step “Order processing”</span></a></li>
+<li><a href="#110"><span>2.1.4.</span><span> Creating a work step “Incoming items”</span></a></li>
+</ul>
+</li>
+<li><a href="#120"><span>2.2.</span><span> Editing a work step</span></a></li>
+<li><a href="#130"><span>2.3.</span><span> Adding a procedure/control element to a work step</span></a></li>
+<li><a href="#140"><span>2.4.</span><span> Adding sub-procedures to procedures</span></a></li>
+<li><a href="#150"><span>2.5.</span><span> Managing error handling</span></a>
+<ul class="sectlevel3">
+<li><a href="#160"><span>2.5.1.</span><span> Available procedures in case of error</span></a></li>
+<li><a href="#170"><span>2.5.2.</span><span> Adding a procedure for error handling</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#180"><span>3.</span><span> Controlling visibility of processes</span></a></li>
+<li><a href="#190"><span>4.</span><span> Reusing a process</span></a>
+<ul class="sectlevel2">
+<li><a href="#200"><span>4.1.</span><span> Copying a process</span></a></li>
+<li><a href="#210"><span>4.2.</span><span> Exporting a process</span></a></li>
+<li><a href="#220"><span>4.3.</span><span> Importing a process</span></a></li>
+<li><a href="#230"><span>4.4.</span><span> Swapping processes in the plentymarkets process bazaar</span></a></li>
 </ul>
 </li>
 </ul>
@@ -21,40 +51,6 @@
 <main id="main">
     <h1>Setting up processes</h1><div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock warning">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="title">Install plentyBase</div>
-<div class="paragraph">
-<p>You need the tool plentyBase to create and run processes in the plentymarkets back end. Go to  <a href="https://marketplace.plentymarkets.com/plugins/externe-tools/plentyBase_5053/" target="_blank" rel="noopener">plentyMarketplace</a> to download the installation files.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-<div class="paragraph">
-<p>The following folders are available for configuring your processes.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>My processes</strong>: here you can see the processes that you can edit.</p>
-</li>
-<li>
-<p><strong>Processes from other users</strong>: here you can see the processes that belong to other users. This folder is only visible for users who are assigned to the class <strong>Admin</strong>.</p>
-</li>
-<li>
-<p>Processes per <a href="/en/basics/admin-tasks/manage-users">role</a>: here you can see the processes that were assigned to your role. If you were not assigned to any role, then you will not see a folder here. Go to <a href="/en/basics/admin-tasks/manage-users">System » Settings » User</a> to create roles. Users who were assigned to the class <a href="/en/basics/admin-tasks/manage-users">Admin</a> will be able to see the processes for all roles.</p>
-</li>
-<li>
-<p><strong>Global processes</strong>: here you can see processes that are available for all users.</p>
-</li>
-</ul>
-</div>
 <div class="admonitionblock important">
 <table>
 <tbody><tr>
@@ -62,9 +58,9 @@
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-<div class="title">Visibility of the menu: System » Processes</div>
+<div class="title">Installing plentyBase</div>
 <div class="paragraph">
-<p>Variable users will only be able to see the <strong>System » Processes</strong> menu if they were given the right to do so in the user profile. For further information about rights, refer to the <a href="/en/basics/admin-tasks/manage-users">Managing user accounts</a> page of the manual.</p>
+<p>You need plentyBase to create and run processes in the plentymarkets back end. You can download the installation files in the <a href="https://marketplace.plentymarkets.com/en/plugins/integration/plentyBase_5053">plentyMarketplace</a>.</p>
 </div>
 </td>
 </tr>
@@ -72,57 +68,247 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="_configuring_processes">1. Configuring processes</h2>
+<h2 id="10">1. Processes in plentymarkets</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You will now learn how to create a process and which elements are included in a process.</p>
+<p>Processes allow you to automate many complex tasks in plentymarkets. Find out more about automatically processing orders in our link::https://www.plentymarkets.co.uk/knowledge/video-tutorials/automation/[video tutorials on automation].</p>
 </div>
-<div class="sect2">
-<h3 id="_new_process">1.1. New process</h3>
 <div class="paragraph">
-<p>Carry out the following steps to add a <strong>new process</strong>:</p>
+<p>The following process elements are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Work steps</p>
+</li>
+<li>
+<p>Control elements</p>
+</li>
+<li>
+<p>Procedures</p>
+</li>
+<li>
+<p>Sub-procedures</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/automation/processes/assets/EN-Einstell-Prozesse-Prozesse-einrichten-01-SI.png" alt="Process menu and submenus">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/automatisierung/prozesse/assets/prozess.png" alt="prozess">
 </div>
-<div class="title">Figure 1. <strong>Process</strong> menu and submenus</div>
+<div class="title">Figure 1. Pattern of a very simple process</div>
+</div>
+<div class="sect2">
+<h3 id="20">1.1. What is a work step?</h3>
+<div class="paragraph">
+<p>Each process consists of at least one work step. Work steps are the core of your processes. Work steps are used to define which tasks and sequences are to be automated. Depending on the type of work step, you automate processing of either individual or several orders or of incoming items. You can add an unlimited amount of work steps to each process. The following types of work steps are available:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Available work steps</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Work step</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order group processing work step</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies which and how many orders should be processed. Filters allow you to limit automatic processing to specific orders. Furthermore, you can specify if and to what extent the work step makes any changes these orders. You can change the status, the owner and/or the flag of orders that were processed in this work step. You also specify the sequence in which orders are processed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order processing</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines how single orders are dealt with after they are registered, e.g. scanned with a barcode scanner.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Incoming items</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the work step to search for and register single incoming items, to search for orders and then book the items contained in the order and to automatically assign reorders.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="30">1.2. What is a procedure?</h3>
+<div class="paragraph">
+<p>Procedures are added to a work step. Use procedures to specify which actions are to be performed automatically when a process is run.</p>
+</div>
+<div class="paragraph">
+<p>For further information about available procedures, refer to the <a href="/en/basics/automation/processes/procedures">Procedures/control elements</a> page of the manual.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="40">1.3. What is a control element?</h3>
+<div class="paragraph">
+<p>Control elements are a special type of procedure. Control elements are used to control how the work steps of a process are executed. As such, you add control elements to a work space to control the way that the procedures of the work step interact with each other. For example, you can repeat procedures, jump to specific points within the work step or specify conditions that need to be met before a procedure is executed.</p>
+</div>
+<div class="paragraph">
+<p>The following control elements are available and are described in more detail on the <a href="/en/automation/processes/procedures#_control_elements">Procedures/control elements</a> page of the manual.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Available control elements</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 50%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Control element</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+<th class="tableblock halign-left valign-top">Work steps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Jump</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skips to a specific part of the process.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Order group processing</p>
+</li>
+<li>
+<p>Single order processing</p>
+</li>
+<li>
+<p>Incoming items</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Loop</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loop that repeats a procedure or sequence of actions until all orders have been processed by the work step.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Order group processing</p>
+</li>
+<li>
+<p>Single order processing</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Split</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fork for saving a condition for a target.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Order group processing</p>
+</li>
+<li>
+<p>Single order processing</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limits procedures to the filtered orders.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Order group processing</p>
+</li>
+<li>
+<p>Single order processing</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reset filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cancels the filter.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Order group processing</p>
+</li>
+<li>
+<p>Single order processing</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>End</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ends a work step or process.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Order group processing</p>
+</li>
+<li>
+<p>Single order processing</p>
+</li>
+<li>
+<p>Incoming items</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Dialog</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Query with optional selection using up to 5 buttons</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Order group processing</p>
+</li>
+<li>
+<p>Single order processing</p>
+</li>
+<li>
+<p>Incoming items</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="50">1.4. What is a sub-procedure?</h3>
+<div class="paragraph">
+<p>Sub-procedures are added to a procedure. As such, you use sub-procedures to specify which actions are to be performed automatically when a procedure is run.</p>
+</div>
+<div class="paragraph">
+<p>For a list of available sub-procedures, refer to the <a href="/en/basics/automation/processes/sub-procedures">Sub-procedures</a> page of the manual.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="60">2. Creating a process</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Go to <strong>System » Processes</strong> to create and manage processes. Proceed as described below to create a process.</p>
 </div>
 <div class="paragraph instruction">
-<p>Adding a new process:</p>
+<p>Creating a process:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <strong>System » Processes</strong>.</p>
+<p>Go to <strong>System » Processes » New process</strong>.<br>
+<strong><em>Note:</em></strong> It the menu <strong>System » Processes</strong> is not shown, install the plugin <a href="https://marketplace.plentymarkets.com/plugins/externe-tools/plentyBase_5053/" target="_blank" rel="noopener">plentyBase</a>.</p>
 </li>
 <li>
-<p>Point your mouse cursor to the desired folder, e.g. <strong>My processes</strong> and click on the small triangle on the right-hand side of the line (image 1, number 1).<br>
-→ The <strong>New process</strong> button will appear.</p>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-process-settings">Table 3</a>.</p>
 </li>
 <li>
-<p>Click on the <strong>New process</strong> button (image 1, number 2).<br>
-→ The configuration menu for a new process will appear (image 2).</p>
-</li>
-<li>
-<p>Pay attention to the explanations given in table 1 and carry out the settings as desired.</p>
-</li>
-<li>
-<p><strong>Save</strong> the settings.</p>
+<p><strong>Save</strong> the settings.<br>
+→ The process is shown in the menu tree.</p>
 </li>
 </ol>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/automation/processes/assets/EN-Einstell-Prozesse-Prozesse-einrichten-02-SI.png" alt="Configuration menu for a new process">
-</div>
-<div class="title">Figure 2. Configuration menu for a new process</div>
-</div>
-<div class="paragraph">
-<p>The following table explains the settings of the new process:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. New process; settings</caption>
+<table id="table-process-settings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Creating a process</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -135,68 +321,1725 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the process. This name should be as clear and self-explanatory as possible so that the processes can be easily identified in the overview of processes later on.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the process.<br>
+<strong><em>Tip:</em></strong> Use a unique and descriptive name so that users can easily understand what the process does.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Visibility</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select which group the corresponding process should be visible for. Visible means that the process will be available in the <strong>Processes</strong> menu and can be carried out there.<br>
-<strong>General</strong> = The process is visible to everyone<br>
-<a href="/en/basics/admin-tasks/manage-users">User</a> = The process is only visible to a specific user. This user is selected from the <strong>User</strong> drop-down list below<br>
-<a href="/en/basics/admin-tasks/manage-users">Role</a> = The process is only visible to a specific <strong>role</strong>. This role is selected from the <strong>Role</strong> drop-down list below</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Visibility</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select which group the process should be visible for. Visible means that the process will be available in the <strong>Processes</strong> menu and can be carried out there.<br>
+<strong>General</strong> = The process is visible to everyone.<br>
+<strong>User</strong> = The process is only visible to a specific user. This user is selected from the <strong>User</strong> drop-down list.<br>
+<strong>Role</strong> = The process is only visible to a specific <strong>role</strong>. This role is selected from the <strong>Role</strong> drop-down list.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This option can only be used if you selected <strong>User</strong> for the option <strong>Visibility</strong>. Select which user the corresponding process should be visible for. In other words, you can create processes for yourself as well as for other users. Users who were assigned to the class <a href="/en/basics/admin-tasks/manage-users">Admin</a> will also be able to see the process, regardless of which setting is chosen here.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This option can only be used if you selected <strong>User</strong> for the option <strong>Visibility</strong>. Select which person the process should be visible for.<br>
+<strong><em>Note:</em></strong> Users with <a href="/en/basics/working-with-plentymarkets/manage-users">Admin</a> rights can view all processes.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select which role the corresponding process should be visible for. In other words, you can create processes for your own role as well as for other roles. Users who were assigned to the class <strong>admin</strong> will also be able to see the process, regardless of which setting is chosen here.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Role</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This option can only be used if you selected <strong>Role</strong> for the option <strong>Visibility</strong>. Select which role the process should be visible for.<br>
+<strong><em>Note:</em></strong> Users with <a href="/en/basics/working-with-plentymarkets/manage-users">Admin</a> rights can view all processed.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Changeable</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Place a <em><strong>check mark</strong></em> to allow others to <em><strong>edit</strong></em> the process. This setting works in combination with the option that you selected under <strong>visibility</strong>. In other words, you allow the process to be edited by the selected <strong>user</strong>, the selected <strong>role</strong> or <strong>globally</strong>. If you <em><strong>do not place a check mark</strong></em>, then only <strong>admin</strong> users will be able to edit the process.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Changeable</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select who can edit the process.<br>
+Activated = Users that can view the process also can edit it.<br>
+Not activated = Only users with <strong>Admin</strong> rights can edit the process.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select the <strong>warehouse</strong>.<br>
-<strong>Important</strong>: If you do not select any warehouse, then the warehouse with the warehouse ID 1 will be selected by default.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a warehouse. The warehouse with the warehouse ID 1 is selected by default.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Color</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select a color for the process. The process will later be displayed with this color in the <strong>Processes</strong> menu.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Colour</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the colour in which the process it to be shown in the <strong>Processes</strong> menu.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="70">2.1. Creating a work step</h3>
 <div class="paragraph">
-<p>The new process will be displayed in the menu structure after you have saved the settings (image 3).</p>
+<p>The following work steps are available:</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/automation/processes/assets/EN-Einstell-Prozesse-Prozesse-einrichten-03-SI.png" alt="New process in My processes menu">
+<div class="ulist">
+<ul>
+<li>
+<p>Order group processing</p>
+</li>
+<li>
+<p>Single order processing</p>
+</li>
+<li>
+<p>Incoming items</p>
+</li>
+</ul>
 </div>
-<div class="title">Figure 3. New process in the <strong>My processes</strong> menu</div>
+<div class="sect3">
+<h4 id="80">2.1.1. Creating a work step “Order group processing”</h4>
+<div class="paragraph">
+<p>Proceed as described below to create a work step of the type <strong>Order group processing</strong>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a work step “Order group processing”:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Processes » Select folder » Select process</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>New work step</strong>.<br>
+→ The window <strong>New work step</strong> opens.</p>
+</li>
+<li>
+<p>From the drop-down list select the type <strong>Order group processing</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The window <strong>Work step: Order group processing</strong> opens.</p>
+</li>
+<li>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-processes-order-group-processing">Table 4</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The work step is created.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Use the context menu</div>
+<div class="paragraph">
+<p>If the processes already contains a work step, you can also use the context menu to add additional work steps. Use your mouse to right-click on a work step and select to insert a work step before or after.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table id="table-processes-order-group-processing" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Settings for the work step <strong>Order group processing</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Settings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a name that describes the work step as clearly as possible.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Number</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter how many orders should be processed per run.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Next step</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether an additional work step should be started manually or automatically. This setting is only relevant if at least two work steps are configured.<br>
+<strong>Awaiting input</strong> = The next step or procedure is not started automatically. The process is paused until you click on <strong>Start</strong> in the menu for carrying out the process.<br>
+<strong>Start automatically</strong> = The next step or procedure will be started automatically.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Position</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You need to create the work step first to select this option.<br>
+Newly created work steps are assigned the next available position by default. Select a different position to change the order in which several work steps are executed. Work steps are sorted in ascending order. As such, the work step with the lowest number is started first.<br>
+<strong><em>Tip:</em></strong> Alternatively, you can change the position of work steps using the context menu. To do so, use your mouse to right-click on the work step and select <strong>Move up</strong> or <strong>Move down</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Filter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click on the green <strong>Plus</strong> icon and select a filter to only process specific orders in this process. <a href="#table-order-group-processing-filter">Table 5</a> describes the filters available for the work step <strong>Order group processing</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Select orders</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want this work step to change the status of the orders, select the status to be assigned to orders at the end of the work step. You can also select <strong>Without changes</strong> if you do not want to change the status.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New owner</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want this work step to assign a new user as owner of the orders, then select the user from the drop-down menu. You can also select <strong>Without changes</strong> if you do not want to change the owner.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New flag</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you want this work step to change the flag of the orders, select the flag to be assigned to orders at the end of the work step. Select <strong>Without changes</strong> if you do not want to change the flag.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Sorting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sorting</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the order in which the orders should be processed. Orders can be sorted in ascending or descending order by:<br>
+<strong>Order ID</strong> (default setting)<br>
+<strong>Item ID</strong><br>
+<strong>Customer ID</strong><br>
+<strong>Invoice number</strong><br>
+<strong>Item number</strong><br>
+<strong>Storage location position</strong><br>
+<strong><em>Note:</em></strong> Only the first item within an order item is taken into consideration for the sorting.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="90">2.1.2. Filters of the work step Order group processing</h4>
+<div class="paragraph">
+<p>Use the filters to only process specific orders in the work step <strong>Order group processing</strong>. <a href="#table-order-group-processing-filter">Table 5</a> describes the filters available for the work step <strong>Order group processing</strong>.</p>
+</div>
+<table id="table-order-group-processing-filter" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Filters of the work step <strong>Order group processing</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Filter</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Order data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Number of order items</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an operator from the drop-down list and enter a number into the field. This will search for orders that include a certain number of order items.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order warehouse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a warehouse from the drop-down list to only search for orders that contain items from this warehouse.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a specific order type if you only want to process this type of order. The list also includes some combinations of order types.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a point in time, e.g. <strong>Yesterday</strong> or e.g. <strong>in the past</strong>, to filter all existing orders. You can select more than one option.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Owner</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the user whose orders you want to filter.<br>
+<strong>Active user</strong> = User who is currently logged into the system.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Email address</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an option to only filter for those orders that <strong>include</strong> an email address in the customer data record or that <strong>do not include</strong> an email address in the customer data record.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Express delivery</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether you want to filter orders with express shipping or not.<br>
+<strong>Yes</strong> = Only orders with express shipping<br>
+<strong>No</strong> = Only orders without express shipping</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Total quantity of items</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an operator from the drop-down list and enter a number into the field. This will search for orders that include a certain number of unique items.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Weight</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orders can be filtered by weight in grams. Enter a value and select the equals sign to filter orders with an exact weight. Enter a value and select the appropriate operator to filter orders within a certain weight range. You can filter two different weight ranges by using both text fields at once.<br>
+<strong><em>Example</em></strong>: For a weight of 3.5 kg and higher, enter <strong>3500</strong> into the text field and select the operator <strong>&gt;=</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the order referrer of those orders that you want to filter. You can select more than one option.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Customer class</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select one or more customer classes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Country of delivery</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the country of delivery of those orders that you want to filter. All countries of delivery can be selected here. Not only those that you activated in your system.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client (store)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the client (store) of those orders that you want to filter. You can select more than one option.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Flag</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the flag of those orders that you want to filter. The option <strong>None</strong> will filter orders that do not have a flag.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pending pick list</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pending <a href="/en/order-processing/orders/order-documents/pick-list"><strong>pick lists *</strong></a><strong> are those that have not been completely processed yet. In order for the filter to be effective, a pending pick list has to be available in general. If this is not the case, then orders will not be filtered by the specified conditions. Instead, orders will be loaded by other filters set up. Options:<br>
+*Use</strong> = Continue processing a pending pick list.<br>
+<strong>Do not use</strong> = Start a new pick list.<br>
+If the filter with the setting <strong>Use</strong> is looking for the corresponding orders and finds a pending pick list, the orders of this pick list will be loaded. All other filters set up for this work step will be ignored then. You have to set up a <a href="/en/stock-management/setting-up-a-warehouse#700">box storage rack</a> in the <a href="/en/automation/processes/procedures#140">item registration procedure</a> as a condition for the following processing of the loaded pick list.<br>
+If you deactivate the filter by selecting <strong>Do not use</strong>, then a new pick list will automatically be created assuming that the previously mentioned condition is fulfilled. However, if there is a pending pick list available when selecting this option, then the process will be cancelled and an error message will be displayed. In this case, the pending pick list has to be processed in advance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Packstation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether you want to filter orders with Packstations or not.<br>
+<strong>Yes</strong> = Only orders with Packstations<br>
+<strong>No</strong> = Only orders without Packstations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Invoice amount</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orders can be filtered by invoice amount. Enter a value and select the equals sign to filter orders with an exact amount. Enter a value and select the appropriate operator to filter orders within a certain invoice amount range. You can filter two different weight ranges by using both text fields at once.<br>
+<strong><em>Example</em></strong>: For an invoice amount of 39.90 euros and higher, enter <strong>39.90</strong> into the text field and select the operator <strong>&gt;=</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a status if you only want to filter orders with this status.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Loyalty program</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select one, several or no loyalty program to only process orders from this loyalty program or orders without a loyalty program.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping service provider</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a shipping service provider to only filter orders that use this shipping service provider.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping costs</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orders can be filtered by shipping costs. Enter a value and select the equals sign to filter orders with an exact amount. Enter a value and select the appropriate operator to filter orders within a certain shipping costs range. You can filter two different weight ranges by using both text fields at once.<br>
+<strong><em>Example</em></strong>: For a shipping cost of 3.90 euros and higher, enter <strong>3.90</strong> into the text field and select the operator <strong>&gt;=</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping profiles</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select one or more shipping profiles to only filter orders with this shipping profile.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping region</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a shipping region to only filter orders from this region.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outgoing items</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select how you want to filter by outgoing items:<br>
+<strong>Not booked</strong> = Only orders without outgoing items booked<br>
+<strong>Booked</strong> = Only orders with outgoing items booked<br>
+<strong>Today</strong> = Only orders with outgoing items booked today<br>
+<strong>Yesterday</strong> = Only orders with outgoing items booked yesterday</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the payment status by which you want to filter the orders.<br>
+<strong>Check payment</strong> = Filters all orders in a specific status that should be checked (manually). This means that unpaid, partially paid and overpaid orders will be listed.<br>
+<strong>Unpaid only</strong> = Only orders for which no payment was received.<br>
+<strong>Paid only</strong> = Only fully paid orders<br>
+<strong>Partial payment only</strong> = Only orders for which a partial payment was received.<br>
+<strong>Initial payment complete</strong> = Only orders for which a complete initial payment was received.<br>
+<strong>Overpaid only</strong>= Only orders for which an overpayment was received.<br>
+<strong>Unpaid and partially paid</strong> = Only orders for which no or only partial payment was received.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select one or more payment methods to only filter orders with this payment method.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#400">SEPA</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type of debit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether you want to filter orders with <strong>First debit</strong> or <strong>Recurring debit</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Type of mandate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SEPA core direct debit</strong> = Allows a biller to collect funds from a payer’s account, provided that a signed mandate has been granted by the payer to the biller<br>
+<strong>SEPA business to business direct debit</strong> = Enables business customers in the role of payers to make payments by direct debit (B2B).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment frequency</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>One-time payment</strong> = Standard orders<br>
+<strong>Recurring payment</strong> = Regularly occurring orders such as subscription orders, etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IBAN &amp; BIC</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether you want to filter orders for which IBAN and BIC are <strong>available</strong> or <strong>not available</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SEPA direct debit mandate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters orders depending on whether or not the customer has signed the SEPA direct debit mandate.<br>
+<strong>active</strong> = Only orders from customers who confirmed and signed the SEPA direct debit mandate are processed.<br>
+<strong>not active</strong> = Only orders from customers who did not confirm and sign the SEPA direct debit mandate are processed.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph instruction">
+<p>Available procedures and sub-procedures</p>
 </div>
 <div class="paragraph">
-<p>Create a process in the desired folder. For further information, refer to section 1 on this page of the manual.</p>
+<p>The following <a href="/en/automation/processes/procedures#_procedures">procedures</a> and <a href="/en/automation/processes/sub-procedures">sub-procedures</a> can be selected for the <strong>Order group processing</strong> work step.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Work step <strong>Order group processing</strong>; procedures and sub-procedures</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Procedure</th>
+<th class="tableblock halign-left valign-top">Sub-procedures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/automation/processes/procedures#120">Address label</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#130">Offer</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#140">Item registration</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>None</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#170">Order</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#290">Change status</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#210">Change flag</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#190">Change owner</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#250">Scan package number</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#180">Order confirmation</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#210">Documents</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#220">Email</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-edures#330">Send</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#250">Credit note</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#260">Note</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#200">Show note</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#240">Customer notes</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#240">Order notes</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#270">Adjustment form</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#280">Warehouse pick list</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#290">Delivery note</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#300">Dunning letter</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#310">Packing list</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#320">Pick list</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#340">Polling</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#350">Invoice</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#380">Return label</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#390">Return slip</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#400">SEPA Pain001</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#410">SEPA Pain008</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#420">Serial numbers</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#260">Register serial numbers</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#430">Shipping center</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#440">Outgoing items</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#160">Execute booking</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#170">Reset booking</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#470">Register incoming payment</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>None</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="100">2.1.3. Creating a work step “Order processing”</h4>
+<div class="paragraph">
+<p>Proceed as described below to create a work step of the type <strong>Order processing</strong>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a work step “Order processing”:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Processes » Select folder » Select process</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>New work step</strong>.<br>
+→ The window <strong>New work step</strong> opens.</p>
+</li>
+<li>
+<p>From the drop-down list select the type <strong>Order processing</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The window <strong>Work step: Single order processing</strong> opens.</p>
+</li>
+<li>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-processes-single-order-processing">[table-processes-single-order-processing]</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The work step is created.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Use the context menu</div>
+<div class="paragraph">
+<p>If the processes already contains a work step, you can also use the context menu to add additional work steps. Use your mouse to right-click on a work step and select to insert a work step before or after.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table id="table-processes-order-processing" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Settings for the work step <strong>Order processing</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Position</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You need to create the work step first to select this option.<br>
+Newly created work steps are assigned the next available position by default. Select a different position to change the order in which several work steps are executed. Work steps are sorted in ascending order. As such, the work step with the lowest number is started first.<br>
+<strong><em>Tip:</em></strong> Alternatively, you can change the position of work steps using the context menu. To do so, use your mouse to right-click on the work step and select <strong>Move up</strong> or <strong>Move down</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the work step. Enter a name that describes the work step as clearly as possible.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Next step</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether an additional work step should be started manually or automatically. This setting is only relevant if at least two work steps are configured.<br>
+<strong>Awaiting input</strong> = The next step or procedure is not started automatically. The process is paused until you click on <strong>Start</strong> in the menu for executing the process.<br>
+<strong>Start automatically</strong> = The next step or procedure will be started automatically.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph instruction">
+<p>Available procedures and sub-procedures</p>
+</div>
+<div class="paragraph">
+<p><a href="#table-order-processing-procedures">Table 8</a> shows the <a href="/en/automation/processes/procedures#_procedures">procedures</a> and <a href="/en/automation/processes/sub-procedures">sub-procedures</a> that can be selected for the <strong>Order processing</strong> work step.</p>
+</div>
+<table id="table-order-processing-procedures" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. Work step <strong>Order processing</strong>; procedures and sub-procedures</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Procedure</th>
+<th class="tableblock halign-left valign-top">Sub-procedures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/automation/processes/procedures#120">Address label</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#140">Item registration</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>None</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#170">Order</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#290">Change status</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#210">Change flag</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#190">Change owner</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#250">Scan package number</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#190">Order search</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>None</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#200">Reorder search</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#150">Scan reorder</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#210">Documents</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#220">Email</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-edures#330">Send</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#250">Credit note</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#260">Note</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#200">Show note</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#240">Customer notes</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#240">Order notes</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#290">Delivery note</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#310">Packing list</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#320">Pick list</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#340">Polling</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#350">Invoice</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#380">Return label</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#390">Return slip</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#420">Serial numbers</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#260">Register serial numbers</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#430">Shipping center</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#440">Outgoing items</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#160">Execute booking</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#170">Reset booking</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="110">2.1.4. Creating a work step “Incoming items”</h4>
+<div class="paragraph">
+<p>Proceed as described below to create a work step of the type <strong>Incoming items</strong>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a work step “Incoming items”:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Processes » Select folder » Select process</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>New work step</strong>.<br>
+→ The window <strong>New work step</strong> opens.</p>
+</li>
+<li>
+<p>From the drop-down list select the type <strong>Incoming items</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The window <strong>Work step: Incoming items</strong> opens.</p>
+</li>
+<li>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-processes-incoming-items">Table 9</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The work step is created.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Use the context menu</div>
+<div class="paragraph">
+<p>If the processes already contains a work step, you can also use the context menu to add additional work steps. Use your mouse to right-click on a work step and select to insert a work step before or after.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table id="table-processes-incoming-items" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Settings of the work step <strong>Incoming items</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You need to create the work step first to select this option.<br>
+Newly created work steps are assigned the next available position by default. Select a different position to change the order in which several work steps are executed. Work steps are sorted in ascending order. As such, the work step with the lowest number is started first.<br>
+<strong><em>Tip:</em></strong> Alternatively, you can change the position of work steps using the context menu. To do so, use your mouse to right-click on the work step and select <strong>Move up</strong> or <strong>Move down</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the work step. Enter a name that describes the work step as precisely as possible.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Next step</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether an additional work step should be started manually or automatically. This setting is only relevant if at least two work steps are configured.<br>
+<strong>Awaiting input</strong> = The next step or procedure is not started automatically. The process is paused until you click on <strong>Start</strong>.<br>
+<strong>Start automatically</strong> = The next step or procedure starts automatically.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph instruction">
+<p>Available procedures and sub-procedures</p>
+</div>
+<div class="paragraph">
+<p><a href="#table-table-incoming-items-procedures">[table-table-incoming-items-procedures]</a> shows the procedures and sub-procedures that can be selected for the <strong>Incoming items</strong> work step.</p>
+</div>
+<table id="table-incoming-items-procedures" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 10. Work step <strong>Incoming items</strong>; procedures and sub-procedures</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Procedure</th>
+<th class="tableblock halign-left valign-top">Sub-procedures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#150">Item label</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#180">Print</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#280">Save</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#350">Save to clipboard</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#160">Item search</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#120">Scan item</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#200">Reorder search</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#150">Scan reorder</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#260">Note</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#200">Show note</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#450">Incoming items (reorder)</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#160">Execute booking</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/en/basics/automation/processes/procedures#460">Single incoming item</a></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#160">Execute booking</a></p>
+</li>
+<li>
+<p><a href="/en/basics/automation/processes/sub-procedures#270">Sounds</a></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exporting_importing_and_copying_processes">1.2. Exporting, importing and copying processes</h3>
+<h3 id="120">2.2. Editing a work step</h3>
 <div class="paragraph">
-<p>Instead of recreating a process from your own or another system, you can also export it and import it into the new system or copy it within the same system.</p>
+<p>You can edit existing work steps by pointing your cursor at the work step. In the context menu shown, click on the <strong>Pencil</strong> icon.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="130">2.3. Adding a procedure/control element to a work step</h3>
+<div class="paragraph">
+<p>Proceed as described below to add a procedure or a control element to a work step. For further information about available procedures, refer to the <a href="/en/basics/automation/processes/procedures">Procedures/control elements</a> page of the manual.</p>
+</div>
+<div class="paragraph instruction">
+<p>Adding a procedure or sub-procedure to a work step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Processes » Select folder » Select process</strong>.</p>
+</li>
+<li>
+<p>Move the mouse cursor over the work step for which you want to add a procedure or a control element.<br>
+→ The context menu of the work step opens.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong>.<br>
+→ The <strong>Add</strong> window is displayed.</p>
+</li>
+<li>
+<p>Select a procedure or a control element from the drop-down list.<br>
+Carry out additional settings as desired. Pay attention to the explanations on the <a href="/en/basics/automation/processes/procedures">Procedures</a> page of the manual.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The procedure or the control element is created.</p>
+</li>
+<li>
+<p>Move the mouse cursor over the procedure or the control element to edit the <strong>position</strong> or other settings.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Use the context menu</div>
+<div class="paragraph">
+<p>If the work step already contains a procedure, you can also use the context menu to add additional procedures or control elements. Use your mouse to right-click on a procedure and select to insert a procedure before or after.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="140">2.4. Adding sub-procedures to procedures</h3>
+<div class="paragraph">
+<p>Proceed as described below to add a sub-procedure to a procedure. For a list of available sub-procedures, refer to the <a href="/en/basics/automation/processes/sub-procedures">Sub-procedures</a> page of the manual.</p>
+</div>
+<div class="paragraph instruction">
+<p>Adding a sub-procedure to a procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Processes » Select folder » Select process</strong>.</p>
+</li>
+<li>
+<p>Move the mouse cursor over procedure for which you want to add a sub-procedure.<br>
+→ The context menu of the procedure is shown.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong>.<br>
+→ The <strong>Add</strong> window is displayed.</p>
+</li>
+<li>
+<p>Select a sub-procedure from the drop-down list.<br>
+Carry out additional settings as desired. Pay attention to the explanations on the <a href="/en/basics/automation/processes/procedures">Procedures</a> page of the manual.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The sub-procedure is created and displayed in the Procedures tab.</p>
+</li>
+<li>
+<p>Move the mouse cursor over the sub-procedure to edit the <strong>position</strong> or other settings.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Use the context menu</div>
+<div class="paragraph">
+<p>If the procedure already contains a sub-procedure, you can also use the context menu to add additional sub-procedures. Use your mouse to right-click a sub-procedure and select to insert a sub-procedure before or after.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="150">2.5. Managing error handling</h3>
+<div class="paragraph">
+<p>It is possible to fix errors so that processes are not aborted due to one or more faulty orders. To do so, you can add one of the combinations of procedures and sub-procedures to certain procedures. These procedures are only run if an error occurs. For example, if you add the troubleshooting procedure <strong>Order</strong> with the two sub-procedures <strong>Change status</strong> and <strong>Add order notes</strong> to a procedure, faulty orders are assigned a new status. In addition, a note is added to the order.</p>
+</div>
+<div class="sect3">
+<h4 id="160">2.5.1. Available procedures in case of error</h4>
+<div class="paragraph">
+<p><a href="#table-error-procedures">Table 11</a> shows the procedures that can be executed if an error occurs.</p>
+</div>
+<table id="table-error-procedures" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 11. Available procedures in case of error</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Procedure</th>
+<th class="tableblock halign-left valign-top">Sub-procedure</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Email</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>Email</strong> procedure together with the <strong>Send</strong> sub-procedure sends an email template if an error occurs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Change status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Changes the status of the faulty order. The status changes to the status that is selected from the drop-down list.<br>
+<strong><em>Tip:</em></strong> The easiest way to find faulty orders is to assign a separate status. You can then filter for this status in the <strong>Orders</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add order notes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Saves a note with the order that created the error.<br>
+<strong>Individual note</strong> = Allows the user to enter a message during the process. This message is saved as a note for the order.<br>
+<strong>Predefined note</strong> = Opens a window. Enter a message into the Message area. This message will be saved automatically for errors during the process.<br>
+<strong>None</strong> = Notes are not saved in the order. This option is recommended if you want to save the error message only as the order note.<br>
+<strong>Save error message as additional note</strong> = Place a check mark to save the error message displayed in the process as an order note.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="170">2.5.2. Adding a procedure for error handling</h4>
+<div class="paragraph">
+<p>Proceed as described below to add a procedure for error handling.</p>
+</div>
+<div class="paragraph instruction">
+<p>Adding a procedure for error handling:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Processes » Select folder » Select process</strong>.</p>
+</li>
+<li>
+<p>Use your mouse to right-click on the procedure.<br>
+<strong><em>Tip:</em></strong> A grey beetle identifies the procedures that troubleshooting is available for.<br>
+→ The context menu opens.</p>
+</li>
+<li>
+<p>Click on <strong>Add procedure for occurring errors</strong> in the context menu.</p>
+</li>
+<li>
+<p>Select a procedure from the drop-down list.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Carry out additional settings as desired.<br>
+→ The procedure is created. Procedures for error handling are flagged with a red frame.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The procedure is created. Procedures for error handling are flagged with a red frame.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Visualisation of troubleshooting</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Procedures to which you can assign procedures for troubleshooting have a grey bug icon in the top right corner.</p>
+</li>
+<li>
+<p>If a procedure for troubleshooting has been assigned to a procedure, the bug is red.</p>
+</li>
+<li>
+<p>Click on the bug icon to show or hide the troubleshooting procedures set up for the process structure.</p>
+</li>
+<li>
+<p>You can recognise procedures for error handling by the red square.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="180">3. Controlling visibility of processes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The folder structure of the <strong>Settings » Processes</strong> menu shows the visibility and availability of the processes for other users. The following folders available.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Visibility of the menu System » Processes</div>
+<div class="paragraph">
+<p>For user accounts of the class <strong>Variable</strong>, the <strong>System » Processes</strong> menu is only visible if they were given the <a href="/en/basics/working-with-plentymarkets/manage-users">necessary rights</a> in their user profile.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 12. Folder structure of processes</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Folder</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>My processes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Processes that the current user can edit.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Processes of other users</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Processes of other users This folder is only visible for users who are assigned to the class <strong>Admin</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Processes per role</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Processes for users with the <a href="/en/basics/admin-tasks/manage-users#800">role</a> of the logged in user. If the user is not assigned to any roles, this folder is shown. Users who are assigned to the class <a href="/en/basics/admin-tasks/manage-users#90">Admin</a> will be able to see the processes for all roles.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Global processes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Processes that are available for all users.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="190">4. Reusing a process</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Copy processes to reuse them in the same system or to edit and export and import them to another system.</p>
+</div>
+<div class="sect2">
+<h3 id="200">4.1. Copying a process</h3>
+<div class="paragraph">
+<p>Proceed as described below to copy a process.</p>
+</div>
+<div class="paragraph instruction">
+<p>Copying a process:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the plentymarkets Client.</p>
+</li>
+<li>
+<p>Go to <strong>Settings » Processes</strong>.</p>
+</li>
+<li>
+<p>Move the cursor over the process that you want to copy.</p>
+</li>
+<li>
+<p>Click on the triangle to the right.<br></p>
+</li>
+<li>
+<p>Click on <strong>Copy process</strong>.<br>
+→ The <strong>Copy process</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a name for the process.</p>
+</li>
+<li>
+<p>Click on <strong>Copy process</strong>.<br>
+→ The process is created and opened for editing.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>The context menu of a process also allows you to delete or start the process. If you click on <strong>Execute process</strong>, first the main processes menu and then the process is opened.</p>
+<p>Alternatively, open the process and click on <strong>Copy process</strong>.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/automation/processes/assets/DE-Einstell-Prozesse-ProEinricht-04-SI.png" alt="Context menu">
 </div>
-<div class="title">Figure 4. Context menu <strong>Export process</strong> and <strong>Copy process</strong></div>
-</div>
+<div class="sect2">
+<h3 id="210">4.2. Exporting a process</h3>
 <div class="paragraph">
-<p>We recommend using the export and import functions for exchanging processes between different plentymarkets systems. To do so, proceed as follows.</p>
+<p>We recommend using the export and import functions for exchanging processes between different plentymarkets systems. To do so, proceed as described below.</p>
 </div>
 <div class="paragraph instruction">
 <p>Exporting a process:</p>
@@ -204,29 +2047,31 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <strong>System » Processes</strong>.</p>
+<p>Open the plentymarkets Client.</p>
 </li>
 <li>
-<p>Click on the small <strong>triangle</strong> on the right-hand side of the line (image 4, number 1).<br>
-→ The option <strong>Export process</strong> will appear.</p>
+<p>Go to <strong>Settings » Processes</strong>.</p>
 </li>
 <li>
-<p>Click on <strong>Export process</strong> (image 4, number 2).<br>
-→ The process will be exported as a <strong>ZIP file</strong> and saved in the Downloads (MAC) or Documents (Windows) folder on your computer.</p>
+<p>Move the cursor over the process that you want to copy.</p>
+</li>
+<li>
+<p>Click on the triangle to the right.<br></p>
+</li>
+<li>
+<p>Click on <strong>Import process</strong>.<br>
+→ The process will be exported as a ZIP file and saved in the <strong>Downloads</strong> (MAC) or <strong>Documents</strong> (Windows) folder on your computer.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>You can also trigger this process by clicking on the corresponding icon within the editing window of a process (image 6, icon with green arrow).</p>
+<p>Alternatively, open the process and click on <strong>Export process</strong>.</p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="220">4.3. Importing a process</h3>
 <div class="paragraph">
-<p>In order to import an exported process into a plentymarkets system again, proceed as follows.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/automation/processes/assets/EN-Einstell-Prozesse-Prozesse-einrichten-05-SI.png" alt="Context menu">
-</div>
-<div class="title">Figure 5. Context menu <strong>Import process</strong></div>
+<p>Proceed as follows to import a process.</p>
 </div>
 <div class="paragraph instruction">
 <p>Importing a process:</p>
@@ -234,21 +2079,27 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <strong>System » Processes</strong>.</p>
+<p>Open the plentymarkets Client.</p>
 </li>
 <li>
-<p>Click on the small <strong>triangle</strong> on the right-hand side of the line (image 1, number 1).<br>
+<p>Go to <strong>Settings » Processes</strong>.</p>
+</li>
+<li>
+<p>Point your cursor at the folder <strong>My processes</strong>.</p>
+</li>
+<li>
+<p>Click on the triangle to the right.<br>
 → The option <strong>Import process</strong> will appear.</p>
 </li>
 <li>
-<p>Click on <strong>Import process</strong> (image 5).<br>
-→ A new window will open.</p>
+<p>Click on <strong>Import process</strong>.<br>
+→ The <strong>Import process</strong> window opens.</p>
 </li>
 <li>
-<p>Enter a <strong>name</strong> for the process and click on <strong>Upload files</strong>.</p>
+<p>Enter a name for the process and click on <strong>Upload files</strong>.</p>
 </li>
 <li>
-<p>Select the corresponding <strong>ZIP file</strong> from your computer and click on <strong>Open</strong>.<br>
+<p>Select the ZIP file from your computer and click on <strong>Open</strong>.<br>
 → The process will be imported into the <strong>My processes</strong> folder.</p>
 </li>
 </ol>
@@ -260,89 +2111,20 @@
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-<div class="title">System-specific settings</div>
+<div class="title">System-specific settings are not imported.</div>
 <div class="paragraph">
-<p>System-specific settings such as printer settings in the <strong>Print</strong> sub-procedure are not exported and will therefore not be imported.<br>
-<strong>Tip:</strong> If you want to know which procedures or sub-procedures were not completely transferred, open the imported process in the <strong>Processes</strong> menu → Error messages will show the corresponding procedures and sub-procedures with missing settings together with their <strong>IDs</strong>.</p>
+<p>System-specific settings, for example printer settings in the <strong>Print</strong> sub-procedure are not exported and will therefore not be imported either.<br>
+<strong><em>Tip:</em></strong> To check which procedures or sub-procedures were not completely transferred, open the imported process in the <strong>Processes</strong> menu. The error messages show the IDs of procedures and sub-procedures that require additional settings.</p>
 </div>
 </td>
 </tr>
 </tbody></table>
 </div>
-<div class="paragraph">
-<p>We recommend the <strong>Copy process</strong> function to reproduce processes within the same system. All processes in all folders can be copied.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/automation/processes/assets/EN-Einstell-Prozesse-Prozesse-einrichten-06-SI.png" alt="Icons">
-</div>
-<div class="title">Figure 6. <strong>Copy process</strong> or <strong>Export process</strong> icons</div>
-</div>
-<div class="paragraph">
-<p>In addition to the context menu (image 4), you can also copy and export processes using the icons in the editing window of a process. This process is explained below, using the option <strong>Copy process</strong> as an example.</p>
-</div>
-<div class="paragraph instruction">
-<p>Copying a process:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to <strong>System » Processes</strong>.</p>
-</li>
-<li>
-<p>Open the process that you want to copy.<br>
-→ The <strong>Copy process</strong> icon is displayed in the upper line.</p>
-</li>
-<li>
-<p>Click on <strong>Copy process</strong> (image 6, arrow) and enter a new <strong>name</strong> in the window if desired.<br>
-→ The process will be copied to the <strong>My processes</strong> folder.</p>
-</li>
-</ol>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_context_menu">1.3. Context menu</h3>
+<h3 id="230">4.4. Swapping processes in the plentymarkets process bazaar</h3>
 <div class="paragraph">
-<p>You can also use the context menu to more easily configure your processes, e.g. to add a new element.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Using the context menu</div>
-<div class="paragraph">
-<p>Right-click on an element to create, edit or delete a new work step, procedure or sub-procedure. You will see a context menu with various procedures that can be selected (see the following image).</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-<div class="paragraph">
-<p>Image 7 shows the context menu that opened after having clicked ton the <strong>Delivery note</strong> procedure.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/automation/processes/assets/EN-Einstell-Prozesse-Prozesse-einrichten-07-SI.png" alt="Context menu">
-</div>
-<div class="title">Figure 7. Context menu</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_adding_elements">1.4. Adding elements</h3>
-<div class="paragraph">
-<p>A process is always based on a <a href="/en/automation/processes/work-steps">work step</a>. Additional elements can be added to the work step as desired. You can add as many work steps as you wish to a process.</p>
-</div>
-<div class="paragraph">
-<p>You can add various <strong>elements</strong> to a work step. There are two types of elements: <a href="/en/automation/processes/procedures">control elements</a> and <a href="/en/automation/processes/procedures">procedures</a>. You can also add <a href="/en/automation/processes/sub-procedures">sub-procedures</a> to a procedure. You can always add a subordinate element by pointing your cursor to the superordinate element and clicking on the <strong>green plus icon</strong> (see image 7).</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/automation/processes/assets/EN-Einstell-Prozesse-Prozesse-einrichten-08-SI.png" alt="Example">
-</div>
-<div class="title">Figure 8. Example: Clicking on the <strong>green plus icon</strong> to add a procedure</div>
+<p>Go to the <a href="https://forum.plentymarkets.com/c/suche-biete/prozess-basar" target="_blank" rel="noopener"><strong>Processes</strong></a> category of the plentymarkets forum to find the plentymarkets process bazaar. This is where generous plentymarkets users make their processes available for other users.</p>
 </div>
 </div>
 </div>
