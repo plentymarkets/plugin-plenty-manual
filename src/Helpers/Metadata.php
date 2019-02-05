@@ -2931,21 +2931,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "fcc0accf19977120f47d6653283a8026",
-				"path" => "daten/ftp-zugang",
-				"position" => 80,
-				"urlName" => "ftp-zugang",
-				"url" => "/daten/ftp-zugang",
-				"level" => 2,
-				"title" => "FTP-Zugang",
-				"keywords" => "Webshop, Mandant, FTP-Zugang",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich FTP-Zugang. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
