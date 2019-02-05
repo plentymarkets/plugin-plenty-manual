@@ -8695,21 +8695,6 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Sub-procedures. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "dcc73a125cdf41373001dd99780be383",
-						"path" => "automation/processes/troubleshooting",
-						"position" => 65,
-						"urlName" => "troubleshooting",
-						"url" => "/en/automation/processes/troubleshooting",
-						"level" => 3,
-						"title" => "Troubleshooting",
-						"keywords" => "Processes, Procedures, Troubleshooting",
-						"description" => "Specify how processes are to be continued when errors occur.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Troubleshooting. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
