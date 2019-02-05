@@ -38,7 +38,8 @@
 <li><a href="#400"><span>1.22.</span><span> VariationComment</span></a></li>
 <li><a href="#410"><span>1.23.</span><span> VariationAttributeValues</span></a></li>
 <li><a href="#420"><span>1.24.</span><span> VariationEigenschaften</span></a></li>
-<li><a href="#430"><span>1.25.</span><span> Eigene Werte exportieren</span></a></li>
+<li><a href="#format-artikel-seriennummer"><span>1.25.</span><span> ItemSerialNumber</span></a></li>
+<li><a href="#430"><span>1.26.</span><span> Eigene Werte exportieren</span></a></li>
 </ul>
 </li>
 <li><a href="#1130"><span>2.</span><span> Artikelbilder</span></a></li>
@@ -255,10 +256,6 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stockType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Typ</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">storeSpecial</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shop-Aktion</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ownerId</p></td>
@@ -561,8 +558,12 @@ url;position,url;position,etc.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tag-ID</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tagNames</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tagName</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tag-Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tagNames</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tag-Namen</p></td>
 </tr>
 </tbody>
 </table>
@@ -732,6 +733,14 @@ url;position,url;position,etc.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nicht verfügbar wenn kein Netto-WB</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">isVisibleInListIfNetStockIsPositive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sichtbar in Artikelliste wenn Netto-WB positiv</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">isInvisibleInListIfNetStockIsNotPositive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unsichtbar in Artikelliste wenn kein Netto-WB</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mainWarehouseId</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Hauptlagers</p></td>
 </tr>
@@ -856,6 +865,18 @@ D = 3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Verkaufsrang der Variante</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parentVariationID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Hauptvariante</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parentVariationQuantity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">singleItemCount</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">categoryVariationId</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Entweder die ID der Variante oder die ID der Hauptvariante des Artikels.<br>
 ID der Variante = Kategorien werden nicht von der Hauptvariante geerbt.<br>
@@ -939,8 +960,8 @@ ID der Hauptvariante des Artikels = Merkmale werden von der Hauptvariante geerbt
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">codes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Für den gewählten Barcode gespeicherte Codes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Für den gewählten Barcode gespeicherter Code</p></td>
 </tr>
 </tbody>
 </table>
@@ -1522,6 +1543,24 @@ SupplierID:SupplierRowID,PurchasePrice:MinimumPurchase;…​.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID der Eigenschaft</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Typ der Eigenschaft<br>
+int = Ganze Zahl<br>
+float = Kommazahl<br>
+select = Auswahl<br>
+date = Datum<br>
+file = Datei<br>
+empty = Kein</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">linked</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IDs der verlinkten Eigenschaften</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eigenschaftenwert</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alle Eigenschaften im Format<br>
 name:wert:sprache;name:wert:sprache</p></td>
@@ -1530,12 +1569,45 @@ name:wert:sprache;name:wert:sprache</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="430">1.25. Eigene Werte exportieren</h3>
+<h3 id="format-artikel-seriennummer">1.25. ItemSerialNumber</h3>
 <div class="paragraph">
-<p>Für den Export von eigenen Werten stehen die in <a href="#tabelle-felder-eigene-werte">Tabelle 26</a> aufgelisteten Felder zur Verfügung.</p>
+<p>Für den Export von Seriennummern stehen die in <a href="#tabelle-felder-seriennummern">Tabelle 26</a> aufgelisteten Felder zur Verfügung.</p>
+</div>
+<table id="tabelle-felder-seriennummern" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 26. Felder für Export von Seriennummern</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Feld</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle Seriennummern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">available</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Freie Seriennummern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">used</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vergebene Seriennummern</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="430">1.26. Eigene Werte exportieren</h3>
+<div class="paragraph">
+<p>Für den Export von eigenen Werten stehen die in <a href="#tabelle-felder-eigene-werte">Tabelle 27</a> aufgelisteten Felder zur Verfügung.</p>
 </div>
 <table id="tabelle-felder-eigene-werte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 26. Felder für Export von eigenen Werten</caption>
+<caption class="title">Tabelle 27. Felder für Export von eigenen Werten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1559,10 +1631,10 @@ name:wert:sprache;name:wert:sprache</p></td>
 <h2 id="1130">2. Artikelbilder</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Für den Export von Artikelbildern über das Format <strong>Artikelbilder</strong> stehen die in <a href="#tabelle-felder-artikelbilder">Tabelle 27</a> aufgelisteten Felder zur Verfügung.</p>
+<p>Für den Export von Artikelbildern über das Format <strong>Artikelbilder</strong> stehen die in <a href="#tabelle-felder-artikelbilder">Tabelle 28</a> aufgelisteten Felder zur Verfügung.</p>
 </div>
 <table id="tabelle-felder-artikelbilder" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 27. Felder für Export von Artikelbildern</caption>
+<caption class="title">Tabelle 28. Felder für Export von Artikelbildern</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1584,6 +1656,10 @@ name:wert:sprache;name:wert:sprache</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fileType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dateiformat des Bilds (JPG, JPEG, PNG, GIF oder SVG)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL des Bilds</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">position</p></td>
@@ -1671,7 +1747,10 @@ name:wert:sprache;name:wert:sprache</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alternativtext des Artikelbilds</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eigener Wert</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>custom_value</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">custom_value</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Eigener Wert für den Export</p></td>
 </tr>
 </tbody>
@@ -1681,10 +1760,10 @@ name:wert:sprache;name:wert:sprache</p></td>
 <h2 id="440">3. Attribute</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-attribute">Tabelle 28</a> werden Felder erläutert, die für den Export von Attributdaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-attribute">Tabelle 29</a> werden Felder erläutert, die für den Export von Attributdaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-attribute" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 28. Felder für Export von Attributen</caption>
+<caption class="title">Tabelle 29. Felder für Export von Attributen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1835,10 +1914,10 @@ name:wert:sprache;name:wert:sprache</p></td>
 <h2 id="450">4. Kategorien</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-kategorien">Tabelle 29</a> werden Felder erläutert, die für den Export von Kategoriedaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-kategorien">Tabelle 30</a> werden Felder erläutert, die für den Export von Kategoriedaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-kategorien" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 29. Felder für Export von Kategorien</caption>
+<caption class="title">Tabelle 30. Felder für Export von Kategorien</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1884,6 +1963,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sitemap</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">updatedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der letzten Aktualisierung</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">parentCategoryName</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name der übergeordneten Kategorie</p></td>
 </tr>
@@ -1923,6 +2006,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <td class="tableblock halign-left valign-top"><p class="tableblock">Meta-Titel</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">image2path</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">previewUrl</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URL der Kategorie</p></td>
 </tr>
@@ -1941,6 +2028,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">pageView</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Template-Seite</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fullText</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volltextsuche</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>CategoryClient</strong></p></td>
@@ -1963,10 +2054,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <h2 id="1140">5. Hersteller</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Für den Export von Herstellerdaten stehen die in <a href="#tabelle-felder-hersteller">Tabelle 30</a> aufgelisteten Felder zur Verfügung.</p>
+<p>Für den Export von Herstellerdaten stehen die in <a href="#tabelle-felder-hersteller">Tabelle 31</a> aufgelisteten Felder zur Verfügung.</p>
 </div>
 <table id="tabelle-felder-hersteller" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 30. Felder für Export von Herstellerdaten</caption>
+<caption class="title">Tabelle 31. Felder für Export von Herstellerdaten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1978,6 +2069,9 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Manufacturer</strong></p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Herstellers</p></td>
@@ -2055,8 +2149,11 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der letzten Aktualisierung</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>custom_value</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">custom_value</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Eigener Wert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eigener Wert für den Export</p></td>
 </tr>
 </tbody>
 </table>
@@ -2067,10 +2164,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="_order">6.1. Order</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order">Tabelle 31</a> werden Felder erläutert, die für den Export von Auftragsdaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order">Tabelle 32</a> werden Felder erläutert, die für den Export von Auftragsdaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 31. Felder für Export von Auftragsdaten</caption>
+<caption class="title">Tabelle 32. Felder für Export von Auftragsdaten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2140,10 +2237,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="510">6.2. BillingAddress</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-billing-address">Tabelle 32</a> werden Felder erläutert, die für den Export von Rechnungen und Rechnungsdaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-billing-address">Tabelle 33</a> werden Felder erläutert, die für den Export von Rechnungen und Rechnungsdaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-billing-address" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 32. Felder für den Export von Rechnungsadressen</caption>
+<caption class="title">Tabelle 33. Felder für den Export von Rechnungsadressen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2305,10 +2402,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="520">6.3. BillingAddressOption</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-billing-address-option">Tabelle 33</a> werden die Typen erläutert, die für den Export von Rechnungsadressen-Optionen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-billing-address-option">Tabelle 34</a> werden die Typen erläutert, die für den Export von Rechnungsadressen-Optionen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-billing-address-option" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 33. Felder für Export von Rechnungsadressen-Optionen</caption>
+<caption class="title">Tabelle 34. Felder für Export von Rechnungsadressen-Optionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2373,10 +2470,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="530">6.4. BillingAddressCountry</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-billing-address-country">Tabelle 34</a> werden Felder erläutert, die für den Export von Länderinformationen auf Rechnungen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-billing-address-country">Tabelle 35</a> werden Felder erläutert, die für den Export von Länderinformationen auf Rechnungen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-billing-address-country" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 34. Felder für Export von Länderinformationen auf Rechnungen</caption>
+<caption class="title">Tabelle 35. Felder für Export von Länderinformationen auf Rechnungen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2410,10 +2507,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="540">6.5. DeliveryAddress</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-lieferadresse">Tabelle 35</a> werden Felder erläutert, die für den Export von Lieferadressen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-lieferadresse">Tabelle 36</a> werden Felder erläutert, die für den Export von Lieferadressen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-lieferadresse" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 35. Felder für Export von Lieferadressen</caption>
+<caption class="title">Tabelle 36. Felder für Export von Lieferadressen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2575,10 +2672,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="550">6.6. DeliveryAddressOption</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-delivery-address-option">Tabelle 36</a> werden die Typen erläutert, die für den Export von Lieferadressen-Optionen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-delivery-address-option">Tabelle 37</a> werden die Typen erläutert, die für den Export von Lieferadressen-Optionen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-delivery-address-option" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 36. Felder für Export von Lieferadressen-Optionen</caption>
+<caption class="title">Tabelle 37. Felder für Export von Lieferadressen-Optionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2643,10 +2740,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="560">6.7. DeliveryAddressCountry</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-lieferland">Tabelle 37</a> werden Felder erläutert, die für den Export von Daten über Lieferländer zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-lieferland">Tabelle 38</a> werden Felder erläutert, die für den Export von Daten über Lieferländer zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-lieferland" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 37. Felder für Export von Lieferländern</caption>
+<caption class="title">Tabelle 38. Felder für Export von Lieferländern</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2678,10 +2775,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="570">6.8. Contact</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-kontaktdaten">Tabelle 38</a> werden Felder erläutert, die für den Export von Kontaktdaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-kontaktdaten">Tabelle 39</a> werden Felder erläutert, die für den Export von Kontaktdaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-kontaktdaten" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 38. Felder für Export von Kontaktdaten</caption>
+<caption class="title">Tabelle 39. Felder für Export von Kontaktdaten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2839,10 +2936,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="580">6.9. OrderProperty</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-property">Tabelle 39</a> werden Felder erläutert, die für den Export von verschiedenen Autragseigenschaften zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-property">Tabelle 40</a> werden Felder erläutert, die für den Export von verschiedenen Autragseigenschaften zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-property" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 39. Felder für Export von Auftragseigenschaften</caption>
+<caption class="title">Tabelle 40. Felder für Export von Auftragseigenschaften</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2915,10 +3012,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="590">6.10. OrderDate</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-date">Tabelle 40</a> werden Felder erläutert, die für den Export des Auftragsdatums zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-date">Tabelle 41</a> werden Felder erläutert, die für den Export des Auftragsdatums zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-date" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 40. Felder für Export des Auftragsdatums</caption>
+<caption class="title">Tabelle 41. Felder für Export des Auftragsdatums</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2987,10 +3084,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="600">6.11. OrderAmount</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-amount">Tabelle 41</a> werden Felder erläutert, die für den Export der allgemein berechneten Beträge eines Auftrags zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-amount">Tabelle 42</a> werden Felder erläutert, die für den Export der allgemein berechneten Beträge eines Auftrags zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-amount" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 41. Felder für Export der Auftragsbeträge</caption>
+<caption class="title">Tabelle 42. Felder für Export der Auftragsbeträge</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3060,10 +3157,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="610">6.12. OrderReference</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-reference">Tabelle 42</a> werden Felder erläutert, die für den Export von zusammenhängenden Aufträgen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-reference">Tabelle 43</a> werden Felder erläutert, die für den Export von zusammenhängenden Aufträgen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-reference" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 42. Felder für Export von zusammenhängenden Aufträgen</caption>
+<caption class="title">Tabelle 43. Felder für Export von zusammenhängenden Aufträgen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3087,10 +3184,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="620">6.13. ShippingPackages</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-shipping-packages">Tabelle 43</a> werden Felder erläutert, die für den Export von Versandpaketen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-shipping-packages">Tabelle 44</a> werden Felder erläutert, die für den Export von Versandpaketen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-shipping-packages" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 43. Felder für den Export von Versandpaketen</caption>
+<caption class="title">Tabelle 44. Felder für den Export von Versandpaketen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3114,10 +3211,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="630">6.14. OrderComment</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-comment">Tabelle 44</a> werden Felder erläutert, die für den Export von Auftragsnotizen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-comment">Tabelle 45</a> werden Felder erläutert, die für den Export von Auftragsnotizen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-comment" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 44. Felder für den Export von Auftragsnotizen</caption>
+<caption class="title">Tabelle 45. Felder für den Export von Auftragsnotizen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3139,10 +3236,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="640">6.15. OrderDocument</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-document">Tabelle 45</a> werden Felder erläutert, die für den Export von Daten zu Auftragsdokumenten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-document">Tabelle 46</a> werden Felder erläutert, die für den Export von Daten zu Auftragsdokumenten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-document" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 45. Felder für den Export von Auftragsdokumenten</caption>
+<caption class="title">Tabelle 46. Felder für den Export von Auftragsdokumenten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3182,10 +3279,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="650">6.16. AccountingLocation</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-accounting-location">Tabelle 46</a> werden Felder erläutert, die für den Export von Buchhaltungs-Standorten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-accounting-location">Tabelle 47</a> werden Felder erläutert, die für den Export von Buchhaltungs-Standorten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-accounting-location" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 46. Felder für den Export von Buchhaltungs-Standorten</caption>
+<caption class="title">Tabelle 47. Felder für den Export von Buchhaltungs-Standorten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3221,10 +3318,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="660">6.17. OrderParcelServicePreset</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-orderparcelservicepreset">Tabelle 47</a> werden Felder erläutert, die für den Export von Daten zum Standard-Versanddienstleister zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-orderparcelservicepreset">Tabelle 48</a> werden Felder erläutert, die für den Export von Daten zum Standard-Versanddienstleister zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-orderparcelservicepreset" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 47. Felder für den Export von Standard-Versanddienstleistern</caption>
+<caption class="title">Tabelle 48. Felder für den Export von Standard-Versanddienstleistern</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3292,10 +3389,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="670">6.18. OrderParcelServicePresetName</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-orderparcelservicepresetname">Tabelle 48</a> werden Felder erläutert, die für den Export der Bezeichnung des Standard-Versanddienstleisters zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-orderparcelservicepresetname">Tabelle 49</a> werden Felder erläutert, die für den Export der Bezeichnung des Standard-Versanddienstleisters zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-orderparcelservicepresetname" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 48. Felder für den Export der Bezeichnung des Standard-Versanddienstleisters</caption>
+<caption class="title">Tabelle 49. Felder für den Export der Bezeichnung des Standard-Versanddienstleisters</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3326,10 +3423,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="680">6.19. OrderParcelService</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-orderparcelservice">Tabelle 49</a> werden Felder erläutert, die für den Export von Daten zum Versanddienstleisters des Auftrags zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-orderparcelservice">Tabelle 50</a> werden Felder erläutert, die für den Export von Daten zum Versanddienstleisters des Auftrags zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-orderparcelservice" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 49. Felder für den Export des Versanddienstleisters</caption>
+<caption class="title">Tabelle 50. Felder für den Export des Versanddienstleisters</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3361,10 +3458,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="690">6.20. OrderParcelServiceName</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-orderparcelservicename">Tabelle 50</a> werden Felder erläutert, die für den Export der Bezeichnung des Versanddienstleisters des Auftrags zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-orderparcelservicename">Tabelle 51</a> werden Felder erläutert, die für den Export der Bezeichnung des Versanddienstleisters des Auftrags zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-orderparcelservicename" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 50. Felder für den Export der Bezeichnung des Versanddienstleisters</caption>
+<caption class="title">Tabelle 51. Felder für den Export der Bezeichnung des Versanddienstleisters</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3388,10 +3485,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="700">6.21. Eigene Werte exportieren</h3>
 <div class="paragraph">
-<p>Für den Export von eigenen Werten stehen die in <a href="#tabelle-order-felder-eigene-werte">Tabelle 51</a> aufgelisteten Felder zur Verfügung.</p>
+<p>Für den Export von eigenen Werten stehen die in <a href="#tabelle-order-felder-eigene-werte">Tabelle 52</a> aufgelisteten Felder zur Verfügung.</p>
 </div>
 <table id="tabelle-order-felder-eigene-werte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 51. Felder für Export von eigenen Werten</caption>
+<caption class="title">Tabelle 52. Felder für Export von eigenen Werten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3417,10 +3514,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="_order_2">7.1. Order</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-order">Tabelle 52</a> werden Felder erläutert, die für den Export von Auftragsdaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-order">Tabelle 53</a> werden Felder erläutert, die für den Export von Auftragsdaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-order" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 52. Felder für Export von Auftragsdaten</caption>
+<caption class="title">Tabelle 53. Felder für Export von Auftragsdaten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3482,10 +3579,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="710">7.2. OrderProperty</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-order-property">Tabelle 53</a> werden Felder erläutert, die für den Export von verschiedenen Autragseigenschaften zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-order-property">Tabelle 54</a> werden Felder erläutert, die für den Export von verschiedenen Autragseigenschaften zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-order-property" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 53. Felder für Export von Auftragseigenschaften</caption>
+<caption class="title">Tabelle 54. Felder für Export von Auftragseigenschaften</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3558,10 +3655,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="720">7.3. OrderDate</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-order-date">Tabelle 54</a> werden Felder erläutert, die für den Export des Auftragsdatums zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-order-date">Tabelle 55</a> werden Felder erläutert, die für den Export des Auftragsdatums zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-order-date" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 54. Felder für Export des Auftragsdatums</caption>
+<caption class="title">Tabelle 55. Felder für Export des Auftragsdatums</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3642,10 +3739,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="730">7.4. OrderAmount</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-order-amount">Tabelle 55</a> werden Felder erläutert, die für den Export der allgemein berechneten Beträge eines Auftrags zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-order-amount">Tabelle 56</a> werden Felder erläutert, die für den Export der allgemein berechneten Beträge eines Auftrags zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-order-amount" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 55. Felder für Export der Auftragsbeträge</caption>
+<caption class="title">Tabelle 56. Felder für Export der Auftragsbeträge</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3715,10 +3812,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="740">7.5. OrderReference</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-order-reference">Tabelle 56</a> werden Felder erläutert, die für den Export von zusammenhängenden Aufträgen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-order-reference">Tabelle 57</a> werden Felder erläutert, die für den Export von zusammenhängenden Aufträgen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-order-reference" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 56. Felder für Export von zusammenhängenden Aufträgen</caption>
+<caption class="title">Tabelle 57. Felder für Export von zusammenhängenden Aufträgen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3744,10 +3841,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="750">7.6. OrderItem</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-item">Tabelle 57</a> werden Felder erläutert, die für den Export von Daten zu Auftragspositionen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-item">Tabelle 58</a> werden Felder erläutert, die für den Export von Daten zu Auftragspositionen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-item" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 57. Felder für Export von Daten zu Auftragspositionen</caption>
+<caption class="title">Tabelle 58. Felder für Export von Daten zu Auftragspositionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3821,10 +3918,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="760">7.7. OrderItemProperty</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-item-property">Tabelle 58</a> werden Felder erläutert, die für den Export von Eigenschaften von Auftragspositionen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-order-item-property">Tabelle 59</a> werden Felder erläutert, die für den Export von Eigenschaften von Auftragspositionen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-order-item-property" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 58. Felder für Export von Eigenschaften von Auftragspositionen</caption>
+<caption class="title">Tabelle 59. Felder für Export von Eigenschaften von Auftragspositionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3909,10 +4006,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="770">7.8. OrderItemDate</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-order-item-date">Tabelle 59</a> werden Felder erläutert, die für den Export des Datums zur Verfügung stehen, das an der Auftragsposition hinterlegt ist.</p>
+<p>In <a href="#tabelle-felder-order-item-date">Tabelle 60</a> werden Felder erläutert, die für den Export des Datums zur Verfügung stehen, das an der Auftragsposition hinterlegt ist.</p>
 </div>
 <table id="tabelle-felder-order-item-date" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 59. Felder für Export des Datums der Auftragsposition</caption>
+<caption class="title">Tabelle 60. Felder für Export des Datums der Auftragsposition</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3993,10 +4090,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="780">7.9. OrderItemAmount</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-order-amount">Tabelle 55</a> werden Felder erläutert, die für den Export der allgemein berechneten Beträge einer Auftragsposition zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-order-amount">Tabelle 56</a> werden Felder erläutert, die für den Export der allgemein berechneten Beträge einer Auftragsposition zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-order-amount" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 60. Felder für Export der Beträge zu Auftragspositionen</caption>
+<caption class="title">Tabelle 61. Felder für Export der Beträge zu Auftragspositionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4058,10 +4155,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="790">7.10. BillingAddress</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-billing-address">Tabelle 61</a> werden Felder erläutert, die für den Export von Rechnungsadressen zu Auftragspositionen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-billing-address">Tabelle 62</a> werden Felder erläutert, die für den Export von Rechnungsadressen zu Auftragspositionen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-billing-address" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 61. Felder für den Export von Rechnungsadressen zu Auftragspositionen</caption>
+<caption class="title">Tabelle 62. Felder für den Export von Rechnungsadressen zu Auftragspositionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4223,10 +4320,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="800">7.11. BillingAddressOption</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-billing-address-option">Tabelle 62</a> werden die Typen erläutert, die für den Export von Rechnungsadressen-Optionen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-billing-address-option">Tabelle 63</a> werden die Typen erläutert, die für den Export von Rechnungsadressen-Optionen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-billing-address-option" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 62. Felder für Export von Rechnungsadressen-Optionen zu Auftragspositionen</caption>
+<caption class="title">Tabelle 63. Felder für Export von Rechnungsadressen-Optionen zu Auftragspositionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4291,10 +4388,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="810">7.12. BillingAddressCountry</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-billing-address-country">Tabelle 63</a> werden Felder erläutert, die für den Export von Länderinformationen auf Rechnungen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-billing-address-country">Tabelle 64</a> werden Felder erläutert, die für den Export von Länderinformationen auf Rechnungen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-billing-address-country" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 63. Felder für Export von Länderinformationen auf Rechnungen</caption>
+<caption class="title">Tabelle 64. Felder für Export von Länderinformationen auf Rechnungen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4328,10 +4425,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="820">7.13. DeliveryAddress</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-lieferadresse">Tabelle 64</a> werden Felder erläutert, die für den Export von Lieferadressen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-lieferadresse">Tabelle 65</a> werden Felder erläutert, die für den Export von Lieferadressen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-lieferadresse" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 64. Felder für Export von Lieferadressen</caption>
+<caption class="title">Tabelle 65. Felder für Export von Lieferadressen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4497,10 +4594,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="830">7.14. DeliveryAddressOption</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-delivery-orderitem-address-option">Tabelle 65</a> werden die Typen erläutert, die für den Export von Lieferadressen-Optionen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-delivery-orderitem-address-option">Tabelle 66</a> werden die Typen erläutert, die für den Export von Lieferadressen-Optionen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-delivery-orderitem-address-option" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 65. Felder für Export von Lieferadressen-Optionen</caption>
+<caption class="title">Tabelle 66. Felder für Export von Lieferadressen-Optionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4565,10 +4662,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="840">7.15. DeliveryAddressCountry</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-lieferland">Tabelle 66</a> werden Felder erläutert, die für den Export von Daten über Lieferländer zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-lieferland">Tabelle 67</a> werden Felder erläutert, die für den Export von Daten über Lieferländer zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-lieferland" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 66. Felder für Export von Lieferländern</caption>
+<caption class="title">Tabelle 67. Felder für Export von Lieferländern</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4600,10 +4697,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="850">7.16. Contact</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-kontaktdaten">Tabelle 67</a> werden Felder erläutert, die für den Export von Kontaktdaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-kontaktdaten">Tabelle 68</a> werden Felder erläutert, die für den Export von Kontaktdaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-kontaktdaten" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 67. Felder für Export von Kontaktdaten</caption>
+<caption class="title">Tabelle 68. Felder für Export von Kontaktdaten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4765,10 +4862,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="860">7.17. VariationBarcode</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-barcodes">Tabelle 68</a> werden die Felder erläutert, die für den Export von Barcodes zu Auftragspositionen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-barcodes">Tabelle 69</a> werden die Felder erläutert, die für den Export von Barcodes zu Auftragspositionen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-barcodes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 68. Felder für Export von Barcodes</caption>
+<caption class="title">Tabelle 69. Felder für Export von Barcodes</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4809,10 +4906,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="870">7.18. OrderDocument</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-order-document">Tabelle 69</a> werden Felder erläutert, die für den Export von Daten zu Auftragsdokumenten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-order-document">Tabelle 70</a> werden Felder erläutert, die für den Export von Daten zu Auftragsdokumenten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-order-document" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 69. Felder für den Export von Auftragsdokumenten</caption>
+<caption class="title">Tabelle 70. Felder für den Export von Auftragsdokumenten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4854,10 +4951,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="880">7.19. Item</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-artikel">Tabelle 70</a> werden die Felder erläutert, die für den Export von Artikeldaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-artikel">Tabelle 71</a> werden die Felder erläutert, die für den Export von Artikeldaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-artikel" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 70. Felder für Artikelexport</caption>
+<caption class="title">Tabelle 71. Felder für Artikelexport</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4919,10 +5016,10 @@ customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-
 <div class="sect2">
 <h3 id="890">7.20. Variation</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-varianten">Tabelle 71</a> werden die Felder erläutert, die für den Export von Variantendaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-varianten">Tabelle 72</a> werden die Felder erläutert, die für den Export von Variantendaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-varianten" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 71. Felder für Export von Variantendaten</caption>
+<caption class="title">Tabelle 72. Felder für Export von Variantendaten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5020,10 +5117,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="900">7.21. OrderParcelServicePreset</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-orderparcelservicepreset">Tabelle 72</a> werden Felder erläutert, die für den Export von Daten zum Standard-Versanddienstleister zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-orderparcelservicepreset">Tabelle 73</a> werden Felder erläutert, die für den Export von Daten zum Standard-Versanddienstleister zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-orderparcelservicepreset" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 72. Felder für den Export von Standard-Versanddienstleistern</caption>
+<caption class="title">Tabelle 73. Felder für den Export von Standard-Versanddienstleistern</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5117,10 +5214,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="910">7.22. OrderParcelServicePresetName</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-orderparcelservicepresetname">Tabelle 73</a> werden Felder erläutert, die für den Export der Bezeichnung des Standard-Versanddienstleisters zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-orderparcelservicepresetname">Tabelle 74</a> werden Felder erläutert, die für den Export der Bezeichnung des Standard-Versanddienstleisters zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-orderparcelservicepresetname" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 73. Felder für den Export der Bezeichnung des Standard-Versanddienstleisters</caption>
+<caption class="title">Tabelle 74. Felder für den Export der Bezeichnung des Standard-Versanddienstleisters</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5151,10 +5248,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="920">7.23. OrderParcelService</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-orderparcelservice">Tabelle 74</a> werden Felder erläutert, die für den Export von Daten zum Versanddienstleisters des Auftrags zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-orderparcelservice">Tabelle 75</a> werden Felder erläutert, die für den Export von Daten zum Versanddienstleisters des Auftrags zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-orderparcelservice" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 74. Felder für den Export des Versanddienstleisters</caption>
+<caption class="title">Tabelle 75. Felder für den Export des Versanddienstleisters</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5186,10 +5283,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="930">7.24. OrderParcelServiceName</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-orderitem-orderparcelservicename">Tabelle 75</a> werden Felder erläutert, die für den Export der Bezeichnung des Versanddienstleisters des Auftrags zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-orderitem-orderparcelservicename">Tabelle 76</a> werden Felder erläutert, die für den Export der Bezeichnung des Versanddienstleisters des Auftrags zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-orderitem-orderparcelservicename" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 75. Felder für den Export der Bezeichnung des Versanddienstleisters</caption>
+<caption class="title">Tabelle 76. Felder für den Export der Bezeichnung des Versanddienstleisters</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5238,10 +5335,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="940">7.25. Eigene Werte exportieren</h3>
 <div class="paragraph">
-<p>Für den Export von eigenen Werten stehen die in <a href="#tabelle-felder-orderitem-eigene-werte">Tabelle 76</a> aufgelisteten Felder zur Verfügung.</p>
+<p>Für den Export von eigenen Werten stehen die in <a href="#tabelle-felder-orderitem-eigene-werte">Tabelle 77</a> aufgelisteten Felder zur Verfügung.</p>
 </div>
 <table id="tabelle-felder-orderitem-eigene-werte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 76. Felder für Export von eigenen Werten</caption>
+<caption class="title">Tabelle 77. Felder für Export von eigenen Werten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5270,7 +5367,7 @@ D = 3</p></td>
 <p>Für den Export von Lagerorten stehen die in <a href="#tabelle-felder-lagerorte">Tabelle 15</a> aufgelisteten Felder zur Verfügung.</p>
 </div>
 <table id="tabelle-felder-lagerorte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 77. Felder für den Export von Lagerorten</caption>
+<caption class="title">Tabelle 78. Felder für den Export von Lagerorten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5324,10 +5421,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="1110">8.2. WarehouseLocationLevel</h3>
 <div class="paragraph">
-<p>Für den Export von Lagerortebenen stehen die in <a href="#tabelle-felder-lagerortebenen">Tabelle 78</a> aufgelisteten Felder zur Verfügung.</p>
+<p>Für den Export von Lagerortebenen stehen die in <a href="#tabelle-felder-lagerortebenen">Tabelle 79</a> aufgelisteten Felder zur Verfügung.</p>
 </div>
 <table id="tabelle-felder-lagerortebenen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 78. Felder für den Export von Lagerortebenen</caption>
+<caption class="title">Tabelle 79. Felder für den Export von Lagerortebenen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5373,10 +5470,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="1120">8.3. WarehouseLocationDimension</h3>
 <div class="paragraph">
-<p>Für den Export von Lagerortdimensionen stehen die in <a href="#tabelle-felder-lagerortdimensionen">Tabelle 79</a> aufgelisteten Felder zur Verfügung.</p>
+<p>Für den Export von Lagerortdimensionen stehen die in <a href="#tabelle-felder-lagerortdimensionen">Tabelle 80</a> aufgelisteten Felder zur Verfügung.</p>
 </div>
 <table id="tabelle-felder-lagerortdimensionen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 79. Felder für den Export von Lagerortdimensionen</caption>
+<caption class="title">Tabelle 80. Felder für den Export von Lagerortdimensionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5433,7 +5530,7 @@ D = 3</p></td>
 <p>Für den Export von Lagern stehen die in <a href="#tabelle-felder-lager">Tabelle 20</a> aufgelisteten Felder zur Verfügung.</p>
 </div>
 <table id="tabelle-felder-lager" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 80. Felder für Export von Lagern</caption>
+<caption class="title">Tabelle 81. Felder für Export von Lagern</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5491,10 +5588,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="1140">8.5. Eigene Werte exportieren</h3>
 <div class="paragraph">
-<p>Für den Export von eigenen Werten stehen die in <a href="#tabelle-felder-lager-eigene-werte">Tabelle 81</a> aufgelisteten Felder zur Verfügung.</p>
+<p>Für den Export von eigenen Werten stehen die in <a href="#tabelle-felder-lager-eigene-werte">Tabelle 82</a> aufgelisteten Felder zur Verfügung.</p>
 </div>
 <table id="tabelle-felder-lager-eigene-werte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 81. Felder für Export von eigenen Werten</caption>
+<caption class="title">Tabelle 82. Felder für Export von eigenen Werten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5520,10 +5617,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="1205">9.1. Contact</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-kontakte">Tabelle 82</a> werden Felder erläutert, die für den Export von Kontaktdaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-kontakte">Tabelle 83</a> werden Felder erläutert, die für den Export von Kontaktdaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-kontakte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 82. Felder für den Export von Kontaktdaten</caption>
+<caption class="title">Tabelle 83. Felder für den Export von Kontaktdaten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5657,10 +5754,10 @@ Mögliche Werte: 0 = nicht gesperrt, 1 = gesperrt.</p></td>
 <div class="sect2">
 <h3 id="1210">9.2. BillingAddress</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-billing-address-kontakte">Tabelle 83</a> werden Felder erläutert, die für den Export von Rechnungsadressen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-billing-address-kontakte">Tabelle 84</a> werden Felder erläutert, die für den Export von Rechnungsadressen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-billing-address-kontakte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 83. Felder für den Export von Rechnungsadressen</caption>
+<caption class="title">Tabelle 84. Felder für den Export von Rechnungsadressen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5738,10 +5835,10 @@ Mögliche Werte: 0 = nicht gesperrt, 1 = gesperrt.</p></td>
 <div class="sect2">
 <h3 id="1220">9.3. DeliveryAddress</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-lieferadresse-kontakte">Tabelle 84</a> werden Felder erläutert, die für den Export von Lieferadressen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-lieferadresse-kontakte">Tabelle 85</a> werden Felder erläutert, die für den Export von Lieferadressen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-lieferadresse-kontakte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 84. Felder für den Export von Lieferadressen</caption>
+<caption class="title">Tabelle 85. Felder für den Export von Lieferadressen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5819,10 +5916,10 @@ Mögliche Werte: 0 = nicht gesperrt, 1 = gesperrt.</p></td>
 <div class="sect2">
 <h3 id="1230">9.4. Account</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-firma">Tabelle 85</a> werden Felder erläutert, die für den Export von Firmendaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-firma">Tabelle 86</a> werden Felder erläutert, die für den Export von Firmendaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-firma" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 85. Felder für den Export von Firmendaten</caption>
+<caption class="title">Tabelle 86. Felder für den Export von Firmendaten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5888,10 +5985,10 @@ Mögliche Werte: 0 = nicht gesperrt, 1 = gesperrt.</p></td>
 <div class="sect2">
 <h3 id="1240">9.5. ContactOption</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-contact-option">Tabelle 86</a> werden Felder erläutert, die für den Export von Kontaktoptionen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-contact-option">Tabelle 87</a> werden Felder erläutert, die für den Export von Kontaktoptionen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-contact-option" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 86. Felder für den Export von Kontaktoptionen</caption>
+<caption class="title">Tabelle 87. Felder für den Export von Kontaktoptionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6013,10 +6110,10 @@ Mögliche Werte: 0 = nicht gesperrt, 1 = gesperrt.</p></td>
 <div class="sect2">
 <h3 id="1250">9.6. BillingAddressOption</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-billing-address-option-kontakte">Tabelle 87</a> werden die Felder erläutert, die für den Export von Rechnungsadressoptionen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-billing-address-option-kontakte">Tabelle 88</a> werden die Felder erläutert, die für den Export von Rechnungsadressoptionen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-billing-address-option-kontakte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 87. Felder für Export von Rechnungsadressoptionen</caption>
+<caption class="title">Tabelle 88. Felder für Export von Rechnungsadressoptionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6082,10 +6179,10 @@ Mögliche Werte: 0 = nicht gesperrt, 1 = gesperrt.</p></td>
 <div class="sect2">
 <h3 id="1260">9.7. DeliveryAddressOption</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-delivery-address-option-kontakte">Tabelle 88</a> werden die Felder erläutert, die für den Export von Lieferadressoptionen zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-delivery-address-option-kontakte">Tabelle 89</a> werden die Felder erläutert, die für den Export von Lieferadressoptionen zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-delivery-address-option-kontakte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 88. Felder für Export von Lieferadressoptionen</caption>
+<caption class="title">Tabelle 89. Felder für Export von Lieferadressoptionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6151,10 +6248,10 @@ Mögliche Werte: 0 = nicht gesperrt, 1 = gesperrt.</p></td>
 <div class="sect2">
 <h3 id="1270">9.8. ContactBank</h3>
 <div class="paragraph">
-<p>In <a href="#tabelle-felder-contact-bank">Tabelle 89</a> werden die Felder erläutert, die für den Export von Bankdaten zur Verfügung stehen.</p>
+<p>In <a href="#tabelle-felder-contact-bank">Tabelle 90</a> werden die Felder erläutert, die für den Export von Bankdaten zur Verfügung stehen.</p>
 </div>
 <table id="tabelle-felder-contact-bank" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 89. Felder für den Export von Bankdaten</caption>
+<caption class="title">Tabelle 90. Felder für den Export von Bankdaten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6249,10 +6346,10 @@ onOff</p></td>
 <div class="sect2">
 <h3 id="1280">9.9. Eigene Werte exportieren</h3>
 <div class="paragraph">
-<p>Für den Export von eigenen Werten stehen die in <a href="#tabelle-felder-kontakte-eigene-werte">Tabelle 90</a> aufgelisteten Felder zur Verfügung.</p>
+<p>Für den Export von eigenen Werten stehen die in <a href="#tabelle-felder-kontakte-eigene-werte">Tabelle 91</a> aufgelisteten Felder zur Verfügung.</p>
 </div>
 <table id="tabelle-felder-kontakte-eigene-werte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 90. Felder für Export von eigenen Werten</caption>
+<caption class="title">Tabelle 91. Felder für Export von eigenen Werten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
