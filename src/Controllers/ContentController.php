@@ -64,7 +64,7 @@ class ContentController extends Controller
     public function showSearchResults(): string
     {
         $searchService = pluginApp( SearchService::class );
-        $query = $this->request->get("q");
+        $query = $this->request->get("q", "");
         $page = (int)$this->request->get("p", 1);
         $itemsPerPage = (int)$this->request->get("s", null);
 
