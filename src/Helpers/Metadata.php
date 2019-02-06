@@ -4326,6 +4326,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "363265e4b475d9c554a94d55b510aedb",
+				"path" => "plugins/neue-plugins",
+				"position" => 10,
+				"urlName" => "neue-plugins",
+				"url" => "/plugins/neue-plugins",
+				"level" => 2,
+				"title" => "Plugins dem System hinzufügen",
+				"keywords" => "Plugins, Erweiterungen, Funktionen",
+				"description" => "So fügen Sie Plugins zu plentymarkets hinzu.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Plugins dem System hinzufügen. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "6157d5673701014108f758bd078e66ca",
 				"path" => "plugins/plugin-sets",
 				"position" => 20,
