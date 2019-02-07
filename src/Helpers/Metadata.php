@@ -1936,6 +1936,21 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Postleitzahlenfilter. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "eb2c9ca83bf400a947226c1106055e9d",
+				"path" => "fulfillment/best-practices-fulfillment",
+				"position" => 80,
+				"urlName" => "best-practices-fulfillment",
+				"url" => "/fulfillment/best-practices-fulfillment",
+				"level" => 2,
+				"title" => "Best Practices: Fulfillment",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Best Practices: Fulfillment. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
