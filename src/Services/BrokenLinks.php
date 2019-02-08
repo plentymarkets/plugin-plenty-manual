@@ -5,29 +5,34 @@ namespace PlentyManual\Services;
 
 use Plenty\Plugin\ConfigRepository;
 use PlentyManual\Helpers\Metadata;
-use PlentyManual\Helpers\ManualHelper;
+use Plenty\Plugin\Mail\Contracts\MailerContract;
+
 
 class BrokenLinks
 {
 
+    /**
+     * @var host
+     */
     private $host;
 
-    private $manualHelper;
+    /**
+     * @var MailerContract
+     */
+    private $mailerContract;
 
-    const RECIPIENTS = [
-        'doku@plentymarkets.com'
-    ];
+    private $recipients;
 
-    const RECIPIENT_DEV = [
-        'daniel.borza@plentydevelopment.com'
-    ];
+    private $recipients_dev;
 
     public function __construct(ConfigRepository $config,
-                                ManualHelper $manualHelper
+                                MailerContract $mailerContract
     )
     {
         $this->host = $config->get('PlentyManual.search.es_host');
-        $this->manualHelper = $manualHelper;
+        $this->mailerContract = $mailerContract;
+        $this->recipients = $config->get('PlentyManual.broken_links.email_productive');
+        $this->recipients_dev = $config->get('PlentyManual.broken_links.email_development');
     }
 
     /**
@@ -87,8 +92,8 @@ class BrokenLinks
         if (\strpos($mailContent, 'http') !== false)
         {
             $subject = "Broken Links";
-            $this->manualHelper->sendMail($mailContentDev, self::RECIPIENT_DEV, $subject);
-            $this->manualHelper->sendMail($mailContent, self::RECIPIENTS, $subject);
+            $this->mailerContract->sendHtml($mailContentDev, $this->recipients_dev, $subject);
+            $this->mailerContract->sendHtml($mailContent, $this->recipients, $subject);
         }
 
         return $result;
@@ -113,11 +118,11 @@ class BrokenLinks
 
         $requestArray = array('host' => $this->host,
             'type' => $type,
-            'Query' => $requestQuery);
+            'query' => $requestQuery);
 
 
 
-        $result = $this->Links($this->serverCall($requestArray), $lang);
+        $result = $this->links($this->serverCall($requestArray), $lang);
 
         return $result;
 
@@ -133,7 +138,7 @@ class BrokenLinks
 
         curl_setopt( $cHandle, CURLOPT_POST, true );
         curl_setopt( $cHandle, CURLOPT_RETURNTRANSFER, true );
-        curl_setopt( $cHandle, CURLOPT_POSTFIELDS, json_encode( $requestArray['Query'] ) );
+        curl_setopt( $cHandle, CURLOPT_POSTFIELDS, json_encode( $requestArray['query'] ) );
 
         $response = curl_exec( $cHandle );
 
@@ -149,7 +154,7 @@ class BrokenLinks
      * @param $lang
      * @return array
      */
-    private function Links($resultData, $lang)
+    private function links($resultData, $lang)
     {
         $totalHits = $resultData["hits"]["total"];
 
