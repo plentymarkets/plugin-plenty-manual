@@ -5527,21 +5527,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "2eabc2defefbf5df849163fc013e7853",
-				"path" => "orders/multi-orders",
-				"position" => 60,
-				"urlName" => "multi-orders",
-				"url" => "/en/orders/multi-orders",
-				"level" => 2,
-				"title" => "Multi-orders",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Multi-orders. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "7d76a65a5e7af7b06bffaab5b6741059",
 				"path" => "orders/scheduler",
 				"position" => 70,
@@ -6171,21 +6156,6 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Best Practices: Postcode Filter. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "439852c2c1c0a1a218ff06c70ce5d343",
-				"path" => "fulfilment/vendor-manual",
-				"position" => 1000,
-				"urlName" => "vendor-manual",
-				"url" => "/en/fulfilment/vendor-manual",
-				"level" => 2,
-				"title" => "Fulfilment",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Fulfilment. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			]
