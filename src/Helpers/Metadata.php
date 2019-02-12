@@ -1936,21 +1936,6 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Postleitzahlenfilter. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
-			],
-			[
-				"id" => "f3eac874ea587ae1487effb5b266915a",
-				"path" => "fulfillment/vendor-manual",
-				"position" => 1000,
-				"urlName" => "vendor-manual",
-				"url" => "/fulfillment/vendor-manual",
-				"level" => 2,
-				"title" => "Manual",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Manual. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
@@ -2004,7 +1989,7 @@ class Metadata {
 						"url" => "/daten/daten-importieren/best-practices",
 						"level" => 3,
 						"title" => "Best Practices: ElasticSync",
-						"keywords" => "ElasticSync, Import, Artikel, Artikelanlage, Best Practice, automatisiert",
+						"keywords" => "ElasticSync, Import, Artikel, Artikelanlage, Best Practice, automatisiert, Variantenanlage",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: ElasticSync. Hier finden Sie folgende Informationen:",
