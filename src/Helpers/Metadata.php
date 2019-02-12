@@ -1936,21 +1936,6 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Postleitzahlenfilter. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
-			],
-			[
-				"id" => "f3eac874ea587ae1487effb5b266915a",
-				"path" => "fulfillment/vendor-manual",
-				"position" => 1000,
-				"urlName" => "vendor-manual",
-				"url" => "/fulfillment/vendor-manual",
-				"level" => 2,
-				"title" => "Vendor manual",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
