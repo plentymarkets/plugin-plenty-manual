@@ -6173,6 +6173,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Best Practices: Postcode Filter. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "439852c2c1c0a1a218ff06c70ce5d343",
+				"path" => "fulfilment/vendor-manual",
+				"position" => 1000,
+				"urlName" => "vendor-manual",
+				"url" => "/en/fulfilment/vendor-manual",
+				"level" => 2,
+				"title" => "Vendor manual",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
