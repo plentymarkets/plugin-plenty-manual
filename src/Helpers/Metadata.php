@@ -6189,21 +6189,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "491f4ec7916e536bf5116889cff1179c",
-						"path" => "data/importing-data/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/data/importing-data/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: ElasticSync",
-						"keywords" => "ElasticSync, import, items, creating items, best practice, automated",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: ElasticSync. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "212bf9905abc7430016c62873512232d",
 						"path" => "data/importing-data/ElasticSync-plugin-(deprecated)",
 						"position" => 30,

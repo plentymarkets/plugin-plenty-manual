@@ -1,0 +1,338 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_creating_variations_with_elasticsync"><span>1.</span><span> Creating variations with ElasticSync</span></a>
+<ul class="sectlevel2">
+<li><a href="#requirements"><span>1.1.</span><span> Requirements</span></a></li>
+<li><a href="#infos"><span>1.2.</span><span> Info</span></a></li>
+<li><a href="#structure_of_file"><span>1.3.</span><span> Structure of the file</span></a>
+<ul class="sectlevel3">
+<li><a href="#_general"><span>1.3.1.</span><span> General</span></a></li>
+<li><a href="#_variation_numbers"><span>1.3.2.</span><span> Variation numbers</span></a></li>
+<li><a href="#_attributes"><span>1.3.3.</span><span> Attributes</span></a></li>
+<li><a href="#_images"><span>1.3.4.</span><span> Images</span></a></li>
+<li><a href="#_category_links"><span>1.3.5.</span><span> Category links</span></a></li>
+</ul>
+</li>
+<li><a href="#synchronisation"><span>1.4.</span><span> Synchronisation</span></a></li>
+<li><a href="#mappings"><span>1.5.</span><span> Mapping</span></a></li>
+<li><a href="#second_mapping"><span>1.6.</span><span> Second mapping</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Best Practices: Creating variations</h1><div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Plugin update?</div>
+<div class="paragraph">
+<p>Before creating syncs or export formats, go to <strong>Plugins » Plugin overview » Open plugin set</strong> and make sure that you use the latest version of ElasticSync.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>This page contains best practices for the plugin <a href="https://marketplace.plentymarkets.com/en/plugins/integration/ElasticSync_4750" target="_blank" rel="noopener">ElasticSync</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Before you start using the best practices described on this page of the manual, you should familiarise yourself with the general functionality of ElasticSync. To do so, read the <a href="/en/basics/data-exchange/ElasticSync/ElasticSync-plugin">Importing data with ElasticSync</a> page of the manual before you start on this best practice.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_creating_variations_with_elasticsync">1. Creating variations with ElasticSync</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This best practice teaches you how to create items using ElasticSync.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To benefit from this best practice, you should be familiar the basic functionality of ElasticSync. Check the <a href="/en/basics/data-exchange/ElasticSync/ElasticSync-plugin">Importing data with ElasticSync</a> page of the manual for general information about how the plugin works.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="requirements">1.1. Requirements</h3>
+<div class="paragraph">
+<p>To import items and variations using ElasticSync as described here, the following data must be saved in the system:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Attributes</p>
+</li>
+<li>
+<p>Attribute values</p>
+</li>
+<li>
+<p>Categories</p>
+</li>
+<li>
+<p>Sales prices</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="infos">1.2. Info</h3>
+<div class="paragraph">
+<p>Go to <strong>System » Settings » ElasticSync</strong> to find the button <strong>Delete cache</strong>.</p>
+</div>
+<div class="paragraph">
+<p>This button allows you to reset the ElasticSync cache once per hour in order to reimport a file that does not contain any changes.</p>
+</div>
+<div class="paragraph">
+<p>Also helpful is the <strong>Test run</strong> button.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/data-exchange/ElasticSync/assets/testrun.png" alt="testrun">
+</div>
+<div class="title">Figure 1. Useful for testing syncs</div>
+</div>
+<div class="paragraph">
+<p>This imports the first 10 rows of a file without cache. This allows you to check if all values have been assigned correctly before you start syncing all rows.</p>
+</div>
+<div class="paragraph">
+<p>Check the plugin description and the manual to find out which values are valid for these fields.</p>
+</div>
+<div class="paragraph">
+<p>Go to <strong>Data » Log</strong> to access the error messages related to the sync.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="structure_of_file">1.3. Structure of the file</h3>
+<div class="paragraph">
+<p>The following <a href="https://www.plentymarkets.eu/download/Testdatei.csv" target="_blank" rel="noopener">sample file</a> has been used for the sync.</p>
+</div>
+<div class="sect3">
+<h4 id="_general">1.3.1. General</h4>
+<div class="paragraph">
+<p>The data that is saved <strong>globally</strong> at the item level, e.g. <strong>the name, the description, etc.</strong> is saved to the row of the main variation. During the sync, this should be saved in a separate mapping.</p>
+</div>
+<div class="paragraph">
+<p>Data that is <strong>variation based</strong> must be entered into the relevant rows of the variations.</p>
+</div>
+<div class="paragraph">
+<p>When creating the variations, it is important that the structure of the attributes and values are saved in the file matches that of the mapping.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_variation_numbers">1.3.2. Variation numbers</h4>
+<div class="paragraph">
+<p>In this example, we will create a main variation with 4 variations. For mapping the variations, we use the main variation number.</p>
+</div>
+<div class="paragraph">
+<p>Because the sync imports data row by row, the main variation is at the top of the file.</p>
+</div>
+<div class="paragraph">
+<p>There, we manually save the variation number in the field of the same name. The field <strong>Main variation number</strong> remains empty.</p>
+</div>
+<div class="paragraph">
+<p>This variation number is now written into the field <strong>Main variation number</strong> of the variations in order to map them to the main variation. Otherwise, the variations would be imported as separate main variations.</p>
+</div>
+<div class="paragraph">
+<p>You can also enter the variation numbers of the child variations. If you leave the field empty, the system generates the numbers automatically.</p>
+</div>
+<div class="paragraph">
+<p>The file will look like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/data-exchange/ElasticSync/assets/hvnumber.png" alt="hvnumber">
+</div>
+<div class="title">Figure 2. Entering the numbers for main variation and variations</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Variation numbers must be unique!</div>
+<div class="paragraph">
+<p>Both the number of the main variation and those of the child variations must be unique. The import fails if numbers are assigned more than once.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_attributes">1.3.3. Attributes</h4>
+<div class="paragraph">
+<p>In our example, we selected <strong>attribute selection combination</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/data-exchange/ElasticSync/assets/attributes.png" alt="attributes">
+</div>
+<div class="title">Figure 3. Creating variations using the attribute selection combination</div>
+</div>
+<div class="paragraph">
+<p>The first row of the main variation has not been assigned a combination so it is not linked to any attributes.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Main variation without attributes</div>
+<div class="paragraph">
+<p>If you work with variation items, we recommend that you do not assign any attributes to the main variation. This provides you with more flexibility when you create variations. If you assign an attribute to the main variation, you can only create variations with the same attributes.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_images">1.3.4. Images</h4>
+<div class="paragraph">
+<p>In our sync, we will import the image URLs using 2 separate columns and mappings. You can also do this in one row by comma-separating the URLs.
+For that, the field <strong>Multi URL</strong> must be selected in the mapping. The format of the URL is saved as follows: <strong>image1url;positionImage1,image2url;positionImage2</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_category_links">1.3.5. Category links</h4>
+<div class="paragraph">
+<p>To link more than one category, you need to create several mappings. Also, make sure to specify the full path for the category links. The levels are separated by a semicolon.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/data-exchange/ElasticSync/assets/categorylink.png" alt="categorylink">
+</div>
+<div class="title">Figure 4. Correct spelling of separators and paths are essential for the import.</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Mapping and file</div>
+<div class="paragraph">
+<p>Make sure that the values in the file match the mapping. This is because you can select different values in the mapping. For example, for the field Default category, you can select either the ID or the name. As such, the CSV file must contain either the ID or the name. You cannot use the ID in the mapping but the name in the file.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="synchronisation">1.4. Synchronisation</h3>
+<div class="paragraph">
+<p>For the synchronisation, it is important that a variation-specific synchronisation field is used. A good choice is the variation number or the variation ID.</p>
+</div>
+<div class="paragraph">
+<p>Select the option to create a new data record if no synchronisation is possible.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mappings">1.5. Mapping</h3>
+<div class="paragraph">
+<p>In the mapping, we map the fields in the CSV file with the fields in plentymarkets.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/data-exchange/ElasticSync/assets/set_values.png" alt="set values">
+</div>
+<div class="title">Figure 5. Create a mapping</div>
+</div>
+<div class="paragraph">
+<p>We recommend that you only map those fields that you actually want to import. Unnecessary fields can result in errors and should best be avoided.</p>
+</div>
+<div class="paragraph">
+<p>There are some mandatory fields for creating items with variations. These fields must be mapped for the sync to work. Those mandatory fields are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Default category</p>
+</li>
+<li>
+<p>Main variation number</p>
+</li>
+<li>
+<p>Variation number</p>
+</li>
+<li>
+<p>If you want to import stock, the following values must be part of the mapping:
+Warehouse, Quantity, Storage location</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="second_mapping">1.6. Second mapping</h3>
+<div class="paragraph">
+<p>The mappings are processed one after other. That means that the second mapping runs after the first one.</p>
+</div>
+<div class="paragraph">
+<p>Using an additional mapping, we now want to import a second category, an additional image and the global item data (e.g. name, description, etc.).</p>
+</div>
+<div class="paragraph">
+<p>In the mapping itself, we again specify the values and map the URL and the name of the category to the second column of our file.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/basics/data-exchange/ElasticSync/assets/second_mapping_new.png" alt="second mapping new">
+</div>
+<div class="title">Figure 6. Additional mappings are created in the same way as the first one.</div>
+</div>
+<div class="paragraph">
+<p>The sync is now ready to go and you can start it.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Test run</div>
+<div class="paragraph">
+<p>We recommend that you do a test run before the first sync. This allows you to check if the sync functions as expected. If the sync does not perform as expected, you can now correct it before it is run for real.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</main>
