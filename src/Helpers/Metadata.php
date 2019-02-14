@@ -4086,11 +4086,11 @@ class Metadata {
 						"urlName" => "best-practices",
 						"url" => "/maerkte/rakuten/best-practices",
 						"level" => 3,
-						"title" => "Best Practices: Rakuten.de",
+						"title" => "Best Practices: Rakuten",
 						"keywords" => "Rakuten.de, Multi-Channel",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Rakuten.de. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Rakuten. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
