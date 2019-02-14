@@ -4292,7 +4292,7 @@ class Metadata {
 		"title" => "Plugins",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "",
+		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Plugins. Hier finden Sie folgende Informationen:",
 		"children" => 		[
 			[
