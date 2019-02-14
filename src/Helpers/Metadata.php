@@ -8469,7 +8469,7 @@ class Metadata {
 		"title" => "Plugins",
 		"keywords" => "plugin, plugin set, marketplace",
 		"description" => "",
-		"navAlias" => "",
+		"navAlias" => "Overview",
 		"linkListInto" => "Welcome to the topic Plugins. The following information is available:",
 		"children" => 		[
 			[
