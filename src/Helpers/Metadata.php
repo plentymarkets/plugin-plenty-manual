@@ -6344,11 +6344,11 @@ class Metadata {
 								"urlName" => "best-practices-elasticsync-importing-data",
 								"url" => "/en/data/importing-data/elasticsync-best-practices/best-practices-elasticsync-importing-data",
 								"level" => 4,
-								"title" => "Best Practices: Importing data with ElasticSync",
+								"title" => "Best Practices: Creating storage locations",
 								"keywords" => "ElasticSync, ElasticSync new, Importing data, Mapping, Matching",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practices: Importing data with ElasticSync. Hier finden Sie folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: Creating storage locations. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							],
