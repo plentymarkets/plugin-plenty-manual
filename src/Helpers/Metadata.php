@@ -2001,11 +2001,11 @@ class Metadata {
 								"urlName" => "best-practices-elasticsync-datenimport",
 								"url" => "/daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-datenimport",
 								"level" => 4,
-								"title" => "Best Practices: Datenimport mit ElasticSync",
+								"title" => "Best Practices: Lagerorte anlegen",
 								"keywords" => "ElasticSync, ElasticSync new, Datenimport, Zuordnung, Abgleich",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practices: Datenimport mit ElasticSync. Hier finden Sie folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: Lagerorte anlegen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							],
