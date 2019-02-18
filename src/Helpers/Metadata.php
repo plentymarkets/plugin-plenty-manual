@@ -2047,7 +2047,7 @@ class Metadata {
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-merkmale",
 								"level" => 4,
 								"title" => "Merkmale",
-								"keywords" => "ElasticSync, Import, Artikel, Artikelanlage",
+								"keywords" => "ElasticSync, Import, Merkmal, Merkmalimport",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Merkmale. Hier finden Sie folgende Informationen:",
