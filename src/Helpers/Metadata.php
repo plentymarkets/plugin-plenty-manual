@@ -2010,6 +2010,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "9fabaf014b4d86cfc7d891210ab7db8d",
+								"path" => "daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-lagerorte",
+								"position" => 10,
+								"urlName" => "best-practices-elasticsync-lagerorte",
+								"url" => "/daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-lagerorte",
+								"level" => 4,
+								"title" => "Best Practices: Lagerorte anpassen",
+								"keywords" => "ElasticSync, ElasticSync new, Datenimport, Zuordnung, Abgleich",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: Lagerorte anpassen. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "0e1765bcd8464e21a4fa675eefa3bbf4",
 								"path" => "daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-variantenanlage",
 								"position" => 20,
