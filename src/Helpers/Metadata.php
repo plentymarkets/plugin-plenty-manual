@@ -6456,6 +6456,21 @@ class Metadata {
 								"linkListInto" => "Welcome to the topic Best Practices: Package numbers and fulfilment. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "39dc643495b02869a6c525cd4995bf27",
+								"path" => "data/importing-data/elasticsync-best-practices/best-practices-elasticsync-contact-data",
+								"position" => 70,
+								"urlName" => "best-practices-elasticsync-contact-data",
+								"url" => "/en/data/importing-data/elasticsync-best-practices/best-practices-elasticsync-contact-data",
+								"level" => 4,
+								"title" => "Best Practices: Contact data",
+								"keywords" => "ElasticSync, import, best practice, automated, contacts, contact, customer, customers, customer data",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Best Practices: Contact data. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
