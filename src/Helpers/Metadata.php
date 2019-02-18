@@ -1995,21 +1995,6 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: ElasticSync. Hier finden Sie folgende Informationen:",
 						"children" => 						[
 							[
-								"id" => "f806c53d2b88b7f3598b9ec64c6c42e2",
-								"path" => "daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-datenimport",
-								"position" => 10,
-								"urlName" => "best-practices-elasticsync-datenimport",
-								"url" => "/daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-datenimport",
-								"level" => 4,
-								"title" => "Best Practices: Lagerorte anlegen",
-								"keywords" => "ElasticSync, ElasticSync new, Datenimport, Zuordnung, Abgleich",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practices: Lagerorte anlegen. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "9fabaf014b4d86cfc7d891210ab7db8d",
 								"path" => "daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-lagerorte",
 								"position" => 10,
@@ -2126,6 +2111,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Best Practices: Kontaktdaten. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "22c2fb55327f11d0a327d58cdcfa2aeb",
+								"path" => "daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-auftragspositionen",
+								"position" => 80,
+								"urlName" => "best-practices-elasticsync-auftragspositionen",
+								"url" => "/daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-auftragspositionen",
+								"level" => 4,
+								"title" => "Best Practices: Auftragspositionen",
+								"keywords" => "ElasticSync, Import, Aufträge, Auftragspositionen, Best Practice, automatisiert",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: Auftragspositionen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							]
