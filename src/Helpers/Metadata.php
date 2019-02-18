@@ -5150,7 +5150,7 @@ class Metadata {
 			[
 				"id" => "c1b444c5e01ad2a5abeff5125ab1d808",
 				"path" => "item/managing-items",
-				"position" => 30,
+				"position" => 20,
 				"urlName" => "managing-items",
 				"url" => "/en/item/managing-items",
 				"level" => 2,
@@ -6352,21 +6352,6 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Best Practices: ElasticSync. The following information is available:",
 						"children" => 						[
-							[
-								"id" => "653c0edc5d3eacd08d8f67fa66a659d1",
-								"path" => "data/importing-data/elasticsync-best-practices/best-practices-elasticsync-importing-data",
-								"position" => 10,
-								"urlName" => "best-practices-elasticsync-importing-data",
-								"url" => "/en/data/importing-data/elasticsync-best-practices/best-practices-elasticsync-importing-data",
-								"level" => 4,
-								"title" => "Best Practices: Creating storage locations",
-								"keywords" => "ElasticSync, ElasticSync new, Importing data, Mapping, Matching",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practices: Creating storage locations. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
 							[
 								"id" => "6e8ed06fb7c5a117e0e0aa4c0a1bca03",
 								"path" => "data/importing-data/elasticsync-best-practices/best-practices-elasticsync-storage-locations",
