@@ -6368,6 +6368,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "6e8ed06fb7c5a117e0e0aa4c0a1bca03",
+								"path" => "data/importing-data/elasticsync-best-practices/best-practices-elasticsync-storage-locations",
+								"position" => 10,
+								"urlName" => "best-practices-elasticsync-storage-locations",
+								"url" => "/en/data/importing-data/elasticsync-best-practices/best-practices-elasticsync-storage-locations",
+								"level" => 4,
+								"title" => "Best Practices: Adjusting storage locations",
+								"keywords" => "ElasticSync, ElasticSync new, Importing data, Mapping, Matching",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practices: Adjusting storage locations. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "73b01b73b46d0be5311f6cd826654392",
 								"path" => "data/importing-data/elasticsync-best-practices/best-practices-elasticsync-creating-variations",
 								"position" => 20,
