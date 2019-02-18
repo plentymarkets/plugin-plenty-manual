@@ -17,7 +17,7 @@
 <li><a href="#210"><span>1.1.</span><span> Item</span></a></li>
 <li><a href="#230"><span>1.2.</span><span> ItemImage</span></a></li>
 <li><a href="#230"><span>1.3.</span><span> ItemDescription</span></a></li>
-<li><a href="#240"><span>1.4.</span><span> ItemTag</span></a></li>
+<li><a href="#240"><span>1.4.</span><span> VariationTag</span></a></li>
 <li><a href="#250"><span>1.5.</span><span> ItemCrossSelling</span></a></li>
 <li><a href="#255"><span>1.6.</span><span> ItemShippingProfile</span></a></li>
 <li><a href="#260"><span>1.7.</span><span> Variation</span></a></li>
@@ -38,7 +38,8 @@
 <li><a href="#400"><span>1.22.</span><span> VariationComment</span></a></li>
 <li><a href="#410"><span>1.23.</span><span> VariationAttributeValues</span></a></li>
 <li><a href="#420"><span>1.24.</span><span> VariationEigenschaften</span></a></li>
-<li><a href="#430"><span>1.25.</span><span> Exporting custom values</span></a></li>
+<li><a href="#format-item-serial-number"><span>1.25.</span><span> ItemSerialNumber</span></a></li>
+<li><a href="#430"><span>1.26.</span><span> Exporting custom values</span></a></li>
 </ul>
 </li>
 <li><a href="#1130"><span>2.</span><span> Item images</span></a></li>
@@ -106,6 +107,19 @@
 <li><a href="#1120"><span>8.3.</span><span> WarehouseLocationName</span></a></li>
 <li><a href="#1130"><span>8.4.</span><span> Warehouse</span></a></li>
 <li><a href="#1140"><span>8.5.</span><span> Exporting custom values</span></a></li>
+</ul>
+</li>
+<li><a href="#1200"><span>9.</span><span> Contacts</span></a>
+<ul class="sectlevel2">
+<li><a href="#1205"><span>9.1.</span><span> Contact</span></a></li>
+<li><a href="#1210"><span>9.2.</span><span> BillingAddress</span></a></li>
+<li><a href="#1220"><span>9.3.</span><span> DeliveryAddress</span></a></li>
+<li><a href="#1230"><span>9.4.</span><span> Account</span></a></li>
+<li><a href="#1240"><span>9.5.</span><span> ContactOption</span></a></li>
+<li><a href="#1250"><span>9.6.</span><span> BillingAddressOption</span></a></li>
+<li><a href="#1260"><span>9.7.</span><span> DeliveryAddressOption</span></a></li>
+<li><a href="#1270"><span>9.8.</span><span> ContactBank</span></a></li>
+<li><a href="#1280"><span>9.9.</span><span> Exporting custom values</span></a></li>
 </ul>
 </li>
 </ul>
@@ -242,10 +256,6 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stockType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">storeSpecial</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Store special</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OwnerID</p></td>
@@ -526,12 +536,12 @@ url;position,url;position,etc.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="240">1.4. ItemTag</h3>
+<h3 id="240">1.4. VariationTag</h3>
 <div class="paragraph">
 <p><a href="#table-fields-tags">Table 5</a> lists the fields available for exporting tags linked to variations.</p>
 </div>
 <table id="table-fields-tags" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Fields for exporting item tags</caption>
+<caption class="title">Table 5. Fields for exporting variation tags</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -548,8 +558,12 @@ url;position,url;position,etc.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tag ID</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tagNames</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tagName</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tag name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tagNames</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tag names</p></td>
 </tr>
 </tbody>
 </table>
@@ -691,6 +705,10 @@ url;position,url;position,etc.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of last update of linked data</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">availabilityUpdatedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of last update of the availability</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PriceCalculationID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Price calculation</p></td>
 </tr>
@@ -717,6 +735,14 @@ url;position,url;position,etc.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">isUnavailableIfNetStockIsNotPositive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not available if net stock is 0 or negative</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">isVisibleInListIfNetStockIsPositive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visible in item list if net stock is positive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">isInvisibleInListIfNetStockIsNotPositive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invisible in item list if net stock is 0 or negative</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mainWarehouseId</p></td>
@@ -843,6 +869,30 @@ D = 3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sales rank of the variation</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parentVariationId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Currently not in use<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parentVariationQuantity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Currently not in use<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">singleItemCount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Currently not in use<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parentVariationID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the main variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">parentVariationQuantity</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">singleItemCount</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">categoryVariationId</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variation ID or ID of the main variation of the item.<br>
 ID of the variation = Categories are not inherited from the main variation.<br>
@@ -926,8 +976,8 @@ ID of the main variation of the item = Properties are inherited from the main va
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">codes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Codes for the selected barcode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code saved for the selected barcode</p></td>
 </tr>
 </tbody>
 </table>
@@ -1339,9 +1389,9 @@ Component:Quantity;Component:Quantity</p></td>
 <div class="sect2">
 <h3 id="380">1.20. VariationSupplier</h3>
 <div class="paragraph">
-<p><a href="#table-fields-variation-supplier">Table 21</a> lists the fields available for exporting supplier data.</p>
+<p><a href="#table-fields-suppliers">[table-fields-suppliers]</a> lists the fields available for exporting supplier data.</p>
 </div>
-<table id="table-fields-variation-supplier" class="tableblock frame-all grid-all stretch">
+<table id="table-fields-supplier" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 21. Fields for exporting supplier data</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -1354,6 +1404,10 @@ Component:Quantity;Component:Quantity</p></td>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplier link ID</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SupplierID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supplier ID</p></td>
@@ -1489,7 +1543,7 @@ SupplierID:SupplierRowID,PurchasePrice:MinimumPurchase;…​.</p></td>
 <div class="sect2">
 <h3 id="420">1.24. VariationEigenschaften</h3>
 <div class="paragraph">
-<p><a href="#table-fields-variation-properties">Table 25</a> lists the fields available for importing property links at the variation level.</p>
+<p><a href="#table-fields-properties-variations">[table-fields-properties-variations]</a> lists the fields available for importing property links at the variation level.</p>
 </div>
 <table id="table-fields-variation-properties" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 25. Fields for exporting variation properties</caption>
@@ -1509,6 +1563,24 @@ SupplierID:SupplierRowID,PurchasePrice:MinimumPurchase;…​.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the property</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cast</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of the property<br>
+int = Integer<br>
+float = Decimal number<br>
+select = Selection<br>
+date = Date<br>
+file = File<br>
+empty = None</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">linked</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IDs of the linked properties</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property value</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">All characteristics in the format<br>
 name:value:language;name:value:language</p></td>
@@ -1517,12 +1589,45 @@ name:value:language;name:value:language</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="430">1.25. Exporting custom values</h3>
+<h3 id="format-item-serial-number">1.25. ItemSerialNumber</h3>
 <div class="paragraph">
-<p><a href="#table-fields-custom-values">Table 26</a> lists the fields available for importing custom values.</p>
+<p><a href="#table-fields-serial-numbers">Table 26</a> lists the fields available for exporting serial number data.</p>
+</div>
+<table id="table-fields-serial-numbers" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 26. Fields for exporting serial numbers</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All serial numbers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">available</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Available serial numbers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">used</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assigned serial numbers</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="430">1.26. Exporting custom values</h3>
+<div class="paragraph">
+<p><a href="#table-fields-custom-values">Table 27</a> lists the fields available for importing custom values.</p>
 </div>
 <table id="table-fields-custom-values" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 26. Fields for exporting custom values</caption>
+<caption class="title">Table 27. Fields for exporting custom values</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1546,10 +1651,10 @@ name:value:language;name:value:language</p></td>
 <h2 id="1130">2. Item images</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-fields-item-images">Table 27</a> lists the fields available for exporting item image data with the format <strong>Item images</strong>.</p>
+<p><a href="#table-fields-item-images">Table 28</a> lists the fields available for exporting item image data with the format <strong>Item images</strong>.</p>
 </div>
 <table id="table-fields-item-images" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 27. Fields for exporting item images</caption>
+<caption class="title">Table 28. Fields for exporting item images</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1571,6 +1676,10 @@ name:value:language;name:value:language</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fileType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">File format of the image (JPG, JPEG, PNG, GIF or SVG)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL of the image</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">position</p></td>
@@ -1658,7 +1767,10 @@ name:value:language;name:value:language</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alternative text of item image</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Own value</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>custom_value</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">custom_value</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Own value for export</p></td>
 </tr>
 </tbody>
@@ -1668,10 +1780,10 @@ name:value:language;name:value:language</p></td>
 <h2 id="440">3. Attributes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-fields-attributes">Table 28</a> explains the fields that are available for exporting attribute data.</p>
+<p><a href="#table-fields-attributes">Table 29</a> explains the fields that are available for exporting attribute data.</p>
 </div>
 <table id="table-fields-attributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 28. Fields for exporting attributes</caption>
+<caption class="title">Table 29. Fields for exporting attributes</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1822,10 +1934,10 @@ name:value:language;name:value:language</p></td>
 <h2 id="450">4. Categories</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-fields-categories">Table 29</a> explains the fields that are available for matching category data.</p>
+<p><a href="#table-fields-categories">Table 30</a> explains the fields that are available for matching category data.</p>
 </div>
 <table id="table-fields-categories" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 29. Fields for exporting category data</caption>
+<caption class="title">Table 30. Fields for exporting category data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1871,6 +1983,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sitemap</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">updatedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">parentCategoryName</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the parent category</p></td>
 </tr>
@@ -1910,6 +2026,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <td class="tableblock halign-left valign-top"><p class="tableblock">Meta title</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">image2Path</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">previewUrl</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Category URL</p></td>
 </tr>
@@ -1928,6 +2048,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">pageView</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Template page</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fullText</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Full text search</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>CategoryClient</strong></p></td>
@@ -1950,10 +2074,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <h2 id="1140">5. Manufacturer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-fields-manufacturer">Table 30</a> lists the fields available for exporting manufacturer data.</p>
+<p><a href="#table-fields-manufacturer">Table 31</a> lists the fields available for exporting manufacturer data.</p>
 </div>
 <table id="table-fields-manufacturer" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 30. Fields for exporting manufacturer data</caption>
+<caption class="title">Table 31. Fields for exporting manufacturer data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1965,6 +2089,9 @@ customer = Category and all sub-categories are only visible to online store visi
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Manufacturer</strong></p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer ID</p></td>
@@ -2042,8 +2169,11 @@ customer = Category and all sub-categories are only visible to online store visi
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>custom_value</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">custom_value</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Own value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Own value for export</p></td>
 </tr>
 </tbody>
 </table>
@@ -2054,10 +2184,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="_order">6.1. Order</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order">Table 31</a> lists the fields available for exporting order data.</p>
+<p><a href="#table-fields-order">Table 32</a> lists the fields available for exporting order data.</p>
 </div>
 <table id="table-fields-order" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 31. Fields for exporting order data</caption>
+<caption class="title">Table 32. Fields for exporting order data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2127,10 +2257,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="510">6.2. BillingAddress</h3>
 <div class="paragraph">
-<p><a href="#table-fields-billing-address">Table 32</a> lists the fields available for exporting invoice address data.</p>
+<p><a href="#table-fields-billing-address">Table 33</a> lists the fields available for exporting invoice address data.</p>
 </div>
 <table id="table-fields-billing-address" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 32. Fields for exporting invoice address data</caption>
+<caption class="title">Table 33. Fields for exporting invoice address data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2272,7 +2402,7 @@ customer = Category and all sub-categories are only visible to online store visi
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personalNumber</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Personnel number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Personal number</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">packstationNo</p></td>
@@ -2292,10 +2422,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="520">6.3. BillingAddressOption</h3>
 <div class="paragraph">
-<p><a href="#table-fields-billing-address-option">Table 33</a> lists the fields available for exporting different types of invoice address options.</p>
+<p><a href="#table-fields-billing-address-option">Table 34</a> lists the fields available for exporting different types of invoice address options.</p>
 </div>
 <table id="table-fields-billing-address-option" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 33. Fields for exporting invoice address options</caption>
+<caption class="title">Table 34. Fields for exporting invoice address options</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2360,10 +2490,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="530">6.4. BillingAddressCountry</h3>
 <div class="paragraph">
-<p><a href="#table-fields-billing-address-country">Table 34</a> lists the fields available for exporting country data used in the invoice address.</p>
+<p><a href="#table-fields-billing-address-country">Table 35</a> lists the fields available for exporting country data used in the invoice address.</p>
 </div>
 <table id="table-fields-billing-address-country" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 34. Fields for exporting countries in invoice addresses</caption>
+<caption class="title">Table 35. Fields for exporting countries in invoice addresses</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2397,10 +2527,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="540">6.5. DeliveryAddress</h3>
 <div class="paragraph">
-<p><a href="#table-fields-delivery-address">Table 35</a> lists the fields available for exporting delivery address data.</p>
+<p><a href="#table-fields-delivery-address">Table 36</a> lists the fields available for exporting delivery address data.</p>
 </div>
 <table id="table-fields-delivery-address" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 35. Fields for exporting delivery addresses</caption>
+<caption class="title">Table 36. Fields for exporting delivery addresses</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2562,10 +2692,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="550">6.6. DeliveryAddressOption</h3>
 <div class="paragraph">
-<p><a href="#table-fields-delivery-address-option">Table 36</a> lists the fields available for exporting delivery address option data.</p>
+<p><a href="#table-fields-delivery-address-option">Table 37</a> lists the fields available for exporting delivery address option data.</p>
 </div>
 <table id="table-fields-delivery-address-option" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 36. Fields for exporting delivery address options</caption>
+<caption class="title">Table 37. Fields for exporting delivery address options</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2630,10 +2760,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="560">6.7. DeliveryAddressCountry</h3>
 <div class="paragraph">
-<p><a href="#table-fields-delivery-address-country">Table 37</a> lists the fields available for exporting delivery address country data.</p>
+<p><a href="#table-fields-delivery-address-country">Table 38</a> lists the fields available for exporting delivery address country data.</p>
 </div>
 <table id="table-fields-delivery-address-country" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 37. Fields for exporting delivery address countries</caption>
+<caption class="title">Table 38. Fields for exporting delivery address countries</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2665,10 +2795,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="570">6.8. Contact</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-contacts">Table 38</a> lists the fields available for exporting order contact data.</p>
+<p><a href="#table-fields-order-contacts">[table-fields-order-contacts]</a> lists the fields available for exporting order contact data.</p>
 </div>
-<table id="table-fields-order-contacts" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 38. Fields for exporting order contacts</caption>
+<table id="table-order-contacts" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 39. Fields for exporting order contacts</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2826,10 +2956,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="580">6.9. OrderProperty</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-property">Table 39</a> lists the fields available for exporting order properties.</p>
+<p><a href="#table-fields-order-property">Table 40</a> lists the fields available for exporting order properties.</p>
 </div>
 <table id="table-fields-order-property" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 39. Fields for exporting order properties</caption>
+<caption class="title">Table 40. Fields for exporting order properties</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2902,10 +3032,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="590">6.10. OrderDate</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-date">Table 40</a> lists the fields available for exporting order dates.</p>
+<p><a href="#table-fields-order-date">Table 41</a> lists the fields available for exporting order dates.</p>
 </div>
 <table id="table-fields-order-date" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 40. Fields for exporting order dates</caption>
+<caption class="title">Table 41. Fields for exporting order dates</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2974,10 +3104,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="600">6.11. OrderAmount</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-amount">Table 41</a> lists the fields available for exporting the totality of calculated amounts belonging to the order.</p>
+<p><a href="#table-fields-order-amount">Table 42</a> lists the fields available for exporting the totality of calculated amounts belonging to the order.</p>
 </div>
 <table id="table-fields-order-amount" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 41. Fields for exporting order amounts</caption>
+<caption class="title">Table 42. Fields for exporting order amounts</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3047,10 +3177,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="610">6.12. OrderReference</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-reference">Table 42</a> lists the fields available for exporting order reference data.</p>
+<p><a href="#table-fields-order-reference">Table 43</a> lists the fields available for exporting order reference data.</p>
 </div>
 <table id="table-fields-order-reference" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 42. Fields for exporting order references</caption>
+<caption class="title">Table 43. Fields for exporting order references</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3074,10 +3204,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="620">6.13. ShippingPackages</h3>
 <div class="paragraph">
-<p><a href="#table-fields-shipping-packages">Table 43</a> lists the fields available for exporting shipping package data.</p>
+<p><a href="#table-fields-shipping-packages">Table 44</a> lists the fields available for exporting shipping package data.</p>
 </div>
 <table id="table-fields-shipping-packages" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 43. Fields for exporting shipping packages</caption>
+<caption class="title">Table 44. Fields for exporting shipping packages</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3101,10 +3231,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="630">6.14. OrderComment</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-comment">Table 44</a> lists the fields available for exporting order notes.</p>
+<p><a href="#table-fields-order-comment">Table 45</a> lists the fields available for exporting order notes.</p>
 </div>
 <table id="table-fields-order-comment" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 44. Fields for exporting order notes</caption>
+<caption class="title">Table 45. Fields for exporting order notes</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3126,10 +3256,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="640">6.15. OrderDocument</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-document">Table 45</a> lists the fields available for exporting order document data.</p>
+<p><a href="#table-fields-order-document">Table 46</a> lists the fields available for exporting order document data.</p>
 </div>
 <table id="table-fields-order-document" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 45. Fields for exporting order documents</caption>
+<caption class="title">Table 46. Fields for exporting order documents</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3169,10 +3299,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="650">6.16. AccountingLocation</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-accounting-location">Table 46</a> lists the fields available for exporting order accounting location data.</p>
+<p><a href="#table-fields-order-accounting-location">Table 47</a> lists the fields available for exporting order accounting location data.</p>
 </div>
 <table id="table-fields-order-accounting-location" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 46. Fields for exporting accounting locations</caption>
+<caption class="title">Table 47. Fields for exporting accounting locations</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3208,10 +3338,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="660">6.17. OrderParcelServicePreset</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-orderparcelservicepreset">Table 47</a> lists the fields available for exporting preset parcel service data.</p>
+<p><a href="#table-fields-order-orderparcelservicepreset">Table 48</a> lists the fields available for exporting preset parcel service data.</p>
 </div>
 <table id="table-fields-order-orderparcelservicepreset" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 47. Fields for exporting preset parcel services</caption>
+<caption class="title">Table 48. Fields for exporting preset parcel services</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3279,10 +3409,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="670">6.18. OrderParcelServicePresetName</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-orderparcelservicepresetname">Table 48</a> lists the fields available for exporting the preset parcel service name.</p>
+<p><a href="#table-fields-order-orderparcelservicepresetname">Table 49</a> lists the fields available for exporting the preset parcel service name.</p>
 </div>
 <table id="table-fields-order-orderparcelservicepresetname" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 48. Fields for exporting the parcel service preset name</caption>
+<caption class="title">Table 49. Fields for exporting the parcel service preset name</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3313,10 +3443,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="680">6.19. OrderParcelService</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-orderparcelservicepreset">Table 47</a> lists the fields available for exporting order parcel service data.</p>
+<p><a href="#table-fields-order-orderparcelservicepreset">Table 48</a> lists the fields available for exporting order parcel service data.</p>
 </div>
 <table id="table-fields-order-orderparcelservicepreset" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 49. Fields for exporting order parcel service data</caption>
+<caption class="title">Table 50. Fields for exporting order parcel service data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3348,10 +3478,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="690">6.20. OrderParcelServiceName</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-orderparcelservicename">Table 50</a> lists the fields available for exporting the order parcel service name.</p>
+<p><a href="#table-fields-order-orderparcelservicename">Table 51</a> lists the fields available for exporting the order parcel service name.</p>
 </div>
 <table id="table-fields-order-orderparcelservicename" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 50. Fields for exporting the order parcel service name</caption>
+<caption class="title">Table 51. Fields for exporting the order parcel service name</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3375,10 +3505,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="700">6.21. Exporting custom values</h3>
 <div class="paragraph">
-<p><a href="#table-order-fields-custom-values">Table 51</a> lists the fields available for exporting custom values.</p>
+<p><a href="#table-order-fields-custom-values">Table 52</a> lists the fields available for exporting custom values.</p>
 </div>
 <table id="table-order-fields-custom-values" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 51. Fields for exporting custom values</caption>
+<caption class="title">Table 52. Fields for exporting custom values</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3404,10 +3534,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="_order_2">7.1. Order</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-order">Table 52</a> explains the fields available for exporting order data.</p>
+<p><a href="#table-fields-orderitem-order">Table 53</a> explains the fields available for exporting order data.</p>
 </div>
 <table id="table-fields-orderitem-order" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 52. Fields for exporting order data</caption>
+<caption class="title">Table 53. Fields for exporting order data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3469,10 +3599,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="710">7.2. OrderProperty</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-order-property">Table 53</a> lists the fields available for exporting order properties.</p>
+<p><a href="#table-fields-orderitem-order-property">Table 54</a> lists the fields available for exporting order properties.</p>
 </div>
 <table id="table-fields-orderitem-order-property" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 53. Fields for exporting order properties</caption>
+<caption class="title">Table 54. Fields for exporting order properties</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3545,10 +3675,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="720">7.3. OrderDate</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-order-date">Table 54</a> lists the fields available for exporting data on the order date.</p>
+<p><a href="#table-fields-orderitem-order-date">Table 55</a> lists the fields available for exporting data on the order date.</p>
 </div>
 <table id="table-fields-orderitem-order-date" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 54. Fields for exporting order dates</caption>
+<caption class="title">Table 55. Fields for exporting order dates</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3629,10 +3759,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="730">7.4. OrderAmount</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-order-amount">Table 55</a> lists the fields available for exporting the totality of calculated amounts belonging to the order.</p>
+<p><a href="#table-fields-orderitem-order-amount">Table 56</a> lists the fields available for exporting the totality of calculated amounts belonging to the order.</p>
 </div>
 <table id="table-fields-orderitem-order-amount" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 55. Fields for exporting order amounts</caption>
+<caption class="title">Table 56. Fields for exporting order amounts</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3702,10 +3832,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="740">7.5. OrderReference</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-order-reference">Table 56</a> lists the fields available for exporting order reference data.</p>
+<p><a href="#table-fields-orderitem-order-reference">Table 57</a> lists the fields available for exporting order reference data.</p>
 </div>
 <table id="table-fields-orderitem-order-reference" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 56. Fields for exporting order references</caption>
+<caption class="title">Table 57. Fields for exporting order references</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3731,10 +3861,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="750">7.6. OrderItem</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-item">Table 57</a> lists the fields available for exporting order item data.</p>
+<p><a href="#table-fields-order-item">Table 58</a> lists the fields available for exporting order item data.</p>
 </div>
 <table id="table-fields-order-item" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 57. Fields for exporting order item data</caption>
+<caption class="title">Table 58. Fields for exporting order item data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3808,10 +3938,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="760">7.7. OrderItemProperty</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-item-property">Table 58</a> lists the fields available for exporting order item properties.</p>
+<p><a href="#table-fields-order-item-property">Table 59</a> lists the fields available for exporting order item properties.</p>
 </div>
 <table id="table-fields-order-item-property" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 58. Fields for exporting order item properties</caption>
+<caption class="title">Table 59. Fields for exporting order item properties</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3896,10 +4026,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="770">7.8. OrderItemDate</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-order-date">Table 54</a> lists the fields available for exporting order item dates.</p>
+<p><a href="#table-fields-orderitem-order-date">Table 55</a> lists the fields available for exporting order item dates.</p>
 </div>
 <table id="table-fields-order-item-date" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 59. Fields for exporting order item dates</caption>
+<caption class="title">Table 60. Fields for exporting order item dates</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3980,10 +4110,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="780">7.9. OrderItemAmount</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-order-amount">Table 55</a> lists the fields available for exporting the totality of calculated amounts belonging to the order item.</p>
+<p><a href="#table-fields-orderitem-order-amount">Table 56</a> lists the fields available for exporting the totality of calculated amounts belonging to the order item.</p>
 </div>
 <table id="table-fields-orderitem-order-amount" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 60. Fields for exporting order item amounts</caption>
+<caption class="title">Table 61. Fields for exporting order item amounts</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4045,10 +4175,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="790">7.10. BillingAddress</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-billing-address">Table 61</a> lists the fields available for exporting invoice address data.</p>
+<p><a href="#table-fields-orderitem-billing-address">Table 62</a> lists the fields available for exporting invoice address data.</p>
 </div>
 <table id="table-fields-orderitem-billing-address" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 61. Fields for exporting invoice address data</caption>
+<caption class="title">Table 62. Fields for exporting invoice address data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4210,10 +4340,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="800">7.11. BillingAddressOption</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-billing-address-option">Table 62</a> lists the fields available for exporting different types of invoice address options.</p>
+<p><a href="#table-fields-orderitem-billing-address-option">Table 63</a> lists the fields available for exporting different types of invoice address options.</p>
 </div>
 <table id="table-fields-orderitem-billing-address-option" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 62. Fields for exporting invoice address options</caption>
+<caption class="title">Table 63. Fields for exporting invoice address options</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4281,7 +4411,7 @@ customer = Category and all sub-categories are only visible to online store visi
 <p><a href="#table-fields-orderitem-billing-address-country">[table-fields-orderitem-billing-address-country]</a> lists the fields available for exporting country data used in the invoice address.</p>
 </div>
 <table id="table-fields-orderiten-billing-address-country" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 63. Fields for exporting countries in invoice addresses</caption>
+<caption class="title">Table 64. Fields for exporting countries in invoice addresses</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4315,10 +4445,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="820">7.13. DeliveryAddress</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-delivery-address">Table 64</a>lists the fields available for exporting delivery address data.</p>
+<p><a href="#table-fields-orderitem-delivery-address">Table 65</a>lists the fields available for exporting delivery address data.</p>
 </div>
 <table id="table-fields-orderitem-delivery-address" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 64. Fields for exporting delivery addresses</caption>
+<caption class="title">Table 65. Fields for exporting delivery addresses</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4484,10 +4614,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="830">7.14. DeliveryAddressOption</h3>
 <div class="paragraph">
-<p><a href="#table-fields-delivery-orderitem-address-option">Table 65</a> lists the fields available for exporting delivery address option data.</p>
+<p><a href="#table-fields-delivery-orderitem-address-option">[table-fields-delivery-orderitem-address-option]</a> lists the fields available for exporting delivery address option data.</p>
 </div>
-<table id="table-fields-delivery-orderitem-address-option" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 65. Fields for exporting delivery address options</caption>
+<table id="table-fields-delivery-orderiten-address-option" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 66. Fields for exporting delivery address options</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4552,10 +4682,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="840">7.15. DeliveryAddressCountry</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-delivery-address-country">Table 66</a> lists the fields available for exporting delivery address country data.</p>
+<p><a href="#table-fields-orderitem-delivery-address-country">Table 67</a> lists the fields available for exporting delivery address country data.</p>
 </div>
 <table id="table-fields-orderitem-delivery-address-country" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 66. Fields for exporting delivery address countries</caption>
+<caption class="title">Table 67. Fields for exporting delivery address countries</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4587,10 +4717,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="850">7.16. Contact</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-contact">Table 67</a> lists the fields available for exporting order contact data.</p>
+<p><a href="#table-fields-orderitem-contact">Table 68</a> lists the fields available for exporting order contact data.</p>
 </div>
 <table id="table-fields-orderitem-contact" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 67. Fields for exporting order contacts</caption>
+<caption class="title">Table 68. Fields for exporting order contacts</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4752,10 +4882,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="860">7.17. VariationBarcode</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-barcodes">Table 68</a> lists the fields available for exporting variation barcodes.</p>
+<p><a href="#table-fields-orderitem-barcodes">Table 69</a> lists the fields available for exporting variation barcodes.</p>
 </div>
 <table id="table-fields-orderitem-barcodes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 68. Fields for exporting variation bar codes</caption>
+<caption class="title">Table 69. Fields for exporting variation bar codes</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4796,10 +4926,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="870">7.18. OrderDocument</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-order-document">Table 69</a> lists the fields available for exporting order document data.</p>
+<p><a href="#table-fields-orderitem-order-document">Table 70</a> lists the fields available for exporting order document data.</p>
 </div>
 <table id="table-fields-orderitem-order-document" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 69. Fields for exporting order documents</caption>
+<caption class="title">Table 70. Fields for exporting order documents</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4841,10 +4971,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="880">7.19. Item</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-item">Table 70</a> lists the fields available for exporting item data.</p>
+<p><a href="#table-fields-orderitem-item">Table 71</a> lists the fields available for exporting item data.</p>
 </div>
 <table id="table-fields-orderitem-item" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 70. Fields for exporting item data</caption>
+<caption class="title">Table 71. Fields for exporting item data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4906,10 +5036,10 @@ customer = Category and all sub-categories are only visible to online store visi
 <div class="sect2">
 <h3 id="890">7.20. Variation</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-variations">Table 71</a> lists the fields available for exporting variation data.</p>
+<p><a href="#table-fields-orderitem-variations">Table 72</a> lists the fields available for exporting variation data.</p>
 </div>
 <table id="table-fields-orderitem-variations" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 71. Fields for exporting variation data</caption>
+<caption class="title">Table 72. Fields for exporting variation data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5007,10 +5137,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="900">7.21. OrderParcelServicePreset</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-orderparcelservicepreset">Table 72</a>lists the fields available for exporting preset parcel service data.</p>
+<p><a href="#table-fields-orderitem-orderparcelservicepreset">Table 73</a>lists the fields available for exporting preset parcel service data.</p>
 </div>
 <table id="table-fields-orderitem-orderparcelservicepreset" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 72. Fields for exporting preset parcel services</caption>
+<caption class="title">Table 73. Fields for exporting preset parcel services</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5104,10 +5234,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="910">7.22. OrderParcelServicePresetName</h3>
 <div class="paragraph">
-<p><a href="#table-fields-order-orderitem-orderparcelservicepresetname">Table 73</a> lists the fields available for exporting the parcel service provider of the order.</p>
+<p><a href="#table-fields-order-orderitem-orderparcelservicepresetname">Table 74</a> lists the fields available for exporting the parcel service provider of the order.</p>
 </div>
 <table id="table-fields-order-orderitem-orderparcelservicepresetname" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 73. Fields for exporting the parcel service preset name</caption>
+<caption class="title">Table 74. Fields for exporting the parcel service preset name</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5138,10 +5268,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="920">7.23. OrderParcelService</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-orderparcelservice">Table 74</a> lists the fields available for exporting order parcel service data.</p>
+<p><a href="#table-fields-orderitem-orderparcelservice">Table 75</a> lists the fields available for exporting order parcel service data.</p>
 </div>
 <table id="table-fields-orderitem-orderparcelservice" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 74. Fields for exporting order parcel service data</caption>
+<caption class="title">Table 75. Fields for exporting order parcel service data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5173,10 +5303,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="930">7.24. OrderParcelServiceName</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-orderparcelservicename">Table 75</a> lists the fields available for exporting the order parcel service name.</p>
+<p><a href="#table-fields-orderitem-orderparcelservicename">Table 76</a> lists the fields available for exporting the order parcel service name.</p>
 </div>
 <table id="table-fields-orderitem-orderparcelservicename" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 75. Fields for exporting the order parcel service name</caption>
+<caption class="title">Table 76. Fields for exporting the order parcel service name</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5225,10 +5355,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="940">7.25. Exporting custom values</h3>
 <div class="paragraph">
-<p><a href="#table-fields-orderitem-own-values">Table 76</a> lists the fields available for importing custom values.</p>
+<p><a href="#table-fields-orderitem-own-values">Table 77</a> lists the fields available for importing custom values.</p>
 </div>
 <table id="table-fields-orderitem-own-values" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 76. Fields for exporting custom values</caption>
+<caption class="title">Table 77. Fields for exporting custom values</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5257,7 +5387,7 @@ D = 3</p></td>
 <p><a href="#table-fields-storage-locations">Table 15</a> lists the fields available for exporting storage location data.</p>
 </div>
 <table id="table-fields-storage-locations" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 77. Fields for exporting storage locations</caption>
+<caption class="title">Table 78. Fields for exporting storage locations</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5311,10 +5441,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="1110">8.2. WarehouseLocationLevel</h3>
 <div class="paragraph">
-<p><a href="#table-fields-storage-location-levels">Table 78</a> lists the fields available for exporting storage location levels.</p>
+<p><a href="#table-fields-storage-location-levels">Table 79</a> lists the fields available for exporting storage location levels.</p>
 </div>
 <table id="table-fields-storage-location-levels" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 78. Fields for exporting storage locations</caption>
+<caption class="title">Table 79. Fields for exporting storage locations</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5360,10 +5490,10 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="1120">8.3. WarehouseLocationName</h3>
 <div class="paragraph">
-<p><a href="#table-fields-storage-location-dimensions">Table 79</a> lists the fields available for exporting storage location dimensions.</p>
+<p><a href="#table-fields-storage-location-dimensions">Table 80</a> lists the fields available for exporting storage location dimensions.</p>
 </div>
 <table id="table-fields-storage-location-dimensions" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 79. Fields for exporting storage location dimensions</caption>
+<caption class="title">Table 80. Fields for exporting storage location dimensions</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5420,7 +5550,7 @@ D = 3</p></td>
 <p><a href="#table-fields-warehouses">Table 20</a> lists the fields available for exporting warehouse data.</p>
 </div>
 <table id="table-fields-warehouses" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 80. Fields for exporting warehouses</caption>
+<caption class="title">Table 81. Fields for exporting warehouses</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5478,10 +5608,768 @@ D = 3</p></td>
 <div class="sect2">
 <h3 id="1140">8.5. Exporting custom values</h3>
 <div class="paragraph">
-<p><a href="#table-fields-warehouse-own-values">Table 81</a> lists the fields available for exporting custom values.</p>
+<p><a href="#table-fields-warehouse-own-values">Table 82</a> lists the fields available for exporting custom values.</p>
 </div>
 <table id="table-fields-warehouse-own-values" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 81. Fields for exporting custom values</caption>
+<caption class="title">Table 82. Fields for exporting custom values</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Own value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Own value</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1200">9. Contacts</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="1205">9.1. Contact</h3>
+<div class="paragraph">
+<p><a href="#table-fields-contacts">Table 83</a> lists the fields available for exporting contact data.</p>
+</div>
+<table id="table-fields-contacts" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 83. Fields for exporting contact data</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">externalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External contact ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer number. This number is not assigned automatically. The maximum length is 128 characters.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">typeId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact type ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">firstName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The contact’s first name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The contact’s surname</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gender</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gender of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Title of contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">newsletterAllowanceAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the contact registering for the newsletter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">classId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer class ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">blocked</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status “Blocked”. A contact can be locked for a specific client.<br>
+Possible values: 0 = not blocked, 1 = blocked.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rating</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rating of the contact. This is an internal rating only. 5 red stars are the worst and 5 yellow stars are the best rating. Possible values:<br>
+-5 = 5 red stars (worst possible rating)<br>
+-4 = 4 red stars<br>
+-3 = 3 red stars<br>
+-2 = 2 red stars<br>
+-1 = 1 red stars<br>
+0 = 5 grey stars, no rating saved for the contact.<br>
+1 = 1 yellow star<br>
+2 = 2 yellow stars<br>
+3 = 3 yellow stars<br>
+4 = 4 yellow stars<br>
+5 = 5 yellow stars (best possible rating)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bookAccount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Debtor account of the contact. An additional, separate number that usually corresponds to the contact number or the debtor number of the contact in your administrative accounting.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Language of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">referrerId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Referrer of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plentyId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client that is assigned to the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">userId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Owner ID of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">birthdayAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Birthday of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastLoginAtTimestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date of last login of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastOrderAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date of last order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dhlPostIdent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DHL PostIdent of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">valuta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valuta of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">discountDays</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Early payment discount (days) of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">discountPercent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Percentage for early payment discount of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timeForPaymentAllowedDays</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment due date of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">salesRepresentativeContactId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact ID of the sales representative</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1210">9.2. BillingAddress</h3>
+<div class="paragraph">
+<p><a href="#table-fields-billing-address-contacts">Table 84</a> lists the fields available for exporting invoice address data.</p>
+</div>
+<table id="table-fields-billing-address-contacts" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 84. Fields for exporting invoice address data</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the invoice address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name (default: company)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name (default: first name)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name (default: last name)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name (default: freely definable)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field address 1 (default: street)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field address 2 (default: house number)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address field 3 (default: additional address information)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address field 4 (default: freely definable)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">postalCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postcode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">town</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Town</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">countryId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stateId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of state, county or province</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">checkedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last check of address (Unix timestamp)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Title of contact</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1220">9.3. DeliveryAddress</h3>
+<div class="paragraph">
+<p><a href="#table-fields-delivery-address">Table 36</a> lists the fields available for exporting delivery address data.</p>
+</div>
+<table id="table-fields-delivery-address-contacts" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 85. Fields for exporting delivery address data</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the invoice address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name (default: company)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name (default: first name)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name (default: last name)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name (default: freely definable)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field address 1 (default: street)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field address 2 (default: house number)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address field 3 (default: additional address information)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address field 4 (default: freely definable)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">postalCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postcode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">town</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Town</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">countryId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stateID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of state, county or province</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">checkedAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last check of address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Title of contact</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1230">9.4. Account</h3>
+<div class="paragraph">
+<p><a href="#table-fields-company">Table 86</a> lists the fields available for exporting company data.</p>
+</div>
+<table id="table-fields-company" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 86. Fields for exporting company data</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The company’s ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customer number. This number is not assigned automatically. The maximum length is 128 characters.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">companyName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Company name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">taxIdNumber</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VAT identification number of the customer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">valuta</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valuta of the company</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">discountDays</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Early payment discount (days) of the company</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">discountPercent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Percentage for early payment discount of the company</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TimeForPaymentAllowedDays</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment due date of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">salesRepresentativeContactId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact ID of the sales representative</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">userId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the owner (plentymarkets user ID)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deliveryTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delivery time for the supplier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dealerMinOrderValue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum order value for the supplier</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1240">9.5. ContactOption</h3>
+<div class="paragraph">
+<p><a href="#table-fields-contact-option">Table 87</a> lists the fields available for exporting contact options.</p>
+</div>
+<table id="table-fields-contact-option" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 87. Fields for exporting contact options</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">telephonePrivate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Private telephone number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">telephoneWork</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Office telephone number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">telephoneMobilePrivate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Private mobile phone number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">telephoneMobileWork</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Office mobile phone number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emailPrivate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Private email address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emailWork</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Office email address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">emailPayPal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PayPal email address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">telefaxPrivate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Private fax number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">telefaxWork</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Office fax number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">webPagePrivate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Private website</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">webPageWork</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Office website</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">marketplaceEbay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eBay name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">marketplaceAmazon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email address at Amazon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identificationNumberKlarna</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identification number at Klarna</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identificationNumberDHL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identification number at DHL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">paymentPayPal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email address at PayPal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">paymentKlarna</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identification number at Klarna</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">paymentStandard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default payment method</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">userNamePrivate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Private user name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">userNameWork</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Office user name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">userNameForum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User name used in a forum</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groupForum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email address used in a forum</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accessGuest</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Account type. Indicates if the account is a regular account or a guest account.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">additionalContactPerson</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Additional contact person</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">salutationPrivate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Private form of address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">salutationWork</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Office form of address</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1250">9.6. BillingAddressOption</h3>
+<div class="paragraph">
+<p><a href="#table-fields-billing-address-option-contacts">Table 88</a> lists the fields available for exporting invoice address options.</p>
+</div>
+<table id="table-fields-billing-address-option-contacts" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 88. Fields for exporting invoice address options</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vatNumber</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VAT identification number of the customer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">externalAddressID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External ID of the invoice address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entryCertificate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entry certificate (Gelangensbestätigung)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">telephone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Telephone number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">postNumber</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Post number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">personalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Personnel ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bBFC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BBFC (age rating)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">birthday</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date of birth</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sessionID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Session ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Title of the invoice recipient</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contactPerson</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact person</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1260">9.7. DeliveryAddressOption</h3>
+<div class="paragraph">
+<p><a href="#table-fields-delivery-address-option-contacts">Table 89</a> lists the fields available for exporting delivery address options.</p>
+</div>
+<table id="table-fields-delivery-address-option-contacts" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 89. Fields for exporting delivery address options</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vatNumber</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VAT identification number of the customer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">externalAddressID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External ID of the delivery address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">entryCertificate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entry certificate (Gelangensbestätigung)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">telephone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Telephone number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">postNumber</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Post number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">personalId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Personnel ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bBFC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BBFC (age rating)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">birthday</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date of birth</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sessionID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Session ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Title of recipient</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contactPerson</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact person</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1270">9.8. ContactBank</h3>
+<div class="paragraph">
+<p><a href="#table-fields-contact-bank">Table 90</a> lists the fields available for exporting bank details.</p>
+</div>
+<table id="table-fields-contact-bank" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 90. Fields for exporting bank data</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the bank account</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contactId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accountOwner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The account holder’s name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bankName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the bank</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bankAddress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The address of the bank</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bankPostalCodeTown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postcode and town of the bank</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bankCountry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country of the bank</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iban</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IBAN of bank account</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BIC of the bank account</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accountNumber</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Account number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sortCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort code</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdateBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date of last update. Possible values:<br>
+customer<br>
+back end<br>
+import</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">directDebiteMandateAvailable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag that indicates if a SEPA direct debit mandate was granted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">directDebitMandateAt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date the SEPA direct debit mandate was granted.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">directDebitMethod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of SEPA direct debit mandate. Possible values:<br>
+sepaDirectDebit<br>
+sepaB2bDirectDebit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">directDebitType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates if this is a first debit or recurring debit. Possible values:<br>
+first<br>
+next</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">paymentMethod</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment frequency of SEPA direct debit mandate. Possible values:<br>
+recurrent<br>
+onOff</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1280">9.9. Exporting custom values</h3>
+<div class="paragraph">
+<p><a href="#table-fields-contacts-own-values">Table 91</a> lists the fields available for exporting custom values.</p>
+</div>
+<table id="table-fields-contacts-own-values" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 91. Fields for exporting custom values</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
