@@ -2107,7 +2107,7 @@ class Metadata {
 								"url" => "/daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-kontaktdaten",
 								"level" => 4,
 								"title" => "Best Practices: Kontaktdaten",
-								"keywords" => "ElasticSync, Import, Artikel, Artikelanlage, Best Practice, automatisiert, Kontakte, Kontaktdaten, Kunden, Kundendaten",
+								"keywords" => "ElasticSync, Import, Best Practice, automatisiert, Kontakte, Kontaktdaten, Kunden, Kundendaten",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Best Practices: Kontaktdaten. Hier finden Sie folgende Informationen:",
