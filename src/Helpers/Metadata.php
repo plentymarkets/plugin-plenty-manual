@@ -1982,6 +1982,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "189bedcd1a14a302c745d7db9b2561dc",
+						"path" => "daten/daten-importieren/elasticsync-sync-typen",
+						"position" => 15,
+						"urlName" => "elasticsync-sync-typen",
+						"url" => "/daten/daten-importieren/elasticsync-sync-typen",
+						"level" => 3,
+						"title" => "Sync-Typen",
+						"keywords" => "ElasticSync, Sync-Typen",
+						"description" => "Hier finden Sie praktische Anleitungen zum Datenimport mit ElasticSync.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Sync-Typen. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "933962dcfc26e5c9c569ffd35515499b",
 						"path" => "daten/daten-importieren/elasticsync-best-practices",
 						"position" => 20,
