@@ -6637,6 +6637,21 @@ class Metadata {
 								"linkListInto" => "Welcome to the topic Best Practices: Contact data. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "1673df150168e35921bf3a84ef045200",
+								"path" => "data/importing-data/elasticsync-best-practices/best-practices-elasticsync-order-items",
+								"position" => 80,
+								"urlName" => "best-practices-elasticsync-order-items",
+								"url" => "/en/data/importing-data/elasticsync-best-practices/best-practices-elasticsync-order-items",
+								"level" => 4,
+								"title" => "Best Practices: Order items",
+								"keywords" => "ElasticSync, import, orders, order items, best practices, automated",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Best Practices: Order items. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true

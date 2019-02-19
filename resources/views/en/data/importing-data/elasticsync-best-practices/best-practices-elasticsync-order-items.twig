@@ -1,0 +1,180 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_preparing_the_import_file"><span>1.</span><span> Preparing the import file</span></a></li>
+<li><a href="#_importing_and_updating_order_items"><span>2.</span><span> Importing and updating order items</span></a></li>
+<li><a href="#_testing_and_carrying_out_the_sync"><span>3.</span><span> Testing and carrying out the sync</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Best Practices: Order items</h1><div class="sect1">
+<h2 id="_preparing_the_import_file">1. Preparing the import file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before we explain the process of importing and updating order items, we provide you with important information regarding the import of data into your plentymarkets system in this chapter.<br></p>
+</div>
+<div class="paragraph">
+<p>Your plentymarkets system obtains the necessary data on the order items from an import file in CSV format. This import file has to contain the following columns, as you can see from this sample set up from the dynamic export:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/EN-elasticsync-bp-order-importdatei.png" alt="EN elasticsync bp order importdatei">
+</div>
+</div>
+<div class="paragraph">
+<p>Make sure that the CSV file required for the next step is saved locally on your computer.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_importing_and_updating_order_items">2. Importing and updating order items</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter describes how to use ElasticSync to import and update order items. Order items are items included in an order.</p>
+</div>
+<div class="paragraph instruction">
+<p>Carrying out the basic settings:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Elastic Sync NEW</strong>.</p>
+</li>
+<li>
+<p>Click on the plus sign (<strong>Add sync</strong>).</p>
+</li>
+<li>
+<p>Enter a distinct name for the sync in the area <strong>Basic data</strong>.</p>
+</li>
+<li>
+<p>Select the option <strong>Orders</strong> from the drop-down list <strong>Type</strong>.</p>
+</li>
+<li>
+<p>In the area <strong>Import</strong>, you can leave the settings as they are.</p>
+</li>
+<li>
+<p>In the area <strong>Source</strong>, select the option <strong>HTTP</strong>.<br>
+→ Three further lines are displayed.</p>
+</li>
+<li>
+<p>In the drop-down list <strong>HTTP options</strong>, select the options <strong>Data upload</strong>.</p>
+</li>
+<li>
+<p>In the line <strong>URL</strong>, click on the button with the three dots (<strong>Select file</strong>).<br>
+→ A new window opens.</p>
+</li>
+<li>
+<p>Click on <strong>Upload file</strong>, select the CSV file containing the data belonging to the order items that you wish to import, and click on <strong>Open</strong>.</p>
+</li>
+<li>
+<p>Place a check mark in the line of the file and click once in the line of the file.<br>
+→ <strong><em>Important</em></strong> The line must be clicked a second time. Only when the line is displayed in blue can you upload it by clicking on <strong>Select</strong>.<br>
+→ The URL – i.e. the path from that you uploaded the CSV file – is now displayed in grey in the field <strong>URL</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You have uploaded the CSV file successfully. In the following, carry out the matching settings.</p>
+</div>
+<div class="paragraph instruction">
+<p>Carrying out the matching settings:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on <strong>Matching</strong> on the left side.</p>
+</li>
+<li>
+<p>In the <strong>Matching</strong> area, select the following data fields to update the order items:</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/EN-elasticsync-bp-order-matching.png" alt="EN elasticsync bp order matching">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Functionality of the matching</div>
+<div class="paragraph">
+<p>The matching fields selected here and available in the sync type <strong>orders</strong> are generally linked by an AND-condition. This means that if the fields <strong>Order ID</strong> and <strong>Variation ID</strong> are selected, only data lines containing values for <strong>both</strong> these data columns are imported.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Next, you carry out the mapping settings.</p>
+</div>
+<div class="paragraph instruction">
+<p>Carrying out the mapping settings:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on <strong>Mapping</strong> on the left side.</p>
+</li>
+<li>
+<p>Click on the plus sign (<strong>Add mapping</strong>).</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>In the field <strong>Position</strong>, enter the number <strong>1</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The area <strong>Import data / plentymarkets data fields</strong> opens.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In this area, you assign the fields from your CSV file to the data fields in plentymarkets. Assign the fields displayed to the left to the plentymarkets data fields as shown below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/EN-elasticsync-bp-order-mapping.png" alt="EN elasticsync bp order mapping">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Mandatory fields for mapping</div>
+<div class="paragraph">
+<p>Please pay attention to the fact that the plentymarkets fields <strong>Order item / Description</strong>, <strong>Order item / Quantity</strong>, <strong>Order item / Currency</strong> and <strong>Order item / Type</strong> are mandatory fields. You can only import and update order items at the same time if you carry out the mapping settings as shown above.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_testing_and_carrying_out_the_sync">3. Testing and carrying out the sync</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After having carried out the settings described above, you should test the sync using the button <strong>Test sync</strong>.<br>
+The first 10 lines of your CSV file are used for the test, and no cache is used. After running the test, check the log for error messages by clicking on the <strong>Log</strong> button or open the tested orders manually. We recommend that you only start running the sync after the test sync has been completed without error messages.</p>
+</div>
+</div>
+</div>
+</main>
