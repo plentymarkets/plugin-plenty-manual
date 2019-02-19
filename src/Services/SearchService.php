@@ -407,10 +407,7 @@ class SearchService
 
             $resultTemp = array_unique($suggestArray);
 
-            foreach($resultTemp as $key => $value)
-            {
-                $result = $this->searchForWords($value);
-            }
+            $result = $this->searchForWords($resultTemp);
 
             return $result;
         }
@@ -676,18 +673,24 @@ class SearchService
 
         }
 
+        $suggestions = array();
+
         $suggestionArrayTemp = $this->createCombinedSuggestionArray($suggestedArrayTitleTemp, $suggestedArrayDescriptionTemp, $suggestedArrayContentTemp, $suggestedArrayTitleContentTemp);
 
-        foreach($suggestionArrayTemp as $key => $value)
+        $suggestionsTemp = $this->searchForWords($suggestionArrayTemp[$itemsNb]);
+
+        unset($suggestionArrayTemp[$itemsNb]);
+
+        for($i = 0; $i < count($suggestionArrayTemp); $i++)
         {
-            $suggestionsTemp[$key] = $this->searchForWords($value);
+            $suggestions[$i] = $this->checkForWords($suggestionArrayTemp[$i], $suggestionsTemp);
         }
 
-        $suggestionArray = $this->createCombinedArray($suggestionsTemp[0], $suggestionsTemp[1]);
+        $suggestionArray = $this->createCombinedArray($suggestions[0], $suggestions[1]);
 
-        for($i = 2; $i < count($suggestionsTemp); $i++)
+        for($i = 2; $i < count($suggestions); $i++)
         {
-            $suggestionArray = $this->createCombinedArray($suggestionArray, $suggestionsTemp[$i]);
+            $suggestionArray = $this->createCombinedArray($suggestionArray, $suggestions[$i]);
         }
 
         return $suggestionArray;
@@ -752,6 +755,22 @@ class SearchService
 
         $result = array_unique($suggestArray);
 
+        $numItems = count($result);
+
+        $resultTemp = '';
+
+        $i = 0;
+
+        foreach($result as $res)
+        {
+
+            if(++$i === $numItems)
+                $resultTemp .= $res;
+            else
+                $resultTemp .= $res." ";
+        }
+
+        $result[$i] = $resultTemp;
 
         return $result;
     }
@@ -846,7 +865,7 @@ class SearchService
 
         $resultTemp = $this->serverCall($requestArray);
 
-        return $this->extractHighlights($resultTemp);;
+        return $this->extractHighlights($resultTemp);
 
     }
 
@@ -937,7 +956,29 @@ class SearchService
     {
         $result = str_replace("<p>","",$value);
         $result = str_replace("</p>","", $result);
+        $result = str_replace("’","", $result);
         return strtolower($result);
+    }
+
+    /**
+     * @param $word
+     * @param $suggestionArray
+     * @return array
+     */
+    private function checkForWords($word, $suggestionArray)
+    {
+        $suggestions = array();
+
+        if(strlen($word) > 3)
+            $word = substr($word, 0 , -1);
+
+        foreach ($suggestionArray as $value)
+        {
+            if(strpos($value, $word) !== false)
+                array_push($suggestions, $value);
+        }
+
+        return $suggestions;
     }
 
 }
