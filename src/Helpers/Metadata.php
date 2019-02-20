@@ -4656,6 +4656,21 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Plugins einrichten. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "623a931f2741217703c7013991b94b08",
+				"path" => "plugins/entwicklerdokumentation",
+				"position" => 40,
+				"urlName" => "entwicklerdokumentation",
+				"url" => "/plugins/entwicklerdokumentation",
+				"level" => 2,
+				"title" => "Entwicklerdokumentation",
+				"keywords" => "Plugins, Erweiterungen, Funktionen",
+				"description" => "Informationen zur Entwicklung von Plugins.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Entwicklerdokumentation. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
