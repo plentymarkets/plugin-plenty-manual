@@ -8984,6 +8984,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Setting up plugins. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "f67f094799b6f9007eb5b3a633cb1976",
+				"path" => "plugins/developers",
+				"position" => 40,
+				"urlName" => "developers",
+				"url" => "/en/plugins/developers",
+				"level" => 2,
+				"title" => "Developers guide",
+				"keywords" => "plugins, extensions, functionality",
+				"description" => "Learn how to develop new plugins.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Developers guide. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
