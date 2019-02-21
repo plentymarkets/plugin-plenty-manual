@@ -4,15 +4,25 @@
             <div id="toc" class="toc">
 <div id="toctitle">Inhalt</div>
 <ul class="sectlevel1">
-<li><a href="#_datenbearbeitung"><span>1.</span><span> Datenbearbeitung</span></a></li>
-<li><a href="#_datenimport_mit_dem_neuen_elasticsync"><span>2.</span><span> Datenimport mit dem neuen ElasticSync</span></a>
+<li><a href="#_daten_exportieren"><span>1.</span><span> Daten exportieren</span></a>
 <ul class="sectlevel2">
-<li><a href="#_abgleich"><span>2.1.</span><span> Abgleich</span></a></li>
-<li><a href="#_importoptionen"><span>2.2.</span><span> Importoptionen</span></a></li>
-<li><a href="#_zuordnung_erstellen"><span>2.3.</span><span> Zuordnung erstellen</span></a></li>
-<li><a href="#_datenfelder_zuweisen"><span>2.4.</span><span> Datenfelder zuweisen</span></a></li>
-<li><a href="#_sync_testen_und_ausführen"><span>2.5.</span><span> Sync testen und ausführen</span></a></li>
-<li><a href="#_das_ergebnis_im_struktur_manager"><span>2.6.</span><span> Das Ergebnis im Struktur-Manager</span></a></li>
+<li><a href="#_datenfelder_mit_dem_formatdesigner_erstellen_und_zuweisen"><span>1.1.</span><span> Datenfelder mit dem FormatDesigner erstellen und zuweisen</span></a></li>
+<li><a href="#_daten_mit_dem_elastischen_export_exportieren"><span>1.2.</span><span> Daten mit dem Elastischen Export exportieren</span></a>
+<ul class="sectlevel3">
+<li><a href="#_neuen_export_anlegen"><span>1.2.1.</span><span> Neuen Export anlegen</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_datenbearbeitung"><span>2.</span><span> Datenbearbeitung</span></a></li>
+<li><a href="#_datenimport_mit_elasticsync"><span>3.</span><span> Datenimport mit ElasticSync</span></a>
+<ul class="sectlevel2">
+<li><a href="#_abgleich"><span>3.1.</span><span> Abgleich</span></a></li>
+<li><a href="#_importoptionen"><span>3.2.</span><span> Importoptionen</span></a></li>
+<li><a href="#_zuordnung_erstellen"><span>3.3.</span><span> Zuordnung erstellen</span></a></li>
+<li><a href="#_datenfelder_zuweisen"><span>3.4.</span><span> Datenfelder zuweisen</span></a></li>
+<li><a href="#_sync_testen_und_ausführen"><span>3.5.</span><span> Sync testen und ausführen</span></a></li>
+<li><a href="#_das_ergebnis_im_struktur_manager"><span>3.6.</span><span> Das Ergebnis im Struktur-Manager</span></a></li>
 </ul>
 </li>
 </ul>
@@ -25,23 +35,233 @@
     <h1>Best Practices: Lagerorte anpassen</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Hier findest du Best Practices zum Thema Import mit ElasticSync. Bevor du die Best Practices auf dieser Handbuchseite nutzt, um Daten auszutauschen, solltest du dich mit der generellen Funktionsweise des FormatDesigners und des Elastischen Exports vertraut machen. Lies dazu zunächst die Handbuchseiten <a href="https://knowledge.plentymarkets.com/daten/daten-exportieren/FormatDesigner">FormatDesigner</a> und <a href="https://knowledge.plentymarkets.com/daten/daten-exportieren/elastischer-export">Elastischer Export</a>.<br></p>
-</div>
-<div class="paragraph">
-<p>Im folgenden Abschnitt zeigen wir dir, wie man Daten mit ElasticSync importiert.</p>
+<p>Hier findest du Best Practices zum Thema Import und Export von Daten. Bevor du diese Best Practices nutzt, um Daten auszutauschen, solltest du dich mit der generellen Funktionsweise des FormatDesigners, des Elastischen Exports und ElasticSync vertraut machen. Lies dazu zunächst die Handbuchseiten <a href="https://knowledge.plentymarkets.com/daten/daten-exportieren/FormatDesigner">Datenformate mit FormatDesigner erstellen</a>, <a href="https://knowledge.plentymarkets.com/daten/daten-exportieren/elastischer-export">Elastischer Export</a> und <a href="https://knowledge.plentymarkets.com/daten/daten-importieren/ElasticSync">Daten mit ElasticSync importieren</a>.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="_datenbearbeitung">1. Datenbearbeitung</h2>
+<h2 id="_daten_exportieren">1. Daten exportieren</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die per Elastischem Export erstellte CSV-Datei kann in einem  Tabellenkalkulationsprogramm geöffnet werden.</p>
+<p>Im ersten Abschnitt der Best Practices steht der Datenexport im Mittelpunkt. Zunächst zeigen wir dir, wie man mit Hilfe des FormatDesigners Datenfelder erstellt und entsprechend zuweist.</p>
+</div>
+<div class="sect2">
+<h3 id="_datenfelder_mit_dem_formatdesigner_erstellen_und_zuweisen">1.1. Datenfelder mit dem FormatDesigner erstellen und zuweisen</h3>
+<div class="paragraph">
+<p>Im Menü unter <strong>Daten » FormatDesigner</strong> lassen sich Datenformate für den Export erstellen. Zur Nutzung muss das ElasticSync-Plugin installiert sein.
+Im folgenden Abschnitt legen wir beispielhaft eine Vorlage für Lagerort und somit für das Datenformat WarehouseLocation an. In WarehouseLocation sind alle Datenfelder hinterlegt, die den Lagerort bzw. die StorageLocation (SL) direkt betreffen.</p>
+</div>
+<table id="tabelle-einstellungen-datenfelder" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Datenfelder WarehouseLocation</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die ID eines Lagerortes ist einzigartig, denn sie wird für jeden Lagerort neu vergeben.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>LevelID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Ebene, auf der sich der Lagerort befindet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lagerort-Label</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hier kann ein Name für das Lagerort-Label gewählt werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zweck</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verwendungszweck des Lagerorts, z.B. Entnahme</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status des Lagerorts, z.B. aktiv, inaktiv</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Position</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position des Lagerorts (Laufweg)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Lagerorts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Typ</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Typ des Lagerorts, z.B. klein, mittel, groß</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Notizen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hier können Notizen zum Lagerort vermerkt werden.</p></td>
+</tr>
+</tbody>
+</table>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/datenfelder-in-der-lagerstruktur.png" alt="datenfelder in der lagerstruktur">
+</div>
+<div class="title">Bild 1. Datenfelder in der Lagerstruktur</div>
+</div>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/datenfelder-im-strukturmanager.png" alt="datenfelder im strukturmanager">
+</div>
+<div class="title">Bild 2. Datenfelder im Strukturmanager</div>
+</div>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/storagelocation-datenfelder-strukturmanager.png" alt="storagelocation datenfelder strukturmanager">
+</div>
+<div class="title">Bild 3. StorageLocation Datenfelder im Strukturmanager</div>
+</div>
+<div class="paragraph">
+<p>In unserem Beispiel legen wir im FormatDesigner einen Sync vom Typ Warehouse an und vergeben als Namen warehouseLocation.</p>
+</div>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/neue-vorlage.png" alt="neue vorlage">
+</div>
+<div class="title">Bild 4. Neue Vorlage</div>
+</div>
+<div class="paragraph">
+<p>Datenfelder WarehouseLocation</p>
+</div>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/datenfelder-warehouselocation.png" alt="datenfelder warehouselocation">
+</div>
+<div class="title">Bild 5. Datenfelder WarehouseLocation</div>
+</div>
+<div class="paragraph">
+<p>Durch Anklicken werden die Datenfelder zur Vorlage hinzugefügt.<br>
+<strong>Speichere</strong> die Einstellungen.</p>
+</div>
+<div class="paragraph">
+<p>Daraus ergibt sich im FormatDesigner die folgende Zuweisung.</p>
+</div>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/zuweisung-der-datenfelder.png" alt="zuweisung der datenfelder">
+</div>
+<div class="title">Bild 6. Zuweisung der Datenfelder</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_daten_mit_dem_elastischen_export_exportieren">1.2. Daten mit dem Elastischen Export exportieren</h3>
+<div class="paragraph">
+<p>Mit Hilfe des Elastischen Exports können die im FormatDesigner erstellten Vorlagen in das CSV-Format exportiert werden.
+Kann im Menü kein Elastischer Export angezeigt werden, muss das Plugin im plentyMarketplace zuerst installiert werden.</p>
+</div>
+<div class="sect3">
+<h4 id="_neuen_export_anlegen">1.2.1. Neuen Export anlegen</h4>
+<div class="paragraph">
+<p>Im Menü unter <strong>Daten » ElasticSync</strong> kann ein neuer Export erstellt werden.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Daten » ElasticSync</strong>.<br>
+→ Die Übersicht wird geöffnet.</p>
+</li>
+<li>
+<p>Klicke auf <strong>+ Neuer Export</strong>.</p>
+</li>
+<li>
+<p>Nehme die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-einstellungen-neuer-export">Tabelle 2</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+<li>
+<p>Aktualisiere das Token erneut.</p>
+</li>
+<li>
+<p>Klicke anschließend auf <strong>Datei herunterladen</strong>.<br>
+→ Die erstellte CSV-Datei kann mit einem Tabellenkalkulationsprogramm bearbeitet werden.</p>
+</li>
+<li>
+<p>Nachdem die Daten bearbeitet wurden, muss die Datei unter einem neuen Namen abgespeichert werden.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-einstellungen-neuer-export" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Neuen Export anlegen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Namen eingeben. Unter diesem Namen erscheint das Exportformat in der Übersicht im Tab <strong>Exporte</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Typ</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Typ der Daten aus der Dropdown-Liste wählen, die exportiert werden sollen. Hier wählen wir den Typ Lager.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Format für den Export aus der Dropdown-Liste wählen. Es stehen nur aus dem plentyMarketplace installierte Formate zur Verfügung.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zahl eingeben. Als Limit gelten 10.000 Datensätze.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bereitstellung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>URL</strong>, <strong>FTP</strong> oder <strong>Admin-Bereich</strong> wählen.
+Je nach gewählter Option erscheinen unterschiedliche Einstellungsmöglichkeiten. Wir wählen hier die Option <strong>URL</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Token</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wenn unter <strong>Bereitstellung</strong> die Option <strong>URL</strong> gewählt wurde, auf <strong>Token generieren</strong> klicken. Das Token wird dann automatisch eingetragen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Für den Filter wird hier die Option Lager gewählt.</p></td>
+</tr>
+</tbody>
+</table>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/das-formular.png" alt="das formular">
+</div>
+<div class="title">Bild 7. Das Formular</div>
+</div>
+<div class="paragraph">
+<p>In der Tabelle sehen die Daten aus wie folgt.</p>
+</div>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/die-daten.png" alt="die daten">
+</div>
+<div class="title">Bild 8. Die Daten</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_datenbearbeitung">2. Datenbearbeitung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In einem nächsten Schritt werden die Daten bearbeitet. Die per Elastischem Export erstellte CSV-Datei kann in einem  Tabellenkalkulationsprogramm geöffnet werden.</p>
 </div>
 <div id="bild-daten-importieren" class="imageblock">
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/daten-csv-datei-unbearbeitet.png" alt="daten csv datei unbearbeitet">
 </div>
-<div class="title">Bild 1. Daten CSV-Datei unbearbeitet</div>
+<div class="title">Bild 9. Daten CSV-Datei unbearbeitet</div>
 </div>
 <div class="paragraph">
 <p>Dort können die Datenfelder Level, Label, Verwendungszweck, Status, Position, Typ und Notizen importiert werden.<br></p>
@@ -53,14 +273,14 @@
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/daten-csv-datei-bearbeitet.png" alt="daten csv datei bearbeitet">
 </div>
-<div class="title">Bild 2. Daten CSV-Datei bearbeitet</div>
+<div class="title">Bild 10. Daten CSV-Datei bearbeitet</div>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="_datenimport_mit_dem_neuen_elasticsync">2. Datenimport mit dem neuen ElasticSync</h2>
+<h2 id="_datenimport_mit_elasticsync">3. Datenimport mit ElasticSync</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Im folgenden Abschnitt legen wir beispielhaft einen Sync vom Typ Lager an.</p>
+<p>Nun kommen wir zum Datenimport mit ElasticSync. Im folgenden Abschnitt legen wir beispielhaft einen Sync vom Typ Lager an.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -73,7 +293,7 @@
 → Die Übersicht wird geöffnet.</p>
 </li>
 <li>
-<p>Nehme die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-einstellungen-elasticsync">[tabelle-einstellungen-elasticsync]</a>.</p>
+<p>Nehme die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-sync-anlegen">Tabelle 3</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> die Einstellungen.<br>
@@ -81,8 +301,8 @@
 </li>
 </ol>
 </div>
-<table id="tabelle-daten-importieren" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Sync anlegen</caption>
+<table id="tabelle-sync-anlegen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Sync anlegen</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -121,25 +341,25 @@ In diesem Beispiel wird der Datei-Upload verwendet, der bald als eigenes Options
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/auswahl-des-typs.png" alt="auswahl des typs">
 </div>
-<div class="title">Bild 3. Auswahl des Typs</div>
+<div class="title">Bild 11. Auswahl des Typs</div>
 </div>
 <div id="bild-daten-importieren" class="imageblock">
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/trennzeichen.png" alt="trennzeichen">
 </div>
-<div class="title">Bild 4. Trennzeichen</div>
+<div class="title">Bild 12. Trennzeichen</div>
 </div>
 <div id="bild-daten-importieren" class="imageblock">
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/quelle.png" alt="quelle">
 </div>
-<div class="title">Bild 5. Quelle</div>
+<div class="title">Bild 13. Quelle</div>
 </div>
 <div id="bild-daten-importieren" class="imageblock">
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/grunddaten-im-überblick.png" alt="grunddaten im überblick">
 </div>
-<div class="title">Bild 6. Grunddaten im Überblick</div>
+<div class="title">Bild 14. Grunddaten im Überblick</div>
 </div>
 <div class="paragraph">
 <p>Anschließend folgt der Datei-Upload. Für den Datei-Upload verwenden wir eine lokale CSV-Datei. In diesem Fall wird als Quelle HTTP und als HTTP-Option der Datei-Upload gewählt.</p>
@@ -172,22 +392,22 @@ In diesem Beispiel wird der Datei-Upload verwendet, der bald als eigenes Options
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/datei-upload.png" alt="datei upload">
 </div>
-<div class="title">Bild 7. Datei-Upload</div>
+<div class="title">Bild 15. Datei-Upload</div>
 </div>
 <div id="bild-daten-importieren" class="imageblock">
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/datei-wählen.png" alt="datei wählen">
 </div>
-<div class="title">Bild 8. Datei wählen</div>
+<div class="title">Bild 16. Datei wählen</div>
 </div>
 <div id="bild-daten-importieren" class="imageblock">
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/datei-wird-in-das-quellverzeichnis-geladen.png" alt="datei wird in das quellverzeichnis geladen">
 </div>
-<div class="title">Bild 9. Datei wird in das Quellverzeichnis geladen</div>
+<div class="title">Bild 17. Datei wird in das Quellverzeichnis geladen</div>
 </div>
 <div class="sect2">
-<h3 id="_abgleich">2.1. Abgleich</h3>
+<h3 id="_abgleich">3.1. Abgleich</h3>
 <div class="paragraph">
 <p>Für den Abgleich müssen die Daten festgelegt und zugeordnet werden, um festzustellen, welche Daten der Datei welchen Daten in plentymarkets entsprechen.</p>
 </div>
@@ -195,7 +415,7 @@ In diesem Beispiel wird der Datei-Upload verwendet, der bald als eigenes Options
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/abgleich.png" alt="abgleich">
 </div>
-<div class="title">Bild 10. Abgleich</div>
+<div class="title">Bild 18. Abgleich</div>
 </div>
 <div class="paragraph">
 <p>Mit dem Abgleich legst du fest, anhand welcher Daten untersucht werden soll, ob bereits ein Datensatz besteht oder nicht.<br>
@@ -205,11 +425,11 @@ In diesem Beispiel wird die Warehouse Location ID für den Abgleich verwendet.</
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/abgleich-wählen.png" alt="abgleich wählen">
 </div>
-<div class="title">Bild 11. Abgleich wählen</div>
+<div class="title">Bild 19. Abgleich wählen</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_importoptionen">2.2. Importoptionen</h3>
+<h3 id="_importoptionen">3.2. Importoptionen</h3>
 <div class="paragraph">
 <p>Hier wird festgelegt, ob nur neue, nur bestehende oder sowohl neue als auch bestehende Daten importiert werden sollen.</p>
 </div>
@@ -217,14 +437,14 @@ In diesem Beispiel wird die Warehouse Location ID für den Abgleich verwendet.</
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/importoptionen.png" alt="importoptionen">
 </div>
-<div class="title">Bild 12. Importoptionen</div>
+<div class="title">Bild 20. Importoptionen</div>
 </div>
 <div class="paragraph">
 <p><strong>Speichere</strong> anschließend die Einstellungen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_zuordnung_erstellen">2.3. Zuordnung erstellen</h3>
+<h3 id="_zuordnung_erstellen">3.3. Zuordnung erstellen</h3>
 <div class="paragraph">
 <p>Bei der Zuordnung werden die importierten Daten den plentymarkets Datenfelder zugewiesen.</p>
 </div>
@@ -232,7 +452,7 @@ In diesem Beispiel wird die Warehouse Location ID für den Abgleich verwendet.</
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/zuordnung.png" alt="zuordnung">
 </div>
-<div class="title">Bild 13. Zuordnung</div>
+<div class="title">Bild 21. Zuordnung</div>
 </div>
 <div class="paragraph">
 <p>Zuerst muss eine Zuordnung erstellt werden.</p>
@@ -257,7 +477,7 @@ In diesem Beispiel wird die Warehouse Location ID für den Abgleich verwendet.</
 </div>
 </div>
 <div class="sect2">
-<h3 id="_datenfelder_zuweisen">2.4. Datenfelder zuweisen</h3>
+<h3 id="_datenfelder_zuweisen">3.4. Datenfelder zuweisen</h3>
 <div class="paragraph">
 <p>Die zu importierenden Daten müssen den Datenfeldern in plentymarkets zugewiesen werden.</p>
 </div>
@@ -282,7 +502,7 @@ In diesem Beispiel wird die Warehouse Location ID für den Abgleich verwendet.</
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/datenfelder-zuweisen.png" alt="datenfelder zuweisen">
 </div>
-<div class="title">Bild 14. Datenfelder zuweisen</div>
+<div class="title">Bild 22. Datenfelder zuweisen</div>
 </div>
 <div class="paragraph">
 <p>Klicke auf <strong>Vorschau</strong>, um die Änderungen der ersten Zeilen anzuzeigen.</p>
@@ -291,11 +511,11 @@ In diesem Beispiel wird die Warehouse Location ID für den Abgleich verwendet.</
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/vorschau.png" alt="vorschau">
 </div>
-<div class="title">Bild 15. Vorschau</div>
+<div class="title">Bild 23. Vorschau</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sync_testen_und_ausführen">2.5. Sync testen und ausführen</h3>
+<h3 id="_sync_testen_und_ausführen">3.5. Sync testen und ausführen</h3>
 <div class="paragraph">
 <p>Mit Klick auf <strong>Sync testen</strong> wird geprüft, ob die Eingaben zu einem erfolgreichen Ablauf des Syncs führen.</p>
 </div>
@@ -303,7 +523,7 @@ In diesem Beispiel wird die Warehouse Location ID für den Abgleich verwendet.</
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/sync-testen.png" alt="sync testen">
 </div>
-<div class="title">Bild 16. Sync testen</div>
+<div class="title">Bild 24. Sync testen</div>
 </div>
 <div class="paragraph">
 <p>Mit Klick auf <strong>Sync ausführen</strong> wird der Sync gestartet und in die Queue geladen.</p>
@@ -312,11 +532,11 @@ In diesem Beispiel wird die Warehouse Location ID für den Abgleich verwendet.</
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/sync-ausführen.png" alt="sync ausführen">
 </div>
-<div class="title">Bild 17. Sync ausführen</div>
+<div class="title">Bild 25. Sync ausführen</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_das_ergebnis_im_struktur_manager">2.6. Das Ergebnis im Struktur-Manager</h3>
+<h3 id="_das_ergebnis_im_struktur_manager">3.6. Das Ergebnis im Struktur-Manager</h3>
 <div class="paragraph">
 <p>Im Struktur-Manager wird das Ergebnis wie folgt angezeigt.</p>
 </div>
@@ -324,7 +544,7 @@ In diesem Beispiel wird die Warehouse Location ID für den Abgleich verwendet.</
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/anzeige-im-struktur-manager.png" alt="anzeige im struktur manager">
 </div>
-<div class="title">Bild 18. Anzeige im Struktur-Manager</div>
+<div class="title">Bild 26. Anzeige im Struktur-Manager</div>
 </div>
 </div>
 </div>
