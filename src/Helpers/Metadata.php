@@ -2279,21 +2279,6 @@ class Metadata {
 								"linkListInto" => "Willkommen im Themenbereich Best Practices: Auftragspositionen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
-							],
-							[
-								"id" => "787d9468e64fdf6ce656879f31746717",
-								"path" => "daten/daten-importieren/elasticsync-best-practices/best-practices-formatdesigner-elastischer-export",
-								"position" => 90,
-								"urlName" => "best-practices-formatdesigner-elastischer-export",
-								"url" => "/daten/daten-importieren/elasticsync-best-practices/best-practices-formatdesigner-elastischer-export",
-								"level" => 4,
-								"title" => "Best Practices: FormatDesigner und Elastischer Export",
-								"keywords" => "ElasticSync, ElasticSync new, Datenimport, Zuordnung, Abgleich",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practices: FormatDesigner und Elastischer Export. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
