@@ -6526,10 +6526,10 @@ class Metadata {
 								"url" => "/en/data/importing-data/elasticsync-best-practices/best-practices-elasticsync-storage-locations",
 								"level" => 4,
 								"title" => "Best Practices: Adjusting storage locations",
-								"keywords" => "ElasticSync, ElasticSync new, Importing data, Mapping, Matching",
+								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practices: Adjusting storage locations. Hier finden Sie folgende Informationen:",
+								"linkListInto" => "Welcome to the topic Best Practices: Adjusting storage locations. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
