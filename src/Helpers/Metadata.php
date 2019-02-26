@@ -2500,11 +2500,11 @@ class Metadata {
 								"urlName" => "categories",
 								"url" => "/daten/report/datenformate/categories",
 								"level" => 4,
-								"title" => "Categories",
+								"title" => "categories",
 								"keywords" => "Kategorien, Report, Rohdaten, categories",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Categories. Hier finden Sie folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich categories. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							],
