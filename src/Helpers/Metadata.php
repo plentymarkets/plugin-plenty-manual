@@ -5618,7 +5618,7 @@ class Metadata {
 			[
 				"id" => "24a5b70973a0f60cf507ad3343600456",
 				"path" => "item/combining-products",
-				"position" => 40,
+				"position" => 30,
 				"urlName" => "combining-products",
 				"url" => "/en/item/combining-products",
 				"level" => 2,
