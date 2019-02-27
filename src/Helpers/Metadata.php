@@ -7355,11 +7355,11 @@ class Metadata {
 								"urlName" => "tags",
 								"url" => "/en/data/report/data-formats/tags",
 								"level" => 4,
-								"title" => "Tags",
+								"title" => "tags",
 								"keywords" => "Tags, report, raw data",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Tags. The following information is available:",
+								"linkListInto" => "Welcome to the topic tags. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
