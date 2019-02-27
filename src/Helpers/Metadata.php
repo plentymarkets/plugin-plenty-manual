@@ -2414,11 +2414,11 @@ class Metadata {
 				"urlName" => "backup",
 				"url" => "/daten/backup",
 				"level" => 2,
-				"title" => "Daten-Backup durchführen",
+				"title" => "Datenbank-Backup durchführen",
 				"keywords" => "Backup, Daten sichern, Rücksicherung, Datensicherung, rücksichern, Wiederherstellung, wiederherstellen",
 				"description" => "Erfahren Sie, wie Sie plentymarkets Daten sichern und einspielen.",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Daten-Backup durchführen. Hier finden Sie folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Datenbank-Backup durchführen. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			],
