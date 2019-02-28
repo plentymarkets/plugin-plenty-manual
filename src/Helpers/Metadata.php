@@ -8371,7 +8371,7 @@ class Metadata {
 				"url" => "/en/online-store/shop-builder",
 				"level" => 2,
 				"title" => "Setting up the ShopBuilder",
-				"keywords" => "Online store, client, Standard, Ceres, IO, Plugin, configuration, Template, homepage, Drag and Drop, ShopBuilder, ShopBuilder, item lists, image box, carousel",
+				"keywords" => "Online store, client, Standard, Ceres, IO, Plugin, configuration, Template, preset, homepage, Drag and Drop, Kit, ShopBuilder, Item lists",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Setting up the ShopBuilder. The following information is available:",
