@@ -6956,6 +6956,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "e1d6f0eb47dee0ede7e5b01a11cb0eae",
+								"path" => "data/importing-data/sync-types/elasticSync-notes",
+								"position" => 90,
+								"urlName" => "elasticSync-notes",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-notes",
+								"level" => 4,
+								"title" => "Notes",
+								"keywords" => "ElasticSync, import, notes",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Notes. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "93a8721314350d1d9c0e9e61cc806e63",
 								"path" => "data/importing-data/sync-types/elasticSync-warehouse",
 								"position" => 90,
