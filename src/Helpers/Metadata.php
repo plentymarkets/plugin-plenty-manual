@@ -2128,6 +2128,21 @@ class Metadata {
 								"linkListInto" => "Willkommen im Themenbereich Lager. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "ad40eba960def9d64f3794d3eafbe4f7",
+								"path" => "daten/daten-importieren/sync-typen/elasticSync-notizen",
+								"position" => 90,
+								"urlName" => "elasticSync-notizen",
+								"url" => "/daten/daten-importieren/sync-typen/elasticSync-notizen",
+								"level" => 4,
+								"title" => "Notizen",
+								"keywords" => "ElasticSync, Import, Notizen",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Notizen. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
