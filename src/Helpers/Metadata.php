@@ -2040,6 +2040,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "3a1c9bca84ac68d8b796a0d8c224b168",
+								"path" => "daten/daten-importieren/sync-typen/elasticSync-eigenschaften",
+								"position" => 40,
+								"urlName" => "elasticSync-eigenschaften",
+								"url" => "/daten/daten-importieren/sync-typen/elasticSync-eigenschaften",
+								"level" => 4,
+								"title" => "Eigenschaften",
+								"keywords" => "ElasticSync, Import, Eigenschaften",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Eigenschaften. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "50d718418dab75d1d862a39021f5b806",
 								"path" => "daten/daten-importieren/sync-typen/elasticSync-facetten",
 								"position" => 40,
