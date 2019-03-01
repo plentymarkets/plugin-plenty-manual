@@ -6911,6 +6911,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "3c15c96e5a389d916053e681334d0efb",
+								"path" => "data/importing-data/sync-types/elasticSync-properties",
+								"position" => 40,
+								"urlName" => "elasticSync-properties",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-properties",
+								"level" => 4,
+								"title" => "Properties",
+								"keywords" => "ElasticSync, import, properties",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Properties. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "7a484322fe444e5a699f276d85c9435c",
 								"path" => "data/importing-data/sync-types/elasticSync-manufacturer",
 								"position" => 50,
