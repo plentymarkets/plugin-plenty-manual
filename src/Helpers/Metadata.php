@@ -5841,21 +5841,6 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Best Practices: Correcting/Transferring/Deleting stock. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
-			],
-			[
-				"id" => "a898d1c51e680b889c4a7e89f4a7d2a7",
-				"path" => "stock-management/best-practices-saving-stock",
-				"position" => 90,
-				"urlName" => "best-practices-saving-stock",
-				"url" => "/en/stock-management/best-practices-saving-stock",
-				"level" => 2,
-				"title" => "Best Practices: Saving stock on a daily basis",
-				"keywords" => "Stocktaking, managing stock, saving stock, stock at a specific time, determining stock",
-				"description" => "Find out how to save your stock on a daily basis.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Best Practices: Saving stock on a daily basis. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
