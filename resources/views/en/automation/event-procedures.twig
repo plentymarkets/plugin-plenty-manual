@@ -54,10 +54,10 @@ The basic principle of event procedures is simple: Certain <strong>Events</stron
 <p><a href="#110">Selecting an event</a></p>
 </li>
 <li>
-<p><a href="#120">Adding one or more filter(s)</a></p>
+<p><a href="#120">Adding one or multiple filters</a></p>
 </li>
 <li>
-<p>Determining which <a href="#130">Procedures</a> should be carried out by the system once the chosen event takes place</p>
+<p>Determining which <a href="#130">Procedures</a> should be carried out by the system once the selected event takes place</p>
 </li>
 <li>
 <p><a href="#200">Activating</a> the event procedure</p>
@@ -65,14 +65,14 @@ The basic principle of event procedures is simple: Certain <strong>Events</stron
 </ol>
 </div>
 <div class="paragraph">
-<p>For practical examples for using event procedures, refer to the <a href="/en/automation/best-practices-automation">Best practices: Event procedures and Procedure manager</a> page of the manual.</p>
+<p>For practical examples of how to use event procedures effectively, refer to the <a href="/en/automation/best-practices-automation">Best Practices: Procedure manager and event procedures</a> page of the manual.</p>
 </div>
 </div>
 </div><div class="sect1">
 <h2 id="100">1. Creating a new event procedure</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Go to <strong>System » Orders » Events</strong> to create a new event procedure. In the same menu, you can access and <a href="/en/automation/event-procedures#300">edit</a> all event procedures that you have previously created.</p>
+<p>Go to <strong>System » Orders » Events</strong> to create a new event procedure. In this menu, you can also view the already existing event procedures and <a href="/en/automation/event-procedures#300">edit</a> them.</p>
 </div>
 <div class="paragraph instruction">
 <p>Creating a new event procedure:</p>
@@ -167,7 +167,7 @@ The event <strong>New return (by customer)</strong> refers to returns that are i
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Change of order type</strong>,<br>
 <strong>Change of repair status</strong>,<br>
 <strong>Change of payment method</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The event procedure is triggered when the settings for one of the following parameters in an order are changed. The following events are available: <strong>Change of order type</strong>, <strong>Change of repair status</strong>, <strong>Change of payment method</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The event procedure is triggered when the settings for one of the following parameters in an order are changed. The following events are available: <strong>Change of order type</strong>, …​ of <strong>repair status</strong>, …​ of <strong>payment method</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New OpenTrans order</strong></p></td>
@@ -219,7 +219,7 @@ This event is triggered several times if the customer effects multiple partial p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Initial payment complete</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">When a deposit on production items has been fully paid.<br>
-Go to <strong><a href="/en/orders/basic-settings">System » Orders » Settings</a></strong> to save the percentage for deposits on production items.</p></td>
+Enter the percentage value for deposits on production items in the <strong><a href="/en/orders/basic-settings">System » Orders » Settings</a></strong> menu.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment cancelled by the customer</strong></p></td>
@@ -229,10 +229,6 @@ Go to <strong><a href="/en/orders/basic-settings">System » Orders » Settings</
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Event group <strong>Goods</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New purchase order</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">When a new order of the type purchase order is created.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Goods delivered</strong>,<br>
 <strong>Partly delivered</strong>,<br>
 <strong>Booked out</strong><br>
@@ -240,6 +236,18 @@ Go to <strong><a href="/en/orders/basic-settings">System » Orders » Settings</
 <strong>Booked in</strong>,<br>
 <strong>Partly booked in</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">These events only apply to the order type purchase order. Depending on your selection here, the event triggering the event procedure is a complete or partial booking in or booking out of reordered stock.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Purchase order initiated</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When a reorder or redistribution is initiated. With reorders, this means that the reorder has been transmitted to the supplier. Redistributions are initiated when the process of booking items from a source warehouse to a target warehouse is started.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Purchase order finished</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When a reorder or redistribution is finished. For example, this is the case as soon as all items contained in the reorder or redistribution have been fully booked in or booked.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reorder document generated</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When the reorder document is generated in an order of the type reorder.</p></td>
 </tr>
 </tbody>
 </table>
@@ -333,7 +341,7 @@ Go to <strong><a href="/en/orders/basic-settings">System » Orders » Settings</
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Click &amp; Collect</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Orders are filtered according to the shipping method Click &amp; Collect. Click &amp; Collect can only be used for orders that are referred from eBay UK and have the UK as their delivery country. For further information, refer to the <a href="/en/omni-channel/multi-channel/ebay/ebay-setup#7010">Click &amp; Collect</a> chapter.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orders are filtered according to the shipping method Click &amp; Collect. Click &amp; Collect can only be used for orders that are referred from eBay UK and have the UK as their delivery country. For further information, refer to the chapter on <a href="/en/markets/ebay/ebay-setup#7010">Click &amp; Collect</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Referrer</strong></p></td>
@@ -377,7 +385,7 @@ Go to <strong><a href="/en/orders/basic-settings">System » Orders » Settings</
 <strong>Amazon Prime NextDay</strong> = Only Amazon Prime orders that have to be shipped on the following day are filtered.<br>
 <strong>Amazon Prime SecondDay</strong> = Only Amazon Prime orders that have to be shipped 2 days after placement of the order are filtered.<br>
 <strong>eBay Plus</strong> = Only eBay Plus orders are filtered.<br>
-For more information on Amazon and eBay orders, refer to the respective manual pages on <a href="/en/omni-channel/multi-channel/amazon/amazon-setup">Amazon</a> and <a href="/en/omni-channel/multi-channel/ebay/ebay-setup">eBay</a>.</p></td>
+For more information on Amazon and ebay orders, refer to the respective manual pages on <a href="/en/markets/amazon/amazon-setup#4200">Amazon</a> and <a href="/en/markets/ebay/ebay-setup#100">eBay</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order weight</strong></p></td>
@@ -516,8 +524,10 @@ Use this filter to flag orders of this kind.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eBay</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This filter identifies orders that are generated on eBay.</p>
-<p class="tableblock">2+ Filtergruppe <strong>Bestellwesen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This filter identifies orders that are generated on eBay.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Filter group <strong>Purchase order</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Supplier</strong></p></td>
@@ -537,7 +547,7 @@ Use this filter to flag orders of this kind.</p></td>
 <div class="sect2">
 <h3 id="130">1.3. Adding procedures</h3>
 <div class="paragraph">
-<p>After having selected the desired event group as well as one or multiple filters, the last step consists of deciding which procedure(s) should be carried out. In case the selected event takes place, these procedures are carried out for the orders according to the filter settings. <a href="#table-event-procedures-procedure-groups">[table-event-procedures-procedure-groups]</a> describes the available procedures and procedure groups.</p>
+<p>After having selected the desired event group as well as one or multiple filters, the last step consists of deciding which procedure(s) should be carried out. In case the selected event takes place, these procedures are carried out for the orders according to the filter settings. <a href="#table-event-procedures-procedure-groups">Table 3</a> describes the available procedures and procedure groups.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -582,7 +592,7 @@ Use this filter to flag orders of this kind.</p></td>
 </li>
 </ol>
 </div>
-<table id="table-event-procedures-procedure-group" class="tableblock frame-all grid-all stretch">
+<table id="table-event-procedures-procedure-groups" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 3. Available procedures and procedure groups</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -623,12 +633,12 @@ Choose one of the following settings for the <strong>Date</strong> option:<br>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use order template</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure automatically uses a certain order template. Order templates can be set up in the <strong>System » Orders » Order template</strong> menu.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure automatically uses a certain order template. Order templates are created in the menu <strong>System » Orders » Order template</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Generate delivery orders</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This procedure automatically creates delivery orders as soon as the selected event takes place.<br>
-<strong>Important</strong>: This option is only displayed if the necessary <a href="/en/orders/managing-orders#320">warehouse assignment</a> has been set up correctly.</p></td>
+<strong>Important</strong>: This option is only displayed if the correct <a href="/en/orders/managing-orders#320">assignment of warehouses</a> has been carried out beforehand.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Split into delivery orders by gross value of items</strong></p></td>
@@ -657,7 +667,7 @@ Choose one of the following settings for the <strong>Date</strong> option:<br>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Change status</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select a status that should be assigned to the order by the event procedure.<br>
-<strong>Ignore <a href="/en/orders/managing-orders#300">Delivery orders</a></strong>: The procedure <strong>Change status</strong> changes the status of both the main order and its delivery orders by default. Activate the option if you only want the status of the main order to be changed.</p></td>
+<strong>Ignore<a href="/en/orders/managing-orders#300">delivery orders</a></strong>: The procedure <strong>Change status</strong> changes the status of both the main order and its delivery orders by default. Activate the option if you only want the status of the main order to be changed.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Change flag</strong></p></td>
@@ -709,39 +719,39 @@ For more detailed information, refer to the <a href="/en/crm/managing-contacts">
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delete Klarna invoice</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure deletes an invoice with the payment method <strong>Klarna</strong> when an order is cancelled. Detailed information as well as examples for further event procedures can be found on the <a href="/en/payment/payment-providers/klarna">Klarna</a> page of the manual.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure deletes an invoice with the payment method <strong>Klarna</strong> when an order is cancelled. For further information on order cancellations and further event procedures, refer to the <a href="/en/payment/payment-providers/klarna">Klarna</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send order confirmation to Fruugo</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure sends an order confirmation to the market <a href="/en/omni-channel/multi-channel/fruugo">Fruugo</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure sends an order confirmation to the market <a href="/en/markets/fruugo">Fruugo</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send cancellation to Fruugo</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure notifies the market <a href="/en/omni-channel/multi-channel/fruugo">Fruugo</a> of the cancellation of an order.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure notifies the market <a href="/en/markets/fruugo">Fruugo</a> of an order cancellation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Notify Cdiscount of order changes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure informs <a href="/en/omni-channel/multi-channel/cdiscount">Cdiscount</a> of status changes in orders received from the market Cdiscount.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure informs <a href="/en/markets/cdiscount">Cdiscount</a> of status changes in orders received from the market Cdiscount.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send cancellation to Flubit</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure notifies the market <a href="/en/omni-channel/multi-channel/flubit">Flubit</a> of the cancellation of an order.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure notifies the market <a href="/en/markets/flubit">Flubit</a> of the cancellation of an order.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send order confirmation to idealo</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure sends an order confirmation to the market <a href="/en/omni-channel/multi-channel/idealo-checkout/idealo-setup">idealo</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure sends an order confirmation to the market <a href="/en/markets/idealo-checkout/idealo-setup">idealo</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send cancellation to idealo</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure notifies the market <a href="/en/omni-channel/multi-channel/idealo-checkout/idealo-setup">idealo</a> of the cancellation of an order.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure notifies the market <a href="/en/markets/idealo-checkout/idealo-setup">idealo</a> of the cancellation of an order.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send order cancellation to bol.com</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure notifies the market <a href="/en/omni-channel/multi-channel/bol-com">bol.com</a> of the cancellation of an order.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure notifies the market <a href="/en/markets/bol-com">bol.com</a> of the cancellation of an order.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send cancellation to real.de</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure notifies the market <a href="/en/omni-channel/multi-channel/real-de/real-setup">real.de</a> of the cancellation of an order.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure notifies the market <a href="/en/markets/real-de/real-setup">real</a> of the cancellation of an order.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Change shipping profile</strong></p></td>
@@ -857,17 +867,17 @@ Further options appear when the procedure is selected: Indicate a <strong>Paymen
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transfer shipping permission to FBA</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sends a permission to <a href="/en/omni-channel/multi-channel/amazon/amazon-setup#3300">FBA</a> so that FBA can start the shipping process.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure sends a shipping permission to <a href="/en/markets/amazon/amazon-setup#3300">FBA</a> so that shipping is initiated by FBA.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send shipping confirmation</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sends a shipping confirmation to a market or a payment provider once the orders placed via this market or payment provider has been shipped.<br>
-Individual procedures are available for: <a href="/en/payment/payment-providers/amazon-pay">Amazon Pay</a>, <a href="/en/payment/payment-providers/upg">UPG</a>, <a href="/en/payment/payment-providers/klarna">Klarna</a>, <a href="/en/payment/payment-providers/klarna-checkout-uk">Klarna UK</a>, <a href="/en/payment/payment-providers/masterpayment">Masterpayment</a>, <a href="/en/payment/payment-providers/payolution">Payolution</a>, <a href="/en/omni-channel/multi-channel/plus-gartenxxl">NettoeStores</a>, <a href="/en/payment/payment-providers/postpay">POSTPAY</a>, <strong>Zentralverkauf</strong>, <a href="/en/omni-channel/multi-channel/hood">Hood</a>, <a href="/en/omni-channel/multi-channel/ebay/ebay-setup">eBay</a>, <a href="/en/omni-channel/multi-channel/rakuten/rakuten-setup">Rakuten.de</a>, <a href="/en/omni-channel/multi-channel/fruugo">Fruugo</a>, <a href="/en/omni-channel/multi-channel/flubit">Flubit</a>, <a href="/en/omni-channel/multi-channel/idealo-checkout/idealo-setup">idealo</a> and <a href="/en/omni-channel/multi-channel/bol-com">bol.com</a>.</p></td>
+Individual procedures are available for: <a href="/en/payment/payment-providers/amazon-pay">Amazon Pay</a>, <a href="/en/payment/payment-providers/crefopay">CrefoPay</a>, <a href="/en/payment/payment-providers/klarna">Klarna</a>, <a href="/en/payment/payment-providers/klarna-checkout-uk">Klarna UK</a>, <a href="/en/payment/payment-providers/masterpayment">Masterpayment</a>, <a href="/en/payment/payment-providers/payolution">Payolution</a>, <a href="/en/payment/payment-providers/payone">PAYONE</a>, <a href="/en/markets/plus-gartenxxl">Netto eStores</a>, <a href="/en/payment/payment-providers/postpay">POSTPAY</a>, <strong>Zentralverkauf</strong>, <a href="/en/markets/hood">Hood</a>, <a href="/en/markets/ebay/ebay-setup#. eBay">/en/markets/ebay/ebay-setup</a>, <a href="/en/markets/rakuten/rakuten-setup">Rakuten.de</a>, <a href="/en/markets/fruugo">Fruugo</a>, <a href="/en/markets/flubit">Flubit</a>, <a href="/en/markets/idealo-checkout/idealo-setup">idealo</a> and <a href="/en/markets/bol-com">bol.com</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send tracking information to Rakuten</strong>,<br>
 <strong>Send preparation for shipping to Rakuten</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">These procedures send the tracking number or a confirmation that the order is being prepared for shipment to the market <a href="/en/omni-channel/multi-channel/rakuten/rakuten-setup">Rakuten.de</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This procedure sends the tracking number or a confirmation that the order is currently being prepared for shipping to the market <a href="/en/markets/rakuten/rakuten-setup">Rakuten.de</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Procedure group <strong>Payment methods</strong></p></td>
@@ -883,7 +893,7 @@ Individual procedures are available for: <strong>ClickandBuy</strong>, <a href="
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Notify Klarna of changes to the order</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A notification on changes to an order is sent to <a href="/en/payment/payment-providers/klarna">Klarna</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A notification on changes on an order is sent to <a href="/en/payment/payment-providers/klarna">Klarna</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send reversal to ClickandBuy</strong></p></td>
@@ -902,7 +912,7 @@ Individual procedures are available for: <a href="/en/payment/payment-providers/
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send cancellation</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A cancellation is sent to the payment provider.<br>
-Individual procedures are available for: <a href="/en/payment/payment-providers/upg">UPG</a>, <a href="/en/payment/payment-providers/amazon-pay">Amazon Pay</a>, <strong>ClickandBuy</strong>, <a href="/en/payment/payment-providers/paymorrow">paymorrow</a>, <a href="/en/omni-channel/multi-channel/plus-gartenxxl">Netto eStores</a>, <a href="/en/payment/payment-providers/postpay">POSTPAY</a>, <a href="/en/omni-channel/multi-channel/rakuten/rakuten-setup">Rakuten.de</a>, <a href="/en/payment/payment-providers/worldpay">Worldpay</a>, <a href="/en/payment/payment-providers/sage-pay">SagePay</a>, <a href="/en/payment/payment-providers/klarna-checkout-uk">Klarna UK</a>.</p></td>
+Individual procedures are available for: <a href="/en/payment/payment-providers/upg">UPG</a>, <a href="/en/payment/payment-providers/amazon-pay">Amazon Pay</a>, <strong>ClickandBuy</strong>, <a href="/en/payment/payment-providers/paymorrow">paymorrow</a>, <a href="/en/markets/plus-gartenxxl.de">Netto eStores</a>, <a href="/en/payment/payment-providers/postpay">POSTPAY</a>, <a href="/en/markets/rakuten/rakuten-setup">Rakuten.de</a>, <a href="/en/payment/payment-providers/worldpay">Worldpay</a>, <a href="/en/payment/payment-providers/sage-pay">SagePay</a>, <a href="/en/payment/payment-providers/klarna-checkout-uk">Klarna UK</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Permit payment via direct debit</strong></p></td>
@@ -922,12 +932,12 @@ Individual procedures are available for: <a href="/en/payment/payment-providers/
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send return</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sends a return to a market or a payment provider.<br>
-Individual procedures are available for: <a href="/en/payment/payment-providers/klarna">Klarna</a>, <a href="/en/omni-channel/multi-channel/amazon/amazon-setup">Amazon</a>, <a href="/en/omni-channel/multi-channel/plus-gartenxxl">Netto eStores</a>, <a href="/en/payment/payment-providers/postpay">POSTPAY</a>, <a href="/en/omni-channel/multi-channel/rakuten/rakuten-setup">Rakuten.de</a>, <a href="/en/omni-channel/multi-channel/shopgate">Shopgate</a>, <a href="/en/omni-channel/multi-channel/flubit">Flubit</a>, <a href="/en/omni-channel/multi-channel/idealo-checkout/idealo-setup">idealo</a>, <a href="/en/omni-channel/multi-channel/fruugo">Fruugo</a> and <a href="/en/omni-channel/multi-channel/cdiscount">Cdiscount</a>.<br>
-More information is available on the <a href="/en/payment">Payment method</a> page of the manual.</p></td>
+Individual procedures are available for: <a href="/en/payment/payment-providers/klarna">Klarna</a>, <a href="/en/markets/amazon/amazon-setup">Amazon</a>, <a href="/en/markets/plus-gartenxxl">Netto eStores</a>, <a href="/en/payment/payment-providers/postpay">POSTPAY</a>, <a href="/en/markets/rakuten/rakuten-setup">Rakuten</a>, <a href="/en/markets/shopgate">Shopgate</a>, <a href="/en/markets/flubit">Flubit</a>, <a href="/en/markets/idealo-checkout/idealo-setup">/en/markets/idealo-checkout/idealo-setup</a>, <a href="/en/markets/fruugo">Fruugo</a> and <a href="/en/markets/cdiscount">Cdiscount</a>.<br>
+For further information refer to the <a href="/en/payment/payment-providers">/en/payment/payment-providers</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send return status to bol.com</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sends the return status to the market <a href="/en/omni-channel/multi-channel/bol-com">bol.com</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sends the status of the return to the market <a href="/en/markets/bol-com">bol.com</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Procedure group <strong>Market listings</strong></p></td>
@@ -935,12 +945,12 @@ More information is available on the <a href="/en/payment">Payment method</a> pa
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Post feedback</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Automatically generates feedback for a listing.<br>
-Individual procedures are available for: <a href="/en/omni-channel/multi-channel/hood#600">Hood</a>, <a href="/en/omni-channel/multi-channel/ricardo-ch#700">ricardo</a> and <a href="/en/omni-channel/multi-channel/ebay/ebay-setup#1300">eBay</a>.</p></td>
+Individual procedures are available for <a href="/en/markets/hood#600">hood</a>, <a href="/en/markets/ricardo-ch#700">ricardo</a> and <a href="/en/markets/ebay/ebay-setup#1300">eBay</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send payment notification</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Automatically sends a payment confirmation.<br>
-Individual procedures are available for: <a href="/en/omni-channel/multi-channel/hood#600">Hood</a> and <a href="/en/omni-channel/multi-channel/ebay/ebay-setup#1300">eBay</a>.</p></td>
+Individual procedures are available for <a href="/en/markets/hood#600">Hood</a> and <a href="/en/markets/ebay/ebay-setup#1300">eBay</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eBay return</strong>,<br>
@@ -948,24 +958,24 @@ Individual procedures are available for: <a href="/en/omni-channel/multi-channel
 <strong>Mark eBay return as received</strong>,<br>
 <strong>eBay refund sent</strong>,<br>
 <strong>Upload own return label at eBay</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Once the selected event takes place, the listed procedures are triggered within the management of returns and refunds at <a href="/en/omni-channel/multi-channel/ebay/ebay-setup#1300">eBay</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Once the selected event takes place, the listed procedures are triggered within the management of returns and refunds at <a href="/en/markets/ebay/ebay-setup#1300">eBay</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reject eBay cancellation request</strong>,<br>
 <strong>Accept eBay cancellation request</strong>,<br>
 <strong>Create an order cancellation on eBay</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Once the selected event takes place, the listed procedures are triggered within the management of order cancellations at <a href="/en/omni-channel/multi-channel/ebay/ebay-setup#1300">eBay</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Once the selected event takes place, the listed procedures are triggered within the management of order cancellations at <a href="/en/markets/ebay/ebay-setup#1300">eBay</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Start dunning/dispute process on eBay</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Automatically sends a dunning letter or starts a dispute on <a href="/en/omni-channel/multi-channel/ebay/ebay-setup#1300">eBay</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatically sends a dunning letter or starts a dispute on <a href="/en/markets/ebay/ebay-setup#1300">eBay</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Procedure group <strong>Board</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create card</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Once the selected event happens, a new card is <a href="/en/basics/working-with-plentymarkets/boards#30">added</a> in the <strong>Start » Boards</strong> menu.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Once the selected event happens, a new card is <a href="/en/basics/working-with-pletnymarkets/boards#30">added</a> in the <strong>Start » Boards</strong> menu.<br>
 Select the <strong>Board</strong> and the <strong>Column</strong> as the place for the new card within the procedure. Within the procedure, you can assign an optional <strong>Prefix</strong> for the new card. The prefix can be used for better distinction between the cards and is automatically added at the beginning of the card title.</p></td>
 </tr>
 <tr>
@@ -975,8 +985,23 @@ Select the <strong>Board</strong> and the <strong>Column(s)</strong> whose cards
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Move cards</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Once the selected event happens, selected cards are <a href="/en/basics/working-with-plentymarkets/boards#40">moved</a> in the <strong>Start » Boards</strong> menu.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Once the selected event happens, selected cards are <a href="/en/basics/working-with-plentymarkets/boards">moved</a> in the <strong>Start » Boards</strong> menu.<br>
 Select the <strong>Board</strong> and the <strong>Column(s)</strong> from and to which the cards should be moved within the procedure.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Procedure group <strong>Purchase order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Set delivery date (reorder only)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For orders of the type reorder, the estimated delivery date is saved in the reorder.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Initiate purchase order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Once the selected events happens, reorders or redistributions are initiated. With reorders, this means that the reorder is transmitted to the supplier. With redistributions, this means that the process of booking items from a source warehouse to a target warehouse begins with this procedure.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Finish purchase order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Once the selected events happens, reorders or redistributions are finished. Once the orders are finished, editing these orders is not possible any more.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1000,11 +1025,11 @@ Select the <strong>Board</strong> and the <strong>Column(s)</strong> from and to
 <p>Go to <strong>System » Orders » Events</strong>.</p>
 </li>
 <li>
-<p>Select the event procedure from the list displayed on the left.
+<p>Select the event procedure from the list displayed on the left.<br>
 → The event procedure opens.</p>
 </li>
 <li>
-<p>Activate the option <strong>Active</strong> in the <strong>Settings</strong> area.
+<p>Activate the option <strong>Active</strong> in the <strong>Settings</strong> area.<br>
 → The event procedure is activated.</p>
 </li>
 </ol>
