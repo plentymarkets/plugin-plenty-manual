@@ -110,7 +110,7 @@
 </li>
 </ul>
 </li>
-<li><a href="#4100"><span>14.</span><span> Abholen und Zahlen von Online-Bestellungen vorbereiten (Click &amp; Collect)</span></a></li>
+<li><a href="#4100"><span>14.</span><span> Abholen und Bezahlen von Online-Bestellungen vorbereiten (Click &amp; Collect)</span></a></li>
 <li><a href="#3000"><span>15.</span><span> Warenausgang automatisch buchen</span></a></li>
 <li><a href="#600"><span>16.</span><span> plentymarkets App auf dem Gerät installieren</span></a></li>
 <li><a href="#230"><span>17.</span><span> Kasse mit Gerät verbinden</span></a>
@@ -382,7 +382,7 @@ Häkchen nicht gesetzt = Aktive und inaktive Varianten sind in der Kasse verfüg
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retourenbetrag als Gutschein auszahlen</strong><br></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob Kassenpersonal einen Gutschein in Höhe des Retourenbetrags aushändigen können, statt den Betrag bar auszuzahlen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob Kassenpersonal einen Gutschein in Höhe des Retourenbetrags aushändigen darf, statt den Betrag bar auszuzahlen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Varianten-ID des Retourenartikels</strong><br></p></td>
@@ -393,7 +393,20 @@ Häkchen nicht gesetzt = Aktive und inaktive Varianten sind in der Kasse verfüg
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warenbestand bei Stornierung zurückbuchen</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Aktivieren, um den Warenbestand bei einer Stornierung automatisch zurückzubuchen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aktivieren, um den Warenbestand automatisch zurückzubuchen, wenn ein Auftrag storniert wird.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Externer Auftrag: Warenausgang automatisch buchen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob für externe Aufträge, die an der Kasse bezahlt werden, der Warenausgang automatisch gebucht werden soll.<br>
+Aktiviert (Standardeinstellung) = Der Warenausgang wird automatisch gebucht. Der Button <strong>Warenausgang buchen</strong> wird Kassenkräften nicht angezeigt.<br>
+Nicht aktiviert = Der Warenausgang wird nur gebucht, wenn das Kassenpersonal auf <strong>Warenausgang buchen</strong> tippt.<br>
+<strong><em>Tipp:</em></strong> Option deaktivieren, wenn die Ware nicht direkt an der Kasse ausgegeben wird.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warenausgang von externen Aufträgen: Ware aus POS-Vertriebslager buchen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, aus welchem Lager die Auftragspositionen ausgebucht werden, wenn externe Aufträge an der Kasse abgeschlossen werden.<br>
+Nicht aktiviert (Standardeinstellung) = Die Auftragspositionen werden aus dem Lager gebucht, das dem Auftrag bei der Erstellung zugeordnet wurde.<br>
+Aktiviert = Die Auftragspositionen werden aus dem für die Kasse eingestellten <strong>Vertriebslager</strong> gebucht. Das Lager, das am Auftrag gespeichert ist, wird überschrieben.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Bedienung</strong></p></td>
@@ -431,6 +444,17 @@ Aktiviert = Die folgenden Komfortfunktionen werden als zusätzliche Reihe im Zif
 Nicht aktiviert = Standardeinstellung. Beim Öffnen des Hauptauftrags sind alle Auftragspositionen für die Retoure vorausgewählt. Das Kassenpersonal entfernt die Artikel, die nicht zurückgegeben werden.<br>
 Aktiviert = Beim Öffnen des Hauptauftrags sind keine Auftragspositionen für die Retoure vorausgewählt. Das Kassenpersonal fügt die Artikel zur Retoure hinzu, die zurückgegeben werden.<br>
 <strong><em>Tipp:</em></strong> Einstellung für Kassen ohne Scanner aktivieren, über die Aufträge mit vielen Auftragspositionen abgewickelt werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Kundenkarte</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kundenidentifikation</strong><br>
+(ab App-Version 1.9.2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, welche Kontaktdaten durchsucht werden, wenn ein Barcode mit einem Pluszeichen (+) als Präfix gescannt wird.<br>
+<strong>Kontakt-ID</strong> (Standardeinstellung) = Wählen, wenn Barcodes die Kontakt-ID enthalten.<br>
+<strong>Kundennummer</strong> (empfohlen) = Wählen, wenn Barcodes die Kundennummer enthalten.<br>
+<strong><em>Tipp:</em></strong> Bei der Einstellung <strong>Kundennummer</strong> können vorab Kundenkarten mit Barcodes gedruckt werden. Der Barcode-Code wird dann ohne das Pluszeichen in dem Feld <strong>Kundennummer</strong> des Kontakts gespeichert.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Österreich</strong></p></td>
@@ -3303,13 +3327,13 @@ Informieren Sie das Kassenpersonal darüber, an welchen Lagerort Retouren gebuch
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="4100">14. Abholen und Zahlen von Online-Bestellungen vorbereiten (Click &amp; Collect)</h2>
+<h2 id="4100">14. Abholen und Bezahlen von Online-Bestellungen vorbereiten (Click &amp; Collect)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ab App-Version 1.9 können über den Webshop oder Marktplätze bestellte Waren auch entweder online bezahlt und im Ladengeschäft abgeholt oder im Ladengeschäft bezahlt und abholt werden.</p>
+<p>Über den Webshop, Marktplätze oder andere Herkünfte bestellte Ware kann auch entweder online bezahlt und im Ladengeschäft abgeholt oder im Ladengeschäft bezahlt und abholt werden.</p>
 </div>
 <div class="paragraph">
-<p>Die folgenden Vorbereitungen sind POS-seitig nötig, wenn Sie Kundinnen und Kunden anbieten möchten, Online-Bestellungen im Laden abzuholen oder im Laden abzuholen und zu bezahlen:</p>
+<p>Die folgenden Vorbereitungen sind POS-seitig nötig, wenn Sie Ihrer Kundschaft anbieten möchten, Online-Bestellungen im Laden abzuholen oder im Laden abzuholen und zu bezahlen:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3318,7 +3342,7 @@ Informieren Sie das Kassenpersonal darüber, an welchen Lagerort Retouren gebuch
 → Stellen Sie sicher, dass Auftragsbestätigungen die Auftrags-ID enthalten. Weisen Sie Kundinnen und Kunden explizit darauf hin, dass diese Auftrags-ID benötigt wird, um den Auftrag in der Filiale zu bearbeiten.</p>
 </li>
 <li>
-<p>Erklären Sie Ihren Kassenkräften, wie sie die Identität von Personen prüfen sollen, die bezahlte Ware im Ladengeschäft abholen. Sonst besteht Gefahr, dass Kassenkräfte die Ware an Unbefugte aushändigen.</p>
+<p>Erklären Sie Ihren Kassenkräften, wie sie die Identität von Personen prüfen müssen, die bezahlte Ware im Ladengeschäft abholen. Sonst besteht Gefahr, dass Kassenkräfte die Ware an Unbefugte aushändigen.</p>
 </li>
 <li>
 <p>Sie nutzen Prozesse und/oder Ereignisaktionen, um Aufträge zu bearbeiten, die über den Webshop oder Marktplätze ins System gelangen?<br>
@@ -3336,7 +3360,7 @@ Informieren Sie das Kassenpersonal darüber, an welchen Lagerort Retouren gebuch
 <p>Online-Aufträge können an der Kasse nicht bearbeitet werden. Das Kassenpersonal kann nur Zahlungen anlegen und Notizen zum Auftrag speichern.<br></p>
 </li>
 <li>
-<p>Zurzeit können Kunden Online-Bestellungen an der Kasse noch nicht mit Verkaufsgutscheinen bezahlen.</p>
+<p>Online-Aufträge können an der Kasse erst ab App-Version 1.9.2 mit Verkaufsgutscheinen bezahlt werden. Voraussetzung ist, dass für den Auftrag noch keine Zahlung durchgeführt wurde und noch kein Rechnungsdokument für den Auftrag erstellt wurde.</p>
 </li>
 <li>
 <p>Kassenkräfte können Online-Aufträge noch nicht an der Kasse stornieren.</p>
@@ -3344,6 +3368,9 @@ Informieren Sie das Kassenpersonal darüber, an welchen Lagerort Retouren gebuch
 <li>
 <p>Zahlungen, die an der Kasse getätigt werden, um einen Online-Auftrag zu bezahlen, sind für die Kasse umsatzneutral.<br>
 → Im Kassenjournal werden Zahlungen, die nicht umsatzrelevant für die Kasse sind, als Kassenvorfall des Typs <strong>Zahlung</strong> gespeichert.</p>
+</li>
+<li>
+<p>Über die Option <strong>Externer Auftrag: Warenausgang automatisch buchen</strong> in den Kasseneinstellungen legen Sie fest, ob nach der Bezahlung an der Kasse die Ware automatisch aus dem Lager ausgebucht wird. Diese Option ist bei Kassen, die ab 05.03.2019 erstellt werden, standardmäßig aktiviert. Wenn Sie die Funktion deaktivieren, erklären Sie Ihren Kassenkräften, in welchen Fällen sie den Warenausgang manuell buchen sollen.</p>
 </li>
 </ul>
 </div>
@@ -3911,7 +3938,7 @@ Wenn in den Dropdown-Listen außer dem Bondrucker und dem Standarddrucker keine 
 <strong><em>Empfehlung:</em></strong> Konfigurieren Sie plentyBase so, dass plentyBase beim Starten des Rechners automatisch gestartet wird.</p>
 </li>
 <li>
-<p>Wurde der Drucker im plentymarkets Backend <a href="#basics/admin-aufgaben/drucker">gespeichert und konfiguriert</a>?</p>
+<p>Wurde der Drucker im plentymarkets Backend <a href="/basics/admin-aufgaben/drucker">gespeichert und konfiguriert</a>?</p>
 </li>
 </ul>
 </div>
