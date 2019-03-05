@@ -9547,11 +9547,11 @@ class Metadata {
 						"urlName" => "real-setup",
 						"url" => "/en/markets/real-de/real-setup",
 						"level" => 3,
-						"title" => "Setting up real.de",
+						"title" => "Setting up real.de in plentymarkets",
 						"keywords" => "",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market real.de in your plentymarkets system.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Setting up real.de. The following information is available:",
+						"linkListInto" => "Welcome to the topic Setting up real.de in plentymarkets. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
