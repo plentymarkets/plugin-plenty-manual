@@ -110,11 +110,7 @@
 </li>
 </ul>
 </li>
-<li><a href="#3700"><span>14.</span><span> Preparing Click &amp; Collect</span></a>
-<ul class="sectlevel2">
-<li><a href="#2000"><span>14.1.</span><span> Click &amp; Collect information</span></a></li>
-</ul>
-</li>
+<li><a href="#4100"><span>14.</span><span> Preparing pickup and payment of online orders (click &amp; collect)</span></a></li>
 <li><a href="#3000"><span>15.</span><span> Booking outgoing items automatically</span></a></li>
 <li><a href="#600"><span>16.</span><span> Installing the plentymarkets app on a device</span></a></li>
 <li><a href="#230"><span>17.</span><span> Linking a POS to a device</span></a>
@@ -386,7 +382,7 @@ No check mark = Active and inactive variations are available for this POS and ca
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Refund customer with gift card</strong><br></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select if POS users can hand out a gift card to the value of the refund amount instead of paying out the amount in cash.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select if POS users are allowed to hand out a gift card to the value of the refund amount instead of paying out the amount in cash.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variation ID of return item</strong><br></p></td>
@@ -398,6 +394,19 @@ No check mark = Active and inactive variations are available for this POS and ca
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reverse stock if order is cancelled</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Activate to reverse stock automatically if the order is cancelled.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>External order: Book outgoing items automatically</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select if outgoing items are booked automatically for external items that are payed for at the POS.<br>
+Activated (default setting) = Items are booked out automatically. The <strong>Book outgoing items</strong> button is not shown.<br>
+Not activated = Items are booked out only if the POS user taps the <strong>Book outgoing items</strong> button.<br>
+<strong><em>Tip:</em></strong> Deactivate the option if your customers do not receive their goods at the POS.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Outgoing items for external orders: Book items out of POS sales warehouse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select from which warehouse the order items are to be booked out when external orders are completed at the POS.<br>
+Not activated (default setting) = The order items are booked out of the warehouse that was assigned to the order when the order was created.<br>
+Activated = The order items are booked out of the <strong>Sales warehouse</strong> saved for the POS. The warehouse originally saved for the order is overwritten.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Operation</strong></p></td>
@@ -435,6 +444,17 @@ Activated = The following numpad quick buttons are shown as an additional row of
 Not activated = Default setting. All order items are selected for return when you open the order. POS staff removes those items from the return that the customer does not want to return.<br>
 Activated = No order items are selected for return when the order opens. POS staff adds those items to the return that the customer wants to return.<br>
 <strong><em>Tipp:</em></strong> Activate this option if your POS does not have a scanner and if your orders typically contain a large number of order items.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Loyalty card</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Customer identification</strong><br>
+(version 1.9.2 and higher)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select what contact data is to be searched when a barcode with a plus sign prefix (+) is scanned.<br>
+<strong>Contact ID</strong> (default setting) = Select if barcodes contain the contact ID.<br>
+<strong>Customer number</strong> = Select if barcodes contain the customer number.<br>
+<strong><em>Tip:</em></strong> If you select <strong>Customer number</strong>, this allows you to print loyalty cards with barcodes in advance. The barcode code minus the plus sign is then entered into the <strong>Customer number</strong> field of the contact.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Austria</strong></p></td>
@@ -2149,7 +2169,7 @@ Postcode</strong>;<br>
 </ul>
 </div>
 <div class="paragraph">
-<p>These steps are described below. Find more detailed information on campaigns and gift cards on the <a href="/en/orders/coupons">Coupons</a> page of the manual.</p>
+<p>These steps are described below. Find more detailed information on creating campaigns and gift cards on the <a href="/en/orders/coupons">Coupons</a> page of the manual.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2906,7 +2926,7 @@ Tell your POS staff which storage location to select for returned items.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>These steps are described below. Find more detailed information on campaigns and gift cards on the <a href="/en/orders/coupons">Coupons</a> page of the manual.</p>
+<p>These steps are described below. Find more detailed information on creating campaigns and gift cards on the <a href="/en/orders/coupons">Coupons</a> page of the manual.</p>
 </div>
 <div class="sect3">
 <h4 id="3200">13.2.1. Creating a campaign for refund gift cards</h4>
@@ -3247,17 +3267,45 @@ Tell your POS staff which storage location to select for returned items.</p>
 <p>Users with admin rights are able to create refund gift cards by default. <strong>Variable</strong> users must be assigned this right.</p>
 </div>
 <div class="paragraph instruction">
-<p>Assigning rights for refund gift cards:
-. Go to <strong>System » Settings » User » Accounts</strong>.
-. Open the variable user account.
-. Click on the <strong>Right</strong> tab.
-. Click on the <strong>REST API</strong> tab.
-. Open the area <strong>Coupon » Campaign » Code</strong>.
-. Activate the following rights:
-	<strong> Create code
-	</strong> Delete code
-	<strong>* Show code
-. *Save</strong> the settings.</p>
+<p>Assigning rights for refund gift cards:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>System » Settings » User » Accounts</strong>.</p>
+</li>
+<li>
+<p>Open the variable user account.</p>
+</li>
+<li>
+<p>Click on the <strong>Right</strong> tab.</p>
+</li>
+<li>
+<p>Click on the <strong>REST API</strong> tab.</p>
+</li>
+<li>
+<p>Open the area <strong>Coupon » Campaign » Code</strong>.</p>
+</li>
+<li>
+<p>Activate the following rights:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Create code</p>
+</li>
+<li>
+<p>Delete code</p>
+</li>
+<li>
+<p>Show code</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect3">
@@ -3279,55 +3327,52 @@ Tell your POS staff which storage location to select for returned items.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="3700">14. Preparing Click &amp; Collect</h2>
+<h2 id="4100">14. Preparing pickup and payment of online orders (click &amp; collect)</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Customer orders and pays online and picks up the ordered items in the retail outlet.</p>
-</li>
-<li>
-<p>Customer orders online and pays in the retail outlet when they pick up the ordered items.</p>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="2000">14.1. Click &amp; Collect information</h3>
 <div class="paragraph">
-<p>Note the following information on Click &amp; Collect orders:</p>
+<p>Items ordered in your online store, on markets or via other sales channels can be paid for online and picked up at the retail store or picked up and paid for in the store.</p>
+</div>
+<div class="paragraph">
+<p>The following preparations for the POS are necessary if you want your customers to be able to pick up and pay for online orders at your retail outlet.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>The order ID is needed to search for orders at the POS.<br>
-→ Make sure that your order confirmations state the order ID clearly and that customers are aware that they need this ID to pick up their order in your retail outlet.</p>
+→ Ensure that your order confirmations contain the order ID. → Make sure that your order confirmations state the order ID clearly and that customers are aware that they need this order ID to pick up their order at your retail outlet.</p>
 </li>
 <li>
-<p>Train POS users to verify the identity of customers who come to pick up orders that were paid for online.</p>
+<p>Train POS users to verify the identity of customers who come to pick up orders that were paid for online. Otherwise your POS users may hand over paid items to the wrong person by mistake.</p>
 </li>
 <li>
-<p>If you use processes and/or event procedures to automatically process orders generated in the online store and/or on markets, check these automated sequences before you offer customers to order online and pick up their orders in the retail outlet.<br>
-→ Make sure that orders are not automatically set to the status <strong>Outgoing items booked</strong> by an event procedure or a process before the customer picks up the ordered items in the retail outlet.</p>
-</li>
-<li>
-<p>Online store orders cannot be edited at the POS. POS users can only book payments or save order notes.<br></p>
-</li>
-<li>
-<p>Click &amp; Collect orders cannot be paid for using gift cards.</p>
-</li>
-<li>
-<p>Click &amp; Collect orders cannot be cancelled at the POS.</p>
-</li>
-<li>
-<p>Payments that are booked at the POS to clear Click &amp; Collect orders do not increase the POS’s revenue.<br>
-→ Payments that are not revenue relevant for the POS are saved as POS events of the type <strong>Payment</strong> in the Cash Journal.</p>
-</li>
-<li>
-<p>The POS shows that a customer has received the goods they ordered after the items have been booked out.<br>
-→ If problems occur and a customer insists that they have not yet received the items, the order must be checked in the plentymarkets back end. The items may have been booked out by mistake because they automatic processing of orders might have been configured incorrectly.</p>
+<p>Do you use processes and/or event procedures to automatically process orders generated in the online store and/or on markets?<br>
+→ Check your event procedures and processes before you offer store pickups. → Make sure that orders are only set to the status <strong>Outgoing items booked</strong> by an event procedure or a process after the customer has picked up the ordered items from the retail outlet.<br>
+→ The POS shows that a customer has received the goods they ordered after the items have been booked out in plentymarkets. → If problems occur and a customer insists that they have not received the items, check the order in the plentymarkets back end. The items may have been booked out too early.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Also note the following information and limitations regarding payment and pickup of online orders at the retail outlet:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Online orders cannot be edited at the POS. POS users can only book payments or save order notes.<br></p>
+</li>
+<li>
+<p>Online orders can be paid for at the POS using gift cards in app version 1.9.2 and higher. However, gift cards can only be used if no payment has been made for the order and no invoice document has been created yet.</p>
+</li>
+<li>
+<p>Online orders cannot be cancelled at the POS.</p>
+</li>
+<li>
+<p>Payments that are booked at the POS to clear online orders do not increase the POS’s revenue.<br>
+→ Payments that are not revenue relevant for the POS are saved as POS events of the type <strong>Payment</strong> in the Cash Journal.</p>
+</li>
+<li>
+<p>The option <strong>External order: Book outgoing items automatically</strong> of the POS settings allows you to specify if the order items are booked out of the warehouse automatically. This option is activated by default for POS created on or after the 05th of March 2019. If you deactivate this option, explain to your POS users in what cases they need to manually book outgoing items.</p>
+</li>
+</ul>
 </div>
 </div>
 </div><div class="sect1">
@@ -3534,12 +3579,12 @@ Tell your POS staff which storage location to select for returned items.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create start receipt</strong><br>
 (new POS with location in Austria only)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select to <a href="/en/pos/integrating-plentymarkets-pos#900">create the start receipt</a> (Startbeleg). This activates the tamper-proof signature unit for the POS. After the start receipt is created, the location country of the POS cannot be changed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select to <a href="/en/pos/integrating-plentymarkets-pos#900">create the start receipt</a> (Startbeleg). This will activate the tamper-proof signature unit for the POS. After the start receipt is created, the location country of the POS cannot be changed.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create end receipt</strong><br>
 (POS with location in Austria and activated signature unit only)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select to <a href="/en/pos/integrating-plentymarkets-pos#920">create the end receipt</a> (Endbeleg). This deactivates the tamper-proof signature unit for the POS. Once an end receipt has been created, the POS can no longer be operated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select to <a href="/en/pos/integrating-plentymarkets-pos#920">create the end receipt</a> (Endbeleg). This will deactivate the tamper-proof signature unit for the POS. Once an end receipt has been created, the POS can no longer be operated.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3893,7 +3938,7 @@ If you can only select the receipt printer or the default printer from the drop-
 <strong><em>Recommendation:</em></strong> Configure plentyBase to run automatically when the computer is started up.</p>
 </li>
 <li>
-<p>Has the printer been <a href="#basics/admin-tasks/printer">saved and configured</a> in the plentymarkets back end?</p>
+<p>Has the printer been <a href="/en/basics/admin-tasks/printer">saved and configured</a> in the plentymarkets back end?</p>
 </li>
 </ul>
 </div>
@@ -4250,7 +4295,7 @@ To only show receipts of a custom period, select <strong>Date selection</strong>
 <li>
 <p>In the top left corner, click <strong>Delete</strong>.<br>
 → The POS is deleted.<br>
-<strong><em>Note:</em></strong> If the POS is located in Austria and the signature unit is activated, an <a href="/en/pos/implementing-plentymarkets-pos#920">end receipt must be created in the app</a>. This deletes the POS automatically.</p>
+<strong><em>Note:</em></strong> If the POS is located in Austria and the signature unit is activated, an <a href="/en/pos/integrating-plentymarkets-pos#920">end receipt must be created in the app</a>. This deletes the POS automatically.</p>
 </li>
 </ol>
 </div>
@@ -4298,12 +4343,12 @@ To only show receipts of a custom period, select <strong>Date selection</strong>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Initialise the tamper-proof POS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="/en/pos/integrating-plentymarkets-POS#50">Basic settings for PO</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="/en/pos/plentymarkets-pos-for-pos-users#50">Basic settings for POS</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create the start receipt (Startbeleg)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="/en/pos/integrating-plentymarkets-pos#900">Creating the start receipt (Startbeleg)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See <a href="/en/pos/integrating-plentymarkets-pos#900">Creating the start receipt (Austria)</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
