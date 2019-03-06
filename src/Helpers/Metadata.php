@@ -5411,7 +5411,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Working with plentymarkets",
 				"keywords" => "",
-				"description" => "Working with plentymarkets: Here you will find information about managing user accounts, setting up general functions and customising the user account.",
+				"description" => "Working with plentymarkets: Here you find several pages on the topic of working with plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Working with plentymarkets. The following information is available:",
 				"children" => 				[
