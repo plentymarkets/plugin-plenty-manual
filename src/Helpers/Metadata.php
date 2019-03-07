@@ -3707,11 +3707,11 @@ class Metadata {
 						"urlName" => "coconut",
 						"url" => "/webshop/referenz/coconut",
 						"level" => 3,
-						"title" => "Ceres Coconut Theme",
+						"title" => "Ceres Coconut Theme - Individualisiere deinen Webshop",
 						"keywords" => "Webshop, Mandant, Standard, Ceres, IO, Plugin, Template, ShopBuilder, Theme",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Ceres Coconut Theme. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Ceres Coconut Theme - Individualisiere deinen Webshop. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
