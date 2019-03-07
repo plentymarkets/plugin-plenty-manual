@@ -3699,6 +3699,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich ElasticSearch Ergebnisfelder. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "61531f58a2faa4383eb2acba11459a3c",
+						"path" => "webshop/referenz/coconut",
+						"position" => 40,
+						"urlName" => "coconut",
+						"url" => "/webshop/referenz/coconut",
+						"level" => 3,
+						"title" => "Ceres Coconut Theme",
+						"keywords" => "Webshop, Mandant, Standard, Ceres, IO, Plugin, Template, ShopBuilder, Theme",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Ceres Coconut Theme. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
