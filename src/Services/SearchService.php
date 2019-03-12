@@ -381,10 +381,12 @@ class SearchService
 
         $suggestArray = array();
 
-        $result = array();
-
         if(isset($suggestArrayData["suggest"]))
         {
+            $result = array();
+
+            $searchQuery = '';
+
             foreach ($suggestArrayData["suggest"]["suggestion_content_1"][0]["options"] as $suggestion)
             {
                 array_push($suggestArray, $suggestion["text"]);
@@ -407,7 +409,10 @@ class SearchService
 
             $resultTemp = array_unique($suggestArray);
 
-            $result = $this->searchForWords($resultTemp);
+            foreach ($resultTemp as $key => $value)
+                $searchQuery .= $value." ";
+
+            $result = $this->searchForWords($searchQuery);
 
             return $result;
         }
@@ -438,7 +443,6 @@ class SearchService
                         "max_errors" => 0.95,
                         "confidence" => 2.0,
                         "size" => 3,
-                        "gram_size" => 1,
                         "shard_size" => 1,
                         "highlight" => [
                             "pre_tag" => "<em>",
@@ -466,7 +470,6 @@ class SearchService
                         "max_errors" => 0.95,
                         "confidence" => 2.0,
                         "size" => 4,
-                        "gram_size" => 1,
                         "shard_size" => 1,
                         "highlight" => [
                             "pre_tag" => "<em>",
@@ -494,7 +497,6 @@ class SearchService
                         "max_errors" => 0.95,
                         "confidence" => 2.0,
                         "size" => 4,
-                        "gram_size" => 1,
                         "shard_size" => 1,
                         "highlight" => [
                             "pre_tag" => "<em>",
@@ -522,7 +524,6 @@ class SearchService
                         "max_errors" => 0.95,
                         "confidence" => 2.0,
                         "size" => 4,
-                        "gram_size" => 1,
                         "shard_size" => 1,
                         "highlight" => [
                             "pre_tag" => "<em>",
@@ -677,14 +678,18 @@ class SearchService
 
         $suggestionArrayTemp = $this->createCombinedSuggestionArray($suggestedArrayTitleTemp, $suggestedArrayDescriptionTemp, $suggestedArrayContentTemp, $suggestedArrayTitleContentTemp);
 
-        $suggestionsTemp = $this->searchForWords($suggestionArrayTemp[$itemsNb]);
+        $itNb = count($suggestionArrayTemp);
 
-        unset($suggestionArrayTemp[$itemsNb]);
+        $suggestionsTemp = $this->searchForWords($suggestionArrayTemp[$itNb-1]);
+
+        unset($suggestionArrayTemp[$itNb-1]);
 
         for($i = 0; $i < count($suggestionArrayTemp); $i++)
         {
             $suggestions[$i] = $this->checkForWords($suggestionArrayTemp[$i], $suggestionsTemp);
         }
+
+        $suggestions = array_intersect_key($suggestions, array_unique(array_map('serialize', $suggestions)));
 
         $suggestionArray = $this->createCombinedArray($suggestions[0], $suggestions[1]);
 
@@ -782,7 +787,7 @@ class SearchService
     private function searchForWords($query)
     {
         $conjunctive = true;
-        $operator = $conjunctive ? "and" : "or";
+        $operator = $conjunctive ? "or" : "and";
         $sectionQuery = [
             "nested" => [
                 "path" => "sections",
