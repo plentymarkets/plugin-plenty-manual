@@ -116,7 +116,7 @@ class SearchService
                         'type' => $this->type,
                         'itemsPerPage' => $itemsPerPage,
                         'from' => $from,
-                        'Query' => $mainQuery);
+                        'query' => $mainQuery);
 
         $result = $this->serverCall($requestArray);
 
@@ -136,7 +136,7 @@ class SearchService
 
         curl_setopt( $cHandle, CURLOPT_POST, true );
         curl_setopt( $cHandle, CURLOPT_RETURNTRANSFER, true );
-        curl_setopt( $cHandle, CURLOPT_POSTFIELDS, json_encode( $requestArray['Query'] ) );
+        curl_setopt( $cHandle, CURLOPT_POSTFIELDS, json_encode( $requestArray['query'] ) );
 
         $response = curl_exec( $cHandle );
 
@@ -333,7 +333,7 @@ class SearchService
 
             $requestArray = array('host' => $this->host,
                 'type' => $this->type,
-                'Query' => $suggestionQuery);
+                'query' => $suggestionQuery);
 
             return $this->serverCall($requestArray);
 
@@ -348,7 +348,7 @@ class SearchService
 
                 $requestArray = array('host' => $this->host,
                     'type' => $this->type,
-                    'Query' => $tempArray);
+                    'query' => $tempArray);
 
                 $queryArray = $this->serverCall($requestArray);
 
@@ -439,9 +439,9 @@ class SearchService
                 "suggestion_content_".$index => [
                     "phrase" => [
                         "field" => "sections.content",
-                        "real_word_error_likelihood" => 0.95,
-                        "max_errors" => 0.95,
-                        "confidence" => 2.0,
+                        "real_word_error_likelihood" => 0.75,
+                        "max_errors" => 0.5,
+                        "confidence" => 0,
                         "size" => 3,
                         "shard_size" => 1,
                         "highlight" => [
@@ -466,9 +466,9 @@ class SearchService
                 "suggestion_description_".$index => [
                     "phrase" => [
                         "field" => "description",
-                        "real_word_error_likelihood" => 0.95,
-                        "max_errors" => 0.95,
-                        "confidence" => 2.0,
+                        "real_word_error_likelihood" => 0.75,
+                        "max_errors" => 0.5,
+                        "confidence" => 0,
                         "size" => 4,
                         "shard_size" => 1,
                         "highlight" => [
@@ -493,9 +493,9 @@ class SearchService
                 "suggestion_title_content_".$index => [
                     "phrase" => [
                         "field" => "sections.title",
-                        "real_word_error_likelihood" => 0.95,
-                        "max_errors" => 0.95,
-                        "confidence" => 2.0,
+                        "real_word_error_likelihood" => 0.75,
+                        "max_errors" => 0.5,
+                        "confidence" => 0,
                         "size" => 4,
                         "shard_size" => 1,
                         "highlight" => [
@@ -520,9 +520,9 @@ class SearchService
                 "suggestion_title_".$index => [
                     "phrase" => [
                         "field" => "title",
-                        "real_word_error_likelihood" => 0.95,
-                        "max_errors" => 0.95,
-                        "confidence" => 2.0,
+                        "real_word_error_likelihood" => 0.75,
+                        "max_errors" => 0.5,
+                        "confidence" => 0,
                         "size" => 4,
                         "shard_size" => 1,
                         "highlight" => [
@@ -758,24 +758,21 @@ class SearchService
             array_push($suggestArray, $value[0]);
         }
 
-        $result = array_unique($suggestArray);
+        $resultTemp = array_unique($suggestArray);
 
-        $numItems = count($result);
+        $numItems = count($resultTemp);
 
-        $resultTemp = '';
+        $result = array();
 
-        $i = 0;
+        foreach ($resultTemp as $key => $value)
+            array_push($result, $value);
+
+        $searchQuery = '';
 
         foreach($result as $res)
-        {
+            $searchQuery .= $res." ";
 
-            if(++$i === $numItems)
-                $resultTemp .= $res;
-            else
-                $resultTemp .= $res." ";
-        }
-
-        $result[$i] = $resultTemp;
+        $result[$numItems] = $searchQuery;
 
         return $result;
     }
@@ -866,7 +863,7 @@ class SearchService
 
         $requestArray = array('host' => $this->host,
             'type' => $this->type,
-            'Query' => $mainQuery);
+            'query' => $mainQuery);
 
         $resultTemp = $this->serverCall($requestArray);
 
@@ -893,10 +890,13 @@ class SearchService
             {
                 foreach ($hit["highlight"]["title"] as $title)
                 {
-                    if(preg_match($pattern,$title,$matches))
+                    if(preg_match_all($pattern,$title,$matches))
                     {
-                        $tempVariable = $this->removeHighlight($matches[0]);
-                        array_push($highlights, $tempVariable);
+                        foreach ($matches[1] as $key => $value)
+                        {
+                            $tempVariable = $this->removeHighlight($value);
+                            array_push($highlights, $tempVariable);
+                        }
                     }
                 }
             }
@@ -905,10 +905,13 @@ class SearchService
             {
                 foreach ($hit["highlight"]["description"] as $description)
                 {
-                    if(preg_match($pattern,$description,$matches))
+                    if(preg_match_all($pattern,$description,$matches))
                     {
-                        $tempVariable = $this->removeHighlight($matches[0]);
-                        array_push($highlights, $tempVariable);
+                        foreach ($matches[1] as $key => $value)
+                        {
+                            $tempVariable = $this->removeHighlight($value);
+                            array_push($highlights, $tempVariable);
+                        }
                     }
                 }
             }
@@ -920,10 +923,13 @@ class SearchService
                 {
                     foreach ($innerHit["highlight"]["sections.content"] as $content)
                     {
-                        if(preg_match($pattern,$content,$matches))
+                        if(preg_match_all($pattern,$content,$matches))
                         {
-                            $tempVariable = $this->removeHighlight($matches[0]);
-                            array_push($highlights, $tempVariable);
+                            foreach ($matches[1] as $key => $value)
+                            {
+                                $tempVariable = $this->removeHighlight($value);
+                                array_push($highlights, $tempVariable);
+                            }
                         }
                     }
                 }
@@ -932,10 +938,13 @@ class SearchService
                 {
                     foreach ($innerHit["highlight"]["sections.title"] as $titleContent)
                     {
-                        if(preg_match($pattern,$titleContent,$matches))
+                        if(preg_match_all($pattern,$titleContent,$matches))
                         {
-                            $tempVariable = $this->removeHighlight($matches[0]);
-                            array_push($highlights, $tempVariable);
+                            foreach ($matches[1] as $key => $value)
+                            {
+                                $tempVariable = $this->removeHighlight($value);
+                                array_push($highlights, $tempVariable);
+                            }
                         }
                     }
                 }
