@@ -7,6 +7,7 @@ use Plenty\Plugin\Controller;
 use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Templates\Twig;
 use PlentyManual\Services\PageService;
+use PlentyManual\Services\PlentyManualChangelog;
 use PlentyManual\Services\SearchService;
 use Plenty\Modules\System\Contracts\WebstoreConfigurationRepositoryContract;
 use Plenty\Plugin\Application;
@@ -93,14 +94,17 @@ class ContentController extends Controller
         );
     }
 
-    public function showStartpage(): string
+    public function showStartpage(PlentyManualChangelog $plentyManualChangelog): string
     {
+        $changelogEntries = $plentyManualChangelog->getChangelog();
+
         return $this->twig->render(
             "PlentyManual::Startpage",
             [
                 "pages"     => $this->pageService->getPages(),
                 "lang"      => $this->lang,
-                "searchUrl" => $this->searchUrl
+                "searchUrl" => $this->searchUrl,
+                'changelog' => $changelogEntries,
             ]
         );
     }
