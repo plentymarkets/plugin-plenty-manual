@@ -14,7 +14,7 @@ class PlentyManualChangelog
 {
     const FORUM_HOST = 'https://forum.plentymarkets.com';
 
-    const MAX_CHANGELOG_ENTRIES = 5;
+    const MAX_CHANGELOG_ENTRIES = 4;
 
     /**
      * @var array
