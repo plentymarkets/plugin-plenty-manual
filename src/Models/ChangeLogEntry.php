@@ -3,10 +3,10 @@
 namespace PlentyManual\Models;
 
 /**
- * Class ChangelogEntry
+ * Class ChangeLogEntry
  * @package PlentyManual\Models
  */
-class ChangelogEntry implements \JsonSerializable
+class ChangeLogEntry implements \JsonSerializable
 {
     /**
      * @var string

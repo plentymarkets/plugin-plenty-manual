@@ -4,7 +4,7 @@ namespace PlentyManual\Services;
 
 use Plenty\Plugin\CachingRepository;
 use Plenty\Plugin\ConfigRepository;
-use PlentyManual\Models\ChangelogEntry;
+use PlentyManual\Models\ChangeLogEntry;
 
 /**
  * Class PlentyManualChangelog
@@ -74,8 +74,8 @@ class PlentyManualChangelog
                 if (is_array($result)) {
                     $counter = 0;
                     foreach ($result as $topic) {
-                        /** @var ChangelogEntry $changelogEntry */
-                        $changelogEntry = pluginApp(ChangelogEntry::class);
+                        /** @var ChangeLogEntry $changelogEntry */
+                        $changelogEntry = pluginApp(ChangeLogEntry::class);
                         $changelogEntry->setTitle($topic['title']);
                         $changelogEntry->setUrl(self::FORUM_HOST . '/t/' . $topic['slug'] . '/' . $topic['id']);
                         $changelogEntry->setDateString($topic['created_at']);
