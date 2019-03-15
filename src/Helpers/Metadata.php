@@ -594,7 +594,7 @@ class Metadata {
 								"urlName" => "best-practices",
 								"url" => "/basics/arbeiten-mit-plentymarkets/statistik/best-practices",
 								"level" => 4,
-								"title" => "Best Practices",
+								"title" => "Best Practices: Statistik",
 								"keywords" => "Kennzahlen, App-Statistik, verkaufte Aufträge, verkaufte Artikel, Umsatz anzeigen, neue Kunden anzeigen, Dashboard",
 								"description" => "",
 								"navAlias" => "",
@@ -754,7 +754,7 @@ class Metadata {
 				"title" => "Best Practices: Artikel und Kategorien",
 				"keywords" => "Webshop, Mandant, Artikel, Kategorien, Sichtbarkeit, Verfügbarkeit, Checkliste, FAQ",
 				"description" => "",
-				"navAlias" => "Best Practices: Artikel und Kategorien",
+				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Artikel und Kategorien. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
@@ -779,11 +779,11 @@ class Metadata {
 						"urlName" => "best-practices_kategorien",
 						"url" => "/artikel/best-practices/best-practices_kategorien",
 						"level" => 3,
-						"title" => "Best Practices: Artikel und Kategorien",
+						"title" => "Best Practices: Kategorien",
 						"keywords" => "Webshop, Mandant, Artikel, Kategorien, Sichtbarkeit, Verfügbarkeit, Checkliste, FAQ",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Artikel und Kategorien. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Kategorien. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
