@@ -754,10 +754,41 @@ class Metadata {
 				"title" => "Best Practices: Artikel und Kategorien",
 				"keywords" => "Webshop, Mandant, Artikel, Kategorien, Sichtbarkeit, Verfügbarkeit, Checkliste, FAQ",
 				"description" => "",
-				"navAlias" => "",
+				"navAlias" => "Best Practices: Artikel und Kategorien",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Artikel und Kategorien. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
+				"children" => 				[
+					[
+						"id" => "d970892504dc61edc7c650f1c932245f",
+						"path" => "artikel/best-practices/best-practices_artikel",
+						"position" => 70,
+						"urlName" => "best-practices_artikel",
+						"url" => "/artikel/best-practices/best-practices_artikel",
+						"level" => 3,
+						"title" => "Best Practices: Artikel",
+						"keywords" => "Webshop, Mandant, Artikel, Kategorien, Sichtbarkeit, Verfügbarkeit, Checkliste, FAQ",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Artikel. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "7e9c83c53995f00635989ba79d9d293a",
+						"path" => "artikel/best-practices/best-practices_kategorien",
+						"position" => 70,
+						"urlName" => "best-practices_kategorien",
+						"url" => "/artikel/best-practices/best-practices_kategorien",
+						"level" => 3,
+						"title" => "Best Practices: Artikel und Kategorien",
+						"keywords" => "Webshop, Mandant, Artikel, Kategorien, Sichtbarkeit, Verfügbarkeit, Checkliste, FAQ",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Artikel und Kategorien. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
 			]
 		],
 		"hasChildren" => true
