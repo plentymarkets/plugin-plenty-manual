@@ -355,11 +355,11 @@ class Metadata {
 						"urlName" => "ssl-zertifikat",
 						"url" => "/basics/admin-aufgaben/ssl-zertifikat",
 						"level" => 3,
-						"title" => "SSL-Zertifikat bestellen",
+						"title" => "Best Practice: SSL-Zertifikat bestellen",
 						"keywords" => "Arbeiten mit plentymarkets, SSL-Zertifikat",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich SSL-Zertifikat bestellen. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: SSL-Zertifikat bestellen. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
