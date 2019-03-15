@@ -2158,6 +2158,21 @@ class Metadata {
 								"linkListInto" => "Willkommen im Themenbereich Notizen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "ae34ecc1ef315dcb67eedc36894aeec5",
+								"path" => "daten/daten-importieren/sync-typen/elasticSync-newsletter-empfaenger",
+								"position" => 100,
+								"urlName" => "elasticSync-newsletter-empfaenger",
+								"url" => "/daten/daten-importieren/sync-typen/elasticSync-newsletter-empfaenger",
+								"level" => 4,
+								"title" => "Newsletter-Empfänger",
+								"keywords" => "ElasticSync, Import, Sync, Newsletter, Newsletter-Empfänger, Newsletter-Adresse",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Newsletter-Empfänger. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
