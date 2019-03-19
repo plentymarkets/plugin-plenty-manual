@@ -6942,21 +6942,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "4ccb478ee70ef9e03a36f716caa6757f",
-								"path" => "data/importing-data/sync-types/elasticSync-facets",
-								"position" => 40,
-								"urlName" => "elasticSync-facets",
-								"url" => "/en/data/importing-data/sync-types/elasticSync-facets",
-								"level" => 4,
-								"title" => "Facets",
-								"keywords" => "ElasticSync, import, facets, sync type, sync, faceted search",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Facets. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "3c15c96e5a389d916053e681334d0efb",
 								"path" => "data/importing-data/sync-types/elasticSync-properties",
 								"position" => 40,
@@ -6968,6 +6953,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Properties. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "4ccb478ee70ef9e03a36f716caa6757f",
+								"path" => "data/importing-data/sync-types/elasticSync-facets",
+								"position" => 40,
+								"urlName" => "elasticSync-facets",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-facets",
+								"level" => 4,
+								"title" => "Facets",
+								"keywords" => "ElasticSync, import, facets, sync type, sync, faceted search",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Facets. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7058,6 +7058,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Warehouse. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "2e6eeb730433579a57877137008265bb",
+								"path" => "data/importing-data/sync-types/elasticSync-newsletter-recipient",
+								"position" => 100,
+								"urlName" => "elasticSync-newsletter-recipient",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-newsletter-recipient",
+								"level" => 4,
+								"title" => "Newsletter recipient",
+								"keywords" => "ElasticSync, Import, Sync, Newsletter, Newsletter recipient, Newsletter address",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Newsletter recipient. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]

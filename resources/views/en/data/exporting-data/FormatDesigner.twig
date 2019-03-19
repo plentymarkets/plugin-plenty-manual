@@ -112,16 +112,18 @@
 <li><a href="#1200"><span>9.</span><span> Contacts</span></a>
 <ul class="sectlevel2">
 <li><a href="#1205"><span>9.1.</span><span> Contact</span></a></li>
-<li><a href="#1210"><span>9.2.</span><span> BillingAddress</span></a></li>
-<li><a href="#1220"><span>9.3.</span><span> DeliveryAddress</span></a></li>
-<li><a href="#1230"><span>9.4.</span><span> Account</span></a></li>
-<li><a href="#1240"><span>9.5.</span><span> ContactOption</span></a></li>
-<li><a href="#1250"><span>9.6.</span><span> BillingAddressOption</span></a></li>
-<li><a href="#1260"><span>9.7.</span><span> DeliveryAddressOption</span></a></li>
-<li><a href="#1270"><span>9.8.</span><span> ContactBank</span></a></li>
-<li><a href="#1280"><span>9.9.</span><span> Exporting custom values</span></a></li>
+<li><a href="#1207"><span>9.2.</span><span> contactAllowedMethodOfPayment</span></a></li>
+<li><a href="#1210"><span>9.3.</span><span> BillingAddress</span></a></li>
+<li><a href="#1220"><span>9.4.</span><span> DeliveryAddress</span></a></li>
+<li><a href="#1230"><span>9.5.</span><span> Account</span></a></li>
+<li><a href="#1240"><span>9.6.</span><span> ContactOption</span></a></li>
+<li><a href="#1250"><span>9.7.</span><span> BillingAddressOption</span></a></li>
+<li><a href="#1260"><span>9.8.</span><span> DeliveryAddressOption</span></a></li>
+<li><a href="#1270"><span>9.9.</span><span> ContactBank</span></a></li>
+<li><a href="#1280"><span>9.10.</span><span> Exporting custom values</span></a></li>
 </ul>
 </li>
+<li><a href="#1300"><span>10.</span><span> Newsletter recipient</span></a></li>
 </ul>
 </li>
 </ul>
@@ -134,7 +136,7 @@
     <h1>Creating data formats with FormatDesigner</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The FormatDesigner is part of the plugin ElasticSync and allows you to create formats for exporting using the ElasticExport. All formats created with FormatDesigner are available in the <strong>Data » Elastic export</strong> menu. Using the FormatDesigner, you can not only set CSV options and select data fields, but also manipulate numeric data values during export.</p>
+<p>The FormatDesigner is part of the ElasticSync plugin and allows you to create formats for exporting using the ElasticExport. All formats created with FormatDesigner are available in the <strong>Data » Elastic export</strong> menu. Using the FormatDesigner, you can not only set CSV options and select data fields, but also manipulate numeric data values during export.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -145,7 +147,7 @@
 <td class="content">
 <div class="title">Plugin updated?</div>
 <div class="paragraph">
-<p>The FormatDesigner is part of the plugin ElasticSync. ElasticSync is constantly updated and improved. As such, go to <strong>Plugins » Plugin overview » Open plugin set</strong> and check that you use the latest version of ElasticSync before creating syncs or export formats.</p>
+<p>The FormatDesigner is part of the ElasticSync plugin. ElasticSync is constantly updated and improved. As such, go to <strong>Plugins » Plugin overview » Open plugin set</strong> and check that you use the latest version of ElasticSync before creating syncs or exporting formats.</p>
 </div>
 </td>
 </tr>
@@ -350,11 +352,10 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Item feedback</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">free1;<br>
-free2;<br>
-free3;<br>
-…​<br>
-free20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">+
+ <br>
+ <br>
+…​<br></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Free text fields 1 to 20</p></td>
 </tr>
 <tr>
@@ -1413,7 +1414,7 @@ Component:Quantity;Component:Quantity</p></td>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">supplierRowId</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Supplier link ID</p></td>
 </tr>
 <tr>
@@ -5642,6 +5643,9 @@ D = 3</p></td>
 </div><div class="sect1">
 <h2 id="1200">9. Contacts</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>With formats of the type <strong>Contacts</strong>, you export contact data.</p>
+</div>
 <div class="sect2">
 <h3 id="1205">9.1. Contact</h3>
 <div class="paragraph">
@@ -5707,7 +5711,7 @@ Possible values: 0 = not blocked, 1 = blocked.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rating</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rating of the contact. This is an internal rating only. 5 red stars are the worst and 5 yellow stars are the best rating. Possible values:<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rating of the contact. This is an internal rating only. 5 red stars are the worst possible rating and 5 yellow stars are the best possible rating. Possible values:<br>
 -5 = 5 red stars (worst possible rating)<br>
 -4 = 4 red stars<br>
 -3 = 3 red stars<br>
@@ -5780,12 +5784,47 @@ Possible values: 0 = not blocked, 1 = blocked.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1210">9.2. BillingAddress</h3>
+<h3 id="1207">9.2. contactAllowedMethodOfPayment</h3>
 <div class="paragraph">
-<p><a href="#table-fields-billing-address-contacts">Table 84</a> lists the fields available for exporting invoice address data.</p>
+<p><a href="#table-fields-contactallowedmethodofpayment-contacts">Table 84</a> lists the fields available for exporting allowed methods of payment saved in the contact data record.</p>
+</div>
+<table id="table-fields-contactallowedmethodofpayment-contacts" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 84. Fields for exporting allowed methods of payment of the contact</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allow Debit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information that states whether the contact is allowed to pay via direct debit.<br>
+Possible values:<br>
+0 = do not allow<br>
+1 = allow</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allowInvoice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information that states whether the contact is allowed to pay via invoice.<br>
+Possible values:<br>
+0 = do not allow<br>
+1 = allow</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1210">9.3. BillingAddress</h3>
+<div class="paragraph">
+<p><a href="#table-fields-billing-address-contacts">Table 85</a> lists the fields available for exporting invoice address data.</p>
 </div>
 <table id="table-fields-billing-address-contacts" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 84. Fields for exporting invoice address data</caption>
+<caption class="title">Table 85. Fields for exporting invoice address data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5861,12 +5900,12 @@ Possible values: 0 = not blocked, 1 = blocked.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1220">9.3. DeliveryAddress</h3>
+<h3 id="1220">9.4. DeliveryAddress</h3>
 <div class="paragraph">
 <p><a href="#table-fields-delivery-address">Table 36</a> lists the fields available for exporting delivery address data.</p>
 </div>
 <table id="table-fields-delivery-address-contacts" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 85. Fields for exporting delivery address data</caption>
+<caption class="title">Table 86. Fields for exporting delivery address data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5942,12 +5981,12 @@ Possible values: 0 = not blocked, 1 = blocked.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1230">9.4. Account</h3>
+<h3 id="1230">9.5. Account</h3>
 <div class="paragraph">
-<p><a href="#table-fields-company">Table 86</a> lists the fields available for exporting company data.</p>
+<p><a href="#table-fields-company">Table 87</a> lists the fields available for exporting company data.</p>
 </div>
 <table id="table-fields-company" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 86. Fields for exporting company data</caption>
+<caption class="title">Table 87. Fields for exporting company data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6011,12 +6050,12 @@ Possible values: 0 = not blocked, 1 = blocked.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1240">9.5. ContactOption</h3>
+<h3 id="1240">9.6. ContactOption</h3>
 <div class="paragraph">
-<p><a href="#table-fields-contact-option">Table 87</a> lists the fields available for exporting contact options.</p>
+<p><a href="#table-fields-contact-option">Table 88</a> lists the fields available for exporting contact options.</p>
 </div>
 <table id="table-fields-contact-option" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 87. Fields for exporting contact options</caption>
+<caption class="title">Table 88. Fields for exporting contact options</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6136,12 +6175,12 @@ Possible values: 0 = not blocked, 1 = blocked.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1250">9.6. BillingAddressOption</h3>
+<h3 id="1250">9.7. BillingAddressOption</h3>
 <div class="paragraph">
-<p><a href="#table-fields-billing-address-option-contacts">Table 88</a> lists the fields available for exporting invoice address options.</p>
+<p><a href="#table-fields-billing-address-option-contacts">Table 89</a> lists the fields available for exporting invoice address options.</p>
 </div>
 <table id="table-fields-billing-address-option-contacts" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 88. Fields for exporting invoice address options</caption>
+<caption class="title">Table 89. Fields for exporting invoice address options</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6205,12 +6244,12 @@ Possible values: 0 = not blocked, 1 = blocked.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1260">9.7. DeliveryAddressOption</h3>
+<h3 id="1260">9.8. DeliveryAddressOption</h3>
 <div class="paragraph">
-<p><a href="#table-fields-delivery-address-option-contacts">Table 89</a> lists the fields available for exporting delivery address options.</p>
+<p><a href="#table-fields-delivery-address-option-contacts">Table 90</a> lists the fields available for exporting delivery address options.</p>
 </div>
 <table id="table-fields-delivery-address-option-contacts" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 89. Fields for exporting delivery address options</caption>
+<caption class="title">Table 90. Fields for exporting delivery address options</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6274,12 +6313,12 @@ Possible values: 0 = not blocked, 1 = blocked.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1270">9.8. ContactBank</h3>
+<h3 id="1270">9.9. ContactBank</h3>
 <div class="paragraph">
-<p><a href="#table-fields-contact-bank">Table 90</a> lists the fields available for exporting bank details.</p>
+<p><a href="#table-fields-contact-bank">Table 91</a> lists the fields available for exporting bank details.</p>
 </div>
 <table id="table-fields-contact-bank" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 90. Fields for exporting bank data</caption>
+<caption class="title">Table 91. Fields for exporting bank data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6372,12 +6411,12 @@ onOff</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1280">9.9. Exporting custom values</h3>
+<h3 id="1280">9.10. Exporting custom values</h3>
 <div class="paragraph">
-<p><a href="#table-fields-contacts-own-values">Table 91</a> lists the fields available for exporting custom values.</p>
+<p><a href="#table-fields-contacts-own-values">Table 92</a> lists the fields available for exporting custom values.</p>
 </div>
 <table id="table-fields-contacts-own-values" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 91. Fields for exporting custom values</caption>
+<caption class="title">Table 92. Fields for exporting custom values</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6396,6 +6435,92 @@ onOff</p></td>
 </tbody>
 </table>
 </div>
+</div>
+</div><div class="sect1">
+<h2 id="1300">10. Newsletter recipient</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="#table-fields-newsletter">Table 93</a> lists the fields available for exporting newsletter data.</p>
+</div>
+<table id="table-fields-newsletter" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 93. Fields for exporting newsletter data</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Newsletter recipient</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the email address to which the newsletter will be sent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the folder in which the email address of the newsletter recipient is saved</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contactId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">firstName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First name of the newsletter recipient</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last name of the newsletter recipient</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email address of the newsletter recipient</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gender</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gender of the newsletter recipient</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">birthday</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date of birth of the newsletter recipient</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp when the newsletter email was sent to the recipient</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">templateLang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Language of the newsletter template.<br>
+<strong><em>Note:</em></strong> The language is set in the <strong>Email message</strong> tab of the email template.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">confirmedTimestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp when the recipient confirmed the newsletter registration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ipAddress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IP address that the contact used to confirm the newsletter registration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">confirmationURL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL that the contact used to confirm the newsletter registration.<br>
+<strong><em>Note:</em></strong> The confirmation link can be inserted in the email template via the template variable <strong>NewsletterConfirmURL</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>custom_value</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">custom_value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Own value</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </main>
