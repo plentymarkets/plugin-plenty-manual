@@ -452,6 +452,37 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich FTP-Zugang. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "1ea546e67f9fa66eeb87743b17d54ade",
+						"path" => "basics/admin-aufgaben/best-practices",
+						"position" => 120,
+						"urlName" => "best-practices",
+						"url" => "/basics/admin-aufgaben/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: Admin-Aufgaben",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Admin-Aufgaben. Hier finden Sie folgende Informationen:",
+						"children" => 						[
+							[
+								"id" => "645367dc005d633de1223eed81a474e0",
+								"path" => "basics/admin-aufgaben/best-practices/ssl-zertifikat_bestellen",
+								"position" => 1,
+								"urlName" => "ssl-zertifikat_bestellen",
+								"url" => "/basics/admin-aufgaben/best-practices/ssl-zertifikat_bestellen",
+								"level" => 4,
+								"title" => "Best Practice: SSL-Zertifikat bestellen",
+								"keywords" => "SSL, Let's_Encrypt, let's_enrypt, Lets_Encrypt, lets_encrypt, COMODO, comodo",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					]
 				],
 				"hasChildren" => true
