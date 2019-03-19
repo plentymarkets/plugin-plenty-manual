@@ -12,6 +12,7 @@
 <li><a href="#1510"><span>4.1.</span><span> Zeilen einer Zuordnung für den Import aktivieren</span></a></li>
 <li><a href="#1520"><span>4.2.</span><span> Werte mit der RegEx-Funktion ersetzen</span></a></li>
 <li><a href="#1520"><span>4.3.</span><span> Eigene Zuordnung</span></a></li>
+<li><a href="#1530"><span>4.4.</span><span> Importdatei durch die eigene Zuordnung manipulieren</span></a></li>
 </ul>
 </li>
 <li><a href="#1600"><span>5.</span><span> Importdaten filtern</span></a></li>
@@ -258,7 +259,7 @@ Je nach gewählter Option werden weitere Einstellungen sichtbar:</p>
 <p><strong>Passwort (Pflichtfeld)</strong> = Passwort für FTP-Zugang eingeben.</p>
 </li>
 <li>
-<p><strong>Dateiname</strong> = Pfad und Name der Datei eingeben, aus der Daten importiert werden sollen. Der Dateiname muss auf .csv enden.
+<p><strong>Dateiname</strong> = Pfad und Name der Datei eingeben, aus der Daten importiert werden sollen. Der Dateiname muss auf .csv enden.<br>
 <strong><em>Hinweis:</em></strong> Wildcards können im Feld <strong>Dateiname</strong> verwendet werden, indem z.B. ein Teil des Dateinamens durch ein <strong>*</strong> ersetzt wird. Wildcards nur in Kombination mit der Option <strong>Datei nach erfolgreichem Import in Archiv verschieben</strong> verwenden.</p>
 </li>
 <li>
@@ -656,6 +657,59 @@ Auf letzterer muss die Einstellung der RegEx engine auf PCRE umgestellt werden. 
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="1530">4.4. Importdatei durch die eigene Zuordnung manipulieren</h3>
+<div class="paragraph">
+<p>Im folgenden Abschnitt soll die Verwendung der eigenen Zuordnung am Beispiel von <strong>Versandprofil aktivieren</strong> demonstriert werden.<br>
+Voraussetzung für diese Vorgehensweise ist, dass bereits ein Artikel/eine Variante sowie ein Versandprofil vorhanden ist.</p>
+</div>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/versandprofil.png" alt="versandprofil">
+</div>
+<div class="title">Bild 1. Versandprofil</div>
+</div>
+<div class="paragraph">
+<p>Um einen Artikel/eine Variante mit einem Versandprofil zu verknüpfen, wird die ID benötigt. Denn allein mit dem Namen des Versandprofils, der in der Importdatei steht, kann keine Verknüpfung erstellt werden.</p>
+</div>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/artikel-id.png" alt="artikel id">
+</div>
+<div class="title">Bild 2. Artikel-ID</div>
+</div>
+<div class="paragraph">
+<p>Verwenden Sie dafür die eigene Zuordnung in ElasticSync, denn dort werden die Daten während des Imports manipuliert. Wählen Sie dazu als Quelle der Importdaten den Wert <strong>Eigene Zuordnung</strong>.</p>
+</div>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/eigene-zuordnung.png" alt="eigene zuordnung">
+</div>
+<div class="title">Bild 3. Eigene Zuordnung</div>
+</div>
+<div class="paragraph">
+<p>Wählen Sie bei <strong>Typ</strong> die Spalte aus der Importdatei. In diesem Fall ist es die Spalte <strong>Versandprofil</strong>.</p>
+</div>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/typ.png" alt="typ">
+</div>
+<div class="title">Bild 4. Spalte der Importdatei wählen</div>
+</div>
+<div class="paragraph">
+<p>Bestimmen Sie nun, welcher Wert in der Importdatei zu welchem Wert geändert werden soll, um den Import erfolgreich durchführen zu können. In diesem Fall soll DPD zur ID des Versandprofils (hier ID 7) geändert werden. Das Gleiche können Sie auch für mehrere Versandprofile tun, indem Sie noch weitere eigene Zuordnungen hinzufügen.
+Führen Sie anschließend den Import aus. Das Versandprofil wird verknüpft.</p>
+</div>
+<div id="bild-daten-importieren" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/wert-bestimmen.png" alt="wert bestimmen">
+</div>
+<div class="title">Bild 5. Wert bestimmen</div>
+</div>
+<div class="paragraph">
+<p>Die eigene Zuordnung eignet sich für viele weitere Fälle. Dies gilt insbesondere dort, wo interne IDs von plentymarkets eine Rolle spielen, wie z.B. bei Merkmalnamen, Artikelmarkierungen, Zahlungsmethoden, Länder/Staaten ISO Codes usw.</p>
+</div>
 </div>
 </div>
 </div><div class="sect1">
