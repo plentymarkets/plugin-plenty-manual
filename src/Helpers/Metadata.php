@@ -4505,9 +4505,24 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "e935cbf141a43bc181a797a3f2c849fd",
+				"path" => "maerkte/etsy",
+				"position" => 60,
+				"urlName" => "etsy",
+				"url" => "/maerkte/etsy",
+				"level" => 2,
+				"title" => "Etsy",
+				"keywords" => "Etsy, Marktplatz",
+				"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Etsy in Ihrem plentymarkets System ein.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Etsy. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "d89aed996cf5fb7f0ccc3beefd92a81a",
 				"path" => "maerkte/flubit",
-				"position" => 60,
+				"position" => 70,
 				"urlName" => "flubit",
 				"url" => "/maerkte/flubit",
 				"level" => 2,
@@ -4522,7 +4537,7 @@ class Metadata {
 			[
 				"id" => "42c66fb238f9d81c2b23e07e20dc7343",
 				"path" => "maerkte/fruugo",
-				"position" => 70,
+				"position" => 80,
 				"urlName" => "fruugo",
 				"url" => "/maerkte/fruugo",
 				"level" => 2,
@@ -4537,7 +4552,7 @@ class Metadata {
 			[
 				"id" => "2b1ad3a9a3e9f4f41d0b78bb3303a213",
 				"path" => "maerkte/grosshandel",
-				"position" => 80,
+				"position" => 90,
 				"urlName" => "grosshandel",
 				"url" => "/maerkte/grosshandel",
 				"level" => 2,
@@ -4552,7 +4567,7 @@ class Metadata {
 			[
 				"id" => "624f519a6b668b1785b98519f44e6ba6",
 				"path" => "maerkte/hood",
-				"position" => 90,
+				"position" => 100,
 				"urlName" => "hood",
 				"url" => "/maerkte/hood",
 				"level" => 2,
@@ -4567,7 +4582,7 @@ class Metadata {
 			[
 				"id" => "905f3581f6feb270f00178b141edf0fc",
 				"path" => "maerkte/idealo",
-				"position" => 100,
+				"position" => 110,
 				"urlName" => "idealo",
 				"url" => "/maerkte/idealo",
 				"level" => 2,
@@ -4613,7 +4628,7 @@ class Metadata {
 			[
 				"id" => "d76da78315dda8674c27b553913e3a1c",
 				"path" => "maerkte/kauflux",
-				"position" => 110,
+				"position" => 120,
 				"urlName" => "kauflux",
 				"url" => "/maerkte/kauflux",
 				"level" => 2,
@@ -4628,7 +4643,7 @@ class Metadata {
 			[
 				"id" => "28f50b79073a9b0846d8f2a7db300b85",
 				"path" => "maerkte/mercateo",
-				"position" => 120,
+				"position" => 130,
 				"urlName" => "mercateo",
 				"url" => "/maerkte/mercateo",
 				"level" => 2,
@@ -4643,7 +4658,7 @@ class Metadata {
 			[
 				"id" => "ee10baf97a9fc616224ab2b2bc6c8dc2",
 				"path" => "maerkte/neckermann",
-				"position" => 130,
+				"position" => 140,
 				"urlName" => "neckermann",
 				"url" => "/maerkte/neckermann",
 				"level" => 2,
@@ -4689,7 +4704,7 @@ class Metadata {
 			[
 				"id" => "654bfffa21d7672d700bc3c2ae139acf",
 				"path" => "maerkte/otto",
-				"position" => 140,
+				"position" => 150,
 				"urlName" => "otto",
 				"url" => "/maerkte/otto",
 				"level" => 2,
@@ -4704,7 +4719,7 @@ class Metadata {
 			[
 				"id" => "d8643eeff680f2f8779a309271d34096",
 				"path" => "maerkte/pixmania",
-				"position" => 150,
+				"position" => 160,
 				"urlName" => "pixmania",
 				"url" => "/maerkte/pixmania",
 				"level" => 2,
@@ -4719,7 +4734,7 @@ class Metadata {
 			[
 				"id" => "158be29dc6c52c4499110eb3ecc13529",
 				"path" => "maerkte/plus-gartenxxl",
-				"position" => 160,
+				"position" => 170,
 				"urlName" => "plus-gartenxxl",
 				"url" => "/maerkte/plus-gartenxxl",
 				"level" => 2,
@@ -4734,7 +4749,7 @@ class Metadata {
 			[
 				"id" => "854422d6850225cd12e47222ff10b250",
 				"path" => "maerkte/rakuten",
-				"position" => 170,
+				"position" => 180,
 				"urlName" => "rakuten",
 				"url" => "/maerkte/rakuten",
 				"level" => 2,
@@ -4780,7 +4795,7 @@ class Metadata {
 			[
 				"id" => "da609c5895eff8091e0e474a63c6a4f0",
 				"path" => "maerkte/real-de",
-				"position" => 180,
+				"position" => 190,
 				"urlName" => "real-de",
 				"url" => "/maerkte/real-de",
 				"level" => 2,
@@ -4826,7 +4841,7 @@ class Metadata {
 			[
 				"id" => "6feff9ab88d3f1a88cdcddc0e8c6d738",
 				"path" => "maerkte/restposten-de",
-				"position" => 190,
+				"position" => 200,
 				"urlName" => "restposten-de",
 				"url" => "/maerkte/restposten-de",
 				"level" => 2,
@@ -4839,9 +4854,24 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "82f4b58d664a1f98c3e0fa248e20cf30",
+				"path" => "maerkte/rewe",
+				"position" => 210,
+				"urlName" => "rewe",
+				"url" => "/maerkte/rewe",
+				"level" => 2,
+				"title" => "REWE",
+				"keywords" => "Rewe, Marktplatz",
+				"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz REWE in Ihrem plentymarkets System ein.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich REWE. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "3b03ece4c9065b58b8432f91f67530d9",
 				"path" => "maerkte/ricardo-ch",
-				"position" => 200,
+				"position" => 220,
 				"urlName" => "ricardo-ch",
 				"url" => "/maerkte/ricardo-ch",
 				"level" => 2,
@@ -4856,7 +4886,7 @@ class Metadata {
 			[
 				"id" => "c08b0ba0fbc43264631fd7c797e32b89",
 				"path" => "maerkte/shopgate",
-				"position" => 210,
+				"position" => 230,
 				"urlName" => "shopgate",
 				"url" => "/maerkte/shopgate",
 				"level" => 2,
@@ -4871,7 +4901,7 @@ class Metadata {
 			[
 				"id" => "b7b70e4294ba56587a5ceb3d6f872ea8",
 				"path" => "maerkte/yatego",
-				"position" => 220,
+				"position" => 240,
 				"urlName" => "yatego",
 				"url" => "/maerkte/yatego",
 				"level" => 2,
@@ -4886,7 +4916,7 @@ class Metadata {
 			[
 				"id" => "8198d7f31430176e4aa7ced6a163375a",
 				"path" => "maerkte/zalando",
-				"position" => 230,
+				"position" => 250,
 				"urlName" => "zalando",
 				"url" => "/maerkte/zalando",
 				"level" => 2,
