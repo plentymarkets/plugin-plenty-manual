@@ -12,6 +12,7 @@
 <li><a href="#1510"><span>4.1.</span><span> Activating lines of a mapping for the import</span></a></li>
 <li><a href="#1520"><span>4.2.</span><span> Replacing values with the RegEx function</span></a></li>
 <li><a href="#1520"><span>4.3.</span><span> Own assignment</span></a></li>
+<li><a href="#1530"><span>4.4.</span><span> Manipulating an import file via the own assignment</span></a></li>
 </ul>
 </li>
 <li><a href="#1600"><span>5.</span><span> Filtering import data</span></a></li>
@@ -205,7 +206,7 @@ Depending on the selected option, the following settings are displayed:</p>
 <p><strong>Password (Mandatory field)</strong> = Enter the password for the FTP access.</p>
 </li>
 <li>
-<p><strong>File name</strong> = Enter the path and the name of the file from which the data is to be imported. The file name must end with .csv.
+<p><strong>File name</strong> = Enter the path and the name of the file from which the data is to be imported. The file name must end with .csv.<br>
 <strong><em>Note:</em></strong> You can use wildcard characters in the field <strong>File name</strong> by e.g. replacing a part of the file name with a <strong>*</strong>. Only use wildcard characters in combination with the option <strong>Move file to archive when import was successful</strong>.</p>
 </li>
 <li>
@@ -658,6 +659,58 @@ On the latter, the RegEx engine setting has to be changed to PCRE. This can be d
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect2">
+<h3 id="1530">4.4. Manipulating an import file via the own assignment</h3>
+<div class="paragraph">
+<p>In the following section we will demonstrate the usage of the own assignment shown by the example of <strong>activating the shipping profile</strong>.<br>
+For this procedure, an item/a variant as well as a shipping profile has to exist.</p>
+</div>
+<div id="image-importing-data" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/en-elasticsync-shipping-profile.png" alt="en elasticsync shipping profile">
+</div>
+<div class="title">Figure 1. Shipping profile</div>
+</div>
+<div class="paragraph">
+<p>In order to link an item/a variant to a shipping profile, the ID is needed. Only with the name of the shipping profile that is shown in the import file, no link can be created.</p>
+</div>
+<div id="image-importing-data" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/en-elasticsync-item-id.png" alt="en elasticsync item id">
+</div>
+<div class="title">Figure 2. Item ID</div>
+</div>
+<div class="paragraph">
+<p>Use the own assignment in ElasticSync, which manipulates the data during the import. As source for the import data, select the value <strong>Own assignment</strong>.</p>
+</div>
+<div id="image-importing-data" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/en-elasticsync-own-assignment.png" alt="en elasticsync own assignment">
+</div>
+<div class="title">Figure 3. Own assignment</div>
+</div>
+<div class="paragraph">
+<p>For <strong>type</strong>, select the column from the import file. In this case, it is the column <strong>Shipping profile</strong>.</p>
+</div>
+<div id="image-importing-data" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/en-elasticsync-type.png" alt="en elasticsync type">
+</div>
+<div class="title">Figure 4. Select column from import file</div>
+</div>
+<div class="paragraph">
+<p>Determine, which value in the import file is to be changed to which value, in order to successfully carry out the import. In this case, DPD shall be changed to the ID of the shipping profile (here ID 7). You can also do this for several shipping profiles by adding further own assignments. Afterwards, carry out the import. The shipping profile is linked.</p>
+</div>
+<div id="image-importing-data" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/en-elasticsnyc-determine-value.png" alt="en elasticsnyc determine value">
+</div>
+<div class="title">Figure 5. Determining a value</div>
+</div>
+<div class="paragraph">
+<p>The own assignment can be used for many other cases. This applies in particular where internal IDs of plentymarkets play a role (e.g. characteristic names, item flags, payment methods, country ISO codes etc.).</p>
+</div>
 </div>
 </div>
 </div><div class="sect1">
