@@ -5237,11 +5237,11 @@ class Metadata {
 						"urlName" => "FAQ",
 						"url" => "/automatisierung/prozesse/FAQ",
 						"level" => 3,
-						"title" => "Erste Hilfe für Prozesse und plentyBase",
+						"title" => "Erste Hilfe für Prozesse",
 						"keywords" => "Erste Hilfe, Client, plentymarkets Client, Client-Probleme, plentyBase, Prozesse, Prozessprobleme, alles kaputt, SOS Prozesse",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Erste Hilfe für Prozesse und plentyBase. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Erste Hilfe für Prozesse. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
