@@ -452,6 +452,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Admin-Aufgaben. Hier finden Sie folgende Informationen:",
 						"children" => 						[
 							[
+								"id" => "61be6687692032e4d19d25e0867a9069",
+								"path" => "basics/admin-aufgaben/best-practices/dns-selbsthilfe",
+								"position" => 1,
+								"urlName" => "dns-selbsthilfe",
+								"url" => "/basics/admin-aufgaben/best-practices/dns-selbsthilfe",
+								"level" => 4,
+								"title" => "Best Practice: DNS-Einstellungen prüfen und anpassen",
+								"keywords" => "DNS, CNAME, www.www., www.www, A-Record, DNS_NAME, NOT_RESOLVED",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "645367dc005d633de1223eed81a474e0",
 								"path" => "basics/admin-aufgaben/best-practices/ssl-zertifikat_bestellen",
 								"position" => 1,

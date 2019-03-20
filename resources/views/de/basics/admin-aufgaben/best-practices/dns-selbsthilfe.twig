@@ -1,0 +1,271 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Best Practice: DNS-Einstellungen prüfen und anpassen</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hier erfährst du mehr über die DNS-Einstellungen.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_was_bedeutet_dns">Was bedeutet "DNS"?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Das <strong>D</strong>omain <strong>N</strong>ame <strong>S</strong>ystem (<strong>DNS</strong>) ist einer der wichtigsten Dienste in vielen IP-basierten Netzwerken. Seine Hauptaufgabe ist die Beantwortung von Anfragen zur Namensauflösung.</p>
+</div>
+<div class="paragraph">
+<p>Namen sind leichter zu merken als eine bis zu 12-stellige Zahlenkombination, aus diesem Grund werden für das Internet sog. Domains verwendet (wie z. Bsp. <code>plentymarkets.eu</code>). Ein Aufruf dieser Domain in einem Internetbrowser erzeugt eine Anfrage an diverse DNS-Server, die versuchen diese Domain in eine IP-Adresse aufzulösen und auf diese Weise den für den Inhalt zuständigen Server der Domain <code>plentymarkets.eu</code> zu erreichen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Beispiel:</strong><br>
+IP-Adressen sind, wie der Name schon sagt, Adressen. Will man in der realen Welt ein Paket verschicken, so braucht man dafür die Adresse des Empfängers. Bei Netzwerken ist das nicht anders, nur dass hier Netzwerkpakete verschickt werden und dass sich die Adressen nicht aus Straße, Hausnummer, Postleitzahl und Ort zusammensetzen. Stattdessen kommen klar definierte Zahlenfolgen zum Einsatz, die <strong>I</strong>nternet-<strong>P</strong>rotokoll-<strong>Adressen</strong>, oder eben kurz <strong>IP-Adressen</strong>, genannt werden.</p>
+</div>
+<table class="tableblock frame-topbot grid-all stretch">
+<caption class="title">Table 1. illustrate_IP_addresses</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Adressteil 1</th>
+<th class="tableblock halign-left valign-top">Adressteil 2</th>
+<th class="tableblock halign-left valign-top">Adressteil 3</th>
+<th class="tableblock halign-left valign-top">Adressteil 4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Post</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Straße</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hausnummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postleitzahl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ort</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Netzwerk</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">192</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">168</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>*Diese Tabelle dient lediglich der Veranschaulichung. Die Gewichtung der Adressteile stehen in keinem Zusammenhang.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_welche_dns_daten_müssen_angepasst_werden">Welche DNS-Daten müssen angepasst werden?</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_a_record">A-Record</h3>
+<div class="paragraph">
+<p>Mit einem A-Resource-Record wird einem DNS-Namen (z. B. einer <a href="https://de.wikipedia.org/wiki/Uniform_Resource_Locator" target="_blank" rel="noopener">URL</a> wie <code>plentymarkets.eu</code>) eine IPv4-Adresse zugeordnet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cname">CNAME</h3>
+<div class="paragraph">
+<p>Ein CNAME Resource Record (CNAME RR) ist im Domain Name System (DNS) dazu vorgesehen, einer Domäne einen weiteren Namen zuzuordnen. Ein CNAME-Eintrag darf nicht für die eigentliche Domain (<code>plentymarkets.eu</code>), sondern lediglich für Subdomains (<code>knowledge.plentymarkets.eu</code>) verwendet werden! Ein CNAME-Eintrag überschreibt grundsätzlich alle anderen Einträge der gleichen Subdomain.</p>
+</div>
+<div class="paragraph">
+<p><strong>Beispiel:</strong><br>
+Der Name eines Shops lautet <code>plentymarkets.eu</code>. Wir möchten, dass dieser Shop ebenfalls unter dem Namen <code>www.plentymarkets.eu</code> zu erreichen ist.
+Durch das Eintragen eines CNAMES für <code>www.plentymarkets.eu</code> wird dafür gesorgt, dass <code>www.plentymarkets.eu</code> die Anfrage zum Darstellen der Internetseite an <code>plentymarkets.eu</code> weitergibt.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Für den Betrieb des Systems auf <a href="https://forum.plentymarkets.com/t/information-source-autoscaling-informationen-und-koordination/46996" target="_blank" rel="noopener">AutoScaling</a> ist ein CNAME-Record für die Subdomain <code><strong>www</strong>.plentymarkets.eu</code> zwingend erforderlich!
+Der hierfür notwendige Eintrag wird in Deinem Service-Center an der jeweiligen Domain dargestellt.</p>
+</div>
+<div id="styleguide-assets" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/domains/assets/dnsselbsthilfe_pic001.png" alt="dnsselbsthilfe pic001">
+</div>
+<div class="title">Figure 1. check_dns_settings1</div>
+</div>
+<div class="paragraph">
+<p>Gleiches gilt für alle anderen Sub-Domains.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_wie_sehe_ich_meine_aktuell_hinterlegten_dns_einträge">Wie sehe ich meine aktuell hinterlegten DNS-Einträge?</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_per_internet_browser">Per Internet-Browser</h3>
+<div class="paragraph">
+<p>Auf der Internetseite <a href="https://www.whatsmydns.net/" target="_blank" rel="noopener">whatsmydns.net</a> kann kann man sehen welche DNS-Einstellungen bei Deinem Domain-Provider hinterlegt sind. Weiterhin bietet die Seite die Möglichkeit den Stand der weltweiten Verteilung der DNS-Daten auf allen DNS-Servern nachzuverfolgen.</p>
+</div>
+<div class="sect3">
+<h4 id="_a_record_eintrag_ermitteln">A-Record-Eintrag ermitteln</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Trage in Feld <mark><strong>A</strong></mark> die Domain und Top-Level-Domain ein, dessen A-Record ermittelt werden soll - z. Bsp. <code>plentymarkets.eu</code> (<strong>nicht</strong> <code><strong>www.</strong>plentymarkets.eu</code>).</p>
+</li>
+<li>
+<p>Wähle bei Feld <mark><strong>B</strong></mark> den zu ermittelnden Ressource-Record-Eintrag aus - in diesem Fall "<strong>A</strong>".</p>
+</li>
+<li>
+<p>Starte die Suche durch einen Klick auf <strong>Search</strong>.</p>
+</li>
+</ol>
+</div>
+<div id="styleguide-assets" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/domains/assets/dnsselbsthilfe_pic002.png" alt="dnsselbsthilfe pic002">
+</div>
+<div class="title">Figure 2. check_dns_settings2</div>
+</div>
+<div class="paragraph">
+<p>Es erscheint eine Liste der weltweiten Haupt-DNS-Server mit dem derzeit eingetragenen, dem Server bekannten A-Record in Form einer IPv4-Adresse.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cname_record_eintrag_ermitteln">CNAME-Record-Eintrag ermitteln</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Trage in Feld <mark><strong>A</strong></mark> die Subdomain, Hauptdomain und Top-Level-Domain ein, dessen CNAME-Record ermittelt werden soll, z.B. www.meinshop.de.</p>
+</li>
+<li>
+<p>Wähle bei Feld <mark><strong>B</strong></mark> den zu ermittelnden Ressource-Record-Eintrag aus - in diesem Fall "<strong>CNAME</strong>".</p>
+</li>
+<li>
+<p>Starte die Suche durch einen Klick auf <strong>Search</strong>.</p>
+</li>
+</ol>
+</div>
+<div id="styleguide-assets" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/domains/assets/dnsselbsthilfe_pic003.png" alt="dnsselbsthilfe pic003">
+</div>
+<div class="title">Figure 3. check_dns_settings3</div>
+</div>
+<div class="paragraph">
+<p>Es erscheint eine Liste der weltweiten Haupt-DNS-Server mit dem derzeit eingetragenen, dem Server bekannten CNAME-Record.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_linux_macos_und_windows_kommandozeilentools">Linux, MacOS und Windows Kommandozeilentools</h3>
+<div class="sect3">
+<h4 id="_a_record_eintrag_ermitteln_2">A-Record-Eintrag ermitteln:</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne auf Deinem Linux/MacOS ein Terminalfenster, oder auf Deinem Windows die Eingabeaufforderung</p>
+</li>
+<li>
+<p>Trage zum Ermitteln des A-Record-Eintrages folgenden Befehl ein:<br>
+<code>nslookup plentymarkets.eu</code> (<strong>nicht</strong> <code><strong>www.</strong>plentymarkets.eu</code>)</p>
+</li>
+<li>
+<p>Es erscheint die nachfolgende Ausgabe mit dem entsprechenden A-Record-Eintrag</p>
+</li>
+</ol>
+</div>
+<div id="styleguide-assets" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/domains/assets/dnsselbsthilfe_pic004.png" alt="dnsselbsthilfe pic004">
+</div>
+<div class="title">Figure 4. check_dns_settings4</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cname_record_eintrag_ermitteln_2">CNAME-Record-Eintrag ermitteln:</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne auf Deinem Linux/MacOS ein Terminalfenster, oder auf Deinem Windows die Eingabeaufforderung</p>
+</li>
+<li>
+<p>Trage zum Ermitteln des CNAME-Record-Eintrages folgenden Befehl ein:<br>
+<code>nslookup -q=CNAME www.plentymarkets.eu</code> (<strong>Bitte exakte Schreibweise beachten!</strong>)</p>
+</li>
+<li>
+<p>Es erscheint die nachfolgende Ausgabe mit dem entsprechenden CNAME-Record-Eintrag</p>
+</li>
+</ol>
+</div>
+<div id="styleguide-assets" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/domains/assets/dnsselbsthilfe_pic005.png" alt="dnsselbsthilfe pic005">
+</div>
+<div class="title">Figure 5. check_dns_settings5</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wo_finde_ich_die_benötigten_korrekten_dns_einträge">Wo finde ich die benötigten, korrekten DNS-Einträge?</h3>
+<div class="paragraph">
+<p>Die korrekten DNS-Einstellungen findest Du in Deinem Service-Center<br>
+<strong>Service-Center » Systeme » Plenty ID » Tab: Domain » Domain-ID » Aktuelle DNS Einstellungen</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Beispielauszug:</strong></p>
+</div>
+<div id="styleguide-assets" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/domains/assets/dnsselbsthilfe_pic001.png" alt="dnsselbsthilfe pic001">
+</div>
+<div class="title">Figure 6. check_dns_settings1</div>
+</div>
+<div class="paragraph">
+<p>Der Login in das Service-Center ist über den nachfolgenden Link zu erreichen:
+<a href="https://www.plentymarkets.eu/my-account/" class="bare" target="_blank" rel="noopener">https://www.plentymarkets.eu/my-account/</a></p>
+</div>
+<div class="paragraph">
+<p>Für den Login wird als Anmeldename die E-Mail-Adresse benötigt, die auf Deiner plentymarkets-Rechnung angegeben wurde, sowie das dazugehörige Passwort.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_wie_ändere_ich_meine_extern_hinterlegten_dns_einträge">Wie ändere ich meine extern hinterlegten DNS-Einträge?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Prinzipiell liegt die Verantwortung, dass die DNS-Einstellungen bei <strong>extern gehosteten Domains</strong> beim Domain-Inhaber - also bei Dir. Plentymarkets bietet keinen offiziellen Support für das Einrichten von externen Domains.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Das Ändern von DNS-Einstellungen sollte nur von fachkundigem Personal durchgeführt werden, da Fehlkonfigurationen zur Nichterreichbarkeit der Domain führen und damit die Systemerreichbarkeit negativ beeinflussen können.<br></p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Im Forum sind ein paar Screenshots von verschiedenen Domain-Providern hinterlegt, anhand deren man die notwendigen Schritte zum Hinterlegen der korrekten DNS-Einstellungen nachvollziehen kann:
+<a href="https://forum.plentymarkets.com/t/selbsthilfe-bei-dns-problemen-wie-hinterlege-ich-korrekte-dns-einstellungen/65559/7">Link zum plentymarkets-Forum</a></p>
+</div>
+</div>
+</div>
+</main>
