@@ -838,21 +838,6 @@ class Metadata {
 		"linkListInto" => "Willkommen im Themenbereich Warenwirtschaft. Hier finden Sie folgende Informationen:",
 		"children" => 		[
 			[
-				"id" => "512d46bb9a4ed9339e388961c23cbc26",
-				"path" => "warenwirtschaft/umbuchungen-vornehmen",
-				"position" => 0,
-				"urlName" => "umbuchungen-vornehmen",
-				"url" => "/warenwirtschaft/umbuchungen-vornehmen",
-				"level" => 2,
-				"title" => "Umbuchungen vornehmen",
-				"keywords" => "Umbuchung, Lager-Umbuchung, Lagerort, Lagerorte, PO Lieferschein",
-				"description" => "Erfahren Sie, wie Sie mit Lager-Umbuchungen in Ihrem plentymarkets System arbeiten.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Umbuchungen vornehmen. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "f56ebddcd70cf0c60da1fac89d08fead",
 				"path" => "warenwirtschaft/lager-einrichten",
 				"position" => 10,
@@ -894,6 +879,21 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Warenbestände verwalten. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "512d46bb9a4ed9339e388961c23cbc26",
+				"path" => "warenwirtschaft/umbuchungen-vornehmen",
+				"position" => 35,
+				"urlName" => "umbuchungen-vornehmen",
+				"url" => "/warenwirtschaft/umbuchungen-vornehmen",
+				"level" => 2,
+				"title" => "Umbuchungen vornehmen",
+				"keywords" => "Umbuchung, Lager-Umbuchung, Lagerort, Lagerorte, PO Lieferschein",
+				"description" => "Erfahren Sie, wie Sie mit Lager-Umbuchungen in Ihrem plentymarkets System arbeiten.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Umbuchungen vornehmen. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			],
