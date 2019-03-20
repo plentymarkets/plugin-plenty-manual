@@ -5018,7 +5018,7 @@ class Metadata {
 		"title" => "Plugins",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Übersicht",
+		"navAlias" => "Plugins kennenlernen",
 		"linkListInto" => "Willkommen im Themenbereich Plugins. Hier finden Sie folgende Informationen:",
 		"children" => 		[
 			[
