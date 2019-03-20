@@ -349,21 +349,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "0caa8111b1889b4be6ae9c1815ae6b7a",
-						"path" => "basics/admin-aufgaben/ssl-zertifikat",
-						"position" => 20,
-						"urlName" => "ssl-zertifikat",
-						"url" => "/basics/admin-aufgaben/ssl-zertifikat",
-						"level" => 3,
-						"title" => "Best Practice: SSL-Zertifikat bestellen",
-						"keywords" => "Arbeiten mit plentymarkets, SSL-Zertifikat",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practice: SSL-Zertifikat bestellen. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "0b865b404c4b478cfa13c884a36dd06e",
 						"path" => "basics/admin-aufgaben/benutzer-verwalten",
 						"position" => 30,
