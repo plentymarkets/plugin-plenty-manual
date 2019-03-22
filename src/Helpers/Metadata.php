@@ -5904,6 +5904,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "b98933657d64dcbbd94fca816220120f",
+				"path" => "stock-management/working-with-redistributions",
+				"position" => 35,
+				"urlName" => "working-with-redistributions",
+				"url" => "/en/stock-management/working-with-redistributions",
+				"level" => 2,
+				"title" => "Working with redistributions",
+				"keywords" => "Redistribution, warehouse redistribution, storage location, storage locations, PO delivery note",
+				"description" => "Learn how to work with warehouse redistributions in your plentymarkets system.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Working with redistributions. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "1049e7b822f6eb85bbf56556cbe15845",
 				"path" => "stock-management/managing-reorders",
 				"position" => 40,
