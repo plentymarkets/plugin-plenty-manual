@@ -7353,6 +7353,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Exporting data. The following information is available:",
 				"children" => 				[
 					[
+						"id" => "5c7f269162b81dda0d33f3deb83244c0",
+						"path" => "data/exporting-data/best-practices-elastic-export",
+						"position" => 0,
+						"urlName" => "best-practices-elastic-export",
+						"url" => "/en/data/exporting-data/best-practices-elastic-export",
+						"level" => 3,
+						"title" => "Best Practices: Elastic Export",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "eca87a63276c70e326fd9b52b3d628b4",
 						"path" => "data/exporting-data/elastic-export",
 						"position" => 10,
