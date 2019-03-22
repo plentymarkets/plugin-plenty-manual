@@ -2437,6 +2437,21 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Daten exportieren. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
+						"id" => "458b9437340eb6db2e4ce567a2d06867",
+						"path" => "daten/daten-exportieren/best-practices-elastischer-export",
+						"position" => 0,
+						"urlName" => "best-practices-elastischer-export",
+						"url" => "/daten/daten-exportieren/best-practices-elastischer-export",
+						"level" => 3,
+						"title" => "Best Practices: Elastischer Export",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "9824a1fe39bed1cad696d61c7d056b9c",
 						"path" => "daten/daten-exportieren/elastischer-export",
 						"position" => 10,
