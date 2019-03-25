@@ -5479,7 +5479,7 @@ class Metadata {
 					[
 						"id" => "5152327ae5b9d8da5dc667ed8bdc8f67",
 						"path" => "basics/admin-tasks/manage-users",
-						"position" => 20,
+						"position" => 30,
 						"urlName" => "manage-users",
 						"url" => "/en/basics/admin-tasks/manage-users",
 						"level" => 3,
@@ -5492,9 +5492,24 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "72b751e31d4c25da8030f33ab4e3ed25",
+						"path" => "basics/admin-tasks/rest-api",
+						"position" => 40,
+						"urlName" => "rest-api",
+						"url" => "/en/basics/admin-tasks/rest-api",
+						"level" => 3,
+						"title" => "Setting up REST API",
+						"keywords" => "",
+						"description" => "Use REST API to communicate with external systems.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Setting up REST API. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "b8b3ae467a86e9ef3880187a464ca2a0",
 						"path" => "basics/admin-tasks/printer",
-						"position" => 30,
+						"position" => 50,
 						"urlName" => "printer",
 						"url" => "/en/basics/admin-tasks/printer",
 						"level" => 3,
@@ -5509,7 +5524,7 @@ class Metadata {
 					[
 						"id" => "70983090ab7ddfa1e71a825f56f1ff5d",
 						"path" => "basics/admin-tasks/installing-plentybase",
-						"position" => 50,
+						"position" => 60,
 						"urlName" => "installing-plentybase",
 						"url" => "/en/basics/admin-tasks/installing-plentybase",
 						"level" => 3,
@@ -5524,7 +5539,7 @@ class Metadata {
 					[
 						"id" => "757a75743f749d911dc0b214e0f3a92c",
 						"path" => "basics/admin-tasks/version-cycle",
-						"position" => 60,
+						"position" => 70,
 						"urlName" => "version-cycle",
 						"url" => "/en/basics/admin-tasks/version-cycle",
 						"level" => 3,
@@ -5533,21 +5548,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Changing state of development. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "9737fe6f3e43a847a6c337265a88974a",
-						"path" => "basics/admin-tasks/migration-guide",
-						"position" => 70,
-						"urlName" => "migration-guide",
-						"url" => "/en/basics/admin-tasks/migration-guide",
-						"level" => 3,
-						"title" => "Migration guide",
-						"keywords" => "plentymarkets 7, Migration, Migration guide",
-						"description" => "Guide for migrating to plentymarkets 7",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Migration guide. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5563,6 +5563,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic FTP access. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "9737fe6f3e43a847a6c337265a88974a",
+						"path" => "basics/admin-tasks/migration-guide",
+						"position" => 80,
+						"urlName" => "migration-guide",
+						"url" => "/en/basics/admin-tasks/migration-guide",
+						"level" => 3,
+						"title" => "Migration guide",
+						"keywords" => "plentymarkets 7, Migration, Migration guide",
+						"description" => "Guide for migrating to plentymarkets 7",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Migration guide. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
