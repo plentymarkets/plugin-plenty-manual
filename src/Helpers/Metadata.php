@@ -364,9 +364,24 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "217dcdd6a31bc5a281dd4aa8ddfc8cdb",
+						"path" => "basics/admin-aufgaben/rest-api",
+						"position" => 40,
+						"urlName" => "rest-api",
+						"url" => "/basics/admin-aufgaben/rest-api",
+						"level" => 3,
+						"title" => "REST-API-Schnittstellen einrichten",
+						"keywords" => "",
+						"description" => "Nutzen Sie REST-API, um mit externen Systemen zu kommunizieren.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich REST-API-Schnittstellen einrichten. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "67ad3debe25043ccc2b7413679c18bc3",
 						"path" => "basics/admin-aufgaben/drucker",
-						"position" => 40,
+						"position" => 50,
 						"urlName" => "drucker",
 						"url" => "/basics/admin-aufgaben/drucker",
 						"level" => 3,
@@ -381,7 +396,7 @@ class Metadata {
 					[
 						"id" => "2fa08b76410335a74d4c629bdb62bcbd",
 						"path" => "basics/admin-aufgaben/plentybase-installieren",
-						"position" => 50,
+						"position" => 60,
 						"urlName" => "plentybase-installieren",
 						"url" => "/basics/admin-aufgaben/plentybase-installieren",
 						"level" => 3,
@@ -396,7 +411,7 @@ class Metadata {
 					[
 						"id" => "36f70da854cc9bb0c29b4a2d442b5d10",
 						"path" => "basics/admin-aufgaben/versionszyklus",
-						"position" => 60,
+						"position" => 70,
 						"urlName" => "versionszyklus",
 						"url" => "/basics/admin-aufgaben/versionszyklus",
 						"level" => 3,
@@ -405,21 +420,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Entwicklungsstand ändern. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "d5ea7b85278572f82f1ee95a57eaaf9b",
-						"path" => "basics/admin-aufgaben/migrationsleitfaden",
-						"position" => 70,
-						"urlName" => "migrationsleitfaden",
-						"url" => "/basics/admin-aufgaben/migrationsleitfaden",
-						"level" => 3,
-						"title" => "Migrationsleitfaden plentymarkets 7",
-						"keywords" => "plentymarkets 7, Migration, Migrationsleitfaden",
-						"description" => "Leitfaden zur Migration auf plentymarkets 7",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Migrationsleitfaden plentymarkets 7. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -435,6 +435,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich FTP-Zugang. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "d5ea7b85278572f82f1ee95a57eaaf9b",
+						"path" => "basics/admin-aufgaben/migrationsleitfaden",
+						"position" => 80,
+						"urlName" => "migrationsleitfaden",
+						"url" => "/basics/admin-aufgaben/migrationsleitfaden",
+						"level" => 3,
+						"title" => "Migrationsleitfaden plentymarkets 7",
+						"keywords" => "plentymarkets 7, Migration, Migrationsleitfaden",
+						"description" => "Leitfaden zur Migration auf plentymarkets 7",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Migrationsleitfaden plentymarkets 7. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],

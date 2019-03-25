@@ -1,0 +1,172 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#endanwender"><span>1.</span><span> Für Endanwender</span></a></li>
+<li><a href="#entwickler"><span>2.</span><span> Für Entwickler</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>REST-API-Schnittstellen einrichten</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bei dem Begriff REST-API handelt es sich um eine Zusammensetzung aus zwei Akronymen. Dabei steht REST für <em>Representational State Transfer</em> (dt. etwa: repräsentative Zustandsübertragung) und API für <em>application programming interface</em>, eine Schnittstelle zwischen zwei Systemen. Allgemein gesagt ermöglicht diese Schnittstelle externen Aufrufen, Daten an das plentymarkets System zu senden oder Daten von dem System abzurufen. Beispielsweise könnten dadurch also alle Kontakte aus der Kontaktlisten auf einmal abgerufen werden.</p>
+</div>
+<div class="paragraph">
+<p>Auch in manchen Plugins, etwa <a href="https://marketplace.plentymarkets.com/plugins/channels/marktplaetze/ebayoauth2_4787" target="_blank" rel="noopener">eBay OAuth2</a> und <a href="https://marketplace.plentymarkets.com/plugins/channels/marktplaetze/etsy_4689" target="_blank" rel="noopener">Etsy</a>, werden sogenannte REST-Routen verwendet, um mit dem plentymarkets System zu kommunizieren. Um dies zu ermöglichen, müssen bestimmte Berechtigungen vergeben werden.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="endanwender">1. Für Endanwender</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sollen Plugins mit REST-Routen im System eingebunden werden, muss diesen Plugins über einen Benutzer der Benutzerklasse Variabel ermöglicht werden, auf Teile des plentymarkets Systems zuzugreifen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Benutzerkonto der Klasse Variable erstellen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Systemeinstellungen » Einstellungen » Benutzer » Konten</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Neu</strong>.<br>
+→ Das Fenster <strong>Neuen Benutzer anlegen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Geben Sie den <strong>Benutzernamen</strong> ein.</p>
+</li>
+<li>
+<p>Geben Sie den <strong>realen Namen</strong> ein.</p>
+</li>
+<li>
+<p>Geben Sie das <strong>Passwort</strong> ein.</p>
+</li>
+<li>
+<p>Wiederholen Sie das Passwort.</p>
+</li>
+<li>
+<p>Wählen Sie die Benutzerklasse <strong>Variabel</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Der Benutzername darf kein Leerzeichen enthalten und muss mindestens 5 Zeichen lang sein.</p>
+</div>
+<div class="paragraph">
+<p>Im Tab REST API legen Sie fest, welche Berechtigungen ein Benutzerkonto der Klasse Variabel für die REST API erhält. Standardmäßig sind keine REST-API-Berechtigungen vergeben. Berechtigungen werden für die verschiedenen Module und Submodule der REST API separat vergeben. Unter Autorisierung legen Sie zum Beispiel fest, ob REST-API-Benutzerkonten Berechtigungen anzeigen bzw. Benutzerrollen anzeigen, erstellen und löschen dürfen.</p>
+</div>
+<div class="paragraph">
+<p>Welche Rechte ein Plugin benötigt, ist in der Beschreibung des jeweiligen Plugins vermerkt.</p>
+</div>
+<div class="paragraph instruction">
+<p>REST-API-Bereiche freischalten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Systemeinstellungen » Einstellungen » Benutzer » Konten</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie einen Benutzer.</p>
+</li>
+<li>
+<p>Öffnen Sie das Tab <strong>Berechtigung</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie das Tab <strong>REST API</strong>.</p>
+</li>
+<li>
+<p>Aktivieren Sie komplette Bereiche oder klappen Sie Bereiche auf, um einzelne Berechtigungen zu aktivieren, die dem Benutzerkonto zur Verfügung stehen sollen.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Nachträglich ergänzte, untergeordnete Berechtigungen eines Hauptmoduls werden automatisch für einen Benutzerkonto aktiviert, wenn das Hauptmodul aktiviert ist. Sie können diese Funktion deaktivieren und neue, untergeordnete Berechtigungen manuell aktivieren.</p>
+</div>
+<div class="paragraph instruction">
+<p>Neue, untergeordnete Berechtigungen manuell aktivieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffnen Sie das Menü <strong>System » Systemeinstellungen » Einstellungen » Benutzer » Konten</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie einen Benutzer.</p>
+</li>
+<li>
+<p>Öffnen Sie das Tab <strong>Berechtigung</strong>.</p>
+</li>
+<li>
+<p>Öffnen Sie das Tab <strong>REST API</strong>.</p>
+</li>
+<li>
+<p>Klicken Sie auf <strong>Neue, untergeordnete Berechtigungen manuell aktivieren</strong>.</p>
+</li>
+<li>
+<p><strong>Speichern</strong> Sie die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="entwickler">2. Für Entwickler</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Entwicklerseite</div>
+<div class="paragraph">
+<p>Die Entwicklerseite ist nur auf Englisch verfügbar.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Wenn Sie ein Plugin erstellen und vermarkten möchten, das REST-Routen verwendet, können Sie dies kostenfrei über <a href="https://marketplace.plentymarkets.com/" target="_blank" rel="noopener">plentyMarketplace</a> tun. Neben plentymarkets Plugins können hier auch Einträge zu externen Angeboten integriert werden. <a href="https://www.plentymarkets.eu/service/partner-werden/" target="_blank" rel="noopener">Registrieren Sie sich hier als Partner.</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://developers.plentymarkets.com/rest-doc/gettingstarted" target="_blank" rel="noopener">Allgemeine Informationen</a> zur plentymarkets REST-API finden Sie auf unserer Entwicklerseite. Dort gibt es auch eine <a href="https://developers.plentymarkets.com/rest-doc" target="_blank" rel="noopener">Übersicht der verfügbaren Routen</a> und verschiedene Anwendungsbeispiele in Form von Tutorials:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://developers.plentymarkets.com/tutorials/customerdata" target="_blank" rel="noopener">Kontakt und Benutzerkonto erstellen</a></p>
+</li>
+<li>
+<p><a href="https://developers.plentymarkets.com/tutorials/order-data" target="_blank" rel="noopener">Auftragsdaten abrufen</a></p>
+</li>
+<li>
+<p><a href="https://developers.plentymarkets.com/tutorials/item-data" target="_blank" rel="noopener">Artikel erstellen</a></p>
+</li>
+<li>
+<p><a href="https://developers.plentymarkets.com/tutorials/bulk-routes">Mehrere Daten auf einmal aktualisieren</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
