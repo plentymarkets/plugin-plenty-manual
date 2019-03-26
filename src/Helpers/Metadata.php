@@ -9583,21 +9583,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "f7e23d39a606dbf6d58640be9eef78b3",
-						"path" => "markets/amazon/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/markets/amazon/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Amazon",
-						"keywords" => "Amazon, Multi-Channel, Prime, FBA",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: Amazon. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "e6a4f4e1e1c687ad4745d513c531b63c",
 						"path" => "markets/amazon/best-practices-amazon-item-data-export",
 						"position" => 20,
@@ -9609,6 +9594,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "f7e23d39a606dbf6d58640be9eef78b3",
+						"path" => "markets/amazon/best-practices",
+						"position" => 20,
+						"urlName" => "best-practices",
+						"url" => "/en/markets/amazon/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: Amazon",
+						"keywords" => "Amazon, Multi-Channel, Prime, FBA",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Best Practices: Amazon. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -9930,21 +9930,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "47556b3dc2d899af6cdfcddc542d45aa",
-						"path" => "markets/idealo-checkout/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/markets/idealo-checkout/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: idealo",
-						"keywords" => "idealo, Item",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: idealo. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "b58b5aa75c66fe10fe26675dfb49d0bb",
 						"path" => "markets/idealo-checkout/best-practices-idealo-free-text-field",
 						"position" => 20,
@@ -9956,6 +9941,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "47556b3dc2d899af6cdfcddc542d45aa",
+						"path" => "markets/idealo-checkout/best-practices",
+						"position" => 20,
+						"urlName" => "best-practices",
+						"url" => "/en/markets/idealo-checkout/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: idealo",
+						"keywords" => "idealo, Item",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Best Practices: idealo. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -10021,21 +10021,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "04a18a23a939ae552d40b10c28d6ee82",
-						"path" => "markets/neckermann/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/markets/neckermann/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Neckermann.at",
-						"keywords" => "neckermann, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: Neckermann.at. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "2d1181265eecae960f491a244bbdae84",
 						"path" => "markets/neckermann/best-practices-neckermann-cancellation-returns",
 						"position" => 20,
@@ -10047,6 +10032,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "04a18a23a939ae552d40b10c28d6ee82",
+						"path" => "markets/neckermann/best-practices",
+						"position" => 20,
+						"urlName" => "best-practices",
+						"url" => "/en/markets/neckermann/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: Neckermann.at",
+						"keywords" => "neckermann, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Best Practices: Neckermann.at. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -10127,21 +10127,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "6406074239f98aca957cc9a2e928bd6a",
-						"path" => "markets/rakuten/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/markets/rakuten/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Rakuten",
-						"keywords" => "rakuten.de, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "e1d2113f067b7e0d605f669bf4211a45",
 						"path" => "markets/rakuten/best-practices-rakuten-item-export",
 						"position" => 20,
@@ -10150,6 +10135,21 @@ class Metadata {
 						"level" => 3,
 						"title" => "Best practice: Rakuten",
 						"keywords" => "Rakuten, Multi-Channel, item export, elastic export",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "6406074239f98aca957cc9a2e928bd6a",
+						"path" => "markets/rakuten/best-practices",
+						"position" => 20,
+						"urlName" => "best-practices",
+						"url" => "/en/markets/rakuten/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: Rakuten",
+						"keywords" => "rakuten.de, Multi-Channel",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
@@ -10188,21 +10188,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "f0be301e8a0ebd5adb3548e2339ef484",
-						"path" => "markets/real-de/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/markets/real-de/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: real.de",
-						"keywords" => "real.de, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: real.de. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "e33c290b9ec4c759bf66a6521f6ab1c6",
 						"path" => "markets/real-de/best-practices-real-integration-shipping-groups",
 						"position" => 20,
@@ -10214,6 +10199,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "f0be301e8a0ebd5adb3548e2339ef484",
+						"path" => "markets/real-de/best-practices",
+						"position" => 20,
+						"urlName" => "best-practices",
+						"url" => "/en/markets/real-de/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: real.de",
+						"keywords" => "real.de, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Best Practices: real.de. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
