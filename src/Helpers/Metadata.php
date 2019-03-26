@@ -2452,21 +2452,6 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Daten exportieren. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
-						"id" => "458b9437340eb6db2e4ce567a2d06867",
-						"path" => "daten/daten-exportieren/best-practices-elastischer-export",
-						"position" => 0,
-						"urlName" => "best-practices-elastischer-export",
-						"url" => "/daten/daten-exportieren/best-practices-elastischer-export",
-						"level" => 3,
-						"title" => "Best Practices: Elastischer Export",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "9824a1fe39bed1cad696d61c7d056b9c",
 						"path" => "daten/daten-exportieren/elastischer-export",
 						"position" => 10,
@@ -2482,9 +2467,24 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "458b9437340eb6db2e4ce567a2d06867",
+						"path" => "daten/daten-exportieren/best-practices-elastischer-export",
+						"position" => 20,
+						"urlName" => "best-practices-elastischer-export",
+						"url" => "/daten/daten-exportieren/best-practices-elastischer-export",
+						"level" => 3,
+						"title" => "Best Practice: Elastischer Export",
+						"keywords" => "Elastischer Export, Elastic Export, Artikelexport, elastisch, elastic",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "2a8d8b128cde807b27d9f9a56a2127f9",
 						"path" => "daten/daten-exportieren/FormatDesigner",
-						"position" => 20,
+						"position" => 30,
 						"urlName" => "FormatDesigner",
 						"url" => "/daten/daten-exportieren/FormatDesigner",
 						"level" => 3,
@@ -2499,7 +2499,7 @@ class Metadata {
 					[
 						"id" => "fa381b6aa96f2804ef0f01a2a67c173e",
 						"path" => "daten/daten-exportieren/dropshipping-elasticexport-bp",
-						"position" => 30,
+						"position" => 40,
 						"urlName" => "dropshipping-elasticexport-bp",
 						"url" => "/daten/daten-exportieren/dropshipping-elasticexport-bp",
 						"level" => 3,
@@ -2514,7 +2514,7 @@ class Metadata {
 					[
 						"id" => "4a1b876004753d2414814546cc702afc",
 						"path" => "daten/daten-exportieren/kataloge-verwalten",
-						"position" => 40,
+						"position" => 50,
 						"urlName" => "kataloge-verwalten",
 						"url" => "/daten/daten-exportieren/kataloge-verwalten",
 						"level" => 3,
@@ -4485,6 +4485,96 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Amazon. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "04623413dfd13d5cd119c31e06753019",
+						"path" => "maerkte/amazon/best-practices-amazon-artikeldatenexport",
+						"position" => 20,
+						"urlName" => "best-practices-amazon-artikeldatenexport",
+						"url" => "/maerkte/amazon/best-practices-amazon-artikeldatenexport",
+						"level" => 3,
+						"title" => "Best Practice: Artikeldatenexport",
+						"keywords" => "Amazon, Artikel, Export,",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "c80f830af1c961bccb7488554b338daa",
+						"path" => "maerkte/amazon/best-practices-amazon-fehler-request-throttled",
+						"position" => 30,
+						"urlName" => "best-practices-amazon-fehler-request-throttled",
+						"url" => "/maerkte/amazon/best-practices-amazon-fehler-request-throttled",
+						"level" => 3,
+						"title" => "Best Practice: Fehler _Request is throttled_",
+						"keywords" => "Amazon, Prime, Auftragsablauf",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "47f53a25c8a6c8900853e5d6dbf026a2",
+						"path" => "maerkte/amazon/best-practices-amazon-manuelle-berichtserstellung-fba",
+						"position" => 40,
+						"urlName" => "best-practices-amazon-manuelle-berichtserstellung-fba",
+						"url" => "/maerkte/amazon/best-practices-amazon-manuelle-berichtserstellung-fba",
+						"level" => 3,
+						"title" => "Best Practice: Manuelle Berichtserstellung für FBA-Aufträge und Retouren",
+						"keywords" => "Amazon, Artikel, Export",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "b8b4846d66485e1f50e23403f3358570",
+						"path" => "maerkte/amazon/best-practices-amazon-mfn-auftragsimport",
+						"position" => 50,
+						"urlName" => "best-practices-amazon-mfn-auftragsimport",
+						"url" => "/maerkte/amazon/best-practices-amazon-mfn-auftragsimport",
+						"level" => 3,
+						"title" => "Best Practice: MFN-Auftragsimport",
+						"keywords" => "Amazon, Auftrag, Import, Händlerversand, MFN",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "61a1bb520fdab76165cd449c9d440833",
+						"path" => "maerkte/amazon/best-practices-amazon-prime",
+						"position" => 60,
+						"urlName" => "best-practices-amazon-prime",
+						"url" => "/maerkte/amazon/best-practices-amazon-prime",
+						"level" => 3,
+						"title" => "Best Practice: Amazon Prime",
+						"keywords" => "Amazon, Prime, Auftragsablauf",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "affae991dd10ddfba526f424fd3cb272",
+						"path" => "maerkte/amazon/best-practices-amazon-vcs",
+						"position" => 70,
+						"urlName" => "best-practices-amazon-vcs",
+						"url" => "/maerkte/amazon/best-practices-amazon-vcs",
+						"level" => 3,
+						"title" => "Best Practice: Rechnungsservice VCS nutzen",
+						"keywords" => "Amazon, VCS, Rechnungsservice, Rechnung, Umsatzsteuerservice",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -4502,6 +4592,51 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich eBay. Hier finden Sie folgende Informationen:",
 				"children" => 				[
+					[
+						"id" => "13532cfeb5b06339ef582b0a07dc8a83",
+						"path" => "maerkte/ebay/best-practices-ebay-faq",
+						"position" => 0,
+						"urlName" => "best-practices-ebay-faq",
+						"url" => "/maerkte/ebay/best-practices-ebay-faq",
+						"level" => 3,
+						"title" => "FAQ",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "6dd65db7fb72e6d885cf2816a54dc2e4",
+						"path" => "maerkte/ebay/best-practices-ebay-listing-freischalten",
+						"position" => 0,
+						"urlName" => "best-practices-ebay-listing-freischalten",
+						"url" => "/maerkte/ebay/best-practices-ebay-listing-freischalten",
+						"level" => 3,
+						"title" => "Best Practice: Artikel für eBay freischalten",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "4ec8639cd89e7be88bc11423020b0cd5",
+						"path" => "maerkte/ebay/best-practices-ebay-nicht-mehr-vorraetig-option",
+						"position" => 0,
+						"urlName" => "best-practices-ebay-nicht-mehr-vorraetig-option",
+						"url" => "/maerkte/ebay/best-practices-ebay-nicht-mehr-vorraetig-option",
+						"level" => 3,
+						"title" => "Best Practice: "Nicht mehr vorrätig"-Option nutzen",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
 					[
 						"id" => "d85b0e7f27d4b89a5718c8f4b381f355",
 						"path" => "maerkte/ebay/ebay-einrichten",
@@ -4697,6 +4832,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: idealo. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "a3c80e945302db49d6f29b2ed7dbe735",
+						"path" => "maerkte/idealo/best-practices-idealo-artikelexport",
+						"position" => 20,
+						"urlName" => "best-practices-idealo-artikelexport",
+						"url" => "/maerkte/idealo/best-practices-idealo-artikelexport",
+						"level" => 3,
+						"title" => "Best Practice: idealo",
+						"keywords" => "idealo, Artikel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -4771,6 +4921,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Neckermann.at. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "2f3a923379ee2674a833aa60410c981b",
+						"path" => "maerkte/neckermann/best-practices-neckermann-storno-retoure",
+						"position" => 20,
+						"urlName" => "best-practices-neckermann-storno-retoure",
+						"url" => "/maerkte/neckermann/best-practices-neckermann-storno-retoure",
+						"level" => 3,
+						"title" => "Best Practice: Neckermann",
+						"keywords" => "Neckermann.at, Neckermann, Storno, Retoure, Teilstorno, Teilstornierung, Komplettstorno, Komplettstornierung",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4864,6 +5029,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Rakuten. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "a3a7ded5c749e61c7f83af5ec4479d0e",
+						"path" => "maerkte/rakuten/best-practices-rakuten-artikelexport",
+						"position" => 20,
+						"urlName" => "best-practices-rakuten-artikelexport",
+						"url" => "/maerkte/rakuten/best-practices-rakuten-artikelexport",
+						"level" => 3,
+						"title" => "Best Practice: Rakuten",
+						"keywords" => "rakuten, Multi-Channel, artikelexport, elastischer export,",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -4908,6 +5088,36 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: real.de. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "e1ee68600cf2bb37b65836c9cf1ac953",
+						"path" => "maerkte/real-de/best-practices-real-integration-versandgruppen",
+						"position" => 20,
+						"urlName" => "best-practices-real-integration-versandgruppen",
+						"url" => "/maerkte/real-de/best-practices-real-integration-versandgruppen",
+						"level" => 3,
+						"title" => "Best Practice: Integration der Versandgruppen",
+						"keywords" => "Versand, real.de, hitmeister, Versandgruppen, Versandeinstellungen, Versandprofil",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "753fbfbb8d5053d1735a1cc512dcade6",
+						"path" => "maerkte/real-de/best-practices-real-merkmalverknuepfung",
+						"position" => 30,
+						"urlName" => "best-practices-real-merkmalverknuepfung",
+						"url" => "/maerkte/real-de/best-practices-real-merkmalverknuepfung",
+						"level" => 3,
+						"title" => "Best Practice: Merkmale mit Attributen verknüpfen",
+						"keywords" => "real.de, Multi-Channel, inventory.csv, product.csv",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
 						"children" => [],
 						"hasChildren" => false
 					]
