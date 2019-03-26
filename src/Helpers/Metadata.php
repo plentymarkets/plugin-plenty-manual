@@ -7608,21 +7608,6 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Exporting data. The following information is available:",
 				"children" => 				[
 					[
-						"id" => "5c7f269162b81dda0d33f3deb83244c0",
-						"path" => "data/exporting-data/best-practices-elastic-export",
-						"position" => 0,
-						"urlName" => "best-practices-elastic-export",
-						"url" => "/en/data/exporting-data/best-practices-elastic-export",
-						"level" => 3,
-						"title" => "Best Practices: Elastic Export",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "eca87a63276c70e326fd9b52b3d628b4",
 						"path" => "data/exporting-data/elastic-export",
 						"position" => 10,
@@ -7638,9 +7623,24 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "5c7f269162b81dda0d33f3deb83244c0",
+						"path" => "data/exporting-data/best-practices-elastic-export",
+						"position" => 20,
+						"urlName" => "best-practices-elastic-export",
+						"url" => "/en/data/exporting-data/best-practices-elastic-export",
+						"level" => 3,
+						"title" => "Best Practices: Elastic Export",
+						"keywords" => "elastic export, item export, elastic",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "d68c7db4b0dce578fa33fdaaf4a1105e",
 						"path" => "data/exporting-data/FormatDesigner",
-						"position" => 20,
+						"position" => 30,
 						"urlName" => "FormatDesigner",
 						"url" => "/en/data/exporting-data/FormatDesigner",
 						"level" => 3,
@@ -7670,7 +7670,7 @@ class Metadata {
 					[
 						"id" => "23330b893c08b89489acdfafcc2e8859",
 						"path" => "data/exporting-data/Managing-catalogs",
-						"position" => 40,
+						"position" => 50,
 						"urlName" => "Managing-catalogs",
 						"url" => "/en/data/exporting-data/Managing-catalogs",
 						"level" => 3,
@@ -9596,6 +9596,96 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Best Practices: Amazon. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "e6a4f4e1e1c687ad4745d513c531b63c",
+						"path" => "markets/amazon/best-practices-amazon-item-data-export",
+						"position" => 20,
+						"urlName" => "best-practices-amazon-item-data-export",
+						"url" => "/en/markets/amazon/best-practices-amazon-item-data-export",
+						"level" => 3,
+						"title" => "Best practice: Item data export",
+						"keywords" => "Amazon, Item, Export",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "d5863610f688ffc1b4adbb9cd77c5b5b",
+						"path" => "markets/amazon/best-practices-amazon-error-request-throttled",
+						"position" => 30,
+						"urlName" => "best-practices-amazon-error-request-throttled",
+						"url" => "/en/markets/amazon/best-practices-amazon-error-request-throttled",
+						"level" => 3,
+						"title" => "Best practice: Error _Request is throttled_",
+						"keywords" => "Amazon, Prime, order",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "37cca3327a90833b3af8160a67bbc048",
+						"path" => "markets/amazon/best-practices-amazon-manual-order-generation-fba",
+						"position" => 40,
+						"urlName" => "best-practices-amazon-manual-order-generation-fba",
+						"url" => "/en/markets/amazon/best-practices-amazon-manual-order-generation-fba",
+						"level" => 3,
+						"title" => "Best practice: Manually generating reports for FBA orders and returns",
+						"keywords" => "Amazon, Items, Export",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "f4bc71a8550ed89f281ca5919a94c076",
+						"path" => "markets/amazon/best-practices-amazon-mfn-order-import",
+						"position" => 50,
+						"urlName" => "best-practices-amazon-mfn-order-import",
+						"url" => "/en/markets/amazon/best-practices-amazon-mfn-order-import",
+						"level" => 3,
+						"title" => "Best practice: MFN order import",
+						"keywords" => "Amazon, Order, Import, Merchant Fulfilment Network, Merchant Fulfillment Network, MFN",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "d0bf0d6e0eebb5e860b9dda69344ec58",
+						"path" => "markets/amazon/best-practices-amazon-prime",
+						"position" => 60,
+						"urlName" => "best-practices-amazon-prime",
+						"url" => "/en/markets/amazon/best-practices-amazon-prime",
+						"level" => 3,
+						"title" => "Best practice: Amazon Prime",
+						"keywords" => "Amazon, Prime, Order, Shipping",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "ea74551544db9d6198aad54d6fc17069",
+						"path" => "markets/amazon/best-practices-amazon-vcs",
+						"position" => 70,
+						"urlName" => "best-practices-amazon-vcs",
+						"url" => "/en/markets/amazon/best-practices-amazon-vcs",
+						"level" => 3,
+						"title" => "Best practice: Using Amazon’s VAT calculation service VCS",
+						"keywords" => "Amazon, VCS, VAT calculation service, invoice",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -9613,6 +9703,51 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic eBay. The following information is available:",
 				"children" => 				[
+					[
+						"id" => "292d44841f26b8c94f4e2cc9e266e68f",
+						"path" => "markets/ebay/best-practices-ebay-activate-listings",
+						"position" => 0,
+						"urlName" => "best-practices-ebay-activate-listings",
+						"url" => "/en/markets/ebay/best-practices-ebay-activate-listings",
+						"level" => 3,
+						"title" => "Best practice: Activating listings",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "51a9fe35f433852a3e9439171735c204",
+						"path" => "markets/ebay/best-practices-ebay-faq",
+						"position" => 0,
+						"urlName" => "best-practices-ebay-faq",
+						"url" => "/en/markets/ebay/best-practices-ebay-faq",
+						"level" => 3,
+						"title" => "FAQ",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "de1671c4a63f620a8f043c7937f83f10",
+						"path" => "markets/ebay/best-practices-ebay-out-of-stock-option",
+						"position" => 0,
+						"urlName" => "best-practices-ebay-out-of-stock-option",
+						"url" => "/en/markets/ebay/best-practices-ebay-out-of-stock-option",
+						"level" => 3,
+						"title" => "Best practice: Use "out of stock" option",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
 					[
 						"id" => "cc771e6b132ebb90b7ae663b33643a49",
 						"path" => "markets/ebay/ebay-setup",
@@ -9808,6 +9943,21 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Best Practices: idealo. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "b58b5aa75c66fe10fe26675dfb49d0bb",
+						"path" => "markets/idealo-checkout/best-practices-idealo-free-text-field",
+						"position" => 20,
+						"urlName" => "best-practices-idealo-free-text-field",
+						"url" => "/en/markets/idealo-checkout/best-practices-idealo-free-text-field",
+						"level" => 3,
+						"title" => "Best practice: idealo",
+						"keywords" => "idealo, Item",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -9882,6 +10032,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Best Practices: Neckermann.at. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "2d1181265eecae960f491a244bbdae84",
+						"path" => "markets/neckermann/best-practices-neckermann-cancellation-returns",
+						"position" => 20,
+						"urlName" => "best-practices-neckermann-cancellation-returns",
+						"url" => "/en/markets/neckermann/best-practices-neckermann-cancellation-returns",
+						"level" => 3,
+						"title" => "Best practice: Neckermann",
+						"keywords" => "Neckermann.at, Neckermann, cancellation, returns, partial cancellation",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -9975,6 +10140,21 @@ class Metadata {
 						"linkListInto" => "",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "e1d2113f067b7e0d605f669bf4211a45",
+						"path" => "markets/rakuten/best-practices-rakuten-item-export",
+						"position" => 20,
+						"urlName" => "best-practices-rakuten-item-export",
+						"url" => "/en/markets/rakuten/best-practices-rakuten-item-export",
+						"level" => 3,
+						"title" => "Best practice: Rakuten",
+						"keywords" => "Rakuten, Multi-Channel, item export, elastic export",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -10019,6 +10199,36 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Best Practices: real.de. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "e33c290b9ec4c759bf66a6521f6ab1c6",
+						"path" => "markets/real-de/best-practices-real-integration-shipping-groups",
+						"position" => 20,
+						"urlName" => "best-practices-real-integration-shipping-groups",
+						"url" => "/en/markets/real-de/best-practices-real-integration-shipping-groups",
+						"level" => 3,
+						"title" => "Best practice: Integration of shipping groups",
+						"keywords" => "Shipping, real.de, hitmeister, shipping groups, settings, shipping profile",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "f359b5959f8927707c175407af7f7dcc",
+						"path" => "markets/real-de/best-practices-real-linking-properties",
+						"position" => 30,
+						"urlName" => "best-practices-real-linking-properties",
+						"url" => "/en/markets/real-de/best-practices-real-linking-properties",
+						"level" => 3,
+						"title" => "Best practice: Linking properties to attributes",
+						"keywords" => "real.de, Multi-Channel, inventory.csv, product.csv",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "",
 						"children" => [],
 						"hasChildren" => false
 					]
