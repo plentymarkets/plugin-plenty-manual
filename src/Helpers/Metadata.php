@@ -4916,7 +4916,7 @@ class Metadata {
 						"urlName" => "best-practices-neckermann-storno-retoure",
 						"url" => "/maerkte/neckermann/best-practices-neckermann-storno-retoure",
 						"level" => 3,
-						"title" => "Best Practice: Neckermann",
+						"title" => "Best Practice: Neckermann.at",
 						"keywords" => "Neckermann.at, Neckermann, Storno, Retoure, Teilstorno, Teilstornierung, Komplettstorno, Komplettstornierung",
 						"description" => "",
 						"navAlias" => "",
