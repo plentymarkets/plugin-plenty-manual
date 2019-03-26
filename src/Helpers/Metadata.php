@@ -4472,21 +4472,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "97cb656be4b2a09d757849aaa004562d",
-						"path" => "maerkte/amazon/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/maerkte/amazon/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Amazon",
-						"keywords" => "Amazon, Multi-Channel, Prime, FBA",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Amazon. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "04623413dfd13d5cd119c31e06753019",
 						"path" => "maerkte/amazon/best-practices-amazon-artikeldatenexport",
 						"position" => 20,
@@ -4498,6 +4483,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "97cb656be4b2a09d757849aaa004562d",
+						"path" => "maerkte/amazon/best-practices",
+						"position" => 20,
+						"urlName" => "best-practices",
+						"url" => "/maerkte/amazon/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: Amazon",
+						"keywords" => "Amazon, Multi-Channel, Prime, FBA",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Amazon. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4819,21 +4819,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "a7f187c4719c64c922d5f23eadb219de",
-						"path" => "maerkte/idealo/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/maerkte/idealo/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: idealo",
-						"keywords" => "idealo, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: idealo. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "a3c80e945302db49d6f29b2ed7dbe735",
 						"path" => "maerkte/idealo/best-practices-idealo-artikelexport",
 						"position" => 20,
@@ -4845,6 +4830,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "a7f187c4719c64c922d5f23eadb219de",
+						"path" => "maerkte/idealo/best-practices",
+						"position" => 20,
+						"urlName" => "best-practices",
+						"url" => "/maerkte/idealo/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: idealo",
+						"keywords" => "idealo, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: idealo. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4910,21 +4910,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "7801248dc254d6aa4d8b68523bad1b17",
-						"path" => "maerkte/neckermann/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/maerkte/neckermann/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Neckermann.at",
-						"keywords" => "neckermann, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Neckermann.at. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "2f3a923379ee2674a833aa60410c981b",
 						"path" => "maerkte/neckermann/best-practices-neckermann-storno-retoure",
 						"position" => 20,
@@ -4936,6 +4921,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "7801248dc254d6aa4d8b68523bad1b17",
+						"path" => "maerkte/neckermann/best-practices",
+						"position" => 20,
+						"urlName" => "best-practices",
+						"url" => "/maerkte/neckermann/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: Neckermann.at",
+						"keywords" => "neckermann, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Neckermann.at. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5016,21 +5016,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "e894c21227ba093ba0a7e202301042a6",
-						"path" => "maerkte/rakuten/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/maerkte/rakuten/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Rakuten",
-						"keywords" => "Rakuten.de, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Rakuten. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "a3a7ded5c749e61c7f83af5ec4479d0e",
 						"path" => "maerkte/rakuten/best-practices-rakuten-artikelexport",
 						"position" => 20,
@@ -5042,6 +5027,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "e894c21227ba093ba0a7e202301042a6",
+						"path" => "maerkte/rakuten/best-practices",
+						"position" => 20,
+						"urlName" => "best-practices",
+						"url" => "/maerkte/rakuten/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: Rakuten",
+						"keywords" => "Rakuten.de, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Rakuten. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5077,21 +5077,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "1f330a70a481dc9b7d7063ba8194b9ea",
-						"path" => "maerkte/real-de/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/maerkte/real-de/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: real.de",
-						"keywords" => "real.de, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: real.de. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "e1ee68600cf2bb37b65836c9cf1ac953",
 						"path" => "maerkte/real-de/best-practices-real-integration-versandgruppen",
 						"position" => 20,
@@ -5103,6 +5088,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "1f330a70a481dc9b7d7063ba8194b9ea",
+						"path" => "maerkte/real-de/best-practices",
+						"position" => 20,
+						"urlName" => "best-practices",
+						"url" => "/maerkte/real-de/best-practices",
+						"level" => 3,
+						"title" => "Best Practices: real.de",
+						"keywords" => "real.de, Multi-Channel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: real.de. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
