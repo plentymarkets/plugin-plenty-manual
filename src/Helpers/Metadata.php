@@ -4487,21 +4487,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "97cb656be4b2a09d757849aaa004562d",
-						"path" => "maerkte/amazon/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/maerkte/amazon/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Amazon",
-						"keywords" => "Amazon, Multi-Channel, Prime, FBA",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Amazon. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "c80f830af1c961bccb7488554b338daa",
 						"path" => "maerkte/amazon/best-practices-amazon-fehler-request-throttled",
 						"position" => 30,
@@ -4649,21 +4634,6 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz eBay in Ihrem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich eBay einrichten. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "56f3ea25057166b91bc07ec1de363e5d",
-						"path" => "maerkte/ebay/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/maerkte/ebay/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: eBay",
-						"keywords" => "eBay, Multi-Channel, ebay Plus, Listings",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: eBay. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4832,21 +4802,6 @@ class Metadata {
 						"linkListInto" => "",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "a7f187c4719c64c922d5f23eadb219de",
-						"path" => "maerkte/idealo/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/maerkte/idealo/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: idealo",
-						"keywords" => "idealo, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: idealo. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -4921,21 +4876,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "7801248dc254d6aa4d8b68523bad1b17",
-						"path" => "maerkte/neckermann/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/maerkte/neckermann/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Neckermann.at",
-						"keywords" => "neckermann, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Neckermann.at. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5029,21 +4969,6 @@ class Metadata {
 						"linkListInto" => "",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "e894c21227ba093ba0a7e202301042a6",
-						"path" => "maerkte/rakuten/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/maerkte/rakuten/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Rakuten",
-						"keywords" => "Rakuten.de, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Rakuten. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -5088,21 +5013,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "1f330a70a481dc9b7d7063ba8194b9ea",
-						"path" => "maerkte/real-de/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/maerkte/real-de/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: real.de",
-						"keywords" => "real.de, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: real.de. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
