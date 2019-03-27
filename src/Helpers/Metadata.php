@@ -6170,8 +6170,8 @@ class Metadata {
 		"url" => "/en/crm",
 		"level" => 1,
 		"title" => "CRM",
-		"keywords" => "Managing customer data, using the ticket system, sending emails",
-		"description" => "Learn how to manage your customer data, how to use the ticket system for your customer communication and how to send emails and newsletters.",
+		"keywords" => "customer data, contact data, ticket system, emails, newsletter",
+		"description" => "Learn how to manage your customer data, use the ticket system for your customer communication and send emails and newsletters.",
 		"navAlias" => "Overview",
 		"linkListInto" => "Welcome to the topic CRM. The following information is available:",
 		"children" => 		[
@@ -9508,21 +9508,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "f7e23d39a606dbf6d58640be9eef78b3",
-						"path" => "markets/amazon/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/markets/amazon/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Amazon",
-						"keywords" => "Amazon, Multi-Channel, Prime, FBA",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: Amazon. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "d5863610f688ffc1b4adbb9cd77c5b5b",
 						"path" => "markets/amazon/best-practices-amazon-error-request-throttled",
 						"position" => 30,
@@ -9670,21 +9655,6 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market eBay in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Setting up eBay. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "e9cc20f7fb8ef43819b77a8c3cfb2964",
-						"path" => "markets/ebay/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/markets/ebay/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: eBay",
-						"keywords" => "eBay, Multi-Channel, ebay Plus, Listings",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: eBay. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -9853,21 +9823,6 @@ class Metadata {
 						"linkListInto" => "",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "47556b3dc2d899af6cdfcddc542d45aa",
-						"path" => "markets/idealo-checkout/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/markets/idealo-checkout/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: idealo",
-						"keywords" => "idealo, Item",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: idealo. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -9942,21 +9897,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "04a18a23a939ae552d40b10c28d6ee82",
-						"path" => "markets/neckermann/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/markets/neckermann/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Neckermann.at",
-						"keywords" => "neckermann, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: Neckermann.at. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -10050,21 +9990,6 @@ class Metadata {
 						"linkListInto" => "",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "6406074239f98aca957cc9a2e928bd6a",
-						"path" => "markets/rakuten/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/markets/rakuten/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Rakuten",
-						"keywords" => "rakuten.de, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -10109,21 +10034,6 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "f0be301e8a0ebd5adb3548e2339ef484",
-						"path" => "markets/real-de/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/markets/real-de/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: real.de",
-						"keywords" => "real.de, Multi-Channel",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: real.de. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
