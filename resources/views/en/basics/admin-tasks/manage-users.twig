@@ -41,9 +41,11 @@
 <li><a href="#60"><span>10.</span><span> Searching user accounts</span></a></li>
 <li><a href="#150"><span>11.</span><span> Linking roles and processes</span></a></li>
 <li><a href="#_creating_an_account_for_the_plentymarkets_forum"><span>12.</span><span> Creating an account for the plentymarkets forum</span></a></li>
-<li><a href="#160"><span>13.</span><span> Limitation of simultaneously logged in users in the back end</span></a>
+<li><a href="#160"><span>13.</span><span> Managing the number of logged in users</span></a>
 <ul class="sectlevel2">
-<li><a href="#_exceeding_the_maximum_number_of_simultaneously_logged_in_users"><span>13.1.</span><span> Exceeding the maximum number of simultaneously logged in users</span></a></li>
+<li><a href="#170"><span>13.1.</span><span> Logging out users in the session management menu</span></a></li>
+<li><a href="#180"><span>13.2.</span><span> Logging out users when user limit is exceeded</span></a></li>
+<li><a href="#190"><span>13.3.</span><span> Booking additional user licenses</span></a></li>
 </ul>
 </li>
 </ul>
@@ -56,17 +58,42 @@
     <h1>Managing user accounts</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Create accounts for new users and edit existing user accounts in the user menu. Furthermore, assign roles and classes to users. Depending on the workflow, they are important for other areas in the system. Roles are used for grouping users and assigning the same rights to multiple user accounts in a very convenient way. Classes on the other hand allow you to assign rights to specific users and interfaces. For example, assign API calls to users of the API class individually.</p>
+<p>Create accounts for new users and edit existing user accounts in the user menu. Furthermore, assign roles and classes to users.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Roles are used for grouping users and assigning the same rights to multiple user accounts in a very convenient way.</p>
+</li>
+<li>
+<p>Classes allow you to assign rights to specific users and interfaces. For example, assign API calls to users of the API class individually.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Five free user accounts are included in every plentymarkets system. If you need additional user accounts, book them in the <a href="https://www.plentymarkets.co.uk/prices/">configurator</a>.</p>
+<p>Five free CUL user licences are included in every plentymarkets system. If you need additional user accounts, book them in the <a href="https://www.plentymarkets.co.uk/prices/">configurator</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">What is a CUL user licence?</div>
+<div class="paragraph">
+<p>CUL stands for concurrent user licencing. The licence determines how many user accounts can have access to the plentymarkets back end, the REST API and the plentymarkets app. As such, we limit simultaneous use and not the number of user accounts you can create.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div><div class="sect1">
 <h2 id="35">1. Setting the password strength</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the menu <strong>System » System settings » Settings » User » Security</strong>, you manage the criteria for new passwords entered by users. Proceed as follows to activate the criteria.</p>
+<p>In the menu <strong>System » Settings » User » Security</strong>, you manage the criteria for new passwords entered by users. Proceed as follows to activate the criteria.</p>
 </div>
 <div class="paragraph instruction">
 <p>Setting the password strength:</p>
@@ -74,10 +101,10 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <strong>System » System settings » Settings » User » Security</strong>.</p>
+<p>Go to <strong>System » Settings » User » Security</strong>.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the information given in <a href="#table-setting-password-security">Tabelle 1</a>.</p>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-password-security">Tabelle 1</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
@@ -85,7 +112,7 @@
 </li>
 </ol>
 </div>
-<table id="table-setting-password-security" class="tableblock frame-all grid-all stretch">
+<table id="table-password-security" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 1. Setting the password strength</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -163,7 +190,7 @@
 <p>Enter the user’s email address. This allows the user to receive messages from the system.</p>
 </li>
 <li>
-<p>Select a <strong>User class</strong>. Pay attention to the information given in <a href="#table-available-user-classes">Tabelle 2</a>.</p>
+<p>Select a <strong>User class</strong>. Pay attention to the information given in <a href="#table-user-classes">Tabelle 2</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -177,10 +204,10 @@
 <p>Click on <strong>My account</strong> to open your own user account.</p>
 </div>
 <div class="paragraph">
-<p>The user classes are preset and the classes' settings cannot be changed. The following table includes detailed information about preset rights and rights that you can assign individually:</p>
+<p>The user classes are preset and the classes' settings cannot be changed. <a href="#table-user-classes">Tabelle 2</a> includes detailed information about preset rights and rights that you can assign individually:</p>
 </div>
-<table id="table-available-user-classes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 2. Available user classes</caption>
+<table id="table-user-classes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. overview of available user classes</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -198,7 +225,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variable</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Class with individual rights for <a href="/en/basics/admin-tasks/manage-users#100">menu</a> and <a href="/en/basics/admin-tasks/manage-users#110">functions</a> that can be assigned in the <strong>Rights</strong> tab.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class with individual rights for <a href="#100">menu</a> and <a href="#110">functions</a> that can be assigned in the <strong>Rights</strong> tab.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Call centre</strong></p></td>
@@ -230,7 +257,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>API</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Class for <a href="/en/basics/admin-tasks/manage-users#120">API calls</a> that can be assigned in the user account. API calls are activated individually. REST API calls are not assigned to user accounts by default.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Class for <a href="#120">API calls</a> that can be assigned in the user account. API calls are activated individually. REST API calls are not assigned to user accounts by default.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Logistics</strong></p></td>
@@ -314,7 +341,7 @@
 → The user account opens in a new tab.</p>
 </li>
 <li>
-<p>Pay attention to the explanations given in <a href="#table-user-account-master-data">Tabelle 3</a> and carry out the settings as desired.</p>
+<p>Pay attention to the explanations given in <a href="#table-master-data">Tabelle 3</a> and carry out the settings as desired.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -341,7 +368,7 @@
 <div class="paragraph">
 <p>Enter information and change the settings of a user account in the <strong>Master data</strong> tab. Only users with administrative rights can edit the <strong>user name</strong>, <strong>IP restriction</strong>, <strong>user class</strong> and <strong>roles</strong>. All other master data can also be changed by a user in their own account. In this tab, it is also possible to block a user account.</p>
 </div>
-<table id="table-user-account-master-data" class="tableblock frame-all grid-all stretch">
+<table id="table-master-data" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 3. A user account’s master data</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -409,7 +436,7 @@ The user ID is a unique identification number. It is assigned by the system and 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Roles</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select roles for the user account. <a href="/en/basics/admin-tasks/manage-users#70">Roles</a> must have already been created before they can be selected here.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select roles for the user account. <a href="#70">Roles</a> must have already been created before they can be selected here.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New password</strong></p></td>
@@ -479,7 +506,7 @@ When switching users, any user account for which a PIN has been saved can be sel
 <div class="sect2">
 <h3 id="42">3.3. Managing mailboxes</h3>
 <div class="paragraph">
-<p>If plentymarkets manages your domains, then you can go to <strong>Settings » Basic settings » User » Accounts » Open account » Tab: Email</strong> to create and manage mailboxes for system users. You need admin rights to manage mailboxes. These mailboxes are created and hosted by the third party email provider <a href="https://mailbox.org/business/" target="_blank" rel="noopener">mailbox.org</a>. You will learn how you create mailboxes and additional email addresses (aliases) for these mailboxes.</p>
+<p>If plentymarkets manages your domains, then you can go to <strong>Settings » System settings » Basic settings » User » Accounts » Open account » Tab: Email</strong> to create and manage mailboxes for system users. You need admin rights to manage mailboxes. These mailboxes are created and hosted by the third party email provider <a href="https://mailbox.org/business/" target="_blank" rel="noopener">mailbox.org</a>. You will learn how you create mailboxes and additional email addresses (aliases) for these mailboxes.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -523,7 +550,7 @@ When switching users, any user account for which a PIN has been saved can be sel
 <p>Select the email address type <strong>Mailbox</strong>.</p>
 </li>
 <li>
-<p>Carry out the additional settings. Pay attention to the information given in <a href="#table-settings-creating-a-mailbox">Tabelle 4</a>.</p>
+<p>Carry out the additional settings. Pay attention to the information given in <a href="#table-mailbox">Tabelle 4</a>.</p>
 </li>
 <li>
 <p>Click on <strong>Create mailbox</strong>.<br>
@@ -531,8 +558,8 @@ When switching users, any user account for which a PIN has been saved can be sel
 </li>
 </ol>
 </div>
-<table id="table-settings-creating-a-mailbox" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 4. Creating a mailbox</caption>
+<table id="table-mailbox" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. creating a mailbox</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -591,7 +618,7 @@ Not activated = Emails are forwarded to the target email addresses directly. No 
 <div class="sect3">
 <h4 id="_saving_the_mailbox_org_servers_access_data_in_plentymarkets">3.3.2. Saving the mailbox.org server’s access data in plentymarkets</h4>
 <div class="paragraph">
-<p>For plentymarkets to send emails such as order confirmations on your behalf, you need to save the <a href="https://kb.mailbox.org/display/MBOKBEN/Setup+other+e-mail+clients+manually" target="_blank" rel="noopener">access data</a> of the mailbox.org mailbox from which you want to send these emails in the <strong><a href="/en/crm/sending-emails#100">Settings » Client (store) » Standard » Email » Access data</a></strong> menu.</p>
+<p>For plentymarkets to send emails such as order confirmations on your behalf, you need to save the access data of the mailbox.org mailbox from which you want to send these emails in the <a href="/en/crm/sending-emails#100">Settings » System settings » Client (store) » Standard » Email » Access data</a> menu.</p>
 </div>
 </div>
 <div class="sect3">
@@ -621,7 +648,7 @@ Not activated = Emails are forwarded to the target email addresses directly. No 
 <p>Select the email address type <strong>Alias</strong>.</p>
 </li>
 <li>
-<p>Carry out the additional settings. Pay attention to the information given in <a href="#table-setting-create-additional-address">Tabelle 5</a>.</p>
+<p>Carry out the additional settings. Pay attention to the information given in <a href="#table-email-addresses">Tabelle 5</a>.</p>
 </li>
 <li>
 <p>Click on <strong>Create mailbox</strong>.<br>
@@ -629,8 +656,8 @@ Not activated = Emails are forwarded to the target email addresses directly. No 
 </li>
 </ol>
 </div>
-<table id="table-setting-create-additional-address" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 5. Creating an additional email address for a mailbox</caption>
+<table id="table-email-addresses" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. creating an additional email address for a mailbox</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -748,7 +775,7 @@ Not activated = Emails are forwarded to the target email addresses directly. No 
 <div class="paragraph">
 <p>In addition to the tabs described above, you find other tabs in the editing window of a user account. These tabs and the corresponding settings are described on other pages of the manual. Further information about the tabs can be found by following the links in the right column.</p>
 </div>
-<table id="table-further-tabs-editing-window" class="tableblock frame-all grid-all stretch">
+<table class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 6. Other tabs in the editing window of a user account</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -771,7 +798,7 @@ Not activated = Emails are forwarded to the target email addresses directly. No 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Right</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">For further information about this tab, refer to the <a href="/en/basics/admin-tasks/manage-users#90">Assigning rights</a> chapter.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For further information about this tab, refer to the <a href="#90">Assigning rights</a> chapter.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Personal settings</strong></p></td>
@@ -807,14 +834,14 @@ Not activated = Emails are forwarded to the target email addresses directly. No 
 → The <strong>Group function</strong> window opens.</p>
 </li>
 <li>
-<p>Pay attention to the explanations given in <a href="#table-editing-multiple-user-accounts">Tabelle 7</a> and carry out the settings as desired.</p>
+<p>Pay attention to the explanations given in <a href="#table-group-function">Tabelle 7</a> and carry out the settings as desired.</p>
 </li>
 <li>
 <p>Click on <strong>Apply</strong> to apply the settings to the user accounts.</p>
 </li>
 </ol>
 </div>
-<table id="table-editing-multiple-user-accounts" class="tableblock frame-all grid-all stretch">
+<table id="table-group-function" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 7. Editing user accounts using the <strong>Group function</strong></caption>
 <colgroup>
 <col style="width: 25%;">
@@ -871,17 +898,13 @@ Not activated = Emails are forwarded to the target email addresses directly. No 
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sales warehouse;<br>
-Repair warehouse;<br>
-Storage warehouse;<br>
-Transit warehouse;<br>
-Distribution warehouse;<br>
-Special warehouse</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Give rights for warehouses to the user. Only previously created warehouse types are available. For further information about warehouse types, refer to the <a href="/en/stock-management/setting-up-a-warehouse#300">Setting up a warehouse</a> page of the manual.<br>
-+
-+
-+
-A special warehouse is a warehouse of the warehouse type <strong>Other</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sales warehouse</strong>;<br>
+<strong>Repair warehouse</strong>;<br>
+<strong>Storage warehouse</strong>;<br>
+<strong>Transit warehouse</strong>;<br>
+<strong>Distribution warehouse</strong>;<br>
+<strong>Special warehouse</strong> (type <strong>Other</strong>)<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Give rights for warehouses to the user. Only previously created warehouse types are available.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Visible order status</strong></p></td>
@@ -903,7 +926,7 @@ A special warehouse is a warehouse of the warehouse type <strong>Other</strong>.
 <strong>Invisible</strong> = The user will not see tickets with this status.<br>
 <strong>Visible</strong> = The user will see all tickets that are in this status.<br>
 <strong>Own only</strong> = The user will only see tickets that are in this status and that they own.<br>
-All tickets are listed in the ticket overview, i.e. also those tickets that are not visible to the user account. However, the user is unable to open invisible tickets.</p></td>
+All tickets are listed in the ticket overview, including those tickets that are not visible to the user account. However, the user is unable to open invisible tickets.</p></td>
 </tr>
 </tbody>
 </table>
@@ -914,7 +937,7 @@ All tickets are listed in the ticket overview, i.e. also those tickets that are 
 <p>The structure of the <strong>Menu</strong> tab corresponds to the menu structure in plentymarkets in order to facilitate finding the desired functions. Activate a menu to activate all of the submenus that it contains. If you want to activate individual submenus only, then you have to do so within the lowest level of this menu.</p>
 </div>
 <div class="paragraph">
-<p>Assign every user account of the <strong>Variable</strong> class only those rights required for their field of work. This way, security is increased and errors can be prevented in your plentymarkets system.</p>
+<p>Assign every user account of the <strong>Variable</strong> class only those rights required for their field of work. This way, security is increased and errors can be prevented in your system.</p>
 </div>
 <div class="paragraph instruction">
 <p>Activating the rights to menus:</p>
@@ -1139,7 +1162,7 @@ All tickets are listed in the ticket overview, i.e. also those tickets that are 
 <h2 id="80">7. Edit roles</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After creating a role, it will open in a new tab for editing. The role is also added to the role overview so that you can open and edit it later. Roles are listed alphabetically in the overview. Every role is divided into 3 tabs. In the <strong>Settings</strong> tab, you can change the role’s name. In the <strong>User</strong> tab, you link user accounts to this role. In the <strong>Rights</strong> tab, you assign rights to the role. The same settings used for user accounts of the Variable class are also available for roles. For further information about rights, refer to the <a href="/en/basics/admin-tasks/manage-users#90">Assigning rights</a> chapter.</p>
+<p>After creating a role, it will open in a new tab for editing. The role is also added to the role overview so that you can open and edit it easier. Roles are listed alphabetically in the overview. Every role is divided into 3 tabs. In the <strong>Settings</strong> tab, you can change the role’s name. In the <strong>User</strong> tab, you link user accounts to this role. In the <strong>Rights</strong> tab, you assign rights to the role. The same settings used for user accounts of the Variable class are also available for roles. For further information about rights, refer to the <a href="/en/basics/admin-tasks/manage-users#90">Assigning rights</a> chapter.</p>
 </div>
 <div class="paragraph">
 <p>Users of the Admin and Variable classes can create roles. User accounts of the Variable class must have the corresponding rights to do so.</p>
@@ -1162,10 +1185,8 @@ All tickets are listed in the ticket overview, i.e. also those tickets that are 
 <p>Select user accounts from the <strong>Available users</strong> column.</p>
 </li>
 <li>
-<p>Click on the <strong>single arrow pointed to the right</strong> to transfer the selected user accounts to the <strong>Assigned users</strong> column.</p>
-</li>
-<li>
-<p>Alternative: Drag and drop a user account to the <strong>Assigned users</strong> column.</p>
+<p>Click on the <strong>single arrow pointed to the right</strong> to transfer the selected user accounts to the <strong>Assigned users</strong> column.<br>
+<strong><em>Or:</em></strong> Drag and drop a user account to the <strong>Assigned users</strong> column.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -1218,7 +1239,7 @@ All tickets are listed in the ticket overview, i.e. also those tickets that are 
 <td class="content">
 <div class="title">Linking user roles to users of the Admin class</div>
 <div class="paragraph">
-<p>Administrators have all rights. However, it is important that roles are assigned to administrators for some processes. For example, administrators only receive role-specific emails when linked to the corresponding role.</p>
+<p>Administrators have all rights. However, it is important that roles are assigned to administrators for some process.  For example, administrators only receive role-specific emails when linked to the corresponding role.</p>
 </div>
 </td>
 </tr>
@@ -1230,8 +1251,8 @@ All tickets are listed in the ticket overview, i.e. also those tickets that are 
 <div class="paragraph">
 <p>The administrator of the company MyStore creates multiple roles. All the rights to be assigned to every user account are included in the Employee role. With this role, it is no longer necessary to assign these rights to every single user. Also, changes to rights concerning all user accounts can be made in the Employee role. In addition to this role, the administrator creates the Warehouse technician and Accounting roles - specific roles for a small group of users only.</p>
 </div>
-<table id="table-example-for-roles" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 9. Example for roles</caption>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 9. example for roles</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1254,7 +1275,7 @@ Start » Forum</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse technician</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System » System settings » Stock » Warehouse<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Settings » System settings » Stock » Warehouse<br>
 Stock<br>
 Orders » Fulfilment</p></td>
 </tr>
@@ -1320,7 +1341,7 @@ System » System settings » Client » Select client » Accounting</p></td>
 </li>
 <li>
 <p>Click on <strong>Send email</strong> in the toolbar.<br>
-→ The email program opens. The email addresses of all user accounts of this role are entered in the recipient field.</p>
+→ The email programme opens. The email addresses of all user accounts of this role are entered in the recipient field.</p>
 </li>
 </ol>
 </div>
@@ -1331,8 +1352,8 @@ System » System settings » Client » Select client » Accounting</p></td>
 <div class="paragraph">
 <p>Filters help you to search for user accounts. Use the <strong>Class</strong> filter to display only user accounts of a certain class, e.g. <strong>Variable</strong>. If no filters are used, all user accounts are displayed in the overview. The following elements and functions are available in the <strong>User</strong> menu.</p>
 </div>
-<table id="filter-options-for-users" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 10. Filter options for users</caption>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 10. filter options for users</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1375,7 +1396,7 @@ System » System settings » Client » Select client » Accounting</p></td>
 <h2 id="150">11. Linking roles and processes</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can also use roles for the <a href="/en/automation/processes/setting-up-processes">processes</a>.</p>
+<p>You can also use roles for <a href="/en/automation/processes/setting-up-processes">processes</a>.</p>
 </div>
 <div class="paragraph instruction">
 <p>Linking roles and processes:</p>
@@ -1439,18 +1460,148 @@ System » System settings » Client » Select client » Accounting</p></td>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="160">13. Limitation of simultaneously logged in users in the back end</h2>
+<h2 id="160">13. Managing the number of logged in users</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Due to the new tariff models, for customers making a new contract or a tariff change, a modification concerning the simultaneously logged in users has been made. Depending on the tariff, there is now a limitation in the number of those. <strong>Customers with an existing tariff are not concerned.</strong></p>
+<p>Depending on your plentymarkets contract, the number of users that can be logged into plentymarkets at the same time may be limited. This limit applies to the plentymarkets back end, the REST API and the plentymarkets app.</p>
+</div>
+<div class="paragraph">
+<p>You can do the following if you reach the user limit:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ask users to log out manually</p>
+</li>
+<li>
+<p><a href="#170">Log out users in the session management menu</a></p>
+</li>
+<li>
+<p><a href="#190">Increase the user limit of your plentymarkets contract</a></p>
+</li>
+</ul>
 </div>
 <div class="sect2">
-<h3 id="_exceeding_the_maximum_number_of_simultaneously_logged_in_users">13.1. Exceeding the maximum number of simultaneously logged in users</h3>
+<h3 id="170">13.1. Logging out users in the session management menu</h3>
 <div class="paragraph">
-<p>Is the maximum number of simultaneously logged in users reached or exceeded, the user gets an error message.
-Via the link in the error message, the admin is directly forwarded to the session management. This allows the admin to terminate the currently running sessions so he can enable the login of another user. The login is valid for 10 minutes. Afterwards, the admin is automatically logged out.<br>
-The admin can access the Session Management in the back end via <strong>System » System settings » Settings » User » Session management</strong> as well as via the user icon on the top right.
-In order to terminate one or more sessions, select the desired sessions and click <strong>Terminate selected sessions</strong>.</p>
+<p>Proceed as described below to use the session management to log out users.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Admin rights required</div>
+<div class="paragraph">
+<p>You need admin rights to log out users in the session management.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Logging out users in the session management menu:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Point your cursor over the user icon at the top right corner.</p>
+</li>
+<li>
+<p>Click on <strong>Session management</strong>.<br>
+<strong><em>Or:</em></strong> Go to <strong>System » System settings » Settings » User</strong>.<br>
+→ The <strong>Session management</strong> menu opens.<br>
+→ The logged in users are shown.</p>
+</li>
+<li>
+<p>Activate the check boxes of the users that you want to log out.</p>
+</li>
+<li>
+<p>Click on <strong>Terminate selected sessions</strong>.<br>
+→ The selected users are logged out.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="180">13.2. Logging out users when user limit is exceeded</h3>
+<div class="paragraph">
+<p>If the number of users has been reached or exceeded, admin users can access the session management menu by clicking on the error message that is shown when they attempt to log in.</p>
+</div>
+<div class="paragraph instruction">
+<p>Logging out users when user limit is exceeded:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log into the plentymarkets back end.<br>
+→ An error message is displayed.</p>
+</li>
+<li>
+<p>Click on the link in the error message.<br>
+→ The <strong>Session management</strong> menu opens.<br>
+→ The logged in users are shown.</p>
+</li>
+<li>
+<p>Activate the check boxes of the users that you want to log out.</p>
+</li>
+<li>
+<p>Click on <strong>Terminate selected sessions</strong>.<br>
+→ The selected users are logged out.<br>
+<strong><em>Note:</em></strong> The login via the error message is valid for 10 minutes. You are automatically logged out after this time.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="190">13.3. Booking additional user licenses</h3>
+<div class="paragraph">
+<p>Book additional user licenses in the plentymarkets configurator.</p>
+</div>
+<div class="paragraph instruction">
+<p>Booking additional user licenses:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Start » Service Centre</strong>.<br>
+<strong><em>Tip:</em></strong> To do so, point your cursor at the plentymarkets logo at the top left of the screen.<br>
+→ The Service Centre opens in a new browser tab.</p>
+</li>
+<li>
+<p>Click on the blue <strong>plus</strong> icon of the system.<br>
+→ The available tabs are shown.</p>
+</li>
+<li>
+<p>Click on the <strong>Contract</strong> tab.</p>
+</li>
+<li>
+<p>Click on one of the buttons for changing your contract.<br>
+→ The plentymarkets configurator opens.</p>
+</li>
+<li>
+<p>In the progress bar at the bottom of the configurator, click on <strong>Features</strong>.</p>
+</li>
+<li>
+<p>Scroll to the <strong>User licenses (CUL)</strong> area.</p>
+</li>
+<li>
+<p>Click on the plus icon underneath the heading <strong>Additional concurrent user license (CUL)</strong> to add additional user licenses.</p>
+</li>
+<li>
+<p>In the progress bar at the bottom of the configurator, click on <strong>Your system</strong>.<br>
+→ A summary of the new contract details is shown.</p>
+</li>
+<li>
+<p>Check the information carefully.</p>
+</li>
+<li>
+<p>Click on <strong>Order system change</strong>.<br>
+→ The system is changed.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
