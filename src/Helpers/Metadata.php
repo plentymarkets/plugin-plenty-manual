@@ -1374,7 +1374,7 @@ class Metadata {
 				"url" => "/auftraege/gutscheine",
 				"level" => 2,
 				"title" => "Gutscheine",
-				"keywords" => "Gutscheine, Gutschein, Kampagne, Gutschein-Code, Artikel als Gutschein verkaufen",
+				"keywords" => "Gutscheine, Gutschein, Kampagne, Gutschein-Code, Artikel als Gutschein verkaufen, Gutscheinartikel",
 				"description" => "Erfahren Sie auf dieser Handbuchseite, wie Sie Gutscheine und Gutscheinkampagnen in plentymarkets verwalten.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Gutscheine. Hier finden Sie folgende Informationen:",
