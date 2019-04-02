@@ -7245,7 +7245,7 @@ class Metadata {
 							[
 								"id" => "4ccb478ee70ef9e03a36f716caa6757f",
 								"path" => "data/importing-data/sync-types/elasticSync-facets",
-								"position" => 40,
+								"position" => 50,
 								"urlName" => "elasticSync-facets",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-facets",
 								"level" => 4,
@@ -7260,7 +7260,7 @@ class Metadata {
 							[
 								"id" => "7a484322fe444e5a699f276d85c9435c",
 								"path" => "data/importing-data/sync-types/elasticSync-manufacturer",
-								"position" => 50,
+								"position" => 60,
 								"urlName" => "elasticSync-manufacturer",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-manufacturer",
 								"level" => 4,
@@ -7275,7 +7275,7 @@ class Metadata {
 							[
 								"id" => "a4040a364e1548a1c30eca7c95a82f42",
 								"path" => "data/importing-data/sync-types/elasticSync-categories",
-								"position" => 60,
+								"position" => 70,
 								"urlName" => "elasticSync-categories",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-categories",
 								"level" => 4,
@@ -7290,7 +7290,7 @@ class Metadata {
 							[
 								"id" => "a8265020387357c210f3992d85c50aea",
 								"path" => "data/importing-data/sync-types/elasticSync-contacts",
-								"position" => 70,
+								"position" => 80,
 								"urlName" => "elasticSync-contacts",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-contacts",
 								"level" => 4,
@@ -7299,36 +7299,6 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Contacts, companies and addresses. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "ec0838fc1108295ca0240b179a4729bc",
-								"path" => "data/importing-data/sync-types/elasticSync-characteristic",
-								"position" => 80,
-								"urlName" => "elasticSync-characteristic",
-								"url" => "/en/data/importing-data/sync-types/elasticSync-characteristic",
-								"level" => 4,
-								"title" => "Characteristics",
-								"keywords" => "ElasticSync, import, characteristics, importing characteristics",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Characteristics. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "e1d6f0eb47dee0ede7e5b01a11cb0eae",
-								"path" => "data/importing-data/sync-types/elasticSync-notes",
-								"position" => 90,
-								"urlName" => "elasticSync-notes",
-								"url" => "/en/data/importing-data/sync-types/elasticSync-notes",
-								"level" => 4,
-								"title" => "Notes",
-								"keywords" => "ElasticSync, import, notes",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Notes. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -7348,9 +7318,24 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "ec0838fc1108295ca0240b179a4729bc",
+								"path" => "data/importing-data/sync-types/elasticSync-characteristic",
+								"position" => 110,
+								"urlName" => "elasticSync-characteristic",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-characteristic",
+								"level" => 4,
+								"title" => "Characteristics",
+								"keywords" => "ElasticSync, import, characteristics, importing characteristics",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Characteristics. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "2e6eeb730433579a57877137008265bb",
 								"path" => "data/importing-data/sync-types/elasticSync-newsletter-recipient",
-								"position" => 100,
+								"position" => 120,
 								"urlName" => "elasticSync-newsletter-recipient",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-newsletter-recipient",
 								"level" => 4,
@@ -7359,6 +7344,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Newsletter recipient. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "e1d6f0eb47dee0ede7e5b01a11cb0eae",
+								"path" => "data/importing-data/sync-types/elasticSync-notes",
+								"position" => 130,
+								"urlName" => "elasticSync-notes",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-notes",
+								"level" => 4,
+								"title" => "Notes",
+								"keywords" => "ElasticSync, import, notes",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Notes. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
