@@ -6551,6 +6551,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Document archive. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "062ae4593a8f0c631e3f372b030adbc4",
+				"path" => "orders/package-content-list",
+				"position" => 300,
+				"urlName" => "package-content-list",
+				"url" => "/en/orders/package-content-list",
+				"level" => 2,
+				"title" => "Package content list",
+				"keywords" => "package content list, package content, pallet, palett, package, unpacked items, packed items, purchase order, inbound, receipt",
+				"description" => "Learn how to use the package content list in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Package content list. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
