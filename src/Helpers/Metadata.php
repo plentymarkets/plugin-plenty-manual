@@ -1382,6 +1382,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "e6fba0d431a0ed02a4400fb0f1c905b1",
+				"path" => "auftraege/paketinhaltsliste",
+				"position" => 85,
+				"urlName" => "paketinhaltsliste",
+				"url" => "/auftraege/paketinhaltsliste",
+				"level" => 2,
+				"title" => "Paketinhaltsliste",
+				"keywords" => "Paketinhaltsliste, Paketinhalt, Palette, Paket, ungepackte Artikel, verpackte Artikel, Purchase Order, Inbound, Einlieferungsliste",
+				"description" => "Erfahren Sie auf dieser Handbuchseite, wie Sie die Paketinhaltsliste in plentymarkets verwenden.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Paketinhaltsliste. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "126a72fb594b299dc4844c906d678f22",
 				"path" => "auftraege/dokumentenarchiv",
 				"position" => 90,
@@ -1393,21 +1408,6 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Dokumentenarchiv. Hier finden Sie folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "e6fba0d431a0ed02a4400fb0f1c905b1",
-				"path" => "auftraege/paketinhaltsliste",
-				"position" => 300,
-				"urlName" => "paketinhaltsliste",
-				"url" => "/auftraege/paketinhaltsliste",
-				"level" => 2,
-				"title" => "Paketinhaltsliste",
-				"keywords" => "Paketinhaltsliste, Paketinhalt, Palette, Paket, ungepackte Artikel, verpackte Artikel, Purchase Order, Inbound, Einlieferungsliste",
-				"description" => "Erfahren Sie auf dieser Handbuchseite, wie Sie die Paketinhaltsliste in plentymarkets verwenden.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Paketinhaltsliste. Hier finden Sie folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			]
