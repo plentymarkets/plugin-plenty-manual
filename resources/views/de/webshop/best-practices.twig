@@ -1056,12 +1056,34 @@ Der wichtigste Aspekt hierbei sind die drei verschiedenen Bestellvorgänge und d
 <p>Suche den folgenden Code: <code>&#123;&#37; if ( $CustomerID ) { Link_Checkout(3); } else { Link_Checkout(2); } &#37;&#125;</code></p>
 </li>
 <li>
-<p>Ersetze den Code durch: <code>&#123;&#37; if( $CustomerID ) { $_check = Link_Checkout(3); $_backlink = ''; } else { $_check = Link_Checkout(2); $_backlink = '?backlink=&#123;&#37;if $Lang !== 'de' &#37;&#125;$Lang&#123;&#37; endif &#37;&#125;/checkout'; } &#37;&#125; $_check.$_backlink</code></p>
+<p>Ersetze den Code durch: <code>$_check.$_backlink</code></p>
 </li>
 <li>
 <p><strong>Speichere</strong> die Einstellungen.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>In der Zeile vor dem gerade eingefügten <code>$_check.$_backlink</code> musst du nun noch den folgenden Code einfügen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; if( $CustomerID ) &#37;&#125;
+	 	  &#123;&#37; $_check = Link_Checkout(3); &#37;&#125;
+			&#123;&#37; $_backlink = ''; &#37;&#125;
+&#123;&#37; else &#37;&#125;
+			&#123;&#37; $_check = Link_Checkout(2); &#37;&#125;
+			&#123;&#37; $_backlink = '?backlink='; &#37;&#125;
+			&#123;&#37; if $Lang !== 'de' &#37;&#125;
+					   {$ $_backlink = $_backlink . '/' . $Lang; &#37;&#125;
+			&#123;&#37; endif &#37;&#125;'
+			&#123;&#37; $_backlink .= '/checkout'; &#37;&#125;
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Speichere</strong> deine Änderungen am Code.<br>
+Das <strong>de</strong> in der Zeile <code>&#123;&#37; if $Lang !== 'de' &#37;&#125;</code> bezieht sich hier auf die Standartprache des Webshops. Falls die Standardsprache nicht Deutsch ist, muss das Sprachkürzel entsprechend angepasst werden.</p>
 </div>
 <div class="paragraph instruction">
 <p>Backlinks für die Warenkorbvorschau setzen:</p>
@@ -1075,12 +1097,34 @@ Der wichtigste Aspekt hierbei sind die drei verschiedenen Bestellvorgänge und d
 <p>Suche den folgenden Code: <code>&#123;&#37; if( $CustomerID ) { Link_Checkout(3); } else { Link_Checkout(2); } &#37;&#125;</code></p>
 </li>
 <li>
-<p>Ersetze den Code durch <code>&#123;&#37; if( $CustomerID ) { $_check = Link_Checkout(3); $_backlink = ''; } else { $_check = Link_Checkout(2); $_backlink = '?backlink=&#123;&#37;if $Lang !== 'de' &#37;&#125;$Lang&#123;&#37; endif &#37;&#125;/checkout'; } &#37;&#125; $_check.$_backlink</code></p>
+<p>Ersetze den Code durch <code>$_check.$_backlink</code></p>
 </li>
 <li>
 <p><strong>Speichere</strong> die Einstellungen.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>In der Zeile vor dem gerade eingefügten <code>$_check.$_backlink</code> musst du nun noch den folgenden Code einfügen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; if( $CustomerID ) &#37;&#125;
+	 	  &#123;&#37; $_check = Link_Checkout(3); &#37;&#125;
+			&#123;&#37; $_backlink = ''; &#37;&#125;
+&#123;&#37; else &#37;&#125;
+			&#123;&#37; $_check = Link_Checkout(2); &#37;&#125;
+			&#123;&#37; $_backlink = '?backlink='; &#37;&#125;
+			&#123;&#37; if $Lang !== 'de' &#37;&#125;
+					   {$ $_backlink = $_backlink . '/' . $Lang; &#37;&#125;
+			&#123;&#37; endif &#37;&#125;'
+			&#123;&#37; $_backlink .= '/checkout'; &#37;&#125;
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Speichere</strong> deine Änderungen am Code.<br>
+Das <strong>de</strong> in der Zeile <code>&#123;&#37; if $Lang !== 'de' &#37;&#125;</code> bezieht sich hier auf die Standartprache des Webshops. Falls die Standardsprache nicht Deutsch ist, muss das Sprachkürzel entsprechend angepasst werden.</p>
 </div>
 <div class="paragraph instruction">
 <p>Backlinks für das Warenkorb-Overlay setzen:</p>
@@ -1094,7 +1138,7 @@ Der wichtigste Aspekt hierbei sind die drei verschiedenen Bestellvorgänge und d
 <p>Suche den folgenden Code: <code>&#123;&#37; if( $CustomerID ) { Link_Checkout(3); } else { Link_Checkout(2); } &#37;&#125;</code></p>
 </li>
 <li>
-<p>Ersetze den Code durch: <code>&#123;&#37; if( $CustomerID ) { $_check = Link_Checkout(3); $_backlink = ''; } else { $_check = Link_Checkout(2); $_backlink = '?backlink=&#123;&#37;if $Lang !== 'de' &#37;&#125;$Lang&#123;&#37; endif &#37;&#125;/checkout'; } &#37;&#125; $_check.$_backlink</code></p>
+<p>Ersetze den Code durch: <code>$_check.$_backlink</code></p>
 </li>
 <li>
 <p><strong>Speichere</strong> die Einstellungen.</p>
@@ -1102,7 +1146,29 @@ Der wichtigste Aspekt hierbei sind die drei verschiedenen Bestellvorgänge und d
 </ol>
 </div>
 <div class="paragraph">
-<p>Kunden, die zusätzliche individuelle Anpassungen an ihrem Layout vorgenommen haben, müssen überprüfen an welchen Stellen sie ihre Kunden zur Kaufabwicklung weiterleiten. Diese Stellen müssen so angepasst werden, dass sie auf die Route <strong>/checkout</strong> verlinken. Wir können diese individuellen Anpassungen nicht abfangen und sie können von Kunde zu Kunde anders ausfallen.</p>
+<p>In der Zeile vor dem gerade eingefügten <code>$_check.$_backlink</code> musst du nun noch den folgenden Code einfügen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; if( $CustomerID ) &#37;&#125;
+	 	  &#123;&#37; $_check = Link_Checkout(3); &#37;&#125;
+			&#123;&#37; $_backlink = ''; &#37;&#125;
+&#123;&#37; else &#37;&#125;
+			&#123;&#37; $_check = Link_Checkout(2); &#37;&#125;
+			&#123;&#37; $_backlink = '?backlink='; &#37;&#125;
+			&#123;&#37; if $Lang !== 'de' &#37;&#125;
+					   {$ $_backlink = $_backlink . '/' . $Lang; &#37;&#125;
+			&#123;&#37; endif &#37;&#125;'
+			&#123;&#37; $_backlink .= '/checkout'; &#37;&#125;
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Speichere</strong> deine Änderungen am Code.<br>
+Das <strong>de</strong> in der Zeile <code>&#123;&#37; if $Lang !== 'de' &#37;&#125;</code> bezieht sich hier auf die Standartprache des Webshops. Falls die Standardsprache nicht Deutsch ist, muss das Sprachkürzel entsprechend angepasst werden.<br></p>
+</div>
+<div class="paragraph">
+<p>Kunden, die zusätzliche individuelle Anpassungen an ihrem Layout vorgenommen haben, müssen überprüfen an welchen Stellen sie ihre Kunden zur Kaufabwicklung weiterleiten. Diese Stellen müssen so angepasst werden, dass sie auf die Route <strong>/checkout</strong> verlinken. Wir können diese individuellen Anpassungen nicht abfangen, da sie von Kunde zu Kunde anders ausfallen können.<br></p>
 </div>
 <div class="paragraph">
 <p>Der Ceres-Checkout wird sich von deinem bisherigen Callisto-Layout optisch unterscheiden. Du kannst Header und Footer des Checkouts und des Warenkorbs global über den <a href="/webshop/shop-builder#95">ShopBuilder</a> bearbeiten. Den Checkout selbst wirst du mit Ceres Version 3.1.0 über den ShopBuilder bearbeiten können. Weiterhin kannst du eigene Anpassungen über ein <a href="#theme">Theme</a> realisieren.</p>
