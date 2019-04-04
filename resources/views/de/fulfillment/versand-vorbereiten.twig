@@ -81,13 +81,14 @@
 <ul class="sectlevel2">
 <li><a href="#4800"><span>19.1.</span><span> DHL Fulfillment</span></a>
 <ul class="sectlevel3">
-<li><a href="#4900"><span>19.1.1.</span><span> Lager erstellen</span></a></li>
-<li><a href="#5000"><span>19.1.2.</span><span> Auftragsstatus erstellen</span></a></li>
-<li><a href="#5100"><span>19.1.3.</span><span> Retourengründe anlegen</span></a></li>
-<li><a href="#5200"><span>19.1.4.</span><span> Schnittstelle einrichten</span></a></li>
-<li><a href="#5300"><span>19.1.5.</span><span> Merkmale übermitteln</span></a></li>
-<li><a href="#5310"><span>19.1.6.</span><span> Für Deutschland: Briefe versenden</span></a></li>
-<li><a href="#5320"><span>19.1.7.</span><span> Für UK: National und international versenden</span></a></li>
+<li><a href="#4850"><span>19.1.1.</span><span> Voraussetzungen für die Artikelübertragung an DHL Fulfillment</span></a></li>
+<li><a href="#4900"><span>19.1.2.</span><span> Lager erstellen</span></a></li>
+<li><a href="#5000"><span>19.1.3.</span><span> Auftragsstatus erstellen</span></a></li>
+<li><a href="#5100"><span>19.1.4.</span><span> Retourengründe anlegen</span></a></li>
+<li><a href="#5200"><span>19.1.5.</span><span> Schnittstelle einrichten</span></a></li>
+<li><a href="#5300"><span>19.1.6.</span><span> Merkmale übermitteln</span></a></li>
+<li><a href="#5310"><span>19.1.7.</span><span> Für Deutschland: Briefe versenden</span></a></li>
+<li><a href="#5320"><span>19.1.8.</span><span> Für UK: National und international versenden</span></a></li>
 </ul>
 </li>
 <li><a href="#5400"><span>19.2.</span><span> IDS Logistik</span></a></li>
@@ -2584,7 +2585,7 @@ Wenn Sie erlauben, dass Kunden Retouren selbst anlegen können, stehen die <a hr
 <p>Sie haben die Möglichkeit, das Retourenetikett automatisch zu erzeugen. Richten Sie dazu eine Ereignisaktion im Menü <strong>System » Systemeinstellungen » Aufträge » Ereignisse</strong> ein. Wählen Sie ein Ereignis Ihrer Wahl und als Aktion die Option <strong>Retoure &gt; DHL-Retourenlabel generieren</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Anschließend können Sie das Retourenetikett an Ihren Kunden versenden. Richten Sie dazu eine weitere Ereignisaktion ein und wählen als Ereignis <strong>Dokumente &gt; Retourenlabel gespeichert</strong>. Außerdem richten Sie eine E-Mail-Vorlage im Menü <strong>System » Systemeinstellungen » Mandant » Mandant wählen » E-Mail » Vorlagen</strong> ein und wählen aus der Dropdown-Liste <strong>PDF-Anhang</strong> die Option <strong>Retourenlabel</strong>.</p>
+<p>Um das Retourenetikett dann automatisch an Ihren Kunden zu versenden, müssen Sie eine eine E-Mail-Vorlage im Menü <strong>System » Systemeinstellungen » Mandant » Mandant wählen » E-Mail » Vorlagen</strong> einrichten und aus der Dropdown-Liste <strong>PDF-Anhang</strong> die Option <strong>Retourenlabel</strong> wählen. Anschließend richten Sie eine weitere Ereignisaktion ein und wählen als Ereignis <strong>Dokumente &gt; Retourenlabel gespeichert</strong> und als Aktion <strong>Kunde &gt; E-Mail versenden</strong>.</p>
 </div>
 </td>
 </tr>
@@ -4374,7 +4375,26 @@ Somit kann auch keine Packstation als Lieferadresse angegeben werden, für die d
 <p>Die Sendungsanmeldung an DHL Fulfillment erfolgt automatisch über die Schnittstelle. Meldungen zu Sendungen, die bei DHL Fulfillment angemeldet wurden, finden Sie im Menü <strong>Daten » API-Log</strong>. Weitere Informationen zu den API-Log-Einträgen von DHL Fulfillment finden Sie auf der Handbuchseite <a href="/basics/datenaustausch/api-log">API-Log</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="4900">19.1.1. Lager erstellen</h4>
+<h4 id="4850">19.1.1. Voraussetzungen für die Artikelübertragung an DHL Fulfillment</h4>
+<div class="paragraph">
+<p>Die folgenden Voraussetzungen müssen erfüllt sein, damit die Variante an DHL Fulfillment übertragen werden kann:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Variante ist aktiv.</p>
+</li>
+<li>
+<p>Als Hauptlager der Variante ist ein gültiges Vertriebslager vom Typ <strong>DHL Fulfillment</strong> gewählt.</p>
+</li>
+<li>
+<p>Die Variante darf nicht schon einmal an DHL Fulfillment gemeldet geworden sein.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="4900">19.1.2. Lager erstellen</h4>
 <div class="paragraph">
 <p>Erstellen Sie zunächst im Menü <strong>System » Systemeinstellungen » Waren » Lager</strong> die Lager für die von DHL Fulfillment verwalteten Artikel. Geben Sie bei allen Lagern den gleichen Namen ein, z.B. DHL Fulfillment. Wählen Sie diese Lager dann auch als Hauptlager für die von DHL Fulfillment verwalteten Artikel. Öffnen Sie dazu den Artikel im Menü <strong>Artikel » Artikel bearbeiten</strong> und wählen Sie das Hauptlager im Bereich <strong>Versand</strong>. Weitere Informationen zum Erstellen von Lagern finden Sie auf der Handbuchseite <a href="/warenwirtschaft/lager-einrichten">Lager einrichten</a>.</p>
 </div>
@@ -4445,7 +4465,7 @@ Somit kann auch keine Packstation als Lieferadresse angegeben werden, für die d
 </div>
 </div>
 <div class="sect3">
-<h4 id="5000">19.1.2. Auftragsstatus erstellen</h4>
+<h4 id="5000">19.1.3. Auftragsstatus erstellen</h4>
 <div class="paragraph">
 <p>Zur Zuordnung legen Sie im Menü <strong>System » Systemeinstellungen » Aufträge » Auftragsstatus</strong> 2 <a href="/auftraege/auftraege-verwalten#1200">Auftragsstatus</a> für die an DHL Fulfillment übermittelten Aufträge an. Im Folgenden finden Sie 2 Beispiele:</p>
 </div>
@@ -4484,13 +4504,13 @@ Somit kann auch keine Packstation als Lieferadresse angegeben werden, für die d
 </div>
 </div>
 <div class="sect3">
-<h4 id="5100">19.1.3. Retourengründe anlegen</h4>
+<h4 id="5100">19.1.4. Retourengründe anlegen</h4>
 <div class="paragraph">
 <p>Wenn die Retouren von DHL Fulfillment in Ihr plentymarkets System importiert werden sollen, benötigen Sie Retourengründe. Diese Retourengründe legen Sie im Menü <a href="/auftraege/auftraege-verwalten#410">System » Systemeinstellungen » Aufträge » Auftragstypen » Retoure</a> an. Verknüpfen Sie dann die von Ihnen konfigurierten Retourengründe mit den von DHL Fulfillment vorgegebenen Gründen im Menü <strong>System » Systemeinstellungen » Aufträge » Versand » Fulfillment » DHL Fulfillment</strong>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="5200">19.1.4. Schnittstelle einrichten</h4>
+<h4 id="5200">19.1.5. Schnittstelle einrichten</h4>
 <div class="paragraph">
 <p>In den Schnittstelleneinstellungen speichern Sie die Login-Daten, ordnen die Auftragsstatus zu und verknüpfen die Retourengründe.</p>
 </div>
@@ -4588,7 +4608,7 @@ Die Zugangsdaten für den Produktivbetrieb werden von DHL nach erfolgreichem Tes
 </table>
 </div>
 <div class="sect3">
-<h4 id="5300">19.1.5. Merkmale übermitteln</h4>
+<h4 id="5300">19.1.6. Merkmale übermitteln</h4>
 <div class="paragraph">
 <p>Erstellen Sie im Menü <strong>System » Systemeinstellungen » Artikel » Merkmale</strong> Eigenschaften wie z.B. "Zerbrechlich" oder "Originalkarton", die Sie anschließend an DHL Fulfillment übermitteln, damit die Artikel logistisch vorbereitet werden können. Wie Sie ein Merkmal erstellen, ist auf der Handbuchseite <a href="/artikel/artikel-verwalten">Artikel verwalten</a> im Kapitel <a href="/artikel/artikel-verwalten#500">Merkmale erstellen</a> beschrieben. Die folgenden Merkmale können an DHL Fulfillment übermittelt werden:</p>
 </div>
@@ -4664,7 +4684,7 @@ Sollten fehlerhafte HTML-Zeichen bzw. für die API ungültige Zeichen in der Adr
 </div>
 </div>
 <div class="sect3">
-<h4 id="5310">19.1.6. Für Deutschland: Briefe versenden</h4>
+<h4 id="5310">19.1.7. Für Deutschland: Briefe versenden</h4>
 <div class="paragraph">
 <p>Um den Briefversand mit DHL Fulfillment nutzen zu können und so z.B. Einschreiben sowohl national als auch international zu versenden, müssen Sie den <a href="/fulfillment/versand-vorbereiten#800">Versanddienstleister</a> erstellen sowie <a href="/fulfillment/versand-vorbereiten#1000">Versandprofil</a> und <a href="/fulfillment/versand-vorbereiten#1500">Portotabelle</a> einrichten. Dafür müssen <a href="/fulfillment/versand-vorbereiten#100">Lieferländer</a> aktiviert und <a href="/fulfillment/versand-vorbereiten#400">Regionen</a> erstellt sein.<br></p>
 </div>
@@ -4673,7 +4693,7 @@ Sollten fehlerhafte HTML-Zeichen bzw. für die API ungültige Zeichen in der Adr
 </div>
 </div>
 <div class="sect3">
-<h4 id="5320">19.1.7. Für UK: National und international versenden</h4>
+<h4 id="5320">19.1.8. Für UK: National und international versenden</h4>
 <div class="paragraph">
 <p>Damit Sie als Händler im Vereinigten Königreich über DHL Fulfillment Ihre Artikel sowohl national als auch international versenden können, müssen Sie den <a href="/fulfillment/versand-vorbereiten#800">Versanddienstleister</a> erstellen sowie <a href="/fulfillment/versand-vorbereiten#1000">Versandprofil</a> und <a href="/fulfillment/versand-vorbereiten#1500">Portotabelle</a> einrichten. Dafür müssen <a href="/fulfillment/versand-vorbereiten#100">Lieferländer</a> aktiviert und <a href="/fulfillment/versand-vorbereiten#400">Regionen</a> erstellt sein.</p>
 </div>
