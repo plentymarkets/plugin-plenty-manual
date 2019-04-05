@@ -7633,7 +7633,7 @@ class Metadata {
 						"keywords" => "elastic export, item export, elastic",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best Practices: Elastic Export. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -9593,7 +9593,7 @@ class Metadata {
 						"keywords" => "Amazon, Item, Export",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Item data export. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -9608,7 +9608,7 @@ class Metadata {
 						"keywords" => "Amazon, Prime, order",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Error Request is throttled. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -9623,7 +9623,7 @@ class Metadata {
 						"keywords" => "Amazon, Items, Export",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Manually generating reports for FBA orders and returns. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -9638,7 +9638,7 @@ class Metadata {
 						"keywords" => "Amazon, Order, Import, Merchant Fulfilment Network, Merchant Fulfillment Network, MFN",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: MFN order import. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -9653,7 +9653,7 @@ class Metadata {
 						"keywords" => "Amazon, Prime, Order, Shipping",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Amazon Prime. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -9668,7 +9668,7 @@ class Metadata {
 						"keywords" => "Amazon, VCS, VAT calculation service, invoice",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Using Amazon’s VAT calculation service VCS. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -9714,7 +9714,7 @@ class Metadata {
 						"keywords" => "eBay, item, no variation, listing, markets",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Activating listings. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -9729,7 +9729,7 @@ class Metadata {
 						"keywords" => "eBay, Out of stock, Listing, Markets, Stock dependence, Automatic stock update",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Use out of stock-option. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -9744,7 +9744,7 @@ class Metadata {
 						"keywords" => "eBay, Questions, FAQ, Help, Markets",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic FAQ. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -9910,7 +9910,7 @@ class Metadata {
 						"keywords" => "idealo, Item",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: idealo. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -9986,7 +9986,7 @@ class Metadata {
 						"keywords" => "Neckermann.at, Neckermann, cancellation, returns, partial cancellation",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Neckermann.at. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -10077,7 +10077,7 @@ class Metadata {
 						"keywords" => "Rakuten, Multi-Channel, item export, elastic export",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Rakuten. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -10123,7 +10123,7 @@ class Metadata {
 						"keywords" => "Shipping, real.de, hitmeister, shipping groups, settings, shipping profile",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Integration of shipping groups. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -10138,7 +10138,7 @@ class Metadata {
 						"keywords" => "real.de, Multi-Channel, inventory.csv, product.csv",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Linking properties to attributes. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
