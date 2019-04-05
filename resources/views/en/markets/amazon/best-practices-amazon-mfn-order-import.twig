@@ -7,11 +7,18 @@
 </aside>
 
 <main id="main">
-    <h1>Best practice: MFN order import</h1><div class="paragraph">
+    <h1>Best practice: MFN order import</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
 <p>This best practice deals with MFN orders (MFN = Merchant Fulfillment Network, i.e. shipment by the seller) that are not imported. We assume that the order import is activated in the basic settings for Amazon.</p>
-</div><h4 id="_mws_registration" class="discrete">MWS registration</h4><div class="paragraph">
+</div>
+</div>
+</div><div class="sect3">
+<h4 id="100">MWS registration</h4>
+<div class="paragraph">
 <p>MWS registration allows our developers to access your Amazon account. When the registration is finished, the access rights are displayed in your seller central within <strong>Settings » User permissions</strong> in the <strong>Amazon MWS Developer Permissions</strong> section. If we are not granted access rights, we can neither retrieve data from nor send data to Amazon (as requests are blocked by Amazon).</p>
-</div><div class="admonitionblock important">
+</div>
+<div class="admonitionblock important">
 <table>
 <tbody><tr>
 <td class="icon">
@@ -25,12 +32,17 @@ Another indicator that there are no developer permissions is this error message:
 </td>
 </tr>
 </tbody></table>
-</div><div class="paragraph">
+</div>
+<div class="paragraph">
 <p>How to carry out the MWS registration is described in our <a href="/en/markets/amazon/amazon-setup#100">manual</a>.</p>
-</div><h4 id="_auth_token_expired" class="discrete">Auth token expired</h4><div class="paragraph">
+</div>
+</div><div class="sect3">
+<h4 id="200">Auth token expired</h4>
+<div class="paragraph">
 <p>The Auth token is generated during the MWS registration. The token is used for the synchronisation between plentymarkets and Amazon and it is directly linked to the authorisation. The token has an expiry date. This is to ensure that deactivated interfaces no longer have access after the token is expired.
 Vice versa, this means that the token must be updated from time to time. When the token has expired, developer permissions granted with the MWS registration are no longer valid and no synchronisation can be carried out.</p>
-</div><div class="admonitionblock important">
+</div>
+<div class="admonitionblock important">
 <table>
 <tbody><tr>
 <td class="icon">
@@ -43,11 +55,16 @@ Vice versa, this means that the token must be updated from time to time. When th
 </td>
 </tr>
 </tbody></table>
-</div><div class="paragraph">
+</div>
+<div class="paragraph">
 <p>You can update the Auth token in the seller central under <strong>Settings » User permissions</strong> in the section <strong>Amazon MWS Developer Permissions</strong>. (The expiry date is set in the future. This ensures that the permissions are valid again.)</p>
-</div><h4 id="_wrong_access_data" class="discrete">Wrong access data</h4><div class="paragraph">
+</div>
+</div><div class="sect3">
+<h4 id="300">Wrong access data</h4>
+<div class="paragraph">
 <p>In order to enable contact between our system and your Amazon account, the access data saved in the basic settings must be correct.</p>
-</div><div class="admonitionblock important">
+</div>
+<div class="admonitionblock important">
 <table>
 <tbody><tr>
 <td class="icon">
@@ -60,9 +77,11 @@ Vice versa, this means that the token must be updated from time to time. When th
 </td>
 </tr>
 </tbody></table>
-</div><div class="paragraph">
+</div>
+<div class="paragraph">
 <p>The correct token and your seller ID (merchant ID) can be found via the <a href="/en/markets/amazon/amazon-setup#100">MWS registration</a> (at the end of the registration). As an alternative, you can enter the merchant ID into the field for the seller token.</p>
-</div><div class="admonitionblock tip">
+</div>
+<div class="admonitionblock tip">
 <table>
 <tbody><tr>
 <td class="icon">
@@ -75,9 +94,13 @@ Vice versa, this means that the token must be updated from time to time. When th
 </td>
 </tr>
 </tbody></table>
-</div><h4 id="_scheduled_reports" class="discrete">Scheduled reports</h4><div class="paragraph">
+</div>
+</div><div class="sect3">
+<h4 id="400">Scheduled reports</h4>
+<div class="paragraph">
 <p>If all of the issues mentioned above are solved, you can start the synchronisation. In order to import orders, Amazon generates reports which contain the orders. We retrieve those reports.</p>
-</div><div class="admonitionblock caution">
+</div>
+<div class="admonitionblock caution">
 <table>
 <tbody><tr>
 <td class="icon">
@@ -90,9 +113,11 @@ Vice versa, this means that the token must be updated from time to time. When th
 </td>
 </tr>
 </tbody></table>
-</div><div class="paragraph">
+</div>
+<div class="paragraph">
 <p>Go to <strong>System » System settings » Markets » Amazon » Data exchange » Reports » Tab: Scheduled reports</strong> to set up a continual automatic generation of scheduled reports. This function is called <strong>scheduled reports</strong>.</p>
-</div><div class="olist arabic">
+</div>
+<div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Select the <strong>Amazon account</strong>.</p>
@@ -104,7 +129,8 @@ Vice versa, this means that the token must be updated from time to time. When th
 <p>Click on the gear-wheel icon <strong>Schedule MFN order report</strong>.</p>
 </li>
 </ol>
-</div><div class="admonitionblock tip">
+</div>
+<div class="admonitionblock tip">
 <table>
 <tbody><tr>
 <td class="icon">
@@ -117,17 +143,24 @@ Vice versa, this means that the token must be updated from time to time. When th
 </td>
 </tr>
 </tbody></table>
-</div><div class="paragraph">
+</div>
+<div class="paragraph">
 <p>Click on <strong>Import report list</strong> to check whether your settings were saved.</p>
-</div><div id="scheduledreports" class="imageblock">
+</div>
+<div id="scheduledreports" class="imageblock">
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/markets/assets/bp-amazon-mfn-order-import-magnifier.png" alt="Viewing the scheduled reports">
 </div>
 <div class="title">Figure 1. Viewing the scheduled reports</div>
-</div><div class="paragraph">
+</div>
+<div class="paragraph">
 <p>As a result, the schedulers that you activated for your Amazon account are displayed. The report type <strong>Get Orders Data</strong> is required for the MFN order import. It should be set to 15 minutes. This setting may cause orders to be imported late (for example if the interval is set to <strong>weekly</strong>).</p>
-</div><h4 id="_further_error_messages" class="discrete">Further error messages</h4><div class="paragraph">
+</div>
+</div><div class="sect3">
+<h4 id="500">Further error messages</h4>
+<div class="paragraph">
 <p>If you receive the error message <em>The seller does not have an eligible Amazon account to call Amazon MWS.</em>, it may be that our system is not authorised to access Amazon. Check the developer permissions as described above. If they are not available, add the permissions via the MWS registration.
 If this does not help, contact Amazon. (Either your seller account is no power seller account and therefore the Amazon MWS API cannot be used, or your account is not properly activated).</p>
+</div>
 </div>
 </main>
