@@ -1,37 +1,62 @@
 <aside class="plenty-anchor-navbar">
     <div class="sticky-wrapper">
         <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
-            
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> Was bedeutet “Request is throttled”?</span></a></li>
+<li><a href="#200"><span>2.</span><span> Hauptsächliche Ursache des Problems:</span></a></li>
+<li><a href="#300"><span>3.</span><span> Lösung des Problems:</span></a></li>
+</ul>
+</div>
         </div>
     </div>
 </aside>
 
 <main id="main">
-    <h1>Best Practice: Fehler Request is throttled</h1><div class="paragraph">
+    <h1>Best Practice: Fehler Request is throttled</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
 <p>Dieses Best Practice behandelt das auftretende Problem der Fehlermeldung: “Request is throttled” und dessen Lösung.</p>
-</div><h4 id="_was_bedeutet_request_is_throttled" class="discrete">Was bedeutet “Request is throttled”?</h4><div class="paragraph">
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. Was bedeutet “Request is throttled”?</h2>
+<div class="sectionbody">
+<div class="paragraph">
 <p>Für jede sogenannte “Operation” (Auftragsimport, Versandbestätigungen, Bestandsübermittlung/en usw.) existieren bei Amazon Limits für Anfragen (Maximum Request quota), welche, wenn diese überschritten werden, zu einer “Sperrung” der Operation führen. Weitere Anfragen werden von Amazon verworfen. Erst nach einer gewissen Zeit werden nach und nach (The Leaky Bucket Algorithm) wieder Kapazitäten dieser Operation zur Verfügung gestellt und die Übertragung ist erneut möglich.</p>
-</div><div class="paragraph">
+</div>
+<div class="paragraph">
 <p>Wer die genaue Funktionsweise noch einmal nachlesen möchte, kann dies im Englischen unter <a href="http://docs.developer.amazonservices.com/en_DE/dev_guide/DG_Throttling.html" target="_blank" rel="noopener">Throttling: Limits to how often you can submit requests</a> tun.</p>
-</div><h4 id="_hauptsächliche_ursache_des_problems" class="discrete">Hauptsächliche Ursache des Problems:</h4><div class="paragraph">
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="200">2. Hauptsächliche Ursache des Problems:</h2>
+<div class="sectionbody">
+<div class="paragraph">
 <p>Dieses Problem tritt häufig auf, da aufgrund einer Konfiguration im plentymarkets System bei der Nutzung eines europäischen Verkäuferkontos bei Amazon zu viele Anfragen dieses Amazon-Kontos gesendet werden.</p>
-</div><div class="paragraph">
+</div>
+<div class="paragraph">
 <p><strong>Konkret:</strong></p>
-</div><div class="paragraph">
+</div>
+<div class="paragraph">
 <p>Unter <strong>System » Systemeinstellungen » Märkte » Amazon » Einstellungen</strong> wurden mehrere Amazon-Konten für unterschiedliche Plattformen hinterlegt, welche jedoch alle dasselbe europäische Verkäuferkonto “anzielen”. Diese Konten haben immer die gleiche Verkäufer-ID. In jedem / mehreren dieser Konten wurden diverse “Operationen” aktiviert.</p>
-</div><div class="paragraph">
+</div>
+<div class="paragraph">
 <p>Amazon-Plattformen, die meist zu einem europäischen Verkäuferkonto zusammengefasst sind (Stand 15.05.2017):</p>
-</div><div class="ulist">
+</div>
+<div class="ulist">
 <ul>
 <li>
 <p>Amazon.de , Amazon.fr, Amazon.it, Amazon.es, Amazon.co.uk</p>
 </li>
 </ul>
-</div><div class="admonitionblock important">
+</div>
+<div class="admonitionblock important">
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Important</div>
+<i class="fa icon-important" title="Wichtig"></i>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -40,13 +65,19 @@
 </td>
 </tr>
 </tbody></table>
-</div><h4 id="_lösung_des_problems" class="discrete">Lösung des Problems:</h4><div class="paragraph">
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="300">3. Lösung des Problems:</h2>
+<div class="sectionbody">
+<div class="paragraph">
 <p>Bei solch einem europäischen Amazon-Verkäuferkonto ist es sinnvoll, wenn ihr in nur einem in plentymarkets hinterlegten Konto (<strong>System » Systemeinstellungen » Märkte » Amazon » Einstellungen</strong>) diverse “Operationen” aktiviert, da diese sonst für jedes in plentymarkets hinterlegtes Konto, welches zu dieser Verkäufer-ID gehört, die Daten zusätzlich übermitteln.</p>
-</div><div class="admonitionblock tip">
+</div>
+<div class="admonitionblock tip">
 <table>
 <tbody><tr>
 <td class="icon">
-<div class="title">Tip</div>
+<i class="fa icon-tip" title="Hinweis"></i>
 </td>
 <td class="content">
 <div class="title">Operationen, welche nicht “doppelt” / “mehrfach” aktiviert werden sollten und häufig zum oben genannten Fehler führen, sind:</div>
@@ -66,7 +97,10 @@
 </td>
 </tr>
 </tbody></table>
-</div><div class="paragraph">
+</div>
+<div class="paragraph">
 <p><strong>P.S.:</strong> Bei einem Konto für Amazon.com handelt es sich selbstverständlich nicht um eine Plattform eines europäischen Verkäuferkontos.</p>
+</div>
+</div>
 </div>
 </main>

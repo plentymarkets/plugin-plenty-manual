@@ -2522,7 +2522,7 @@ class Metadata {
 						"keywords" => "Elastischer Export, Elastic Export, Artikelexport, elastisch, elastic",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Elastischer Export. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4527,7 +4527,7 @@ class Metadata {
 						"keywords" => "Amazon, Artikel, Export",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Artikeldatenexport. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4542,7 +4542,7 @@ class Metadata {
 						"keywords" => "Amazon, Prime, Auftragsablauf",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Fehler Request is throttled. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4557,7 +4557,7 @@ class Metadata {
 						"keywords" => "Amazon, Artikel, Export",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Manuelle Berichtserstellung für FBA-Aufträge und Retouren. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4572,7 +4572,7 @@ class Metadata {
 						"keywords" => "Amazon, Auftrag, Import, Händlerversand, MFN",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: MFN-Auftragsimport. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4587,7 +4587,7 @@ class Metadata {
 						"keywords" => "Amazon, Prime, Auftragsablauf",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Amazon Prime. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4602,7 +4602,7 @@ class Metadata {
 						"keywords" => "Amazon, VCS, Rechnungsservice, Rechnung, Umsatzsteuerservice",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Rechnungsservice VCS nutzen. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4648,7 +4648,7 @@ class Metadata {
 						"keywords" => "eBay, Artikel, keine Variante, Listing, Märkte",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Artikel für eBay freischalten. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4663,7 +4663,7 @@ class Metadata {
 						"keywords" => "eBay, Ausblenden, Nicht mehr vorrätig, Listing, Märkte, Bestandsabhängigkeit, Bestandsautomatik",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Nicht mehr vorrätig-Option nutzen. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4678,7 +4678,7 @@ class Metadata {
 						"keywords" => "eBay, Fragen, FAQ, Hilfe, Märkte",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich FAQ. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4844,7 +4844,7 @@ class Metadata {
 						"keywords" => "idealo, Artikel",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: idealo. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4920,7 +4920,7 @@ class Metadata {
 						"keywords" => "Neckermann.at, Neckermann, Storno, Retoure, Teilstorno, Teilstornierung, Komplettstorno, Komplettstornierung",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Neckermann.at. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5011,7 +5011,7 @@ class Metadata {
 						"keywords" => "rakuten, Multi-Channel, artikelexport, elastischer Export",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Rakuten. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5057,7 +5057,7 @@ class Metadata {
 						"keywords" => "Versand, real.de, hitmeister, Versandgruppen, Versandeinstellungen, Versandprofil",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Integration der Versandgruppen. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5072,7 +5072,7 @@ class Metadata {
 						"keywords" => "real.de, Multi-Channel, inventory.csv, product.csv",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Merkmale mit Attributen verknüpfen. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
