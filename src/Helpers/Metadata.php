@@ -4966,7 +4966,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Netto Marken-Discount, GartenXXL.de und GartenXXL.at",
 				"keywords" => "Plus.de, GartenXXL.de, GartenXXL.at, Netto, Marktplatz",
-				"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zu den Marktplätzen Plus.de, Netto Marken-Discount und GartenXXL.de in Ihrem plentymarkets System ein.",
+				"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zu den Marktplätzen Netto Marken-Discount und GartenXXL.de in Ihrem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Netto Marken-Discount, GartenXXL.de und GartenXXL.at. Hier finden Sie folgende Informationen:",
 				"children" => [],
