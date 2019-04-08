@@ -9,7 +9,8 @@
 <ul class="sectlevel2">
 <li><a href="#2260"><span>2.1.</span><span> Item</span></a>
 <ul class="sectlevel3">
-<li><a href="#2310"><span>2.1.1.</span><span> Cross-selling</span></a></li>
+<li><a href="#3000"><span>2.1.1.</span><span> Item sets</span></a></li>
+<li><a href="#2310"><span>2.1.2.</span><span> Cross-selling</span></a></li>
 </ul>
 </li>
 <li><a href="#2270"><span>2.2.</span><span> Item description</span></a></li>
@@ -26,7 +27,7 @@
 <li><a href="#2370"><span>2.9.</span><span> Markets</span></a></li>
 <li><a href="#2380"><span>2.10.</span><span> Attributes</span></a></li>
 <li><a href="#2390"><span>2.11.</span><span> Item images</span></a></li>
-<li><a href="#2400"><span>2.12.</span><span> Properties</span></a></li>
+<li><a href="#2400"><span>2.12.</span><span> Characteristics</span></a></li>
 <li><a href="#2410"><span>2.13.</span><span> Properties</span></a></li>
 <li><a href="#2290"><span>2.14.</span><span> Variation tags</span></a></li>
 <li><a href="#2420"><span>2.15.</span><span> Inheritance</span></a></li>
@@ -278,7 +279,7 @@ multipack = <strong>Multipack</strong> item<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Listing category 1;<br>
-Listing category 2;</p></td>
+Listing category 2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -338,7 +339,7 @@ Field 20</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If not available in the system, a new producer is created.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If not available in the system, a new manufacturer is created.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Item template</p></td>
@@ -355,12 +356,52 @@ Field 20</p></td>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="2310">2.1.1. Cross-selling</h4>
+<h4 id="3000">2.1.1. Item sets</h4>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-crossselling">Table 3</a> lists the fields available for importing cross-selling links. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-item-sets">Table 3</a> lists the fields available for importing item sets. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+</div>
+<table id="table-mapping-fields-item-sets" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Fields for importing item sets</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add components (IDs, comma-separated)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID and quantity of the items to be added to the set, format:<br>
+<strong>itemID:quantity,itemID:quantity</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remove components (IDs, comma-separated)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IDs of the items to be removed from the set<br>
+<strong>itemID:quantity,itemID:quantity</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decimal number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discount on total price of set in %</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="2310">2.1.2. Cross-selling</h4>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-crossselling">Table 4</a> lists the fields available for importing cross-selling links. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-crossselling" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Fields for importing cross-selling links</caption>
+<caption class="title">Table 4. Fields for importing cross-selling links</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -392,10 +433,10 @@ Similar<br>
 Bundle = item bundle</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delete all cross selling links</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete cross selling links</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cross-selling links in the format<br>
- <strong>ItemID; itemID;etc.</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cross-selling links to be deleted in the format<br>
+ <strong>ItemID;itemID;etc.</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -404,10 +445,10 @@ Bundle = item bundle</p></td>
 <div class="sect2">
 <h3 id="2270">2.2. Item description</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-descriptions">Table 4</a> lists the fields available for importing item descriptions. Create one mapping per language. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-matching-fields-description">[table-matching-fields-description]</a> lists the fields available for importing item descriptions. Create one mapping per language. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-descriptions" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Fields for importing item descriptions</caption>
+<caption class="title">Table 5. Fields for importing item descriptions</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -468,10 +509,10 @@ Name 3</p></td>
 <div class="sect2">
 <h3 id="2280">2.3. Shipping profile</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-shipping-profiles">Table 5</a> lists the fields available for importing shipping profiles. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-shipping-profiles">Table 6</a> lists the fields available for importing shipping profiles. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-shipping-profiles" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Matching fields for shipping profiles</caption>
+<caption class="title">Table 6. Matching fields for shipping profiles</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -506,10 +547,10 @@ Name 3</p></td>
 <div class="sect2">
 <h3 id="2300">2.4. Variations</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-variations">Table 6</a> lists the fields available for importing variation data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-variations">Table 7</a> lists the fields available for importing variation data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-variations" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 6. Matching fields for variations</caption>
+<caption class="title">Table 7. Matching fields for variations</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -660,7 +701,7 @@ Name 3</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bundle type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">bundle = variation is a bundle<br>
-bundle_item = variation is bundle component</p></td>
+bundle_item = Variation is bundle component</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -673,7 +714,7 @@ bundle_item = variation is bundle component</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order picking</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">single_picking = Single order picking possible<br>
 no_single_picking = No single order picking possible<br>
-exclude_from_picklist</p></td>
+exclude_from_picklist = Exclude from pick list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -751,7 +792,7 @@ exclude_from_picklist</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delete variations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete variation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0 = No<br>
 1 = Yes</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -764,12 +805,12 @@ exclude_from_picklist</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Available until</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Last date that the main variation is available.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last date that the main variation is available</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Release date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date on which the main variation becomes available.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date on which the main variation becomes available</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
@@ -812,10 +853,10 @@ Extra shipping charge 2</p></td>
 <div class="sect3">
 <h4 id="2320">2.4.1. Barcodes</h4>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-barcodes">Table 7</a> lists the fields available for importing barcode data. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping per barcode type.</p>
+<p><a href="#table-mapping-fields-barcodes">Table 8</a> lists the fields available for importing barcode data. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping per barcode type.</p>
 </div>
 <table id="table-mapping-fields-barcodes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 7. Fields for importing barcodes</caption>
+<caption class="title">Table 8. Fields for importing barcodes</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -847,10 +888,10 @@ Extra shipping charge 2</p></td>
 <div class="sect2">
 <h3 id="2330">2.5. Variation price</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-price">Table 8</a> lists the fields available for importing variation price data. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping per sales price.</p>
+<p><a href="#table-mapping-fields-price">Table 9</a> lists the fields available for importing variation price data. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping per sales price.</p>
 </div>
 <table id="table-mapping-fields-price" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. Fields for importing variation prices</caption>
+<caption class="title">Table 9. Fields for importing variation prices</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -887,10 +928,10 @@ Extra shipping charge 2</p></td>
 <div class="sect2">
 <h3 id="2340">2.6. Categories</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-categories">Table 9</a> lists the fields available for importing category data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-categories">Table 10</a> lists the fields available for importing category data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-categories" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. Fields for importing categories</caption>
+<caption class="title">Table 10. Fields for importing categories</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -976,12 +1017,6 @@ or</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the default category</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Automatically selected</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">N = No<br>
-Y = Yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Category name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the default category</p></td>
@@ -992,10 +1027,10 @@ Y = Yes</p></td>
 <div class="sect2">
 <h3 id="2350">2.7. Stock</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-stock">Table 10</a> lists the fields available for importing stock data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-stock">Table 11</a> lists the fields available for importing stock data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-stock" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. Fields for importing stock</caption>
+<caption class="title">Table 11. Fields for importing stock</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1030,10 +1065,10 @@ Y = Yes</p></td>
 <div class="sect2">
 <h3 id="2360">2.8. Client</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-clients">Table 11</a> lists the fields available for importing client availabilities. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping for each client.</p>
+<p><a href="#table-mapping-fields-clients">Table 12</a> lists the fields available for importing client availabilities. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping for each client.</p>
 </div>
 <table id="table-mapping-fields-clients" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. Matching fields for importing client availabilities</caption>
+<caption class="title">Table 12. Matching fields for importing client availabilities</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1059,10 +1094,10 @@ Y = Yes</p></td>
 <div class="sect2">
 <h3 id="2370">2.9. Markets</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-markets">Table 12</a> lists the fields available for importing market availabilities. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping for each market.</p>
+<p><a href="#table-mapping-fields-markets">Table 13</a> lists the fields available for importing market availabilities. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping for each market.</p>
 </div>
 <table id="table-mapping-fields-markets" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. Fields for importing market availabilities</caption>
+<caption class="title">Table 13. Fields for importing market availabilities</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1088,10 +1123,10 @@ Y = Yes</p></td>
 <div class="sect2">
 <h3 id="2380">2.10. Attributes</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-attributes">Table 13</a> lists the fields available for importing attribute links. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping for each format.</p>
+<p><a href="#table-mapping-fields-attributes">Table 14</a> lists the fields available for importing attribute links. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping for each format.</p>
 </div>
 <table id="table-mapping-fields-attributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 13. Fields for importing attribute links</caption>
+<caption class="title">Table 14. Fields for importing attribute links</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1109,33 +1144,48 @@ Y = Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute selection combination</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Combination of <strong>Attribute name (internal)</strong> and <strong>Attribute value (internal)</strong> in the format<br>
-<strong>Attribute name:Value name;</strong> or <strong>Attributname&lt;&gt;Value name&lt;||&gt;</strong><br>
+*attributeName:valueName; * or *attributeName&lt;&gt;valueName&lt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;*<br>
 Import of more than two attribute links.<br>
 <strong><em>Note:</em></strong> Every attribute selection combination must be unique for each variation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute ID</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Import of up to two attribute links.<br>
-<strong><em>Tip:</em></strong> If two links exist, the IDs must be in different columns. Create a mapping in the format <strong>Attribute name:Value name;</strong> and an additional mapping in the format <strong>Attribute name&lt;&gt;Value name&lt;||&gt;</strong> and assign the separate columns.</p></td>
+<strong><em>Tip:</em></strong> If two links exist, the IDs must be in different columns. Create a mapping in the format <strong>attribute name:value name;</strong> and an additional mapping in the format *attribute name&lt;&gt;value name&lt;</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;* and assign the separate columns.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Import of up to two attribute links.<br>
-<strong><em>Tip:</em></strong> If two links exist, the names must be in different columns. Create a mapping in the format <strong>Attribute name:Value name;</strong> and an additional mapping in the format <strong>Attribute name&lt;&gt;Value name&lt;||&gt;</strong> and assign the separate columns.</p></td>
+<strong><em>Tip:</em></strong> If two links exist, the names must be in different columns. Create a mapping in the format <strong>attribute name:value name;</strong> and an additional mapping in the format *attribute name&lt;&gt;value name&lt;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;* and assign the separate columns.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Value name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Import of up to two attribute links.<br>
-<strong><em>Tip:</em></strong> If two links exist, the names must be in different columns. Create a mapping in the format <strong>Attribute name:Value name;</strong> and an additional mapping in the format <strong>Attribute name&lt;&gt;Value name&lt;||&gt;</strong> and assign the separate columns.</p></td>
+<strong><em>Tip:</em></strong> If two links exist, the names must be in different columns. Create a mapping in the format <strong>attribute name:value name;</strong> and an additional mapping in the format *attribute name&lt;&gt;value name&lt;</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;* and assign the separate columns.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Value ID</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Import of up to two attribute links.<br>
-<strong><em>Tip:</em></strong> If two links exist, the IDs must be in different columns. Create a mapping in the format <strong>Attribute name:Value name;</strong> and an additional mapping in the format <strong>Attribute name&lt;&gt;Value name&lt;||&gt;</strong> and assign the separate columns.</p></td>
+<strong><em>Tip:</em></strong> If two links exist, the IDs must be in different columns. Create a mapping in the format <strong>attribute name:value name;</strong> and an additional mapping in the format *attribute name&lt;&gt;value name&lt;</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -1143,10 +1193,10 @@ Import of more than two attribute links.<br>
 <div class="sect2">
 <h3 id="2390">2.11. Item images</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-images">Table 14</a> lists the fields available for importing image data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-images">Table 15</a> lists the fields available for importing image data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-images" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 14. Matching fields for importing item images</caption>
+<caption class="title">Table 15. Matching fields for importing item images</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1231,7 +1281,7 @@ Specify more than one referrer separated by commas.<br>
 Alternative text of the item image in the format <strong>Name:Language1:AlternativeText,Name:Language2:AlternativeText</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Market attribute link (Attribute value ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Market attribute link (attribute value ID)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the attribute value</p></td>
 </tr>
@@ -1245,12 +1295,12 @@ Alternative text of the item image in the format <strong>Name:Language1:Alternat
 </table>
 </div>
 <div class="sect2">
-<h3 id="2400">2.12. Properties</h3>
+<h3 id="2400">2.12. Characteristics</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-properties-items">Table 15</a> lists the fields available for importing characteristic links at the item level. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-matching-fields-characteristics">[table-matching-fields-characteristics]</a> lists the fields available for importing characteristics data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
-<table id="table-mapping-fields-properties-items" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 15. Fields for importing property links</caption>
+<table id="table-mapping-fields-characteristics" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 16. Fields for importing characteristics links</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1267,35 +1317,35 @@ Alternative text of the item image in the format <strong>Name:Language1:Alternat
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">See <strong>System » System settings » Item » Properties</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Property combination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See <strong>System » System settings » Item » Characteristics</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic combination</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Combination of back end name, value and language in the format<br>
 <strong>Name1:Value1:Language1;Name2:Value2:Language2</strong> etc.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Internal name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Value</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Language</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Letters</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Properties of the type <strong>Text</strong> only<br>
-For codes, see <a href="/en/basics/internal-IDs#10">Languages</a></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Properties of the type <strong>Text</strong> only<br>
+For codes, see <a href="/en/basics/internal-IDs#10">Languages</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete (yes/no)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0 = No<br>
 1 = Yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -1303,10 +1353,10 @@ For codes, see <a href="/en/basics/internal-IDs#10">Languages</a></p></td>
 <div class="sect2">
 <h3 id="2410">2.13. Properties</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-properties-variations">Table 16</a> lists the fields available for importing property links at the variation level. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-properties-variations">Table 17</a> lists the fields available for importing property links at the variation level. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-properties-variations" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 16. Fields for importing property links</caption>
+<caption class="title">Table 17. Fields for importing property links</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1369,10 +1419,10 @@ For codes, see <a href="/en/basics/internal-IDs#10">Languages</a></p></td>
 <div class="sect2">
 <h3 id="2290">2.14. Variation tags</h3>
 <div class="paragraph">
-<p><a href="#Table-mapping-fields-tags">[Table-mapping-fields-tags]</a> lists the fields available for importing tag links. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-tags">Table 18</a> lists the fields available for importing tag links. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-tags" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 17. Fields for importing tag links</caption>
+<caption class="title">Table 18. Fields for importing tag links</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1424,10 +1474,10 @@ For codes, see <a href="/en/basics/internal-IDs#10">Languages</a></p></td>
 <div class="sect2">
 <h3 id="2420">2.15. Inheritance</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-inheritance">Table 18</a> lists the fields available for importing inheritance data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-inheritance">Table 19</a> lists the fields available for importing inheritance settings. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-inheritance" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 18. Fields for importing inheritance</caption>
+<caption class="title">Table 19. Fields for importing inheritance</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1495,10 +1545,10 @@ For codes, see <a href="/en/basics/internal-IDs#10">Languages</a></p></td>
 <div class="sect2">
 <h3 id="2420a">2.16. Content</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-content">Table 19</a> lists the fields available for importing content data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-content">Table 20</a> lists the fields available for importing content data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-content" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 19. Fields for importing content</caption>
+<caption class="title">Table 20. Fields for importing content</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1534,10 +1584,10 @@ Alternatively, transfer <strong>content units of measure (ISO)</strong></p></td>
 <div class="sect2">
 <h3 id="2430">2.17. ASIN/ePID</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-ASIS-ePID">[table-mapping-fields-ASIS-ePID]</a> lists the fields available for importing ASIN/ePID data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-ASIN-ePID">Table 21</a> lists the fields available for importing ASIN/ePID data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-ASIN-ePID" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 20. Fields for importing ASIN/ePID</caption>
+<caption class="title">Table 21. Fields for importing ASIN/ePID</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1577,10 +1627,10 @@ Alternatively, transfer <strong>content units of measure (ISO)</strong></p></td>
 <div class="sect2">
 <h3 id="2440">2.18. Warehouse</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-warehouse">Table 21</a> lists the fields available for importing warehouse data. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping per warehouse.</p>
+<p><a href="#table-mapping-fields-warehouse">Table 22</a> lists the fields available for importing warehouse data. During the import, plentymarkets checks if the imported data record already exists based on the matching field. Create one mapping per warehouse.</p>
 </div>
 <table id="table-mapping-fields-warehouse" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 21. Fields for importing warehouse data</caption>
+<caption class="title">Table 22. Fields for importing warehouse data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1657,10 +1707,10 @@ europallet</p></td>
 <div class="sect2">
 <h3 id="2450">2.19. Supplier</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-supplier">Table 22</a> lists the fields available for importing supplier data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-supplier">Table 23</a> lists the fields available for importing supplier data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-supplier" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 22. Fields for importing supplier data</caption>
+<caption class="title">Table 23. Fields for importing supplier data</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1744,10 +1794,10 @@ europallet</p></td>
 <div class="sect2">
 <h3 id="2460">2.20. SKU</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-SKU">Table 23</a> lists the fields available for importing SKU data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-SKU">Table 24</a> lists the fields available for importing SKU data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-SKU" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 23. Fields for importing SKU</caption>
+<caption class="title">Table 24. Fields for importing SKU</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1795,10 +1845,10 @@ For eBay, see <strong>System » System settings » Markets » eBay » Accounts</
 <div class="sect2">
 <h3 id="3000">2.21. Additional SKUs</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-additional-SKU">Table 24</a> lists the fields available for importing additional SKU data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-additional-SKU">Table 25</a> lists the fields available for importing additional SKU data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-additional-SKU" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 24. Fields for importing additional SKU</caption>
+<caption class="title">Table 25. Fields for importing additional SKU</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1846,10 +1896,10 @@ For eBay, see <strong>System » System settings » Markets » eBay » Accounts</
 <div class="sect2">
 <h3 id="2470">2.22. Bundle</h3>
 <div class="paragraph">
-<p><a href="#table-mapping-fields-bundle">Table 25</a> lists the fields available for importing item bundle data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-bundle">Table 26</a> lists the fields available for importing item bundle data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-bundle" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 25. Fields for importing bundles</caption>
+<caption class="title">Table 26. Fields for importing bundles</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1864,9 +1914,9 @@ For eBay, see <strong>System » System settings » Markets » eBay » Accounts</
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Item bundle components</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bundle components</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Variation ID:quantity;Variation ID:quantity,etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">variationID:quantity;variationID:quantity;etc.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delete bundle components</p></td>
@@ -1874,7 +1924,7 @@ For eBay, see <strong>System » System settings » Markets » eBay » Accounts</
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variation ID of bundle component</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delete package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete bundle</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0 = No<br>
 1 = Yes</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -1885,10 +1935,10 @@ For eBay, see <strong>System » System settings » Markets » eBay » Accounts</
 <div class="sect2">
 <h3 id="sync-serial-number">2.23. Serial number</h3>
 <div class="paragraph">
-<p><a href="#Table-mapping-fields-serial-numbers">[Table-mapping-fields-serial-numbers]</a> lists the fields available for importing serial number data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-fields-serial-numbers">Table 27</a> lists the fields available for importing serial number data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-mapping-fields-serial-numbers" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 26. Fields for importing serial numbers</caption>
+<caption class="title">Table 27. Fields for importing serial numbers</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -1926,10 +1976,10 @@ For eBay, see <strong>System » System settings » Markets » eBay » Accounts</
 <h2 id="1930">3. Mandatory values for sync procedures with items</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-procedures-item-sync">Table 27</a> lists possible procedures for syncs of the type item and explains the required values.</p>
+<p><a href="#table-procedures-item-sync">Table 28</a> lists possible procedures for syncs of the type item and explains the required values.</p>
 </div>
 <table id="table-procedures-item-sync" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 27. Procedures for item syncs</caption>
+<caption class="title">Table 28. Procedures for item syncs</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2264,7 +2314,7 @@ or</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Properties</strong></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Characteristics</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Save properties</p></td>
