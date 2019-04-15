@@ -641,7 +641,7 @@ class Metadata {
 								"url" => "/basics/arbeiten-mit-plentymarkets/statistik/best-practices",
 								"level" => 4,
 								"title" => "Best Practices: Statistik",
-								"keywords" => "Kennzahlen, App-Statistik, verkaufte Aufträge, verkaufte Artikel, Umsatz anzeigen, neue Kunden anzeigen, Dashboard",
+								"keywords" => "Kennzahlen, App-Statistik, verkaufte Aufträge, verkaufte Artikel, Umsatz anzeigen, Erstbestellungen anzeigen, Dashboard",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "",
