@@ -2295,6 +2295,21 @@ class Metadata {
 								"linkListInto" => "Willkommen im Themenbereich Notizen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "c3cbca619769122e4e89f6d70b784821",
+								"path" => "daten/daten-importieren/sync-typen/elasticSync-warenbestand",
+								"position" => 140,
+								"urlName" => "elasticSync-warenbestand",
+								"url" => "/daten/daten-importieren/sync-typen/elasticSync-warenbestand",
+								"level" => 4,
+								"title" => "Warenbestand",
+								"keywords" => "ElasticSync, Stock, Warenbestand, Import, Lager, Lagerimport, Sync, Sync-Typ",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Warenbestand. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
