@@ -7393,6 +7393,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "d7813bf2443dbb90799e9e31110cc09a",
+								"path" => "data/importing-data/sync-types/elasticSync-coupon-codes",
+								"position" => 68,
+								"urlName" => "elasticSync-coupon-codes",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-coupon-codes",
+								"level" => 4,
+								"title" => "Coupon codes",
+								"keywords" => "ElasticSync, import, coupon codes",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Coupon codes. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "7a484322fe444e5a699f276d85c9435c",
 								"path" => "data/importing-data/sync-types/elasticSync-manufacturer",
 								"position" => 70,
@@ -7404,6 +7419,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Manufacturer. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "601735fe8fdd26132072432d557e4e10",
+								"path" => "data/importing-data/sync-types/elasticSync-campaigns",
+								"position" => 72,
+								"urlName" => "elasticSync-campaigns",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-campaigns",
+								"level" => 4,
+								"title" => "Campaigns",
+								"keywords" => "ElasticSync, import, campaign, coupon campaign",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Campaigns. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
