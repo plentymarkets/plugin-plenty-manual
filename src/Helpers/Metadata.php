@@ -2192,6 +2192,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "9fb44eb2ec9c12f5bc1dd99e56b23816",
+								"path" => "daten/daten-importieren/sync-typen/elasticSync-gutschein-codes",
+								"position" => 68,
+								"urlName" => "elasticSync-gutschein-codes",
+								"url" => "/daten/daten-importieren/sync-typen/elasticSync-gutschein-codes",
+								"level" => 4,
+								"title" => "Gutschein-Codes",
+								"keywords" => "ElasticSync, Import, Gutschein-Codes",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Gutschein-Codes. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "8eaf2205b1e6b6a76b335bf5a93ab290",
 								"path" => "daten/daten-importieren/sync-typen/elasticSync-hersteller",
 								"position" => 70,
@@ -2203,6 +2218,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Hersteller. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "3ea9a8354d1f17f6712c0313f27ca42a",
+								"path" => "daten/daten-importieren/sync-typen/elasticSync-kampagnen",
+								"position" => 72,
+								"urlName" => "elasticSync-kampagnen",
+								"url" => "/daten/daten-importieren/sync-typen/elasticSync-kampagnen",
+								"level" => 4,
+								"title" => "Kampagnen",
+								"keywords" => "ElasticSync, Import, Kampagne, Gutschein-Kampagne",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Kampagnen. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							],
