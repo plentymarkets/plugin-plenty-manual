@@ -1978,7 +1978,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Dokumente erzeugen",
 				"keywords" => "Versandlabel, Versandetikett, Adressetikett, Lieferanschriftenliste, Paketnummernimport, Paketnummer, Paketnummern, Einlieferungsliste, Barcodescanner",
-				"description" => "Erfahren Sie, wie Sie die Lieferanschriftenliste exportieren, Paketnummern importieren, Adressetiketten einrichten und Einlieferungslisten generieren.",
+				"description" => "Erfahre, wie du die Lieferanschriftenliste exportierst, Paketnummern importierst, Adressetiketten einrichtest und Einlieferungslisten generierst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Dokumente erzeugen. Hier finden Sie folgende Informationen:",
 				"children" => [],
