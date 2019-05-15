@@ -3971,21 +3971,6 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Ceres Coconut Theme - Individualisiere deinen Webshop. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "da67a05ecadf87b56a877971e03be706",
-						"path" => "webshop/referenz/webinarCSS",
-						"position" => 50,
-						"urlName" => "webinarCSS",
-						"url" => "/webshop/referenz/webinarCSS",
-						"level" => 3,
-						"title" => "Begleitmaterial zum Webinar \"Das Einmaleins des Shop-Designs\"",
-						"keywords" => "Webinar, CSS, Ceres, Plugina, Webshop",
-						"description" => "Begleitmaterial zum Webinar \"Das Einmaleins des Shopdesigns - Mit eigenem CSS zum individuellen Webshop\"",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Begleitmaterial zum Webinar \"Das Einmaleins des Shop-Designs\". Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
