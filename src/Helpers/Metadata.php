@@ -3979,11 +3979,11 @@ class Metadata {
 						"urlName" => "webinarCSS",
 						"url" => "/webshop/referenz/webinarCSS",
 						"level" => 3,
-						"title" => "Begleitmaterial zum Webinar \"Das Einmaleins des Shop-Designs - Mit eigenem CSS zum individuellen Webshop\"",
+						"title" => "Begleitmaterial zum Webinar \"Das Einmaleins des Shop-Designs\"",
 						"keywords" => "Webinar, CSS, Ceres, Plugina, Webshop",
 						"description" => "Begleitmaterial zum Webinar \"Das Einmaleins des Shopdesigns - Mit eigenem CSS zum individuellen Webshop\"",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Begleitmaterial zum Webinar \"Das Einmaleins des Shop-Designs - Mit eigenem CSS zum individuellen Webshop\". Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Begleitmaterial zum Webinar \"Das Einmaleins des Shop-Designs\". Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					]
