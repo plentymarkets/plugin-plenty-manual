@@ -1103,7 +1103,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Newsletter versenden",
 				"keywords" => "Double-Opt-In-Funktion, Double-opt, E-Mail-Vorlage, E-Mail-Ordner, Newsletter-Zugangsdaten, CleverReach,",
-				"description" => "Erfahren Sie, wie Sie Newsletter über plentymarkets an Ihre Kunden versenden.",
+				"description" => "Erfahre, wie du Newsletter über plentymarkets an deine Kunden versenden.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Newsletter versenden. Hier finden Sie folgende Informationen:",
 				"children" => [],
