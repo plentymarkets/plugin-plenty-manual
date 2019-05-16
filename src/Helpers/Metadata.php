@@ -4576,6 +4576,21 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
+			],
+			[
+				"id" => "22fbeeab35b7c9bedb6c5736a263154a",
+				"path" => "webshop/webshop-plugins",
+				"position" => 110,
+				"urlName" => "webshop-plugins",
+				"url" => "/webshop/webshop-plugins",
+				"level" => 2,
+				"title" => "Weitere Webshop-Plugins",
+				"keywords" => "",
+				"description" => "Weitere Webshop-Plugins, die über den plentyMarketplace eingebunden werden können",
+				"navAlias" => "Übersicht",
+				"linkListInto" => "Willkommen im Themenbereich Weitere Webshop-Plugins. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
