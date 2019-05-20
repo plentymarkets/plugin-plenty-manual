@@ -1045,7 +1045,7 @@ class Metadata {
 		"level" => 1,
 		"title" => "CRM",
 		"keywords" => "Kundendaten verwalten, Ticketsystem nutzen, E-Mails versenden, Newsletter versenden",
-		"description" => "Erfahren Sie, wie Sie Kundendaten verwalten, das Ticketsystem für Ihre Kundenkommunikation nutzen und E-Mails und Newsletter versenden.",
+		"description" => "Erfahre, wie du Kontaktdaten verwaltest, das Ticketsystem für deine Kundenkommunikation nutzt und E-Mails und Newsletter versendest.",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich CRM. Hier finden Sie folgende Informationen:",
 		"children" => 		[
@@ -1088,7 +1088,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Ticketsystem nutzen",
 				"keywords" => "Ticketsystem, Ticket, Rolle, Typ, Status, Signatur, Grußformel, Nachricht, Kommentar, Vorlage, Kinderticket, Ereignisaktion, Aktionsmanager",
-				"description" => "Erfahren Sie, wie Sie das Ticketsystem in plentymarkets für Ihre Kundenkommunikation nutzen.",
+				"description" => "Erfahre, wie du das Ticketsystem in plentymarkets für deine Kundenkommunikation nutzt.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Ticketsystem nutzen. Hier finden Sie folgende Informationen:",
 				"children" => [],
@@ -1935,7 +1935,7 @@ class Metadata {
 		"level" => 1,
 		"title" => "Fulfillment",
 		"keywords" => "Versand vorbereiten, Versand-Center nutzen, Dokumente erzeugen",
-		"description" => "In diesem Themenbereich erfahren Sie alles über Versanddienstleister, Fulfillment-Dienstleister, den Versandprozess und Versandprofile.",
+		"description" => "In diesem Themenbereich erfährst du alles über Versanddienstleister, Fulfillment-Dienstleister, den Versandprozess und Versandprofile.",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Fulfillment. Hier finden Sie folgende Informationen:",
 		"children" => 		[
