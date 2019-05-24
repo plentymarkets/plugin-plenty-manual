@@ -10545,7 +10545,7 @@ class Metadata {
 				"url" => "/en/plugins/plugins",
 				"level" => 2,
 				"title" => "Setting up plugins",
-				"keywords" => "plugins, extensions, functionality",
+				"keywords" => "Plugins, Extensions, Functions",
 				"description" => "This is how you manage plugins in the plentymarkets back end.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Setting up plugins. The following information is available:",
