@@ -5596,36 +5596,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "3bc506dd8c58a9223f62d47151a1b05c",
-				"path" => "quick-start/quick-start",
-				"position" => 10,
-				"urlName" => "quick-start",
-				"url" => "/en/quick-start/quick-start",
-				"level" => 2,
-				"title" => "Quick start",
-				"keywords" => "",
-				"description" => "Learn how to use plentymarkets.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Quick start. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "16c44c549f5837962ec62d8a3cdcff50",
-				"path" => "quick-start/system-requirements",
-				"position" => 20,
-				"urlName" => "system-requirements",
-				"url" => "/en/quick-start/system-requirements",
-				"level" => 2,
-				"title" => "System requirements",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic System requirements. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "5f517ffc40a65389418068a7dde71c8f",
 				"path" => "quick-start/quick-start-system-requirements",
 				"position" => 20,
@@ -5637,21 +5607,6 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic System requirements. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "837e6110f41123e10e2b1ea3716495d4",
-				"path" => "quick-start/master-data",
-				"position" => 30,
-				"urlName" => "master-data",
-				"url" => "/en/quick-start/master-data",
-				"level" => 2,
-				"title" => "Managing master data",
-				"keywords" => "master data, company data, company name, VAT number",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Managing master data. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
 			],
