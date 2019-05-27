@@ -5726,7 +5726,7 @@ class Metadata {
 						"keywords" => "Owner, User, User accounts, User account, Roles, Rights, Right",
 						"description" => "Working with plentymarkets: Manage user accounts, create new user accounts and edit existing user accounts in the plentymarkets system.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Managing user accounts. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Welcome to the topic Managing user accounts. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
