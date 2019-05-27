@@ -6338,6 +6338,67 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "1049e7b822f6eb85bbf56556cbe15845",
+				"path" => "stock-management/managing-reorders",
+				"position" => 30,
+				"urlName" => "managing-reorders",
+				"url" => "/en/stock-management/managing-reorders",
+				"level" => 2,
+				"title" => "Managing reorders",
+				"keywords" => "reorder, reorder management, reorder level",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing reorders. The following information is available:",
+				"children" => 				[
+					[
+						"id" => "d5386be5bf304a641ce06970e1d11910",
+						"path" => "stock-management/managing-reorders/working-with-reorders",
+						"position" => 10,
+						"urlName" => "working-with-reorders",
+						"url" => "/en/stock-management/managing-reorders/working-with-reorders",
+						"level" => 3,
+						"title" => "New: Working with reorders",
+						"keywords" => "Reorder, reordering goods",
+						"description" => "Learn how to work with the new reorder functionality in plentymarkets.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic New: Working with reorders. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "cd8450e33ebec835e9b82e25831f4d3e",
+						"path" => "stock-management/managing-reorders/managing-backlog-lists",
+						"position" => 20,
+						"urlName" => "managing-backlog-lists",
+						"url" => "/en/stock-management/managing-reorders/managing-backlog-lists",
+						"level" => 3,
+						"title" => "Managing backlog lists",
+						"keywords" => "return, undelivered stock, pending deliveries, backlog list",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing backlog lists. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "8f1a761b79ced29acb7b1077660cb0e0",
+						"path" => "stock-management/managing-reorders/splitting-reorders-into-work-steps",
+						"position" => 40,
+						"urlName" => "splitting-reorders-into-work-steps",
+						"url" => "/en/stock-management/managing-reorders/splitting-reorders-into-work-steps",
+						"level" => 3,
+						"title" => "Old: Splitting reorders into work steps",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Old: Splitting reorders into work steps. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
+			],
+			[
 				"id" => "369e34b7374e8c9647281d7b466799b5",
 				"path" => "stock-management/managing-stocks",
 				"position" => 30,
@@ -6366,52 +6427,6 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Carrying out redistributions. The following information is available:",
 				"children" => [],
 				"hasChildren" => false
-			],
-			[
-				"id" => "1049e7b822f6eb85bbf56556cbe15845",
-				"path" => "stock-management/managing-reorders",
-				"position" => 40,
-				"urlName" => "managing-reorders",
-				"url" => "/en/stock-management/managing-reorders",
-				"level" => 2,
-				"title" => "Managing reorders",
-				"keywords" => "reorder, reorder management, reorder level",
-				"description" => "",
-				"navAlias" => "Reordering stock",
-				"linkListInto" => "Welcome to the topic Managing reorders. The following information is available:",
-				"children" => 				[
-					[
-						"id" => "8f1a761b79ced29acb7b1077660cb0e0",
-						"path" => "stock-management/managing-reorders/splitting-reorders-into-work-steps",
-						"position" => 10,
-						"urlName" => "splitting-reorders-into-work-steps",
-						"url" => "/en/stock-management/managing-reorders/splitting-reorders-into-work-steps",
-						"level" => 3,
-						"title" => "Splitting reorders into work steps",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Splitting reorders into work steps. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "cd8450e33ebec835e9b82e25831f4d3e",
-						"path" => "stock-management/managing-reorders/managing-backlog-lists",
-						"position" => 20,
-						"urlName" => "managing-backlog-lists",
-						"url" => "/en/stock-management/managing-reorders/managing-backlog-lists",
-						"level" => 3,
-						"title" => "Managing backlog lists",
-						"keywords" => "return, undelivered stock, pending deliveries, backlog list",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Managing backlog lists. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					]
-				],
-				"hasChildren" => true
 			],
 			[
 				"id" => "d0bfe877be0cd80a0b74c8df9b9d2099",
