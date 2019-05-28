@@ -5997,7 +5997,7 @@ class Metadata {
 						"keywords" => "",
 						"description" => "Use REST API to communicate with external systems.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Setting up REST API. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Welcome to the topic Setting up REST API. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
