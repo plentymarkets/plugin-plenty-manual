@@ -889,11 +889,11 @@ class Metadata {
 				"urlName" => "nachbestellungen-verwalten",
 				"url" => "/warenwirtschaft/nachbestellungen-verwalten",
 				"level" => 2,
-				"title" => "Neu: Nachbestellungen vornehmen",
+				"title" => "Nachbestellungen verwalten",
 				"keywords" => "Nachbestellung, Waren nachbestellen",
 				"description" => "Erfahre, wie du mit der neuen Nachbestellung in plentymarkets arbeitest.",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Neu: Nachbestellungen vornehmen. Hier finden Sie folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Nachbestellungen verwalten. Hier finden Sie folgende Informationen:",
 				"children" => 				[
 					[
 						"id" => "8143524871967258bafb33cde0383d76",
