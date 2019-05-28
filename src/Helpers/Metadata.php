@@ -7811,6 +7811,21 @@ class Metadata {
 								"linkListInto" => "Welcome to the topic Stock. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "7f2b28d38595cf3cf3a50575c9559c74",
+								"path" => "data/importing-data/sync-types/elasticSync-incoming-items",
+								"position" => 150,
+								"urlName" => "elasticSync-incoming-items",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-incoming-items",
+								"level" => 4,
+								"title" => "Incoming items",
+								"keywords" => "Incoming items, sync type, stock, importing stock, stock, importing data",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Incoming items. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
