@@ -33,6 +33,9 @@ class SearchService
         bool $conjunctive = true
     )
     {
+        $query = rawurldecode($query);
+        $query = str_replace("+", " ", $query);
+
         $operator = $conjunctive ? "and" : "or";
         $sectionQuery = [
             "nested" => [
