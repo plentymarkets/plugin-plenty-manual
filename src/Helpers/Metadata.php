@@ -709,7 +709,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Artikelstruktur kennenlernen",
 				"keywords" => "Artikelstruktur, Artikel, Varianten",
-				"description" => "Erfahren Sie mehr über die Artikelstruktur von plentymarkets 7.",
+				"description" => "Erfahre mehr über die Artikelstruktur von plentymarkets 7.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Artikelstruktur kennenlernen. Hier finden Sie folgende Informationen:",
 				"children" => [],
