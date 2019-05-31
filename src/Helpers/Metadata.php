@@ -5144,7 +5144,7 @@ class Metadata {
 						"level" => 3,
 						"title" => "Rakuten einrichten",
 						"keywords" => "Rakuten, Marktplatz",
-						"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz Rakuten in Ihrem plentymarkets System ein.",
+						"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Rakuten in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Rakuten einrichten. Hier finden Sie folgende Informationen:",
 						"children" => [],
