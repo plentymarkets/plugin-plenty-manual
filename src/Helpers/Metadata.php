@@ -4844,7 +4844,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "bol.com",
 				"keywords" => "bol.com, Marktplatz",
-				"description" => "Multi-Channel in plentymarkets: Richten Sie die Schnittstelle zum Marktplatz bol.com in Ihrem plentymarkets System ein.",
+				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz bol.com in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich bol.com. Hier finden Sie folgende Informationen:",
 				"children" => [],
