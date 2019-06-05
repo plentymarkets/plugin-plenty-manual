@@ -9354,6 +9354,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "69f5c1b73309d6b2af47766be02a8921",
+						"path" => "online-store/reference/ceres-3-update",
+						"position" => 10,
+						"urlName" => "ceres-3-update",
+						"url" => "/en/online-store/reference/ceres-3-update",
+						"level" => 3,
+						"title" => "Updating themes to Ceres 3.0",
+						"keywords" => "Ceres, Webshop, Theme, Themes, Layout, Plugin, Update, Version, Change",
+						"description" => "Diese Anleitung hilft Theme-Entwicklern dabei, ihre Themes auf Ceres 3.0 anzupassen.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Updating themes to Ceres 3.0. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "5030be4f2b00d1b936edff0ff6b201f3",
 						"path" => "online-store/references/image-sizes",
 						"position" => 20,
@@ -9369,11 +9384,41 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "5030be4f2b00d1b936edff0ff6b201f3",
+						"path" => "online-store/reference/image-sizes",
+						"position" => 20,
+						"urlName" => "image-sizes",
+						"url" => "/en/online-store/reference/image-sizes",
+						"level" => 3,
+						"title" => "Image sizes in Ceres",
+						"keywords" => "Kategorien, Bilder, Groesse, Format, Kategorie, Ceres, Webshop, Layout",
+						"description" => "Eine Übersicht der Bildergrößen für Kategoriebilder in Ceres.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Image sizes in Ceres. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "6bbcd2c25775cc6352c466d41824c26a",
 						"path" => "online-store/references/template-variables-in-ceres",
 						"position" => 30,
 						"urlName" => "template-variables-in-ceres",
 						"url" => "/en/online-store/references/template-variables-in-ceres",
+						"level" => 3,
+						"title" => "ElasticSearch result fields",
+						"keywords" => "Elastic Search, Result fields, Template Variablen, Callisto, Ceres, Webshop",
+						"description" => "Eine Übersicht der ElasticSearch Ergebnisfelder und deren Entsprechungen in Callisto.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich ElasticSearch result fields. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "6bbcd2c25775cc6352c466d41824c26a",
+						"path" => "online-store/reference/template-variables-in-ceres",
+						"position" => 30,
+						"urlName" => "template-variables-in-ceres",
+						"url" => "/en/online-store/reference/template-variables-in-ceres",
 						"level" => 3,
 						"title" => "ElasticSearch result fields",
 						"keywords" => "Elastic Search, Result fields, Template Variablen, Callisto, Ceres, Webshop",
