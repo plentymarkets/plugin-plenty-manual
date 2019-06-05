@@ -6865,6 +6865,21 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "85d8b95dfa6632a0d18c2f7e251cde52",
+						"path" => "orders/order-documents/generating-an-entry-certificate-gelangensbestaetigung",
+						"position" => 80,
+						"urlName" => "generating-an-entry-certificate-gelangensbestaetigung",
+						"url" => "/en/orders/order-documents/generating-an-entry-certificate-gelangensbestaetigung",
+						"level" => 3,
+						"title" => "Entry certificates",
+						"keywords" => "Entry certificate, Gelangensbestätigung, Fulfilment, Order documents, Order processing, Delivery, Export delivery",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Entry certificates. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "262c2d95efa4806ebc7b7a7cf505004d",
 						"path" => "orders/order-documents/generating-return-slips",
 						"position" => 90,
