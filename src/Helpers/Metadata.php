@@ -6959,6 +6959,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "890bd1f41cbf0f22902dbca17931a01f",
+				"path" => "payment/managing-payment-methods",
+				"position" => 10,
+				"urlName" => "managing-payment-methods",
+				"url" => "/en/payment/managing-payment-methods",
+				"level" => 2,
+				"title" => "Managing payment methods",
+				"keywords" => "",
+				"description" => "Payment in plentymarkets: Set up and activate payment methods in your plentymarkets system.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing payment methods. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "6e8e0d11be63ede72208487dfd1e71c1",
 				"path" => "payment/managing-payments",
 				"position" => 20,
@@ -7663,6 +7678,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "d5a47b7f0d3cb2693ad457af0f33c4e1",
+								"path" => "data/importing-data/sync-types/elasticsync-parts-compability-listing",
+								"position" => 60,
+								"urlName" => "elasticsync-parts-compability-listing",
+								"url" => "/en/data/importing-data/sync-types/elasticsync-parts-compability-listing",
+								"level" => 4,
+								"title" => "Parts compatibility listing",
+								"keywords" => "ElasticSync, parts compatibility listing, fitment, sync, sync type",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Parts compatibility listing. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "d7813bf2443dbb90799e9e31110cc09a",
 								"path" => "data/importing-data/sync-types/elasticSync-coupon-codes",
 								"position" => 68,
@@ -7754,6 +7784,21 @@ class Metadata {
 							],
 							[
 								"id" => "03009f9843932b7aa63f52ac866f7231",
+								"path" => "data/importing-data/sync-types/elasticsync-market-listing",
+								"position" => 110,
+								"urlName" => "elasticsync-market-listing",
+								"url" => "/en/data/importing-data/sync-types/elasticsync-market-listing",
+								"level" => 4,
+								"title" => "Market listing",
+								"keywords" => "ElasticSync, import, listing, listing import, sync, sync type",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Market listing. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "03009f9843932b7aa63f52ac866f7231",
 								"path" => "data/importing-data/sync-types/elasticSync-market-listing",
 								"position" => 110,
 								"urlName" => "elasticSync-market-listing",
@@ -7798,21 +7843,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "e1d6f0eb47dee0ede7e5b01a11cb0eae",
-								"path" => "data/importing-data/sync-types/elasticSync-notes",
-								"position" => 140,
-								"urlName" => "elasticSync-notes",
-								"url" => "/en/data/importing-data/sync-types/elasticSync-notes",
-								"level" => 4,
-								"title" => "Notes",
-								"keywords" => "ElasticSync, import, notes",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Notes. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "c5e031580f4560d9fd7cd5f61d5558e3",
 								"path" => "data/importing-data/sync-types/elasticSync-stock",
 								"position" => 140,
@@ -7824,6 +7854,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Stock. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "e1d6f0eb47dee0ede7e5b01a11cb0eae",
+								"path" => "data/importing-data/sync-types/elasticSync-notes",
+								"position" => 140,
+								"urlName" => "elasticSync-notes",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-notes",
+								"level" => 4,
+								"title" => "Notes",
+								"keywords" => "ElasticSync, import, notes",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Notes. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
