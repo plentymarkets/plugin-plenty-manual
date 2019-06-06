@@ -5747,21 +5747,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "fcac5048724fc61291e21de49ae864ea",
-				"path" => "quick-start/quick-start-setting-up-payment-processes",
-				"position" => 60,
-				"urlName" => "quick-start-setting-up-payment-processes",
-				"url" => "/en/quick-start/quick-start-setting-up-payment-processes",
-				"level" => 2,
-				"title" => "Setting up payment processing",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Setting up payment processing. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "269e7c612919095ef7fca362d9b00a52",
 				"path" => "quick-start/quick-start-shipping-options",
 				"position" => 70,
@@ -6119,21 +6104,6 @@ class Metadata {
 						"description" => "Working with plentymarkets: Set up your preferred shortcuts and your personal signature and customise your own user account in the plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Customising the user account. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "d124f0dc4d9b29dd8611f79c6dd70f46",
-						"path" => "basics/working-with-plentymarkets/accessing-backend-areas",
-						"position" => 20,
-						"urlName" => "accessing-backend-areas",
-						"url" => "/en/basics/working-with-plentymarkets/accessing-backend-areas",
-						"level" => 3,
-						"title" => "Back end URLs",
-						"keywords" => "back end, access back end, URL, key, UI action, uiaction, parameter, Terra, variables, safe mode",
-						"description" => "This manual page provides you with information how to access specific back end areas by using URLs.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Back end URLs. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -6851,21 +6821,6 @@ class Metadata {
 					],
 					[
 						"id" => "85d8b95dfa6632a0d18c2f7e251cde52",
-						"path" => "orders/order-documents/generating-en-entry-certificate-gelangensbestaetigung",
-						"position" => 80,
-						"urlName" => "generating-en-entry-certificate-gelangensbestaetigung",
-						"url" => "/en/orders/order-documents/generating-en-entry-certificate-gelangensbestaetigung",
-						"level" => 3,
-						"title" => "Entry certificates",
-						"keywords" => "Entry certificate, Gelangensbestätigung, Fulfilment, Order documents, Order processing, Delivery, Export delivery",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Entry certificates. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "85d8b95dfa6632a0d18c2f7e251cde52",
 						"path" => "orders/order-documents/generating-an-entry-certificate-gelangensbestaetigung",
 						"position" => 80,
 						"urlName" => "generating-an-entry-certificate-gelangensbestaetigung",
@@ -6988,21 +6943,6 @@ class Metadata {
 		"navAlias" => "Overview",
 		"linkListInto" => "Welcome to the topic Payment. The following information is available:",
 		"children" => 		[
-			[
-				"id" => "890bd1f41cbf0f22902dbca17931a01f",
-				"path" => "payment/anaging-payment-methods",
-				"position" => 10,
-				"urlName" => "anaging-payment-methods",
-				"url" => "/en/payment/anaging-payment-methods",
-				"level" => 2,
-				"title" => "Managing payment methods",
-				"keywords" => "",
-				"description" => "Payment in plentymarkets: Set up and activate payment methods in your plentymarkets system.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Managing payment methods. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
 			[
 				"id" => "890bd1f41cbf0f22902dbca17931a01f",
 				"path" => "payment/managing-payment-methods",
@@ -7709,21 +7649,6 @@ class Metadata {
 							],
 							[
 								"id" => "d5a47b7f0d3cb2693ad457af0f33c4e1",
-								"path" => "data/importing-data/sync-types/elasticSync-compability-listing",
-								"position" => 60,
-								"urlName" => "elasticSync-compability-listing",
-								"url" => "/en/data/importing-data/sync-types/elasticSync-compability-listing",
-								"level" => 4,
-								"title" => "Parts compatibility listing",
-								"keywords" => "ElasticSync, parts compatibility listing, fitment, sync, sync type",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Parts compatibility listing. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "d5a47b7f0d3cb2693ad457af0f33c4e1",
 								"path" => "data/importing-data/sync-types/elasticsync-parts-compability-listing",
 								"position" => 60,
 								"urlName" => "elasticsync-parts-compability-listing",
@@ -7843,21 +7768,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "03009f9843932b7aa63f52ac866f7231",
-								"path" => "data/importing-data/sync-types/elasticSync-market-listing",
-								"position" => 110,
-								"urlName" => "elasticSync-market-listing",
-								"url" => "/en/data/importing-data/sync-types/elasticSync-market-listing",
-								"level" => 4,
-								"title" => "Market listing",
-								"keywords" => "ElasticSync, import, listing, listing import, sync, sync type",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Market listing. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "ec0838fc1108295ca0240b179a4729bc",
 								"path" => "data/importing-data/sync-types/elasticSync-characteristic",
 								"position" => 120,
@@ -7888,21 +7798,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "c5e031580f4560d9fd7cd5f61d5558e3",
-								"path" => "data/importing-data/sync-types/elasticSync-stock",
-								"position" => 140,
-								"urlName" => "elasticSync-stock",
-								"url" => "/en/data/importing-data/sync-types/elasticSync-stock",
-								"level" => 4,
-								"title" => "Stock",
-								"keywords" => "ElasticSync, Stock, Import, Warehouse, Warehouse import, Sync, Sync type",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Stock. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "e1d6f0eb47dee0ede7e5b01a11cb0eae",
 								"path" => "data/importing-data/sync-types/elasticSync-notes",
 								"position" => 140,
@@ -7914,6 +7809,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Notes. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "c5e031580f4560d9fd7cd5f61d5558e3",
+								"path" => "data/importing-data/sync-types/elasticSync-stock",
+								"position" => 140,
+								"urlName" => "elasticSync-stock",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-stock",
+								"level" => 4,
+								"title" => "Stock",
+								"keywords" => "ElasticSync, Stock, Import, Warehouse, Warehouse import, Sync, Sync type",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Stock. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -8005,21 +7915,6 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Creating eBay properties. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "12c17721c85cef25683580b91845e9e3",
-								"path" => "data/importing-data/elasticsync-best-practices/best-practices-elasticsync-parts-compability-listing",
-								"position" => 50,
-								"urlName" => "best-practices-elasticsync-parts-compability-listing",
-								"url" => "/en/data/importing-data/elasticsync-best-practices/best-practices-elasticsync-parts-compability-listing",
-								"level" => 4,
-								"title" => "Creating parts compatibility listings",
-								"keywords" => "ElasticSync, eBay, create, parts compatibility listing, fitment",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Creating parts compatibility listings. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -9445,21 +9340,6 @@ class Metadata {
 				"children" => 				[
 					[
 						"id" => "69f5c1b73309d6b2af47766be02a8921",
-						"path" => "online-store/references/ceres-3-update",
-						"position" => 10,
-						"urlName" => "ceres-3-update",
-						"url" => "/en/online-store/references/ceres-3-update",
-						"level" => 3,
-						"title" => "Updating themes to Ceres 3.0",
-						"keywords" => "Ceres, Webshop, Theme, Themes, Layout, Plugin, Update, Version, Change",
-						"description" => "Diese Anleitung hilft Theme-Entwicklern dabei, ihre Themes auf Ceres 3.0 anzupassen.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Updating themes to Ceres 3.0. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "69f5c1b73309d6b2af47766be02a8921",
 						"path" => "online-store/reference/ceres-3-update",
 						"position" => 10,
 						"urlName" => "ceres-3-update",
@@ -9475,21 +9355,6 @@ class Metadata {
 					],
 					[
 						"id" => "5030be4f2b00d1b936edff0ff6b201f3",
-						"path" => "online-store/references/image-sizes",
-						"position" => 20,
-						"urlName" => "image-sizes",
-						"url" => "/en/online-store/references/image-sizes",
-						"level" => 3,
-						"title" => "Image sizes in Ceres",
-						"keywords" => "Kategorien, Bilder, Groesse, Format, Kategorie, Ceres, Webshop, Layout",
-						"description" => "Eine Übersicht der Bildergrößen für Kategoriebilder in Ceres.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Image sizes in Ceres. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "5030be4f2b00d1b936edff0ff6b201f3",
 						"path" => "online-store/reference/image-sizes",
 						"position" => 20,
 						"urlName" => "image-sizes",
@@ -9500,21 +9365,6 @@ class Metadata {
 						"description" => "Eine Übersicht der Bildergrößen für Kategoriebilder in Ceres.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Image sizes in Ceres. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "6bbcd2c25775cc6352c466d41824c26a",
-						"path" => "online-store/references/template-variables-in-ceres",
-						"position" => 30,
-						"urlName" => "template-variables-in-ceres",
-						"url" => "/en/online-store/references/template-variables-in-ceres",
-						"level" => 3,
-						"title" => "ElasticSearch result fields",
-						"keywords" => "Elastic Search, Result fields, Template Variablen, Callisto, Ceres, Webshop",
-						"description" => "Eine Übersicht der ElasticSearch Ergebnisfelder und deren Entsprechungen in Callisto.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich ElasticSearch result fields. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -11046,21 +10896,6 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Processes. The following information is available:",
 				"children" => 				[
-					[
-						"id" => "70c6c9bfbff31b14cab64fb10e2b4162",
-						"path" => "automation/processes/setting-up-procedures",
-						"position" => 10,
-						"urlName" => "setting-up-procedures",
-						"url" => "/en/automation/processes/setting-up-procedures",
-						"level" => 3,
-						"title" => "Setting up processes",
-						"keywords" => "Setting up processes, Settings, plentyBase",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Setting up processes. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
 					[
 						"id" => "70c6c9bfbff31b14cab64fb10e2b4162",
 						"path" => "automation/processes/setting-up-processes",
