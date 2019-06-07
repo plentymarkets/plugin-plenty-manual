@@ -908,6 +908,21 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Nachbestellungen exportieren. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "ed24dd22100d774136a92fd8d365fa85",
+						"path" => "warenwirtschaft/nachbestellungen-verwalten/best-practices-nachbestellungen-exportieren",
+						"position" => 50,
+						"urlName" => "best-practices-nachbestellungen-exportieren",
+						"url" => "/warenwirtschaft/nachbestellungen-verwalten/best-practices-nachbestellungen-exportieren",
+						"level" => 3,
+						"title" => "Best Practices: Nachbestellungen exportieren",
+						"keywords" => "Nachbestellungen, Nachbestellungen exportieren, Elastischer Export, Best Practices, FormatDesigner, Export, Daten",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practices: Nachbestellungen exportieren. Hier finden Sie folgende Informationen:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
