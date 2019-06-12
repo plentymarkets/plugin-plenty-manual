@@ -260,6 +260,21 @@ class Metadata {
 		"linkListInto" => "Willkommen im Themenbereich Basics. Hier finden Sie folgende Informationen:",
 		"children" => 		[
 			[
+				"id" => "fe9135b60a8a3f57b8c6037396d79756",
+				"path" => "basics/assistenten",
+				"position" => 5,
+				"urlName" => "assistenten",
+				"url" => "/basics/assistenten",
+				"level" => 2,
+				"title" => "Assistenten",
+				"keywords" => "Assistenten, Systemeinrichtung, essenziell, optional, System einrichten",
+				"description" => "Verschaffe dir einen Überblick über unsere Assistenten, die dir eine schnelle Systemeinrichtung ermöglichen und viele Funktionen bereitstellen.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Assistenten. Hier finden Sie folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "0018975770ec1305698d057353858fa0",
 				"path" => "basics/rechtliches",
 				"position" => 10,
