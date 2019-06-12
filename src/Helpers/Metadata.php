@@ -5943,6 +5943,21 @@ class Metadata {
 		"linkListInto" => "Welcome to the topic Basics. The following information is available:",
 		"children" => 		[
 			[
+				"id" => "969187b6226f85e19b8176aed9760dda",
+				"path" => "basics/assistants",
+				"position" => 5,
+				"urlName" => "assistants",
+				"url" => "/en/basics/assistants",
+				"level" => 2,
+				"title" => "Assistants",
+				"keywords" => "Assistants, system setup, essential, optional, setting up the system",
+				"description" => "Get an overview of our assistants which allow you to quickly set up your system and offer a variety of functions.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Assistants. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "98f21ce7a67fdfa582c8014c288a7332",
 				"path" => "basics/legal-requirements",
 				"position" => 10,
