@@ -876,7 +876,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Lager einrichten",
 				"keywords" => "Lager planen, Lager einrichten, Lagereinstellungen, Dimensionen, Dimension, Lagerort Lagerorte, Ebene, Ebenen",
-				"description" => "Erfahren Sie, wie Sie ein Lager erstellen und den Aufbau gestalten.",
+				"description" => "Erfahre, wie du ein Lager erstellst und den Aufbau gestaltest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Lager einrichten. Hier finden Sie folgende Informationen:",
 				"children" => [],
