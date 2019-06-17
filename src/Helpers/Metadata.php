@@ -932,11 +932,11 @@ class Metadata {
 						"urlName" => "rueckstandsliste-verwalten",
 						"url" => "/warenwirtschaft/nachbestellungen-verwalten/rueckstandsliste-verwalten",
 						"level" => 3,
-						"title" => "Rückstandsliste verwalten",
+						"title" => "Rückstandsliste nutzen",
 						"keywords" => "Zulauf, Rückstandsliste, Retouren, Ausstehende Bestellungen",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Rückstandsliste verwalten. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Rückstandsliste nutzen. Hier finden Sie folgende Informationen:",
 						"children" => [],
 						"hasChildren" => false
 					],
