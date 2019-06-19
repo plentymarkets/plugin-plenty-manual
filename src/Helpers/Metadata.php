@@ -6487,21 +6487,6 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Managing reorders. The following information is available:",
 				"children" => 				[
 					[
-						"id" => "d5386be5bf304a641ce06970e1d11910",
-						"path" => "stock-management/managing-reorders/working-with-reorders",
-						"position" => 10,
-						"urlName" => "working-with-reorders",
-						"url" => "/en/stock-management/managing-reorders/working-with-reorders",
-						"level" => 3,
-						"title" => "New: Working with reorders",
-						"keywords" => "Reorder, reordering goods",
-						"description" => "Learn how to work with the new reorder functionality in plentymarkets.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic New: Working with reorders. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "cd8450e33ebec835e9b82e25831f4d3e",
 						"path" => "stock-management/managing-reorders/managing-backlog-lists",
 						"position" => 20,
