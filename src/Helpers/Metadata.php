@@ -11030,6 +11030,21 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Sub-procedures. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "418188024da5ee64e106bb26e5ec10f9",
+						"path" => "automation/processes/mobile-box-picking",
+						"position" => 80,
+						"urlName" => "mobile-box-picking",
+						"url" => "/en/automation/processes/mobile-box-picking",
+						"level" => 3,
+						"title" => "Best Practices: Mobile box picking",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Best Practices: Mobile box picking. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
