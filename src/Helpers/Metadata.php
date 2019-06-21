@@ -387,7 +387,7 @@ class Metadata {
 						"level" => 3,
 						"title" => "REST-API-Schnittstellen einrichten",
 						"keywords" => "",
-						"description" => "Nutzen Sie REST-API, um mit externen Systemen zu kommunizieren.",
+						"description" => "Nutze REST-API, um mit externen Systemen zu kommunizieren.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich REST-API-Schnittstellen einrichten. Hier finden Sie folgende Informationen:",
 						"children" => [],
