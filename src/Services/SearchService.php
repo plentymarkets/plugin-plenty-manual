@@ -4,19 +4,22 @@ namespace PlentyManual\Services;
 
 use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 use Plenty\Plugin\ConfigRepository;
+use PlentyManual\Helpers\ResultsStorage;
 
 class SearchService
 {
     private $type;
     private $host;
     private $snippetLength;
+    private $resultsStorage;
 
-    public function __construct( FrontendSessionStorageFactoryContract $sessionStorage, ConfigRepository $config )
+    public function __construct( FrontendSessionStorageFactoryContract $sessionStorage, ConfigRepository $config, ResultsStorage $resultsStorage )
     {
         $lang = $sessionStorage->getLocaleSettings()->language ?? 'de';
         $this->type = "manual_" . $lang;
         $this->host = $config->get('PlentyManual.search.es_host');
         $this->snippetLength = $config->get('PlentyManual.search.snippet_length');
+        $this->resultsStorage = $resultsStorage;
     }
 
     /**
@@ -160,6 +163,7 @@ class SearchService
     private function readSearchResults( $resultData, $page, $itemsPerPage, $query )
     {
 
+        $storageArray = array();
         $suggestionsData = array();
         $totalHits = $resultData["hits"]["total"];
         $maxPages = ($totalHits - $totalHits % $itemsPerPage ) / $itemsPerPage;
@@ -210,6 +214,10 @@ class SearchService
             if ( $doc["description"] === null )
             {
                 $doc["description"] = $this->trim( $hit["_source"]["description"], $this->snippetLength );
+            }
+            if( $hit["languageID"] !== null)
+            {
+                array_push($storageArray, $hit["languageID"]);
             }
 
 //            if ( strip_tags( $doc["description"] ) !== substr( $hit["_source"]["description"], 0, strlen( strip_tags( $doc["description"] ) ) ) )
@@ -266,6 +274,8 @@ class SearchService
             $doc["sections"] = $sections;
             array_push( $result["hits"], $doc );
         }
+
+        $storageArray = $this->resultsStorage->setResults($storageArray);
 
         return $result;
     }
