@@ -8342,9 +8342,24 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "9fc101bf33d799013b93029b09cb1110",
+								"path" => "data/report/data-formats/feedback",
+								"position" => 40,
+								"urlName" => "feedback",
+								"url" => "/en/data/report/data-formats/feedback",
+								"level" => 4,
+								"title" => "feedback",
+								"keywords" => "feedback, report, raw data",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic feedback. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "a011f76343592fb21e0c85a6958192ff",
 								"path" => "data/report/data-formats/itemmanufacturer",
-								"position" => 40,
+								"position" => 50,
 								"urlName" => "itemmanufacturer",
 								"url" => "/en/data/report/data-formats/itemmanufacturer",
 								"level" => 4,
@@ -8359,7 +8374,7 @@ class Metadata {
 							[
 								"id" => "267bb8aa52ef23fae9d4316967c40b01",
 								"path" => "data/report/data-formats/itemvariations",
-								"position" => 50,
+								"position" => 60,
 								"urlName" => "itemvariations",
 								"url" => "/en/data/report/data-formats/itemvariations",
 								"level" => 4,
@@ -8374,7 +8389,7 @@ class Metadata {
 							[
 								"id" => "401bd5d0321dc45d092ac126ad7888ec",
 								"path" => "data/report/data-formats/itemvariationsuppliers",
-								"position" => 60,
+								"position" => 70,
 								"urlName" => "itemvariationsuppliers",
 								"url" => "/en/data/report/data-formats/itemvariationsuppliers",
 								"level" => 4,
@@ -8389,7 +8404,7 @@ class Metadata {
 							[
 								"id" => "2651eb62e1ad2733f6ddb136db2625de",
 								"path" => "data/report/data-formats/orderitemamounts",
-								"position" => 70,
+								"position" => 80,
 								"urlName" => "orderitemamounts",
 								"url" => "/en/data/report/data-formats/orderitemamounts",
 								"level" => 4,
@@ -8404,7 +8419,7 @@ class Metadata {
 							[
 								"id" => "e82c8e6eadfa239967b0e0b6b42e1ea3",
 								"path" => "data/report/data-formats/orderitemproperties",
-								"position" => 80,
+								"position" => 90,
 								"urlName" => "orderitemproperties",
 								"url" => "/en/data/report/data-formats/orderitemproperties",
 								"level" => 4,
@@ -8419,7 +8434,7 @@ class Metadata {
 							[
 								"id" => "f44299615c1c63c55c6701e80211850f",
 								"path" => "data/report/data-formats/orderitems",
-								"position" => 90,
+								"position" => 100,
 								"urlName" => "orderitems",
 								"url" => "/en/data/report/data-formats/orderitems",
 								"level" => 4,
@@ -8434,7 +8449,7 @@ class Metadata {
 							[
 								"id" => "158daa0188e6ac9183e453a219dab664",
 								"path" => "data/report/data-formats/orderproperties",
-								"position" => 100,
+								"position" => 110,
 								"urlName" => "orderproperties",
 								"url" => "/en/data/report/data-formats/orderproperties",
 								"level" => 4,
@@ -8449,7 +8464,7 @@ class Metadata {
 							[
 								"id" => "4bbe9a47501d8f48df1707c56cdd46a1",
 								"path" => "data/report/data-formats/orders",
-								"position" => 110,
+								"position" => 120,
 								"urlName" => "orders",
 								"url" => "/en/data/report/data-formats/orders",
 								"level" => 4,
@@ -8464,7 +8479,7 @@ class Metadata {
 							[
 								"id" => "08b46ee61de4c6bcc9000b97687bff43",
 								"path" => "data/report/data-formats/stockmanagementstock",
-								"position" => 120,
+								"position" => 130,
 								"urlName" => "stockmanagementstock",
 								"url" => "/en/data/report/data-formats/stockmanagementstock",
 								"level" => 4,
@@ -8479,7 +8494,7 @@ class Metadata {
 							[
 								"id" => "053c1f3e0f2330539da5bed578d4c720",
 								"path" => "data/report/data-formats/stockmanagementstockmovements",
-								"position" => 130,
+								"position" => 140,
 								"urlName" => "stockmanagementstockmovements",
 								"url" => "/en/data/report/data-formats/stockmanagementstockmovements",
 								"level" => 4,
@@ -8494,7 +8509,7 @@ class Metadata {
 							[
 								"id" => "b14ad2505d543f121e93dbd6daf10a91",
 								"path" => "data/report/data-formats/stockmanagementwarehouses",
-								"position" => 140,
+								"position" => 150,
 								"urlName" => "stockmanagementwarehouses",
 								"url" => "/en/data/report/data-formats/stockmanagementwarehouses",
 								"level" => 4,
@@ -8509,7 +8524,7 @@ class Metadata {
 							[
 								"id" => "3a076610decb10c7d29bfb38540e7982",
 								"path" => "data/report/data-formats/tagrelations",
-								"position" => 150,
+								"position" => 160,
 								"urlName" => "tagrelations",
 								"url" => "/en/data/report/data-formats/tagrelations",
 								"level" => 4,
@@ -8524,7 +8539,7 @@ class Metadata {
 							[
 								"id" => "90685d4b81177c28c21e43b0f935af1e",
 								"path" => "data/report/data-formats/tags",
-								"position" => 160,
+								"position" => 170,
 								"urlName" => "tags",
 								"url" => "/en/data/report/data-formats/tags",
 								"level" => 4,
