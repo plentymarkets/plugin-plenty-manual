@@ -2886,6 +2886,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "c26efc38d2c72cbf553e1af3578c4a6f",
+								"path" => "daten/report/datenformate/feedbacks",
+								"position" => 40,
+								"urlName" => "feedbacks",
+								"url" => "/daten/report/datenformate/feedbacks",
+								"level" => 4,
+								"title" => "feedback",
+								"keywords" => "feedback, Report, Rohdaten",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich feedback. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "5c8925b7da03c191f6daf4e94ff4d172",
 								"path" => "daten/report/datenformate/itemmanufacturer",
 								"position" => 50,
