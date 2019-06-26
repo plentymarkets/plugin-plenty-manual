@@ -8372,6 +8372,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "dde5bbcf6f9fc6cc187825105aa3cc03",
+								"path" => "data/report/data-formats/feedbacks",
+								"position" => 40,
+								"urlName" => "feedbacks",
+								"url" => "/en/data/report/data-formats/feedbacks",
+								"level" => 4,
+								"title" => "feedback",
+								"keywords" => "feedback, report, raw data",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic feedback. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "a011f76343592fb21e0c85a6958192ff",
 								"path" => "data/report/data-formats/itemmanufacturer",
 								"position" => 50,
