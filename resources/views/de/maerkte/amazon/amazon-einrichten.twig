@@ -338,6 +338,7 @@ Anmerkung zu <strong>Bereits bestehende SKU-Nummern zuordnen</strong> unterhalb 
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rechnung erzeugen</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob Rechnungen von plentymarkets oder Amazon erzeugt werden sollen.<br>
 <strong>plentymarkets</strong> = Rechnungen werden von plentymarkets erzeugt.<br>
+Wenn Amazon VCS genutzt wird, eigene Rechnungen mit einer Ereignisaktion zu Amazon hochladen.
 <strong>VCS plentymarkets</strong> = <strong>Voraussetzung:</strong> Amazon VCS wird genutzt. Amazon-Rechnungen werden automatisch von plentymarkets erzeugt und zu Amazon übertragen.<br>
 <strong>VCS Amazon</strong> = <strong>Voraussetzung:</strong> Amazon VCS wird genutzt. Amazon-Rechnungen werden von Amazon erzeugt.</p></td>
 </tr>
@@ -2593,7 +2594,10 @@ Mit der Ereignisaktion wird der Auftrag von Status 1 in einen Status verschoben,
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>Amazon VCS (= VAT Calculation Service) ist ein von Amazon angebotener Umsatzsteuerservice, mit dem Amazon die Umsatzsteuer berechnet. Du entscheidest, ob die Amazon-Rechnungen von Amazon oder plentymarkets erzeugt werden sollen. Wenn du Amazon-Rechnungen von plentymarkets erstellen lässt, werden die Rechnungen automatisch zu Amazon übertragen. Aktiviere Amazon VCS im Menü <strong>System » Systemeinstellungen » Märkte » Amazon » Amazon-Konto wählen » Tab: Einstellungen</strong> im Bereich <strong>Basiseinstellungen</strong> in plentymarkets.</p>
+<p>Amazon VCS (= VAT Calculation Service) ist ein von Amazon angebotener Umsatzsteuerservice, mit dem Amazon die Umsatzsteuer berechnet. Du entscheidest, ob die Amazon-Rechnungen von Amazon oder plentymarkets erzeugt werden sollen. Wenn du Amazon-Rechnungen von plentymarkets erstellen lässt, werden die Rechnungen automatisch zu Amazon übertragen. Außerdem hast du die Möglichkeit, deine eigenen Rechnungsdokumente bei Amazon hochzuladen, ohne dass Amazon die Umsatzsteuer berechnet. Wenn du diese Option wählst, musst du eine Ereignisaktion erstellen, um deine Rechnungen bei Amazon hochzuladen.<br></p>
+</div>
+<div class="paragraph">
+<p>Aktiviere Amazon VCS im Menü <strong>System » Systemeinstellungen » Märkte » Amazon » Amazon-Konto wählen » Tab: Einstellungen</strong> im Bereich <strong>Basiseinstellungen</strong> in plentymarkets.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -2658,7 +2662,7 @@ Mit der Ereignisaktion wird der Auftrag von Status 1 in einen Status verschoben,
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>plentymarkets</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rechnungen werden von plentymarkets erzeugt.<br>
-<strong>Wichtig:</strong> Diese Option nur wählen, wenn Amazon VCS nicht genutzt wird.</p></td>
+<strong>Wichtig:</strong> Diese Option wählen, wenn Amazon VCS <em>nicht</em> genutzt wird <em>oder</em> wenn Amazon VCS genutzt wird und eigene Rechnungsdokumente zu Amazon hochgeladen werden sollen (Amazon Invoice Document Uploader - IDU), ohne dass die Umsatzsteuer von Amazon berechnet wird. Ereignisaktion erstellen, um eigene Rechnungen automatisch bei Amazon hochzuladen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VCS plentymarkets</strong></p></td>
@@ -2674,12 +2678,86 @@ Amazon-Rechnungen werden von Amazon erzeugt.<br>
 </tr>
 </tbody>
 </table>
+<div class="paragraph subhead">
+<p>Eigene Rechnungen bei Amazon hochladen ohne Umsatzsteuerberechnung</p>
+</div>
+<div class="paragraph">
+<p>Du hast die Möglichkeit, deine eigenen in plentymarkets erstellten Rechnungsdokumente bei Amazon hochzuladen, ohne dass Amazon die Umsatzsteuer berechnet. Dadurch kann vermieden werden, dass sich die Umsatzsteuerberechnungen von Amazon und plentymarkets unterscheiden. Um eigene Rechnungen ohne Umsatzsteuerberechnung bei Amazon hochzuladen, erstellst du eine Ereignisaktion im Menü <strong>System » Systemeinstellungen » Aufträge » Ereignisse</strong>.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>System » Systemeinstellungen » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong>.<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen Namen ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-rechnung-hochladen">Tabelle 16</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.<br>
+→ Das Ereignis wird erstellt.</p>
+</li>
+<li>
+<p>Nimm die weiteren Einstellungen gemäß <a href="#ereignisaktion-rechnung-hochladen">Tabelle 16</a> vor.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.<br>
+→ Die Ereignisaktion wird gespeichert.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="ereignisaktion-rechnung-hochladen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 16. Ereignisaktion um Rechnungen automatisch bei Amazon hochzuladen</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis wählen, z.B. <strong>Auftragsänderung: Statuswechsel</strong>, <strong>Dokumente: Rechnung generiert</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Amazon</strong> oder die passende Amazon-Unterherkunft, z.B. Amazon France</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rechnung bei Amazon hochladen</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div><div class="sect1">
 <h2 id="3200">18. Amazon-Geschenkservice nutzen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mit der Aktivierung des Amazon-Geschenkservices können Ihre Kunden optional während des Bestellprozesses auf Amazon einen Geschenkpapierservice nutzen und ggf. eine Grußbotschaft eingeben. Diese Optionen werden beim automatischen Auftragsabruf übernommen, ohne dass weitere Einstellungen erforderlich sind. Für jede Auftragsposition mit Geschenkoption wird eine zusätzliche Auftragsposition mit der ID <strong>-2</strong> und Informationen direkt hinter dem bestellten Artikel angefügt. Dazu gehören die Verpackungsart sowie ggf. eine Grußbotschaft.</p>
+<p>Mit der Aktivierung des Amazon-Geschenkservices können deine Kunden optional während des Bestellprozesses auf Amazon einen Geschenkpapierservice nutzen und ggf. eine Grußbotschaft eingeben. Diese Optionen werden beim automatischen Auftragsabruf übernommen, ohne dass weitere Einstellungen erforderlich sind. Für jede Auftragsposition mit Geschenkoption wird eine zusätzliche Auftragsposition mit der ID <strong>-2</strong> und Informationen direkt hinter dem bestellten Artikel angefügt. Dazu gehören die Verpackungsart sowie ggf. eine Grußbotschaft.</p>
 </div>
 <div class="paragraph">
 <p>Aktiviere die Geschenkoptionen in der Amazon Seller Central, um den Geschenkservice zu nutzen.</p>
@@ -3050,7 +3128,7 @@ In plentymarkets wird jede FBA-Teillieferung anhand des versendenden FBA-Lagers 
 <p>Wechsele in das Tab <strong>Auftragseinstellungen</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen im Bereich <strong>Versand durch Amazon (FBA)</strong> vor. Beachte dazu die Erläuterungen in <a href="#amazon-multi-channel">Tabelle 16</a>.</p>
+<p>Nimm die Einstellungen im Bereich <strong>Versand durch Amazon (FBA)</strong> vor. Beachte dazu die Erläuterungen in <a href="#amazon-multi-channel">Tabelle 17</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> die Einstellungen.</p>
@@ -3058,7 +3136,7 @@ In plentymarkets wird jede FBA-Teillieferung anhand des versendenden FBA-Lagers 
 </ol>
 </div>
 <table id="amazon-multi-channel" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 16. Amazon Multi-Channel einrichten</caption>
+<caption class="title">Tabelle 17. Amazon Multi-Channel einrichten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3146,14 +3224,14 @@ Dabei werden nur Änderungen der Bestandsdaten berücksichtigt. Weitere Möglich
 <p>Gib einen Namen ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-fba-versandfreigabe">Tabelle 17</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-fba-versandfreigabe">Tabelle 18</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> die Einstellungen.<br>
 → Das Ereignis wird erstellt.</p>
 </li>
 <li>
-<p>Nimm die weiteren Einstellungen gemäß <a href="#ereignisaktion-fba-versandfreigabe">Tabelle 17</a> vor.</p>
+<p>Nimm die weiteren Einstellungen gemäß <a href="#ereignisaktion-fba-versandfreigabe">Tabelle 18</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong>.</p>
@@ -3167,7 +3245,7 @@ Dabei werden nur Änderungen der Bestandsdaten berücksichtigt. Weitere Möglich
 </div>
 </div>
 <table id="ereignisaktion-fba-versandfreigabe" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 17. Ereignisaktion zum automatischen Erteilen von FBA-Versandfreigaben an Amazon</caption>
+<caption class="title">Tabelle 18. Ereignisaktion zum automatischen Erteilen von FBA-Versandfreigaben an Amazon</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
