@@ -1380,9 +1380,9 @@ class Metadata {
 					],
 					[
 						"id" => "4a3bd2733902257148e7640162f45874",
-						"path" => "auftraege/auftragsdokumente/best-practices",
+						"path" => "auftraege/auftragsdokumente/best-pratices",
 						"position" => 100,
-						"urlName" => "best-practices",
+						"urlName" => "best-pratices",
 						"url" => "/auftraege/auftragsdokumente/best-practices",
 						"level" => 3,
 						"title" => "Best Practices: Sammel-PDF erstellen",
@@ -4654,9 +4654,9 @@ class Metadata {
 			],
 			[
 				"id" => "22fbeeab35b7c9bedb6c5736a263154a",
-				"path" => "webshop/plugins",
+				"path" => "webshop/webshop-plugins",
 				"position" => 110,
-				"urlName" => "plugins",
+				"urlName" => "webshop-plugins",
 				"url" => "/webshop/plugins",
 				"level" => 2,
 				"title" => "Weitere Webshop-Plugins",
