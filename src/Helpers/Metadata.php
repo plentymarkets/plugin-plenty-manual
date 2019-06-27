@@ -6502,6 +6502,21 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Managing reorders. The following information is available:",
 				"children" => 				[
 					[
+						"id" => "d5386be5bf304a641ce06970e1d11910",
+						"path" => "stock-management/managing-reorders/working-with-reorders",
+						"position" => 10,
+						"urlName" => "working-with-reorders",
+						"url" => "/en/en/stock-management/managing-reorders/working-with-reorders",
+						"level" => 3,
+						"title" => "New: Working with reorders",
+						"keywords" => "Reorder, reordering goods",
+						"description" => "Learn how to work with the new reorder functionality in plentymarkets.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic New: Working with reorders. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "cd8450e33ebec835e9b82e25831f4d3e",
 						"path" => "stock-management/managing-reorders/managing-backlog-lists",
 						"position" => 20,
@@ -7709,9 +7724,9 @@ class Metadata {
 							],
 							[
 								"id" => "d5a47b7f0d3cb2693ad457af0f33c4e1",
-								"path" => "data/importing-data/sync-types/elasticsync-parts-compability-listing",
+								"path" => "data/importing-data/sync-types/elasticsync-parts-compatibility-listing",
 								"position" => 60,
-								"urlName" => "elasticsync-parts-compability-listing",
+								"urlName" => "elasticsync-parts-compatibility-listing",
 								"url" => "/en/data/importing-data/sync-types/elasticsync-parts-compability-listing",
 								"level" => 4,
 								"title" => "Parts compatibility listing",
@@ -9430,9 +9445,9 @@ class Metadata {
 					],
 					[
 						"id" => "5030be4f2b00d1b936edff0ff6b201f3",
-						"path" => "online-store/reference/image-sizes",
+						"path" => "online-store/reference/images-sizes",
 						"position" => 20,
-						"urlName" => "image-sizes",
+						"urlName" => "images-sizes",
 						"url" => "/en/online-store/reference/image-sizes",
 						"level" => 3,
 						"title" => "Image sizes in Ceres",
