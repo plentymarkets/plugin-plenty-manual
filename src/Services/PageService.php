@@ -61,7 +61,7 @@ class PageService
     public function getPathByUrl(string $path)
     {
         $pathRes = null;
-
+        $path = "/".$path;
         $pages = $this->getPages();
         for ($i = 0; $i < count($pages); $i++ )
         {
