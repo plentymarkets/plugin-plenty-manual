@@ -48,7 +48,17 @@ class ContentController extends Controller
 
     public function showContent( string $contentPath ):string
     {
-        $currentPage = $this->pageService->getPageByPath( $contentPath );
+        $contentPathAndPage = $this->pageService->getPathByUrl($contentPath);
+        if(is_array($contentPathAndPage) && isset($contentPathAndPage))
+        {
+            $contentPath = $contentPathAndPage["path"];
+            $currentPage = $contentPathAndPage["page"];
+        }
+        else
+        {
+            $currentPage = $this->pageService->getPageByPath( $contentPath );
+        }
+
         $pages = $this->pageService->getPages( $currentPage["id"] );
         return $this->twig->render(
             "PlentyManual::Main",
