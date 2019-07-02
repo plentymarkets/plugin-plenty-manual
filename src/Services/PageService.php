@@ -58,6 +58,44 @@ class PageService
         return false;
     }
 
+    public function getPathByUrl(string $path)
+    {
+        $pathRes = null;
+
+        $pages = $this->getPages();
+        for ($i = 0; $i < count($pages); $i++ )
+        {
+            if(is_array($pathRes))
+                continue;
+            else
+                $pathRes = $this->searchPage($pages[$i], $path, $pathRes);
+
+        }
+
+        return $pathRes;
+    }
+
+    private function searchPage($page, $string, $pathRes)
+    {
+        if($page["url"] === $string)
+        {
+            $pathRes["path"] = $page["path"];
+            $pathRes["page"] = $page;
+            return $pathRes;
+        }
+        elseif($page["hasChildren"] === true)
+        {
+            for ($i = 0; $i < count($page["children"]); $i++)
+            {
+                if(is_array($pathRes))
+                    continue;
+                else
+                    $pathRes = $this->searchPage($page["children"][$i], $string, $pathRes);
+            }
+        }
+        return $pathRes;
+    }
+
     public function getPageByPath( string $path )
     {
         $levels = explode( "/", $path );
