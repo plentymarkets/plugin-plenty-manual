@@ -1011,7 +1011,7 @@ class Metadata {
 				"url" => "/warenwirtschaft/umbuchungen-vornehmen",
 				"level" => 2,
 				"title" => "Umbuchungen vornehmen",
-				"keywords" => "Umbuchung, Lager-Umbuchung, Lagerort, Lagerorte, PO Lieferschein",
+				"keywords" => "Umbuchung, Lagerumbuchung, Lagerort, Lagerorte, PO Lieferschein",
 				"description" => "Erfahre, wie du mit Lager-Umbuchungen in deinem plentymarkets System arbeitest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Umbuchungen vornehmen. Hier finden Sie folgende Informationen:",
