@@ -8433,21 +8433,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "a011f76343592fb21e0c85a6958192ff",
-								"path" => "data/report/data-formats/itemmanufacturer",
-								"position" => 50,
-								"urlName" => "itemmanufacturer",
-								"url" => "/en/data/report/data-formats/itemmanufacturer",
-								"level" => 4,
-								"title" => "itemManufacturer",
-								"keywords" => "itemManufacturer, report, raw data",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic itemManufacturer. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "ea4ffecd6f1453cec68b262bce675efc",
 								"path" => "data/report/data-formats/itemmanufacturers",
 								"position" => 50,
