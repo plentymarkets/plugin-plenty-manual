@@ -64,13 +64,13 @@ Dateiname: <strong>orderItems-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeilen pro Tag</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 100.0000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 160.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die maximale Anzahl der Datenzeilen, die insgesamt an einem Tag geschrieben wird.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Frühester Zeitpunkt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2017-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitpunkt, ab dem die Rohdaten erhoben werden können. Die Daten werden nach dem Datum gefiltert, das in der Spalte <strong>dataUpdatedAtColumnName</strong> enthalten ist.</p></td>
 </tr>
 <tr>
@@ -103,6 +103,18 @@ Dateiname: <strong>orderItems-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">täglich</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mit dieser Einstellung werden 1 x pro Tag, gewöhnlich über Nacht, alle seit dem letzten Durchlauf geänderten Daten exportiert.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtertyp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Daten werden basierend auf der letzten Aktualisierung gefiltert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -115,45 +127,59 @@ Dateiname: <strong>orderItems-xxx.csv.gz</strong></p></td>
 <table id="tabelle-datenspalten-orderitems" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Datenspalten des Formats <strong>orderItems</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Spaltenname</th>
+<th class="tableblock halign-left valign-top">Datentyp</th>
 <th class="tableblock halign-left valign-top">Vollständige Bezeichnung</th>
 <th class="tableblock halign-left valign-top">Erläuterung</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des plentymarkets Systems</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>oi_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID der Auftragsposition</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Auftrags</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iv_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">item variation id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Varianten-ID der Auftragsposition</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">i_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">item id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Artikel-ID der Auftragsposition</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oi_quantity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(8,2) NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item quantity</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl der im Auftrag enthaltenen Auftragspositionen</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oi_type_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item type ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Typs der Auftragsposition.<br>
 Mögliche Werte:<br>
@@ -171,11 +197,13 @@ Mögliche Werte:<br>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">smw_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Lagers, das der Auftragsposition zugeordnet ist</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>oi_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der letzten Aktualisierung<br>
 Datumsformat: MM/DD/YY HH:MI:SS TZ</p></td>

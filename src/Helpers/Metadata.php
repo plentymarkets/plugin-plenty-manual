@@ -2901,6 +2901,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "3fc445c42f99ba814ec05413e58af873",
+								"path" => "daten/report/datenformate/itemmanufacturers",
+								"position" => 50,
+								"urlName" => "itemmanufacturers",
+								"url" => "/daten/report/datenformate/itemmanufacturer",
+								"level" => 4,
+								"title" => "itemManufacturers",
+								"keywords" => "itemManufacturer, Report, Rohdaten",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich itemManufacturers. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "d4a80ec545b6d96f1100628a192dfb2c",
 								"path" => "daten/report/datenformate/itemvariations",
 								"position" => 60,
@@ -3077,6 +3092,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich tags. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "9149ad40aaefa01986c01fcc219a5d46",
+								"path" => "daten/report/datenformate/users",
+								"position" => 180,
+								"urlName" => "users",
+								"url" => "/daten/report/datenformate/users",
+								"level" => 4,
+								"title" => "users",
+								"keywords" => "users, Report, Rohdaten",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich users. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							]

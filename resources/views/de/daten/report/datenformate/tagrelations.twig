@@ -70,19 +70,19 @@ Dateiname: <strong>tagRelations-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeilen pro Anfrage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 4.000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 8.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die maximale Anzahl der Datenzeilen, die in eine einzelne Datei geschrieben wird.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeilen pro Tag</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 20.000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 320.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die maximale Anzahl der Datenzeilen, die insgesamt an einem Tag geschrieben wird.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Frühester Zeitpunkt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2018-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitpunkt, ab dem die Rohdaten erhoben werden können. Die Daten werden nach dem Datum gefiltert, das in der Spalte <strong>dataUpdatedAtColumnName</strong> enthalten ist.</p></td>
 </tr>
 <tr>
@@ -103,6 +103,18 @@ Dateiname: <strong>tagRelations-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die maximal Anzahl an Tagen, bis die generierte Rohdaten-Datei wieder vom Cloud-Speicher entfernt wird. Eine Weiterverarbeitung muss somit vorher erfolgen. Die genaue Dauer kann im Menü <strong>Daten » Rohdaten</strong> definiert werden.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtertyp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Daten werden basierend auf der letzten Aktualisierung gefiltert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -115,13 +127,15 @@ Dateiname: <strong>tagRelations-xxx.csv.gz</strong></p></td>
 <table id="tabelle-datenspalten-tag-relations" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Datenspalten des Formats <strong>TagRelations</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Eigenschaft</th>
+<th class="tableblock halign-left valign-top">Datentyp</th>
 <th class="tableblock halign-left valign-top">Vollständige Bezeichnung</th>
 <th class="tableblock halign-left valign-top">Erläuterung</th>
 </tr>
@@ -129,26 +143,44 @@ Dateiname: <strong>tagRelations-xxx.csv.gz</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des plentymarkets Systems</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tr_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tag relations id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Tag-Verknüpfung</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">t_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tag ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Tags</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tr_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tag relation type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Typ der Tag-Verknüpfung</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tr_value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tag relation value</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Wert der Tag-Verknüpfung</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tr_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tr_created_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tag relation created at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der Erstellung<br>
+Datumsformat: MM/DD/YYYY HH:MI:SS TZ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tr_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tag relation updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der letzten Aktualisierung<br>
 Datumsformat: MM/DD/YYYY HH:MI:SS TZ</p></td>

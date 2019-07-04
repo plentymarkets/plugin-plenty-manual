@@ -64,7 +64,7 @@ Dateiname: <strong>orders-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeilen pro Tag</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 50.0000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 100.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die maximale Anzahl der Datenzeilen, die insgesamt an einem Tag geschrieben wird.</p></td>
 </tr>
 <tr>
@@ -94,14 +94,26 @@ Dateiname: <strong>orders-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Standardmäßig aktiv</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Export läuft erst dann automatisch im Hintergrund, wenn der Creator zuvor im Menü <strong>Daten » Rohdaten</strong> aktiviert wurde.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Export läuft standardmäßig automatisch im Hintergrund.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Intervall</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">täglich</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mit dieser Einstellung werden 1 x pro Tag, gewöhnlich über Nacht, alle seit dem letzten Durchlauf geänderten Daten exportiert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtertyp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Daten werden basierend auf der letzten Aktualisierung gefiltert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -115,13 +127,15 @@ Dateiname: <strong>orders-xxx.csv.gz</strong></p></td>
 <table id="tabelle-datenspalten-orders" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Datenspalten des Formats <strong>orders</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Spaltenname</th>
+<th class="tableblock halign-left valign-top">Datentyp</th>
 <th class="tableblock halign-left valign-top">Vollständige Bezeichnung</th>
 <th class="tableblock halign-left valign-top">Erläuterung</th>
 </tr>
@@ -129,31 +143,37 @@ Dateiname: <strong>orders-xxx.csv.gz</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des plentymarkets Systems</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">o_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>o_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Auftrags</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order plenty ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des plentymarkets Systems oder Mandanten, über die der Auftrag angelegt wurde</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_origin_order_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order origin order ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des übergeordneten Hauptauftrags. Diese ID wird nur bei Auftragstypen ausgegeben, die einem sogenannten Hauptauftrag untergeordnet ist (beispielsweise Gutschriften, Retouren und Lieferaufträge).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(6,4) NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order status</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Status des Auftrags im Dezimalformat. Je nach den im System eingerichteten Status werden Zahlen mit bis zu 4 Nachkommastellen ausgegeben. Die IDs der Standardstatus finden Sie auf der Handbuchseite <a href="/basics/interne-IDs#120">Interne IDs in plentymarkets</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_referrer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(5,2)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order referrer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Herkunft des Auftrags.<br>
 Mögliche Werte:<br>
@@ -171,11 +191,13 @@ Weitere mögliche Werte für Auftragsherkünfte finden Sie auf der Handbuchseite
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_global_referrer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(5,2)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order global referrer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Globale Herkunft des Auftrags</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Auftragstyp<br>
 Mögliche Werte:<br>
@@ -192,42 +214,49 @@ multi credit note = Sammelgutschrift</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Kontakts, der dem Auftrag zugeordnet ist</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_shipping_profile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order shipping profile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Versandprofil des Auftrags</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Lagers, das dem Auftrag zugeordnet ist</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_created_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order created at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der Auftragsanlage<br>
 Datumsformat: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_goods_issue_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order goods issue at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der Buchung des Warenausgangs<br>
 Datumsformat: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_paid_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order paid at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der Buchung des Zahlungseingangs<br>
 Datumsformat: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der letzten Aktualisierung des Auftrags<br>
 Datumsformat: MM/DD/YY HH:MI:SS TZ</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">smw_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Lagers, das dem Auftrag zugeordnet ist</p></td>
 </tr>
 </tbody>
 </table>

@@ -70,13 +70,13 @@ Dateiname: <strong>accountContacts-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeilen pro Anfrage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 3.000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 4.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die maximale Anzahl der Datenzeilen, die in eine einzelne Datei geschrieben wird.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeilen pro Tag</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 80.0000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 80.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die maximale Anzahl der Datenzeilen, die insgesamt an einem Tag geschrieben wird.</p></td>
 </tr>
 <tr>
@@ -103,6 +103,18 @@ Dateiname: <strong>accountContacts-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die maximal Anzahl an Tagen, bis die generierte Rohdaten-Datei wieder vom Cloud-Speicher entfernt wird. Eine Weiterverarbeitung muss somit vorher erfolgen. Die genaue Dauer kann im Menü <strong>Daten » Rohdaten</strong> definiert werden.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtertyp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Daten werden basierend auf der letzten Aktualisierung gefiltert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -115,13 +127,15 @@ Dateiname: <strong>accountContacts-xxx.csv.gz</strong></p></td>
 <table id="tabelle-datenspalten-accountcontacts" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Datenspalten des Formats <strong>accountContacts</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Spaltenname</th>
+<th class="tableblock halign-left valign-top">Datentyp</th>
 <th class="tableblock halign-left valign-top">Vollständige Bezeichnung</th>
 <th class="tableblock halign-left valign-top">Erläuterung</th>
 </tr>
@@ -129,21 +143,25 @@ Dateiname: <strong>accountContacts-xxx.csv.gz</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des plentymarkets Systems</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ac_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ac_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Kontakts</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID der Firma, sofern vorhanden</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">act_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact type id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Kontakttyps<br>
 Mögliche Werte:<br>
@@ -156,36 +174,43 @@ Mögliche Werte:<br>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">acc_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact class id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID der Kontaktklasse</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">r_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(5,2)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">referrer id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID der Auftragsherkunft, über die der Datensatz angelegt wurde</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">u_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Benutzers, der als Eigner des Kontakts hinterlegt wurde</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Vorname und Nachname des Kontakts</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact country</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Land des Kontakts als ISO2-Ländercode</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_lang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact lang</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sprache des Kontakts, die im Kontaktdatensatz gespeichert ist.<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_rating</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact rating</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bewertung des Kontakts<br>
 Dient der internen Bewertung des Kontakts. 5 graue Sterne stehen für keine Bewertung. 5 gelbe Sterne stehen für die beste, 5 rote Sterne für die schlechteste Bewertung:<br>
@@ -202,13 +227,15 @@ Dient der internen Bewertung des Kontakts. 5 graue Sterne stehen für keine Bewe
 -5 = 5 rote Sterne (schlechteste Bewertung)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ac_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ac_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der letzten Aktualisierung<br>
 Datumsformat: MM/DD/YYYY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_created_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact created at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der Erstellung<br>
 Datumsformat: MM/DD/YYYY HH:MI:SS TZ</p></td>

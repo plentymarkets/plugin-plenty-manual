@@ -64,7 +64,7 @@ Dateiname: <strong>orderItemAmounts-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeilen pro Tag</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 100.0000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 160.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die maximale Anzahl der Datenzeilen, die insgesamt an einem Tag geschrieben wird.</p></td>
 </tr>
 <tr>
@@ -97,6 +97,18 @@ Dateiname: <strong>orderItemAmounts-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">täglich</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mit dieser Einstellung werden 1 x pro Tag, gewöhnlich über Nacht, alle seit dem letzten Durchlauf geänderten Daten exportiert.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtertyp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Daten werden basierend auf der letzten Aktualisierung gefiltert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -109,30 +121,41 @@ Dateiname: <strong>orderItemAmounts-xxx.csv.gz</strong></p></td>
 <table id="tabelle-datenspalten-orderitemamounts" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Datenspalten des Formats <strong>orderItemAmounts</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Spaltenname</th>
+<th class="tableblock halign-left valign-top">Datentyp</th>
 <th class="tableblock halign-left valign-top">Vollständige Bezeichnung</th>
 <th class="tableblock halign-left valign-top">Erläuterung</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des plentymarkets Systems</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>oia_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order item amount ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enthält den Primärschlüssel der Datenzeile</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oi_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID der Auftragsposition</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oia_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item amount ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enthält den Primärschlüssel der Datenzeile.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oia_is_system_currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item amount is system currency</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Markierung, die anzeigt, ob die an der Auftragsposition hinterlegte Währung der Systemwährung entspricht<br>
 Mögliche Werte:<br>
@@ -141,31 +164,37 @@ Mögliche Werte:<br>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oi_price_gross</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(17,4) NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item price gross</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bruttopreis der Auftragsposition</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oi_price_net</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(17,4) NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item price net</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nettopreis der Auftragsposition</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oi_price_currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item price currency</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Währung des Preises der Auftragsposition</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oi_exchange_rate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(12,6) NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item exchange rate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Wechselkurs der Währung, der an der Auftragsposition hinterlegt ist</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oi_purchase_price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(17,6) NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item purchase price</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Einkaufspreis der Auftragsposition</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>oi_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der letzten Aktualisierung<br>
 Datumsformat: MM/DD/YY HH:MI:SS TZ</p></td>

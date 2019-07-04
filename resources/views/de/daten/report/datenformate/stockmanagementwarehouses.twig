@@ -74,6 +74,12 @@ Dateiname: <strong>stockManagementWarehouses-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitpunkt, ab dem die Rohdaten erhoben werden können. Die Daten werden nach dem Datum gefiltert, das in der Spalte <strong>dataUpdatedAtColumnName</strong> enthalten ist.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spaltenbezeichnung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Spalte, die den Zeitstempel der letzten Aktualisierung der Daten enthält.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMinimum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Minimale Anzahl an Tagen bis zur Löschung</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
@@ -88,7 +94,7 @@ Dateiname: <strong>stockManagementWarehouses-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Standardmäßig aktiv</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Export läuft erst dann automatisch im Hintergrund, wenn der Creator zuvor im Menü <strong>Daten » Rohdaten</strong> aktiviert wurde.</p></td>
 </tr>
 <tr>
@@ -96,6 +102,18 @@ Dateiname: <strong>stockManagementWarehouses-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Intervall</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">täglich</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mit dieser Einstellung werden 1 x pro Tag, gewöhnlich über Nacht, alle seit dem letzten Durchlauf geänderten Daten exportiert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtertyp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Daten werden basierend auf der letzten Aktualisierung gefiltert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -109,13 +127,15 @@ Dateiname: <strong>stockManagementWarehouses-xxx.csv.gz</strong></p></td>
 <table id="tabelle-datenspalten-stockmanagementwarehouses" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Datenspalten des Formats <strong>stockManagementWarehouses</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Spaltenname</th>
+<th class="tableblock halign-left valign-top">Datentyp</th>
 <th class="tableblock halign-left valign-top">Vollständige Bezeichnung</th>
 <th class="tableblock halign-left valign-top">Erläuterung</th>
 </tr>
@@ -123,16 +143,19 @@ Dateiname: <strong>stockManagementWarehouses-xxx.csv.gz</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des plentymarkets Systems</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">smw_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>smw_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Lagers</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">smw_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_type_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Typ des Lagers<br>
 Mögliche Werte:<br>
@@ -145,6 +168,7 @@ Mögliche Werte:<br>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">smw_logistics_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse logistics type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Logistiktyp des Lagers<br>
 Mögliche Werte:<br>
@@ -154,6 +178,7 @@ dhl = DHL Fulfillment</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">smw_priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse priority</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Priorität des Lagers<br>
 Mögliche Werte:<br>
@@ -161,11 +186,13 @@ Mögliche Werte:<br>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">smw_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name des Lagers</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">smw_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>smw_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der letzte Aktualisierung<br>
 Datumsformat: MM/DD/YYYY HH:MI:SS TZ</p></td>
