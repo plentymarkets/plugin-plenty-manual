@@ -2886,21 +2886,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "5c8925b7da03c191f6daf4e94ff4d172",
-								"path" => "daten/report/datenformate/itemmanufacturer",
-								"position" => 50,
-								"urlName" => "itemmanufacturer",
-								"url" => "/daten/report/datenformate/itemmanufacturer",
-								"level" => 4,
-								"title" => "itemManufacturer",
-								"keywords" => "itemManufacturer, Report, Rohdaten",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich itemManufacturer. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "3fc445c42f99ba814ec05413e58af873",
 								"path" => "daten/report/datenformate/itemmanufacturers",
 								"position" => 50,
