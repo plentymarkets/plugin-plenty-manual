@@ -6643,7 +6643,7 @@ class Metadata {
 			[
 				"id" => "b98933657d64dcbbd94fca816220120f",
 				"path" => "stock-management/working-with-redistributions",
-				"position" => 35,
+				"position" => 50,
 				"urlName" => "working-with-redistributions",
 				"url" => "/en/stock-management/working-with-redistributions",
 				"level" => 2,
