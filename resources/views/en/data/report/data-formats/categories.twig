@@ -103,6 +103,18 @@ File name: <strong>categories-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -115,13 +127,15 @@ File name: <strong>categories-xxx.csv.gz</strong></p></td>
 <table id="table-data-columns-categories" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Data columns of the format <strong>categories</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">Data type</th>
 <th class="tableblock halign-left valign-top">Full name</th>
 <th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
@@ -129,27 +143,44 @@ File name: <strong>categories-xxx.csv.gz</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">c_id</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>c_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">category id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Category ID</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">c_parent_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">category parent id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the parent category This field is empty for level 1 categories.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">c_level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">category level</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Category level<br></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">c_type</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type of category<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">category type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category type<br>
 item = Categories of the type <strong>Item</strong></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">c_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">category name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Category name</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">c_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>c_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">category updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update<br>
 Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>

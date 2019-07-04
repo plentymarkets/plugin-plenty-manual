@@ -70,7 +70,7 @@ File name: <strong>accountContacts-xxx.csv</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per request</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 3,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 4,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written into a single file.</p></td>
 </tr>
 <tr>
@@ -82,7 +82,7 @@ File name: <strong>accountContacts-xxx.csv</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">01/01/2017</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
 </tr>
 <tr>
@@ -103,6 +103,18 @@ File name: <strong>accountContacts-xxx.csv</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -115,13 +127,15 @@ File name: <strong>accountContacts-xxx.csv</strong></p></td>
 <table id="table-data-columns-accountcontacts" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Data columns of the format <strong>accountContacts</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">Data type</th>
 <th class="tableblock halign-left valign-top">Full name</th>
 <th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
@@ -129,21 +143,25 @@ File name: <strong>accountContacts-xxx.csv</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ac_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ac_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the contact</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the company, if available</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">act_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact type id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the contact type<br>
 Possible values:<br>
@@ -156,36 +174,43 @@ Possible values:<br>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">acc_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact class id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the contact class</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">r_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(5,2)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">referrer id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order referrer via which the data record was saved</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">u_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the user that was saved as owner of the contact</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">First name and last name of the contact</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact country</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Country of the contact as ISO2 country code</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_lang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact lang</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Language of the contact that is saved in the contact data record.<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_rating</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact rating</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Rating of the contact<br>
 Is used as internal rating of the contact. 5 grey stars mean that no rating was saved. 5 yellow stars are the best rating, 5 red stars are the worst rating:<br>
@@ -202,13 +227,15 @@ Is used as internal rating of the contact. 5 grey stars mean that no rating was 
 -5 = 5 red stars (worst possible rating)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ac_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ac_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update<br>
 Data format: MM/DD/YYYY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_created_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact created at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the creation<br>
 Data format: MM/DD/YYYY HH:MI:SS TZ</p></td>

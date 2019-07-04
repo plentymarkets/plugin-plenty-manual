@@ -76,13 +76,13 @@ File name: <strong>accounts-xxx.csv</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 100,0000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 100,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">01/01/2017</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
 </tr>
 <tr>
@@ -103,6 +103,18 @@ File name: <strong>accounts-xxx.csv</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -115,13 +127,15 @@ File name: <strong>accounts-xxx.csv</strong></p></td>
 <table id="table-data-columns-accounts" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Data columns of the format <strong>accounts</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">Data type</th>
 <th class="tableblock halign-left valign-top">Full name</th>
 <th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
@@ -129,32 +143,38 @@ File name: <strong>accounts-xxx.csv</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">a_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>a_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the company, if available</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the company</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">u_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the user</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">a_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>a_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update<br>
 Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">a_created_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account created at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the creation<br>
 Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>

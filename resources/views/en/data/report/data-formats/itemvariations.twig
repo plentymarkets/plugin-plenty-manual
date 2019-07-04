@@ -70,19 +70,19 @@ File name: <strong>itemVariations-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per request</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 4,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 5,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written into a single file.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 40,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 100,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2017-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2014-01-01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
 </tr>
 <tr>
@@ -103,6 +103,18 @@ File name: <strong>itemVariations-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -115,13 +127,15 @@ File name: <strong>itemVariations-xxx.csv.gz</strong></p></td>
 <table id="table-data-columns-itemvariations" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Data columns of the format <strong>itemVariations</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">Data type</th>
 <th class="tableblock halign-left valign-top">Full name</th>
 <th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
@@ -129,46 +143,55 @@ File name: <strong>itemVariations-xxx.csv.gz</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">iv_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>iv_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">item variation id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variation ID</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">i_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">item id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The item’s ID</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">iv_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">im_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">item variation id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer ID</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iv_attribute_value_set_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">item variation attribute value set id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the combination of content and attribute value</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">c_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">category id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the category</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iv_number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">item variation number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Number of the variation</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">i_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">item name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Item name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iv_active</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">item variation active</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Possible values:<br>
 0 = Variation is inactive<br>
@@ -176,13 +199,15 @@ File name: <strong>itemVariations-xxx.csv.gz</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iv_availability</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">item variation availability</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the availability of the variation<br>
 Possible values:<br>
 1 to 10</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">iv_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>iv_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">item variation updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update<br>
 Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>

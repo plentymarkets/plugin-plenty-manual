@@ -64,13 +64,13 @@ File name: <strong>orders-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 50,0000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 100,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2017-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
 </tr>
 <tr>
@@ -94,7 +94,7 @@ File name: <strong>orders-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Activated by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The data is only exported automatically in the background after you have activated the creator in the <strong>Data » Raw data</strong> menu.</p></td>
 </tr>
 <tr>
@@ -102,6 +102,18 @@ File name: <strong>orders-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Interval</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">daily</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">With this setting, all data that has been changed since the last run is exported once a day, usually during the night.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -115,13 +127,15 @@ File name: <strong>orders-xxx.csv.gz</strong></p></td>
 <table id="table-data-columns-orders" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Data columns of the format <strong>orders</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">Data type</th>
 <th class="tableblock halign-left valign-top">Full name</th>
 <th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
@@ -129,31 +143,37 @@ File name: <strong>orders-xxx.csv.gz</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">o_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>o_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order plenty ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system or the client via which the order was created</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_origin_order_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order origin order ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the main order. This ID is only exported for order types that are assigned to a so-called main order (e.g. credit notes, returns and delivery orders).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(6,4) NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order status</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Status of the order in decimal format. Depending on the statuses set up in the system, numbers with up to 4 decimal places are exported. You find the IDs of the standard statuses on the <a href="/en/basics/internal-IDs#120">Internal Ids in plentymarkets</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_referrer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(5,2)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order referrer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Referrer of the order.<br>
 Possible values:<br>
@@ -171,11 +191,13 @@ You find further possible values for order referrers on the <a href="/en/basics/
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_global_referrer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(5,2)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order global referrer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Global referrer of the order</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order type<br>
 Possible values:<br>
@@ -192,34 +214,40 @@ multi credit note</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account contact id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the contact that is assigned to the order</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_shipping_profile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order shipping profile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the shipping profile of the order</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_created_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order created at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the order creation<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_goods_issue_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order goods issue at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp for booking outgoing items<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_paid_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order paid at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp for booking the incoming payment<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">o_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>o_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last order update<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>

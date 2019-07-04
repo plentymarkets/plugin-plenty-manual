@@ -8463,6 +8463,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "ea4ffecd6f1453cec68b262bce675efc",
+								"path" => "data/report/data-formats/itemmanufacturers",
+								"position" => 50,
+								"urlName" => "itemmanufacturers",
+								"url" => "/en/data/report/data-formats/itemmanufacturers",
+								"level" => 4,
+								"title" => "itemManufacturers",
+								"keywords" => "itemManufacturers, report, raw data",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic itemManufacturers. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "267bb8aa52ef23fae9d4316967c40b01",
 								"path" => "data/report/data-formats/itemvariations",
 								"position" => 60,
@@ -8639,6 +8654,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic tags. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "e3303ae3f6ea0c15e8f5621874eb4705",
+								"path" => "data/report/data-formats/users",
+								"position" => 180,
+								"urlName" => "users",
+								"url" => "/en/data/report/data-formats/users",
+								"level" => 4,
+								"title" => "users",
+								"keywords" => "users, report, raw data",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic users. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]

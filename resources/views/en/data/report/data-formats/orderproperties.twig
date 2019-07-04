@@ -64,13 +64,13 @@ File name: <strong>orderProperties-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 100,0000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 160,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2017-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
 </tr>
 <tr>
@@ -88,7 +88,7 @@ File name: <strong>orderProperties-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Column header</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oip_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">op_updated_at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the column that contains the time stamp of the last data update.</p></td>
 </tr>
 <tr>
@@ -103,6 +103,18 @@ File name: <strong>orderProperties-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">daily</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">With this setting, all data that has been changed since the last run is exported once a day, usually during the night.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -115,13 +127,15 @@ File name: <strong>orderProperties-xxx.csv.gz</strong></p></td>
 <table id="table-data-columns-order-properties" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Data columns of the format <strong>orderProperties</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">Data type</th>
 <th class="tableblock halign-left valign-top">Full name</th>
 <th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
@@ -129,11 +143,13 @@ File name: <strong>orderProperties-xxx.csv.gz</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">op_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>op_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order property ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the property of the order<br>
 Possible values:<br>
@@ -148,11 +164,13 @@ Further possible values are listed in our <a href="https://developers.plentymark
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">op_type_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">opt_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order property type ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order property type.<br>
  Possible values:<br>
@@ -172,11 +190,13 @@ Further possible values are listed in our <a href="https://developers.plentymark
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">op_value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order property value</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Value of the order property</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">op_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>op_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order property updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>

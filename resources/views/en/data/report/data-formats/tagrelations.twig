@@ -26,7 +26,7 @@
 <p>See <a href="#table-specifications-tag-relationships">Table 1</a> for more information on the available properties and their corresponding values.</p>
 </div>
 <table id="table-specifications-tag-relationships" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Technical specifications of the format <strong>TagRelations</strong></caption>
+<caption class="title">Table 1. Technical specifications of the format <strong>tagRelations</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -70,19 +70,19 @@ File name: <strong>tagRelations-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per request</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 4,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 8,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written into a single file.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 20,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 320,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">01-Jan-2018</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
 </tr>
 <tr>
@@ -103,6 +103,18 @@ File name: <strong>tagRelations-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -110,18 +122,20 @@ File name: <strong>tagRelations-xxx.csv.gz</strong></p></td>
 <h2 id="_data_columns">2. Data columns</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>See <a href="#table-data-columns-tag-relationships">[table-data-columns-tag-relationships]</a> for more information on the <strong>tagRelations</strong> data columns included in the CSV file during raw data export.</p>
+<p>See <a href="#table-data-columns-tag-relationships">Table 2</a> for more information on the <strong>tagRelations</strong> data columns included in the CSV file during raw data export.</p>
 </div>
-<table id="table-data-columns-tag-relations" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Data columns of the format <strong>TagRelations</strong></caption>
+<table id="table-data-columns-tag-relationships" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Data columns of the format <strong>tagRelations</strong></caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Data type</th>
 <th class="tableblock halign-left valign-top">Full name</th>
 <th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
@@ -129,26 +143,44 @@ File name: <strong>tagRelations-xxx.csv.gz</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tr_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tag relation ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the tag relation</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">t_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tag ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the tag</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tr_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tag relation type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of the tag relation</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tr_value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tag relation value</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Value of the tag relation</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tr_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tr_created_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tag relation created at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the creation<br>
+Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tr_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tag relation updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update<br>
 Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>

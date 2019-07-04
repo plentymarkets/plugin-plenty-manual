@@ -64,26 +64,50 @@ File name: <strong>feedbacks-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per request</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 3000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 5,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written into a single file.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 800000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 50,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">01-Jan-2016</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2006-01-01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Column header</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ac_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f_updated_at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the column that contains the time stamp of the last data update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMinimum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum number of days until the data is deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The minimum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMaximum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of days until the data is deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shouldProcessed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -97,13 +121,15 @@ File name: <strong>feedbacks-xxx.csv.gz</strong></p></td>
 <table id="table-data-columns-feedbacks" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Data columns of the <strong>feedbacks</strong> format</caption>
 <colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">Data type</th>
 <th class="tableblock halign-left valign-top">Full name</th>
 <th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
@@ -111,37 +137,44 @@ File name: <strong>feedbacks-xxx.csv.gz</strong></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">f_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>f_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">feedbacks id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the feedback</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">f_visible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">feedbacks visible</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1 = visible<br>
 0 = invisible</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ftr_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">feedbacks relation type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of the feedback (e.g. variation)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ftr_target_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">feedbacks relation type target id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the target (e.g. variation ID)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fr_value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">feedbacks rating value</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Value of the feedback</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">f_update_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>f_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">feedbacks updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update<br>
 Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>
