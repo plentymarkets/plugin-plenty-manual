@@ -8735,6 +8735,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "521f9c2045778ef094d8db4fc09afb1e",
+								"path" => "data/export-import/data-formats/campaign",
+								"position" => 20,
+								"urlName" => "campaign",
+								"url" => "/en/data/export-import/data-formats/campaign",
+								"level" => 4,
+								"title" => "Campaign",
+								"keywords" => "",
+								"description" => "Campaign",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Campaign. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "324b4c5f0b49e839b844464bbd5ede3a",
 								"path" => "data/export-import/data-formats/campaigncoupon",
 								"position" => 30,
@@ -8765,6 +8780,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "6015c798a765e1ec922b3abfc79acf41",
+								"path" => "data/export-import/data-formats/campaigncouponcontact",
+								"position" => 40,
+								"urlName" => "campaigncouponcontact",
+								"url" => "/en/data/export-import/data-formats/campaigncouponcontact",
+								"level" => 4,
+								"title" => "CampaignCouponContact",
+								"keywords" => "",
+								"description" => "CampaignCouponContact",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic CampaignCouponContact. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "b9824c2addc0b983778e64b5d2fa8239",
 								"path" => "data/export-import/data-formats/creditnote",
 								"position" => 45,
@@ -8776,6 +8806,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic CreditNote. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "0d35732507df3143c898136094483c27",
+								"path" => "data/export-import/data-formats/campaigncouponorder",
+								"position" => 45,
+								"urlName" => "campaigncouponorder",
+								"url" => "/en/data/export-import/data-formats/campaigncouponorder",
+								"level" => 4,
+								"title" => "CampaignCouponOrder",
+								"keywords" => "",
+								"description" => "CampaignCouponOrder",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic CampaignCouponOrder. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
