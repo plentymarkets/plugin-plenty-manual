@@ -3233,6 +3233,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "02450873cf5bb042e877b0aa04816f71",
+								"path" => "daten/export-import/datenformate/campaigncouponorder",
+								"position" => 45,
+								"urlName" => "campaigncouponorder",
+								"url" => "/daten/export-import/datenformate/campaigncouponorder",
+								"level" => 4,
+								"title" => "CampaignCouponOrder",
+								"keywords" => "",
+								"description" => "CampaignCouponOrder",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich CampaignCouponOrder. Hier finden Sie folgende Informationen:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "7db8f11c96dc4f3aec741fc975821636",
 								"path" => "daten/export-import/datenformate/category",
 								"position" => 50,
@@ -3244,21 +3259,6 @@ class Metadata {
 								"description" => "Datenformat Category",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Category. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "02450873cf5bb042e877b0aa04816f71",
-								"path" => "daten/export-import/datenformate/campaigncouponorder",
-								"position" => 50,
-								"urlName" => "campaigncouponorder",
-								"url" => "/daten/export-import/datenformate/campaigncouponorder",
-								"level" => 4,
-								"title" => "CampaignCouponOrder",
-								"keywords" => "",
-								"description" => "CampaignCouponOrder",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich CampaignCouponOrder. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							],
