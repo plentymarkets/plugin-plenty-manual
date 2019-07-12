@@ -836,7 +836,7 @@ class Metadata {
 					[
 						"id" => "7e9c83c53995f00635989ba79d9d293a",
 						"path" => "artikel/best-practices/best-practices_kategorien",
-						"position" => 70,
+						"position" => 80,
 						"urlName" => "best-practices_kategorien",
 						"url" => "/artikel/best-practices/best-practices_kategorien",
 						"level" => 3,
