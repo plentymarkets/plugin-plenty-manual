@@ -6471,21 +6471,6 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic Best practices: Items and categories. The following information is available:",
 				"children" => 				[
 					[
-						"id" => "af1da0766bceeca92d354f93e94aedb7",
-						"path" => "item/best-practices/best-practices_categories",
-						"position" => 70,
-						"urlName" => "best-practices_categories",
-						"url" => "/en/item/best-practices/best-practices_categories",
-						"level" => 3,
-						"title" => "Best practices: Categories",
-						"keywords" => "Online store, Client, Items, Categories, Visibility, Availability, Checklist, FAQ",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best practices: Categories. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "efdfe1b466dc6ffdfc9e6fdccbfa36bb",
 						"path" => "item/best-practices/best-practices_item",
 						"position" => 70,
@@ -6497,6 +6482,21 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Best practices: Item. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "af1da0766bceeca92d354f93e94aedb7",
+						"path" => "item/best-practices/best-practices_categories",
+						"position" => 80,
+						"urlName" => "best-practices_categories",
+						"url" => "/en/item/best-practices/best-practices_categories",
+						"level" => 3,
+						"title" => "Best practices: Categories",
+						"keywords" => "Online store, Client, Items, Categories, Visibility, Availability, Checklist, FAQ",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Best practices: Categories. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
