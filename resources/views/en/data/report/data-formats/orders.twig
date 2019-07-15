@@ -58,19 +58,19 @@ File name: <strong>orders-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per request</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 5,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 5.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written into a single file.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 100,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 100.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01-Jan-2016</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
 </tr>
 <tr>
@@ -95,7 +95,7 @@ File name: <strong>orders-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Activated by default</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The data is only exported automatically in the background after you have activated the creator in the <strong>Data » Raw data</strong> menu.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As standard, the export runs automatically in the background.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
@@ -116,7 +116,7 @@ File name: <strong>orders-xxx.csv.gz</strong></p></td>
 <h2 id="_data_columns">2. Data columns</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>See <a href="#table-data-columns-orders">Table 2</a> for more information on the <strong>orders</strong> data columns included in the CSV file during raw data export.</p>
+<p>See {dataColumns} for more information on the <strong>orders</strong> data columns included in the CSV file during raw data export.</p>
 </div>
 <table id="table-data-columns-orders" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Data columns of the format <strong>orders</strong></caption>
@@ -195,16 +195,22 @@ You find further possible values for order referrers on the <a href="/en/basics/
 <td class="tableblock halign-left valign-top"><p class="tableblock">order type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order type<br>
 Possible values:<br>
-order<br>
-delivery order<br>
-return<br>
-credit note<br>
-warranty<br>
-repair<br>
-offer<br>
-advance order<br>
-multi-order<br>
-multi credit note</p></td>
+order = Order<br>
+delivery order = Delivery order<br>
+return = Return<br>
+credit note = Credit note<br>
+warranty = Warranty<br>
+repair = Repair<br>
+offer = Offer<br>
+advance order = Advance order<br>
+multi-order = Multi-order<br>
+multi credit note = Multi credit note</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_is_net</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order is net</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains <strong>1</strong> if the order has been calculated with a net amount, or <strong>2</strong> if the order has been calculated with a gross amount.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ac_id</p></td>
@@ -213,35 +219,83 @@ multi credit note</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the contact that is assigned to the order</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_invoice_postal_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order invoice postal code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postcode listed in the invoice address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_invoice_town</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order invoice town</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Town listed in the invoice address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_invoice_country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order invoice country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country listed in the invoice address (ISO2 code)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_delivery_postal_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order delivery postal code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postcode listed in the invoice address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_delivery_town</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order delivery town</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Town listed in the delivery address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_delivery_country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order delivery country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country listed in the delivery address (ISO2 code)</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_shipping_profile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order shipping profile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the shipping profile of the order</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the warehouse associated with the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_entry_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order entry at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp of the entry of the order. This date is editable in the user interface in the back end. If no change has been made, this field is identical to the existing field <strong>o_created_at</strong> (timestamp at which the order has been saved in the database).</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_created_at</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order created at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the order creation<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_goods_issue_at</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order goods issue at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp for booking outgoing items<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_paid_at</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order paid at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp for booking the incoming payment<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>o_updated_at</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last order update<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>
