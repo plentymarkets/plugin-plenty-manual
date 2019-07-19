@@ -2053,7 +2053,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "eBay Fulfillment Integrationsleitfaden",
 				"keywords" => "eBay Fulfillment",
-				"description" => "Erfahren Sie, wie Sie eBay Fulfillment in plentymarkets einrichten.",
+				"description" => "Erfahre, wie du eBay Fulfillment in plentymarkets einrichtest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich eBay Fulfillment Integrationsleitfaden. Hier finden Sie folgende Informationen:",
 				"children" => [],
