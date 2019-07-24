@@ -6243,21 +6243,6 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic FTP access. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "9737fe6f3e43a847a6c337265a88974a",
-						"path" => "basics/admin-tasks/migration-guide",
-						"position" => 80,
-						"urlName" => "migration-guide",
-						"url" => "/en/basics/admin-tasks/migration-guide",
-						"level" => 3,
-						"title" => "Migration guide",
-						"keywords" => "plentymarkets 7, Migration, Migration guide",
-						"description" => "Guide for migrating to plentymarkets 7",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Migration guide. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -8858,21 +8843,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "64d08538a74b9554b2bd8498a95b19d2",
-								"path" => "data/export-import/data-formats/category",
-								"position" => 40,
-								"urlName" => "category",
-								"url" => "/en/data/export-import/data-formats/category",
-								"level" => 4,
-								"title" => "Category",
-								"keywords" => "Data format",
-								"description" => "Data format Category",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Category. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "6015c798a765e1ec922b3abfc79acf41",
 								"path" => "data/export-import/data-formats/campaigncouponcontact",
 								"position" => 40,
@@ -8884,6 +8854,21 @@ class Metadata {
 								"description" => "CampaignCouponContact",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic CampaignCouponContact. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "64d08538a74b9554b2bd8498a95b19d2",
+								"path" => "data/export-import/data-formats/category",
+								"position" => 40,
+								"urlName" => "category",
+								"url" => "/en/data/export-import/data-formats/category",
+								"level" => 4,
+								"title" => "Category",
+								"keywords" => "Data format",
+								"description" => "Data format Category",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Category. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -9214,21 +9199,6 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic ItemListingMarketText. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "a096dc69f59c7f7b7f0b30c6b5019a5d",
-								"path" => "data/export-import/data-formats/itemprice",
-								"position" => 170,
-								"urlName" => "itemprice",
-								"url" => "/en/data/export-import/data-formats/itemprice",
-								"level" => 4,
-								"title" => "ItemPrice",
-								"keywords" => "Data format",
-								"description" => "Data format ItemPrice",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic ItemPrice. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							],
