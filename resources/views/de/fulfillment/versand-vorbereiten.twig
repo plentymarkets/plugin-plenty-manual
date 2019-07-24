@@ -979,7 +979,7 @@ Mit dieser Funktion können sehr einfach die Versandprofile für neue Artikel zu
 <div class="sect2">
 <h3 id="1400">8.4. Tipps und Tricks:&nbsp;Versandprofilkombinationen zur Fehlervermeidung</h3>
 <div class="paragraph">
-<p>Achte darauf, dass bei allen Artikeln, die zusammen gekauft werden können, mindestens ein übereinstimmendes Versandprofil gespeichert ist. Befinden sich 2 oder mehr Artikel im Warenkorb, die kein gemeinsames Versandprofil haben, wird das Porto von beiden Versandprofilen addiert. Allerdings wird nur der Versanddienstleister mit der höheren Priorität im Warenkorb angezeigt. Solch eine Versandprofilkombination ist nicht vorgesehen und führt zu unerwünschten Ergebnissen.</p>
+<p>Achte darauf, dass bei allen Artikeln, die zusammen gekauft werden können, mindestens ein übereinstimmendes Versandprofil gespeichert ist. Befinden sich 2 oder mehr Artikel im Warenkorb, die kein gemeinsames Versandprofil haben, findet im Hintergrund eine Versandprofilermittlung statt und das Porto der Versandprofile wird addiert. Allerdings wird nur der Versanddienstleister mit der höheren Priorität im Warenkorb angezeigt. Solch eine Versandprofilkombination ist nicht vorgesehen und führt zu unerwünschten Ergebnissen.</p>
 </div>
 <div class="paragraph">
 <p>Um dieses Fehlverhalten zu vermeiden, kannst du z.B. für alle Artikel ein DHL-Versandprofil speichern und nur für bestimmte Artikel ein zusätzliches Versandprofil.</p>
@@ -1018,6 +1018,34 @@ Mit dieser Funktion können sehr einfach die Versandprofile für neue Artikel zu
 </div>
 <div class="paragraph">
 <p>Die Portobeträge der Versandprofile werden dann in der Kaufabwicklung im Webshop addiert. Der Kunde sieht also ein Gesamtporto von 6,90 EUR. Jedoch wird dem Kunden nur der Versanddienstleister mit der höheren Priorität im Warenkorb angezeigt.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Fehlermeldung im Checkout bei lückenhafter Ermittlung von Versandprofilkombinationen</div>
+<div class="paragraph">
+<p>Wenn mehrere Artikel versendet werden sollen, die kein gemeinsames Versandprofil haben, wird im Hintergrund die Versandprofilkombination ermittelt.</p>
+</div>
+<div class="paragraph">
+<p>Wenn dann bei mindestens einem der Artikel kein Versandprofil aufgrund von gesetzten Filtern und Einschränkungen (z.B. gesperrte Zahlungsarten) greift, ist die Versandprofilkombination lückenhaft und wird verworfen.</p>
+</div>
+<div class="paragraph">
+<p>In diesem Fall wird deinen Kunden im Checkout der Fehlercode 53 (Fehler in der Versandkostenberechnung) angezeigt und es wird kein Versandprofil automatisch gewählt.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Wichtig:</em></strong> Wenn du Versandprofile mit vielen gesetzten Filtern und Einschränkungen wie z.B. gesperrten Zahlungsarten eingerichtet hast, prüfe diese Versandprofile und passe sie ggf. an.</p>
+</div>
+<div class="paragraph">
+<p>Die Fehlermeldung sowie die Übersetzung für den Code 53 kannst du im Menü <strong>System » Systemeinstellungen » Einstellungen » Mandant » Global » Sprachpakete</strong> im Bereich <strong>Fehlermeldungen</strong> anpassen.<br>
+Wenn du die Fehlermeldung im Menüpunkt <strong>Sprachpakete</strong> angepasst hast, solltest du diese auch im Menü <strong>CMS » Mehrsprachigkeit</strong> für das Ceres-Plugin anpassen. Klappe dazu den Bereich <strong>Benachrichtigungen</strong> auf und gib die Übersetzung für den Punkt <strong>notificationsCalculatedShippingFailed</strong> ein.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div>
