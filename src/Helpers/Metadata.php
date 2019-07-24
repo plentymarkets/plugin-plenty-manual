@@ -5458,11 +5458,11 @@ class Metadata {
 								"urlName" => "rollende-kommissionierung",
 								"url" => "/app/funktionen/lagerverwaltung/rollende-kommissionierung",
 								"level" => 4,
-								"title" => "Best Practices: Rollende Kommissionierung",
+								"title" => "Rollende Kommissionierung",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practices: Rollende Kommissionierung. Hier finden Sie folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Rollende Kommissionierung. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							],
