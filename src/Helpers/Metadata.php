@@ -6499,7 +6499,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Introducing items",
 				"keywords" => "Item structure, items, variations",
-				"description" => "Get to know the item structure in plentymarkets 7.",
+				"description" => "Get to know the item structure in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Introducing items. The following information is available:",
 				"children" => [],
