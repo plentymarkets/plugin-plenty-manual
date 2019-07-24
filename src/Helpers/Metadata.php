@@ -454,21 +454,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "d5ea7b85278572f82f1ee95a57eaaf9b",
-						"path" => "basics/admin-aufgaben/migrationsleitfaden",
-						"position" => 80,
-						"urlName" => "migrationsleitfaden",
-						"url" => "/basics/admin-aufgaben/migrationsleitfaden",
-						"level" => 3,
-						"title" => "Migrationsleitfaden plentymarkets 7",
-						"keywords" => "plentymarkets 7, Migration, Migrationsleitfaden",
-						"description" => "Leitfaden zur Migration auf plentymarkets 7",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Migrationsleitfaden plentymarkets 7. Hier finden Sie folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "1ea546e67f9fa66eeb87743b17d54ade",
 						"path" => "basics/admin-aufgaben/best-practices",
 						"position" => 120,
@@ -3574,21 +3559,6 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ItemListingMarketText. Hier finden Sie folgende Informationen:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "27380f6506aa621a6d97e0559625bb00",
-								"path" => "daten/export-import/datenformate/itemprice",
-								"position" => 280,
-								"urlName" => "itemprice",
-								"url" => "/daten/export-import/datenformate/itemprice",
-								"level" => 4,
-								"title" => "ItemPrice",
-								"keywords" => "Datenformat",
-								"description" => "Datenformat ItemPrice",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich ItemPrice. Hier finden Sie folgende Informationen:",
 								"children" => [],
 								"hasChildren" => false
 							],
