@@ -7685,6 +7685,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "6aaaec7562bd4a850c2f4c36d0146acf",
+				"path" => "fulfilment/ebay-fulfillment",
+				"position" => 35,
+				"urlName" => "ebay-fulfillment",
+				"url" => "/en/fulfilment/ebay-fulfillment",
+				"level" => 2,
+				"title" => "eBay Fulfillment integration guide",
+				"keywords" => "eBay Fulfillment",
+				"description" => "Learn how to set up eBay Fulfillment in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic eBay Fulfillment integration guide. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "3473f7e1a3ce511bab387328e4fdb091",
 				"path" => "fulfilment/best-practices-dhl",
 				"position" => 40,
