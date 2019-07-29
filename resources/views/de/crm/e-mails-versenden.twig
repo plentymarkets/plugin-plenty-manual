@@ -1192,9 +1192,44 @@ Voraussetzung ist, dass die potenziellen Käufer beim Besuch im Webshop angemeld
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Address($field, $subField?)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diese Funktion gibt die Adresse des Kontakts aus und steht in E-Mail-Vorlagen des Typs <strong>Kunde</strong> und <strong>Ticket</strong> zur Verfügung.<br>
+Als <strong>$field</strong> kann sowohl der Feldname selbst als auch der Alternativwert (Alias) benutzt werden.<br>
+<strong><em>Beispiele:</em></strong> <strong>Address('name1')</strong> und <strong>Address('companyName')</strong> geben den Firmennamen der Kontaktadresse aus. <strong>Address('address1')</strong> und <strong>Address('street')</strong> geben die Straße der Kontaktadresse aus.<br>
+Adressoptionen können über deren Alternativwerte abgefragt werden. So gibt z.B. <strong>Address('email')</strong> die E-Mail-Adresse und <strong>Address('taxIdNumber')</strong> die Umsatzsteuer-ID der Kontaktadresse aus.<br>
+Weiterhin stehen die Daten zweier Sub-Datensätze von Adressen zur Verfügung, bei denen der zweite und optionale Parameter <strong>$subField</strong> zum Tragen kommt:<br>
+- <strong>Address('state', 'name')</strong> gibt den Namen der Region/des Bundeslandes und <strong>Address('state', 'isoCode')</strong> den ISO-Code des selbigen aus.<br>
+-  <strong>Address('country', 'name')</strong> gibt den Namen des Landes,  <strong>Address('country', 'isoCode2')</strong> den ISO-Code2 des Landes und <strong>Address('country', 'isoCode3')</strong> den ISO-Code3 des Landes aus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>BillingAddress($field, $subField?)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diese Funktion gibt Daten der Rechnungsadresse aus und steht in E-Mail-Vorlgen des Typs <strong>Auftrag</strong> und <strong>Scheduler</strong> zur Verfügung.<br>
+Als <strong>$field</strong> kann sowohl der Feldname selbst als auch der Alternativwert (Alias) benutzt werden.<br>
+<strong><em>Beispiele:</em></strong> <strong>BillingAddress('name1')</strong> und <strong>BillingAddress('companyName')</strong> geben den Firmennamen der Rechnungsadresse aus. <strong>BillingAddress('address1')</strong> und <strong>BillingAddress('street')</strong> geben die Straße der Rechnungsadresse aus.<br>
+Adressoptionen können über deren Alternativwerte abgefragt werden. So gibt z.B. <strong>BillingAddress('email')</strong> die E-Mail-Adresse und <strong>BillingAddress('taxIdNumber')</strong> die Umsatzsteuer-ID der Rechnungsadresse aus.<br>
+Weiterhin stehen die Daten zweier Sub-Datensätze von Rechnungsadressen zur Verfügung, bei denen der zweite und optionale Parameter <strong>$subField</strong> zum Tragen kommt:<br>
+- <strong>BillingAddress('state', 'name')</strong> gibt den Namen der Region/des Bundeslandes und <strong>BillingAddress('state', 'isoCode')</strong> den ISO-Code des selbigen aus.<br>
+-  <strong>BillingAddress('country', 'name')</strong> gibt den Namen des Landes,  <strong>BillingAddress('country', 'isoCode2')</strong> den ISO-Code2 des Landes und <strong>BillingAddress('country', 'isoCode3')</strong> den ISO-Code3 des Landes aus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DeliveryAddress($field, $subField?)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diese Funktion gibt Daten der Lieferadresse aus und steht in E-Mail-Vorlagen des Typs <strong>Auftrag</strong> und <strong>Scheduler</strong> zur Verfügung.<br>
+Als <strong>$field</strong> kann sowohl der Feldname selbst als auch der Alternativwert (Alias) benutzt werden.<br>
+<strong><em>Beispiele:</em></strong> <strong>DeliveryAddress('name1')</strong> und <strong>DeliveryAddress('companyName')</strong> geben den Firmennamen der Lieferadresse aus. <strong>DeliveryAddress('address1')</strong> und <strong>DeliveryAddress('street')</strong> geben die Straße der Lieferadresse aus.<br>
+Adressoptionen können über deren Alternativwerte abgefragt werden. So gibt z.B. <strong>DeliveryAddress('email')</strong> die E-Mail-Adresse und <strong>DeliveryAddress('taxIdNumber')</strong> die Umsatzsteuer-ID der Lieferadresse aus.<br>
+Weiterhin stehen die Daten zweier Sub-Datensätze von Lieferadressen zur Verfügung, bei denen der zweite und optionale Parameter <strong>$subField</strong> zum Tragen kommt:<br>
+- <strong>DeliveryAddress('state', 'name')</strong> gibt den Namen der Region/des Bundeslandes und <strong>DeliveryAddress('state', 'isoCode')</strong> den ISO-Code des selbigen aus.<br>
+-  <strong>DeliveryAddress('country', 'name')</strong> gibt den Namen des Landes,  <strong>DeliveryAddress('country', 'isoCode2')</strong> den ISO-Code2 des Landes und <strong>DeliveryAddress('country', 'isoCode3')</strong> den ISO-Code3 des Landes aus.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link_Checkout()</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Diese Funktion gibt die URL zum Bereich <strong>Mein Konto</strong> des Webshops aus.<br>
 <strong><em>Hinweis:</em></strong> Für die korrekte Ausgabe der URL <strong>&#123;&#37;Link_Checkout()&#37;&#125;</strong> in der E-Mail-Vorlage einfügen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link_Basket()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diese Funktion gibt die URL zum Warenkorb aus.<br>
+<strong><em>Hinweis:</em></strong> Für die korrekte Ausgabe der URL <strong>&#123;&#37;Link_Basket()&#37;&#125;</strong> in der E-Mail-Vorlage einfügen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link_TermsConditions()</strong></p></td>
@@ -1205,6 +1240,11 @@ Voraussetzung ist, dass die potenziellen Käufer beim Besuch im Webshop angemeld
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link_Webstore()</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Diese Funktion gibt die URL zum Webshop aus.<br>
 <strong><em>Hinweis:</em></strong> Für die korrekte Ausgabe der URL <strong>&#123;&#37;Link_Webstore()&#37;&#125;</strong> in der E-Mail-Vorlage einfügen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link_Item()</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diese Funktion gibt die URL zum Artikel aus.<br>
+<strong><em>Hinweis:</em></strong> Für die korrekte Ausgabe der URL <strong>&#123;&#37;Link_Item()&#37;&#125;</strong> in der E-Mail-Vorlage einfügen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link_NewPassword()</strong></p></td>
