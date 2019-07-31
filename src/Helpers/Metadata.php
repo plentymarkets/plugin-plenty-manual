@@ -6377,21 +6377,6 @@ class Metadata {
 								"linkListInto" => "Welcome to the topic Managing statistics. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
-							],
-							[
-								"id" => "f300b938ffed3c8f0a2422086afff845",
-								"path" => "basics/working-with-plentymarkets/statistics/best-practices",
-								"position" => 20,
-								"urlName" => "best-practices",
-								"url" => "/en/basics/working-with-plentymarkets/statistics/best-practices",
-								"level" => 4,
-								"title" => "Best Practices",
-								"keywords" => "Key figures, app statistics, orders, sold items, show revenue, show new customers, dashboard",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Best Practices. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
@@ -11365,21 +11350,6 @@ class Metadata {
 						"description" => "Overview of the sub-procedures that can be configured in plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Sub-procedures. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "418188024da5ee64e106bb26e5ec10f9",
-						"path" => "automation/processes/mobile-box-picking",
-						"position" => 80,
-						"urlName" => "mobile-box-picking",
-						"url" => "/en/automation/processes/mobile-box-picking",
-						"level" => 3,
-						"title" => "Best Practices: Mobile box picking",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: Mobile box picking. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					]
