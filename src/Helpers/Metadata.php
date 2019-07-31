@@ -10978,6 +10978,114 @@ class Metadata {
 		"hasChildren" => true
 	],
 	[
+		"id" => "d2a57dc1d883fd21fb9951699df71cc7",
+		"path" => "app",
+		"position" => 115,
+		"urlName" => "app",
+		"url" => "/en/app",
+		"level" => 1,
+		"title" => "The plentymarkets app",
+		"keywords" => "",
+		"description" => "",
+		"navAlias" => "",
+		"linkListInto" => "Welcome to the topic The plentymarkets app. The following information is available:",
+		"children" => 		[
+			[
+				"id" => "dea626bb0c2f13e837a28fee35351c77",
+				"path" => "app/installation",
+				"position" => 10,
+				"urlName" => "installation",
+				"url" => "/en/app/installation",
+				"level" => 2,
+				"title" => "Installation and setup",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Installation and setup. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "075546dbc2ce0273bd3700ac45479d06",
+				"path" => "app/functions",
+				"position" => 20,
+				"urlName" => "functions",
+				"url" => "/en/app/functions",
+				"level" => 2,
+				"title" => "App functions",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic App functions. The following information is available:",
+				"children" => 				[
+					[
+						"id" => "c4be41c28bc18e65bd683b51fdbe78dc",
+						"path" => "app/functions/best-practices",
+						"position" => 20,
+						"urlName" => "best-practices",
+						"url" => "/en/basics/working-with-plentymarkets/statistics/best-practices",
+						"level" => 3,
+						"title" => "Best Practices",
+						"keywords" => "Key figures, app statistics, orders, sold items, show revenue, show new customers, dashboard",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Best Practices. The following information is available:",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "4f4682ae8b03ae8e322339f87017e639",
+						"path" => "app/functions/mobile-inventory",
+						"position" => 30,
+						"urlName" => "mobile-inventory",
+						"url" => "/en/app/functions/warehouse-management",
+						"level" => 3,
+						"title" => "Mobile inventory management system",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Mobile inventory management system. The following information is available:",
+						"children" => 						[
+							[
+								"id" => "313aba524d5d3738c16acf38bd8d430a",
+								"path" => "app/functions/mobile-inventory/reshelving",
+								"position" => 40,
+								"urlName" => "reshelving",
+								"url" => "/en/app/functions/warehouse-management/reshelving",
+								"level" => 4,
+								"title" => "Reshelving items",
+								"keywords" => "",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Reshelving items. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "0891ca015ae8ed43b200d7602adea881",
+								"path" => "app/functions/mobile-inventory/mobile-box-picking",
+								"position" => 80,
+								"urlName" => "mobile-box-picking",
+								"url" => "/en/automation/processes/mobile-box-picking",
+								"level" => 4,
+								"title" => "Best Practices: Mobile box picking",
+								"keywords" => "",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Best Practices: Mobile box picking. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
+					]
+				],
+				"hasChildren" => true
+			]
+		],
+		"hasChildren" => true
+	],
+	[
 		"id" => "5e0bdcbddccca4d66d74ba8c1cee1a68",
 		"path" => "pos",
 		"position" => 120,
