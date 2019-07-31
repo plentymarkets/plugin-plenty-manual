@@ -290,7 +290,7 @@ class Metadata {
 					[
 						"id" => "4f559529341390d8849eef6359e164f5",
 						"path" => "basics/rechtliches/verfahrensdokumentation",
-						"position" => 50,
+						"position" => 10,
 						"urlName" => "verfahrensdokumentation",
 						"url" => "/basics/rechtliches/verfahrensdokumentation",
 						"level" => 3,
