@@ -11053,11 +11053,11 @@ class Metadata {
 								"urlName" => "mobile-box-picking",
 								"url" => "/en/app/functions/warehouse-management/mobile-box-picking",
 								"level" => 4,
-								"title" => "Best Practices: Mobile box picking",
+								"title" => "Mobile box picking",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Best Practices: Mobile box picking. The following information is available:",
+								"linkListInto" => "Welcome to the topic Mobile box picking. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
