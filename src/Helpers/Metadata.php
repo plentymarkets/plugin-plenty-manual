@@ -6630,7 +6630,7 @@ class Metadata {
 						"path" => "stock-management/managing-reorders/working-with-reorders",
 						"position" => 10,
 						"urlName" => "working-with-reorders",
-						"url" => "/en/en/stock-management/managing-reorders/working-with-reorders",
+						"url" => "/en/stock-management/managing-reorders/working-with-reorders",
 						"level" => 3,
 						"title" => "New: Working with reorders",
 						"keywords" => "Reorder, reordering goods",
