@@ -11004,21 +11004,6 @@ class Metadata {
 				"linkListInto" => "Welcome to the topic App functions. The following information is available:",
 				"children" => 				[
 					[
-						"id" => "c4be41c28bc18e65bd683b51fdbe78dc",
-						"path" => "app/functions/best-practices",
-						"position" => 20,
-						"urlName" => "best-practices",
-						"url" => "/en/app/functions/key-figures",
-						"level" => 3,
-						"title" => "Key performance indicators",
-						"keywords" => "Key figures, app statistics, orders, sold items, show revenue, show new customers, dashboard",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Key performance indicators. The following information is available:",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "cb6cc217650c6dd9b41ff119c22ec03f",
 						"path" => "app/functions/key-figures",
 						"position" => 20,
@@ -11032,52 +11017,6 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Key performance indicators. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "4f4682ae8b03ae8e322339f87017e639",
-						"path" => "app/functions/mobile-inventory",
-						"position" => 30,
-						"urlName" => "mobile-inventory",
-						"url" => "/en/app/functions/warehouse-management",
-						"level" => 3,
-						"title" => "Mobile inventory management system",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Mobile inventory management system. The following information is available:",
-						"children" => 						[
-							[
-								"id" => "313aba524d5d3738c16acf38bd8d430a",
-								"path" => "app/functions/mobile-inventory/reshelving",
-								"position" => 40,
-								"urlName" => "reshelving",
-								"url" => "/en/app/functions/warehouse-management/reshelving",
-								"level" => 4,
-								"title" => "Reshelving items",
-								"keywords" => "",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Reshelving items. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "0891ca015ae8ed43b200d7602adea881",
-								"path" => "app/functions/mobile-inventory/mobile-box-picking",
-								"position" => 80,
-								"urlName" => "mobile-box-picking",
-								"url" => "/en/app/functions/warehouse-management/mobile-box-picking",
-								"level" => 4,
-								"title" => "Mobile box picking",
-								"keywords" => "",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Mobile box picking. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							]
-						],
-						"hasChildren" => true
 					],
 					[
 						"id" => "f6f196c8801f803dda003af88d0802c3",
