@@ -11,7 +11,6 @@ use PlentyManual\Services\PlentyManualChangelog;
 use PlentyManual\Services\SearchService;
 use Plenty\Modules\System\Contracts\WebstoreConfigurationRepositoryContract;
 use Plenty\Plugin\Application;
-use PlentyManual\Services\SwitchLanguageService;
 
 
 class ContentController extends Controller
