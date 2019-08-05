@@ -11,6 +11,7 @@ use PlentyManual\Services\PlentyManualChangelog;
 use PlentyManual\Services\SearchService;
 use Plenty\Modules\System\Contracts\WebstoreConfigurationRepositoryContract;
 use Plenty\Plugin\Application;
+use PlentyManual\Services\SwitchLanguageService;
 
 
 class ContentController extends Controller
@@ -51,7 +52,14 @@ class ContentController extends Controller
         $contentPathAndPage = $this->pageService->getPathByUrl($contentPath);
         if(is_array($contentPathAndPage) && isset($contentPathAndPage))
         {
-            $contentPath = $contentPathAndPage["path"];
+            if($this->lang === "en")
+            {
+                $contentPath = "en/".$contentPathAndPage["path"];
+            }
+            else
+            {
+                $contentPath = $contentPathAndPage["path"];
+            }
             $currentPage = $contentPathAndPage["page"];
         }
         else
