@@ -7866,7 +7866,7 @@ class Metadata {
 								"path" => "data/importing-data/sync-types/elasticsync-parts-compatibility-listing",
 								"position" => 60,
 								"urlName" => "elasticsync-parts-compatibility-listing",
-								"url" => "/en/data/importing-data/sync-types/elasticsync-parts-compability-listing",
+								"url" => "/en/data/importing-data/sync-types/elasticsync-parts-compatibility-listing",
 								"level" => 4,
 								"title" => "Parts compatibility listing",
 								"keywords" => "ElasticSync, parts compatibility listing, fitment, sync, sync type",
