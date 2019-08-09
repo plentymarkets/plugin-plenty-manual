@@ -6284,7 +6284,7 @@ class Metadata {
 						"level" => 3,
 						"title" => "Back end URLs",
 						"keywords" => "back end, access back end, URL, key, UI action, uiaction, parameter, Terra, variables, safe mode",
-						"description" => "This manual page provides you with information how to access specific back end areas by using URLs.",
+						"description" => "This manual page provides you with information on how to access specific back end areas by using URLs.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Back end URLs. The following information is available:",
 						"children" => [],
