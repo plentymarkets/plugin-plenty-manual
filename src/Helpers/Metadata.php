@@ -11032,6 +11032,21 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic Mobile inventory management system. The following information is available:",
 						"children" => 						[
 							[
+								"id" => "1e3ad043d63f8ea66a4db4d72cf1eed9",
+								"path" => "app/functions/warehouse-management/mobile-box-picking",
+								"position" => 20,
+								"urlName" => "mobile-box-picking",
+								"url" => "/en/app/functions/warehouse-management/mobile-box-picking",
+								"level" => 4,
+								"title" => "Box picking",
+								"keywords" => "",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Box picking. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "a67b88f32d4a255052996a38eb90544d",
 								"path" => "app/functions/warehouse-management/reshelving",
 								"position" => 40,
@@ -11043,21 +11058,6 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Reshelving items. The following information is available:",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "1e3ad043d63f8ea66a4db4d72cf1eed9",
-								"path" => "app/functions/warehouse-management/mobile-box-picking",
-								"position" => 80,
-								"urlName" => "mobile-box-picking",
-								"url" => "/en/app/functions/warehouse-management/mobile-box-picking",
-								"level" => 4,
-								"title" => "Mobile box picking",
-								"keywords" => "",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Mobile box picking. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
