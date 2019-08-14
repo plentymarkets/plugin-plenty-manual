@@ -5819,9 +5819,9 @@ class Metadata {
 		"url" => "/en/quick-start",
 		"level" => 1,
 		"title" => "Quick start",
-		"keywords" => "quicks start",
+		"keywords" => "quick start",
 		"description" => "",
-		"navAlias" => "",
+		"navAlias" => "Taking off",
 		"linkListInto" => "Welcome to the topic Quick start. The following information is available:",
 		"children" => 		[
 			[
