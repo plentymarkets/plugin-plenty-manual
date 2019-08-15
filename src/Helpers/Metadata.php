@@ -5825,21 +5825,6 @@ class Metadata {
 		"linkListInto" => "Welcome to the topic Quick start. The following information is available:",
 		"children" => 		[
 			[
-				"id" => "e99c2b4074e12cf7601722fac6258d5f",
-				"path" => "quick-start/quick-start-taking-off",
-				"position" => 10,
-				"urlName" => "quick-start-taking-off",
-				"url" => "/en/quick-start/quick-start-taking-off",
-				"level" => 2,
-				"title" => "Taking off",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Taking off. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "5f517ffc40a65389418068a7dde71c8f",
 				"path" => "quick-start/quick-start-system-requirements",
 				"position" => 20,
@@ -6632,11 +6617,11 @@ class Metadata {
 						"urlName" => "working-with-reorders",
 						"url" => "/en/stock-management/managing-reorders/working-with-reorders",
 						"level" => 3,
-						"title" => "New: Working with reorders",
+						"title" => "Working with reorders",
 						"keywords" => "Reorder, reordering goods",
-						"description" => "Learn how to work with the new reorder functionality in plentymarkets.",
+						"description" => "Learn how to work with the reorder functionality in plentymarkets.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic New: Working with reorders. The following information is available:",
+						"linkListInto" => "Welcome to the topic Working with reorders. The following information is available:",
 						"children" => [],
 						"hasChildren" => false
 					],
