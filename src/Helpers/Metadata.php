@@ -38,7 +38,7 @@ class Metadata {
 				"path" => "schnelleinstieg/schnelleinstieg-basiseinstellungen",
 				"position" => 30,
 				"urlName" => "schnelleinstieg-basiseinstellungen",
-				"url" => "/schnelleinstieg/schnelleinstieg",
+				"url" => "/schnelleinstieg/schnelleinstieg-basiseinstellungen",
 				"level" => 2,
 				"title" => "Basiseinstellungen vornehmen",
 				"keywords" => "Stammdaten, Bankdaten, E-Mail, E-Mails, Emails, Zugangsdaten, E-Mail-Vorlagen, Vorlage, Vorlagen, Template-Variable",
