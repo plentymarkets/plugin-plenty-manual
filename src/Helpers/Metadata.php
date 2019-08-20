@@ -4911,21 +4911,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "2b1ad3a9a3e9f4f41d0b78bb3303a213",
-				"path" => "maerkte/grosshandel",
-				"position" => 90,
-				"urlName" => "grosshandel",
-				"url" => "/maerkte/grosshandel",
-				"level" => 2,
-				"title" => "grosshandel.eu",
-				"keywords" => "grosshandel.eu, Marktplatz",
-				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz grosshandel.eu in deinem plentymarkets System ein.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich grosshandel.eu. Hier findest du folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "624f519a6b668b1785b98519f44e6ba6",
 				"path" => "maerkte/hood",
 				"position" => 100,
@@ -5213,21 +5198,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "6feff9ab88d3f1a88cdcddc0e8c6d738",
-				"path" => "maerkte/restposten-de",
-				"position" => 200,
-				"urlName" => "restposten-de",
-				"url" => "/maerkte/restposten-de",
-				"level" => 2,
-				"title" => "Restposten.de",
-				"keywords" => "Restposten, Marktplatz",
-				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Restposten.de in deinem plentymarkets System ein.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Restposten.de. Hier findest du folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
 			],
 			[
 				"id" => "82f4b58d664a1f98c3e0fa248e20cf30",
