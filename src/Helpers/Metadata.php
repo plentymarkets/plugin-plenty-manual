@@ -10430,21 +10430,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "627818975760291a3bfb9ab9fce02caf",
-				"path" => "markets/grosshandel",
-				"position" => 90,
-				"urlName" => "grosshandel",
-				"url" => "/en/markets/grosshandel",
-				"level" => 2,
-				"title" => "Setting up grosshandel.eu",
-				"keywords" => "grosshandel.eu, Market, Marketplace",
-				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market grosshandel.eu in your plentymarkets system.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Setting up grosshandel.eu. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "e1bb4a82dcae9e030df36f538acfb4be",
 				"path" => "markets/hood",
 				"position" => 100,
@@ -10732,21 +10717,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "b8c74d845102d5bfcbc2012dc7ea46d6",
-				"path" => "markets/restposten-de",
-				"position" => 200,
-				"urlName" => "restposten-de",
-				"url" => "/en/markets/restposten-de",
-				"level" => 2,
-				"title" => "Setting up Restposten.de",
-				"keywords" => "Restposten, Restposten.de, Market, Marketplace",
-				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Restposten.de in your plentymarkets system.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Setting up Restposten.de. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
 			],
 			[
 				"id" => "8e9b33e584c936ca1e928a182e410f8f",
