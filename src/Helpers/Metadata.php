@@ -6523,21 +6523,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "369e34b7374e8c9647281d7b466799b5",
-				"path" => "stock-management/managing-stocks",
-				"position" => 30,
-				"urlName" => "managing-stocks",
-				"url" => "/en/stock-management/managing-stocks",
-				"level" => 2,
-				"title" => "Managing stock",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Managing stock. The following information is available:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "1049e7b822f6eb85bbf56556cbe15845",
 				"path" => "stock-management/managing-reorders",
 				"position" => 30,
@@ -6597,6 +6582,21 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
+			],
+			[
+				"id" => "369e34b7374e8c9647281d7b466799b5",
+				"path" => "stock-management/managing-stocks",
+				"position" => 30,
+				"urlName" => "managing-stocks",
+				"url" => "/en/stock-management/managing-stocks",
+				"level" => 2,
+				"title" => "Managing stock",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing stock. The following information is available:",
+				"children" => [],
+				"hasChildren" => false
 			],
 			[
 				"id" => "b98933657d64dcbbd94fca816220120f",
