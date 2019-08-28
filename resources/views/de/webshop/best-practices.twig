@@ -2099,7 +2099,7 @@ class MyThemeContext extends SingleItemContext implements ContextInterface
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Die beschriebenen Anpassungen müssen in einem eigenen Theme-Plugin eingebaut werden, damit die Änderungen nicht bei einem Ceres-Update überschrieben werden.</p>
+<p>Du solltest die beschriebenen Anpassungen in einem eigenen Theme-Plugin verbauen, damit die Änderungen nicht bei einem Ceres-Update überschrieben werden. Du kannst die Anpassungen auch im Ceres-Plugin selbst durchführen, allerdings wirst du die betreffende Stelle dadurch nach jedem Ceres-Update erneut anpassen müssen, da dein Ceres durch das Update überschrieben wird.</p>
 </div>
 </td>
 </tr>
@@ -2108,7 +2108,8 @@ class MyThemeContext extends SingleItemContext implements ContextInterface
 <div class="sect2">
 <h3 id="_basketlistitem_twig_anpassen">9.1. BasketListItem.twig anpassen</h3>
 <div class="paragraph">
-<p>Im ersten Schritt suchst du in der Dateistruktur des Ceres-Plugins die Komponente BasketListItem.twig unter <strong>/resources/views/Basket/Components/BasketListItem.twig</strong>. Dies ist die Komponente für Warenkorbartikel und muss angepasst werden, um Eigenschaften im Warenkorb darzustellen. In Zeile 101 der Komponente findest du die Zeile <code>&lt;div class="item-properties" v-if="basketItem.basketItemOrderParams.length"&gt;</code>.<br>
+<p>Im ersten Schritt suchst du in der Dateistruktur des Ceres-Plugins die Komponente BasketListItem.twig unter <strong>/resources/views/Basket/Components/BasketListItem.twig</strong>. Dies ist die Komponente für Warenkorbartikel und muss angepasst werden, um Eigenschaften im Warenkorb darzustellen. In Zeile 101 der Komponente findest du die folgende Zeile:<br>
+<code>&lt;div class="item-properties" v-if="basketItem.basketItemOrderParams.length"&gt;</code><br>
 Binde nun darüber den folgenden Code ein:</p>
 </div>
 <div class="listingblock">
@@ -2128,13 +2129,13 @@ Binde nun darüber den folgenden Code ein:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Die CSS-Klasse "item-properties" wurde hier nur zu Illustrationszwecken aufgeführt.<br></p>
+<p>Die CSS-Klasse "item-properties" wurde hier nur zu Illustrationszwecken aufgeführt und steht stellvertretend für die Möglichkeit, eine CSS-Klasse hier angeben zu können.<br></p>
 </div>
 <div class="paragraph">
-<p>Das Array in Zeile 2 des Code-Snippets (<code>&lt;template v-for="i in [5, 6, 2, 3]"&gt;</code>) enthält die Eigenschaften, die du im Warenkorb ausgeben möchtest, in diesem Beispiel also die Eigenschaften mit den IDs 5, 6, 2 und 3. Die IDs der Eigenschaften müssen <strong>kommasepariert</strong> eingegeben werden. Sie werden in der Reihenfolge angezeigt, in der sie im Array angegeben sind. Die IDs deiner Eigenschaften findest du im Menü <strong>Einrichtung » Einstellungen » Eigenschaften » Konfiguration</strong>.<br></p>
+<p>Das Array in Zeile 2 des Code-Snippets (<code>&lt;template v-for="i in [5, 6, 2, 3]"&gt;</code>) enthält die IDs der Eigenschaften, die du im Warenkorb ausgeben möchtest, in diesem Beispiel also die Eigenschaften mit den IDs 5, 6, 2 und 3. Die IDs der Eigenschaften müssen <strong>kommasepariert</strong> eingegeben werden. Sie werden in der Reihenfolge im Warenkorb angezeigt, in der sie im Array angegeben sind. Die IDs deiner Eigenschaften findest du im Menü <strong>Einrichtung » Einstellungen » Eigenschaften » Konfiguration</strong>.<br></p>
 </div>
 <div class="paragraph">
-<p>Die 3 <code>&lt;template&gt;</code>-Tags werden nicht im Frontend ausgegeben, sondern dienen hier als Schleifenelement, um über die einzelnen Eigenschaften zu iterieren.<br></p>
+<p>Die 3 <code>&lt;template&gt;</code>-Tags im Code-Snippet werden nicht im Frontend ausgegeben, sondern dienen hier als Schleifenelement, um über die einzelnen Eigenschaften zu iterieren.<br></p>
 </div>
 <div class="paragraph">
 <p>Das <code>&lt;span&gt;</code>-Element gibt den Namen der Eigenschaft aus. Dieses Element kann durch andere Elemente, wie etwa ein <code>&lt;p&gt;</code>-Tag oder ein <code>&lt;strong&gt;</code>-Tag ersetzt werden. Die v-text Direktive darf allerdings nicht entfernt werden.<br></p>
