@@ -8511,9 +8511,24 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "cb0fa0e84f32674b51576befe2d1700d",
+								"path" => "data/report/data-formats/orderdocuments-en_gb",
+								"position" => 80,
+								"urlName" => "orderdocuments-en_gb",
+								"url" => "/en/data/report/data-formats/orderdocuments",
+								"level" => 4,
+								"title" => "orderDocuments",
+								"keywords" => "orderDocuments, report, raw data",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic orderDocuments. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "2651eb62e1ad2733f6ddb136db2625de",
 								"path" => "data/report/data-formats/orderitemamounts",
-								"position" => 80,
+								"position" => 90,
 								"urlName" => "orderitemamounts",
 								"url" => "/en/data/report/data-formats/orderitemamounts",
 								"level" => 4,
@@ -8528,7 +8543,7 @@ class Metadata {
 							[
 								"id" => "e82c8e6eadfa239967b0e0b6b42e1ea3",
 								"path" => "data/report/data-formats/orderitemproperties",
-								"position" => 90,
+								"position" => 100,
 								"urlName" => "orderitemproperties",
 								"url" => "/en/data/report/data-formats/orderitemproperties",
 								"level" => 4,
@@ -8543,7 +8558,7 @@ class Metadata {
 							[
 								"id" => "f44299615c1c63c55c6701e80211850f",
 								"path" => "data/report/data-formats/orderitems",
-								"position" => 100,
+								"position" => 110,
 								"urlName" => "orderitems",
 								"url" => "/en/data/report/data-formats/orderitems",
 								"level" => 4,
@@ -8558,7 +8573,7 @@ class Metadata {
 							[
 								"id" => "158daa0188e6ac9183e453a219dab664",
 								"path" => "data/report/data-formats/orderproperties",
-								"position" => 110,
+								"position" => 120,
 								"urlName" => "orderproperties",
 								"url" => "/en/data/report/data-formats/orderproperties",
 								"level" => 4,
@@ -8573,7 +8588,7 @@ class Metadata {
 							[
 								"id" => "4bbe9a47501d8f48df1707c56cdd46a1",
 								"path" => "data/report/data-formats/orders",
-								"position" => 120,
+								"position" => 130,
 								"urlName" => "orders",
 								"url" => "/en/data/report/data-formats/orders",
 								"level" => 4,
@@ -8586,9 +8601,54 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "64ba0cbc47bc98add1c2ec7775a021bb",
+								"path" => "data/report/data-formats/orderstatuses-en_gb",
+								"position" => 140,
+								"urlName" => "orderstatuses-en_gb",
+								"url" => "/en/data/report/data-formats/orderstatuses",
+								"level" => 4,
+								"title" => "orderStatuses",
+								"keywords" => "orderStatuses, report, raw data",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic orderStatuses. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "6dfd307cdf888337535b1c7a61bdfccf",
+								"path" => "data/report/data-formats/paymentorderrelations-en_gb",
+								"position" => 150,
+								"urlName" => "paymentorderrelations-en_gb",
+								"url" => "/en/data/report/data-formats/paymentorderrelations",
+								"level" => 4,
+								"title" => "paymentOrderRelations",
+								"keywords" => "paymentOrderRelations, report, raw data",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic paymentOrderRelations. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "d6063903a5240d28a67bbfad7d559fb7",
+								"path" => "data/report/data-formats/payments-en_gb",
+								"position" => 160,
+								"urlName" => "payments-en_gb",
+								"url" => "/en/data/report/data-formats/payments",
+								"level" => 4,
+								"title" => "payments",
+								"keywords" => "payments, report, raw data",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic payments. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "08b46ee61de4c6bcc9000b97687bff43",
 								"path" => "data/report/data-formats/stockmanagementstock",
-								"position" => 130,
+								"position" => 170,
 								"urlName" => "stockmanagementstock",
 								"url" => "/en/data/report/data-formats/stockmanagementstock",
 								"level" => 4,
@@ -8603,7 +8663,7 @@ class Metadata {
 							[
 								"id" => "053c1f3e0f2330539da5bed578d4c720",
 								"path" => "data/report/data-formats/stockmanagementstockmovements",
-								"position" => 140,
+								"position" => 180,
 								"urlName" => "stockmanagementstockmovements",
 								"url" => "/en/data/report/data-formats/stockmanagementstockmovements",
 								"level" => 4,
@@ -8618,7 +8678,7 @@ class Metadata {
 							[
 								"id" => "b14ad2505d543f121e93dbd6daf10a91",
 								"path" => "data/report/data-formats/stockmanagementwarehouses",
-								"position" => 150,
+								"position" => 190,
 								"urlName" => "stockmanagementwarehouses",
 								"url" => "/en/data/report/data-formats/stockmanagementwarehouses",
 								"level" => 4,
@@ -8633,7 +8693,7 @@ class Metadata {
 							[
 								"id" => "3a076610decb10c7d29bfb38540e7982",
 								"path" => "data/report/data-formats/tagrelations",
-								"position" => 160,
+								"position" => 200,
 								"urlName" => "tagrelations",
 								"url" => "/en/data/report/data-formats/tagrelations",
 								"level" => 4,
@@ -8648,7 +8708,7 @@ class Metadata {
 							[
 								"id" => "90685d4b81177c28c21e43b0f935af1e",
 								"path" => "data/report/data-formats/tags",
-								"position" => 170,
+								"position" => 210,
 								"urlName" => "tags",
 								"url" => "/en/data/report/data-formats/tags",
 								"level" => 4,
@@ -8663,7 +8723,7 @@ class Metadata {
 							[
 								"id" => "e3303ae3f6ea0c15e8f5621874eb4705",
 								"path" => "data/report/data-formats/users",
-								"position" => 180,
+								"position" => 220,
 								"urlName" => "users",
 								"url" => "/en/data/report/data-formats/users",
 								"level" => 4,

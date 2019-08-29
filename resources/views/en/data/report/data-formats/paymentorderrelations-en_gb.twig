@@ -13,20 +13,20 @@
 </aside>
 
 <main id="main">
-    <h1>orderItems</h1><div id="preamble">
+    <h1>paymentOrderRelations</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Using the <strong>orderItems</strong> data format creator, you can export properties of order items and save it in the cloud. For further information on the properties of the format, see the following tables.</p>
+<p>Using the {dataFormat} data format creator, you can export Relations between payments and orders and save it in the cloud. For further information on the properties of the format, see the following tables.</p>
 </div>
 </div>
 </div><div class="sect1">
 <h2 id="_technical_specifications">1. Technical specifications</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>See <a href="#table-specifications-orderitems">Table 1</a> for further information on the available properties and their corresponding values.</p>
+<p>See <a href="#table-specifications-paymentorderrelations">Table 1</a> for further information on the available properties and their corresponding values.</p>
 </div>
-<table id="table-specifications-orderitems" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Technical specifications of the format <strong>orderItems</strong></caption>
+<table id="table-specifications-paymentorderrelations" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Technical specifications of the format <strong>paymentOrderRelations</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -45,9 +45,9 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataName</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">orderItems</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">paymentOrderRelations</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of the creator process and prefix of the created file.<br>
-File name: <strong>orderItems-xxx.csv.gz</strong></p></td>
+File name: <strong>paymentOrderRelations-xxx.csv.gz</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fileFormat</p></td>
@@ -56,22 +56,40 @@ File name: <strong>orderItems-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The data is provided as a GZIP-compressed CSV file (RFC 1952).</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activated by default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data is only exported automatically in the background after you have activated the creator in the <strong>Data » Raw data</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">daily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">With this setting, all data that has been changed since the last run is exported once a day, usually during the night.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per request</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 8,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 8.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written into a single file.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 200,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 200.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">01-Jan-2016</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column header</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">por_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the column that contains the time stamp of the last data update.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMinimum</p></td>
@@ -86,24 +104,6 @@ File name: <strong>orderItems-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Column header</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_updated_at</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the column that contains the time stamp of the last data update.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Activated by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">As standard, the export runs automatically in the background.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Interval</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">daily</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">With this setting, all data that has been changed since the last run is exported once a day, usually during the night.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
@@ -116,10 +116,10 @@ File name: <strong>orderItems-xxx.csv.gz</strong></p></td>
 <h2 id="_data_columns">2. Data columns</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>See <a href="#table-data-columns-orderitems">Table 2</a> for further information on the <strong>orderItems</strong> data columns included in the CSV file during raw data export.</p>
+<p>See {dataColumns} for further information on the {dataFormat} data columns included in the CSV file during raw data export.</p>
 </div>
-<table id="table-data-columns-orderitems" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Data columns of the format <strong>orderItems</strong></caption>
+<table id="table-columns-paymentorderrelations" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Data columns of the format <strong>paymentOrderRelations</strong></caption>
 <colgroup>
 <col style="width: 10%;">
 <col style="width: 30%;">
@@ -142,10 +142,16 @@ File name: <strong>orderItems-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>oi_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>por_id (Primary key)</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payment order relation id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the relation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payment id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the payment</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_id</p></td>
@@ -154,53 +160,11 @@ File name: <strong>orderItems-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">iv_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">item variation id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Variation ID of the order item</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">i_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">item id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Item ID of the order item</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_quantity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(8,2) NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item quantity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quantity of the order items contained in the order</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_type_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item type id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order item type.<br>
-Possible values:<br>
-1= Variation<br>
-2 = Bundle<br>
-3 = Bundle component<br>
-4 = Promotional coupon<br>
-5 = Gift card<br>
-6 = Shipping costs<br>
-7 = Surcharge (depending on the payment method)<br>
-8 = Gift wrap<br>
-9 = Unassigned variation<br>
-10 = Deposit<br>
-11 = Order (e.g. with multi-orders)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">smw_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the warehouse that is assigned to the order item</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>oi_updated_at</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item updated at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>por_assigned_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payment order relations assigned at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update<br>
-Date format: MM/DD/YY HH:MI:SS TZ</p></td>
+Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>
 </tr>
 </tbody>
 </table>
