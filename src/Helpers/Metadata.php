@@ -11032,6 +11032,21 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "dd60afe0abf7485c4b9eb7ca2b08923d",
+								"path" => "app/functions/warehouse-management/receiving-rebooking",
+								"position" => 30,
+								"urlName" => "receiving-rebooking",
+								"url" => "/en/app/functions/warehouse-management/receiving-rebooking",
+								"level" => 4,
+								"title" => "Receiving goods and replenishing stock",
+								"keywords" => "",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Receiving goods and replenishing stock. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "a67b88f32d4a255052996a38eb90544d",
 								"path" => "app/functions/warehouse-management/reshelving",
 								"position" => 40,
@@ -11043,6 +11058,21 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Reshelving items. The following information is available:",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "dd5e46639ceccb8b15bd253f944af58d",
+								"path" => "app/functions/warehouse-management/stocktaking",
+								"position" => 50,
+								"urlName" => "stocktaking",
+								"url" => "/en/app/functions/warehouse-management/stocktaking",
+								"level" => 4,
+								"title" => "Stocktaking",
+								"keywords" => "",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Stocktaking. The following information is available:",
 								"children" => [],
 								"hasChildren" => false
 							]
