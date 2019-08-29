@@ -2114,17 +2114,17 @@ Binde nun darüber den folgenden Code ein:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="item-properties"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;template v-for="i in [5, 6, 2, 3]"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;template v-for="property in basketItem.variation.data.variationProperties"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;template v-if="property.property.id === i"&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span v-text="property.property.names.name"&gt;&lt;/span&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;strong v-html="property.values &amp;&amp; property.values.value"&gt;&lt;/strong&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/template&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/template&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/template&gt;
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="item-properties" v-if="basketItem.variation.data.variationProperties"&gt;
+    &lt;template v-for="i in [5, 6, 2, 3]"&gt;
+        &lt;template v-for="property in basketItem.variation.data.variationProperties"&gt;
+            &lt;template v-if="property.property.id === i"&gt;
+                &lt;div&gt;
+                    &lt;span v-text="property.property.names.name"&gt;&lt;/span&gt;
+                    &lt;strong v-html="property.values &amp;&amp; property.values.value"&gt;&lt;/strong&gt;
+                &lt;/div&gt;
+            &lt;/template&gt;
+        &lt;/template&gt;
+    &lt;/template&gt;
 &lt;/div&gt;</code></pre>
 </div>
 </div>
@@ -2135,7 +2135,7 @@ Binde nun darüber den folgenden Code ein:</p>
 <p>Das Array in Zeile 2 des Code-Snippets (<code>&lt;template v-for="i in [5, 6, 2, 3]"&gt;</code>) enthält die IDs der Eigenschaften, die du im Warenkorb ausgeben möchtest, in diesem Beispiel also die Eigenschaften mit den IDs 5, 6, 2 und 3. Die IDs der Eigenschaften müssen <strong>kommasepariert</strong> eingegeben werden. Sie werden in der Reihenfolge im Warenkorb angezeigt, in der sie im Array angegeben sind. Die IDs deiner Eigenschaften findest du im Menü <strong>Einrichtung » Einstellungen » Eigenschaften » Konfiguration</strong>.<br></p>
 </div>
 <div class="paragraph">
-<p>Die 3 <code>&lt;template&gt;</code>-Tags im Code-Snippet werden nicht im Frontend ausgegeben, sondern dienen hier als Schleifenelement, um über die einzelnen Eigenschaften zu iterieren.<br></p>
+<p>Die 3 <code>&lt;template&gt;</code>-Tags im Code-Snippet werden nicht im Frontend ausgegeben, sondern dienen hier als Schleifenelement, um über die einzelnen Eigenschaften zu iterieren. Diese solltest du nicht anpassen.+</p>
 </div>
 <div class="paragraph">
 <p>Das <code>&lt;span&gt;</code>-Element gibt den Namen der Eigenschaft aus. Dieses Element kann durch andere Elemente, wie etwa ein <code>&lt;p&gt;</code>-Tag oder ein <code>&lt;strong&gt;</code>-Tag ersetzt werden. Die v-text Direktive darf allerdings nicht entfernt werden.<br></p>
@@ -2150,7 +2150,10 @@ Binde nun darüber den folgenden Code ein:</p>
 <div class="sect2">
 <h3 id="_basketitem_fields_json_anpassen">9.2. BasketItem.fields.json anpassen</h3>
 <div class="paragraph">
-<p>Suche nun die Datei BasketItem.fields.json unter /resources/views/ResultFields/BasketItem.fields.json. In dieser Datei musst du die beiden Ergebnisfelder "variationProperties.values" und "variationProperties.property.id" hinzufügen. Bitte achte darauf, dass du die Kommata entsprechend setzt. Speichere deine Änderungen und stelle das Plugin-Set neu bereit. Deine Eigenschaften sollten nun im Warenkorb, sowie in der Warenkorbübersicht im Checkout angezeigt werden.</p>
+<p>Suche nun die Datei BasketItem.fields.json unter /resources/views/ResultFields/BasketItem.fields.json. In dieser Datei musst du die beiden Ergebnisfelder "variationProperties.values" und "variationProperties.property.id" hinzufügen. Bitte achte darauf, dass du nach jedem Ergebnisfeld außer dem letzten Feld in der JSON-Datei ein Komma setzt, sodass die Datei weiterhin valides JSON enthält.<br></p>
+</div>
+<div class="paragraph">
+<p>Speichere deine Änderungen und stelle das Plugin-Set neu bereit. Deine Eigenschaften sollten nun im Warenkorb sowie in der Warenkorbübersicht im Checkout angezeigt werden.</p>
 </div>
 </div>
 </div>
