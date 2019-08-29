@@ -1,0 +1,201 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#_technische_spezifikationen"><span>1.</span><span> Technische Spezifikationen</span></a></li>
+<li><a href="#_datenspalten"><span>2.</span><span> Datenspalten</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>orderStatuses</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mit dem Datenformat-Creator <strong>orderStatuses</strong> kannst du Auftragsstatus exportieren und in der Cloud speichern. Weitere Informationen zu den Eigenschaften des Formats findest du in den nachfolgenden Tabellen.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_technische_spezifikationen">1. Technische Spezifikationen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In <a href="#tabelle-spezifikationen-orderstatuses">Tabelle 1</a> werden die verfügbaren Eigenschaften und die dazugehörigen Werte erläutert.</p>
+</div>
+<table id="tabelle-spezifikationen-orderstatuses" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Technische Spezifikationen des Formats <strong>orderStatuses</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Eigenschaft</th>
+<th class="tableblock halign-left valign-top">Bedeutung</th>
+<th class="tableblock halign-left valign-top">Wert</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">orderStatuses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Creator-Prozesses und Präfix der erstellten Datei.<br>
+Dateiname: <strong>orderStatuses-xxx.csv.gz</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fileFormat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dateiformat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CSV, GZIP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Daten werden als per GZIP (RFC 1952) komprimierte CSV-Datei bereitgestellt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardmäßig aktiv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Export läuft erst dann automatisch im Hintergrund, wenn der Creator zuvor im Menü <strong>Daten » Rohdaten</strong> aktiviert wurde.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intervall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">täglich</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mit dieser Einstellung werden 1 x pro Tag, gewöhnlich über Nacht, alle seit dem letzten Durchlauf geänderten Daten exportiert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeilen pro Anfrage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die maximale Anzahl der Datenzeilen, die in eine einzelne Datei geschrieben wird.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeilen pro Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 200</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die maximale Anzahl der Datenzeilen, die insgesamt an einem Tag geschrieben wird.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Frühester Zeitpunkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeitpunkt, ab dem die Rohdaten erhoben werden können. Die Daten werden nach dem Datum gefiltert, das in der Spalte <strong>dataUpdatedAtColumnName</strong> enthalten ist.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spaltenbezeichnung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">os_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Spalte, die den Zeitstempel der letzten Aktualisierung der Daten enthält.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMinimum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimale Anzahl an Tagen bis zur Löschung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die minimale Anzahl an Tagen, bis die generierte Rohdaten-Datei wieder vom Cloud-Speicher entfernt wird. Eine Weiterverarbeitung muss somit vorher erfolgen. Die genaue Dauer kann im Menü <strong>Daten » Rohdaten</strong> definiert werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMaximum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximale Anzahl an Tagen bis zur Löschung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die maximal Anzahl an Tagen, bis die generierte Rohdaten-Datei wieder vom Cloud-Speicher entfernt wird. Eine Weiterverarbeitung muss somit vorher erfolgen. Die genaue Dauer kann im Menü <strong>Daten » Rohdaten</strong> definiert werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtertyp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">singleDump</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle Daten werden in einer Datei ausgegeben.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="_datenspalten">2. Datenspalten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In <a href="#tabelle-datenspalten-orderstatuses">Tabelle 2</a> werden die Datenspalten des Formats <strong>orderStatuses</strong> erläutert, die beim Export der Rohdaten in der CSV-Datei gespeichert werden.</p>
+</div>
+<table id="tabelle-datenspalten-orderstatuses" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Datenspalten des Formats <strong>orderStatuses</strong></caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Spaltenname</th>
+<th class="tableblock halign-left valign-top">Datentyp</th>
+<th class="tableblock halign-left valign-top">Vollständige Bezeichnung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des plentymarkets Systems</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>os_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL (6, 4) NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">account contact id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Kontakts</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">os_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order status name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Auftragsstatuses</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">os_color</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order status colour</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Farbe des Auftragsstatuses</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">os_is_frontend_visible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order status is frontend visible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 = sichtbar<br>
+0 = unsichtbar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">os_is_reorder_visible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order status is reorder visible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 = sichtbar<br>
+0 = unsichtbar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">os_is_redistribution_visible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order status is redistribution visible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 = sichtbar<br>
+0 = unsichtbar</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>os_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order statuses updated at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der letzten Aktualisierung<br>
+Datumsformat: MM/DD/YYYY HH:MI:SS TZ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">os_created_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order statuses created at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der Erstellung<br>
+Datumsformat: MM/DD/YYYY HH:MI:SS TZ</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>

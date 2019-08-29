@@ -13,20 +13,20 @@
 </aside>
 
 <main id="main">
-    <h1>orderItemAmounts</h1><div id="preamble">
+    <h1>orderDocuments</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mit dem Datenformat-Creator <strong>orderItemAmounts</strong> kannst du Beträge von Auftragspositionen exportieren und in der Cloud speichern. Weitere Informationen zu den Eigenschaften des Formats findest du in den nachfolgenden Tabellen.</p>
+<p>Mit dem Datenformat-Creator <strong>orderDocuments</strong> kannst du Auftragsdokumente exportieren und in der Cloud speichern. Weitere Informationen zu den Eigenschaften des Formats findest du in den nachfolgenden Tabellen.</p>
 </div>
 </div>
 </div><div class="sect1">
 <h2 id="_technische_spezifikationen">1. Technische Spezifikationen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In <a href="#tabelle-spezifikationen-orderitemamounts">Tabelle 1</a> werden die verfügbaren Eigenschaften und die dazugehörigen Werte erläutert.</p>
+<p>In <a href="#tabelle-spezifikationen-orderdocuments">Tabelle 1</a> werden die verfügbaren Eigenschaften und die dazugehörigen Werte erläutert.</p>
 </div>
-<table id="tabelle-spezifikationen-orderitemamounts" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Technische Spezifikationen des Formats <strong>orderItemAmounts</strong></caption>
+<table id="tabelle-spezifikationen-orderdocuments" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Technische Spezifikationen des Formats <strong>orderDocuments</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 25%;">
@@ -45,15 +45,27 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataName</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">orderItemAmounts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">orderDocuments</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name des Creator-Prozesses und Präfix der erstellten Datei.<br>
-Dateiname: <strong>orderItemAmounts-xxx.csv.gz</strong></p></td>
+Dateiname: <strong>orderDocuments-xxx.csv.gz</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fileFormat</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dateiformat</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CSV, GZIP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die Daten werden als per GZIP (RFC 1952) komprimierte CSV-Datei bereitgestellt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardmäßig aktiv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Export läuft standardmäßig automatisch im Hintergrund.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intervall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">täglich</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mit dieser Einstellung werden 1 x pro Tag, gewöhnlich über Nacht, alle seit dem letzten Durchlauf geänderten Daten exportiert.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
@@ -70,32 +82,26 @@ Dateiname: <strong>orderItemAmounts-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Frühester Zeitpunkt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2017-01-01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitpunkt, ab dem die Rohdaten erhoben werden können. Die Daten werden nach dem Datum gefiltert, das in der Spalte <strong>dataUpdatedAtColumnName</strong> enthalten ist.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spaltenbezeichnung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">od_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Spalte, die den Zeitstempel der letzten Aktualisierung der Daten enthält.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMinimum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Minimale Anzahl an Tagen bis zur Löschung</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1095</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die minimale Anzahl an Tagen, bis die generierte Rohdaten-Datei wieder vom Cloud-Speicher entfernt wird. Eine Weiterverarbeitung muss somit vorher erfolgen. Die genaue Dauer kann im Menü <strong>Daten » Rohdaten</strong> definiert werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMaximum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maximale Anzahl an Tagen bis zur Löschung</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1095</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die maximal Anzahl an Tagen, bis die generierte Rohdaten-Datei wieder vom Cloud-Speicher entfernt wird. Eine Weiterverarbeitung muss somit vorher erfolgen. Die genaue Dauer kann im Menü <strong>Daten » Rohdaten</strong> definiert werden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standardmäßig aktiv</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Export läuft standardmäßig automatisch im Hintergrund.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Intervall</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">täglich</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mit dieser Einstellung werden 1 x pro Tag, gewöhnlich über Nacht, alle seit dem letzten Durchlauf geänderten Daten exportiert.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
@@ -110,10 +116,10 @@ Dateiname: <strong>orderItemAmounts-xxx.csv.gz</strong></p></td>
 <h2 id="_datenspalten">2. Datenspalten</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In <a href="#tabelle-datenspalten-orderitemamounts">Tabelle 2</a> werden die Datenspalten des Formats <strong>orderItemAmounts</strong> erläutert, die beim Export der Rohdaten in der CSV-Datei gespeichert werden.</p>
+<p>In <a href="#tabelle-datenspalten-orderdocuments">[tabelle-datenspalten-orderdocuments]</a> werden die Datenspalten des Formats <strong>orderDocuments</strong> erläutert, die beim Export der Rohdaten in der CSV-Datei gespeichert werden.</p>
 </div>
-<table id="tabelle-datenspalten-orderitemamounts" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 2. Datenspalten des Formats <strong>orderItemAmounts</strong></caption>
+<table id="tabelle-datenspalten-orderDocuments" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Datenspalten des Formats <strong>orderDocuments</strong></caption>
 <colgroup>
 <col style="width: 10%;">
 <col style="width: 30%;">
@@ -136,62 +142,35 @@ Dateiname: <strong>orderItemAmounts-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des plentymarkets Systems</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>oia_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>od_id (Primary key)</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item amount ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enthält den Primärschlüssel der Datenzeile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order document id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Auftragsdokuments</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">od_type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Auftragsposition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order document type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Art des Auftragsdokuments</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oia_is_system_currency</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item amount is system currency</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Markierung, die anzeigt, ob die an der Auftragsposition hinterlegte Währung der Systemwährung entspricht<br>
-Mögliche Werte:<br>
-0 = Nein<br>
-1 = Ja</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_price_gross</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(17,4) NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item price gross</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bruttopreis der Auftragsposition</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_price_net</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(17,4) NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item price net</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nettopreis der Auftragsposition</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_price_currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">od_number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item price currency</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Währung des Preises der Auftragsposition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order document number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nummer des Auftragsdokuments</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_exchange_rate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(12,6) NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item exchange rate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wechselkurs der Währung, der an der Auftragsposition hinterlegt ist</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Auftrags</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_purchase_price</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DECIMAL(17,6) NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item purchase price</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Einkaufspreis der Auftragsposition</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>oi_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>od_created_at</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item updated at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order documents updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der letzten Aktualisierung<br>
-Datumsformat: MM/DD/YY HH:MI:SS TZ</p></td>
+Datumsformat: MM/DD/YYYY HH:MI:SS TZ</p></td>
 </tr>
 </tbody>
 </table>
