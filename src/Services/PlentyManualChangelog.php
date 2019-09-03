@@ -19,7 +19,7 @@ class PlentyManualChangelog
     /**
      * @var array
      */
-    private static $tags = ['doku'];
+    private static $tags = ['doku', 'video'];
 
     /**
      * @var ConfigRepository
