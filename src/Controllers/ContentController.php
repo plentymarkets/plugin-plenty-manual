@@ -11,6 +11,7 @@ use PlentyManual\Services\PlentyManualChangelog;
 use PlentyManual\Services\SearchService;
 use Plenty\Modules\System\Contracts\WebstoreConfigurationRepositoryContract;
 use Plenty\Plugin\Application;
+use PlentyManual\Services\SwitchLanguageService;
 
 
 class ContentController extends Controller
@@ -99,6 +100,80 @@ class ContentController extends Controller
                 "results"   => $results,
                 "lang"      => $this->lang,
                 "searchUrl" => $this->searchUrl
+            ]
+        );
+    }
+
+    public function showSWLanguageSearch(): string
+    {
+        $sWLanguageService = pluginApp( SwitchLanguageService::class );
+        $query = $this->request->get("q", "");
+        $page = (int)$this->request->get("p", 1);
+        $itemsPerPage = (int)$this->request->get("s", null);
+
+        if ( !is_null( $itemsPerPage ) )
+        {
+            $this->sessionStorage->getPlugin()->setValue("manual_search_items_per_page", $itemsPerPage);
+        }
+
+        $itemsPerPage = (int)$this->sessionStorage->getPlugin()->getValue("manual_search_items_per_page");
+
+        if ( is_null( $itemsPerPage ) || $itemsPerPage <= 0 )
+        {
+            $itemsPerPage = 25;
+        }
+
+        $results = $sWLanguageService->sLSearch( $page, $itemsPerPage );
+        return $this->twig->render(
+            "PlentyManual::SearchResults",
+            [
+                "pages"     => $this->pageService->getPages(),
+                "query"     => $query,
+                "results"   => $results,
+                "lang"      => $this->lang,
+                "searchUrl" => $this->searchUrl
+            ]
+        );
+
+    }
+
+    public function showSWLanguagePage(string $contentPath ):string
+    {
+        $sWLanguageService = pluginApp( SwitchLanguageService::class );
+        $contentPathAndPage = $this->pageService->getPathByUrl($contentPath, true);
+        if(is_array($contentPathAndPage) && isset($contentPathAndPage))
+        {
+            $currentPage = $contentPathAndPage["page"];
+        }
+        else
+        {
+            $currentPage = $this->pageService->getPageByPath( $contentPath, true );
+        }
+
+        $currentPageLanguageID = $currentPage["languageID"];
+
+        $pageURL = $sWLanguageService->sLPage($currentPageLanguageID);
+
+        $contentPathAndPage = $this->pageService->getPathByUrl($pageURL);
+        if(is_array($contentPathAndPage) && isset($contentPathAndPage))
+        {
+            $contentPath = $contentPathAndPage["path"];
+            $switchPage = $contentPathAndPage["page"];
+        }
+        else
+        {
+            $switchPage = $this->pageService->getPageByPath( $contentPath );
+        }
+
+        $pages = $this->pageService->getPages( $switchPage["id"] );
+        return $this->twig->render(
+            "PlentyManual::Main",
+            [
+                "contentTemplate"   => "PlentyManual::" . $this->lang . "." . implode( ".", explode( "/", $contentPath ) ),
+                "currentPage"       => $currentPage,
+                "pages"             => $pages,
+                "lang"              => $this->lang,
+                "searchUrl"         => $this->searchUrl
             ]
         );
     }

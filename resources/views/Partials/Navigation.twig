@@ -103,7 +103,7 @@
                 </a>
                 <ul class="ul-right" aria-labelledby="navbarLangToggle">
                     <li class="">
-                        <a class="" href="/{% if lang == "de" %}en{% else %}de{% endif %}">
+                        <a class="navbarLangSwitchURL" href="/{% if lang == "de" %}en{% else %}de{% endif %}">
                                 <span class="plenticon-flag-{% if lang == "de" %}uk{% else %}de{% endif %} mr-2" aria-hidden="true">
                                     <i></i>
                                 </span>{{ trans("PlentyManual::Manual.otherLang") }}</a>
@@ -113,3 +113,47 @@
         </ul>
     </nav>
 </header>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+
+    var switchLanguageSearch = "/slw";
+    var switchLanguagePage = "/slwp";
+
+    $(".navbarLangSwitchURL").click(function(){
+        pageUrl = $(location).attr("href");
+
+        var pageUrlPath = pageUrl.split('.com')[1];
+
+        if(pageUrlPath.length > 4)
+        {
+            if(pageUrlPath.indexOf("/search/") > -1)
+            {
+                url = pageUrlPath.replace('/en/', '/');
+                urlH = "/de" + switchLanguageSearch + url;
+                $(this).attr('href', urlH);
+            }
+            else
+            {
+                urlH = "/en" + switchLanguageStr + pageUrlPath;
+                $(this).attr('href', urlH);
+            }
+        }
+        // var xhttp = new XMLHttpRequest();
+        // var pageURL = $(location).attr("href");
+        // $(this).attr('href',xhttp.responseText);
+        // if(pageURL.indexOf("/en/") > -1)
+        // {
+        //     pageURL = pageURL.replace('/en/', '/de/');
+        //     console.log(pageURL);
+        //     $(this).attr('href',pageURL);
+        // }
+        // if(pageURL.indexOf("com/search/") > -1)
+        // {
+        //     pageURL = pageURL.replace('com/search/', 'com/en/search/');
+        //     console.log(pageURL);
+        //     $(this).attr('href',pageURL);
+        // }
+
+
+    });
+</script>
