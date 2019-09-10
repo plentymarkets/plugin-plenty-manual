@@ -5,7 +5,6 @@ namespace PlentyManual\Services;
 use Plenty\Modules\Frontend\Session\Storage\Contracts\FrontendSessionStorageFactoryContract;
 use Plenty\Plugin\ConfigRepository;
 use PlentyManual\Helpers\ResultsStorage;
-use PlentyManual\Services\PageService;
 
 class SearchService
 {
@@ -115,20 +114,6 @@ class SearchService
                 ]
             ]
         ];
-
-//        $contentPath = "/en/app/functions/warehouse-management/reshelving";
-//
-//        $contentPathAndPage = $this->pageService->getPathByUrl($contentPath);
-//        if(is_array($contentPathAndPage) && isset($contentPathAndPage))
-//        {
-//            $contentPath = $contentPathAndPage["path"];
-//            $currentPage = $contentPathAndPage["page"];
-//        }
-//        else
-//        {
-//            $currentPage = $this->pageService->getPageByPath( $contentPath );
-//        }
-//        $pages = $this->pageService->getPages( $currentPage["id"] );
 
         $from = ($page - 1) * $itemsPerPage ;
 
@@ -289,7 +274,7 @@ class SearchService
             array_push( $result["hits"], $doc );
         }
 
-        $storageArray = $this->resultsStorage->setResults($storageArray);
+        $this->resultsStorage->setResults($storageArray);
 
         return $result;
     }

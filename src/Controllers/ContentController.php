@@ -52,7 +52,14 @@ class ContentController extends Controller
         $contentPathAndPage = $this->pageService->getPathByUrl($contentPath);
         if(is_array($contentPathAndPage) && isset($contentPathAndPage))
         {
-            $contentPath = $contentPathAndPage["path"];
+            if($this->lang === "en")
+            {
+                $contentPath = "/en/".$contentPathAndPage["path"];
+            }
+            else
+            {
+                $contentPath = $contentPathAndPage["path"];
+            }
             $currentPage = $contentPathAndPage["page"];
         }
         else
@@ -140,6 +147,8 @@ class ContentController extends Controller
     public function showSWLanguagePage(string $contentPath ):string
     {
         $sWLanguageService = pluginApp( SwitchLanguageService::class );
+        if($this->lang === "de")
+            $contentPath = '/en/'.$contentPath;
         $contentPathAndPage = $this->pageService->getPathByUrl($contentPath, true);
         if(is_array($contentPathAndPage) && isset($contentPathAndPage))
         {

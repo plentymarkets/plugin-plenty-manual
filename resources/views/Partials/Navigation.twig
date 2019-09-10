@@ -116,44 +116,56 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
 
-    var switchLanguageSearch = "/slw";
-    var switchLanguagePage = "/slwp";
+    var switchLanguageSearch = "/sls";
+    var switchLanguagePage = "/slp";
 
     $(".navbarLangSwitchURL").click(function(){
-        pageUrl = $(location).attr("href");
-
+        var pageUrl = $(location).attr("href");
         var pageUrlPath = pageUrl.split('.com')[1];
+        var urlH;
 
-        if(pageUrlPath.length > 4)
+        if( pageUrlPath.length >= 4)
         {
-            if(pageUrlPath.indexOf("/search/") > -1)
+            if( pageUrlPath.indexOf("/search/") > -1 )
             {
-                url = pageUrlPath.replace('/en/', '/');
-                urlH = "/de" + switchLanguageSearch + url;
+                if(pageUrlPath.indexOf("/sls/") > -1)
+                    urlH = changeUrl(pageUrlPath, undefined);
+                else
+                    urlH = changeUrl(pageUrlPath, switchLanguageSearch);
                 $(this).attr('href', urlH);
             }
-            else
+            if( pageUrlPath.indexOf("/search/")  === -1 )
             {
-                urlH = "/en" + switchLanguageStr + pageUrlPath;
+                if(pageUrlPath.indexOf("/slp/") > -1)
+                    urlH = changeUrl(pageUrlPath, undefined);
+                else
+                    urlH = changeUrl(pageUrlPath, switchLanguagePage);
                 $(this).attr('href', urlH);
             }
         }
-        // var xhttp = new XMLHttpRequest();
-        // var pageURL = $(location).attr("href");
-        // $(this).attr('href',xhttp.responseText);
-        // if(pageURL.indexOf("/en/") > -1)
-        // {
-        //     pageURL = pageURL.replace('/en/', '/de/');
-        //     console.log(pageURL);
-        //     $(this).attr('href',pageURL);
-        // }
-        // if(pageURL.indexOf("com/search/") > -1)
-        // {
-        //     pageURL = pageURL.replace('com/search/', 'com/en/search/');
-        //     console.log(pageURL);
-        //     $(this).attr('href',pageURL);
-        // }
-
-
     });
+
+    var  changeUrl = function(urlPage, slAdd){
+        if(urlPage.indexOf("/en/") > -1)
+        {
+            url = urlPage.replace('/en/', '/');
+            if(slAdd === undefined)
+                urlH = "/de" + url;
+            else
+                urlH = "/de" + slAdd + url;
+            return urlH;
+        }
+        else
+        {
+            if(slAdd === undefined)
+                urlH = "/en" + urlPage;
+            else
+                urlH = "/en" + slAdd + urlPage;
+            return urlH;
+        }
+    };
+
+
+
+
 </script>

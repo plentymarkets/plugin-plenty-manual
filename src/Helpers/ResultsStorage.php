@@ -12,23 +12,17 @@ class ResultsStorage
         $this->storageArray = $storageArray;
     }
 
-    public function deleteResults()
+    public function deleteResults(): void
     {
         foreach ($this->storageArray as $key => $value)
             unset($this->storageArray[$key]);
-        if(empty($this->storageArray))
-            return true;
-        else
-            return false;
     }
 
-    public function setResults($arr)
+    public function setResults($arr): void
     {
-        $result = true;
         if(!empty($this->storageArray))
-            $result = $this->deleteResults();
+            $this->deleteResults();
         $this->storageArray = $arr;
-        return $arr;
     }
 
     public function getResults()

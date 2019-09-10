@@ -20,9 +20,9 @@ class PlentyManualRouteServiceProvider extends RouteServiceProvider
         $router->get('{contentPath}', 'PlentyManual\Controllers\ContentController@showContent')
                ->where('contentPath', '.*');
 
-        $router->get('swl/{contentPath}', 'PlentyManual\Controllers\ContentController@showSWLanguageSearch');
+        $router->get('sls', 'PlentyManual\Controllers\ContentController@showSWLanguageSearch');
 
-        $router->get('swlp/{contentPath}', 'PlentyManual\Controllers\ContentController@showSWLanguagePage')
+        $router->get('slp/{contentPath}', 'PlentyManual\Controllers\ContentController@showSWLanguagePage')
             ->where('contentPath', '.*');
     }
 }
