@@ -14,15 +14,21 @@ class PageService
         $this->lang = $sessionStorage->getLocaleSettings()->language ?? 'de';
     }
 
-    public function getPages( string $activePageId = null )
+    public function getPages( string $activePageId = null, bool $swl = false )
     {
         if ( $this->lang === "de" )
         {
-            $pages = Metadata::DE;
+            if($swl === true)
+                $pages = Metadata::EN;
+            else
+                $pages = Metadata::DE;
         }
         else
         {
-            $pages = Metadata::EN;
+            if($swl === true)
+                $pages = Metadata::DE;
+            else
+                $pages = Metadata::EN;
         }
 
         if ( $activePageId !== null )
@@ -58,11 +64,16 @@ class PageService
         return false;
     }
 
-    public function getPathByUrl(string $path)
+    public function getPathByUrl(string $path, bool $swl = false)
     {
         $pathRes = null;
         $path = "/".$path;
-        $pages = $this->getPages();
+
+        if($swl === true)
+            $pages = $this->getPages($swl);
+        else
+            $pages = $this->getPages();
+
         for ($i = 0; $i < count($pages); $i++ )
         {
             if(is_array($pathRes))
@@ -75,9 +86,9 @@ class PageService
         return $pathRes;
     }
 
-    private function searchPage($page, $string, $pathRes)
+    private function searchPage($page, $pathURL, $pathRes)
     {
-        if($page["url"] === $string)
+        if($page["url"] === $pathURL)
         {
             $pathRes["path"] = $page["path"];
             $pathRes["page"] = $page;
@@ -90,16 +101,21 @@ class PageService
                 if(is_array($pathRes))
                     continue;
                 else
-                    $pathRes = $this->searchPage($page["children"][$i], $string, $pathRes);
+                    $pathRes = $this->searchPage($page["children"][$i], $pathURL, $pathRes);
             }
         }
         return $pathRes;
     }
 
-    public function getPageByPath( string $path )
+    public function getPageByPath( string $path, bool $swl = false )
     {
         $levels = explode( "/", $path );
-        $pages = $this->getPages();
+
+        if($swl === true)
+            $pages = $this->getPages($swl);
+        else
+            $pages = $this->getPages();
+
         $page = null;
         foreach( $levels as $lvl )
         {
