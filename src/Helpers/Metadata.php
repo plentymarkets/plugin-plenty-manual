@@ -1655,7 +1655,7 @@ class Metadata {
 						"path" => "payment/zahlungsanbieter/heidelpay",
 						"position" => 100,
 						"urlName" => "heidelpay",
-						"url" => "/payment/zahlungsanbieter/heidelpay",
+						"url" => "/payment/zahlungsanbieter/heidelpay.",
 						"level" => 3,
 						"title" => "Alter Webshop: heidelpay",
 						"keywords" => "heidelpay, Zahlungsart",
@@ -5550,6 +5550,21 @@ class Metadata {
 		"linkListInto" => "Willkommen im Themenbereich Plugins. Hier findest du folgende Informationen:",
 		"children" => 		[
 			[
+				"id" => "05ffe37e9db3dd6757249d4cb72a5329",
+				"path" => "plugins/test",
+				"position" => 0,
+				"urlName" => "test",
+				"url" => "/plugins/test",
+				"level" => 2,
+				"title" => "Test",
+				"keywords" => "Plugins, Erweiterungen, Funktionen",
+				"description" => "Informationen zur Entwicklung von Plugins.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Test. Hier findest du folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "363265e4b475d9c554a94d55b510aedb",
 				"path" => "plugins/neue-plugins",
 				"position" => 10,
@@ -5576,21 +5591,6 @@ class Metadata {
 				"description" => "So verwaltest du Plugins und Plugin-Sets im plentymarkets Backend.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Plugins und Plugin-Sets. Hier findest du folgende Informationen:",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "38b51b6744b46213b91f76d96e6fd6ab",
-				"path" => "plugins/plugin-test",
-				"position" => 20,
-				"urlName" => "plugin-test",
-				"url" => "/plugins/plugin-test",
-				"level" => 2,
-				"title" => "Plugin-Test",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Plugin-Test. Hier findest du folgende Informationen:",
 				"children" => [],
 				"hasChildren" => false
 			],
