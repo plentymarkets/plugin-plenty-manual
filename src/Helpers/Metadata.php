@@ -2569,21 +2569,6 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
-					],
-					[
-						"id" => "13373caf7386a885756a2130f1e3c486",
-						"path" => "daten/daten-importieren/ElasticSync-plugin-(veraltet)",
-						"position" => 30,
-						"urlName" => "ElasticSync-plugin-(veraltet)",
-						"url" => "/daten/daten-importieren/ElasticSync-plugin-(veraltet)",
-						"level" => 3,
-						"title" => "Daten mit ElasticSync importieren (Plugin) (veraltet)",
-						"keywords" => "Daten importieren, Datenimport, ElasticSync, Sync, Elastic Sync, Sync, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten, Sync-Verlauf",
-						"description" => "Erfahren Sie, wie Sie mit dem Plugin ElasticSync Daten in plentymarkets importieren.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren (Plugin) (veraltet). Hier findest du folgende Informationen:",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -8224,21 +8209,6 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
-					],
-					[
-						"id" => "212bf9905abc7430016c62873512232d",
-						"path" => "data/importing-data/ElasticSync-plugin-(deprecated)",
-						"position" => 30,
-						"urlName" => "ElasticSync-plugin-(deprecated)",
-						"url" => "/en/data/importing-data/ElasticSync-plugin-(deprecated)",
-						"level" => 3,
-						"title" => "Importing data with ElasticSync (Plugin) (deprecated)",
-						"keywords" => "Importing data, import data, data import, ElasticSync, sync, Elastic Sync, synchronise, synchronisation, data format, data formats, dynamic import, mapping, matching, import option, import data",
-						"description" => "Learn how to import data using the plugin ElasticSync.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Importing data with ElasticSync (Plugin) (deprecated). The following information is available:",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
