@@ -5,6 +5,7 @@ namespace PlentyManual\Providers;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Templates\Twig;
 use PlentyManual\Extensions\TwigManualExtension;
+use PlentyManual\Helpers\ResultsStorage;
 
 /**
  * Class PlentyManualServiceProvider
@@ -18,6 +19,7 @@ class PlentyManualServiceProvider extends ServiceProvider
     public function register()
     {
         $this->getApplication()->register(PlentyManualRouteServiceProvider::class);
+        $this->getApplication()->singleton(ResultsStorage::class);
     }
 
     /**

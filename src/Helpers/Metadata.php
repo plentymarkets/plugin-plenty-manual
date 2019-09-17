@@ -5580,6 +5580,21 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "38b51b6744b46213b91f76d96e6fd6ab",
+				"path" => "plugins/plugin-test",
+				"position" => 20,
+				"urlName" => "plugin-test",
+				"url" => "/plugins/plugin-test",
+				"level" => 2,
+				"title" => "Plugin-Test",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Plugin-Test. Hier findest du folgende Informationen:",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "82ede5296c669eeda6e3416ca3131e61",
 				"path" => "plugins/plugins",
 				"position" => 30,

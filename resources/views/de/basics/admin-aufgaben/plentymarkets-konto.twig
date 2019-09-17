@@ -40,7 +40,12 @@
 <li><a href="#240"><span>3.12.</span><span> TXT Record verwalten</span></a></li>
 <li><a href="#200"><span>3.13.</span><span> Nameserver für Subdomains speichern</span></a></li>
 <li><a href="#250"><span>3.14.</span><span> Domain-Umzug durchführen</span></a></li>
-<li><a href="#260"><span>3.15.</span><span> URL-Weiterleitungen einrichten</span></a></li>
+<li><a href="#260"><span>3.15.</span><span> URL-Weiterleitungen einrichten</span></a>
+<ul class="sectlevel3">
+<li><a href="#265"><span>3.15.1.</span><span> Aufbau</span></a></li>
+<li><a href="#_beispiele"><span>3.15.2.</span><span> Beispiele</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#ssl-zertifikat"><span>4.</span><span> SSL-Zertifikat verwalten</span></a>
@@ -1133,18 +1138,126 @@ Speichere außerdem im Menü <a href="/payment/bankdaten-verwalten#70">Einrichtu
 <p>Klicke auf das <strong>blaue Plus</strong> der Domain, von der du weiterleiten möchtest.</p>
 </li>
 <li>
-<p>Klicke auf <strong>Anleitung URL-Weiterleitungen</strong>.</p>
+<p>Gib die gewünschten Weiterleitungen in das vorgesehene Feld ein. Pro Zeile kann eine Umleitung definiert werden. Beachte bei der Eingabe die nachfolgende <a href="/basics/admin-aufgaben/plentymarkets-konto#265">Informationen zum Syntax</a>.</p>
 </li>
 <li>
-<p>Lese dir die angezeigten Informationen durch.</p>
-</li>
-<li>
-<p>Gib die gewünschten Weiterleitungen gemäß dieser Anleitung in das vorgesehene Feld ein.</p>
-</li>
-<li>
-<p>Klicke auf <strong>URL-Weiterleitungen speichern</strong>.</p>
+<p>Klicke auf <strong>URL-Weiterleitungen speichern</strong>.<br>
+→ Änderungen werden spätestens nach 24 Stunden auf den Webservern veröffentlicht.</p>
 </li>
 </ol>
+</div>
+<div class="sect3">
+<h4 id="265">3.15.1. Aufbau</h4>
+<div class="paragraph">
+<p>Eine Umleitung besteht immer aus vier Angaben, die mit einem Semikolon getrennt eingegeben werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Quelle;Ziel;HTTP-Code;Option</p>
+</li>
+</ul>
+</div>
+<table id="tabelle-weiterleitung-aufbau" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Eine Umleitung besteht aus vier Angaben</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Angabe</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Quelle</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Quell-Pfad von welchem weitergeleitet werden soll (z.B. <code>/kontakt/</code>). Verwende ein Sternchen <code>*</code> am Ende der Quelle, um alle Unterseiten auf das Ziel umzuleiten (z.B. <code>/kontakt/*</code>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ziel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Ziel-Pfad oder die Ziel-URL auf welche weitergeleitet werden soll (z.B. <code>/unternehmen/kontakt/</code> oder <code>http://www.externe-domain.com/kontakt/</code>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP-Code</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die folgenden HTTP-Codes werden unterstützt und von Suchmaschinen interpretiert:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>301: Die angeforderte Quelle steht ab sofort unter dem definierten Ziel bereit (auch Redirect genannt). Die alte Adresse (Quelle) ist nicht länger gültig.</p>
+</li>
+<li>
+<p>304: Der Inhalt der angeforderten Ressource hat sich seit der letzten Abfrage des Clients nicht verändert und wird deshalb nicht übertragen.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Option</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die Angabe einer Option ist nicht in jedem Fall erforderlich.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>L: Wenn du diese Option angibst, wird nach dieser RewriteRule keine weitere mehr ausgeführt.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_beispiele">3.15.2. Beispiele</h4>
+<table id="tabelle-weiterleitung-beispiele" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 6. Beispiel-Weiterleitungen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Weiterleitung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/herren/*;/mode/herren/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle URLs, welche mit <code>/herren/</code> beginnen werden auf die URL <code>/mode/herren/</code> weitergeleitet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/herren/hosen/;/mode/herren/hosen/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die URL <code>/herren/hosen/</code> wird auf die URL <code>/mode/herren/hosen/</code> weitergeleitet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/herren/basics-*;/mode/herren/*;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle URLs, welche mit <code>/herren/basic</code> beginnen, werden auf die URL <code>/mode/herren/…​</code> weitergeleitet.<br>
+<strong><em>Hinweis:</em></strong> hierbei der Teil der Quell-URL, welcher in diesem Beispiel mit <code>basics-</code> beginnt, an die Ziel-URL angehängt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/;https://www.externer-blog.com/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Startseite wird auf die URL <code>https://www.externer-blog.com/</code> weitergeleitet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/*;https://www.externer-blog.com/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle URLs, inkl. der Startseite, werden auf die URL <code>https://www.externer-blog.com/</code> weitergeleitet.<br>
+<strong><em>Hinweis:</em></strong> Bitte setze diese Weiterleitung niemals für deinen Hauptshop, da sonst der plentymarkets Admin nicht mehr erreichbar ist. Der Einsatz dieser Weiterleitung für einen zusätzlichen Mandantshop ist jedoch problemlos möglich.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/blog/*;https://www.externer-blog.com/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle URLs, welche mit <code>/blog/</code> beginnen werden auf die URL <code>https://www.externer-blog.com/</code> weitergeleitet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>^/mode/hosen/$;/mode/herren/hosen/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diese Regel gilt nur für die Adresse <code>ihre-domain.de/mode/herren/</code> ohne etwas davor oder danach. Der Zirkumflex <code>^</code> ist hierbei das Symbol für Stringanfang und das Dollarzeichen <code>$</code> das Symbol für das Stringende. Durch diese Syntax vermeidest du, dass es zu unerwünschten Weiterleitungen oder Endlosweiterleitungen kommt, wenn du mehrere Zeilen an Weiterleitungen nutzt die z.B. <code>/mode/hosen/</code> als Quell-URL enthalten.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1716,10 +1829,10 @@ Eine weitere mögliche Ursache ist, dass eine Domain erstmalig zu einem Mandante
 <div class="sect2">
 <h3 id="480">8.1. Verbrauchsdaten anzeigen</h3>
 <div class="paragraph">
-<p>Die Verbrauchsdaten werden im Menü <strong>Start » Hosting » Tab: Verbrauch</strong> angezeigt. <a href="#tabelle-konto-verbrauchsdaten">Tabelle 5</a> bietet einen Überblick der in diesem Menü angezeigten Daten zu deinem Verbrauch.</p>
+<p>Die Verbrauchsdaten werden im Menü <strong>Start » Hosting » Tab: Verbrauch</strong> angezeigt. <a href="#tabelle-konto-verbrauchsdaten">Tabelle 7</a> bietet einen Überblick der in diesem Menü angezeigten Daten zu deinem Verbrauch.</p>
 </div>
 <table id="tabelle-konto-verbrauchsdaten" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 5. Angezeigte Verbrauchsdaten</caption>
+<caption class="title">Tabelle 7. Angezeigte Verbrauchsdaten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">

@@ -40,7 +40,12 @@
 <li><a href="#240"><span>3.12.</span><span> Managing the TXT Record</span></a></li>
 <li><a href="#200"><span>3.13.</span><span> Saving a name server for sub-domains</span></a></li>
 <li><a href="#250"><span>3.14.</span><span> Relocating a domain</span></a></li>
-<li><a href="#260"><span>3.15.</span><span> Setting up URL forwarding</span></a></li>
+<li><a href="#260"><span>3.15.</span><span> Setting up URL forwarding</span></a>
+<ul class="sectlevel3">
+<li><a href="#265"><span>3.15.1.</span><span> Structure</span></a></li>
+<li><a href="#_examples"><span>3.15.2.</span><span> Examples</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#ssl-certificate"><span>4.</span><span> Managing the SSL certificate</span></a>
@@ -1145,18 +1150,126 @@ In addition, go to <a href="/en/payment/managing-bank-details#70">Setup » Order
 <p>Click on the <strong>blue plus</strong> icon next to the domain that you want to forward from.</p>
 </li>
 <li>
-<p>Click on the <strong>URL forwarding instructions</strong>.</p>
+<p>Enter redirects into the designated field. You can define one redirect per line. Note the following <a href="/en/basics/admin-tasks/plentymarkets-account#265">syntax information</a> while entering redirects.</p>
 </li>
 <li>
-<p>Read the information that is displayed.</p>
-</li>
-<li>
-<p>Pay attention to the instructions and enter the forwarding information into the designated field.</p>
-</li>
-<li>
-<p>Click on <strong>Save URL forwarding</strong>.</p>
+<p>Click on <strong>Save URL forwarding</strong>.<br>
+→ Any changes will be published on our web servers within 24 hours.</p>
 </li>
 </ol>
+</div>
+<div class="sect3">
+<h4 id="265">3.15.1. Structure</h4>
+<div class="paragraph">
+<p>Redirects always consist of four parts that are separated by semicolons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Source;Target;HTTP-code;Option</p>
+</li>
+</ul>
+</div>
+<table id="table-redirect-structure" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Redirects always consist of four parts</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Part</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Source</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The source path you want to forward from (e.g. <code>/contact/</code>). Use an asterisk <code>*</code> at the end of the source if you want all of the subpages to redirect to the target (e.g. <code>/contact/*</code>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Target</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The target path or target URL you want to forward to (e.g. <code>/company/contact/</code> or <code>http://www.external-domain.com/contact/</code>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP code</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following HTTP codes are supported and interpreted by search engines:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>301: The requested source is now available at the defined target (also called redirect). The old address (source) is no longer valid.</p>
+</li>
+<li>
+<p>304: The contents of the requested resource have not been modified since the last client query. Therefore, the contents are not retransmitted.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Option</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specifying an option is not always necessary.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>L: If you specify this option, no additional RewriteRule is run after this one.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_examples">3.15.2. Examples</h4>
+<table id="table-redirect-examples" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Example redirects</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Redirect</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/mens/*;/fashion/mens/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All URLs that start with <code>/mens/</code> are forwarded to the URL <code>/fashion/mens/</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/mens/trousers/;/fashion/mens/trousers/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URL <code>/mens/trousers/</code> is forwarded to the URL <code>/fashion/mens/trousers/</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/mens/basics-*;/fashion/mens/*;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All URLs that start with <code>/mens/basic</code> are forwarded to the URL <code>/fashion/mens/…​</code>.<br>
+<strong><em>Note:</em></strong> In this example, the part of the source URL that starts with <code>basics-</code> is appended to the target URL.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/;https://www.external-blog.com/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The homepage is forwarded to the URL <code>https://www.external-blog.com/</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/*;https://www.externer-blog.com/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All of the URLs, including the homepage, are forwarded to the URL <code>https://www.external-blog.com/</code>.<br>
+<strong><em>Note:</em></strong> Never set this redirect for your main store. Otherwise the plentymarkets admin will no longer be accessible. However, you can use this redirect for additional clients (stores) without any problem.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/blog/*;https://www.external-blog.com/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All URLs that start with <code>/blog/</code> are forwarded to the URL <code>https://www.external-blog.com/</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>^/fashion/trousers/$;/fashion/mens/trousers/;301;L</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This rule only applies to the address <code>your-domain.com/fashion/mens/</code> without anything before or after. The circumflex <code>^</code> symbolises the beginning of the string and the dollar sign <code>$</code> symbolises the end of the string. Use this syntax if you have multiple lines of redirects that have e.g. <code>/fashion/trousers/</code> as the source URL and you want to avoid undesired redirects or endless redirects.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1728,10 +1841,10 @@ Another cause might be that the domain was added to a client for the first time.
 <div class="sect2">
 <h3 id="480">8.1. Viewing usage data</h3>
 <div class="paragraph">
-<p>Go to <strong>Start » Hosting » Tab: Usage</strong> to view the usage data of your system. <a href="#table-account-usage">Table 5</a> provides an overview of the data you have used.</p>
+<p>Go to <strong>Start » Hosting » Tab: Usage</strong> to view the usage data of your system. <a href="#table-account-usage">Table 7</a> provides an overview of the data you have used.</p>
 </div>
 <table id="table-account-usage" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Usage data shown</caption>
+<caption class="title">Table 7. Usage data shown</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
