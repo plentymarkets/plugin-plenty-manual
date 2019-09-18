@@ -17,6 +17,7 @@ class Metadata {
 		"description" => "",
 		"navAlias" => "Schnell durchstarten",
 		"linkListInto" => "Willkommen im Themenbereich Schnelleinstieg. Hier findest du folgende Informationen:",
+		"languageID" => "HU0IDHT",
 		"children" => 		[
 			[
 				"id" => "8cce91823e4b975390ebdcd4fbef0cf3",
@@ -30,6 +31,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Systemvoraussetzungen. Hier findest du folgende Informationen:",
+				"languageID" => "FLZ2XIJ",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -45,6 +47,7 @@ class Metadata {
 				"description" => "Erfahre in diesem Teil des Schnelleinstiegs, welche Basiseinstellungen du vornehmen musst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Basiseinstellungen vornehmen. Hier findest du folgende Informationen:",
+				"languageID" => "U4A9SAW",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -60,6 +63,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Lager und Lieferant einrichten. Hier findest du folgende Informationen:",
+				"languageID" => "ME2XTHD",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -75,6 +79,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Webshop einrichten: Einleitung. Hier findest du folgende Informationen:",
+				"languageID" => "QCU0NOG",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -90,6 +95,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Zahlungsabwicklung einrichten. Hier findest du folgende Informationen:",
+				"languageID" => "LKPTJCQ",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -105,6 +111,7 @@ class Metadata {
 				"description" => "Erfahre in diesem Teil des Schnelleinstiegs, wie du die Versandoptionen einrichtest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Versandoptionen einrichten. Hier findest du folgende Informationen:",
+				"languageID" => "ELFJKWG",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -120,6 +127,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Artikelkatalog aufbauen. Hier findest du folgende Informationen:",
+				"languageID" => "IKOMOQN",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -135,6 +143,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Warenbestand buchen. Hier findest du folgende Informationen:",
+				"languageID" => "ZTYZTPX",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -150,6 +159,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Ceres-Webshop gestalten. Hier findest du folgende Informationen:",
+				"languageID" => "PB6K87K",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -165,6 +175,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Auftragsabwicklung vorbereiten. Hier findest du folgende Informationen:",
+				"languageID" => "C0B259C",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -180,6 +191,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Plugins dem System hinzufügen. Hier findest du folgende Informationen:",
+				"languageID" => "KQTQONO",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -195,6 +207,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Schnelleinstieg eBay. Hier findest du folgende Informationen:",
+				"languageID" => "HBY8NX5",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -210,6 +223,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Vorgänge automatisieren. Hier findest du folgende Informationen:",
+				"languageID" => "MCO2VYQ",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -225,6 +239,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Die letzten Schritte. Hier findest du folgende Informationen:",
+				"languageID" => "63EEV9V",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -243,6 +258,7 @@ class Metadata {
 		"description" => "",
 		"navAlias" => "",
 		"linkListInto" => "Willkommen im Themenbereich Basics. Hier findest du folgende Informationen:",
+		"languageID" => "YS9J4YY",
 		"children" => 		[
 			[
 				"id" => "fe9135b60a8a3f57b8c6037396d79756",
@@ -256,6 +272,7 @@ class Metadata {
 				"description" => "Verschaffe dir einen Überblick über unsere Assistenten, die dir eine schnelle Systemeinrichtung ermöglichen und viele Funktionen bereitstellen.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Assistenten. Hier findest du folgende Informationen:",
+				"languageID" => "GEVYXVL",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -271,6 +288,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Rechtliches. Hier findest du folgende Informationen:",
+				"languageID" => "SAVT7LY",
 				"children" => 				[
 					[
 						"id" => "4f559529341390d8849eef6359e164f5",
@@ -284,6 +302,7 @@ class Metadata {
 						"description" => "Lade über diese Seite die technische Systemdokumentation von plentymarkets herunter, die den Anwendern der plentymarkets Software jedoch lediglich als Grundlage zur Erstellung deiner Verfahrensdokumentation dient.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Verfahrensdokumentation. Hier findest du folgende Informationen:",
+						"languageID" => "JMGHYFQ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -299,6 +318,7 @@ class Metadata {
 						"description" => "Lade über diese Seite einen Auszug des Verzeichnisses der Verarbeitungstätigkeiten innerhalb der Software plentymarkets gemäß der DSGVO herunter.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich DSGVO. Hier findest du folgende Informationen:",
+						"languageID" => "8NCZ7LJ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -314,6 +334,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Callisto und DSGVO. Hier findest du folgende Informationen:",
+						"languageID" => "RDZYNPP",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -332,6 +353,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Admin-Aufgaben. Hier findest du folgende Informationen:",
+				"languageID" => "G6MTCF6",
 				"children" => 				[
 					[
 						"id" => "5a518de4fc9eb2c878f0da0d0b3bd984",
@@ -345,6 +367,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Dein plentymarkets Konto. Hier findest du folgende Informationen:",
+						"languageID" => "AIXO9P7",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -360,6 +383,7 @@ class Metadata {
 						"description" => "Arbeiten mit plentymarkets: Verwalte Benutzerkonten, lege neue Benutzerkonten an und bearbeite bestehende Benutzerkonten im plentymarkets System.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Benutzerkonten verwalten. Hier findest du folgende Informationen:",
+						"languageID" => "CHBIF6G",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -375,6 +399,7 @@ class Metadata {
 						"description" => "Nutze REST-API, um mit externen Systemen zu kommunizieren.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich REST-API-Schnittstellen einrichten. Hier findest du folgende Informationen:",
+						"languageID" => "JWGLMYW",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -390,6 +415,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Drucker verwalten. Hier findest du folgende Informationen:",
+						"languageID" => "VTQM7SL",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -405,6 +431,7 @@ class Metadata {
 						"description" => "plentyBase installieren",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich plentyBase installieren. Hier findest du folgende Informationen:",
+						"languageID" => "ZDXC8YS",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -420,6 +447,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Entwicklungsstand ändern. Hier findest du folgende Informationen:",
+						"languageID" => "4YXZVNG",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -435,6 +463,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich FTP-Zugang. Hier findest du folgende Informationen:",
+						"languageID" => "HCKHMEI",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -450,6 +479,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Admin-Aufgaben. Hier findest du folgende Informationen:",
+						"languageID" => "S4P1GVO",
 						"children" => 						[
 							[
 								"id" => "61be6687692032e4d19d25e0867a9069",
@@ -463,6 +493,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "",
+								"languageID" => "Z6F5WUG",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -478,6 +509,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "",
+								"languageID" => "LAF1PEI",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -499,6 +531,7 @@ class Metadata {
 				"description" => "Arbeiten mit plentymarkets: Hier finden Sie die Seiten Benutzer verwalten, allgemeine Funktionen und Benutzerkonto personalisieren.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Arbeiten mit plentymarkets. Hier findest du folgende Informationen:",
+				"languageID" => "MWD1GJ4",
 				"children" => 				[
 					[
 						"id" => "7ff61fb2dfb630267c1ec3cc45563e50",
@@ -512,6 +545,7 @@ class Metadata {
 						"description" => "Arbeiten mit plentymarkets: Richten Sie z.B. eigene Shortcuts und eine Signatur ein und personalisieren Sie so Ihr Benutzerkonto im plentymarkets System.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Benutzerkonto personalisieren. Hier findest du folgende Informationen:",
+						"languageID" => "49S4GON",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -527,6 +561,7 @@ class Metadata {
 						"description" => "Erfahre, wie du anhand von URLs in bestimmte Backend-Bereiche gelangst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Backend-URLs. Hier findest du folgende Informationen:",
+						"languageID" => "AXIOIRN",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -542,6 +577,7 @@ class Metadata {
 						"description" => "Arbeiten mit plentymarkets: Füge Menüs als Favoriten hinzu, passe die Menüansicht an und nutze weitere allgemeine Funktionen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Allgemeine Funktionen nutzen. Hier findest du folgende Informationen:",
+						"languageID" => "BBRBTD5",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -557,6 +593,7 @@ class Metadata {
 						"description" => "Erfahre auf dieser Handbuchseite, wie du Boards in plentymarkets verwaltest.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Boards. Hier findest du folgende Informationen:",
+						"languageID" => "KWBLPJJ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -572,6 +609,7 @@ class Metadata {
 						"description" => "Erfahre, wie du Aufgaben und Kalender in plenytmarkets verwaltest.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Aufgaben und Kalender. Hier findest du folgende Informationen:",
+						"languageID" => "U0UVIS6",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -587,6 +625,7 @@ class Metadata {
 						"description" => "Erfahre auf dieser Handbuchseite, wie du Tags in plentymarkets verwaltest.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Tags. Hier findest du folgende Informationen:",
+						"languageID" => "UZRABLS",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -602,6 +641,7 @@ class Metadata {
 						"description" => "Erfahre, wie du das Statistikmodul in plentymarkets verwendest.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Statistik. Hier findest du folgende Informationen:",
+						"languageID" => "CC4EFZF",
 						"children" => 						[
 							[
 								"id" => "99fcd154fd3d6dbb2768838aaea92341",
@@ -615,6 +655,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Statistiken verwalten. Hier findest du folgende Informationen:",
+								"languageID" => "MSLDK1U",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -636,6 +677,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Interne IDs in plentymarkets. Hier findest du folgende Informationen:",
+				"languageID" => "7YAQR1P",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -651,6 +693,7 @@ class Metadata {
 				"description" => "Auf dieser Seite findest du eine Übersicht mit den Enddaten von Softwarepflege und Bereitstellung der Funktionen und Bereiche in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich EOL: Beendigung Softwarepflege und Bereitstellung. Hier findest du folgende Informationen:",
+				"languageID" => "VHKOBHS",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -669,6 +712,7 @@ class Metadata {
 		"description" => "Verschaffen Sie sich einen Überblick über Artikel in plentymarkets.",
 		"navAlias" => "",
 		"linkListInto" => "Willkommen im Themenbereich Artikel. Hier findest du folgende Informationen:",
+		"languageID" => "TP9OCLS",
 		"children" => 		[
 			[
 				"id" => "9d3f6102e243f36976bb3df6f334bb32",
@@ -682,6 +726,7 @@ class Metadata {
 				"description" => "Erfahre mehr über die Artikelstruktur von plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Artikelstruktur kennenlernen. Hier findest du folgende Informationen:",
+				"languageID" => "HM7G8FN",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -697,6 +742,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Kategorien verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "YXK0NOR",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -728,6 +774,7 @@ class Metadata {
 				"description" => "Erfahre, wie du Varianten in plentymarkets kombinierst, um sie im Paket zu verkaufen.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Multipacks, Artikelpakete und Sets verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "NXZCPXN",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -743,6 +790,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Aktualität von Artikeldaten prüfen. Hier findest du folgende Informationen:",
+				"languageID" => "PSROCEP",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -758,6 +806,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Frontend-Artikelsuche verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "NKJXE3I",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -773,6 +822,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Artikel und Kategorien. Hier findest du folgende Informationen:",
+				"languageID" => "ZQL6QKM",
 				"children" => 				[
 					[
 						"id" => "d970892504dc61edc7c650f1c932245f",
@@ -786,6 +836,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Artikel. Hier findest du folgende Informationen:",
+						"languageID" => "",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -801,6 +852,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Kategorien. Hier findest du folgende Informationen:",
+						"languageID" => "",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -822,6 +874,7 @@ class Metadata {
 		"description" => "",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Warenwirtschaft. Hier findest du folgende Informationen:",
+		"languageID" => "200DET3",
 		"children" => 		[
 			[
 				"id" => "f56ebddcd70cf0c60da1fac89d08fead",
@@ -835,6 +888,7 @@ class Metadata {
 				"description" => "Erfahre, wie du ein Lager erstellst und den Aufbau gestaltest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Lager einrichten. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -850,6 +904,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Wareneingänge verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -865,6 +920,7 @@ class Metadata {
 				"description" => "Erfahre, wie du mit der neuen Nachbestellung in plentymarkets arbeitest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Nachbestellungen verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => 				[
 					[
 						"id" => "8143524871967258bafb33cde0383d76",
@@ -878,6 +934,7 @@ class Metadata {
 						"description" => "Erfahre, wie du mit der Funktion zur Nachbestellung in plentymarkets arbeitest.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Nachbestellungen vornehmen. Hier findest du folgende Informationen:",
+						"languageID" => "",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -893,6 +950,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Rückstandsliste nutzen. Hier findest du folgende Informationen:",
+						"languageID" => "",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -908,6 +966,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Nachbestellungen exportieren. Hier findest du folgende Informationen:",
+						"languageID" => "",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -926,6 +985,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Warenbestände verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -941,6 +1001,7 @@ class Metadata {
 				"description" => "Erfahre, wie du mit Lager-Umbuchungen in deinem plentymarkets System arbeitest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Umbuchungen vornehmen. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -956,6 +1017,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich MHD/Charge verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -971,6 +1033,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Inventur vornehmen. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -986,6 +1049,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Waren ausbuchen. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1001,6 +1065,7 @@ class Metadata {
 				"description" => "Erfahre wie Du den Bestand eines Lagers komplett in ein anderes umbuchen kannst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Bestand umbuchen/korrigieren/löschen. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1016,6 +1081,7 @@ class Metadata {
 				"description" => "Erfahre wie Du deinen Warenbestand täglich sichern kannst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Warenbestand täglich sichern. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -1034,6 +1100,7 @@ class Metadata {
 		"description" => "Erfahre, wie du Kontaktdaten verwaltest, das Ticketsystem für deine Kundenkommunikation nutzt und E-Mails und Newsletter versendest.",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich CRM. Hier findest du folgende Informationen:",
+		"languageID" => "IWIIOPV",
 		"children" => 		[
 			[
 				"id" => "a61bb34674affc5ac8aff96fa3110fac",
@@ -1047,6 +1114,7 @@ class Metadata {
 				"description" => "Erfahre, wie du in plentymarkets Kontakte, Adressen und Firmen verwaltest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Kontakte verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "KO9RPU2",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1062,6 +1130,7 @@ class Metadata {
 				"description" => "Erfahre, wie du E-Mail-Vorlagen einrichtest und E-Mails automatisiert an deine Kunden versendest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich E-Mails versenden. Hier findest du folgende Informationen:",
+				"languageID" => "NIUDPCH",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1077,6 +1146,7 @@ class Metadata {
 				"description" => "Erfahre, wie du das Ticketsystem in plentymarkets für deine Kundenkommunikation nutzt.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Ticketsystem nutzen. Hier findest du folgende Informationen:",
+				"languageID" => "0QJVUMT",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1092,6 +1162,7 @@ class Metadata {
 				"description" => "Erfahre, wie du Newsletter über plentymarkets an deine Kunden versenden.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Newsletter versenden. Hier findest du folgende Informationen:",
+				"languageID" => "JIHLVCR",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -1110,6 +1181,7 @@ class Metadata {
 		"description" => "Erfahren Sie, wie Sie Ihre Buchhaltung einrichten, Dokumente einrichten und generieren sowie Aufträge verwalten.",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Aufträge. Hier findest du folgende Informationen:",
+		"languageID" => "QV9OPKI",
 		"children" => 		[
 			[
 				"id" => "5d09ec96a765bb7df8184e33718433ea",
@@ -1123,6 +1195,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Grundeinstellungen. Hier findest du folgende Informationen:",
+				"languageID" => "UQ3KZYP",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1138,6 +1211,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Aufträge verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "1HDXOGT",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1153,6 +1227,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Buchhaltung. Hier findest du folgende Informationen:",
+				"languageID" => "O4EBBOD",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1168,6 +1243,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "Übersicht",
 				"linkListInto" => "Willkommen im Themenbereich Auftragsdokumente. Hier findest du folgende Informationen:",
+				"languageID" => "SVWTISV",
 				"children" => 				[
 					[
 						"id" => "50495050b01fc9d335fa2827d5554404",
@@ -1181,6 +1257,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Rechnungen. Hier findest du folgende Informationen:",
+						"languageID" => "I75PCMI",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1196,6 +1273,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Gutschriften. Hier findest du folgende Informationen:",
+						"languageID" => "GHUUQJS",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1211,6 +1289,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Mahnungen. Hier findest du folgende Informationen:",
+						"languageID" => "SDRBZ5M",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1226,6 +1305,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Lieferscheine. Hier findest du folgende Informationen:",
+						"languageID" => "7W56HLU",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1241,6 +1321,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Picklisten. Hier findest du folgende Informationen:",
+						"languageID" => "C8MJJH7",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1256,6 +1337,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Lager-Picklisten. Hier findest du folgende Informationen:",
+						"languageID" => "XFYMZBD",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1271,6 +1353,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Packlisten. Hier findest du folgende Informationen:",
+						"languageID" => "ZGVQU9F",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1286,6 +1369,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Gelangensbestätigungen. Hier findest du folgende Informationen:",
+						"languageID" => "JPM7S1A",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1301,6 +1385,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Rücksendescheine. Hier findest du folgende Informationen:",
+						"languageID" => "S938BDY",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1316,6 +1401,7 @@ class Metadata {
 						"description" => "Erfahre wie Du mit einem Prozess eine Sammelrechnung erzeugst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Sammel-PDF erstellen. Hier findest du folgende Informationen:",
+						"languageID" => "HDI34RR",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -1334,6 +1420,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Auftragsherkunft. Hier findest du folgende Informationen:",
+				"languageID" => "G39SVHL",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1349,6 +1436,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Scheduler. Hier findest du folgende Informationen:",
+				"languageID" => "XULCZ1F",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1364,6 +1452,7 @@ class Metadata {
 				"description" => "Erfahre auf dieser Handbuchseite, wie du Gutscheine und Gutscheinkampagnen in plentymarkets verwaltest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Gutscheine. Hier findest du folgende Informationen:",
+				"languageID" => "V9GZLXD",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1379,6 +1468,7 @@ class Metadata {
 				"description" => "Erfahre auf dieser Handbuchseite, wie du die Paketinhaltsliste in plentymarkets verwendest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Paketinhaltsliste. Hier findest du folgende Informationen:",
+				"languageID" => "XM4EPEE",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1394,6 +1484,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Dokumentenarchiv. Hier findest du folgende Informationen:",
+				"languageID" => "GDRKPMA",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -1412,6 +1503,7 @@ class Metadata {
 		"description" => "Payment in plentymarkets: Zahlungen verwalten und Schnittstellen zu Zahlungsarten und Zahlungsanbietern einrichten.",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Payment. Hier findest du folgende Informationen:",
+		"languageID" => "EJC9AQU",
 		"children" => 		[
 			[
 				"id" => "43a4e201d915a714ebc3e023f2b023b9",
@@ -1425,6 +1517,7 @@ class Metadata {
 				"description" => "Payment in plentymarkets: Richte Zahlungsarten in deinem plentymarkets System ein und aktiviere diese.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Zahlungsarten verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "MVDQHNC",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1440,6 +1533,7 @@ class Metadata {
 				"description" => "Payment in plentymarkets: Erfahre alles über Zahlungseingänge und Zahlungsausgänge.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Zahlungen verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "JJC5DHB",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1455,6 +1549,7 @@ class Metadata {
 				"description" => "Payment in plentymarkets: Verwalte deine Bankdaten und die Bankdaten einer Kunden. Richte EBICS und SEPA in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Bankdaten verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "69AQ724",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1470,6 +1565,7 @@ class Metadata {
 				"description" => "Payment in plentymarkets: Richte Währungen in deinem plentymarkets System ein und passe die Anzeige der Währung im Webshop an.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Währungen verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "SLNMMPS",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1485,6 +1581,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: PayPal-Plugin. Hier findest du folgende Informationen:",
+				"languageID" => "PBKWNPM",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1500,6 +1597,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: EBICS-Plugin. Hier findest du folgende Informationen:",
+				"languageID" => "YHMKO3V",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1515,6 +1613,7 @@ class Metadata {
 				"description" => "Payment in plentymarkets: Schnittstellen zu Zahlungsarten und Zahlungsanbietern einrichten.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Zahlungsanbieter. Hier findest du folgende Informationen:",
+				"languageID" => "X3QHMOA",
 				"children" => 				[
 					[
 						"id" => "7a989b1bdfd633e752bcdb36c488730f",
@@ -1528,6 +1627,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu PayPal in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: PayPal. Hier findest du folgende Informationen:",
+						"languageID" => "LLZC8U7",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1543,6 +1643,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu PayPal PLUS in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: PayPal PLUS. Hier findest du folgende Informationen:",
+						"languageID" => "LCFSITP",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1558,6 +1659,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte den Inkassodienstleister ADU-Inkasso in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: ADU-Inkasso. Hier findest du folgende Informationen:",
+						"languageID" => "OVNEYEC",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1573,6 +1675,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu Amazon Pay in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Amazon Pay. Hier findest du folgende Informationen:",
+						"languageID" => "ADNY8MR",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1588,6 +1691,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte den Inkassodienstleister atriga und die Bonitätsprüfung atrigapaymax in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich atriga. Hier findest du folgende Informationen:",
+						"languageID" => "HOMBF18",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1603,6 +1707,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu BitPay in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: BitPay. Hier findest du folgende Informationen:",
+						"languageID" => "N4JXKZK",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1618,6 +1723,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu ConCardis in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: ConCardis. Hier findest du folgende Informationen:",
+						"languageID" => "T09QMVV",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1633,6 +1739,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu CrefoPay in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: CrefoPay. Hier findest du folgende Informationen:",
+						"languageID" => "34EYYS7",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1648,6 +1755,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu ExperCash in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: ExperCash. Hier findest du folgende Informationen:",
+						"languageID" => "S4B24JZ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1663,6 +1771,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu heidelpay in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: heidelpay. Hier findest du folgende Informationen:",
+						"languageID" => "CRAPGQQ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1678,6 +1787,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu Klarna in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Klarna. Hier findest du folgende Informationen:",
+						"languageID" => "DLEUT5R",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1693,6 +1803,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu Klarna Checkout in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Klarna Checkout. Hier findest du folgende Informationen:",
+						"languageID" => "XAAEUNW",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1708,6 +1819,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu Klarna Checkout UK in plentymarkets ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Klarna Checkout UK. Hier findest du folgende Informationen:",
+						"languageID" => "QLOVOII",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1723,6 +1835,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richten die Schnittstelle zu Masterpayment in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Masterpayment. Hier findest du folgende Informationen:",
+						"languageID" => "MQCLU4D",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1738,6 +1851,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zum Inkassodienstleister mediafinanz in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: mediafinanz. Hier findest du folgende Informationen:",
+						"languageID" => "QDXJZCC",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1753,6 +1867,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle für Paymorrow in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Paymorrow. Hier findest du folgende Informationen:",
+						"languageID" => "OMFUTDV",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1768,6 +1883,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu Payolution in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Payolution. Hier findest du folgende Informationen:",
+						"languageID" => "C5RTU4M",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1783,6 +1899,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu PAYONE in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: PAYONE. Hier findest du folgende Informationen:",
+						"languageID" => "JZAWRPZ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1798,6 +1915,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu POSTPAY in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: POSTPAY. Hier findest du folgende Informationen:",
+						"languageID" => "VCYXWN1",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1813,6 +1931,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu Saferpay in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Saferpay. Hier findest du folgende Informationen:",
+						"languageID" => "84YOU6M",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1828,6 +1947,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu Sage Pay in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Sage Pay. Hier findest du folgende Informationen:",
+						"languageID" => "30W7BE5",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1843,6 +1963,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu Santander Consumer Bank in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Santander Consumer Bank. Hier findest du folgende Informationen:",
+						"languageID" => "LGBGR7F",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1858,6 +1979,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu Skrill in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Skrill. Hier findest du folgende Informationen:",
+						"languageID" => "1QVYZ2T",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1873,6 +1995,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu SOFORT Überweisung in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: SOFORT Überweisung. Hier findest du folgende Informationen:",
+						"languageID" => "MNRND21",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1888,6 +2011,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu Wirecard in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Wirecard. Hier findest du folgende Informationen:",
+						"languageID" => "QNI2FRR",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1903,6 +2027,7 @@ class Metadata {
 						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu WorldPay in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: WorldPay. Hier findest du folgende Informationen:",
+						"languageID" => "E59VXXE",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -1924,6 +2049,7 @@ class Metadata {
 		"description" => "In diesem Themenbereich erfährst du alles über Versanddienstleister, Fulfillment-Dienstleister, den Versandprozess und Versandprofile.",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Fulfillment. Hier findest du folgende Informationen:",
+		"languageID" => "BELRROP",
 		"children" => 		[
 			[
 				"id" => "c16ecf83869b0b2f08c85a4a0697f8bb",
@@ -1937,6 +2063,7 @@ class Metadata {
 				"description" => "Erfahre, wie du Versandprofile, Versandpakete und Versanddienstleister in plentymarkets einrichtest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Versand vorbereiten. Hier findest du folgende Informationen:",
+				"languageID" => "KQ2V6EE",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1952,6 +2079,7 @@ class Metadata {
 				"description" => "Erfahre, wie du Versandaufträge anmeldest und Polling-Dateien und Labels erzeugst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Versand-Center nutzen. Hier findest du folgende Informationen:",
+				"languageID" => "YX8GNS9",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1967,6 +2095,7 @@ class Metadata {
 				"description" => "Erfahre, wie du die Lieferanschriftenliste exportierst, Paketnummern importierst, Adressetiketten einrichtest und Einlieferungslisten generierst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Dokumente erzeugen. Hier findest du folgende Informationen:",
+				"languageID" => "SYG5G8B",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1982,6 +2111,7 @@ class Metadata {
 				"description" => "Erfahre, wie du eBay Fulfillment in plentymarkets einrichtest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich eBay Fulfillment Integrationsleitfaden. Hier findest du folgende Informationen:",
+				"languageID" => "688XH7L",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1997,6 +2127,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: DHL. Hier findest du folgende Informationen:",
+				"languageID" => "URSDY8P",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -2012,6 +2143,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: UPS. Hier findest du folgende Informationen:",
+				"languageID" => "6TD0IZW",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -2027,6 +2159,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Versandartwahl/Geoblocking. Hier findest du folgende Informationen:",
+				"languageID" => "XEWBOJ6",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -2042,6 +2175,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Postleitzahlenfilter. Hier findest du folgende Informationen:",
+				"languageID" => "CSGWTHG",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -2060,6 +2194,7 @@ class Metadata {
 		"description" => "",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Daten. Hier findest du folgende Informationen:",
+		"languageID" => "PXLNINJ",
 		"children" => 		[
 			[
 				"id" => "b1d48bf1006c47a192ece2df88c22184",
@@ -2073,6 +2208,7 @@ class Metadata {
 				"description" => "Erfahren Sie, wie Sie das Plugin ElasticSync nutzen, um Daten in plentymarkets zu importieren.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Daten importieren. Hier findest du folgende Informationen:",
+				"languageID" => "QMSHHHL",
 				"children" => 				[
 					[
 						"id" => "ce1ea74109676257ce2f14f5b512fb97",
@@ -2086,6 +2222,7 @@ class Metadata {
 						"description" => "Erfahre, wie du mit ElasticSync Daten in plentymarkets importierst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Daten mit ElasticSync importieren. Hier findest du folgende Informationen:",
+						"languageID" => "6Z40YCT",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -2101,6 +2238,7 @@ class Metadata {
 						"description" => "Hier finden Sie praktische Anleitungen zum Datenimport mit ElasticSync.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Sync-Typen. Hier findest du folgende Informationen:",
+						"languageID" => "I6XYGLR",
 						"children" => 						[
 							[
 								"id" => "b5fb523b1d04f903bbe25d62aa204183",
@@ -2114,6 +2252,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Artikel. Hier findest du folgende Informationen:",
+								"languageID" => "QUGDW1A",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2129,6 +2268,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Attribute. Hier findest du folgende Informationen:",
+								"languageID" => "ZUBYTQO",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2144,6 +2284,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Aufträge. Hier findest du folgende Informationen:",
+								"languageID" => "ZSCPDPE",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2159,6 +2300,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Eigenschaften. Hier findest du folgende Informationen:",
+								"languageID" => "KKVLRL6",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2174,6 +2316,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Facetten. Hier findest du folgende Informationen:",
+								"languageID" => "GJRZ6BN",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2189,6 +2332,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Fahrzeugverwendungsliste. Hier findest du folgende Informationen:",
+								"languageID" => "FAQVTNA",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2204,6 +2348,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Gutschein-Codes. Hier findest du folgende Informationen:",
+								"languageID" => "5YTZP74",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2219,6 +2364,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Hersteller. Hier findest du folgende Informationen:",
+								"languageID" => "0WCHQHL",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2234,6 +2380,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Kampagnen. Hier findest du folgende Informationen:",
+								"languageID" => "YQ1TVBF",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2249,6 +2396,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Kategorien. Hier findest du folgende Informationen:",
+								"languageID" => "GV1MLXQ",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2264,6 +2412,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Kontakte, Firmen und Adressen. Hier findest du folgende Informationen:",
+								"languageID" => "SMSK85D",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2279,6 +2428,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Lager. Hier findest du folgende Informationen:",
+								"languageID" => "IS31LNZ",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2294,6 +2444,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Market-Listing. Hier findest du folgende Informationen:",
+								"languageID" => "SLFTH6B",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2309,6 +2460,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Merkmale. Hier findest du folgende Informationen:",
+								"languageID" => "C7ST0UL",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2324,6 +2476,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Newsletter-Empfänger. Hier findest du folgende Informationen:",
+								"languageID" => "8YOA2GS",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2339,6 +2492,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Notizen. Hier findest du folgende Informationen:",
+								"languageID" => "XJILTUN",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2354,6 +2508,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Warenbestand. Hier findest du folgende Informationen:",
+								"languageID" => "BA1OBE6",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2369,6 +2524,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Wareneingang. Hier findest du folgende Informationen:",
+								"languageID" => "QTSFR4P",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -2387,6 +2543,7 @@ class Metadata {
 						"description" => "Hier finden Sie praktische Anleitungen zum Datenimport mit ElasticSync.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: ElasticSync. Hier findest du folgende Informationen:",
+						"languageID" => "QCR3P2E",
 						"children" => 						[
 							[
 								"id" => "beabd73bd2d2e6880585fdda4feec04f",
@@ -2400,6 +2557,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ASIN und ePID. Hier findest du folgende Informationen:",
+								"languageID" => "M534KLI",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2415,6 +2573,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Auftragspositionen. Hier findest du folgende Informationen:",
+								"languageID" => "X6TW7XN",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2430,6 +2589,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Cross-Selling-Verknüpfungen. Hier findest du folgende Informationen:",
+								"languageID" => "NFZBNLQ",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2445,6 +2605,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich eBay-Merkmale anlegen. Hier findest du folgende Informationen:",
+								"languageID" => "AAQM038",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2460,6 +2621,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Fahrzeugverwendungsliste erstellen. Hier findest du folgende Informationen:",
+								"languageID" => "LJBIR0F",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2475,6 +2637,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Kontaktdaten. Hier findest du folgende Informationen:",
+								"languageID" => "ZMEX0V9",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2490,6 +2653,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Lagerorte anpassen. Hier findest du folgende Informationen:",
+								"languageID" => "PA71CHE",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2505,6 +2669,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Listings erstellen. Hier findest du folgende Informationen:",
+								"languageID" => "KWPZ4GE",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2520,6 +2685,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Mandantenverknüpfung. Hier findest du folgende Informationen:",
+								"languageID" => "OGFCILR",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2535,6 +2701,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Merkmalverknüpfungen. Hier findest du folgende Informationen:",
+								"languageID" => "EXWPB7O",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2550,6 +2717,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Paketnummern von Versanddienstleistern importieren. Hier findest du folgende Informationen:",
+								"languageID" => "NG7LSRE",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2565,6 +2733,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Variantenanlage. Hier findest du folgende Informationen:",
+								"languageID" => "K1IPG4S",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -2586,6 +2755,7 @@ class Metadata {
 				"description" => "Erfahren Sie, wie Sie das Plugin ElasticExport nutzen, um Daten aus plentymarkets zu exportieren.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Daten exportieren. Hier findest du folgende Informationen:",
+				"languageID" => "FGTSSBX",
 				"children" => 				[
 					[
 						"id" => "9824a1fe39bed1cad696d61c7d056b9c",
@@ -2599,6 +2769,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Elastischer Export. Hier findest du folgende Informationen:",
+						"languageID" => "COEO41G",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -2614,6 +2785,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Elastischer Export. Hier findest du folgende Informationen:",
+						"languageID" => "U3OWBES",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -2629,6 +2801,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Datenformate mit FormatDesigner erstellen. Hier findest du folgende Informationen:",
+						"languageID" => "J8CFXWD",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -2644,6 +2817,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Dropshipping und ElasticExport. Hier findest du folgende Informationen:",
+						"languageID" => "BSVUAFW",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -2659,6 +2833,7 @@ class Metadata {
 						"description" => "Im Menü *Daten » Kataloge* konfigurierst du den Export von Variantendaten an Marktplätze.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Kataloge verwalten. Hier findest du folgende Informationen:",
+						"languageID" => "FHQHFWO",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -2677,6 +2852,7 @@ class Metadata {
 				"description" => "Erfahre, wie du nach Log-Einträgen suchen kannst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Daten-Log. Hier findest du folgende Informationen:",
+				"languageID" => "8PM1DPV",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -2692,6 +2868,7 @@ class Metadata {
 				"description" => "Erfahre, wie du in plentymarkets automatisch Daten bereinigst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Datenbereinigung durchführen. Hier findest du folgende Informationen:",
+				"languageID" => "BPZ0VS4",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -2707,6 +2884,7 @@ class Metadata {
 				"description" => "Erfahre, wie du in plentymarkets Daten sicherst und einspielst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Datenbank-Backup durchführen. Hier findest du folgende Informationen:",
+				"languageID" => "XCMTBYE",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -2722,6 +2900,7 @@ class Metadata {
 				"description" => "Erfahren Sie, wie Sie Rohdaten exportieren.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Report. Hier findest du folgende Informationen:",
+				"languageID" => "AZ5LGXN",
 				"children" => 				[
 					[
 						"id" => "cac6530f46b7f0e865ec74b6b6bb374b",
@@ -2735,6 +2914,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Reports verwalten. Hier findest du folgende Informationen:",
+						"languageID" => "LAKHMQK",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -2750,6 +2930,7 @@ class Metadata {
 						"description" => "Erfahren Sie, welche Datenformate Ihnen für den Export von Rohdaten in plentymarkets zur Verfügung stehen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Datenformate. Hier findest du folgende Informationen:",
+						"languageID" => "9IQX4QW",
 						"children" => 						[
 							[
 								"id" => "2a471f485027c106e45e50b60be8ed66",
@@ -2763,6 +2944,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich accountContacts. Hier findest du folgende Informationen:",
+								"languageID" => "KQ9IDYG",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2778,6 +2960,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich accounts. Hier findest du folgende Informationen:",
+								"languageID" => "6QLW9EB",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2793,6 +2976,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich categories. Hier findest du folgende Informationen:",
+								"languageID" => "3UIWVIY",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2808,6 +2992,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich feedbacks. Hier findest du folgende Informationen:",
+								"languageID" => "DMP04KN",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2823,6 +3008,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich itemManufacturers. Hier findest du folgende Informationen:",
+								"languageID" => "GQZMVOH",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2838,6 +3024,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich itemVariations. Hier findest du folgende Informationen:",
+								"languageID" => "OKSTZEM",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2853,6 +3040,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich itemVariationSuppliers. Hier findest du folgende Informationen:",
+								"languageID" => "H87EYMI",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2868,6 +3056,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich orderDocuments. Hier findest du folgende Informationen:",
+								"languageID" => "KUJ96F4",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2883,6 +3072,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich orderItemAmounts. Hier findest du folgende Informationen:",
+								"languageID" => "7RD1PT0",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2898,6 +3088,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich orderItemProperties. Hier findest du folgende Informationen:",
+								"languageID" => "FW0AGZS",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2913,6 +3104,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich orderItems. Hier findest du folgende Informationen:",
+								"languageID" => "JCVCGKZ",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2928,6 +3120,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich orderProperties. Hier findest du folgende Informationen:",
+								"languageID" => "SKCMPG4",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2943,6 +3136,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich orders. Hier findest du folgende Informationen:",
+								"languageID" => "KGCWSW7",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2958,6 +3152,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich orderStatuses. Hier findest du folgende Informationen:",
+								"languageID" => "VNAGXVK",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2973,6 +3168,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich paymentOrderRelations. Hier findest du folgende Informationen:",
+								"languageID" => "SHFEV9P",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -2988,6 +3184,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich payments. Hier findest du folgende Informationen:",
+								"languageID" => "SPJWNQP",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3003,6 +3200,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich stockManagementStock. Hier findest du folgende Informationen:",
+								"languageID" => "YBRJGDK",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3018,6 +3216,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich stockManagementStockMovements. Hier findest du folgende Informationen:",
+								"languageID" => "YXJKHWO",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3033,6 +3232,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich stockManagementWarehouses. Hier findest du folgende Informationen:",
+								"languageID" => "FZLJW5B",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3048,6 +3248,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich tagRelations. Hier findest du folgende Informationen:",
+								"languageID" => "QR1YQRX",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3063,6 +3264,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich tags. Hier findest du folgende Informationen:",
+								"languageID" => "MBI8J3J",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3078,6 +3280,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich users. Hier findest du folgende Informationen:",
+								"languageID" => "TVQUX2T",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -3099,6 +3302,7 @@ class Metadata {
 				"description" => "Im API Log finden Sie eine Historie über interne Vorgänge und Vorgänge, die über Schnittstellen ausgeführt wurden.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Alt: API-Log. Hier findest du folgende Informationen:",
+				"languageID" => "7EM3XRN",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -3114,6 +3318,7 @@ class Metadata {
 				"description" => "Erfahren Sie, wie Sie den dynamischen Import und den dynamischen Export in plentymarkets nutzen und welche Datenformate Ihnen zur Verfügung stehen.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Alt: Dynamischer Datenaustausch. Hier findest du folgende Informationen:",
+				"languageID" => "090WP3K",
 				"children" => 				[
 					[
 						"id" => "129e66931c67fb4550609b0362fe24ab",
@@ -3127,6 +3332,7 @@ class Metadata {
 						"description" => "Erfahre, wie du vorkonfigurierte und individualisierbare Datenformate sowie Datenformate für Preissuchmaschinen exportieren.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Daten über dynamischen Export exportieren. Hier findest du folgende Informationen:",
+						"languageID" => "TL3MS5D",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -3142,6 +3348,7 @@ class Metadata {
 						"description" => "Erfahre, wie du Datenformate erstellst und den dynamischen Import nutzt.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Daten über dynamischen Import importieren. Hier findest du folgende Informationen:",
+						"languageID" => "XS9XT6R",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -3157,6 +3364,7 @@ class Metadata {
 						"description" => "Erfahren Sie, welche Datenformate Ihnen für den dynamischen Import und dynamischen Export in plentymarkets zur Verfügung stehen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Datenformate. Hier findest du folgende Informationen:",
+						"languageID" => "XDEKNSD",
 						"children" => 						[
 							[
 								"id" => "eac69e23e70e35d4613563e992713a44",
@@ -3170,6 +3378,7 @@ class Metadata {
 								"description" => "Datenformat Attribute",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Attribute. Hier findest du folgende Informationen:",
+								"languageID" => "DFTDUWV",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3185,6 +3394,7 @@ class Metadata {
 								"description" => "Campaign",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Campaign. Hier findest du folgende Informationen:",
+								"languageID" => "O2X1MPC",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3200,6 +3410,7 @@ class Metadata {
 								"description" => "CampaignCoupon",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich CampaignCoupon. Hier findest du folgende Informationen:",
+								"languageID" => "KNP2JHY",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3215,6 +3426,7 @@ class Metadata {
 								"description" => "CampaignCouponContact",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich CampaignCouponContact. Hier findest du folgende Informationen:",
+								"languageID" => "46JUBLA",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3230,6 +3442,7 @@ class Metadata {
 								"description" => "CampaignCouponOrder",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich CampaignCouponOrder. Hier findest du folgende Informationen:",
+								"languageID" => "MQX7OJK",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3245,6 +3458,7 @@ class Metadata {
 								"description" => "Datenformat Category",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Category. Hier findest du folgende Informationen:",
+								"languageID" => "XQ2CJU9",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3260,6 +3474,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich CreditNote. Hier findest du folgende Informationen:",
+								"languageID" => "PGH1PZR",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3275,6 +3490,7 @@ class Metadata {
 								"description" => "Mit dem Datenformat Customer exportieren Sie Kundenstammdaten.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Customer. Hier findest du folgende Informationen:",
+								"languageID" => "4HMZIVC",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3290,6 +3506,7 @@ class Metadata {
 								"description" => "Mit dem Datenformat CustomerNewsletter exportieren Sie Daten von Kunden, die den Newsletter beziehen.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich CustomerNewsletter. Hier findest du folgende Informationen:",
+								"languageID" => "0EUDZWC",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3305,6 +3522,7 @@ class Metadata {
 								"description" => "Mit dem Datenformat CustomerNote exportieren Sie Notizen, die in Kundendaten erstellt wurden.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich CustomerNote. Hier findest du folgende Informationen:",
+								"languageID" => "LX4Y5WC",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3320,6 +3538,7 @@ class Metadata {
 								"description" => "Mit dem Datenformat CustomerProperty exportieren Sie Kundeneigenschaften.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich CustomerProperty. Hier findest du folgende Informationen:",
+								"languageID" => "OLPLJWR",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3335,6 +3554,7 @@ class Metadata {
 								"description" => "Mit dem Datenformat CustomerPropertyLink exportieren Sie Kundeneigenschaften und die für die Kunden eingegebenen Werte.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich CustomerPropertyLink. Hier findest du folgende Informationen:",
+								"languageID" => "RWENFES",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3350,6 +3570,7 @@ class Metadata {
 								"description" => "Datenformat EbayPartsFitment",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich EbayPartsFitment. Hier findest du folgende Informationen:",
+								"languageID" => "KDY7WIN",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3365,6 +3586,7 @@ class Metadata {
 								"description" => "Datenformat EbayTitleMatch",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich EbayTitleMatch. Hier findest du folgende Informationen:",
+								"languageID" => "TPDUGM1",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3380,6 +3602,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Facet. Hier findest du folgende Informationen:",
+								"languageID" => "XIOWUI9",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3395,6 +3618,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich FacetReference. Hier findest du folgende Informationen:",
+								"languageID" => "JF1PP2J",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3410,6 +3634,7 @@ class Metadata {
 								"description" => "Spezialformat IncomingItem zum Buchen von Wareneingängen",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich IncomingItems. Hier findest du folgende Informationen:",
+								"languageID" => "PWHUKJB",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3425,6 +3650,7 @@ class Metadata {
 								"description" => "Datenformat Item",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Item. Hier findest du folgende Informationen:",
+								"languageID" => "7KTEV56",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3440,6 +3666,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ItemImage. Hier findest du folgende Informationen:",
+								"languageID" => "LQK63HJ",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3455,6 +3682,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ItemImageName. Hier findest du folgende Informationen:",
+								"languageID" => "KEDRWGO",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3470,6 +3698,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ItemImageReference. Hier findest du folgende Informationen:",
+								"languageID" => "TPMJ6ZL",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3485,6 +3714,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ItemListingMarket. Hier findest du folgende Informationen:",
+								"languageID" => "8MA06MC",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3500,6 +3730,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ItemListingMarketEbay. Hier findest du folgende Informationen:",
+								"languageID" => "LOAGUFP",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3515,6 +3746,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ItemListingMarketHistory. Hier findest du folgende Informationen:",
+								"languageID" => "AFLYNB6",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3530,6 +3762,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ItemListingMarketHood. Hier findest du folgende Informationen:",
+								"languageID" => "3Q1JSEP",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3545,6 +3778,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ItemListingMarketRicardo. Hier findest du folgende Informationen:",
+								"languageID" => "ZBNTZWF",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3560,6 +3794,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich ItemListingMarketText. Hier findest du folgende Informationen:",
+								"languageID" => "SP8D8AW",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3575,6 +3810,7 @@ class Metadata {
 								"description" => "Datenformat Order",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Order. Hier findest du folgende Informationen:",
+								"languageID" => "MFCBRYF",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3590,6 +3826,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich OrderComplete. Hier findest du folgende Informationen:",
+								"languageID" => "8MBH0FX",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3605,6 +3842,7 @@ class Metadata {
 								"description" => "Datenformat OrderItems",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich OrderItems. Hier findest du folgende Informationen:",
+								"languageID" => "SKXU9KC",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3620,6 +3858,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich OrderListForFulfillment. Hier findest du folgende Informationen:",
+								"languageID" => "9DUAHIW",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3635,6 +3874,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Producer. Hier findest du folgende Informationen:",
+								"languageID" => "FHWX2DB",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3650,6 +3890,7 @@ class Metadata {
 								"description" => "Datenformat",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich SerialKeys. Hier findest du folgende Informationen:",
+								"languageID" => "YM58IAX",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3665,6 +3906,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Stock. Hier findest du folgende Informationen:",
+								"languageID" => "FET4KI7",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3680,6 +3922,7 @@ class Metadata {
 								"description" => "Datenformat StockMovement",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich StockMovement. Hier findest du folgende Informationen:",
+								"languageID" => "ONYPLJA",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3695,6 +3938,7 @@ class Metadata {
 								"description" => "Datenformat Variation",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Variation. Hier findest du folgende Informationen:",
+								"languageID" => "ZQYE7NM",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3710,6 +3954,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich VariationAdditionalSKU. Hier findest du folgende Informationen:",
+								"languageID" => "ETCLIAT",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3725,6 +3970,7 @@ class Metadata {
 								"description" => "VariationBarcode",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich VariationBarcode. Hier findest du folgende Informationen:",
+								"languageID" => "PL8WIX7",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3740,6 +3986,7 @@ class Metadata {
 								"description" => "Datenformat VariationBundle",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich VariationBundle. Hier findest du folgende Informationen:",
+								"languageID" => "MFXHUVW",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3755,6 +4002,7 @@ class Metadata {
 								"description" => "Datenformat VariationCategories",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich VariationCategories. Hier findest du folgende Informationen:",
+								"languageID" => "B8M3ONH",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3770,6 +4018,7 @@ class Metadata {
 								"description" => "Datenformat VariationMarketLink",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich VariationMarketLink. Hier findest du folgende Informationen:",
+								"languageID" => "XTK27MX",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3785,6 +4034,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich VariationSalesPrice. Hier findest du folgende Informationen:",
+								"languageID" => "HJKIYI2",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3800,6 +4050,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich VariationSKU. Hier findest du folgende Informationen:",
+								"languageID" => "M3IEOLY",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3815,6 +4066,7 @@ class Metadata {
 								"description" => "Datenformat VariationSupplier",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich VariationSupplier. Hier findest du folgende Informationen:",
+								"languageID" => "3ZR2YS0",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3830,6 +4082,7 @@ class Metadata {
 								"description" => "Datenformat VariationWarehouse",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich VariationWarehouse. Hier findest du folgende Informationen:",
+								"languageID" => "PHIMGMR",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -3845,6 +4098,7 @@ class Metadata {
 								"description" => "Datenformat Warehouse",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Warehouse. Hier findest du folgende Informationen:",
+								"languageID" => "MBTTKOI",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -3869,6 +4123,7 @@ class Metadata {
 		"description" => "",
 		"navAlias" => "",
 		"linkListInto" => "Willkommen im Themenbereich Webshop. Hier findest du folgende Informationen:",
+		"languageID" => "MRYCME4",
 		"children" => 		[
 			[
 				"id" => "6451239269053e0c7726bdcb97fb373e",
@@ -3882,6 +4137,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Ceres-Webshop einrichten. Hier findest du folgende Informationen:",
+				"languageID" => "GW5QHSI",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -3897,6 +4153,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich IO einrichten. Hier findest du folgende Informationen:",
+				"languageID" => "J4PED99",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -3912,6 +4169,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich ShopBuilder einrichten. Hier findest du folgende Informationen:",
+				"languageID" => "UC8C8W9",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -3927,6 +4185,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Feedbacks verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "HLDXN6U",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -3942,6 +4201,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Mandanten verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "BU7X5JP",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -3957,6 +4217,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Ceres. Hier findest du folgende Informationen:",
+				"languageID" => "XJY0P6P",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -3972,6 +4233,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Referenz. Hier findest du folgende Informationen:",
+				"languageID" => "VWGZVVE",
 				"children" => 				[
 					[
 						"id" => "bd38c7dfbd14f46f1a412e8aa0839121",
@@ -3985,6 +4247,7 @@ class Metadata {
 						"description" => "Diese Anleitung hilft Theme-Entwicklern dabei, ihre Themes auf Ceres 3.0 anzupassen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Themes auf Ceres 3.0 updaten. Hier findest du folgende Informationen:",
+						"languageID" => "6XWWCJA",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4000,6 +4263,7 @@ class Metadata {
 						"description" => "Eine Übersicht der Bildergrößen für Kategoriebilder in Ceres.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Bildergrößen in Ceres. Hier findest du folgende Informationen:",
+						"languageID" => "SNFFO4R",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4015,6 +4279,7 @@ class Metadata {
 						"description" => "Eine Übersicht der ElasticSearch Ergebnisfelder und deren Entsprechungen in Callisto.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich ElasticSearch Ergebnisfelder. Hier findest du folgende Informationen:",
+						"languageID" => "WFGWFB8",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4030,6 +4295,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Ceres Coconut Theme - Individualisiere deinen Webshop. Hier findest du folgende Informationen:",
+						"languageID" => "",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4045,6 +4311,7 @@ class Metadata {
 						"description" => "Begleitmaterial zum Webinar \"Das Einmaleins des Shopdesigns - Mit eigenem CSS zum individuellen Webshop\"",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Begleitmaterial zum Webinar \"Das Einmaleins des Shop-Designs\". Hier findest du folgende Informationen:",
+						"languageID" => "",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4063,6 +4330,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "Webshop einrichten",
 				"linkListInto" => "Willkommen im Themenbereich Alt: CMS & Callisto-Webshop. Hier findest du folgende Informationen:",
+				"languageID" => "RWYBLML",
 				"children" => 				[
 					[
 						"id" => "430d5473320adcf2bed1d6966198029d",
@@ -4076,6 +4344,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Extras. Hier findest du folgende Informationen:",
+						"languageID" => "QAEED2M",
 						"children" => 						[
 							[
 								"id" => "f49a4b000c3bb8e909f52bd4aa1fec8b",
@@ -4089,6 +4358,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Addressdoctor. Hier findest du folgende Informationen:",
+								"languageID" => "WGDQIXY",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4104,6 +4374,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich BeezUP. Hier findest du folgende Informationen:",
+								"languageID" => "IFSWTLN",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4119,6 +4390,7 @@ class Metadata {
 								"description" => "Mit bit.ly die URLs, die plentymarkets automatisch z.B. für twitter-Nachrichten über den Aktions-Manager generiert, direkt kürzen.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich bit.ly. Hier findest du folgende Informationen:",
+								"languageID" => "TTLXV8D",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4134,6 +4406,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Cliplister einrichten. Hier findest du folgende Informationen:",
+								"languageID" => "JMKOO9W",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4149,6 +4422,7 @@ class Metadata {
 								"description" => "Der econda Shop-Monitor ist eine voll integrierte E-Commerce-Datenzentrale: analysiere und optimiere deinen Webshop professionell.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich econda. Hier findest du folgende Informationen:",
+								"languageID" => "Z5WYE3U",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4164,6 +4438,7 @@ class Metadata {
 								"description" => "Mit eKomi richtest du glaubwürdige Kundenmeinungen in deinem Webshop ein und trägst so maßgeblich zur Steigerung der Konversionsraten bei.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich eKomi. Hier findest du folgende Informationen:",
+								"languageID" => "EAFB0JE",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4179,6 +4454,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Elmar. Hier findest du folgende Informationen:",
+								"languageID" => "8J6SBXE",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4194,6 +4470,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich etracker. Hier findest du folgende Informationen:",
+								"languageID" => "WFNDP9H",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4209,6 +4486,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Facebook. Hier findest du folgende Informationen:",
+								"languageID" => "KQY4MMX",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4224,6 +4502,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Facettensuche. Hier findest du folgende Informationen:",
+								"languageID" => "MZQIPXX",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4239,6 +4518,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Familienkarte Hessen. Hier findest du folgende Informationen:",
+								"languageID" => "LY1BFE8",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4254,6 +4534,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich FINDOLOGIC. Hier findest du folgende Informationen:",
+								"languageID" => "H57FRZB",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4269,6 +4550,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Gewinnspiel. Hier findest du folgende Informationen:",
+								"languageID" => "HWXRIL0",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4284,6 +4566,7 @@ class Metadata {
 								"description" => "plentymarkets Integration: Richte die Schnittstelle zu Händlerbund und das Bewertungstool in plentymarkets ein.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Händlerbund. Hier findest du folgende Informationen:",
+								"languageID" => "SE15HOM",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4299,6 +4582,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich IT-Recht Kanzlei. Hier findest du folgende Informationen:",
+								"languageID" => "PRWWK6L",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4314,6 +4598,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Janolaw. Hier findest du folgende Informationen:",
+								"languageID" => "GJBYUA6",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4329,6 +4614,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Kunden-Feedback. Hier findest du folgende Informationen:",
+								"languageID" => "BBYV6NE",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4344,6 +4630,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Lionbridge. Hier findest du folgende Informationen:",
+								"languageID" => "72ORMSY",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4359,6 +4646,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Live-Shopping. Hier findest du folgende Informationen:",
+								"languageID" => "QBSLUDQ",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4374,6 +4662,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich picalike. Hier findest du folgende Informationen:",
+								"languageID" => "GBIKQM7",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4389,6 +4678,7 @@ class Metadata {
 								"description" => "Lass Rechtstexte jederzeit und ohne Aufwand in deinen Onlineshop übertragen. Die Rechtstexte bleiben stets aktuell und auf dem neuesten Stand.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Protected Shops. Hier findest du folgende Informationen:",
+								"languageID" => "TSDD0HQ",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4404,6 +4694,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Social Media. Hier findest du folgende Informationen:",
+								"languageID" => "3CJIZKW",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4419,6 +4710,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Testberichte.de. Hier findest du folgende Informationen:",
+								"languageID" => "HGKHFGL",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4434,6 +4726,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Treepodia. Hier findest du folgende Informationen:",
+								"languageID" => "P9IHSHQ",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4449,6 +4742,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Trusted Shops. Hier findest du folgende Informationen:",
+								"languageID" => "RPRBGDT",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4464,6 +4758,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Twenga. Hier findest du folgende Informationen:",
+								"languageID" => "BUS1XG4",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4479,6 +4774,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Twitter. Hier findest du folgende Informationen:",
+								"languageID" => "G9AQR81",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4494,6 +4790,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Universal Analytics. Hier findest du folgende Informationen:",
+								"languageID" => "7XAXUII",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -4509,6 +4806,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich YOOCHOOSE. Hier findest du folgende Informationen:",
+								"languageID" => "APRSYEZ",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -4527,6 +4825,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Artikelansichten. Hier findest du folgende Informationen:",
+						"languageID" => "RWM9TFW",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4542,6 +4841,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Artikelsortierung. Hier findest du folgende Informationen:",
+						"languageID" => "DSTB0NQ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4557,6 +4857,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Bestellvorgang. Hier findest du folgende Informationen:",
+						"languageID" => "QXVKW5S",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4572,6 +4873,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: CMS. Hier findest du folgende Informationen:",
+						"languageID" => "7PV0XAH",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4587,6 +4889,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Mehrsprachiger Webshop. Hier findest du folgende Informationen:",
+						"languageID" => "1SVZ69K",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4602,6 +4905,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Mein Konto. Hier findest du folgende Informationen:",
+						"languageID" => "YWQI6SL",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4617,6 +4921,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: Module. Hier findest du folgende Informationen:",
+						"languageID" => "8PAMTDR",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4632,6 +4937,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: CMS-Syntax. Hier findest du folgende Informationen:",
+						"languageID" => "3BHDFUZ",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4650,6 +4956,7 @@ class Metadata {
 				"description" => "Weitere Webshop-Plugins, die über den plentyMarketplace eingebunden werden können",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Weitere Webshop-Plugins. Hier findest du folgende Informationen:",
+				"languageID" => "7BTALUY",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -4668,6 +4975,7 @@ class Metadata {
 		"description" => "Multi-Channel in plentymarkets: Schnittstellen zu allen verfügbaren Vertriebskanälen, wie Marktplätze und Preisportale, einrichten.",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Märkte. Hier findest du folgende Informationen:",
+		"languageID" => "MFX1Q1C",
 		"children" => 		[
 			[
 				"id" => "e7224822847a3ee79b4f8b6873b47e86",
@@ -4681,6 +4989,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Amazon. Hier findest du folgende Informationen:",
+				"languageID" => "C3MKLSO",
 				"children" => 				[
 					[
 						"id" => "9fbbb2bdb5601405ef9e2bc0c230b22e",
@@ -4694,6 +5003,7 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Amazon in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Amazon einrichten. Hier findest du folgende Informationen:",
+						"languageID" => "GL6NEIV",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4709,6 +5019,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Artikeldatenexport. Hier findest du folgende Informationen:",
+						"languageID" => "TLFZIRR",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4724,6 +5035,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Fehler Request is throttled. Hier findest du folgende Informationen:",
+						"languageID" => "ASBZ4BY",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4739,6 +5051,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Manuelle Berichtserstellung für FBA-Aufträge und Retouren. Hier findest du folgende Informationen:",
+						"languageID" => "UKCQIBV",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4754,6 +5067,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: MFN-Auftragsimport. Hier findest du folgende Informationen:",
+						"languageID" => "TPQK10E",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4769,6 +5083,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Amazon Prime. Hier findest du folgende Informationen:",
+						"languageID" => "HVTSBI0",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4784,6 +5099,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Rechnungsservice VCS nutzen. Hier findest du folgende Informationen:",
+						"languageID" => "CLPVTBO",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4802,6 +5118,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich eBay. Hier findest du folgende Informationen:",
+				"languageID" => "OVYSUQC",
 				"children" => 				[
 					[
 						"id" => "d85b0e7f27d4b89a5718c8f4b381f355",
@@ -4815,6 +5132,7 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz eBay in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich eBay einrichten. Hier findest du folgende Informationen:",
+						"languageID" => "DWYPTTK",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4830,6 +5148,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Artikel für eBay freischalten. Hier findest du folgende Informationen:",
+						"languageID" => "0ITKS35",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4845,6 +5164,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Nicht mehr vorrätig-Option nutzen. Hier findest du folgende Informationen:",
+						"languageID" => "CS9FTU3",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -4860,6 +5180,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich FAQ. Hier findest du folgende Informationen:",
+						"languageID" => "VDXOOCT",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -4878,6 +5199,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz bol.com in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich bol.com. Hier findest du folgende Informationen:",
+				"languageID" => "0WQSMLF",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -4893,6 +5215,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Cdiscount in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Cdiscount. Hier findest du folgende Informationen:",
+				"languageID" => "EICIMBX",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -4908,6 +5231,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Check24 in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Check24. Hier findest du folgende Informationen:",
+				"languageID" => "BZ3ZIMQ",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -4923,6 +5247,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Etsy in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Etsy. Hier findest du folgende Informationen:",
+				"languageID" => "J8WLEBE",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -4938,6 +5263,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Flubit in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Flubit. Hier findest du folgende Informationen:",
+				"languageID" => "NBASOP0",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -4953,6 +5279,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Fruugo in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Fruugo. Hier findest du folgende Informationen:",
+				"languageID" => "SSHUJMD",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -4968,6 +5295,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Hood in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Hood. Hier findest du folgende Informationen:",
+				"languageID" => "VB8LKX7",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -4983,6 +5311,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich idealo. Hier findest du folgende Informationen:",
+				"languageID" => "TOSZVB0",
 				"children" => 				[
 					[
 						"id" => "2bbaa90f4f36e6e71f26293c65be26f9",
@@ -4996,6 +5325,7 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz idealo Direktkauf in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich idealo einrichten. Hier findest du folgende Informationen:",
+						"languageID" => "JFWN4QY",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5011,6 +5341,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: idealo. Hier findest du folgende Informationen:",
+						"languageID" => "A6CU20R",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5029,6 +5360,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Kauflux in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Kauflux. Hier findest du folgende Informationen:",
+				"languageID" => "GKYZVIJ",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5044,6 +5376,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Mercateo in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Mercateo. Hier findest du folgende Informationen:",
+				"languageID" => "D9WLEYW",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5059,6 +5392,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Neckermann.at. Hier findest du folgende Informationen:",
+				"languageID" => "5RUNLHF",
 				"children" => 				[
 					[
 						"id" => "2516678aa4d2be253975e14648a27bd1",
@@ -5072,6 +5406,7 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Neckermann Österreich in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Neckermann.at einrichten. Hier findest du folgende Informationen:",
+						"languageID" => "X6FNZUL",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5087,6 +5422,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Neckermann.at. Hier findest du folgende Informationen:",
+						"languageID" => "1JZWXQQ",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5105,6 +5441,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz OTTO in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich OTTO. Hier findest du folgende Informationen:",
+				"languageID" => "VM4QQ6Y",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5120,6 +5457,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz PIXmania in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich PIXmania. Hier findest du folgende Informationen:",
+				"languageID" => "XMVLNKP",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5135,6 +5473,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zu den Marktplätzen Netto Marken-Discount und GartenXXL.de in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Netto Marken-Discount, GartenXXL.de und GartenXXL.at. Hier findest du folgende Informationen:",
+				"languageID" => "49Y2YPL",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5150,6 +5489,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Rakuten. Hier findest du folgende Informationen:",
+				"languageID" => "9D5OZQ8",
 				"children" => 				[
 					[
 						"id" => "163fc1ea6b61f4af521934d5f09a0989",
@@ -5163,6 +5503,7 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Rakuten in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Rakuten einrichten. Hier findest du folgende Informationen:",
+						"languageID" => "VXWROW6",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5178,6 +5519,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Rakuten. Hier findest du folgende Informationen:",
+						"languageID" => "ZUWDDQS",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5196,6 +5538,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich real.de. Hier findest du folgende Informationen:",
+				"languageID" => "ZSASYOH",
 				"children" => 				[
 					[
 						"id" => "d12f378d1d31dc17a0d5f20db6d73b33",
@@ -5209,6 +5552,7 @@ class Metadata {
 						"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Martkplatz real.de in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich real.de einrichten. Hier findest du folgende Informationen:",
+						"languageID" => "EFWQVAH",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5224,6 +5568,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Integration der Versandgruppen. Hier findest du folgende Informationen:",
+						"languageID" => "AECQKPS",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5239,6 +5584,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Merkmale mit Attributen verknüpfen. Hier findest du folgende Informationen:",
+						"languageID" => "TX8FAKB",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -5257,6 +5603,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz REWE in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich REWE. Hier findest du folgende Informationen:",
+				"languageID" => "VCPKDKC",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5272,6 +5619,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz ricardo.ch in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich ricardo.ch. Hier findest du folgende Informationen:",
+				"languageID" => "SA24AGT",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5287,6 +5635,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Shopgate in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Shopgate. Hier findest du folgende Informationen:",
+				"languageID" => "MITNTZU",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5302,6 +5651,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Yatego in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Yatego. Hier findest du folgende Informationen:",
+				"languageID" => "SFARL01",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5317,6 +5667,7 @@ class Metadata {
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Zalando in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Zalando. Hier findest du folgende Informationen:",
+				"languageID" => "H1AGZUB",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -5335,6 +5686,7 @@ class Metadata {
 		"description" => "",
 		"navAlias" => "",
 		"linkListInto" => "Willkommen im Themenbereich Die plentymarkets App. Hier findest du folgende Informationen:",
+		"languageID" => "",
 		"children" => 		[
 			[
 				"id" => "e116d4124e75867db29b1a88e73a4b2b",
@@ -5348,6 +5700,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Installation und Ersteinrichtung. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5363,6 +5716,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich App-Funktionen. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => 				[
 					[
 						"id" => "8570be5698eff5eb13557e05d0663930",
@@ -5376,6 +5730,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "",
+						"languageID" => "GQEJK5F",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5391,6 +5746,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Mobile Warenwirtschaft. Hier findest du folgende Informationen:",
+						"languageID" => "",
 						"children" => 						[
 							[
 								"id" => "fd7df486e6c8569037aa05a92a5b3d63",
@@ -5404,6 +5760,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Rollende Kommissionierung. Hier findest du folgende Informationen:",
+								"languageID" => "",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5419,6 +5776,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Ware einbuchen und umbuchen. Hier findest du folgende Informationen:",
+								"languageID" => "",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5434,6 +5792,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Ware verräumen. Hier findest du folgende Informationen:",
+								"languageID" => "",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -5449,6 +5808,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Inventur durchführen. Hier findest du folgende Informationen:",
+								"languageID" => "",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -5473,6 +5833,7 @@ class Metadata {
 		"description" => "",
 		"navAlias" => "",
 		"linkListInto" => "Willkommen im Themenbereich Kassensystem/POS. Hier findest du folgende Informationen:",
+		"languageID" => "8OEUR6U",
 		"children" => 		[
 			[
 				"id" => "7012bc427b4666a6774e9ce4ebc9b452",
@@ -5486,6 +5847,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich POS einrichten. Hier findest du folgende Informationen:",
+				"languageID" => "LLRIR57",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5501,6 +5863,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich POS für Kassenpersonal. Hier findest du folgende Informationen:",
+				"languageID" => "VY49UZP",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5516,6 +5879,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: POS. Hier findest du folgende Informationen:",
+				"languageID" => "X4RBWGB",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -5534,6 +5898,7 @@ class Metadata {
 		"description" => "",
 		"navAlias" => "Plugins kennenlernen",
 		"linkListInto" => "Willkommen im Themenbereich Plugins. Hier findest du folgende Informationen:",
+		"languageID" => "XPOMS9R",
 		"children" => 		[
 			[
 				"id" => "05ffe37e9db3dd6757249d4cb72a5329",
@@ -5547,6 +5912,7 @@ class Metadata {
 				"description" => "Informationen zur Entwicklung von Plugins.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Test. Hier findest du folgende Informationen:",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5562,6 +5928,7 @@ class Metadata {
 				"description" => "So fügst du Plugins zu plentymarkets hinzu.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Plugins dem System hinzufügen. Hier findest du folgende Informationen:",
+				"languageID" => "TRPLAQM",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5577,6 +5944,7 @@ class Metadata {
 				"description" => "So verwaltest du Plugins und Plugin-Sets im plentymarkets Backend.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Plugins und Plugin-Sets. Hier findest du folgende Informationen:",
+				"languageID" => "AFH8SPB",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5592,6 +5960,7 @@ class Metadata {
 				"description" => "So richtest du Plugins im plentymarkets Backend ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Plugins einrichten. Hier findest du folgende Informationen:",
+				"languageID" => "KNLEFVK",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5607,6 +5976,7 @@ class Metadata {
 				"description" => "Informationen zur Entwicklung von Plugins.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Entwicklerdokumentation. Hier findest du folgende Informationen:",
+				"languageID" => "PJQXFUO",
 				"children" => [],
 				"hasChildren" => false
 			]
@@ -5625,6 +5995,7 @@ class Metadata {
 		"description" => "",
 		"navAlias" => "",
 		"linkListInto" => "Willkommen im Themenbereich Automatisierung. Hier findest du folgende Informationen:",
+		"languageID" => "KM681RQ",
 		"children" => 		[
 			[
 				"id" => "bb57561f141a729605f131abf45fce44",
@@ -5638,6 +6009,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Aktionsmanager. Hier findest du folgende Informationen:",
+				"languageID" => "30WDWBA",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5653,6 +6025,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Ereignisaktionen. Hier findest du folgende Informationen:",
+				"languageID" => "WA2EIQR",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5668,6 +6041,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Aktionsmanager und Ereignisaktionen. Hier findest du folgende Informationen:",
+				"languageID" => "HLHXRPK",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -5683,6 +6057,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Prozesse. Hier findest du folgende Informationen:",
+				"languageID" => "BOVCLZL",
 				"children" => 				[
 					[
 						"id" => "aba5f2b9f2388c64ad4c04b12f780aa3",
@@ -5696,6 +6071,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Prozesse einrichten. Hier findest du folgende Informationen:",
+						"languageID" => "ELDP3TZ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5711,6 +6087,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Prozesse ausführen. Hier findest du folgende Informationen:",
+						"languageID" => "OM8HCEJ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5726,6 +6103,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Arbeitsschritte. Hier findest du folgende Informationen:",
+						"languageID" => "93G3IG4",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5741,6 +6119,7 @@ class Metadata {
 						"description" => "Übersicht der Aktionen und Steuerelemente, die du für Prozesse konfigurieren kannst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Aktionen/Steuerelemente. Hier findest du folgende Informationen:",
+						"languageID" => "7N0QKMI",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5756,6 +6135,7 @@ class Metadata {
 						"description" => "Übersicht der Subaktionen, die du für Prozesse konfigurieren kannst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Subaktionen. Hier findest du folgende Informationen:",
+						"languageID" => "QKPEDOW",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5771,6 +6151,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Erste Hilfe für Prozesse. Hier findest du folgende Informationen:",
+						"languageID" => "Q0SNALQ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -5786,6 +6167,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Beispielprozesse. Hier findest du folgende Informationen:",
+						"languageID" => "MMOGYLL",
 						"children" => [],
 						"hasChildren" => false
 					]
