@@ -52,14 +52,7 @@ class ContentController extends Controller
         $contentPathAndPage = $this->pageService->getPathByUrl($contentPath);
         if(is_array($contentPathAndPage) && isset($contentPathAndPage))
         {
-            if($this->lang === "en")
-            {
-                $contentPath = "en/".$contentPathAndPage["path"];
-            }
-            else
-            {
-                $contentPath = $contentPathAndPage["path"];
-            }
+            $contentPath = $contentPathAndPage["path"];
             $currentPage = $contentPathAndPage["page"];
         }
         else
@@ -130,7 +123,7 @@ class ContentController extends Controller
             $itemsPerPage = 25;
         }
 
-        $results = $sWLanguageService->sLSearch( $page, $itemsPerPage );
+        $results = $sWLanguageService->sLSearch();
         return $this->twig->render(
             "PlentyManual::SearchResults",
             [

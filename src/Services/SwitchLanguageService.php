@@ -30,16 +30,22 @@ class SwitchLanguageService
         $idValues = $this->resultsStorage->getResults();
         $storageValues = array_values($idValues);
 
-        $query = [
-            "query" => [
-                "constant_score" => [
-                    "filter" => [
-                        "terms" => [
-                            "languageID" => $storageValues
-                        ]
-                    ]
-                ]
+        $queryArray = [
+            'bool' => [
+                'should' => [],
             ]
+        ];
+        foreach($storageValues as $value)
+        {
+            $queryArray['bool']['should'][] = [
+                'match' => [
+                    'languageID' => $value
+                ],
+            ];
+        }
+
+        $query = [
+            'query' => $queryArray
         ];
 
         $requestArray = array('host' => $this->host,
@@ -55,13 +61,7 @@ class SwitchLanguageService
 
         $query = [
             "query" => [
-                "constant_score" => [
-                    "filter" => [
-                        "terms" => [
-                            "languageID" => [$languageID]
-                        ]
-                    ]
-                ]
+                "query_string" => [ "query" => $languageID, "default_operator" => "AND"]
             ]
         ];
 
@@ -79,7 +79,7 @@ class SwitchLanguageService
         }
         else
         {
-            $url = $result["hits"]["hits"]["_source"]["url"];
+            $url = $result["hits"]["hits"][0]["_source"]["url"];
         }
 
         return $url;

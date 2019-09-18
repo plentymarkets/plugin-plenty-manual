@@ -95,7 +95,7 @@ class SearchService
         ];
 
         $mainQuery = [
-            "_source" => ["url", "title", "description"],
+            "_source" => ["url", "title", "description", "languageID"],
             "query" => [
                 "dis_max" => [
                     "queries" => [
@@ -214,9 +214,9 @@ class SearchService
                 $doc["description"] = $this->trim( $hit["_source"]["description"], $this->snippetLength );
             }
 
-            if( $hit["languageID"] !== null)
+            if( isset($hit["_source"]["languageID"]) && trim($hit["_source"]["languageID"]) != '')
             {
-                array_push($storageArray, $hit["languageID"]);
+                array_push($storageArray, $hit["_source"]["languageID"]);
             }
 
 //            if ( strip_tags( $doc["description"] ) !== substr( $hit["_source"]["description"], 0, strlen( strip_tags( $doc["description"] ) ) ) )
