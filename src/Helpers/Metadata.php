@@ -712,6 +712,7 @@ class Metadata {
 				"description" => "Erfahre, wie du Artikel in plentymarkets erstellst und verwaltest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Artikel verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "ZVYHQWL",
 				"children" => [],
 				"hasChildren" => false
 			],
