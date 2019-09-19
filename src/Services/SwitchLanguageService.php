@@ -112,15 +112,19 @@ class SwitchLanguageService
     {
         $totalHits = $resultData["hits"]["total"];
         $maxPages = ($totalHits - $totalHits % $itemsPerPage ) / $itemsPerPage;
+
         if ( $totalHits % $itemsPerPage > 0 )
         {
             $maxPages++;
         }
+
         $hitsEnd = ($page * $itemsPerPage);
+
         if ( $hitsEnd > $totalHits )
         {
             $hitsEnd = $totalHits;
         }
+
         $result = [
             "currentPage" => $page,
             "itemsPerPage" => $itemsPerPage,
@@ -133,45 +137,37 @@ class SwitchLanguageService
         foreach( $resultData["hits"]["hits"] as $hit )
         {
             $doc = [
-                "title" => $hit["highlight"]["title"][0],
-                "description" => $hit["highlight"]["description"][0],
+                "title" => $hit["_source"]["title"],
+                "description" => $hit["_source"]["description"],
                 "url" => $hit["_source"]["url"],
                 "sections" => [],
                 "cutBefore" => false,
                 "cutAfter" => false
             ];
-            if ( $doc["title"] === null )
-            {
-                $doc["title"] = $hit["_source"]["title"];
-            }
-            if ( $doc["description"] === null )
-            {
-                $doc["description"] = $this->trim( $hit["_source"]["description"], $this->snippetLength );
-            }
+
             $sections = [];
-            foreach ( $hit["inner_hits"]["sections"]["hits"]["hits"] as $inner_hit )
+
+            foreach ( $hit["_source"]["sections"] as $inner_hit )
             {
                 $sec = [
-                    "id" => $inner_hit["_source"]["id"],
-                    "url" => $inner_hit["_source"]["url"],
-                    "title" => $inner_hit["highlight"]["sections.title"][0],
-                    "content" => $this->trim( $inner_hit["highlight"]["sections.content"][0], $this->snippetLength ),
+                    "id" => $inner_hit["id"],
+                    "url" => $inner_hit["url"],
+                    "title" => $inner_hit["title"],
+                    "content" => $this->trim( $inner_hit["content"], $this->snippetLength ),
                     "cutBefore" => false,
                     "cutAfter" => false
                 ];
-                if ( $sec["title"] === null )
-                {
-                    $sec["title"] = $inner_hit["_source"]["title"];
-                }
-                if ( $sec["content"] === null )
-                {
-                    $sec["content"] = $this->trim( $inner_hit["_source"]["content"], $this->snippetLength );
-                }
+
                 array_push( $sections, $sec );
+
             }
+
             $doc["sections"] = $sections;
+
             array_push( $result["hits"], $doc );
+
         }
+
         return $result;
     }
 

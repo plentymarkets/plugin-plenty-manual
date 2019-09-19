@@ -274,7 +274,7 @@ class SearchService
             array_push( $result["hits"], $doc );
         }
 
- //       $this->resultsStorage->setResults($storageArray);
+        $storageArray = $this->resultsStorage->setResults($storageArray);
 
         return $result;
     }
