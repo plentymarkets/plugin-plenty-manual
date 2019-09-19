@@ -21,8 +21,9 @@ class ResultsStorage
 
     public function setResults($arr)
     {
+        $deleteFlag = false;
         if(!empty($this->storageArray))
-            $this->deleteResults();
+            $deleteFlag = $this->deleteResults();
         $this->storageArray = $arr;
 
         return $arr;
