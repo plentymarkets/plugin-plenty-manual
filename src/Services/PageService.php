@@ -70,7 +70,7 @@ class PageService
         $path = "/".$path;
 
         if($swl === true)
-            $pages = $this->getPages($swl);
+            $pages = $this->getPages(null, $swl);
         else
             $pages = $this->getPages();
 
@@ -112,7 +112,7 @@ class PageService
         $levels = explode( "/", $path );
 
         if($swl === true)
-            $pages = $this->getPages($swl);
+            $pages = $this->getPages(null, $swl);
         else
             $pages = $this->getPages();
 
