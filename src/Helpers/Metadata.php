@@ -484,7 +484,7 @@ class Metadata {
 							[
 								"id" => "61be6687692032e4d19d25e0867a9069",
 								"path" => "basics/admin-aufgaben/best-practices/dns-selbsthilfe",
-								"position" => 1,
+								"position" => 10,
 								"urlName" => "dns-selbsthilfe",
 								"url" => "/basics/admin-aufgaben/best-practices/dns-selbsthilfe",
 								"level" => 4,
@@ -492,7 +492,7 @@ class Metadata {
 								"keywords" => "DNS, CNAME, www.www., www.www, A-Record, DNS_NAME, NOT_RESOLVED",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practice: DNS-Einstellungen prüfen und anpassen. Hier findest du folgende Informationen:",
 								"languageID" => "Z6F5WUG",
 								"children" => [],
 								"hasChildren" => false
@@ -500,7 +500,7 @@ class Metadata {
 							[
 								"id" => "645367dc005d633de1223eed81a474e0",
 								"path" => "basics/admin-aufgaben/best-practices/ssl-zertifikat_bestellen",
-								"position" => 1,
+								"position" => 20,
 								"urlName" => "ssl-zertifikat_bestellen",
 								"url" => "/basics/admin-aufgaben/best-practices/ssl-zertifikat_bestellen",
 								"level" => 4,
@@ -508,7 +508,7 @@ class Metadata {
 								"keywords" => "SSL, Let's_Encrypt, let's_enrypt, Lets_Encrypt, lets_encrypt, COMODO, comodo",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practice: SSL-Zertifikat bestellen. Hier findest du folgende Informationen:",
 								"languageID" => "LAF1PEI",
 								"children" => [],
 								"hasChildren" => false
