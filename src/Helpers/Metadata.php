@@ -5901,22 +5901,6 @@ class Metadata {
 		"languageID" => "XPOMS9R",
 		"children" => 		[
 			[
-				"id" => "05ffe37e9db3dd6757249d4cb72a5329",
-				"path" => "plugins/test",
-				"position" => 0,
-				"urlName" => "test",
-				"url" => "/plugins/test",
-				"level" => 2,
-				"title" => "Test",
-				"keywords" => "Plugins, Erweiterungen, Funktionen",
-				"description" => "Informationen zur Entwicklung von Plugins.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Test. Hier findest du folgende Informationen:",
-				"languageID" => "",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "363265e4b475d9c554a94d55b510aedb",
 				"path" => "plugins/neue-plugins",
 				"position" => 10,
