@@ -542,7 +542,7 @@ class Metadata {
 						"level" => 3,
 						"title" => "Benutzerkonto personalisieren",
 						"keywords" => "Dashboard, Startseite, Grußformel, Signatur, persönliche Einstellungen, Shortcuts, Tastaturkürzel, Favoriten",
-						"description" => "Arbeiten mit plentymarkets: Richten Sie z.B. eigene Shortcuts und eine Signatur ein und personalisieren Sie so Ihr Benutzerkonto im plentymarkets System.",
+						"description" => "Arbeiten mit plentymarkets: Richte z.B. eigene Shortcuts und eine Signatur ein und personalisiere so dein Benutzerkonto im plentymarkets System.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Benutzerkonto personalisieren. Hier findest du folgende Informationen:",
 						"languageID" => "49S4GON",
