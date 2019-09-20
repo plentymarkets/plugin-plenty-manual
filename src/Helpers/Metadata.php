@@ -5949,9 +5949,25 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "daba4ac0beaf6aff175853edaa7b2acf",
+				"path" => "plugins/backend-plugin-sets",
+				"position" => 40,
+				"urlName" => "backend-plugin-sets",
+				"url" => "/plugins/backend-plugin-sets",
+				"level" => 2,
+				"title" => "Backend-Plugin-Sets",
+				"keywords" => "backend-plugin-set, backend, plugin, erweiterung",
+				"description" => "So richtest du Plugins im plentymarkets Backend ein.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Backend-Plugin-Sets. Hier findest du folgende Informationen:",
+				"languageID" => "VJFGUF0",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "623a931f2741217703c7013991b94b08",
 				"path" => "plugins/entwicklerdokumentation",
-				"position" => 40,
+				"position" => 50,
 				"urlName" => "entwicklerdokumentation",
 				"url" => "/plugins/entwicklerdokumentation",
 				"level" => 2,
