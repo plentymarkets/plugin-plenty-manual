@@ -11930,9 +11930,25 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "daba4ac0beaf6aff175853edaa7b2acf",
+				"path" => "plugins/backend-plugin-sets",
+				"position" => 40,
+				"urlName" => "backend-plugin-sets",
+				"url" => "/en/plugins/backend-plugin-sets",
+				"level" => 2,
+				"title" => "Backend plugin sets",
+				"keywords" => "back end plugin set, back end, plugin, extension",
+				"description" => "Customise your user account using plugin sets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Backend plugin sets. The following information is available:",
+				"languageID" => "VJFGUF0",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "f67f094799b6f9007eb5b3a633cb1976",
 				"path" => "plugins/developers",
-				"position" => 40,
+				"position" => 50,
 				"urlName" => "developers",
 				"url" => "/en/plugins/developers",
 				"level" => 2,
