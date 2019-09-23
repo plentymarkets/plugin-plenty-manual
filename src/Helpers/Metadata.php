@@ -7187,11 +7187,11 @@ class Metadata {
 				"url" => "/en/crm/managing-contacts",
 				"level" => 2,
 				"title" => "Managing contacts",
-				"keywords" => "contact, customer, address, addresses, invoice address, delivery address, primary, company, companies, guest account, regular account, events, event, login details, change password, unblock login, bank details",
+				"keywords" => "contact, customer, address, addresses, invoice address, delivery address, primary, company, companies, guest account, regular account, events, event, properties, property, access data, change password, unblock login, bank details, login details, messages, messenger",
 				"description" => "Learn how to manage contacts, addresses and companies in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Managing contacts. The following information is available:",
-				"languageID" => "KO9RPU2",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
