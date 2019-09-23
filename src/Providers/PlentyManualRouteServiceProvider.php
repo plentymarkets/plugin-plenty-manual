@@ -17,11 +17,12 @@ class PlentyManualRouteServiceProvider extends RouteServiceProvider
 
         $router->get('search', 'PlentyManual\Controllers\ContentController@showSearchResults');
 
-        $router->get('{contentPath}', 'PlentyManual\Controllers\ContentController@showContent')
-            ->where('contentPath', '.*');
-
         $router->get('sls', 'PlentyManual\Controllers\ContentController@showSWLanguageSearch');
 
         $router->get('slp/{contentPath}', 'PlentyManual\Controllers\ContentController@showSWLanguagePage');
+
+        $router->get('{contentPath}', 'PlentyManual\Controllers\ContentController@showContent')
+            ->where('contentPath', '.*');
+
     }
 }
