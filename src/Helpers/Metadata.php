@@ -8886,6 +8886,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "65b437f5773b55e5ea8e2e1216b66c35",
+				"path" => "data/data-cleanup",
+				"position" => 50,
+				"urlName" => "data-cleanup",
+				"url" => "/en/data/data-cleanup",
+				"level" => 2,
+				"title" => "Carrying out data cleanup",
+				"keywords" => "Cleanup, cleansing, data cleansing, data purge, automatic deletion, deleting addresses, deleting unused addresses, deleting unused contacts, deleting orders, deleting history, deleting IP addresses",
+				"description" => "Learn how to clean up data automatically in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Carrying out data cleanup. The following information is available:",
+				"languageID" => "BPZ0VS4",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "ee5f42c02fa8c8a81bf2d6b0b956fbfb",
 				"path" => "data/backup",
 				"position" => 60,
