@@ -49,27 +49,39 @@ class ContentController extends Controller
 
     public function showContent( string $contentPath ):string
     {
-        $contentPathAndPage = $this->pageService->getPathByUrl($contentPath);
-        if(is_array($contentPathAndPage) && isset($contentPathAndPage))
+        if(strpos($contentPath, "sls/") !== false)
         {
-            $contentPath = $contentPathAndPage["path"];
-            $currentPage = $contentPathAndPage["page"];
+            return $this->showSWLanguageSearch();
+        }
+        elseif (strpos($contentPath, "slp/") !== false)
+        {
+            $content = explode("slp/", $contentPath);
+            return $this->showSWLanguagePage($content[1]);
         }
         else
         {
-            $currentPage = $this->pageService->getPageByPath( $contentPath );
+            $contentPathAndPage = $this->pageService->getPathByUrl($contentPath);
+            if(is_array($contentPathAndPage) && isset($contentPathAndPage))
+            {
+                $contentPath = $contentPathAndPage["path"];
+                $currentPage = $contentPathAndPage["page"];
+            }
+            else
+            {
+                $currentPage = $this->pageService->getPageByPath( $contentPath );
+            }
+            $pages = $this->pageService->getPages( $currentPage["id"] );
+            return $this->twig->render(
+                "PlentyManual::Main",
+                [
+                    "contentTemplate"   => "PlentyManual::" . $this->lang . "." . implode( ".", explode( "/", $contentPath ) ),
+                    "currentPage"       => $currentPage,
+                    "pages"             => $pages,
+                    "lang"              => $this->lang,
+                    "searchUrl"         => $this->searchUrl
+                ]
+            );
         }
-        $pages = $this->pageService->getPages( $currentPage["id"] );
-        return $this->twig->render(
-            "PlentyManual::Main",
-            [
-                "contentTemplate"   => "PlentyManual::" . $this->lang . "." . implode( ".", explode( "/", $contentPath ) ),
-                "currentPage"       => $currentPage,
-                "pages"             => $pages,
-                "lang"              => $this->lang,
-                "searchUrl"         => $this->searchUrl
-            ]
-        );
     }
 
     public function showSearchResults(): string
