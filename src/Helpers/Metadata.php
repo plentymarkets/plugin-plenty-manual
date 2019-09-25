@@ -1178,7 +1178,7 @@ class Metadata {
 		"level" => 1,
 		"title" => "Aufträge",
 		"keywords" => "Aufträge verwalten, Auftragstypen, Buchhaltung, Dokumente, Steuer",
-		"description" => "Erfahren Sie, wie Sie Ihre Buchhaltung einrichten, Dokumente einrichten und generieren sowie Aufträge verwalten.",
+		"description" => "Erfahre, wie du deine Buchhaltung einrichtest, Dokumente einrichtest und generierst sowie Aufträge verwaltest.",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Aufträge. Hier findest du folgende Informationen:",
 		"languageID" => "QV9OPKI",
