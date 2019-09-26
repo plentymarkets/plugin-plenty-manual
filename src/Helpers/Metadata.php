@@ -8893,10 +8893,10 @@ class Metadata {
 				"url" => "/en/data/backup",
 				"level" => 2,
 				"title" => "Backing up database data",
-				"keywords" => "",
-				"description" => "Find out how create backups and import backed up plentymarkets data.",
+				"keywords" => "Backup, back up data, data backup, restore",
+				"description" => "Find out how to create backups and import backed up plentymarkets data.",
 				"navAlias" => "",
-				"linkListInto" => "",
+				"linkListInto" => "Welcome to the topic Backing up database data. The following information is available:",
 				"languageID" => "XCMTBYE",
 				"children" => [],
 				"hasChildren" => false
