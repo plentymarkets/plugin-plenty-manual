@@ -22,6 +22,7 @@ class ContentController extends Controller
     private $request;
     private $sessionStorage;
     private $searchUrl = "";
+    private $switchLanguageService;
 
     public function __construct( 
         Twig $twig, 
@@ -29,13 +30,15 @@ class ContentController extends Controller
         PageService $pageService, 
         Request $request, 
         WebstoreConfigurationRepositoryContract $webstoreConfigRepo, 
-        Application $app )
+        Application $app,
+        SwitchLanguageService $switchLanguageService )
     {
         $this->twig = $twig;
         $this->lang = $sessionStorage->getLocaleSettings()->language ?? 'de';
         $this->pageService = $pageService;
         $this->request = $request;
         $this->sessionStorage = $sessionStorage;
+        $this->switchLanguageService = $switchLanguageService;
 
         $defaultLanguage = $webstoreConfigRepo->findByPlentyId($app->getPlentyId())->defaultLanguage;
 
@@ -118,7 +121,6 @@ class ContentController extends Controller
 
     public function showSWLanguageSearch(): string
     {
-        $sWLanguageService = pluginApp( SwitchLanguageService::class );
         $query = $this->request->get("q", "");
         $page = (int)$this->request->get("p", 1);
         $itemsPerPage = (int)$this->request->get("s", null);
@@ -135,7 +137,7 @@ class ContentController extends Controller
             $itemsPerPage = 25;
         }
 
-        $results = $sWLanguageService->sLSearch();
+        $results = $this->switchLanguageService->sLSearch();
         return $this->twig->render(
             "PlentyManual::SearchResults",
             [
@@ -151,7 +153,6 @@ class ContentController extends Controller
 
     public function showSWLanguagePage(string $contentPath ):string
     {
-        $sWLanguageService = pluginApp( SwitchLanguageService::class );
         if($this->lang === "de")
             $contentPath = 'en/'.$contentPath;
         $pathAndPage = $this->pageService->getPathByUrl($contentPath, true);
@@ -166,7 +167,9 @@ class ContentController extends Controller
 
         $currentPageLanguageID = $currentPage["languageID"];
 
-        $pageURL = $sWLanguageService->sLPage($currentPageLanguageID);
+        $pageURL = $this->switchLanguageService->sLPage($currentPageLanguageID);
+
+        $pageURL = ltrim($pageURL, '/');
 
         $contentPathAndPage = $this->pageService->getPathByUrl($pageURL);
         if(is_array($contentPathAndPage) && isset($contentPathAndPage))
