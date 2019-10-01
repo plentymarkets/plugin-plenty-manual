@@ -38,8 +38,12 @@ class SwitchLanguageService
         foreach($storageValues as $value)
         {
             $queryArray['bool']['should'][] = [
-                'match' => [
-                    'languageID' => $value
+                'bool' => [
+                    'must'=> [
+                        'match' => [
+                            'languageID' => $value
+                        ],
+                    ],
                 ],
             ];
         }
