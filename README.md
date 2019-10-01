@@ -1,4 +1,3 @@
 # plugin-plenty-manual
-plentymarkets manual plugin
 
-test
+The plentymarkets manual. Available at https://knowledge.plentymarkets.com
