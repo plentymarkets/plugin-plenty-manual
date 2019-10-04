@@ -23,6 +23,7 @@ class ContentController extends Controller
     private $sessionStorage;
     private $searchUrl = "";
     private $switchLanguageService;
+    private $switchLanguageSearchUrl = "";
 
     public function __construct( 
         Twig $twig, 
@@ -43,9 +44,11 @@ class ContentController extends Controller
         $defaultLanguage = $webstoreConfigRepo->findByPlentyId($app->getPlentyId())->defaultLanguage;
 
         $this->searchUrl = "/search/";
+        $this->switchLanguageSearchUrl = "/sls/search/";
         if ( $this->lang !== $defaultLanguage )
         {
             $this->searchUrl = "/" . $this->lang . "/search/";
+            $this->switchLanguageSearchUrl = "/" . $this->lang . "/sls/search/";
         }
         parent::__construct();
     }
@@ -63,7 +66,17 @@ class ContentController extends Controller
         }
         else
         {
-            $contentPathAndPage = $this->pageService->getPathByUrl($contentPath);
+            if($this->lang === "en" && strpos($contentPath, "en/") === false)
+            {
+                $contentPathEnglish = "en/". $contentPath;
+            }
+            else
+            {
+                $contentPathEnglish = $contentPath;
+            }
+
+            $contentPathAndPage = $this->pageService->getPathByUrl($contentPathEnglish);
+
             if(is_array($contentPathAndPage) && isset($contentPathAndPage))
             {
                 $contentPath = $contentPathAndPage["path"];
@@ -73,7 +86,9 @@ class ContentController extends Controller
             {
                 $currentPage = $this->pageService->getPageByPath( $contentPath );
             }
+
             $pages = $this->pageService->getPages( $currentPage["id"] );
+
             return $this->twig->render(
                 "PlentyManual::Main",
                 [
@@ -145,7 +160,7 @@ class ContentController extends Controller
                 "query"     => $query,
                 "results"   => $results,
                 "lang"      => $this->lang,
-                "searchUrl" => $this->searchUrl
+                "searchUrl" => $this->switchLanguageSearchUrl
             ]
         );
 
@@ -162,7 +177,10 @@ class ContentController extends Controller
         }
         else
         {
-            $currentPage = $this->pageService->getPageByPath( $contentPath, true );
+            $content = explode("en/", $contentPath);
+            $currentPage = $this->pageService->getPageByPath( $content[1], true );
+            if($currentPage === null)
+                $currentPage = $this->pageService->getPageByPath( $content[1] );
         }
 
         $currentPageLanguageID = $currentPage["languageID"];
