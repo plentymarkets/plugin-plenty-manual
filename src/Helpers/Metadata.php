@@ -7046,7 +7046,7 @@ class Metadata {
 				"description" => "Learn how to create and structure a warehouse.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Setting up a warehouse. The following information is available:",
-				"languageID" => "",
+				"languageID" => "5EKUCA2",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -7062,7 +7062,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Managing incoming items. The following information is available:",
-				"languageID" => "",
+				"languageID" => "D1FCJJV",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -7078,7 +7078,7 @@ class Metadata {
 				"description" => "In this area, you will find all important information on working with the reorder functionality in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Managing reorders. The following information is available:",
-				"languageID" => "LPLLJJP",
+				"languageID" => "BKMUE7L",
 				"children" => 				[
 					[
 						"id" => "d5386be5bf304a641ce06970e1d11910",
@@ -7092,7 +7092,7 @@ class Metadata {
 						"description" => "Learn how to work with the reorder functionality in plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Working with reorders. The following information is available:",
-						"languageID" => "",
+						"languageID" => "SJ8T7XV",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7108,7 +7108,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Managing backlog lists. The following information is available:",
-						"languageID" => "",
+						"languageID" => "EKFGWEC",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7124,7 +7124,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Best Practices: Exporting reorder data. The following information is available:",
-						"languageID" => "",
+						"languageID" => "Z7VI7TW",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -7143,7 +7143,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Managing stock. The following information is available:",
-				"languageID" => "",
+				"languageID" => "LD1RKJI",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -7159,7 +7159,7 @@ class Metadata {
 				"description" => "Learn how to work with redistributions between different warehouses in your plentymarkets system.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Carrying out redistributions. The following information is available:",
-				"languageID" => "",
+				"languageID" => "A5QIHYW",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -7175,7 +7175,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Booking items out. The following information is available:",
-				"languageID" => "",
+				"languageID" => "JTRIWSB",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -7191,7 +7191,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Taking stock. The following information is available:",
-				"languageID" => "",
+				"languageID" => "YU6LH3H",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -7207,7 +7207,7 @@ class Metadata {
 				"description" => "Find out how to completely transfer stock of one warehouse to another one.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Best Practices: Correcting/Transferring/Deleting stock. The following information is available:",
-				"languageID" => "",
+				"languageID" => "GUYCYAG",
 				"children" => [],
 				"hasChildren" => false
 			]
