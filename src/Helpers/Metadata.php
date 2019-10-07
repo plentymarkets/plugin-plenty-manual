@@ -937,7 +937,7 @@ class Metadata {
 				"description" => "Erfahre, wie du ein Lager erstellst und den Aufbau gestaltest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Lager einrichten. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "5EKUCA2",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -953,7 +953,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Wareneingänge verwalten. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "D1FCJJV",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -969,7 +969,7 @@ class Metadata {
 				"description" => "Erfahre, wie du mit der neuen Nachbestellung in plentymarkets arbeitest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Nachbestellungen verwalten. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "BKMUE7L",
 				"children" => 				[
 					[
 						"id" => "8143524871967258bafb33cde0383d76",
@@ -983,7 +983,7 @@ class Metadata {
 						"description" => "Erfahre, wie du mit der Funktion zur Nachbestellung in plentymarkets arbeitest.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Nachbestellungen vornehmen. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "SJ8T7XV",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -999,7 +999,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Rückstandsliste nutzen. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "EKFGWEC",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -1015,7 +1015,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Nachbestellungen exportieren. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "Z7VI7TW",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -1034,7 +1034,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Warenbestände verwalten. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "LD1RKJI",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1050,7 +1050,7 @@ class Metadata {
 				"description" => "Erfahre, wie du mit Lager-Umbuchungen in deinem plentymarkets System arbeitest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Umbuchungen vornehmen. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "A5QIHYW",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1066,7 +1066,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich MHD/Charge verwalten. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "AHPX91D",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1082,7 +1082,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Inventur vornehmen. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "YU6LH3H",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1098,7 +1098,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Waren ausbuchen. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "JTRIWSB",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1114,7 +1114,7 @@ class Metadata {
 				"description" => "Erfahre wie Du den Bestand eines Lagers komplett in ein anderes umbuchen kannst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Bestand umbuchen/korrigieren/löschen. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "GUYCYAG",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1130,7 +1130,7 @@ class Metadata {
 				"description" => "Erfahre wie Du deinen Warenbestand täglich sichern kannst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Best Practices: Warenbestand täglich sichern. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "CQCLIVI",
 				"children" => [],
 				"hasChildren" => false
 			]
