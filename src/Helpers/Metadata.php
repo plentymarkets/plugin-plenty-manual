@@ -5021,7 +5021,7 @@ class Metadata {
 		"level" => 1,
 		"title" => "Märkte",
 		"keywords" => "",
-		"description" => "Multi-Channel in plentymarkets: Schnittstellen zu allen verfügbaren Vertriebskanälen, wie Marktplätze und Preisportale, einrichten.",
+		"description" => "Multi-Channel in plentymarkets: Schnittstellen zu allen verfügbaren Vertriebskanälen, wie Marktplätzen und Preisportalen, einrichten.",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Märkte. Hier findest du folgende Informationen:",
 		"languageID" => "MFX1Q1C",
