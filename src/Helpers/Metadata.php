@@ -11529,7 +11529,7 @@ class Metadata {
 						"url" => "/en/markets/rakuten/rakuten-setup",
 						"level" => 3,
 						"title" => "Setting up Rakuten",
-						"keywords" => "Rakuten, Market, Marketplace",
+						"keywords" => "Rakuten, market, marketplace",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Rakuten in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Setting up Rakuten. The following information is available:",
