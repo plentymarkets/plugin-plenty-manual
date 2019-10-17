@@ -177,10 +177,25 @@ class ContentController extends Controller
         }
         else
         {
-            $content = explode("en/", $contentPath);
-            $currentPage = $this->pageService->getPageByPath( $content[1], true );
+            if($this->lang === "de")
+            {
+                $content = explode("en/", $contentPath);
+                $contentPath = $content[1];
+            }
+            elseif(strpos($contentPath, "en/") === false && $this->lang === "en")
+            {
+                $contentPath = "en/".$contentPath;
+            }
+
+            $pageURL = $this->pageService->getPathByUrl( $contentPath, true );
+            $currentPage = $pageURL["page"];
+
             if($currentPage === null)
-                $currentPage = $this->pageService->getPageByPath( $content[1] );
+            {
+                $pageURL = $this->pageService->getPathByUrl( $contentPath);
+                $currentPage = $pageURL["page"];
+            }
+
         }
 
         $currentPageLanguageID = $currentPage["languageID"];
