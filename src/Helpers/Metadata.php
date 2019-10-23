@@ -12122,6 +12122,38 @@ class Metadata {
 				"languageID" => "BOVCLZL",
 				"children" => 				[
 					[
+						"id" => "03e0670bea1aadc838f671be786120fd",
+						"path" => "automation/processes/installing-plentybase",
+						"position" => 3,
+						"urlName" => "installing-plentybase",
+						"url" => "/en/automation/processes/installing-plentybase",
+						"level" => 3,
+						"title" => "Installing plentyBase",
+						"keywords" => "plentyBase, processes, printer, printing, Installing printer, run processes, execute processes, automation, print history, plentymarkets Client, Base, base",
+						"description" => "Installing plentyBase",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Installing plentyBase. The following information is available:",
+						"languageID" => "ZDXC8YS",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "9819b463fd08a3f4e0bee3d6f01a23a7",
+						"path" => "automation/processes/printer",
+						"position" => 7,
+						"urlName" => "printer",
+						"url" => "/en/automation/processes/printer",
+						"level" => 3,
+						"title" => "Managing printers",
+						"keywords" => "Printer, plentyBase",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing printers. The following information is available:",
+						"languageID" => "VTQM7SL",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "70c6c9bfbff31b14cab64fb10e2b4162",
 						"path" => "automation/processes/setting-up-processes",
 						"position" => 10,
