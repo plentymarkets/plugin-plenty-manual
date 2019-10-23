@@ -6109,6 +6109,38 @@ class Metadata {
 				"languageID" => "BOVCLZL",
 				"children" => 				[
 					[
+						"id" => "376874de2dd3bb8eb4703f49936ac5b9",
+						"path" => "automatisierung/prozesse/plentybase-installieren",
+						"position" => 3,
+						"urlName" => "plentybase-installieren",
+						"url" => "/automatisierung/prozesse/plentybase-installieren",
+						"level" => 3,
+						"title" => "plentyBase installieren",
+						"keywords" => "plentyBase, Prozesse, Drucken, Drucker installieren, Prozesse ausführen, Automatisierung, Druckverlauf, Druckhistorie, plentymarkets Client, Base, base",
+						"description" => "plentyBase installieren",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich plentyBase installieren. Hier findest du folgende Informationen:",
+						"languageID" => "ZDXC8YS",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "1b07ceb13e5706dcce2d7a91a744522d",
+						"path" => "automatisierung/prozesse/drucker",
+						"position" => 7,
+						"urlName" => "drucker",
+						"url" => "/automatisierung/prozesse/drucker",
+						"level" => 3,
+						"title" => "Drucker verwalten",
+						"keywords" => "Drucker, plentyBase, Druckereinstellungen, Drucker konfigurieren, Druckverlauf, Druckhistorie, Druck Historie, Druckerprobleme",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Drucker verwalten. Hier findest du folgende Informationen:",
+						"languageID" => "VTQM7SL",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "aba5f2b9f2388c64ad4c04b12f780aa3",
 						"path" => "automatisierung/prozesse/prozesse-einrichten",
 						"position" => 10,
