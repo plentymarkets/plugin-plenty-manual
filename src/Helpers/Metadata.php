@@ -404,38 +404,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "67ad3debe25043ccc2b7413679c18bc3",
-						"path" => "basics/admin-aufgaben/drucker",
-						"position" => 50,
-						"urlName" => "drucker",
-						"url" => "/basics/admin-aufgaben/drucker",
-						"level" => 3,
-						"title" => "Drucker verwalten",
-						"keywords" => "Drucker, plentyBase, Druckereinstellungen, Drucker konfigurieren, Druckverlauf, Druckhistorie, Druck Historie, Druckerprobleme",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Drucker verwalten. Hier findest du folgende Informationen:",
-						"languageID" => "VTQM7SL",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "2fa08b76410335a74d4c629bdb62bcbd",
-						"path" => "basics/admin-aufgaben/plentybase-installieren",
-						"position" => 60,
-						"urlName" => "plentybase-installieren",
-						"url" => "/basics/admin-aufgaben/plentybase-installieren",
-						"level" => 3,
-						"title" => "plentyBase installieren",
-						"keywords" => "plentyBase, Prozesse, Drucken, Drucker installieren, Prozesse ausführen, Automatisierung, Druckverlauf, Druckhistorie, plentymarkets Client, Base, base",
-						"description" => "plentyBase installieren",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich plentyBase installieren. Hier findest du folgende Informationen:",
-						"languageID" => "ZDXC8YS",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "36f70da854cc9bb0c29b4a2d442b5d10",
 						"path" => "basics/admin-aufgaben/versionszyklus",
 						"position" => 70,
