@@ -11126,7 +11126,7 @@ class Metadata {
 						"url" => "/en/markets/ebay/ebay-setup",
 						"level" => 3,
 						"title" => "Setting up eBay",
-						"keywords" => "eBay, Market, Marketplace, Listing, Layout template",
+						"keywords" => "eBay, market, marketplace, listing, layout template",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market eBay in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Setting up eBay. The following information is available:",
