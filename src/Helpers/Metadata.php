@@ -6611,38 +6611,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "b8b3ae467a86e9ef3880187a464ca2a0",
-						"path" => "basics/admin-tasks/printer",
-						"position" => 50,
-						"urlName" => "printer",
-						"url" => "/en/basics/admin-tasks/printer",
-						"level" => 3,
-						"title" => "Managing printers",
-						"keywords" => "Printer, plentyBase",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Managing printers. The following information is available:",
-						"languageID" => "VTQM7SL",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "70983090ab7ddfa1e71a825f56f1ff5d",
-						"path" => "basics/admin-tasks/installing-plentybase",
-						"position" => 60,
-						"urlName" => "installing-plentybase",
-						"url" => "/en/basics/admin-tasks/installing-plentybase",
-						"level" => 3,
-						"title" => "Installing plentyBase",
-						"keywords" => "plentyBase, processes, printer, printing, Installing printer, run processes, execute processes, automation, print history, plentymarkets Client, Base, base",
-						"description" => "Installing plentyBase",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Installing plentyBase. The following information is available:",
-						"languageID" => "ZDXC8YS",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "757a75743f749d911dc0b214e0f3a92c",
 						"path" => "basics/admin-tasks/version-cycle",
 						"position" => 70,
