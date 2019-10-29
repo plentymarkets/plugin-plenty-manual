@@ -690,7 +690,9 @@ Alle E-Mail-Vorlagen können mit bis zu 2 Anhängen standardisiert an Kunden ver
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inhalt / Artikelliste</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">In diese Tabs den Text bzw. die Artikelauflistung als <strong>reinen Text</strong> oder als <strong>HTML-formatierten Text</strong> eingeben. Für den Inhalt stehen verschiedene Template-Variablen und Template-Funktionen zur Verfügung.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Im Tab <strong>Inhalt</strong> können globale Template-Variablen verwendet werden, z.B. alle auftrags-, kontakt- und adressbezogenen Template-Variablen.<br>
+Im Tab <strong>Artikelliste</strong> können nur die Template-Variablen verwendet werden, die Werte der Auftragspositionen beinhalten. Würden diese Variablen im Tab <strong>Inhalt</strong> verwendet werden, so hätten sie keinen Inhalt.<br>
+Gib in diese Tabs den Text bzw. die Artikelauflistung als <strong>reinen Text</strong> oder als <strong>HTML-formatierten Text</strong> sowie Template-Variablen und Template-Funktionen ein. <br>
 <strong><em>Hinweis:</em></strong> Nur der Inhalt des Tabs wird berücksichtigt, dessen Inhaltstyp im Tab <strong>Einstellungen</strong> unter <strong>Inhalt</strong> festgelegt wurde. Wenn dort also z.B. <strong>Nur reiner Text</strong> eingestellt wurde, jedoch nur das Tab <strong>HTML-formatierter Text</strong> Inhalt enthält, wird keine E-Mail versendet.</p></td>
 </tr>
 </tbody>
@@ -728,10 +730,10 @@ Alle E-Mail-Vorlagen können mit bis zu 2 Anhängen standardisiert an Kunden ver
 <p>Für E-Mail-Vorlagen stehen Template-Variablen und Template-Funktionen zur Verfügung. Statt der Variablen oder Funktion wird dann von deinem plentymarkets System automatisch der definierte Inhalt abgebildet, d.h. in der E-Mail wird dann der Inhalt dargestellt. Außerdem erfüllen einige Template-Variablen die Funktion von Zuordnungsparametern, wenn du mit dem <a href="/crm/ticketsystem-nutzen#4800">Ticketsystem</a> arbeitest.</p>
 </div>
 <div class="paragraph">
-<p>Öffne eine E-Mail-Vorlage im Menü <strong>Einrichtung » Mandant</strong> » <em>Mandant wählen</em> » <strong>E-Mail » Vorlagen</strong>, um eine Liste aller Template-Variablen und Template-Funktionen, die dir für deine E-Mail-Vorlagen zur Verfügung stehen, anzuzeigen.</p>
+<p>Um eine Liste aller Template-Variablen und Template-Funktionen, die dir für deine E-Mail-Vorlagen zur Verfügung stehen, anzuzeigen, öffne eine E-Mail-Vorlage im Menü <strong>Einrichtung » Mandant</strong> » <em>Mandant wählen</em> » <strong>E-Mail » Vorlagen</strong> und klicke auf <span class="icon"><i class="fa fa-code" style="color:blue"></i></span>.</p>
 </div>
 <div class="paragraph">
-<p>Eine Übersicht der Template-Variablen und Template-Funktionen für E-Mail-Vorlagen findest du im Kapitel <a href="/crm/e-mails-versenden#4000">Für E-Mail-Vorlagen verfügbare Template-Variablen und Template-Funktionen</a>.</p>
+<p>Eine Übersicht der Template-Variablen und Template-Funktionen für E-Mail-Vorlagen findest du im Kapitel <a href="/crm/e-mails-versenden#4000">Für E-Mail-Vorlagen verfügbare Template-Variablen und Template-Funktionen</a> auf dieser Handbuchseite.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -789,12 +791,18 @@ Alle E-Mail-Vorlagen können mit bis zu 2 Anhängen standardisiert an Kunden ver
 </li>
 <li>
 <p>Kopiere die Template-Variablen aus der Übersicht, die du für die Artikelpositionen benötigst und füge die Template-Variablen im Tab <strong>Artikelliste</strong> ein.<br>
-​→ Zur Formatierung füge z.B. Tabulatoren, die du aus einem Textprogramm kopiert hast, zwischen den Template-Variablen ein.</p>
+​→ Zur Formatierung füge z.B. Tabulatoren, die du aus einem Textprogramm kopiert hast, zwischen den Template-Variablen ein (siehe <a href="#bild-verfuegbare-template-variablen-artikelliste">[bild-verfuegbare-template-variablen-artikelliste]</a>).</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon"><i class="fa fa-save" style="color:green"></i></span>) die Einstellungen.</p>
 </li>
 </ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/crm/assets/verfuegbare-template-variablen-artikelliste.png" alt="bild-verfuegbare-template-variablen-artikelliste]" width="640" height="360">
+</div>
+<div class="title">Bild 1. Verfügbare Template-Variablen für die Artikelliste</div>
 </div>
 <div class="paragraph subhead">
 <p>Beispiel: Anzeige der Artikelpositionen</p>
@@ -2038,158 +2046,189 @@ Die Tags müssen zuvor im Menü <strong>Einrichtung » Einstellungen » Tags</st
 <td class="tableblock halign-left valign-top"><p class="tableblock">Anmeldung im Forum</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">$ItemListPlain / $ItemListHTML</p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">$ItemListPlain / $ItemListHTML<br>
+(<span class="icon"><i class="fa fa-exclamation-triangle" style="color:red"></i></span> Die im folgenden aufgelisteten Template-Variablen können nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Artikels.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$OrderProperties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bestellmerkmale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bestellmerkmale<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ReturnItemStatusID</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ReturnItemStatusLabel</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemNumber</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Artikelnummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Artikelnummer.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Artikelname</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Artikelname.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemQuantity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl des Artikels.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemPrice</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Artikelpreis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Artikelpreis.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemPriceNet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nettopreis des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nettopreis des Artikels.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemReferrer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Herkunft des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Herkunft des Artikels.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ExternalItemID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Externe Artikel-ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Externe Artikel-ID.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ExternalVariationID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Externe Varianten-ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Externe Varianten-ID.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$TransactionID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transaktions-ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transaktions-ID.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$UnitString</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Einheit des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Einheit des Artikels.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$VariationName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Variantenname</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variantenname.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$VariationNumber</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Variantennummer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variantennummer.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$VariationId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Varianten-ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Varianten-ID.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$VariantName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Variantenname</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variantenname.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemModel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Modellbezeichnung des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modellbezeichnung des Artikels.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemEAN</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Internationale Artikelnummer (EAN)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Internationale Artikelnummer (EAN).<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemISBN</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ISBN-Code des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISBN-Code des Artikels.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemASIN</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon Standard Ident Number (ASIN) des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon Standard Ident Number (ASIN) des Artikels.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemAvailabilityLabel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Text der Artikelverfügbarkeit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text der Artikelverfügbarkeit.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemAvailabilityID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Artikelverfügbarkeit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Artikelverfügbarkeit.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$Free</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Freitextfeld für die Artikel. Die Texte werden im Menü <strong>Einrichtung » Artikel » Freitextfelder</strong> gespeichert. Für die Ausgabe der Feldbezeichnungen die Feldnummer in eckigen Klammer dahinter schreiben.<br>
-<strong><em>Beispiel:</em></strong> <strong>$Free[3]</strong> gibt den Text, der unter <strong>Feld 3</strong> gespeichert ist, aus.</p></td>
+<strong><em>Beispiel:</em></strong> <strong>$Free[3]</strong> gibt den Text, der unter <strong>Feld 3</strong> gespeichert ist, aus.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$DownloadLink</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Download-Link z.B. zu Produktinformationen, der im Mein Konto-Bereich des Webshops eingebunden werden kann.<br>
 <strong><em>Hinweis:</em></strong> Die Dateien werden im Tab <strong>Media</strong> des Artikels hochgeladen.<br>
-<strong><em>Wichtig</em>:</strong> Im Tab <strong>Media</strong> hochgeladene Dateien können für den Ceres-Webshop nicht genutzt werden.</p></td>
+<strong><em>Wichtig</em>:</strong> Im Tab <strong>Media</strong> hochgeladene Dateien können für den Ceres-Webshop nicht genutzt werden.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemImageURL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URL zum Artikelbild</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL zum Artikelbild.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemProducerName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Herstellers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Herstellers.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemVatRate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mehrwertsteuersatz für die einzelne Auftragsposition in Prozent (ohne Angabe des Prozentzeichens)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mehrwertsteuersatz für die einzelne Auftragsposition in Prozent (ohne Angabe des Prozentzeichens).<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemWarehouseID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lager-ID des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lager-ID des Artikels.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$SchedulerItemStartDate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Startdatum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Startdatum.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$SchedulerItemEndDate</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ReturnItemComment</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ReturnItemValuePercentage</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ReturnItemReasonID</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ReturnItemReasonLabel</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">$ItemVoucherCodes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Codes eines Gutscheins pro Auftragsposition durch Komma getrennt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Codes eines Gutscheins pro Auftragsposition durch Komma getrennt.<br>
+Dies ist keine globale Template-Variable, sondern eine Variable, die pro Auftragsposition gesetzt wird. Sie kann nur im Tab <strong>Artikelliste</strong> der E-Mail-Vorlage genutzt werden.</p></td>
 </tr>
 </tbody>
 </table>
