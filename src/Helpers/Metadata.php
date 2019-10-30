@@ -11318,11 +11318,11 @@ class Metadata {
 						"urlName" => "idealo-setup",
 						"url" => "/en/markets/idealo-checkout/idealo-setup",
 						"level" => 3,
-						"title" => "Setting up idealo Checkout",
+						"title" => "Setting up idealo",
 						"keywords" => "idealo, idealo Checkout, market, marketplace, price comparison",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market idealo Checkout in your plentymarkets system.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Setting up idealo Checkout. The following information is available:",
+						"linkListInto" => "Welcome to the topic Setting up idealo. The following information is available:",
 						"languageID" => "JFWN4QY",
 						"children" => [],
 						"hasChildren" => false
