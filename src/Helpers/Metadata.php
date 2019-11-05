@@ -5752,6 +5752,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "80173b9af9c9cc6278da30ff132201d3",
+						"path" => "app/funktionen/artikelsuche",
+						"position" => 20,
+						"urlName" => "artikelsuche",
+						"url" => "/app/funktionen/artikelsuche",
+						"level" => 3,
+						"title" => "Artikel-, Kunden- und Auftragssuche",
+						"keywords" => "",
+						"description" => "Die plentymarkets App macht es einfach, unterwegs nach Artikeln zu suchen.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Artikel-, Kunden- und Auftragssuche. Hier findest du folgende Informationen:",
+						"languageID" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "fb3461494f84514111417b2942c7af7d",
 						"path" => "app/funktionen/lagerverwaltung",
 						"position" => 30,
