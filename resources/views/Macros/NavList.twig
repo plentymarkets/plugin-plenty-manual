@@ -2,38 +2,39 @@
     {% import _self as NavList %}
 
     {% for page in pages %}
-
-        <li class="{% if page.isActive or page.isOpen %}open{% endif %}">
-            <a class="docs-nav-link{% if page.hasChildren %} plenty-dropdown-toggle{% endif %}{% if page.isActive or page.isOpen %} active{% endif %}"
-                id="{{ page.id }}"
-                href="{{ page.url }}"
-                {# TODO: check if initial open, adapt class & aria #}
-                {% if page.hasChildren %}
-                    data-fn="expandable-item-trigger"
-                    aria-haspopup="true"
-                {% endif %}
-                {% if page.isOpen %}
-                    aria-expanded="true"
-                {% else %}
-                    aria-expanded="false"
-                {% endif %}
-            >{{ page.title }}</a>
-
-            {% if page.hasChildren or page.navAlias %}
-                <ul aria-labelledby="{{ page.id }}">
-                    {% if page.navAlias %}
-                        {# TODO: what is this? #}
-                        <li>
-                            <a class="docs-nav-link" href="{{ page.url }}">{{ page.navAlias }}</a>
-                        </li>
-                    {% endif %}
-
+        {% if page.position != 0 %}
+            <li class="{% if page.isActive or page.isOpen %}open{% endif %}">
+                <a class="docs-nav-link{% if page.hasChildren %} plenty-dropdown-toggle{% endif %}{% if page.isActive or page.isOpen %} active{% endif %}"
+                    id="{{ page.id }}"
+                    href="{{ page.url }}"
+                    {# TODO: check if initial open, adapt class & aria #}
                     {% if page.hasChildren %}
-                        {{ NavList.print( page.children, depth + 1, page.url ) }}
+                        data-fn="expandable-item-trigger"
+                        aria-haspopup="true"
                     {% endif %}
-                </ul>
-            {% endif %}
-        </li>
+                    {% if page.isOpen %}
+                        aria-expanded="true"
+                    {% else %}
+                        aria-expanded="false"
+                    {% endif %}
+                >{{ page.title }}</a>
+
+                {% if page.hasChildren or page.navAlias %}
+                    <ul aria-labelledby="{{ page.id }}">
+                        {% if page.navAlias %}
+                            {# TODO: what is this? #}
+                            <li>
+                                <a class="docs-nav-link" href="{{ page.url }}">{{ page.navAlias }}</a>
+                            </li>
+                        {% endif %}
+
+                        {% if page.hasChildren %}
+                            {{ NavList.print( page.children, depth + 1, page.url ) }}
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endif %}
 
     {% endfor %}
 
