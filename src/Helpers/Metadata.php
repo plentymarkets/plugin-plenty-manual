@@ -683,6 +683,22 @@ class Metadata {
 		"languageID" => "TP9OCLS",
 		"children" => 		[
 			[
+				"id" => "fe4b8b572602fafbdbe6dadfdf5fa9ff",
+				"path" => "artikel/einstellungen",
+				"position" => 0,
+				"urlName" => "einstellungen",
+				"url" => "/artikel/einstellungen",
+				"level" => 2,
+				"title" => "Vorbereitende Einstellungen",
+				"keywords" => "",
+				"description" => "Bereite dein plentymarkets System auf den Verkauf von Artikeln vor. Treffe vorbereitende Einstellungn, die später mit deinen Artikeln und Varianten verknüpft werden.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Vorbereitende Einstellungen. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "0ff6774e26eca098d491728c7fb8538a",
 				"path" => "artikel/einleitung",
 				"position" => 10,
