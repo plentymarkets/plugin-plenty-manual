@@ -5885,6 +5885,22 @@ class Metadata {
 		"languageID" => "8OEUR6U",
 		"children" => 		[
 			[
+				"id" => "0e6ceffc88a6bce56c7b084a525f3cbf",
+				"path" => "pos/demo",
+				"position" => 0,
+				"urlName" => "demo",
+				"url" => "/pos/demo",
+				"level" => 2,
+				"title" => "Demo-Modus",
+				"keywords" => "",
+				"description" => "Willst du deine Ladentheke mit deinem Online-Business verbinden? Überzeuge dich selbst mit der kostenlosen Demoversion von plentymarkets POS.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Demo-Modus. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "7012bc427b4666a6774e9ce4ebc9b452",
 				"path" => "pos/pos-einrichten",
 				"position" => 10,
