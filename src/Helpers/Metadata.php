@@ -5887,7 +5887,7 @@ class Metadata {
 			[
 				"id" => "0e6ceffc88a6bce56c7b084a525f3cbf",
 				"path" => "pos/demo",
-				"position" => 0,
+				"position" => 5,
 				"urlName" => "demo",
 				"url" => "/pos/demo",
 				"level" => 2,
