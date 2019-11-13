@@ -11882,6 +11882,22 @@ class Metadata {
 		"languageID" => "8OEUR6U",
 		"children" => 		[
 			[
+				"id" => "0e6ceffc88a6bce56c7b084a525f3cbf",
+				"path" => "pos/demo",
+				"position" => 5,
+				"urlName" => "demo",
+				"url" => "/en/pos/demo",
+				"level" => 2,
+				"title" => "Demo mode",
+				"keywords" => "",
+				"description" => "Want to link your physical store with your online business? See what the free demo version of plentymarkets POS has to offer.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Demo mode. The following information is available:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "bd759acc3cfe5a0179cfe9a6dc8b5e36",
 				"path" => "pos/integrating-plentymarkets-pos",
 				"position" => 10,
