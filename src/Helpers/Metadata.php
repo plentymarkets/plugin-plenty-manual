@@ -764,22 +764,6 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
-				"id" => "8c2a3fa7200cba571c55ea653d0615d0",
-				"path" => "artikel/artikel-verwalten",
-				"position" => 20,
-				"urlName" => "artikel-verwalten",
-				"url" => "/artikel/artikel-verwalten",
-				"level" => 2,
-				"title" => "Artikel manuell anlegen",
-				"keywords" => "Cross-Selling, Hersteller, Barcodes",
-				"description" => "Erfahre, wie du Artikel in plentymarkets erstellst und verwaltest.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Artikel manuell anlegen. Hier findest du folgende Informationen:",
-				"languageID" => "ZVYHQWL",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "fe4b8b572602fafbdbe6dadfdf5fa9ff",
 				"path" => "artikel/einstellungen",
 				"position" => 20,
@@ -939,6 +923,22 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
+			],
+			[
+				"id" => "8c2a3fa7200cba571c55ea653d0615d0",
+				"path" => "artikel/artikel-verwalten",
+				"position" => 25,
+				"urlName" => "artikel-verwalten",
+				"url" => "/artikel/artikel-verwalten",
+				"level" => 2,
+				"title" => "Artikel manuell anlegen",
+				"keywords" => "Cross-Selling, Hersteller, Barcodes",
+				"description" => "Erfahre, wie du Artikel in plentymarkets erstellst und verwaltest.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Artikel manuell anlegen. Hier findest du folgende Informationen:",
+				"languageID" => "ZVYHQWL",
+				"children" => [],
+				"hasChildren" => false
 			],
 			[
 				"id" => "29a2eeb6bc46aa8ea676513bc07dc637",
