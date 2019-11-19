@@ -775,6 +775,22 @@ class Metadata {
 						"languageID" => "",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "44f5cee62cbc1a0a4e4d4a7efb6ec0b3",
+						"path" => "artikel/einstellungen/eigenschaften",
+						"position" => 0,
+						"urlName" => "eigenschaften",
+						"url" => "/artikel/einstellungen/eigenschaften",
+						"level" => 3,
+						"title" => "Merkmale und Eigenschaften",
+						"keywords" => "",
+						"description" => "Lerne, wie du deine Produkte charakterisierst und dabei Varianten bildest.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Merkmale und Eigenschaften. Hier findest du folgende Informationen:",
+						"languageID" => "",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
