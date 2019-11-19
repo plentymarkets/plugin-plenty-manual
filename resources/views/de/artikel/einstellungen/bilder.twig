@@ -1,0 +1,793 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> Artikelbilder einrichten</span></a></li>
+<li><a href="#200"><span>2.</span><span> Eigene Domain für Bild-URLs speichern</span></a>
+<ul class="sectlevel2">
+<li><a href="#300"><span>2.1.</span><span> Eine von plentymarkets gehostete Domain</span></a></li>
+<li><a href="#400"><span>2.2.</span><span> Eine von einem externen Provider gehostete Domain</span></a></li>
+</ul>
+</li>
+<li><a href="#500"><span>3.</span><span> Größe von Artikelbildern festlegen</span></a></li>
+<li><a href="#600"><span>4.</span><span> Artikelbilder per FTP-Server hochladen</span></a>
+<ul class="sectlevel2">
+<li><a href="#700"><span>4.1.</span><span> Artikelbilddateien für den FTP-Import benennen</span></a></li>
+<li><a href="#800"><span>4.2.</span><span> Artikelbilder per FTP-Server importieren</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Artikelbilder</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Artikelbilder werden auf S3 gespeichert und über den CDN-Service CloudFront von AWS ausgeliefert. CDN steht für Content Delivery Network und ermöglicht eine komplett skalierbare Auslieferung der Artikelbilder. Dank CDN wird nur das Originalbild gespeichert. Erst wenn ein Bild aufgerufen wird, wird das Bild in den definierten Dimensionen erstellt und im CDN-Cache von CloudFront gespeichert.</p>
+</div>
+<div class="paragraph">
+<p>Erfahre, welche Einstellungen du für deine Artikelbilder vornehmen kannst und wie du Bilder per FTP hochlädst.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. Artikelbilder einrichten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im Menü <strong>Einrichtung » Artikel » Bilder » Einstellungen</strong> nimmst du die folgenden Einstellungen für Artikelbilder vor:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Import und Export</p>
+</li>
+<li>
+<p>Platzhalterbilder</p>
+</li>
+<li>
+<p>Größe von Attributbildern</p>
+</li>
+<li>
+<p>Bildnamen</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Einstellungen für Artikelbilder vornehmen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Artikel » Bilder » Einstellungen</strong>.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen vor. Beachte die Erläuterungen in <a href="#tabelle-bildeinstellungen">Tabelle 1</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon"><i class="fa fa-save" style="color:green"></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-bildeinstellungen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Bildeinstellungen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Einstellungen</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exportiere Artikelbild-Position</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positionsnummer des Artikelbildes für den Bildexport wählen, zum Beispiel für den Export zu einem Marktplatz.<br>
+Die Position wird im Tab <a href="/artikel/artikel-verwalten#90">Bilder</a> des Artikels eingestellt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Import von Bildern per FTP</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob importierte Bilder ergänzt werden sollen (Grundeinstellung) oder ob vorhandene Bilder vor dem Import der neuen Bilder gelöscht werden sollen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bildernamen des FTP-Imports</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob die Dateinamen von <a href="/artikel/einstellungen/bilder#600">per FTP-Server importierten Bilder</a> die <strong>Artikel-ID</strong> oder die <strong>Varianten-Nr.</strong> enthalten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Platzhalterbild-URL</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL für ein Platzhalterbild eingeben. Das Platzhalterbild wird angezeigt, wenn Artikelbilder nicht angezeigt werden können. Platzhalterbild im Menü <strong>CMS » Webspace</strong> hochladen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Platzhaltervorschaubild-URL</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL für ein Platzhalterbild für Vorschaubilder eingeben. Das Platzhalterbild wird angezeigt, wenn Vorschaubilder nicht angezeigt werden können. Platzhalterbild im Menü <strong>CMS » Webspace</strong> hochladen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Attributbilder</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max. Höhe in Pixeln</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximale Höhe in Pixeln für Attributbilder eingeben. Standardmäßig ist der Wert <strong>40</strong> eingestellt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max. Breite in Pixeln</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximale Breite in Pixeln für Attributbilder eingeben. Standardmäßig ist der Wert <strong>40</strong> eingestellt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Originalname</strong>;<br>
+<strong>Artikel-ID</strong>;<br>
+<strong>Artikel-Nr.</strong>;<br>
+<strong>Name 1</strong> - <strong>Name 3</strong>;<br>
+<strong>Keywords</strong>;<br>
+<strong>Model</strong>;<br>
+<strong>Freitextfeld 1</strong> - <strong>Freitextfeld 20</strong>;<br>
+<strong>Eigenes Präfix</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter wählen, die im Namen des Bildes enthalten sein sollen und die Position festlegen, an der der Parameter im Namen geführt wird. Parameter werden im Bildnamen durch Bindestriche getrennt. Die Angabe der <strong>Artikel-ID</strong> oder der <strong>Artikelnummer</strong> ist Pflicht. Der Bildname ist auf eine Länge von 32 Zeichen beschränkt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Präfix</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ein eigenes Präfix eingeben, das in Bildnamen eingefügt wird.<br>
+<strong><em>Hinweis:</em></strong> Das eingegebene Präfix wird nur in den Bildnamen eingefügt, wenn in der Dropdown-Liste <strong>Präfix</strong> eine Position gewählt wurde.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="200">2. Eigene Domain für Bild-URLs speichern</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Artikelbildern wird die URL der Standard-CDN-Domain zugewiesen. Deshalb enthalten die URLs von Artikelbildern standardmäßig den Domain-Namen "plentymarkets.com". Du hast jedoch auch die Möglichkeit, statt der Standard-CDN-Domain die Domain des Mandanten zu nutzen und eine eigene Subdomain für Artikelbilder zu speichern. <a href="#tabelle-domain-bild-URLs">Tabelle 2</a> zeigt die Unterschiede zwischen der Standard-CDN-Domain und einer eigenen CDN-Domain. Eine eigene CDN-Domain kann für von plentymarkets gehostete Domains und für extern gehostete Domains eingerichtet werden. Beachte jedoch die folgenden Einschränkungen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Eine eigene Subdomain kann nur für die Hauptdomain gespeichert werden.</p>
+</li>
+<li>
+<p>Pro Mandant kann nur eine eigene Subdomain gespeichert werden.</p>
+</li>
+<li>
+<p>Die Subdomain darf nicht <strong>www</strong> enthalten.</p>
+</li>
+<li>
+<p>Die Subdomain darf nicht im Service-Center vorhanden sein.</p>
+</li>
+</ul>
+</div>
+<table id="tabelle-domain-bild-URLs" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Eigene Domain für Bilder-URLs</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 37.5%;">
+<col style="width: 37.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Bild-URL mit Standard-Domain</th>
+<th class="tableblock halign-left valign-top">Bild-URL mit eigener Domain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL-Muster</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die URL von Artikelbildern setzt sich wie folgt zusammen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Subdomain <strong>CDN1</strong>, <strong>CDN2</strong> oder <strong>CDN3</strong></p>
+</li>
+<li>
+<p>Domain <strong>plentymarkets.com</strong></p>
+</li>
+<li>
+<p>Kunden-Hash</p>
+</li>
+<li>
+<p>Dateipfad <strong>item/images</strong></p>
+</li>
+<li>
+<p>Artikel-ID</p>
+</li>
+<li>
+<p>Ordnername der Bildgröße</p>
+</li>
+<li>
+<p>Name der Bilddatei mit Dateierweiterung</p>
+</li>
+</ol>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Statt der Standard-Domain wird die eigene Domain angegeben. Der Kunden-Hash wird nicht in der URL angezeigt:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Eigene Subdomain</p>
+</li>
+<li>
+<p>Domain des Mandanten</p>
+</li>
+<li>
+<p>Dateipfad <strong>item/images</strong></p>
+</li>
+<li>
+<p>Artikel-ID</p>
+</li>
+<li>
+<p>Ordnername der Bildgröße</p>
+</li>
+<li>
+<p>Name der Bilddatei mit Dateierweiterung</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beispiel-URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://<strong>cdn01.plentymarkets.com/<br>
+1abcd2e3fghi</strong>/item/images/118/full/118-Relaxsessel-Rio.jpg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://<strong>ihresubdomain.ihrshop.de</strong>/<br>
+item/images/118/full/118-Relaxsessel-Rio.jpg</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Gehe wie unten beschrieben vor, um eine eigene Domain für die Bilder-URLs eines Mandanten zu speichern:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/artikel/einstellungen/bilder#300">Für eine von plentymarkets gehostete Domain</a></p>
+</li>
+<li>
+<p><a href="/artikel/einstellungen/bilder#400">Für eine von einem externen Provider gehostete Domain</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="300">2.1. Eine von plentymarkets gehostete Domain</h3>
+<div class="paragraph">
+<p>Gehe wie unten beschrieben vor, um eine eigene Domain für die Bilder-URLs eines Mandanten zu speichern, wenn dein System von plentymarkets gehostet wird.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Nach Erstellen der Subdomain die Domain aktivieren</div>
+<div class="paragraph">
+<p>Das Erstellen der Subdomain kann mehrere Stunden dauern. Erst wenn in allen drei Spalten <strong>SSL</strong>, <strong>DNS</strong> und <strong>Cloud-Status</strong> grüne Häkchen angezeigt werden, ist der Vorgang abgeschlossen und die Domain kann aktiviert werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Eigene Domain für Bild-URLs speichern:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Mandant » Mandant öffnen » Domains</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.<br>
+→ Das Fenster <strong>Neue Domain</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-cdn-domain">Tabelle 3</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon"><i class="fa fa-save" style="color:green"></i></span>) die Einstellungen.<br>
+→ Die Subdomain wird erstellt.<br>
+→ Für die Subdomain wird ein eigenes SSL-Zertifikat erstellt.<br>
+→ Für die Subdomain wird ein DNS-Eintrag erstellt.<br>
+→ Eine CloudFront-Instanz wird erstellt.<br>
+<strong><em>Hinweis:</em></strong> Dieser Vorgang kann mehrere Stunden dauern. Erst wenn in den Spalten <strong>SSL</strong>, <strong>DNS</strong> und <strong>Cloud-Status</strong> grüne Häkchen angezeigt werden, ist der Vorgang abgeschlossen.</p>
+</li>
+<li>
+<p>Wenn alle drei Häkchen angezeigt werden, klicke in der Spalte <strong>Status</strong> auf <strong>Aktivieren</strong>.<br>
+→ Die Domain wird aktiviert.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-cdn-domain" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Subdomain für Bilder-URLs festlegen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bereich</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Den Typ der Subdomain aus der Dropdown-Liste wählen. Aktuell ist nur der Typ <strong>CDN1</strong> verfügbar.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Subdomain</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eigene Subdomain eingeben. Gültige Zeichen sind Buchstaben (a-z, A-Z), Ziffern (0-9), Unterstrich (_) und Bindestrich (-). Das erste Zeichen der Subdomain muss entweder ein Buchstabe oder eine Ziffer sein.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Domain</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain aus der Dropdown-Liste wählen. Aktuell ist nur die Hauptdomain des Mandanten wählbar.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="400">2.2. Eine von einem externen Provider gehostete Domain</h3>
+<div class="paragraph">
+<p>Wenn deine Domain von einem externen Provider gehostet wird, musst du die DNS-Einstellungen bei deinem Domain-Provider speichern. Gehe wie unten beschrieben vor, um eine eigene Domain für die Bilder-URLs eines Mandanten zu speichern und die DNS-Einstellungen beim externen Domain-Provider zu hinterlegen.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Was ist DNS?</div>
+<div class="paragraph">
+<p>DNS steht für Domain Name System. Dieses System sorgt dafür, dass nicht die numerische IP-Adresse deines Webshops eingegeben werden muss, sondern auch der Domain-Name der richtigen IP-Adresse zugeordnet wird.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Eigene Domain für Bild-URLs speichern bei externer Domain:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Mandant » Mandant öffnen » Domains</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.<br>
+→ Das Fenster <strong>Neue Domain</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-cdn-domain">Tabelle 3</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon"><i class="fa fa-save" style="color:green"></i></span>) die Einstellungen.<br>
+→ Für die Subdomain wird ein DNS-Eintrag erstellt.</p>
+</li>
+<li>
+<p>Klicke in der Zeile des Domain-Eintrags auf <strong>DNS-Infos</strong>.<br>
+→ Das Fenster <strong>DNS-Infos</strong> wird geöffnet.<br>
+→ Die DNS-Einstellungen werden angezeigt.</p>
+</li>
+<li>
+<p>Log dich in den Service-Bereich deines Domain-Providers ein.</p>
+</li>
+<li>
+<p>Kopiere die in plentymarkets angezeigten DNS-Einstellungen in die dafür vorgesehenen Felder des Domain-Providers.<br>
+→ Informationen zur Vorgehensweise findest du in der Dokumentation des Domain-Providers.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon"><i class="fa fa-save" style="color:green"></i></span>) die Einstellungen.<br>
+→ Für die Subdomain wird ein eigenes SSL-Zertifikat erstellt.<br>
+→ Eine CloudFront-Instanz wird erstellt.<br>
+→ Die DNS-Einstellungen werden aktualisiert.<br>
+<strong><em>Hinweis:</em></strong> Es kann bis zu 72 Stunden dauern, bis die DNS-Einstellungen beim externen Provider wirksam werden. plentymarkets hat keinen Einfluss auf die Dauer dieses Vorgangs.<br>
+→ Wenn im Menü <strong>Einrichtung » Mandant » Mandant öffnen » Domains</strong> des plentymarkets Backend in den Spalten <strong>SSL</strong>, <strong>DNS</strong> und <strong>Cloud-Status</strong> grüne Häkchen angezeigt werden, ist der Vorgang abgeschlossen.</p>
+</li>
+<li>
+<p>Wenn im Menü <strong>Einrichtung » Mandant » Mandant öffnen » Domains</strong> alle drei Häkchen angezeigt werden, klicke in der Spalte <strong>Status</strong> auf <strong>Aktivieren</strong>.<br>
+→ Die Domain wird aktiviert.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-cdn-domain" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Subdomain für Bilder-URLs festlegen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bereich</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Den Typ der Subdomain aus der Dropdown-Liste wählen. Aktuell ist nur der Typ <strong>CDN1</strong> verfügbar.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Subdomain</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eigene Subdomain eingeben. Gültige Zeichen sind Buchstaben (a-z, A-Z), Ziffern (0-9), Unterstrich (_) und Bindestrich (-). Das erste Zeichen der Subdomain muss entweder ein Buchstabe oder eine Ziffer sein.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Domain</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain aus der Dropdown-Liste wählen. Aktuell ist nur die Hauptdomain des Mandanten wählbar.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="500">3. Größe von Artikelbildern festlegen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im Menü <strong>Einrichtung » Artikel » Bilder » Größen</strong> nimmst du Einstellungen für jede Bildgröße fest. Die folgenden Größen sind verfügbar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>preview</strong> = Größe des Vorschaubilds</p>
+</li>
+<li>
+<p><strong>secondPreview</strong> = Größe des zweiten Vorschaubilds</p>
+</li>
+<li>
+<p><strong>middle</strong> = Größe der mittleren Bildgröße</p>
+</li>
+<li>
+<p><strong>full</strong> = Größe der vollen Bildgröße</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Gehe wie unten beschrieben vor, um die verschiedenen Größen von Artikelbildern festzulegen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Größe von Artikelbildern festlegen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Artikel » Bilder » Größen</strong>.</p>
+</li>
+<li>
+<p>Nimm für jede Bildgröße die Einstellungen vor. Beachte die Erläuterungen in <a href="#tabelle-bildgroessen">Tabelle 5</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon"><i class="fa fa-save" style="color:green"></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-bildgroessen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Bildgrößen festlegen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bezeichnung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interne Bezeichnung eingeben, die für diese Größe verwendet wird.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ordnername</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Ordnername für diese Bildgröße. Der Ordnername ist nicht änderbar und ist Bestandteil der URL des Artikelbilds.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximale Höhe in Pixeln</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximale Höhe in Pixeln eingeben, in der Bilder dieser Größe ausgeliefert werden. Überschreitet dein hinterlegtes Artikelbild diese Größe, wird das angezeigte Artikelbild nach unten skaliert. Dabei wird das Seitenverhältnis beibehalten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximale Breite in Pixeln</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximale Breite in Pixeln eingeben, in der Bilder dieser Größe ausgeliefert werden. Überschreitet dein hinterlegtes Artikelbild diese Größe, wird das angezeigte Artikelbild nach unten skaliert. Dabei wird das Seitenverhältnis beibehalten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max. Cache-Lebensdauer in Tagen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl der Tage eingeben, die erstellte Bilder im CloudFront-Cache gespeichert werden. Der Zeitpunkt gilt ab dem ersten Aufruf des Bildes in dieser Größe.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Drehen basierend auf dem EXIF Orientation Tag</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob die Orientierung des Originalbilds (Bilddrehung um 90, 180, 270°) übernommen werden.<br>
+Aktiviert = Für skalierte Bilder dieser Größe wird die Rotation des Originalbilds übernommen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Metadaten (EXIF, XMP, IPTC) vom Orginalbild übernehmen</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wählen, ob die Metadaten des Originalbilds übernommen werden.<br>
+Metadaten sind zum Beispiel Beschreibungstexte, Geodaten (GPS), Datum und Uhrzeit.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Aktiviert</strong> = Für skalierte Bilder dieser Größe werden die Metadaten des Originalbilds übernommen.<br>
+<strong><em>Tipp:</em></strong> Besonders für Vorschaubilder kann es sinnvoll sein, die Metadaten nicht mit auszuliefern, um Ladezeit und Datenvolumen zu optimieren.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nicht vergrößern</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wählen, ob Originalbilder vergrößert werden.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Nicht aktiviert</strong> = Wenn das Originalbild kleiner ist als die für diese Größe definierten maximale Dimensionen, wird das Bild auf diese Größe skaliert.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">JPG</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Qualität in Prozent</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Komprimierung von Originalbildern im JPG-Format in Prozent eingeben. Eine Komprimierung verringert die Ladezeiten und trägt zu besseren Pagespeed-Werten bei.<br>
+<strong><em>Tipp:</em></strong> Eine Komprimierung von 80&nbsp;% führt in der Regel zu keinem sichtbaren Qualitätsverlust.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Progressiv</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wählen, ob Bilder dieser Größe bei Aufruf der Seite sofort angezeigt werden.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Aktiviert</strong> = Beim Aufruf der Seite ist das Bild sofort in geringer Auflösung verfügbar. Die Qualität des Bildes wird während des Seitenaufbaus nach und nach verbessert.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">PNG</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Komprimierungslevel (0-9)</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Komprimierungslevel für PNG-Dateien wählen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>0</strong> = Geringste Komprimierung</p>
+</li>
+<li>
+<p><strong>9</strong> = Höchste Komprimierung<br>
+PNG ist ein verlustfreies Format. Deshalb werden Bilder im PNG-Format immer in derselben Qualität dargestellt. Bei einem höheren Komprimierungslevel benötigt der Browser aber mehr Zeit, um die Komprimierung des Bildes wiederherzustellen.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Progressiv</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wählen, ob Bilder dieser Größe bei Aufruf der Seite sofort angezeigt werden.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Aktiviert</strong> = Beim Aufruf der Seite ist das Bild sofort in geringer Auflösung verfügbar. Die Qualität des Bildes wird während des Seitenaufbaus nach und nach verbessert.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">CDN-Cache invalidieren</div>
+<div class="paragraph">
+<p>Wenn du im Menü <strong>Einrichtung » Artikel » Bilder</strong> Änderungen vornimmst, kann es sein, dass die Bilder noch immer mit den alten Einstellungen angezeigt werden, da sich die Änderungen im Cache befinden. Klicke in diesem Fall auf <strong>CDN-Cache invalidieren</strong>, um die Änderungen schneller anzuzeigen. Die Cache-Invalidierung erfolgt durch CloudFront.
+Nachdem du den Cache invalidierst wird jede Bildgröße neu erstellt, wenn das Bild zum ersten Mal wieder aufgerufen wird.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="600">4. Artikelbilder per FTP-Server hochladen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Jedes plentymarkets System hat einen eigenen <a href="/basics/admin-aufgaben/ftpz-zugang">FTP-Server</a>. Auf diesem FTP-Server liegt der Ordner <strong>upload_article_image_XXXX</strong> (XXXX = plentyID), in den du Artikelbilder laden kannst. Der Ordner wird alle 60 Minuten auf Änderungen geprüft. Neue, korrekt benannte Bilder werden automatisch den richtigen Artikeln zugeordnet. Zum Hochladen von Dateien benötigst du ein FTP-Programm und deine FTP-Login-Daten.</p>
+</div>
+<div class="sect2">
+<h3 id="700">4.1. Artikelbilddateien für den FTP-Import benennen</h3>
+<div class="paragraph">
+<p>Im Menü <strong>Einrichtung » Artikel » Bilder » Einstellungen</strong> legst du über die Option <strong>Bildernamen des FTP-Imports</strong> fest, ob die Dateinamen von Artikelbildern die Artikel-ID oder die Varianten-Nr. enthalten. Abhängig von dieser Einstellung benennst du die Dateien entweder mit der Artikel-ID oder der Variantennummer.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Zulässige Zeichen für Dateinamen</div>
+<div class="paragraph">
+<p>Die Dateinamen von Bildern dürfen folgende Zeichen enthalten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Buchstaben (a-z, A-Z) ohne Umlaute</p>
+</li>
+<li>
+<p>Zahlen (0-9)</p>
+</li>
+<li>
+<p>Unterstriche (_)</p>
+</li>
+<li>
+<p>Bindestriche (-)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Leerzeichen und andere Sonderzeichen sind nicht zulässig. Beim Hochladen der Bilddatei werden Leerzeichen und Sonderzeichen durch Bindestriche (-) ersetzt.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Wenn du mehrere Bilder pro Artikel hochladen möchtest, nummeriere die Dateien über ein Suffix durch. Dabei muss die Bildnummer der Artikel-ID oder Varianten-Nr. mit drei Bindestrichen, also mit <strong>---</strong>, nachgestellt werden. Pro Artikel sind bis zu 100 Bilder bei einer Nummerierung von 0 bis 99 möglich.</p>
+</div>
+<div class="paragraph instruction">
+<p>Beispiel:</p>
+</div>
+<div class="paragraph">
+<p>Du möchtest Bilder für einen Artikel mit der Artikel-ID 4562 und der Variantennummer AQ3957 hochladen.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 6. Beispiele für FTP-konforme Benennung von Artikelbildern</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Benennung 1 Bild pro Artikel</th>
+<th class="tableblock halign-left valign-top">Benennung mehr als 1 Bild pro Artikel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bildernamen des FTP-Imports</strong> = <strong>Artikel-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>4562.jpg</p>
+</li>
+<li>
+<p>4562.png</p>
+</li>
+<li>
+<p>4562.gif</p>
+</li>
+<li>
+<p>4562.svg</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>4652---0.jpg</p>
+</li>
+<li>
+<p>4652---1.jpg</p>
+</li>
+<li>
+<p>4652---2.gif</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bildernamen des FTP-Imports</strong> = <strong>Varianten-Nr.</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>AQ3957.jpg</p>
+</li>
+<li>
+<p>AQ3957.png</p>
+</li>
+<li>
+<p>AQ3957.gif</p>
+</li>
+<li>
+<p>AQ3957.svg</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>AQ3957---0.png</p>
+</li>
+<li>
+<p>AQ3957---19.png</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="800">4.2. Artikelbilder per FTP-Server importieren</h3>
+<div class="paragraph">
+<p>Gehe wie hier beschrieben vor, um Artikelbilder per FTP-Server zu importieren.</p>
+</div>
+<div class="paragraph instruction">
+<p>Artikelbilder per FTP importieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Kopiere die Artikelbilder, die du hochladen möchtest, in einen Ordner auf deiner Festplatte.</p>
+</li>
+<li>
+<p>Prüfe die <a href="/artikel/einstellungen/bilder#700">Namen der Bildateien</a>.</p>
+</li>
+<li>
+<p>Passe die Namen der Bilddateien wenn nötig an.</p>
+</li>
+<li>
+<p>Wähle in deinem FTP-Programm den Zielordner <strong>upload_article_image_XXXX</strong> (XXXX = plentyID).</p>
+</li>
+<li>
+<p>Wähle im Bereich <strong>Upload</strong> des FTP-Programms die Dateien.</p>
+</li>
+<li>
+<p>Starte den Upload.<br>
+→ Die Bilder werden den Artikeln zugeordnet und nach maximal 60 Minuten im Webshop angezeigt.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Upload-Zeit berücksichtigen</div>
+<div class="paragraph">
+<p>Pro Durchlauf werden 200 Bilder oder bei eigenem Server 2000 Bilder verarbeitet. Daher kann der Upload je nach Datenmenge bis zu mehrere Stunden dauern, auch wenn du einen leistungsfähigen Rechner und eine schnelle Datenverbindung hast. Plane daher den Dateien-Upload so, dass du dadurch nicht in deinem Tagesgeschäft eingeschränkt wirst.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</main>
