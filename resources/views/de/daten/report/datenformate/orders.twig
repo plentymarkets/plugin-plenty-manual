@@ -64,7 +64,7 @@ Dateiname: <strong>orders-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeilen pro Tag</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 150.000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bis zu 300.000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die maximale Anzahl der Datenzeilen, die insgesamt an einem Tag geschrieben wird.</p></td>
 </tr>
 <tr>
@@ -77,13 +77,19 @@ Dateiname: <strong>orders-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMinimum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Minimale Anzahl an Tagen bis zur Löschung</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1095</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Die minimale Anzahl an Tagen, bis die generierte Rohdaten-Datei wieder vom Cloud-Speicher entfernt wird. Eine Weiterverarbeitung muss somit vorher erfolgen. Die genaue Dauer kann im Menü <strong>Daten » Rohdaten</strong> definiert werden.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die minimale Anzahl an Tagen, bis die generierte Rohdaten-Datei wieder vom Cloud-Speicher entfernt wird. Eine Weiterverarbeitung muss somit vorher erfolgen. Die genaue Dauer kann im Menü <strong>Einrichtung » Einstellungen » Report » Rohdaten</strong> definiert werden.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMaximum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maximale Anzahl an Tagen bis zur Löschung</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1095</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Die maximal Anzahl an Tagen, bis die generierte Rohdaten-Datei wieder vom Cloud-Speicher entfernt wird. Eine Weiterverarbeitung muss somit vorher erfolgen. Die genaue Dauer kann im Menü <strong>Daten » Rohdaten</strong> definiert werden.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die maximal Anzahl an Tagen, bis die generierte Rohdaten-Datei wieder vom Cloud-Speicher entfernt wird. Eine Weiterverarbeitung muss somit vorher erfolgen. Die genaue Dauer kann im Menü <strong>Einrichtung » Einstellungen » Report » Rohdaten</strong> definiert werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtertyp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Daten werden basierend auf der letzten Aktualisierung gefiltert.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
@@ -94,7 +100,7 @@ Dateiname: <strong>orders-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Standardmäßig aktiv</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Export läuft standardmäßig automatisch im Hintergrund.</p></td>
 </tr>
 <tr>
@@ -102,12 +108,6 @@ Dateiname: <strong>orders-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Intervall</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">täglich</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mit dieser Einstellung werden 1 x pro Tag, gewöhnlich über Nacht, alle seit dem letzten Durchlauf geänderten Daten exportiert.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Filtertyp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Daten werden basierend auf der letzten Aktualisierung gefiltert.</p></td>
 </tr>
 </tbody>
 </table>
@@ -262,13 +262,13 @@ multi credit note = Sammelgutschrift</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">smw_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID des Lagers, das dem Auftrag zugeordnet ist</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_entry_at</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order entry at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel des Auftragseingangs. Dieses Datum ist über die Benutzeroberfläche im Backend editierbar. Sofern keine Änderung vorgenommen wurde, ist dieses Feld mit dem bereits bestehenden Feld <strong>o_created_at</strong> identisch (Zeitpunkt der Speicherung des Auftrags in der Datenbank).</p></td>
 </tr>
@@ -294,7 +294,7 @@ Datumsformat: MM/DD/YY HH:MI:SS TZ</p></td>
 Datumsformat: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">o_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>o_updated_at</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Zeitstempel der letzten Aktualisierung des Auftrags<br>
