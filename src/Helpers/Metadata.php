@@ -2974,11 +2974,11 @@ class Metadata {
 						"urlName" => "FormatDesigner",
 						"url" => "/daten/daten-exportieren/FormatDesigner",
 						"level" => 3,
-						"title" => "Datenformate mit FormatDesigner erstellen",
+						"title" => "FormatDesigner",
 						"keywords" => "Format, FormatDesigner, Format Designer, Formatdesigner, Format designen, Datenfeld, Datenfelder, Format erstellen, Format bearbeiten, Daten exportieren",
 						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Datenformate mit FormatDesigner erstellen. Hier findest du folgende Informationen:",
+						"navAlias" => "Datenformate mit FormatDesigner erstellen",
+						"linkListInto" => "Willkommen im Themenbereich FormatDesigner. Hier findest du folgende Informationen:",
 						"languageID" => "J8CFXWD",
 						"children" => 						[
 							[
