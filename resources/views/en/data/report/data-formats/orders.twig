@@ -16,7 +16,7 @@
     <h1>orders</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Using the <strong>orders</strong> data format creator, you can export orders and save it in the cloud. For further information on the properties of the format, see the following tables.</p>
+<p>Use the <strong>orders</strong> data format creator to export orders and save them in the cloud. For further information on the properties of the format, see the following tables.</p>
 </div>
 </div>
 </div><div class="sect1">
@@ -64,7 +64,7 @@ File name: <strong>orders-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 150,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 300,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
 </tr>
 <tr>
@@ -77,13 +77,19 @@ File name: <strong>orders-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMinimum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Minimum number of days until the data is deleted</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1095</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The minimum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The minimum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Setup » Settings » Report » Raw data</strong> menu.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMaximum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of days until the data is deleted</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1095</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Setup » Settings » Report » Raw data</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
@@ -102,12 +108,6 @@ File name: <strong>orders-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Interval</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">daily</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">With this setting, all data that has been changed since the last run is exported once a day, usually during the night.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
 </tr>
 </tbody>
 </table>
@@ -268,34 +268,34 @@ multi credit note = Multi credit note</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_entry_at</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPtZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order entry at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp of the entry of the order. This date is editable in the user interface in the back end. If no change has been made, this field is identical to the existing field <strong>o_created_at</strong> (timestamp at which the order has been saved in the database).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_created_at</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPtZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order created at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the order creation<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_goods_issue_at</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPtZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order goods issue at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp for booking outgoing items<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">o_paid_at</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPtZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order paid at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp for booking the incoming payment<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">o_updated_at</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>o_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPtZ</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order updated at</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last order update<br>
 Date format: MM/DD/YY HH:MI:SS TZ</p></td>

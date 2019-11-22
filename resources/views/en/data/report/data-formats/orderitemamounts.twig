@@ -16,7 +16,7 @@
     <h1>orderItemAmounts</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Using the <strong>orderItemAmounts</strong> data format creator, you can export amounts of order items and save it in the cloud. For further information on the properties of the format, see the following tables.</p>
+<p>Use the <strong>orderItemAmounts</strong> data format creator to export amounts of order items and save them in the cloud. For further information on the properties of the format, see the following tables.</p>
 </div>
 </div>
 </div><div class="sect1">
@@ -64,7 +64,7 @@ File name: <strong>orderItemAmounts-xxx.csv.gz</strong></p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">up to 200,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 280,000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
 </tr>
 <tr>
@@ -77,13 +77,25 @@ File name: <strong>orderItemAmounts-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMinimum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Minimum number of days until the data is deleted</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1095</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The minimum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The minimum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Setup » Settings » Report » Raw data</strong> menu.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMaximum</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of days until the data is deleted</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1095</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Data » Raw data</strong> menu.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Setup » Settings » Report » Raw data</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column header</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oi_updated_at</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
@@ -96,12 +108,6 @@ File name: <strong>orderItemAmounts-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Interval</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">daily</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">With this setting, all data that has been changed since the last run is exported once a day, usually during the night.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
 </tr>
 </tbody>
 </table>
@@ -136,16 +142,16 @@ File name: <strong>orderItemAmounts-xxx.csv.gz</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oi_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">order item ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order item</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>oia_id (Primary key)</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">order item amount ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Contains the primary key of the data line.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oi_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order item ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order item</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oia_is_system_currency</p></td>
