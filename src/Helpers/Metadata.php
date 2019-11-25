@@ -7278,7 +7278,7 @@ class Metadata {
 			[
 				"id" => "16f2ae6b1d1793b5732572dce1003d31",
 				"path" => "item/introducing-items",
-				"position" => 10,
+				"position" => 0,
 				"urlName" => "introducing-items",
 				"url" => "/en/item/introducing-items",
 				"level" => 2,
@@ -7287,7 +7287,7 @@ class Metadata {
 				"description" => "Get to know the item structure in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Introducing items. The following information is available:",
-				"languageID" => "HM7G8FN",
+				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
 			],
