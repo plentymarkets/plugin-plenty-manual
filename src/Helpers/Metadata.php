@@ -3597,7 +3597,7 @@ class Metadata {
 								"path" => "daten/report/datenformate/propertyrelations",
 								"position" => 163,
 								"urlName" => "propertyrelations",
-								"url" => "/daten/report/datenformate/properties",
+								"url" => "/daten/report/datenformate/propertyrelations",
 								"level" => 4,
 								"title" => "propertyRelations",
 								"keywords" => "propertyRelations, Eigenschaftsverknüpfungen, Report, Rohdaten",
