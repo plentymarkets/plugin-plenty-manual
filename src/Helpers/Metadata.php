@@ -7389,22 +7389,6 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
-				"id" => "c1b444c5e01ad2a5abeff5125ab1d808",
-				"path" => "item/managing-items",
-				"position" => 20,
-				"urlName" => "managing-items",
-				"url" => "/en/item/managing-items",
-				"level" => 2,
-				"title" => "Manually creating items",
-				"keywords" => "Cross-selling, manufacturers, barcodes",
-				"description" => "Learn how to create and manage items in plentymarkets.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Manually creating items. The following information is available:",
-				"languageID" => "ZVYHQWL",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "76456655b946bcdfdaeb3f669c1d983c",
 				"path" => "item/settings",
 				"position" => 20,
@@ -7564,6 +7548,22 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
+			],
+			[
+				"id" => "c1b444c5e01ad2a5abeff5125ab1d808",
+				"path" => "item/managing-items",
+				"position" => 25,
+				"urlName" => "managing-items",
+				"url" => "/en/item/managing-items",
+				"level" => 2,
+				"title" => "Manually creating items",
+				"keywords" => "Cross-selling, manufacturers, barcodes",
+				"description" => "Learn how to create and manage items in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Manually creating items. The following information is available:",
+				"languageID" => "ZVYHQWL",
+				"children" => [],
+				"hasChildren" => false
 			],
 			[
 				"id" => "24a5b70973a0f60cf507ad3343600456",
