@@ -7276,38 +7276,6 @@ class Metadata {
 		"languageID" => "TP9OCLS",
 		"children" => 		[
 			[
-				"id" => "16f2ae6b1d1793b5732572dce1003d31",
-				"path" => "item/introducing-items",
-				"position" => 0,
-				"urlName" => "introducing-items",
-				"url" => "/en/item/introducing-items",
-				"level" => 2,
-				"title" => "Introducing items",
-				"keywords" => "Item structure, items, variations",
-				"description" => "Get to know the item structure in plentymarkets.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Introducing items. The following information is available:",
-				"languageID" => "",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "7fcc66e11870404498338975e984e6cf",
-				"path" => "item/managing-categories",
-				"position" => 0,
-				"urlName" => "managing-categories",
-				"url" => "/en/item/managing-categories",
-				"level" => 2,
-				"title" => "Managing categories",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Managing categories. The following information is available:",
-				"languageID" => "YXK0NOR",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "6dc23dd651f69945f4ae4b569c2903b0",
 				"path" => "item/introduction",
 				"position" => 10,
