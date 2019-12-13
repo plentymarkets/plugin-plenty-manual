@@ -683,22 +683,6 @@ class Metadata {
 		"languageID" => "TP9OCLS",
 		"children" => 		[
 			[
-				"id" => "936e54378d158f50c4c0f69474a786de",
-				"path" => "artikel/kategorien-verwalten",
-				"position" => 0,
-				"urlName" => "kategorien-verwalten",
-				"url" => "/artikel/kategorien-verwalten",
-				"level" => 2,
-				"title" => "Kategorien verwalten",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Kategorien verwalten. Hier findest du folgende Informationen:",
-				"languageID" => "YXK0NOR",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "0ff6774e26eca098d491728c7fb8538a",
 				"path" => "artikel/einleitung",
 				"position" => 10,
