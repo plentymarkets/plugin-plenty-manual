@@ -12620,6 +12620,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "c20b6f7c8d94c29482a5d56280555cc2",
+						"path" => "app/functions/item-search",
+						"position" => 20,
+						"urlName" => "item-search",
+						"url" => "/en/app/functions/item-search",
+						"level" => 3,
+						"title" => "Searching for items, customers and orders",
+						"keywords" => "",
+						"description" => "The plentymarkets app makes it easy to search for items while on the go.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Searching for items, customers and orders. The following information is available:",
+						"languageID" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "f6f196c8801f803dda003af88d0802c3",
 						"path" => "app/functions/warehouse-management",
 						"position" => 30,
