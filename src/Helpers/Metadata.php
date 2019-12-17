@@ -7271,7 +7271,7 @@ class Metadata {
 		"title" => "Items",
 		"keywords" => "",
 		"description" => "Get to know items in plentymarkets.",
-		"navAlias" => "",
+		"navAlias" => "Overview",
 		"linkListInto" => "Welcome to the topic Items. The following information is available:",
 		"languageID" => "TP9OCLS",
 		"children" => 		[
@@ -7282,11 +7282,11 @@ class Metadata {
 				"urlName" => "introduction",
 				"url" => "/en/item/introduction",
 				"level" => 2,
-				"title" => "Introduction",
+				"title" => "Introducing the item structure",
 				"keywords" => "",
 				"description" => "Learn how to manage items in plentymarkets. Find out which topics are covered in this chapter.",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Introduction. The following information is available:",
+				"linkListInto" => "Welcome to the topic Introducing the item structure. The following information is available:",
 				"languageID" => "HM7G8FN",
 				"children" => 				[
 					[
@@ -7296,11 +7296,11 @@ class Metadata {
 						"urlName" => "structure",
 						"url" => "/en/item/introduction/structure",
 						"level" => 3,
-						"title" => "Getting to know the item structure",
+						"title" => "Items vs. Variations",
 						"keywords" => "",
 						"description" => "What’s the difference between items and variations? And what do system settings have to do with it all? This page introduces you to the item structure in plentymarkets!",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Getting to know the item structure. The following information is available:",
+						"linkListInto" => "Welcome to the topic Items vs. Variations. The following information is available:",
 						"languageID" => "",
 						"children" => [],
 						"hasChildren" => false
