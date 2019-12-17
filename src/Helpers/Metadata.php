@@ -678,7 +678,7 @@ class Metadata {
 		"title" => "Artikel",
 		"keywords" => "",
 		"description" => "Verschaffe dir schnell einen Überblick über die Artikelverwaltung in plentymarkets. Erfahre, welche Themen in diesem Kapitel erläutert werden.",
-		"navAlias" => "",
+		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Artikel. Hier findest du folgende Informationen:",
 		"languageID" => "TP9OCLS",
 		"children" => 		[
@@ -689,11 +689,11 @@ class Metadata {
 				"urlName" => "einleitung",
 				"url" => "/artikel/einleitung",
 				"level" => 2,
-				"title" => "Einleitung",
+				"title" => "Einführung in die Artikelstruktur",
 				"keywords" => "",
 				"description" => "Verschaffe dir schnell einen Überblick über die Artikelverwaltung in plentymarkets. Erfahre, welche Themen in diesem Kapitel erläutert werden.",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Einleitung. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Einführung in die Artikelstruktur. Hier findest du folgende Informationen:",
 				"languageID" => "HM7G8FN",
 				"children" => 				[
 					[
@@ -703,11 +703,11 @@ class Metadata {
 						"urlName" => "struktur",
 						"url" => "/artikel/einleitung/struktur",
 						"level" => 3,
-						"title" => "Artikelstruktur kennenlernen",
+						"title" => "Artikel vs. Varianten",
 						"keywords" => "",
 						"description" => "Was ist der Unterschied zwischen Artikeln und Varianten? Und was haben Systemeinstellungen damit zu tun? Lerne auf dieser Seite die Artikelstruktur von plentymarkets kennen!",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Artikelstruktur kennenlernen. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Artikel vs. Varianten. Hier findest du folgende Informationen:",
 						"languageID" => "",
 						"children" => [],
 						"hasChildren" => false
