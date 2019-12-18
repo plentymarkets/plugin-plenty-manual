@@ -12569,7 +12569,7 @@ class Metadata {
 		"title" => "The plentymarkets app",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "",
+		"navAlias" => "Overview",
 		"linkListInto" => "Welcome to the topic The plentymarkets app. The following information is available:",
 		"languageID" => "",
 		"children" => 		[
@@ -12732,7 +12732,7 @@ class Metadata {
 		"title" => "POS",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "",
+		"navAlias" => "Overview",
 		"linkListInto" => "Welcome to the topic POS. The following information is available:",
 		"languageID" => "8OEUR6U",
 		"children" => 		[
@@ -12910,7 +12910,7 @@ class Metadata {
 		"title" => "Automation",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "",
+		"navAlias" => "Overview",
 		"linkListInto" => "Willkommen im Themenbereich Automation. Hier finden Sie folgende Informationen:",
 		"languageID" => "KM681RQ",
 		"children" => 		[
