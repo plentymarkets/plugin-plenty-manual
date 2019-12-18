@@ -6104,7 +6104,7 @@ class Metadata {
 		"title" => "Die plentymarkets App",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "",
+		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Die plentymarkets App. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
@@ -6267,7 +6267,7 @@ class Metadata {
 		"title" => "Kassensystem/POS",
 		"keywords" => "plentymarkets POS, POS, Kassensystem, plentymarkets Kasse, plentymarkets Kassensystem, plentymarkets App",
 		"description" => "",
-		"navAlias" => "",
+		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Kassensystem/POS. Hier findest du folgende Informationen:",
 		"languageID" => "8OEUR6U",
 		"children" => 		[
@@ -6445,7 +6445,7 @@ class Metadata {
 		"title" => "Automatisierung",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "",
+		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Automatisierung. Hier findest du folgende Informationen:",
 		"languageID" => "KM681RQ",
 		"children" => 		[
