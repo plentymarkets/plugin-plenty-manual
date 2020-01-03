@@ -998,7 +998,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Darstellung von Artikeln im Webshop",
 				"keywords" => "",
-				"description" => "###Bereite dein plentymarkets### System auf den Verkauf von Artikeln vor. Treffe vorbereitende Einstellungn, die später mit deinen Artikeln und Varianten verknüpft werden.",
+				"description" => "Präsentiere Artikel im Webshop genau nach deiner Vorstellungen. Finde außerdem schnelle Hilfe, falls deine Artikel oder Kategorien nicht im Webshop angezeigt werden.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Darstellung von Artikeln im Webshop. Hier findest du folgende Informationen:",
 				"languageID" => "",
