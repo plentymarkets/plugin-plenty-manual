@@ -2397,11 +2397,11 @@ class Metadata {
 				"urlName" => "best-practices-ups",
 				"url" => "/fulfillment/best-practices-ups",
 				"level" => 2,
-				"title" => "Best Practices: UPS",
+				"title" => "FAQ: UPS",
 				"keywords" => "UPS, United Parcel Service, Versandanmeldung, Versandabwicklung, Fehler, Fehlermeldung, Fehlercode, 120, 120110, 120101, 120209, 120109, 120500, 120124, 120122, 10001",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Best Practices: UPS. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich FAQ: UPS. Hier findest du folgende Informationen:",
 				"languageID" => "6TD0IZW",
 				"children" => [],
 				"hasChildren" => false
