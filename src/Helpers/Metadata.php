@@ -2413,11 +2413,11 @@ class Metadata {
 				"urlName" => "best-practices-geoblocking",
 				"url" => "/fulfillment/best-practices-geoblocking",
 				"level" => 2,
-				"title" => "Best Practices: Versandartwahl/Geoblocking",
+				"title" => "Praxisbeispiel: Versandartwahl/Geoblocking",
 				"keywords" => "geoblocking, best practices",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Best Practices: Versandartwahl/Geoblocking. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Praxisbeispiel: Versandartwahl/Geoblocking. Hier findest du folgende Informationen:",
 				"languageID" => "XEWBOJ6",
 				"children" => [],
 				"hasChildren" => false
