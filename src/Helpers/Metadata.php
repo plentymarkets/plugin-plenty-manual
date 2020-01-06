@@ -8910,11 +8910,11 @@ class Metadata {
 				"urlName" => "best-practices-ups",
 				"url" => "/en/fulfilment/best-practices-ups",
 				"level" => 2,
-				"title" => "Best Practices: UPS",
+				"title" => "FAQ: UPS",
 				"keywords" => "Keine Auftragsdaten, no order data, Kein Wert gefunden, no value found, 120110, missing or invalid Shipper AttentionName, 120101, Missing or invalid Shipper Name, 120209, Missing or invalid Ship to phone number, 120109, Missing or invalid shipper phone number, 120500, Missing or invalid service code, 120124, The requested service is unavailable between the selected locations, UPS Services, 120122, customer number, Code 1, Der Vorgang konnte nicht korrekt durchgeführt werden. Bitte Dateneingabe prüfen., 10001, The XML document is not well formed",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Best Practices: UPS. The following information is available:",
+				"linkListInto" => "Welcome to the topic FAQ: UPS. The following information is available:",
 				"languageID" => "6TD0IZW",
 				"children" => [],
 				"hasChildren" => false
