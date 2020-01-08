@@ -12,6 +12,12 @@
 <li><a href="#_generating_and_sending_an_invoice"><span>1.4.</span><span> Generating and sending an invoice</span></a></li>
 <li><a href="#_adding_give_aways_to_orders"><span>1.5.</span><span> Adding give-aways to orders</span></a></li>
 <li><a href="#_sending_shipping_confirmations_to_customers"><span>1.6.</span><span> Sending shipping confirmations to customers</span></a></li>
+<li><a href="#_setting_up_the_postcode_filter"><span>1.7.</span><span> Setting up the postcode filter</span></a>
+<ul class="sectlevel3">
+<li><a href="#_how_does_the_postcode_filter_work"><span>1.7.1.</span><span> How does the postcode filter work?</span></a></li>
+<li><a href="#_what_do_you_need_to_set_up"><span>1.7.2.</span><span> What do you need to set up?</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_practical_examples_procedure_manager"><span>2.</span><span> Practical examples: Procedure manager</span></a>
@@ -28,7 +34,7 @@
 </aside>
 
 <main id="main">
-    <h1>Best Practices: Procedure manager and event procedures</h1><div id="preamble">
+    <h1>Practical example: Procedure manager and event procedures</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Your daily business as a seller mostly consists of simple routine tasks. Plentymarkets offers you different effective tools to automate such tasks.<br>
@@ -670,6 +676,110 @@ For further information on give-aways, refer to the <a href="/en/item/managing-i
 </td>
 </tr>
 </tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_the_postcode_filter">1.7. Setting up the postcode filter</h3>
+<div class="paragraph">
+<p>In this chapter, we describe the postcode filter a little closer and give you an example of how you might set up an event procedure for it.</p>
+</div>
+<div class="sect3">
+<h4 id="_how_does_the_postcode_filter_work">1.7.1. How does the postcode filter work?</h4>
+<div class="paragraph">
+<p>The postcode filter was added to the filters of the <a href="/en/automation/event-procedures">event procedures</a> to check the postcode in the <strong>delivery address</strong> of an order.
+A comparison of the entered values and the postcode will be done, starting with the first character and proceeding to the next.</p>
+</div>
+<div class="paragraph">
+<p>This means putting <code>W1U</code> in this field will result in the event procedure working for e.g. <code>W1U 6AG</code>, <code>W1S 2XG</code> and <code>W1T 1BX</code>.
+You might enter multiple values separated by a comma as <code>W1U, SE</code> if multiple regions are to be considered.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_what_do_you_need_to_set_up">1.7.2. What do you need to set up?</h4>
+<div class="paragraph">
+<p>Depending on your workflow in processing orders, some settings are useful such as activating 'special' delivery countries you are delivering to (Isle of Man, Canary Islands).</p>
+</div>
+<div class="paragraph">
+<p>To us it makes sense to create a new order status because you will be able to set filters in other menus regarding it.</p>
+</div>
+<div class="paragraph">
+<p>In the following example we created a new status in the <strong>Setup » Orders » Status</strong> menu named <strong>check delivery address</strong> in advance.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/automation/assets/Postcode-filter-new_order_status.png" alt="Postcode filter new order status" width="640" height="360">
+</div>
+<div class="title">Figure 1. New order status</div>
+</div>
+<div class="paragraph">
+<p>We frequently get orders with shipment to 'special' countries which need to be processed in another way as for customs reasons or because the shipping costs are much higher for us.</p>
+</div>
+<div class="paragraph">
+<p>Las Palmas is such an example. The postcodes of the Canary Islands start with <code>35</code> or <code>38</code>. Politically, it belongs to Spain but is an autonomous community with most likely higher shipping costs compared to the costs for shipping to mainland Spain.</p>
+</div>
+<div class="paragraph">
+<p>To create our new event procedure we open the menu <strong>Setup » Orders » Events</strong>. After clicking on <strong>Add event procedure</strong>, plus sign in the bottom (<span class="icon green"><i class="fa fa-plus-square  "></i></span>), we choose the name <strong>Postcode filter</strong> and click on the save button (<span class="icon green"><i class="fa fa-save  "></i></span>).</p>
+</div>
+<div class="paragraph">
+<p>The event <strong>Status Change</strong> is most suitable to us because all our orders have to go through the status <strong>In preparation for shipping</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Next, we add a new filter by clicking on <span class="icon green"><i class="fa fa-plus-square  "></i></span> next to filter and select <strong>Postcodes</strong> in the <strong>Order</strong> folder.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/automation/assets/Postcode-filter-add-filter.png" alt="Postcode filter add filter">
+</div>
+<div class="title">Figure 2. Postcode filter</div>
+</div>
+<div class="paragraph">
+<p>Entering <code>35, 38</code> will do a check for postcodes beginning with <code>35</code> or <code>38</code>.</p>
+</div>
+<div class="paragraph">
+<p>In addition to this, we add the filter  <strong>Shipping → Country of delivery</strong> and activate <strong>Spain</strong> because other countries don’t need this check.</p>
+</div>
+<div class="paragraph">
+<p>After that, we add the procedure <strong>Change Status</strong> in the <strong>Order</strong> folder and select the order status <strong>check delivery address</strong> that we created in advance.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/automation/assets/Postcode-filter-filter-and-procedures.png" alt="Postcode filter filter and procedures" width="640" height="360">
+</div>
+<div class="title">Figure 3. New event procedure</div>
+</div>
+<div class="paragraph">
+<p>Now the event procedure looks out in all my new orders in status <strong>in preparation for shipping</strong>, if they were to be sent to Spain and if the postcode fit in the filter.</p>
+</div>
+<div class="paragraph">
+<p>There are two possible scenarios:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The filters in the event procedure do not fit with the order.<br>
+→ The event procedure does not have any impact on the order.</p>
+</li>
+<li>
+<p>The filters in the event procedure do fit with the order.<br>
+→ The event procedure is processed and the order status will be changed to  <strong>check delivery address</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Further options for the use of this filter</div>
+<div class="paragraph">
+<p>Of course, more filters can be used with the postcode filter, e.g. you can add a referrer or order types to have finer distinction in the event procedures. You know best, what you need.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 </div>
 </div>
 </div>
