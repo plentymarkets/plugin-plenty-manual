@@ -12,6 +12,12 @@
 <li><a href="#_rechnung_erzeugen_und_versenden"><span>1.4.</span><span> Rechnung erzeugen und versenden</span></a></li>
 <li><a href="#_gratis_artikel_zu_aufträgen_hinzufügen"><span>1.5.</span><span> Gratis-Artikel zu Aufträgen hinzufügen</span></a></li>
 <li><a href="#_versandbestätigung_an_kunden_versenden"><span>1.6.</span><span> Versandbestätigung an Kunden versenden</span></a></li>
+<li><a href="#_postleitzahlenfilter_einrichten"><span>1.7.</span><span> Postleitzahlenfilter einrichten</span></a>
+<ul class="sectlevel3">
+<li><a href="#_wie_arbeitet_der_postleitzahlenfilter"><span>1.7.1.</span><span> Wie arbeitet der Postleitzahlenfilter?</span></a></li>
+<li><a href="#_was_sollte_man_einrichten"><span>1.7.2.</span><span> Was sollte man einrichten?</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_praxisbeispiele_aktionsmanager"><span>2.</span><span> Praxisbeispiele: Aktionsmanager</span></a>
@@ -28,7 +34,7 @@
 </aside>
 
 <main id="main">
-    <h1>Best Practices: Aktionsmanager und Ereignisaktionen</h1><div id="preamble">
+    <h1>Praxisbeispiel: Aktionsmanager und Ereignisaktionen</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Ein nicht unerheblicher Teil deines Tagesgeschäfts als Händler entfällt auf einfache Routineaufgaben. Zur Automatisierung dieser Aufgaben bietet dir plentymarkets verschiedene effektive Werkzeuge.<br>
@@ -670,6 +676,105 @@ Weitere Information zu Gratis-Artikeln findest du auch auf der Handbuchseite <a 
 </td>
 </tr>
 </tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_postleitzahlenfilter_einrichten">1.7. Postleitzahlenfilter einrichten</h3>
+<div class="paragraph">
+<p>In diesem Kapitel beschreiben wir den Postleitzahlenfilter etwas näher. Ihr könnt im Praxisbeispiel sehen, wie eine Ereignisaktion aussehen könnte.</p>
+</div>
+<div class="sect3">
+<h4 id="_wie_arbeitet_der_postleitzahlenfilter">1.7.1. Wie arbeitet der Postleitzahlenfilter?</h4>
+<div class="paragraph">
+<p>Der Postleitzahlenfilter ist ein weiterer Filter in den <a href="/automatisierung/ereignisaktionen">Ereignisaktionen</a>. Er wird auf die Postleitzahl der <strong>Lieferadresse</strong> im Auftrag angewendet. Dabei werden die eingegebenen Werte mit der Angabe in der Lieferadresse verglichen.</p>
+</div>
+<div class="paragraph">
+<p>Sollte z.B. <code>35</code> im Filter eingestellt sein, würden alle Angaben mit <code>35</code> am Anfang der Postleitzahl abgefangen werden und die Aktionen in der Ereignisaktionen werden abgearbeitet. Mehrere Werte können kommagetrennt eingetragen werden. Postleitzahlen, die Buchstaben enthalten, wie z.B. <code>W1U 6AG</code> für London oder <code>1011 DK</code> für Amsterdam, werden ebenfalls berücksichtigt.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_was_sollte_man_einrichten">1.7.2. Was sollte man einrichten?</h4>
+<div class="paragraph">
+<p>Je nach dem, wie ihr eueren Workflow aufgebaut habt, empfiehlt es sich, bereits einige Einstellungen im Vorfeld vorzunehmen wie z.B. die "besonderen" Lieferländer zu aktivieren, in die ihr liefern möchtet. Das können u.a. Helgoland oder die Kanarischen Inseln sein.</p>
+</div>
+<div class="paragraph">
+<p>Als sinnvolle Erweiterung können neue Auftragsstatus angelegt werden, die später helfen, die bearbeiteten Aufträge z.B. in der Auftrasgsübersicht wieder zu finden.</p>
+</div>
+<div class="paragraph">
+<p>Im folgenden Beispiel haben wir bereits im Menü <strong>Einrichtung » Aufträge » Status</strong> den Status <strong>Lieferanschrift prüfen</strong> erstellt.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/automatisierung/assets/PLZ-Filter-Neuer-Auftragsstatus.png" alt="PLZ Filter Neuer Auftragsstatus" width="640" height="360">
+</div>
+<div class="title">Bild 1. Neuer Auftragsstatus</div>
+</div>
+<div class="paragraph">
+<p>Wir erhalten immer wieder Bestellungen aus Sonderregionen, die wir für unsere Anmeldung beim Versanddienstleister anders behandeln muss, da wir zu DHL weitere zolltechnischen Informationen senden müssen, die für das Land für gewöhnlich nicht notwendig sind.</p>
+</div>
+<div class="paragraph">
+<p>Ein Beispiel ist Las Palmas: Die Postleitzahlen der Kanarischen Inseln beginnen mit <code>35</code> oder <code>38</code>. Politisch gehören die Inseln zu Spanien, aber man muss Lieferungen dorthin als Ausfuhrlieferungen anmelden.</p>
+</div>
+<div class="paragraph">
+<p>Für unsere neue Ereignisaktion gehen wir in das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong> und erstellen uns eine neue Ereignisaktion, die wir "PLZ-Filter" nennen.</p>
+</div>
+<div class="paragraph">
+<p>Das Ereignis <strong>Statuswechsel</strong> passt für uns am besten, da alle Aufträge zuerst durch den Status <strong>In Versandvorbereitung</strong> laufen. Also wählen wir diesen Status.</p>
+</div>
+<div class="paragraph">
+<p>Danach klicken wir auf das <span class="icon green"><i class="fa fa-plus-square  "></i></span>, um einen neuen Filter hinzuzufügen und wählen <strong>Postleitzahlen</strong> im Ordner <strong>Auftrag</strong> aus.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/automatisierung/assets/PLZ-Filter-Ereignisaktion-Filter-hinzufuegen.png" alt="PLZ Filter Ereignisaktion Filter hinzufuegen" width="640" height="360">
+</div>
+<div class="title">Bild 2. Postleitzahlenfilter</div>
+</div>
+<div class="paragraph">
+<p>In das Feld des Filters schreiben wir nun <code>35, 38</code>, damit alle Postleitzahlen, die mit <code>35</code> oder <code>38</code> beginnen, abgefangen werden. Zudem fügen wir noch einen weiteren Filter <strong>Versand → Lieferland</strong> hinzu und aktivieren <strong>Spanien</strong>, da Marburg in Deutschland sonst auch die Ereignisaktion auslösen würde, weil die Marburger Postleitzahlen ebenfalls mit <code>35</code> beginnen.</p>
+</div>
+<div class="paragraph">
+<p>Als Aktion wählen wir <strong>Status ändern</strong> im Ordner <strong>Auftrag</strong> aus und stellen den zuvor erstellten Auftragsstatus aus.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/automatisierung/assets/PLZ-Filter-Filter-und-Aktionen.png" alt="PLZ Filter Filter und Aktionen" width="640" height="360">
+</div>
+<div class="title">Bild 3. Neue Ereignisaktion</div>
+</div>
+<div class="paragraph">
+<p>Nun prüft die Ereignisaktion bei allen unseren neuen Aufträgen, die in den Status <strong>In Versandvorbereitung</strong> gelangen, ob diese auch nach Spanien versendet werden sollen und ob die Postleitzahl durch den Filter aufgegriffen wird.</p>
+</div>
+<div class="paragraph">
+<p>Es sind nun zwei Szenarien möglich:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Die Filter der Ereignisaktionen passen nicht zum Auftrag.<br>
+→ Die Ereignisaktion hat keine Auswirkung auf den Auftrag.</p>
+</li>
+<li>
+<p>Die Filter der Ereignisaktion passen zum Auftrag.<br>
+→ Die Ereignisaktion greift und schiebt den Auftrag in den Status <strong>Lieferanschrift prüfen</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Weitere Möglichkeiten in den Ereignisaktionen</div>
+<div class="paragraph">
+<p>Mit dem Postleitzahlenfilter sind weitere Kombinationen möglich, sodass auch Herkünfte oder Auftragstypen als zusätzliche Filter hinzugefügt werden können, um die Ereignisaktion noch feiner einstellen zu können. Ihr wisst am Besten, was ihr benötigt!</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 </div>
 </div>
 </div>
