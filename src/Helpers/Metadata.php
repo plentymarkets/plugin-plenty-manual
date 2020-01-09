@@ -8999,22 +8999,6 @@ class Metadata {
 				"languageID" => "6TD0IZW",
 				"children" => [],
 				"hasChildren" => false
-			],
-			[
-				"id" => "68dfc462ec5f8db4433931f9cb3f067b",
-				"path" => "fulfilment/best-practices-postcode-filter",
-				"position" => 70,
-				"urlName" => "best-practices-postcode-filter",
-				"url" => "/en/fulfilment/best-practices-postcode-filter",
-				"level" => 2,
-				"title" => "Best Practices: Postcode Filter",
-				"keywords" => "postcode, postcodes, poastal code, postal code, filter, event procedures",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Best Practices: Postcode Filter. The following information is available:",
-				"languageID" => "CSGWTHG",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
