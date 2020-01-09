@@ -974,22 +974,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "29a2eeb6bc46aa8ea676513bc07dc637",
-				"path" => "artikel/multipacks-pakete-sets-verwalten",
-				"position" => 30,
-				"urlName" => "multipacks-pakete-sets-verwalten",
-				"url" => "/artikel/multipacks-pakete-sets-verwalten",
-				"level" => 2,
-				"title" => "Multipacks, Artikelpakete und Sets verwalten",
-				"keywords" => "Varianten gruppieren, Produkte zusammenfassen, Kombiangebote, Varianten kombinieren",
-				"description" => "Erfahre, wie du Varianten in plentymarkets kombinierst, um sie im Paket zu verkaufen.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Multipacks, Artikelpakete und Sets verwalten. Hier findest du folgende Informationen:",
-				"languageID" => "NXZCPXN",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "53ca2061e5b53228e0764067d567655e",
 				"path" => "artikel/anwendungsfaelle",
 				"position" => 35,
@@ -1008,7 +992,7 @@ class Metadata {
 						"path" => "artikel/anwendungsfaelle/multipacks-pakete-sets-verwalten",
 						"position" => 20,
 						"urlName" => "multipacks-pakete-sets-verwalten",
-						"url" => "/artikel/multipacks-pakete-sets-verwalten",
+						"url" => "/artikel/anwendungsfaelle/multipacks-pakete-sets",
 						"level" => 3,
 						"title" => "Multipacks, Artikelpakete und Sets verwalten",
 						"keywords" => "Varianten gruppieren, Produkte zusammenfassen, Kombiangebote, Varianten kombinieren",
@@ -1056,7 +1040,7 @@ class Metadata {
 						"path" => "artikel/anwendungsfaelle/artikeldaten-status-pruefen",
 						"position" => 50,
 						"urlName" => "artikeldaten-status-pruefen",
-						"url" => "/artikel/artikeldaten-status-pruefen",
+						"url" => "/artikel/anwendungsfaelle/artikeldaten-status-pruefen",
 						"level" => 3,
 						"title" => "Aktualität von Artikeldaten prüfen",
 						"keywords" => "",
@@ -1198,22 +1182,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "d78153a74ce3acf505bf9f2231dfa13a",
-				"path" => "artikel/artikeldaten-status-pruefen",
-				"position" => 50,
-				"urlName" => "artikeldaten-status-pruefen",
-				"url" => "/artikel/artikeldaten-status-pruefen",
-				"level" => 2,
-				"title" => "Aktualität von Artikeldaten prüfen",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Aktualität von Artikeldaten prüfen. Hier findest du folgende Informationen:",
-				"languageID" => "PSROCEP",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
