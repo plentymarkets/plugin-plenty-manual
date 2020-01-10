@@ -953,6 +953,22 @@ class Metadata {
 						"languageID" => "",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "2b7f150823f95eebcbe0d553609214e8",
+						"path" => "artikel/einstellungen/variantennummern",
+						"position" => 110,
+						"urlName" => "variantennummern",
+						"url" => "/artikel/einstellungen/variantennummern",
+						"level" => 3,
+						"title" => "Muster für neue Variantennummern festlegen",
+						"keywords" => "",
+						"description" => "Neue Varianten erhalten automatisch eine Variantennummer. Entscheide selbst, nach welchem Muster neue Variantennummern vergeben werden sollen.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Muster für neue Variantennummern festlegen. Hier findest du folgende Informationen:",
+						"languageID" => "",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
