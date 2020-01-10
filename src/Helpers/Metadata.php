@@ -8991,11 +8991,11 @@ class Metadata {
 				"urlName" => "practical-example-dhl",
 				"url" => "/en/fulfilment/practical-example-dhl",
 				"level" => 2,
-				"title" => "Practical example: DHL",
+				"title" => "Practical example: DHL Shipping (Versenden)",
 				"keywords" => "DHL Shipping (Versenden), plugin",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Practical example: DHL. The following information is available:",
+				"linkListInto" => "Welcome to the topic Practical example: DHL Shipping (Versenden). The following information is available:",
 				"languageID" => "S6ALNG3",
 				"children" => [],
 				"hasChildren" => false
