@@ -2478,11 +2478,11 @@ class Metadata {
 				"urlName" => "praxisbeispiel-dhl",
 				"url" => "/fulfillment/praxisbeispiel-dhl",
 				"level" => 2,
-				"title" => "Praxisbeispiel: DHL",
+				"title" => "Praxisbeispiel: DHL Shipping (Versenden)",
 				"keywords" => "DHL Shipping (Versenden), plugin",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Praxisbeispiel: DHL. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Praxisbeispiel: DHL Shipping (Versenden). Hier findest du folgende Informationen:",
 				"languageID" => "S6ALNG3",
 				"children" => [],
 				"hasChildren" => false
