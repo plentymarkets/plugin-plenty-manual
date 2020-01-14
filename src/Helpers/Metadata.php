@@ -1450,7 +1450,7 @@ class Metadata {
 				"url" => "/crm/kontakte-verwalten",
 				"level" => 2,
 				"title" => "Kontakte",
-				"keywords" => "Kontakt, Kunde, Adresse, Adressen, Rechnungsadresse, Lieferadresse, primär, Firmen, Firma, Gastzugang, regulärer Zugang, Events, Eigenschaften, Zugangsdaten, Passwort ändern, Passwortänderung, Login entsperren, Bankdaten, Zugangsdaten, Nachrichten, Messenger",
+				"keywords" => "Kontakt, Kunde, Adresse, Adressen, Rechnungsadresse, Lieferadresse, primär, Firmen, Firma, Gastzugang, regulärer Zugang, Events, Eigenschaften, Zugangsdaten, Passwort ändern, Passwortänderung, Login entsperren, Bankdaten, Zugangsdaten, Nachrichten, Messenger, Kundenklasse",
 				"description" => "Erfahre, wie du in plentymarkets Kontakte, Adressen und Firmen verwaltest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Kontakte. Hier findest du folgende Informationen:",
