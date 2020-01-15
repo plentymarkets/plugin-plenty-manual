@@ -1394,6 +1394,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "5af3653e3572607ec8ebac9c2f62ff5f",
+				"path" => "warenwirtschaft/praxisbeispiel-lager-einrichten",
+				"position" => 85,
+				"urlName" => "praxisbeispiel-lager-einrichten",
+				"url" => "/warenwirtschaft/praxisbeispiel-lager-einrichten",
+				"level" => 2,
+				"title" => "Praxisbeispiel: Lager einrichten",
+				"keywords" => "Lager einrichten, Dimension, Dimensionen, Halle, Regal, Boden, Lagerort, Laufweg, Etikett, Lagerort-Etikett",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Praxisbeispiel: Lager einrichten. Hier findest du folgende Informationen:",
+				"languageID" => "Y67WMM2",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "6d26fde8ac3c4b0228a1e920be990f66",
 				"path" => "warenwirtschaft/best-pratices",
 				"position" => 90,
