@@ -2302,7 +2302,7 @@ class Metadata {
 								"path" => "videos/auftragsabwicklung/retouren-und-storno/retoureneinstellungen-retourenanlage-durch-kunde",
 								"position" => 0,
 								"urlName" => "retoureneinstellungen-retourenanlage-durch-kunde",
-								"url" => "/videos/auftragsabwicklung/retouren-und-storno/retoureneinstellungen-retourenanlage-druch.kunde",
+								"url" => "/videos/auftragsabwicklung/retouren-und-storno/retoureneinstellungen-retourenanlage-durch-kunde",
 								"level" => 4,
 								"title" => "Individualisiere deine Retoureneinstellungen",
 								"keywords" => "",
