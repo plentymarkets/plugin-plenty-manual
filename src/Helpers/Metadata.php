@@ -680,11 +680,11 @@ class Metadata {
 								"urlName" => "passwortsicherheitsstandard",
 								"url" => "/videos/grundeinstellungen/benutzerkonten/passwortsicherheitsstandard",
 								"level" => 4,
-								"title" => "Benutzerklassen anlegen",
+								"title" => "Integriere deinen Passwort-Sicherheitsstandard in plentymarkets",
 								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Benutzerklassen anlegen. Hier findest du folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Integriere deinen Passwort-Sicherheitsstandard in plentymarkets. Hier findest du folgende Informationen:",
 								"languageID" => "E3HT9CU",
 								"children" => [],
 								"hasChildren" => false
