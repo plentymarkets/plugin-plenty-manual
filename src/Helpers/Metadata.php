@@ -883,22 +883,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "d682e2874f3051e6c4a5f24927723640",
-								"path" => "videos/grundeinstellungen/e-mail-verkehr/automatischer-versand",
-								"position" => 40,
-								"urlName" => "automatischer-versand",
-								"url" => "/videos/grundeinstellungen/e-mail-verkehr/automatischer-versand",
-								"level" => 4,
-								"title" => "Versende E-Mails automatisch über das System",
-								"keywords" => "",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Versende E-Mails automatisch über das System. Hier findest du folgende Informationen:",
-								"languageID" => "KVZAKJD",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "1e3f83d513d9c911fa986a834a0a28f9",
 								"path" => "videos/grundeinstellungen/e-mail-verkehr/template-variablen-if-konstrukte",
 								"position" => 40,
@@ -911,6 +895,22 @@ class Metadata {
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Was sind Template-Variablen und if-Konstrukte?. Hier findest du folgende Informationen:",
 								"languageID" => "2HIY4NW",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "d682e2874f3051e6c4a5f24927723640",
+								"path" => "videos/grundeinstellungen/e-mail-verkehr/automatischer-versand",
+								"position" => 50,
+								"urlName" => "automatischer-versand",
+								"url" => "/videos/grundeinstellungen/e-mail-verkehr/automatischer-versand",
+								"level" => 4,
+								"title" => "Versende E-Mails automatisch über das System",
+								"keywords" => "",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Versende E-Mails automatisch über das System. Hier findest du folgende Informationen:",
+								"languageID" => "KVZAKJD",
 								"children" => [],
 								"hasChildren" => false
 							]
