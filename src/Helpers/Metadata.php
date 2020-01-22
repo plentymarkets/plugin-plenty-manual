@@ -7882,7 +7882,7 @@ class Metadata {
 				"url" => "/crm/ticketsystem-nutzen",
 				"level" => 2,
 				"title" => "Ticketsystem nutzen",
-				"keywords" => "Ticketsystem, Ticket, Rolle, Typ, Status, Signatur, Grußformel, Nachricht, Kommentar, Vorlage, Kinderticket, Ereignisaktion, Aktionsmanager",
+				"keywords" => "Ticketsystem, Ticket, Rolle, Typ, Status, Signatur, Grußformel, Nachricht, Kommentar, Vorlage, Kinderticket, Neue Nachricht, Ticket, Ticket Nachricht, Ticketnachricht, Neu Ticket Nachricht, Ticketnachrichten",
 				"description" => "Erfahre, wie du das Ticketsystem in plentymarkets für deine Kundenkommunikation nutzt.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Ticketsystem nutzen. Hier findest du folgende Informationen:",
