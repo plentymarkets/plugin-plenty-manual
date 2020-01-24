@@ -6924,11 +6924,11 @@ class Metadata {
 						"urlName" => "allgemeine-funktionen",
 						"url" => "/basics/arbeiten-mit-plentymarkets/allgemeine-funktionen",
 						"level" => 3,
-						"title" => "Allgemeine Funktionen nutzen",
+						"title" => "Allgemeine Funktionen",
 						"keywords" => "Schnellzugriff, Vollbildmodus, Vollbild, Webshop, Favorit, Favoriten, Benutzer, Benutzerbild, Benutzerbilder, Support, Menüansicht, Drucker, gravatar, Gravatar, Editor, Editoren",
 						"description" => "Arbeiten mit plentymarkets: Füge Menüs als Favoriten hinzu, passe die Menüansicht an und nutze weitere allgemeine Funktionen.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Allgemeine Funktionen nutzen. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Allgemeine Funktionen. Hier findest du folgende Informationen:",
 						"languageID" => "BBRBTD5",
 						"children" => [],
 						"hasChildren" => false
