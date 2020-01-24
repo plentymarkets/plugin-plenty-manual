@@ -7067,55 +7067,6 @@ class Metadata {
 		"languageID" => "TP9OCLS",
 		"children" => 		[
 			[
-				"id" => "0101d2c29d8a17f12cddb077843948ae",
-				"path" => "artikel/best-practices",
-				"position" => 0,
-				"urlName" => "best-practices",
-				"url" => "/artikel/best-practices",
-				"level" => 2,
-				"title" => "Best Practices: Artikel und Kategorien",
-				"keywords" => "Webshop, Mandant, Artikel, Kategorien, Sichtbarkeit, Verfügbarkeit, Checkliste, FAQ",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Best Practices: Artikel und Kategorien. Hier findest du folgende Informationen:",
-				"languageID" => "ZQL6QKM",
-				"children" => 				[
-					[
-						"id" => "d970892504dc61edc7c650f1c932245f",
-						"path" => "artikel/best-practices/best-practices_artikel",
-						"position" => 0,
-						"urlName" => "best-practices_artikel",
-						"url" => "/artikel/best-practices/best-practices_artikel",
-						"level" => 3,
-						"title" => "Best Practices: Artikel",
-						"keywords" => "Webshop, Mandant, Artikel, Kategorien, Sichtbarkeit, Verfügbarkeit, Checkliste, FAQ",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Artikel. Hier findest du folgende Informationen:",
-						"languageID" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "7e9c83c53995f00635989ba79d9d293a",
-						"path" => "artikel/best-practices/best-practices_kategorien",
-						"position" => 0,
-						"urlName" => "best-practices_kategorien",
-						"url" => "/artikel/best-practices/best-practices_kategorien",
-						"level" => 3,
-						"title" => "Best Practices: Kategorien",
-						"keywords" => "Webshop, Mandant, Artikel, Kategorien, Sichtbarkeit, Verfügbarkeit, Checkliste, FAQ",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Kategorien. Hier findest du folgende Informationen:",
-						"languageID" => "",
-						"children" => [],
-						"hasChildren" => false
-					]
-				],
-				"hasChildren" => true
-			],
-			[
 				"id" => "0ff6774e26eca098d491728c7fb8538a",
 				"path" => "artikel/einleitung",
 				"position" => 10,
