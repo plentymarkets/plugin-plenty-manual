@@ -20948,9 +20948,25 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "51183649763ef47b7194a5e50f026094",
+				"path" => "stock-management/practical-example-setting-up-a-warehouse",
+				"position" => 85,
+				"urlName" => "practical-example-setting-up-a-warehouse",
+				"url" => "/en/stock-management/practical-example-setting-up-a-warehouse",
+				"level" => 2,
+				"title" => "Practical example: Setting up a warehouse",
+				"keywords" => "Setting up a warehouse, dimension, dimensions, storage building, rack, shelf, storage location, pick path, label, storage location label",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Practical example: Setting up a warehouse. The following information is available:",
+				"languageID" => "Y67WMM2",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "cb51296003c0f2ff75a0cb33f6a20d62",
 				"path" => "stock-management/best-practices",
-				"position" => 80,
+				"position" => 90,
 				"urlName" => "best-practices",
 				"url" => "/en/stock-management/best-practices",
 				"level" => 2,
