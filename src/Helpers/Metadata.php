@@ -20886,7 +20886,7 @@ class Metadata {
 			[
 				"id" => "369e34b7374e8c9647281d7b466799b5",
 				"path" => "stock-management/managing-stocks",
-				"position" => 30,
+				"position" => 40,
 				"urlName" => "managing-stocks",
 				"url" => "/en/stock-management/managing-stocks",
 				"level" => 2,
@@ -20916,22 +20916,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "d0bfe877be0cd80a0b74c8df9b9d2099",
-				"path" => "stock-management/outgoing-items",
-				"position" => 60,
-				"urlName" => "outgoing-items",
-				"url" => "/en/stock-management/outgoing-items",
-				"level" => 2,
-				"title" => "Booking items out",
-				"keywords" => "goods issue, outgoing stock, outgoing items",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Booking items out. The following information is available:",
-				"languageID" => "JTRIWSB",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "338582b580255bb2b901aff001478c4c",
 				"path" => "stock-management/taking-stock",
 				"position" => 70,
@@ -20944,6 +20928,22 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Taking stock. The following information is available:",
 				"languageID" => "YU6LH3H",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "d0bfe877be0cd80a0b74c8df9b9d2099",
+				"path" => "stock-management/outgoing-items",
+				"position" => 80,
+				"urlName" => "outgoing-items",
+				"url" => "/en/stock-management/outgoing-items",
+				"level" => 2,
+				"title" => "Booking items out",
+				"keywords" => "goods issue, outgoing stock, outgoing items",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Booking items out. The following information is available:",
+				"languageID" => "JTRIWSB",
 				"children" => [],
 				"hasChildren" => false
 			],
