@@ -64,6 +64,10 @@ class ContentController extends Controller
             $content = explode("slp/", $contentPath);
             return $this->showSWLanguagePage($content[1]);
         }
+        elseif(strpos($contentPath, "slp/") === false && strpos($contentPath, "sls/") === false && strpos($contentPath, "search/") !== false)
+        {
+            return $this->showSearchResults();
+        }
         else
         {
             if($this->lang === "en" && strpos($contentPath, "en/") === false)
