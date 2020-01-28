@@ -12515,13 +12515,46 @@ class Metadata {
 				"url" => "/maerkte/otto",
 				"level" => 2,
 				"title" => "OTTO",
-				"keywords" => "OTTO, Marktplatz",
-				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz OTTO in deinem plentymarkets System ein.",
+				"keywords" => "OTTO, OTTO market, Marktplatz, Direktversand, Cooperation, Integration",
+				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich OTTO. Hier findest du folgende Informationen:",
-				"languageID" => "VM4QQ6Y",
-				"children" => [],
-				"hasChildren" => false
+				"languageID" => "X5RRGMS",
+				"children" => 				[
+					[
+						"id" => "25dbd1439e291178aec2dd8999d3c79f",
+						"path" => "maerkte/otto/otto-interface",
+						"position" => 10,
+						"urlName" => "otto-interface",
+						"url" => "/maerkte/otto/otto-interface",
+						"level" => 3,
+						"title" => "OTTO",
+						"keywords" => "OTTO, Marktplatz",
+						"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz OTTO in deinem plentymarkets System ein.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich OTTO. Hier findest du folgende Informationen:",
+						"languageID" => "VM4QQ6Y",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "e74fc8e6232b6812829e63a8a0681746",
+						"path" => "maerkte/otto/otto-market",
+						"position" => 20,
+						"urlName" => "otto-market",
+						"url" => "/maerkte/otto/otto-market",
+						"level" => 3,
+						"title" => "OTTO market",
+						"keywords" => "OTTO market, OTTO, Marktplatz",
+						"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zu OTTO market in deinem plentymarkets System ein.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich OTTO market. Hier findest du folgende Informationen:",
+						"languageID" => "SMKVRT7",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
 			],
 			[
 				"id" => "d8643eeff680f2f8779a309271d34096",
