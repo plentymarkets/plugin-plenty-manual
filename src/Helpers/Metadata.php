@@ -12976,22 +12976,6 @@ class Metadata {
 				"languageID" => "VY49UZP",
 				"children" => [],
 				"hasChildren" => false
-			],
-			[
-				"id" => "2befee582557902efaf6f92053369625",
-				"path" => "pos/pos-best-practice",
-				"position" => 30,
-				"urlName" => "pos-best-practice",
-				"url" => "/pos/pos-best-practice",
-				"level" => 2,
-				"title" => "Best Practices: POS",
-				"keywords" => "plentymarkets POS, Kasse, POS, Gutscheine, Gutscheine verkaufen, Best Practice",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Best Practices: POS. Hier findest du folgende Informationen:",
-				"languageID" => "X4RBWGB",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
