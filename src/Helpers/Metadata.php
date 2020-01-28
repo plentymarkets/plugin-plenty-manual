@@ -25954,22 +25954,6 @@ class Metadata {
 				"languageID" => "VY49UZP",
 				"children" => [],
 				"hasChildren" => false
-			],
-			[
-				"id" => "2befee582557902efaf6f92053369625",
-				"path" => "pos/pos-best-practice",
-				"position" => 30,
-				"urlName" => "pos-best-practice",
-				"url" => "/en/pos/pos-best-practice",
-				"level" => 2,
-				"title" => "Best Practices: POS",
-				"keywords" => "plentymarkets POS, POS, plentyPOS, Gift cards, selling gift cards, best practice",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Best Practices: POS. The following information is available:",
-				"languageID" => "X4RBWGB",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
