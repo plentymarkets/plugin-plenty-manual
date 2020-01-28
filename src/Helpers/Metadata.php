@@ -25510,13 +25510,46 @@ class Metadata {
 				"url" => "/en/markets/otto",
 				"level" => 2,
 				"title" => "OTTO",
-				"keywords" => "OTTO, market, marketplace",
-				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market OTTO in your plentymarkets system.",
+				"keywords" => "OTTO, OTTO market, marketplace, Direktversand, Cooperation, Integration",
+				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic OTTO. The following information is available:",
-				"languageID" => "VM4QQ6Y",
-				"children" => [],
-				"hasChildren" => false
+				"languageID" => "X5RRGMS",
+				"children" => 				[
+					[
+						"id" => "c0a02f91508592c1af229a3b9bb2850b",
+						"path" => "markets/otto/otto-interface",
+						"position" => 10,
+						"urlName" => "otto-interface",
+						"url" => "/en/markets/otto/otto-interface",
+						"level" => 3,
+						"title" => "OTTO",
+						"keywords" => "OTTO, market, marketplace",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market OTTO in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic OTTO. The following information is available:",
+						"languageID" => "VM4QQ6Y",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "ea2d52f70b2a3126a9fbf5d94178b5dd",
+						"path" => "markets/otto/otto-market",
+						"position" => 20,
+						"urlName" => "otto-market",
+						"url" => "/en/markets/otto/otto-market",
+						"level" => 3,
+						"title" => "OTTO market",
+						"keywords" => "OTTO market, OTTO, marketplace",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to OTTO market in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic OTTO market. The following information is available:",
+						"languageID" => "SMKVRT7",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
 			],
 			[
 				"id" => "d1492790f1bee764e180f1d21f97b0c9",
