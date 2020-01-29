@@ -13335,6 +13335,39 @@ class Metadata {
 			]
 		],
 		"hasChildren" => true
+	],
+	[
+		"id" => "6b306396aa9fdbc560492611d41dd56f",
+		"path" => "changelog",
+		"position" => 150,
+		"urlName" => "changelog",
+		"url" => "/changelog",
+		"level" => 1,
+		"title" => "plentymarkets Changelog",
+		"keywords" => "",
+		"description" => "",
+		"navAlias" => "Changelog 29. Januar 2020",
+		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
+		"languageID" => "",
+		"children" => 		[
+			[
+				"id" => "3509ec60e05699613697bf5e33db2e96",
+				"path" => "changelog/2020_01_22",
+				"position" => 550,
+				"urlName" => "2020_01_22",
+				"url" => "/changelog/changelog-2020-01-22",
+				"level" => 2,
+				"title" => "Changelog 22. Januar 2020",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 22. Januar 2020. Hier findest du folgende Informationen:",
+				"languageID" => "ZOOLI8G",
+				"children" => [],
+				"hasChildren" => false
+			]
+		],
+		"hasChildren" => true
 	]
 ];
     const EN = [
