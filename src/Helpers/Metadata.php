@@ -25983,11 +25983,11 @@ class Metadata {
 		"urlName" => "pos",
 		"url" => "/en/pos",
 		"level" => 1,
-		"title" => "POS",
-		"keywords" => "plentymarkets POS, POS, point of sale, point of sale system, plentymarkets App, POS users",
+		"title" => "Point of sale system",
+		"keywords" => "plentymarkets POS, POS, point of sale, plentymarkets point of sale, point of sale system, plentymarkets app, coupons, coupon point of sale, click and collect, click &amp; collect",
 		"description" => "",
 		"navAlias" => "Overview",
-		"linkListInto" => "Welcome to the topic POS. The following information is available:",
+		"linkListInto" => "Welcome to the topic Point of sale system. The following information is available:",
 		"languageID" => "8OEUR6U",
 		"children" => 		[
 			[
