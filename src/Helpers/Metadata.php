@@ -7092,7 +7092,7 @@ class Metadata {
 						"description" => "Was ist der Unterschied zwischen Artikeln und Varianten? Und was haben Systemeinstellungen damit zu tun? Lerne auf dieser Seite die Artikelstruktur von plentymarkets kennen!",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Artikel vs. Varianten. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "EPZKKB2",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7108,7 +7108,7 @@ class Metadata {
 						"description" => "Lerne, wie deine Varianten Daten und Einstellungen von der Hauptvariante erben.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Was ist Vererbung?. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "041209C",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7124,7 +7124,7 @@ class Metadata {
 						"description" => "Lerne, wo du Artikeldaten in plentymarkets findest und schaue dir die Beispielartikel an.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Nutzerführung und Beispielartikel. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "9ZXF92H",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -7143,7 +7143,7 @@ class Metadata {
 				"description" => "Bereite dein plentymarkets System auf den Verkauf von Artikeln vor. Treffe vorbereitende Einstellungn, die später mit deinen Artikeln und Varianten verknüpft werden.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Vorbereitende Einstellungen. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "4RD95N9",
 				"children" => 				[
 					[
 						"id" => "21295bf92256a4bc28faa038332dd518",
@@ -7157,7 +7157,7 @@ class Metadata {
 						"description" => "Lerne, wie du Kategorien verwendest, um deine Produkte übersichtlich zu gruppieren.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Kategorien. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "QDAF656",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7173,7 +7173,7 @@ class Metadata {
 						"description" => "Standardmäßig sind 52 Einheiten in plentymarkets gespeichert. Lerne, wie du weitere Maßeinheiten bei Bedarf erstellst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Einheiten. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "IHTSF1W",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7189,7 +7189,7 @@ class Metadata {
 						"description" => "Lerne, wie du deine Produkte charakterisierst und dabei Varianten bildest.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Attribute. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "559N81B",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7205,7 +7205,7 @@ class Metadata {
 						"description" => "Lerne, wie du die technischen Features eines Produkts hervorhebst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Merkmale und Eigenschaften. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "I13JJLO",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7221,7 +7221,7 @@ class Metadata {
 						"description" => "plentymarkets unterstützt dich bei der Verwaltung deiner Hersteller. Lerne, wie du deine Herstellerdaten in plentymarkets speicherst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Hersteller. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "RF86X9P",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7237,7 +7237,7 @@ class Metadata {
 						"description" => "Lerne, Barcodes Schritt für Schritt einzurichten und auf Artikeletiketten anzuzeigen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Barcodes und Etiketten. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "650Q5WR",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7253,7 +7253,7 @@ class Metadata {
 						"description" => "Lerne alles über Verkaufspreise, Preiskalkulationen, deren Einstellungen und deine Möglichkeiten.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Verkaufspreise und Preiskalkulation. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "GBG1FJX",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7269,7 +7269,7 @@ class Metadata {
 						"description" => "Erfahre, welche Einstellungen du für deine Artikelbilder vornehmen kannst und wie du Bilder per FTP hochlädst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Artikelbilder. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "JVZ4F9Y",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7285,7 +7285,7 @@ class Metadata {
 						"description" => "Verliere nicht den Überblick! Tags und Markierungen sind gute Möglichkeiten, Artikel übersichtlicher zu gestalten und besser zu sortieren.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Tags und Markierungen. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "EQTFNT8",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7301,7 +7301,7 @@ class Metadata {
 						"description" => "Neue Varianten erhalten automatisch eine Variantennummer. Entscheide selbst, nach welchem Muster neue Variantennummern vergeben werden sollen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Muster für neue Variantennummern festlegen. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "2O40QW3",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -7336,7 +7336,7 @@ class Metadata {
 				"description" => "Hast du einen bestimmten Anwendungsfall im Sinn? Lerne wie du Artikeldaten mehrsprachig pflegst, Produkte kombinierst und Gratisartikel verwaltest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Anwendungsfälle. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "DU8B7LL",
 				"children" => 				[
 					[
 						"id" => "c78b862557f96dc1b49d274b049e8c87",
@@ -7366,7 +7366,7 @@ class Metadata {
 						"description" => "Lerne, wie du Gratisartikel oder Werbegeschenke zu einer Bestellung hinzufügst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Gratiszugaben. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "54CLGEN",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7382,7 +7382,7 @@ class Metadata {
 						"description" => "Lerne, wie du Seriennummern zur eindeutigen Kennzeichnung jedes verkauften Artikels einrichtest.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Seriennummern. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "7NO0GFM",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7414,7 +7414,7 @@ class Metadata {
 						"description" => "Willst du die Backend Artikelsuche anpassen? Lerne, wie du die Suchfunktion in plentymarkets modifizieren kannst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Das Standardsuchverhalten ändern. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "DY9U831",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -7433,7 +7433,7 @@ class Metadata {
 				"description" => "Präsentiere Artikel im Webshop genau nach deiner Vorstellungen. Finde außerdem schnelle Hilfe, falls deine Artikel oder Kategorien nicht im Webshop angezeigt werden.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Darstellung von Artikeln im Webshop. Hier findest du folgende Informationen:",
-				"languageID" => "",
+				"languageID" => "F9L7GVU",
 				"children" => 				[
 					[
 						"id" => "d77c93b4acea6f4d90b8ee667a24ad4b",
@@ -7447,7 +7447,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Kategorie ist nicht sichtbar. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "7HT9CGX",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7463,7 +7463,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Artikel ist nicht sichtbar. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "X4LB3DQ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7495,7 +7495,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Cross-Selling. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "1O7ZCYS",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7511,7 +7511,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Shop-Aktionen. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "3GZXZ0Z",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -7527,7 +7527,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Artikelvorlagen in Callisto. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "QPVEO0X",
 						"children" => [],
 						"hasChildren" => false
 					]
