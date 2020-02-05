@@ -20346,7 +20346,7 @@ class Metadata {
 		"level" => 1,
 		"title" => "Items",
 		"keywords" => "",
-		"description" => "Get to know items in plentymarkets.",
+		"description" => "Learn how to manage items in plentymarkets. Find out which topics are covered in this chapter.",
 		"navAlias" => "Overview",
 		"linkListInto" => "Welcome to the topic Items. The following information is available:",
 		"languageID" => "TP9OCLS",
@@ -20377,7 +20377,7 @@ class Metadata {
 						"description" => "What’s the difference between items and variations? And what do system settings have to do with it all? This page introduces you to the item structure in plentymarkets!",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Items vs. Variations. The following information is available:",
-						"languageID" => "",
+						"languageID" => "EPZKKB2",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20393,7 +20393,7 @@ class Metadata {
 						"description" => "Learn how variations inherit data and settings from the main variation.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic What is inheritance?. The following information is available:",
-						"languageID" => "",
+						"languageID" => "041209C",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20409,7 +20409,7 @@ class Metadata {
 						"description" => "Learn where you can find item data in plentymarkets and take a look at the example items.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Navigation and example items. The following information is available:",
-						"languageID" => "",
+						"languageID" => "9ZXF92H",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -20428,7 +20428,7 @@ class Metadata {
 				"description" => "Get ready to start selling items with your plentymarkets system. Start out by saving information, will be linked to your items and variations later.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Preparatory settings. The following information is available:",
-				"languageID" => "",
+				"languageID" => "4RD95N9",
 				"children" => 				[
 					[
 						"id" => "5828b1cb31f8e4cb196b596091be3ce3",
@@ -20442,7 +20442,7 @@ class Metadata {
 						"description" => "Learn how to use categories to group your products.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Categories. The following information is available:",
-						"languageID" => "",
+						"languageID" => "QDAF656",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20458,7 +20458,7 @@ class Metadata {
 						"description" => "There are 52 units saved in plentymarkets by default. Learn how to create additional units of measure as needed.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Units. The following information is available:",
-						"languageID" => "",
+						"languageID" => "IHTSF1W",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20474,7 +20474,7 @@ class Metadata {
 						"description" => "Learn how to simultaneously characterise your products and build variations.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Attributes. The following information is available:",
-						"languageID" => "",
+						"languageID" => "559N81B",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20490,7 +20490,7 @@ class Metadata {
 						"description" => "Learn how to highlight a product’s technical features.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Characteristics and properties. The following information is available:",
-						"languageID" => "",
+						"languageID" => "I13JJLO",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20506,7 +20506,7 @@ class Metadata {
 						"description" => "plentymarkets helps you manage your manufacturers. Learn how to save your manufacturer data in plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Manufacturers. The following information is available:",
-						"languageID" => "",
+						"languageID" => "RF86X9P",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20522,7 +20522,7 @@ class Metadata {
 						"description" => "Learn to configure barcodes step by step and display them on item labels.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Barcodes and labels. The following information is available:",
-						"languageID" => "",
+						"languageID" => "650Q5WR",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20538,7 +20538,7 @@ class Metadata {
 						"description" => "Learn about sales prices, price calculations, their settings and your opportunities.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Sales prices and price calculation. The following information is available:",
-						"languageID" => "",
+						"languageID" => "GBG1FJX",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20554,7 +20554,7 @@ class Metadata {
 						"description" => "Learn which settings can be configured for item images and how to upload images via FTP.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Item images. The following information is available:",
-						"languageID" => "",
+						"languageID" => "JVZ4F9Y",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20570,7 +20570,7 @@ class Metadata {
 						"description" => "Don’t lose track of your items! Tags and flags are good ways to organise your items and sort them logically.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Tags and flags. The following information is available:",
-						"languageID" => "",
+						"languageID" => "EQTFNT8",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20586,7 +20586,7 @@ class Metadata {
 						"description" => "New variations automatically receive a variation number. You can decide which pattern should be used to assign new variation numbers.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Creating a pattern for new variation numbers. The following information is available:",
-						"languageID" => "",
+						"languageID" => "2O40QW3",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -20621,12 +20621,12 @@ class Metadata {
 				"description" => "Do you have a particular scenario in mind? Learn how to manage item data in multiple languages, how to combine products and how to set up give-aways and promotional gifts.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Use cases. The following information is available:",
-				"languageID" => "",
+				"languageID" => "DU8B7LL",
 				"children" => 				[
 					[
 						"id" => "0920cf1b18d083c0a85280a7b46ee367",
 						"path" => "item/use-cases/combining-products",
-						"position" => 10,
+						"position" => 20,
 						"urlName" => "combining-products",
 						"url" => "/en/item/use-cases/combining-products",
 						"level" => 3,
@@ -20642,7 +20642,7 @@ class Metadata {
 					[
 						"id" => "b556535fbd20ae470230dbbed4207f1a",
 						"path" => "item/use-cases/give-aways",
-						"position" => 20,
+						"position" => 30,
 						"urlName" => "give-aways",
 						"url" => "/en/item/use-cases/give-aways",
 						"level" => 3,
@@ -20651,14 +20651,14 @@ class Metadata {
 						"description" => "Learn how to add free give-aways or promotional items to an order.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Give-aways. The following information is available:",
-						"languageID" => "",
+						"languageID" => "54CLGEN",
 						"children" => [],
 						"hasChildren" => false
 					],
 					[
 						"id" => "616991e712fc55f97e8c98e71287d9ed",
 						"path" => "item/use-cases/serial-numbers",
-						"position" => 30,
+						"position" => 40,
 						"urlName" => "serial-numbers",
 						"url" => "/en/item/use-cases/serial-numbers",
 						"level" => 3,
@@ -20667,14 +20667,14 @@ class Metadata {
 						"description" => "Learn how to set up serial numbers that uniquely identify every single item sold.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Serial numbers. The following information is available:",
-						"languageID" => "",
+						"languageID" => "7NO0GFM",
 						"children" => [],
 						"hasChildren" => false
 					],
 					[
 						"id" => "ff8eb4fd3c8830e7b617650894d36850",
 						"path" => "item/use-cases/checking-data-status",
-						"position" => 40,
+						"position" => 50,
 						"urlName" => "checking-data-status",
 						"url" => "/en/item/use-cases/checking-data-status",
 						"level" => 3,
@@ -20699,7 +20699,7 @@ class Metadata {
 						"description" => "Do you want to modify the back end item search? Learn how to customise the search function within plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Modifying the default search behaviour. The following information is available:",
-						"languageID" => "",
+						"languageID" => "DY9U831",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -20718,7 +20718,7 @@ class Metadata {
 				"description" => "Decide just how items should be featured in your online store. Find quick help if your items or categories aren't appearing in the store.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic How items are displayed in the online store. The following information is available:",
-				"languageID" => "",
+				"languageID" => "F9L7GVU",
 				"children" => 				[
 					[
 						"id" => "ec5883b5f7105f4388981c2893c2f51c",
@@ -20732,7 +20732,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Category isn’t visible. The following information is available:",
-						"languageID" => "",
+						"languageID" => "7HT9CGX",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20748,7 +20748,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Item isn’t visible. The following information is available:",
-						"languageID" => "",
+						"languageID" => "X4LB3DQ",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20780,7 +20780,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Cross-selling. The following information is available:",
-						"languageID" => "",
+						"languageID" => "1O7ZCYS",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20796,7 +20796,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Store specials. The following information is available:",
-						"languageID" => "",
+						"languageID" => "3GZXZ0Z",
 						"children" => [],
 						"hasChildren" => false
 					],
@@ -20812,7 +20812,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Item templates in Callisto. The following information is available:",
-						"languageID" => "",
+						"languageID" => "QPVEO0X",
 						"children" => [],
 						"hasChildren" => false
 					]
