@@ -16132,22 +16132,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "665f1a07dfec9bf737035ab5dbec9674",
-						"path" => "videos/online-store/customise-your-online-store",
-						"position" => 10,
-						"urlName" => "customise-your-online-store",
-						"url" => "/en/videos/online-store/customise-your-online-store",
-						"level" => 3,
-						"title" => "Customising the look of your Ceres online store",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Customising the look of your Ceres online store. The following information is available:",
-						"languageID" => "IFGNB6B",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "f717c0b05f0db7f2c9724812e74e4555",
 						"path" => "videos/online-store/first-step",
 						"position" => 10,
@@ -16160,6 +16144,22 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Take the first step toward opening your online store!. The following information is available:",
 						"languageID" => "BOIKYIL",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "665f1a07dfec9bf737035ab5dbec9674",
+						"path" => "videos/online-store/customise-your-online-store",
+						"position" => 20,
+						"urlName" => "customise-your-online-store",
+						"url" => "/en/videos/online-store/customise-your-online-store",
+						"level" => 3,
+						"title" => "Customising the look of your Ceres online store",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Customising the look of your Ceres online store. The following information is available:",
+						"languageID" => "IFGNB6B",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -20640,6 +20640,22 @@ class Metadata {
 				"languageID" => "DU8B7LL",
 				"children" => 				[
 					[
+						"id" => "ff8eb4fd3c8830e7b617650894d36850",
+						"path" => "item/use-cases/checking-data-status",
+						"position" => 0,
+						"urlName" => "checking-data-status",
+						"url" => "/en/item/use-cases/checking-data-status",
+						"level" => 3,
+						"title" => "Checking status of item data",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Checking status of item data. The following information is available:",
+						"languageID" => "PSROCEP",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "0920cf1b18d083c0a85280a7b46ee367",
 						"path" => "item/use-cases/combining-products",
 						"position" => 20,
@@ -20684,22 +20700,6 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Serial numbers. The following information is available:",
 						"languageID" => "7NO0GFM",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "ff8eb4fd3c8830e7b617650894d36850",
-						"path" => "item/use-cases/checking-data-status",
-						"position" => 50,
-						"urlName" => "checking-data-status",
-						"url" => "/en/item/use-cases/checking-data-status",
-						"level" => 3,
-						"title" => "Checking status of item data",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Checking status of item data. The following information is available:",
-						"languageID" => "PSROCEP",
 						"children" => [],
 						"hasChildren" => false
 					],
