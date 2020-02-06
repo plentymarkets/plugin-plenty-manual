@@ -2734,25 +2734,9 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "1b4b0feececbd047871469ca8c6ad138",
-						"path" => "videos/webshop/deine-artikel",
-						"position" => 10,
-						"urlName" => "deine-artikel",
-						"url" => "/videos/webshop/deine-artikel",
-						"level" => 3,
-						"title" => "Präsentiere deine Artikel im Shop",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Präsentiere deine Artikel im Shop. Hier findest du folgende Informationen:",
-						"languageID" => "DAM9CNS",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "2792bd56b956e4ff136890806d292c51",
 						"path" => "videos/webshop/individualisiere-look-deines-ceres-shops",
-						"position" => 10,
+						"position" => 20,
 						"urlName" => "individualisiere-look-deines-ceres-shops",
 						"url" => "/videos/webshop/individualsiere-deinen-shop",
 						"level" => 3,
@@ -2762,6 +2746,22 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Individualisiere den Look deines Ceres-Shops. Hier findest du folgende Informationen:",
 						"languageID" => "IFGNB6B",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "1b4b0feececbd047871469ca8c6ad138",
+						"path" => "videos/webshop/deine-artikel",
+						"position" => 30,
+						"urlName" => "deine-artikel",
+						"url" => "/videos/webshop/deine-artikel",
+						"level" => 3,
+						"title" => "Präsentiere deine Artikel im Shop",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Präsentiere deine Artikel im Shop. Hier findest du folgende Informationen:",
+						"languageID" => "DAM9CNS",
 						"children" => [],
 						"hasChildren" => false
 					]
@@ -7339,6 +7339,22 @@ class Metadata {
 				"languageID" => "DU8B7LL",
 				"children" => 				[
 					[
+						"id" => "52f251ceacbf32317b9669c81b44bf80",
+						"path" => "artikel/anwendungsfaelle/artikeldaten-status-pruefen",
+						"position" => 0,
+						"urlName" => "artikeldaten-status-pruefen",
+						"url" => "/artikel/anwendungsfaelle/artikeldaten-status-pruefen",
+						"level" => 3,
+						"title" => "Aktualität von Artikeldaten prüfen",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Aktualität von Artikeldaten prüfen. Hier findest du folgende Informationen:",
+						"languageID" => "PSROCEP",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "c78b862557f96dc1b49d274b049e8c87",
 						"path" => "artikel/anwendungsfaelle/multipacks-pakete-sets-verwalten",
 						"position" => 20,
@@ -7383,22 +7399,6 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Seriennummern. Hier findest du folgende Informationen:",
 						"languageID" => "7NO0GFM",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "52f251ceacbf32317b9669c81b44bf80",
-						"path" => "artikel/anwendungsfaelle/artikeldaten-status-pruefen",
-						"position" => 50,
-						"urlName" => "artikeldaten-status-pruefen",
-						"url" => "/artikel/anwendungsfaelle/artikeldaten-status-pruefen",
-						"level" => 3,
-						"title" => "Aktualität von Artikeldaten prüfen",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Aktualität von Artikeldaten prüfen. Hier findest du folgende Informationen:",
-						"languageID" => "PSROCEP",
 						"children" => [],
 						"hasChildren" => false
 					],
