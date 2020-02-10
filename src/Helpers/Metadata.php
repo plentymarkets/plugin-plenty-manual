@@ -24447,11 +24447,11 @@ class Metadata {
 				"urlName" => "online-store",
 				"url" => "/en/online-store/online-store",
 				"level" => 2,
-				"title" => "Old: CMS & Callisto online store",
+				"title" => "Old: CMS &amp; Callisto online store",
 				"keywords" => "Store settings",
 				"description" => "",
 				"navAlias" => "Online store",
-				"linkListInto" => "Welcome to the topic Old: CMS & Callisto online store. The following information is available:",
+				"linkListInto" => "Welcome to the topic Old: CMS &amp; Callisto online store. The following information is available:",
 				"languageID" => "RWYBLML",
 				"children" => 				[
 					[
