@@ -3845,7 +3845,7 @@ class Metadata {
 					[
 						"id" => "52a4c8bd0a878445c0a2c62c92c3decc",
 						"path" => "videos/amazon/mws-schnittstelle",
-						"position" => 10,
+						"position" => 20,
 						"urlName" => "mws-schnittstelle",
 						"url" => "/videos/amazon/mws-schnittstelle",
 						"level" => 3,
