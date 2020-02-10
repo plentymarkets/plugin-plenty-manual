@@ -17241,22 +17241,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "e6d9f1e35d6a031f771ac0ff9a22d4fb",
-						"path" => "videos/amazon/interface-introduction",
-						"position" => 10,
-						"urlName" => "interface-introduction",
-						"url" => "/en/videos/amazon/interface-introduction",
-						"level" => 3,
-						"title" => "Linking your Amazon account with plentymarkets",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Linking your Amazon account with plentymarkets. The following information is available:",
-						"languageID" => "DONYMS2",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "5b6b98a1a949e663b98614c1b3dcc3f5",
 						"path" => "videos/amazon/introduction",
 						"position" => 10,
@@ -17269,6 +17253,22 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Introduction to the Amazon module. The following information is available:",
 						"languageID" => "FSJOWAM",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "e6d9f1e35d6a031f771ac0ff9a22d4fb",
+						"path" => "videos/amazon/interface-introduction",
+						"position" => 20,
+						"urlName" => "interface-introduction",
+						"url" => "/en/videos/amazon/interface-introduction",
+						"level" => 3,
+						"title" => "Linking your Amazon account with plentymarkets",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Linking your Amazon account with plentymarkets. The following information is available:",
+						"languageID" => "DONYMS2",
 						"children" => [],
 						"hasChildren" => false
 					],
