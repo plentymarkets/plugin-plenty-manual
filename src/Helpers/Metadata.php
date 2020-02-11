@@ -9317,6 +9317,22 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "9b40a9bd05a611fec8c2283e04fbf558",
+								"path" => "daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-kategorien",
+								"position" => 55,
+								"urlName" => "best-practices-elasticsync-kategorien",
+								"url" => "/daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-kategorien",
+								"level" => 4,
+								"title" => "Neue Kategorien importieren",
+								"keywords" => "ElasticSync, Import, Kategorien, Best Practice, Praxisbeispiel",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Neue Kategorien importieren. Hier findest du folgende Informationen:",
+								"languageID" => "GV1MLXQ",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "1574cced2e9e4a252beaac798472832c",
 								"path" => "daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-kontaktdaten",
 								"position" => 60,

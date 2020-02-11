@@ -16,20 +16,35 @@
     <h1>Kategorien</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mit einem Sync des Typs <strong>Kategorien</strong> importierst du Kategoriedaten.</p>
+<p>Diese Seite erläutert die Abgleich- und Zuordnungsfelder, die dir beim Importieren von Kategorien zur Verfügung stehen. Diese Seite dient lediglich als Referenz und setzt voraus, dass du bereits Grundkenntnisse über das <a href="/daten/daten-importieren/ElasticSync">ElasticSync-Tool</a> hast.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Praxisbeispiel: Neue Kategorien importieren</div>
+<div class="paragraph">
+<p>Stell dir mal vor, du bist ganz neu bei plentymarkets und möchtest alle deine Kategoriedaten auf einmal importieren. Wie geht so etwas? Wirf einen Blick auf <a href="/daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-kategorien">dieses praktische Beispiel</a>, welches dich Schritt für Schritt durch den Prozess führt.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div><div class="sect1">
 <h2 id="2110">1. Felder für den Kategorieabgleich</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In <a href="#tabelle-Abgleichfelder-Kategorie">Tabelle 1</a> werden Felder erläutert, die für den Abgleich von Kategoriedaten zur Verfügung stehen. Anhand des gewählten Abgleichfelds wird geprüft, ob der importierte Datensatz in plentymarkets vorhanden ist.</p>
+<p>In <a href="#table-matching-fields-categories">Tabelle 1</a> werden Felder erläutert, die für den Abgleich von Kategoriedaten zur Verfügung stehen. Anhand des gewählten Abgleichfelds wird geprüft, ob der importierte Datensatz in plentymarkets vorhanden ist.</p>
 </div>
-<table id="tabelle-Abgleichfelder-Kategorie" class="tableblock frame-all grid-all stretch">
+<table id="table-matching-fields-categories" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 1. Abgleichfelder für Kategorieimport</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
@@ -39,16 +54,21 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">KategorieId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Kategorie</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kategorie-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In welcher Spalte der CSV-Datei werden Kategorie-IDs aufgelistet? Wähle diese Spalte hier.
+Diese Option ist sinnvoll, wenn du <em>bestehende Kategorien aktualisieren</em> möchtest.</p>
+<p class="tableblock"><strong><em>Hintergrund-Info</em></strong>: Jede neu angelegte Kategorie erhält automatisch eine ID, die nicht geändert werden kann.
+Die ID dient zur eindeutigen Kennzeichnung der Kategorie.
+Da die ID eindeutig ist, lässt sich damit gut prüfen, ob der importierte Datensatz bereits in plentymarkets vorhanden ist.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kategoriename Kombiniert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Aus der zweiten Dropdown-Liste das Trennzeichen wählen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kategoriename Kombiniert</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In welcher Spalte der CSV-Datei wird der vollständige Kategoriepfad aufgeführt? Wähle diese Spalte aus der ersten Dropdown-Liste und das Trennzeichen aus der zweiten Dropdown-Liste.
+Diese Option ist sinnvoll, wenn du <em>neue Kategorien anlegen</em> möchtest.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kategoriename Ebene 1 - 6</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kategoriename Ebene 1 - 6</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In welcher Spalte der CSV-Datei wird der Kategoriename für diese Ebene aufgeführt? Wähle diese Spalte hier.</p></td>
 </tr>
 </tbody>
 </table>
@@ -57,166 +77,399 @@
 <h2 id="2120">2. Felder für die Kategoriezuordnung</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In <a href="#tabelle-Zuordnungsfelder-Kategorie">Tabelle 2</a> werden Felder erläutert, die für die Zuordnung von Kategoriedaten zur Verfügung stehen. Anhand des gewählten Abgleichfelds wird geprüft, ob der importierte Datensatz in plentymarkets vorhanden ist.</p>
+<p>In <a href="#table-mapping-fields-categories">Tabelle 2</a> werden Felder erläutert, die für die Zuordnung von Kategoriedaten zur Verfügung stehen.</p>
 </div>
-<table id="tabelle-Zuordnungsfelder-Kategorie" class="tableblock frame-all grid-all stretch">
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Kein Zuordnungsfeld? Standardwert greift!</div>
+<div class="paragraph">
+<p>Wenn du eine bestimmte Information nicht in deine CSV-Datei aufnimmst, d.h. wenn du ein bestimmtes Zuordnungsfeld <em>nicht verwendest</em>, dann erhält deine Kategorie den Standardwert.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table id="table-mapping-fields-categories" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 2. Zuordnungsfelder für Kategorieimport</caption>
 <colgroup>
 <col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Zuordnungsfeld</th>
 <th class="tableblock halign-left valign-top">Zulässige Importwerte</th>
+<th class="tableblock halign-left valign-top">Standardwert</th>
 <th class="tableblock halign-left valign-top">Erläuterung</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Kategorie</strong></p></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Kategorie</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Elternkategorie ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Elternkategorie ID</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nummerisch (interne ID)</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- k.A. -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wird in einer Spalte deiner CSV-Datei die ID der übergeordneten Kategorie aufgeführt? Falls ja, dann ordne die Spalte diesem Datenfeld zu.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Elternkategorie Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Elternkategorie Name</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- k.A. -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wird in einer Spalte deiner CSV-Datei der Name der übergeordneten Kategorie aufgeführt? Falls ja, dann ordne die Spalte diesem Datenfeld zu.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Typ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">item = Artikel<br>
-container = Container<br>
-content = Content<br>
-blog = Blog (nicht in Verwendung)</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Typ</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">item<br>
+container<br>
+content<br>
+blog</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">item</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gib einen der zulässigen Importwerte in deine CSV-Datei ein. Welchen Wert du wählst, bestimmt, <a href="/artikel/einstellungen/kategorien#700">welcher Kategorietyp</a> beim Import vergeben wird.</p>
+</div>
+<div class="paragraph">
+<p>Mit anderen Worten: Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass einer der folgenden Werte für die Einstellung <strong>Typ</strong> gesetzt wurde.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>item = Artikel (Standardeinstellung)</p>
+</li>
+<li>
+<p>container = Container</p>
+</li>
+<li>
+<p>content = Content</p>
+</li>
+<li>
+<p>blog = Blog</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">In Linkliste anzeigen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 = Nein<br>
-1 = Ja</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>In Linkliste anzeigen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gib einen der zulässigen Importwerte in deine CSV-Datei ein. Welchen Wert du wählst, bestimmt, ob die <a href="/artikel/einstellungen/kategorien#700">Kategorie in der Webshop-Navigation angezeigt</a> wird.</p>
+</div>
+<div class="paragraph">
+<p>Mit anderen Worten: Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass einer der folgenden Werte für die Einstellung <strong>In Linkliste</strong> gesetzt wurde.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Nicht anzeigen</p>
+</li>
+<li>
+<p>1 = Anzeigen</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">right</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">all = Kategorie und alle Unterkategorien sind öffentlich sichtbar<br>
-customer = Kategorie und alle Unterkategorien sind nur für eingeloggte Webshop-Besucher sichtbar<br></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entspricht Backend-Einstellung <strong>Sichtbar</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>right</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all<br>
+customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gib einen der zulässigen Importwerte in deine CSV-Datei ein.
+Welchen Wert du wählst, bestimmt, ob die <a href="/artikel/einstellungen/kategorien#700">Kategorie nur für eingeloggte Benutzer sichtbar</a> sein wird.</p>
+</div>
+<div class="paragraph">
+<p>Mit anderen Worten: Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass einer der folgenden Werte für die Einstellung <strong>Sichtbar</strong> gesetzt wurde.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>all = Öffentlich</p>
+</li>
+<li>
+<p>customer = Nach Login</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sichtbar (Sitemap)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 = Nein<br>
-1 = Ja</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Entspricht Backend-Einstellung <strong>Sitemap</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sichtbar</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gib einen der zulässigen Importwerte in deine CSV-Datei ein.
+Welchen Wert du wählst, bestimmt, ob die <a href="/artikel/einstellungen/kategorien#700">Kategorie in die Sitemap</a> aufgenommen wird.</p>
+</div>
+<div class="paragraph">
+<p>Mit anderen Worten: Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass einer der folgenden Werte für die Einstellung <strong>Sitemap</strong> gesetzt wurde.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Nicht anzeigen</p>
+</li>
+<li>
+<p>1 = Anzeigen</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kategorie löschen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 = Nein<br>
-1 = Ja</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kategorie löschen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Möchtest du einige Kategorien löschen und andere aktualisieren? Gib einen der zulässigen Importwerte in deine CSV-Datei ein.
+Welchen Wert du wählst, bestimmt, ob die Kategorie gelöscht werden soll.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Nein</p>
+</li>
+<li>
+<p>1 = Ja</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Details (Zuordnung pro Kombination aus Sprache und Mandant (Shop))</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Elternkategorie anlegen wenn nicht vorhanden</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Möchtest du die übergeordnete Kategorie erstellen, falls sie noch nicht existiert?
+Gib einen der zulässigen Importwerte in deine CSV-Datei ein. Welchen Wert du wählst, bestimmt, ob die Elternkategorie mit erstellt werden soll.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Nein</p>
+</li>
+<li>
+<p>1 = Ja</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Details</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong><br>
+<span class="red">(Pflichtwert)</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Pflichtwert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- k.A. -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gib den <a href="/artikel/einstellungen/kategorien#700">Namen der Kategorie</a> in die CSV-Datei ein.
+Stell im Bereich <strong>Zuordnung</strong> auch die Sprache und den Webstore ein.</p>
+<p class="tableblock">Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass dieser Name in das Feld <strong>Name</strong> eingetragen wurde.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Beschreibung 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beschreibung 1</strong>;<br>
+<strong>Beschreibung 2</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- k.A. -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gib eine <a href="/artikel/einstellungen/kategorien#800">Beschreibung der Kategorie</a> in die CSV-Datei ein.
+Stell im Bereich <strong>Zuordnung</strong> auch die Sprache und den Webstore ein.</p>
+<p class="tableblock">Wenn du die Kategorie nach dem Import öffnest, siehst du, dass dieser Text im Tab <strong>Beschreibung 1</strong> bzw. im Tab <strong>Beschreibung 2</strong> eingetragen wurde.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Beschreibung 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kurzbeschreibung</strong>;<br>
+<strong>Meta-Keywords</strong>;<br>
+<strong>Meta-Beschreibung</strong>;<br>
+<strong>Meta-Titel</strong>;<br>
+<strong>URL-Name</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL-Name = Kategoriename</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gib den Text in die CSV-Datei ein.
+Stell im Bereich <strong>Zuordnung</strong> auch die Sprache und den Webstore ein.</p>
+<p class="tableblock">Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass dieser Text <a href="/artikel/einstellungen/kategorien#700">in das entsprechende Feld eingetragen</a> wurde.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kurzbeschreibung</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Meta-Keywords</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Meta-Beschreibung</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Meta-Titel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URL-Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Position</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gib eine <a href="/artikel/einstellungen/kategorien#700">Positionsnummer</a> in die CSV-Datei ein.
+Stell im Bereich <strong>Zuordnung</strong> auch die Sprache und den Webstore ein.</p>
+<p class="tableblock">Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass diese Nummer in das Feld <strong>Position</strong> eingetragen wurde.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Template-Liste</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Template-Liste</strong>;<br>
+<strong>Template-Produkt</strong>;<br>
+<strong>Template-Seite</strong><br>
+(nur für den alten Callisto-Webshop relevant)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ItemViewCategoriesList;<br>
+ItemViewSingleItem;<br>
+PageDesignContent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gib den <a href="/artikel/einstellungen/kategorien#700">Namen der gewünschten Vorlage</a> in die CSV-Datei ein.
+Stell im Bereich <strong>Zuordnung</strong> auch die Sprache und den Webstore ein.</p>
+<p class="tableblock">Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass diese Vorlage ausgewählt wurde.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Template-Produkt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Volltextsuche</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gib einen der zulässigen Importwerte in deine CSV-Datei ein. Welchen Wert du wählst, bestimmt, ob die <a href="/artikel/einstellungen/kategorien#700">Kategorie zum Suchindex der Kategoriesuche im Webshop</a> hinzugefügt wird.
+Stell im Bereich <strong>Zuordnung</strong> auch die Sprache und den Webstore ein.</p>
+</div>
+<div class="paragraph">
+<p>Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass einer der folgenden Werte für die Einstellung <strong>Volltextsuche</strong> gesetzt wurde.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Nein</p>
+</li>
+<li>
+<p>1 = Ja</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Robots</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all<br>
+index<br>
+nofollow<br>
+noindex<br>
+nofollow_noindex</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gib einen der zulässigen Importwerte in deine CSV-Datei ein. Welchen Wert du wählst, bestimmt, wie <a href="/artikel/einstellungen/kategorien#700">Suchmaschinen-Crawlern</a> mit der Seite und den Links auf dieser Seite verfahren werden.
+Stell im Bereich <strong>Zuordnung</strong> auch die Sprache und den Webstore ein.</p>
+</div>
+<div class="paragraph">
+<p>Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass einer der folgenden Werte für die Einstellung <strong>Robots</strong> gesetzt wurde.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>all</strong> = Webseite der Kategorie in Suchmaschinenindex aufnehmen und Links auf Seite folgen.<br></p>
+</li>
+<li>
+<p><strong>index</strong> = In Suchmaschinenindex aufnehmen.<br></p>
+</li>
+<li>
+<p><strong>nofollow</strong> = Links auf der Seite nicht folgen.<br></p>
+</li>
+<li>
+<p><strong>noindex</strong> = Nicht in den Suchmaschinenindex aufnehmen.<br></p>
+</li>
+<li>
+<p><strong>nofollow_noindex</strong> = Links nicht folgen und Webseite der Kategorie nicht in Suchmaschinenindex aufnehmen.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Platzhalter übersetzen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y<br>
+N<br>
+L</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Y</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gib einen der zulässigen Importwerte in deine CSV-Datei ein. Welchen Wert du wählst, bestimmt, ob <a href="/artikel/einstellungen/kategorien#700">Template-Variablen und -Funktionen übersetzt</a> werden.
+Stell im Bereich <strong>Zuordnung</strong> auch die Sprache und den Webstore ein.</p>
+</div>
+<div class="paragraph">
+<p>Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass einer der folgenden Werte für die Einstellung <strong>Template-Variablen und -Funktionen übersetzen</strong> gesetzt wurde.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Y = Ja</p>
+</li>
+<li>
+<p>N = Nein</p>
+</li>
+<li>
+<p>L = Nur Link-Template-Variablen und -Funktionen</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Canonical</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- k.A. -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gibt es eine andere Kategorie mit dem gleichen Inhalt? Falls ja, gib <a href="/artikel/einstellungen/kategorien#700">die URL für diese Kategorie</a> in deine CSV-Datei ein.
+Die URL ist auf max. 256 Zeichen begrenzt.
+Stell im Bereich <strong>Zuordnung</strong> auch die Sprache und den Webstore ein.</p>
+<p class="tableblock">Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass diese URL in das Feld <strong>Canonical</strong> eingetragen wurde.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Template-Seite</p></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Elmar</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Elmar-Kategorie</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- k.A. -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gib den <a href="/artikel/einstellungen/kategorien#700">Namen der Elmar-Kategorie</a> in deine CSV-Datei ein. Stell im Bereich <strong>Zuordnung</strong> auch den Webstore ein.</p>
+<p class="tableblock">Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass diese Elmar-Kategorie ausgewählt wurde.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volltextsuche</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 = Nein<br>
-1 = Ja</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Verknüpfung löschen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gib einen der zulässigen Importwerte in deine CSV-Datei ein. Welchen Wert du wählst, bestimmt, ob die <a href="/artikel/einstellungen/kategorien#700">Verknüpfung der Elmar-Kategorie</a> gelöscht werden soll.
+Stell im Bereich <strong>Zuordnung</strong> auch den Webstore ein.</p>
+</div>
+<div class="paragraph">
+<p>Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass die <strong>Elmar-Kategorie</strong> überall dort gelöscht wurde, wo die Zahl 1 eingetragen wurde.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Nicht löschen</p>
+</li>
+<li>
+<p>1 = Löschen</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Robots</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>all</strong> = Webseite der Kategorie in Suchmaschinenindex aufnehmen und Links auf Seite folgen.<br>
-<strong>index</strong> = In Suchmaschinenindex aufnehmen.<br>
-<strong>nofollow</strong> = Links auf der Seite nicht folgen.<br>
-<strong>noindex</strong> = Nicht in den Suchmaschinenindex aufnehmen.<br>
-<strong>nofollow_noindex</strong> = Links nicht folgen und Webseite der Kategorie nicht in Suchmaschinenindex aufnehmen.</p></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock"><strong>Mandant (Shop)</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Platzhalter übersetzen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Y</strong> = Ja<br>
-<strong>N</strong> = Nein<br>
-<strong>L</strong> = Nur Link-Template-Variablen und -Funktionen werden übersetzt</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">canonical</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanummerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URL einer Kategorie mit dem gleichen Inhalt, max. 256 Zeichen</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">Mandant (Shop) (Zuordnung pro Mandant)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Aktiv</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0 = Nein<br>
-1 = Ja</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktiv</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gib einen der zulässigen Importwerte in deine CSV-Datei ein. Welchen Wert du wählst, bestimmt, ob die <a href="/artikel/einstellungen/kategorien#700">Kategorie für einen bestimmten Webshop aktiviert</a> werden soll.
+Stell im Bereich <strong>Zuordnung</strong> auch den Webstore ein.</p>
+</div>
+<div class="paragraph">
+<p>Wenn du die Kategorie nach dem Import öffnest und den Tab <strong>Einstellungen</strong> betrachtest, siehst du, dass einer der folgenden Werte für die Einstellung <strong>Mandant (Shop)</strong> gesetzt wurde.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Für den angegebenen Mandanten <em>nicht aktiviert</em>.</p>
+</li>
+<li>
+<p>1 = Für den angegebenen Mandanten <em>aktiviert</em>.</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 </tbody>
 </table>
