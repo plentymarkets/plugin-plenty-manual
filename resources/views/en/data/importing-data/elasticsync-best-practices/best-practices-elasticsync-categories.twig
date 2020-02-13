@@ -1,0 +1,334 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_practical_example_initial_situation"><span>1.</span><span> Practical example: Initial situation</span></a></li>
+<li><a href="#_setting_up_the_csv_file"><span>2.</span><span> Setting up the CSV file</span></a></li>
+<li><a href="#_choosing_the_sync_settings"><span>3.</span><span> Choosing the sync settings</span></a></li>
+<li><a href="#_choosing_the_matching_settings"><span>4.</span><span> Choosing the matching settings</span></a></li>
+<li><a href="#_choosing_the_mapping_settings"><span>5.</span><span> Choosing the mapping settings</span></a></li>
+<li><a href="#_did_it_work"><span>6.</span><span> Did it work?</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Importing new categories</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Categories help you group your products. They determine how items are structured in your online store.</p>
+</div>
+<div class="paragraph">
+<p>Generally speaking, there are two different ways to create or update categories. If you only want to create or modify <em>a few categories</em>, then we would recommend <a href="/en/item/settings/categories#200">doing this manually</a>. However, if you have <em>a lot of categories</em>, then it will probably be quicker to import your category data.</p>
+</div>
+<div class="paragraph">
+<p>That’s what this page is all about. Here you’ll learn how to import category information into plentymarkets. This is useful if you want to create a lot of new categories at once or if you want to update a lot of existing categories at once.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Requirements</div>
+<div class="paragraph">
+<p>This page assumes that you’ve already thought up a <a href="/en/item/settings/categories#100">meaningful category structure</a> and that you have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">ElasticSync tool</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_practical_example_initial_situation">1. Practical example: Initial situation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Imagine you sell clothing in your online store. You’re new to plentymarkets and you want to import all of your category data at once. You want to structure your categories like so:</p>
+</div>
+<table class="tableblock frame-none grid-cols stripes-none stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Women</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Accessoires</p>
+</li>
+<li>
+<p>Shoes</p>
+</li>
+<li>
+<p>Clothing</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Jeans</p>
+</li>
+<li>
+<p>Tops</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Men</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Accessoires</p>
+</li>
+<li>
+<p>Shoes</p>
+</li>
+<li>
+<p>Clothing</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Jeans</p>
+</li>
+<li>
+<p>Tops</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Kids</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Accessoires</p>
+</li>
+<li>
+<p>Shoes</p>
+</li>
+<li>
+<p>Clothing</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Jeans</p>
+</li>
+<li>
+<p>Tops</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="_setting_up_the_csv_file">2. Setting up the CSV file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First, transfer this category structure into a CSV file. This is the file that you’ll import into plentymarkets later. In our example, the categories would look like this in the CSV file:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-category-category-structure-csv.png" alt="best practice category category structure csv">
+</div>
+</div>
+<div class="paragraph">
+<p>You are free to choose any names for the column headers. In this example, I’ve put the following category information in the columns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong> = The name of the category.</p>
+</li>
+<li>
+<p><strong>Parentname</strong> = If you want this to be a main category, i.e. a top-level category, then leave this field blank. If you want this to be a sub-category, then enter the path of whichever category is directly above it. <em>Use semicolons</em> to separate the individual category levels.</p>
+</li>
+<li>
+<p><strong>Multiname</strong> = The complete category path, i.e. the Parentname and the Name. Decide which separator you want to use to separate the individual category levels.</p>
+</li>
+</ul>
+</div>
+<h4 id="_adding_further_category_info" class="discrete">Adding further category info</h4>
+<div class="paragraph">
+<p>You probably want to create much more than just a bare-bones category structure. Perhaps you want to add descriptive texts or SEO-relevant meta data.</p>
+</div>
+<div class="paragraph">
+<p>Add a few more columns to your CSV file and use them to specify the additional category information. For example, like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-category-category-info-csv.png" alt="best practice category category info csv">
+</div>
+</div>
+<div class="paragraph">
+<p>You are free to choose any names for the column headers. You can add any or all of the <a href="/en/data/importing-data/sync-types/elasticSync-categories#2120">category information listed here</a>. In this example, I’ve decided to add the following information:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Description</strong> = A description of each category.</p>
+</li>
+<li>
+<p><strong>Meta title</strong> = A text that should be displayed as the tab title in the web browser and in the search engine results.</p>
+</li>
+<li>
+<p><strong>Visible</strong> = Whether I want the individual categories to be included in the sitemap.</p>
+<div class="paragraph">
+<p>1 = Yes, the category should be included in the sitemap.<br>
+0 = No, the category should <em>not</em> be included in the sitemap.</p>
+</div>
+<div class="paragraph">
+<p>In this example, I only want the first two category levels to be included in the sitemap. I’ve inserted the numbers 1 and 0 accordingly.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_choosing_the_sync_settings">3. Choosing the sync settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="/en/data/importing-data/ElasticSync#1210">Create a new sync</a>. Most of the settings can be chosen freely. However, since you want to import <em>category data</em>, make sure you’ve set the <strong>Type</strong> to <strong>Categories</strong>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_choosing_the_matching_settings">4. Choosing the matching settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>During the import, plentymarkets will check whether the category already exists. This is done with the help of a so-called matching field.</p>
+</div>
+<div class="paragraph">
+<p>Since we want to import <em>new categories</em> in this example, configure the settings as follows.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Combined category name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file contains the complete category path? Choose this column header from the first drop-down list. In our example, I’ll choose the column <strong>Multiname</strong>.<br>
+Select the separator from the second drop-down list. In our example, I’ll choose the <em>semicolon</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Import options</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Since you’ll be importing new categories, choose the option <strong>Only import new data</strong> or <strong>Import new, update existing data</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="_choosing_the_mapping_settings">5. Choosing the mapping settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Your CSV file is already filled with a bunch of category information. Now you’ll decide <em>where in plentymarkets</em> each piece of information should appear when you import the file. <a href="/en/data/importing-data/sync-types/elasticSync-categories#2120">Take a look at this page</a> while you map the columns of your CSV file to the fields in plentymarkets. In this example, I’ve configured the settings as follows.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-category-mapping-settings.png" alt="best practice category mapping settings">
+</div>
+</div>
+<div class="paragraph">
+<p>I created the bare-bones category structure by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>mapping the <strong>Name</strong> column of my CSV file with the <strong>Category settings / Name</strong> data field in plentymarkets.</p>
+</li>
+<li>
+<p>mapping the <strong>Parentname</strong> column of my CSV file with the <strong>Category / Parent category name</strong> data field in plentymarkets.</p>
+</li>
+<li>
+<p>using the <strong>Own value</strong> option and entering <strong>1</strong> for the data field <strong>Category / Create parent category if not found</strong>. In other words, by deciding to create the superior category if it doesn’t already exist.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I added extra category information by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>mapping the <strong>Description</strong> column of my CSV file with the <strong>Category settings / Description 1</strong> data field in plentymarkets.</p>
+</li>
+<li>
+<p>mapping the <strong>Meta title</strong> column of my CSV file with the <strong>Category settings / Meta title</strong> data field in plentymarkets.</p>
+</li>
+<li>
+<p>mapping the <strong>Visible</strong> column of my CSV file with the <strong>Category / Visible</strong> data field in plentymarkets.</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_did_it_work">6. Did it work?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ready to import your categories? Start the sync and check whether the data was correctly imported into plentymarkets.</p>
+</div>
+<div class="paragraph instruction">
+<p>Starting the sync and checking the result:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Activate the lines that should be imported (<span class="icon green"><i class="fa fa-toggle-on"></i></span>).</p>
+</li>
+<li>
+<p>Start the sync (<span class="icon darkGrey"><i class="fa fa-play-circle-o"></i></span>).<br>
+<strong><em>Note:</em></strong> This can take a few minutes.</p>
+</li>
+<li>
+<p>Go to <strong>Item » Category</strong>.</p>
+</li>
+<li>
+<p>Check whether the categories were correctly structured.<br>
+<strong><em>Note:</em></strong> Click on a category’s folder icon (<span class="icon darkGrey"><i class="fa fa-folder"></i></span>) on the far left. This displays the subcategories within.</p>
+</li>
+<li>
+<p>Open a few categories and check their settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
