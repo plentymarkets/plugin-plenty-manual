@@ -25507,10 +25507,10 @@ class Metadata {
 						"url" => "/en/markets/idealo-checkout/idealo-setup",
 						"level" => 3,
 						"title" => "Setting up idealo",
-						"keywords" => "idealo, idealo Checkout, market, marketplace, price comparison",
+						"keywords" => "idealo, idealo Direktkauf, idealo Checkout, market, marketplace, price comparison",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market idealo Checkout in your plentymarkets system.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Setting up idealo. The following information is available:",
+						"linkListInto" => "Willkommen im Themenbereich Setting up idealo. Hier finden Sie folgende Informationen:",
 						"languageID" => "JFWN4QY",
 						"children" => [],
 						"hasChildren" => false
