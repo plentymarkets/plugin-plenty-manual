@@ -26304,7 +26304,7 @@ class Metadata {
 				"url" => "/en/automation/best-practices-automation",
 				"level" => 2,
 				"title" => "Practical example: Procedure manager and event procedures",
-				"keywords" => "Automating processes, Automation, Best Practice, Orders, Event procedures, Procedure manager, Postcode filter, Postal code filter",
+				"keywords" => "Automating processes, Automation, Best Practice, Orders, Event procedures, Procedure manager, postcode filter",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Practical example: Procedure manager and event procedures. The following information is available:",
