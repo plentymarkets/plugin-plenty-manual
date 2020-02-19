@@ -1,0 +1,180 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#_importdatei_vorbereiten"><span>1.</span><span> Importdatei vorbereiten</span></a></li>
+<li><a href="#_auftragspositionen_importieren_und_aktualisieren"><span>2.</span><span> Auftragspositionen importieren und aktualisieren</span></a></li>
+<li><a href="#_sync_testen_und_ausführen"><span>3.</span><span> Sync testen und ausführen</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Auftragspositionen</h1><div class="sect1">
+<h2 id="_importdatei_vorbereiten">1. Importdatei vorbereiten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bevor wir den Import und die Aktualisierung von Auftragspositionen erklären, erhältst du in diesem Kapitel einige wichtige Informationen zum Import der Daten in dein plentymarkets System.<br></p>
+</div>
+<div class="paragraph">
+<p>Dein plentymarkets System bezieht die benötigten Daten zu den Auftragspositionen aus einer Importdatei im CSV-Format. Deine Importdatei muss die folgenden Spalten enthalten, wie du an diesem Beispiel-Aufbau aus dem früheren dynamischen Export erkennst:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/elasticsync-bp-importdatei-order.png" alt="elasticsync bp importdatei order">
+</div>
+</div>
+<div class="paragraph">
+<p>Stelle sicher, dass die CSV-Datei für den folgenden Schritt lokal auf deinem Computer abgespeichert ist.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_auftragspositionen_importieren_und_aktualisieren">2. Auftragspositionen importieren und aktualisieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In diesem Kapitel wird beschrieben, wie du mithilfe von ElasticSync Auftragspositionen, also in einem Auftrag enthaltene Artikel, importierst und anpasst.</p>
+</div>
+<div class="paragraph instruction">
+<p>Grundeinstellungen vornehmen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Daten » Elastic Sync NEW</strong>.</p>
+</li>
+<li>
+<p>Klicke auf das Plus-Zeichen (<strong>Sync hinzufügen</strong>).</p>
+</li>
+<li>
+<p>Gib im Bereich <strong>Grunddaten</strong> einen eindeutigen Namen für den Sync ein.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Typ</strong> die Option <strong>Aufträge</strong>.</p>
+</li>
+<li>
+<p>Im Bereich <strong>Import</strong> lässt du die voreingestellten Optionen so wie sie sind.</p>
+</li>
+<li>
+<p>Im Bereich <strong>Quelle</strong> wählst du die Option <strong>HTTP</strong>.<br>
+→ Drei weitere Zeilen werden angezeigt.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste die Option <strong>HTTP-Optionen</strong> die Option <strong>Datei-Upload</strong>.</p>
+</li>
+<li>
+<p>Klicke in der Zeile <strong>URL</strong> auf die Schaltfläche mit den drei Punkten (<strong>Datei wählen</strong>).<br>
+→ Ein Fenster öffnet sich.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Datei hochladen</strong>, wähle die CSV-Datei mit den Auftragspositionsdaten, die du importieren möchtest, und klicke auf <strong>Öffnen</strong>.</p>
+</li>
+<li>
+<p>Setze ein Häkchen in der Zeile der Datei und klicke einmal in die Zeile der Datei.<br>
+→ <strong><em>Wichtig:</em></strong> Die Zeile muss noch einmal geklickt werden. Erst wenn die Zeile blau gefärbt ist, kannst du sie mit einem Klicke auf <strong>Wählen</strong> hochladen.<br>
+→ Die URL – also der Pfad, von wo aus du die CSV-Datei hochgeladen hast – ist nun im Feld <strong>URL</strong> grau hinterlegt.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Du hast die CSV-Datei nun erfolgreich hochgeladen. Im Folgenden nimmst du die Einstellungen für den Abgleich vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Abgleich einstellen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke ganz links auf <strong>Abgleich</strong>.</p>
+</li>
+<li>
+<p>Im Bereich <strong>Abgleich</strong> wählst du die folgenden Datenfelder aus, um die Auftragspositionen zu aktualisieren:</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/elasticsync-bp-abgleichfelder-order.png" alt="elasticsync bp abgleichfelder order">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Funktionsweise des Abgleichs</div>
+<div class="paragraph">
+<p>Die hier eingestellten Abgleichfelder sind im Sync-Typ <strong>Aufträge</strong> allgemein und somit auch in dem hier gezeigten Format in Form einer UND-Bedingung verknüpft. Werden also die Abgleichfelder <strong>Auftrags-ID</strong> und <strong>Varianten-ID</strong> gewählt, werden nur Datenzeilen importiert, die Werte für <strong>beide</strong> dieser Datenspalten enthalten.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Als nächstes nimmst du die Einstellungen für die Zuordnung vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Zuordnung einstellen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke ganz links auf <strong>Zuordnung</strong>.</p>
+</li>
+<li>
+<p>Klicke auf das Plus-Zeichen (<strong>Zuordnung hinzufügen</strong>).</p>
+</li>
+<li>
+<p>Gib einen Namen ein.</p>
+</li>
+<li>
+<p>Gib bei <strong>Position</strong> die Zahl <strong>1</strong> ein.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> die Einstellung.<br>
+→ Der Bereich <strong>Importdaten / plentymarkets Datenfelder</strong> öffnet sich.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In diesem Bereich ordnest du die Felder aus deiner CSV-Datei den Datenfeldern in plentymarkets zu. Ordne alle links angezeigten Felder wie folgt den plentymarkets Datenfeldern zu:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/elasticsync-bp-zuordnung-order.png" alt="elasticsync bp zuordnung order">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Pflichtfelder für die Zordnung</div>
+<div class="paragraph">
+<p>Bitte beachte, dass die plentymarkets Datenfelder <strong>Auftragsposition / Name</strong>, <strong>Auftragsposition / Menge</strong>, <strong>Auftragsposition / Währung</strong> und <strong>Auftragsposition / Typ</strong> Pflichtfelder sind. Nur wenn du deine Zuordnung wie oben gezeigst vornimmst, kannst du gleichzeitig Auftragspositionen importieren und aktualisieren.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_sync_testen_und_ausführen">3. Sync testen und ausführen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nachdem du alle oben beschriebenen Einstellungen vorgenommen hast, solltest du deinen Sync einmalig über die Schaltfläche <strong>Sync testen</strong> testen.<br>
+Beim Testen werden jeweils die ersten 10 Zeilen des Syncs verarbeitet und es wird kein Cache verwendet. Prüfe anschließend das Log durch Klick auf die Schaltfläche <strong>Log</strong> auf etwaige Fehlermeldungen oder sieh die getesteten Aufträge direkt ein. Erst wenn dieser Test fehlerfrei verläuft, solltest du den Sync ausführen.</p>
+</div>
+</div>
+</div>
+</main>

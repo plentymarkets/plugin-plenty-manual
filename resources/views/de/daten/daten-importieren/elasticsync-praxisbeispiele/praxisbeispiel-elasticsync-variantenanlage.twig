@@ -1,0 +1,300 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#voraussetzungen"><span>1.</span><span> Voraussetzungen</span></a></li>
+<li><a href="#infos"><span>2.</span><span> Infos</span></a></li>
+<li><a href="#aufbau_des_syncs"><span>3.</span><span> Beispiel-Daten für die Variantenanlage</span></a>
+<ul class="sectlevel2">
+<li><a href="#_beispieldatei"><span>3.1.</span><span> Beispieldatei</span></a></li>
+<li><a href="#_beispielsync"><span>3.2.</span><span> Beispielsync</span></a></li>
+<li><a href="#_allgemein"><span>3.3.</span><span> Allgemein</span></a></li>
+<li><a href="#_variantennummern"><span>3.4.</span><span> Variantennummern</span></a></li>
+<li><a href="#_attribute"><span>3.5.</span><span> Attribute</span></a></li>
+<li><a href="#_bilder"><span>3.6.</span><span> Bilder</span></a></li>
+<li><a href="#_kategorieverknüpfungen"><span>3.7.</span><span> Kategorieverknüpfungen</span></a></li>
+</ul>
+</li>
+<li><a href="#abgleich"><span>4.</span><span> Abgleich</span></a></li>
+<li><a href="#Zuordnungen"><span>5.</span><span> Zuordnung</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Variantenanlage</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In diesem Beitrag bieten wir dir ein Best Practice für das Erstellen von Artikeln und Varianten via ElasticSync.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+Für dieses Best Practice solltest du mit der generellen Funktionsweise von ElasticSync vertraut sein. Allgemeine Infos dazu findest du auf der Handbuchseite <a href="/daten/daten-importieren/ElasticSync">Daten mit ElasticSync importieren</a>.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="voraussetzungen">1. Voraussetzungen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im System müssen folgende Daten vorhanden sein, um wie hier beschrieben Artikel und Varianten über ElasticSync zu importieren:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Attribute</p>
+</li>
+<li>
+<p>Attributwerte</p>
+</li>
+<li>
+<p>Kategorien</p>
+</li>
+<li>
+<p>Verkaufspreise</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="infos">2. Infos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unter <strong>Einrichtung » Einstellungen » ElasticSync</strong>, oder auch direkt im Sync findest du die Schaltfläche <strong>Cache löschen</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Mit dieser Schaltfläche kannst du den ElasticSync-Cache zurücksetzen, damit du eine Datei ohne vorherige Änderung erneut importieren kannst.</p>
+</div>
+<div class="paragraph">
+<p>Eine weitere hilfreiche Schaltfläche ist <strong>Testlauf</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/testlauf_button.png" alt="testlauf button">
+</div>
+<div class="title">Bild 1. Testlauf</div>
+</div>
+<div class="paragraph">
+<p>Damit werden die ersten 10 Zeilen der Datei ohne Cache importiert. So kannst du prüfen, ob alle Werte korrekt zugeordnet wurden, bevor du den Sync mit allen Zeilen startest.</p>
+</div>
+<div class="paragraph">
+<p>Gültige Werte für Felder in der Zuordnung findest du in der Beschreibung im Handbuch.</p>
+</div>
+<div class="paragraph">
+<p>Unter <strong>Daten » Log</strong> können Fehlermeldungen zum Sync eingesehen werden.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="aufbau_des_syncs">3. Beispiel-Daten für die Variantenanlage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hier könnt ihr euch die Beispieldatei als CSV, so wie den Sync als json-Datei herunterladen.</p>
+</div>
+<div class="sect2">
+<h3 id="_beispieldatei">3.1. Beispieldatei</h3>
+<div class="paragraph">
+<p>Folgende <a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/ElasticSync_BestPractice/BestPractice.csv" target="_blank" rel="noopener">Beispieldatei</a> wurde für den Sync genutzt.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_beispielsync">3.2. Beispielsync</h3>
+<div class="paragraph">
+<p>Den kompletten Sync kannst du als <a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/ElasticSync_BestPractice/Best_Practice.json.zip" target="_blank" rel="noopener">json-Datei</a> (verpackt als zip-Datei) hier herunterladen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_allgemein">3.3. Allgemein</h3>
+<div class="paragraph">
+<p>Die Daten, die <strong>global</strong> am Artikel gepflegt werden, wie z.B. <strong>der Name, die Beschreibung etc.</strong> sollten in jeder Zeile, die Varianten eines Artikels beinhalten, hinterlegt werden. Alternativ kannst du auch eine separate Zuordnung mit entsprechendem Filter anlegen, in der die Beschreibung nur in der Zeile der Hauptvariante hinterlegt werden muss.</p>
+</div>
+<div class="paragraph">
+<p>Daten, die <strong>variantenbezogen</strong> sind, müssen in die entsprechenden Zeilen der Varianten eingetragen werden.</p>
+</div>
+<div class="paragraph">
+<p>Wichtig bei der Anlage der Varianten ist, dass der Aufbau der Attribute und Werte so in der Datei hinterlegt ist, wie es in der Zuordnung eingestellt ist.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_variantennummern">3.4. Variantennummern</h3>
+<div class="paragraph">
+<p>In unserem Beispiel legen wir eine Hauptvariante mit 4 Varianten an. Als Zuordnung für die Varianten nutzen wir die Hauptvariantennummer.</p>
+</div>
+<div class="paragraph">
+<p>Da der Sync die Daten zeilenweise importiert, steht die Hauptvariante ganz oben in der Datei.</p>
+</div>
+<div class="paragraph">
+<p>Dort hinterlegen wir manuell die Variantennummer im gleichnamigen Feld. Das Feld <strong>Hauptvariantennummer</strong> bleibt leer.</p>
+</div>
+<div class="paragraph">
+<p>Diese Variantennummer wird nun wiederum bei den Varianten in das Feld <strong>Hauptvariantennummer</strong> geschrieben, damit sie eine Zuordnung zur Hauptvariante haben und nicht als Einzelartikel angelegt werden.</p>
+</div>
+<div class="paragraph">
+<p>Die Variantennummern der Untervarianten können ebenfalls eingetragen werden. Wenn das Feld frei gelassen wird, generiert das System die Nummern automatisch.</p>
+</div>
+<div class="paragraph">
+<p>Es sieht in der Datei dann so aus.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/hvnummer.png" alt="hvnummer">
+</div>
+<div class="title">Bild 2. Eintragung der Nummern bei Hauptvariante und Varianten</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Variantennummern müssen eindeutig sein!</div>
+<div class="paragraph">
+<p>Sowohl die Nummer der Hauptvariante, als auch die Nummer der Untervarianten müssen eindeutig sein. Der Import schlägt fehl, wenn Nummern mehrfach vergeben werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_attribute">3.5. Attribute</h3>
+<div class="paragraph">
+<p>In unserem Beispiel haben wir <strong>Attributauswahlkombination</strong> im Format <strong>Attribut:Wert;Attribut:Wert</strong> gewählt.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/attribute.png" alt="attribute">
+</div>
+<div class="title">Bild 3. Erstellen von Varianten via Attributauswahlkombination</div>
+</div>
+<div class="paragraph">
+<p>Die oberste Zeile der Hauptvariante hat dabei keine Kombination erhalten, damit sie keine Attributverknüpfung erhählt.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Hauptvariante ohne Attribute</div>
+<div class="paragraph">
+<p>Wenn man mit Variantenartikeln arbeitet und der Hauptvariante keine Attribute zuweist, ist man später flexibler in der Variantenerstellung. Gibt man der Hauptvariante ebenfalls eine Attributverknüpfung, kann man Varianten ausschließlich mit den verknüpften Attributen erzeugen.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bilder">3.6. Bilder</h3>
+<div class="paragraph">
+<p>In unserem Sync importieren wir die Bilder-URLs in einer Zuordnung mittels Multi-URL.
+Dazu muss das Feld <strong>Multi-URL</strong> in der Zuordnung gewählt werden. Das Format der URL wird wie folgt hinterlegt: <strong>image1url;positionImage1,image2url;positionImage2</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kategorieverknüpfungen">3.7. Kategorieverknüpfungen</h3>
+<div class="paragraph">
+<p>Mehrere Kategorien können in einer Zuordnung kommasepariert verknüpft werden. Es können Kategorienamen oder Kategorie-ID’s genutzt werden. Bei den Kategorienamen muss darauf geachtet werden, dass der gesamte Kategoriepfad angegeben wird. Die Ebenen werden dabei mit einem Semikolon getrennt.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/kategorieverknuepfungen_neu.png" alt="kategorieverknuepfungen neu">
+</div>
+<div class="title">Bild 4. Die Schreibweisen von Trennzeichen und Pfad sind wichtig für den Import.</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Mapping und Datei</div>
+<div class="paragraph">
+<p>Achte darauf, dass die Werte in der Datei auch mit der Zuordnung übereinstimmen. Dabei geht es darum, dass du z.B. bei dem Feld Standardkategorie die ID oder den Namen im Mapping wählen kannst. In der CSV muss dann auch entsprechend die ID oder der Name stehen. Es geht nicht, dass im Mapping die ID, aber in der Datei der Name genutzt wird.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="abgleich">4. Abgleich</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Für den Abgleich ist wichtig, dass ein variantenspezifisches Abgleichfeld genutzt wird. Dafür eignet sich z.B. die Variantennummer oder auch die Varianten-ID.</p>
+</div>
+<div class="paragraph">
+<p>Als Aktion muss „Neue Daten importieren, vorhandene aktualisieren“ eingestellt werden.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="Zuordnungen">5. Zuordnung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In der Zuordnung verknüpfen wir die Felder aus der CSV-Datei mit den Feldern aus plentymarkets.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/zuordnung_neu.png" alt="zuordnung neu">
+</div>
+<div class="title">Bild 5. Eine Zuordnung muss angelegt werden</div>
+</div>
+<div class="paragraph">
+<p>Es empfiehlt sich, nur die Felder in die Zuordnung aufzunehmen, die tatsächlich übergeben werden sollen. Überflüssige Felder sollten deaktiviert werden, da das zu Fehlern führen kann.</p>
+</div>
+<div class="paragraph">
+<p>Für die Artikelanlage mit Varianten gibt es Pflichtfelder, die als Minimum in der Zuordnung enthalten sein müssen, damit der Sync funktioniert. Dabei handelt es sich um folgende Felder:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Standardkategorie</p>
+</li>
+<li>
+<p>Hauptvariantennummer</p>
+</li>
+<li>
+<p>Variantennummer</p>
+</li>
+<li>
+<p>Will man Bestand importieren, müssen folgende Werte in der Zuordnung enthalten sein:
+Lager, Menge, Lagerort</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Der Sync ist jetzt einsatzbereit und kann gestartet werden.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Testlauf</div>
+<div class="paragraph">
+<p>Wir empfehlen, beim erstmaligen Sync vorab den Testlauf zu nutzen. So kann man prüfen, ob der Sync ordnungsgemäß läuft. Sollten sich Fehler eingeschlichen haben, kann man diese vor der kompletten Ausführung noch korrigieren.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</main>
