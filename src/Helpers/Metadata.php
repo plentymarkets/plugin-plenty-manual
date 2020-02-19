@@ -21092,6 +21092,22 @@ class Metadata {
 				"languageID" => "GUYCYAG",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "0c664e782c30061e5f496f8a2137e194",
+				"path" => "stock-management/practical-example-correcting-stock",
+				"position" => 90,
+				"urlName" => "practical-example-correcting-stock",
+				"url" => "/en/stock-management/best-practices",
+				"level" => 2,
+				"title" => "Practical example: Correcting/Transferring/Deleting stock",
+				"keywords" => "Stocktaking, manage stock, transfer stock, correct stock, transfer warehouse, delete stock",
+				"description" => "Find out how to completely transfer stock of one warehouse to another one.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Practical example: Correcting/Transferring/Deleting stock. The following information is available:",
+				"languageID" => "GUYCYAG",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
