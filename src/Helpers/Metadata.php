@@ -9223,22 +9223,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "933962dcfc26e5c9c569ffd35515499b",
-						"path" => "daten/daten-importieren/elasticsync-best-practices",
-						"position" => 20,
-						"urlName" => "elasticsync-best-practices",
-						"url" => "/daten/daten-importieren/elasticsync-best-practices",
-						"level" => 3,
-						"title" => "Praxisbeispiele: ElasticSync",
-						"keywords" => "ElasticSync, Best Practices, Praxisbeispiel, Praxisbeispiele",
-						"description" => "Hier finden Sie praktische Anleitungen zum Datenimport mit ElasticSync.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Praxisbeispiele: ElasticSync. Hier findest du folgende Informationen:",
-						"languageID" => "QCR3P2E",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "ccd3707d53eb36ea780ae6f080bff090",
 						"path" => "daten/daten-importieren/elasticsync-praxisbeispiele",
 						"position" => 20,
