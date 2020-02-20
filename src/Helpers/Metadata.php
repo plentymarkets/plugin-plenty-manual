@@ -22541,22 +22541,6 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "d781fb36079e1e2e5d392d12cb647b57",
-						"path" => "data/importing-data/elasticsync-best-practices",
-						"position" => 20,
-						"urlName" => "elasticsync-best-practices",
-						"url" => "/en/data/importing-data/elasticsync-best-practices",
-						"level" => 3,
-						"title" => "Practical examples: ElasticSync",
-						"keywords" => "ElasticSync, Best Practices, practical example, practical examples",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Practical examples: ElasticSync. The following information is available:",
-						"languageID" => "QCR3P2E",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "1c1536851542860668dd17d65d8605f5",
 						"path" => "data/importing-data/elasticsync-practical-examples",
 						"position" => 20,
