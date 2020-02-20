@@ -11419,11 +11419,11 @@ class Metadata {
 				"urlName" => "webshop-einrichten",
 				"url" => "/webshop/webshop-einrichten",
 				"level" => 2,
-				"title" => "Alt: CMS &amp; Callisto-Webshop",
+				"title" => "Alt: CMS & Callisto-Webshop",
 				"keywords" => "Webshop-Einstellungen",
 				"description" => "",
 				"navAlias" => "Webshop einrichten",
-				"linkListInto" => "Willkommen im Themenbereich Alt: CMS &amp; Callisto-Webshop. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Alt: CMS & Callisto-Webshop. Hier findest du folgende Informationen:",
 				"languageID" => "RWYBLML",
 				"children" => 				[
 					[
