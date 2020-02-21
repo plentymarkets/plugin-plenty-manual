@@ -17,6 +17,7 @@
 <ul class="sectlevel2">
 <li><a href="#550"><span>6.1.</span><span> Generating a DHL return label with an event procedure</span></a></li>
 <li><a href="#600"><span>6.2.</span><span> Sending an order confirmation to OTTO</span></a></li>
+<li><a href="#700"><span>6.3.</span><span> Sending the shipping confirmation to OTTO</span></a></li>
 </ul>
 </li>
 </ul>
@@ -210,7 +211,7 @@
 <div class="sect2">
 <h3 id="550">6.1. Generating a DHL return label with an event procedure</h3>
 <div class="paragraph">
-<p>When OTTO market orders are imported into your plentymarkets system, then DHL return labels must be generated for those orders before the orders are confirmed at OTTO market. The procedure <strong>Generate DHL return label</strong> automatically creates a tracking number for a return (retTrackingNumber) which is saved for the order. This is to ensure that a tracking number exists if customers wish to return an item.<br></p>
+<p>When OTTO market orders are imported into your plentymarkets system, then DHL return labels must be generated for those orders before the shipping confirmation is sent to OTTO market. The procedure <strong>Generate DHL return label</strong> automatically creates a tracking number for a return (retTrackingNumber) which is saved for the order. This is to ensure that a tracking number exists if customers wish to return an item.<br></p>
 </div>
 <div class="paragraph">
 <p>To ensure that the tracking number is sent to OTTO market along with the order confirmation, you have to create two event procedures which are triggered one after the other: 1. <strong>Generate DHL Retoure Online label</strong> and 2. <strong>Auftragsbestätigung an OTTO melden</strong> (Send order confirmation to OTTO).</p>
@@ -384,6 +385,85 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Auftragsbestätigung an OTTO melden</strong> (Send order confirmation to OTTO)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="700">6.3. Sending the shipping confirmation to OTTO</h3>
+<div class="paragraph">
+<p>Set up an event procedure to inform OTTO market that an item has been shipped.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in <a href="#shipping-confirmation-otto">Table 3</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The event is created.</p>
+</li>
+<li>
+<p>Carry out further settings as described in <a href="#shipping-confirmation-otto">Table 3</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The event procedure is saved.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="shipping-confirmation-otto" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Event procedure to send a shipping confirmation to OTTO</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change: e.g. status [7] Shipped</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OTTO market</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Versandinformation an OTTO melden</strong> (Send shipping confirmation to OTTO)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
