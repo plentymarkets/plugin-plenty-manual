@@ -11,8 +11,14 @@
 </ul>
 </li>
 <li><a href="#300"><span>3.</span><span> Artikelverfügbarkeit einstellen</span></a></li>
-<li><a href="#400"><span>4.</span><span> Verkaufspreis festlegen</span></a></li>
-<li><a href="#500"><span>5.</span><span> Ereignisaktionen einrichten</span></a></li>
+<li><a href="#350"><span>4.</span><span> Verfügbarkeit am Bild einstellen</span></a></li>
+<li><a href="#400"><span>5.</span><span> Verkaufspreis festlegen</span></a></li>
+<li><a href="#500"><span>6.</span><span> Ereignisaktionen einrichten</span></a>
+<ul class="sectlevel2">
+<li><a href="#550"><span>6.1.</span><span> DHL-Retourenlabel generieren</span></a></li>
+<li><a href="#600"><span>6.2.</span><span> Auftragsbestätigung an OTTO melden</span></a></li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -56,9 +62,6 @@
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p>Artikelverfügbarkeit im Tab <strong>Einstellungen</strong> eines Artikels einstellen</p>
-</li>
 <li>
 <p>Varianten eines Artikels im Tab <strong>Einstellungen</strong> einer Variante aktivieren</p>
 </li>
@@ -130,7 +133,31 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="400">4. Verkaufspreis festlegen</h2>
+<h2 id="350">4. Verfügbarkeit am Bild einstellen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Damit Artikelbilder auf OTTO market angezeigt werden, muss im Menü <strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Bilder</strong> die Verfügbarkeit <strong>OTTO market</strong> am Bild hinzugefügt werden.</p>
+</div>
+<div class="paragraph instruction">
+<p>Verfügbarkeit am Bild einstellen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Bilder</strong>.</p>
+</li>
+<li>
+<p>Aktiviere in der Dropdown-Liste <strong>Verfügbarkeit</strong> die Option <strong>OTTO market</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Das Bild wird am Artikel auf OTTO market angezeigt.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="400">5. Verkaufspreis festlegen</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Gehe wie im Folgenden beschrieben vor, um für die Auftragsherkunft OTTO market einen Verkaufspreis festzulegen. Dieser Preis wird auf OTTO market angezeigt.</p>
@@ -153,7 +180,7 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="500">5. Ereignisaktionen einrichten</h2>
+<h2 id="500">6. Ereignisaktionen einrichten</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Richte <a href="/automatisierung/ereignisaktionen">Ereignisaktionen</a> ein, um OTTO market automatisch über Änderungen des Auftragsstatus zu informieren. Folgende Ereignisaktionen stehen für OTTO market zur Verfügung:</p>
@@ -178,16 +205,15 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Beispielhaft wird eine Ereignisaktion beschrieben, mit der du die Auftragsbestätigung an OTTO meldest. Richte weitere Ereignisaktionen auf die gleiche Weise ein.</p>
+<p>In den folgenden Kapiteln werden Ereignisaktionen zum Generieren eines DHL-Retourenlabels und zum Senden einer Auftragsbestätigung an OTTO market beschrieben. Richte weitere Ereignisaktionen auf die gleiche Weise ein.</p>
 </div>
-<div class="paragraph subhead">
-<p>DHL-Retourenlabel generieren</p>
-</div>
+<div class="sect2">
+<h3 id="550">6.1. DHL-Retourenlabel generieren</h3>
 <div class="paragraph">
 <p>Wenn OTTO market-Aufträge in dein plentymarkets System importiert wurden, müssen für diese Aufträge DHL-Retourenlabels generiert werden, bevor du die Aufträge bei OTTO market bestätigst. Mit der Aktion <strong>DHL Retoure Online-Label generieren</strong> wird automatisch eine Tracking-Nummer für eine Retoure (retTrackingNumber) erstellt, die am Auftrag hinterlegt wird. Dadurch kann sichergestellt werden, dass es eine Tracking-Nummer für eine Retoure gibt, falls Kunden einen Artikel zurücksenden möchten.<br></p>
 </div>
 <div class="paragraph">
-<p>Damit die Tracking-Nummer bereits übertragen wird, wenn der Auftrag bei OTTO market bestätigt wird, musst du in der Ereignisaktion <strong>Auftragsbestätigung an OTTO melden</strong> als erste Aktion zusätzlich die Aktion <strong>DHL Retoure Online-Label generieren</strong> hinzufügen.</p>
+<p>Damit die Tracking-Nummer zusammen mit der Versandbestätigung an OTTO market gesendet wird, musst du zwei Ereignisaktionen erstellen, die hintereinander ausgelöst werden: 1. <strong>DHL Retoure Online-Label generieren</strong> und 2. <strong>Auftragsbestätigung an OTTO melden</strong>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Hinweis:</strong> Das Retourenlabel kann momentan nur mit DHL generiert werden. Weitere Versanddienstleister folgen.</p>
@@ -199,13 +225,16 @@
 <i class="fa icon-tip" title="Hinweis"></i>
 </td>
 <td class="content">
-<div class="title">DHL-Zugangsdaten hinterlegen</div>
+<div class="title">Plugin DHL Retoure Online installieren</div>
 <div class="paragraph">
-<p>Um ein DHL-Retouren-Label generieren zu können, musst du <strong>DHL Retoure Online</strong> im Menü <strong>Einrichtung » Aufträge » Versand » Dienstleister » DHL Retoure Online</strong> vollständig eingerichtet haben. Dazu musst du u.a. auch deine DHL-Zugangsdaten, bestehend aus Benutzername und Passwort, hinterlegen. DHL Retoure Online wird zukünftig auf ein neues Verfahren umgestellt, beachte deshalb die Anweisungen im <a href="https://forum.plentymarkets.com/t/umstellung-dhl-retoure-online-auf-neues-verfahren/575687" target="_blank" rel="noopener">plentymarkets Forum</a>.</p>
+<p>Um ein DHL-Retouren-Label generieren zu können, muss das Plugin <strong>DHL Retoure Online</strong> in deinem plentymarkets System installiert, aktiviert und eingerichtet sein. Das Plugin erhältst du im <a href="https://marketplace.plentymarkets.com/plugins/integration/dhlretoureonline_6714" target="_blank" rel="noopener">plentyMarketplace</a>.</p>
 </div>
 </td>
 </tr>
 </tbody></table>
+</div>
+<div class="paragraph">
+<p>Wie du die Ereignisaktion einrichtest, mit der ein DHL-Retourenlabel generiert wird, ist im Folgenden beschrieben.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
@@ -223,14 +252,14 @@
 <p>Gib einen Namen ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-auftragsbestätigung-otto">Tabelle 1</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#dhl-retouren-label-otto">Tabelle 1</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
 → Das Ereignis wird erstellt.</p>
 </li>
 <li>
-<p>Nimm die weiteren Einstellungen gemäß <a href="#ereignisaktion-auftragsbestätigung-otto">Tabelle 1</a> vor.</p>
+<p>Nimm die weiteren Einstellungen gemäß <a href="#dhl-retouren-label-otto">Tabelle 1</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong>.</p>
@@ -243,8 +272,8 @@
 </div>
 </div>
 </div>
-<table id="ereignisaktion-auftragsbestätigung-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Ereignisaktion um Auftragsbestätigung an OTTO zu melden</caption>
+<table id="dhl-retouren-label-otto" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Ereignisaktion zum Erstellen eines DHL-Retourenlabels</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -274,17 +303,92 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OTTO market</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; DHL Retoure Online-Label generieren</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DHL Online Retoure</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="600">6.2. Auftragsbestätigung an OTTO melden</h3>
+<div class="paragraph">
+<p>Die Ereignisaktion, mit der du die Auftragsbestätigung an OTTO meldest, muss ausgelöst werden, nachdem ein DHL-Retourenlabel generiert wurde. Wie du die Ereignisaktion zur Auftragsbestätigung einrichtest, ist im Folgenden beschrieben.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen Namen ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#auftragsbestaetigung-otto">Tabelle 2</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Das Ereignis wird erstellt.</p>
+</li>
+<li>
+<p>Nimm die weiteren Einstellungen gemäß <a href="#auftragsbestaetigung-otto">Tabelle 2</a> vor.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Die Ereignisaktion wird gespeichert.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="auftragsbestaetigung-otto" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Ereignisaktion um Auftragsbestätigung an OTTO zu melden</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Statuswechsel: beliebigen Status vor Versand wählen</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OTTO market</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Auftragsbestätigung an OTTO melden</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 </main>
