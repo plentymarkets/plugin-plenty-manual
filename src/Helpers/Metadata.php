@@ -23087,6 +23087,22 @@ class Metadata {
 						"languageID" => "FHQHFWO",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "7de5dfdf4cda2ec0fb3b84b3d1e7b428",
+						"path" => "data/exporting-data/Managing-catalogues",
+						"position" => 50,
+						"urlName" => "Managing-catalogues",
+						"url" => "/en/data/exporting-data/Managing-catalogues",
+						"level" => 3,
+						"title" => "Managing catalogues",
+						"keywords" => "Catalogue, Catalog, Catalogues, Catalogs, catalog templates, catalogue templates, templates, market, markets, sales channel, data sources, target data",
+						"description" => "The *Data » Catalogues* menu allows you to configure the export of variation data to markets.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Managing catalogues. The following information is available:",
+						"languageID" => "FHQHFWO",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
