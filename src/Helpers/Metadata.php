@@ -21247,7 +21247,7 @@ class Metadata {
 				"url" => "/en/crm/using-the-ticket-system",
 				"level" => 2,
 				"title" => "Using the ticket system",
-				"keywords" => "ticket system, ticket, role, type, status, signature, complimentary close, message, comment, template, child ticket, event procedure, procedure manager",
+				"keywords" => "Ticket system, ticket, role, type, status, signature, ticket signature, complimentary close, message, comment, ticket template, child ticket, parent ticket, main ticket, new message, new comment, new ticket, ticket message, ticket owner, email ticket, e-mail ticket, ticket FAQ, FAQ ticket system",
 				"description" => "Learn how to use the ticket system in plentymarkets for your customer communication.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Using the ticket system. The following information is available:",
