@@ -22819,7 +22819,7 @@ class Metadata {
 								"url" => "/en/data/importing-data/elasticsync-best-practices/best-practices-elasticsync-creating-variations",
 								"level" => 4,
 								"title" => "Creating variations",
-								"keywords" => "ElasticSync, import, items, creating items, best practice, automated, creating variations, importing variations",
+								"keywords" => "ElasticSync, import, items, creating items, best practice, example, automation, creating variations, importing variations",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Creating variations. The following information is available:",
