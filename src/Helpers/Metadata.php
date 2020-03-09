@@ -20284,6 +20284,38 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "1d19a46f3660b3c2cca87363724e905b",
+						"path" => "basics/admin-tasks/your-account",
+						"position" => 10,
+						"urlName" => "your-account",
+						"url" => "/en/basics/admin-tasks/your-account",
+						"level" => 3,
+						"title" => "Your plentymarkets account",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Your plentymarkets account. The following information is available:",
+						"languageID" => "AIXO9P7",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "5f00c14dd7225cd209af4854424aca26",
+						"path" => "basics/admin-tasks/system-administration",
+						"position" => 20,
+						"urlName" => "system-administration",
+						"url" => "/en/basics/admin-tasks/plentymarkets-account",
+						"level" => 3,
+						"title" => "System administration",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic System administration. The following information is available:",
+						"languageID" => "AIXO9P7",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "5152327ae5b9d8da5dc667ed8bdc8f67",
 						"path" => "basics/admin-tasks/manage-users",
 						"position" => 30,
