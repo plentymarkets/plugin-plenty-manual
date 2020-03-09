@@ -20268,22 +20268,6 @@ class Metadata {
 				"languageID" => "G6MTCF6",
 				"children" => 				[
 					[
-						"id" => "236b07cf66ca0ad10b85320aac25c4a9",
-						"path" => "basics/admin-tasks/plentymarkets-account",
-						"position" => 10,
-						"urlName" => "plentymarkets-account",
-						"url" => "/en/basics/admin-tasks/plentymarkets-account",
-						"level" => 3,
-						"title" => "Your plentymarkets account",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Your plentymarkets account. The following information is available:",
-						"languageID" => "AIXO9P7",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "1d19a46f3660b3c2cca87363724e905b",
 						"path" => "basics/admin-tasks/your-account",
 						"position" => 10,
