@@ -21724,6 +21724,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "69add9b798084e162fee8af0c8105afc",
+				"path" => "payment/faq-ebics",
+				"position" => 60,
+				"urlName" => "faq-ebics",
+				"url" => "/en/payment/faq-en-ebics",
+				"level" => 2,
+				"title" => "FAQ: EBICS-Plugin",
+				"keywords" => "EBICS, EBICS-plugin, faq, account, bank letter, INI-letter, INI, INI-Call, INI call, HIA, HIA-Call, HIA call, initialisation, HPB, account-initialisation, business transactions, payment retrieval, CAMT, MT, transaction file, interim transaction report, daily account statement",
+				"description" => "Find answers to some FAQs about the EBICS-Plugin.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic FAQ: EBICS-Plugin. The following information is available:",
+				"languageID" => "G5J2ZQP",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "1b973ab3b0301db022fc574542c680e8",
 				"path" => "payment/payment-providers",
 				"position" => 70,
