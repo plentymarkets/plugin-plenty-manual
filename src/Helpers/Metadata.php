@@ -8309,6 +8309,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "5068c98a5f2a9666313a4b2ba91c0ea6",
+				"path" => "payment/faq_ebics",
+				"position" => 60,
+				"urlName" => "faq_ebics",
+				"url" => "/payment/faq-ebics",
+				"level" => 2,
+				"title" => "FAQ: EBICS-Plugin",
+				"keywords" => "EBICS, EBICS-Plugin, FAQ, Konto, Bankbuchung, Vorkasse, Überweisung, HBCI, IBAN, Zahlung, Plugin, CAMT, MT, INI, INI-Brief, Zahlungen, Tagesumsatz, Tagesumsätze, Vormerkposten, Zahlungsabruf, Transaktionsfile, Konto-Initialisierung, Konto initalisieren, Geschäftsvorfälle, Zahlungsabruf",
+				"description" => "Finde Antworten auf einige FAQ zum EBICS-Plugin.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich FAQ: EBICS-Plugin. Hier findest du folgende Informationen:",
+				"languageID" => "YHMKO3V",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "e247b27d1bdc588a4846c4dbd38a0b6e",
 				"path" => "payment/zahlungsanbieter",
 				"position" => 70,
