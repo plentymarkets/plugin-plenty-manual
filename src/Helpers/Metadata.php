@@ -8293,22 +8293,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "512ffc9cb53715c6c94e652ed5533821",
-				"path" => "payment/best_practices_ebics",
-				"position" => 60,
-				"urlName" => "best_practices_ebics",
-				"url" => "/payment/best_practices_ebics",
-				"level" => 2,
-				"title" => "Best Practices: EBICS-Plugin",
-				"keywords" => "EBICS, FAQ, Konto, Bankbuchung, Vorkasse, Überweisung, HBCI, IBAN, Zahlung, Plugin, CAMT, MT",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Best Practices: EBICS-Plugin. Hier findest du folgende Informationen:",
-				"languageID" => "YHMKO3V",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "5068c98a5f2a9666313a4b2ba91c0ea6",
 				"path" => "payment/faq_ebics",
 				"position" => 60,
