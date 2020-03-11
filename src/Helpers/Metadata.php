@@ -13437,11 +13437,11 @@ class Metadata {
 				"urlName" => "2020-03-04",
 				"url" => "/changelog/2020-03-04",
 				"level" => 2,
-				"title" => "Changelog 26. Februar 2020",
+				"title" => "Changelog 04. März 2020",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Changelog 26. Februar 2020. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 04. März 2020. Hier findest du folgende Informationen:",
 				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
