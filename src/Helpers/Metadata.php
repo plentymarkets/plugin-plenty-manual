@@ -8277,22 +8277,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "0260c8a4694ae82f2e8abe73e2d3ece9",
-				"path" => "payment/best_practices_paypal",
-				"position" => 50,
-				"urlName" => "best_practices_paypal",
-				"url" => "/payment/best_practices_paypal",
-				"level" => 2,
-				"title" => "Best Practices: PayPal-Plugin",
-				"keywords" => "PayPal, PayPal einrichten, PayPal verknüpfen, PayPal PLUS, Konto, Ceres, Plugin, Callisto",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Best Practices: PayPal-Plugin. Hier findest du folgende Informationen:",
-				"languageID" => "PBKWNPM",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "672b38ad2eae00e00d79ec2dd9cd63fc",
 				"path" => "payment/faq-paypal",
 				"position" => 50,
@@ -8305,22 +8289,6 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich FAQ PayPal-Plugin. Hier findest du folgende Informationen:",
 				"languageID" => "PBKWNPM",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "5068c98a5f2a9666313a4b2ba91c0ea6",
-				"path" => "payment/faq_ebics",
-				"position" => 60,
-				"urlName" => "faq_ebics",
-				"url" => "/payment/faq-ebics",
-				"level" => 2,
-				"title" => "FAQ: EBICS-Plugin",
-				"keywords" => "EBICS, EBICS-Plugin, FAQ, Konto, Bankbuchung, Vorkasse, Überweisung, HBCI, IBAN, Zahlung, Plugin, CAMT, MT, INI, INI-Brief, Zahlungen, Tagesumsatz, Tagesumsätze, Vormerkposten, Zahlungsabruf, Transaktionsfile, Konto-Initialisierung, Konto initalisieren, Geschäftsvorfälle, Zahlungsabruf",
-				"description" => "Finde Antworten auf einige FAQ zum EBICS-Plugin.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich FAQ: EBICS-Plugin. Hier findest du folgende Informationen:",
-				"languageID" => "YHMKO3V",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -13458,10 +13426,26 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 04. März 2020",
+		"navAlias" => "Changelog 11. März 2020",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
+			[
+				"id" => "403481614c1e4211d3e4480811182699",
+				"path" => "changelog/2020-03-04",
+				"position" => 490,
+				"urlName" => "2020-03-04",
+				"url" => "/changelog/2020-03-04",
+				"level" => 2,
+				"title" => "Changelog 26. Februar 2020",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 26. Februar 2020. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
 			[
 				"id" => "4f56473ffcfcfe352d31a6194634b034",
 				"path" => "changelog/februar-2020",
@@ -13479,7 +13463,7 @@ class Metadata {
 					[
 						"id" => "6b6e65e6f66f55ce479d8d5357c06b0b",
 						"path" => "changelog/februar-2020/2020-02-26",
-						"position" => 150,
+						"position" => 500,
 						"urlName" => "2020-02-26",
 						"url" => "/changelog/februar-2020/2020-02-26",
 						"level" => 3,
