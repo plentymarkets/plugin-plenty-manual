@@ -91,15 +91,17 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
     function setAnchor() {
-        if (location.hash.length !== 0 && location.attr("role") !== "tab") {
+        if (location.hash.length !== 0) {
             window.scrollTo(window.scrollX, window.scrollY - 45);
         }
     }
 
     $(document).on('click', 'a[href*="#"]', function(event) {
-        window.setTimeout(function() {
-            setAnchor();
-        }, 0);
+        if (event.target.getAttribute("role") !== "tab") {
+            window.setTimeout(function() {
+                setAnchor();
+            }, 0);
+        }
     });
 
     $(window).on('load', function(){
