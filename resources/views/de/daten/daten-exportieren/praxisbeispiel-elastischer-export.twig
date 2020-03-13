@@ -1,0 +1,74 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#_warum_erscheint_ein_artikel_nicht_im_elastischen_export"><span>1.</span><span> Warum erscheint ein Artikel nicht im Elastischen Export?</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Praxisbeispiel: Elastischer Export</h1><div class="sect1">
+<h2 id="_warum_erscheint_ein_artikel_nicht_im_elastischen_export">1. Warum erscheint ein Artikel nicht im Elastischen Export?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dieses Praxisbeispiel beschäftigt sich mit der Frage, warum ein Artikel nicht im elastischen Export erscheint. Oft sind die Ursachen falsche Einstellungen. Zur besseren Übersicht und schnelleren Problemlösung behandeln wir hier verschiedene Einstellungen, die ihr überprüfen solltet, um die Fehlerquelle ausfindig machen zu können.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Praxisbeispiel für Marktplatz- und Preisvergleich-Plugins</div>
+<div class="paragraph">
+<p>Dieses Praxisbeispiel bezieht sich nur auf Plugin-Formate für Marktplätze und Preisportale und nicht auf die Formate des FormatDesigners.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<h3 id="_sind_die_plugins_aktuell" class="discrete">Sind die Plugins aktuell?</h3>
+<div class="paragraph">
+<p>Als Erstes solltet ihr überprüfen, ob das Exportformat-Plugin (d.h. das Plugin für das Preisportal oder den Marktplatz) und das Elastic Export-Plugin auf dem aktuellen Stand sind. Prüft außerdem, ob die Plugins in dem Plugin-Set bereitgestellt sind, das mit dem Standard-Mandanten verknüpft ist.</p>
+</div>
+<div class="paragraph">
+<p>Wie Plugins installiert oder aktualisiert werden, ist auf der Handbuchseite <a href="/plugins/plugin-sets#plugins-hinzufuegen">Plugins und Plugin-Sets</a> beschrieben.</p>
+</div>
+<h3 id="_hat_der_artikel_einen_gültigen_verkaufspreis" class="discrete">Hat der Artikel einen gültigen Verkaufspreis?</h3>
+<div class="paragraph">
+<p>Ohne einen gültigen Verkaufspreis wird der Artikel bei den meisten Exportformaten nicht im elastischen Export erscheinen.</p>
+</div>
+<div class="paragraph">
+<p>Ein gültiger Verkaufspreis bedeutet, dass die Auftragsherkunft, die im Menü <strong>System » Artikel » Verkaufspreise</strong> hinterlegt ist, dieselbe Auftragsherkunft ist wie im Exportformat unter <strong>Daten » Elastischer Export</strong> angegeben. Wenn also im elastischen Export als Auftragsherkunft <strong>Rakuten</strong> gewählt wurde, muss es auch einen Verkaufspreis für diese Herkunft geben. Ein Verkaufspreis darf als Preistyp nicht gleichzeitig <strong>UVP</strong>, <strong>Aktionspreis</strong> oder <strong>Setpreis</strong> sein. Außerdem muss der Verkaufspreis auch für die im Export gewählte Währung und den Mandanten gültig sein.</p>
+</div>
+<h3 id="_ist_das_limit_zu_niedrig" class="discrete">Ist das Limit zu niedrig?</h3>
+<div class="paragraph">
+<p>Das Limit in den Einstellungen des Exportformats gibt an, wie viele Artikel (bzw. Zeilen) maximal im Export erscheinen dürfen. Wenn also ein Limit von 1000 gesetzt ist, aber 2000 Artikel für den Export freigeschaltet sind, werden 1000 Artikel davon nicht im Export angezeigt. Setzt hier im Zweifelsfall ein höheres Limit und schaut, ob die fehlenden Artikel dann im Export erscheinen.</p>
+</div>
+<h3 id="_wird_der_artikel_herausgefiltert" class="discrete">Wird der Artikel herausgefiltert?</h3>
+<div class="paragraph">
+<p>Grundsätzlich werden alle Artikel exportiert, die nicht herausgefiltert werden. Wenn also ein Artikel nicht im Export erscheint, solltet ihr die eingestellten Artikelfilter prüfen. Wenn zum Beispiel der Bestandsfilter <strong>Positiver Netto-Warenbestand</strong> eingestellt ist, der Artikel aber einen Bestand von 0 hat, dann erscheint dieser Artikel auch nicht im Export.</p>
+</div>
+<h3 id="_ist_der_artikel_noch_nicht_gecached" class="discrete">Ist der Artikel noch nicht gecached?</h3>
+<div class="paragraph">
+<p>Aus Performance-Gründen können Exporte mit mehr als 10.000 Zeilen nur über eine Cache-Datei generiert werden, diese wird aber nur alle 24h neu erstellt. Deshalb zeigt der Export nicht immer den aktuellsten Stand an und Artikel, die erst kürzlich für den Export freigeschaltet wurden, erscheinen erst im Export, wenn die Cache-Datei neu generiert wird.</p>
+</div>
+<div class="paragraph">
+<p>Ihr könnt die neue Generierung der Cache-Datei auch erzwingen, indem ihr die <strong>Cache Datei generieren</strong>-Option deaktiviert, den Export speichert und anschließend die Option wieder aktiviert. Dann sollte es je nach Anzahl der Exporte und Größe der Datei nicht länger als 2-3 Stunden dauern, bis eine neue Datei verfügbar ist.</p>
+</div>
+<h3 id="_ist_der_elasticsearch_index_aktuell" class="discrete">Ist der ElasticSearch-Index aktuell?</h3>
+<div class="paragraph">
+<p>Zurzeit werden Artikel nicht live aus dem System exportiert, sondern aus ElasticSearch ausgelesen. Diese Technologie erlaubt zwar einen schnelleren Zugriff auf die Artikeldaten, damit die Artikeldaten aber in ElasticSearch verfügbar sind, muss der Index regelmäßig aktualisiert werden. Normalerweise dauert dies nicht länger als 5 Minuten, aber Änderungen am Artikel sind dadurch nicht sofort im Export sichtbar. Wenn ihr also zum Beispiel einen Artikel fertig konfiguriert habt und dieser nicht sofort danach im Export erscheint, kann dies daran liegen, dass der Artikel noch indexiert werden muss. Wenn ihr regelmäßig größere Datenmengen aktualisiert, kann es hier auch zu größeren Verzögerungen kommen.</p>
+</div>
+<div class="paragraph">
+<p>Ob der ElasticSearch-Index aktuell ist, könnt ihr unter <strong>Daten » Status</strong> einsehen.</p>
+</div>
+</div>
+</div>
+</main>

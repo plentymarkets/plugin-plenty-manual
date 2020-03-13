@@ -6883,6 +6883,55 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
+					],
+					[
+						"id" => "c4d58522ac509bbebe4fd4768bfa8bcc",
+						"path" => "basics/admin-aufgaben/praxisbeispiele",
+						"position" => 120,
+						"urlName" => "praxisbeispiele",
+						"url" => "/basics/admin-aufgaben/best-practices",
+						"level" => 3,
+						"title" => "Praxisbeispiele: Admin-Aufgaben",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Praxisbeispiele: Admin-Aufgaben. Hier findest du folgende Informationen:",
+						"languageID" => "S4P1GVO",
+						"children" => 						[
+							[
+								"id" => "5ba1481ddde584e72a7a1052d9fd47f5",
+								"path" => "basics/admin-aufgaben/praxisbeispiele/dns-selbsthilfe",
+								"position" => 10,
+								"urlName" => "dns-selbsthilfe",
+								"url" => "/basics/admin-aufgaben/best-practices/dns-selbsthilfe",
+								"level" => 4,
+								"title" => "Praxisbeispiel: DNS-Einstellungen prüfen und anpassen",
+								"keywords" => "DNS, CNAME, www.www., www.www, A-Record, DNS_NAME, NOT_RESOLVED",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Praxisbeispiel: DNS-Einstellungen prüfen und anpassen. Hier findest du folgende Informationen:",
+								"languageID" => "Z6F5WUG",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "059f1f8998d37828839f85c4eba23dad",
+								"path" => "basics/admin-aufgaben/praxisbeispiele/ssl-zertifikat_bestellen",
+								"position" => 20,
+								"urlName" => "ssl-zertifikat_bestellen",
+								"url" => "/basics/admin-aufgaben/best-practices/ssl-zertifikat_bestellen",
+								"level" => 4,
+								"title" => "Praxisbeispiel: SSL-Zertifikat bestellen",
+								"keywords" => "SSL, Let's_Encrypt, let's_enrypt, Lets_Encrypt, lets_encrypt, COMODO, comodo",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Praxisbeispiel: SSL-Zertifikat bestellen. Hier findest du folgende Informationen:",
+								"languageID" => "LAF1PEI",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					]
 				],
 				"hasChildren" => true
@@ -9513,6 +9562,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "744c344fa6a4557658d40884aeec120b",
+						"path" => "daten/daten-exportieren/praxisbeispiel-elastischer-export",
+						"position" => 20,
+						"urlName" => "praxisbeispiel-elastischer-export",
+						"url" => "/daten/daten-exportieren/best-practices-elastischer-export",
+						"level" => 3,
+						"title" => "Praxisbeispiel: Elastischer Export",
+						"keywords" => "Elastischer Export, Elastic Export, Artikelexport, elastisch, elastic",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Praxisbeispiel: Elastischer Export. Hier findest du folgende Informationen:",
+						"languageID" => "U3OWBES",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "2a8d8b128cde807b27d9f9a56a2127f9",
 						"path" => "daten/daten-exportieren/FormatDesigner",
 						"position" => 30,
@@ -9750,6 +9815,22 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practices: Dropshipping und ElasticExport. Hier findest du folgende Informationen:",
+						"languageID" => "BSVUAFW",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "ac88b4e454f80ae88cabc581ec951dae",
+						"path" => "daten/daten-exportieren/dropshipping-elasticexport-praxisbeispiel",
+						"position" => 40,
+						"urlName" => "dropshipping-elasticexport-praxisbeispiel",
+						"url" => "/daten/daten-exportieren/dropshipping-elasticexport-bp",
+						"level" => 3,
+						"title" => "Praxisbeispiel: Dropshipping und ElasticExport",
+						"keywords" => "Elastischer Export, Dropshipping, Dropshipper, Best Practices, FormatDesigner, Export, Daten, Praxisbeispiel",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Praxisbeispiel: Dropshipping und ElasticExport. Hier findest du folgende Informationen:",
 						"languageID" => "BSVUAFW",
 						"children" => [],
 						"hasChildren" => false
