@@ -23025,6 +23025,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "1dd09facb766e147021d19e3df9c7bc9",
+						"path" => "data/exporting-data/practical-example-elastic-export",
+						"position" => 20,
+						"urlName" => "practical-example-elastic-export",
+						"url" => "/en/data/exporting-data/best-practices-elastic-export",
+						"level" => 3,
+						"title" => "Practical example: Elastic Export",
+						"keywords" => "elastic export, item export, elastic",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Practical example: Elastic Export. The following information is available:",
+						"languageID" => "U3OWBES",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "d68c7db4b0dce578fa33fdaaf4a1105e",
 						"path" => "data/exporting-data/FormatDesigner",
 						"position" => 30,
@@ -23262,6 +23278,22 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Best Practices: Drop shipping and Elastic export. The following information is available:",
+						"languageID" => "BSVUAFW",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "7bbcf823aa77a905ca05eb6cad1bffd8",
+						"path" => "data/exporting-data/practical-example-elasticexport-dropshipping",
+						"position" => 40,
+						"urlName" => "practical-example-elasticexport-dropshipping",
+						"url" => "/en/data/exporting-data/best-practices-elasticexport-dropshipping",
+						"level" => 3,
+						"title" => "Practical example: Drop shipping and Elastic export",
+						"keywords" => "Elastic export, Drop shipping, Drop shipping provider, Best practices, FormatDesigner, Export, Data, Practical example",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Practical example: Drop shipping and Elastic export. The following information is available:",
 						"languageID" => "BSVUAFW",
 						"children" => [],
 						"hasChildren" => false

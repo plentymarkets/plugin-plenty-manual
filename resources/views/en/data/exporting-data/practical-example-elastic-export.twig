@@ -1,0 +1,74 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_why_does_the_item_not_appear_in_the_elastic_export"><span>1.</span><span> Why does the item not appear in the elastic export?</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Practical example: Elastic Export</h1><div class="sect1">
+<h2 id="_why_does_the_item_not_appear_in_the_elastic_export">1. Why does the item not appear in the elastic export?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This practical example deals with the question why items are not included in the elastic export. Often, this is caused by faulty settings. This practical example provides an overview of the settings that you should check in order to detect error sources quickly.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Practical example for marketplace and price comparison plugins</div>
+<div class="paragraph">
+<p>This practical example only refers to export formats for marketplaces and price comparisons and not to formats for the FormatDesigner.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<h3 id="_are_the_plugins_up_to_date" class="discrete">Are the plugins up-to-date?</h3>
+<div class="paragraph">
+<p>First, you should check whether the export format-plugin (i.e. the plugin for the price comparison or the market) and the Elastic Export plugin are up-to-date. In addition, check whether the plugins are activated in the plugin set that is linked to the standard client.</p>
+</div>
+<div class="paragraph">
+<p>How to install or update plugins is described on the <a href="/en/plugins/plugin-sets#adding-plugins">Plugins and plugin sets</a> page of the manual.</p>
+</div>
+<h3 id="_is_the_item_linked_to_a_valid_sales_price" class="discrete">Is the item linked to a valid sales price?</h3>
+<div class="paragraph">
+<p>Without valid sales prices, items will not be included in the elastic export for most export formats.</p>
+</div>
+<div class="paragraph">
+<p>The sales price is valid for the item if the order referrer that is saved in the <strong>System » Item » Sales prices</strong> menu is the same order referrer as the one saved for the export format in the <strong>Data » Elastic Export</strong> menu. Thus, if you have selected e.g. the order referrer <strong>Rakuten</strong> in the the elastic export, then you need to have a sales price for this order referrer. A sales price must not be of the price type <strong>RRP</strong>, <strong>special offer</strong>, or <strong>set price</strong>. In addition, the sales price must be valid for the currency and the client selected in the export.</p>
+</div>
+<h3 id="_is_the_limit_too_low" class="discrete">Is the limit too low?</h3>
+<div class="paragraph">
+<p>The limit which is defined in the export settings specifies the maximum of items (or lines) in the export. Hence, if you set a limit of 1000, but 2000 items should be exported, then 1000 items will not appear in the export. If you are not sure, increase the limit and check if the missing items appear in the export.</p>
+</div>
+<h3 id="_is_the_item_filtered_out_of_the_export" class="discrete">Is the item filtered out of the export?</h3>
+<div class="paragraph">
+<p>In general, all items which are not filtered out will be exported. Thus, check the item filters if an item does not appear in the export. For example, if the stock filter <strong>Positive net stock</strong> is set, but the item’s stock is 0, then the item will not appear in the export.</p>
+</div>
+<h3 id="_is_the_item_not_cached" class="discrete">Is the item not cached?</h3>
+<div class="paragraph">
+<p>Due to performance reasons, exports with more than 10,000 lines can only be generated via cache file. This cache file is only generated once a day. Therefore, the export does not always display the current status and items which were only recently added to the export will only appear in the export once the cache file is generated again.</p>
+</div>
+<div class="paragraph">
+<p>You can also force the new generation of the cache file by deactivating the <strong>Generate cache file</strong> option, saving the setting and activating the option again afterwards. Depending on the number of exports and the size of the file, it should not take longer than 2-3 hours until a new file is available.</p>
+</div>
+<h3 id="_is_the_elasticsearch_index_up_to_date" class="discrete">Is the ElasticSearch index up-to-date?</h3>
+<div class="paragraph">
+<p>At the moment, items are not exported live from the system, but taken from ElasticSearch. This technology enables quick access to item data, but in order to make the item data available in ElasticSearch, the index must be updated regularly. Usually this does not take longer than 5 minutes, but when an item is changed, the changes will not be visible in the export right away. Thus, if you have finished configuring an item and it does not appear in the export immediately, the cause might be that the item still needs to be indexed. If you update large amounts of data on a regular basis, this may lead to a delay.</p>
+</div>
+<div class="paragraph">
+<p>Go to the <strong>Data » Status</strong> menu to check whether the ElasticSearch index is up-to-date.</p>
+</div>
+</div>
+</div>
+</main>
