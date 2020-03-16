@@ -20332,6 +20332,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "b69e55ec741450175f1710df52598aee",
+						"path" => "basics/admin-tasks/plentymarkets-status",
+						"position" => 25,
+						"urlName" => "plentymarkets-status",
+						"url" => "/en/basics/admin-tasks/plentymarkets-status",
+						"level" => 3,
+						"title" => "plentymarkets Status",
+						"keywords" => "plentymarkets Status, plenty Status",
+						"description" => "Learn more about plentymarkets status.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic plentymarkets Status. The following information is available:",
+						"languageID" => "XGZ7DA0",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "5152327ae5b9d8da5dc667ed8bdc8f67",
 						"path" => "basics/admin-tasks/manage-users",
 						"position" => 30,
