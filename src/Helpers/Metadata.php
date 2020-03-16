@@ -6836,55 +6836,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "1ea546e67f9fa66eeb87743b17d54ade",
-						"path" => "basics/admin-aufgaben/best-practices",
-						"position" => 120,
-						"urlName" => "best-practices",
-						"url" => "/basics/admin-aufgaben/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Admin-Aufgaben",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Admin-Aufgaben. Hier findest du folgende Informationen:",
-						"languageID" => "S4P1GVO",
-						"children" => 						[
-							[
-								"id" => "61be6687692032e4d19d25e0867a9069",
-								"path" => "basics/admin-aufgaben/best-practices/dns-selbsthilfe",
-								"position" => 10,
-								"urlName" => "dns-selbsthilfe",
-								"url" => "/basics/admin-aufgaben/best-practices/dns-selbsthilfe",
-								"level" => 4,
-								"title" => "Best Practice: DNS-Einstellungen prüfen und anpassen",
-								"keywords" => "DNS, CNAME, www.www., www.www, A-Record, DNS_NAME, NOT_RESOLVED",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practice: DNS-Einstellungen prüfen und anpassen. Hier findest du folgende Informationen:",
-								"languageID" => "Z6F5WUG",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "645367dc005d633de1223eed81a474e0",
-								"path" => "basics/admin-aufgaben/best-practices/ssl-zertifikat_bestellen",
-								"position" => 20,
-								"urlName" => "ssl-zertifikat_bestellen",
-								"url" => "/basics/admin-aufgaben/best-practices/ssl-zertifikat_bestellen",
-								"level" => 4,
-								"title" => "Best Practice: SSL-Zertifikat bestellen",
-								"keywords" => "SSL, Let's_Encrypt, let's_enrypt, Lets_Encrypt, lets_encrypt, COMODO, comodo",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practice: SSL-Zertifikat bestellen. Hier findest du folgende Informationen:",
-								"languageID" => "LAF1PEI",
-								"children" => [],
-								"hasChildren" => false
-							]
-						],
-						"hasChildren" => true
-					],
-					[
 						"id" => "c4d58522ac509bbebe4fd4768bfa8bcc",
 						"path" => "basics/admin-aufgaben/praxisbeispiele",
 						"position" => 120,
@@ -9546,22 +9497,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "458b9437340eb6db2e4ce567a2d06867",
-						"path" => "daten/daten-exportieren/best-practices-elastischer-export",
-						"position" => 20,
-						"urlName" => "best-practices-elastischer-export",
-						"url" => "/daten/daten-exportieren/best-practices-elastischer-export",
-						"level" => 3,
-						"title" => "Best Practice: Elastischer Export",
-						"keywords" => "Elastischer Export, Elastic Export, Artikelexport, elastisch, elastic",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practice: Elastischer Export. Hier findest du folgende Informationen:",
-						"languageID" => "U3OWBES",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "744c344fa6a4557658d40884aeec120b",
 						"path" => "daten/daten-exportieren/praxisbeispiel-elastischer-export",
 						"position" => 20,
@@ -9802,22 +9737,6 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
-					],
-					[
-						"id" => "fa381b6aa96f2804ef0f01a2a67c173e",
-						"path" => "daten/daten-exportieren/dropshipping-elasticexport-bp",
-						"position" => 40,
-						"urlName" => "dropshipping-elasticexport-bp",
-						"url" => "/daten/daten-exportieren/dropshipping-elasticexport-bp",
-						"level" => 3,
-						"title" => "Best Practices: Dropshipping und ElasticExport",
-						"keywords" => "Elastischer Export, Dropshipping, Dropshipper, Best Practices, FormatDesigner, Export, Daten",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Dropshipping und ElasticExport. Hier findest du folgende Informationen:",
-						"languageID" => "BSVUAFW",
-						"children" => [],
-						"hasChildren" => false
 					],
 					[
 						"id" => "ac88b4e454f80ae88cabc581ec951dae",
