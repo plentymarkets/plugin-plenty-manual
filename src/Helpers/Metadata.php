@@ -20338,11 +20338,11 @@ class Metadata {
 						"urlName" => "plentymarkets-status",
 						"url" => "/en/basics/admin-tasks/plentymarkets-status",
 						"level" => 3,
-						"title" => "plentymarkets Status",
+						"title" => "plentymarkets status",
 						"keywords" => "plentymarkets Status, plenty Status",
 						"description" => "Learn more about plentymarkets status.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic plentymarkets Status. The following information is available:",
+						"linkListInto" => "Welcome to the topic plentymarkets status. The following information is available:",
 						"languageID" => "XGZ7DA0",
 						"children" => [],
 						"hasChildren" => false
