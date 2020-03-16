@@ -6772,6 +6772,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "2f9a66329bb366375d10bc50feab5ac1",
+						"path" => "basics/admin-aufgaben/plentymarkets-status",
+						"position" => 25,
+						"urlName" => "plentymarkets-status",
+						"url" => "/basics/admin-aufgaben/plentymarkets-status",
+						"level" => 3,
+						"title" => "plentymarkets Status",
+						"keywords" => "plentymarkets Status, plenty Status",
+						"description" => "Erfahre mehr über plentymarkets Status.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich plentymarkets Status. Hier findest du folgende Informationen:",
+						"languageID" => "XGZ7DA0",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "0b865b404c4b478cfa13c884a36dd06e",
 						"path" => "basics/admin-aufgaben/benutzer-verwalten",
 						"position" => 30,
