@@ -22928,22 +22928,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "5c7f269162b81dda0d33f3deb83244c0",
-						"path" => "data/exporting-data/best-practices-elastic-export",
-						"position" => 20,
-						"urlName" => "best-practices-elastic-export",
-						"url" => "/en/data/exporting-data/best-practices-elastic-export",
-						"level" => 3,
-						"title" => "Best Practices: Elastic Export",
-						"keywords" => "elastic export, item export, elastic",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: Elastic Export. The following information is available:",
-						"languageID" => "U3OWBES",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "1dd09facb766e147021d19e3df9c7bc9",
 						"path" => "data/exporting-data/practical-example-elastic-export",
 						"position" => 20,
@@ -23184,22 +23168,6 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
-					],
-					[
-						"id" => "4546eccb9eace63a9cd986d4d5171b31",
-						"path" => "data/exporting-data/best-practices-elasticexport-dropshipping",
-						"position" => 40,
-						"urlName" => "best-practices-elasticexport-dropshipping",
-						"url" => "/en/data/exporting-data/best-practices-elasticexport-dropshipping",
-						"level" => 3,
-						"title" => "Best Practices: Drop shipping and Elastic export",
-						"keywords" => "Elastic export, Drop shipping, Drop shipping provider, Best practices, FormatDesigner, Export, Data",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best Practices: Drop shipping and Elastic export. The following information is available:",
-						"languageID" => "BSVUAFW",
-						"children" => [],
-						"hasChildren" => false
 					],
 					[
 						"id" => "7bbcf823aa77a905ca05eb6cad1bffd8",
