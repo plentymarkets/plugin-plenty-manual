@@ -9709,7 +9709,7 @@ class Metadata {
 										"level" => 5,
 										"title" => "Kontakte",
 										"keywords" => "FormatDesigner, Format-Typen, Export, Data, Daten-Export, Kontakte",
-										"description" => "Mit Formaten des Typs Warenbestand exportierst du Warenbestandsdaten.",
+										"description" => "Mit Formaten des Typs Kontakte exportierst du Kontaktdaten.",
 										"navAlias" => "",
 										"linkListInto" => "Willkommen im Themenbereich Kontakte. Hier findest du folgende Informationen:",
 										"languageID" => "",
