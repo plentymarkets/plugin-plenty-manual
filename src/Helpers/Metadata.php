@@ -26359,6 +26359,22 @@ class Metadata {
 				"languageID" => "VY49UZP",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "98d19ab2be61775e41238ad578dcf3a1",
+				"path" => "pos/pos-legal-compliance",
+				"position" => 30,
+				"urlName" => "pos-legal-compliance",
+				"url" => "/en/pos/pos-legal-compliance",
+				"level" => 2,
+				"title" => "plentyPOS and legal compliance",
+				"keywords" => "plentymarkets POS, plentyPOS, POS, legal compliance, tax authorities, tax legislation, financial law, GoBD, financial data export",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic plentyPOS and legal compliance. The following information is available:",
+				"languageID" => "PRVBBTM",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
