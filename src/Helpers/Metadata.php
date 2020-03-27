@@ -21120,7 +21120,7 @@ class Metadata {
 		"url" => "/en/stock-management",
 		"level" => 1,
 		"title" => "Stock management",
-		"keywords" => "Stock, Stock management",
+		"keywords" => "Items, incoming items, outgoing items, stock management, stock, automatic stock update",
 		"description" => "",
 		"navAlias" => "Overview",
 		"linkListInto" => "Welcome to the topic Stock management. The following information is available:",
