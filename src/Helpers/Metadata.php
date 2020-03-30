@@ -12125,7 +12125,7 @@ class Metadata {
 						"url" => "/maerkte/amazon/amazon-einrichten",
 						"level" => 3,
 						"title" => "Amazon einrichten",
-						"keywords" => "Amazon, Amazon einrichten, FBA, Amazon FBA, Fulfillment by Amazon, MFN, Amazon MFN, Merchant Fulfillment Network, Prime, SameDay, NextDay, SecondDay, Marktplatz, Multi-Channel, Multichannel, Amazon Multi-Channel, Multi-Channel Amazon, Amazon Business, Amazon B2B, Amazon VCS, VCS, VCS Lite, IDU, Invoice Document Uploader, Amazon Rechnung, Umsatzsteuerservice, Amazon Pay, Amazon Produkttyp, Flat File, Flatfile, Lagerbestandsdatei, ASIN, ASIN-Verknüpfung, Amazon-Plattform, amazon.de, MWS-Autorisierung, MWS Autorisierung, Gutschriftenimport, VCS plentymarkets, VCS Amazon, VCS Lite",
+						"keywords" => "Amazon, Amazon einrichten, FBA, Amazon FBA, Fulfillment by Amazon, MFN, Amazon MFN, Merchant Fulfillment Network, Prime, SameDay, NextDay, SecondDay, Marktplatz, Multi-Channel, Multichannel, Amazon Multi-Channel, Multi-Channel Amazon, Amazon Business, Amazon B2B, Amazon VCS, VCS, VCS Lite, IDU, Invoice Document Uploader, Amazon Rechnung, Umsatzsteuerservice, Amazon Pay, Amazon Produkttyp, Flat File, Flatfile, Lagerbestandsdatei, ASIN, ASIN-Verknüpfung, Amazon-Plattform, amazon.de, MWS-Autorisierung, MWS Autorisierung, Gutschriftenimport, VCS plentymarkets, VCS Amazon",
 						"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Amazon in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Amazon einrichten. Hier findest du folgende Informationen:",
