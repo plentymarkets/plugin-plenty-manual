@@ -25800,7 +25800,7 @@ class Metadata {
 				"url" => "/en/markets/kauflux",
 				"level" => 2,
 				"title" => "Kauflux",
-				"keywords" => "Kauflux, market, marketplace, marketplace Kauflux, kauflux.de, setting up Kauflux, Kauflux setup, multichannel, multi-channel, multi channel, market place, Kauf lux",
+				"keywords" => "Kauflux, market, marketplace, marketplace Kauflux, kauflux.de, setting up Kauflux, Kauflux setup, multichannel, multi-channel, multi channel, market place, Kauf lux, market Kauflux",
 				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Kauflux in your plentymarkets system.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Kauflux. The following information is available:",
