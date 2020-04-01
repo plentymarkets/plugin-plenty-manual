@@ -7393,11 +7393,11 @@ class Metadata {
 						"urlName" => "multipacks-pakete-sets-verwalten",
 						"url" => "/artikel/anwendungsfaelle/multipacks-pakete-sets",
 						"level" => 3,
-						"title" => "Multipacks, Artikelpakete und Sets verwalten",
+						"title" => "Multipacks, Artikelpakete und Sets",
 						"keywords" => "Varianten gruppieren, Produkte zusammenfassen, Kombiangebote, Varianten kombinieren",
 						"description" => "Erfahre, wie du Varianten in plentymarkets kombinierst, um sie im Paket zu verkaufen.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Multipacks, Artikelpakete und Sets verwalten. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Multipacks, Artikelpakete und Sets. Hier findest du folgende Informationen:",
 						"languageID" => "NXZCPXN",
 						"children" => [],
 						"hasChildren" => false
