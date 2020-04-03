@@ -39,10 +39,12 @@
         });
 
         ConsentManager.setResponse(consents);
+        _updateCheckboxes();
     }
 
     function _saveConsents() {
         ConsentManager.setResponse(consents);
+        _updateCheckboxes();
     }
 
     function _isConsented(key) {
@@ -82,32 +84,32 @@
         }
 
         // Add Listeners
-        $('#consent-footer-link').click(function() {
+        $('#consent-footer-link').on('click', function() {
             $('.consent-banner').show();
         });
 
-        $('.consent-banner input[type=checkbox]').click(function() {
+        $('.consent-banner input[type=checkbox]').on('click', function() {
             _setConsent($(this).data('consentKey'), this.checked);
         });
 
-        $('#consent-details-open').click(function() {
+        $('#consent-details-open').on('click', function() {
             $(this).hide();
             $('#consent-details-close').show();
             $('.consent-details').show();
         });
 
-        $('#consent-details-close').click(function() {
+        $('#consent-details-close').on('click', function() {
             $(this).hide();
             $('#consent-details-open').show();
             $('.consent-details').hide();
         });
 
-        $('#consent-allow-all').click(function() {
+        $('#consent-allow-all').on('click', function() {
             _acceptAll();
             $('.consent-banner').hide();
         });
 
-        $('#consent-save').click(function() {
+        $('#consent-save').on('click', function() {
             _saveConsents();
             $('.consent-banner').hide();
         });
