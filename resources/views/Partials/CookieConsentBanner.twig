@@ -1,0 +1,58 @@
+<div class="consent-banner fixed-bottom border-top bg-light" style="display:none">
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-12">
+                <span class="disclaimer">
+                    {{ trans( "PlentyManual::dataProcessingConsent.beforeLinkText" ) }}
+                </span>
+            </div>
+            <div class="col-12 mb-1" >
+                <div class="consent-details" style="display:none">
+                    {% include "PlentyManual::Partials.CookieConsentBannerDetails" %}
+                </div>
+
+                <div class="col-12 mt-1">
+                    {% for consentGroup in get_consent_groups() if consentGroup.consents | length > 0 %}
+                        <span class="d-md-inline-block mr-3">
+                            <input type="checkbox"
+                                   class="consent-input"
+                                   id="consent-group-{{ consentGroup.key }}"
+                                    {% if consentGroup.necessary %}
+                                        disabled checked="checked"
+                                    {% else %}
+                                        data-consent-key="{{ consentGroup.key }}.*"
+                                    {% endif %}>
+                            <label for="consent-group-{{ consentGroup.key }}">
+                                {% if consentGroup.label | length > 0 %}
+                                    {{ consentGroup.label }}
+                                {% else %}
+                                    {{ trans("Marketplace::Translations.defaultConsentGroup") }}
+                                {% endif %}
+                            </label>
+                        </span>
+                    {% endfor %}
+                    <a id="consent-details-open" href="javascript:void(0)" class="text-primary text-appearance">
+                        <span>{{ trans( "PlentyManual::dataProcessingConsent.showMoreButton" ) }}</span>
+                    </a>
+                    <a id="consent-details-close" style="display:none" href="javascript:void(0)" class="text-primary text-appearance">
+                        <span>{{ trans( "PlentyManual::dataProcessingConsent.showLessButton" ) }}</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <button class="btn btn-dark btn-block" id="consent-allow-all">
+                    {{ trans( "PlentyManual::dataProcessingConsent.acceptAllButtonText") }}
+                </button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-info btn-block" id="consent-save">
+                    {{ trans( "PlentyManual::dataProcessingConsent.okButtonText") }}
+                </button>
+            </div>
+            <div class="col-12 text-right">
+                <a href="{{ trans("PlentyManual::dataProcessingConsent.linkHref") }}" target="_blank">{{ trans("PlentyManual::dataProcessingConsent.legalDisclosureText") }}</a>
+            </div>
+        </div>
+    </div>
+</div>
