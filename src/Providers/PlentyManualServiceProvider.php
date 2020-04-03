@@ -73,7 +73,7 @@ class PlentyManualServiceProvider extends ServiceProvider
                 'necessary' => true,
                 'position' => 100,
                 'description' => 'PlentyManual::dataProcessingConsent.consentConsentDescription',
-                'provider' => 'Plentysystems AG',
+                'provider' => 'PlentyManual::dataProcessingConsent.consentProvider',
                 'lifespan' => $webstoreConfig->sessionLifetime > 0 ? '100 days' : 'Session',
                 'group' => 'necessary',
                 'cookieNames' => ['XDEBUG_SESSION']
@@ -87,7 +87,7 @@ class PlentyManualServiceProvider extends ServiceProvider
                 'necessary' => true,
                 'position' => 200,
                 'description' => 'PlentyManual::dataProcessingConsent.consentSessionDescription',
-                'provider' => 'Plentysystems AG',
+                'provider' => 'PlentyManual::dataProcessingConsent.consentProvider',
                 'lifespan' => $webstoreConfig->sessionLifetime > 0 ? '100 days' : 'Session',
                 'group' => 'necessary'
             ]
