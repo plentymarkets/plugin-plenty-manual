@@ -7507,7 +7507,7 @@ class Metadata {
 						"url" => "/artikel/frontend-artikelsuche-verwalten",
 						"level" => 3,
 						"title" => "Suchfunktion im Webshop",
-						"keywords" => "Facetten, Webshopsuche, Facettensuche",
+						"keywords" => "Facette, Facetten, Webshopsuche, Facettensuche, Suchleiste, Suchfeld, Suche, Frontend, Webshop, Artikelsuche, Suchvorschlag, Suchvorschläge",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Suchfunktion im Webshop. Hier findest du folgende Informationen:",
