@@ -13417,11 +13417,11 @@ class Metadata {
 						"urlName" => "best-practices",
 						"url" => "/automatisierung/prozesse/best-practices",
 						"level" => 3,
-						"title" => "Best Practices: Beispielprozesse",
+						"title" => "Praxisbeispiele: Prozesse",
 						"keywords" => "Prozesse, Prozess, Beispielprozesse, Beispiel Prozesse, Beispielprozess, Beispiel Prozess, Prozess Filter, Prozessfilter",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Beispielprozesse. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Praxisbeispiele: Prozesse. Hier findest du folgende Informationen:",
 						"languageID" => "MMOGYLL",
 						"children" => [],
 						"hasChildren" => false
