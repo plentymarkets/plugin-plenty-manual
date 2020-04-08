@@ -6966,6 +6966,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "3c59e9f6be3cbcb1c396c934643660c2",
+						"path" => "basics/arbeiten-mit-plentymarkets/eigenschaften",
+						"position" => 35,
+						"urlName" => "eigenschaften",
+						"url" => "/basics/arbeiten-mit-plentymarkets/eigenschaften",
+						"level" => 3,
+						"title" => "Eigenschaften",
+						"keywords" => "Eigenschaften, Eigenschaft, Eigenschaft Typ Artikel, Eigenschaft Variante, Eigenschaft Typ Lagerort, Eigenschaft Typ Lager, Eigenschaft Typ Kontakt, Eigenschaftstyp Artikel, Eigenschaftstyp Variante, Eigenschaftstyp Lagerort, Eigenschaftstyp",
+						"description" => "Erfahre auf dieser Handbuchseite, wie du Eigenschaften in plentymarkets verwaltest.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Eigenschaften. Hier findest du folgende Informationen:",
+						"languageID" => "CZTLTV9",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "e86cb5acf9f8860aeb3df3b4bdf72ac4",
 						"path" => "basics/arbeiten-mit-plentymarkets/boards",
 						"position" => 40,
