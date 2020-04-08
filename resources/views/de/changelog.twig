@@ -8,7 +8,7 @@
 
 <main id="main">
     <h1>plentymarkets Changelog</h1><div class="paragraph">
-<p>Erfahre, was sich in der Woche vom 26. März 2020 bis zum 01. April 2020 bei plentymarkets getan hat. Im Folgenden findest du alle Changelog-Einträge der letzten Wochen für stable- und early-Systeme.</p>
+<p>Erfahre, was sich in der Woche vom 02. April 2020 bis zum 08. April 2020 bei plentymarkets getan hat. Im Folgenden findest du alle Changelog-Einträge der letzten Wochen für stable- und early-Systeme.</p>
 </div><div class="paragraph">
 <p>Wenn du mehr zu den einzelnen Versionen erfahren oder auf eine andere Version wechseln möchtest, siehe die Handbuchseite <a href="/basics/admin-aufgaben/versionszyklus">Versionszyklus</a>. Um die Informationen, die auf dieser Seite gesammelt sind, in Echtzeit zu erhalten, abonniere die <a href="https://forum.plentymarkets.com/c/changelog" target="_blank" rel="noopener">Kategorie Changelog in unserem Forum</a>.</p>
 </div><div class="paragraph">
@@ -24,355 +24,6 @@
 <div class="paragraph">
 <p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
 </div>
-<h3 id="_amazon" class="discrete">Amazon</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Es ist nun auch für Händler die kein VCS (auch nicht LITE bzw. VCS plentymarkets) nutzen möglich, die Gutschriftsdokumente zu Amazon hochzuladen. Die erst als Pflichtfeld angenommene Transaktions-ID ist für diese Fälle kein Pflichtfeld. Betroffenene Händler können dann also ebenfalls über die Ereignisaktion <strong>Rechnung bei Amazon hochladen</strong> die Gutschriftsdokumente zu Amazon hochladen.</p>
-</li>
-<li>
-<p>Du kannst ab jetzt auch Amazon NL in den ASINS an der Variante auswählen.</p>
-</li>
-</ul>
-</div>
-<h3 id="_amazon_vcs" class="discrete">Amazon VCS</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Für <strong>Amazon VCS Lite</strong> (VCS plentymarkets, d.h. Generierung der Dokumente durch den Händler) wurde nun implementiert, dass beim Abgleich der VIDR-Berichte von Amazon ebenfalls Gutschriften zugeordnet und auf Basis der Daten von Amazon korrigiert werden.
-Bevor eine Korrektur durchgeführt wird, werden für bereits existierende Gutschriftendokumente Stornobelege erzeugt. Im Anschluss an die Korrektur wird ein neuer Beleg erzeugt. Dieser wird dann automatisch in die Warteschleife für den Upload zu Amazon eingereiht.</p>
-<div class="paragraph">
-<p>Ebenfalls angepasst wurde die Ereignisaktion <strong>Rechnung bei Amazon hochladen</strong>. Diese funktioniert nun auch für Gutschriften mit entsprechenden Dokumenten.
-Wichtig ist hier, dass die Ereignisaktion erst nach dem Import des VIDR-Berichts der Gutschrift funktioniert, da dieser Bericht die Transaktions-ID enthält, die für den Upload der Gutschriftendokumente notwendig ist. Die Transaktions-ID wird als OrderProperty mit der ID 79 zur Gutschrift hinzugefügt. Ohne diese Transaktions-ID ist es nicht möglich, ein Gutschriftendokument zu Amazon hochzuladen.</p>
-</div>
-<div class="paragraph">
-<p>Weil aktuell noch keine Möglichkeit gefunden wurde, die Transaktions-ID für Gutschriften zu erhalten, ohne den VIDR-Bericht zu importieren, können Händler, die weder VCS noch VCS Lite benutzen, weiterhin keine Gutschriftendokumente zu Amazon hochladen. Wir versuchen immer noch, eine Lösung für diese Händler zu finden.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_elastischer_export" class="discrete">Elastischer Export</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Ab sofort ist es möglich über den FormatDesigner einen Export der Eigenschaften vom Typ Kontakt mit Bezug zur Kontakt-ID zu konfigurieren:</p>
-<div class="paragraph">
-<p>ContactProperty wurde als Subtyp des Kontaktformats hinzugefügt und bietet als Filter die ID der Eigenschaft, den Wert der Eigenschaft, den Typ der Eigenschaft, die zur Eigenschaft verlinkte Kontakt-ID sowie die Option, alle zur Eigenschaft gespeicherten Daten zu exportieren.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_kataloge" class="discrete">Kataloge</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Ab sofort kann man Kataloge 1:1 kopieren.</p>
-</li>
-<li>
-<p>Ab sofort kann man Kataloge für den Export deaktivieren und aktivieren.</p>
-</li>
-<li>
-<p>Ab sofort kann man über einen Toggle die nicht obligatorischen Felder ein- und ausblenden. Standardmäßig werden immer nur die Pflichtfelder des jeweiligen Kataloges angezeigt.</p>
-</li>
-<li>
-<p>Ab sofort kann man den Katalognamen ändern.</p>
-</li>
-<li>
-<p>Ab sofort werden im Katalog bei den einzelnen Bereichen Überschriften ausgegeben.</p>
-</li>
-<li>
-<p>Ab sofort können Datenquellen miteinander kombiniert werden. Des Weiteren könnt ihr das Trennzeichen, das zwischen den Quellen stehen soll, beliebig wählen.</p>
-<div class="paragraph">
-<p>Weitere Informationen findest du auf der Handbuchseite <a href="/daten/daten-exportieren/kataloge-verwalten#70">Kataloge verwalten</a>.</p>
-</div>
-</li>
-<li>
-<p>Ab sofort könnt ihr Eigene Werte exportieren.</p>
-<div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/changelog/assets/kataloge-eigene-werte-exportieren.png" alt="Eigene Werte exportieren." width="640"></span></p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_mahnungsprozess" class="discrete">Mahnungsprozess</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Es gibt einen neuen Auftragsposition Typ <strong>dunning charge</strong> für die Mahngebühren (<code>typeId == 12</code>). Diese enthält keine Steuerinformationen (immer brutto).</p>
-</li>
-<li>
-<p>Die neue Auftragsposition <strong>dunning charge</strong> hat eine Property (<code>typeId == 3</code>, Dokumentnummer) mit der Dokumentnummer der Mahnung, für die die Position hinzugefügt wurde.</p>
-</li>
-<li>
-<p>Es gibt ein neues Dokument <strong>Mahnungstorno</strong> unter den Standortdokumenten (<strong>Einrichtung » Mandant » Standorte » Dokumente » Stornobeleg Mahnung</strong>), welches die letzte Mahnung storniert.</p>
-<div class="paragraph">
-<p>Weitere Informationen findest du auf der Handbuchseite <a href="/auftraege/auftragsdokumente/mahnungen-erzeugen">Mahnungen</a>.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_picklisten" class="discrete">Picklisten</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Es ist nun möglich, Picklisten auch für Umbuchungen (<strong>Waren » Bestellungen</strong>) zu generieren. Diese kann z.B. über den Bereich <strong>Aufträge » Fulfillment</strong> in den Abschnitt <strong>Pickliste</strong> erstellt werden.</p>
-</li>
-</ul>
-</div>
-<hr>
-<h2 id="_geändert" class="discrete">Geändert</h2>
-<div class="paragraph">
-<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
-</div>
-<h3 id="_elastischer_export_2" class="discrete">Elastischer Export</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Man konnte bislang nur seine ersten 50 Attribute im Attributs-Filter auswählen, dieses Limit wurde nun auf 350 hinauf gesetzt. Im Zuge der Änderung werden die Attribute nun auch alphabetisch sortiert.</p>
-</li>
-</ul>
-</div>
-<h3 id="_import" class="discrete">Import</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Wir haben innerhalb der Status-UI, das Feld <strong>ID</strong> in <strong>Verarbeitungs-ID</strong> umbenannt.</p>
-</li>
-<li>
-<p>Wir haben innerhalb der Status-UI im Datepicker <strong>Endzeit bis</strong> in <strong>Startzeit bis</strong> umbenannt.</p>
-</li>
-</ul>
-</div>
-<h3 id="_kataloge_2" class="discrete">Kataloge</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Wir haben den Unterpunkt <strong>Bild</strong> in <strong>Alle verfügbaren Bilder</strong> umbenannt.</p>
-</li>
-</ul>
-</div>
-<h3 id="_mahnungsprozess_2" class="discrete">Mahnungsprozess</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Es können maximal 4 Mahnungen erzeugt werden.</p>
-</li>
-<li>
-<p>Um eine Mahnung erzeugen zu können, muss eine nicht stornierte Rechnung existieren.</p>
-</li>
-<li>
-<p>Solange eine nicht stornierte Mahnung existiert, kann kein Stornobeleg zur Rechnung erzeugt werden.
-Die Anzeige der Mahngebühren am Auftrag erfolgt als steuerfreie Summe und nicht als Position in der Artikelliste.</p>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Wichtig"></i>
-</td>
-<td class="content">
-<div class="title">To-Do</div>
-<div class="paragraph">
-<p>Für die erfolgreiche Erzeugung eines Mahnungstornos muss zunächst die Dokument-Einstellung unter <strong>Einrichtung » Mandant » Standorte » Dokumente » Stornobeleg Mahnung</strong> konfiguriert werden</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/changelog/assets/mahnauftrag.png" alt="Mahnauftrag." width="640"></span></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/changelog/assets/mahnstorno.png" alt="Mahnstorno." width="640"></span></p>
-</div>
-<div class="paragraph">
-<p>Weitere Informationen findest du auf der Handbuchseite <a href="/auftraege/auftragsdokumente/mahnungen-erzeugen">Mahnungen</a>.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_prozesse" class="discrete">Prozesse</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Ab sofort wird die Meldung <strong>Keine Aufträge gefunden</strong> nicht mehr als Fehlermeldung ausgegeben. Die Meldungen verschwinden nach kurzer Zeit wieder von allein.</p>
-</li>
-</ul>
-</div>
-<h3 id="_otto" class="discrete">OTTO</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Die aktuelle Version der Merkmalsstrukur-Master-Datei vom 27.03.2020 von OTTO wurde eingespielt. Dadurch wurden für Attribut- und Merkmalverknüpfung neue Verknüpfungsmöglichkeiten und Vorgabewerte bereitgestellt. <a href="https://plentymarkets-discourse.s3.dualstack.eu-central-1.amazonaws.com/original/3X/e/4/e46b27f140ece43452372ebdd108e2ad909c6073.xlsx" target="_blank" rel="noopener">Die Datei könnt ihr hier herunterladen und als Referenz nutzen.</a></p>
-</li>
-</ul>
-</div>
-<hr>
-<h2 id="_behoben" class="discrete">Behoben</h2>
-<div class="paragraph">
-<p>Folgende Probleme wurden in den letzten 7 Tagen auf <strong>stable</strong> behoben.</p>
-</div>
-<h3 id="_amazon_2" class="discrete">Amazon</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Beim Upload der Dokumente für Gutschriften von Amazon kam es zu einem Fehler, weil die Gesamtbeträge positiv statt negativ übermittelt wurden.</p>
-<div class="paragraph">
-<p>Betroffene Gutschriften werden automatisch erneut hochgeladen.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_amazon_vcs_2" class="discrete">Amazon VCS</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Bei VCS Amazon (also nicht VCS plentymarkets / VCS Lite) kam es beim Importieren und Zuordnen der Transaktionen des Amazon-Umsatzsteuer-Kalkulationsberichts zu Fehlern, wenn zu einer Transaktion mehr als ein Transaktionstyp in einem Bericht vorhanden waren, z.B. <em>SHIPMENT</em> und <em>REFUND</em>.
-Dieses Problem entstand durch die Gruppierung der CSV-Zeilen auf Basis der Shipment ID statt der Transaction ID und der fehlenden Gruppierung nach Transaktions-Typen.
-Dies wurde nun korrigiert.</p>
-<div class="paragraph">
-<p>Zusätzlich wird die Transaction ID nun ebenfalls zusätzlich an den Aufträgen an der OrderProperty mit der Typ-ID 79 gespeichert. Dadurch wird sichergestellt, dass mehrere Gutschriften mit den gleichen Artikeln und -mengen und gleicher Shipment ID, aber unterschiedlicher Transaction ID, aus unterschiedlichen Berichten nicht demselben Auftrag zugeordnet werden.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_aufträge" class="discrete">Aufträge</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Bei eBay-Aufträgen mit der Zahlungsart eBay-Payments konnte es dazu kommen, dass Aufträge im Status 4 verbleiben, obwohl ausreichend Bestand verfügbar war. Zukünftig werden diese Aufträge korrekt in den Status 5 verschoben.</p>
-</li>
-<li>
-<p>Nachdem einige nicht länger genutzte Datenbank-Tabellen für Payment entfernt wurden, ist die Bereinigung der Aufträge fehlerhaft gelaufen. Nun werden wieder Aufträge bereinigt.</p>
-</li>
-</ul>
-</div>
-<h3 id="_auftragsdokumente" class="discrete">Auftragsdokumente</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Beim neuen AdressDesign, wenn das Rechnungsland dem Systemland entsprach und die Lieferadresse ein abweichendes Land hatte, wurde auf den Auftragsdokumenten in der Rechnungsadresse das Lieferland angezeigt. Dies wurde behoben.</p>
-</li>
-</ul>
-</div>
-<h3 id="_facetten" class="discrete">Facetten</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Durch einen Fehler wurden Facetten, die aus Mehrfachauswahleigenschaften bestehen, nicht im ES-Index gespeichert. Dadurch konnten diese Facetten auch nicht im Webshop dargestellt werden. Dieser Fehler konnte behoben werden.</p>
-</li>
-</ul>
-</div>
-<h3 id="_import_2" class="discrete">Import</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Wenn man bei Anlage einer neuen Zuordnung nicht auf <strong>Speichern</strong> klickte und das Fenster erneut öffnete, so konnte man nicht auf <strong>Speichern</strong> klicken. Diesen Fehler haben wir nun behoben.</p>
-</li>
-<li>
-<p>In einigen Systemen konnte aufgrund eines Fehlers keine Dateien von SFTP-Servern importiert werden. Diesen Fehler haben wir behoben.</p>
-</li>
-<li>
-<p>Dateien konnten nicht in das Archiv des SFTP-Servers verschoben werden. Diesen Fehler haben wir behoben.</p>
-</li>
-</ul>
-</div>
-<h3 id="_kataloge_3" class="discrete">Kataloge</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Die Schaltfläche <strong>Quelle entfernen</strong> hatte keine Funktion. Dieses Fehlverhalten haben wir nun behoben.</p>
-</li>
-<li>
-<p>Es gab einen Fehler bei der Paginierung. Wenn man z.B. auf Seite 2 klickte, gelangte man auf Seite 1 zurück. Diesen Fehler haben wir behoben.</p>
-</li>
-<li>
-<p>War der Sync-Name zu lang, so war kein Abstand zwischen den Buttons Status und Datei-Upload vorhanden. Diesen Fehler haben wir nun behoben.</p>
-</li>
-<li>
-<p>Wurde in einem Sync nur eine Zuordnung angelegt und gespeichert, so erschien die Fehlermeldung <strong>Die Positionsnummer ist bereits vergeben</strong>. Diesen Fehler haben wir nun behoben.</p>
-</li>
-<li>
-<p>Aufgrund eines Fehlers liefen in einigen Systemen die zeitgesteuerten Syncs nicht zur gewünschten Zeit. Diesen Fehler haben wir behoben.</p>
-</li>
-</ul>
-</div>
-<h3 id="_marktplatzverknüpfungen" class="discrete">Marktplatzverknüpfungen</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Beim Import der Marktplatzattributverknüpfung kam es zu folgendem Fehler:</p>
-<div class="paragraph">
-<p><code>Argument 1 passed to Plenty\Modules\Item\Syncs\Variation\Actions\UpdateItemImage::linkAttributeImage() must be of the type int, null given</code></p>
-</div>
-<div class="paragraph">
-<p>Dieser Fehler konnte behoben werden.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_merkmale" class="discrete">Merkmale</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Das Verknüpfen von Auswahlmerkmalen und das gleichzeitige Anlegen neuer Auswahlwerte der Merkmale funktioniert nun wieder wie gewohnt.</p>
-</li>
-</ul>
-</div>
-<h3 id="_otto_2" class="discrete">OTTO</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Unter <strong>Einrichtung » Märkte » OTTO » Modell » Tab: Artikelliste</strong> gab es zwei Fehler:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>War es nicht mehr möglich die Artikelkatalog-Log-Datei herunterzuladen und</p>
-</li>
-<li>
-<p>wenn mehrere Bestandsdateien innerhalb eines Prozesses generiert wurden, stand nur die erste Datei zur Verfügung.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Nachtrag: Neben der Artikelkatalog-Log-Datei werden alle anderen Dateien bis zum nächsten Export nicht zum Download zur Verfügung stehen, weil die Dateistruktur angepasst wurde.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_rewe_katalog" class="discrete">REWE-Katalog</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Innerhalb des REWE-Kataloges war nicht möglich hinzugefügte Quellen wieder zu entfernen. Diesen Fehler haben wir behoben.</p>
-</li>
-</ul>
-</div>
-<h3 id="_umbuchungen" class="discrete">Umbuchungen</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Bei der Erstellung einer Umbuchung konnte es zu dem Verhalten kommen, dass die Waren doppelt in der Umbuchung aufgeführt werden. Dies trat nur unter der Bedingung auf, dass direkt nach der Speicherung der Umbuchung über den Warenkorb, die Umbuchung über die Schaltfläche <strong>Bestellung auslösen</strong> bestellt wurde. Dieses Verhalten wurde behoben, so dass doppelte Waren nicht mehr angezeigt werden.</p>
-</li>
-</ul>
-</div>
-<hr>
-<h2 id="_gelöscht" class="discrete">Gelöscht</h2>
-<div class="paragraph">
-<p>Folgende Funktionalität wurde in den letzten 7 Tagen auf <strong>stable</strong> gelöscht.</p>
-</div>
-<h3 id="_facettensuche" class="discrete">Facettensuche</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Der Tab <strong>Such-Index</strong> in den Einstelungen der Facettensuche im Menü <strong>Einrichtung » Mandant » Global » Dienste » Facettensuche</strong> wurde gelöscht, da er nicht mehr gebraucht wird. Einstellungen an der Facettensuche werden im Menü <strong>System » Artikel » Suche » Frontend » Sucheinstellungen</strong> vorgenommen.</p>
-</li>
-</ul>
-</div>
-</div><div class="tab-pane fade" id="early" role="tabpanel" aria-labelledby="early-tab">
-<h2 id="_neu_2" class="discrete">Neu</h2>
-<div class="paragraph">
-<p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
-</div>
 <h3 id="_bestellungen" class="discrete">Bestellungen</h3>
 <div class="ulist">
 <ul>
@@ -384,7 +35,7 @@ Dies wurde nun korrigiert.</p>
 </li>
 </ul>
 </div>
-<h3 id="_elastischer_export_3" class="discrete">Elastischer Export</h3>
+<h3 id="_elastischer_export" class="discrete">Elastischer Export</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -392,7 +43,7 @@ Dies wurde nun korrigiert.</p>
 </li>
 </ul>
 </div>
-<h3 id="_import_3" class="discrete">Import</h3>
+<h3 id="_import" class="discrete">Import</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -401,12 +52,73 @@ Dies wurde nun korrigiert.</p>
 <li>
 <p>Ab sofort findet ihr in der Detailansicht der Status-UI das komplette Protokoll eines durchgelaufenen Syncs. Sollten Fehler aufgetreten sein, könnt ihr das Protokoll direkt kopieren und z.B. im Forum einfügen. Dies reduziert den Supportaufwand erheblich.</p>
 </li>
+<li>
+<p>Ab sofort könnt ihr über die Einstellung <strong>Globalen Cache nutzen</strong> entscheiden, ob eine Datei gecached werden soll oder nicht. Ist die Option nicht angehakt, könnt ihr die ein und dieselbe Datei jederzeit erneut importieren. Ist die Option angehakt, importiert das System nur geänderte Datenzeilen.</p>
+</li>
+</ul>
+</div>
+<h3 id="_otto_market" class="discrete">OTTO market</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Wir haben einen neuen Prozess für OTTO market implementiert, welcher Rechnungsdokumente an den Aufträgen importiert. Das Generieren einer eigenen Rechnung ist nicht länger möglich.</p>
+<div class="paragraph">
+<p>Weitere Informationen zu diesem Prozess findest du auf der Seite <a href="//maerkte/otto/otto-market#1200">OTTO market</a>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">To-Do</div>
+<div class="paragraph">
+<p>Solltet ihr bereits eigene Rechnungsdokumente erstellt haben und möchtet eine automatische Stornierung und nachträglichen Import wünschen, könnt ihr diese von OTTO market durch unsere Supporter importieren lassen. Meldet euch dafür im Forum in der <a href="https://forum.plentymarkets.com/c/multi-channel/Otto-Market" target="_blank" rel="noopener">Kategorie multi-channel:Otto-Market</a> mit einer Liste aller plentymarkets Auftrags-IDs, für die ihr eine Korrektur wünscht. Beachtet jedoch dabei, dass bei der Erzeugung von Stornobelegen und dem Import neuer Rechnungsdokumente Ereignisaktionen ausgelöst werden können. Diese sollten vor dem Import deaktiviert werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</li>
 </ul>
 </div>
 <hr>
-<h2 id="_geändert_2" class="discrete">Geändert</h2>
+<h2 id="_geändert" class="discrete">Geändert</h2>
 <div class="paragraph">
-<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
+<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
+</div>
+<h3 id="_aufträge" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Aufträge, die steuerrelevante Dokumente enthalten, lassen sich nicht mehr löschen. <a href="https://forum.plentymarkets.com/t/ankuendigung-loeschen-von-dokumenten-nur-noch-ueber-datenbereinigung-moeglich-announcement-documents-can-only-be-deleted-via-data-purge/582217" target="_blank" rel="noopener">Weitere Informationen zu dieser Änderung findest du im Forum.</a></p>
+</li>
+</ul>
+</div>
+<h3 id="_import_2" class="discrete">Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ab sofort wird der Status der einzelnen Importe nur noch für die letzten 7 Tage gespeichert.</p>
+</li>
+</ul>
+</div>
+<h3 id="_otto" class="discrete">OTTO</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Die aktuelle Version der Merkmalsstrukur-Master-Datei vom 03.04.2020 von OTTO wurde eingespielt. Dadurch wurden für Attribut- und Merkmalverknüpfung neue Verknüpfungsmöglichkeiten und Vorgabewerte bereitgestellt. <a href="https://plentymarkets-discourse.s3.dualstack.eu-central-1.amazonaws.com/original/3X/4/3/43fea466329390b4b73afa17373fbfa1956dc0d6.xlsx" target="_blank" rel="noopener">Die Datei könnt ihr hier herunterladen und als Referenz nutzen.</a></p>
+</li>
+</ul>
+</div>
+<h3 id="_picklisten" class="discrete">Picklisten</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Im Menü <strong>Aufträge » Fulfillment » Pickliste</strong> können nun auch Status für Umbuchungen ausgewählt werden.</p>
+</li>
+</ul>
 </div>
 <h3 id="_retourenlabels" class="discrete">Retourenlabels</h3>
 <div class="ulist">
@@ -420,9 +132,31 @@ Dies wurde nun korrigiert.</p>
 </ul>
 </div>
 <hr>
-<h2 id="_behoben_2" class="discrete">Behoben</h2>
+<h2 id="_behoben" class="discrete">Behoben</h2>
 <div class="paragraph">
-<p>Folgende Probleme wurden in den letzten 7 Tagen auf <strong>early</strong> behoben.</p>
+<p>Folgende Probleme wurden in den letzten 7 Tagen auf <strong>stable</strong> behoben.</p>
+</div>
+<h3 id="_amazon" class="discrete">Amazon</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Wenn beim Anlegen einer Retoure/Gutschrift sowohl das Paket als auch die Paketbestandteile übernommen wurden, konnte die Transaktion von Amazon nicht mehr der Gutschrift zugeordnet werden. Dadurch konnte auch das Dokument nicht hochgeladen werden.</p>
+</li>
+</ul>
+</div>
+<h3 id="_amazon_vcs" class="discrete">Amazon-VCS</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Beim Import des Amazon-Umsatzsteuer-Kalkulationsberichts für VCS Amazon (nicht VCS plentymarkets / VCS Lite) gab es ein Problem, welches verursachte, dass der Bericht als gelesen markiert wurde, während die enthaltenen Transaktionen nicht importiert wurden.</p>
+<div class="paragraph">
+<p>Dieses Problem existiert vom 31.03.2020 bis zum 06.04.2020. Betroffene Berichte wurden nicht als gelesen markiert und werden deswegen automatisch im Laufe des Tages importiert.</p>
+</div>
+</li>
+<li>
+<p>Beim Abgleich von Transaktionen mit mehreren Artikeln aus dem Amazon-Umsatzsteuer-Kalkulationsbericht für VCS Amazon (nicht VCS plentymarkets / Lite) konnte es zu Problemen bei der Zuordnung zu Aufträgen in plentymarkets kommen. Dieses Problem wurde jetzt behoben.</p>
+</li>
+</ul>
 </div>
 <h3 id="_eigenschaften" class="discrete">Eigenschaften</h3>
 <div class="ulist">
@@ -432,11 +166,278 @@ Dies wurde nun korrigiert.</p>
 </li>
 </ul>
 </div>
-<h3 id="_kataloge_4" class="discrete">Kataloge</h3>
+<h3 id="_import_3" class="discrete">Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Führte man einen Testimport durch und anschließend den eigentlichen Import wurden die ersten 10 Zeilen der CSV einfach ignoriert. Diesen Fehler haben wir behoben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_kataloge" class="discrete">Kataloge</h3>
 <div class="ulist">
 <ul>
 <li>
 <p>Wollte man Werte kombinieren, so war es nicht möglich ein Leerzeichen als Trennzeichen zu verwenden. Diesen Fehler haben wir behoben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_otto_2" class="discrete">OTTO</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Seit dem 01.04.2020 wurden wegen eines Problems bei der Validierung der Varianten in plentymarkets keine Artikel mit Varianten mehr exportiert. Dies ist nun nicht mehr der Fall.</p>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Hinweis</div>
+<div class="paragraph">
+<p>Dieses Problem betraf nicht OTTO market und auch nur OTTO-Händler, die mit der RDV-Version der Schnittstelle arbeiten.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="_preiskalkulation" class="discrete">Preiskalkulation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Nach dem Löschen einer Preiskalkulation unter <strong>Einrichtung » Artikel » Preiskalkulation</strong>, wurde die Preiskalkulation nicht an der Variante entfernt. Dieser Fehler konnte behoben werden.</p>
+</li>
+</ul>
+</div>
+</div><div class="tab-pane fade" id="early" role="tabpanel" aria-labelledby="early-tab">
+<h2 id="_neu_2" class="discrete">Neu</h2>
+<div class="paragraph">
+<p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
+</div>
+<h3 id="_import_4" class="discrete">Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ab sofort können innerhalb der StatusUI gestartete Syncs abgebrochen werden.</p>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Anzeigefehler</div>
+<div class="paragraph">
+<p>Nach dem Klicken auf die Schaltfläche <strong>Import abbrechen</strong> wird der Import tatsächlich sofort abgebrochen, aber in der UI wird der Import weiterhin als importierend angezeigt. Dies wird sich in den nächsten Tagen ändern.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+<li>
+<p>Im Sync-Typ <strong>Kontakte, Firmen und Adressen</strong> wurde die Option Kontakteigenschaft hinzugefügt, mit der du Kontakteigenschaften mit den folgenden Zuordnungsfeldern importieren kannst:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Eigenschafts-ID</p>
+</li>
+<li>
+<p>Eigenschaftstyp</p>
+</li>
+<li>
+<p>Eigenschaftswert</p>
+</li>
+<li>
+<p>die mit der Eigenschaft verlinkte Kontakt-ID</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="_prozesse" class="discrete">Prozesse</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Wenn Prozesse von verschiedenen Rechnern gestartet wurden und beide auf Aufträge zugriffen, konnte es durch die doppelte Bearbeitung der betroffenen Aufträge zu Problemen wie z.B. doppelten Versandanmeldungen kommen, weil gleichzeitig gestartete Prozesse auf Aufträge in einem bestimmten Auftragsstatus zugreifen konnten.</p>
+<div class="paragraph">
+<p>Mit der kommenden Anpassung wird dieses Verhalten wie folgt behandelt, um den Ablauf nutzerfreundlicher und weniger fehleranfällig zu gestalten:</p>
+</div>
+<div class="paragraph">
+<p>Wurde bereits ein Prozess gestartet, der auf Aufträge zugreift, erscheint beim Versuch, einen zweiten Prozess zu starten, die folgende Meldung in der Prozessübersicht:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/changelog/assets/prozesse-warteschlange.png" alt="Ein anderer Prozess ruft gerade Aufträge ab. Der Prozess wird automatisch fortgesetzt" width="640" height="sobald der Abruf abgeschlossen ist."></span></p>
+</div>
+<div class="paragraph">
+<p>Der zweite Prozess wird in eine Warteschlange aufgenommen und automatisch gestartet, sobald der erste Prozess den Auftragsabruf durchlaufen hat. Zusätzlich wird die Schaltfläche <strong>Prozesse</strong> deaktiviert, um ein Beenden des Prozesses zu verhindern und Fehlfunktionen zu vermeiden.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="_versanddienstleister" class="discrete">Versanddienstleister</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Wir haben in den Ereignisaktionen den neuen Filter <strong>Einwilligung zur Datenübermittlung an Versanddienstleister</strong> hinzugefügt, über den du einstellen kannst, ob die Einwilligung erteilt oder nicht erteilt wurde. Als Aktion dahinter kannst du z.B. wählen, dass das Versandprofil geändert wird, wenn Aufträge herausgefiltert wurden, bei denen deine Kunden im Webshop nicht eingewilligt haben, dass ihre Daten (E-Mail-Adresse und Telefonnummer) an den Versanddienstleister übertragen werden.</p>
+<div class="paragraph">
+<p>Bitte beachte, dass der Filter <em>nicht</em> mit dem Ereignis <strong>Neuer Auftrag</strong> (oder anderen Auftragstypen) funktioniert, da der Wert zur Einwilligung erst nach der Anlage des Auftrags dem Auftrag hinzugefügt wird. Verwende für diese Ereignisaktion also z.B. den Statuswechsel als Ereignis.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+<div class="title">Hinweis</div>
+<div class="paragraph">
+<p>Mit Ceres Version 5, die voraussichtlich am 14.04.2020 veröffentlicht wird, wird der Filter auch mit dem Ereignis <strong>Neuer Auftrag</strong> funktionieren. Hier wird der Wert zur Einwilligung direkt bei der Anlage des Auftrags hinzugefügt.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://forum.plentymarkets.com/t/ceres-5-was-kommt-in-der-naechsten-version-geplanter-release-14-04-2020/579806" target="_blank" rel="noopener">Weitere Informationen zu Ceres Version 5 findest du im Forum</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_geändert_2" class="discrete">Geändert</h2>
+<div class="paragraph">
+<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
+</div>
+<h3 id="_import_5" class="discrete">Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Hatte man im Tab <strong>Zuordnung</strong> keine Zuordnung angelegt, so wurde ein falscher Text ausgegeben und man hatte den Eindruck, dass dieser Bereich eine Suche ist. Nun wird folgender Text ausgegeben:</p>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/changelog/assets/keine-zuordnung-angelegt.png" alt="Es wurde noch keine Zuordnung angelegt." width="640"></span></p>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_behoben_2" class="discrete">Behoben</h2>
+<div class="paragraph">
+<p>Folgende Probleme wurden in den letzten 7 Tagen auf <strong>early</strong> behoben.</p>
+</div>
+<h3 id="_e_mail_templates" class="discrete">E-Mail-Templates</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Reihenfolge der E-Mail-Variablen <code>$ItemListPlain</code> und <code>$ItemListHTML</code> wurden korrigiert, sodass Bundle-Inhalte nicht mehr mit anderen Artikeln vermischt werden.</p>
+</li>
+</ul>
+</div>
+<h3 id="_import_6" class="discrete">Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In manchen Systemen kam es im Bereich <strong>Filter</strong> zu einem Fehlverhalten. Hatte man den Bereich offen und wechselte in ein anderes Tab, dann verdoppelten sich die Werte.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_gelöscht" class="discrete">Gelöscht</h2>
+<div class="paragraph">
+<p>Folgende Funktionalität wurde in den letzten 7 Tagen auf <strong>early</strong> gelöscht.</p>
+</div>
+<h3 id="_dynamischer_import" class="discrete">Dynamischer Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Folgende Formate wurden aus dem Dynamischen Import entfernt:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>attribute</code></p>
+</li>
+<li>
+<p><code>facet</code></p>
+</li>
+<li>
+<p><code>facet_reference</code></p>
+</li>
+<li>
+<p><code>Item_Character</code></p>
+</li>
+<li>
+<p><code>Item_Cross_Selling</code></p>
+</li>
+<li>
+<p><code>Item_Image</code></p>
+</li>
+<li>
+<p><code>Item_Image_Name</code></p>
+</li>
+<li>
+<p><code>Item_Image_Reference</code></p>
+</li>
+<li>
+<p><code>Item</code></p>
+</li>
+<li>
+<p><code>Serial_Keys</code></p>
+</li>
+<li>
+<p><code>Variation</code></p>
+</li>
+<li>
+<p><code>Variation_Bundle</code></p>
+</li>
+<li>
+<p><code>Variation_Barcode</code></p>
+</li>
+<li>
+<p><code>Variation_Supplier</code></p>
+</li>
+<li>
+<p><code>Variation_Categories</code></p>
+</li>
+<li>
+<p><code>Variation_Market_Ident_Number</code></p>
+</li>
+<li>
+<p><code>Variation_Warehouse</code></p>
+</li>
+<li>
+<p><code>Variation_Sales_Price</code></p>
+</li>
+<li>
+<p><code>Variation_Market_Link</code></p>
+</li>
+<li>
+<p><code>Variation_Webstore_Link</code></p>
+</li>
+<li>
+<p><code>Variation_Sku</code></p>
+</li>
+<li>
+<p><code>Variation_Additional_Sku</code></p>
+</li>
+<li>
+<p><code>Category</code></p>
+</li>
+<li>
+<p><code>Producer</code></p>
+</li>
+<li>
+<p><code>Set</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://forum.plentymarkets.com/t/abschaltung-dynamischer-import-deactivation-of-the-dynamic-import/576466" target="_blank" rel="noopener">Weitere Informationen zur Abschaltung des Dynamischen Imports findest du im Forum.</a></p>
+</div>
 </li>
 </ul>
 </div>
@@ -458,28 +459,58 @@ Dies wurde nun korrigiert.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To-do</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/sales/marktplaetze/elasticexportcdiscountcom_4738" target="_blank" rel="noopener">Cdiscount.com</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/individualisierung/widgets/shippingicons_6782" target="_blank" rel="noopener">Ceres Beautifier: Shipping Icons</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/individualisierung/widgets/cfourstorespecialswidget_6363" target="_blank" rel="noopener">Shopaktionen Widget</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/individualisierung/widgets/cfourfullcrossselling_6125" target="_blank" rel="noopener">Crossselling Artikellisten für die Produkt Seite</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.10</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/integration/simplyletter_5104" target="_blank" rel="noopener">Simplyletter</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.5.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/integration/ergoversicherungsmodul_5976">ERGO Versicherungsmodul</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/payment/sumup_5141" target="_blank" rel="noopener">SumUp</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/sales/marktplaetze/elasticexportkaufluxde_4737">kauflux.de</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.8</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/payment/verifonezvt_5504" target="_blank" rel="noopener">VerifoneZVT</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/individualisierung/widgets/cfourfacebookpixel_6392" target="_blank" rel="noopener">Facebook Pixel mit Tracking Events</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/integration/plentybasecustomerdisplaypos_6359">plentyBase CustomerDisplayPOS</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.5.4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/integration/pricemonitorplentyintegration_6217" target="_blank" rel="noopener">Pricemonitor</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/payment/santanderpaymentsolutions_6231" target="_blank" rel="noopener">Santander Payment Solutions</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.4.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/individualisierung/widgets/ordertrackinglink_6361">Sendungsverfolgungs-Link</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/individualisierung/widgets/cfourwhatsappshare_5323" target="_blank" rel="noopener">Whatsapp Share Button</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/individualisierung/widgets/cfourwidgetswundertuete_5993" target="_blank" rel="noopener">Widgets Wundertüte</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 </tbody>
