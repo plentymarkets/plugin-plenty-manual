@@ -21131,7 +21131,7 @@ class Metadata {
 						"url" => "/en/item/frontend-item-search",
 						"level" => 3,
 						"title" => "Search function in the online store",
-						"keywords" => "Facets, online store search, Faceted search, front end search, frontend search, store search",
+						"keywords" => "Facet, Facets, Store search, Online store search, Webshop search, Faceted search, Facetted search, Search bar, Search box, Search field, Search, Front end, Online store, Item search, Search suggestion, Search suggestions",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Search function in the online store. The following information is available:",
