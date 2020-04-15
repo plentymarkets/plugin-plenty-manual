@@ -21195,7 +21195,7 @@ class Metadata {
 						"url" => "/en/item/online-store/callisto-templates",
 						"level" => 3,
 						"title" => "Item templates in Callisto",
-						"keywords" => "Webshop, Online store, Online shop, Shop, Store, Frontend, Front end, Item, Items, Callisto, Template, Templates, Item templates, Item template, Text, Texts, Description, Descriptions, $Description, Template variable, Template variables, Template function, Template functions, Variable, Function, Description1, Description 1, Content, Content category, Category of the type Content",
+						"keywords" => "Webshop, Online store, Online shop, Shop, Store, Frontend, Front end, Item, Items, Callisto, Template, Templates, Item templates, Item template, Text, Texts, Description, Descriptions, Template variable, Template variables, Template function, Template functions, Variable, Function, Description1, Description 1, Content, Content category, Category of the type Content",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Item templates in Callisto. The following information is available:",
