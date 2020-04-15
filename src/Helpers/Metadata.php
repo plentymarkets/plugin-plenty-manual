@@ -13469,11 +13469,11 @@ class Metadata {
 				"urlName" => "2020-04-08",
 				"url" => "/changelog/2020-04-08",
 				"level" => 2,
-				"title" => "plentymarkets Changelog",
+				"title" => "Changelog 08. April 2020",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 08. April 2020. Hier findest du folgende Informationen:",
 				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
