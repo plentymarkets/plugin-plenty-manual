@@ -7571,7 +7571,7 @@ class Metadata {
 						"url" => "/artikel/webshop/callisto-vorlagen",
 						"level" => 3,
 						"title" => "Artikelvorlagen in Callisto",
-						"keywords" => "Webshop, Shop, Online-Shop, Frontend, Artikel, Callisto, Vorlage, Vorlagen, Artikelvorlage, Artikelvorlagen, Beschreibungstexte, Beschreibungstext, Beschreibung, $Description, Template-Variable, Template-Variablen, Template-Funktion, Template-Funktionen, Variable, Funktion, Beschreibung1, Beschreibung 1, Content, Content-Kategorie, Kategorie des Typs Content, Kategorie vom Typ Content",
+						"keywords" => "Webshop, Shop, Online-Shop, Frontend, Artikel, Callisto, Vorlage, Vorlagen, Artikelvorlage, Artikelvorlagen, Beschreibungstexte, Beschreibungstext, Beschreibung, Description, Template-Variable, Template-Variablen, Template-Funktion, Template-Funktionen, Variable, Funktion, Beschreibung1, Beschreibung 1, Content, Content-Kategorie, Kategorie des Typs Content, Kategorie vom Typ Content",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Artikelvorlagen in Callisto. Hier findest du folgende Informationen:",
