@@ -23871,7 +23871,7 @@ class Metadata {
 				"url" => "/en/data/api-log",
 				"level" => 2,
 				"title" => "Old: API log",
-				"keywords" => "plentymarkets API, API Log, API",
+				"keywords" => "plentymarkets API, API Log, API, log entry, interfaces, SOAP log, SOAP statistics",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Old: API log. The following information is available:",
