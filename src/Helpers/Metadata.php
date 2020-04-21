@@ -21417,6 +21417,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "1a3f2ab58a5615abf45614fca73e1377",
+				"path" => "stock-management/managing-bbd-batch",
+				"position" => 60,
+				"urlName" => "managing-bbd-batch",
+				"url" => "/en/stock-management/managing-bbd-batch",
+				"level" => 2,
+				"title" => "Managing BBD/batch",
+				"keywords" => "Best before, best before date, BBD, batch, batches, durability, durable, status maximum durability, item expired, item expires, item okay",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Managing BBD/batch. The following information is available:",
+				"languageID" => "AHPX91D",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "338582b580255bb2b901aff001478c4c",
 				"path" => "stock-management/taking-stock",
 				"position" => 70,
