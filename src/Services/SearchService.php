@@ -196,10 +196,14 @@ class SearchService
 
         foreach( $resultData["hits"]["hits"] as $hit )
         {
+            if(!isset($hit["_source"]["position"]) || trim($hit["_source"]["position"]) === '0')
+            {
+                continue;
+            }
+
             $doc = [
                 "title" => $hit["highlight"]["title"][0],
                 "description" => $hit["highlight"]["description"][0],
-                "position" => $hit["_source"]["position"],
                 "url" => $hit["_source"]["url"],
                 "sections" => [],
                 "cutBefore" => false,
@@ -215,8 +219,7 @@ class SearchService
                 $doc["description"] = $this->trim( $hit["_source"]["description"], $this->snippetLength );
             }
 
-            if( isset($hit["_source"]["languageID"]) && trim($hit["_source"]["languageID"]) != ''
-            && isset($hit["_source"]["position"]) && trim($hit["_source"]["position"]) != '0')
+            if( isset($hit["_source"]["languageID"]) && trim($hit["_source"]["languageID"]) != '')
             {
                 array_push($storageArray, $hit["_source"]["languageID"]);
             }
