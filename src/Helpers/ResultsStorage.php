@@ -5,7 +5,7 @@ namespace PlentyManual\Helpers;
 class ResultsStorage
 {
 
-    private $storageArray;
+    private static $storageArray = null;
 
     public function __construct()
     {
@@ -13,22 +13,29 @@ class ResultsStorage
 
     public function deleteResults()
     {
-        foreach ($this->storageArray as $key => $value)
-            unset($this->storageArray[$key]);
+        foreach (self::$storageArray as $key => $value)
+            unset(self::$storageArray[$key]);
         return true;
     }
 
     public function setResults($arr)
     {
         $deleteFlag = false;
-        $deleteFlag = $this->deleteResults();
-        $this->storageArray = $arr;
+        if(self::$storageArray === null)
+        {
+            self::$storageArray = $arr;
+        }
+        else
+        {
+            $deleteFlag = $this->deleteResults();
+            self::$storageArray = $arr;
+        }
 
         return $arr;
     }
 
     public function getResults()
     {
-        return $this->storageArray;
+        return self::$storageArray;
     }
 }

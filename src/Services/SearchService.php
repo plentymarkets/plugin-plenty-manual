@@ -95,7 +95,7 @@ class SearchService
         ];
 
         $mainQuery = [
-            "_source" => ["url", "title", "description", "languageID"],
+            "_source" => ["url", "title", "description", "languageID", "position"],
             "query" => [
                 "dis_max" => [
                     "queries" => [
@@ -196,6 +196,11 @@ class SearchService
 
         foreach( $resultData["hits"]["hits"] as $hit )
         {
+            if(!isset($hit["_source"]["position"]) || trim($hit["_source"]["position"]) === '0')
+            {
+                continue;
+            }
+
             $doc = [
                 "title" => $hit["highlight"]["title"][0],
                 "description" => $hit["highlight"]["description"][0],
