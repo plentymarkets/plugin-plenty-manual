@@ -16,11 +16,10 @@
 <li><a href="#500"><span>10.</span><span> Ereignisaktionen einrichten</span></a>
 <ul class="sectlevel2">
 <li><a href="#550"><span>10.1.</span><span> DHL-Retourenlabel generieren</span></a></li>
-<li><a href="#600"><span>10.2.</span><span> Auftragsbestätigung an OTTO melden</span></a></li>
-<li><a href="#700"><span>10.3.</span><span> Versandinformation an OTTO melden</span></a></li>
-<li><a href="#800"><span>10.4.</span><span> Auftragsstornierung an OTTO melden</span></a></li>
-<li><a href="#900"><span>10.5.</span><span> Retoure an OTTO melden</span></a></li>
-<li><a href="#1000"><span>10.6.</span><span> Ablehnung der Retoure an OTTO melden</span></a></li>
+<li><a href="#700"><span>10.2.</span><span> Versandinformation an OTTO melden</span></a></li>
+<li><a href="#800"><span>10.3.</span><span> Auftragsstornierung an OTTO melden</span></a></li>
+<li><a href="#900"><span>10.4.</span><span> Retoure an OTTO melden</span></a></li>
+<li><a href="#1000"><span>10.5.</span><span> Ablehnung der Retoure an OTTO melden</span></a></li>
 </ul>
 </li>
 <li><a href="#1050"><span>11.</span><span> Auftragsbearbeitung bei OTTO market</span></a>
@@ -451,9 +450,6 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <div class="ulist">
 <ul>
 <li>
-<p>Auftragsbestätigung an OTTO melden</p>
-</li>
-<li>
 <p>Versandinformation an OTTO melden</p>
 </li>
 <li>
@@ -479,7 +475,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <td class="content">
 <div class="title">Reihenfolge der Ereignisaktionen beachten</div>
 <div class="paragraph">
-<p>Beachte bei der Auftragsbearbeitung unbedingt die Reihenfolge der Ereignisaktionen. Zuerst muss die Ereignisaktion <a href="#550">DHL-Retourenlabel generieren</a> ausgelöst werden, als nächstes die Ereignisaktion <a href="#600">Auftragsbestätigung an OTTO melden</a> und danach die Ereignisaktion <a href="#700">Versandinformation an OTTO melden</a>. Wenn die Ereignisaktionen nicht in dieser Reihenfolge ausgelöst werden, kann keine Versandbestätigung an OTTO market gesendet werden.</p>
+<p>Beachte bei der Auftragsbearbeitung unbedingt die Reihenfolge der Ereignisaktionen. Zuerst muss die Ereignisaktion <a href="#550">DHL-Retourenlabel generieren</a> ausgelöst werden und danach die Ereignisaktion <a href="#700">Versandinformation an OTTO melden</a>. Wenn zuvor kein Retourenlabel erstellt wurde, kann keine Versandbestätigung an OTTO market gesendet werden.</p>
 </div>
 </td>
 </tr>
@@ -491,7 +487,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <p>Wenn OTTO market-Aufträge in dein plentymarkets System importiert wurden, müssen für diese Aufträge DHL-Retourenlabels generiert werden, bevor der Versand bei OTTO market bestätigt wird. Mit der Aktion <strong>DHL Retoure Online-Label generieren</strong> wird automatisch eine Tracking-Nummer für eine Retoure (retTrackingNumber) erstellt, die am Auftrag hinterlegt wird. Dadurch kann sichergestellt werden, dass es eine Tracking-Nummer für eine Retoure gibt, falls Kunden einen Artikel zurücksenden möchten.<br></p>
 </div>
 <div class="paragraph">
-<p>Damit die Tracking-Nummer zusammen mit der Versandbestätigung an OTTO market gesendet wird, musst du zwei Ereignisaktionen erstellen, die hintereinander ausgelöst werden: 1. <strong>DHL Retoure Online-Label generieren</strong> und 2. <strong>Auftragsbestätigung an OTTO melden</strong>.</p>
+<p>Damit die Tracking-Nummer zusammen mit der Versandbestätigung an OTTO market gesendet wird, musst du die Ereignisaktion <strong>DHL Retoure Online-Label generieren</strong> erstellen.</p>
 </div>
 <div class="paragraph">
 <p><strong>Hinweis:</strong> Das Retourenlabel kann momentan nur mit DHL generiert werden. Weitere Versanddienstleister folgen.</p>
@@ -587,84 +583,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 </table>
 </div>
 <div class="sect2">
-<h3 id="600">10.2. Auftragsbestätigung an OTTO melden</h3>
-<div class="paragraph">
-<p>Die Ereignisaktion, mit der du die Auftragsbestätigung an OTTO meldest, muss ausgelöst werden, nachdem ein DHL-Retourenlabel generiert wurde. Wie du die <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> zur Auftragsbestätigung einrichtest, ist im Folgenden beschrieben.</p>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Ereignisaktion einrichten</div>
-<div class="content">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
-</li>
-<li>
-<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
-→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
-</li>
-<li>
-<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
-</li>
-<li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#auftragsbestaetigung-otto">Tabelle 3</a>.</p>
-</li>
-<li>
-<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
-</li>
-<li>
-<p>Nimm die Einstellungen gemäß <a href="#auftragsbestaetigung-otto">Tabelle 3</a> vor.</p>
-</li>
-<li>
-<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
-</li>
-<li>
-<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<table id="auftragsbestaetigung-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 3. Ereignisaktion um Auftragsbestätigung an OTTO market zu melden</caption>
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Einstellung</th>
-<th class="tableblock halign-left valign-top">Option</th>
-<th class="tableblock halign-left valign-top">Auswahl</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Statuswechsel: beliebigen Status vor Versand wählen</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OTTO market</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Auftragsbestätigung an OTTO melden</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="700">10.3. Versandinformation an OTTO melden</h3>
+<h3 id="700">10.2. Versandinformation an OTTO melden</h3>
 <div class="paragraph">
 <p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO market über den Versand des Artikels zu informieren.</p>
 </div>
@@ -677,7 +596,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <td class="content">
 <div class="title">Adresse des Absenders hinterlegen</div>
 <div class="paragraph">
-<p>Die Versandbestätigung wird nur an OTTO market gesendet, wenn die Absenderadresse des Händlers hinterlegt wurde. Die Adresse speicherst du in den Einstellungen eines Lagers unter <strong>Einrichtung » Waren » Lager »</strong> <em>Lager wählen</em> <strong>Einstellungen</strong>. Du musst die Adresse in dem Lager speichern, das für den jeweiligen Auftrag verwendet wird.</p>
+<p>Die Versandbestätigung wird nur an OTTO market gesendet, wenn die Absenderadresse des Händlers hinterlegt wurde. Die Adresse speicherst du in den Einstellungen eines Lagers unter <strong>Einrichtung » Waren » Lager »</strong> <em>Lager wählen</em> <strong>» Einstellungen</strong>. Du musst die Adresse in dem Lager speichern, das für den jeweiligen Auftrag verwendet wird.</p>
 </div>
 </td>
 </tr>
@@ -699,13 +618,13 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#versandbestaetigung-otto">Tabelle 4</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#versandbestaetigung-otto">Tabelle 3</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#versandbestaetigung-otto">Tabelle 4</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#versandbestaetigung-otto">Tabelle 3</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -718,7 +637,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 </div>
 </div>
 <table id="versandbestaetigung-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 4. Ereignisaktion um Versandinformation an OTTO market zu melden</caption>
+<caption class="title">Tabelle 3. Ereignisaktion um Versandinformation an OTTO market zu melden</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -756,7 +675,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 </table>
 </div>
 <div class="sect2">
-<h3 id="800">10.4. Auftragsstornierung an OTTO melden</h3>
+<h3 id="800">10.3. Auftragsstornierung an OTTO melden</h3>
 <div class="paragraph">
 <p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO market über die Stornierung eines Auftrags zu informieren. Es kann aus verschiedenen Gründen erforderlich sein, Aufträge zu stornieren. Wenn du beispielsweise als Händler den Auftrag selbst stonierst, wähle <strong>Status [8] Storniert</strong>. Wenn ein Kunde den Auftrag storniert, wähle <strong>Status [8.1] Storniert durch Kunden</strong>.</p>
 </div>
@@ -776,13 +695,13 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#auftragsstornierung-otto">Tabelle 5</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#auftragsstornierung-otto">Tabelle 4</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#auftragsstornierung-otto">Tabelle 5</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#auftragsstornierung-otto">Tabelle 4</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -795,7 +714,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 </div>
 </div>
 <table id="auftragsstornierung-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 5. Ereignisaktion um Auftragsstornierung an OTTO market zu melden</caption>
+<caption class="title">Tabelle 4. Ereignisaktion um Auftragsstornierung an OTTO market zu melden</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -833,7 +752,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 </table>
 </div>
 <div class="sect2">
-<h3 id="900">10.5. Retoure an OTTO melden</h3>
+<h3 id="900">10.4. Retoure an OTTO melden</h3>
 <div class="paragraph">
 <p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO market über eine Retoure zu informieren.</p>
 </div>
@@ -853,13 +772,13 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#retoure-otto">Tabelle 6</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#retoure-otto">Tabelle 5</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#retoure-otto">Tabelle 6</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#retoure-otto">Tabelle 5</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -872,7 +791,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 </div>
 </div>
 <table id="retoure-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 6. Ereignisaktion um Retouren an OTTO market zu melden</caption>
+<caption class="title">Tabelle 5. Ereignisaktion um Retouren an OTTO market zu melden</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -910,7 +829,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 </table>
 </div>
 <div class="sect2">
-<h3 id="1000">10.6. Ablehnung der Retoure an OTTO melden</h3>
+<h3 id="1000">10.5. Ablehnung der Retoure an OTTO melden</h3>
 <div class="paragraph">
 <p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO market über die Ablehnung einer Retoure zu informieren.</p>
 </div>
@@ -930,13 +849,13 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ablehnung-retoure-otto">Tabelle 7</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ablehnung-retoure-otto">Tabelle 6</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ablehnung-retoure-otto">Tabelle 7</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ablehnung-retoure-otto">Tabelle 6</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -949,7 +868,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 </div>
 </div>
 <table id="ablehnung-retoure-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 7. Ereignisaktion um die Ablehnung einer Retoure an OTTO market zu melden</caption>
+<caption class="title">Tabelle 6. Ereignisaktion um die Ablehnung einer Retoure an OTTO market zu melden</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1019,6 +938,10 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <div class="qlist qanda">
 <ol>
 <li>
+<p><em>Wie setzt sich der Produkttitel bei OTTO market zusammen?</em></p>
+<p>Der Titel, der bei OTTO market an deinem Artikel angezeigt wird, setzt sich aus den folgenden Feldern zusammen, die du im Katalog verknüpfst: <strong>Marke</strong> + <strong>Modell</strong> + <strong>Besondere Merkmale</strong> + alle Felder, bei denen in Klammern <strong>Namenbildend</strong> steht.</p>
+</li>
+<li>
 <p><em>Warum werden meine Artikel nicht zu OTTO market exportiert?</em></p>
 <p>Durch die Suche folgender Logs kannst du feststellen, warum bestimmte Artikel nicht zu OTTO market exportiert werden und deshalb dort nicht verfügbar sind.</p>
 <div class="olist arabic instruction">
@@ -1044,7 +967,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <li>
 <p>Klicke auf <strong>Marke hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>), um die Marke <strong>AudioAffairs</strong> hinzuzufügen.</p>
 <table id="filter-artikelexport-log" class="tableblock frame-all grid-none stretch">
-<caption class="title">Tabelle 8. Suchbegriffe für OTTO market im Log</caption>
+<caption class="title">Tabelle 7. Suchbegriffe für OTTO market im Log</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
