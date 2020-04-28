@@ -12594,7 +12594,7 @@ class Metadata {
 				"url" => "/maerkte/bol-com",
 				"level" => 2,
 				"title" => "bol.com",
-				"keywords" => "bol.com, bol, BolItemExport, BolOfferExport, Marktplatz, bol.com einrichten, bol.com Marktplatz, Multi-Channel, Multichannel, Multi-Channel bol.com, Multichannel bol.com, multi channel bol.com, bol, Marktplatz Niederlande, Marktplatz Holland, bol.nl",
+				"keywords" => "bol.com, bol, BolItemExport, Marktplatz, bol.com einrichten, bol.com Marktplatz, Multi-Channel, Multichannel, Multi-Channel bol.com, Multichannel bol.com, multi channel bol.com, bol, Marktplatz Niederlande, Marktplatz Holland, bol.nl",
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz bol.com in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich bol.com. Hier findest du folgende Informationen:",

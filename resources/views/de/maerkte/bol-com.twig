@@ -11,12 +11,13 @@
 <li><a href="#400"><span>5.</span><span> Kategorien verknüpfen</span></a></li>
 <li><a href="#450"><span>6.</span><span> Merkmale erstellen</span></a></li>
 <li><a href="#500"><span>7.</span><span> Verkaufspreis festlegen</span></a></li>
-<li><a href="#600"><span>8.</span><span> Artikel- und Angebotsexport einrichten</span></a></li>
+<li><a href="#600"><span>8.</span><span> Artikelexport einrichten</span></a></li>
 <li><a href="#650"><span>9.</span><span> Zahlungsart aktivieren</span></a></li>
 <li><a href="#700"><span>10.</span><span> Versandbestätigungen automatisch senden</span></a></li>
 <li><a href="#800"><span>11.</span><span> Retourenstatus automatisch senden</span></a></li>
 <li><a href="#900"><span>12.</span><span> Stornierungen automatisch senden</span></a></li>
-<li><a href="#1000"><span>13.</span><span> API-Log abrufen</span></a></li>
+<li><a href="#800"><span>13.</span><span> bol.com über direkte Retouren informieren</span></a></li>
+<li><a href="#1000"><span>14.</span><span> Log abrufen</span></a></li>
 </ul>
 </div>
         </div>
@@ -28,6 +29,21 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Der niederländische Online-Marktplatz <a href="http://bol.com" target="_blank" rel="noopener">bol.com</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> hat sich zum führenden Online-Marktplatz der Benelux entwickelt und vertreibt eine breite Angebotspalette inklusive Elektronik, Multimedia, Spielzeug etc.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Neue API-Version 3.0</div>
+<div class="paragraph">
+<p>Die Version 2.0 der API-Schnittstelle von bol.com wird am 12.5.2020 deaktivert. Du kannst ab sofort auf Version 3.0 der API-Schnittstelle wechseln. Wie das geht, erfährst du im <a href="https://forum.plentymarkets.com/t/bol-com-integration-neuer-api-versionen-3-und-4-integration-of-new-api-versions-3-and-4/587773" target="_blank" rel="noopener">plentymarkets Forum</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div><div class="sect1">
@@ -74,17 +90,34 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Automatischen Datenaustausch aktivieren</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ist der Datenaustausch aktiviert, findet ein täglicher Artikelexport, ein stündlicher Bestandsabgleich und ein viertelstündlicher Auftragsimport statt.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ist der Datenaustausch aktiviert, werden die folgenden Daten mit bol.com ausgetauscht:<br>
+* Täglicher Artikelexport<br>
+* Stündlicher Bestandsabgleich<br>
+* Viertelstündlicher Auftragsimport<br>
+* Stündlicher Import von auf bol.com angemeldeten Retouren<br>
+<strong><em>Tipp:</em></strong> Retouren werden automatisch mit dem Status [9.00] importiert.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>öffentlicher API-Schlüssel</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">API-Schlüssel eintragen, wie von bol.com erhalten.<br>
-<strong>Hinweis:</strong> Momentan muss der API-Schlüssel für Version 2.0 verwendet werden.</p></td>
+<strong><em>Hinweis:</em></strong> Momentan muss der API-Schlüssel für Version 2.0 verwendet werden.<br>
+<strong><em>Hinweis:</em></strong> Sobald Client ID und Client Secret gespeichert wurden, werden Daten über die API-Version 3.0 mit bol.com ausgetauscht. Wenn Client ID und Client Secret aus den Einstellungen entfernt werden und noch API-Schlüssel gespeichert sind, wird wieder die API-Version 2.0 genutzt.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>privater API-Schlüssel</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">API-Schlüssel eintragen, wie von bol.com erhalten.<br>
-<strong>Hinweis:</strong> Momentan muss der API-Schlüssel für Version 2.0 verwendet werden.</p></td>
+<strong><em>Hinweis:</em></strong> Momentan muss der API-Schlüssel für Version 2.0 verwendet werden.<br>
+<strong><em>Hinweis:</em></strong> Sobald Client ID und Client Secret gespeichert wurden, werden Daten über die API-Version 3.0 mit bol.com ausgetauscht. Wenn Client ID und Client Secret aus den Einstellungen entfernt werden und noch API-Schlüssel gespeichert sind, wird wieder die API-Version 2.0 genutzt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client ID für Version 3.0 eingeben, wie von bol.com erhalten.<br>
+<strong><em>Hinweis:</em></strong> Sobald Client ID und Client Secret gespeichert wurden, werden Daten über die API-Version 3.0 mit bol.com ausgetauscht. Wenn Client ID und Client Secret aus den Einstellungen entfernt werden und noch API-Schlüssel gespeichert sind, wird wieder die API-Version 2.0 genutzt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client Secret</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client Secret für Version 3.0 eingeben, wie von bol.com erhalten.<br>
+<strong><em>Hinweis:</em></strong> Sobald Client ID und Client Secret gespeichert wurden, werden Daten über die API-Version 3.0 mit bol.com ausgetauscht. Wenn Client ID und Client Secret aus den Einstellungen entfernt werden und noch API-Schlüssel gespeichert sind, wird wieder die API-Version 2.0 genutzt.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mandant</strong></p></td>
@@ -106,7 +139,19 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Auftragsimport alle 15 Minuten</p>
+<p>Auftragsimport alle 15 Minuten<br>
+<strong><em>Hinweis:</em></strong> Aufträge, bei denen bol.com versendet, werden nicht importiert.</p>
+</li>
+<li>
+<p>Einmal stündlich Aktualisierung von Angeboten für Varianten, deren Bestand in den letzten 90 Minuten aktualisiert wurde<br>
+<strong><em>Hinweis:</em></strong> Die Erstellung des Angebots muss abgeschlossen sein, bevor Bestandsaktualisierungen gesendet werden können. Der Status der Angebotserstellung wird einmal täglich geprüft. Es kann also bis zu 24 Stunden dauern, bis ein Angebot nach der Erstellung zum ersten Mal aktualisiert wird.</p>
+</li>
+<li>
+<p>Einmal täglich Artikelexport</p>
+</li>
+<li>
+<p>Einmal stündlich Import von auf bol.com angemeldeten Retouren<br>
+<strong><em>Tipp:</em></strong> Retouren werden automatisch mit dem Status [9.00] importiert.</p>
 </li>
 </ul>
 </div>
@@ -138,7 +183,7 @@
 <h2 id="300">4. Variantenverfügbarkeit einstellen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Artikel, die du auf bol.com verkaufen möchtest, müssen im Menü <strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Varianten-ID</strong> im Tab <strong>Verfügbarkeit</strong> aktiviert werden.</p>
+<p>Varianten, die du auf bol.com verkaufen möchtest, müssen im Menü <strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Varianten-ID</strong> im Tab <strong>Verfügbarkeit</strong> aktiviert werden.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -292,10 +337,10 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="600">8. Artikel- und Angebotsexport einrichten</h2>
+<h2 id="600">8. Artikelexport einrichten</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In diesem Kapitel wird beschrieben, wie du deine Artikel und Angebote zu bol.com überträgst. Artikel und Angebote werden über den elastischen Export zu bol.com übertragen. Zunächst legst du das Datenformat <strong>BolItemExport</strong> und <strong>BolOfferExport</strong> an und übermittelst im Anschluss die Dateien zu bol.com. Beide Dateien müssen an bol.com übergeben werden, damit deine Artikel bei bol.com verkauft werden können.</p>
+<p>In diesem Kapitel wird beschrieben, wie du deine Artikel zu bol.com überträgst. Artikel werden über den elastischen Export zu bol.com übertragen. Zunächst legst du das Datenformat <strong>BolItemExport</strong> an und übermittelst im Anschluss die Datei zu bol.com.</p>
 </div>
 <div class="paragraph">
 <p>Folgende Pflichtfelder müssen für den Artikelexport mitgegeben werden:</p>
@@ -325,36 +370,8 @@
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Folgende Pflichtfelder müssen für den Angebotsexport mitgegeben werden:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>EAN</p>
-</li>
-<li>
-<p>SKU</p>
-</li>
-<li>
-<p>Bestand</p>
-</li>
-<li>
-<p>Preis</p>
-</li>
-<li>
-<p>Artikelzustand</p>
-</li>
-<li>
-<p>Versandverfügbarkeit</p>
-</li>
-<li>
-<p>Versand durch</p>
-</li>
-</ul>
-</div>
 <div class="paragraph instruction">
-<p>Export einrichten:</p>
+<p>Artikelexport einrichten:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -403,7 +420,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Format <strong>BolItemExport</strong> für den Artkelexport wählen oder <strong>BolOfferExport</strong> für den Angebotsexport aus der Dropdown-Liste wählen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Format <strong>BolItemExport</strong> für den Artikelexport aus der Dropdown-Liste wählen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limit</strong></p></td>
@@ -420,13 +437,11 @@
 <strong>Benutzername</strong>,<br>
 <strong>Passwort</strong>,<br>
 <strong>Pfad</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter eingeben. Die Zugangsdaten für den Server inklusive Passwort und Benutzername werden von bol.com zur Verfügung gestellt. Der Dateiname beim BolOfferExport hat den Aufbau &lt;SellerID&gt;.csv. Der Dateiname beim BolItemExport hat den Aufbau &lt;SellerID&gt;.txt.<br>
-Die Datei für das Format <strong>BolItemExport</strong> muss im Ordner <strong>/SQUARE/feed</strong> gespeichert werden.<br>
-Die Datei für das Format <strong>BolOfferExport</strong> muss im Ordner <strong>/inbound</strong> gespeichert werden.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter eingeben. Die Zugangsdaten für den Server inklusive Passwort und Benutzername werden von bol.com zur Verfügung gestellt. Der Dateiname hat den Aufbau &lt;SellerID&gt;.txt. Die Datei muss im Ordner <strong>/SQUARE/feed</strong> gespeichert werden.<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Übertragung</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Täglich</strong> für den Artikelexport wählen, da bol.com nur maximal 4 Exporte pro Tag zulässt. <strong>Stündlich</strong> für den Angebotsexport.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Täglich</strong> wählen, da bol.com nur maximal 4 Exporte pro Tag zulässt.</p></td>
 </tr>
 </tbody>
 </table>
@@ -629,21 +644,48 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <h2 id="800">11. Retourenstatus automatisch senden</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um bol.com automatisch über den Status einer Retoure zu informieren. Bei Retouren muss ein Status an bol.com übertragen werden. Folgende Stornierungsgründe können an bol.com übertragen werden:</p>
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um bol.com automatisch über den Status einer Retoure zu informieren. Bei Retouren muss ein Status an bol.com übertragen werden. Ab API-Version 3.0 können folgende Retourenstatus an bol.com übertragen werden:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Retoure erhalten</p>
+<p><strong>Retoure erhalten (v4)</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>bisher <strong>Retoure erhalten (v2)</strong></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Repariert oder ersetzt</p>
+<p><strong>Artikel wird umgetauscht (v4)</strong></p>
 </li>
 <li>
-<p>Retoure unvollständig</p>
+<p><strong>Retoure entspricht nicht den Anforderungen (v4)</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>bisher <strong>Retoure unvollständig (v2)</strong></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Rückerstattung ohne Rücksendung</p>
+<p><strong>Artikel muss repariert werden (v4)</strong></p>
+</li>
+<li>
+<p><strong>Kunde behält Ware (v4)</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>bisher <strong>Rückerstattung ohne Rücksendung (v2)</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Retoure in Rücksprache mit Kunde angenommen (v4)</strong></p>
 </li>
 </ul>
 </div>
@@ -723,15 +765,59 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <h2 id="900">12. Stornierungen automatisch senden</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um bol.com automatisch über Stornierungen zu informieren. Bei Stornierungen muss ein Grund für die Stornierung an bol.com übertragen werden. Erstelle im Menü <strong>Einrichtung » Aufträge » Auftragsstatus</strong> ggf. zusätzliche Auftragsstatus. Folgende Stornierungsgründe können an bol.com übertragen werden:</p>
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um bol.com automatisch über Stornierungen zu informieren. Bei Stornierungen muss ein Grund für die Stornierung an bol.com übertragen werden. Erstelle im Menü <strong>Einrichtung » Aufträge » Auftragsstatus</strong> ggf. zusätzliche Auftragsstatus. Ab API-Version 3.0 können folgende Stornierungsgründe an bol.com übertragen werden:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Artikel nicht vorrätig</p>
+<p><strong>Nicht vorrätig (v3)</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>bisher <strong>Ausverkauft (v2)</strong></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Stornierung durch Kunden</p>
+<p><strong>Stornierung von Kunde angefragt (v3)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>bisher <strong>Stornierung durch Kunden (v2)</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Artikel in schlechtem Zustand (v3)</strong></p>
+</li>
+<li>
+<p><strong>Höhere Versandkosten (v3)</strong></p>
+</li>
+<li>
+<p><strong>Falscher Preis (v3)</strong></p>
+</li>
+<li>
+<p><strong>Nicht rechtzeitig lieferbar (v3)</strong></p>
+</li>
+<li>
+<p><strong>Keine Garantie durch bol.com (v3)</strong></p>
+</li>
+<li>
+<p><strong>Artikel doppelt bestellt (v3)</strong></p>
+</li>
+<li>
+<p><strong>Artikel züruckbehalten (v3)</strong></p>
+</li>
+<li>
+<p><strong>Technisches Problem (v3)</strong></p>
+</li>
+<li>
+<p><strong>Artikel nicht auffindbar (v3)</strong></p>
+</li>
+<li>
+<p><strong>Sonstiges (v3)</strong></p>
 </li>
 </ul>
 </div>
@@ -808,31 +894,158 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="1000">13. API-Log abrufen</h2>
+<h2 id="800">13. bol.com über direkte Retouren informieren</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Im Menü <strong>Daten » API-Log</strong> findest du eine Historie über Vorgänge, die über die bol.com-Schnittstelle ausgeführt wurden.</p>
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um bol.com automatisch über Retouren zu informieren, die Kund*innen direkt an dich zurückgesendet haben und die Retoure vorher nicht bei bol.com angemeldet haben. Bei Retouren muss ein Status an bol.com übertragen werden. Ab API-Version 3.0 können folgende Retourenstatus an bol.com übertragen werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Retoure erhalten (v4)</p>
+</li>
+<li>
+<p>Artikel wird umgetauscht (v4)</p>
+</li>
+<li>
+<p>Retoure entspricht nicht den Anforderungen (v4)</p>
+</li>
+<li>
+<p>Artikel muss repariert werden (v4)</p>
+</li>
+<li>
+<p>Kunde behält Ware (v4)</p>
+</li>
+<li>
+<p>Retoure in Rücksprache mit Kunde angenommen (v4)</p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-retouren-bol">Tabelle 7</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-retouren-bol">Tabelle 7</a> vor.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="ereignisaktion-retouren-bol" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 7. Ereignisaktion, um bol.com über Retouren zu informieren</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Statuswechsel: [9.5] Gutschrift angelegt</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retoure</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bol.com</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Retoure bei bol.com anlegen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wähle einen Status.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1000">14. Log abrufen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im Menü <strong>Daten » Log</strong> findest du eine Historie über Vorgänge, die über die bol.com-Schnittstelle ausgeführt wurden. Für bol.com steht dir der Identifikator <strong>bol.com</strong> zur Verfügung.</p>
 </div>
 <div class="paragraph instruction">
-<p>API-Log abrufen:</p>
+<p>Log abrufen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <strong>Daten » API-Log » Tab: API-Log</strong>.</p>
+<p>Öffne das Menü <strong>Daten » Log</strong>.</p>
 </li>
 <li>
-<p>Wähle das Format <strong>bol.com</strong> aus der Dropdown-Liste <strong>Vorgang</strong>.</p>
+<p>Wähle aus der Dropdown-Liste <strong>Identifikator</strong> die Einstellung <strong>bol.com</strong>.</p>
 </li>
 <li>
-<p>Wähle ggf. ein <strong>Datum</strong>, um nur Einträge eines bestimmten Tages zu erhalten.</p>
+<p><strong><em>Optional:</em></strong> Wähle ein Datum, um nur Einträge eines bestimmten Tages anzuzeigen.</p>
 </li>
 <li>
-<p>Klicke auf <strong>Suchen</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>), um die Suche auszuführen.<br>
-→ Die Vorgänge werden angezeigt.</p>
+<p>Klicke auf <strong>Suchen</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).<br>
+→ Die Ergebnisse werden angezeigt.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>Nutze die folgenden Referenztypen und Referenzwerte, um die Suchergebnisse zu filtern.</p>
+</div>
+<table id="tabelle-referenztypen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 8. Referenztypen und Referenzwerte für bol.com</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Referenztyp</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+<th class="tableblock halign-left valign-top">Referenzwerte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>action</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filtert nach Ereignissen.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wähle einen Referenzwert, um nach bestimmten Ereignissen zu suchen.<br>
+<strong>shippingConfirmation</strong> = Versandbestätigungen<br>
+<strong>orderImport</strong> = Auftragsimport</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </main>
