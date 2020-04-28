@@ -26282,7 +26282,7 @@ class Metadata {
 				"url" => "/en/markets/bol-com",
 				"level" => 2,
 				"title" => "bol.com",
-				"keywords" => "bol.com, bol, market, marketplace, BolItemExport, BolOfferExport, marketplace bol.com, setting up bol.com, bol.com setup, multichannel, multi-channel, multi channel, bol, bool, bool.com",
+				"keywords" => "bol.com, bol, market, marketplace, BolItemExport, marketplace bol.com, setting up bol.com, bol.com setup, multichannel, multi-channel, multi channel, bol, bool, bool.com, market netherlands, market holland, bol.nl",
 				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market bol.com in your plentymarkets system.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic bol.com. The following information is available:",
