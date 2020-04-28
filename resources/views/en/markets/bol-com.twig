@@ -9,14 +9,15 @@
 <li><a href="#250"><span>3.</span><span> Activating the order referrer</span></a></li>
 <li><a href="#300"><span>4.</span><span> Setting the variation availability</span></a></li>
 <li><a href="#400"><span>5.</span><span> Linking categories</span></a></li>
-<li><a href="#450"><span>6.</span><span> Creating properties</span></a></li>
+<li><a href="#450"><span>6.</span><span> Creating characteristics</span></a></li>
 <li><a href="#500"><span>7.</span><span> Defining a sales price</span></a></li>
-<li><a href="#600"><span>8.</span><span> Setting up the item export and offer export</span></a></li>
+<li><a href="#600"><span>8.</span><span> Setting up the item export</span></a></li>
 <li><a href="#650"><span>9.</span><span> Activating the payment method</span></a></li>
 <li><a href="#700"><span>10.</span><span> Automatically sending shipping confirmations</span></a></li>
 <li><a href="#800"><span>11.</span><span> Automatically sending the return status</span></a></li>
 <li><a href="#900"><span>12.</span><span> Automatically sending cancellations</span></a></li>
-<li><a href="#1000"><span>13.</span><span> Viewing the API log</span></a></li>
+<li><a href="#800"><span>13.</span><span> Sending information on direct returns to bol.com</span></a></li>
+<li><a href="#1000"><span>14.</span><span> Viewing the log</span></a></li>
 </ul>
 </div>
         </div>
@@ -27,7 +28,22 @@
     <h1>bol.com</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Dutch market <a href="http://bol.com" target="_blank" rel="noopener">bol.com</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> is the leading online market in Benelux and distributes many different products, including multimedia, electronics, toys etc.</p>
+<p>The Dutch market <a href="http://bol.com" target="_blank" rel="noopener">bol.com</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> is the leading online market in Benelux and distributes many different products, including multimedia, electronics, toys, etc.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">New API version 3.0</div>
+<div class="paragraph">
+<p>Version 2.0 of the bol.com API interface will be deactivated on the 12th of May 2020. You can now update to version 3.0 of the API interface. Go to the <a href="https://forum.plentymarkets.com/t/bol-com-integration-neuer-api-versionen-3-und-4-integration-of-new-api-versions-3-and-4/587773" target="_blank" rel="noopener">plentymarkets forum</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> to find out more.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div><div class="sect1">
@@ -74,17 +90,34 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activate the automatic data exchange</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If the data exchange is activated, then items are imported daily, stock is synchronised hourly, and orders are imported every 15 minutes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If the data exchange is activated, the following data is exchanged with bol.com:<br>
+* Daily item export<br>
+* Hourly stock synchronisation<br>
+* Order import every 15 minutes<br>
+* Hourly import of returns registered on bol.com<br>
+<strong><em>Tip:</em></strong> Returns are imported with the status [9.00] by default.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Public key</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the API key as received from bol.com.<br>
-<strong>Note:</strong> At the moment, you have to use the API key for version 2.0.</p></td>
+<strong><em>Note:</em></strong> At the moment, you have to use the API key for version 2.0.<br>
+<strong><em>Note:</em></strong> As soon as you save the client ID and client secret, data is exchanged with bol.com via API version 3.0. If you delete the client ID and client secret from the settings and the API keys are still saved, the API version 2.0 is used again.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Private key</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the API key as received from bol.com.<br>
-<strong>Note:</strong> At the moment, you have to use the API key for version 2.0.</p></td>
+<strong><em>Note:</em></strong> At the moment, you have to use the API key for version 2.0.<br>
+<strong><em>Note:</em></strong> As soon as you save the client ID and client secret, data is exchanged with bol.com via API version 3.0. If you delete the client ID and client secret from the settings and the API keys are still saved, the API version 2.0 is used again.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the client ID for version 3.0 as received from bol.com.<br>
+<strong><em>Note:</em></strong> As soon as you save the client ID and client secret, data is exchanged with bol.com via API version 3.0. If you delete the client ID and client secret from the settings and the API keys are still saved, the API version 2.0 is used again.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client Secret</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the client secret for version 3.0 as received from bol.com.<br>
+<strong><em>Note:</em></strong> As soon as you save the client ID and client secret, data is exchanged with bol.com via API version 3.0. If you delete the client ID and client secret from the settings and the API keys are still saved, the API version 2.0 is used again.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client</strong></p></td>
@@ -106,7 +139,12 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Order import every 15 minutes</p>
+<p>Order import every 15 minutes<br>
+<strong><em>Note:</em></strong> Orders that are fulfilled by bol.com are not imported.</p>
+</li>
+<li>
+<p>Hourly update of offers for variations with stock changes in the last 90 minutes<br>
+<strong><em>Note:</em></strong> The offer must have been created before stock updates can be sent. The order creation status is checked once a day. As such, it may take up to 24 hours before an offer is updated after its creation.</p>
 </li>
 </ul>
 </div>
@@ -115,7 +153,7 @@
 <h2 id="250">3. Activating the order referrer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In order to link items, properties etc. with bol.com, you have to activate the order referrer bol.com in the <strong>Setup » Orders » Order referrer</strong> menu.</p>
+<p>In order to link items, characteristics etc. with bol.com, you have to activate the order referrer bol.com in the <strong>Setup » Orders » Order referrer</strong> menu.</p>
 </div>
 <div class="paragraph instruction">
 <p>Activating the order referrer bol.com:</p>
@@ -126,7 +164,7 @@
 <p>Go to <strong>Setup » Orders » Order referrer</strong>.</p>
 </li>
 <li>
-<p>Activate the referrer <strong>bol.com</strong>.</p>
+<p>Activate the option <strong>bol.com</strong>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
@@ -149,14 +187,14 @@
 <td class="content">
 <div class="title">Selling all variations of an item on bol.com</div>
 <div class="paragraph">
-<p>If you want to sell all variations of an item on bol.com, carry out the settings below for the item’s main variation. All other variations of the item then inherit the settings of the main variation.</p>
+<p>To sell all variations of an item on bol.com, carry out the settings described below for the main variation. The settings are then passed on to all variations of the item.</p>
 </div>
 </td>
 </tr>
 </tbody></table>
 </div>
 <div class="paragraph instruction">
-<p>Activating the variation availability for bol.com:</p>
+<p>Setting the variation availability for bol.com:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -167,13 +205,13 @@
 <p>Open the variation that you want to sell on bol.com.</p>
 </li>
 <li>
-<p>In the <strong>Availability</strong> area, active the option <strong>Active</strong>.</p>
+<p>In the <strong>Availability</strong> area, activate the option <strong>Active</strong>.</p>
 </li>
 <li>
 <p>Click on the <strong>Availability</strong> tab.</p>
 </li>
 <li>
-<p>In the <strong>Markets</strong> area, click in the selection field. <br>
+<p>In the <strong>Markets</strong> area, click in the selection field.<br>
 → A list of all available markets is displayed.</p>
 </li>
 <li>
@@ -225,13 +263,13 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="450">6. Creating properties</h2>
+<h2 id="450">6. Creating characteristics</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Next create <a href="/en/item/managing-items#480">properties</a> and link these to the bol.com properties. Matching properties to a bol.com category can be found within the bol.com data model file. Download the bol.com data model file <a href="https://developers.bol.com/datamodel/" target="_blank" rel="noopener">here</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+<p>Next create <a href="/en/item/managing-items#480">characteristics</a> and link these to the bol.com characteristics. Matching characteristics to a bol.com category can be found within the bol.com data model file. Download the bol.com data model file <a href="https://developers.bol.com/datamodel/" target="_blank" rel="noopener">here</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> .</p>
 </div>
 <div class="paragraph instruction">
-<p>Creating a property:</p>
+<p>Creating a characteristic:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -239,22 +277,22 @@
 <p>Go to <strong>Setup » Item » Characteristics</strong>.</p>
 </li>
 <li>
-<p>Click on the <strong>New property</strong> tab.</p>
+<p>Click on the <strong>New characteristic</strong> tab.</p>
 </li>
 <li>
-<p>Enter a name for the property under <strong>Name (internal)</strong>.</p>
+<p>Enter a name for the characteristic under <strong>Name (internal)</strong>.</p>
 </li>
 <li>
 <p>Select <strong>nl</strong> for Dutch from the <strong>Language</strong> drop-down list.</p>
 </li>
 <li>
-<p>Enter the Dutch name that you want to use for this property into the <strong>Name</strong> field.</p>
+<p>Enter the Dutch name that you want to use for this characteristic into the <strong>Name</strong> field.</p>
 </li>
 <li>
-<p>Select the option <strong>Text</strong> from the <strong>Property type</strong> drop-down list.</p>
+<p>Select the option <strong>Text</strong> from the <strong>Characteristic type</strong> drop-down list.</p>
 </li>
 <li>
-<p>Enter the bol.com property which can be found in the column <strong>Attribute name</strong> within the bol.com data model file into the line <strong>bol.com property</strong>.</p>
+<p>Enter the bol.com characteristic which can be found in the column <strong>Attribute name</strong> within the bol.com data model file into the line <strong>bol.com characteristic</strong>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
@@ -262,10 +300,10 @@
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>bol_fulfillment</strong> is a mandatory field for the offer export. This indicates whether the item is shipped by you or by bol.com. Enter the bol.com property <strong>bol_fulfillment</strong> into the line <strong>bol.com property</strong>.</p>
+<p><strong>bol_fulfillment</strong> is a mandatory field for the offer export. This indicates whether the item is shipped by you or by bol.com. In the line <strong>bol.com characteristic</strong>, enter the bol.com characteristic <strong>bol_fulfillment</strong>.</p>
 </div>
 <div class="paragraph">
-<p>If you want to sell used items on bol.com, you have to indicate this by using the property <strong>bol_used</strong>. Enter the bol.com property <strong>bol_used</strong> into the line <strong>bol.com property</strong>.</p>
+<p>If you want to sell used items on bol.com, you have to indicate this by using the property <strong>bol_used</strong>. In the line <strong>bol.com characteristic</strong>, enter the bol.com characteristic <strong>bol_used</strong>.</p>
 </div>
 </div>
 </div><div class="sect1">
@@ -292,10 +330,10 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="600">8. Setting up the item export and offer export</h2>
+<h2 id="600">8. Setting up the item export</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This chapter explains how to export your items and offers to bol.com. Items and offers are transferred to bol.com with the elastic export. First, create the data formats <strong>BolItemExport</strong> and <strong>BolOfferExport</strong> and then send the CSV files to bol.com. Both files have to be sent in order to sell items on bol.com.</p>
+<p>This section explains how to transfer your items to bol.com. Items are transferred to bol.com with the elastic export. First, create the data format <strong>BolItemExport</strong> and then send the CSV file to bol.com.</p>
 </div>
 <div class="paragraph">
 <p>The following fields are mandatory for the item export:</p>
@@ -325,36 +363,8 @@
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>The following fields are mandatory for the offer export:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>EAN</p>
-</li>
-<li>
-<p>SKU</p>
-</li>
-<li>
-<p>Stock</p>
-</li>
-<li>
-<p>Price</p>
-</li>
-<li>
-<p>Item condition</p>
-</li>
-<li>
-<p>Shipping availability</p>
-</li>
-<li>
-<p>Fulfilment by</p>
-</li>
-</ul>
-</div>
 <div class="paragraph instruction">
-<p>Setting up the export:</p>
+<p>Setting up the item export:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -403,7 +413,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select the format <strong>BolItemExport</strong> for the item export or <strong>BolOfferExport</strong> for the offer export.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From the drop-down list, select the format <strong>BolItemExport</strong> for the item export.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limit</strong></p></td>
@@ -420,13 +430,11 @@
 <strong>user name</strong>,<br>
 <strong>password</strong>,<br>
 <strong>path</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a parameter. The access data including the password and user name are provided by bol.com. The file name for BolOfferExport has the structure &lt;SellerID&gt;.csv. The file name for BolItemExport has the structure &lt;SellerID&gt;.txt.<br>
-The file for the format <strong>BolItemExport</strong> must be saved in the <strong>/SQUARE/feed</strong> folder.<br>
-The file for the format <strong>BolOfferExport</strong> must be saved in the <strong>/inbound</strong> folder.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a parameter. The access data including the password and user name are provided by bol.com. The file name is created based on the pattern &lt;sellerID&gt;.txt. You need to save the file in the folder <strong>/SQUARE/feed</strong>.<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transfer</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>daily</strong> for the item export, as bol.com allows a maximum of 4 exports per day. Select <strong>hourly</strong> for the offer export.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>daily</strong> as bol.com allows a maximum of 4 exports per day.</p></td>
 </tr>
 </tbody>
 </table>
@@ -629,21 +637,48 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 <h2 id="800">11. Automatically sending the return status</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform bol.com of the status of a return. bol.com requests the status of returns. The following cancellation reasons can be transferred to bol.com:</p>
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform bol.com of the status of a return. bol.com requests the status of returns. The following return statuses can be sent to bol.com in API version 3.0 and higher:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Return received</p>
+<p><strong>Return received (v4)</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>previously <strong>Return received (v2)</strong></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Repaired or exchanged</p>
+<p><strong>Item will be exchanged (v4)</strong></p>
 </li>
 <li>
-<p>Incomplete return</p>
+<p><strong>Return does not meet conditions (v4)</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>previously <strong>Incomplete return (v2)</strong></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Refund without returning goods</p>
+<p><strong>Item must be repaired (v4)</strong></p>
+</li>
+<li>
+<p><strong>Customer keeps item (v4)</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>previously <strong>Refund without returning goods (v2)</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Return accepted after consultation with customer (v4)</strong></p>
 </li>
 </ul>
 </div>
@@ -723,15 +758,59 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 <h2 id="900">12. Automatically sending cancellations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform bol.com of cancellations. Whenever you are dealing with cancellations, you need to send bol.com a reason for the cancellation. Open the <strong>System » Orders » Status</strong> menu and create additional order statuses as needed. The following cancellation reasons can be transferred to bol.com:</p>
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform bol.com of cancellations. Whenever you are dealing with cancellations, you need to send bol.com a reason for the cancellation. Open the <strong>System » Orders » Status</strong> menu and create additional order statuses as needed. The following cancellation reasons can be transferred to bol.com in version 3.0 and higher:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Item not in stock</p>
+<p><strong>Out of stock (v3)</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>previously <strong>Out of stock (v2)</strong></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Customer cancellation</p>
+<p><strong>Cancellation requested by customer (v3)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>previously <strong>Customer cancelled order (v2)</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Item is in a bad condition (v3)</strong></p>
+</li>
+<li>
+<p><strong>Higher shipping costs (v3)</strong></p>
+</li>
+<li>
+<p><strong>Incorrect price (v3)</strong></p>
+</li>
+<li>
+<p><strong>Item not available in time (v3)</strong></p>
+</li>
+<li>
+<p><strong>No bol.com warranty (v3)</strong></p>
+</li>
+<li>
+<p><strong>Item ordered twice (v3)</strong></p>
+</li>
+<li>
+<p><strong>Item retained (v3)</strong></p>
+</li>
+<li>
+<p><strong>Technical issue (v3)</strong></p>
+</li>
+<li>
+<p><strong>Item untraceable (v3)</strong></p>
+</li>
+<li>
+<p><strong>Other (v3)</strong></p>
 </li>
 </ul>
 </div>
@@ -808,31 +887,158 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="1000">13. Viewing the API log</h2>
+<h2 id="800">13. Sending information on direct returns to bol.com</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Data » API log</strong> menu contains a history of processes that run via the bol.com interface.</p>
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform bol.com about returns that customers sent back to you directly without registering the return with bol.com first. bol.com requests the status of returns. The following return statuses can be sent to bol.com in API version 3.0 and higher:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Return received (v4)</p>
+</li>
+<li>
+<p>Item will be exchanged (v4)</p>
+</li>
+<li>
+<p>Return does not meet conditions (v4)</p>
+</li>
+<li>
+<p>Item must be repaired (v4)</p>
+</li>
+<li>
+<p>Customer keeps item (v4)</p>
+</li>
+<li>
+<p>Return accepted after consultation with customer (v4)</p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The window <strong>Create new event procedure</strong> opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-return-bol">Table 7</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#event-procedure-return-bol">Table 7</a> vor.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-return-bol" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Event procedure to inform bol.com about returns</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change: [9.5] Credit note created</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Return</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bol.com</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Create a return at bol.com</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a status.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1000">14. Viewing the log</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>Data » Log</strong> menu contains a history of processes that run via the bol.com interface. For bol.com, you can filter by the identifier <strong>bol.com</strong>.</p>
 </div>
 <div class="paragraph instruction">
-<p>Viewing the API log:</p>
+<p>Viewing the log:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <strong>Data » API log » Tab: API log</strong>.</p>
+<p>Go to <strong>Data » Log</strong>.</p>
 </li>
 <li>
-<p>Select the format <strong>bol.com</strong> from the <strong>Process</strong> drop-down list.</p>
+<p>From the drop-down list <strong>Identifier</strong>, select the option <strong>bol.com</strong>.</p>
 </li>
 <li>
-<p>Select a <strong>date</strong> if you only want to see entries for a specific day.</p>
+<p><strong><em>Optional:</em></strong> Select a date if you only want to see entries for a specific day.</p>
 </li>
 <li>
-<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>) to carry out the search.<br>
-→ The processes are displayed.</p>
+<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).<br>
+→ The results are shown.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>Use the following reference types and reference values to filter the search results.</p>
+</div>
+<table id="table-reference-types" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. Reference types and reference values for bol.com</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Reference type</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+<th class="tableblock halign-left valign-top">Reference value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>action</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters by events.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a reference type to filter for specific events.<br>
+<strong>shippingConfirmation</strong> = Shipping confirmations<br>
+<strong>orderImport</strong> = Order import</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </main>
