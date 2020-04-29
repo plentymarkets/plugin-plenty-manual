@@ -25,16 +25,17 @@
 <li><a href="#600"><span>3.7.</span><span> VAT for digital items</span></a></li>
 </ul>
 </li>
-<li><a href="#650"><span>4.</span><span> Setting up posting keys, revenue and debtor accounts</span></a>
+<li><a href="#620"><span>4.</span><span> Taric codes</span></a></li>
+<li><a href="#650"><span>5.</span><span> Setting up posting keys, revenue and debtor accounts</span></a>
 <ul class="sectlevel2">
-<li><a href="#700"><span>4.1.</span><span> Setting up posting keys</span></a></li>
-<li><a href="#750"><span>4.2.</span><span> Setting up debtor accounts</span></a></li>
-<li><a href="#800"><span>4.3.</span><span> Setting up revenue accounts</span></a></li>
-<li><a href="#910"><span>4.4.</span><span> Saving booking accounts for POS events (plentymarkets App version 1.7.3 and higher)</span></a></li>
-<li><a href="#850"><span>4.5.</span><span> Copying settings to other locations</span></a></li>
+<li><a href="#700"><span>5.1.</span><span> Setting up posting keys</span></a></li>
+<li><a href="#750"><span>5.2.</span><span> Setting up debtor accounts</span></a></li>
+<li><a href="#800"><span>5.3.</span><span> Setting up revenue accounts</span></a></li>
+<li><a href="#910"><span>5.4.</span><span> Saving booking accounts for POS events (plentymarkets App version 1.7.3 and higher)</span></a></li>
+<li><a href="#850"><span>5.5.</span><span> Copying settings to other locations</span></a></li>
 </ul>
 </li>
-<li><a href="#900"><span>5.</span><span> Exporting accounting data</span></a></li>
+<li><a href="#900"><span>6.</span><span> Exporting accounting data</span></a></li>
 </ul>
 </div>
         </div>
@@ -576,13 +577,100 @@ This regulation applies to B2C revenues. B2B revenues without VAT are not affect
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="650">4. Setting up posting keys, revenue and debtor accounts</h2>
+<h2 id="620">4. Taric codes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Taric codes, also called taric numbers, are used in EU-wide trading. These are unique and fixed numbers which are assigned to a specific commodity and have to be included in tax relevant documents.</p>
+</div>
+<div class="paragraph">
+<p>Taric codes are relevant for you if you have VAT registrations in delivery countries because you are trading EU-wide or if you have exceeded a <a href="/en/orders/accounting#300">delivery threshold</a> in a delivery country. In these cases, or if you know that you will exceed a delivery threshold in the foreseeable future, you should add all taric related data in time. We recommend to clarify all details regarding the taxation of your goods in other EU countries with your tax consultant.</p>
+</div>
+<div class="paragraph">
+<p>Goods are charged with different taxes in different EU countries. In order to take this into account and thus also have a correct basis for the calculation of orders, the taric codes have to be entered into the system and also checked against the VAT rates which are set for different countries.
+Thus, as a first step, you have to maintain the taric codes in your system. Taric codes are entered in the <a href="/en/item/managing-items#280">variations</a>. Moreover, you need to set <a href="/en/orders/accounting#550">VAT rates</a> for the required countries. These VAT rates could also be entered later, but we recommend setting these in the system in time.</p>
+</div>
+<div class="paragraph">
+<p>The table in the menu <strong>Setup » Client » Setting » Taric codes</strong> then enables the linking of taric code, VAT rate and country. Thus, this taric code table is a basis for the calculation of orders and has to be up to date.</p>
+</div>
+<div class="paragraph">
+<p><em>This happens in the background when orders are calculated:</em> For example, an order with France as the country of delivery enters the system. VAT rate A is set for the variation of the order item in the order. But in France, this item is taxed with the VAT rate B. That is why there is an entry in the taric code table with the same taric code as the one entered in the variation. The difference is that in the table, this taric code is linked with France and the VAT rate B. The order logic recognises these cases and uses the VAT rate set in the taric code table.</p>
+</div>
+<div class="paragraph">
+<p>In case there is no taric code entered in the variation or in the table, no differing VAT rate is used for the calculation. This means that you only have to enter the corresponding taric codes in the table if a variation is <em>taxed differently</em> in other countries.</p>
+</div>
+<div class="paragraph">
+<p>In order to import taric codes you can use either ElasticSync or enter them manually. We recommend to use ElasticSync and to enter only single taric codes or carry out small adaptations manually.
+<em>Note</em> that only numbers up to 12 characters are allowed. Entering special or blank characters is not allowed.</p>
+</div>
+<div class="paragraph">
+<p>You can find general information about imports via ElasticSync on the manual page <a href="#data/importing-data/ElasticSync">Importing data with ElasticSync</a>. The <a href="#data/importing-data/sync-types/elasticSync-assignment-taric-code">sync types</a> for importing taric codes can be found under <strong>Assignment taric codes</strong> .</p>
+</div>
+<div class="paragraph">
+<p>To fill the table manually, proceed as follows.</p>
+</div>
+<div class="paragraph instruction">
+<p>Filling the taric code table manually:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Settings » Taric codes</strong>.<br></p>
+</li>
+<li>
+<p>Click on <strong>Create new assignment</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ A new row is added to the table.</p>
+</li>
+<li>
+<p>Enter the <strong>taric code</strong> and select the corresponding <strong>country</strong> as well as the <strong>VAT rate</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) at the end of the row.<br>
+→ The saving is confirmed.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In the table, found variation links are marked with a green dot. This means that this taric code is currently in use in a variation. If a red dot is displayed, no variation link was found, i.e. this taric code is not in use in a variation.</p>
+</div>
+<div class="paragraph">
+<p>More editing options are available to you. Take <a href="#table-editing-options-taric-code">Table 5</a> into account.</p>
+</div>
+<table id="table-editing-options-taric-code" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Editing options for the taric code table</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Search</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can <strong>search</strong> for assignments. For this, the filters <strong>taric code</strong> and <strong>country</strong> are available to you.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Editing an assignment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To <strong>edit</strong> an existing assignment, click on the appropriate row and carry out the necessary adaptations. After this, click on <strong>save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>). The adaptation is confirmed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deleting an assignment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To delete an existing assignment, click on <strong>delete</strong> (<span class="icon red"><i class="fa fa-minus-square  "></i></span>) in the column <strong>Actions</strong>  at the end of the row. Deleting an assignment has to be confirmed by you.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="650">5. Setting up posting keys, revenue and debtor accounts</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Posting keys are only relevant for DATEV exports. You can ignore the posting key settings if you do not work with DATEV. You can set up revenue accounts to book your revenues. You can set up debtor accounts to book your pending amounts.</p>
 </div>
 <div class="sect2">
-<h3 id="700">4.1. Setting up posting keys</h3>
+<h3 id="700">5.1. Setting up posting keys</h3>
 <div class="paragraph">
 <p>Posting keys are relevant for DATEV exports. Continue with the next chapter on this page if you do not work with DATEV. Posting keys are called tax key in DATEV and are required for the correct transfer of posting information. There are some standard tax keys in DATEV. The standard tax key from the two standard charts of accounts 03 and 04 for 19 % VAT in Germany is 3. plentymarkets automatically determines whether it is dealing with a debit (D) or credit © posting. This information is included in the export. The information is displayed in a separate column in the export.</p>
 </div>
@@ -609,7 +697,7 @@ This regulation applies to B2C revenues. B2B revenues without VAT are not affect
 </div>
 </div>
 <div class="sect2">
-<h3 id="750">4.2. Setting up debtor accounts</h3>
+<h3 id="750">5.2. Setting up debtor accounts</h3>
 <div class="paragraph">
 <p>You can set up debtor accounts to keep an overview on your pending amounts. You can choose a criteria that will be used to book pending amounts on debtor accounts. As a criteria you can e.g. use the names of the debtors or the country of delivery. Choose a criteria first and then enter the actual accounts.</p>
 </div>
@@ -630,7 +718,7 @@ This regulation applies to B2C revenues. B2B revenues without VAT are not affect
 <p>Click on the <strong>Debtor accounts</strong> tab.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the information given in  <a href="#table-debtor-account-setup">Table 5</a>.</p>
+<p>Carry out the settings. Pay attention to the information given in  <a href="#table-debtor-account-setup">Table 6</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.</p>
@@ -638,7 +726,7 @@ This regulation applies to B2C revenues. B2B revenues without VAT are not affect
 </ol>
 </div>
 <table id="table-debtor-account-setup" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Setting up debtor accounts</caption>
+<caption class="title">Table 6. Setting up debtor accounts</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -686,7 +774,7 @@ If you choose the order <strong>Company, surname, first name</strong>, the name 
 </table>
 </div>
 <div class="sect2">
-<h3 id="800">4.3. Setting up revenue accounts</h3>
+<h3 id="800">5.3. Setting up revenue accounts</h3>
 <div class="paragraph">
 <p>You can set up revenue accounts to book your revenues and to assign them to accounts. You can enter accounts for revenues that are liable to VAT and for revenues that are exempt from VAT.</p>
 </div>
@@ -743,13 +831,13 @@ If you choose the order <strong>Company, surname, first name</strong>, the name 
 </div>
 </div>
 <div class="sect2">
-<h3 id="910">4.4. Saving booking accounts for POS events (plentymarkets App version 1.7.3 and higher)</h3>
+<h3 id="910">5.4. Saving booking accounts for POS events (plentymarkets App version 1.7.3 and higher)</h3>
 <div class="paragraph">
 <p>Orders generated in plentyPOS are assigned to the revenue accounts saved in plentymarkets. Because deposits, withdrawals and till count discrepancies are not orders, you can save booking accounts for these POS events. For further information on how to save booking accounts for POS events, refer to the <a href="/en/pos/integrating-plentymarkets-pos#940">Integrating POS</a> page of the manual.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="850">4.5. Copying settings to other locations</h3>
+<h3 id="850">5.5. Copying settings to other locations</h3>
 <div class="paragraph">
 <p>Use the <strong>Copy settings</strong> function to copy the settings of the current location and apply these settings to one or more other locations. You can copy all of the settings or only specific settings.</p>
 </div>
@@ -798,7 +886,7 @@ If you choose the order <strong>Company, surname, first name</strong>, the name 
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="900">5. Exporting accounting data</h2>
+<h2 id="900">6. Exporting accounting data</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>plentymarkets allows you to export accounting data. You can use the export to transfer the data to your accounting software. When you export your accounting data the system will automatically assign debtor accounts, revenue accounts and posting keys according to the settings that you have set up prior to the export.</p>

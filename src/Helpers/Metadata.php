@@ -22845,6 +22845,22 @@ class Metadata {
 						"languageID" => "I6XYGLR",
 						"children" => 						[
 							[
+								"id" => "e013f099f04fcd2cdc1d45f25fb11271",
+								"path" => "data/importing-data/sync-types/elasticSync-assignment-taric-code",
+								"position" => 10,
+								"urlName" => "elasticSync-assignment-taric-code",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-assignment-taric-code",
+								"level" => 4,
+								"title" => "Assignment taric code",
+								"keywords" => "ElasticSync, import, taric, taric code, assignment, VAT",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Assignment taric code. The following information is available:",
+								"languageID" => "91N5TSK",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "9bc76a90dcdcf4c677f2b06675e24dc0",
 								"path" => "data/importing-data/sync-types/elasticSync-item",
 								"position" => 10,
