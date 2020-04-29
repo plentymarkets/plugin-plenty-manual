@@ -25,16 +25,17 @@
 <li><a href="#600"><span>3.7.</span><span> Umsatzsteuer für digitale Artikel</span></a></li>
 </ul>
 </li>
-<li><a href="#650"><span>4.</span><span> Buchungsschlüssel, Erlös- und Debitorenkonten einrichten</span></a>
+<li><a href="#620"><span>4.</span><span> Zolltarifnummern</span></a></li>
+<li><a href="#650"><span>5.</span><span> Buchungsschlüssel, Erlös- und Debitorenkonten einrichten</span></a>
 <ul class="sectlevel2">
-<li><a href="#700"><span>4.1.</span><span> Buchungsschlüssel einrichten</span></a></li>
-<li><a href="#750"><span>4.2.</span><span> Debitorenkonten einrichten</span></a></li>
-<li><a href="#800"><span>4.3.</span><span> Erlöskonten einrichten</span></a></li>
-<li><a href="#910"><span>4.4.</span><span> Buchungskonten für Kassenvorfälle speichern (ab plentymarkets App Version 1.7.3)</span></a></li>
+<li><a href="#700"><span>5.1.</span><span> Buchungsschlüssel einrichten</span></a></li>
+<li><a href="#750"><span>5.2.</span><span> Debitorenkonten einrichten</span></a></li>
+<li><a href="#800"><span>5.3.</span><span> Erlöskonten einrichten</span></a></li>
+<li><a href="#910"><span>5.4.</span><span> Buchungskonten für Kassenvorfälle speichern (ab plentymarkets App Version 1.7.3)</span></a></li>
 </ul>
 </li>
-<li><a href="#850"><span>5.</span><span> Einstellungen auf andere Standorte übertragen</span></a></li>
-<li><a href="#900"><span>6.</span><span> Buchhaltungsdaten exportieren</span></a></li>
+<li><a href="#850"><span>6.</span><span> Einstellungen auf andere Standorte übertragen</span></a></li>
+<li><a href="#900"><span>7.</span><span> Buchhaltungsdaten exportieren</span></a></li>
 </ul>
 </div>
         </div>
@@ -553,13 +554,100 @@ Die EU-Verordnung betrifft B2C-Umsätze. B2B-Umsätze ohne Umsatzsteuer bleiben 
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="650">4. Buchungsschlüssel, Erlös- und Debitorenkonten einrichten</h2>
+<h2 id="620">4. Zolltarifnummern</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Zolltarifnummern, auch Taric genannt, werden im Handel innerhalb der EU genutzt. Es handelt sich dabei um eine eindeutige, festgelegte Nummer, die einer Ware zugeordnet ist und auf steuerrelevanten Dokumenten mit ausgegeben werden muss.</p>
+</div>
+<div class="paragraph">
+<p>Zolltarifnummern sind für dich relevant, wenn du beim Verkauf innerhalb der EU Umsatzsteueranmeldungen im Lieferland hast oder die <a href="/auftrage/buchhaltung#300">Lieferschwelle</a> im Lieferland überschritten hast. In diesen Fällen oder wenn du weißt, dass du in einem Lieferland die Lieferschwelle in absehbarer Zeit überschreiten wirst, solltest du die Zolltarifnummern rechtzeitig einpflegen. Wie empfehlen, dass du die Einzelheiten zur Besteuerung deiner Waren im EU-Ausland mit deinem Steuerberater klärst.</p>
+</div>
+<div class="paragraph">
+<p>Waren werden in den EU-Ländern unterschiedlich besteuert. Damit für Aufträge auch bei abweichenden Besteuerungen im EU-Ausland die richtigen Steuersätze verwendet werden und somit die Auftragsberechnung korrekt verläuft, müssen Zolltarifnummern im System eingegeben und mit den für die verschiedenen Länder hinterlegten Steuersätzen abgeglichen werden.
+Grundlegend dafür ist, dass du zunächst die Zolltarifnummern im System pflegst. Die <a href="/artikel/artikel-verwalten#280">Hinterlegung von Zolltarifnummern</a> erfolgt an den <strong>Varianten</strong> eines Artikels. Des Weiteren sollten <a href="/auftrage/buchhaltung#550">Umsatzsteuersätze</a> für die entsprechenden Länder eingerichtet sein. Umsatzsteuersätze lassen sich auch nachtragen, wir empfehlen aber die rechtzeitige Erstellung im System.</p>
+</div>
+<div class="paragraph">
+<p>Die Tabelle im Menü <strong>Einrichtung » Mandant » Global » Zolltarifnummern</strong> ermöglicht die Verknüpfung von Zolltarifnummer, Umsatzsteuer und Land. Diese Zolltarifnummerntabelle ist somit eine Grundlage der Berechnung bei Aufträgen und muss ebenfalls befüllt und gepflegt werden.</p>
+</div>
+<div class="paragraph">
+<p><em>Das passiert im Hintergrund bei der Auftragsberechnung:</em> Es kommt zum Beispiel ein Auftrag mit Lieferland Frankreich ins System. Für die Artikelposition im Auftrag ist an der Variante Steuersatz A hinterlegt. In Frankreich gilt dafür aber Steuersatz B. Deswegen ist in der Zolltarifnummerntabelle ein Eintrag mit der gleichen Zolltarifnummer, die auch an der Variante hinterlegt ist, zu finden. In der Tabelle ist diese Zolltarifnummer aber für Frankreich mit Steuersatz B hinterlegt. Dies erkennt die Auftragslogik und nimmt in solchen Fällen immer den in der Zolltarifnummerntabelle hinterlegten Steuersatz.</p>
+</div>
+<div class="paragraph">
+<p>Sollte an der Variante oder in der Tabelle keine Zolltarifnummer hinterlegt sein, wird kein abweichender Steuersatz für die Berechnung verwendet. Dies bedeutet für dich, dass du nur bei <em>abweichender Besteuerung</em> einer Variante die entsprechende Zolltarifnummer in der Tabelle hinterlegen musst.</p>
+</div>
+<div class="paragraph">
+<p>Zum Import der Zolltarifnummern kannst du ElasticSync verwenden oder die Nummern manuell einpflegen. Wir empfehlen, ElasticSync zu nutzen und nur einzelne Zolltarifnummern oder kleine Änderungen manuell in der Tabelle zu pflegen.
+<em>Beachte</em> bei der Eingabe, dass Nummern bis zu maximal 12 Zeichen Länge hinterlegt werden können. Die Eingabe von Sonder- und Leerzeichen ist nicht erlaubt.</p>
+</div>
+<div class="paragraph">
+<p>Allgemeine Informationen zum Import über ElasticSync findest du auf der Handbuchseite <a href="#daten/daten-importieren/ElasticSync">Daten mit ElasticSync importieren</a>. Die <a href="#daten/daten-importieren/sync-typen/elasticSync-zuordnung-zolltarifnummer">Sync-Typen</a> zum Import der Zolltarifnummern sind unter <strong>Zuordnung Zolltarifnummer</strong> zu finden.</p>
+</div>
+<div class="paragraph">
+<p>Um die Zolltarifnummerntabelle manuell zu füllen, gehe wie im Folgenden beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Zolltarifnummerntabelle manuell befüllen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Mandant » Global » Zolltarifnummern</strong>.<br></p>
+</li>
+<li>
+<p>Klicke auf <strong>Zuordnung neu anlegen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Eine neue Zeile der Tabelle hinzugefügt.</p>
+</li>
+<li>
+<p>Gib die <strong>Zolltarifnummer</strong> ein und wähle das entsprechende <strong>Land</strong> sowie die passende <strong>Umsatzsteuer</strong> aus.</p>
+</li>
+<li>
+<p>Klicke am Ende der Zeile auf <strong>Speichern</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>).<br>
+→ Das Speichern wird bestätigt.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In der Tabelle werden dir gefundene Variantenverknüpfungen mit einem grün Punkt markiert angezeigt. Das bedeutet, dass diese Zolltarifnummer aktuell in einer Variante in Verwendung ist. Wird ein roter Punkt angezeigt, wurde keine Variantenverknüpfung gefunden, die Zolltarifnummer ist dementsprechend in keiner Variante in Verwendung.</p>
+</div>
+<div class="paragraph">
+<p>Es stehen dir weitere Bearbeitungsfunktionen zur Verfügung, beachte hierfür <a href="#tabelle-bearbeitungsfunktionen-zolltarifnummer">Tabelle 5</a>.</p>
+</div>
+<table id="tabelle-bearbeitungsfunktionen-zolltarifnummer" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Bearbeitungsfunktionen Zolltarifnummer</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Funktion</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Suche</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Innerhalb der Tabelle kannst du nach Zuordnungen <strong>suchen</strong>. Dafür stehen dir die Filter <strong>Zolltarifnummer</strong> und <strong>Land</strong> zur Verfügung.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zuordnung bearbeiten</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Um eine bestehende Zuordnung zu <strong>bearbeiten</strong>, klicke in die entsprechende Zeile und nimm die erforderlichen Anpassungen vor. Klicke danach auf <strong>speichern</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>). Die Bearbeitung wird bestätigt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zuordnung löschen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Um eine bestehende Zuordnung zu löschen, klicke am Ende der Zeile in der Spalte <strong>Aktionen</strong> auf <strong>löschen</strong> (<span class="icon red"><i class="fa fa-minus-square  "></i></span>). Das Löschen muss in einer Abfrage bestätigt werden.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="650">5. Buchungsschlüssel, Erlös- und Debitorenkonten einrichten</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Buchungsschlüssel sind einzig für den DATEV-Export relevant. Wenn du nicht mit DATEV arbeitest, kannst du das Menü für Buchungsschlüssel ignorieren. Erlöskonten richtest du ein, um deine Umsatzerlöse zu verbuchen. Debitorenkonten richtest du ein, um deine Forderungen zu verwalten.</p>
 </div>
 <div class="sect2">
-<h3 id="700">4.1. Buchungsschlüssel einrichten</h3>
+<h3 id="700">5.1. Buchungsschlüssel einrichten</h3>
 <div class="paragraph">
 <p>Die Buchungsschlüssel sind für den DATEV-Export relevant. Wenn du nicht mit DATEV arbeiten, überspringe dieses Kapitel. Buchungsschlüssel heißen bei DATEV Steuerschlüssel und dienen der korrekten Übertragung von Buchungsdaten. DATEV hat einige Standardsteuerschlüssel. Der Standardsteuerschlüssel für 19 % Umsatzsteuer gemäß Standardkontenrahmen 03 und Standardkontenrahmen 04 ist 3. Die für dich gültigen Steuerschlüssel entnimmst du deinem Kontenplan. plentymarkets ermittelt automatisch, ob es sich um eine Soll- (S) oder eine Haben-Buchung (H) handelt. Diese Information wird dann im Export in einer eigenen Spalte ausgegeben.</p>
 </div>
@@ -586,7 +674,7 @@ Die EU-Verordnung betrifft B2C-Umsätze. B2B-Umsätze ohne Umsatzsteuer bleiben 
 </div>
 </div>
 <div class="sect2">
-<h3 id="750">4.2. Debitorenkonten einrichten</h3>
+<h3 id="750">5.2. Debitorenkonten einrichten</h3>
 <div class="paragraph">
 <p>Debitorenkonten richtest du z.B. für deine Forderungen ein. In plentymarkets kannst du wählen, anhand welches Kriteriums Forderungen Debitorenkonten zugeordnet werden. Du kannst z.B. die Nachnamen der Debitoren oder das Lieferland zur Zuordnung nutzen. Lege also zuerst das Kriterium fest und trage dann die Konten ein.</p>
 </div>
@@ -607,7 +695,7 @@ Die EU-Verordnung betrifft B2C-Umsätze. B2B-Umsätze ohne Umsatzsteuer bleiben 
 <p>Wechsle in das Tab <strong>Debitorenkonten</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen anhand der Informationen in <a href="#tabelle-debitorenkonten-einrichten">Tabelle 5</a> vor.</p>
+<p>Nimm die Einstellungen anhand der Informationen in <a href="#tabelle-debitorenkonten-einrichten">Tabelle 6</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> die Einstellungen.</p>
@@ -615,7 +703,7 @@ Die EU-Verordnung betrifft B2C-Umsätze. B2B-Umsätze ohne Umsatzsteuer bleiben 
 </ol>
 </div>
 <table id="tabelle-debitorenkonten-einrichten" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 5. Debitorenkonten einrichten</caption>
+<caption class="title">Tabelle 6. Debitorenkonten einrichten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -663,7 +751,7 @@ Die Reihenfolge <strong>Firma, Nachname, Vorname</strong> sorgt dafür, dass zue
 </table>
 </div>
 <div class="sect2">
-<h3 id="800">4.3. Erlöskonten einrichten</h3>
+<h3 id="800">5.3. Erlöskonten einrichten</h3>
 <div class="paragraph">
 <p>Richte Erlöskonten ein, um deinen Umsatzerlösen Konten zuzuordnen. Du hast die Möglichkeit, für steuerpflichtige Erlöse pro Steuersatz ein Erlöskonto anzugeben sowie für umsatzsteuerfreie Erlöse.</p>
 </div>
@@ -720,14 +808,14 @@ Die Reihenfolge <strong>Firma, Nachname, Vorname</strong> sorgt dafür, dass zue
 </div>
 </div>
 <div class="sect2">
-<h3 id="910">4.4. Buchungskonten für Kassenvorfälle speichern (ab plentymarkets App Version 1.7.3)</h3>
+<h3 id="910">5.4. Buchungskonten für Kassenvorfälle speichern (ab plentymarkets App Version 1.7.3)</h3>
 <div class="paragraph">
 <p>Aufträge, die über plentyPOS generiert werden, werden den in plentymarkets gespeicherten Erlöskonten zugewiesen. Da Einlagen, Entnahmen und Differenzen aus Kassenstürzen keine Aufträge sind, kannst du für diese Kassenvorfälle eigene Buchungskonten speichern. Wie du Buchungskonten für Kassenvorfälle speicherst, erfährst du auf der Handbuchseite <a href="/pos/pos-einrichten">POS einrichten</a>.</p>
 </div>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="850">5. Einstellungen auf andere Standorte übertragen</h2>
+<h2 id="850">6. Einstellungen auf andere Standorte übertragen</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Mit der Funktion <strong>Einstellungen übertragen</strong> kopierst du Einstellungen des aktuellen Standortes auf einen oder mehrere andere Standorte. Dabei kannst du die Einstellungen entsprechend der Tabs der Buchhaltung einzeln oder zusammen übertragen.</p>
@@ -776,7 +864,7 @@ Die Reihenfolge <strong>Firma, Nachname, Vorname</strong> sorgt dafür, dass zue
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="900">6. Buchhaltungsdaten exportieren</h2>
+<h2 id="900">7. Buchhaltungsdaten exportieren</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>plentymarkets bietet die Möglichkeit, Buchhaltungsdaten zu exportieren und so an ein Buchhaltungs-Software zu übergeben. Beim Export werden Debitorenkonten, Erlöskonten und Buchungsschlüssel vergeben, wenn du die Einstellungen wie oben beschrieben vorgenommen hast.</p>

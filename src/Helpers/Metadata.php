@@ -9266,6 +9266,22 @@ class Metadata {
 								"languageID" => "QTSFR4P",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "ba99008f5a0040072adeb78b2cccf253",
+								"path" => "daten/daten-importieren/sync-typen/elasticSync-zuordnung-zolltarifnummer",
+								"position" => 160,
+								"urlName" => "elasticSync-zuordnung-zolltarifnummer",
+								"url" => "/daten/daten-importieren/sync-typen/elasticSync-zuordnung-zolltarifnummer",
+								"level" => 4,
+								"title" => "Zuordnung Zolltarifnummer",
+								"keywords" => "ElasticSync, Import, Zuordnung Zolltarifnummer, Taric, Umsatzsteuer",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Zuordnung Zolltarifnummer. Hier findest du folgende Informationen:",
+								"languageID" => "SOPEBTH",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
