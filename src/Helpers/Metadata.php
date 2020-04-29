@@ -13736,6 +13736,22 @@ class Metadata {
 		"languageID" => "",
 		"children" => 		[
 			[
+				"id" => "01ba953453741a2b617221537ee11cc6",
+				"path" => "changelog/2020-04-22",
+				"position" => 420,
+				"urlName" => "2020-04-22",
+				"url" => "/changelog/2020-04-22",
+				"level" => 2,
+				"title" => "Changelog 22. April 2020",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 22. April 2020. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "65dceaad61e86c9888b31a4487a2d005",
 				"path" => "changelog/2020-04-15",
 				"position" => 430,
