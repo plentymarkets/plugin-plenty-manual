@@ -27042,11 +27042,11 @@ class Metadata {
 				"urlName" => "integrating-plentymarkets-pos",
 				"url" => "/en/pos/integrating-plentymarkets-pos",
 				"level" => 2,
-				"title" => "Integrating plentyPOS",
+				"title" => "Integrating POS",
 				"keywords" => "plentymarkets POS, POS, point of sale, POS system, points of sale, IDEA export, IDEA, GoBD, cash journal, POS journal, RKSV, DEP export, mobile POS, smartphone POS, plentyPOS, POS system, IDEA export, IDEA, GoBD, cash journal, mobile POS, smartphone POS, security device, POS Austria, POS legal, RKSV conformity, QR code",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Integrating plentyPOS. The following information is available:",
+				"linkListInto" => "Welcome to the topic Integrating POS. The following information is available:",
 				"languageID" => "LLRIR57",
 				"children" => [],
 				"hasChildren" => false
