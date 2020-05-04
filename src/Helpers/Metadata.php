@@ -26378,7 +26378,7 @@ class Metadata {
 				"url" => "/en/markets/etsy",
 				"level" => 2,
 				"title" => "Etsy",
-				"keywords" => "Etsy, market, marketplace, marketplace Etsy, setting up Etsy, Etsy setup, multichannel, multi-channel, multi channel, Etzy, DaWanda",
+				"keywords" => "Etsy, market, marketplace, Multi-Channel, marketplace Etsy, setting up Etsy, Etsy setup, Etsy marketplace, Multichannel, Multi-Channel Etsy, Multichannel Etsy, multi channel Etsy, dawanda, Etsy-plugin, Etsy plugin, Etzy",
 				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Etsy in your plentymarkets system.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Etsy. The following information is available:",
