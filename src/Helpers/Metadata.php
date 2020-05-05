@@ -27074,11 +27074,11 @@ class Metadata {
 				"urlName" => "pos-legal-compliance",
 				"url" => "/en/pos/pos-legal-compliance",
 				"level" => 2,
-				"title" => "plentyPOS and legal compliance",
+				"title" => "POS and legal compliance",
 				"keywords" => "plentymarkets POS, plentyPOS, POS, legal compliance, tax authorities, tax legislation, financial law, GoBD, financial data export",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic plentyPOS and legal compliance. The following information is available:",
+				"linkListInto" => "Welcome to the topic POS and legal compliance. The following information is available:",
 				"languageID" => "PRVBBTM",
 				"children" => [],
 				"hasChildren" => false
