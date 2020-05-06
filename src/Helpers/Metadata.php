@@ -21778,7 +21778,7 @@ class Metadata {
 				"url" => "/en/crm/sending-emails",
 				"level" => 2,
 				"title" => "Sending emails",
-				"keywords" => "login details, HTML design, info service, email template, e-mail template, email, e-mail, template variable, template variables, template functions, automatic email, event procedure, aborted purchase email",
+				"keywords" => "login details, HTML design, info service, email template, e-mail template, email, e-mail, template variable, template variables, template functions, automatic email, event procedure",
 				"description" => "Learn how to set up email templates and automatically send emails to your customers.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Sending emails. The following information is available:",
