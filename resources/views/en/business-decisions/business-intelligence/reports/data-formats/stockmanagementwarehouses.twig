@@ -1,0 +1,198 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_technical_specifications"><span>1.</span><span> Technical specifications</span></a></li>
+<li><a href="#_data_columns"><span>2.</span><span> Data columns</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>stockManagementWarehouses</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <strong>stockManagementWarehouses</strong> data format creator to export warehouses and save them in the cloud. For further information on the properties of the format, see the following tables.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_technical_specifications">1. Technical specifications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="#table-specifications-stockmanagementstockwarehouses">Table 1</a> for further information on the available properties and their corresponding values.</p>
+</div>
+<table id="table-specifications-stockmanagementstockwarehouses" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Technical specifications of the format <strong>stockManagementWarehouses</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stockManagementWarehouses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the creator process and prefix of the created file.<br>
+File name: <strong>stockManagementWarehouses-xxx.csv.gz</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fileFormat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CSV, GZIP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data is provided as a GZIP-compressed CSV file (RFC 1952).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lines per request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 1,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written into a single file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 1,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2006-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMinimum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum number of days until the data is deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The minimum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Setup » Settings » Report » Raw data</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMaximum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of days until the data is deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Setup » Settings » Report » Raw data</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column header</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the column that contains the time stamp of the last data update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activated by default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data is only exported automatically in the background after you have activated the creator in the <strong>Setup » Settings » Report » Raw data</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">daily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">With this setting, all data that has been changed since the last run is exported once a day, usually during the night.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="_data_columns">2. Data columns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="#table-data-columns-stockmanagementstockwarehouses">Table 2</a> for further information on the <strong>stockManagementWarehouses</strong> data columns included in the CSV file during raw data export.</p>
+</div>
+<table id="table-data-columns-stockmanagementstockwarehouses" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Data columns of the format <strong>stockManagementWarehouses</strong></caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+<th class="tableblock halign-left valign-top">Full name</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>smw_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the warehouse</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_type_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of the warehouse<br>
+Possible values:<br>
+0 = Sales warehouse<br>
+1 = Repair warehouse<br>
+4 = Storage warehouse<br>
+5 = Transit warehouse<br>
+6 = Distribution warehouse<br>
+7 = Other</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_logistics_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse logistics type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Logistics type of the warehouse<br>
+Possible values:<br>
+own = own warehouse<br>
+amazon = amazon FBA warehouse<br>
+dhl = DHL Fulfillment warehouse</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Priority of the warehouse<br>
+Possible values:<br>
+5 (highest priority) to 1 (lowest priority)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the warehouse</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>smw_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse updated at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update<br>
+Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>

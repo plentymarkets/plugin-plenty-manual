@@ -1,0 +1,202 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_technical_specifications"><span>1.</span><span> Technical specifications</span></a></li>
+<li><a href="#_data_columns"><span>2.</span><span> Data columns</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>orderProperties</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <strong>orderProperties</strong> data format creator to export order properties and save them in the cloud. For further information on the properties of the format, see the following tables.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_technical_specifications">1. Technical specifications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="#table-specifications-order-properties">Table 1</a> for further information on the available properties and their corresponding values.</p>
+</div>
+<table id="table-specifications-order-properties" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Technical specifications of the format <strong>orderProperties</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">orderProperties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the creator process and prefix of the created file.<br>
+File name: <strong>orderProperties-xxx.csv.gz</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fileFormat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CSV, GZIP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data is provided as a GZIP-compressed CSV file (RFC 1952).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lines per request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 8,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written into a single file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 280,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2016-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMinimum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum number of days until the data is deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1095</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The minimum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Setup » Settings » Report » Raw data</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deleteRawDataAfterDaysMaximum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of days until the data is deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1095</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of days until the generated raw data file is deleted from the cloud storage. Therefore, the data must be processed before this date. The exact duration can be defined in the <strong>Setup » Settings » Report » Raw data</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column header</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">op_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the column that contains the time stamp of the last data update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activated by default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As standard, the export runs automatically in the background.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">daily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">With this setting, all data that has been changed since the last run is exported once a day, usually during the night.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="_data_columns">2. Data columns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="#table-data-columns-order-properties">Table 2</a> for further information on the <strong>orderProperties</strong> data columns included in the CSV file during raw data export.</p>
+</div>
+<table id="table-data-columns-order-properties" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Data columns of the format <strong>orderProperties</strong></caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+<th class="tableblock halign-left valign-top">Full name</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>op_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order property ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the property of the order<br>
+Possible values:<br>
+1 = Warehouse<br>
+2 = Shipping profile<br>
+3 = Payment method<br>
+4 = Payment status<br>
+5 = External shipping profile<br>
+6 = Document language (in the order documents)<br>
+7 = External order ID<br>
+Further possible values are listed in our <a href="https://developers.plentymarkets.com/rest-doc/order_order_property/details" target="_blank" rel="noopener">documentation for developers</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">opt_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order property type ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order property type.<br>
+ Possible values:<br>
+ 1 = Order<br>
+ 2 = Delivery order<br>
+ 3 = Return<br>
+ 4 = Credit note<br>
+ 5 = Warranty<br>
+ 6 = Repair<br>
+ 7 = Offer<br>
+ 8 = Advance order<br>
+ 9 = Multi-order<br>
+ 10 = Multi credit note<br>
+ 11 = Scheduler<br>
+ 12 = Reorder<br>
+ 13 = Partial delivery</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">op_value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order property value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value of the order property</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>op_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order property updated at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update<br>
+Date format: MM/DD/YY HH:MI:SS TZ</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
