@@ -1,0 +1,243 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#_rohdaten"><span>1.</span><span> Rohdaten</span></a>
+<ul class="sectlevel2">
+<li><a href="#_für_endanwender"><span>1.1.</span><span> Für Endanwender</span></a></li>
+<li><a href="#_für_entwickler"><span>1.2.</span><span> Für Entwickler</span></a></li>
+<li><a href="#_datenformat_creator"><span>1.3.</span><span> Datenformat-Creator</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Reports verwalten</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ein Report ist eine Datenanalyse, die als Ergebnis eine einzelne Kennzahl (KPI) oder eine Ergebnisliste ermittelt. Als Datenbasis für diese Analyse werden regelmäßig Rohdaten aus plentymarkets exportiert und auf einem sicheren Cloud-Speicher abgelegt.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Aktueller Stand</div>
+<div class="paragraph">
+<p>Zum aktuellen Zeitpunkt kann die Analyse lediglich über externe Business-Intelligence-Tools (BI-Tools) erfolgen. Für das laufende Jahr ist auch ein internes Modul zur Datenanalyse geplant.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_rohdaten">1. Rohdaten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rohdaten werden im Hintergrund und im Regelfall nachts ermittelt. Welche Rohdaten abgelegt werden, legst du im Menü <strong>Einrichtung » Einstellungen » Report » Rohdaten</strong> fest. Die generierten Dateien kannst du per REST-API abrufen und extern verarbeiten.</p>
+</div>
+<div class="sect2">
+<h3 id="_für_endanwender">1.1. Für Endanwender</h3>
+<div class="paragraph">
+<p>Wir beobachten, dass Geschäftsentscheidungen oft nicht auf Basis von Kennzahlen, sondern eher aus dem Bauch heraus getroffen werden. Um dies zu verändern, empfehlen wir den Einsatz eines Business-Intelligence-Tools. Bestenfalls werden darin unterschiedliche Daten aus mehreren Quellen analysiert, um daraus konkrete Handlungsempfehlungen ableiten zu können.</p>
+</div>
+<div class="paragraph">
+<p>Die Daten aus plentymarkets können einfach in eine bestehende BI-Lösung integriert werden. Sofern noch kein Standard-Connector existiert, leite die URL zu dieser Seite an den Lösungsanbieter weiter.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_für_entwickler">1.2. Für Entwickler</h3>
+<div class="paragraph">
+<p>Wenn du einen Connector zu einer BI-Lösung herstellen und diesen vermarkten möchtest, kann dies auch kostenfrei über den <a href="https://marketplace.plentymarkets.com/" target="_blank" rel="noopener">plentyMarketplace</a> erfolgen. Neben plentymarkets Plugins können hier auch Einträge zu externen Angeboten integriert werden. Registriere dich <a href="https://www.plentymarkets.eu/service/partner-werden/" target="_blank" rel="noopener">hier</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> als Partner.</p>
+</div>
+<div class="paragraph">
+<p>Rohdaten liegen im Format CSV vor und können somit einfach weiter verarbeitet werden. Alle plentymarkets Systeme verfügen über eine einheitliche REST-API. Die Dokumentation findest du auf <a href="https://developers.plentymarkets.com/" target="_blank" rel="noopener">dieser Seite</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+<div class="paragraph">
+<p>Der Abruf von Rohdaten erfolgt in zwei Schritten. Wir empfehlen, den Abruf einmal pro Tag ab Mittag durchzuführen, da bis dahin für alle Systeme die Generierung der Rohdaten abgeschlossen ist.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Zuerst wird über diese <a href="https://developers.plentymarkets.com/rest-doc#/Report/get_rest_report_raw_data" target="_blank" rel="noopener">Route</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> eine Liste der vorhandenen Rohdatendateien abgefragt. Der Erstellungszeitpunkt der beim letzten Abruf jüngsten Datei dient für die nächste Anfrage als Filter, um Dateien nicht wiederholt abzufragen. Die Anzahl der pro Tag generierten Dateien kann variieren, je nachdem wie viele Creator-Prozesse für ein plentymarkets System aktiviert wurden. Zudem wird in jede Datei nur eine bestimmte Anzahl an Datenzeilen geschrieben und im Bedarfsfall eine weitere Datei angelegt. Je nach Bedarf können mit dieser Route alle Dateien nur eines Creators oder alle Dateien die im Abfragezeitraum erstellt wurden, zurückgeliefert werden.</p>
+</li>
+<li>
+<p>Mit dieser <a href="https://developers.plentymarkets.com/rest-doc#/Report/get_rest_report_raw_data_file" target="_blank" rel="noopener">Route</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> wird eine Rohdatendatei zurückgeliefert. Der dafür nötige Dateipfad ist in der Ergebnismenge der unter Punkt 1 benannten REST-Route. Rohdatendateien werden als per GZIP (RFC 1952) komprimierte CSV-Dateien geliefert, wobei als Spaltentrennzeichen ein Komma verwendet wird.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Standardzeitstempelformat</div>
+<div class="paragraph">
+<p>Das Standarddatumsformat ist MM/DD/YYYY HH:MI:SS TZ, da dies unverändert in eine AWS Redshift Spalte vom Typ TIMESTAMPTZ per copy-Befehl übernommen werden kann. Beispiel: 01/30/2019 05:14:57 Europe/Berlin</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_datenformat_creator">1.3. Datenformat-Creator</h3>
+<div class="paragraph">
+<p>Mit Creator bezeichnen wir einen bestimmten Prozess, welcher ein Datenformat bereitstellt. Jeder Creator legt erst dann Daten ab, wenn dieser zuvor im Menü <strong>Einrichtung » Einstellungen » Report » Rohdaten</strong> aktiviert wurde.</p>
+</div>
+<div class="paragraph">
+<p>Die einzelnen Datenformate haben englische Bezeichnungen. Die Bedeutung sowie weiterführende Links sind in <a href="#tabelle-report-datenformate">Tabelle 1</a> aufgelistet.</p>
+</div>
+<table id="tabelle-report-datenformate" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Verfügbare Datenformate</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Datenformat</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accountContacts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kontakt<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/accountcontacts">accountContacts</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accounts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Firma<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/accounts">accounts</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">categories</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kategorien<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/categories">categories</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">feedbacks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feedbacks<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/feedbacks">feedbacks</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">itemManufacturer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hersteller<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/itemmanufacturer">itemManufacturer</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">itemVariations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variante<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/itemvariations">itemVariations</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">itemVariationSuppliers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verknüpfungen zwischen Lieferanten und Varianten<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/itemvariationsuppliers">itemVariationSuppliers</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">orderDocuments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftragsdokumente<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/orderdocuments">orderDocuments</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">orderItemAmounts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl der Auftragspositionen<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/orderitemamounts">orderItemAmounts</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">orderItemProperties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eigenschaft der Auftragsposition<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/orderitemproperties">orderItemProperties</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">orderItems</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftragsposition<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/orderitems">orderItems</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">orderProperties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftragseigenschaft<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/orderproperties">orderProperties</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">orders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftrag<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/orders">orders</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">orderStatuses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftragsstatus<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/orderstatuses">orderStatuses</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">paymentOrderRelations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verknüpfungen zwischen Zahlungen und Aufträgen<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/paymentorderrelations">paymentOrderRelations</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">payments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zahlungen<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/payments">payments</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eigenschaften<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/properties">properties</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">propertyRelations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verknüpfungen zwischen Eigenschaften und anderen Daten<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/propertyrelations">propertyRelations</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stockManagementStock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bestand<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/stockmanagementstock">stockManagementStock</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stockManagementStockMovements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warenbewegungen<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/stockmanagementstockmovements">stockManagementStockMovements</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stockManagementWarehouses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lager<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/stockmanagementwarehouses">stockManagementWarehouses</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tags<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/tags">tags</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tagRelations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tag-Verknüpfungen<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/tagrelations">tagRelations</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">users</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benutzer<br>
+Weitere Informationen findest du auf der Unterseite <a href="/daten/report/datenformate/users">users</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Weitere Datenformate werden sukzessive ergänzt und in dieser Tabelle hinzugefügt.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
