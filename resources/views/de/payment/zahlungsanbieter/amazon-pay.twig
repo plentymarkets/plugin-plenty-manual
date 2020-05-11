@@ -335,7 +335,37 @@ Die <a href="/artikel/artikel-verwalten#170">Verfügbarkeit</a> wird im Tab eine
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in &lt;stdin&gt; - include::assets/EX-DE-Amazon-Payments-Advanced-Zahlung-Versand.html[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="row equal margin-bottom-1" data-plenty="UI.equalHeight(this, 'lg, md, sm')"&gt;
+
+	&#123;&#37; $_apaAddress = Container_CheckoutAmazonPaymentsAdvancedAddressWidget() &#37;&#125;
+	&#123;&#37; $_apaPayment = Container_CheckoutAmazonPaymentsAdvancedPaymentWidget() &#37;&#125;
+
+
+	&lt;div class="col-lg-6 col-md-6 col-sm-6" data-plenty-checkout-template="MethodsOfPaymentList"&gt;
+		&#123;&#37; if strlen($_apaPayment) &gt; 0 &#37;&#125;
+			$_apaPayment
+		&#123;&#37; else &#37;&#125;
+			&#123;&#37; Container_CheckoutMethodsOfPaymentList() &#37;&#125;
+		&#123;&#37; endif &#37;&#125;
+	&lt;/div&gt;
+
+	&#123;&#37; if strlen($_apaAddress) &gt; 0 &#37;&#125;
+		&lt;div class="col-lg-6 col-md-6 col-sm-6" data-plenty-checkout-template="MethodsOfPaymentList"&gt;
+			$_apaAddress
+		&lt;/div&gt;
+	&#123;&#37; endif &#37;&#125;
+
+	&lt;div class="col-lg-6 col-md-6 col-sm-6 shipping-select" data-plenty-checkout-template="ShippingProfilesList"&gt;
+		&#123;&#37; Container_CheckoutShippingProfilesList() &#37;&#125;
+	&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="text-right"&gt;
+	&lt;button class="btn btn-primary btn-lg btn-block-xs" id="goToOrderSummaryButton" data-plenty="click:Redirect.toCheckoutTab('next')"&gt;
+		&lt;span&gt;Weiter&lt;/span&gt;&lt;span class="glyphicon glyphicon-chevron-right" aria-hidden="true"&gt;&lt;/span&gt;
+	&lt;/button&gt;
+&lt;/div&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -371,7 +401,9 @@ Die <a href="/artikel/artikel-verwalten#170">Verfügbarkeit</a> wird im Tab eine
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in &lt;stdin&gt; - include::assets/EX-DE-Amazon-Payments-Advanced-Overlay.html[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;a class="pull-left" style="padding: 5px 10px"&gt;
+	$AmazonPaymentsAdvancedButton
+&lt;/a&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -407,7 +439,9 @@ Die <a href="/artikel/artikel-verwalten#170">Verfügbarkeit</a> wird im Tab eine
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in &lt;stdin&gt; - include::assets/EX-DE-Amazon-Payments-Advanced-Warenkorbvorschau.html[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="pull-right" style="padding-bottom: 5px;"&gt;
+	&#123;&#37; CheckoutAmazonPaymentsAdvancedButton() &#37;&#125;
+&lt;/div&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -446,7 +480,9 @@ Die <a href="/artikel/artikel-verwalten#170">Verfügbarkeit</a> wird im Tab eine
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in &lt;stdin&gt; - include::assets/EX-DE-Amazon-Payments-Advanced-Warenkorb.html[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="margin-top-1 text-right"&gt;
+	&#123;&#37; CheckoutAmazonPaymentsAdvancedButton() &#37;&#125;
+&lt;/div&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -485,7 +521,34 @@ Die <a href="/artikel/artikel-verwalten#170">Verfügbarkeit</a> wird im Tab eine
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in &lt;stdin&gt; - include::assets/EX-DE-Amazon-Payments-Advanced-Anmeldung.html[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="col-lg-6 col-md-6 col-sm-6"&gt;
+	&lt;h4&gt;Noch kein Kunde?&lt;/h4&gt;
+	&lt;hr class="margin-bottom-15"&gt;
+	&lt;div class="row"&gt;
+		&lt;div class="col-lg-4 col-md-4 col-sm-4"&gt;
+			&lt;p&gt;
+				&lt;a class="btn btn-primary btn-block" href="&#123;&#37; Link_CustomerRegistration() &#37;&#125;"&gt;&lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt; Registrieren&lt;/a&gt;
+			&lt;/p&gt;
+			&lt;p&gt;
+				Sie erhalten in Ihrem persönlichen "Mein Konto"-Bereich jederzeit Zugriff auf Ihre Bestellungen sowie Ihre Kundendaten.
+			&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="col-lg-4 col-md-4 col-sm-4"&gt;
+			&lt;p&gt;
+				&lt;a class="btn btn-default btn-block" href="&#123;&#37; Link_Checkout(3) &#37;&#125;"&gt;&lt;span class="glyphicon glyphicon-briefcase"&gt;&lt;/span&gt; Gastbestellung&lt;/a&gt;
+			&lt;/p&gt;
+			&lt;p&gt;
+				Als Gast bestellen Sie ohne Registrierung. Bei weiteren Bestellungen müssen Sie Ihre Daten erneut eingeben.
+			&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="col-lg-4 col-md-4 col-sm-4"&gt;
+			&lt;div style="padding-bottom: 19px;"&gt;&#123;&#37; CheckoutAmazonPaymentsAdvancedButton() &#37;&#125;&lt;/div&gt;
+			&lt;p&gt;
+				Bequem und einfach direkt mit ihrem Amazon-Konto bezahlen.
+			&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 </div>
 </div>
 </div>

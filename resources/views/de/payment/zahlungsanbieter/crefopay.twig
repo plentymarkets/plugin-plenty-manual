@@ -250,7 +250,74 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">Unresolved directive in &lt;stdin&gt; - include::assets/EX-DE-Crefopay-Bestellbestaetigung.html[]</code></pre>
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="row margin-bottom-15"&gt;
+	&#123;&#37; if $CheckoutMethodOfPaymentID == 5500 &#37;&#125;
+			&#123;&#37; $_crefoFrame = Container_CheckoutCrefoPay() &#37;&#125;
+		&#123;&#37; endif &#37;&#125;
+		&#123;&#37; if strlen($_crefoFrame) &#37;&#125;
+			&#123;&#37; if $_crefoFrame == "PENDING" || $_crefoFrame == "ACCEPTED" &#37;&#125;
+			&lt;div class="col-lg-6 col-md-6 col-sm-12"&gt;
+				&lt;h4&gt;Vielen Dank für Ihre Bestellung!&lt;/h4&gt;
+
+				&lt;hr&gt;
+
+				&lt;p&gt;
+					Ihre Bestellung wurde erfolgreich an uns übermittelt. Sie erhalten eine entsprechende Bestätigung per E-Mail.
+					Einen Überblick über Ihre Bestellungen finden Sie in der Auftragsübersicht.
+				&lt;/p&gt;
+				&lt;p&gt;
+					&#123;&#37; if $_crefoFrame == "PENDING"&#37;&#125;
+					Ihre Zahlung wird bearbeitet. Zahlungsstatus =&gt; $_crefoFrame
+					&#123;&#37; else &#37;&#125;
+					Ihre Zahlung wurde bearbeitet. Zahlungsstatus =&gt; $_crefoFrame
+					&#123;&#37; endif &#37;&#125;
+				&lt;/p&gt;
+
+				&lt;div class="row"&gt;
+					&lt;div class="col-lg-6 col-md-6 col-sm-6"&gt;
+						&lt;a class="btn btn-default btn-block" href="&#123;&#37; Link_Home() &#37;&#125;"&gt;
+							&lt;span class="glyphicon glyphicon-home" aria-hidden="true"&gt;&lt;/span&gt; Zurück zur Startseite
+						&lt;/a&gt;
+					&lt;/div&gt;
+
+					&lt;div class="col-lg-6 col-md-6 col-sm-6 margin-top-xs-1"&gt;
+						&lt;a class="btn btn-primary btn-block" href="&#123;&#37; Link_Home() &#37;&#125;?AccountShow=OrderOverView&amp;OrderID=$_confirm-&gt;OrderID"&gt;
+							&lt;span class="glyphicon glyphicon-eye-open" aria-hidden="true"&gt;&lt;/span&gt; Zur Auftragsübersicht
+						&lt;/a&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&#123;&#37; else &#37;&#125;
+				$_crefoFrame
+			&#123;&#37; endif &#37;&#125;
+		&#123;&#37; else &#37;&#125;
+
+	&lt;div class="col-lg-6 col-md-6 col-sm-12"&gt;
+		&lt;h4&gt;Vielen Dank für Ihre Bestellung!&lt;/h4&gt;
+
+		&lt;hr&gt;
+
+		&lt;p&gt;
+			Ihre Bestellung wurde erfolgreich an uns übermittelt. Sie erhalten eine entsprechende Bestätigung per E-Mail.
+			Einen Überblick über Ihre Bestellungen finden Sie in der Auftragsübersicht.
+		&lt;/p&gt;
+
+		&lt;div class="row"&gt;
+			&lt;div class="col-lg-6 col-md-6 col-sm-6"&gt;
+				&lt;a class="btn btn-default btn-block" href="&#123;&#37; Link_Home() &#37;&#125;"&gt;
+					&lt;span class="glyphicon glyphicon-home" aria-hidden="true"&gt;&lt;/span&gt; Zurück zur Startseite
+				&lt;/a&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-lg-6 col-md-6 col-sm-6 margin-top-xs-1"&gt;
+				&lt;a class="btn btn-primary btn-block" href="&#123;&#37; Link_Home() &#37;&#125;?AccountShow=OrderOverView&amp;OrderID=$_confirm-&gt;OrderID"&gt;
+					&lt;span class="glyphicon glyphicon-eye-open" aria-hidden="true"&gt;&lt;/span&gt; Zur Auftragsübersicht
+				&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&#123;&#37; endif &#37;&#125;
+&lt;/div&gt;</code></pre>
 </div>
 </div>
 </div>
