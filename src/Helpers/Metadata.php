@@ -16133,7 +16133,7 @@ class Metadata {
 				"url" => "/en/fulfilment/ebay-fulfillment",
 				"level" => 2,
 				"title" => "eBay Fulfillment integration guide",
-				"keywords" => "eBay Fulfillment, Inbound, Outbound, Fiege, goods delivery announcement, advice note, inbound packages, EBFSKU, ebfsku",
+				"keywords" => "eBay Fulfillment, Inbound, Outbound, Fiege, Ebay Fulfillment integration guide, ebay fulfilment, EBFSKU, ebay fulfillment sku, ebay sku, ebfsku, automatically assign ebay fulfillment warehouse, eBay Fulfillment warehouse, error inbound, error Outbound, ebay customer support, goods delivery announcement, advice note, inbound packages, Inbound not sent, eBay Fulfillment shipping release, eBay Fulfillment warehouse",
 				"description" => "Learn how to set up eBay Fulfillment in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic eBay Fulfillment integration guide. The following information is available:",
