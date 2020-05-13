@@ -15,7 +15,14 @@
 <li><a href="#800"><span>9.</span><span> Kategorien verknüpfen</span></a></li>
 <li><a href="#900"><span>10.</span><span> Primär-Kategorien aktivieren</span></a></li>
 <li><a href="#1000"><span>11.</span><span> Attribute verknüpfen</span></a></li>
-<li><a href="#1100"><span>12.</span><span> Hersteller verknüpfen</span></a></li>
+<li><a href="#1100"><span>12.</span><span> Hersteller verknüpfen</span></a>
+<ul class="sectlevel2">
+<li><a href="#1125"><span>12.1.</span><span> Sync erstellen</span></a></li>
+<li><a href="#1130"><span>12.2.</span><span> Importoptionen festlegen</span></a></li>
+<li><a href="#1135"><span>12.3.</span><span> Abgleich festlegen</span></a></li>
+<li><a href="#1140"><span>12.4.</span><span> Zuordnung erstellen</span></a></li>
+</ul>
+</li>
 <li><a href="#1200"><span>13.</span><span> Exportierte Artikel anzeigen</span></a></li>
 <li><a href="#1300"><span>14.</span><span> Fehlerberichte anzeigen</span></a></li>
 <li><a href="#1400"><span>15.</span><span> Variantenverfügbarkeit einstellen</span></a></li>
@@ -607,77 +614,222 @@
 <h2 id="1100">12. Hersteller verknüpfen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Brand-IDs für Neckermann.at werden über den dynamischen Datenaustausch importiert.</p>
+<p>Brand-IDs für Neckermann.at können mit ElasticSync importiert werden oder manuell eingegeben werden.<br></p>
+</div>
+<div class="paragraph">
+<p>Um Brand-IDs für Neckermann mit ElasticSync zu importieren, erstellst du einen Sync vom Typ <a href="/daten/daten-importieren/sync-typen/elasticSync-hersteller">Hersteller</a>. Nachdem du den Sync erstellt hast, musst du noch die Importoptionen für den Sync bestimmen, den Abgleich festlegen und die Zuordnung erstellen.</p>
+</div>
+<div class="sect2">
+<h3 id="1125">12.1. Sync erstellen</h3>
+<div class="paragraph">
+<p>Erstelle zunächst einen Sync vom Typ <strong>Hersteller</strong>.</p>
 </div>
 <div class="paragraph instruction">
-<p>Brand-IDs von Neckermann.at importieren:</p>
+<p>Sync erstellen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <strong>Daten » Dynamischer Export » Tab: Neues Datenformat</strong>.</p>
+<p>Öffne das Menü <strong>Daten » Datenimport: Import</strong>.<br>
+→ Die Sync-Übersicht wird geöffnet.</p>
 </li>
 <li>
-<p>Wähle unter <strong>Datenformat-Typ</strong> die Einstellung <strong>Producer</strong>.</p>
+<p>Klicke auf <strong>Sync hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Der Bearbeitungsbereich <strong>Neuer Sync</strong> wird angezeigt.</p>
 </li>
 <li>
-<p>Gib einen Namen ein.</p>
-</li>
-<li>
-<p>Aktiviere die Felder <strong>ProducerID</strong>, <strong>ProducerName</strong> und <strong>ProducerNeckermannID_AT_EP</strong> bzw. <strong>ProducerNeckermannID_AT_CD</strong>.</p>
+<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#hersteller-sync-neckermann">Tabelle 4</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
-→ Das Tab <strong>Datenformat bearbeiten</strong> wird geöffnet.</p>
-</li>
-<li>
-<p>Klappe das Datenformat auf.</p>
-</li>
-<li>
-<p>Klicke auf <strong>Daten exportieren</strong>.</p>
-</li>
-<li>
-<p>Speichere die CSV-Datei auf deinem Rechner.</p>
-</li>
-<li>
-<p>Gib in die CSV-Datei unter <strong>ProducerNeckermannID</strong> die passenden Hersteller-IDs ein.<br>
-→ Die IDs findest du in der Datei von Neckermann.</p>
-</li>
-<li>
-<p>Öffne das Menü <strong>Daten » Dynamischer Import</strong>.</p>
-</li>
-<li>
-<p>Wähle das Feldtrennzeichen.</p>
-</li>
-<li>
-<p>Wähle unter <strong>Format</strong> dein Datenformat.</p>
-</li>
-<li>
-<p>Klicke auf <strong>Durchsuchen…​</strong>.</p>
-</li>
-<li>
-<p>Öffne die CSV-Datei.</p>
-</li>
-<li>
-<p>Klicke auf <strong>Import</strong>.<br>
-→ Nach dem Import der Brand-IDs findest du die Neckermann-ID eines Herstellers im Menü <strong>Einrichtung » Artikel » Hersteller</strong>.</p>
+→ Der Sync wird erstellt.<br>
+→ Die Abgleicheinstellungen des Syncs werden geöffnet.</p>
 </li>
 </ol>
 </div>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Wichtig"></i>
-</td>
-<td class="content">
-<div class="title">Format der CSV-Datei</div>
-<div class="paragraph">
-<p>Die CSV-Datei darf keine Kopfzeile enthalten. Die erste Spalte enthält die Hersteller-ID und die zweite Spalte die Brand-IDs von Neckermann. Die Hersteller-ID der ersten Spalte ist der entsprechenden Brand-ID der zweiten Spalte zugeordnet.</p>
-</div>
-</td>
+<table id="hersteller-sync-neckermann" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Sync erstellen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
 </tr>
-</tbody></table>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Grunddaten</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name eingeben. Dieser Name wird in der Übersicht angezeigt und kann für die Suche genutzt werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Intervall</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intervall für den Import von Syncs wählen.<br>
+Mit der Option <strong>Zeitplan</strong> kann festgelegt werden, wie oft und zu welchem Zeitpunkt der Import von Syncs gestartet werden soll.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Typ</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Typ <a href="/daten/daten-importieren/sync-typen/elasticSync-hersteller">Hersteller</a> aus der Dropdown-Liste wählen. Mit diesem Sync-Typ werden Herstellerdaten importiert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Import</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datentyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dateiformat der Importdatei wählen.<br>
+Aktuell ist nur die Auswahl <strong>CSV/TXT</strong> verfügbar, da nur CSV- oder TXT-Dateien importiert werden können.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zeichensatz</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zeichensatz der Datei oder die Option <strong>Automatisch erkennen</strong> wählen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beginne ab Zeile</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ab welcher Zeile der Datei Daten importiert werden sollen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kopfzeile enthalten</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob die Importdatei eine Kopfzeile enthält.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Globalen Cache nutzen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Festlegen, ob der globale Cache für eine Datei genutzt werden soll oder nicht. Ist die Einstellung aktiviert, werden nur geänderte Datenzeilen importiert. Ist die Einstellung nicht aktiviert, kann ein und dieselbe Datei jederzeit erneut importiert werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Automatische Zuordnung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob die automatische Zuordnung verwendet werden soll. Die Spalten der CSV- oder TXT-Datei können automatisch den plentymarkets Datenfeldern zugeordnet werden. Damit die Zuordnung funktioniert, darf die Benennung der im FormatDesigner gewählten Felder nicht geändert werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Trennzeichen</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Trennzeichen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Das Trennzeichen der CSV- oder TXT-Datei wird automatisch erkannt. Diese Einstellung ist standardmäßig aktiviert.<br>
+Alternativ kann das Trennzeichen, das in der Importdatei verwendet wird, um die Datenfelder (Spalten) eines Datensatzes voneinander zu trennen, manuell gewählt werden.<br>
+Mögliche Trennzeichen sind <strong>Semikolon</strong>, <strong>Komma</strong>, <strong>Tabulator</strong> oder <strong>Pipe</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Feldbegrenzungszeichen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Begrenzungszeichen innerhalb von Feldern wählen, die mehrere Werte enthalten können.<br>
+* " = einzelne Werte innerhalb eines Feldes sind durch doppelte Anführungszeichen voneinander getrennt.
+* ' = einzelne Werte innerhalb eines Feldes sind durch einfache Anführungszeichen voneinander getrennt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Quelle</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Quelle</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Manueller Upload</strong>, <strong>FTP</strong>, <strong>HTTPS</strong> oder <strong>SFTP</strong> wählen.<br>
+Je nach gewählter Option werden weitere Einstellungen sichtbar:</p>
+</div>
+<div class="paragraph">
+<p><strong>Manueller Upload</strong> = lokale Datei wählen und direkt hochladen.<br>
+Nachdem ein Sync ausgeführt wurde, wird die Datei automatisch vom Webspace gelöscht. Dies ist standardmäßig voreingestellt. Um die Datei zu speichern, muss der Haken in der Checkbox entfernt werden. <strong><em>Hinweis</em></strong>: Das Speichern der Datei auf dem Webspace ist kostenpflichtig.</p>
+</div>
+<div class="paragraph">
+<p><strong>FTP</strong> = Host, Port, Benutzername, Passwort und Dateiname werden als Einstellungen sichtbar.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Host (Pflichtfeld)</strong> = Host des FTP-Servers eingeben.<br>
+<strong><em>Tipp:</em></strong> Nutze hierzu deinen plentymarkets FTP-Zugang.</p>
+</li>
+<li>
+<p><strong>Port</strong> = Port des FTP-Servers. Wenn kein Port eingetragen ist, wird der Standard-Port (22) verwendet.</p>
+</li>
+<li>
+<p><strong>Benutzername (Pflichtfeld)</strong> = Benutzer für FTP-Zugang eingeben.</p>
+</li>
+<li>
+<p><strong>Passwort (Pflichtfeld)</strong> = Passwort für FTP-Zugang eingeben.</p>
+</li>
+<li>
+<p><strong>Dateiname</strong> = Pfad und Name der Datei eingeben, aus der Daten importiert werden sollen. Der Dateiname muss auf .csv oder .txt enden.<br>
+<strong><em>Hinweis:</em></strong> Wildcards können im Feld <strong>Dateiname</strong> verwendet werden, indem z.B. ein Teil des Dateinamens durch ein <strong>*</strong> ersetzt wird. Wildcards nur in Kombination mit der Option <strong>Datei nach erfolgreichem Import in Archiv verschieben</strong> verwenden.</p>
+</li>
+<li>
+<p><strong>Datei nach erfolgreichem Import in Archiv verschieben</strong> = Wenn diese Option aktiv ist, wird nach erfolgreichem Import die Importdatei automatisch in einen neuen Ordner <strong>Archiv</strong> auf dem FTP-Verzeichnis verschoben.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>HTTPS</strong> = <strong>Externe URL</strong> wählen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Externe URL</strong> = URL eingeben, unter der die Importdatei erreichbar ist.<br>
+<strong><em>Tipp:</em></strong> Speichere die Datei auf dem plentymarkets Webspace.</p>
+</li>
+<li>
+<p><strong>Authentifizierung</strong>: Wählen, ob für den Zugriff auf die Datei eine Authentifizierung erforderlich ist oder nicht.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>keine</strong> = keine Authentifizierung erforderlich</p>
+</li>
+<li>
+<p><strong>HTTP-Authentifizierung</strong> = Authentifizierung per Benutzer und Passwort erforderlich</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>SFTP</strong> = Host, Port, Benutzername, Passwort und Dateiname werden als Einstellungen sichtbar.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Host (Pflichtfeld)</strong> = Host des FTP-Servers eingeben.<br></p>
+</li>
+<li>
+<p><strong>Port (Pflichtfeld)</strong> = Port des FTP-Servers. Wenn kein Port eingetragen ist, wird der Standard-Port (22) verwendet.</p>
+</li>
+<li>
+<p><strong>Benutzername (Pflichtfeld)</strong> = Benutzer für FTP-Zugang eingeben.</p>
+</li>
+<li>
+<p><strong>Passwort (Pflichtfeld)</strong> = Passwort für FTP-Zugang eingeben.</p>
+</li>
+<li>
+<p><strong>Dateiname</strong> = Pfad und Name der Datei eingeben, aus der Daten importiert werden sollen. Der Dateiname muss auf .csv oder .txt enden.<br>
+<strong><em>Hinweis:</em></strong> Wildcards können im Feld <strong>Dateiname</strong> verwendet werden, indem z.B. ein Teil des Dateinamens durch ein <strong>*</strong> ersetzt wird. Wildcards nur in Kombination mit der Option <strong>Datei nach erfolgreichem Import in Archiv verschieben</strong> verwenden.</p>
+</li>
+<li>
+<p><strong>Datei nach erfolgreichem Import in Archiv verschieben</strong> = Wenn diese Option aktiv ist, wird nach erfolgreichem Import die Importdatei automatisch in einen neuen Ordner <strong>Archiv</strong> auf dem FTP-Verzeichnis verschoben.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1130">12.2. Importoptionen festlegen</h3>
+<div class="paragraph">
+<p>Nachdem du den Sync vom Typ <strong>Hersteller</strong> erstellt hast, legst du die Importoptionen fest. Nimm dazu die Einstellungen vor wie im Kapitel <a href="/daten/daten-importieren/ElasticSync#1300">Importoptionen festlegen</a> auf der ElasticSync-Handbuchseite beschrieben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1135">12.3. Abgleich festlegen</h3>
+<div class="paragraph">
+<p>Als Nächstes legst du den Abgleich für den Sync fest. Nimm dazu die Einstellungen vor wie im Kapitel <a href="/daten/daten-importieren/ElasticSync#1400">Abgleich festlegen</a> auf der ElasticSync-Handbuchseite beschrieben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1140">12.4. Zuordnung erstellen</h3>
+<div class="paragraph">
+<p>Zuletzt musst du noch die Zuordnung der Datenfelder erstellen. Nimm dazu die Einstellungen vor wie im Kapitel <a href="/daten/daten-importieren/ElasticSync#1500">Zuordnung erstellen</a> auf der ElasticSync-Handbuchseite beschrieben.</p>
+</div>
 </div>
 </div>
 </div><div class="sect1">
@@ -1037,7 +1189,7 @@ Dateiformat: <strong>PDF</strong></p>
 → Das Tab <strong>Einstellungen</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#zahlungsart-neckermann">Tabelle 4</a>.</p>
+<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#zahlungsart-neckermann">Tabelle 5</a>.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong>.</p>
@@ -1048,7 +1200,7 @@ Dateiformat: <strong>PDF</strong></p>
 </ol>
 </div>
 <table id="zahlungsart-neckermann" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 4. Einstellungen der Zahlungsart</caption>
+<caption class="title">Tabelle 5. Einstellungen der Zahlungsart</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1211,7 +1363,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 <p>Wähle unter <strong>Aktion</strong> einen neuen <strong>Auftragsstatus</strong>, der den gewählten Aufträgen nach erfolgreichem Rechnungsabruf zugewiesen werden soll.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen vor. Beachte dazu <a href="#einstellungen-neckermann-rechnungen">Tabelle 5</a>.</p>
+<p>Nimm die Einstellungen vor. Beachte dazu <a href="#einstellungen-neckermann-rechnungen">Tabelle 6</a>.</p>
 </li>
 <li>
 <p>Klicke auf das <strong>Zahnrad</strong>.<br>
@@ -1223,7 +1375,7 @@ Weitere Informationen findest du im Kapitel <a href="/payment/zahlungsarten-verw
 </ol>
 </div>
 <table id="einstellungen-neckermann-rechnungen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 5. Einstellungen für Neckermann-Rechnungen</caption>
+<caption class="title">Tabelle 6. Einstellungen für Neckermann-Rechnungen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
