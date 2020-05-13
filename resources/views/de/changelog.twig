@@ -8,7 +8,7 @@
 
 <main id="main">
     <h1>plentymarkets Changelog</h1><div class="paragraph">
-<p>Erfahre, was sich in der Woche vom 30. April 2020 bis zum 06. Mai 2020 bei plentymarkets getan hat. Im Folgenden findest du alle Changelog-Einträge der letzten Wochen für stable- und early-Systeme.</p>
+<p>Erfahre, was sich in der Woche vom 07. Mai 2020 bis zum 13. Mai 2020 bei plentymarkets getan hat. Im Folgenden findest du alle Changelog-Einträge der letzten Wochen für stable- und early-Systeme.</p>
 </div><div class="paragraph">
 <p>Wenn du mehr zu den einzelnen Versionen erfahren oder auf eine andere Version wechseln möchtest, siehe die Handbuchseite <a href="/business-entscheidungen/systemadministration/versionszyklus">Versionszyklus</a>. Um die Informationen, die auf dieser Seite gesammelt sind, in Echtzeit zu erhalten, abonniere die <a href="https://forum.plentymarkets.com/c/changelog" target="_blank" rel="noopener">Kategorie Changelog in unserem Forum</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
 </div><div class="paragraph">
@@ -26,233 +26,39 @@
 <div class="paragraph">
 <p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
 </div>
-<h3 id="_bol_com" class="discrete">Bol.com</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Ab sofort kannst du auf Version 3.0 der API-Schnittstelle von bol.com wechseln. Version 2.0 der API-Schnittstelle von bol.com wird am 12.05.2020 deaktivert.</p>
-<div class="paragraph">
-<p>Folgende Bestandteile der neuen API wurden in den folgenden Versionen implementiert:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 75%;">
-<col style="width: 25%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Funktion</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API-Version</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Angebotsanlage /-update</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version 3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Auftragsimport</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version 3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Versandmeldung</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version 3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Stornomeldung</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version 3</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Retourenimport</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version 4</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Retourenstatus melden</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version 4</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Retouren anlegen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Version 4</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Neu hinzugekommen ist folgende Funktionalität:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Ein stündlicher Import der Retouren, die von EndkundInnen auf bol.com angemeldet wurden.</p>
-</li>
-<li>
-<p>Eine neue Ereignisaktion zum Melden von Retouren, die EndkundInnen direkt an den Händler versendet haben, ohne diese bei bol.com anzumelden.</p>
-</li>
-<li>
-<p>Separate Optionen zur Eingabe der API-Zugangsdaten für die Version 3 und 4.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Außerdem hat sich folgendes geändert:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Die Gründe für die Stornierungs- und Retourenmeldung. Die neuen Gründe wurden ergänzt und in der Benutzeroberfläche mit einer Markierung für die zugehörige API-Version versehen (v2/v3/v4).</p>
-</li>
-<li>
-<p>Die Art der Übertragung der Angebotsdaten. Angebote werden nun statt über einen FTP stündlich über die API erstellt und übermittelt. Beachte, dass ganz neue Angebote erst in einem täglichen Export endgültig aktiviert werden, da die Verarbeitung asynchron erfolgt. Es kann also bis zu 24 Stunden dauern, bis neue Angebote aktiviert werden.</p>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Wichtig"></i>
-</td>
-<td class="content">
-<div class="title">To-Do vor dem 12.05.2020</div>
-<div class="paragraph">
-<p>Im Zuge des Updates musst du folgende Schritte durchführen:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Im Händlerbereich von bol.com API-Zugangsdaten für die Version 3 erstellen (diese Zugangsdaten sind auch für die Version 4 gültig) und diese Zugangsdaten unter <strong>Einrichtung » Märkte » bol.com » Einstellungen</strong> eintragen. Sobald die Zugangsdaten für die Version 3 hinterlegt sind, wird diese neue API-Version benutzt. Um auf die Version 2 zurückzustellen, entferne die neuen Zugangsdaten einfach wieder falls notwendig.</p>
-</li>
-<li>
-<p>Deine bestehenden Ereignisaktionen für Stornos und Retouren auf die neuen Gründe umstellen oder neue Ereignisaktionen dafür anlegen.</p>
-</li>
-<li>
-<p>Ab Version 3 kann das Format "BolOfferExport" nicht mehr zum Erstellen und Aktualisieren von Angeboten genutzt werden. Bitte prüfe deine Exporte mit diesem Format im Menü <strong>Daten » Elastischer Export</strong>. Lösche entweder den Export oder ändere die Einstellung Bereitstellung auf URL, damit das Format nicht mehr zum FTP von bol.com exportiert wird.</p>
-</li>
-</ol>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ul>
-</div>
-<hr>
-<h2 id="_geändert" class="discrete">Geändert</h2>
-<div class="paragraph">
-<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
-</div>
-<h3 id="_dynamischer_import" class="discrete">Dynamischer Import</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Der Menüpunkt <strong>Daten » Dynamischer Import</strong> wurde entfernt.</p>
-</li>
-</ul>
-</div>
-<h3 id="_listings" class="discrete">Listings</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Die Schaltfläche für aktive Listings im Market Listing ist nun auch klickbar, wenn es zu diesem Listing ein augeblendetes Listing gibt. Zuvor war die Schaltfläche bei einem ausgeblendeten Listing ausgegraut.</p>
-</li>
-</ul>
-</div>
-<h3 id="_otto" class="discrete">OTTO</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Die aktuelle Version der Merkmalsstrukur-Master-Datei vom 03.05.2020 von OTTO wurde eingespielt. Dadurch wurden für Attribut- und Merkmalverknüpfung neue Verknüpfungsmöglichkeiten und Vorgabewerte bereitgestellt. <a href="https://forum.plentymarkets.com/uploads/short-url/mQ5kQM5kH7mFNkIDZlScuFW1B1K.xlsx" target="_blank" rel="noopener">Die Datei könnt ihr hier herunterladen und als Referenz nutzen.</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
-</li>
-</ul>
-</div>
-<hr>
-<h2 id="_behoben" class="discrete">Behoben</h2>
-<div class="paragraph">
-<p>Folgende Probleme wurden in den letzten 7 Tagen auf <strong>stable</strong> behoben.</p>
-</div>
 <h3 id="_artikel" class="discrete">Artikel</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Man kann nun auch die Vererbung deaktivieren, wenn keine Eigenschaften oder Text-Eigenschaften an der Hauptvariante hinterlegt sind und somit Text-Eigenschaften hinzufügen.</p>
+<p>Bisher konnten Verkaufspreise, die als Quell- oder Zielpreises einer Preiskalkulation gesetzt waren, einfach gelöscht werden. Dadurch wurde automatisch der Einkaufspreis als Quelle gesetzt, was zu Folgefehlern führte. Durch diese Anpassung lassen sich keine Verkaufspreise mehr löschen, die als Quell- oder Zielpreis angegeben sind, bis ein anderer Preis gewählt wurde.</p>
 </li>
 <li>
-<p>Die Schaltfläche <strong>Bilder-Galerie</strong> auf der Kategorie-Seite wurde gelöscht, da sie nicht mehr benötigt wird.</p>
+<p>Die Herkunft bol.com wurde bei den Verkaufspreisen ergänzt.</p>
+</li>
+</ul>
+</div>
+<h3 id="_artikellisten" class="discrete">Artikellisten</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In den E-Mail-Vorlagen sind zwei neue Template-Variablen für das Tab <strong>Artikelliste</strong> verfügbar:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>$ItemAvailabilityPhysicalStockId</code></p>
+</li>
+<li>
+<p><code>$ItemAvailabilityPhysicalStockLabel</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Der physische Warenbestand gibt den echten Wert aus, nachdem der Artikel in einem Auftrag reserviert wurde.</p>
+</div>
 </li>
 </ul>
 </div>
 <h3 id="_aufträge" class="discrete">Aufträge</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Es kam vor das Tickets in der Auftrags-UI zum Teil nicht korrekt geladen wurden. Dieser Fehler wurde nun behoben.</p>
-</li>
-<li>
-<p>Wenn eine Mahnung existiert und der Kunde die Rechnung ohne die Mahngebühren bezahlt hat, wurde der Auftrag auf <code>unterbezahlt</code> gesetzt. Nach der Stornierung der Mahnung blieb der Auftrag auf <code>unterbezahlt</code>. Dies wurde gefixt, der Zahlungsstatus des Auftrages wird nach Entfernung der Mahngebühr neu bestimmt.</p>
-</li>
-<li>
-<p>In der Auftragsübersicht wird nun die Anzahl der Pakete richtig angezeigt und Pakete ohne Paketnummer werden nun auch ausgegeben und können bearbeitet werden.</p>
-</li>
-</ul>
-</div>
-<h3 id="_elastischer_export" class="discrete">Elastischer Export</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Wurden mehrere Lager für den Export ausgewählt, wurde nur das Lager mit der niedrigsten ID exportiert.</p>
-</li>
-</ul>
-</div>
-<h3 id="_hood" class="discrete">Hood</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Bisher konnten nur Sendungsnummern zu Hood übertragen werden, die manuell am Auftrag hinzugefügt wurden. Das verhalten wurde behoben.</p>
-</li>
-</ul>
-</div>
-<h3 id="_import" class="discrete">Import</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Im Status wurden die Vorgänge Abgebrochen und Fehlgeschlagen vertauscht. Diesen Fehler haben wir behoben.</p>
-</li>
-<li>
-<p>Verknüpfte man Felder im Bereich Zuordnung und ging man ohne zu speichern in einen anderen plenty Tab, so gingen die Werte verloren. Diesen Fehler haben wir behoben.</p>
-</li>
-</ul>
-</div>
-<h3 id="_nachbestellungen" class="discrete">Nachbestellungen</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Die Einstellung <strong>Schriftart</strong> berücksichtigt die erweiterten Alphabete nun korrekt.</p>
-<div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/changelog/assets/reorder-pdf-extended-alphabets.png" alt="East Asian" width="640" height="Arabic"></span></p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_paketnummern" class="discrete">Paketnummern</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Die Statushistorie und Ereignisaktion wird nun beim Updaten von Paketen nicht mehr fehlerhaft ausgelöst.</p>
-</li>
-</ul>
-</div>
-<h3 id="_prozesse" class="discrete">Prozesse</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>In den Prozessen wurde beim Bearbeiten einer Pickliste der Status nicht aktualisiert, sodass diese immer den Status <code>Offen</code> hatte. Mit diesem Update werden die Status <code>In Bearbeitung</code> und <code>Geschlossen</code> wieder korrekt gesetzt. Zusätzlich wurden Abfragen in der Picklisten-Suche hinzugefügt, ob bei der Suche nach einer bestimmten Pickliste diese Pickliste auch geöffnet werden soll, wenn sie bereits geschlossen wurde oder in Bearbeitung ist.</p>
-</li>
-</ul>
-</div>
-</div><div class="tab-pane fade" id="early" role="tabpanel" aria-labelledby="early-tab">
-<h2 id="_neu_2" class="discrete">Neu</h2>
-<div class="paragraph">
-<p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
-</div>
-<h3 id="_aufträge_2" class="discrete">Aufträge</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -291,15 +97,246 @@
 </li>
 </ul>
 </div>
+<h3 id="_nachbestellungen" class="discrete">Nachbestellungen</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Durch einen Fehler im Release sind die bei der Keynote zum Kongress angekündigten Felder für die Zusatzkosten an der Nachbestellung bereits eine Woche früher als geplant veröffentlicht worden.</p>
+</li>
+</ul>
+</div>
+<h3 id="_otto_market" class="discrete">OTTO market</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Vor dem Erhalt der physischen Retoure bietet OTTO Market an der API die Information über angemeldete Retouren an. Wir haben einen Prozess entwickelt, der diese Retouren-Anmeldungen in plentymarkets als Retouren-Aufträge importiert.</p>
+<div class="paragraph">
+<p>Der Retouren-Import kann über den Grundeinstellungs-Assistenten für OTTO Market aktiviert werden. Beim Import wird der gewählte Auftragsstatus aus dem Assistenten am Auftrag gesetzt. Jede retournierte Auftragsposition wird als einzelner Retouren-Auftrag am Ursprungsauftrag angehangen.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="_versandeinstellungen" class="discrete">Versandeinstellungen</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Du kannst ab jetzt im Assistenten <strong>Versandeinstellungen</strong> alle Berechnungstypen einrichten, die auch in den Versandprofilen zur Verfügung stehen. Ebenso kannst du nun im Assistenten auch die Pauschalen und die Beschränkungen aller Beschränkungstypen einrichten.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_geändert" class="discrete">Geändert</h2>
+<div class="paragraph">
+<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
+</div>
+<h3 id="_otto" class="discrete">OTTO</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Die aktuelle Version der Merkmalsstrukur-Master-Datei vom 08.05.2020 von OTTO wurde eingespielt. Dadurch wurden für Attribut- und Merkmalverknüpfung neue Verknüpfungsmöglichkeiten und Vorgabewerte bereitgestellt. <a href="https://forum.plentymarkets.com/uploads/short-url/hvXDpZNDefeJ5YFnwk8ClJqLMGQ.xlsx" target="_blank" rel="noopener">Die Datei könnt ihr hier herunterladen und als Referenz nutzen.</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+</ul>
+</div>
+<h3 id="_versandeinstellungen_2" class="discrete">Versandeinstellungen</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Name, den man im Assistenten <strong>Versandeinstellungen</strong> beim Erstellen einer neuen Konfiguration wählen konnte, hatte keinen Bezug zum Versandprofil selbst. Dies wurde geändert. Der Name den man künftig eingibt, ist der Name, der im Versandprofil als Backend-Name angegeben wird.</p>
+<div class="paragraph">
+<p>Beim Namen, der im ersten Schritt des Assistenten konfiguriert wird, handelt es sich nun ebenfalls um den Backend-Namen und nicht mehr um den Frontend-Namen.</p>
+</div>
+<div class="paragraph">
+<p>Bezüglich der Regionen konnte bisher im Assistenten gewählt werden, ob man eine bestehende Region verwenden oder eine neue erstellen möchte. Dies wurde in das Overlay beim Erstellen der Konfiguration verschoben. Man wählt dort nun entweder eine bestehende Region aus, oder wählt, dass man eine neue Region erstellen möchte. Wenn man eine neue Region erstellen möchte, kann man diese wie gewohnt dann im Assistenten einrichten.</p>
+</div>
+<div class="paragraph">
+<p>Die Informationen auf der Kachel (und der Tabelle) im Assistenten wurden angepasst. Bisher wurde nur ein Name (der keinerlei weiteren Bezug hatte) angezeigt. Künftig wird hier der Backend-Name des Versandprofils sowie die Region angezeigt.</p>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_behoben" class="discrete">Behoben</h2>
+<div class="paragraph">
+<p>Folgende Probleme wurden in den letzten 7 Tagen auf <strong>stable</strong> behoben.</p>
+</div>
+<h3 id="_aufträge_2" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Beim Editieren von Auftragspositionen, z.B. Ändern der Menge, wurde unter seltenen Konstellationen ein anderer nicht korrekter Preis genommen. Das lag daran, dass das Lieferland nicht berücksichtigt wurde und ein falscher Verkaufspreis genommen wurde. Wir haben es gefixt, das Lieferland wird jetzt berücksichtigt.</p>
+</li>
+<li>
+<p>Seit der Einführung der <a href="https://forum.plentymarkets.com/t/taric-table-for-order-vat-calculation-taric-tabelle-fuer-die-steuersatz-ermittlung-von-auftraegen/588478" target="_blank" rel="noopener">Taric-Tabelle</a> hat sich ein Fehler eingeschlichen, der es nicht erlaubt den Steuersatz an bestehenden Auftragspositionen zu ändern. Dies wurde behoben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_ceres_5" class="discrete">Ceres 5</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Bei der Anlage von Retouren aus dem MyAccount Bereich bei Ceres 5 wurde nicht das Ereignis <code>Neue Retoure (durch Kunde)</code> bei den Ereignisaktionen ausgelöst, sondern das Ereignis <code>Neue Retoure</code>. Dieser Fehler wurde nun behoben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_import" class="discrete">Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Operatoren <strong>Und</strong> und <strong>Oder</strong> funktionieren wieder.</p>
+</li>
+<li>
+<p>Filter werden nicht mehr übersprungen.</p>
+</li>
+</ul>
+</div>
+<h3 id="_nachbestellungen_2" class="discrete">Nachbestellungen</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In der Nachbestellung wird nicht länger AED als Währung angezeigt, wenn am Lieferanten keine Währung hinterlegt ist.</p>
+</li>
+</ul>
+</div>
+<h3 id="_prozesse" class="discrete">Prozesse</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Beim Löschen von Versandpaketen über Prozesse kam es nun nicht mehr zu dem Fehler `Type error: Argument 1 passed to ShippingPackageType2OrderDataWriter::getPackageNum() must be of the type int, null given, called in /modules/order/packages/package_type2order/ShippingPackageType2OrderDataWriter.class.php on line 109
+`.</p>
+</li>
+<li>
+<p>Wenn aus einem Prozess heraus ein PDF erzeugt werden soll, konnte es unter Umständen passieren, dass die PlentyID des Auftrages nicht gesetzt war, was zum Abbruch der Dokumenterzeugung führte. Dies wird nun abgefangen und das Dokument zu Ende erzeugt.</p>
+</li>
+<li>
+<p>Bei der Bearbeitung einer Pickliste innerhalb eines Prozesses wird die Pickliste automatisch in den Status in Bearbeitung gesetzt. Bei der weiteren Bearbeitung der Pickliste über das Backend wurde eine Fehlermeldung angezeigt, wenn Benutzer erst aus der App und im Folgenden aus den Prozessen auf dieselbe Pickliste zugegriffen haben. Dieses Verhalten wurde behoben.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_gelöscht" class="discrete">Gelöscht</h2>
+<div class="paragraph">
+<p>Folgende Funktionalität wurde in den letzten 7 Tagen auf <strong>stable</strong> entfernt.</p>
+</div>
+<h3 id="_dynamischer_import" class="discrete">Dynamischer Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Der dynamische Import wurde abgeschaltet.</p>
+</li>
+</ul>
+</div>
+</div><div class="tab-pane fade" id="early" role="tabpanel" aria-labelledby="early-tab">
+<h2 id="_neu_2" class="discrete">Neu</h2>
+<div class="paragraph">
+<p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
+</div>
+<h3 id="_aufträge_3" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Ereignisaktionen wurden um die Ereignisse <code>Externe Rechnung hochgeladen</code> und <code>Externe Gutschrift hochgeladen</code> erweitert.</p>
+</li>
+<li>
+<p>Es wird bei Aufträgen eine Warnung angezeigt, wenn eine Zahlung aber keine Rechnung existiert. Dies ist auch bei Gutschriften ohne Gutschrift-Dokument der Fall.</p>
+</li>
+</ul>
+</div>
+<h3 id="_import_2" class="discrete">Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Im Sync des Typs Attribut sind weitere Sprachen für den Import hinzugefügt worden</p>
+</li>
+</ul>
+</div>
+<h3 id="_kontakte" class="discrete">Kontakte</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Im Filterbereich in den Menüs <strong>CRM » Kontakte</strong> und <strong>CRM » Schnellsuche</strong> wurde im Filter <strong>Land</strong> die Einstellung <strong>Alle außer Deutschland</strong> hinzugefügt. Wenn du diese Filtereinstellung wählst, werden Kontakte aus allen Ländern außer Deutschland angezeigt.</p>
+</li>
+<li>
+<p>In den Menüs <strong>CRM » Kontakte</strong> und <strong>CRM » Schnellsuche</strong> werden in der Übersicht zusätzlich zu den bisherigen Daten ab sofort auch die Bewertung und die Kundenklasse angezeigt.</p>
+</li>
+</ul>
+</div>
+<h3 id="_plugins" class="discrete">Plugins</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Du kannst ab jetzt Plugins in der neuen Plugin-UI aktualisieren.</p>
+<div class="paragraph">
+<p>Außerdem wird ab jetzt sowohl vor dem Aktualisieren als auch vor dem Installieren von Plugins geprüft, ob alle anderen Plugins, die für die ausgewählte Version benötigt werden, bereits in dem Plugin-Set vorliegen.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/changelog/assets/plugin_kompatibel.png" alt="Meldung" width="640" height="dass ein Plugin kompatibel mit dem Rest des Plugin-Sets ist."></span></p>
+</div>
+<div class="paragraph">
+<p>Um ein Plugin-Set in der neuen UI zu bearbeiten, öffne das Menü <strong>Plugins » Plugin-Set-Übersicht (Alpha)</strong> und klicke auf die Schaltfläche <strong>Plugin-Set bearbeiten</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Wir freuen uns bereits auf dein Feedback. Wenn du die neue UI erkundest und dir etwas auffällt, das gut, schlecht oder auch total unverständlich ist, freuen wir uns auf eine entsprechende Rückmeldung <a href="https://forum.plentymarkets.com/t/feedback-neue-plugin-ui-feedback-for-new-plugin-ui/579903" target="_blank" rel="noopener">im zugehörigen Thema im Forum in der Kategorie Plugin-Einrichtung</a>.</p>
+</div>
+</li>
+</ul>
+</div>
 <hr>
 <h2 id="_geändert_2" class="discrete">Geändert</h2>
 <div class="paragraph">
 <p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
 </div>
+<h3 id="_aufträge_4" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Es ist nicht mehr möglich, einer Gutschrift eine Soll-Zahlung zuzuordnen.</p>
+</li>
+</ul>
+</div>
 <hr>
 <h2 id="_behoben_2" class="discrete">Behoben</h2>
 <div class="paragraph">
 <p>Folgende Probleme wurden in den letzten 7 Tagen auf <strong>early</strong> behoben.</p>
+</div>
+<h3 id="_artikel_2" class="discrete">Artikel</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Es kam zu dem Fehler, dass wenn alle Bildverfügbarkeiten bis auf eine gesetzt werden sollten, trotzdem alle gesetzt wurden. Durch den Fix werden nur genau die Verfügbarkeiten gesetzt, die angegeben sind.</p>
+</li>
+</ul>
+</div>
+<h3 id="_aufträge_5" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In der Auftragssuche wurde ein fehlerhafter Sendungsverfolgungslink generiert mit doppelten Paketnummern. Dieses Problem wurde behoben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_import_3" class="discrete">Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Es ist nun wieder möglich, die Vererbung der Felder für die Artikelauflistung per Import zu aktivieren.</p>
+</li>
+</ul>
+</div>
+<h3 id="_newsletter" class="discrete">Newsletter</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Beim Löschen von Newsletter Ordnern mit vorhandenen Newsletter Anmeldungen wurde die gespeicherte Ordner-ID am entsprechendem Kontakt nicht mit entfernt. Dieses Fehlverhalten wurde behoben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_otto_market_2" class="discrete">OTTO market</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Unter seltenen Konstellationen konnte das Stornieren eines Auftrages zu einem Fehler führen, so z.B. wenn der Auftrag bereits gelöscht ist oder schon den zu setzenden Storno-Status bereits hat. Dies wurde behoben.</p>
+</li>
+</ul>
 </div>
 </div><div class="tab-pane fade" id="plugin-updates" role="tabpanel" aria-labelledby="plugin-updates-tab">
 <div class="paragraph">
@@ -319,23 +356,8 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">To-do</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/individualisierung/edon_6618" target="_blank" rel="noopener">FairGeben</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/payment/novalnet_5231" target="_blank" rel="noopener">Novalnet</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.12</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/individualisierung/widgets/ordernow_6541" target="_blank" rel="noopener">Order now - Jetzt bestellen, wann versendet?</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/plugins/payment/payment-integrationen/paypal_4690" target="_blank" rel="noopener">PayPal</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.4.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 </tbody>
@@ -344,34 +366,6 @@
 <p>Wenn du dir weitere neue oder aktualisierte Plugins anschauen möchtest, findest du eine <a href="https://marketplace.plentymarkets.com/plugins?sorting=variation.createdAt_desc&amp;page=1&amp;items=50" target="_blank" rel="noopener">Übersicht direkt auf plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
 </div>
 </div><div class="tab-pane fade" id="app" role="tabpanel" aria-labelledby="app-tab">
-<h2 id="_geändert_3" class="discrete">Geändert</h2>
-<div class="paragraph">
-<p>Folgende Neuerungen wurden in Version 1.1.10 der <strong>plentymarkets App</strong> veröffentlicht.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Auf dem Kassenbeleg können nun Zusatzinformationen zu Artikelpositionen ausgegeben werden. Weitere Informationen findest du auf der Handbuchseite <a href="//pos/pos-einrichten#120">POS einrichten</a>.</p>
-</li>
-<li>
-<p>Um die Anforderungen der Kassensicherungsverordnung (KassenSichV) zu erfüllen ist es nun möglich, eine technische Sicherheitseinrichtung (TSE) der Marke EPSON mit plentyPOS zu verwenden. Weitere Informationen findest du <a href="https://forum.plentymarkets.com/t/plentypos-und-kassensichv-wichtige-informationen-im-ueberblick/586112" target="_blank" rel="noopener">im Forum</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> und auf der Handbuchseite <a href="/pos/pos-rechtssicherheit#400">Rechtssicher arbeiten mit POS</a>.</p>
-</li>
-<li>
-<p>Um die Anforderungen der Kassensicherungsverordnung (KassenSichV) zu erfüllen ist es nun außerdem möglich, im Menü <strong>Aufträge » POS » DSFinV-K-Export</strong> einen DSFinV-K-Export (Digitale Schnittstelle der Finanzverwaltung für Kassensysteme) zu erstellen. Auch zu diesem Thema findest du weitere Informationen auf der Handbuchseite <a href="/pos/pos-rechtssicherheit#950">Rechtssicher arbeiten mit POS</a>.</p>
-</li>
-</ul>
-</div>
-<h2 id="_geändert_4" class="discrete">Geändert</h2>
-<div class="paragraph">
-<p>Folgende Änderungen wurden in Version 1.1.10 der <strong>plentymarkets App</strong> veröffentlicht.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Die Steuersätze im Tagesabschluss werden jetzt vom höchsten bis zum niedrigsten Steuersatz sortiert dargestellt.</p>
-</li>
-</ul>
-</div>
 <h2 id="_behoben_3" class="discrete">Behoben</h2>
 <div class="paragraph">
 <p>Folgende Probleme wurden in Version 1.1.10 der <strong>plentymarkets App</strong> behoben.</p>
@@ -379,7 +373,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Bei Rechnungsdokumenten mit mehreren Artikelpositionen kam es zu Formatierungsfehlern. Dieses Verhalten wurde behoben.</p>
+<p>Vereinzelt wurden während der Erstellung des Tagesabschlussberichts korrupte Daten geladen und der Tagesabschluss konnte nicht erstellt werden. Dieses Verhalten wurde behoben.</p>
 </li>
 </ul>
 </div>
