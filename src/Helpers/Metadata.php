@@ -16240,22 +16240,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "6aaaec7562bd4a850c2f4c36d0146acf",
-				"path" => "fulfilment/ebay-fulfillment",
-				"position" => 35,
-				"urlName" => "ebay-fulfillment",
-				"url" => "/en/fulfilment/ebay-fulfillment",
-				"level" => 2,
-				"title" => "eBay Fulfillment integration guide",
-				"keywords" => "eBay Fulfillment, Inbound, Outbound, Fiege, Ebay Fulfillment integration guide, ebay fulfilment, EBFSKU, ebay fulfillment sku, ebay sku, ebfsku, automatically assign ebay fulfillment warehouse, eBay Fulfillment warehouse, error inbound, error Outbound, ebay customer support, goods delivery announcement, advice note, inbound packages, Inbound not sent, eBay Fulfillment shipping release, eBay Fulfillment warehouse",
-				"description" => "Learn how to set up eBay Fulfillment in plentymarkets.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic eBay Fulfillment integration guide. The following information is available:",
-				"languageID" => "688XH7L",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "3473f7e1a3ce511bab387328e4fdb091",
 				"path" => "fulfilment/best-practices-dhl",
 				"position" => 40,
@@ -16268,6 +16252,22 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic FAQ: DHL. The following information is available:",
 				"languageID" => "URSDY8P",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "6aaaec7562bd4a850c2f4c36d0146acf",
+				"path" => "fulfilment/ebay-fulfillment",
+				"position" => 40,
+				"urlName" => "ebay-fulfillment",
+				"url" => "/en/fulfilment/ebay-fulfillment",
+				"level" => 2,
+				"title" => "eBay Fulfillment integration guide",
+				"keywords" => "eBay Fulfillment, Inbound, Outbound, Fiege, Ebay Fulfillment integration guide, ebay fulfilment, EBFSKU, ebay fulfillment sku, ebay sku, ebfsku, automatically assign ebay fulfillment warehouse, eBay Fulfillment warehouse, error inbound, error Outbound, ebay customer support, goods delivery announcement, advice note, inbound packages, Inbound not sent, eBay Fulfillment shipping release, eBay Fulfillment warehouse",
+				"description" => "Learn how to set up eBay Fulfillment in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic eBay Fulfillment integration guide. The following information is available:",
+				"languageID" => "688XH7L",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -16302,6 +16302,88 @@ class Metadata {
 				"languageID" => "6TD0IZW",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "59c423126afe897badebad2d6fd96393",
+				"path" => "fulfilment/practical-examples",
+				"position" => 100,
+				"urlName" => "practical-examples",
+				"url" => "/en/faq",
+				"level" => 2,
+				"title" => "Practical examples",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Practical examples. The following information is available:",
+				"languageID" => "CVFFAFD",
+				"children" => 				[
+					[
+						"id" => "caca04b325cb9f824290beba6dab2f7b",
+						"path" => "fulfilment/practical-examples/practical-example-dhl",
+						"position" => 10,
+						"urlName" => "practical-example-dhl",
+						"url" => "/en/fulfilment/practical-examples/practical-example-dhl",
+						"level" => 3,
+						"title" => "Practical example: DHL Shipping (Versenden)",
+						"keywords" => "DHL Shipping (Versenden), plugin, install DHL plugin, dhl versenden, dhl shipping,",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Practical example: DHL Shipping (Versenden). The following information is available:",
+						"languageID" => "S6ALNG3",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
+			],
+			[
+				"id" => "4751a749ec594ccd455579ecfe804c0e",
+				"path" => "fulfilment/faq",
+				"position" => 110,
+				"urlName" => "faq",
+				"url" => "/en/faq",
+				"level" => 2,
+				"title" => "FAQ",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic FAQ. The following information is available:",
+				"languageID" => "V4YL4ZQ",
+				"children" => 				[
+					[
+						"id" => "325daca98f86c62f4a9ba2d20e0b77f8",
+						"path" => "fulfilment/faq/best-practices-dhl",
+						"position" => 10,
+						"urlName" => "best-practices-dhl",
+						"url" => "/en/fulfilment/faq/best-practices-dhl",
+						"level" => 3,
+						"title" => "FAQ: DHL",
+						"keywords" => "Der Vorgang konnte nicht korrekt durchgeführt werden, Bitte Dateneingabe prüfen, 1001, Fehler bei der Anmeldung, login failed, Exception in extension function, java.lang.RuntimeException, productId cannot be mapped, productId **EXP/OFP** cannot be mapped, Hard validation error occured, Bitte geben Sie einen Ort an, Bitte geben Sie Name 1 an, Bitte geben Sie eine Postleitzahl an, Bitte geben Sie eine Straße an, Bitte geben Sie eine Hausnummer an, Bitte geben Sie eine gültige Telefonnummer an, Es handelt sich um eine ungültige Postleitzahl, Bitte verwenden Sie das Format 99999, The Customer ID Number is invalid, Please check the Customer ID Number, Your order could not be processed, Ein interner Fehler ist aufgetreten, Keine gültigen Versandprofile vorhanden, SystemShippingController, unknown, Die Gewichtsangabe ist kleiner als im CN23-Formular, Invalid fieldlength: InvoiceDate, Bitte geben Sie die Anzahl an, Bitte geben Sie die Beschreibung an, Bitte geben Sie den Warenwert an, Bitte geben Sie das Gewicht an, Bitte geben Sie das Gewicht an, Bitte geben Sie die Art der Sendung an, Die angegebene Art der Sendung ist nicht gültig, Invalid fieldlength in element ‘Note’, Please refer to documentation, Invalid XML, Ungültiger Content wurde beginnend mit Element ‘Shipment’ gefunden, An dieser Stelle wird kein untergeordnetes Element erwartet, The current incoterms are not included in the list of the available incoterms, The current origin country code is not included in the list of the available countries, Export document is missing, Please enter weight for the packages, Terms of Trade have not been selected, The shipment weight may not be smaller than 0.1 kg for this product code, Please select a valid type of shipment, Please enter quantity of goods, Please enter a description of goods, Please enter the country of origin, Please enter value of goods, Please add an exportdoc position, The combination of shipping profile ID and shipping region ID does not exist, Code 1001, Der Nutzer des Webservice konnte nicht authentifiziert werden, Authorization Required",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic FAQ: DHL. The following information is available:",
+						"languageID" => "URSDY8P",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "43c2766372e8090c0f03e4bc226d597d",
+						"path" => "fulfilment/faq/best-practices-ups",
+						"position" => 20,
+						"urlName" => "best-practices-ups",
+						"url" => "/en/fulfilment/faq/best-practices-ups",
+						"level" => 3,
+						"title" => "FAQ: UPS",
+						"keywords" => "Keine Auftragsdaten, no order data, Kein Wert gefunden, no value found, 120110, missing or invalid Shipper AttentionName, 120101, Missing or invalid Shipper Name, 120209, Missing or invalid Ship to phone number, 120109, Missing or invalid shipper phone number, 120500, Missing or invalid service code, 120124, The requested service is unavailable between the selected locations, UPS Services, 120122, customer number, Code 1, Der Vorgang konnte nicht korrekt durchgeführt werden. Bitte Dateneingabe prüfen., 10001, The XML document is not well formed",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic FAQ: UPS. The following information is available:",
+						"languageID" => "6TD0IZW",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
 			]
 		],
 		"hasChildren" => true
