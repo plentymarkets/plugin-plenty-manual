@@ -19843,6 +19843,22 @@ class Metadata {
 						"languageID" => "TX8FAKB",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "ac1f408861d4aa51dcaea8b75803286d",
+						"path" => "markets/real-de/best-practices-real-linking-characteristics",
+						"position" => 30,
+						"urlName" => "best-practices-real-linking-characteristics",
+						"url" => "/en/markets/real-de/best-practices-real-linking-properties",
+						"level" => 3,
+						"title" => "Best practice: Linking characteristics to attributes",
+						"keywords" => "real.de, Multi-Channel, inventory.csv, product.csv, real inventory.csv, real product.csv, real attribute matching, real characteristic matching, real product data file",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Best practice: Linking characteristics to attributes. The following information is available:",
+						"languageID" => "TX8FAKB",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
