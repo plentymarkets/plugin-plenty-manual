@@ -19829,22 +19829,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "f359b5959f8927707c175407af7f7dcc",
-						"path" => "markets/real-de/best-practices-real-linking-properties",
-						"position" => 30,
-						"urlName" => "best-practices-real-linking-properties",
-						"url" => "/en/markets/real-de/best-practices-real-linking-properties",
-						"level" => 3,
-						"title" => "Best practice: Linking properties to attributes",
-						"keywords" => "real.de, Multi-Channel, inventory.csv, product.csv, real inventory.csv, real product.csv, real attribute matching, real property matching, real product data file",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best practice: Linking properties to attributes. The following information is available:",
-						"languageID" => "TX8FAKB",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "ac1f408861d4aa51dcaea8b75803286d",
 						"path" => "markets/real-de/best-practices-real-linking-characteristics",
 						"position" => 30,
