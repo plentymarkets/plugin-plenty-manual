@@ -57,7 +57,7 @@
 <p>Order import every 15 minutes</p>
 </li>
 <li>
-<p>Stock synchronisation (every 15 minutes)</p>
+<p>Stock synchronisation every 15 minutes</p>
 </li>
 <li>
 <p>Daily update of item data</p>
@@ -218,7 +218,7 @@
 <p>Go to <strong>Setup » Orders » Payment » Methods</strong>.</p>
 </li>
 <li>
-<p>Activate the option <strong>Also show inactive</strong>.</p>
+<p>Activate the setting <strong>Also show inactive</strong>.</p>
 </li>
 <li>
 <p>Open the folder <strong>International</strong>.</p>
@@ -1053,8 +1053,14 @@ image::markets/otto/assets/dhl-return-label.png[DHL return label]</p>
 </div>
 </li>
 <li>
-<p><em>The log shows the error "Duplicate entry. Combination of the fields variationId, marketId and accountId must be unique". How can I solve this error?</em></p>
+<p><em>The log shows an error. How can I solve this error?</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Duplicate entry. Combination of the fields variationId, marketId and accountId must be unique.</strong></p>
+<div class="paragraph">
 <p>This error is also indicated as “SKU 1234 not generated” in the log.</p>
+</div>
 <div class="paragraph">
 <p>How SKUs should be generated is defined in the catalogue. There is a distinction between the <strong>Parent SKU</strong> and the <strong>Variation SKU</strong>. The source selected here should be a data record which exists only once. Hence, it is not possible to use the same SKU for different items. For example, you could use the <strong>Item ID</strong> and the <strong>Variation ID</strong>. Both IDs are generated when the item is created in plentymarkets and only exist once. However, it might happen that the item export is carried out with errors because of missing information in the catalogue. The SKU is created anyway and can now be found in the <strong>Availability</strong> tab of a variation. During the next export, your plentymarkets system will try again to create an SKU from the sources selected in the catalogue. However, as this SKU already exists, the error “Duplicate entry. Combination of the fields variationId, marketId and accountId must be unique." / “SKU 1234 not generated.” occurs.</p>
 </div>
@@ -1087,7 +1093,7 @@ image::markets/otto/assets/dhl-return-label.png[DHL return label]</p>
 </div>
 </li>
 <li>
-<p><em>The log shows the errors "Code:“200009 - ATTRIBUTE_CHANGE_DENIED" or "title: Der Wert dieses Feldes kann nicht geändert werden." ("title: The value of this field cannot be changed.") How can I solve these errors?</em></p>
+<p><strong>Code: 200009 - ATTRIBUTE_CHANGE_DENIED</strong> or <strong>title: Der Wert dieses Feldes kann nicht geändert werden.</strong> (title: The value of this field cannot be changed.)</p>
 <div class="paragraph">
 <p>These errors indicate that you changed an OTTO item attribute. However, OTTO does not accept the change and it is not possible the change the attribute for this item. The indicated attribute can relate to a variation attribute or a title attribute. Other OTTO attributes are important here, too.</p>
 </div>
@@ -1105,6 +1111,57 @@ image::markets/otto/assets/dhl-return-label.png[DHL return label]</p>
 </td>
 </tr>
 </tbody></table>
+</div>
+</li>
+<li>
+<p><strong>productDescription.brand</strong></p>
+<div class="paragraph">
+<p>This error indicates that the variation’s brand that should be exported has not been mapped in the catalogue. The brand can be linked to the variation in two different ways:</p>
+</div>
+</li>
+<li>
+<p>via the <strong>Manufacturer</strong> setting in an item’s <strong>Global</strong> tab</p>
+</li>
+<li>
+<p>via property</p>
+<div class="paragraph">
+<p>Make sure that a source is saved for the brand in the catalogue and that the source is linked to the item.</p>
+</div>
+</li>
+<li>
+<p><strong>mediaAssets.IMAGE</strong></p>
+<div class="paragraph">
+<p>This error indicates that either you did not select an image source in the catalogue or that none of your item images is linked to the referrer <strong>OTTO Market</strong>. To do so, open an item’s <strong>Images</strong> tab and activate the referrer <strong>OTTO market</strong> as described in the <a href="#350">Setting the availability for images</a> chapter.</p>
+</div>
+</li>
+<li>
+<p><strong>delivery.type</strong></p>
+<div class="paragraph">
+<p>This error indicates that the shipping method is not linked. The shipping method can be defined via two different sources:</p>
+</div>
+</li>
+<li>
+<p>via a shipping profile</p>
+</li>
+<li>
+<p>via property</p>
+<div class="paragraph">
+<p>Make sure that the source saved in the catalogue is linked to the item. For the shipping profile, activate the shipping profile in the item’s <strong>Global</strong> tab. For the property, activate the property for the desired variation.</p>
+</div>
+</li>
+<li>
+<p><strong>productDescription.category</strong></p>
+<div class="paragraph">
+<p>This error indicates that the category link in the catalogue is missing. In the catalogue, check whether at least one category of the desired variation is linked to an OTTO Market category.</p>
+</div>
+</li>
+<li>
+<p>Error messages concerning order processing: <strong>Carrier ID (X) not mapped in OTTO market config.</strong></p>
+<div class="paragraph">
+<p>Check whether shipping service providers were linked to OTTO Market. This is done in the <strong>Shipping service provider</strong> step of the <strong>OTTO Market Basic settings</strong> assistant in the <strong>Setup » Assistants » Omni-Channel</strong> menu.</p>
+</div>
+</li>
+</ul>
 </div>
 </li>
 </ol>
