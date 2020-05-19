@@ -20523,7 +20523,7 @@ class Metadata {
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Your contract with plentymarkets. The following information is available:",
-				"languageID" => "AIXO9P7",
+				"languageID" => "ZGJLXUS",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -21032,7 +21032,7 @@ class Metadata {
 						"url" => "/en/business-decisions/system-administration/domains",
 						"level" => 3,
 						"title" => "Domains",
-						"keywords" => "Admin, System administrator, System administration, System admin, Domain, Domains",
+						"keywords" => "Domain, Domains, Subdomain, Subdomains, Sub-Domain, Sub-Domains, TLD, Service-Center, Service Center, Service-Centre, Service Centre, Host, Hosting, Hoster, Domain type, Domain types, Assistant, Assistants, Main domain, Primary domain, Client, Clients, System link, System links, Domain-Handle, Domain handle, DNS, DNS settings, Domain-Provider, Domain provider, AutoScaling, CNAME, CNAME entry, Alias, DNS source, IP address, Mailserver, MX10, SPF, SPF record, IP, AuthCode, Auth-Code, Auth-Info, Web hosting, IPS, IPS tag, TXT Resource Record, TXT record, DNS zone, Nameserver, Name server, Domain name, URL, Forward, Forwarding, Redirect, URL forwarding, HTTP code, SSL, SSL certificate, SSL certificates, Let’s Encrypt, https, Test domain, Test domains, A-Record, A-Records, Cache, SSL redirect, Redirect, Traffic, Bot, Bots, Crawler, Crawling, Relocation, Transfer, Cloud, Cloud solution, Cloud solutions",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Domains. The following information is available:",
