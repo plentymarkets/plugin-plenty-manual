@@ -1044,7 +1044,7 @@ class Metadata {
 				"url" => "/warenwirtschaft/inventur-vornehmen",
 				"level" => 2,
 				"title" => "Inventur vornehmen",
-				"keywords" => "Inventur, Bestandsinventur, Lagerinventur, Lagerbestand erfassen, Soll-Bestand, Ist-Bestand, Bestandsverzeichnis, Artikelbestände, Inventurmodus, Inventur-Modus, Warenbestand löschen, Warenbestand neu einbuchen, dynamischer Import, dynamischer Export, Datenformat Stock, Testlauf, Warenbestand anpassen, physischer Bestand, Inventurmodus aktivieren, Inventurmodus deaktivieren, Warenbestand leeren, Inventurmodus aufheben",
+				"keywords" => "Inventur, Bestandsinventur, Lagerinventur, Lagerbestand erfassen, Soll-Bestand, Ist-Bestand, Bestandsverzeichnis, Artikelbestände, Inventurmodus, Inventur-Modus, Warenbestand löschen, Warenbestand neu einbuchen, ElasticSync, dynamischer Export, Datenformat Stock, Testlauf, Warenbestand anpassen, physischer Bestand, Inventurmodus aktivieren, Inventurmodus deaktivieren, Warenbestand leeren, Inventurmodus aufheben",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Inventur vornehmen. Hier findest du folgende Informationen:",

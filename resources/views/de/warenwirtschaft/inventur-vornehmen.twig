@@ -8,7 +8,11 @@
 <ul class="sectlevel2">
 <li><a href="#200"><span>1.1.</span><span> Warenbestände exportieren</span></a></li>
 <li><a href="#300"><span>1.2.</span><span> Warenbestände anpassen</span></a></li>
-<li><a href="#400"><span>1.3.</span><span> Warenbestände importieren</span></a></li>
+<li><a href="#400"><span>1.3.</span><span> Warenbestände importieren</span></a>
+<ul class="sectlevel3">
+<li><a href="#450"><span>1.3.1.</span><span> Datenimport mit ElasticSync durchführen</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#500"><span>2.</span><span> Inventur bei aktiviertem Inventurmodus vornehmen</span></a>
@@ -34,7 +38,7 @@
 <p>Inventur bezeichnet die Erfassung des Lagerbestandes, d.h. sowohl des Soll- als auch des Ist-Bestandes, zu einem bestimmten Zeitpunkt. Dabei wird ein Bestandsverzeichnis angelegt, das alle Artikelbestände auflistet.</p>
 </div>
 <div class="paragraph">
-<p>Diese Seite beschreibt, wie du eine Inventur durchführst. Zum einen wird beschrieben, wie du eine Inventur im Menü <strong>Datenaustausch</strong> durchführst. Zum anderen erfährst du, wie der <strong>Inventurmodus</strong> funktioniert und wie du diesen Modus verwendest, wenn du deinen gesamten Warenbestand löschen und neu einbuchen möchtest.</p>
+<p>Diese Seite beschreibt, wie du eine Inventur durchführst. Außerdem erfährst du, wie der <strong>Inventurmodus</strong> funktioniert und wie du diesen Modus verwendest, wenn du deinen gesamten Warenbestand löschen und neu einbuchen möchtest.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -43,9 +47,9 @@
 <i class="fa icon-important" title="Wichtig"></i>
 </td>
 <td class="content">
-<div class="title">Inventur nur mit Dynamischem Import und Dynamischem Export</div>
+<div class="title">Inventur nur mit ElasticSync und Dynamischem Export</div>
 <div class="paragraph">
-<p>Die Inventur kann nur anhand des <strong>Dynamischen Imports</strong> und des <strong>Dynamischen Exports</strong> durchgeführt werden.</p>
+<p>Die Inventur kann nur anhand des <strong>ElasticSync</strong> und des <strong>Dynamischen Exports</strong> durchgeführt werden.</p>
 </div>
 </td>
 </tr>
@@ -99,10 +103,11 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <a href="/daten/export-import/daten-exportieren">Daten » Dynamischer Export</a>.</p>
+<p>Öffne das Menü <strong>Daten » Dynamischer Export</strong>.<br>
+→ Die Übersicht der Datenformate wird geöffnet.</p>
 </li>
 <li>
-<p>Öffne das Untermenü des Datenformats <a href="/daten/export-import/datenformate/stock">Stock</a>, indem du auf das Plus klickst. Falls noch kein Untermenü existiert, klicke auf <strong>Neues Datenformat</strong>, um dieses <a href="/daten/export-import/datenformate#2-2">Datenformat</a> anzulegen.</p>
+<p>Öffne das Untermenü des Datenformats <a href="/daten/export-import/datenformate/stock">Stock</a>, indem du auf das Plus am linken Rand klickst. Falls noch kein Untermenü existiert, klicke auf <strong>Neues Datenformat</strong>, um dieses <a href="/daten/export-import/datenformate#2-2">Datenformat</a> anzulegen.</p>
 </li>
 <li>
 <p>Hake die folgenden Datenfelder an: VariationID, LocationID, Batch (optional), BestBeforeDate (optional), PurchasePrice, Stock, WarehouseID.</p>
@@ -124,7 +129,7 @@
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Klicke auf das Zahnrad <strong>Daten exportieren</strong>, um eine CSV-Datei zu exportieren.</p>
+<p>Klicke auf <strong>Daten exportieren</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>), um eine CSV-Datei zu exportieren.</p>
 </li>
 </ol>
 </div>
@@ -158,7 +163,7 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ermittele den Ist-Zustand deines Bestandes.</p>
+<p>Ermittele den Istzustand deines Bestandes.</p>
 </li>
 <li>
 <p>Öffne die exportierte Stock-Datei.</p>
@@ -186,76 +191,95 @@
 <td class="content">
 <div class="title">Physischer Warenbestand wird überschrieben!</div>
 <div class="paragraph">
-<p>Beim Import werden die aktuellen physischen Warenbestände überschrieben, d.h. dein vorheriger Warenbestand ist nicht wieder herstellbar! Reservierte Warenbestände bleiben erhalten und werden nicht importiert. Wenn du nicht den kompletten physischen Warenbestand importieren möchtest, sondern nur bei einzelnen Varianten den Bestand nach oben korrigieren, kannst du Wareneingänge per Datenimport hinzufügen. Verwende das Spezialformat <a href="/daten/export-import/datenformate/incomingitems">IncomingItems</a>.</p>
+<p>Beim Import werden die aktuellen physischen Warenbestände überschrieben, d.h. dein vorheriger Warenbestand ist nicht wiederherstellbar! Reservierte Warenbestände bleiben erhalten und werden nicht importiert. Wenn du nicht den kompletten physischen Warenbestand importieren möchtest, sondern nur bei einzelnen Varianten den Bestand nach oben korrigieren, kannst du Wareneingänge per Datenimport hinzufügen. Verwende das Spezialformat <a href="/daten/export-import/datenformate/incomingitems">IncomingItems</a>.</p>
 </div>
 </td>
 </tr>
 </tbody></table>
 </div>
+<div class="sect3">
+<h4 id="450">1.3.1. Datenimport mit ElasticSync durchführen</h4>
+<div class="paragraph">
+<p>Für den Datenimport mit ElasticSync erstellst du zunächst einen Sync, legst anschließend den Abgleich für die Daten fest und erstellst eine Zuordnung, in der du deine Daten den plentymarkets Datenfeldern zuordnest.</p>
+</div>
 <div class="paragraph instruction">
-<p>Datenimport durchführen:</p>
+<p>Datenimport mit ElasticSync durchführen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <a href="/daten/export-import/daten-importieren">Daten » Dynamischer Import</a>.</p>
+<p>Öffne das Menü <strong>Daten » Import</strong>.<br>
+→ Die ElasticSync-Übersicht wird geöffnet.</p>
 </li>
 <li>
-<p>Wähle die Einstellungen gemäß Tabelle 1.</p>
+<p>Klicke auf <strong>Sync hinzufügen</strong> (<span class="icon ”green”"><i class="fa fa-plus-square  "></i></span>).</p>
 </li>
 <li>
-<p>Klicke auf <strong>Import</strong>.</p>
+<p>Wähle bei <strong>Typ</strong> entweder Artikel oder Warenbestand.</p>
+</li>
+<li>
+<p>Nimm die weiteren Einstellungen vor. Beachte dazu die Erläuterungen in <a href="/daten/daten-importieren/ElasticSync#1210^">Tabelle 2</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon ”green”"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Der Sync wird erstellt.<br>
+→ Die Einstellungen des Syncs werden geöffnet.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>Abgleich</strong>.</p>
+</li>
+<li>
+<p>Lege einen <a href="/daten/daten-importieren/ElasticSync#1400">Abgleich^</a> sowie die <a href="/daten/daten-importieren/ElasticSync#1300^">Importoptionen</a> fest.<br></p>
+</li>
+<li>
+<p><strong>Speichere</strong> (icon:save[role=”green”) die Einstellungen.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>Zuordnung</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Zuordnung hinzufügen</strong> (<span class="icon ”green”"><i class="fa fa-plus-square  "></i></span>), um eine <a href="/daten/daten-importieren/ElasticSync#1500^">Zuordnung^</a> zu erstellen.<br>
+→ Ein Fenster wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen Namen für die Zuordnung ein.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon ”green”"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Die neue Zuordnung wird geöffnet. Die verfügbaren Zuordnungsfelder unterscheiden sich je nach Sync-Typ.</p>
+</li>
+<li>
+<p>Wähle für jedes Datenfeld eine Spalte aus deiner Datei oder die Option <strong>Eigener Wert</strong>.</p>
+</li>
+<li>
+<p>Wähle auf der rechten Seite die Datenfelder für die Zuordnung aus, indem du Häkchen bei diesen Feldern setzt. Die Pflichtfelder sind hier <strong>Lager</strong>, <strong>Lagerort</strong> und <strong>Menge</strong>.<br>
+→ Die gewählten Datenfelder werden zur Zuordnung hinzugefügt.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon ”green”"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Aktiviere am linken Rand die Zeilen, die du importieren möchtest.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Sync ausführen</strong> (<span class="icon "><i class="fa fa-play-circle  "></i></span>).<br>
+→ Der Sync wird ausgeführt und die Daten werden importiert.</p>
 </li>
 </ol>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Importeinstellungen für dynamischen Import</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Einstellung</th>
-<th class="tableblock halign-left valign-top">Erläuterung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Feldtrennzeichen</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Trennzeichen wählen.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Datenformat Stock wählen.<br>
-Wenn du mehrere Stock-Formate hast, achte darauf, dass jedes Format eine Lagereinstellung enthält und nur die Daten dieses Lagers geändert werden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lager</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wenn die Spalte <strong>WarehouseID</strong> in der Datei nicht enthalten oder leer ist, wird der Bestand für das hier gewählte Lager importiert. Wenn die Spalte <strong>WarehouseID</strong> Werte enthält, die größer als 0 sind, wird der Bestand für dieses Lager importiert. Auf diese Weise kann gleichzeitig auch Bestand für mehrere Lager importiert werden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Barcode</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Barcode ist ein optionales Abgleichfeld. Ein Barcode-Format wählen, anhand dessen die Varianten aus dem Datenformat mit den Varianten im System abgeglichen werden sollen. Wenn keine Zuordnung zu einer Variante erfolgt, wird die Zeile übersprungen. Wenn die Import-Datei die Varianten-ID enthält, muss kein Barcode gewählt werden, da die ID zur Zuordnung genügt.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datei</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Die zu importierende Datei wählen.</p></td>
-</tr>
-</tbody>
-</table>
 <div class="paragraph">
-<p>Unter <strong>Daten » Dynamischer Import » Untermenü: Bearbeitungsstatus</strong> erhältst du detaillierte Meldungen zum Datenimport.</p>
+<p>Im Menü <strong>Daten » Status</strong> erhältst du detaillierte Informationen zum Datenimport.</p>
 </div>
 <div class="paragraph">
 <p>Die bei der Inventur vorgenommenen Korrekturen kannst du für einen Artikel im <strong>Tab: Bestand » Tab: Warenbewegung</strong> des Artikels einsehen.
-Der Import wird außerdem unter <strong>Waren » Wareneingänge</strong> als ein Eintrag aufgelistet und die geänderten Warenbestände können im Eintrag nachvollzogen werden (Bild 1).</p>
+Der Import wird außerdem unter <strong>Waren » Wareneingänge</strong> als Eintrag aufgelistet und die geänderten Warenbestände können im Eintrag nachvollzogen werden (Bild 1).</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/warenwirtschaft/assets/DE-Inventur-vornehmen-01.png" alt="DE Inventur vornehmen 01">
 </div>
 <div class="title">Bild 1. Variantenliste eines Wareneingangs einsehen</div>
+</div>
 </div>
 </div>
 </div>
@@ -351,7 +375,7 @@ Die Inventur im Inventurmodus erfolgt am besten in vier Schritten. Zunächst wir
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <a href="/daten/export-import/daten-exportieren">Daten » Dynamischer Export</a>.</p>
+<p>Öffne das Menü <strong>Daten » Dynamischer Export</strong>.</p>
 </li>
 <li>
 <p>Öffne das Tab <strong>Neues Datenformat</strong>.</p>
@@ -369,7 +393,7 @@ Die Inventur im Inventurmodus erfolgt am besten in vier Schritten. Zunächst wir
 </ol>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 2. Notwendige Datenfelder für eine Inventur</caption>
+<caption class="title">Tabelle 1. Notwendige Datenfelder für eine Inventur</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -439,75 +463,80 @@ Die Inventur im Inventurmodus erfolgt am besten in vier Schritten. Zunächst wir
 </tr>
 </tbody></table>
 </div>
+<div class="paragraph">
+<p>Um den Warenbestand zu leeren, musst du zunächst die Bestände auf Null setzen und kannst anschließend den tatsächlichen Bestand importieren.</p>
+</div>
 <div class="paragraph instruction">
-<p>Warenbestand leeren:</p>
+<p>Warenbestand mit ElasticSync leeren:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne eine Kopie deines Stock-Exports.</p>
+<p>Öffne das Menü <strong>Daten » Import</strong>.<br>
+→ Die ElasticSync-Übersicht wird geöffnet.</p>
 </li>
 <li>
-<p>Trage 0 im Datenfeld <strong>Stock</strong> für alle Varianten ein.</p>
+<p>Klicke auf <strong>Sync hinzufügen</strong> (<span class="icon ”green”"><i class="fa fa-plus-square  "></i></span>).</p>
 </li>
 <li>
-<p>Speichere die Datei mit dem genullten physischen Bestand.</p>
+<p>Wähle bei <strong>Typ</strong> entweder Artikel oder Warenbestand.</p>
 </li>
 <li>
-<p>Öffne das Menü <strong>Daten » Dynamischer Import</strong>.</p>
+<p>Nimm die weiteren Einstellungen vor. Beachte dazu die Erläuterungen in <a href="/daten/daten-importieren/ElasticSync#1210^">Tabelle 2</a>.</p>
 </li>
 <li>
-<p>Wähle unter <strong>Format</strong> das Datenformat Stock, das du für die Inventur exportiert hast.</p>
+<p><strong>Speichere</strong> (<span class="icon ”green”"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Der Sync wird erstellt.<br>
+→ Die Einstellungen des Syncs werden geöffnet.</p>
 </li>
 <li>
-<p>Beachte für weitere Einstellungen Tabelle 3.</p>
+<p>Wechsele in das Tab <strong>Abgleich</strong>.</p>
 </li>
 <li>
-<p>Wähle unter <strong>Datei</strong> deine Datei mit den genullten Beständen.</p>
+<p>Lege einen <a href="/daten/daten-importieren/ElasticSync#1400">Abgleich^</a> sowie die <a href="/daten/daten-importieren/ElasticSync#1300^">Importoptionen</a> fest.<br></p>
 </li>
 <li>
-<p>Klicke auf <strong>Import</strong>.</p>
+<p><strong>Speichere</strong> (icon:save[role=”green”) die Einstellungen.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>Zuordnung</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Zuordnung hinzufügen</strong> (<span class="icon ”green”"><i class="fa fa-plus-square  "></i></span>), um eine <a href="/daten/daten-importieren/ElasticSync#1500^">Zuordnung^</a> zu erstellen.<br>
+→ Ein Fenster wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen Namen für die Zuordnung ein.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon ”green”"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Die neue Zuordnung wird geöffnet. Die verfügbaren Zuordnungsfelder unterscheiden sich je nach Syn-Typ.</p>
+</li>
+<li>
+<p>Wähle für jedes Datenfeld eine Spalte aus deiner Datei oder die Option <strong>Eigener Wert</strong>.</p>
+</li>
+<li>
+<p>Wähle auf der rechten Seite die Datenfelder für die Zuordnung aus, indem du Häkchen bei diesen Feldern setzt. Die Pflichtfelder sind hier <strong>Lager</strong>, <strong>Lagerort</strong> und <strong>Menge</strong>.<br>
+→ Die gewählten Datenfelder werden zur Zuordnung hinzugefügt.</p>
+</li>
+<li>
+<p>Nutze für das Feld <strong>Warenbestand / Menge</strong> den <strong>Eigenen Wert</strong> und trage als Wert 0 ein. Dadurch wird der Warenbestand auf Null gesetzt.</p>
+</li>
+<li>
+<p><strong><em>Tipp</em></strong>: Solltest du keine Lagerorte verwenden, importiere die Lagerort-ID 0.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon ”green”"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Aktiviere am linken Rand die Zeilen, die du importieren möchtest.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Sync ausführen</strong> (<span class="icon "><i class="fa fa-play-circle  "></i></span>).<br>
+→ Der Sync wird ausgeführt und der Warenbestand wird geleert.</p>
 </li>
 </ol>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 3. Dynamischer Import des Formats <strong>Stock</strong></caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Einstellung</th>
-<th class="tableblock halign-left valign-top">Erläuterung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Feldtrennzeichen</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Trennzeichen wählen</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Format</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Datenformat Stock wählen.<br>
-Wenn du mehrere Stock-Formate hast, achte darauf, dass jedes Format eine Lagereinstellung enthält und nur die Daten dieses Lagers geändert werden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lager</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kann leer bleiben für diesen Import, da die Spalte WarehouseID im Datenformat enthalten sein sollte. <br>
-Wenn die Spalte <strong>WarehouseID</strong> in der Datei nicht enthalten oder leer ist, wird der Bestand für das hier gewählte Lager importiert. Wenn die Spalte <strong>WarehouseID</strong> Werte enthält, die größer als 0 sind, wird der Bestand für dieses Lager importiert. Auf diese Weise kann gleichzeitig auch Bestand für mehrere Lager importiert werden.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Barcode</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kann leer bleiben für diesen Import. <br>
-Barcode ist ein optionales Abgleichfeld. Ein Barcode-Format wählen, anhand dessen die Varianten aus dem Datenformat mit den Varianten im System abgeglichen werden sollen. Wenn keine Zuordnung zu einer Variante erfolgt, wird die Zeile übersprungen. Wenn die Import-Datei die Varianten-ID enthält, muss kein Barcode gewählt werden, da die ID zur Zuordnung genügt.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Datei</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Die zu importierende Datei wählen.</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect2">
 <h3 id="900">2.4. Warenbestand buchen</h3>
@@ -515,33 +544,26 @@ Barcode ist ein optionales Abgleichfeld. Ein Barcode-Format wählen, anhand dess
 <p>Nun überträgst du die aktuellen Lagerbestände, die du bei der Inventur aufgenommen hast, in das System. Hierfür nutzt du wieder das Datenformat Stock. Trage die aktuellen physischen Bestände in die genullte Kopie deines Stock-Exports ein und speichere die Datei mit den aktuellen Beständen. Der physische Bestand muss in der Spalte <strong>Stock</strong> eingetragen werden.</p>
 </div>
 <div class="paragraph instruction">
-<p>Warenbestand buchen:</p>
+<p>Warenbestand mit ElasticSync buchen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne eine Kopie deines Stock-Exports.</p>
+<p>Öffne den Sync, mit dem du zuvor den Warenbestand geleert hast.</p>
 </li>
 <li>
-<p>Trage die aktuellen physischen Bestandsmengen im Datenfeld <strong>Stock</strong> für alle Varianten ein.</p>
+<p>Ändere den <strong>Eigenen Wert</strong> in der Spalte, in der der Warenbestand steht.</p>
 </li>
 <li>
-<p>Speichere die Datei mit den aktuellen physischen Beständen.</p>
+<p>Wähle dort als Quelle die Spalte der CSV-Datei, in der die Menge steht.<br>
+→ Der Wert wird automatisch eingetragen.</p>
 </li>
 <li>
-<p>Öffne das Menü <strong>Daten » Dynamischer Import</strong>.</p>
+<p><strong>Speichere</strong> (<span class="icon ”green”"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Wähle das Datenformat Stock, das du für die Inventur exportiert hast.</p>
-</li>
-<li>
-<p>Beachte für weitere Einstellungen die Tabelle 3.</p>
-</li>
-<li>
-<p>Wähle unter <strong>Datei</strong> deine Datei mit den aktuellen Beständen.</p>
-</li>
-<li>
-<p>Klicke auf <strong>Import</strong>.</p>
+<p>Klicke auf <strong>Sync ausführen</strong> (<span class="icon "><i class="fa fa-play-circle  "></i></span>).<br>
+→ Der Sync wird ausgeführt und der Warenbestand wird gebucht.</p>
 </li>
 </ol>
 </div>
