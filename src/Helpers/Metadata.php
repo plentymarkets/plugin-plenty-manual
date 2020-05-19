@@ -6687,7 +6687,7 @@ class Metadata {
 				"description" => "Lerne, wie du auf den Mein Konto-Bereich zugreifst und Änderungen an deinem plentymarkets-Vertrag vornimmst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Dein Vertrag mit plentymarkets. Hier findest du folgende Informationen:",
-				"languageID" => "AIXO9P7",
+				"languageID" => "ZGJLXUS",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -7196,7 +7196,7 @@ class Metadata {
 						"url" => "/business-entscheidungen/systemadministration/domains",
 						"level" => 3,
 						"title" => "Domains",
-						"keywords" => "Admin, Systemadministrator, System-Administrator, Systemadministration, System-Administration, Systemadmin, System-Admin, Domain, Domains",
+						"keywords" => "Domain, Domains, Subdomain, Subdomains, Sub-Domain, Sub-Domains, TLD, Service-Center, Host, Hosting, Hoster, Domain-Typ, Domain-Typen, Assistent, Assistenten, Hauptdomain, Haupt-Domain, Mandant, Mandanten, Systemverknüpfung, Systemverknüpfungen, Domain-Handle, DNS, DNS-Einstellungen, Domain-Provider, AutoScaling, CNAME, CNAME-Eintrag, Alias, DNS-Quelle, IP-Adresse, Mailserver, MX10, SPF, SPF-Record, IP, AuthCode, Auth-Code, Auth-Info, Webhosting, IPS, IPS-Tag, TXT Resource Record, TXT-Record, DNS-Zone, Nameserver, Domain-Name, URL, Weiterleitung, Weiterleitungen, URL-Weiterleitung, URL-Weiterleitungen, HTTP-Code, SSL, SSL-Zertifikat, SSL-Zertifikate, Let’s Encrypt, https, Primärdomain, Primär-Domain, Testdomain, Testdomains, A-Record, A-Records, Cache, SSL-Umleitung, Umleitung, Traffic, Bot, Bots, Crawler, Crawling, Umzug, Systemumzug, Cloud, Cloud-Lösung, Cloud-Lösungen",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Domains. Hier findest du folgende Informationen:",
