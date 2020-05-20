@@ -27534,12 +27534,12 @@ class Metadata {
 		"urlName" => "glossary",
 		"url" => "/en/glossary",
 		"level" => 1,
-		"title" => "plentymarkets Glossary",
+		"title" => "plentymarkets glossary",
 		"keywords" => "",
 		"description" => "Glossary for plentymarkets",
 		"navAlias" => "",
-		"linkListInto" => "Welcome to the topic plentymarkets Glossary. The following information is available:",
-		"languageID" => "",
+		"linkListInto" => "Welcome to the topic plentymarkets glossary. The following information is available:",
+		"languageID" => "GJA5K7N",
 		"children" => [],
 		"hasChildren" => false
 	]
