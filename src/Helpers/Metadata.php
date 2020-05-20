@@ -14079,6 +14079,22 @@ class Metadata {
 			]
 		],
 		"hasChildren" => true
+	],
+	[
+		"id" => "8e2550c12799cab0419ee94be8086db1",
+		"path" => "glossar",
+		"position" => 300,
+		"urlName" => "glossar",
+		"url" => "/glossar",
+		"level" => 1,
+		"title" => "plentymarkets Glossar",
+		"keywords" => "",
+		"description" => "Glossar für plentymarkets",
+		"navAlias" => "",
+		"linkListInto" => "Willkommen im Themenbereich plentymarkets Glossar. Hier findest du folgende Informationen:",
+		"languageID" => "",
+		"children" => [],
+		"hasChildren" => false
 	]
 ];
     const EN = [
