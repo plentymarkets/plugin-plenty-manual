@@ -14092,7 +14092,7 @@ class Metadata {
 		"description" => "Glossar für plentymarkets",
 		"navAlias" => "",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Glossar. Hier findest du folgende Informationen:",
-		"languageID" => "",
+		"languageID" => "GJA5K7N",
 		"children" => [],
 		"hasChildren" => false
 	]
