@@ -27526,6 +27526,22 @@ class Metadata {
 			]
 		],
 		"hasChildren" => true
+	],
+	[
+		"id" => "d63aadefb84d945d3faa8eaa35f5015d",
+		"path" => "glossary",
+		"position" => 300,
+		"urlName" => "glossary",
+		"url" => "/en/glossary",
+		"level" => 1,
+		"title" => "plentymarkets Glossary",
+		"keywords" => "",
+		"description" => "Glossary for plentymarkets",
+		"navAlias" => "",
+		"linkListInto" => "Welcome to the topic plentymarkets Glossary. The following information is available:",
+		"languageID" => "",
+		"children" => [],
+		"hasChildren" => false
 	]
 ];
 
