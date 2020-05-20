@@ -14666,7 +14666,7 @@ class Metadata {
 						"url" => "/en/item/settings/prices",
 						"level" => 3,
 						"title" => "Sales prices and price calculation",
-						"keywords" => "Price, Prices, Sales price, Sales prices, Price calculation, Price calculations, Calculation, Calculations, Assistant, Assistants, Sales price assistant, RRP, Special offer, Set price, Customer classes, Customer class, Quantity-based dependency, Currency, Currencies, Subscription int., Minimum quantity, Live conversion, Standard currency, Conversion factor, Price type, Monetary price, Monetary prices, Profit margin, Purchase price, Price source, Transportation costs, Storage costs, Operating costs, Operator, Operand, Manufacturer commission, Manufacturer commissions",
+						"keywords" => "Price, Prices, Sales price, Sales prices, Price calculation, Price calculations, Calculation, Calculations, Assistant, Assistants, Sales price assistant, RRP, Special offer, Set price, Customer classes, Customer class, Quantity-based dependency, Currency, Currencies, Subscription int., Minimum quantity, Live conversion, Standard currency, Conversion factor, Price type, Monetary price, Monetary prices, Profit margin, Purchase price, Price source, Transportation costs, Storage costs, Operating costs, Operator, Operand, Manufacturer commission, Manufacturer commissions, Price range, Price ranges, Price scale, Price scales, Scale of prices, Sliding scale, Graduated prices, Staggered prices",
 						"description" => "Learn about sales prices, price calculations, their settings and your opportunities.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Sales prices and price calculation. The following information is available:",
