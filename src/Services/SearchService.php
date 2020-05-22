@@ -62,7 +62,7 @@ class SearchService
                 ],
                 "inner_hits" => [
                     "_source" => [
-                        "includes" => [ "id", "url", "title", "content" ]
+                        "includes" => [ "id", "url", "title", "keywords", "content" ]
                     ],
                     "highlight" => [
                         "pre_tags" => ["<em class=\"search-item-keyword\">"],
@@ -95,7 +95,7 @@ class SearchService
         ];
 
         $mainQuery = [
-            "_source" => ["url", "title", "description", "languageID", "position"],
+            "_source" => ["url", "title", "keywords", "description", "languageID", "position"],
             "query" => [
                 "dis_max" => [
                     "queries" => [
