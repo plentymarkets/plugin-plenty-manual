@@ -1,0 +1,677 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> Stock terms</span></a></li>
+<li><a href="#200"><span>2.</span><span> Reserving stock</span></a></li>
+<li><a href="#300"><span>3.</span><span> Searching stocks</span></a></li>
+<li><a href="#500"><span>4.</span><span> Redistributing stock in the plentymarkets back end</span></a>
+<ul class="sectlevel2">
+<li><a href="#_redistributing_stock_with_best_before_datesbatches"><span>4.1.</span><span> Redistributing stock with best before dates/batches</span></a></li>
+</ul>
+</li>
+<li><a href="#1300"><span>5.</span><span> Redistributing stock with the plentymarkets app</span></a></li>
+<li><a href="#600"><span>6.</span><span> Searching variations that are below or have reached the reorder level</span></a></li>
+<li><a href="#700"><span>7.</span><span> Reordering variations that are below or have reached the reorder level</span></a></li>
+<li><a href="#800"><span>8.</span><span> Checking reserved stock</span></a></li>
+<li><a href="#900"><span>9.</span><span> Releasing reserved stocks</span></a></li>
+<li><a href="#1000"><span>10.</span><span> Exporting or importing stock data</span></a></li>
+<li><a href="#1100"><span>11.</span><span> Viewing the stock movements history</span></a></li>
+<li><a href="#1200"><span>12.</span><span> Making automatic processes dependent on stock</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Managing stock</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>On this page you will learn which stock data plentymarkets provides to you, how and where to get an overview of your stocks as well as how to create a reorder. Your stock data is calculated based on your incoming and outgoing items data records.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. Stock terms</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following stock terms are used in plentymarkets:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Stock terms in plentymarkets</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Stock term</th>
+<th class="tableblock halign-left valign-top">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Physical stock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The quantity of a variation that is actually present in your warehouse.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserved stock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The quantity of a variation that is already reserved for orders. A variation will be reserved as soon as an order or a warranty is created. The stock is reserved until either outgoing items are booked or until the order or the warranty is canceled. The reserved stock is part of the physical stock because the reserved stock is still present in the warehouse. As soon as the outgoing items are booked the quantity will be subtracted from the physical stock and the reservation is canceled.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserved for listings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The quantity of a variation that is currently listed on markets. In legal terms, listings are binding offers to potential customers. Therefore, it makes sense to be careful and to reserve those items offered in listings, even before they have a concrete order. Otherwise you might sell more variations than you have in stock. You can decide whether or not you want items from active listings to be registered as reserved stock in plentymarkets. Stock that is reserved for listings is seperated from the quantity that is reserved for orders. The quantity listed on a market will be part of the net stock if you do not reserve stock for listings. The net stock is the quantity available for sale anywhere. Go to <strong>Setup » Listings</strong> and open the submenu <strong>stock</strong> to set the stock options for listings. When you create a market listing, select <strong>limited (with reservation)</strong> for the stock dependence. This will reserve the listed quantity. As soon as a listing was successfully completed, the setting is no longer active. However, the sold item is now reserved within the order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Net stock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The quantity of a variation that is available for sale. The net stock is part of the physical stock. Substract all reserved qunatities from the physical stock and you will get the net stock. If a purchaser tries to buy more copies of an item than are currently available in the net stock, then this purchaser will receive a warning that the delivery will be delayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ordered items:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The quantity of items or variations that you ordered from your supplier but that you haven’t received or booked in yet. As soon as these items are booked in (as incoming items), they are listed as physical stock.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="200">2. Reserving stock</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The system can reserve stock for listings and orders if you manage your stock in plentymarkets.</p>
+</div>
+<div class="paragraph subhead">
+<p>When is stock reserved?</p>
+</div>
+<div class="paragraph">
+<p>We have already described the reserved stock as the quantity of variations that have been ordered or as the difference between the physical stock and the net stock. Now we want to take a closer look at the cases in which plentymarkets can automatically reserve stock.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When orders are created:<br>
+If an item is purchased, an order will be created and the variation will automatically be reserved until the order is either canceled or until it is booked out. The reservations will be applied to all orders from all kinds of referrers, also from external markets.</p>
+</li>
+<li>
+<p>When warranties are created:<br>
+If an item is returned by a customer, then you can create a <a href="/en/orders/managing-orders#warranty">warranty</a> for one or more items by opening the original order. These warranties are treated as individual orders with a distinct order number. Exactly the same rules apply as for orders: Stock is reserved until either variations are booked out or until the warranty itself is canceled again.</p>
+</li>
+<li>
+<p>When listings are posted:<br>
+If you do not reserve stock for active listings, then it is possible that you may end up empty-handed after a listing has been terminated. This is because you may have already sold the item. In order to stay away from this kind of trouble and bad evaluations, it is recommended that you use the system’s function of reserving stock for active listings. Go to <strong>Setup » Listings</strong> and open the sub-menu <strong>stock</strong> to select the relevant options for stock and listings. When you create a market listing, select <strong>limited (with reservation)</strong> for the <strong>stock dependence</strong>. This will reserve the listed quantity. As soon as a listing was successfully completed, the setting is no longer active. However, the sold item is now part of an order and is reserved within the order.</p>
+</li>
+<li>
+<p>Exception item bundles:<br>
+<strong>Item bundles</strong> consist of multiple products. No individual stock is administered for those bundles in plentymarkets. The stock of item bundles directly depends on the stock of the single items contained in the bundle. If a bundle is sold, the items included in it are automatically taken over into the reserved stock.</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="300">3. Searching stocks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When opening the menu <strong>Stock » Stocks</strong> no filters are set and a search for all stocks will be carried out automatically. By default, the results are sorted by variation ID. In addition the stocks of a variation are sorted by warehouse. Use the filters to narrow down the stock results.<br>
+The column titles are abbreviated. If you point your cursor over an abbreviation, then you will see the entire name.</p>
+</div>
+<div class="paragraph">
+<p>The parametes displayed depend on the user’s rights. Options that can be restricted for a user are e.g. the warehouse options. When you edit a user open the <strong>Rights</strong> and then open the <strong>Visibility</strong> tab, this is where you will find the warehouse options. Go to <strong>Setup » Settings » User</strong> and check the settings for users who work with stocks.</p>
+</div>
+<div class="paragraph instruction">
+<p>Searching stocks:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Stock » Stocks</strong>.</p>
+</li>
+<li>
+<p>Select <strong>filters</strong>. Pay attention to the information given in table 2.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong>.<br>
+→ The stocks that correspond to the search criteria entered will be listed.</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Filters for the stock search</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Table type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Standard</strong> = lists results by variation ID<br>
+<strong>Extended</strong> = lists results by item ID and in addition for each item the variations by variation ID<br>
+<strong>Matrix</strong> = similar to the extended result list, only variations that have attributes are displayed differently</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Search</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Triggers a search The stock data found is listed in the results in the <strong>Stocks</strong> tab.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reset</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Completely resets the selected filters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variation number</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a variation number to search stock of this variation. The search may return more than one result. Let’s assume you enter 987 and because you have a lot of variations you also have a variation that has the ID 9871, then both variations will be found. In addition also variations of the same item that the variations belong to will be listed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter an item ID to list the stock of all variations of that item.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variation ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a variation ID to search stock of this variation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Barcode</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a barcode to search stock of this variation by barcode. <br>
+You can set up barcodes in the <a href="/en/item/managing-items#630">Setup » Item » Barcode</a> menu and then you need to <a href="/en/item/managing-items#250">link the barcode with your variation</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item data</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter data in this field to browse through the item ID, variation ID, variation number, item name and variation name. The search will not browse through the preview text or the item text.<br>
+When searching with item data, it is sufficient to only enter the word stem into the field. Search terms can be shortened to almost any extent at the end of words. However, words cannot be shortened at the beginning. When searching for starter sets it would be enough to just enter starter or start. The same is true for all numbers e. g. IDs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Limitation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an option from the drop-down list to only search for variations that have this stock limitation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Yes</strong> = Allows to create reorders within the stock search menu. The items need to be linked with variations to create reorders. The button <strong>Create reorder</strong> is above the result list. The manual page<a href="/en/stock-management/managing-reorders/working-with-reorders">Working with reorders</a> explains all necessary steps in detail.<br>
+<strong>No</strong> = Disables the function to create reorders within the stock search menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sorting</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose whether to sort the stock entries by <strong>item ID</strong> (default) or by their <strong>item number</strong>.<br>
+<em>Note</em>: When you choose the standard table type the item number will not be displayed with the results. However, the sorting is still correct.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Supplier</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a supplier to search stock of variations that you receive from this supplier. This makes it easy to create reorders for a supplier.<br>
+The supplier can also be selected from a drop-down list in the variation’s row. Despite the fact that you have filtered with a supplier, all supliers of the variation will be listed here. In addition to the supplier you will also see the purchase price for this variation from this suppler, the units contained, the discount and the minimum order quantity.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Flag 1<br>
+Flag 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a flag to only display stocks that have this flag. The two flags form a conjunction and this means that only variations with the two flags will be listed if both flags are set as filters.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bundle</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose between searching vor variations only and including bundles into the search.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inactive</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ALL</strong> = All variations and stock are displayed. The option is set by default.<br>
+<strong>Yes</strong> = Only searches for the stock of inactive variations.<br>
+<strong>No</strong> = Only active variations and their stock will be displayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Category 1<br>
+Category 2<br>
+Category 3</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the category to only search for stock of variations that have this category. The categories are based on each other. You can only choose a third level category if you have selected a second and first level category before. This means you need to start with the first level category. However, you do not have to select a second or third level category. You will only see the stock of the lowest category that was selected.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a warehouse in order to display stock only from this warehouse.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Net calculation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a calculation variation to display the net stock: If you want to include listings, then select the setting <strong>reserved orders + listings</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date of receipt</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a date in order to search stocks by the date that incoming items were booked. All stock of this variation that was registered or booked in that day will be listed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Net stock</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an operator and enter a quantity to search variations with net stock quantities above, below or equal to the quantity entered. You will search for all variations that have a net stock of more than 20 if you select (&gt;) as operator and enter 20 as quantity.</p></td>
+</tr>
+</tbody>
+</table>
+<div id="400" class="paragraph subhead">
+<p>Interpreting the result list</p>
+</div>
+<div class="paragraph">
+<p>The results list the stock of a variation per warehouse. The stock of two or more storage locations in the same warehouse will be added to display only one result per warehouse if a variation is stored at several storage locations in the same warehouse.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Columns of the stock list</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Purchase price</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can define whether the average purchase price or the purchase price that is currently saved in the variation data will be displayed. Open the <strong>Setup » Stock » Stock » Search</strong> and select an option for the purchase price.<br>
+However, the purchase price saved in the variation data is also based on your settings and might as well be the average purchase price. How the incoming items data is applied to your variation data needs to be defined in the <strong>Setup » Stock » Stock » Incoming items</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Storage location</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows the storage location of a variation if you click on the magnifying glass. Also allows to redistribute stock of a variation to other storage locations.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Value</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The value is calculated by multiplying the purchase price with the physical stock.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Phy</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Physical stock of a warehouse. Click on the stock to open the <strong>stock movement</strong> of a variation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>RS</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The total quantity of reserved stock. Click on the stock will open the orders these reservations are included in.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>RSL</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The quantity of a variation reserved in active listings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>RSB</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of item bundles that are included in pending orders and are therefore reserved. The quantity of a variation that is reserved by an item bundle is also included in the quantity displayed in the <strong>Reserved stock</strong> column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Supply</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quantity of reordered items. Click on the quantity to open the <strong>Stock » reorder management » reorder</strong> menu. The reorders that form the supply will be listed automatically.<br>
+<strong>Note</strong>: Even if you have not yet submitted a reorder to your supplier, the quantity included in the reorder will already be added to the quantity that is in supply.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>RL</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The reorder level currently saved for the variation.<br>
+For further information about the reorder level and reorders, refer to the <a href="/en/stock-management/managing-reorders/working-with-reorders">Working with reorders</a> page of the manual.<br>
+<em>Note</em>: Your system can calculate a dynamic reorder level in the background. However, this is not shown in your system yet. Only the shown difference between the current stock and the reorder level is based on the dynamic reorder level.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>RLΔ</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reorder level Delta = Shows the quantity that is missing to reach the reorder level<br>
+The difference either tells you how many items still need to be sold in order to reach the reorder level or it tells you how many items you need to reorder to reach the reorder level. This means if the difference is negative your stock is still above the reorder level. Your stock is below the reorder level if the difference is positive.<br>
+The difference between the current stock and the reorder level can also be calculated based on a dynamic reorder level. However, the dynamic reorder level itself is not shown in the system. Only the difference between the current stock and the reorder level shown is based on this dynamic value. The <a href="/en/stock-management/setting-up-a-warehouse/#reorder-level_variation_warehouse">warehouse settings</a> allow you to select if the difference between the current stock and the reorder level is based on the dynamic reorder level or on a static value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ø sale</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The average sales depend on the <strong>sales period</strong> that was saved in the <strong>Setup » Stock » Reorder management » Settings</strong> menu. However, you will only see a value for average sales here if the search filter <strong>Order</strong> is set to <strong>Yes</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Quantity</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the desired quantity for an order that is placed with the <strong>Create reorder</strong> button. The quantity saved as <strong>minimum order quantity</strong> for the supplier will automatically be suggested. This value will only be displayed in the table if the <strong>Order</strong> filter was set to <strong>Yes</strong>. If you see a crossed out shopping cart symbol instead of a text field for entering the order quantity, then this means that no supplier was saved for the variation. In this case, save a supplier in the variation’s <strong>Supplier</strong> tab.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Supplier</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the desired supplier for a reorder. This value will only be displayed in the table if the <strong>Order</strong> filter was set to <strong>Yes</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>∑</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sigma sign</strong> = The total of the values in the individual columns (e. g. value of items in Euro). This value will only be displayed in the table if the <strong>Order</strong> filter was set to <strong>Yes</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="500">4. Redistributing stock in the plentymarkets back end</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When changing the storage location of a variation in the stock overview, you can also easily redistribute the stock of a variation. You can redistribute the entire stock or only part of it. You can redistribute the stock from one storage location to a storage location in the same warehouse or in another warehouse.<br>
+However, you can not increase the quantity when redistributing. In other words, redistributing can not be used to book new stock in. Only the already existing quantity can be redistributed. Even if you enter a quantity that is higher than the current stock quantity, only the current quantity will be redistributed.</p>
+</div>
+<div class="paragraph instruction">
+<p>Redistributing stock:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Stock » Stocks</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>magnifying glass</strong> in the <strong>storage location</strong> column for the variation that you wish to redistribute.<br>
+→ A window will open.</p>
+</li>
+<li>
+<p>Select the warehouse that you wish to book the stock to from the <strong>New warehouse</strong> drop-down list.</p>
+</li>
+<li>
+<p>Select the storage location that you wish to book the stock to from the <strong>New warehouse</strong> drop-down list.<br>
+→ You can select storage locations that are in use for this variation from the drop-down list. Click on <strong>Search</strong> to add a new storage location.</p>
+</li>
+<li>
+<p>Enter the quantity that you wish to redistribute into the <strong>New stock</strong> field.</p>
+</li>
+<li>
+<p>Click on <strong>Redistribute</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Another menu where you can redistribute stock is the <strong>Stock</strong> tab of a variation. Open the <strong>Item » Edit item</strong> menu and then open a variation.</p>
+</div>
+<div class="sect2">
+<h3 id="_redistributing_stock_with_best_before_datesbatches">4.1. Redistributing stock with best before dates/batches</h3>
+<div class="paragraph">
+<p>You can redistribute stock with best before dates/batches to other warehouses. However, please note the limitations for redistributing stock with best before dates/batches listed in <a href="#limitations_redistribution">Table 4</a>.</p>
+</div>
+<table id="limitations_redistribution" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Limitations when redistributing stock with best before dates/batches</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Option activated for warehouse</th>
+<th class="tableblock halign-left valign-top">Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Best before date and batch</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Redistribution to a warehouse with batches or best before date is possible. However, best before dates and batch information are lost during redistribution.</p>
+</li>
+<li>
+<p>Redistribution to a warehouse without batches or best before date is possible. However, best before dates and batch information are lost during redistribution.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> These limitations do not apply when you redistribute stock using the plentymarkets app.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Best before date</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Redistribution to a warehouse with batches or best before date is not possible.</p>
+</li>
+<li>
+<p>Redistribution to a warehouse without batches or best before date is possible. However, best before dates are lost.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> These limitations do not apply when you redistribute stock using the plentymarkets app.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Batch</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Redistribution to a warehouse with batches is not possible.</p>
+</li>
+<li>
+<p>Redistribution to a warehouse without batches or best before date is possible. However, batch information is lost.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> These limitations do not apply when you redistribute stock using the plentymarkets app.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1300">5. Redistributing stock with the plentymarkets app</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can also redistribute stock using the plentymarkets app. Refer to the <a href="/en/app/functions/warehouse-management/receiving-rebooking">Receiving goods and replenishing stock</a> page of the manual to learn how it’s done and which settings you’ll need to configure in advance.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="600">6. Searching variations that are below or have reached the reorder level</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A good reason to manage stocks in your system is that it allows you to reorder variations from your supplier early enough to not run out of stock. The reorder level is your reference figure to define a stock level at which reordering early enough is still possible. To filter variations that have reaached the reorder level, proceed as follows.</p>
+</div>
+<div class="paragraph instruction">
+<p>Filtering variations by reorder level:</p>
+</div>
+<div class="paragraph instruction">
+<p>Searching stocks:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Stock » Stocks</strong>.</p>
+</li>
+<li>
+<p>Select a <strong>Supplier</strong> from the drop-down list.</p>
+</li>
+<li>
+<p>Select the option <strong>Reorder level reached/below</strong> in the <strong>limitation</strong> filter.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong>. <br>
+→ The variations that are below or have reached the reorder level will be listed.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When you have listed the variations, you can directly create a reorder in this menu.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="700">7. Reordering variations that are below or have reached the reorder level</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To reorder the variations that you have just listed, porceed as follows.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Click on reorder before switching pages</div>
+<div class="paragraph">
+<p>When you switch a page, the quantities entered will be reset. This is why you need to click on reorder before you switch the page. As long as the reorder is still open, further variations will be added to the reorder.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Creating reorders:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Stock » Stocks</strong>.</p>
+</li>
+<li>
+<p>Filter by reorder level as described above.</p>
+</li>
+<li>
+<p>Click on <strong>Accept suggestion</strong>.</p>
+</li>
+<li>
+<p>If a suggestion does not seem right to you, you can enter the <strong>quantity</strong> that you wish to order.</p>
+</li>
+<li>
+<p>Click on <strong>Create reorder</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Create reorder is not visible</div>
+<div class="paragraph">
+<p>If you can not see the <strong>Create order</strong> button, than check that <strong>Yes</strong> is set for the <strong>order</strong> filter on the left. The filter has to be set to yes. Otherwise reorders can not be carried out.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Go to <strong>Stock » Reorder management » Reorders</strong> to see the reorder that was just created. The reorder will be <strong>Open</strong>. Further variations that you want to order from the same supplier will be added to the same reorder as long as you have a reorder that is open.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="800">8. Checking reserved stock</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Booking variations out is crucial for managing stocks correctly. If you note that reserved stock exists for a variation or that more stock is reserved than should be and you know for sure that all orders have been shipped, you can search for orders that have not been booked out. Stock remains reserved until you booked the variations out. This means that the order status does not influence whether or not stock is reserved. The important step is to actually book the variations out.</p>
+</div>
+<div class="paragraph">
+<p>Our recommended course of action that many users follow is to first book the variations out and to use this action to set the order in status 7. Use status 7 to display all orders that are in status 7 but that have not been booked out correctly.</p>
+</div>
+<div class="paragraph instruction">
+<p>Searching for outgoing items that were not yet booked:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Orders » Edit orders</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Filter</strong> tab, select <strong>[7] Outgoing items booked</strong> for the <strong>= Status</strong> option in order to select all processed orders.</p>
+</li>
+<li>
+<p>Select the filter <strong>Outgoing items</strong> and set the option <strong>not booked</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> to carry out the search.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If there are still orders in status 7 for which the outgoing items were not yet booked, then you will receive an overview of them with this search filter and you can decide individually how to proceed with the orders listed there.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Automatic stock update: Changes to the order status</div>
+<div class="paragraph">
+<p>The automatic stock update works in such a way that certain orders are automatically moved to another status.<br>
+<strong>Example</strong>: For orders in status 4 it is checked whether there is stock available. If that is the case and the user has activated the option in the order settings, they are automatically moved to status 5. In the menu <strong>Stock » Stocks</strong> you can find the respective buttons <strong>Recalculate stocks</strong> and <strong>Order status 4 or 5 - calculate</strong>.
+<strong>Automatic stock update (b)</strong> means that the stocks have been recalculated and <strong>automatic stock update (m)</strong> means that the order status 4 or 5 has been calculated.
+If you want to avoid that an order with stock is automatically moved to status 5, you should not use status 4.
+For further info on the order status see <a href="/en/orders/managing-orders#1200">here</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="900">9. Releasing reserved stocks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you or your customer cancel an order, the stock that was reserved for that order can be released again. You can only create a cancellation as long as no variations have been booked out. In case variations have already been booked out and the order is about to be shipped or has already been delivered to your customer you need to create a return. The stock calculation is not based on order statuses but on events and actions. This means if the status of an order changes, then the stock will not autmatically be released.</p>
+</div>
+<div class="paragraph">
+<p>However, you can still define a status for cancelled orders and use this status to release stock. Define the status for cancellations. Status 8 is commonly used for cancellations. If you use a status other than [8] for cancellations or if you use the additional status options 8.1, 8.2 etc., then you can define this status or even a whole range of statuses in which orders are considered to be canceled.</p>
+</div>
+<div class="paragraph instruction">
+<p>Editing basic settings for the status of canceled orders:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Settings</strong>.</p>
+</li>
+<li>
+<p>Select the status range that you wish to use for cancellations from the two drop-down lists under <strong>Status of canceled orders</strong>. The drop-down lists are <strong>from</strong> and <strong>to</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1000">10. Exporting or importing stock data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can export or import stock data and this way you can let your system know about the latest stocktaking that you carried out. The data format <a href="/en/data/export-import/data-formats/stock">Stock</a> contains the relevant stock data from your system. Data formats that might generally be useful when working with stock are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/en/data/export-import/data-formats/stock">Stock</a>,</p>
+</li>
+<li>
+<p><a href="/en/data/export-import/data-formats/variationsupplier">VariationSupplier</a>,</p>
+</li>
+<li>
+<p><a href="/en/data/export-import/data-formats/variationwarehouse">VariationWarehouse</a> and</p>
+</li>
+<li>
+<p><a href="/en/data/export-import/data-formats/warehouse">Warehouse</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All data formats available in plentymarkets as well as a general description on how to export or import data from or into plentymarkets can be found in the <a href="/en/data">data exchange</a> chapter of the manual.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1100">11. Viewing the stock movements history</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can view a variation’s stock movements in the <strong>Stock movement</strong> tab of the variation. You can open the <strong>stock movements</strong> by either opening the variation or by clicking on the physical stock of one of the results in the stock results list. This tab shows you how your stock reached its current level. In other words, you will see the different bookings that led to the current result. This will increase transparency of your stock management and in addition it enables you to understand your bookings also later. <br>
+Item bundles do not have an own stock movements tab, because the stock of bundles is calculated from the stock of the bundle components.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/stock-management/assets/EN-Managing-stocks-01.png" alt="EN Managing stocks 01">
+</div>
+<div class="title">Figure 1. Opening stock movements</div>
+</div>
+<div class="paragraph instruction">
+<p>Opening the stock movement tab:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Stock » Stocks</strong>.</p>
+</li>
+<li>
+<p>In the results list, click on the <strong>quantity</strong> displayed in the <strong>PS</strong> (physical stock) column (image 1, red arrow) of the variation that you wish to open. <br>
+→ The <strong>Stock movements</strong> tab within the <strong>Stock</strong> tab of the item will be opened.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1200">12. Making automatic processes dependent on stock</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For example, the item’s display in the online store can depend on its stock: If the item can be delivered, it is offered in the online store. As soon as the net stock is 0, then the item is no longer displayed. Furthermore listings can depend on stock. This is a way to avoid overselling. You can choose your hood and ricardo settings to end listings if the stock is low. You can also choose to end eBay listings if the stock is low, but in addition you can choose to automatically relist eBay listings if stock has increased. To get a more detailed description of the settings, open the <a href="/en/omni-channel/multi-channel/ebay/ebay-setup#11000">eBay listings</a> page.</p>
+</div>
+</div>
+</div>
+</main>

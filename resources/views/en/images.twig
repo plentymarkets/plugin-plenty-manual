@@ -1,0 +1,793 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> Setting up item images</span></a></li>
+<li><a href="#200"><span>2.</span><span> Saving own domain for image URLs</span></a>
+<ul class="sectlevel2">
+<li><a href="#300"><span>2.1.</span><span> A domain hosted by plentymarkets</span></a></li>
+<li><a href="#400"><span>2.2.</span><span> A domain hosted by an external provider</span></a></li>
+</ul>
+</li>
+<li><a href="#500"><span>3.</span><span> Specifying item image sizes</span></a></li>
+<li><a href="#600"><span>4.</span><span> Uploading item images via FTP server</span></a>
+<ul class="sectlevel2">
+<li><a href="#700"><span>4.1.</span><span> Naming of item image files for FTP import</span></a></li>
+<li><a href="#800"><span>4.2.</span><span> Importing item images via FTP server</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Item images</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Item images are saved on S3 and delivered using CloudFront, a CDN service by AWS. CDN is short for Content Delivery Network. CDN allows completely scalable delivery of item images. CDN makes it possible to only save the original image. A specified dimension of the original image is created when the image is displayed on screen. This dimension is then saved in the CloudFront CDN cache.</p>
+</div>
+<div class="paragraph">
+<p>Learn which settings can be configured for item images and how to upload images via FTP.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. Setting up item images</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the <strong>Setup » Item » Images » Settings</strong> menu, carry out the following settings for item images:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Import and export</p>
+</li>
+<li>
+<p>Placeholder images</p>
+</li>
+<li>
+<p>Size of attribute images</p>
+</li>
+<li>
+<p>Image names</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Carrying out settings for item images:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Item » Images » Settings</strong>.</p>
+</li>
+<li>
+<p>Carry out the settings. Note <a href="#table-image-settings">Table 1</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-image-settings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Image settings</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Settings</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Export item image position</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the item image position for the image export, for example to a market.<br>
+The position is defined in the item’s <a href="/en/item/managing-items#90">Images</a> tab.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Image import using FTP</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether imported images should be added (default setting) or whether the old images should be deleted before importing the new images.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Image names of the FTP import</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether the file names of <a href="/en/item/settings/images#600">images imported via the FTP server</a> include the <strong>item ID</strong> or the <strong>variation No.</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>URL of placeholder image</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the URL of a placeholder image. This image will be shown if item images cannot be displayed. Upload the placeholder image in the menu <strong>CMS » Webspace</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>URL of placeholder preview image</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the URL of a placeholder image for preview images. This image will be shown if preview images cannot be displayed. Upload the placeholder image in the menu <strong>CMS » Webspace</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Attribute images</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max. height in pixels</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the maximum height of attribute images in pixels. The value <strong>40</strong> is set by default.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max. width in pixels</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the maximum width of attribute images in pixels. The value <strong>40</strong> is set by default.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Original name</strong>;<br>
+<strong>Item ID</strong>;<br>
+<strong>Item No.</strong>;<br>
+<strong>Name 1</strong> - <strong>Name 3</strong>;<br>
+<strong>Keywords</strong>;<br>
+<strong>Model</strong>;<br>
+<strong>Free text field 1</strong> - <strong>Free text field 20</strong>;<br>
+<strong>Own prefix</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select parameters to be included in the image name and define positions for the order of parameters in the name. Parameters are hyphenated in the image name. You have to specify the <strong>item ID</strong> or the <strong>item number</strong>. The image name is limited to a maximum of 32 characters.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Prefix</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a prefix to be inserted in the image name.<br>
+<strong><em>Note:</em></strong> The prefix you enter is only inserted into image names if you selected a position in the <strong>Prefix</strong> drop-down list.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="200">2. Saving own domain for image URLs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Item images are assigned the URL of the default CDN domain by default. This means that the URLs of item images contain the domain name "plentymarkets.com”. However, instead of the default CDN domain, you can also set up the domain of the client and save a custom subdomain for item images. <a href="#table-domain-image-URLs">Table 2</a> shows the differences between the default CDN domain and an individual CDN domain. You can set up an own CDN domain for domains hosted by plentymarkets and for domains hosted by an external provider. However, note the following limitations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can only save individual subdomains for the main domain.</p>
+</li>
+<li>
+<p>You can only save one subdomain for each client.</p>
+</li>
+<li>
+<p>The subdomain must not contain <strong>www</strong>.</p>
+</li>
+<li>
+<p>The subdomain must not exist in the domain assistant.</p>
+</li>
+</ul>
+</div>
+<table id="table-domain-image-URLs" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Own domain for image URLs</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 37.5%;">
+<col style="width: 37.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Image URL with default domain</th>
+<th class="tableblock halign-left valign-top">Image URL with own domain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL pattern</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The URL of item images is created as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Subdomain <strong>CDN1</strong>, <strong>CDN2</strong> or <strong>CDN3</strong></p>
+</li>
+<li>
+<p>Domain <strong>plentymarkets.com</strong></p>
+</li>
+<li>
+<p>Customer hash</p>
+</li>
+<li>
+<p>File path <strong>item/images</strong></p>
+</li>
+<li>
+<p>Item ID</p>
+</li>
+<li>
+<p>Folder name of image size</p>
+</li>
+<li>
+<p>Name of image file with file extension</p>
+</li>
+</ol>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The own domain is specified instead of the default domain. The customer hash is not shown in the URL:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Own subdomain.</p>
+</li>
+<li>
+<p>Domain of the client</p>
+</li>
+<li>
+<p>File path <strong>item/images</strong></p>
+</li>
+<li>
+<p>Item ID</p>
+</li>
+<li>
+<p>Folder name of image size</p>
+</li>
+<li>
+<p>Name of image file with file extension</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://<strong>cdn01.plentymarkets.com/<br>
+1abcd2e3fghi</strong>/item/images/118/full/118-chair-Rio.jpg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://<strong>yoursubdomain.yourstore.co.uk</strong>/<br>
+item/images/118/full/118-chair-Rio.jpg</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Proceed as described below to save an own domain for the image URLs of a client.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/en/item/settings/images#300">For a domain hosted by plentymarkets</a></p>
+</li>
+<li>
+<p><a href="/en/item/settings/images#400">For a domain hosted by an external provider</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="300">2.1. A domain hosted by plentymarkets</h3>
+<div class="paragraph">
+<p>Proceed as described below to save an own domain for the image URLs of a client if your domain is hosted by plentymarkets.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Activate the domain after the subdomain has been created</div>
+<div class="paragraph">
+<p>It can take several hours for the subdomain to be created. The creation process is complete when green checkmarks are shown in all three columns, i.e. <strong>SSL</strong>, <strong>DNS</strong> and <strong>Cloud status</strong>. Once the subdomain is created, activate the domain.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Saving own domain for image URLs:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » Domains</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong>.<br>
+→ The <strong>New domain</strong> window opens.</p>
+</li>
+<li>
+<p>Carry out the settings. Note <a href="#table-plenty-domain">Table 3</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The subdomain is created.<br>
+→ A SSL certificate is created for the subdomain.<br>
+→ A DNS record is created for the subdomain.<br>
+→ A CloudFront instance is created.<br>
+<strong><em>Note:</em></strong> This process can take several hours. The process is complete when green checkmarks are shown in the columns <strong>SSL</strong>, <strong>DNS</strong> and <strong>Cloud status</strong>.</p>
+</li>
+<li>
+<p>Once all three checkmarks are shown, click on <strong>Activate</strong> in the <strong>Status</strong> column.<br>
+→ The domain is activated.</p>
+</li>
+</ol>
+</div>
+<table id="table-plenty-domain" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Saving subdomain for image URLs</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Section</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the type of subdomain from the drop-down list. Currently, only the type <strong>CDN1</strong> is available.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Subdomain</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a custom subdomain. Valid characters are letters (a-z, A-Z), numbers (0-9), underscore (_) and hyphen (-). The first character of the subdomain must be either a letter or a number.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Domain</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the domain from the drop-down list. You can only select the main domain of the client.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="400">2.2. A domain hosted by an external provider</h3>
+<div class="paragraph">
+<p>If your domain is hosted by an external provider, you need to save the DNS settings with your external domain provider. Proceed as described below to save an own domain for the image URLs of a client and save the DNS settings with the external provider.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">What is DNS?</div>
+<div class="paragraph">
+<p>DNS is short for Domain Name System. DNS makes it possible to enter the domain name instead of the numerical IP address of your online store.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Saving own domain for image URLs for an external domain:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » Domains</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong>.<br>
+→ The <strong>New domain</strong> window opens.</p>
+</li>
+<li>
+<p>Carry out the settings. Note <a href="#table-external-domain">Table 4</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ A DNS record is created for the subdomain.</p>
+</li>
+<li>
+<p>In the row of the domain entry, click <strong>DNS info</strong>.<br>
+→ The <strong>DNS info</strong> window opens.<br>
+→ The DNS settings are shown.</p>
+</li>
+<li>
+<p>Log into the service area of your domain provider.</p>
+</li>
+<li>
+<p>Copy the DNS settings shown in plentymarkets into the relevant fields of the domain provider.<br>
+→ Check the documentation of the domain provider on how to do this.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ A SSL certificate is created for the subdomain.<br>
+→ A CloudFront instance is created.<br>
+→ The DNS settings are updated.<br>
+<strong><em>Note:</em></strong> It can take up to 72 hours for the DNS settings to take effect. plentymarkets is unable to speed up this process.<br>
+→ The process is complete once green checkmarks are shown in the columns <strong>SSL</strong>, <strong>DNS</strong> and <strong>Cloud status</strong> of the <strong>Setup » Client » Open client » Domains</strong> menu in the plentymarkets back end.</p>
+</li>
+<li>
+<p>Once all three checkmarks are shown in the <strong>Setup » Clients » Open client » Domains</strong> menu, click on <strong>Activate</strong> in the <strong>Status</strong> column.<br>
+→ The domain is activated.</p>
+</li>
+</ol>
+</div>
+<table id="table-external-domain" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Saving subdomain for image URLs</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Section</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the type of subdomain from the drop-down list. Currently, only the type <strong>CDN1</strong> is available.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Subdomain</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a custom subdomain. Valid characters are letters (a-z, A-Z), numbers (0-9), underscore (_) and hyphen (-). The first character of the subdomain must be either a letter or a number.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Domain</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the domain from the drop-down list. You can only select the main domain of the client.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="500">3. Specifying item image sizes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the <strong>Setup » Item » Images » Sizes</strong> menu, you select settings for each image size. The following sizes are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>preview</strong> = The size of the preview image</p>
+</li>
+<li>
+<p><strong>secondPreview</strong> = The size of the second preview image</p>
+</li>
+<li>
+<p><strong>middle</strong> = The size of the medium image</p>
+</li>
+<li>
+<p><strong>full</strong> = The size of the full size image</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Proceed as described below to specify the item image sizes.</p>
+</div>
+<div class="paragraph instruction">
+<p>Specifying item image sizes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Item » Images » Sizes</strong>.</p>
+</li>
+<li>
+<p>Carry out the settings for each image size. Note <a href="#table-image-sizes">Table 5</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-image-sizes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Setting the image sizes</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter an internal name for this image size.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Folder name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The folder name for this image size. The folder name cannot be changed and is part of the item image’s URL.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximum height in pixels</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the maximum height in pixels for images of this size. If your item image exceeds this size, then the displayed image will be scaled down. The aspect ratio will stay the same.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximum width in pixels</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the maximum width in pixels for images of this size. If your item image exceeds this size, then the displayed image will be scaled down. The aspect ratio will stay the same.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Max. lifetime of cache in days</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the number of days that created images are saved in the CloudFront cache. The image’s lifetime begins once the image has been displayed on screen in this size, i.e. loaded into the cache.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rotate the output image based on the EXIF Orientation tag</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decide whether you want to retain the original image orientation (image rotation of 90, 180, 270°).<br>
+Activated = The original image’s rotation is retained for scaled images of this size.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retain meta data (EXIF, XMP, IPTC) of the original image</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select if the meta data of the original image is to be retained.<br>
+Examples of meta data are description texts, geo data (GPS), date and time.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Activated</strong> = The original image’s meta data is retained for scaled images of this size.<br>
+<strong><em>Tip:</em></strong> To optimise load time and data volume, it may be advisable to not retain meta data particularly for preview images.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Do not enlarge</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select if original images are to be enlarged.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Not activated</strong> = Images are scaled to size if the original image is smaller than the maximum dimensions defined for this size.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">JPG</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Quality in percent</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a compression for original JPG images in percent. Compression reduces load times and can help you achieve better page speed values.<br>
+<strong><em>Tip:</em></strong> Compressing images to 80&nbsp;% results in no visible loss of quality.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Progressive</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select if images of this size are to be displayed instantly when the page is loaded.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Activated</strong> = The image is available at low resolution as soon as the page is loaded. The quality of the image increases gradually during page load.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">PNG</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Compression level (0-9)</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select a compression level for PNG files.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>0</strong> = Lowest compression</p>
+</li>
+<li>
+<p><strong>9</strong> = Highest compression<br>
+PNG is a loss-free format. As such, PNG images are always decompressed and shown at the original quality. However, if you select a higher compression level, the browser needs more time to decompress the image.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Progressive</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select if images of this size are to be displayed instantly when the page is loaded.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Activated</strong> = The image is available at low resolution as soon as the page is loaded. The quality of the image increases gradually during page load.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Invalidate CDN cache</div>
+<div class="paragraph">
+<p>It may be necessary to clear the image cache after changing settings in the <strong>Setup » Item » Images</strong> menu. Images may be displayed with old settings because these settings are still saved in the cache. Click on <strong>Invalidate CDN cache</strong>, to show the changes more quickly. The cache invalidation is done by CloudFront.
+After you invalidate the cache, each image size is created on the fly when the image is opened.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="600">4. Uploading item images via FTP server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every plentymarkets system has its own <a href="/en/data/ftp-access">FTP server</a>. This FTP server contains the folder <strong>upload_article_image_XXXX</strong> (XXXX = plentyID) to which you can upload item images.  The folder is checked for changes every 60 minutes. New, correctly named images are assigned to the correct item automatically. To upload files, you need an FTP program and your FTP login details.</p>
+</div>
+<div class="sect2">
+<h3 id="700">4.1. Naming of item image files for FTP import</h3>
+<div class="paragraph">
+<p>Go to <strong>Setup » Item » Images » Settings</strong> and use the option <strong>Image names of the FTP import</strong> to choose whether the file names of the imported item images include the item ID or the variation No. Depending on this setting, you either name the files with the item ID or the variation number.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Valid characters for file names</div>
+<div class="paragraph">
+<p>The following characters are supported for image file names:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Letters (a-z, A-Z) excluding umlauts</p>
+</li>
+<li>
+<p>Numbers (0-9)</p>
+</li>
+<li>
+<p>Underscores (_)</p>
+</li>
+<li>
+<p>Hyphens (-)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Spaces and special characters are not permitted. When you upload images, spaces and special characters are replaced by hyphens (-).</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>If you want to upload several images for one item, number the files by adding suffixes. You have to separate the image number from the item ID or variation No. with three hyphens, i.e. <strong>---</strong>. You can upload up to 100 images per item by numbering them from 0 to 99.</p>
+</div>
+<div class="paragraph instruction">
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>You want to upload images for an item with item ID 4562 and the variation number AQ3957.</p>
+</div>
+<table id="table-ftp-compliant-naming" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Examples of FTP compliant naming of item images</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Naming 1 image per item</th>
+<th class="tableblock halign-left valign-top">Naming more than 1 image per item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Image names of the FTP import</strong> = <strong>Item ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>4562.jpg</p>
+</li>
+<li>
+<p>4562.png</p>
+</li>
+<li>
+<p>4562.gif</p>
+</li>
+<li>
+<p>4562.svg</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>4652---0.jpg</p>
+</li>
+<li>
+<p>4652---1.jpg</p>
+</li>
+<li>
+<p>4652---2.gif</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Image names of the FTP import</strong> = <strong>Variation number</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>AQ3957.jpg</p>
+</li>
+<li>
+<p>AQ3957.png</p>
+</li>
+<li>
+<p>AQ3957.gif</p>
+</li>
+<li>
+<p>AQ3957.svg</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>AQ3957---0.png</p>
+</li>
+<li>
+<p>AQ3957---19.png</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="800">4.2. Importing item images via FTP server</h3>
+<div class="paragraph">
+<p>Proceed as described to import item images to the FTP server.</p>
+</div>
+<div class="paragraph instruction">
+<p>Importing item images using FTP:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy the item images that you want to upload using FTP to a folder on your hard drive.</p>
+</li>
+<li>
+<p>Check the <a href="/en/item/settings/images#700">names of the image files</a>.</p>
+</li>
+<li>
+<p>Modify the names of the image files if they do not comply with the file name conventions.</p>
+</li>
+<li>
+<p>Select the target folder <strong>upload_article_image_XXXX</strong> (XXXX = plentyID) in your FTP program.</p>
+</li>
+<li>
+<p>In the <strong>Upload</strong> section of your FTP program, select the files to be uploaded.</p>
+</li>
+<li>
+<p>Start the upload.<br>
+→ The images are assigned to the items and displayed in the online store after up to 60 minutes.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Take upload time into account</div>
+<div class="paragraph">
+<p>200 images are processed in each run, 2000 images if you have your own server. Depending on the data volume, the upload may take several hours, even if you have a powerful computer and a fast data connection. Therefore, schedule the file upload at a time when it will not interfere with your day-to-day business.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</main>

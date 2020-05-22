@@ -1,0 +1,178 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#import-package-numbers"><span>1.</span><span> Importing package numbers from shipping service providers</span></a>
+<ul class="sectlevel2">
+<li><a href="#_creating_the_sync_in_elasticsync"><span>1.1.</span><span> Creating the sync in ElasticSync</span></a></li>
+</ul>
+</li>
+<li><a href="#import-sync-file-template"><span>2.</span><span> Importing the sync file template</span></a>
+<ul class="sectlevel2">
+<li><a href="#download-sync-file-template"><span>2.1.</span><span> Downloading the sync file template</span></a></li>
+<li><a href="#upload-csv-file-shipping-service-provider"><span>2.2.</span><span> Uploading the CSV file of the shipping service provider</span></a></li>
+<li><a href="#automatically-matching-csv-file"><span>2.3.</span><span> Automatically matching the CSV file</span></a></li>
+<li><a href="#matching-order-id"><span>2.4.</span><span> Matching of the order ID</span></a></li>
+<li><a href="#select-shipping-package"><span>2.5.</span><span> Selecting the shipping package</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Importing package numbers from shipping service providers</h1><div class="sect1">
+<h2 id="import-package-numbers">1. Importing package numbers from shipping service providers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter describes how you can use <strong>ElasticSync</strong> to import package numbers for orders that are processed by your shipping service providers into your plentymarkets system. Usually, the shipping service provider provides a .csv or txt file which contains the order ID and the package number.</p>
+</div>
+<div class="sect2">
+<h3 id="_creating_the_sync_in_elasticsync">1.1. Creating the sync in ElasticSync</h3>
+<div class="paragraph">
+<p>To import the package numbers, go to <strong>Data » Import</strong> and create a new sync of the type <strong>Order</strong>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Creating a new sync</div>
+<div class="paragraph">
+<p>To ensure effective cooperation with your shipping service provider, we recommend that you create a separate sync for importing package numbers and only use this sync for this purpose. If the fields described below are added to an existing sync, wrong mapping and malfunctions are likely to occur.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It is mandatory that the matching is carried out via the <strong>Order ID</strong>. It is not necessary to add further matching fields.</p>
+</li>
+<li>
+<p>Add a new <strong>Mapping</strong> for the package number. Select the mapping field <strong>Package number</strong> as well as an option for the <strong>Standard package</strong>.</p>
+</li>
+<li>
+<p>Within the <strong>Standard package</strong> mapping, select the name of the column whose values should be imported from the source file.</p>
+</li>
+<li>
+<p>In the <strong>Settings</strong> area, select the <strong>Source</strong> that you use to import the file from the shipping service provider.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After carrying out and saving the settings, go to <strong>Sync » Matching</strong> and test the sync. Once the <strong>package number</strong> has been successfully imported. it is displayed in the <strong>Settings</strong> tab of the respective order.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="import-sync-file-template">2. Importing the sync file template</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To make it easier for you, we prepared a sync template for the package number import for you. You can simply import the sync file in the <strong>Data » Import</strong> menu.</p>
+</div>
+<div class="sect2">
+<h3 id="download-sync-file-template">2.1. Downloading the sync file template</h3>
+<div class="paragraph">
+<p>Download the sync file by clicking on the following link: <a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/ElasticSync_BestPractice/Sync-Datei_Paketnummern.json" target="_blank" rel="noopener">Download sync file</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+<div class="paragraph">
+<p>Please read the chapter <a href="/en/data/importing-data/ElasticSync#1640">Exporting and importing a sync</a> on the <a href="/en/data/importing-data/ElasticSync">Importing data with ElasticSync</a> page of the manual. In this chapter, it is described how to import a sync file.</p>
+</div>
+<div class="paragraph">
+<p>Pay attention to the following information:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>During import, you will receive an error message that the client deviates from your client. This is why we created the sync file in our test system. You can ignore this error message.</p>
+</li>
+<li>
+<p>After you have imported the sync, click on <strong>Search</strong> in the overview and open the sync.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="upload-csv-file-shipping-service-provider">2.2. Uploading the CSV file of the shipping service provider</h3>
+<div class="paragraph">
+<p>Now open the sync and upload the CSV file of the shipping service provider in the <strong>Source</strong> area.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/BP-package-numbers-source.png" alt="BP package numbers source">
+</div>
+<div class="title">Figure 1. Data source</div>
+</div>
+<div class="paragraph">
+<p><strong><em>Note:</em></strong> Currently, it is only possible to manually upload CSV files. If you want to upload .txt files, you have to upload them to a webspace.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Important:</em></strong> The setting regarding the <strong>header</strong> is decisive. Before you import the CSV file, open it and check whether the file contains column headers. If a header is contained, you have to place a checkmark next to the option <strong>Header row included</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/BP-package-numbers-header.png" alt="BP package numbers header">
+</div>
+<div class="title">Figure 2. Header row included?</div>
+</div>
+<div class="paragraph subhead">
+<p>Possible scenarios for importing with and without header:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the file contained a header, but you do not place a checkmark, an error message would appear when matching the package numbers.</p>
+</li>
+<li>
+<p>If the file did not contain a header, but you place a checkmark, the first order would be ignored since the matching would take place starting from the second line only.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="automatically-matching-csv-file">2.3. Automatically matching the CSV file</h3>
+<div class="paragraph">
+<p>Some shipping service providers upload the file with the package numbers to an FTP server. Instead of manually uploading the file, select <strong>FTP</strong> as source and select an <strong>interval</strong>. By means of this interval, the sync will be automatically carried out.</p>
+</div>
+<div class="paragraph">
+<p>The login details of the FTP server as well as further possibilities regarding the data transfer can be obtained from your shipping service provider.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="matching-order-id">2.4. Matching of the order ID</h3>
+<div class="paragraph">
+<p>As described above, the matching is only carried out via the order ID. It is required to select the column in the CSV file of your shipping service provider in which the order ID is contained. This column has to be selected in the <strong>Matching</strong> area of the sync. By doing so, errors can be avoided.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/BP-package-numbers-column-orderid.png" alt="BP package numbers column orderid">
+</div>
+<div class="title">Figure 3. Column of the order ID</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="select-shipping-package">2.5. Selecting the shipping package</h3>
+<div class="paragraph">
+<p>In this sync, you have to select the target of the imported package numbers in order that these numbers are saved in the shipping package. Select the shipping package from the drop-down list in order that the package numbers are assigned to this shipping package.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/BP-package-numbers-shipping-package.png" alt="BP package numbers shipping package">
+</div>
+<div class="title">Figure 4. Selecting the shipping package</div>
+</div>
+</div>
+</div>
+</div>
+</main>

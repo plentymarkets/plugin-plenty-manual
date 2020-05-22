@@ -1,0 +1,373 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#2231"><span>1.</span><span> Fields for storage location matching</span></a></li>
+<li><a href="#2232"><span>2.</span><span> Fields for the storage location mapping</span></a></li>
+<li><a href="#2240"><span>3.</span><span> Adjusting storage locations</span></a></li>
+<li><a href="#2250"><span>4.</span><span> Creating storage locations</span></a></li>
+<li><a href="#2250"><span>5.</span><span> Deleting storage locations</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Warehouse</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>With syncs of the type <strong>Warehouse</strong>, you import new storage locations or update existing ones.</p>
+</div>
+<div class="paragraph">
+<p>In order to create or update storage locations via ElasticSync, a warehouse must be created.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="2231">1. Fields for storage location matching</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="#table-matching-fields-storage-locations">Table 1</a> explains the fields that are available for matching storage locations. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+</div>
+<div class="paragraph">
+<p>For further information on the terms dimensions, levels and storage locations, refer to the <a href="https://knowledge.plentymarkets.com/en/stock-management/setting-up-a-warehouse" target="_blank" rel="noopener">Setting up a warehouse</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> page of the manual.</p>
+</div>
+<table id="table-matching-fields-storage-locations" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Matching fields for importing storage locations</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Matching field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the level, e.g. R01</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the level</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WarehouseLocationId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the storage location</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WarehouseLocationName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the storage location without path</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="2232">2. Fields for the storage location mapping</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="#table-mapping-fields-storage-locations">Table 2</a> explains the fields that are available for mapping storage location data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+</div>
+<div class="paragraph">
+<p>For further information on the terms dimensions, levels and storage locations, refer to the <a href="https://knowledge.plentymarkets.com/en/stock-management/setting-up-a-warehouse" target="_blank" rel="noopener">Setting up a warehouse</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> page of the manual.</p>
+</div>
+<table id="table-mapping-fields-storage-locations" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Mapping fields for importing storage locations</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Storage locations</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage location ID<br>
+(only for existing storage locations)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the storage location</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the level</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage location name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the storage location without path</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Purpose</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Purpose of the storage location, e.g. removal from storage</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status of the storage location, e.g. active, inactive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position of the storage location (distance)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Notes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Notes on the storage location</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete Storage Location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete function for storage locations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Levels of storage locations</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level Parent ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parent ID of the level</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dimension ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the dimension, e.g. rack</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level Position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position of the level</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Level name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the level, e.g. R01, R02 etc.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Use Level ID of the smallest dimension</div>
+<div class="paragraph">
+<p>When importing storage locations use the Level ID of the smallest dimension. In the following table this would be Level ID 309.<br>
+In case you select the ID of a higher dimension, the storage locations are no longer visible and the existing structure disappears.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table id="table-level-id" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Level IDs and level names</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Level 1</th>
+<th class="tableblock halign-left valign-top">Level 2</th>
+<th class="tableblock halign-left valign-top">Level 3</th>
+<th class="tableblock halign-left valign-top">Storage location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name of the level</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rack 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shelf 5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Box 17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">102</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Level ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>309</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="2240">3. Adjusting storage locations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can adjust storage locations via ElasticSync such as changing the name or the position of the storage location.</p>
+</div>
+<div class="paragraph instruction">
+<p>Adjusting storage locations:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Import</strong>.</p>
+</li>
+<li>
+<p>Click on the sync in the sync overview.<br>
+→ The settings open.</p>
+</li>
+<li>
+<p>Switch to the <strong>Matching</strong> tab.</p>
+</li>
+<li>
+<p>Activate the field <strong>Warehouse Location ID</strong>.</p>
+</li>
+<li>
+<p>Select one of the <strong>Import options</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Click on <strong>Mapping</strong>.</p>
+</li>
+<li>
+<p>Open the mapping from the overview.</p>
+</li>
+<li>
+<p>Expand the area <strong>Warehouse location</strong> on the right-hand side.</p>
+</li>
+<li>
+<p>Activate the fields <strong>Storage location name</strong> and <strong>Position</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="2250">4. Creating storage locations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use ElasticSync to create new storage locations. Note that the structure of the warehouse has to be defined beforehand which means that at least one storage location already has to exist.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating storage locations:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Import</strong>.</p>
+</li>
+<li>
+<p>Click on the sync in the sync overview.<br>
+→ The settings open.</p>
+</li>
+<li>
+<p>Switch to the <strong>Matching</strong> tab.</p>
+</li>
+<li>
+<p>Select the field <strong>Level ID</strong>.</p>
+</li>
+<li>
+<p>Select one of the <strong>Import options</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Click on <strong>Mapping</strong>.</p>
+</li>
+<li>
+<p>Open the mapping from the overview.</p>
+</li>
+<li>
+<p>Activate the lines in which the values <strong>Storage location name</strong>, <strong>Purpose</strong>, <strong>Position</strong> and <strong>Status</strong> can be found and select the respective source.</p>
+</li>
+<li>
+<p>Expand the area <strong>Warehouse location</strong> on the right-hand side and map the fields <strong>Storage location name</strong>, <strong>Purpose</strong>, <strong>Position</strong> and <strong>Status</strong>. The <strong>Storage location ID</strong> is optional - if not selected, the next highest ID is automatically assigned.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="2250">5. Deleting storage locations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can delete storage locations with ElasticSync.</p>
+</div>
+<div class="paragraph instruction">
+<p>Deleting storage locations:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Import</strong>.</p>
+</li>
+<li>
+<p>Click on the sync in the sync overview.<br>
+→ The settings open.</p>
+</li>
+<li>
+<p>Switch to the <strong>Matching</strong> tab.</p>
+</li>
+<li>
+<p>Select the field <strong>Warehouse Location ID</strong>.</p>
+</li>
+<li>
+<p>Select one of the <strong>Import options</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Click on <strong>Mapping</strong>.</p>
+</li>
+<li>
+<p>Open the mapping from the overview.</p>
+</li>
+<li>
+<p>Expand the area <strong>Warehouse location</strong> on the right-hand side.</p>
+</li>
+<li>
+<p>Activate the field <strong>Delete storage location</strong>.</p>
+</li>
+<li>
+<p>You can either delete all storage locations or only specific ones. Carry out the respective settings. Pay attention to the explanations given in <a href="#table-deleting-storage-locations">Table 4</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-deleting-storage-locations" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Deleting all storage locations or only specific ones</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deleting all storage locations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All storage location IDs that exist in the CSV file will be deleted.<br>
+ For the Delete storage location value, select <strong>Own value</strong>.<br>
+ Then select <strong>Yes</strong> or <strong>No</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deleting only specific storage locations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Here, the CSV file contains two values: on the one hand there are the storage location IDs and on the other hand there are the values <strong>Yes</strong> and <strong>No</strong> by which you can determine whether the value should be deleted.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>

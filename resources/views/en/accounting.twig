@@ -1,0 +1,898 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> Basic information about price calculation in plentymarkets</span></a></li>
+<li><a href="#150"><span>2.</span><span> Setting up how prices are saved and rounded</span></a>
+<ul class="sectlevel2">
+<li><a href="#200"><span>2.1.</span><span> Example calculations</span></a></li>
+</ul>
+</li>
+<li><a href="#300"><span>3.</span><span> Carrying out VAT settings</span></a>
+<ul class="sectlevel2">
+<li><a href="#_creating_a_new_location"><span>3.1.</span><span> Creating a new location</span></a></li>
+<li><a href="#_deleting_a_location"><span>3.2.</span><span> Deleting a location:</span></a></li>
+<li><a href="#350"><span>3.3.</span><span> Using the German small business owner regulation</span></a></li>
+<li><a href="#400"><span>3.4.</span><span> Setting up how invoices are issued for deliveries within the EU</span></a>
+<ul class="sectlevel3">
+<li><a href="#450"><span>3.4.1.</span><span> Examples with the settings' effect</span></a></li>
+</ul>
+</li>
+<li><a href="#500"><span>3.5.</span><span> Issuing an invoice for export shipments</span></a></li>
+<li><a href="#550"><span>3.6.</span><span> Setting up VAT rates</span></a></li>
+<li><a href="#600"><span>3.7.</span><span> VAT for digital items</span></a></li>
+</ul>
+</li>
+<li><a href="#620"><span>4.</span><span> Taric codes</span></a></li>
+<li><a href="#650"><span>5.</span><span> Setting up posting keys, revenue and debtor accounts</span></a>
+<ul class="sectlevel2">
+<li><a href="#700"><span>5.1.</span><span> Setting up posting keys</span></a></li>
+<li><a href="#750"><span>5.2.</span><span> Setting up debtor accounts</span></a></li>
+<li><a href="#800"><span>5.3.</span><span> Setting up revenue accounts</span></a></li>
+<li><a href="#910"><span>5.4.</span><span> Saving booking accounts for POS events (plentymarkets App version 1.7.3 and higher)</span></a></li>
+<li><a href="#850"><span>5.5.</span><span> Copying settings to other locations</span></a></li>
+</ul>
+</li>
+<li><a href="#900"><span>6.</span><span> Exporting accounting data</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Accounting</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Learn more about settings in plentymarkets that are relevant for your accounting. These settings include VAT rates, currencies, exchange rates, the calculation of your prices, booking keys, revenue accounts, debtor accounts and just as well your document templates. Most of the settings that are relevant for accounting purposes can be defined per accounting location. Only the setting that defines how your prices are calculated as well as <a href="/en/orders/accounting#620">the taric numbers</a> apply to your entire system.<br></p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. Basic information about price calculation in plentymarkets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The calculation of prices is based on the gross prices of your variations. In other words, the net price of a variation in an order is calculated based on the gross price. To get the sum of an order item the individual price of one variation is multiplied with purchased number of the variation. This means, that the purchased number of a variation is multiplied with the individual gross price of an order item to get the order item’s gross sum. To get the net sum of an order item the previously calculated net price of a single variation is multiplied by the number of variations purchased. The number of decimal places of the single net price is defined by your accounting settings. To get the VAT amount for an order item the net sum must be substracted from the gross sum.<br>
+Your settings define when the price will be rounded to decimal places. Calculations that are carried out after the prices are rounded will be carried out with 2 decimal places. The settings in plentymarkets can lead to the following results:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rounded single variation price</p>
+</li>
+<li>
+<p>Rounded order item sums</p>
+</li>
+<li>
+<p>Rounded totals</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="150">2. Setting up how prices are saved and rounded</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The path to the menu that contains the settings plus explanations of the settings. The settings applied to an order are the settings that were active in the moment that the order was created. This means that if you change the settings the changes will not affect existing orders.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up how prices are saved and rounded:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » Locations » Select location » Accounting</strong>. <br>
+The <strong>Basic settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-rounding-and-saving-prices">Table 1</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-rounding-and-saving-prices" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Settings for saving and rounding prices</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Number of decimal places for prices</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select 2 or 4 decimal places <br>
+<strong>2</strong> = The prices in an order will be saved with 2 decimal places The indirect result of this setting is that the price of a single variation will be rounded. The sums and totals of an order are then calculated based on the rounded price of a single variation. <br>
+<strong>4</strong> = The prices in an order will be saved with 4 decimal places Selecting 4 decimal places has the effect that the sum of an order item will be rounded by default. The sums are saved with 4 decimal places, but further calculation will be carried out with sums that are rounded to two decimal places. If you do not want that the sums are rounded by default, you need to additionally activate the setting <strong>Round totals only</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Round totals only</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate by placing a check mark if you want that only the totals of an order are rounded. The sums of order items are no longer rounded by default if the setting is active. Totals refers to the total value of an order. When you look at the settings of the document template for invoices the settings that will be affected are the ones that are listed unter the sums heading. <br>
+If the option is not activated and 4 decimal places are selected, then the sum of each order item will be rounded. <br>
+However, if 2 decimal places are selected, this setting has no influence on the rounding of prices.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="200">2.1. Example calculations</h3>
+<div class="paragraph">
+<p>The following section compares the different calculation methods and the results.<br>
+In our example fabrics were sold. Several panels of the same fabric were bought, but with different widths. The widths are 50 cm and 30 cm. The 50 cm panel was boungt 8 times and the 30 cm panel 7 times. 30 centimetres cost € 2.187 and 50 centimetres cost € 3.645. The prices are calculated based on a price of € 7.29 per metre. The settings that must be carried out to get one of the results are also listed in the table.</p>
+</div>
+<div id="image-comparison-price-rounding" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/order-processing/orders/assets/CalculationMethodsCompared.png" alt="Rounding_prices" width="849" height="417">
+</div>
+<div class="title">Figure 1. Comparing price rounding methods</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="300">3. Carrying out VAT settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The VAT settings are specifically for one location. You can have different settings for each location. Locations are required for your registered business addresses or countries that you ship from. There are two locations per default in your system. These locations are Germany and United Kingdom. You need your own locations for the productive mode of your system.<br>
+Your system behaves a little differently for countries that are members of the European Union and non-EU countries. For a location in an non-EU country every delivery to another country will be treated as export shipping. For shippings from EU member state locations the system differs between intra-community shipping and export shipping.<br>
+The basic VAT relevant settings include settings that define how the system reacts for export shipping and how the VAT amount for shipping costs will be displayed. For EU locations you can also define how the system reacts if a VAT ID is given in the order. 
+If you are about to or already have passed a delivery threshold you need to open your existing location and set up a <a href="/en/orders/accounting#550">new VAT configuration</a> for that country within the location. Do not create a new location if for countries where you pass the delivery threshold.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Do not use the example locations for real orders</div>
+<div class="paragraph">
+<p>The two locations, Germany and United Kingdom, are examples and are not meant for use in productive mode. It is best if you set up our own locations or at least edit the existing locations. When editing the existing locations you need to add at least a new VAT configuration with your correct VAT number and the correct VAT rates.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="_creating_a_new_location">3.1. Creating a new location</h3>
+<div class="paragraph">
+<p>Proceed as described below to create a new location. Furthermore you need to set one location as your <a href="/en/omni-channel/online-store/setting-up-clients#_configuration">Default location</a>. Your default location is so to say your head office.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a new location:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » POS</strong>.</p>
+</li>
+<li>
+<p>Move your cursor over the menu item <strong>Locations</strong>.<br>
+→ An arrow will be displayed on the right.</p>
+</li>
+<li>
+<p>Click on the <strong>Arrow</strong>.<br>
+→ The option <strong>New location</strong> will appear.</p>
+</li>
+<li>
+<p>Click on <strong>New Location</strong>.<br>
+→ An editing window will open.</p>
+</li>
+<li>
+<p>Enter the <strong>name</strong> of the new location.</p>
+</li>
+<li>
+<p>Select the new location’s <strong>Country</strong> from the drop-down list.
+→ Only active countries of delivery can be selected.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.
+→ The location is added to the list of locations.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Each location has the following 3 submenus:
+* Settings
+* Accounting and
+* Documents</p>
+</div>
+<div class="paragraph">
+<p>The settings submenu contains the ID, the name and the country of a location. The accounting submenu is devided into several tabs and the settings in those tabs ared described in detail on this page starting with the <a href="#350">Using the German small business owner regulation</a>. In the documents submenu you can set up documents per accounting location e.g. the delivery note or invoice.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deleting_a_location">3.2. Deleting a location:</h3>
+<div class="paragraph">
+<p>You must always have one location. You can only delete a location if there is at least one other location in this menu as well. It is not possible to delete the <a href="/en/omni-channel/online-store/setting-up-clients#_configuration">Default location</a>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Deleting a location:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » POS</strong>.</p>
+</li>
+<li>
+<p>Open the location that you want to delete and click on the <strong>Settings</strong> submenu.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.<br>
+→ Confirm the security question to delete the location.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="350">3.3. Using the German small business owner regulation</h3>
+<div class="paragraph">
+<p>If you are a small business owner in Germany and you do not want that VAT is applied to your invoices, then activating the setting in your location settings is all you need to do. However, even though you the VAT is not applied, you still need to save the correct VAT rates in your settings. They will not be applied.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Small business owner setting only for systems with Germany as system country</div>
+<div class="paragraph">
+<p>The small business owner setting is only available if your system was set up with Germany as system country. The system country is a setting that you can not access and that is selected based on the information that you provide when you order your plentymarkets system.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Using the German small business owner regulation:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » Locations » Select location » Accounting</strong>.<br>
+→ The <strong>Basic settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Small business owners (Germany only)</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Displaying small business owner information on invoices</div>
+<div class="paragraph">
+<p>As a small business owner you need to place information on your invoice why there was no VAT applied. You can use the note field on your invoice template for this information. The setting for small business owners does not automatically place a note on your invoice.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="400">3.4. Setting up how invoices are issued for deliveries within the EU</h3>
+<div class="paragraph">
+<p>You can choose whether customers that are within the European Union and that have a VAT number will receive a net invoice or a gross invoice. In many cases the information of the delivery’s recipient are of higher priority than the ones of the invoice’s recipient. The delivery address must be in another country within the EU if you want the invoice to be net. For deliveries within the same member state of the EU the setting will be ignored and VAT will always be applied. However, there is one option that will allow a different result. You need to add an entry certificate to your delivery and you need to choose the entry certificate option for the delivery address within the data set of an order. If the customer does not have a VAT number, this means that it is a private purchase and that VAT will be applied anyway. The only time VAT will not be applied for private purchases is if you are a small business owner as described above.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up gross or net invoices for deliveries within the EU:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select a location under <strong>Setup » Client (store) » Select store » Locations » Select location » Accounting</strong>.<br>
+→ The <strong>Basic settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Select one option from the <strong>VAT number</strong> drop-down list. Pay attention to the information given in <a href="#table-intra-EU-invoices">Table 2</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-intra-EU-invoices" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Issuing invoices for deliveries within the EU</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Setting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Explanation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VAT number</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only applies to deliveries within the EU.<br>
+This setting does not have any effect for non-EU locations.<br>
+<br>
+<strong> Gross invoice</strong> = All invoices for inner European Union deliveries will be issued as gross.<br>
+<strong> Net invoice</strong> = Invoices will be issued without VAT for customers who have a VAT number.<br>
+However, if the customer’s delivery address is in the same country as the accounting location, then VAT will be calculated for the order regardless of the setting that you have chosen. German law permits orders to be issued as net for customers from other European countries who have a valid VAT number and provide a German delivery address, but a certain paper must be provided in this case. This paper is an entry certificate and needs to be included with the order. For this reason the delivery address in an order as well as in the customer data includes the option <strong>Entry certificate</strong>. If you want to apply the entry certificate only once for a specific order, then activate the option in the order settings. If you want to use the entry certificate repetitively for this delivery address of the customer, then you need to activate the option in the customer’s delivery address data. If you activate the <strong>Entry certificate</strong> option, then orders that are placed by customers in other European countries but shipped to a German delivery address will be treated like shipments to foreign EU countries. The settings <strong>VAT number</strong> and <strong>Export shipping</strong> in this menu then determine whether the invoice is issued as gross or net. If the <strong>Entry certificate</strong> is not active, then these orders will be issued as gross.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="450">3.4.1. Examples with the settings' effect</h4>
+<div class="paragraph">
+<p>In the following section 6 possible setting combinations and the effects are described.</p>
+</div>
+<div class="paragraph subhead">
+<p>What is the result if the sender, the delivery’s recipient and the invoice recipient are in the same member state of the European Union and if the setting net invoice is selected?</p>
+</div>
+<div class="paragraph">
+<p>The invoice will always be gross despite the selected setting.</p>
+</div>
+<div class="paragraph subhead">
+<p>What is the result if the sender and the delivery’s recipient are in the same member state of the European Union, but the invoice recipient is in a different member state and if the setting net invoice is selected?</p>
+</div>
+<div class="paragraph">
+<p>The invoice will be gross despite the selected setting. However, in this case a net invoice is actually allowed if the invoice recipient has a VAT number. An additional setting must be carried out to issue a net invoice. The entry certificate must be activated in the delivery adress data of the order. The invoice will be gross as long as the entry certificate setting is not activate. The entry certificate is an individual delivery address setting.</p>
+</div>
+<div class="paragraph subhead">
+<p>What is the result if the sender and the invoice recipient are in the same member state of the European Union, but the delivery’s recipient is in a different member state and if the setting net invoice is selected?</p>
+</div>
+<div class="paragraph">
+<p>The invoice will be net if the recipient of the delivery has a VAT number. The invoice recipient does not play a role in this scenario.</p>
+</div>
+<div class="paragraph subhead">
+<p>What is the result if the sender is in one member state of the European Union, but the invoice recipient and the delivery’s recipient are in a different member state and if the setting net invoice is selected?</p>
+</div>
+<div class="paragraph">
+<p>The invoice will be net as soon as either the recipient of the delivery or the recipient of the invoice has a VAT number. The invoice will be gross if neither the recipient of the delivery nor the recipient of the invoice has a VAT number.</p>
+</div>
+<div class="paragraph subhead">
+<p>What is the result if the sender is in one member state of the European Union, but the delivery’s recipient is in a different member state and the invoice recipient is in a country outside of the EU and if the setting net invoice is selected?</p>
+</div>
+<div class="paragraph">
+<p>The invoice will be net as soon as either the recipient of the delivery or the recipient of the invoice has a VAT number. The invoice will be gross if neither the recipient of the delivery nor the recipient of the invoice has a VAT number.</p>
+</div>
+<div class="paragraph subhead">
+<p>What is the result if the sender is in one member state of the European Union, but the invoice recipient is in a different member state and the delivery’s recipient is in a country outside of the EU and if the setting net invoice is selected?</p>
+</div>
+<div class="paragraph">
+<p>In this case the delivery is an export shipment and the setting setting for export shipping will be applied. The settings for export shippings will be explained in the next section on this page.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="500">3.5. Issuing an invoice for export shipments</h3>
+<div class="paragraph">
+<p>For each accounting location you can individually define, whether the invoice for export shipments will be net or gross. The core assumption is that your business is based in the European Union. The setting will be applied if the delivery is sent to a country outside the European Union. Your customers receive an invoice without VAT if the invoice is net.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up gross or net invoices for export shipping:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>. Go to <strong>Setup » Client » Select client » Locations » Select location » Accounting</strong>.<br>
+→ The <strong>Basic settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Select one option from the <strong>export shipping</strong> drop-down list. Pay attention to the information given in <a href="#table-export-shipping-invoices">Table 3</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-export-shipping-invoices" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Invoice settings for export shipping</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Setting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Explanation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Export shipping</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Net invoice</strong> = Invoices for export shipping will be issued without VAT.<br>
+This setting will be ignored if VAT rates are saved for the export country. This means that the invoice will be gross.
+<strong>Gross invoice</strong> = Invoices for export shipping will be issued with VAT.<br>
+ If you have set up VAT rates for the country of delivery, then these VAT rates will be applied. If no VAT rates are set up for the country of delivery, then the VAT rates of the country that your location is at will be used.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="550">3.6. Setting up VAT rates</h3>
+<div class="paragraph">
+<p>You need to differ between your accounting locations and countries of deliveries that you need to pay tax to. An accounting location is a registered business address. 2 accounting locations exist per default in plentymarkets. The default locations are Germany and United Kingdom. You need one location at the very least and you can add further locations for each of your subsidiaries. The 2 default locations include default VAT configurations with VAT rates etc. However, do not use these configurations for the productive mode of your system. Add your own configurations and delete the default ones. You need to set up at least one configuration. You can use this configuration to ship worldwide. However, you need to add further configurations for other countries if you exceed the delivery theshold for a country. Otherwise the system can not calculate the correct VAT amounts. You need to set up a location for your registered business address and then you need to set up the country that the business is in with a VAT configuration. Once you become liable for taxation in other countries because you exceeded the delivery threshold, you need to add futher countries with VAT configurations within the same location.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Information from the German Federal Central Tax Office</div>
+<div class="paragraph">
+<p>For Germany, the <a href="http://www.bzst.de/DE/Steuern_International/Vorsteuerverguetung/02_Unternehmer_Ausland_EU/FAQ/FAQ_node.html"><strong>Federal Central Tax Office</strong></a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> provides tax information about the European countries of delivery as well as the USA and Japan.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div id="image-edit-default-locations" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/order-processing/orders/assets/defaultVatRatesAndLocations.png" alt="defaultVatRatesAndLocations">
+</div>
+<div class="title">Figure 2. Default VAT rates and locations</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Replacing the default VAT rates and locations</div>
+<div class="paragraph">
+<p>The VAT configurations shown in <a href="#image-edit-default-locations">Figure 2</a> is a default configuration and contains a fantasy VAT number. This VAT number is not yours and is not correct and that is why you need to set up your own configuration with a correct VAT number. You can delete the default configuration.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Setting up VAT rates:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select a location under <strong>Setup » Client (store) » Select store » Locations » Select location » Accounting</strong>.<br>
+→ The <strong>Basic settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>VAT rates</strong> tab.</p>
+</li>
+<li>
+<p>Click on <strong>New configuration</strong>.</p>
+</li>
+<li>
+<p>Please select a <strong>Country</strong>.</p>
+</li>
+<li>
+<p>Enter the highest VAT rate as <strong>VAT rate A</strong>.<br>
+→ Enter furhter VAT rates in descending order.</p>
+</li>
+<li>
+<p>Enter your VAT number.</p>
+</li>
+<li>
+<p>Select a starting date when the rates will become valid.</p>
+</li>
+<li>
+<p>Pay attention to the explanations on the settings given in table 4.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The new configuration will open and additionally a setting for margin scheme will be displayed.</p>
+</li>
+</ol>
+</div>
+<table id="table-setting-up-VAT-configuration" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Settings of a VAT configuration</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Setting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Explanation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Country</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the country that you have become liable for taxation in.<br>
+<strong><em>Important</em></strong>: The country can not be changed later.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tax rate A in %</strong><br>
+<strong>Tax rate B in %</strong><br>
+<strong>Tax rate C in %</strong><br>
+<strong>Tax rate D in %</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter tax rates. Start with the highest rate and continue in descending order.<br>
+<strong><em>Important</em></strong>: You can only change the VAT rates as long as they are not valid. Once the rates are valid they can not be changed. The names are only relevant for the accounting software Xero.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Valid from</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the date in the calendar. The VAT rates will go into effect on this date.<br>
+<strong><em>Important</em></strong>: When you enter the date manually instead of picking it from the calendar, make sure that you enter the year as a four digit value. Entering only two digits for the year may cause errors.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Invalid from</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the date in the calendar. The VAT rates will no longer be applied from this date on.<br>
+Enter a date for invalid from if you no longer need to pay taxes to a country. Your duty to pay taxes may cease if have not passed the delivery threshold in a while or you have stopped delivering to that country.<br>
+<strong><em>Important</em></strong>: When you enter the date manually instead of picking it from the calendar, make sure that you enter the year as a four digit value. Entering only two digits for the year may cause errors.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>For digital items only</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate if the VAT rate should only apply to digital items. For further information, refer to chapter VAT for digital items.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Margin scheme</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify which tax rate is to be used for stock units to which the margin scheme applies. If no tax rate is selected, then stock units that the margin scheme applies to can not be displayed on invoices (= basic setting).<br>
+The margin scheme setting is not visible until you save a VAT configuration.<br>
+<strong><em>Important</em></strong>: The margin scheme setting in plentymarkets is an older customized implementation. The tax rate will be applied to the entire amount of the stock units that the margin scheme applies to. In other words the tax rate will not be applied to the difference between sales price and purchase price.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="600">3.7. VAT for digital items</h3>
+<div class="paragraph">
+<p>The buyer’s VAT rate must be used for digital items. An EU regulation puts these VAT rates into effect starting January 1st, 2015. If a VAT rate is already available for a country of delivery, e.g. because the delivery threshold was exceeded, then it is not necessary to create an additional VAT rate for digital items only. The existing VAT rate will be used. If no VAT rate is set up for one or more countries of delivery, then set up your accounting procedures in plentymarkets as described below. The EU regulation applies to B2C revenues.<br>
+This regulation applies to B2C revenues. B2B revenues without VAT are not affected.</p>
+</div>
+<div class="paragraph instruction">
+<p>Identifying the VAT for digital items:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » Locations » Select location » Accounting</strong>.<br>
+→ The <strong>Basic settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>VAT rates</strong> tab.</p>
+</li>
+<li>
+<p>Create a VAT configuration for every country of delivery where digital items are sold.</p>
+</li>
+<li>
+<p>Open the VAT configuration and activate the option <strong>For digital items only</strong>.</p>
+</li>
+<li>
+<p>Create a <a href="/en/item/managing-items#500">characteristics</a> for digital items and give it a name, e.g. <strong>Digital</strong>. The characteristic may not be an order characteristic.</p>
+</li>
+<li>
+<p>Go to <strong>System » Item » Settings</strong> and select the characteristic for the option <strong>Item characteristic for identifying digital items</strong>.</p>
+</li>
+<li>
+<p>Open every item that should be sold as digital media and save the characteristic in the <a href="/en/item/managing-items#500">Characteristics</a> tab.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="620">4. Taric codes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Taric codes, also called taric numbers, are used in EU-wide trading. These are unique and fixed numbers which are assigned to a specific commodity and have to be included in tax relevant documents.</p>
+</div>
+<div class="paragraph">
+<p>Taric codes are relevant for you if you have VAT registrations in delivery countries because you are trading EU-wide or if you have exceeded a <a href="/en/orders/accounting#300">delivery threshold</a> in a delivery country. In these cases, or if you know that you will exceed a delivery threshold in the foreseeable future, you should add all taric related data in time. We recommend to clarify all details regarding the taxation of your goods in other EU countries with your tax consultant.</p>
+</div>
+<div class="paragraph">
+<p>Goods are charged with different taxes in different EU countries. In order to take this into account and thus also have a correct basis for the calculation of orders, the taric codes have to be entered into the system and also checked against the VAT rates which are set for different countries.
+Thus, as a first step, you have to maintain the taric codes in your system. Taric codes are entered in the <a href="/en/item/managing-items#280">variations</a>. Moreover, you need to set <a href="/en/orders/accounting#550">VAT rates</a> for the required countries. These VAT rates could also be entered later, but we recommend setting these in the system in time.</p>
+</div>
+<div class="paragraph">
+<p>The table in the menu <strong>Setup » Client » Setting » Taric codes</strong> then enables the linking of taric code, VAT rate and country. Thus, this taric code table is a basis for the calculation of orders and has to be up to date.</p>
+</div>
+<div class="paragraph">
+<p><em>This happens in the background when orders are calculated:</em> For example, an order with France as the country of delivery enters the system. VAT rate A is set for the variation of the order item in the order. But in France, this item is taxed with the VAT rate B. That is why there is an entry in the taric code table with the same taric code as the one entered in the variation. The difference is that in the table, this taric code is linked with France and the VAT rate B. The order logic recognises these cases and uses the VAT rate set in the taric code table.</p>
+</div>
+<div class="paragraph">
+<p>In case there is no taric code entered in the variation or in the table, no differing VAT rate is used for the calculation. This means that you only have to enter the corresponding taric codes in the table if a variation is <em>taxed differently</em> in other countries.</p>
+</div>
+<div class="paragraph">
+<p>In order to import taric codes you can use either ElasticSync or enter them manually. We recommend to use ElasticSync and to enter only single taric codes or carry out small adaptations manually.
+<em>Note</em> that only numbers up to 12 characters are allowed. Entering special or blank characters is not allowed.</p>
+</div>
+<div class="paragraph">
+<p>You can find general information about imports via ElasticSync on the manual page <a href="/en/data/importing-data/ElasticSync">Importing data with ElasticSync</a>. The <a href="/en/data/importing-data/sync-types/elasticSync-assignment-taric-code">sync types</a> for importing taric codes can be found under <strong>Assignment taric codes</strong> .</p>
+</div>
+<div class="paragraph">
+<p>To fill the table manually, proceed as follows.</p>
+</div>
+<div class="paragraph instruction">
+<p>Filling the taric code table manually:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Settings » Taric codes</strong>.<br></p>
+</li>
+<li>
+<p>Click on <strong>Create new assignment</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ A new row is added to the table.</p>
+</li>
+<li>
+<p>Enter the <strong>taric code</strong> and select the corresponding <strong>country</strong> as well as the <strong>VAT rate</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) at the end of the row.<br>
+→ The saving is confirmed.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In the table, found variation links are marked with a green dot. This means that this taric code is currently in use in a variation. If a red dot is displayed, no variation link was found, i.e. this taric code is not in use in a variation.</p>
+</div>
+<div class="paragraph">
+<p>More editing options are available to you. Take <a href="#table-editing-options-taric-code">Table 5</a> into account.</p>
+</div>
+<table id="table-editing-options-taric-code" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Editing options for the taric code table</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Search</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can <strong>search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>) for assignments. For this, the filters <strong>taric code</strong> and <strong>country</strong> are available to you.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Editing an assignment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To <strong>edit</strong> an existing assignment, click on the appropriate row and carry out the necessary adaptations. After this, click on <strong>save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>). The adaptation is confirmed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deleting an assignment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To delete an existing assignment, click on <strong>delete</strong> (<span class="icon red"><i class="fa fa-minus-square  "></i></span>) in the column <strong>Actions</strong>  at the end of the row. Deleting an assignment has to be confirmed by you.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="650">5. Setting up posting keys, revenue and debtor accounts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Posting keys are only relevant for DATEV exports. You can ignore the posting key settings if you do not work with DATEV. You can set up revenue accounts to book your revenues. You can set up debtor accounts to book your pending amounts.</p>
+</div>
+<div class="sect2">
+<h3 id="700">5.1. Setting up posting keys</h3>
+<div class="paragraph">
+<p>Posting keys are relevant for DATEV exports. Continue with the next chapter on this page if you do not work with DATEV. Posting keys are called tax key in DATEV and are required for the correct transfer of posting information. There are some standard tax keys in DATEV. The standard tax key from the two standard charts of accounts 03 and 04 for 19 % VAT in Germany is 3. plentymarkets automatically determines whether it is dealing with a debit (D) or credit © posting. This information is included in the export. The information is displayed in a separate column in the export.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up posting keys:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » Locations » Select location » Accounting</strong>.<br>
+→ The <strong>Basic settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>Accounts</strong> tab.<br>
+→ The <strong>Posting key</strong> tab will open.</p>
+</li>
+<li>
+<p>Enter a posting key for each tax rate.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="750">5.2. Setting up debtor accounts</h3>
+<div class="paragraph">
+<p>You can set up debtor accounts to keep an overview on your pending amounts. You can choose a criteria that will be used to book pending amounts on debtor accounts. As a criteria you can e.g. use the names of the debtors or the country of delivery. Choose a criteria first and then enter the actual accounts.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up deptor accounts:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » Locations » Select location » Accounting</strong>.<br>
+→ The <strong>Basic settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>Accounts</strong> tab.<br>
+→ The <strong>Posting key</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>Debtor accounts</strong> tab.</p>
+</li>
+<li>
+<p>Carry out the settings. Pay attention to the information given in  <a href="#table-debtor-account-setup">Table 6</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-debtor-account-setup" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Setting up debtor accounts</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Setting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Explanation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Standard debtor account</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a debtor account that will be used if no other debtor account is saved or no other account applies.<br>
+<em><strong>Important:</strong></em> The debtor account in the customer’s data set will always be applied and exported if the customer’s data set contains an specific debtor account.<br>
+The debtor account will be saved in the customer data as soon as it has been identified for the first time. The identification of debtor accounts is carried out if revenue information are exported. The DATEV or Collmex export are exports that will trigger the identification of debtor accounts.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Save debtor account in the customer master data record</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Place a check mark to save a debtor account in the customer’s master data. This will only be carried out if no debtor account already exists in the customer data. The debtor account will be saved according to the option that is selected for the <strong>automatic assignment of debtor accounts</strong>.<br>
+If no debtor account is saved for the selected process, then the standard debtor account will be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Automatic assignment of debtor accounts based on</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a criteria from the drop-down list that will be used to assign the debtor accounts.<br>
+The actual account information must be filled according to the selected criteria.<br>
+<strong>Initial letter</strong> = Debtor accounts will be assigned based on the initial letters of customer information. Choose the customer information and the order of the information that will be used from the second drop-down list.<br>
+If you choose the order <strong>Company, surname, first name</strong>, the name of the company will have the highest priority. If no company name was entered, then the last name will be used and so on.<br>
+<strong>Payment method</strong> = Debtor accounts will be assigned based on the payment method that is saved in an order.<br>
+<strong>Country of delivery</strong> = Debtor accounts will be assigned based on the country of delivery that an order is shipped to.<br>
+<strong>Country of delivery, but payment method for domestic</strong> = Debtor accounts will be assigned based on the country of delifery if the delivery goes to a country that is not the country of the location. If the shipment is a home country shipping, then the payment method will be used as criteria.<br>
+<strong><em>Note:</em></strong> Consult with your financial accounting department or your tax office when deciding which process to use.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Initial letters (A - Z or 0 - 9 Debtor account)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter debtor accounts depending on the <strong>initial letter</strong>. Do not enter debtor accounts here if you have selected anhother criteria.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Countries of delivery</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Save debtor accounts for the countries of delivery activated in your system. Do not enter debtor accounts here if you have selected anhother criteria.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment methods</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Save debtor accounts for the payment methods saved in your system. Do not enter debtor accounts here if you have selected another criteria.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="800">5.3. Setting up revenue accounts</h3>
+<div class="paragraph">
+<p>You can set up revenue accounts to book your revenues and to assign them to accounts. You can enter accounts for revenues that are liable to VAT and for revenues that are exempt from VAT.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up revenue accounts for revenues that are liable to VAT:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » Locations » Select location » Accounting</strong>.<br>
+→ The <strong>Basic settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>Accounts</strong> tab.<br>
+→ The <strong>Posting key</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>Revenue accounts</strong> tab.</p>
+</li>
+<li>
+<p>Enter an account for each VAT rate that you use.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Setting up revenue accounts for revenues that are exempt from VAT:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » Locations » Select location » Accounting</strong>.<br>
+→ The <strong>Basic settings</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>Accounts</strong> tab.<br>
+→ The <strong>Posting key</strong> tab will open.</p>
+</li>
+<li>
+<p>Click on the <strong>Revenue exempt from VAT</strong> tab.</p>
+</li>
+<li>
+<p>Enter an account for revenues that are sold within the EU and that are exempt from VAT into the <strong>Revenue from EU</strong> field.</p>
+</li>
+<li>
+<p>Enter an account for revenues that are sold to countries outside the EU and that are exempt from VAT into the <strong>Revenue from export</strong> field.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="910">5.4. Saving booking accounts for POS events (plentymarkets App version 1.7.3 and higher)</h3>
+<div class="paragraph">
+<p>Orders generated in plentyPOS are assigned to the revenue accounts saved in plentymarkets. Because deposits, withdrawals and till count discrepancies are not orders, you can save booking accounts for these POS events. For further information on how to save booking accounts for POS events, refer to the <a href="/en/pos/integrating-plentymarkets-pos#940">Integrating POS</a> page of the manual.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="850">5.5. Copying settings to other locations</h3>
+<div class="paragraph">
+<p>Use the <strong>Copy settings</strong> function to copy the settings of the current location and apply these settings to one or more other locations. You can copy all of the settings or only specific settings.</p>
+</div>
+<div class="paragraph">
+<p>The following settings can be copied:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Basic settings</strong></p>
+</li>
+<li>
+<p><strong>VAT rates</strong></p>
+</li>
+<li>
+<p><strong>Accounts</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Proceed as described below to copy settings to one or more locations:</p>
+</div>
+<div class="paragraph instruction">
+<p>Copying settings to one or more locations:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » Locations » Select location » Accounting</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>Copy settings to another location</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Location</strong>, select one or more locations that the settings should be applied to.</p>
+</li>
+<li>
+<p>Place check marks next to the <strong>Options</strong> that you wish to copy.</p>
+</li>
+<li>
+<p>Click on <strong>Copy</strong>.<br>
+→ The settings will be applied to the locations.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="900">6. Exporting accounting data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>plentymarkets allows you to export accounting data. You can use the export to transfer the data to your accounting software. When you export your accounting data the system will automatically assign debtor accounts, revenue accounts and posting keys according to the settings that you have set up prior to the export.</p>
+</div>
+<div class="paragraph">
+<p>Go to <strong>Data » Data export</strong> and select the data format that you want to export. Set up the format and <a href="/en/data/export-import/exporting-data#10">export the data</a>.</p>
+</div>
+</div>
+</div>
+</main>

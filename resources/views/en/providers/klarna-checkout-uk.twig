@@ -1,0 +1,737 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#10"><span>1.</span><span> Important notes</span></a>
+<ul class="sectlevel2">
+<li><a href="#20"><span>1.1.</span><span> Payment process with Klarna Checkout UK</span></a></li>
+<li><a href="#30"><span>1.2.</span><span> SSL certificate</span></a></li>
+<li><a href="#40"><span>1.3.</span><span> Included payment methods</span></a></li>
+</ul>
+</li>
+<li><a href="#_registering_with_klarna"><span>2.</span><span> Registering with Klarna</span></a></li>
+<li><a href="#_setting_up_klarna_checkout_uk_for_callisto"><span>3.</span><span> Setting up Klarna Checkout UK for Callisto</span></a></li>
+<li><a href="#70"><span>4.</span><span> Activating the payment method</span></a></li>
+<li><a href="#80"><span>5.</span><span> Permitting external payment methods in the Klarna Checkout UK</span></a></li>
+<li><a href="#90"><span>6.</span><span> Displaying Klarna Checkout UK in the Callisto online store</span></a></li>
+<li><a href="#100"><span>7.</span><span> Automatically sending shipping confirmations</span></a></li>
+<li><a href="#_automatically_reporting_refunds"><span>8.</span><span> Automatically reporting refunds</span></a></li>
+<li><a href="#120"><span>9.</span><span> Automatically sending cancellations</span></a></li>
+<li><a href="#130"><span>10.</span><span> Reporting credit notes</span></a></li>
+<li><a href="#140"><span>11.</span><span> Checking the payment status</span></a>
+<ul class="sectlevel2">
+<li><a href="#150"><span>11.1.</span><span> Status progression for complete shipping</span></a></li>
+<li><a href="#160"><span>11.2.</span><span> Status progression for partial shipping</span></a></li>
+<li><a href="#170"><span>11.3.</span><span> Status progression for cancellations, credit notes or refunds</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Old online store: Klarna Checkout UK</h1><div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Integration only for Callisto online stores</div>
+<div class="paragraph">
+<p>This page only contains instructions for integrating <strong>Klarna Checkout UK</strong> in Callisto online stores. The following instructions are not valid for Ceres stores!</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>In plentymarkets, Klarna Checkout UK is the name for the checkout solution offered by Klarna in and for the United Kingdom. This checkout solution includes different countries of delivery and payment methods than the checkout solution provided for Germany. Klarna Checkout UK is responsive.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10">1. Important notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter provides you with important information about integrating the payment provider in plentymarkets.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Klarna Checkout and store design</div>
+<div class="paragraph">
+<p>Note that the following conditions must be met before integrating Klarna Checkout UK successfully in plentymarkets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use of the standard design Callisto (Version 2 or higher)</p>
+</li>
+<li>
+<p>Use of the individual order process</p>
+</li>
+<li>
+<p>Safe handling of the plentymarkets CMS</p>
+</li>
+<li>
+<p>Experience with integrating payment providers</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="20">1.1. Payment process with Klarna Checkout UK</h3>
+<div class="paragraph">
+<p>The payment process can be described as follows: The customer enters their email address and the postcode of the invoice address in Klarna Checkout UK. For Klarna customers, the invoice address is filled in automatically. The same happens if the customer is logged in in your online store. The customer clicks on Purchase now. The customer can select a different payment method during the order confirmation. They can choose from the payment methods available in Klarna Checkout UK. The page for switching the payment method is hosted by Klarna. The customer receives the invoice directly from Klarna. For the customer, the order process is completed at this point. An order will be created in your plentymarkets system.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="30">1.2. SSL certificate</h3>
+<div class="paragraph">
+<p>An iframe is used to integrate Klarna Checkout UK directly in plentymarkets. Thus, an <a href="/en/business-decisions/system-administration/domains">SSL certificate</a> is required for using this payment method.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="40">1.3. Included payment methods</h3>
+<div class="paragraph">
+<p>Klarna Checkout UK combines the following payment methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>American Express</p>
+</li>
+<li>
+<p>Maestro</p>
+</li>
+<li>
+<p>VISA</p>
+</li>
+<li>
+<p>VISA electron</p>
+</li>
+<li>
+<p>MasterCard</p>
+</li>
+<li>
+<p>Pay after delivery</p>
+</li>
+<li>
+<p>Further <a href="/en/payment/payment-providers/klarna-checkout-uk#80">external payment methods</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_registering_with_klarna">2. Registering with Klarna</h2>
+<div class="sectionbody">
+<div id="50" class="paragraph">
+<p>Before you set up Klarna Checkout UK in your plentymarkets system, you have to register with <a href="https://www.klarna.com/uk/business/sell-online-with-klarna" target="_blank" rel="noopener">Klarna</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_setting_up_klarna_checkout_uk_for_callisto">3. Setting up Klarna Checkout UK for Callisto</h2>
+<div class="sectionbody">
+<div id="60" class="paragraph">
+<p>Proceed as described below to set up the interface to Klarna Checkout UK for your Callisto online store in plentymarkets.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up the interface to Klarna Checkout UK:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Payment » Methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>International</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>Klarna</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Klarna Checkout UK</strong>.<br>
+→ The <strong>settings</strong> tab will be opened.</p>
+</li>
+<li>
+<p>Click on the <strong>Interface</strong> tab.</p>
+</li>
+<li>
+<p>Expand a Client (store).</p>
+</li>
+<li>
+<p>Carry out the settings as desired. Pay attention to the information given in <a href="#table-setup-klarna-checkout-uk-interface">Table 1</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-setup-klarna-checkout-uk-interface" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. setting up the interface to Klarna Checkout UK</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">General settings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Operating mode</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Live</strong> = productive or active mode <br>
+<strong>Test</strong> = test mode. This mode allows you to test the data transfer between your system an Klarna. Any order made while the test mode is active will be ignored by Klarna. This means the invoice amount will not be requested from the test customer and you will not receive any payment. Furthermore, Klarna will not charge any fee for orders made while the test mode is active.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Country assignment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a country of delivery that will be used as standard country of delivery.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Show external payment providers</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate to permit external payment providers.<br>
+The following payment methods can be offered in combination with Klarna Checkout UK:<br>
+PayPal, Amazon Pay, cash in advance, Giropay, cash payment, direct debit, cash on delivery<br>
+Check the spelling of these payment methods with Klarna because they need to be set up in plentymarkets exactly as specified by Klarna. Only <a href="/en/payment/managing-payment-methods#20">active payment methods</a> are taken into account.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Klarna identification</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Merchant ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the Merchant ID that you received from Klarna.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Security key (SharedSecret)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the Security key that you received from Klarna.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Mandatory entries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date of birth</strong>,<br>
+<strong>Delivery address</strong>,<br>
+<strong>Form of address</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate the options that should be mandatory for customers during the order process.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Customising the checkout</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Button colour</strong>, <br>
+<strong>Background colour of check boxes</strong>, <br>
+<strong>Button text colour</strong>, <br>
+<strong>Colour of check marks</strong>,<br>
+<strong>Link colour</strong>,<br>
+<strong>Header colour</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter hexadecimal codes for the colours. <br>
+Make sure to choose different colours for the text and the button because the text cannot be read if the colours are the same. The same applies to the colour of the check box and the check mark.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="70">4. Activating the payment method</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up and activate the <a href="/en/payment/managing-payment-methods#20">payment method</a> Klarna Checkout UK in your plentymarkets system. In addition, check the settings for <strong>Permitted payment methods</strong> in the <a href="/en/payment/managing-payment-methods#30">customer classes</a> and for <strong>Blocked payment methods</strong> in the <a href="/en/fulfilment/preparing-the-shipment#1000">shipping profiles</a>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="80">5. Permitting external payment methods in the Klarna Checkout UK</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Besides the payment methods that are included, you can also offer your customers some external payment methods via Klarna Checkout UK. However, you need Klarna to agree to these external payment methods. Therefore, contact Klarna before setting up external payment methods.</p>
+</div>
+<div class="paragraph">
+<p>You need to spell the external payment methods exactly as specified by Klarna. Otherwise, Klarna will not accept the payment method. Check the exact spelling with Klarna before setting them up. The logos for the external payment providers also must have the exact size specified by Klarna. Some examples are given below. The default logos saved in plentymarkets are too big for the Klarna Checkout.<br>
+The available payment methods and image sizes are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>PayPal (276 x 48px)</p>
+</li>
+<li>
+<p>Amazon Pay (276 x 48px)</p>
+</li>
+<li>
+<p>Cash in advance (69 x 24px)</p>
+</li>
+<li>
+<p>Giropay (69 x 24px)</p>
+</li>
+<li>
+<p>Cash payment (69 x 24px)</p>
+</li>
+<li>
+<p>Direct debit (69 x 24px)</p>
+</li>
+<li>
+<p>Cash on delivery (69 x 24px)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Klarna continuously adds new external payment methods to the Klarna Checkout UK. Therefore, this list may not be complete.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Payment » Methods</strong>.</p>
+</li>
+<li>
+<p>Place a check mark next to the setting <strong>Also show inactive</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>International</strong>.</p>
+</li>
+<li>
+<p>Open the folder <strong>Klarna</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Klarna Checkout UK</strong>.<br>
+→ The <strong>settings</strong> tab will be opened.</p>
+</li>
+<li>
+<p>Click on the <strong>Interface</strong> tab.</p>
+</li>
+<li>
+<p>Expand the client.</p>
+</li>
+<li>
+<p>Activate the setting <strong>External payment providers</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the setting.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Set up and activate the desired <a href="/en/payment/managing-payment-methods#20">payment methods</a> in the <strong>Setup » Orders » Payment » Methods</strong> menu in your plentymarkets system.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="90">6. Displaying Klarna Checkout UK in the Callisto online store</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the following container to add the Klarna Checkout UK to your design: <strong>&#123;&#37; Container_CheckoutKlarnaPayment() &#37;&#125;</strong>. You can enter the function into a template or into a category of the type container. How to add the Klarna Checkout UK as an order step into your Callisto Light 3 design by replacing the order step Purchase is described below. Create a new category of the type <strong>Container</strong> and replace the standard order step Purchase by this new category.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">No changes to the active design</div>
+<div class="paragraph">
+<p>Do not make changes to your active design. Before making changes to the design, make a backup copy so that you can restore the original state of the design.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Creating a category of the type container:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Categories</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>New category</strong>.<br>
+→ The <strong>Create new category</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name, e.g. Klarna Checkout UK.</p>
+</li>
+<li>
+<p>Click on <strong>Create</strong>.<br>
+→ The category will be opened and the <strong>Settings</strong> tab will be displayed.</p>
+</li>
+<li>
+<p>Select the option <strong>Container</strong> as the <strong>Type</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>Description 1</strong> tab.</p>
+</li>
+<li>
+<p>Insert the container <strong>&#123;&#37; Container_CheckoutKlarnaPayment() &#37;&#125;</strong> into the text field.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Carry out additional settings, such as selecting the client, in the <strong>Settings</strong> tab. Afterwards, add the category as an order step to your order process.</p>
+</div>
+<div class="paragraph instruction">
+<p>Adding a category as order step:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CMS » Web design</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Settings</strong>. <br>
+→ The <strong>Design settings</strong> window will open.</p>
+</li>
+<li>
+<p>Click on the <strong>Clients</strong> tab.</p>
+</li>
+<li>
+<p>Click on a client.</p>
+</li>
+<li>
+<p>Click on the <strong>Order process</strong> tab.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> for the <strong>3rd order process step</strong>.</p>
+</li>
+<li>
+<p>Select the newly created <strong>Klarna Checkout UK</strong> category.</p>
+</li>
+<li>
+<p>Click on <strong>Select</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The order step will be added.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">7. Automatically sending shipping confirmations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up the following event procedures in order to inform Klarna UK when items are shipped, orders are cancelled and credit notes or refunds are paid. Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send shipping confirmations to Klarna. Payment providers usually wait for the shipping confirmation from the merchant before they disburse and transfer the amount paid by the customer to the merchant’s account.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 2.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 2 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. event procedure for sending automatic shipping confirmations to Klarna Checkout UK</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Outgoing items booked</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong><br>
+Delivery order - optional for partial delivery</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Klarna Checkout UK</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping &gt; Send shipping confirmation to Klarna UK</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="_automatically_reporting_refunds">8. Automatically reporting refunds</h2>
+<div class="sectionbody">
+<div id="110" class="paragraph">
+<p>To refund customers the total purchase amount, create a <strong>Return order</strong>. Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send refunds to Klarna UK. For further information about creating returns, refer to the <a href="/en/orders/managing-orders#400">Return</a> page of the manual.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 3.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 3 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. event procedure for sending automatic refunds to Klarna Checkout UK</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order generation: New return</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Klarna Checkout UK</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment methods &gt; Send refund to Klarna UK</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="120">9. Automatically sending cancellations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send cancellations to Klarna UK.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong>.<br>
+→ The <strong>Create new event procedure</strong> window will open.</p>
+</li>
+<li>
+<p>Enter a name.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> listed in table 4.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+<li>
+<p>Pay attention to the explanations given in table 4 and carry out the settings as desired.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. event procedure for sending automatic cancellations to Klarna Checkout UK</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select status for <strong>cancelled orders</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Klarna Checkout UK</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment methods &gt; Send cancellation to Klarna UK</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="130">10. Reporting credit notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Credit notes are usually used if only a partial amount of the total order amount should be refunded. To refund partial amounts, use the order type <strong>credit note</strong> and enter the amount that you would like to refund. Use your own discretion to decide how much is refunded. Partial amounts need to be entered manually since it is possible to enter a different amount for every order. Hence, it is not possible to automate this process.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a credit note to refund a partial amount:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Orders » Edit orders</strong>.</p>
+</li>
+<li>
+<p>Open the Klarna Checkout UK order.<br>
+→ The <strong>Overview</strong> tab will open.</p>
+</li>
+<li>
+<p>Select the option <strong>create</strong> from the <strong>Credit note…​</strong> drop-down list.<br>
+→ The credit note will be created.</p>
+</li>
+<li>
+<p>Open the newly created credit note.</p>
+</li>
+<li>
+<p>Click on the <strong>Settings</strong> tab.</p>
+</li>
+<li>
+<p>Click on <strong>Klarna Checkout UK Refund</strong> under <strong>Refund</strong>.</p>
+</li>
+<li>
+<p>Enter the amount that you want to refund.</p>
+</li>
+<li>
+<p>Click on <strong>Transfer refund</strong>.<br>
+→ The sum will automatically be reported to Klarna Checkout UK.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="140">11. Checking the payment status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can check the payment status in the <strong>Payment</strong> tab of an order. The meanings of the payment statuses and when a payment is added to the list will be explained next. The payment entries refer to the <strong>Payment</strong> tab of the main order.</p>
+</div>
+<div class="sect2">
+<h3 id="150">11.1. Status progression for complete shipping</h3>
+<div class="paragraph subhead">
+<p>confirmed &gt; received</p>
+</div>
+<div class="paragraph">
+<p>If Klarna accepted the customer to pay via Klarna, a payment will be created. The payment receives the status <strong>confirmed</strong>. Now you need to send the items to the customer and the shipping confirmation to Klarna. After Klarna received the shipping confirmation, they will transfer the amount to your account. The payment receives the status <strong>received</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="160">11.2. Status progression for partial shipping</h3>
+<div class="paragraph subhead">
+<p>confirmed &gt; partially received &gt; received</p>
+</div>
+<div class="paragraph">
+<p>If Klarna accepted the customer to pay via Klarna, a payment will be created. The payment receives the status <strong>confirmed</strong>. You only send part of the order to the customer because you do not have all items in stock. Let’s assume the customer ordered 5 items, but you only have 3 of them in stock. You create a delivery order for these 3 items and send them immediately. Then you book the outgoing items for the delivery order. A shipping confirmation for the <strong>delivery order</strong> will be sent to Klarna if the filter <strong>Order &gt; Order type</strong> in the event procedure for automatically sending shipping confirmations also includes delivery orders. Sending the shipping confirmation will cause a further payment to be added to the list in the main order. The payment will receive the status <strong>received</strong>. The status of the first payment will change from <strong>confirmed</strong> to <strong>partially received</strong>. Next create a second delivery order for the remaining items and book the outgoing items for the delivery order. A third payment will be created in the main order after you have sent the shipping confirmation for the remaining items. This payment receives the status <strong>received</strong>. The status of the first payment will change from <strong>partially received</strong> to <strong>received</strong>.<br>
+In the scenario described above a payment will be created for each delivery order. Once the whole original order was sent, the payment status of the first payment will change to <strong>received</strong>.<br>
+Do not include <strong>delivery orders</strong> in the filter of the event procedure if you do not wish to send shipping confirmations for delivery orders to Klarna.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="170">11.3. Status progression for cancellations, credit notes or refunds</h3>
+<div class="paragraph">
+<p>The payment listed in the <strong>Payment</strong> tab of the main order will receive the status <strong>cancelled</strong> if a cancellation is reported.<br>
+If a credit note is reported to Klarna, a further payment will be created in the <strong>Payment</strong> tab of the main order and this payment receives the status <strong>partially refunded</strong>. A payment will also be listed in the credit note itself. The payment in the credit note will have the status <strong>confirmed</strong>.<br>
+If a refund is reported to Klarna, a further payment is added to the list of the main order in the <strong>Payment</strong> tab. This payment will receive the status <strong>refunded</strong>. The payment in the refund itself receives the status <strong>confirmed</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</main>

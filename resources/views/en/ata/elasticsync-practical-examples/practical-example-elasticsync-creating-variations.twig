@@ -1,0 +1,523 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> Downloading the example files</span></a></li>
+<li><a href="#200"><span>2.</span><span> Entering product data into the CSV file</span></a>
+<ul class="sectlevel2">
+<li><a href="#300"><span>2.1.</span><span> Practical example: Initial situation</span></a></li>
+<li><a href="#400"><span>2.2.</span><span> Variation numbers</span></a></li>
+<li><a href="#500"><span>2.3.</span><span> Attributes</span></a></li>
+<li><a href="#600"><span>2.4.</span><span> Images</span></a></li>
+<li><a href="#700"><span>2.5.</span><span> Categories</span></a></li>
+<li><a href="#800"><span>2.6.</span><span> Sales prices</span></a></li>
+</ul>
+</li>
+<li><a href="#900"><span>3.</span><span> Importing the example sync</span></a></li>
+<li><a href="#1000"><span>4.</span><span> Checking the matching settings</span></a></li>
+<li><a href="#1100"><span>5.</span><span> Checking the mapping settings</span></a></li>
+<li><a href="#1200"><span>6.</span><span> Did it work?</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Creating variations</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Do you have products that need to be imported into plentymarkets? And to complicate things even further: Do you sell these products in different sizes and colours?</p>
+</div>
+<div class="paragraph">
+<p>You might already know that ElasticSync is a good tool for importing data. But you might not have tried your hand at a realistic example yet. This page of the manual guides you step by step through the process of creating new items and variations in plentymarkets.
+This page relies on an example sync, which you can download and import into your own system.</p>
+</div>
+<div id="requirements" class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Requirements</div>
+<div class="paragraph">
+<p>This page assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">ElasticSync tool</a>. Furthermore, make sure you’ve saved the following data in your system before you start importing items and variations with ElasticSync:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/en/item/settings/attributes">Attributes</a></p>
+</li>
+<li>
+<p><a href="/en/item/settings/attributes">Attribute values</a></p>
+</li>
+<li>
+<p><a href="/en/item/settings/categories">Categories</a></p>
+</li>
+<li>
+<p><a href="/en/item/settings/prices">Sales prices</a></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>This video gives you a playful introduction to the topic:</p>
+</div>
+<div class="videoblock">
+<div class="title">Creating items and variations with ElasticSync</div>
+<div class="content">
+<iframe src="https://player.vimeo.com/video/336295453" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. Downloading the example files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page of the manual guides you step by step through the process of creating new items and variations in plentymarkets. This page relies on two example files, which you can download and import into your own system.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/ElasticSync_BestPractice/BestPractice.csv" target="_blank" rel="noopener">Example CSV file</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+<li>
+<p><a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/ElasticSync_BestPractice/Best-Practice-25-02-20.json.zip" target="_blank" rel="noopener">Example sync (JSON compressed as a ZIP file)</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Importing syncs</div>
+<div class="paragraph">
+<p>Download the example sync, unzip the file and <a href="/en/data/importing-data/ElasticSync#1640">import the JSON file into your plentymarkets system</a>.</p>
+</div>
+<div class="paragraph">
+<p>Take a look at the CSV file and see which column headers it includes. Later, you’ll enter your own item and variation data into these columns.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="200">2. Entering product data into the CSV file</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="300">2.1. Practical example: Initial situation</h3>
+<div class="paragraph">
+<p>Imagine you sell a t-shirt that’s available in small or medium and also in yellow or red. You want to import all four possible combinations: medium red, small red, small yellow and medium yellow.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-variations-initial-situation.png" alt="best practice variations initial situation">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="400">2.2. Variation numbers</h3>
+<div class="paragraph">
+<p>In our example, we want to import a main variation with 4 sub-variations.
+Each sub-variation has its own unique number and each sub-variation can be traced back to the same main variation.</p>
+</div>
+<div class="paragraph">
+<p>First, transfer the variation numbers to a CSV file.
+In our example, the numbers would look like this in the CSV file:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-variations-numbers.png" alt="best practice variations numbers">
+</div>
+<div class="title">Figure 1. Entering the numbers for main variation and variations</div>
+</div>
+<div class="paragraph">
+<p>First, let’s look at the <strong>Variation number</strong> column:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The main variation has a unique number (main123). This number is displayed in the first line.</p>
+</li>
+<li>
+<p>Each sub-variation has its own unique number (var123, var456, var567, var890). These numbers are also entered into this column.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Now let’s look at the <strong>Number of main variation</strong> column:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Each sub-variation originates from the same main variation.
+This is represented by entering the main variation’s number next to each sub-variation.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Main variation before sub-variations</div>
+<div class="paragraph">
+<p>Make sure that you always enter the main variation number first and then the individual sub-variations afterwards. Why? plentymarkets goes through the file line by line. So first it creates a main item. Then it creates the individual sub-variations based on this item.</p>
+</div>
+<div class="paragraph">
+<p>If you did it the other way around, then you’d be telling plentymarkets to create a variation on a main item that doesn’t exist yet. plentymarkets wouldn’t understand what you’re asking it to do and the data wouldn’t be imported correctly.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">No variation numbers? No problem!</div>
+<div class="paragraph">
+<p>You don’t technically need sub-variation numbers for the import (var123, var456, var567, var890). If you don’t already have unique variation numbers, then just leave these lines blank and plentymarkets will automatically generate unique numbers for you during the import.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">Variation numbers must be unique</div>
+<div class="paragraph">
+<p>Both the number of the main variation and those of the sub-variations must be unique. The import fails if numbers are assigned more than once.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="500">2.3. Attributes</h3>
+<div class="paragraph">
+<p>Attributes are characteristics like colour and size. If you combine them together, you’ll get a saleable item variation, for example a small, red t-shirt.
+Before you start importing items into plentymarkets, make sure you’ve <a href="/en/item/settings/attributes">created all of the necessary attributes and attribute values</a>.</p>
+</div>
+<div class="paragraph">
+<p>Then open the mapping settings and decide how you want to format the attributes (like colour) and the values (like red).
+In this example, I’m working with the mapping field <strong>Attributes / Attribute value combinations</strong> and I’ve selected the format <strong>Attribute:Value;</strong>.
+Finally, enter the attributes and values into your CSV file with this exact formatting.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-variations-attributes.png" alt="best practice variations attributes">
+</div>
+<div class="title">Figure 2. Creating variations using the attribute selection combination</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Don’t enter attributes for the main variation</div>
+<div class="paragraph">
+<p>In this example, I didn’t enter any attributes or values for the main variation, i.e. the first line of the CSV file.This prevents the main variation from being linked to attributes.</p>
+</div>
+<div class="paragraph">
+<p>We recommend that you work with variations and that you don’t enter any attributes for the main variation. This will make you much more flexible while creating variations. If you were to link attributes to the main variation, then you would only be able to create variations with these same attributes.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="600">2.4. Images</h3>
+<div class="paragraph">
+<p>Regardless whether you use your supplier’s product images, or you take your own photos, your goal here is to get the image’s URL. In other words, your supplier might upload images to an FTP server or you might upload your own images in the plenymarkets webspace.
+However you go about getting the URL, enter it into your CSV file.
+In this example, I’m working with the mapping field <strong>Item images / Multi-Url (Comma-separated)</strong>. Therefore, I’ll enter the image URLs into the CSV file like so: <strong>image1url;positionImage1,image2url;positionImage2</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-variations-images.png" alt="best practice variations images">
+</div>
+<div class="title">Figure 3. Comparison of the mapping field and the column in the CSV file</div>
+</div>
+<div class="paragraph">
+<p>Note the following about image URLs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter a semicolon (;) and a number after the URL to specify when your customer should see this image. So whether the image should be displayed first, second, third, and so on.</p>
+</li>
+<li>
+<p>If you want to use multiple product images, then separate them with commas.</p>
+</li>
+<li>
+<p>You can upload images that show the main variation, i.e. the item as a whole. Or you can upload images that display each individual variation.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="700">2.5. Categories</h3>
+<div class="paragraph">
+<p>Categories help you group your products. They determine how items are structured in your online store.
+Before you start importing items into plentymarkets, make sure you’ve <a href="/en/item/settings/categories">created all of the necessary categories</a>.</p>
+</div>
+<div class="paragraph">
+<p>Each category has a unique ID. In your CSV file, enter the ID of whichever category the item should be listed in. If you want the item to be listed under multiple categories, then use commas to separate the category IDs.
+In order for the import to work, every item also needs to have a <em>default category</em>. Since items can be listed in multiple categories, the default category essentially just specifies which one is the best fit.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-variations-categories.png" alt="best practice variations categories">
+</div>
+<div class="title">Figure 4. Category IDs and the default category ID</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Category ID or category name?</div>
+<div class="paragraph">
+<p>You might prefer to work with a category’s <em>name</em> instead of its ID. No problem! Category names work just as well. If you use category names, make sure you specify the entire category path. The levels are separated by a semicolon.</p>
+</div>
+<div class="paragraph">
+<p>Also make sure that the values in the CSV file correspond to the mapping settings.
+For example, if you choose the field <strong>Default categories / Category ID</strong> in the mapping settings, then make sure you enter the ID in your CSV file.
+Or the other way around: if you choose the field <strong>Default categories / Category name</strong> in the mapping settings, then make sure you enter the name in your CSV file.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="800">2.6. Sales prices</h3>
+<div class="paragraph">
+<p>Sales prices are the conditions under which a variation is sold at a specific price.
+Before you start importing items into plentymarkets, make sure you’ve <a href="/en/item/settings/prices">created all of the necessary sales prices</a>.</p>
+</div>
+<div class="paragraph">
+<p>In the mapping settings, specify which sales price you want to use for the import. And enter the corresponding prices in your CSV file.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-variations-prices.png" alt="best practice variations prices">
+</div>
+<div class="title">Figure 5. Comparison of the mapping field and the column in the CSV file</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="900">3. Importing the example sync</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you haven’t already done so, download the example sync, unzip the file and <a href="/en/data/importing-data/ElasticSync#1640">import the JSON file into your plentymarkets system</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Check the default settings!</div>
+<div class="paragraph">
+<p>Lots of settings were pre-configured in the example sync. Check these settings and make sure that they meet your needs.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1000">4. Checking the matching settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>During the import, plentymarkets will check whether the variation already exists. This is done with the help of a so-called matching field.
+Make sure you use a <em>variation-specific matching field</em>. A good choice is the variation number or the variation ID.</p>
+</div>
+<div class="paragraph">
+<p>The following matching settings were pre-configured in the example sync:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Matching field: Variation number</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The column header <strong>Variation number</strong> from the CSV file is pre-selected here.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Import options</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The option <strong>Import new, update existing data</strong> is pre-selected here.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1100">5. Checking the mapping settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Your CSV file is already filled with a bunch of item information. Now you’ll decide <em>where in plentymarkets</em> each piece of information should appear when you import the file. <a href="/en/data/importing-data/sync-types/elasticSync-item#1920">Take a look at this page</a> while you map the columns of your CSV file to the fields in plentymarkets.
+Lots of mapping settings were pre-configured in the example sync. Check these settings and make sure that they meet your needs.</p>
+</div>
+<div class="paragraph">
+<p>We recommend that you only map those fields that you actually want to import. Unnecessary fields should be deactivated (<span class="icon red"><i class="fa fa-toggle-off  "></i></span>) because they might otherwise cause errors to occur.</p>
+</div>
+<h4 id="_mandatory_fields" class="discrete">Mandatory fields</h4>
+<div class="paragraph">
+<p>There are some <em>mandatory fields</em> for creating items with variations. These fields must be mapped for the sync to work. Those mandatory fields are:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">What do you want to import?</th>
+<th class="tableblock halign-left valign-top">Mandatory fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item and variation data</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Default category</p>
+</li>
+<li>
+<p>Main variation number</p>
+</li>
+<li>
+<p>Variation number</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item and variation data + Stock</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Default category</p>
+</li>
+<li>
+<p>Main variation number</p>
+</li>
+<li>
+<p>Variation number</p>
+</li>
+<li>
+<p>Warehouse</p>
+</li>
+<li>
+<p>Quantity</p>
+</li>
+<li>
+<p>Storage location</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1200">6. Did it work?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ready to import your items? Start the sync and check whether the data was correctly imported into plentymarkets.</p>
+</div>
+<div class="paragraph instruction">
+<p>Starting the sync and checking the result:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Activate the lines that should be imported (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>).</p>
+</li>
+<li>
+<p>Test the sync (<span class="icon "><i class="psicon-plugin_stage_deploy"></i></span>) or start the sync (<span class="icon darkGrey"><i class="fa fa-play-circle-o  "></i></span>).<br>
+<strong><em>Note:</em></strong> This can take a few minutes.</p>
+</li>
+<li>
+<p>Go to <strong>Item » Edit item</strong>.</p>
+</li>
+<li>
+<p>Open a few item data records and check their settings.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Do a trial run</div>
+<div class="paragraph">
+<p>We recommend testing the sync (<span class="icon "><i class="psicon-plugin_stage_deploy"></i></span>) before you start it for the first time.
+This imports the first 10 rows of the file and bypasses the cache.
+It gives you time to check whether the sync works correctly. If the sync does not perform as expected, you can correct it before importing the entire file.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Resetting the cache</div>
+<div class="paragraph">
+<p>Directly within the sync, you’ll find the button <strong>Reset cache</strong> (<span class="icon "><i class="psicon-reload"></i></span>).
+This button allows you to reset the ElasticSync cache in order to reimport a file that does not contain any changes.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</main>

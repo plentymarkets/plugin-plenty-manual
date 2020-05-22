@@ -1,0 +1,615 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> How does box picking work?</span></a></li>
+<li><a href="#200"><span>2.</span><span> Configuring one-time settings</span></a>
+<ul class="sectlevel2">
+<li><a href="#300"><span>2.1.</span><span> Configuring settings in the plentymarkets back end</span></a>
+<ul class="sectlevel3">
+<li><a href="#400"><span>2.1.1.</span><span> Making boxes available</span></a></li>
+<li><a href="#500"><span>2.1.2.</span><span> Granting rights to warehouse technicians</span></a></li>
+<li><a href="#600"><span>2.1.3.</span><span> Modifying the order process</span></a></li>
+</ul>
+</li>
+<li><a href="#700"><span>2.2.</span><span> Configuring settings in the plentymarkets app</span></a></li>
+</ul>
+</li>
+<li><a href="#800"><span>3.</span><span> Picking items with the plentymarkets app</span></a>
+<ul class="sectlevel2">
+<li><a href="#900"><span>3.1.</span><span> Specifying the number of boxes</span></a></li>
+<li><a href="#1000"><span>3.2.</span><span> Finding the items in the warehouse</span></a></li>
+<li><a href="#1100"><span>3.3.</span><span> Linking the order to a box</span></a></li>
+<li><a href="#1200"><span>3.4.</span><span> Picking items</span></a></li>
+<li><a href="#1300"><span>3.5.</span><span> Packing items</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Box picking</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Box picking is a way to pick several orders at once and bring them all back to the packing table, pre-sorted and ready to be shipped. This method is particularly well-suited for small items.</p>
+</div>
+<div class="paragraph">
+<p>The plentymarkets app includes a function for box picking, which is described on this page. First, you’ll read a short description of box picking to help you understand the concept. Then you’ll learn about the <a href="#200">settings</a>, which need to be configured one time only. These settings go into effect when you begin <a href="#800">using the function</a>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Requirements</div>
+<div class="paragraph">
+<p>This page assumes that you’ve already <a href="/en/app/installation">downloaded</a> the plentymarkets app and installed it on the appropriate hardware.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. How does box picking work?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The warehouse technician has a trolley, which he takes with him through the warehouse. Any number of boxes are loaded onto the trolley. Each box represents an order that’s ready to be processed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/app/assets/Grafik-Rollende-Kommissionierung.png" alt="Grafik Rollende Kommissionierung">
+</div>
+</div>
+<div class="paragraph">
+<p>The warehouse technician takes his trolley through the warehouse and looks at a mobile device, which tells him which items need to be picked. Duplicate items are grouped together. For example, if the same item is included in two different orders, then the warehouse technician will see that he needs to pick two copies of the item. The warehouse technician picks the items and puts them in the appropriate boxes. In other words, the warehouse technician picks items and immediately matches them with their corresponding orders.</p>
+</div>
+<div class="paragraph">
+<p>Once all of the boxes have been filled with items, the warehouse technician walks back to the packing table. He scans the first box and thus loads the corresponding order. The warehouse technician processes the order as usual. When he’s finished, the box and order are unlinked. In other words, the box is made available again and the warehouse technician can re-use it on his next trip through the warehouse.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="200">2. Configuring one-time settings</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="300">2.1. Configuring settings in the plentymarkets back end</h3>
+<div class="paragraph">
+<p>Before you <a href="#800">use the tool</a>, you’ll need to configure a few settings one time only in your plentymarkets system. These settings specify, e.g. which boxes are available, which warehouse technicians are in charge of box picking and when the order and box should be unlinked.</p>
+</div>
+<div class="sect3">
+<h4 id="400">2.1.1. Making boxes available</h4>
+<div class="paragraph">
+<p>In the warehouse, every item is stored in its own <a href="/en/stock-management/setting-up-a-warehouse#500">storage location</a>. When the warehouse technician picks an order, he goes and gets the item from its storage location, and he places the item in a box. The item stays in that box until the warehouse technician has finished packing and shipping the order.</p>
+</div>
+<div class="paragraph">
+<p>As such, boxes are essentially just temporary storage locations. Just like "normal" storage locations, you’ll need to create boxes one time in advance. Specifically, you’ll create one storage location for each box. Then you’ll specify that these storage locations should be used for box picking.</p>
+</div>
+<div class="paragraph instruction">
+<p>Making boxes available:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log into your plentymarkets system.</p>
+</li>
+<li>
+<p>Go to <strong>Setup » Stock » Warehouse » Select warehouse » Storage locations</strong></p>
+</li>
+<li>
+<p>Create new storage locations for box picking. Refer to the chapter on <a href="/en/stock-management/setting-up-a-warehouse#500">creating storage locations</a>.</p>
+</li>
+<li>
+<p>Set the storage location’s <strong>Purpose</strong> to <strong>Box</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="500">2.1.2. Granting rights to warehouse technicians</h4>
+<div class="paragraph">
+<p>Consider for a moment which employees will use the box picking function. Is everyone in your company responsible for picking and packing, or only a few, specific employees? Decide which user accounts should be able to see the function.</p>
+</div>
+<div class="paragraph instruction">
+<p>Making the function visible:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Settings » User » Accounts</strong>.</p>
+</li>
+<li>
+<p>Open a <strong>Backend</strong> or <strong>REST-API</strong> user account.</p>
+</li>
+<li>
+<p>Click on the <strong>Mobile</strong> tab.</p>
+</li>
+<li>
+<p>Activate the <strong>Box picking</strong> function.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you want employees to pick and pack orders, they’ll need to be authorised e.g. to see order information and know where individual items are stored.</p>
+</div>
+<div class="paragraph instruction">
+<p>Granting rights to warehouse technicians:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Settings » User » Rights » User</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> in the upper left corner.<br>
+→ The user accounts will be displayed in an overview.</p>
+</li>
+<li>
+<p>Click on the <strong>Backend</strong> or <strong>REST-API</strong> user account that you want to modify.<br>
+→ The user rights will open.</p>
+</li>
+<li>
+<p>Grant the <strong>necessary rights</strong>. Note <a href="#table-settings-rights-picking">Table 1</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-settings-rights-picking" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Granting user rights</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Show item image name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow your warehouse technician to see a picture of the item in the app.<br>
+Under <strong>Authorisations</strong>, open the <strong>Items » Item » Item image » Item image name</strong> area. Place a check mark next to <strong>Show</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Update orders</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow your warehouse technician to change the order’s status.<br>
+Under <strong>Authorisations</strong>, open the <strong>Orders</strong> area. Place a check mark next to <strong>Update</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Show orders</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow your warehouse technician to see the order.<br>
+Under <strong>Authorisations</strong>, open the <strong>Orders</strong> area. Place a check mark next to <strong>Show</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create comment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow your warehouse technician to write notes and attach them to the order.<br>
+Under <strong>Authorisations</strong>, open the <strong>Comments</strong> area. Place a check mark next to <strong>Create</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Show warehouse location</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allow your warehouse technician to see where the item is stored.<br>
+Under <strong>Authorisations</strong>, open the <strong>Stock » Warehouses » Warehouse location</strong> area. Place a check mark next to <strong>Show</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Edit several user accounts at once</div>
+<div class="paragraph">
+<p>Use <a href="/en/business-decisions/user-accounts-access#70">roles</a> to grant the same rights to multiple users. Roles save you from having to modify each user account individually.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Do admin users also need these rights?</div>
+<div class="paragraph">
+<p><strong>Admin</strong> <a href="/en/business-decisions/user-accounts-access#10">users</a> are allowed to work with any function. You won’t need to make any changes to their account settings. On the other hand, <strong>Backend</strong> and <strong>REST-API</strong> accounts don’t automatically have rights.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="600">2.1.3. Modifying the order process</h4>
+<div class="paragraph">
+<p>You can integrate the packing half of box picking into your company’s existing <a href="/en/automation/processes/setting-up-processes">order processes</a>. All you need to do is add a procedure and a sub-procedure to your existing process.</p>
+</div>
+<div class="paragraph instruction">
+<p>Modifying the existing order process:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Processes » Select process</strong>.</p>
+</li>
+<li>
+<p>Add the procedure and sub-procedure. Carry out the settings according to <a href="#table-procedure-subprocedure-picking">Table 2</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-procedure-subprocedure-picking" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Procedure and sub-procedure for box picking</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure: Order search</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add the <a href="/en/automation/processes/procedures#190">Order search</a> procedure to the <a href="/en/automation/processes/work-steps#single-order-processing">Single order processing</a> work step. This procedure searches for individual orders, with the goal of processing them further afterward.<br>
+Open the procedure’s settings and set the <strong>Mode</strong> to <strong>Box search</strong>. This specifies that your warehouse technician will scan the box - i.e. the temporary storage location - and then plentymarkets will load the corresponding order.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sub-procedure: Remove order from box</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add the <a href="/en/automation/processes/sub-procedures#195">Remove order from box</a> sub-procedure to the <a href="/en/automation/processes/procedures#170">Order</a> procedure. This sub-procedure unlinks the order from the box. This makes the box available again, so that it can be re-used on the next trip through the warehouse.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Example process</div>
+<div class="paragraph">
+<p>You don’t already have an existing order process to modify? Or you’d like to see the procedure and sub-procedure in the context of an example process? No problem! We’re happy to provide you with an example process for box picking.</p>
+</div>
+<div class="paragraph">
+<p>Import file for the process:
+<a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/plentyprocess/rollende_Box-Kommissionierung_2019_08_23_13_49_13.plentyprocess">rollende_Box-Kommissionierung_2019_08_23_13_49_13.plentyprocess</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</div>
+<div class="paragraph">
+<p>Once you have <a href="/en/automation/processes/setting-up-processes#220">imported the process</a>, you’ll need to check and modify the following settings:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open the <a href="/en/automation/processes/setting-up-processes#65">process settings</a> and choose the correct warehouse.</p>
+</li>
+<li>
+<p>Open both of the <a href="/en/automation/processes/procedures#550">split control elements</a> and choose the correct status.</p>
+</li>
+<li>
+<p>Open the <a href="/en/automation/processes/procedures#510">filter control element</a> and choose <strong>Progress: Completely registered</strong>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="700">2.2. Configuring settings in the plentymarkets app</h3>
+<div class="paragraph">
+<p>Before you <a href="#800">use the tool</a>, you’ll need to configure a few settings one time only in the plentymarkets app. These settings specify, e.g. how many orders should be picked at once and how the app should react if something goes wrong.</p>
+</div>
+<div class="paragraph instruction">
+<p>Configuring the settings:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="/en/app/installation#1200">Log into the plentymarkets app</a>.</p>
+</li>
+<li>
+<p>Tap on the <strong>menu icon</strong> (<span class="icon blue"><i class="fa fa-bars  "></i></span>) in the top left corner.</p>
+</li>
+<li>
+<p>Tap on <strong>Settings » Box picking</strong>.<br>
+→ The settings for box picking will open.</p>
+</li>
+<li>
+<p>Carry out the settings. Note <a href="#table-settings-box-picking">Table 3</a>.</p>
+</li>
+</ol>
+</div>
+<table id="table-settings-box-picking" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Configuring settings in the plentymarkets app</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Initial status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which orders do you want to pick? When you use the tool later, you’ll see a list of items to pick. This list only includes items from orders that are currently in this status.<br>
+<strong><em>Tip:</em></strong> You can customise the <a href="/en/orders/managing-orders#1200">statuses</a> in this drop-down list. This is done in the menu <strong>Setup » Orders » Status</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">How do you want to flag orders that are currently being picked? Change the order’s status, so that it’s not possible to accidentally start picking the same order twice.<br>
+<strong><em>Tip:</em></strong> You can customise the <a href="/en/orders/managing-orders#1200">statuses</a> in this drop-down list. This is done in the menu <strong>Setup » Orders » Status</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Error status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">How should the app react if something goes wrong? If an error occurs while picking an order, the app will change that order’s status to whatever is selected here. Later, you can go into plentymarkets, search for all the faulty orders with this status and then process these orders separately.<br>
+<strong><em>Tip:</em></strong> You can customise the <a href="/en/orders/managing-orders#1200">statuses</a> in this drop-down list. This is done in the menu <strong>Setup » Orders » Status</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In which warehouse do you want to pick? When you use the tool later, you’ll see a list of items to pick. This list only includes items that are stored in this warehouse.<br>
+<strong><em>Tip:</em></strong> You can customise the <a href="/en/stock-management/setting-up-a-warehouse#200">warehouses</a> in this drop-down list. This is done in the menu <em>Setup » Stock » Warehouse</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Default number of boxes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">How many orders do you typically pick at once? When you use the tool later, this number will be suggested by default. However, you will still be able to manually increase or decrease the number.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Template</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What should the <a href="#1000">list of items</a> look like? The plentymarkets app comes with a default template, which is appropriate for most picking processes. However, you can create additional templates in the menu <strong>Setup » plenty app » Mobile pick list</strong>. Once you’ve created a template, you’ll be able to select it from the drop-down list here.<br>
+<strong><em>Tip:</em></strong> Templates let you control, e.g. which information is displayed first, second, third, etc and which font size each piece of information should have.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="800">3. Picking items with the plentymarkets app</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you’ve finished <a href="#200">configuring the one-time settings</a>, you can begin using the plentymarkets app to pick several orders at once and bring them all back to the packing table, pre-sorted and ready to be shipped.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Are any orders available?</div>
+<div class="paragraph">
+<p>The app will only process orders that meet the criteria saved in the <a href="#200">settings</a>. In other words, an order will only be processed if it relates to the correct warehouse and if it is currently in the initial status. If no orders currently meet these criteria, then there will be no orders to pick.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="900">3.1. Specifying the number of boxes</h3>
+<div class="paragraph">
+<p>How many boxes are on your order picking trolley? Enter the number of boxes that you want to work with, i.e. the number of orders that you want to pick simultaneously.</p>
+</div>
+<div class="paragraph instruction">
+<p>Specifying the number of boxes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="/en/app/installation#1200">Log into the plentymarkets app</a>.</p>
+</li>
+<li>
+<p>Tap on the <strong>menu icon</strong> (<span class="icon blue"><i class="fa fa-bars  "></i></span>) in the top left corner.</p>
+</li>
+<li>
+<p>Tap on <strong>Warehouse management » Box picking</strong>.<br>
+→ The start screen is displayed.</p>
+</li>
+<li>
+<p>Tap the plus or minus to increase or decrease the <a href="#700">pre-defined number</a> of boxes.</p>
+</li>
+<li>
+<p>Tap <strong>Start</strong> when you’re ready to go.<br>
+→ The corresponding orders will be displayed on an item list. Their order status will change to whichever <a href="#700">new status</a> you chose in the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1000">3.2. Finding the items in the warehouse</h3>
+<div class="paragraph">
+<p>plentymarkets automatically creates a list of all the items that are ready to be picked in the warehouse. Duplicate items are grouped together. For example, if the same item is included in two different orders, then the warehouse technician will see that he needs to pick two copies of the item.</p>
+</div>
+<div class="paragraph">
+<p>The list includes important information about the items that are ready to be picked. Not only does the warehouse technician see how many copies of an item he should pick, but he also sees where the item is stored and what the item is called. You can control which information is displayed on the list. Simply create a <a href="#700">template</a> before you start picking items.</p>
+</div>
+<div class="paragraph">
+<p>Now the warehouse technician takes his trolley and walks over to where the first item is stored. Once he’s there, he scans the barcode of the first item. Alternatively, he can tap on the item in the app.</p>
+</div>
+<div class="paragraph instruction">
+<p>Working with the item list:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Take a look at the list to find out where the item is stored.</p>
+</li>
+<li>
+<p>Take the order picking trolley over to the item.</p>
+</li>
+<li>
+<p>Scan the item’s barcode or tap on the item in the app.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Picking a different item first, second, third, etc</div>
+<div class="paragraph">
+<p>While generating the item list, plentymarkets calculates the shortest possible path through the warehouse. In other words, plentymarkets sorts the items so that picking is as easy as possible. However, if the warehouse technician still wants to pick a different item first, second, third, all he needs to do is tap on the three dots.</p>
+</div>
+<div class="paragraph">
+<p>Now the warehouse technician can decide how he wants to proceed. He can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>move the item to the bottom of the list, e.g. if he’d prefer to pick this item later.</p>
+</li>
+<li>
+<p>remove the item from the list completely, e.g. if the item is not currently in stock. In this case, all of the orders that contain this item are placed in an <a href="#700">error status</a>.</p>
+</li>
+<li>
+<p>save a note. The note is attached to all of the orders that contain this item.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1100">3.3. Linking the order to a box</h3>
+<div class="paragraph">
+<p>Which box do you want to temporarily store this item in? Scan an empty box or tap on an empty box in the app. This links the order to the box.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Need help deciding?</div>
+<div class="paragraph">
+<p>Do you have boxes in several different sizes and you’re not sure which box you should choose? Swipe left to see information about the order. Here you’ll see how big the order is and you can decide which box is the best fit.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Orders with multiple items</div>
+<div class="paragraph">
+<p>Some orders contain more than just one item. If you’ve already scanned the first item and linked it to a box, then you won’t need to link the second item with a new box too. Instead, you’ll continue using the box that you’ve already linked.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1200">3.4. Picking items</h3>
+<div class="paragraph">
+<p>The app displays important information about the picking process. You’ll see, e.g.:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>how many copies of the item you should pick</p>
+</li>
+<li>
+<p>where the item is currently stored, i.e. its storage location</p>
+</li>
+<li>
+<p>which box you should put each copy of the item in</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Picking items:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Take a look at the app to see information about the picking process.</p>
+</li>
+<li>
+<p>Scan the item or tap the plus/minus to specify how many copies of the item you’ve picked.<br>
+<strong><em>Note:</em></strong> Every time you scan the item, the number automatically increases by one.</p>
+</li>
+<li>
+<p>Place the item in the corresponding box.</p>
+</li>
+<li>
+<p>Scan the box that you’ve just picked or tap the green check mark to finish the picking process.<br>
+→ plentymarkets links the item to the box. The item’s storage location is changed to the temporary storage location. plentymarkets keeps a record of this <a href="/en/stock-management/managing-stocks#1100">stock movement</a>.</p>
+</li>
+<li>
+<p>Repeat steps 1 through 4 for every order that contains the item.<br>
+→ Once you’ve finished picking this item, the screen changes. You’ll see the <a href="#1000">list of items</a> again and you can begin picking the next item.<br>
+→ Once you’ve finished picking all of the items, you’ll see a success message.</p>
+</li>
+<li>
+<p>Click on <strong>Complete</strong> to close the success message.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Not enough copies in stock?</div>
+<div class="paragraph">
+<p>Have you come across an item where there aren’t enough copies in the warehouse? For example, should you pick three copies but only two are available? You don’t need to cancel the entire picking process. Simply enter however many copies of the item are available and then tap on the brown arrow. Afterwards, you’ll see a message, which tells you that the quantity is incorrect. Here you can also write a note, which will be attached to the order in your plentymarkets system. The order will be switched to the error status and it can be processed separately later.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1300">3.5. Packing items</h3>
+<div class="paragraph">
+<p>Once all of the boxes have been filled with items, the warehouse technician walks back to the packing table. He scans the first box and thus loads the corresponding order. The warehouse technician <a href="/en/automation/processes/carrying-out-processes">processes the order as usual</a>. Outgoing items are booked from the temporary storage location, i.e. from the box.</p>
+</div>
+<div class="paragraph">
+<p>When he’s finished, the box and order are unlinked. In other words, the box is made available again and the warehouse technician can re-use it on his next trip through the warehouse.</p>
+</div>
+</div>
+</div>
+</div>
+</main>

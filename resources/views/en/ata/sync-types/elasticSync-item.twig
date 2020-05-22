@@ -1,0 +1,4150 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#1910"><span>1.</span><span> Fields for item matching</span></a></li>
+<li><a href="#1920"><span>2.</span><span> Fields for the item mapping</span></a>
+<ul class="sectlevel2">
+<li><a href="#2260"><span>2.1.</span><span> Item</span></a></li>
+<li><a href="#3000"><span>2.2.</span><span> Item sets</span></a></li>
+<li><a href="#2310"><span>2.3.</span><span> Cross-selling</span></a></li>
+<li><a href="#2270"><span>2.4.</span><span> Item texts</span></a></li>
+<li><a href="#2280"><span>2.5.</span><span> Shipping profile</span></a></li>
+<li><a href="#2300"><span>2.6.</span><span> Item variations</span></a></li>
+<li><a href="#2320"><span>2.7.</span><span> Barcodes</span></a></li>
+<li><a href="#2330"><span>2.8.</span><span> Sales prices</span></a></li>
+<li><a href="#2340"><span>2.9.</span><span> Categories</span></a></li>
+<li><a href="#2345"><span>2.10.</span><span> Default categories</span></a></li>
+<li><a href="#2350"><span>2.11.</span><span> Stock</span></a></li>
+<li><a href="#2360"><span>2.12.</span><span> Client (store)</span></a></li>
+<li><a href="#2370"><span>2.13.</span><span> Markets</span></a></li>
+<li><a href="#2380"><span>2.14.</span><span> Attributes</span></a></li>
+<li><a href="#2390"><span>2.15.</span><span> Item images</span></a></li>
+<li><a href="#2400"><span>2.16.</span><span> Characteristics</span></a></li>
+<li><a href="#2410"><span>2.17.</span><span> Properties</span></a></li>
+<li><a href="#2290"><span>2.18.</span><span> Variation tags</span></a></li>
+<li><a href="#2420"><span>2.19.</span><span> Inheritance</span></a></li>
+<li><a href="#2420a"><span>2.20.</span><span> Content</span></a></li>
+<li><a href="#2430"><span>2.21.</span><span> ASIN/ePID</span></a></li>
+<li><a href="#2440"><span>2.22.</span><span> Warehouse</span></a></li>
+<li><a href="#2450"><span>2.23.</span><span> Supplier</span></a></li>
+<li><a href="#2460"><span>2.24.</span><span> SKU</span></a></li>
+<li><a href="#3000"><span>2.25.</span><span> Additional SKU</span></a></li>
+<li><a href="#2470"><span>2.26.</span><span> Bundle</span></a></li>
+<li><a href="#sync-serial-number"><span>2.27.</span><span> Serial number</span></a></li>
+</ul>
+</li>
+<li><a href="#1930"><span>3.</span><span> Required values for various item sync procedures</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Item</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page explains the matching and mapping fields that you can use while importing item and variation data. This page serves purely as a reference and it assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">ElasticSync tool</a>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Requirements</div>
+<div class="paragraph">
+<p>In order to import item data via ElasticSync, the following data records must be present in plentymarkets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Categories (<strong>Item » Category</strong> menu)</p>
+</li>
+<li>
+<p>Sales prices (<strong>Setup » Item » Sales prices</strong> menu)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In order to import variation data with attributes via ElasticSync, the following data records must be present in plentymarkets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Attributes and attribute values (<strong>Setup » Item » Attributes</strong> menu)</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Practical example: Importing new items</div>
+<div class="paragraph">
+<p>Imagine you’re new to plentymarkets and you want to import all of your items and variations at once. How would that work? Take a look at <a href="/en/data/importing-data/elasticsync-best-practices/best-practices-elasticsync-creating-variations">this practical example</a>, which guides you through the process step-by-step.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1910">1. Fields for item matching</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="#table-matching-fields-item">Table 1</a> explains the fields that are available for matching item data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+</div>
+<table id="table-matching-fields-item" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Matching fields for importing items</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Matching field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation ID</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation no.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External variation ID</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Barcode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the <a href="/en/item/settings/barcodes#100">barcode type</a> from the second drop-down list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For variations with attributes, use this field only in combination with attribute selection combination.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute selection combination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For variations with attributes, use this field only in combination with the item ID.
+Select the format from the second drop-down list that contains the data of the file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplier item No.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1920">2. Fields for the item mapping</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter explains the fields that are available for mapping item and variation data.</p>
+</div>
+<div class="paragraph">
+<p>Many different mapping fields are available for the <strong>Item</strong> sync type. As such, the following explanations have been divided into sub-chapters.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">No mapping field? Default value applies!</div>
+<div class="paragraph">
+<p>If you don’t include a certain piece of information in your CSV file, i.e. if you <em>don’t use</em> a certain mapping field, then your item or variation will be given the default value.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="2260">2.1. Item</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-items">Table 2</a> explains the fields that are available for mapping various <em>item data</em>.
+These mapping fields correspond, e.g. to the tabs <a href="/en/item/managing-items#40">Global</a>, <a href="/en/item/managing-items#45">Multi-Channel</a> and <a href="/en/item/managing-items#70">Fields</a> within the <a href="/en/item/introduction/structure#200">upper row of tabs</a> in an item data record.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the item data record once it’s been imported, then you’ll see that the settings in the upper row of tabs were configured as follows.</p>
+</div>
+<table id="table-mapping-fields-items" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Fields for importing items</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Default value</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stock type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1<br>
+2<br>
+3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Type</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Stocked item</p>
+</li>
+<li>
+<p>1 = Production item</p>
+</li>
+<li>
+<p>2 = Colli</p>
+</li>
+<li>
+<p>3 = Special order item</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Store special</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1<br>
+2<br>
+3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Online store » Option: Store special</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = None</p>
+</li>
+<li>
+<p>1 = Special offer</p>
+</li>
+<li>
+<p>2 = New item</p>
+</li>
+<li>
+<p>3 = Top item</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Manufacturer</a></p>
+<p class="tableblock">Data is mapped according to the manufacturer ID in the menu <strong>Setup » Item » Manufacturers</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturing country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID);<br>
+0 = unknown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Germany</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Manufacturing country</a></p>
+<p class="tableblock">Data is mapped according to the <a href="/en/data/internal-IDs#20">list of country IDs</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Revenue account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Revenue account</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coupon for special offers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1<br>
+2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Promotional coupon/POS discount</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Permitted</p>
+</li>
+<li>
+<p>1 = Not permitted</p>
+</li>
+<li>
+<p>2 = Purchasable with coupon only</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Condition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1<br>
+2<br>
+3<br>
+4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Condition</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = New</p>
+</li>
+<li>
+<p>1 = Used</p>
+</li>
+<li>
+<p>2 = New &amp; with original packaging</p>
+</li>
+<li>
+<p>3 = New with label</p>
+</li>
+<li>
+<p>4 = Factory seconds</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Condition for API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1<br>
+2<br>
+3<br>
+4<br>
+5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Condition for API</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = New</p>
+</li>
+<li>
+<p>1 = Used but as new</p>
+</li>
+<li>
+<p>2 = Used but very good</p>
+</li>
+<li>
+<p>3 = Used but good</p>
+</li>
+<li>
+<p>4 = Used but acceptable</p>
+</li>
+<li>
+<p>5 = Factory seconds</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subscription (yes/no)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Subscription</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Serial number (yes/no)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Serial number</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping package (yes/no)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Shipping package</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fulfilment by Amazon (FBA)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1<br>
+2<br>
+3<br>
+-1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#45">Tab: Multi-Channel » Area: Amazon » Option: FBA Fulfillment</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Do not use</p>
+</li>
+<li>
+<p>1 = AMAZON_EU</p>
+</li>
+<li>
+<p>2 = AMAZON_FE</p>
+</li>
+<li>
+<p>3 = AMAZON_NA</p>
+</li>
+<li>
+<p>-1 = FBA and SellerCentral</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipment by Amazon (FBA)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the checkbox under:<br>
+<a href="/en/item/managing-items#45">Tab: Multi-Channel » Area: Amazon » Option: Amazon FBA</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No check mark</p>
+</li>
+<li>
+<p>1 = Check mark</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon product type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unknown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#45">Tab: Multi-Channel » Area: Amazon » Option: Product type</a></p>
+<p class="tableblock">Data is mapped according to the <a href="/en/data/internal-IDs#130">value table amazon_product_type</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon FEDAS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>FEDAS product group key</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing template</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#45">Tab: Multi-Channel » Area: Listing default settings » Option: Listing template</a></p>
+<p class="tableblock">Data is mapped according to the listing template ID in the menu <strong>Listings » Listings</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing category 1;<br>
+Listing category 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#45">Tab: Multi-Channel » Area: Listing default settings » Option: Category 1</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listing store category 1;<br>
+Listing store category 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#45">Tab: Multi-Channel » Area: Listing default settings » Option: Store category 1</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rakuten.de categories</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#45">Tab: Multi-Channel » Area: Category link » Option: Rakuten.de</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag 1;<br>
+Flag 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the <a href="/en/item/settings/flags">item’s flag</a>.</p>
+<p class="tableblock">Data is mapped according to the flag’s ID in the menu <strong>Setup » Item » Flags » Tab: Flag 1 or Flag 2</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Age rating</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+3<br>
+6<br>
+12<br>
+16<br>
+18<br>
+50<br>
+88<br>
+99</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Age rating</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = None available</p>
+</li>
+<li>
+<p>3 = Released for age 3 and older</p>
+</li>
+<li>
+<p>6 = Released for age 6 and older</p>
+</li>
+<li>
+<p>12 = Released for age 12 and older</p>
+</li>
+<li>
+<p>16 = Released for age 16 and older</p>
+</li>
+<li>
+<p>18 = Released for age 18 and older</p>
+</li>
+<li>
+<p>50 = Not marked</p>
+</li>
+<li>
+<p>88 = Not required</p>
+</li>
+<li>
+<p>99 = Still unknown</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item feedback</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Online store » Option: Item feedback</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Field 1;<br>
+Field 2;<br>
+Field 3;<br>
+…​<br>
+Field 20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to free text fields 1 through 20 under:<br>
+<a href="/en/item/managing-items#70">Tab: Fields</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max. item order quantity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Max. order quantity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">standard<br>
+multipack<br>
+set</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">standard</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>While creating a new item</em>, this corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#20">Tab for creating a new item » Area: Item data » Option: Type</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>standard = <strong>Default</strong> item</p>
+</li>
+<li>
+<p>multipack = <strong>Multipack</strong> item</p>
+</li>
+<li>
+<p>set = <strong>Set</strong> item</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#40">Tab: Global » Area: Basic settings » Option: Manufacturer</a></p>
+<p class="tableblock">Data is mapped according to the manufacturer’s name. If the manufacturer data record doesn’t already exist in the system, then a new manufacturer data record will be created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to delete some items and update others? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the item should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="3000">2.2. Item sets</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-item-sets">Table 3</a> explains the fields that are available for mapping item sets.
+These mapping fields correspond to your possibilities for <a href="/en/item/use-cases/combining-products#3700">adding components to an item set</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the item set once it’s been imported, then you’ll see that the settings in the <strong>Set</strong> tab were configured as follows.</p>
+</div>
+<table id="table-mapping-fields-item-sets" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Fields for importing item sets</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add components (IDs, comma-separated)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID and quantity of the items to be added to the set<br>
+Format: <code>itemID:quantity,itemID:quantity</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remove components (IDs, comma-separated)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IDs of the items to be removed from the set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decimal number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discount on total price of set in %</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2310">2.3. Cross-selling</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-cross-selling">Table 4</a> explains the fields that are available for mapping cross-selling items.
+These mapping fields correspond to your possibilities for <a href="/en/item/online-store/cross-selling">generating additional sales with cross-selling</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the item once it’s been imported, then you’ll see that the cross-selling links were configured as follows.</p>
+</div>
+<table id="table-mapping-fields-cross-selling" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Fields for importing cross-selling links</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete all cross selling links</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to <a href="/en/item/online-store/cross-selling#600">delete all of the cross-selling links from the item data record</a>? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the cross-selling links should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add cross-selling links</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to <a href="/en/item/online-store/cross-selling#300">create new cross-selling links</a>? Enter information about the links in this format:
+<code>Item-ID:RelationshipType;Item-ID:RelationshipType;etc.</code></p>
+</div>
+<div class="paragraph">
+<p>Available relationship types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Accessory = Accessory</p>
+</li>
+<li>
+<p>ReplacementPart = Replacement part</p>
+</li>
+<li>
+<p>Similar = Similar</p>
+</li>
+<li>
+<p>Bundle = Item bundle</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete cross selling links</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do you want to <a href="/en/item/online-store/cross-selling#600">delete some of the cross-selling links from the item data record</a>? Enter the cross-selling links that should be deleted in this format:
+<code>ItemID;itemID;etc.</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2270">2.4. Item texts</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-item-description">Table 5</a> explains the fields that are available for mapping item descriptions.
+These mapping fields correspond to the <a href="/en/item/managing-items#50">settings in the item text tab</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter the texts in your CSV file. Create one mapping per language.
+If you open the item once it’s been imported, then you’ll see that these texts were saved for the item.</p>
+</div>
+<table id="table-mapping-fields-item-description" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Fields for importing item descriptions</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name;<br>
+Name 2;<br>
+Name 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a name for the item in your CSV file. Make sure you also select the language within the <strong>Mapping</strong> area.</p>
+<p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#50">Tab: Texts » Option: Name 1, 2, 3</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preview text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a preview text for the item in your CSV file. Make sure you also select the language within the <strong>Mapping</strong> area.</p>
+<p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#50">Tab: Texts » Option: Preview text</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a meta description for the item in your CSV file. Make sure you also select the language within the <strong>Mapping</strong> area.</p>
+<p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#50">Tab: Texts » Option: Meta description</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a text for the item in your CSV file. Make sure you also select the language within the <strong>Mapping</strong> area.</p>
+<p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#50">Tab: Texts » Option: Item text</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technical data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter technical data for the item in your CSV file. Make sure you also select the language within the <strong>Mapping</strong> area.</p>
+<p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#50">Tab: Texts » Option: Technical data</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a URL path for the item in your CSV file. Make sure you also select the language within the <strong>Mapping</strong> area.</p>
+<p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#50">Tab: Texts » Option: URL path</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta keywords</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter meta keywords for the item in your CSV file. Make sure you also select the language within the <strong>Mapping</strong> area.</p>
+<p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#50">Tab: Texts » Option: Meta keywords</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2280">2.5. Shipping profile</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-shipping-profile">Table 6</a> explains the fields that are available for mapping shipping profiles.
+These mapping fields correspond to your possibilities for <a href="/en/item/managing-items#40">linking shipping profiles to items</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the item once it’s been imported, then you’ll see that the shipping profiles were linked as follows.</p>
+</div>
+<table id="table-mapping-fields-shipping-profile" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Matching fields for shipping profiles</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping profile ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the ID of whichever shipping profile should be linked to the item.</p>
+<p class="tableblock">You can look up the shipping profile IDs in the menu <strong>Setup » Orders » Shipping » Settings » Tab: Shipping profiles</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping profiles (separated by commas)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do you want to link more than just one shipping profile? Enter the IDs of all the shipping profiles that should be linked to the item.
+Enter the IDs in this format:
+<code>Profile-ID1,Profile-ID2,…​</code></p>
+<p class="tableblock">You can look up the shipping profile IDs in the menu <strong>Setup » Orders » Shipping » Settings » Tab: Shipping profiles</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete shipping profile links (profile IDs, comma-separated)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do you want to delete some of the links? Enter the IDs of all the shipping profiles that <em>should no longer be linked</em> to the item.
+Enter the IDs in this format:
+<code>Profile-ID1,Profile-ID2,…​</code></p>
+<p class="tableblock">You can look up the shipping profile IDs in the menu <strong>Setup » Orders » Shipping » Settings » Tab: Shipping profiles</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2300">2.6. Item variations</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-variations">Table 7</a> explains the fields that are available for mapping variation data.
+These mapping fields correspond to the information in the <a href="/en/item/introduction/structure#200">lower row of tabs</a> within an item data record.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the settings in the lower row of tabs were configured as follows.</p>
+</div>
+<table id="table-mapping-fields-variations" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Matching fields for variations</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Default value</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the variation ID.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the item ID.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#_carrying_out_basic_settings_for_the_main_variation">Tab: Variation ID » Tab: Settings » Area: Basic settings » Option: Position</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Active</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the checkbox under:<br>
+<a href="/en/item/managing-items#_carrying_out_basic_settings_for_the_main_variation">Tab: Variation ID » Tab: Settings » Area: Availability » Option: Active</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No check mark</p>
+</li>
+<li>
+<p>1 = Check mark</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation no.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#_carrying_out_basic_settings_for_the_main_variation">Tab: Variation ID » Tab: Settings » Area: Basic settings » Option: Variation No.</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#_carrying_out_basic_settings_for_the_main_variation">Tab: Variation ID » Tab: Settings » Area: Basic settings » Option: Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">External variation ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#_carrying_out_basic_settings_for_the_main_variation">Tab: Variation ID » Tab: Settings » Area: Basic settings » Option: External variation ID</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Availability</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the availability symbols 1 through 10 under:<br>
+<a href="/en/item/managing-items#190">Tab: Variation ID » Tab: Settings » Area: Availability » Option: Availability</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Net purchase price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#280">Tab: Variation ID » Tab: Settings » Area: Costs » Option: Net purchase price</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mov. av. purchase price (net)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#280">Tab: Variation ID » Tab: Settings » Area: Costs » Option: Moving average purchase price (net)</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Price calculation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applies a price calculation to whichever prices were saved for the variation. In other words, it corresponds to the <em>third</em> drop-down list under:<br>
+<a href="/en/item/managing-items#240">Tab: Variation ID » Tab: Settings » Area: Sales prices</a></p>
+<p class="tableblock">Data is mapped according to the price calculation ID in the menu <strong>Setup » Item » Calculation » Open price calculation</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stock limit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1<br>
+2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#190">Tab: Variation ID » Tab: Settings » Area: Availability » Option: Limitation</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = None</p>
+</li>
+<li>
+<p>1 = To net stock</p>
+</li>
+<li>
+<p>2 = Do not administer stock for this variation</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visibility of client:&nbsp;Visible automatically if net stock is positive;<br>
+Visibility of client: Invisible automatically if net stock is 0 or negative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the checkbox with the same name under:<br>
+<a href="/en/item/managing-items#230">Tab: Variation ID » Tab: Settings » Area: Availability</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No check mark</p>
+</li>
+<li>
+<p>1 = Check mark</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Availability of online store Available automatically if net stock is positive<br>
+Availability of online store Not available automatically if net stock is 0 or negative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the checkbox with the same name under:<br>
+<a href="/en/item/managing-items#230">Tab: Variation ID » Tab: Settings » Area: Availability</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No check mark</p>
+</li>
+<li>
+<p>1 = Check mark</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visibility of item list: Visible automatically if net stock is positive;<br>
+Visibility of item list: Invisible automatically if net stock is 0 or negative</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the checkbox with the same name under:<br>
+<a href="/en/item/managing-items#230">Tab: Variation ID » Tab: Settings » Area: Availability</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No check mark</p>
+</li>
+<li>
+<p>1 = Check mark</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Main warehouse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#190">Tab: Variation ID » Tab: Settings » Area: Shipping » Option: Main warehouse</a></p>
+<p class="tableblock">Data is mapped according to the warehouse ID in the menu <strong>Setup » Stock » Warehouse » Open warehouse » Settings</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max. order quantity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#230">Tab: Variation ID » Tab: Settings » Area: Availability » Option: Max. order quantity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Min. order quantity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#230">Tab: Variation ID » Tab: Settings » Area: Availability » Option: Min. order quantity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval order quantity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#230">Tab: Variation ID » Tab: Settings » Area: Availability » Option: Interval order quantity</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Available until</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date<br>
+(DD.MM.YYYY)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#230">Tab: Variation ID » Tab: Settings » Area: Availability » Option: Available until</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Release date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date<br>
+(DD.MM.YYYY)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#230">Tab: Variation ID » Tab: Settings » Area: Availability » Option: Release date</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#_carrying_out_basic_settings_for_the_main_variation">Tab: Variation ID » Tab: Settings » Area: Basic settings » Option: Variation name</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gross weight in g;<br>
+Net weight in g</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#270">Tab: Variation ID » Tab: Settings » Area: Dimensions » Option: Gross weight and Net weight</a></p>
+<p class="tableblock">Make sure you enter the <em>weight in grams</em> rather than kilograms.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Width mm;<br>
+Length mm;<br>
+Height mm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#270">Tab: Variation ID » Tab: Settings » Area: Dimensions » Option: Length/Width/Height</a></p>
+<p class="tableblock">Make sure you enter the <em>dimensions in millimetres</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Extra shipping charge 1;<br>
+Extra shipping charge 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#290">Tab: Variation ID » Tab: Settings » Area: Shipping » Option: Extra shipping charge 1 and Extra shipping charge 2</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Units contained</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Packaging unit. Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#270">Tab: Variation ID » Tab: Settings » Area: Dimensions » Option: Units contained</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of packing units</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1<br>
+2<br>
+…​<br>
+20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the <em>first drop-down list</em> under:<br>
+<a href="/en/item/managing-items#290">Tab: Variation ID » Tab: Settings » Area: Shipping » Option: Packing units</a></p>
+<p class="tableblock">Use this mapping field together with <strong>Packing unit type</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Packing unit type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1<br>
+2<br>
+…​<br>
+39</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the <em>second drop-down list</em> under:<br>
+<a href="/en/item/managing-items#290">Tab: Variation ID » Tab: Settings » Area: Shipping » Option: Packing units</a></p>
+</div>
+<div class="paragraph">
+<p>Use this mapping field together with <strong>Number of packing units</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No packaging</p>
+</li>
+<li>
+<p>1 = Bale</p>
+</li>
+<li>
+<p>2 = Dispenser</p>
+</li>
+<li>
+<p>3 = Coil</p>
+</li>
+<li>
+<p>4 = Roll pallet</p>
+</li>
+<li>
+<p>5 = Colli</p>
+</li>
+<li>
+<p>6 = Container</p>
+</li>
+<li>
+<p>7 = Bucket</p>
+</li>
+<li>
+<p>8 = Cask</p>
+</li>
+<li>
+<p>9 = Bottles</p>
+</li>
+<li>
+<p>10 = European flat pallet</p>
+</li>
+<li>
+<p>11 = Structural frame</p>
+</li>
+<li>
+<p>12 = Gas cylinder</p>
+</li>
+<li>
+<p>13 = Pallet cage</p>
+</li>
+<li>
+<p>14 = Hobbock</p>
+</li>
+<li>
+<p>15 = Half pallet</p>
+</li>
+<li>
+<p>16 = Pallet of food items</p>
+</li>
+<li>
+<p>17 = Wooden coaster</p>
+</li>
+<li>
+<p>18 = IBC container</p>
+</li>
+<li>
+<p>19 = Pitcher</p>
+</li>
+<li>
+<p>20 = Wicker bottle</p>
+</li>
+<li>
+<p>21 = Case</p>
+</li>
+<li>
+<p>22 = Canister</p>
+</li>
+<li>
+<p>23 = Customer pallet</p>
+</li>
+<li>
+<p>24 = Cardboard box</p>
+</li>
+<li>
+<p>25 = Composite packaging</p>
+</li>
+<li>
+<p>26 = Package</p>
+</li>
+<li>
+<p>27 = Ring</p>
+</li>
+<li>
+<p>28 = Roll</p>
+</li>
+<li>
+<p>29 = Sack</p>
+</li>
+<li>
+<p>30 = Unit</p>
+</li>
+<li>
+<p>31 = Tank</p>
+</li>
+<li>
+<p>32 = Drum</p>
+</li>
+<li>
+<p>34 = Crate</p>
+</li>
+<li>
+<p>35 = Quarter pallet</p>
+</li>
+<li>
+<p>36 Other pallets</p>
+</li>
+<li>
+<p>37 = Bin</p>
+</li>
+<li>
+<p>38 = One-way pallet</p>
+</li>
+<li>
+<p>39 = Foil bag</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Net transportation costs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#280">Tab: Variation ID » Tab: Settings » Area: Costs » Option: Net transportation costs</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Net storage costs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#280">Tab: Variation ID » Tab: Settings » Area: Costs » Option: Net storage costs</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric
+(Percentage value)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#280">Tab: Variation ID » Tab: Settings » Area: Costs » Option: Customs</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Customs tariff number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#280">Tab: Variation ID » Tab: Settings » Area: Costs » Option: Customs tariff number</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Operating costs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric
+(Percentage value)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- n/a -</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#280">Tab: Variation ID » Tab: Settings » Area: Costs » Option: Operating costs</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VAT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric
+(Percentage value)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#280">Tab: Variation ID » Tab: Settings » Area: Costs » Option: VAT</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bundle type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bundle = Variation is a bundle<br>
+bundle_item = Variation is a bundle component</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visibility of item list: Always invisible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = No<br>
+1 = Yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Show unit price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the checkbox under:<br>
+<a href="/en/item/managing-items#270">Tab: Variation ID » Tab: Settings » Area: Dimensions » Option: Show unit price</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calculate gross weight from bundle components;<br>
+Calculate net weight from bundle components;<br>
+Calculate net purchase price from bundle components;<br>
+Calculate moving average purchase price (net) from bundle components</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the check boxes under:<br>
+<a href="/en/item/managing-items#265">Tab: Variation ID » Tab: Settings » Area: Bundle » Option: Automatically calculate from bundle components</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Note</em></strong>: These check boxes are only visible for <a href="/en/item/use-cases/combining-products">item bundles</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order picking</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">single_picking<br>
+no_single_picking<br>
+exclude_from_picklist</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no_single_picking</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#280">Tab: Variation ID » Tab: Settings » Area: Shipping » Option: Order picking</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>single_picking = Single order picking possible</p>
+</li>
+<li>
+<p>no_single_picking = Single order picking not possible</p>
+</li>
+<li>
+<p>exclude_from_picklist = Exclude from pick list</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete variation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to delete some variations and update others? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the variation should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of the main variation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2320">2.7. Barcodes</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-barcodes">Table 8</a> explains the fields that are available for mapping barcode data.
+These mapping fields correspond to your possibilities for <a href="/en/item/settings/barcodes#300">assigning barcodes to items</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the item once it’s been imported, then you’ll see that the barcodes were linked as follows.</p>
+</div>
+<table id="table-mapping-fields-barcodes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. Fields for importing barcodes</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#280">Tab: Variation ID » Tab: Settings » Area: Barcode » Option: Code</a></p>
+<p class="tableblock">Enter the alpha-numeric code into your CSV file.
+Select the barcode type from the second drop-down list in the <strong>Mapping</strong> area.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete barcode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to delete a barcode from the item data record? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the barcode should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Select the barcode type that should be deleted from the second drop-down list in the <strong>Mapping</strong> area.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2330">2.8. Sales prices</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-prices">Table 9</a> explains the fields that are available for mapping prices.
+These mapping fields correspond to your possibilities for <a href="/en/item/managing-items#240">saving prices for variations</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the prices were saved as follows.</p>
+</div>
+<table id="table-mapping-fields-prices" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Fields for importing variation prices</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#280">Tab: Variation ID » Tab: Settings » Area: Sales prices » Option: Price</a></p>
+<p class="tableblock">Enter the monetary amount in your CSV file.
+Select the <a href="/en/item/settings/prices">sales price</a> from the second drop-down list in the <strong>Mapping</strong> area.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to delete a price from the item data record? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the price should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Select whichever <a href="/en/item/settings/prices">sales price</a> should be deleted from the second drop-down list in the <strong>Mapping</strong> area.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Net price (Yes/No)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Is the monetary price a net price? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the price will be a net price.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No (it’s a gross price)</p>
+</li>
+<li>
+<p>1 = Yes (it’s a net price)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Select the <a href="/en/item/settings/prices">sales price</a> from the second drop-down list in the <strong>Mapping</strong> area.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2340">2.9. Categories</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-categories">Table 10</a> explains the fields that are available for mapping category data.
+These mapping fields correspond to your possibilities for <a href="/en/item/settings/categories#1300">sorting items into categories</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the categories were linked as follows.</p>
+</div>
+<table id="table-mapping-fields-categories" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 10. Fields for importing categories</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links <em>one</em> category to the variation. Corresponds to the information under:<br>
+<a href="/en/item/managing-items#300">Tab: Variation ID » Tab: Categories » Area: Linked categories » Option: ID</a></p>
+<p class="tableblock">Enter a category ID into the CSV file. You can find the category IDs in the menu <strong>Item » Category</strong> (ID appears when you move your mouse over a category).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#300">Tab: Variation ID » Tab: Categories » Area: Linked categories » Option: Position</a></p>
+<p class="tableblock">Enter the position number in the CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Neckermann.de main category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = No<br>
+1 = Yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links <em>one</em> category to the variation. Corresponds to the information under:<br>
+<a href="/en/item/managing-items#300">Tab: Variation ID » Tab: Categories » Area: Linked categories » Option: Category</a></p>
+<p class="tableblock">Enter the complete category path, separated by semicolons. For example:<br>
+<strong>Shoes;Unisex</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete all category links</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to delete <em>all</em> of the category links from the item data record? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the links should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Note</em></strong>: The categories themselves will not be deleted. The links will simply be removed from the variation.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category IDs (separated by commas)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links <em>multiple</em> categories to the variation. Corresponds to the information under:<br>
+<a href="/en/item/managing-items#300">Tab: Variation ID » Tab: Categories » Area: Linked categories » Option: ID</a></p>
+<p class="tableblock">Enter the category IDs into the CSV file. Separate the IDs with commas. For example:<br>
+<strong>ID1,ID2,ID3,etc</strong></p>
+<p class="tableblock">You can find the category IDs in the menu <strong>Item » Category</strong> (ID appears when you move your mouse over a category).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category names (separated by commas)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links <em>multiple</em> categories to the variation. Corresponds to the information under:<br>
+<a href="/en/item/managing-items#300">Tab: Variation ID » Tab: Categories » Area: Linked categories » Option: Category</a></p>
+<p class="tableblock">Enter the complete category path, separated by semicolons. Separate the category paths with commas. For example:<br>
+<strong>Shoes;Unisex,Shoes;Women,Shoes;Men</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete links (Category IDs, separated by commas)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do you want to delete <em>some</em> of the category links from the item data record?
+Enter the IDs of whichever categories should be deleted into your CSV file.
+Separate the IDs with commas. For example:<br>
+<strong>ID1,ID2,ID3,etc</strong></p>
+<p class="tableblock">You can find the category IDs in the menu <strong>Item » Category</strong> (ID appears when you move your mouse over a category).</p>
+<p class="tableblock"><strong><em>Note</em></strong>: The categories themselves will not be deleted. The links will simply be removed from the variation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete links (Category names, separated by commas)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do you want to delete <em>some</em> of the category links from the item data record?
+Enter the names of whichever categories should be deleted into your CSV file.
+Separate the category paths with commas. For example:<br>
+<strong>Shoes;Unisex,Shoes;Women,Shoes;Men</strong></p>
+<p class="tableblock"><strong><em>Note</em></strong>: The categories themselves will not be deleted. The links will simply be removed from the variation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create not found categories</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to create the category, if this category doesn’t already exist? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the category should be created.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2345">2.10. Default categories</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-default-categories">Table 11</a> explains the fields that are available for mapping default category data.
+These mapping fields correspond to your possibilities for specifying which category is most appropriate.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the standard category was linked as follows.</p>
+</div>
+<table id="table-mapping-fields-default-categories" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 11. Fields for importing default categories</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links the default category to the variation. Corresponds to the information under:<br>
+<a href="/en/item/managing-items#300">Tab: Variation ID » Tab: Categories » Area: Default categories</a></p>
+<p class="tableblock">Enter a category ID into the CSV file. You can find the category IDs in the menu <strong>Item » Category</strong> (ID appears when you move your mouse over a category).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links the default category to the variation. Corresponds to the information under:<br>
+<a href="/en/item/managing-items#300">Tab: Variation ID » Tab: Categories » Area: Default categories</a></p>
+<p class="tableblock">Enter the complete category path, separated by semicolons. For example:<br>
+<strong>Shoes;Unisex</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create not found categories</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to create the default category, if this default category doesn’t already exist? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the default category should be created.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2350">2.11. Stock</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-stock">Table 12</a> lists the fields available for importing stock data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+</div>
+<table id="table-mapping-fields-stock" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 12. Fields for importing stock</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can only be used in combination with quantity and storage location.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quantity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can only be used in combination with warehouse and storage location.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can only be used in combination with warehouse and quantity.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2360">2.12. Client (store)</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-client">Table 13</a> explains the field that is used for mapping the client availability.
+This mapping field corresponds to your possibility to <a href="/en/item/managing-items#_setting_the_availability_for_clients">make the variation available for specific clients</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the client availability was saved as follows.</p>
+</div>
+<table id="table-mapping-fields-client" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 13. Matching fields for importing client availabilities</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Active</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to make the variation available for a specific client (store)? Enter one of the permitted import values into your CSV file.
+Which value you choose determines whether a check mark (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) will be placed next to the client.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Select the store that should be activated from the second drop-down list in the <strong>Mapping</strong> area.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2370">2.13. Markets</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-markets">Table 14</a> explains the field that is used for mapping the marketplace availabilities.
+This mapping field corresponds to your possibility to <a href="/en/item/managing-items#235">make the variation available for specific markets</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the market availabilities were saved as follows.</p>
+</div>
+<table id="table-mapping-fields-markets" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 14. Fields for importing market availabilities</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Active</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to make the variation available for specific markets? Enter one of the permitted import values into your CSV file.
+Which value you choose determines whether the market will be included in the following list:<br>
+<a href="/en/item/managing-items#235">Tab: Variation ID » Tab: Availability » Area: Markets</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Select the market that should be activated from the second drop-down list in the <strong>Mapping</strong> area.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2380">2.14. Attributes</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-attributes">Table 15</a> explains the fields that are available for mapping attribute links.
+These mapping fields correspond to your possibilities for saving attributes for variations.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that it was created with the following attributes.</p>
+</div>
+<table id="table-mapping-fields-attributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 15. Fields for importing attribute links</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute selection combination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Combination of <strong>Attribute name (internal)</strong> and <strong>Attribute value (internal)</strong> in the format<br>
+<code>attributeName:valueName;</code> or `attributeName&lt;&gt;valueName&lt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;`<br>
+Import of more than two attribute links.<br>
+<strong><em>Note:</em></strong> Every attribute selection combination must be unique for each variation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Import of up to two attribute links.<br>
+<strong><em>Tip:</em></strong> If two links exist, the IDs must be in different columns. Create a mapping in the format <code>attributeName:valueName;</code> and an additional mapping in the format `attributeName&lt;&gt;valueName&lt;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;` and assign the separate columns.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Import of up to two attribute links.<br>
+<strong><em>Tip:</em></strong> If two links exist, the names must be in different columns. Create a mapping in the format <code>attributeName:valueName;</code> and an additional mapping in the format `attributeName&lt;&gt;valueName&lt;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;` and assign the separate columns.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Import of up to two attribute links.<br>
+<strong><em>Tip:</em></strong> If two links exist, the names must be in different columns. Create a mapping in the format <code>attributeName:valueName;</code> and an additional mapping in the format `attributeName&lt;&gt;valueName&lt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;` and assign the separate columns.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Import of up to two attribute links.<br>
+<strong><em>Tip:</em></strong> If two links exist, the IDs must be in different columns. Create a mapping in the format <code>attributeName:valueName;</code> and an additional mapping in the format `attributeName&lt;&gt;valueName&lt;</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&gt;` and assign the separate columns.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create not existing values</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2390">2.15. Item images</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-item-images">Table 16</a> explains the fields that are available for mapping item images.
+These mapping fields correspond to your possibilities to <a href="/en/item/managing-items#90">save images for items</a> and for <a href="/en/item/managing-items#_linking_item_images_with_variations">variations</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the item images were saved as follows.</p>
+</div>
+<table id="table-mapping-fields-item-images" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 16. Matching fields for importing item images</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#300">Tab: Images » Option: Position</a></p>
+<p class="tableblock">Enter the position number in the CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the information under:<br>
+<a href="/en/item/managing-items#300">Tab: Images » Click on the image » File name up top</a></p>
+<p class="tableblock">Enter the file name into the CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Base64 data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the information under:<br>
+<a href="/en/item/managing-items#300">Tab: Images » URL</a></p>
+<p class="tableblock">Enter the URL into the CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multi URL (separated by commas)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the information under:<br>
+<a href="/en/item/managing-items#300">Tab: Images » URL</a></p>
+<p class="tableblock">Enter multiple image URLs into the CSV file. Use the following format.<br>
+<code>image1url;positionImage1,image2url;positionImage2</code><br>
+If no position is transferred, the position corresponds to the order of the URLs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete images</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to delete all of the item’s images? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the images should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Note</em></strong>: Images that should not be deleted must be entered as URL in the sync.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to variation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to link the image to the variation? Enter one of the permitted import values into your CSV file.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Deletes an existing link</p>
+</li>
+<li>
+<p>1 = Links the image to the variation</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Availability client (store)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#300">Tab: Images » Option: Availability</a></p>
+<p class="tableblock">Enter the IDs of all the clients that should be activated. Separate the IDs with commas.
+You can find the client IDs in the menu <strong>Setup » Client » Select client » Settings</strong></p>
+<p class="tableblock"><strong>-1</strong> activates all clients</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Availability referrers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#300">Tab: Images » Option: Availability</a></p>
+<p class="tableblock">Enter the IDs of all the referrers that should be activated. Separate the IDs with commas.
+You can find the <a href="/en/data/internal-IDs#90">referrer IDs</a> in the menu <strong>Setup » Orders » Order referrer</strong></p>
+<p class="tableblock"><strong>-1</strong> activates all referrers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Availability listings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#300">Tab: Images » Option: Availability</a></p>
+<p class="tableblock">Enter the IDs of all the listings referrers that should be activated. Separate the IDs with commas.
+You can find the <a href="/en/data/internal-IDs#90">listing referrer IDs</a> in the menu <strong>Setup » Orders » Order referrer</strong></p>
+<p class="tableblock"><strong>-1</strong> activates all listings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#300">Tab: Images » Option: Name</a></p>
+<p class="tableblock">Enter the name of the item image into the CSV file. Use the following format.<br>
+<code>Name1:Language1,Name2:Language2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternative names</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#300">Tab: Images » Option: Alternative text</a></p>
+<p class="tableblock">Enter the alternative text for the item image into the CSV file. Use the following format.<br>
+<code>Name1:Language1:Alternativetext1,Name2:Language2:Alternativetext2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Market attribute link (attribute value ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#300">Tab: Images » Option: Market attribute link</a></p>
+<p class="tableblock">Enter the ID of the attribute value into the CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remove all availabilities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove all of the availabilities? Enter one of the permitted import values into your CSV file.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2400">2.16. Characteristics</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-characteristics">Table 17</a> explains the fields that are available for mapping characteristic links.
+These mapping fields correspond to your possibilities for <a href="/en/item/managing-items#80">linking characteristics to items</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the item once it’s been imported, then you’ll see that the characteristics were linked as follows.</p>
+</div>
+<table id="table-mapping-fields-characteristics" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 17. Fields for importing characteristic links</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links the characteristic to the item. Corresponds to the information under:<br>
+<a href="/en/item/managing-items#80">Tab: Characteristics » Area: Characteristics</a></p>
+<p class="tableblock">Enter a characteristic ID into the CSV file. You can find the characteristic ID in the menu Setup » Item » Characteristics.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic combination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the combination of back end name, value and language into the CSV file. Enter this information in the following format:<br>
+<code>Name1:Value1:Language1;Name2:Value2:Language2</code> etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Internal name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links the characteristic to the item. Corresponds to the information under:<br>
+<a href="/en/item/managing-items#80">Tab: Characteristics » Area: Characteristics</a></p>
+<p class="tableblock">Enter the internal name into the CSV file. You can find the internal name in the menu Setup » Item » Characteristics.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the value of the characteristic under:<br>
+<a href="/en/item/managing-items#80">Tab: Characteristics » Area: Characteristics</a></p>
+<p class="tableblock">Enter the value into the CSV file.
+Depending on the type of characteristic, the value could be e.g. a text or a number.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selection ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only for characteristics of the type <strong>Selection</strong> Links a characteristic’s selection values by their IDs.</p>
+<p class="tableblock">Enter a selection ID into the CSV file. You can find the selection ID in the menu <strong>Setup » Item » Characteristics » Open a characteristic of the type Selection</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Letters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only for characteristics of the type <strong>Text</strong>. Specifies which language the text was written in.</p>
+<p class="tableblock">Enter a <a href="/en/data/internal-IDs#10">language code</a> into the CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete (yes/no)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove the characteristic from the item data record? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the characteristic should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Note</em></strong>: The characteristic itself will not be deleted. The characteristic will simply be removed from the item data record.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2410">2.17. Properties</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-properties">Table 18</a> explains the fields that are available for mapping property links.
+These mapping fields correspond to your possibilities for <a href="/en/item/managing-items#4800">linking properties to variations</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the properties were linked as follows.</p>
+</div>
+<table id="table-mapping-fields-properties" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 18. Fields for importing property links</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links the property with a variation. Corresponds to the information under:<br>
+<a href="/en/item/managing-items#4800">Tab: Variation ID » Tab: Properties or Texts</a></p>
+<p class="tableblock">Enter a property ID into the CSV file. You can find the property IDs in the menu <strong>Setup » Settings » Properties » Configuration</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Letters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only for properties of the type <strong>Text</strong> or <strong>Short text</strong>. Specifies which language the text was written in.</p>
+<p class="tableblock">Enter a <a href="/en/data/internal-IDs#10">language code</a> into the CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the property’s value under:<br>
+<a href="/en/item/managing-items#4800">Tab: Variation ID » Tab: Properties or Texts</a></p>
+<p class="tableblock">Enter the value into the CSV file.
+Depending on the type of property, the value could be e.g. a text or a number.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Internal name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links the property with a variation. Corresponds to the information under:<br>
+<a href="/en/item/managing-items#4800">Tab: Variation ID » Tab: Properties or Texts</a></p>
+<p class="tableblock">Enter the internal name into the CSV file. You can find the internal names in the menu <strong>Setup » Settings » Properties » Configuration</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property combination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the combination of back end name, value and language into the CSV file. Enter this information in the following format:<br>
+<code>Name1:Value1:Language1;Name2:Value2:Language2</code> etc.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property selection combination (names)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only for properties of the type <strong>Selection</strong>. Enter the combination of property name, selection value name and language into the CSV file. Enter this information in the following format:<br>
+<code>PropertyName1:SelectionValueName1:Language1;PropertyName2:SelectionValueName2:Language2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property selection combination (IDs)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only for properties of the type <strong>Selection</strong>. Enter the combination of property ID, selection value ID and language into the CSV file. Enter this information in the following format:<br>
+<code>PropertyID1:SelectionValueID1:Language1;PropertyID2:SelectionValueID2:Language2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selection ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only for properties of the type <strong>Selection</strong>. Links a property’s selection value by its ID. Enter the selection ID into the CSV file.<br></p>
+<p class="tableblock">You can find the selection IDs in the menu <strong>Setup » Settings » Properties » Configuration » Open property » Values</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multi-selection IDs (comma-separated)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only for properties of the type <strong>Multi-selection</strong>. Links a property’s selection values by their IDs. Enter the selection IDs into the CSV file. Separate them with commas.<br></p>
+<p class="tableblock">You can find the selection IDs in the menu <strong>Setup » Settings » Properties » Configuration » Open property » Values</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete (yes/no)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = No<br>
+1 = Yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove the property from the variation data record? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the property should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Note</em></strong>: The property itself will not be deleted. The property will simply be removed from the variation data record.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2290">2.18. Variation tags</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-tags">Table 19</a> explains the fields that are available for mapping tags.
+These mapping fields correspond to your possibilities for <a href="/en/item/managing-items#150">linking tags to variations</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the tags were linked as follows.</p>
+</div>
+<table id="table-mapping-fields-tags" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 19. Fields for importing tag links</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tag ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#150">Tab: Variation ID » Tab: Settings » Area: Tags</a></p>
+<p class="tableblock">Enter a tag ID into the CSV file.
+You can find the tag IDs in the menu <strong>Setup » Settings » Tags » Open tag</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tag name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#150">Tab: Variation ID » Tab: Settings » Area: Tags</a></p>
+<p class="tableblock">Enter a name for the tag in the CSV file.
+You can find the tag names in the menu <strong>Setup » Settings » Tags » Open tag</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tag names<br>
+(separated by commas)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#150">Tab: Variation ID » Tab: Settings » Area: Tags</a></p>
+<p class="tableblock">Enter the names of multiple tags in the CSV file. Use commas to separate the names like so:<br>
+name1,name2,name3…​</p>
+<p class="tableblock">You can find the tag names in the menu <strong>Setup » Settings » Tags » Open tag</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete all tag relationships</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove <em>all of the tags</em> from a variation? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the tag links should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Note</em></strong>: The tags themselves will not be deleted. The tags will simply be removed from the variation.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete the given tag relationships (name, comma-separated)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove <em>some of the tags</em> from a variation?
+Enter the names of the tags that should be removed in the CSV file. Use commas to separate the names like so:<br>
+name1,name2,name3…​</p>
+</div>
+<div class="paragraph">
+<p>You can find the tag names in the menu <strong>Setup » Settings » Tags » Open tag</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Note</em></strong>: The tags themselves will not be deleted. The tags will simply be removed from the variation.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete the given tag relationships (IDs, comma-separated)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove <em>some of the tags</em> from a variation?
+Enter the IDs of the tags that should be removed in the CSV file. Use commas to separate the IDs like so:<br>
+id1,id2,id3…​</p>
+</div>
+<div class="paragraph">
+<p>You can find the tag IDs in the menu <strong>Setup » Settings » Tags » Open tag</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Note</em></strong>: The tags themselves will not be deleted. The tags will simply be removed from the variation.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2420">2.19. Inheritance</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-inheritance">Table 20</a> explains the fields that are available for mapping inheritance.
+These mapping fields correspond to your possibilities for <a href="/en/item/introduction/inheritance">passing data on with the inheritance function</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the inheritance functions were activated or deactivated as follows.</p>
+</div>
+<table id="table-mapping-fields-inheritance" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 20. Fields for importing inheritance</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Should the <a href="/en/item/introduction/inheritance">inheritance function</a> be activated or deactivated under:<br>
+<a href="/en/item/managing-items#300">Tab: Variation ID » Tab: Categories » Area: Linked categories</a></p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines whether the inheritance should be activated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Deactivated</p>
+</li>
+<li>
+<p>1 = Activated</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Markets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Should the <a href="/en/item/introduction/inheritance">inheritance function</a> be activated or deactivated under:<br>
+<a href="/en/item/managing-items#235">Tab: Variation ID » Tab: Availability » Area: Markets</a></p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines whether the inheritance should be activated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Deactivated</p>
+</li>
+<li>
+<p>1 = Activated</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Should the <a href="/en/item/introduction/inheritance">inheritance function</a> be activated or deactivated under:<br>
+<a href="/en/item/managing-items#_setting_the_availability_for_clients">Tab: Variation ID » Tab: Availability » Area: Client (store)</a></p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines whether the inheritance should be activated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Deactivated</p>
+</li>
+<li>
+<p>1 = Activated</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Purchase price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Should the <a href="/en/item/introduction/inheritance">inheritance function</a> be activated or deactivated under:<br>
+<a href="/en/item/managing-items#240">Tab: Variation ID » Tab: Settings » Area: Sales prices</a></p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines whether the inheritance should be activated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Deactivated</p>
+</li>
+<li>
+<p>1 = Activated</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Should the <a href="/en/item/introduction/inheritance">inheritance function</a> be activated or deactivated under:<br>
+<a href="/en/item/managing-items#310">Tab: Variation ID » Tab: Supplier</a></p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines whether the inheritance should be activated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Deactivated</p>
+</li>
+<li>
+<p>1 = Activated</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warehouse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Should the <a href="/en/item/introduction/inheritance">inheritance function</a> be activated or deactivated under:<br>
+<a href="/en/item/managing-items#312">Tab: Variation ID » Tab: Warehouse</a></p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines whether the inheritance should be activated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Deactivated</p>
+</li>
+<li>
+<p>1 = Activated</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Availability</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Should the <a href="/en/item/introduction/inheritance">inheritance function</a> be activated or deactivated under:<br>
+<a href="/en/item/managing-items#240">Tab: Variation ID » Tab: Settings » Area: Availability</a></p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines whether the inheritance should be activated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Deactivated</p>
+</li>
+<li>
+<p>1 = Activated</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Should the <a href="/en/item/introduction/inheritance">inheritance function</a> be activated or deactivated under:<br>
+<a href="/en/item/managing-items#4800">Tab: Variation ID » Tab: Properties</a></p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines whether the inheritance should be activated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Deactivated</p>
+</li>
+<li>
+<p>1 = Activated</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Should the <a href="/en/item/introduction/inheritance">inheritance function</a> be activated or deactivated under:<br>
+<a href="/en/item/managing-items#150">Tab: Variation ID » Tab: Settings » Area: Tags</a></p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines whether the inheritance should be activated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = Deactivated</p>
+</li>
+<li>
+<p>1 = Activated</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2420a">2.20. Content</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-content">Table 21</a> explains the fields that are available for mapping content.
+These mapping fields correspond to your possibilities for specifying the <a href="/en/item/managing-items#270">content and unit of a variation</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the content was saved as follows.</p>
+</div>
+<table id="table-mapping-fields-content" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 21. Fields for importing content</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Default value</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content unit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric
+(internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Piece</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the <em>drop-down list</em> under:<br>
+<a href="/en/item/managing-items#270">Tab: Variation ID » Tab: Settings » Area: Dimensions » Option: Content</a></p>
+<p class="tableblock">Enter the unit’s ID into the CSV file.
+You can find the unit IDs in the menu Setup » Item » Units.</p>
+<p class="tableblock"><strong><em>Note</em></strong>: Use this mapping field in combination with <strong>Content value</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the <em>entry field</em> under:<br>
+<a href="/en/item/managing-items#270">Tab: Variation ID » Tab: Settings » Area: Dimensions » Option: Content</a></p>
+<p class="tableblock">Enter the numerical content into the CSV file.</p>
+<p class="tableblock"><strong><em>Note</em></strong>: Use this mapping field in combination with <strong>Content unit</strong> or <em>Content measuring unit (ISO)</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content Units of measure (ISO)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric ISO code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Piece</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the <em>drop-down list</em> under:<br>
+<a href="/en/item/managing-items#270">Tab: Variation ID » Tab: Settings » Area: Dimensions » Option: Content</a></p>
+<p class="tableblock">Enter the unit’s ISO code into the CSV file.
+You can find the ISO codes in the menu Setup » Item » Units.</p>
+<p class="tableblock"><strong><em>Note</em></strong>: Use this mapping field in combination with <strong>Content value</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2430">2.21. ASIN/ePID</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-ASIN-ePID">Table 22</a> explains the fields that are available for mapping ASIN/ePIDs.
+These mapping fields correspond to your possibilities for <a href="/en/item/managing-items#260">saving ASIN/ePIDs for variations</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the settings were saved as follows under <strong>Tab: Settings » Area: ASIN/ePID</strong>.</p>
+</div>
+<table id="table-mapping-fields-ASIN-ePID" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 22. Fields for importing ASIN/ePID</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the <em>first</em> drop-down list under:<br>
+<a href="/en/item/managing-items#260">Tab: Variation ID » Tab: Settings » Area: ASIN/ePID</a></p>
+<p class="tableblock">In other words: Corresponds to the <em>country platform</em>, e.g. Amazon Germany, eBay France, eBay UK, etc.</p>
+<p class="tableblock">Enter the country ID in your CSV file. You can find the country IDs in the menu <strong>Setup » Orders » Shipping » Settings » Tab: Countries of delivery</strong>.</p>
+<p class="tableblock">You can also find a <a href="/en/data/internal-IDs#20">list of IDs in the online manual</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ASIN<br>
+ePID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the <em>second</em> drop-down list under:<br>
+<a href="/en/item/managing-items#260">Tab: Variation ID » Tab: Settings » Area: ASIN/ePID</a></p>
+<p class="tableblock">Enter one of the permitted import values into your CSV file.
+Which value you choose determines whether you are working with an ASIN or an ePID.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#260">Tab: Variation ID » Tab: Settings » Area: ASIN/ePID</a></p>
+<p class="tableblock">Enter the ASIN or ePID in your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete (IDs, comma-separated)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove some of the ASINs or ePIDs from a variation?
+Enter the IDs of the ASINs or ePIDs that should be removed in the CSV file. Use commas to separate the IDs like so:<br>
+ASIN-ID1,ASIN-ID2,ASIN-ID3 etc.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2440">2.22. Warehouse</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-warehouse">Table 23</a> explains the fields that are available for mapping warehouse data.
+These mapping fields correspond to your possibilities for specifying <a href="/en/item/managing-items#312">where a specific variation is stored</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the settings in the <strong>Warehouse</strong> tab were saved as follows.</p>
+</div>
+<table id="table-mapping-fields-warehouse" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 23. Fields for importing warehouse data</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#312">Tab: Variation ID » Tab: Warehouse » Column: Zone</a></p>
+<p class="tableblock">Select the appropriate warehouse from the second drop-down list in the <strong>Mapping</strong> area.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage location type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">none<br>
+small<br>
+medium<br>
+large<br>
+europallet</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#312">Tab: Variation ID » Tab: Warehouse » Column: Storage location type</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>none = No type selected</p>
+</li>
+<li>
+<p>small = Small</p>
+</li>
+<li>
+<p>medium = Medium</p>
+</li>
+<li>
+<p>large = Large</p>
+</li>
+<li>
+<p>europallet = Euro pallet</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Select the appropriate warehouse from the second drop-down list in the <strong>Mapping</strong> area.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reorder level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#312">Tab: Variation ID » Tab: Warehouse » Column: Reorder level</a></p>
+<p class="tableblock">Select the appropriate warehouse from the second drop-down list in the <strong>Mapping</strong> area.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum stock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#312">Tab: Variation ID » Tab: Warehouse » Column: Maximum stock</a></p>
+<p class="tableblock">Select the appropriate warehouse from the second drop-down list in the <strong>Mapping</strong> area.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stock turnover (in days)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#312">Tab: Variation ID » Tab: Warehouse » Column: Stock turnover (in days)</a></p>
+<p class="tableblock">Select the appropriate warehouse from the second drop-down list in the <strong>Mapping</strong> area.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the drop-down list under:<br>
+<a href="/en/item/managing-items#312">Tab: Variation ID » Tab: Warehouse » Column: Suggested storage location</a></p>
+<p class="tableblock">Data is mapped according to the storage location ID in the menu <strong>Setup » Stock » Warehouse » Open warehouse » Storage locations</strong>.</p>
+<p class="tableblock">Select the appropriate warehouse from the second drop-down list in the <strong>Mapping</strong> area.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stock buffer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#312">Tab: Variation ID » Tab: Warehouse » Column: Stock buffer</a></p>
+<p class="tableblock">Select the appropriate warehouse from the second drop-down list in the <strong>Mapping</strong> area.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Batch (yes/no)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the checkbox under:<br>
+<a href="/en/item/managing-items#312">Tab: Variation ID » Tab: Warehouse » Column: Charge</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No check mark</p>
+</li>
+<li>
+<p>1 = Check mark</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Select the appropriate warehouse from the second drop-down list in the <strong>Mapping</strong> area.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Best before date (yes/no)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the checkbox under:<br>
+<a href="/en/item/managing-items#312">Tab: Variation ID » Tab: Warehouse » Column: MHD</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No check mark</p>
+</li>
+<li>
+<p>1 = Check mark</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Select the appropriate warehouse from the second drop-down list in the <strong>Mapping</strong> area.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete warehouse link</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove the warehouse from a variation? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the warehouse should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Select the appropriate warehouse from the second drop-down list in the <strong>Mapping</strong> area.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Note</em></strong>: The warehouse itself will not be deleted. The warehouse will simply be removed from the variation.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2450">2.23. Supplier</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-supplier">Table 24</a> explains the fields that are available for mapping supplier data.
+These mapping fields correspond to your possibilities for <a href="/en/item/managing-items#312">adding suppliers to variations</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the settings in the <strong>Supplier</strong> tab were saved as follows.</p>
+</div>
+<table id="table-mapping-fields-supplier" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 24. Fields for importing supplier data</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplier link ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the link between variation and supplier<br>
+This ID is automatically generated by plentymarkets. The ID is <em>not</em> visible in your plentymarkets system. Rather, the ID is only saved in the background. If you want to see the ID anyway, then you’ll need to export this information from your plentymarkets system. You can do this with the export format <a href="/en/data/exporting-data/FormatDesigner#385">VariationSupplier in FormatDesigner</a>.<br>
+The mapping field <strong>Supplier link ID</strong> may or may not be a required value. It <a href="/en/data/importing-data/sync-types/elasticSync-item#1930">depends on what exactly you want to do</a>. For example, you need this field if you want to create suppliers while you import items.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Purchase price in system currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decimal number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#310">Tab: Variation ID » Tab: Supplier » Column: Purchase price in system currency</a></p>
+<p class="tableblock">Enter the number in your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum purchase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#310">Tab: Variation ID » Tab: Supplier » Column: Minimum purchase</a></p>
+<p class="tableblock">Enter the quantity in your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplier item No.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#310">Tab: Variation ID » Tab: Supplier » Column: Supplier item No.</a></p>
+<p class="tableblock">Enter the external item number into your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Last price query</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date<br>
+(Y-m-d H:i:s)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#310">Tab: Variation ID » Tab: Supplier » Column: Last price query</a></p>
+<p class="tableblock">Enter the date of the last price negotiation into your CSV file.</p>
+<p class="tableblock"><strong><em>Note</em></strong>: Enter the date in this format:<br>
+<code>2020-04-24 00:00:00</code><br>
+If you would prefer to use a different date format, then <a href="/en/data/importing-data/ElasticSync#1300">specify this format in the import options</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delivery time in days</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#310">Tab: Variation ID » Tab: Supplier » Column: Delivery time in days</a></p>
+<p class="tableblock">Enter the number of days into your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#310">Tab: Variation ID » Tab: Supplier » Column: Discount</a></p>
+<p class="tableblock">Enter the discount percentage into your CSV file.</p>
+<p class="tableblock"><strong><em>Note</em></strong>: The discount will only be applied to reorders if the discountable option was also activated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discountable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Corresponds to the checkbox under:<br>
+<a href="/en/item/managing-items#310">Tab: Variation ID » Tab: Supplier » Column: Discountable</a></p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines whether the check mark will be placed.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No check mark</p>
+</li>
+<li>
+<p>1 = Check mark</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Packaging unit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#310">Tab: Variation ID » Tab: Supplier » Column: Packaging unit</a></p>
+<p class="tableblock">Enter the numerical value into your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Purchase price in account currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decimal number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#310">Tab: Variation ID » Tab: Supplier » Column: Purchase price from account</a></p>
+<p class="tableblock">Enter the number in your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplier item name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the entry field under:<br>
+<a href="/en/item/managing-items#310">Tab: Variation ID » Tab: Supplier » Column: Supplier item name</a></p>
+<p class="tableblock">Enter the external name into your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplier ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the supplier’s contact ID as listed in the menu <strong>CRM » Contacts</strong>.</p>
+<p class="tableblock"><strong><em>Tip</em></strong>: Set the <strong>Type</strong> filter to <strong>Supplier</strong> to only show contacts of the type <strong>Supplier</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Supplier name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the supplier’s name as listed in the menu <strong>CRM » Contacts</strong>.</p>
+<p class="tableblock"><strong><em>Tip</em></strong>: Set the <strong>Type</strong> filter to <strong>Supplier</strong> to only show contacts of the type <strong>Supplier</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete supplier link</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove the link between the supplier and the variation? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the link should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2460">2.24. SKU</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-SKU">Table 25</a> explains the fields that are available for mapping SKUs.
+These mapping fields correspond to your possibilities for <a href="/en/item/managing-items#235">saving SKUs for variations</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the settings were saved as follows under <strong>Tab: Availability » Area: SKU</strong>.</p>
+</div>
+<table id="table-mapping-fields-SKU" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 25. Fields for importing SKU</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Market ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the field under:<br>
+<a href="/en/item/managing-items#235">Tab: Variation ID » Tab: Availability » Area: SKU » Option: Referrer</a></p>
+<p class="tableblock">Data is mapped according to the order referrer ID in the menu <strong>Setup » Orders » Order referrer</strong>.</p>
+<p class="tableblock">You can also find a <a href="/en/data/internal-IDs#90">list of IDs in the online manual</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Account ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the field under:<br>
+<a href="/en/item/managing-items#235">Tab: Variation ID » Tab: Availability » Area: SKU » Option: Account</a></p>
+<p class="tableblock">Data is mapped according to the marketplace account ID.<br>
+For Amazon, see <strong>Setup » Markets » Amazon » Settings</strong><br>
+For eBay, see <strong>Setup » Markets » eBay » Settings » Account settings</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SKU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the field under:<br>
+<a href="/en/item/managing-items#235">Tab: Variation ID » Tab: Availability » Area: SKU » Option: SKU</a></p>
+<p class="tableblock">Enter the SKU in your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parent SKU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the field under:<br>
+<a href="/en/item/managing-items#235">Tab: Variation ID » Tab: Availability » Area: SKU » Option: Parent SKU</a></p>
+<p class="tableblock">Enter the parent SKU in your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete SKU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove the SKU from a variation? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the SKU should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="3000">2.25. Additional SKU</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-additional-SKU">Table 26</a> explains the fields that are available for mapping additional SKUs.
+These mapping fields correspond to your possibilities for <a href="/en/item/managing-items#235">saving additional SKUs for variations</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the settings were saved as follows under <strong>Tab: Availability » Area: Additional SKU</strong>.</p>
+</div>
+<table id="table-mapping-fields-additional-SKU" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 26. Fields for importing additional SKU</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An existing SKU ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Market ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the field under:<br>
+<a href="/en/item/managing-items#235">Tab: Variation ID » Tab: Availability » Area: Additional SKU » Option: Referrer</a></p>
+<p class="tableblock">Data is mapped according to the order referrer ID in the menu <strong>Setup » Orders » Order referrer</strong>.</p>
+<p class="tableblock">You can also find a <a href="/en/data/internal-IDs#90">list of IDs in the online manual</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Account ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the field under:<br>
+<a href="/en/item/managing-items#235">Tab: Variation ID » Tab: Availability » Area: Additional SKU » Option: Account</a></p>
+<p class="tableblock">Data is mapped according to the marketplace account ID.<br>
+For Amazon, see <strong>Setup » Markets » Amazon » Settings</strong><br>
+For eBay, see <strong>Setup » Markets » eBay » Settings » Account settings</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SKU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the field under:<br>
+<a href="/en/item/managing-items#235">Tab: Variation ID » Tab: Availability » Area: Additional SKU » Option: SKU</a></p>
+<p class="tableblock">Enter the SKU in your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Existing SKU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The current value of an SKU</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match by ID or existing SKU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0 = No<br>
+1 = Yes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete additional SKU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove the additional SKU from a variation? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the additional SKU should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="2470">2.26. Bundle</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-bundle">Table 27</a> explains the fields that are available for mapping item bundles.
+These mapping fields correspond to your possibilities for <a href="/en/item/use-cases/combining-products#2000">adding components to a bundle</a> and removing components from a bundle.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the bundle once it’s been imported, then you’ll see that the components were added or removed as follows.</p>
+</div>
+<table id="table-mapping-fields-bundle" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 27. Fields for importing bundles</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item bundle components</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds components to a bundle.
+Enter the variation ID and quantity of the bundle component into your CSV file.
+Use a colon to separate the variation ID and quantity.
+Use a semicolon to separate multiple components. Example:<br>
+<strong>VariationID:Quantity;VariationID:Quantity;etc.</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item bundle components (variation numbers)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adds components to a bundle.
+Enter the variation number and quantity of the bundle component into your CSV file.
+Use a colon to separate the variation number and quantity.
+Use a semicolon to separate multiple components. Example:<br>
+<strong>VariantionNumber:Quantity;VariationNumber:Quantity;etc.</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete bundle components</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alpha-numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deletes components from a bundle.
+Enter the variation ID of whichever bundle component should be deleted into your CSV file.
+Use a semicolon to separate multiple variation IDs. Example:<br>
+<strong>VariationID;VariationID</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete bundle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Deletes <em>all</em> of the components from a bundle. You don’t need to specify the variation IDs of each individual component since all of the components will be deleted at once.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="sync-serial-number">2.27. Serial number</h3>
+<div class="paragraph">
+<p><a href="#table-mapping-fields-serial-number">Table 28</a> explains the fields that are available for mapping serial numbers.
+These mapping fields correspond to your possibilities for <a href="/en/item/use-cases/serial-numbers#100">creating a pool of serial numbers within an item data record</a>.</p>
+</div>
+<div class="paragraph">
+<p>Enter one of the permitted import values into your CSV file. Which value you choose determines how the setting will be configured when it’s imported.</p>
+</div>
+<div class="paragraph">
+<p>In other words: If you open the variation once it’s been imported, then you’ll see that the serial number settings were saved as follows.</p>
+</div>
+<table id="table-mapping-fields-serial-number" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 28. Fields for importing serial numbers</caption>
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mapping field</th>
+<th class="tableblock halign-left valign-top">Permitted import values</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the field under:<br>
+<a href="/en/item/use-cases/serial-numbers#200">Serial number symbol in the upper row (<span class="icon "><i class="psicon-item_serial_number"></i></span>) » Area: Serial numbers » Option: ID</a></p>
+<p class="tableblock">Enter the serial number ID into your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the field under:<br>
+<a href="/en/item/use-cases/serial-numbers#200">Serial number symbol in the upper row (<span class="icon "><i class="psicon-item_serial_number"></i></span>) » Area: Serial numbers » Option: Serial number</a></p>
+<p class="tableblock">Enter the serial number into your CSV file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete Serial number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
+1</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to remove the serial number from a variation? Enter one of the permitted import values into your CSV file. Which value you choose determines whether the serial number should be deleted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>0 = No</p>
+</li>
+<li>
+<p>1 = Yes</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1930">3. Required values for various item sync procedures</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="#table-procedures-item-sync">Table 29</a> gives several different examples of things that can be done with item syncs. The table lists the required values for each scenario.</p>
+</div>
+<table id="table-procedures-item-sync" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 29. Procedures for item syncs</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Procedure</th>
+<th class="tableblock halign-left valign-top">Required values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Item description</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update item description</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Name</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Shipping profile</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update shipping profile</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Shipping profile ID</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Variation tags</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete all tag links</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Delete all linked tags = 1</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete tag</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>One tag:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tag ID<br>
+or</p>
+</li>
+<li>
+<p>Tag name<br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Multiple tags:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Tag names (separated by commas)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Variations</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create variation</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>ID of the default category<br>
+or</p>
+</li>
+<li>
+<p>Name of the default category</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add variation to item</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Content quantity</p>
+</li>
+<li>
+<p>Content unit<br>
+or</p>
+</li>
+<li>
+<p>Content quantity</p>
+</li>
+<li>
+<p>Content Units of measure (ISO)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>and</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Item ID<br>
+or</p>
+</li>
+<li>
+<p>Main variation ID</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For variations with attributes, the following applies in addition:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Attribute selection combination<br>
+or</p>
+</li>
+<li>
+<p>Attribute (name or ID)</p>
+</li>
+<li>
+<p>Value (name or ID)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update content</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Content quantity</p>
+</li>
+<li>
+<p>Content unit<br>
+or</p>
+</li>
+<li>
+<p>Content quantity</p>
+</li>
+<li>
+<p>Content Units of measure (ISO)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Barcodes</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change barcode</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Code via barcode mapping</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Categories</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link category</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Category ID<br>
+or</p>
+</li>
+<li>
+<p>Category name</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> Create additional mappings to import more categories.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update link</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Category ID<br>
+or</p>
+</li>
+<li>
+<p>Category name</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Variation prices</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change price</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Price via sales price mapping</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Default categories</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link default category</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Category ID<br>
+or</p>
+</li>
+<li>
+<p>Category name</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update default category</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Category ID<br>
+or</p>
+</li>
+<li>
+<p>Category name</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Stock</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update stock</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Warehouse</p>
+</li>
+<li>
+<p>Quantity</p>
+</li>
+<li>
+<p>Storage location</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Item images</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete all images before upload</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Delete images = 1</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Save images</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Multi URL<br>
+or</p>
+</li>
+<li>
+<p>URL<br>
+or</p>
+</li>
+<li>
+<p>File name</p>
+</li>
+<li>
+<p>Base64 data</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update images</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Image ID</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link image with variation</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Multi URL<br>
+or</p>
+</li>
+<li>
+<p>URL</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Characteristics</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Save characteristics</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Characteristic combination<br>
+or</p>
+</li>
+<li>
+<p>Internal name</p>
+</li>
+<li>
+<p>Language</p>
+</li>
+<li>
+<p>Value<br>
+or</p>
+</li>
+<li>
+<p>ID</p>
+</li>
+<li>
+<p>Language</p>
+</li>
+<li>
+<p>Value</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update characteristics</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Characteristic combination<br>
+or</p>
+</li>
+<li>
+<p>Internal name</p>
+</li>
+<li>
+<p>Language</p>
+</li>
+<li>
+<p>Value<br>
+or</p>
+</li>
+<li>
+<p>ID</p>
+</li>
+<li>
+<p>Language</p>
+</li>
+<li>
+<p>Value</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Properties</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link a property</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>ID</p>
+</li>
+<li>
+<p>Language</p>
+</li>
+<li>
+<p>Value</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Supplier</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link supplier</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Purchase price</p>
+</li>
+<li>
+<p>Supplier link ID (leave empty for new links)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>and</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Supplier ID<br>
+or</p>
+</li>
+<li>
+<p>Supplier name</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update supplier</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Purchase price</p>
+</li>
+<li>
+<p>Supplier link ID</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>and</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Supplier ID<br>
+or</p>
+</li>
+<li>
+<p>Supplier name</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>SKU</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add SKU</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Market ID</p>
+</li>
+<li>
+<p>SKU</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For eBay/Amazon, the following applies in addition:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Account ID</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update SKU</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Market ID</p>
+</li>
+<li>
+<p>SKU</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For eBay/Amazon, the following applies in addition:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Account ID</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Bundle</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create bundle</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Item bundle components</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete bundle components</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Delete bundle components</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete bundle</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Delete bundle = 1</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
