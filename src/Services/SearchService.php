@@ -88,7 +88,7 @@ class SearchService
                         "match" => [
                             "keywords" => [ "query" => $query, "operator" => $operator ]
                         ]
-                    ]
+                    ],
                     [
                         "match" => [
                             "description" => [ "query" => $query, "operator" => $operator ]
