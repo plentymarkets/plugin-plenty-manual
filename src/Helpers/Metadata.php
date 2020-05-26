@@ -3139,6 +3139,38 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
+										"id" => "8aada4495832e8f51c42d98133ee3618",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/listing",
+										"position" => 140,
+										"urlName" => "listing",
+										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/listing",
+										"level" => 5,
+										"title" => "Listing",
+										"keywords" => "FormatDesigner, Format-Typen, Export, Data, Listing, eBay, Hood, ricardo",
+										"description" => "Mit Formaten des Typs Listing exportierst du Listings.",
+										"navAlias" => "",
+										"linkListInto" => "Willkommen im Themenbereich Listing. Hier findest du folgende Informationen:",
+										"languageID" => "AHTOWEL",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
+										"id" => "a5fc1a63abab499ff59e82516a3aa6bc",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/aktive-listings",
+										"position" => 150,
+										"urlName" => "aktive-listings",
+										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/aktive-listings",
+										"level" => 5,
+										"title" => "Aktive Listings",
+										"keywords" => "FormatDesigner, Format-Typen, Export, Data, Listing, aktives Listing, eBay, Hood, ricardo",
+										"description" => "Mit Formaten des Typs Aktive Listings exportierst du aktive Listings.",
+										"navAlias" => "",
+										"linkListInto" => "Willkommen im Themenbereich Aktive Listings. Hier findest du folgende Informationen:",
+										"languageID" => "EPQCAUC",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
 										"id" => "9817f94d4e899de974d05b255efd3301",
 										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/warenbestand",
 										"position" => 160,
