@@ -62,7 +62,7 @@ class SearchService
                 ],
                 "inner_hits" => [
                     "_source" => [
-                        "includes" => [ "id", "url", "title", "keywords", "content" ]
+                        "includes" => [ "id", "url", "title", "content" ]
                     ],
                     "highlight" => [
                         "pre_tags" => ["<em class=\"search-item-keyword\">"],
@@ -84,6 +84,11 @@ class SearchService
                             "title" => [ "query" => $query, "operator" => $operator ]
                         ]
                     ],
+                    [
+                        "match" => [
+                            "keywords" => [ "query" => $query, "operator" => $operator ]
+                        ]
+                    ]
                     [
                         "match" => [
                             "description" => [ "query" => $query, "operator" => $operator ]
