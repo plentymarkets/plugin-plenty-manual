@@ -6345,7 +6345,7 @@ class Metadata {
 		"url" => "/pos",
 		"level" => 1,
 		"title" => "Kassensystem/POS",
-		"keywords" => "plentymarkets POS, plentyPOS, POS, Kassensystem, plentymarkets Kasse, plentymarkets Kassensystem, plentymarkets App, Gutscheine, Gutscheine Kasse, Click and Collect",
+		"keywords" => "plentymarkets POS, plentyPOS, plenty POS, Kassensystem, plentymarkets Kasse, plentymarkets Kassensystem, plentymarkets App, Gutscheine, Gutscheine Kasse, Click and Collect",
 		"description" => "",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich Kassensystem/POS. Hier findest du folgende Informationen:",
