@@ -5397,7 +5397,7 @@ class Metadata {
 					[
 						"id" => "677ca278fc18abfc88e4a3acd988c413",
 						"path" => "maerkte/amazon/amazon-geschenkservice",
-						"position" => 11,
+						"position" => 30,
 						"urlName" => "amazon-geschenkservice",
 						"url" => "/maerkte/amazon/amazon-geschenkservice-nutzen",
 						"level" => 3,
@@ -5413,7 +5413,7 @@ class Metadata {
 					[
 						"id" => "ff8f0b77951a24f83243cc384826ea22",
 						"path" => "maerkte/amazon/amazon-fba-nutzen",
-						"position" => 12,
+						"position" => 40,
 						"urlName" => "amazon-fba-nutzen",
 						"url" => "/maerkte/amazon/amazon-fba-nutzen",
 						"level" => 3,
@@ -5429,7 +5429,7 @@ class Metadata {
 					[
 						"id" => "b41359ebe8aa8558f38afb44fc6b1fb8",
 						"path" => "maerkte/amazon/amazon-prime-auftraege",
-						"position" => 13,
+						"position" => 40,
 						"urlName" => "amazon-prime-auftraege",
 						"url" => "/maerkte/amazon/amazon-prime-auftraege-bearbeiten",
 						"level" => 3,
@@ -5445,7 +5445,7 @@ class Metadata {
 					[
 						"id" => "60873bf911af5df065d7834098a630a5",
 						"path" => "maerkte/amazon/amazon-business",
-						"position" => 14,
+						"position" => 50,
 						"urlName" => "amazon-business",
 						"url" => "/maerkte/amazon/amazon-business-einrichten",
 						"level" => 3,
@@ -5461,7 +5461,7 @@ class Metadata {
 					[
 						"id" => "100333eefeb711dffc9d7fc482724e81",
 						"path" => "maerkte/amazon/amazon-pay",
-						"position" => 15,
+						"position" => 60,
 						"urlName" => "amazon-pay",
 						"url" => "/maerkte/amazon/amazon-pay-einrichten",
 						"level" => 3,
@@ -5477,7 +5477,7 @@ class Metadata {
 					[
 						"id" => "04623413dfd13d5cd119c31e06753019",
 						"path" => "maerkte/amazon/best-practices-amazon-artikeldatenexport",
-						"position" => 20,
+						"position" => 200,
 						"urlName" => "best-practices-amazon-artikeldatenexport",
 						"url" => "/maerkte/amazon/best-practices-amazon-artikeldatenexport",
 						"level" => 3,
@@ -5493,7 +5493,7 @@ class Metadata {
 					[
 						"id" => "c80f830af1c961bccb7488554b338daa",
 						"path" => "maerkte/amazon/best-practices-amazon-fehler-request-throttled",
-						"position" => 30,
+						"position" => 300,
 						"urlName" => "best-practices-amazon-fehler-request-throttled",
 						"url" => "/maerkte/amazon/best-practices-amazon-fehler-request-throttled",
 						"level" => 3,
@@ -5509,7 +5509,7 @@ class Metadata {
 					[
 						"id" => "47f53a25c8a6c8900853e5d6dbf026a2",
 						"path" => "maerkte/amazon/best-practices-amazon-manuelle-berichtserstellung-fba",
-						"position" => 40,
+						"position" => 400,
 						"urlName" => "best-practices-amazon-manuelle-berichtserstellung-fba",
 						"url" => "/maerkte/amazon/best-practices-amazon-manuelle-berichtserstellung-fba",
 						"level" => 3,
@@ -5525,7 +5525,7 @@ class Metadata {
 					[
 						"id" => "b8b4846d66485e1f50e23403f3358570",
 						"path" => "maerkte/amazon/best-practices-amazon-mfn-auftragsimport",
-						"position" => 50,
+						"position" => 500,
 						"urlName" => "best-practices-amazon-mfn-auftragsimport",
 						"url" => "/maerkte/amazon/best-practices-amazon-mfn-auftragsimport",
 						"level" => 3,
@@ -5541,7 +5541,7 @@ class Metadata {
 					[
 						"id" => "61a1bb520fdab76165cd449c9d440833",
 						"path" => "maerkte/amazon/best-practices-amazon-prime",
-						"position" => 60,
+						"position" => 600,
 						"urlName" => "best-practices-amazon-prime",
 						"url" => "/maerkte/amazon/best-practices-amazon-prime",
 						"level" => 3,
@@ -5557,7 +5557,7 @@ class Metadata {
 					[
 						"id" => "affae991dd10ddfba526f424fd3cb272",
 						"path" => "maerkte/amazon/best-practices-amazon-vcs",
-						"position" => 70,
+						"position" => 700,
 						"urlName" => "best-practices-amazon-vcs",
 						"url" => "/maerkte/amazon/best-practices-amazon-vcs",
 						"level" => 3,
