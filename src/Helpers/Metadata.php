@@ -19391,22 +19391,6 @@ class Metadata {
 				"languageID" => "C3MKLSO",
 				"children" => 				[
 					[
-						"id" => "4301f6fc10d8bc7afe6e33cdef89c702",
-						"path" => "markets/amazon/amazon-pay",
-						"position" => 0,
-						"urlName" => "amazon-pay",
-						"url" => "/en/markets/amazon/amazon-pay",
-						"level" => 3,
-						"title" => "Setting up Amazon Pay",
-						"keywords" => "Amazon Pay, Setting up Amazon Pay, Amazon Pay setup, Set up Amazon Pay, Paying with Amazon, Payment with Amazon, Pay with Amazon",
-						"description" => "Multi-Channel in plentymarkets: Allow customers to pay with Amazon in your online store.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Setting up Amazon Pay. The following information is available:",
-						"languageID" => "5MHIPVQ",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "215868cf8cc6ecee80be030819653545",
 						"path" => "markets/amazon/amazon-setup",
 						"position" => 10,
@@ -19425,7 +19409,7 @@ class Metadata {
 					[
 						"id" => "82acdf5f669773f3ce26afd6292eec5a",
 						"path" => "markets/amazon/amazon-gift-service",
-						"position" => 11,
+						"position" => 30,
 						"urlName" => "amazon-gift-service",
 						"url" => "/en/markets/amazon/amazon-gift-service",
 						"level" => 3,
@@ -19439,25 +19423,9 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "0938f1070d8b4b10d840937876ba838e",
-						"path" => "markets/amazon/amazon-fba",
-						"position" => 12,
-						"urlName" => "amazon-fba",
-						"url" => "/en/markets/amazon/amazon-fba",
-						"level" => 3,
-						"title" => "Using the FBA service by Amazon",
-						"keywords" => "Amazon FBA, FBA, Amazon Multi-Channel, Amazon FBA Multi-Channel, setting up Amazon FBA, FBA setup, set up Amazon FBA, shipping by Amazon, Amazon ships, Fulfillment by Amazon, Fulfilment by Amazon, Amazon Fulfilment, Amazon Fulfillment",
-						"description" => "Multi-Channel in plentymarkets: Amazon ships your items with Amazon FBA.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Using the FBA service by Amazon. The following information is available:",
-						"languageID" => "VKWEAOP",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "c8acd01ee9db746ddbfa601ec4839cb1",
 						"path" => "markets/amazon/amazon-prime-orders",
-						"position" => 13,
+						"position" => 40,
 						"urlName" => "amazon-prime-orders",
 						"url" => "/en/markets/amazon/amazon-prime-orders",
 						"level" => 3,
@@ -19471,9 +19439,25 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "0938f1070d8b4b10d840937876ba838e",
+						"path" => "markets/amazon/amazon-fba",
+						"position" => 40,
+						"urlName" => "amazon-fba",
+						"url" => "/en/markets/amazon/amazon-fba",
+						"level" => 3,
+						"title" => "Using the FBA service by Amazon",
+						"keywords" => "Amazon FBA, FBA, Amazon Multi-Channel, Amazon FBA Multi-Channel, setting up Amazon FBA, FBA setup, set up Amazon FBA, shipping by Amazon, Amazon ships, Fulfillment by Amazon, Fulfilment by Amazon, Amazon Fulfilment, Amazon Fulfillment",
+						"description" => "Multi-Channel in plentymarkets: Amazon ships your items with Amazon FBA.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Using the FBA service by Amazon. The following information is available:",
+						"languageID" => "VKWEAOP",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "77bc52bcf446087d66d5ee73f06a5f91",
 						"path" => "markets/amazon/amazon-business",
-						"position" => 14,
+						"position" => 50,
 						"urlName" => "amazon-business",
 						"url" => "/en/markets/amazon/amazon-business",
 						"level" => 3,
@@ -19487,9 +19471,25 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "4301f6fc10d8bc7afe6e33cdef89c702",
+						"path" => "markets/amazon/amazon-pay",
+						"position" => 60,
+						"urlName" => "amazon-pay",
+						"url" => "/en/markets/amazon/amazon-pay",
+						"level" => 3,
+						"title" => "Setting up Amazon Pay",
+						"keywords" => "Amazon Pay, Setting up Amazon Pay, Amazon Pay setup, Set up Amazon Pay, Paying with Amazon, Payment with Amazon, Pay with Amazon",
+						"description" => "Multi-Channel in plentymarkets: Allow customers to pay with Amazon in your online store.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Setting up Amazon Pay. The following information is available:",
+						"languageID" => "5MHIPVQ",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "e6a4f4e1e1c687ad4745d513c531b63c",
 						"path" => "markets/amazon/best-practices-amazon-item-data-export",
-						"position" => 20,
+						"position" => 200,
 						"urlName" => "best-practices-amazon-item-data-export",
 						"url" => "/en/markets/amazon/best-practices-amazon-item-data-export",
 						"level" => 3,
@@ -19505,7 +19505,7 @@ class Metadata {
 					[
 						"id" => "d5863610f688ffc1b4adbb9cd77c5b5b",
 						"path" => "markets/amazon/best-practices-amazon-error-request-throttled",
-						"position" => 30,
+						"position" => 300,
 						"urlName" => "best-practices-amazon-error-request-throttled",
 						"url" => "/en/markets/amazon/best-practices-amazon-error-request-throttled",
 						"level" => 3,
@@ -19521,7 +19521,7 @@ class Metadata {
 					[
 						"id" => "37cca3327a90833b3af8160a67bbc048",
 						"path" => "markets/amazon/best-practices-amazon-manual-order-generation-fba",
-						"position" => 40,
+						"position" => 400,
 						"urlName" => "best-practices-amazon-manual-order-generation-fba",
 						"url" => "/en/markets/amazon/best-practices-amazon-manual-order-generation-fba",
 						"level" => 3,
@@ -19537,7 +19537,7 @@ class Metadata {
 					[
 						"id" => "f4bc71a8550ed89f281ca5919a94c076",
 						"path" => "markets/amazon/best-practices-amazon-mfn-order-import",
-						"position" => 50,
+						"position" => 500,
 						"urlName" => "best-practices-amazon-mfn-order-import",
 						"url" => "/en/markets/amazon/best-practices-amazon-mfn-order-import",
 						"level" => 3,
@@ -19553,7 +19553,7 @@ class Metadata {
 					[
 						"id" => "d0bf0d6e0eebb5e860b9dda69344ec58",
 						"path" => "markets/amazon/best-practices-amazon-prime",
-						"position" => 60,
+						"position" => 600,
 						"urlName" => "best-practices-amazon-prime",
 						"url" => "/en/markets/amazon/best-practices-amazon-prime",
 						"level" => 3,
@@ -19569,7 +19569,7 @@ class Metadata {
 					[
 						"id" => "ea74551544db9d6198aad54d6fc17069",
 						"path" => "markets/amazon/best-practices-amazon-vcs",
-						"position" => 70,
+						"position" => 700,
 						"urlName" => "best-practices-amazon-vcs",
 						"url" => "/en/markets/amazon/best-practices-amazon-vcs",
 						"level" => 3,
