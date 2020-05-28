@@ -5395,6 +5395,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "074864935bf71955a81d796277f64bac",
+						"path" => "maerkte/amazon/variantendaten_exportieren",
+						"position" => 15,
+						"urlName" => "variantendaten_exportieren",
+						"url" => "/maerkte/amazon/variantendaten-exportieren",
+						"level" => 3,
+						"title" => "Amazon-Variantenexport per Katalog einrichten (BETA)",
+						"keywords" => "Amazon, Artikelexport, Amazon Katalog, Export Amazon, Amazon Export, Artikelexport, Variantenexport, Artikeldatenexport",
+						"description" => "Multi-Channel in plentymarkets: Erstelle einen Katalog für den Export von Variantendaten an den Marktplatz Amazon.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Amazon-Variantenexport per Katalog einrichten (BETA). Hier findest du folgende Informationen:",
+						"languageID" => "EABQJ7Y",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "677ca278fc18abfc88e4a3acd988c413",
 						"path" => "maerkte/amazon/amazon-geschenkservice",
 						"position" => 30,
