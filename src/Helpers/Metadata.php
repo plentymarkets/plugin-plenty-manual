@@ -19439,6 +19439,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "ce09acea10b824f99ff6aabd91997870",
+						"path" => "markets/amazon/variation_export",
+						"position" => 15,
+						"urlName" => "variation_export",
+						"url" => "/en/markets/amazon/variation-data-export",
+						"level" => 3,
+						"title" => "Setting up catalogs for exporting variations to Amazon (BETA)",
+						"keywords" => "Amazon, item export, variation export, Amazon catalog, Amazon catalogue, Export Amazon, Amazon Export, variation export, exporting item data to Amazon, exporting variation data to Amazon",
+						"description" => "Multi-Channel in plentymarkets: Create a catalogue to export variation data to the market Amazon.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Setting up catalogs for exporting variations to Amazon (BETA). The following information is available:",
+						"languageID" => "EABQJ7Y",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "82acdf5f669773f3ce26afd6292eec5a",
 						"path" => "markets/amazon/amazon-gift-service",
 						"position" => 30,
@@ -19455,22 +19471,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "c8acd01ee9db746ddbfa601ec4839cb1",
-						"path" => "markets/amazon/amazon-prime-orders",
-						"position" => 40,
-						"urlName" => "amazon-prime-orders",
-						"url" => "/en/markets/amazon/amazon-prime-orders",
-						"level" => 3,
-						"title" => "Processing Amazon Prime orders",
-						"keywords" => "",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Amazon in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Processing Amazon Prime orders. The following information is available:",
-						"languageID" => "WR1DASF",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "0938f1070d8b4b10d840937876ba838e",
 						"path" => "markets/amazon/amazon-fba",
 						"position" => 40,
@@ -19483,6 +19483,22 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Using the FBA service by Amazon. The following information is available:",
 						"languageID" => "VKWEAOP",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "c8acd01ee9db746ddbfa601ec4839cb1",
+						"path" => "markets/amazon/amazon-prime-orders",
+						"position" => 40,
+						"urlName" => "amazon-prime-orders",
+						"url" => "/en/markets/amazon/amazon-prime-orders",
+						"level" => 3,
+						"title" => "Processing Amazon Prime orders",
+						"keywords" => "",
+						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Amazon in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Processing Amazon Prime orders. The following information is available:",
+						"languageID" => "WR1DASF",
 						"children" => [],
 						"hasChildren" => false
 					],
