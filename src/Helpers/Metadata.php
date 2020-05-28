@@ -3267,7 +3267,7 @@ class Metadata {
 				"url" => "/daten/datenbereinigung",
 				"level" => 2,
 				"title" => "Datenbereinigung",
-				"keywords" => "Bereinigung, Daten-Bereinigung, Datenbereinigung, automatisch löschen, Adressen löschen, ungenutzte Adressen löschen, ungenutzte Kontakte löschen, Aufträge löschen, Historie löschen, IP-Adressen löschen",
+				"keywords" => "Bereinigung, Daten-Bereinigung, Datenbereinigung, automatisch löschen, Adressen löschen, ungenutzte Adressen löschen, ungenutzte Kontakte löschen, Aufträge löschen, Historie löschen, IP-Adressen löschen, Newsletter-Registrierungen löschen, Daten bereinigen, Daten automatisch bereinigen",
 				"description" => "Erfahre, wie du in plentymarkets automatisch Daten bereinigst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Datenbereinigung. Hier findest du folgende Informationen:",
