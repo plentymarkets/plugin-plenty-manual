@@ -17472,7 +17472,7 @@ class Metadata {
 				"url" => "/en/data/data-cleansing",
 				"level" => 2,
 				"title" => "Data cleansing",
-				"keywords" => "Cleanup, cleansing, data cleansing, data purge, automatic deletion, deleting addresses, deleting unused addresses, deleting unused contacts, deleting orders, deleting history, deleting IP addresses",
+				"keywords" => "Cleansing, data cleansing, data purge, data cleanup, automatic deletion, deleting addresses, deleting unused addresses, deleting unused contacts, deleting orders, deleting history, deleting IP addresses, deleting newsletter registrations, clean up data, automatically cleaning up data",
 				"description" => "Learn how to clean up data automatically in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Data cleansing. The following information is available:",
