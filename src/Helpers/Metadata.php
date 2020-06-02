@@ -20279,6 +20279,22 @@ class Metadata {
 				"languageID" => "",
 				"children" => 				[
 					[
+						"id" => "cb6cc217650c6dd9b41ff119c22ec03f",
+						"path" => "app/functions/key-figures",
+						"position" => 10,
+						"urlName" => "key-figures",
+						"url" => "/en/app/functions/key-figures",
+						"level" => 3,
+						"title" => "Key performance indicators",
+						"keywords" => "key figures, key performance indicators, items sold, revenue, display revenue, display first orders, dashboard",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Key performance indicators. The following information is available:",
+						"languageID" => "GQEJK5F",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "c20b6f7c8d94c29482a5d56280555cc2",
 						"path" => "app/functions/item-search",
 						"position" => 20,
@@ -20291,22 +20307,6 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Searching for items, customers and orders. The following information is available:",
 						"languageID" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "cb6cc217650c6dd9b41ff119c22ec03f",
-						"path" => "app/functions/key-figures",
-						"position" => 20,
-						"urlName" => "key-figures",
-						"url" => "/en/app/functions/key-figures",
-						"level" => 3,
-						"title" => "Key performance indicators",
-						"keywords" => "Key figures, app statistics, orders, sold items, show revenue, show new customers, dashboard",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Key performance indicators. The following information is available:",
-						"languageID" => "GQEJK5F",
 						"children" => [],
 						"hasChildren" => false
 					],
