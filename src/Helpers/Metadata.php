@@ -3402,22 +3402,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "530af3506ea5559098e0c97437486f81",
-						"path" => "daten/export-import/daten-importieren",
-						"position" => 20,
-						"urlName" => "daten-importieren",
-						"url" => "/daten/export-import/daten-importieren",
-						"level" => 3,
-						"title" => "Daten über dynamischen Import importieren",
-						"keywords" => "Daten importieren, Datenimport, Synchronisieren, Synchronisation, Datenformat, Datenformate, dynamischer Import, Abgleich, Importoptionen, Zuordnung, Importdaten",
-						"description" => "Erfahre, wie du Datenformate erstellst und den dynamischen Import nutzt.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Daten über dynamischen Import importieren. Hier findest du folgende Informationen:",
-						"languageID" => "XS9XT6R",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "680d3ec3ceed6098984d01f7566ea2ee",
 						"path" => "daten/export-import/datenformate",
 						"position" => 30,
@@ -17603,22 +17587,6 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Exporting data with the dynamic export. The following information is available:",
 						"languageID" => "TL3MS5D",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "3dc54c200de288ce59c50cadf1577e48",
-						"path" => "data/export-import/importing-data",
-						"position" => 20,
-						"urlName" => "importing-data",
-						"url" => "/en/data/export-import/importing-data",
-						"level" => 3,
-						"title" => "Importing data with the dynamic import",
-						"keywords" => "Importing data, import data, data import, synchronise, synchronize, synchronisation, synchronization, data format, data formats, dynamic import, mapping, matching, import option",
-						"description" => "Learn how to create data formats and how to use the dynamic import.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Importing data with the dynamic import. The following information is available:",
-						"languageID" => "XS9XT6R",
 						"children" => [],
 						"hasChildren" => false
 					],
