@@ -2025,7 +2025,7 @@ class Metadata {
 				"url" => "/payment/waehrungen",
 				"level" => 2,
 				"title" => "Währungen verwalten",
-				"keywords" => "Währung, Standard-Währung, Live-Umrechnung, Währungen, Währungseinstellungen, Mandant, Shop, umrechnen, Umrechnung, Verkaufspreis, Zahlung, Auftrag, Systemwährung, System-Währung, Umrechnungsfaktoren, Wechselkurs, Standardwährung, Währungsumrechner, Währungssymbol, Mandant, Währungsanzeige, currency",
+				"keywords" => "Währung, Standard-Währung, Live-Umrechnung, Währungen, Währungseinstellungen, Mandant, Shop, umrechnen, Umrechnung, Verkaufspreis, Zahlung, Auftrag, Systemwährung, System-Währung, Umrechnungsfaktoren, Wechselkurs, Standardwährung, Währungsumrechner, Währungssymbol, Währungsanzeige, currency",
 				"description" => "Payment in plentymarkets: Richte Währungen in deinem plentymarkets System ein und passe die Anzeige der Währung im Webshop an.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Währungen verwalten. Hier findest du folgende Informationen:",
