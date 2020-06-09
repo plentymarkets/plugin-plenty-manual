@@ -499,9 +499,14 @@ The barcodes from the item settings can be selected for this option.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use variation number as SKU</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether the variation number is used as the stock keeping unit.<br>
-<strong>Yes</strong> = The variation number is transferred as the SKU. This setting is not recommended because after a variation was changed and the listing was not updated, no synchronisation will take place.<br>
-<strong>No (recommended)</strong> = The listing ID is transferred with the variation ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Should the variation number be used as the stock keeping unit?<br>
+<strong>No (recommended)</strong> = The listing ID is transferred with the variation ID. The SKU is generated automatically with the following pattern:<br>
+For listings with only one variation:<br>
+Prefix <code>#MLID#</code> + <em>Market-Listing-ID</em> (e.g.: #MLID#123)<br>
+For listings with more than one variation:<br>
+Prefix <code>#MLID#</code> + <em>Market-Listing-ID</em> <code>-</code> <em>AttributeValueSetId</em> (e.g.: #MLID#123-456)<br>
+<strong><em>Tip:</em></strong> The AttributeValueSetId is an ID for an exact combination of attributes and attribute values.<br>
+<strong>Yes</strong> = The variation number is transferred as the SKU. This setting is not recommended because after a variation was changed and the listing was not updated, no synchronisation will take place.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sort eBay variations based on position of item variation</strong></p></td>
@@ -1020,7 +1025,46 @@ If the <strong>Do not retrieve sales</strong> option is selected for the <strong
 <div class="sect2">
 <h3 id="1350">2.9. Defining SKU manually</h3>
 <div class="paragraph">
-<p>Add SKUs manually for specific referrers in the <strong>Item » Edit item »</strong> <em>Open item</em> <strong>» Tab: Variations »</strong> <em>Open variation</em> <strong>» Tab: Settings</strong> menu if needed.</p>
+<p>Whether or not you can manually set an SKU depends on the option you selected for the setting <strong>Use variation number as SKU</strong> in the initial settings of the <strong>Setup » Markets » eBay » Settings » Tab: Initial settings</strong> menu.</p>
+</div>
+<ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
+                                <a class="nav-link active" id="option--strong-no--recommended---strong--tab" data-toggle="tab" href="#option--strong-no--recommended---strong-" role="tab" aria-controls="option--strong-no--recommended---strong-" aria-selected="true">Option <strong>No (recommended)</strong></a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="option--strong-yes--strong--tab" data-toggle="tab" href="#option--strong-yes--strong-" role="tab" aria-controls="option--strong-yes--strong-" aria-selected="false">Option <strong>Yes</strong></a>
+                            </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="option--strong-no--recommended---strong-" role="tabpanel" aria-labelledby="option--strong-no--recommended---strong--tab">
+<div class="paragraph">
+<p>If you selected the option <strong>No (recommended)</strong> for the setting <strong>Use variation number as SKU</strong> in the <strong>Setup » Markets » eBay » Settings » Tab: Initial settings</strong> menu, SKU are generated automatically in the following format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For listings with only one variation:<br>
+Prefix <code>#MLID#</code> + <em>Market-Listing-ID</em> (e.g.: #MLID#123)<br></p>
+</li>
+<li>
+<p>For listings with more than one variation:<br>
+Prefix <code>#MLID#</code> + <em>Market listing ID</em> <code>-</code> <em>AttributeValueSetId</em> (e.g.: #MLID#123-456)</p>
+</li>
+</ul>
+</div>
+</div><div class="tab-pane fade" id="option--strong-yes--strong-" role="tabpanel" aria-labelledby="option--strong-yes--strong--tab">
+<div class="paragraph">
+<p>If you selected the option <strong>Yes</strong> for the setting <strong>Use variation number as SKU</strong>, you can add SKUs manually. To do so, go to <strong>Item » Edit item »</strong> <em>Open item</em> <strong>» Tab: Variations »</strong> <em>Open variation</em> <strong>» Tab: Settings</strong> menu if needed.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Option not recommended!</div>
+<div class="paragraph">
+<p>This option is not recommended because after a variation was changed and the listing was not updated, no synchronisation will take place.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph instruction">
 <p>Adding SKU:</p>
@@ -1038,6 +1082,7 @@ If the <strong>Do not retrieve sales</strong> option is selected for the <strong
 </li>
 </ol>
 </div>
+</div></div>
 </div>
 <div class="sect2">
 <h3 id="1400">2.10. Defining a sales price</h3>
