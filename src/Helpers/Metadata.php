@@ -15215,7 +15215,7 @@ class Metadata {
 						"url" => "/en/stock-management/managing-reorders/working-with-reorders",
 						"level" => 3,
 						"title" => "Working with reorders",
-						"keywords" => "Reorder, reordering, stock, purchase order, redistribution, goods, supplier, creating a reorder, adding order items, booking in items, quantity, quantity suggestion, reorder document, reorder management, sales period, reorder level, net stock, average consumption, stock turnover, replacement, ordered quantity, tags, variation, warehouse, static reorder level, dynamic reorder level, stock overview, delivery period, minimum order quantity, order items, purchase price, incoming items, delivery date, dealer sign, storage location, partial quantities",
+						"keywords" => "Reorder, reordering, stock, purchase order, redistribution, goods, supplier, creating a reorder, adding order items, booking in items, quantity, quantity suggestion, reorder document, reorder management, sales period, reorder level, net stock, average consumption, stock turnover, replacement, ordered quantity, tags, variation, warehouse, static reorder level, dynamic reorder level, stock overview, delivery period, minimum order quantity, order items, purchase price, incoming items, delivery date, dealer sign, storage location, partial quantities, cancel, cancel reorder, cancel partial quantities, supply, cancel quantities",
 						"description" => "Learn how to work with the reorder functionality in plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Working with reorders. The following information is available:",
