@@ -19522,22 +19522,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "0938f1070d8b4b10d840937876ba838e",
-						"path" => "markets/amazon/amazon-fba",
-						"position" => 40,
-						"urlName" => "amazon-fba",
-						"url" => "/en/markets/amazon/amazon-fba",
-						"level" => 3,
-						"title" => "Using the FBA service by Amazon",
-						"keywords" => "Amazon FBA, FBA, Amazon Multi-Channel, Amazon FBA Multi-Channel, setting up Amazon FBA, FBA setup, set up Amazon FBA, shipping by Amazon, Amazon ships, Fulfillment by Amazon, Fulfilment by Amazon, Amazon Fulfilment, Amazon Fulfillment",
-						"description" => "Multi-Channel in plentymarkets: Amazon ships your items with Amazon FBA.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Using the FBA service by Amazon. The following information is available:",
-						"languageID" => "VKWEAOP",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "31e17a1e4b98dcf3af55a321370d47a6",
 						"path" => "markets/amazon/amazon-prime",
 						"position" => 40,
@@ -19580,6 +19564,55 @@ class Metadata {
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Best practice: Amazon Prime. The following information is available:",
 								"languageID" => "HVTSBI0",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
+					],
+					[
+						"id" => "0938f1070d8b4b10d840937876ba838e",
+						"path" => "markets/amazon/amazon-fba",
+						"position" => 45,
+						"urlName" => "amazon-fba",
+						"url" => "/en/markets/amazon/amazon-fba-fulfillment",
+						"level" => 3,
+						"title" => "Amazon FBA",
+						"keywords" => "Amazon FBA, FBA, FBA orders, FBA order",
+						"description" => "Multi-Channel in plentymarkets: Amazon FBA with plentymarkets.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Amazon FBA. The following information is available:",
+						"languageID" => "0JTI1KF",
+						"children" => 						[
+							[
+								"id" => "7e918d5ddf0b7ac011169a525e9f590c",
+								"path" => "markets/amazon/amazon-fba/amazon-fba",
+								"position" => 40,
+								"urlName" => "amazon-fba",
+								"url" => "/en/markets/amazon/amazon-fba",
+								"level" => 4,
+								"title" => "Using the FBA service by Amazon",
+								"keywords" => "Amazon FBA, FBA, Amazon Multi-Channel, Amazon FBA Multi-Channel, setting up Amazon FBA, FBA setup, set up Amazon FBA, shipping by Amazon, Amazon ships, Fulfillment by Amazon, Fulfilment by Amazon, Amazon Fulfilment, Amazon Fulfillment",
+								"description" => "Multi-Channel in plentymarkets: Amazon ships your items with Amazon FBA.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Using the FBA service by Amazon. The following information is available:",
+								"languageID" => "VKWEAOP",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "8905ca0661adc46f325616910c444fbf",
+								"path" => "markets/amazon/amazon-fba/best-practices-amazon-manual-order-generation-fba",
+								"position" => 400,
+								"urlName" => "best-practices-amazon-manual-order-generation-fba",
+								"url" => "/en/markets/amazon/best-practices-amazon-manual-order-generation-fba",
+								"level" => 4,
+								"title" => "Best practice: Manually generating reports for FBA orders and returns",
+								"keywords" => "Amazon, items, export, Amazon reports, order reports",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Best practice: Manually generating reports for FBA orders and returns. The following information is available:",
+								"languageID" => "UKCQIBV",
 								"children" => [],
 								"hasChildren" => false
 							]
@@ -19647,22 +19680,6 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Best practice: Error Request is throttled. The following information is available:",
 						"languageID" => "ASBZ4BY",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "37cca3327a90833b3af8160a67bbc048",
-						"path" => "markets/amazon/best-practices-amazon-manual-order-generation-fba",
-						"position" => 400,
-						"urlName" => "best-practices-amazon-manual-order-generation-fba",
-						"url" => "/en/markets/amazon/best-practices-amazon-manual-order-generation-fba",
-						"level" => 3,
-						"title" => "Best practice: Manually generating reports for FBA orders and returns",
-						"keywords" => "Amazon, items, export, Amazon reports, order reports",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Best practice: Manually generating reports for FBA orders and returns. The following information is available:",
-						"languageID" => "UKCQIBV",
 						"children" => [],
 						"hasChildren" => false
 					],
