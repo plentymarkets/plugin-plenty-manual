@@ -5450,11 +5450,11 @@ class Metadata {
 						"urlName" => "amazon-fulfillment",
 						"url" => "/maerkte/amazon/amazon-fulfillment",
 						"level" => 3,
-						"title" => "Fulfillment für Amazon einrichten",
+						"title" => "Fulfillment einrichten",
 						"keywords" => "Amazon FBA, FBA, FBA-Aufträge, FBA-Auftrag, MFN, Versand von Amazon-Aufträgen, Amazon Versand",
 						"description" => "Multi-Channel in plentymarkets: Bereite deinen Versand für Amazon-Aufträge vor.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Fulfillment für Amazon einrichten. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Fulfillment einrichten. Hier findest du folgende Informationen:",
 						"languageID" => "0JTI1KF",
 						"children" => 						[
 							[
@@ -5555,6 +5555,22 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich FAQ und Lösungen. Hier findest du folgende Informationen:",
 						"languageID" => "MWLVJTE",
 						"children" => 						[
+							[
+								"id" => "f61179541a1cd88eedf8386d97c40b6d",
+								"path" => "maerkte/amazon/faq/faq-sammlung",
+								"position" => 10,
+								"urlName" => "faq-sammlung",
+								"url" => "/maerkte/amazon/faq/faq-sammlung",
+								"level" => 4,
+								"title" => "FAQ-Sammlung",
+								"keywords" => "",
+								"description" => "Multi-Channel in plentymarkets: FAQs zum Thema Amazon.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich FAQ-Sammlung. Hier findest du folgende Informationen:",
+								"languageID" => "8WP3B0P",
+								"children" => [],
+								"hasChildren" => false
+							],
 							[
 								"id" => "88c8e2f450f88c6845732f8738974bd7",
 								"path" => "maerkte/amazon/faq/best-practices-amazon-artikeldatenexport",
