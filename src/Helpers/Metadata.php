@@ -5685,22 +5685,6 @@ class Metadata {
 						"languageID" => "5MHIPVQ",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "affae991dd10ddfba526f424fd3cb272",
-						"path" => "maerkte/amazon/best-practices-amazon-vcs",
-						"position" => 700,
-						"urlName" => "best-practices-amazon-vcs",
-						"url" => "/maerkte/amazon/best-practices-amazon-vcs",
-						"level" => 3,
-						"title" => "Best Practice: Rechnungsservice VCS nutzen",
-						"keywords" => "Amazon, VCS, Rechnungsservice, Rechnung, Umsatzsteuerservice, VCS plentymarkets, VCS Amazon, Amazon-Rechnung, Amazon Rechnung, Amazon Rechnungserstellung",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practice: Rechnungsservice VCS nutzen. Hier findest du folgende Informationen:",
-						"languageID" => "CLPVTBO",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
