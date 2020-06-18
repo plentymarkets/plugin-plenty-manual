@@ -13851,55 +13851,6 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
-				"id" => "ac126ec929c8590363a9bc2b7ca2246d",
-				"path" => "videos/plugins",
-				"position" => 110,
-				"urlName" => "plugins",
-				"url" => "/videos/plugins",
-				"level" => 2,
-				"title" => "Plugins",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Plugins. Hier findest du folgende Informationen:",
-				"languageID" => "GXG1A18",
-				"children" => 				[
-					[
-						"id" => "86c786c57f85625d16eeb93264ac6b1a",
-						"path" => "videos/plugins/marketplace-plugins",
-						"position" => 10,
-						"urlName" => "marketplace-plugins",
-						"url" => "/videos/plugins/marketplace-plugins",
-						"level" => 3,
-						"title" => "System mit Marketplace-Plugins individualisieren",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich System mit Marketplace-Plugins individualisieren. Hier findest du folgende Informationen:",
-						"languageID" => "2GIX5MI",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "22b9b41529504889a3f20e99cf5fb441",
-						"path" => "videos/plugins/container-verknuepfungen",
-						"position" => 20,
-						"urlName" => "container-verknuepfungen",
-						"url" => "/videos/plugins/container-verknuepfungen",
-						"level" => 3,
-						"title" => "Inhalte und Container",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Inhalte und Container. Hier findest du folgende Informationen:",
-						"languageID" => "LPETVJJ",
-						"children" => [],
-						"hasChildren" => false
-					]
-				],
-				"hasChildren" => true
-			],
-			[
 				"id" => "9229d3d9897033bb903f8251dc54ea4f",
 				"path" => "videos/warenwirtschaft",
 				"position" => 120,
@@ -28071,55 +28022,6 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
-					]
-				],
-				"hasChildren" => true
-			],
-			[
-				"id" => "ac126ec929c8590363a9bc2b7ca2246d",
-				"path" => "videos/plugins",
-				"position" => 110,
-				"urlName" => "plugins",
-				"url" => "/en/videos/plugins",
-				"level" => 2,
-				"title" => "Plugins",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Plugins. The following information is available:",
-				"languageID" => "GXG1A18",
-				"children" => 				[
-					[
-						"id" => "86c786c57f85625d16eeb93264ac6b1a",
-						"path" => "videos/plugins/marketplace-plugins",
-						"position" => 10,
-						"urlName" => "marketplace-plugins",
-						"url" => "/en/videos/plugins/marketplace-plugins",
-						"level" => 3,
-						"title" => "Individualise system with plugins",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Individualise system with plugins. The following information is available:",
-						"languageID" => "2GIX5MI",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "f45d5c1fc5ce3df7952673c161024718",
-						"path" => "videos/plugins/container-links",
-						"position" => 20,
-						"urlName" => "container-links",
-						"url" => "/en/videos/plugins/container-links",
-						"level" => 3,
-						"title" => "Content and containers",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Content and containers. The following information is available:",
-						"languageID" => "LPETVJJ",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
