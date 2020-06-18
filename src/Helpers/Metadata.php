@@ -19658,11 +19658,11 @@ class Metadata {
 						"urlName" => "amazon-fulfilment",
 						"url" => "/en/markets/amazon/amazon-fulfilment",
 						"level" => 3,
-						"title" => "Setting up fulfilment for Amazon",
+						"title" => "Setting up fulfilment",
 						"keywords" => "Amazon FBA, FBA, FBA orders, FBA order",
 						"description" => "Multi-Channel in plentymarkets: Amazon FBA with plentymarkets.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Setting up fulfilment for Amazon. The following information is available:",
+						"linkListInto" => "Welcome to the topic Setting up fulfilment. The following information is available:",
 						"languageID" => "0JTI1KF",
 						"children" => 						[
 							[
