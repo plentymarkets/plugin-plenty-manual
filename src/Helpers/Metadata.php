@@ -19710,7 +19710,7 @@ class Metadata {
 								"description" => "Multi-Channel in plentymarkets: Amazon FBA with plentymarkets.",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic FBA vs. MFS. The following information is available:",
-								"languageID" => "0JTI1KF",
+								"languageID" => "QYFYPFT",
 								"children" => [],
 								"hasChildren" => false
 							]
