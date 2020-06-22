@@ -19610,7 +19610,7 @@ class Metadata {
 						"url" => "/en/markets/amazon/preparing-variations",
 						"level" => 3,
 						"title" => "Preparing variations",
-						"keywords" => "",
+						"keywords" => "Amazon, Amazon setup, setting up Amazon, FBA, Amazon FBA, Fulfillment by Amazon, MFN, Amazon MFN, Merchant Fulfillment Network, Prime, SameDay, NextDay, SecondDay, Market, Marketplace, Multi-Channel, Multichannel, Multi-Channel Amazon, Amazon Multi-Channel, Amazon Business, Amazon B2B, Amazon VCS, VCS, VCS Lite, IDU, Invoice Document Uploader, Amazon invoice, VAT calculation service, Amazon Pay, Amazon product type, flat file, flatfile, ASIN, ASIN matching, Amazon platform, amazon.de, MWS authorisation, MWS authentication, credit note import, VCS plentymarkets, VCS Amazon",
 						"description" => "Multi-Channel in plentymarkets: Prepare your variations for the market Amazon.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Preparing variations. The following information is available:",
