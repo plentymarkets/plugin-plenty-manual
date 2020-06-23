@@ -16581,6 +16581,39 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "992ddd4b8df916c4d8a33375159dbb06",
+				"path" => "fulfilment/shipping-service-provider-plugins",
+				"position" => 70,
+				"urlName" => "shipping-service-provider-plugins",
+				"url" => "/en/fulfilment/shipping-service-provider-plugins",
+				"level" => 2,
+				"title" => "Shipping service provider plugins",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Shipping service provider plugins. The following information is available:",
+				"languageID" => "DYT7IN3",
+				"children" => 				[
+					[
+						"id" => "b955754f6b8f82ab3296bacebfecb729",
+						"path" => "fulfilment/shipping-service-provider-plugins/plugin-dhl-retoure-online",
+						"position" => 300,
+						"urlName" => "plugin-dhl-retoure-online",
+						"url" => "/en/fulfilment/shipping-service-provider-plugins/plugin-dhl-retoure-online",
+						"level" => 3,
+						"title" => "DHL Retoure Online",
+						"keywords" => "DHL Retoure Online, DHL Retoure, DHL return, register returns, returns with DHL, register returns with DHL, DHL return plugin, DHL return label, DHL return labels, DHL Retoure Online assistant, return assistant",
+						"description" => "Learn how to set up the “DHL Retoure Online” plugin in plentymarkets.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic DHL Retoure Online. The following information is available:",
+						"languageID" => "QDSZAQP",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
+			],
+			[
 				"id" => "59c423126afe897badebad2d6fd96393",
 				"path" => "fulfilment/practical-examples",
 				"position" => 100,
