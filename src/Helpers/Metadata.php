@@ -15592,7 +15592,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Contacts",
 				"keywords" => "",
-				"description" => "Learn how to manage contacts, addresses and companies in plentymarkets.",
+				"description" => "Learn how to manage contacts, addresses and accounts in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Contacts. The following information is available:",
 				"languageID" => "KO9RPU2",
@@ -19845,6 +19845,22 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic FAQ and solutions. The following information is available:",
 						"languageID" => "MWLVJTE",
 						"children" => 						[
+							[
+								"id" => "9ec57aa2a8707e01c8c2efabb2a02212",
+								"path" => "markets/amazon/faq/faq-collection",
+								"position" => 10,
+								"urlName" => "faq-collection",
+								"url" => "/en/markets/amazon/faq/faq-collection",
+								"level" => 4,
+								"title" => "FAQ collection",
+								"keywords" => "",
+								"description" => "Multi-Channel in plentymarkets: FAQs for Amazon.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic FAQ collection. The following information is available:",
+								"languageID" => "8WP3B0P",
+								"children" => [],
+								"hasChildren" => false
+							],
 							[
 								"id" => "e6e612b35c5c109b09abed4c3af0e93b",
 								"path" => "markets/amazon/faq/best-practices-amazon-item-data-export",
