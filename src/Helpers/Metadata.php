@@ -14030,6 +14030,22 @@ class Metadata {
 		"languageID" => "",
 		"children" => 		[
 			[
+				"id" => "4b6e4d618a9311ca9d5a0294b73a610f",
+				"path" => "changelog/2020-06-17",
+				"position" => 340,
+				"urlName" => "2020-06-17",
+				"url" => "/changelog/2020-06-17",
+				"level" => 2,
+				"title" => "Changelog 17. Juni 2020",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 17. Juni 2020. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "378142a2ce89b805bd6f0cd9acccf2e9",
 				"path" => "changelog/2020-06-10",
 				"position" => 360,
