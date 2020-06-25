@@ -16641,6 +16641,22 @@ class Metadata {
 						"languageID" => "QDSZAQP",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "abaf70c1cc136e86fce301add11411fb",
+						"path" => "fulfilment/shipping-service-provider-plugins/plugin-dpd-shipping-services",
+						"position" => 400,
+						"urlName" => "plugin-dpd-shipping-services",
+						"url" => "/en/fulfilment/shipping-service-provider-plugins/plugin-dpd-shipping-services",
+						"level" => 3,
+						"title" => "DPD Shipping Services",
+						"keywords" => "DPD Shipping Services, DPD Versand Services, DPD plugin, DPD shipping plugin, DPD assistant, DPD assistants",
+						"description" => "Learn how to set up the “DPD Shipping Services” plugin in plentymarkets.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic DPD Shipping Services. The following information is available:",
+						"languageID" => "0I6ONMQ",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
