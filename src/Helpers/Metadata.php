@@ -2191,6 +2191,22 @@ class Metadata {
 						"languageID" => "QDSZAQP",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "463639290340e9002fef6a56f35b4a5f",
+						"path" => "fulfillment/versanddienstleister-plugins/plugin-dpd-versand-services",
+						"position" => 400,
+						"urlName" => "plugin-dpd-versand-services",
+						"url" => "/fulfillment/versanddienstleister-plugins/plugin-dpd-versand-services",
+						"level" => 3,
+						"title" => "DPD Versand-Services",
+						"keywords" => "DPD Versand-Services, DPD Versand Services, DPD Plugin, DPD Versand-Plugin, DPD Versandplugin, DPD Assistent, DPD Assistenten",
+						"description" => "Erfahre, wie du das Plugin \"DPD Versand-Services\" in plentymarkets einrichtest.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich DPD Versand-Services. Hier findest du folgende Informationen:",
+						"languageID" => "0I6ONMQ",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
