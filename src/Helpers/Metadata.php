@@ -16659,6 +16659,38 @@ class Metadata {
 				"languageID" => "DYT7IN3",
 				"children" => 				[
 					[
+						"id" => "b8da1175a8a5a17ba6c9461e9d00941c",
+						"path" => "fulfilment/shipping-service-provider-plugins/plugin-dhl-shipping-versenden",
+						"position" => 100,
+						"urlName" => "plugin-dhl-shipping-versenden",
+						"url" => "/en/fulfilment/shipping-service-provider-plugins/plugin-dhl-shipping-versenden",
+						"level" => 3,
+						"title" => "DHL Shipping (Versenden)",
+						"keywords" => "DHL Shipping, DHL Versenden, DHL Shipping (Versenden), DHL Shipping Versenden, DHL plugin, Plugin DHL, DHL business customer portal, DHL BCP, DHL assistant, DHL Shipping assistant, DHL Versenden assistant",
+						"description" => "Learn how to set up the “DHL Shipping (Versenden)” plugin in plentymarkets.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic DHL Shipping (Versenden). The following information is available:",
+						"languageID" => "X5EPVD8",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "aaee079b4bfb6826f547c099c150b646",
+						"path" => "fulfilment/shipping-service-provider-plugins/plugin-dhl-wunschpaket",
+						"position" => 200,
+						"urlName" => "plugin-dhl-wunschpaket",
+						"url" => "/en/fulfilment/shipping-service-provider-plugins/plugin-dhl-wunschpaket",
+						"level" => 3,
+						"title" => "DHL Wunschpaket",
+						"keywords" => "DHL Wunschpaket, DHL Wunschpaket plugin, Preferred day, preferred location, preferred neighbour, preferred neighbor, Wunschpaket services, Show Wunschpaket in checkout, Wunschpaket services in checkout",
+						"description" => "Learn how to set up the “DHL Wunschpaket” plugin in plentymarkets.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic DHL Wunschpaket. The following information is available:",
+						"languageID" => "DKSJ6HL",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "b955754f6b8f82ab3296bacebfecb729",
 						"path" => "fulfilment/shipping-service-provider-plugins/plugin-dhl-retoure-online",
 						"position" => 300,
