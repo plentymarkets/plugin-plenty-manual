@@ -2177,6 +2177,38 @@ class Metadata {
 				"languageID" => "DYT7IN3",
 				"children" => 				[
 					[
+						"id" => "0d15a49e5e2d7d2c4b26f8f74fdb38d7",
+						"path" => "fulfillment/versanddienstleister-plugins/plugin-dhl-shipping-versenden",
+						"position" => 100,
+						"urlName" => "plugin-dhl-shipping-versenden",
+						"url" => "/fulfillment/versanddienstleister-plugins/plugin-dhl-shipping-versenden",
+						"level" => 3,
+						"title" => "DHL Shipping (Versenden)",
+						"keywords" => "DHL Shipping, DHL Versenden, DHL Shipping (Versenden), DHL Shipping Versenden, DHL Plugin, Plugin DHL, DHL Geschäftskundenportal, DHL GKP, DHL Assistent, DHL Shipping Assistent, DHL Versenden Assistent",
+						"description" => "Erfahre, wie du das Plugin \"DHL Shipping (Versenden)\" in plentymarkets einrichtest.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich DHL Shipping (Versenden). Hier findest du folgende Informationen:",
+						"languageID" => "X5EPVD8",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "ebf837606c514999fcf36932b1a87877",
+						"path" => "fulfillment/versanddienstleister-plugins/plugin-dhl-wunschpaket",
+						"position" => 200,
+						"urlName" => "plugin-dhl-wunschpaket",
+						"url" => "/fulfillment/versanddienstleister-plugins/plugin-dhl-wunschpaket",
+						"level" => 3,
+						"title" => "DHL Wunschpaket",
+						"keywords" => "DHL Wunschpaket, DHL Wunschpaket Plugin, Wunschtag, Wunschort, Wunschnachbar, Wunschpaket-Services, Wunschpaket Services, Wunschpaket im Checkout anzeigen, Wunschpaket im Checkout",
+						"description" => "Erfahre, wie du das Plugin \"DHL Wunschpaket\" in plentymarkets einrichtest.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich DHL Wunschpaket. Hier findest du folgende Informationen:",
+						"languageID" => "DKSJ6HL",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "e9d762e4400a4cd5727dcb381cd1c9b4",
 						"path" => "fulfillment/versanddienstleister-plugins/plugin-dhl-retoure-online",
 						"position" => 300,
