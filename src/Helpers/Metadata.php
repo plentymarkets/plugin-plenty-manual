@@ -5283,6 +5283,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "ac87ac9c2ad617e0b851183493a49be0",
+						"path" => "maerkte/preisportale/awin",
+						"position" => 15,
+						"urlName" => "awin",
+						"url" => "/maerkte/preisportale/awin",
+						"level" => 3,
+						"title" => "AWIN",
+						"keywords" => "Preisvergleich, Preisvergleichsportal, Preisportal, Preissuchmaschine, Preise vergleichen, AWIN Plugin, AWIN.com Plugin, Preisportal Plugin, Preis Plugin, Online-Marketing, Affiliate-Marketing",
+						"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung zu AWIN in deinem plentymarkets System ein.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich AWIN. Hier findest du folgende Informationen:",
+						"languageID" => "Q1P9Y6V",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "5862bbd0209d24aa014067eed668f591",
 						"path" => "maerkte/preisportale/billiger-de",
 						"position" => 20,
