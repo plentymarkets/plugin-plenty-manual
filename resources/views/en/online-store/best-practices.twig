@@ -75,6 +75,23 @@
 <li><a href="#_including_additional_cross_selling_lists"><span>8.3.</span><span> Including additional cross-selling lists</span></a></li>
 </ul>
 </li>
+<li><a href="#vat"><span>9.</span><span> Information on the German VAT reduction (01.07.2020)</span></a>
+<ul class="sectlevel2">
+<li><a href="#_css_adjustments"><span>9.1.</span><span> CSS adjustments</span></a></li>
+<li><a href="#_adjustments_in_the_shopbuilder"><span>9.2.</span><span> Adjustments in the ShopBuilder</span></a>
+<ul class="sectlevel3">
+<li><a href="#_adding_code_widgets"><span>9.2.1.</span><span> Adding code widgets</span></a></li>
+</ul>
+</li>
+<li><a href="#_adjusting_ceres_templates"><span>9.3.</span><span> Adjusting Ceres templates</span></a>
+<ul class="sectlevel3">
+<li><a href="#_adjusting_the_order_history"><span>9.3.1.</span><span> Adjusting the order history</span></a></li>
+<li><a href="#_adjusting_the_default_header"><span>9.3.2.</span><span> Adjusting the default header</span></a></li>
+<li><a href="#_adjust_customised_headers"><span>9.3.3.</span><span> Adjust customised headers</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -1771,6 +1788,314 @@ class MyThemeContext extends SingleItemContext implements ContextInterface
 <hr>
 <div class="paragraph">
 <p>Thanks to Jens Volke for contributing this HowTo. Read the original post in our <a href="https://forum.plentymarkets.com/t/howto-weitere-cross-selling-listen-anzeigen-aehnliche-artikel-zubehoer-ersatzteil/495795" target="_blank" rel="noopener">forum</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1 adoc">
+<h2 id="vat">9. Information on the German VAT reduction (01.07.2020)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On 01 July 2020, the German legal value added tax rate is lowered. This can lead to problematic cases for orders that have been placed prior to 01 July (i.e. for which the former rate is displayed in the online store) but which are shipped after 01 July (and which are therefore subject to the reduced rate). In order to remedy these problem cases, we advise you to remove any exlicit references to the applicable VAT rate from the online store and to also remove any references to net prices displayed in the online store, since these allow for the calculation of the applied rates.<br></p>
+</div>
+<div class="paragraph">
+<p>You can find further information on the legal circumstanes <a href="https://legal.trustedshops.com/blog/2020/06/12/mehrwertsteuersenkung-ab-1.-juli-darauf-muessen-sie-unbedingt-achten?uuid=311ded301b1da873edd8ab27a986bdb5&amp;utm_source=email&amp;utm_medium=newsletter&amp;utm_campaign=country_de&amp;utm_content=26-2020" target="_blank" rel="noopener">in the German blog of Trusted Shops</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.<br></p>
+</div>
+<div class="paragraph">
+<p>If you are currently using your own theme for the online store, it is possible that you need to adjust additional sections in the online store, wherever you display net prices or VAT rates. Unfortunately, we are not able to cover these individual cases in this Best Practice.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You should make the changes detailed below in a copy of your active plugin set. You can then activate the adjusted plugin set copy prior to the date the new rates apply. After you have processed all orders that have been placed prior to 01 July and have been shipped after 01 July, you can switch back to your former plugin set, so that net prices and VAT rates are once more displayed in the online store. You can find further information on working with plugin sets <a href="/en/plugins/installing-added-plugins">on this page</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="_css_adjustments">9.1. CSS adjustments</h3>
+<div class="paragraph">
+<p>In order to remove all referenes to net prices from your online store, you need to modify the CSS. The easiest way to do this is to use the <a href="https://marketplace.plentymarkets.com/plugins/storefront/widgets/cfourcustomcssjs_5143">plugin Custom CSS/JS in the Frontend</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+<div class="paragraph">
+<p>Add this plugin to your plentymarkets system <a href="/en/plugins/adding-plugins-system">as described on this page</a>. Afterwards, you need to <a href="/en/plugins/installing-added-plugins">install the plugin</a>.<br></p>
+</div>
+<div class="paragraph">
+<p>After you’ve installed the plugin, open the plugin settings via the action <strong>Settings</strong> in the line of the Custom CSS plugin. In the tab <strong>Stylesheets</strong>, you will find an input field labeled <strong>CSS</strong>, in which you enter the following code snippet:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">.cmp-totals dl dt:not(.font-weight-bold),
+.cmp-totals dl dd:not(.font-weight-bold),
+.cmp-totals .vatTotals,
+.cmp-totals hr {
+    display: none;
+}
+
+.cmp-totals dl {
+    margin-bottom: 0;
+}
+
+.cmp-totals .vat-change,
+.cmp-totals .totalSum hr {
+    display: block !important;
+}
+
+.cmp-totals .rebate-hint {
+    display: inline-block !important;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Save</strong> your changes.</p>
+</div>
+<div class="paragraph">
+<p>After saving and publishing your plugin set, net prices will no longer be displayed in your online store.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adjustments_in_the_shopbuilder">9.2. Adjustments in the ShopBuilder</h3>
+<div class="paragraph">
+<p>You need to make changes to 3 pages in the ShopBuilder: the basket, the order confirmation, and the checkout. You have to add a code widget to each of these 3 pages.</p>
+</div>
+<div class="sect3">
+<h4 id="_adding_code_widgets">9.2.1. Adding code widgets</h4>
+<div class="paragraph">
+<p>In order to remain legally watertight in the transition period, you need to display a message that informs the customer that all prices are to be understood as including the legal VAT. In order to display the information in other languages you might have enabled for your online store, you can use two entries from the multilingualism menu. Here, we will use the entry <strong>Ceres::Template.itemInclVAT</strong> for B2C customers and <strong>Ceres::Template.itemExclVAT</strong> for B2B customers. That way, B2C customers will see gross prices with the notification that they are to be understood as including VAT; B2B customers will see net prices with the notification that they are to be understood as excluding VAT. Storing a simple message like "incl. legal VAT" and "excl. legal VAT" suffices; you can customise the texts any way you want.</p>
+</div>
+<div class="olist instruction">
+<ol class="instruction">
+<li>
+<p>Open the menu <strong>CMS » Multilingualism</strong>.</p>
+</li>
+<li>
+<p>Expand the <strong>Item</strong> section.</p>
+</li>
+<li>
+<p>Check whether the text in the entries <strong>itemInclVAT</strong> and <strong>itemExclVAT</strong> is what you want to display in the store. Adjust them, if necessary.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Open the ShopBuilder in the <strong>CMS » ShopBuiler</strong> menu. You will now have to add a code widget in your contents for the basket, the order confirmation, and the checkout. Place it below the sums widget. Enter the following code in all 3 of the code widgets:<br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; !$store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemInclVAT") }}&lt;/div&gt;
+&lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; $store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemExclVAT") }}&lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the changes of your ShopBuilder content.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adjusting_ceres_templates">9.3. Adjusting Ceres templates</h3>
+<div class="paragraph">
+<p>There are 2 places in the online store that do not display the VAT information and that cannot be customised with the ShopBuilder: the order history in the My Account area and the basket preview. You can adjust three relatively small sections in the Ceres code to output the information on these pages as well. The adjustments to the code also use the same text from the multilingual entry that you used in the text widgets in the previous step.<br></p>
+</div>
+<div class="paragraph">
+<p>The 3 adjustments are detailed below. Additionally, we opened a pull rewuest on GitHub, in which you can see the changes to the code. You can find the pull request <a href="https://github.com/plentymarkets/plugin-ceres/compare/fix%2Fvat_changes?diff=unified&amp;expand=1">here</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>. Scroll down to find the changes to the files.<br></p>
+</div>
+<div class="sect3">
+<h4 id="_adjusting_the_order_history">9.3.1. Adjusting the order history</h4>
+<div class="paragraph">
+<p>Um den Hinweis zur Mehrwersteuer auch in der Auftragshistorie im Mein Konto-Bereich anzuzeigen, musst du ein Code-Schnipsel in einer Template-Datei einfügen. Gehe dafür wie im Folgenden beschrieben vor:</p>
+</div>
+<div class="paragraph">
+<p>In order to display the VAT information in the order history of the My Account area, you need to add a code snippet in a template file. Follow the steps below:</p>
+</div>
+<div class="olist instruction">
+<ol class="instruction">
+<li>
+<p>Open the <strong>Plugins » Plugin set overview</strong> menu.</p>
+</li>
+<li>
+<p>In the line of your plugin set copy, click on the action <strong>Edit plugin set</strong>.<br>
+→ The plugin set is opened.</p>
+</li>
+<li>
+<p>In the line of the <strong>Ceres</strong> plugin, click on the action <strong>Settings</strong>.<br>
+→ The Ceres settings are opened.</p>
+</li>
+<li>
+<p>Click on the tab <strong>Files</strong> in the navigation tree on the left.<br>
+→ The file structure of the plugin is opened.</p>
+</li>
+<li>
+<p>Click on the folder <strong>resources</strong>.</p>
+</li>
+<li>
+<p>Click on the folder <strong>views</strong>.</p>
+</li>
+<li>
+<p>Click on the folder <strong>Checkout</strong>.</p>
+</li>
+<li>
+<p>Click on the folder <strong>Macros</strong>.</p>
+</li>
+<li>
+<p>Click on the file <strong>OrderTotals.twig</strong>.<br>
+→ The file is opened in the editor.</p>
+</li>
+<li>
+<p>After the <code>&#123;&#37; endif &#37;&#125;</code> element in line 186, add the code below in a new line.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) your changes.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;dt class="w-100 vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; !$store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemInclVAT") }}&lt;/dt&gt;
+            &lt;dt class="w-100 vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; $store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemExclVAT") }}&lt;/dt&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Through these changes, the text you stored in the multilingualism entry <strong>itemInclVAT</strong> is also displayed in the order history.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_adjusting_the_default_header">9.3.2. Adjusting the default header</h4>
+<div class="paragraph">
+<p>For ShopBuilder contents for which you haven’t created your own header, you need to make changes to the default header so that the VAT information is also output in the basket preview. Follow the steps below:</p>
+</div>
+<div class="olist instruction">
+<ol class="instruction">
+<li>
+<p>Open the <strong>Plugins » Plugin set overview</strong> menu.</p>
+</li>
+<li>
+<p>In the line of your plugin set copy, click on the action <strong>Edit plugin set</strong>.<br>
+→ The plugin set is opened.</p>
+</li>
+<li>
+<p>In the line of the <strong>Ceres</strong> plugin, click on the action <strong>Settings</strong>.<br>
+→ The Ceres settings are opened.</p>
+</li>
+<li>
+<p>Click on the tab <strong>Files</strong> in the navigation tree on the left.<br>
+→ The file structure of the plugin is opened.</p>
+</li>
+<li>
+<p>Click on the folder <strong>resources</strong>.</p>
+</li>
+<li>
+<p>Click on the folder <strong>views</strong>.</p>
+</li>
+<li>
+<p>Click on the folder <strong>PageDesign</strong>.</p>
+</li>
+<li>
+<p>Click on the folder <strong>Partials</strong>.</p>
+</li>
+<li>
+<p>Click on the folder <strong>Header</strong>.</p>
+</li>
+<li>
+<p>Click on the file <strong>DefaultHeader.twig</strong>.<br>
+→ The file is opened in the editor.</p>
+</li>
+<li>
+<p>After line 118, add the code below in a new line.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) your changes.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; !$store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemInclVAT") }}&lt;/div&gt;
+                                                        &lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; $store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemExclVAT") }}&lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Through these changes, the text you stored in the multilingualism entry <strong>itemInclVAT</strong> is also displayed in the basket preview of the default header.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_adjust_customised_headers">9.3.3. Adjust customised headers</h4>
+<div class="paragraph">
+<p>For ShopBuilder contents for which you have created your own header, you need to make changes to the top bar widget so that the VAT information is also output in the basket preview. Follow the steps below:</p>
+</div>
+<div class="olist instruction">
+<ol class="instruction">
+<li>
+<p>Open the <strong>Plugins » Plugin set overview</strong> menu.</p>
+</li>
+<li>
+<p>In the line of your plugin set copy, click on the action <strong>Edit plugin set</strong>.<br>
+→ The plugin set is opened.</p>
+</li>
+<li>
+<p>In the line of the <strong>Ceres</strong> plugin, click on the action <strong>Settings</strong>.<br>
+→ The Ceres settings are opened.</p>
+</li>
+<li>
+<p>Click on the tab <strong>Files</strong> in the navigation tree on the left.<br>
+→ The file structure of the plugin is opened.</p>
+</li>
+<li>
+<p>Click on the folder <strong>resources</strong>.</p>
+</li>
+<li>
+<p>Click on the folder <strong>views</strong>.</p>
+</li>
+<li>
+<p>Click on the folder <strong>Widgets</strong>.</p>
+</li>
+<li>
+<p>Click on the folder <strong>Header</strong>.</p>
+</li>
+<li>
+<p>Click on the file <strong>TopBarWidget.twig</strong>.<br>
+→ The file is opened in the editor.</p>
+</li>
+<li>
+<p>After line 210, add the code below in a new line.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) your changes.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; !$store.state.basket.showNetPrices"&gt;{{ Twig.print('trans("Ceres::Template.itemInclVAT")') }}&lt;/div&gt;
+                                            &lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; $store.state.basket.showNetPrices"&gt;{{ Twig.print('trans("Ceres::Template.itemExclVAT")') }}&lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Through these changes, the text you stored in the multilingualism entry <strong>itemInclVAT</strong> is also displayed in the basket preview of the headers you created via the ShopBuilder.</p>
+</div>
+<div class="paragraph">
+<p>As an alternative, it is also possible to deactivate the basket preview via the widget settings of the top bar widget, thereby eliminating the need for this last adjustment.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong>Repairing</strong> or updating the Ceres plugin reverts the changes you made to the Ceres plugin.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 </div>
 </div>
 </div>
