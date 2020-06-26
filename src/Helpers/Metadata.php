@@ -5299,6 +5299,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "663f20820fc0a054d19d3ff152c88636",
+						"path" => "maerkte/preisportale/beezup",
+						"position" => 17,
+						"urlName" => "beezup",
+						"url" => "/maerkte/preisportale/beezup",
+						"level" => 3,
+						"title" => "BeezUP",
+						"keywords" => "Preisvergleich, Preisvergleichsportal, Preisportal, Preissuchmaschine, Preise vergleichen, BeezUP Plugin, BeezUP-Plugin, Preisportal Plugin, Preis Plugin, Affiliate-Marketing",
+						"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung zu AWIN in deinem plentymarkets System ein.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich BeezUP. Hier findest du folgende Informationen:",
+						"languageID" => "GITBT4C",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "5862bbd0209d24aa014067eed668f591",
 						"path" => "maerkte/preisportale/billiger-de",
 						"position" => 20,
