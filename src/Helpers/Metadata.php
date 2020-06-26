@@ -19604,6 +19604,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "9895bfa73eafcb5d6f6bc52914ed1901",
+						"path" => "markets/price-search-engines/awin",
+						"position" => 15,
+						"urlName" => "awin",
+						"url" => "/en/markets/price-search-engines/awin",
+						"level" => 3,
+						"title" => "Awin.com",
+						"keywords" => "",
+						"description" => "Multi-Channel in plentymarkets: Set up the item data export to AWIN in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Awin.com. The following information is available:",
+						"languageID" => "Q1P9Y6V",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "03ef72793c4bebb602f0da2307fe915f",
 						"path" => "markets/price-search-engines/billiger-de",
 						"position" => 20,
