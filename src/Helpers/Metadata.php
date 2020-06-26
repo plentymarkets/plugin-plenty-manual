@@ -19636,6 +19636,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "36dda7f299802aa3fb847b7299067464",
+						"path" => "markets/price-search-engines/beezup",
+						"position" => 17,
+						"urlName" => "beezup",
+						"url" => "/en/markets/price-search-engines/beezup",
+						"level" => 3,
+						"title" => "BeezUP",
+						"keywords" => "",
+						"description" => "Multi-Channel in plentymarkets: Set up the item data export to AWIN in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic BeezUP. The following information is available:",
+						"languageID" => "GITBT4C",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "03ef72793c4bebb602f0da2307fe915f",
 						"path" => "markets/price-search-engines/billiger-de",
 						"position" => 20,
