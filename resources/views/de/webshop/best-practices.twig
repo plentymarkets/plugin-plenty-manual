@@ -93,7 +93,7 @@
 <ul class="sectlevel3">
 <li><a href="#_auftragshistorie_anpassen"><span>10.3.1.</span><span> Auftragshistorie anpassen</span></a></li>
 <li><a href="#_standard_header_anpassen"><span>10.3.2.</span><span> Standard-Header anpassen</span></a></li>
-<li><a href="#_eigenen_header_anpassen"><span>10.3.3.</span><span> Eigenen Header anpassen</span></a></li>
+<li><a href="#_eigenen_shopbuilder_header_anpassen"><span>10.3.3.</span><span> Eigenen ShopBuilder-Header anpassen</span></a></li>
 </ul>
 </li>
 </ul>
@@ -1913,13 +1913,13 @@ Binde nun darüber den folgenden Code ein:</p>
 <h2 id="vat">10. Hinweise zur Senkung der Mehrwertsteuer (01.07.2020)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Zum 01.07.2020 wird der gesetzliche Mehrwertsteuersatz gesenkt. Hierbei kann es zu Problemfällen kommen, wenn Bestellungen vor dem 01.07. getätigt werden (bei denen also der vorherige Satz greift und im Webshop angezeigt wurde), aber erst nach dem 01.07. versendet werden (und demnach unter den gesenkten Satz fallen müssten). Um diesen Problemfällen entgegenzuwirken, empfehlen wir, einerseits sämtliche explizite Verweise auf den anzuwendenden Mehrwertsteuersatz aus dem Webshop zu entfernen und andererseits auch alle Auflistungen von Nettopreisen zu entfernen, da diese als Berechnungsgrundlage für die zugrundeliegenden Steuersätze genutzt werden können.<br></p>
+<p>Zum 01.07.2020 wird der gesetzliche Mehrwertsteuersatz gesenkt. Hierbei kann es zu Problemfällen kommen, wenn Bestellungen vor dem 01.07. getätigt werden (bei denen also der vorherige Satz greift und im Webshop angezeigt wurde), aber erst nach dem 01.07. versendet werden (und demnach unter den gesenkten Satz fallen müssten). Um diesen Problemfällen entgegenzuwirken, empfehlen wir, einerseits sämtliche explizite Verweise auf den anzuwendenden Mehrwertsteuersatz aus dem Webshop zu entfernen und andererseits auch alle Auflistungen von Nettopreisen (für B2C-Verkäufe), bzw. Bruttopreisen (für B2B-Verkäufe) zu entfernen, da diese als Berechnungsgrundlage für die zugrundeliegenden Steuersätze genutzt werden können.<br></p>
 </div>
 <div class="paragraph">
 <p>Weitere Informationen zur Rechtsgrundlage findet ihr <a href="https://legal.trustedshops.com/blog/2020/06/12/mehrwertsteuersenkung-ab-1.-juli-darauf-muessen-sie-unbedingt-achten?uuid=311ded301b1da873edd8ab27a986bdb5&amp;utm_source=email&amp;utm_medium=newsletter&amp;utm_campaign=country_de&amp;utm_content=26-2020" target="_blank" rel="noopener">im Blog von Trusted Shops</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.<br></p>
 </div>
 <div class="paragraph">
-<p>Wenn du ein eigenes Theme im Einsatz hast, ist es möglich, dass du weitere Stellen im Webshop anpassen musst, an denen Nettopreise oder Mehrwertsteuersätze ausgegeben werden. Diese individuellen Fälle können wir in diesem Best Practice nicht abbilden.</p>
+<p>Wenn du ein eigenes Theme im Einsatz hast, ist es möglich, dass du weitere Stellen im Webshop anpassen musst, an denen Preise oder Mehrwertsteuersätze ausgegeben werden. Diese individuellen Fälle können wir in diesem Best Practice nicht abbilden.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1929,7 +1929,7 @@ Binde nun darüber den folgenden Code ein:</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Du solltest die folgenden Anpassungen in einer Kopie deines aktiven Plugin-Sets durchführen. Du kannst die angepasste Plugin-Set-Kopie dann vor dem Stichtag aktivieren und später, nachdem alle Bestellungen bearbeitet wurden, die vor dem Stichtag getätigt, aber erst nach dem Stichtag versendet wurden, auf dein altes Plugin-Set wechseln, damit Nettopreise und explizite Mehrwertsteuersätze wieder im Webshop angezeigt werden. Weitere Informationen zur Arbeit mit Plugin-Sets <a href="/plugins/hinzugefuegte-plugins-installieren">findest du hier</a>.</p>
+<p>Du solltest die folgenden Anpassungen in einer Kopie deines aktiven Plugin-Sets durchführen. Du kannst die angepasste Plugin-Set-Kopie dann vor dem Stichtag aktivieren und später, nachdem alle Bestellungen bearbeitet wurden, die vor dem Stichtag getätigt, aber erst nach dem Stichtag versendet wurden, auf dein altes Plugin-Set wechseln, damit Preise und explizite Mehrwertsteuersätze wieder wie vorher im Webshop angezeigt werden. Weitere Informationen zur Arbeit mit Plugin-Sets <a href="/plugins/hinzugefuegte-plugins-installieren">findest du hier</a>.</p>
 </div>
 </td>
 </tr>
@@ -1977,12 +1977,12 @@ Nach dem erneuten Bereitstellen deines Plugin-Sets werden keine Nettopreise mehr
 <div class="sect2">
 <h3 id="_anpassungen_im_shopbuilder">10.2. Anpassungen im ShopBuilder</h3>
 <div class="paragraph">
-<p>Im ShopBuilder musst du 3 Seiten anpassen: den Warenkorb, die Bestellbestätigung und den Checkout. Auf diesen Seiten musst du jeweils ein Code-Widget einfügen.</p>
+<p>Im ShopBuilder musst du 2 Seiten anpassen: den Warenkorb und den Checkout. Auf diesen Seiten musst du jeweils ein Code-Widget einfügen.</p>
 </div>
 <div class="sect3">
 <h4 id="_code_widgets_platzieren">10.2.1. Code-Widgets platzieren</h4>
 <div class="paragraph">
-<p>Um deinen Webshop auch in der Übergangszeit rechtssicher zu betreiben, musst du einen Hinweis ausgeben, dass sich die angezeigten Preise inklusive Mehrwertsteuer verstehen. Damit dieser Hinweis auch automatisch in anderen Sprachen, die du pflegst, ausgegeben wird, verwenden wir dafür den Mehrsprachigkeits-Eintrag <strong>Ceres::Template.itemInclVAT</strong> für B2C- und <strong>Ceres::Template.itemExclVAT</strong> für B2B-Kunden. Dadurch wird B2C-Kunden der Preis als Bruttopreis inklusive Mehrwertsteuer, und B2B-Kunden der Nettopreis exklusive Mehrwertsteuer angezeigt.</p>
+<p>Um deinen Webshop auch in der Übergangszeit rechtssicher zu betreiben, musst du einen Hinweis ausgeben, dass sich die angezeigten Preise inklusive Mehrwertsteuer (für B2C-Verkäufe), bzw. exklusive Mehrwertsteuer (für B2B-Verkäufe) verstehen. Damit dieser Hinweis auch automatisch in anderen Sprachen, die du pflegst, ausgegeben wird, verwenden wir dafür den Mehrsprachigkeits-Eintrag <strong>Ceres::Template.itemInclVAT</strong> für B2C- und <strong>Ceres::Template.itemExclVAT</strong> für B2B-Kunden. Dadurch wird B2C-Kunden der Preis als Bruttopreis inklusive Mehrwertsteuer, und B2B-Kunden der Nettopreis exklusive Mehrwertsteuer angezeigt.</p>
 </div>
 <div class="olist instruction">
 <ol class="instruction">
@@ -2001,7 +2001,7 @@ Nach dem erneuten Bereitstellen deines Plugin-Sets werden keine Nettopreise mehr
 </ol>
 </div>
 <div class="paragraph">
-<p>Öffne nun den ShopBuilder unter <strong>CMS » ShopBuilder</strong>. Auf deinen Inhalten für den Warenkorb, die Bestellbestätigung und den Checkout musst du nun ein Code-Widget unterhalb der Summen-Widgets platzieren. In jedes dieser 3 Code-Widgets fügst du den folgenden Code ein:<br></p>
+<p>Öffne nun den ShopBuilder unter <strong>CMS » ShopBuilder</strong>. Auf deinen Inhalten für den Warenkorb und den Checkout musst du nun ein Code-Widget unterhalb der Summen-Widgets platzieren. In jedes dieser Code-Widgets fügst du den folgenden Code ein:<br></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2017,7 +2017,7 @@ Nach dem erneuten Bereitstellen deines Plugin-Sets werden keine Nettopreise mehr
 <div class="sect2">
 <h3 id="_anpassungen_an_ceres_templates">10.3. Anpassungen an Ceres-Templates</h3>
 <div class="paragraph">
-<p>Es gibt 2 Stellen im Webshop, auf denen der Mehrwertsteuer-Hinweis nicht über den ShopBuilder eingefügt werden kann: die Auftragshistorie und die Warenkorbvorschau. Um trotzdem rechtssicher verkaufen zu können, kannst du 3 kleine Code-Stellen im Ceres-Plugin anpassen, um den Hinweis auch auf diesen Seiten ausgeben zu lassen. Die Anpassungen am Code, sorgen dafür, dass der gleiche Text aus der Mehrsprachigkeit genommen wird, der auch in den Text-Widgets erscheint, die du vorher im ShopBuilder hinzugefügt hast.<br></p>
+<p>Es gibt 2 Stellen im Webshop, auf denen der Mehrwertsteuer-Hinweis nicht über den ShopBuilder eingefügt werden kann: die Auftragshistorie und die Warenkorbvorschau. Um trotzdem rechtssicher verkaufen zu können, kannst du 3 kleine Code-Stellen im Ceres-Plugin anpassen, um den Hinweis auch auf diesen Seiten ausgeben zu lassen. Die Anpassungen am Code, sorgen dafür, dass der gleiche Text aus der Mehrsprachigkeit genommen wird, der auch in den Code-Widgets erscheint, die du vorher im ShopBuilder hinzugefügt hast.<br></p>
 </div>
 <div class="paragraph">
 <p>Die 3 Anpassungen sind im Folgenden detailliert aufgeführt. Wir haben zusätzlichen einen Pull Request offen, in dem du die Code-Änderungen direkt nachverfolgen kannst. Diesen Pull Request findest du <a href="https://github.com/plentymarkets/plugin-ceres/compare/fix%2Fvat_changes?diff=unified&amp;expand=1">auf GitHub</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>. Scrolle auf der Seite weiter nach unten, um die Datei-Änderungen einzusehen.</p>
@@ -2071,7 +2071,7 @@ Nach dem erneuten Bereitstellen deines Plugin-Sets werden keine Nettopreise mehr
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;dt class="w-100 vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; !$store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemInclVAT") }}&lt;/dt&gt;
-            &lt;dt class="w-100 vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; $store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemExclVAT") }}&lt;/dt&gt;</code></pre>
+&lt;dt class="w-100 vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; $store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemExclVAT") }}&lt;/dt&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2130,7 +2130,7 @@ Nach dem erneuten Bereitstellen deines Plugin-Sets werden keine Nettopreise mehr
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; !$store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemInclVAT") }}&lt;/div&gt;
-                                                        &lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; $store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemExclVAT") }}&lt;/div&gt;</code></pre>
+&lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; $store.state.basket.showNetPrices"&gt;{{ trans("Ceres::Template.itemExclVAT") }}&lt;/div&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2138,7 +2138,7 @@ Nach dem erneuten Bereitstellen deines Plugin-Sets werden keine Nettopreise mehr
 </div>
 </div>
 <div class="sect3">
-<h4 id="_eigenen_header_anpassen">10.3.3. Eigenen Header anpassen</h4>
+<h4 id="_eigenen_shopbuilder_header_anpassen">10.3.3. Eigenen ShopBuilder-Header anpassen</h4>
 <div class="paragraph">
 <p>Für ShopBuilder-Inhalte, für die du einen eigenen Header angelegt hast, muss der Code des Top Bar-Widgets angepasst werden, damit der Hinweis zur Mehrwertsteuer auch in der Warenkorbvorschau angezeigt wird. Gehe dafür wie im Folgenden beschrieben vor:</p>
 </div>
@@ -2186,7 +2186,7 @@ Nach dem erneuten Bereitstellen deines Plugin-Sets werden keine Nettopreise mehr
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; !$store.state.basket.showNetPrices"&gt;{{ Twig.print('trans("Ceres::Template.itemInclVAT")') }}&lt;/div&gt;
-                                            &lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; $store.state.basket.showNetPrices"&gt;{{ Twig.print('trans("Ceres::Template.itemExclVAT")') }}&lt;/div&gt;</code></pre>
+&lt;div class="vat-change mb-2" v-if="!$store.state.basket.data.isExportDelivery &amp;&amp; $store.state.basket.showNetPrices"&gt;{{ Twig.print('trans("Ceres::Template.itemExclVAT")') }}&lt;/div&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
