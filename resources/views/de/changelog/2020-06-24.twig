@@ -1,0 +1,360 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Changelog 24. Juni 2020</h1><div class="paragraph">
+<p>Erfahre, was sich in der Woche vom 18. Juni 2020 bis zum 24. Juni 2020 bei plentymarkets getan hat. Im Folgenden findest du alle Changelog-Einträge der letzten Wochen für stable- und early-Systeme.</p>
+</div><div class="paragraph">
+<p>Wenn du mehr zu den einzelnen Versionen erfahren oder auf eine andere Version wechseln möchtest, siehe die Handbuchseite <a href="/business-entscheidungen/systemadministration/versionszyklus">Versionszyklus</a>. Um die Informationen, die auf dieser Seite gesammelt sind, in Echtzeit zu erhalten, abonniere die <a href="https://forum.plentymarkets.com/c/changelog" target="_blank" rel="noopener">Kategorie Changelog in unserem Forum</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div><div class="paragraph">
+<p>Wähle, welchen Changelog du sehen möchtest.</p>
+</div><ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
+                                <a class="nav-link active" id="stable-tab" data-toggle="tab" href="#stable" role="tab" aria-controls="stable" aria-selected="true">stable</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="early-tab" data-toggle="tab" href="#early" role="tab" aria-controls="early" aria-selected="false">early</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="plugin-updates-tab" data-toggle="tab" href="#plugin-updates" role="tab" aria-controls="plugin-updates" aria-selected="false">Plugin-Updates</a>
+                            </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="stable" role="tabpanel" aria-labelledby="stable-tab">
+<h2 id="_neu" class="discrete">Neu</h2>
+<div class="paragraph">
+<p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
+</div>
+<h3 id="_aufträge" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Je höher die Anzahl der unbezahlten Aufträge im System ist, je länger dauert die automatische Zuordung von Zahlungen, da dabei immer alle offenen Aufträge abgeglichen werden. Ab sofort können im Bereich <strong>Einrichtung » Aufträge » Zahlung » Eingänge</strong> Aufträge einer bestimmten Zahlungsarten oder bestimmten Herkünften von der automatischen Zahlungszuordnung ausgeschlossen werden.</p>
+<div class="paragraph">
+<p>Dies kann sehr nützlich sein, wenn bspw. für bestimmte Herkünfte die Zahlungen nie in das System importiert werden, sondern anderweitig abgewickelt werden.</p>
+</div>
+</li>
+<li>
+<p>Es wurde eine neue Ereignisaktion (<strong>Auftragsdatum auf heute ändern</strong>) hinzugefügt, mit welcher das Auftragsdatum (Eingabedatum) auf den aktuellen Zeitpunkt wo diese Aktion läuft gesetzt wird. Es kann nur das Datum geändert werden, wenn der Auftrag nicht gesperrt ist.</p>
+</li>
+</ul>
+</div>
+<h3 id="_listings" class="discrete">Listings</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Du kannst ab nun einen neuen Platzhalter in dein Layout einbinden, das dir die ID deines Kontos ausgibt, das im Market-Listing hinterlegt ist. Der Platzhalter nennt sich <code>$CredentialsId</code>.</p>
+<div class="paragraph">
+<p>Diese ID kommt nun ebenfalls auch pro Cross-Selling-Eintrag zurück. Somit ist es nun mit einem einfachen Check möglich, dass man im Cross-Selling nur Listings anzeigen lässt, die auch vom gleichen Verkäufer-Konto sind.</p>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_geändert" class="discrete">Geändert</h2>
+<div class="paragraph">
+<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
+</div>
+<h3 id="_bol_com" class="discrete">Bol.com</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Log-Einträge zur Ereignisaktion für bol.com wurden überarbeitet. Es wird für jedes Auslösen der Ereignisaktion mindestens ein Log-Eintrag geschrieben, maximal ein Log-Eintrag pro Auftragsposition.</p>
+<div class="paragraph">
+<p>Zum Suchen der Einträge können die folgenden Suchfilter verwendet werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Identifikator</strong>: <code>bol.com</code></p>
+</li>
+<li>
+<p><strong>Referenztyp</strong>: <code>action</code></p>
+</li>
+<li>
+<p><strong>Referenzwerte</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>CancelOrder</code> (Stornierung des Auftrags)</p>
+</li>
+<li>
+<p><code>ShipOrder</code> (Versand des Auftrags)</p>
+</li>
+<li>
+<p><code>HandleReturn</code> (Eingang einer auf bol.com gemeldeten Retoure bestätigen)</p>
+</li>
+<li>
+<p><code>CreateReturn</code> (Eingang einer nicht auf bol.com gemeldeten Retoure melden)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Zur weiteren Reduzierung der Suchergebnisse können abhängig von der Log-Nachricht die folgenden Referenztypen verwendet werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>orderId</code> (die Auftrags-ID des Auftrags in plentymarkets)</p>
+</li>
+<li>
+<p><code>externalOrderId</code> (die Auftragsnummer des Auftrags bei bol.com)</p>
+</li>
+<li>
+<p><code>externalOrderItemId</code> (die ID der Auftragsposition bei bol.com)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="_datenbereinigung" class="discrete">Datenbereinigung</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Das totale Limit der Datenbereinigung wurde auf 100.000 Datensätze pro Durchlauf erhöht. Das native Limit pro Bereinigungstyp wurde ebenfalls individuell angepasst.</p>
+</li>
+</ul>
+</div>
+<h3 id="_elastischer_export" class="discrete">Elastischer Export</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Auswahl des Attributs springt nun nicht mehr auf <code>ungültige Auswahl</code> wenn man einen bereits erstellten Elastischen-Export mit Attribut-Filter lädt, sondern zeigt die richtige Auswahl an.</p>
+</li>
+</ul>
+</div>
+<h3 id="_otto" class="discrete">OTTO</h3>
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::changelog/_textblocks/otto-master-file.adoc[]</p>
+</div>
+<h3 id="_otto_market" class="discrete">OTTO market</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In bestimmten Fällen werden Varianten auf OTTO Market nun automatisiert deaktiviert. Varianten werden in den folgenden Fällen deaktiviert:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Variante hat keinen Bestand mehr:</strong> Fällt ein Produkt auf Bestand 0, wird dieses Produkt zum Schutz des Artikel-Rankings auf OTTO Market nach 15 Tagen deaktiviert. Erhält ein Produkt vor Ablauf der 15 Tage wieder Bestand, wird die Variante normal mit dem Bestandsabgleich synchronisiert. Wurde eine Variante automatisch deaktiviert und erhält dann wieder Bestand, wird die Variante mit dem nächtlichen Artikelexport aktiviert, wenn alle erforderlichen Artikelkonfigurationen gültig sind.</p>
+</li>
+<li>
+<p><strong>Marktplatzverfügbarkeit wurde entfernt:</strong> Wenn die Marktplatzverfügbarkeit für OTTO Market im Menü <strong>Artikel » Artikel bearbeiten » Artikel öffnen » Tab: Varianten-ID</strong> im Tab <strong>Verfügbarkeit</strong> deaktiviert wird, wird das Produkt innerhalb von 15 Minuten auf OTTO Market direkt deaktiviert. Wird die Verfügbarkeit wieder hinzugefügt, wird die Variante mit dem nächtlichen Artikelexport reaktiviert, wenn alle erforderlichen Artikelkonfigurationen gültig sind.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="_rakuten_de" class="discrete">Rakuten.de</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Durch das Konjunkturpaket 1 gelten im Zeitraum von 01.07.2020 bis 31.12.2020 veränderte Mehrwertsteuersätze.
+Um Aufträge von Rakuten.de in diesem Zeitraum korrekt zu importieren wurde für Aufträge, die in diesem Zeitraum auf Rakuten erstellt werden, die Übersetzung der Steuerklassen angepasst.
+Für Artikel in betroffenen Aufträgen werden die Steuerklassen wie folgt in Steuersätze übersetzt:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Steuerklasse 1 = 16 %</p>
+</li>
+<li>
+<p>Steuerklasse 2 = 5 %</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ausschlaggebend ist dabei das Datum des Auftrags auf Rakuten.de und nicht das Datum des Auftragsimportes in plentymarkets.</p>
+</div>
+</li>
+</ul>
+</div>
+<h2 id="_behoben" class="discrete">Behoben</h2>
+<div class="paragraph">
+<p>Folgende Probleme wurden in den letzten 7 Tagen auf <strong>stable</strong> behoben.</p>
+</div>
+<h3 id="_aufträge_2" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In der Auftragssuche, wird beim Klick auf eine externe Gutschriftennummer das Dokument geöffnet und nicht mehr die Maske zum erstellen einer neuen Gutschrift.</p>
+</li>
+<li>
+<p>Es wurden bei der manuellen Auftragsanlage nicht die Werte für Valuta und Skonto aus der Firma des Kontaktes geladen. Das wurde behoben.</p>
+</li>
+<li>
+<p>Bei der Anlage eines Auftrags ohne Artikel wurde kein Versandprofil gesetzt. Es wird nun wieder das Standard-Versandprofil gesetzt.</p>
+</li>
+<li>
+<p>Bei einer Auftragsanlage mit Bestellmerkmalen wurde unter Umständen der Name des Merkmals nicht gespeichert. Das wurde behoben.</p>
+</li>
+<li>
+<p>Für Retouren und Gutschriften wird der gültige Steuersatz für Auftragspositionen aus dem Hauptauftrag übernommen. Hierbei kam es in der Auftrags-UI zu einem Anzeigefehler, wodurch nicht der Steuersatz des Hauptauftrages angezeigt wurde, sondern der gültige Steuersatz zum Eingabedatum der Retoure/Gutschrift. Dies wurde behoben.</p>
+</li>
+<li>
+<p>Es konnte bei der Auftragsanlage zu folgendem Fehler kommen: <code>Call to a member function where() on null</code>. Das wurde behoben.</p>
+</li>
+<li>
+<p>Wenn beim Übertragen der Umsatzsteuersätze von einem Standort auf einen anderen schon ein Satz mit gleichem Land und Datum existiert hat, hatte das Übertragen an dieser Stelle abgebrochen. Jetzt werden die nachfolgenden Sätze noch übertragen und die Fehler zum Schluss gesammelt ausgegeben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_netto" class="discrete">Netto</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Wegen einer 0 in den Adressdaten der Auftrags-XML von Netto kam es beim Auftragsimport zu einem Fehler, durch den der Auftrag nicht gespeichert wurde: <code>&lt;bmecat:NAME2&gt;0&lt;/bmecat:NAME2&gt;</code>.</p>
+<div class="paragraph">
+<p>Dies wird nun verhindert, indem Leerzeichen am Ende und Anfang sowie 0 aus den Werten der Attribute <code>NAME2</code> und <code>NAME3</code> herausgefiltert werden. Betroffene Aufträge werden importiert, sobald dieses Update live ist.</p>
+</div>
+<div class="paragraph">
+<p>Dieses Verhalten trat nur auf, wenn Kund*innen diese Daten so in Netto angegeben haben. Es sollten also nur wenige bis keine Aufträge bei den meisten Händlern betroffen sein.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="_plugins" class="discrete">Plugins</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Bei Plugins, die versuchen, ein TWIG-Template im Webshop zu laden, das nicht existiert, wird der Rest der Seite jetzt wieder normal geladen. Tritt dieser Fall auf, erscheint im Menü <strong>Daten » Log</strong> eine entsprechende Fehlermeldung.</p>
+</li>
+</ul>
+</div>
+<h3 id="_zalando" class="discrete">Zalando</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Es wird nicht mehr für jede Variante, für die eine SKU für Zalando existiert, der Netto-Warenbestand übertragen, wenn die Variante deaktiviert oder die Verfügbarkeit für Zalando oder die Web-API entfernt wurde. Stattdessen wird in diesen Fällen ein Bestand von 0 übertragen.</p>
+</li>
+</ul>
+</div>
+</div><div class="tab-pane fade" id="early" role="tabpanel" aria-labelledby="early-tab">
+<h2 id="_neu_2" class="discrete">Neu</h2>
+<div class="paragraph">
+<p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
+</div>
+<h3 id="_kataloge" class="discrete">Kataloge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ab sofort kann man über einen Toggle die nicht obligatorischen Felder ein- und ausblenden. Standardmäßig werden immer nur die Pflichtfelder des jeweiligen Kataloges angezeigt.</p>
+</li>
+<li>
+<p>Ab sofort werden beim Kopiervorgang bereits zugeordnete Felder in die neue Katalogkategorie übernommen.</p>
+</li>
+</ul>
+</div>
+<h3 id="_kontakte" class="discrete">Kontakte</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Die neue UI zum Erstellen eines neuen Kontakts ist da! Wenn ihr euch im Menü <strong>CRM » Kontakte</strong> befindet und auf <strong>Neuen Kontakt erstellen</strong> klickt, seht ihr nun eine Default-Ansicht mit den 3 Komponenten Firma , Adressdetails und Kontaktdetails , die ihr individuell anpassen könnt.</p>
+<div class="paragraph">
+<p>Mit einem Klick in das Firmenfeld könnt ihr beim Eintippen von mindestens 3 Buchstaben nach bestehenden Firmen suchen und diese dann auswählen. Der Firmenname wird dann automatisch in die Adressdetails in das Feld <strong>Firma</strong> (ehemals: <strong>Name 1</strong>) übernommen.</p>
+</div>
+<div class="paragraph">
+<p>Wenn ihr eine neue Firma erstellen möchtet, tippt den Firmennamen einfach in das Feld ein. Sobald ihr den Kontaktdatensatz speichert, wird auch die Firma erstellt und ist automatisch dem Kontakt zugewiesen.
+Wenn ihr den Firmennamen nicht in der Firmenkomponente eingebt, sondern in den Adressdetails im Feld <strong>Firma</strong>, wird kein neuer Firmendatensatz erstellt, sondern der Wert (d.h. der Firmenname) wird nur für die Adresse gespeichert.</p>
+</div>
+<div class="paragraph">
+<p>Über das Stift-Icon könnt ihr die Ansicht per Drag&amp;Drop verändern und nach euren Wünschen gestalten:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://player.vimeo.com/video/432410505" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="_listings_2" class="discrete">Listings</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Du kannst ab jetzt selbst entscheiden, ob die Bilder der Artikel in der Suche für Listings und aktive Listings angezeigt werden. Die Checkbox dafür findest du ganz oben in den Filtern.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_geändert_2" class="discrete">Geändert</h2>
+<div class="paragraph">
+<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
+</div>
+<h3 id="_kataloge_2" class="discrete">Kataloge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Wir haben <strong>Template</strong> in <strong>Format</strong> umbenannt.</p>
+</li>
+<li>
+<p>Da in naher Zukunft die Standardformate wie <code>Order</code>, <code>Item</code> usw. im Katalog verfügbar sein werden, haben wir den Export-Typ <code>variation</code> in <code>Artikel</code> umbenannt.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_behoben_2" class="discrete">Behoben</h2>
+<div class="paragraph">
+<p>Folgende Probleme wurden in den letzten 7 Tagen auf <strong>early</strong> behoben.</p>
+</div>
+<h3 id="_aufträge_3" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Über die Auftrags-UI (<strong>Aufträge » Aufträge bearbeiten</strong>) war es möglich einen Wechselkurs an der Währung zu hinterlegen, der 0 oder negativ ist. Dies konnte zu Problemen führen und ist nun nicht mehr möglich.</p>
+</li>
+<li>
+<p>Es war unter Umständen nicht mehr möglich, Retouren und Gutschriften anzulegen ohne einen Hauptauftrag anzugeben. Das wurde behoben.</p>
+</li>
+<li>
+<p>Bei den Dokumenteinstellungen wird der Adressen-Titel nun richtig gespeichert.</p>
+</li>
+</ul>
+</div>
+<h3 id="_import" class="discrete">Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Filteroperator steht nun wieder standardmäßig auf <code>Und</code>.</p>
+</li>
+</ul>
+</div>
+<h3 id="_plugins_2" class="discrete">Plugins</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In der neuen Plugin-UI wurden verschiedene Probleme behoben:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Nach dem Löschen eines Plugin-Sets, öffnet sich jetzt die Plugin-Set-Übersicht.</p>
+</li>
+<li>
+<p>Nach dem Speichern von Prioritäten, öffnet sich jetzt die Detailansicht des Plugin-Sets.</p>
+</li>
+<li>
+<p>Nach dem Speichern von Prioritäten wird die Plugin-Tabelle aktualisiert, ohne dass die Seite neu geladen werden muss.</p>
+</li>
+<li>
+<p>Nach dem Speichern von Prioritäten wird die Nachricht, dass es ungespeicherte Änderungen bei den Prioritäten gibt nicht mehr angezeigt.</p>
+</li>
+<li>
+<p>Nach dem Installieren eines Plugins wird die Suchfunktion in der Installationsansicht zurückgesetzt.</p>
+</li>
+<li>
+<p>Nach dem Aktualisieren eines Plugins wird das Plugin in der Nachricht, dass neue Versionen von Plugins vorliegen nicht mehr angezeigt, ohne dass die Seite neu geladen werden muss.</p>
+</li>
+<li>
+<p>Nach dem Wechseln eines Git-Branches wird der neue Branch in der Plugin-Tabelle angezeigt, ohne dass die Seite neu geladen werden muss.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div><div class="tab-pane fade" id="plugin-updates" role="tabpanel" aria-labelledby="plugin-updates-tab">
+<iframe src="https://player.vimeo.com/video/432410505" frameborder="0" allowfullscreen=""></iframe>
+</div></div>
+</main>
