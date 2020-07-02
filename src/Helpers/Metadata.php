@@ -19913,11 +19913,11 @@ class Metadata {
 								"urlName" => "variation-export",
 								"url" => "/en/markets/amazon/variation-data-export",
 								"level" => 4,
-								"title" => "Setting up catalogs for exporting variation data to Amazon (BETA)",
+								"title" => "Setting up catalogs for variation export to Amazon (BETA)",
 								"keywords" => "Amazon, item export, variation export, Amazon catalog, Amazon catalogue, Export Amazon, Amazon Export, variation export, exporting item data to Amazon, exporting variation data to Amazon",
 								"description" => "Multi-Channel in plentymarkets: Create a catalogue to export variation data to the market Amazon.",
 								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Setting up catalogs for exporting variation data to Amazon (BETA). The following information is available:",
+								"linkListInto" => "Welcome to the topic Setting up catalogs for variation export to Amazon (BETA). The following information is available:",
 								"languageID" => "EABQJ7Y",
 								"children" => [],
 								"hasChildren" => false
