@@ -16106,7 +16106,7 @@ class Metadata {
 				"url" => "/en/orders/document-archive",
 				"level" => 2,
 				"title" => "Document archive",
-				"keywords" => "document, documents, archive, PDF, PDF-document, zip file, file, zip, invoice, external invoice, delivery note, credit note, order confirmation, offer, reorder, dunning letter, repair slip, pick-up delivery, return label, entry certificate, document type, number, document number, multiple PDF documents, exporting files",
+				"keywords" => "document, documents, archive, PDF, PDF-document, zip file, file, zip, invoice, external invoice, delivery note, credit note, order confirmation, offer, reorder, dunning letter, repair slip, pick-up delivery, return label, entry certificate, document type, number, document number, multiple PDF documents, exporting files, export, voucher, EBICS, reorder, adjustment form",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Document archive. The following information is available:",
