@@ -14211,7 +14211,7 @@ class Metadata {
 				"path" => "changelog/2020-07-08",
 				"position" => 960,
 				"urlName" => "2020-07-08",
-				"url" => "/changelog",
+				"url" => "/changelog/2020-07-08",
 				"level" => 2,
 				"title" => "Changelog 08. Juli 2020",
 				"keywords" => "",
