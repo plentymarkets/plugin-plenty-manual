@@ -14216,7 +14216,7 @@ class Metadata {
 				"title" => "Changelog 08. Juli 2020",
 				"keywords" => "",
 				"description" => "",
-				"navAlias" => "Changelog 08. Juli 2020",
+				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Changelog 08. Juli 2020. Hier findest du folgende Informationen:",
 				"languageID" => "",
 				"children" => [],
