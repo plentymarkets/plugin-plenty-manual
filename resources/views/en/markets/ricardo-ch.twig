@@ -894,56 +894,61 @@ Make sure that the images used are available via URL. To do so, upload the image
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="wrapper clearfix"&gt;
-	&#123;&#37; $_categories = GetListingStoreCategories('tree') &#37;&#125;
+	&lt;div class="menu"&gt;
+		&#123;&#37; $_categories = GetListingStoreCategories('tree') &#37;&#125;
 
-&lt;ul&gt;
-&#123;&#37; for $_levelOneCategory in $_categories &#37;&#125;
-	&lt;li&gt;
-	&#123;&#37; $_name  = $_levelOneCategory['name'] &#37;&#125;
-	&#123;&#37; $_url = $_levelOneCategory['url'] &#37;&#125;
+		&lt;ul class="left_menu"&gt;
+		&#123;&#37; for $_levelOneCategory in $_categories &#37;&#125;
+			&lt;li&gt;
+			&#123;&#37; $_name  = $_levelOneCategory['name'] &#37;&#125;
+			&#123;&#37; $_url = $_levelOneCategory['url'] &#37;&#125;
 
-	&lt;a href="$_url"&gt;$_name&lt;/a&gt;
+			&lt;a href="$_url"&gt;$_name&lt;/a&gt;
 
-	&#123;&#37; if count($_levelOneCategory['children']) &#37;&#125;
-		&lt;ul class="children"&gt;
-			&#123;&#37; for $_levelTwoCategory in $_levelOneCategory['children'] &#37;&#125;
-				&lt;li class="child-level"&gt;
-					&#123;&#37; $_name = $_levelTwoCategory['name'] &#37;&#125;
-					&#123;&#37; $_url = $_levelTwoCategory['url'] &#37;&#125;
-					&lt;a href="$_url"&gt;$_name&lt;/a&gt;
-				&lt;/li&gt;
-			&#123;&#37; endfor &#37;&#125;
+			&#123;&#37; if count($_levelOneCategory['children']) &#37;&#125;
+				&lt;ul class="children"&gt;
+					&#123;&#37; for $_levelTwoCategory in $_levelOneCategory['children'] &#37;&#125;
+						&lt;li class="child-level"&gt;
+							&#123;&#37; $_name = $_levelTwoCategory['name'] &#37;&#125;
+							&#123;&#37; $_url = $_levelTwoCategory['url'] &#37;&#125;
+							&lt;a href="$_url"&gt;$_name&lt;/a&gt;
+						&lt;/li&gt;
+					&#123;&#37; endfor &#37;&#125;
+				&lt;/ul&gt;
+			&#123;&#37; endif &#37;&#125;
+			&lt;/li&gt;
+		&#123;&#37; endfor &#37;&#125;
 		&lt;/ul&gt;
-	&#123;&#37; endif &#37;&#125;
-	&lt;/li&gt;
-&#123;&#37; endfor &#37;&#125;
-&lt;/ul&gt;
+	&lt;/div&gt;
 
 	&lt;div style="width: $_listingWidth; float: left;" class="listing-content"&gt;
 		&lt;h1&gt;&#123;&#37; GetItemName(1) &#37;&#125;&lt;/h1&gt;
-		&lt;span class="item-data"&gt;Art.-Nr. $ItemId&lt;/span&gt;
-		&lt;figure&gt;$MiddleSizeImage[1]&lt;/figure&gt;
+		&lt;span class="item-data"&gt;Item No. $ItemId&lt;/span&gt;
+		&lt;figure&gt;$MiddleSize$$$$$$$$Image[1]&lt;/figure&gt;
 		&lt;div class="price-block"&gt;
 			&#123;&#37; if $ListingType == $LISTING_TYPE_FIXED &#37;&#125;
-				Jetzt kaufen: $BuyItNowPrice Euro
+				Buy now: GBP $BuyItNowPrice
 			&#123;&#37; else &#37;&#125;
-				Startpreis: $MinimumBid Euro
+				Start price: GBP $MinimumBid
 			&#123;&#37; endif &#37;&#125;
 		&lt;/div&gt;
 
 		&lt;hr&gt;
 		&#123;&#37; GetItemDescription() &#37;&#125;
+
+		$PROPERTY_UNIT ","
+        $PROPERTY_VALUE
 		&lt;hr&gt;
 
 		&#123;&#37; if $Free[3] &#37;&#125;
-			&lt;span class="info"&gt;Artikel umfasst: $Free[3]&lt;/span&gt;
+			&lt;span class="info"&gt;Item includes: $Free[3]&lt;/span&gt;
 		&#123;&#37; else &#37;&#125;
-			&lt;span class="info"&gt;Artikel ohne Zubehör&lt;/span&gt;
+			&lt;span class="info"&gt;Item without accessories&lt;/span&gt;
 		&#123;&#37; endif &#37;&#125;
 
 		&lt;div class="item-properties"&gt;
-			&lt;b&gt;Merkmale:&lt;/b&gt;
-			&#123;&#37; $_propertyList = ["Farbe", "Material"] &#37;&#125;
+			&lt;b&gt;Features:&lt;/b&gt;
+			&#123;&#37; $_propertyList = ["Colour", "Material"] &#37;&#125;
 			&#123;&#37; for $_key,$_property in $_propertyList &#37;&#125;
 				&#123;&#37; GetItemPropertyByName($_property, $PROPERTY_VALUE) &#37;&#125;
 				&#123;&#37; if ($_key + 1) &lt; count($_propertyList) &#37;&#125;,&#123;&#37; endif &#37;&#125;
