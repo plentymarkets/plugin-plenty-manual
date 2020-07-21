@@ -757,22 +757,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "17186cf279878d5e135bd4b8a2c962bc",
-								"path" => "artikel/import-export-anlage/anlage/bearbeitungsfenster-gestalten",
-								"position" => 20,
-								"urlName" => "bearbeitungsfenster-gestalten",
-								"url" => "/artikel/import-export-anlage/anlage/bearbeitungsfenster-gestalten",
-								"level" => 4,
-								"title" => "Tab-Namen anpassen",
-								"keywords" => "Artikel-Tab, Variante-Tab, Tab, Tabs, Tab-Titel, Tab-Name, Umbenennen, Personalisierung, Individualisierung, Artikel-ID, Varianten-ID, Variantenname, Variantennummer",
-								"description" => "Auf dieser Seite lernst du, wie du die Namen von Tabs individuell anpassen kannst.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Tab-Namen anpassen. Hier findest du folgende Informationen:",
-								"languageID" => "864QUOC",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "548cedc11d7b70fe9ce774a7b684b819",
 								"path" => "artikel/import-export-anlage/anlage/verzeichnis",
 								"position" => 30,
@@ -801,6 +785,22 @@ class Metadata {
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Massenbearbeitung. Hier findest du folgende Informationen:",
 								"languageID" => "S71L7WQ",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "17186cf279878d5e135bd4b8a2c962bc",
+								"path" => "artikel/import-export-anlage/anlage/bearbeitungsfenster-gestalten",
+								"position" => 50,
+								"urlName" => "bearbeitungsfenster-gestalten",
+								"url" => "/artikel/import-export-anlage/anlage/bearbeitungsfenster-gestalten",
+								"level" => 4,
+								"title" => "Tab-Namen anpassen",
+								"keywords" => "Artikel-Tab, Variante-Tab, Tab, Tabs, Tab-Titel, Tab-Name, Umbenennen, Personalisierung, Individualisierung, Artikel-ID, Varianten-ID, Variantenname, Variantennummer",
+								"description" => "Auf dieser Seite lernst du, wie du die Namen von Tabs individuell anpassen kannst.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Tab-Namen anpassen. Hier findest du folgende Informationen:",
+								"languageID" => "864QUOC",
 								"children" => [],
 								"hasChildren" => false
 							]
