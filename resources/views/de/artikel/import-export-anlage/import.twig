@@ -1,0 +1,525 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> Beispieldateien herunterladen</span></a></li>
+<li><a href="#200"><span>2.</span><span> Produktdaten in die CSV-Datei eingeben</span></a>
+<ul class="sectlevel2">
+<li><a href="#300"><span>2.1.</span><span> Praxisbeispiel: Ausgangssituation</span></a></li>
+<li><a href="#400"><span>2.2.</span><span> Variantennummern</span></a></li>
+<li><a href="#500"><span>2.3.</span><span> Attribute</span></a></li>
+<li><a href="#600"><span>2.4.</span><span> Bilder</span></a></li>
+<li><a href="#700"><span>2.5.</span><span> Kategorien</span></a></li>
+<li><a href="#800"><span>2.6.</span><span> Verkaufspreise</span></a></li>
+</ul>
+</li>
+<li><a href="#900"><span>3.</span><span> Beispiel-Sync importieren</span></a></li>
+<li><a href="#1000"><span>4.</span><span> Abgleich-Einstellungen prüfen</span></a></li>
+<li><a href="#1100"><span>5.</span><span> Zuordnung-Einstellungen prüfen</span></a></li>
+<li><a href="#1200"><span>6.</span><span> Hat es funktioniert?</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Import</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hast du Produkte, die in plentymarkets importiert werden müssen? Und um die Sache noch komplizierter zu machen: Verkaufst du diese Produkte in verschiedenen Größen und Farben?</p>
+</div>
+<div class="paragraph">
+<p>Vielleicht weißt du bereits, dass ElasticSync ein gutes Werkzeug fürs Importieren von Daten ist. Aber vielleicht hast du dich noch nicht an einem realistischen Beispiel versucht. Diese Handbuchseite führt dich Schritt für Schritt durch die Erstellung von neuen Artikeln und Varianten in plentymarkets.
+Die Seite stützt sich auf einen Beispiel-Sync, den du herunterladen und in dein eigenes System importieren kannst.</p>
+</div>
+<div id="voraussetzungen" class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Voraussetzungen</div>
+<div class="paragraph">
+<p>Diese Seite setzt voraus, dass du bereits Grundkenntnisse über das <a href="/daten/daten-importieren/ElasticSync">ElasticSync-Tool</a> hast. Zudem müssen folgende Daten im System vorhanden sein, um wie hier beschrieben Artikel und Varianten über ElasticSync zu importieren:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/artikel/einstellungen/attribute">Attribute</a></p>
+</li>
+<li>
+<p><a href="/artikel/einstellungen/attribute">Attributwerte</a></p>
+</li>
+<li>
+<p><a href="/artikel/einstellungen/kategorien">Kategorien</a></p>
+</li>
+<li>
+<p><a href="/artikel/einstellungen/preise">Verkaufspreise</a></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Dieses Video bietet dir eine spielerische Einführung in das Thema:</p>
+</div>
+<div class="videoblock">
+<div class="title">Artikel und Varianten mit ElasticSync anlegen</div>
+<div class="content">
+<iframe src="https://player.vimeo.com/video/337232941" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. Beispieldateien herunterladen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Diese Handbuchseite führt dich Schritt für Schritt durch die Erstellung von neuen Artikeln und Varianten in plentymarkets. Die Seite stützt sich auf zwei Beispiel-Dateien, die du herunterladen und in dein eigenes System importieren kannst.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/ElasticSync_BestPractice/BestPractice.csv" target="_blank" rel="noopener">Beispiel-CSV-Datei</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+<li>
+<p><a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/ElasticSync_BestPractice/Best-Practice-25-02-20.json.zip" target="_blank" rel="noopener">Beispiel-Sync (JSON verpackt als ZIP-Datei)</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Syncs importieren</div>
+<div class="paragraph">
+<p>Lade den Beispiel-Sync herunter, entpacke die ZIP-Datei und <a href="/daten/daten-importieren/ElasticSync#1640">importiere die JSON-Datei in dein plentymarkets System</a>.</p>
+</div>
+<div class="paragraph">
+<p>Wirf einen Blick auf die CSV-Datei und mache dich mit den Spaltenüberschriften vertraut. Später wirst du deine eigenen Artikel- und Variantendaten in diese Spalten eingeben.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="200">2. Produktdaten in die CSV-Datei eingeben</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="300">2.1. Praxisbeispiel: Ausgangssituation</h3>
+<div class="paragraph">
+<p>Stell dir mal vor, du verkaufst ein T-Shirt, das in small oder medium und auch in gelb oder rot erhältlich ist. Du möchtest alle vier möglichen Kombinationen importieren: medium rot, small rot, small gelb und medium gelb.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/best-practice-variante-ausgangssituation.png" alt="best practice variante ausgangssituation">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="400">2.2. Variantennummern</h3>
+<div class="paragraph">
+<p>In unserem Beispiel wollen wir eine Hauptvariante mit 4 Untervarianten importieren.
+Jede Untervariante hat ihre eigene, eindeutige Nummer, und jede Untervariante entspringt derselben Hauptvariante.</p>
+</div>
+<div class="paragraph">
+<p>Übertrage zunächst die Variantennummern in eine CSV-Datei.
+In unserem Beispiel würden die Nummern in der CSV-Datei so aussehen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/best-practice-variante-nummern.png" alt="best practice variante nummern">
+</div>
+<div class="title">Bild 1. Eintragung der Nummern bei Hauptvariante und Varianten</div>
+</div>
+<div class="paragraph">
+<p>Schauen wir uns zuerste die Spalte <strong>Variantennummer</strong> an:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Hauptvariante hat eine eindeutige Nummer (haupt123). Diese Nummer wird in die erste Zeile eingegeben wird.</p>
+</li>
+<li>
+<p>Jede Untervariante hat ihre eigene, eindeutige Nummer (var123, var456, var567, var890). Diese Nummern werden ebenfalls in diese Spalte eingetragen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Schauen wir uns jetzt die Spalte <strong>Hauptvariantennummer</strong> an:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Jede Untervariante entspringt derselben Hauptvariante.
+Dies wird durch die Eingabe der Hauptvariantennummer neben jeder Untervariante dargestellt.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Hauptvariante vor Untervarianten</div>
+<div class="paragraph">
+<p>Achte darauf, dass du immer zuerst die Hauptvariantennummer und dann die einzelnen Untervarianten einträgst. Warum? plentymarkets geht die Datei Zeile für Zeile durch. Zuerst wird also ein Hauptartikel erstellt. Und dann werden einzelne Untervarianten auf der Grundlage dieses Artikels erstellt.</p>
+</div>
+<div class="paragraph">
+<p>Würdest du es andersherum machen, dann würdest du plentymarkets sagen, es soll eine Variante zu einem noch nicht existierenden Hauptartikel erstellen. plentymarkets würde nicht verstehen, was du verlangst, und die Daten würden nicht korrekt importiert werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Keine Variantennummern? Kein Problem!</div>
+<div class="paragraph">
+<p>Technisch gesehen benötigst du für den Import keine Untervariantennummern (var123, var456, var567, var890). Falls du noch keine eindeutigen Variantennummern hast, dann lass diese Zeilen leer, und plentymarkets generiert automatisch eindeutige Nummern während des Imports.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Variantennummern müssen eindeutig sein</div>
+<div class="paragraph">
+<p>Sowohl die Nummer der Hauptvariante, als auch die Nummer der Untervarianten müssen eindeutig sein. Der Import schlägt fehl, wenn Nummern mehrfach vergeben werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="500">2.3. Attribute</h3>
+<div class="paragraph">
+<p>Attribute sind Charakteristiken wie Farbe und Größe. Werden diese miteinander kombiniert, entsteht eine verkaufbare Artikelvariante, zum Beispiel ein kleines, rotes T-Shirt.
+Bevor du deine Artikel in plentymarkets importierst, stelle sicher, dass du <a href="/artikel/einstellungen/attribute">alle benötigten Attribute und Attributwerte erstellt hast</a>.</p>
+</div>
+<div class="paragraph">
+<p>Öffne dann die Zuordnungseinstellungen und entscheide, wie du die Attribute (wie Farbe) und die Werte (wie Rot) formatieren willst.
+In diesem Beispiel arbeite ich mit dem Zuordnungsfeld <strong>Attribute / Attributauswahlkombination</strong> und habe das Format <strong>Attribut:Wert;</strong> gewählt.
+Gib schließlich die Attribute und Werte in deine CSV-Datei mit genau dieser Formatierung ein.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/best-practice-variante-attribute.png" alt="best practice variante attribute">
+</div>
+<div class="title">Bild 2. Erstellen von Varianten via Attributauswahlkombination</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Keine Attribute für die Hauptvariante eintragen</div>
+<div class="paragraph">
+<p>In diesem Beispiel habe ich keine Attribute oder Werte für die Hauptvariante, d.h. die erste Zeile der CSV-Datei, eingetragen.
+Dadurch wird verhindert, dass die Hauptvariante mit Attributen verknüpft wird.</p>
+</div>
+<div class="paragraph">
+<p>Wir empfehlen dir, mit Varianten zu arbeiten und keine Attribute für die Hauptvariante einzutragen. Dadurch bist du bei der Erstellung von Variationen viel flexibler.
+Würdest du Attribute mit der Hauptvariante verknüpfen, könntest du dann ausschließlich Varianten mit denselben Attributen anlegen.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="600">2.4. Bilder</h3>
+<div class="paragraph">
+<p>Egal, ob du die Produktbilder deines Lieferanten verwendest oder ob du deine eigenen Fotos machst: dein Ziel ist es, die URL des Bildes zu erhalten. Anders gesagt, könnte dein Lieferant Bilder auf einen FTP-Server hochladen oder du könntest deine eigenen Bilder auf den Webspace von plentymarkets hochladen.
+Egal wie du die URL erhältst, trage sie in deine CSV-Datei ein.
+In diesem Beispiel arbeite ich mit dem Zuordnungsfeld <strong>Artikel Bilder / Multi-Url (Kommasepariert)</strong> und gebe daher die Bild-URLs wie folgt in die CSV-Datei ein: <strong>image1url;positionImage1,image2url;positionImage2</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/best-practice-variante-bilder.png" alt="best practice variante bilder">
+</div>
+<div class="title">Bild 3. Gegenüberstellung von Zuordnungsfeld und Spalte in der CSV-Datei</div>
+</div>
+<div class="paragraph">
+<p>Beachte Folgendes zu den Bild-URLs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Füge ein Semikolon (;) und eine Zahl nach der URL ein, um zu bestimmen, wann dein Kunde dieses Bild sehen soll. Also, ob das Bild als erstes, zweites, drittes usw. dargestellt werden soll.</p>
+</li>
+<li>
+<p>Wenn du mehrere Produktbilder verwenden möchtest, trenne sie mit Kommas voneinander.</p>
+</li>
+<li>
+<p>Du kannst Bilder hochladen, die die Hauptvariante, d.h. den Artikel als Ganzes, zeigen. Du kannst aber auch Bilder hochladen, die jede einzelne Variante zeigen.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="700">2.5. Kategorien</h3>
+<div class="paragraph">
+<p>Kategorien helfen dir Produkte übersichtlich zu gruppieren. Sie bestimmen, wie deine Artikel im Webshop strukturiert sind.
+Bevor du deine Artikel in plentymarkets importierst, stelle sicher, dass du <a href="/artikel/einstellungen/kategorien">alle benötigten Kategorien erstellt hast</a>.</p>
+</div>
+<div class="paragraph">
+<p>Jede Kategorie hat eine eigene ID. In deiner CSV-Datei gibst du die ID der Kategorie ein, in der der Artikel erscheinen soll. Wenn der Artikel unter mehreren Kategorien erscheinen soll, dann trenne die Kategorie-IDs durch Kommas.
+Damit der Import funktioniert, muss jeder Artikel auch eine <em>Standardkategorie</em> haben. Da Artikel in mehreren Kategorien erscheinen können, gibt die Standardkategorie im Grunde nur an, welche Kategorie am passendsten ist.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/best-practice-variante-kategorien.png" alt="best practice variante kategorien">
+</div>
+<div class="title">Bild 4. Kategorie-IDs und die Standardkategorie-ID</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Kategorie-ID oder Kategoriename?</div>
+<div class="paragraph">
+<p>Vielleicht arbeitest du lieber mit dem <em>Namen</em> der Kategorie als mit ihrer ID. Kein Problem! Kategorienamen können genau so gut verwendet werden. Bei den Kategorienamen muss aber darauf geachtet werden, dass der gesamte Kategoriepfad angegeben wird. Die Ebenen werden dabei mit einem Semikolon getrennt.</p>
+</div>
+<div class="paragraph">
+<p>Achte auch darauf, dass die Werte in der CSV-Datei mit der Zuordnung übereinstimmen.
+Wenn du z.B. das Feld <strong>Standardkategorien / ID der Kategorie</strong> in den Zuordnungseinstellungen wählst, dann trage unbedingt die ID in deine CSV-Datei ein.
+Oder umgekehrt, wenn du das Feld <strong>Standardkategorien / Name der Kategorie</strong> in den Zuordnungseinstellungen wählst, dann trage unbedingt den Namen in deine CSV-Datei ein.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="800">2.6. Verkaufspreise</h3>
+<div class="paragraph">
+<p>Verkaufspreise sind die Bedingungen, unter denen eine Variante zu einem bestimmten Preis verkauft wird.
+Bevor du deine Artikel in plentymarkets importierst, stelle sicher, dass du <a href="/artikel/einstellungen/preise">alle benötigten Verkaufspreise erstellt hast</a>.</p>
+</div>
+<div class="paragraph">
+<p>Gib in den Zuordnungseinstellungen an, welchen Verkaufspreis du für den Import verwenden wirst. Und trage die entsprechenden Preise in deine CSV-Datei ein.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/daten/daten-importieren/assets/best-practice-variante-preise.png" alt="best practice variante preise">
+</div>
+<div class="title">Bild 5. Gegenüberstellung von Zuordnungsfeld und Spalte in der CSV-Datei</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="900">3. Beispiel-Sync importieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Falls noch nicht bereits getan, lade den Beispiel-Sync herunter, entpacke die ZIP-Datei und <a href="/daten/daten-importieren/ElasticSync#1640">importiere die JSON-Datei in dein plentymarkets System</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Prüfe die Voreinstellungen!</div>
+<div class="paragraph">
+<p>Im Beispiel-Sync wurden viele Einstellungen vorausgewählt. Prüfe diese Einstellungen und stelle sicher, dass sie deinen Anforderungen entsprechen.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1000">4. Abgleich-Einstellungen prüfen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Während des Imports prüft plentymarkets, ob die Variante bereits existiert. Dies geschieht mit Hilfe eines sogenannten Abgleichfeldes.
+Für den Abgleich ist wichtig, dass ein <em>variantenspezifisches Abgleichfeld</em> genutzt wird. Dafür eignet sich z.B. die Variantennummer oder auch die Varianten-ID.</p>
+</div>
+<div class="paragraph">
+<p>Im Beispiel-Sync wurden die folgenden Einstellungen für den Abgleich vorausgewählt:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Abgleichfeld: Variantennr.</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Spaltenüberschrift <strong>Variantennummer</strong> aus der CSV-Datei wurde hier vorausgewählt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Import Optionen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Option <strong>Neue Daten importieren, vorhandene aktualisieren</strong> wurde hier vorausgewählt.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1100">5. Zuordnung-Einstellungen prüfen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Deine CSV-Datei ist bereits mit einer Menge Artikelinformationen gefüllt. Entscheide als nächstes, <em>wo in plentymarkets</em> jede Information beim Import der Datei erscheinen soll. <a href="/daten/daten-importieren/sync-typen/elasticSync-artikel#1920">Siehe diese Seite</a>, während du die Spalten deiner CSV-Datei zu den Feldern in plentymarkets zuordnest.
+Im Beispiel-Sync wurden viele Zuordnungseinstellungen vorausgewählt. Prüfe diese Einstellungen und stelle sicher, dass sie deinen Anforderungen entsprechen.</p>
+</div>
+<div class="paragraph">
+<p>Es empfiehlt sich, nur die Felder in die Zuordnung aufzunehmen, die tatsächlich übergeben werden sollen. Überflüssige Felder sollten deaktiviert werden (<span class="icon red"><i class="fa fa-toggle-off  "></i></span>), da sie sonst Fehler verursachen können.</p>
+</div>
+<h4 id="_pflichtfelder" class="discrete">Pflichtfelder</h4>
+<div class="paragraph">
+<p>Für die Artikelanlage mit Varianten gibt es <em>Pflichtfelder</em>, die als Minimum in der Zuordnung enthalten sein müssen, damit der Sync funktioniert. Dabei handelt es sich um folgende Felder:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Was möchtest du importieren?</th>
+<th class="tableblock halign-left valign-top">Pflichtfelder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Artikel- und Variantendaten</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Standardkategorie</p>
+</li>
+<li>
+<p>Hauptvariantennummer</p>
+</li>
+<li>
+<p>Variantennummer</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Artikel- und Variantendaten + Bestand</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Standardkategorie</p>
+</li>
+<li>
+<p>Hauptvariantennummer</p>
+</li>
+<li>
+<p>Variantennummer</p>
+</li>
+<li>
+<p>Lager</p>
+</li>
+<li>
+<p>Menge</p>
+</li>
+<li>
+<p>Lagerort</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1200">6. Hat es funktioniert?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bereit, deine Artikel zu importieren? Führe den Sync aus und kontrolliere, dass die Daten korrekt in plentymarkets importiert wurden.</p>
+</div>
+<div class="paragraph instruction">
+<p>Sync ausführen und Ergebnis prüfen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Aktiviere die zu importierenden Zeilen (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>).</p>
+</li>
+<li>
+<p>Teste den Sync (<span class="icon "><i class="psicon-plugin_stage_deploy"></i></span>) oder führe den Sync aus (<span class="icon darkGrey"><i class="fa fa-play-circle-o  "></i></span>).<br>
+<strong><em>Hinweis:</em></strong> Dies kann einige Minuten dauern.</p>
+</li>
+<li>
+<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten</strong>.</p>
+</li>
+<li>
+<p>Öffne einige Artikeldatensätze und prüfe ihre Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Testlauf nutzen</div>
+<div class="paragraph">
+<p>Wir empfehlen, beim erstmaligen Sync vorab den Testlauf (<span class="icon "><i class="psicon-plugin_stage_deploy"></i></span>) zu nutzen.
+Damit werden die ersten 10 Zeilen der Datei ohne Cache importiert.
+So kann man prüfen, ob der Sync ordnungsgemäß läuft. Sollten sich Fehler eingeschlichen haben, kann man diese vor der kompletten Ausführung noch korrigieren.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Cache zurücksetzen</div>
+<div class="paragraph">
+<p>Direkt im Sync findest du die Schaltfläche <strong>Cache löschen</strong> (<span class="icon "><i class="psicon-reload"></i></span>).
+Mit dieser Schaltfläche kannst du den ElasticSync-Cache zurücksetzen, damit du eine Datei ohne vorherige Änderung erneut importieren kannst.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</main>
