@@ -2164,6 +2164,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "d16658fbd486b1f1c5d35dc77e19bd42",
+				"path" => "payment/beta-zahlungen-verwalten-neu",
+				"position" => 25,
+				"urlName" => "beta-zahlungen-verwalten-neu",
+				"url" => "/payment/beta-zahlungen-verwalten",
+				"level" => 2,
+				"title" => "beta: Zahlungseingänge bearbeiten",
+				"keywords" => "Zahlung, Zahlungen, Zahlungsverkehr, Zahlungseingang, Zahlungseingänge, Zahlungsanbieter, Überweisung, Payment, automatische Zuordnung, Zuordnung, Zahlungszuordnung, Properties, Zahlungsdaten, Bankbuchung, Vorkasse, Überweisung, Auftragszuordnung, Zahlung zuordnen, Zahlungsübersicht, Betrag, Haben, Soll, Währung, Verwendungszweck, manuelle Buchung, Vormerkposten, Übereinstimmungsquote, Transaktionstyp, Wert, Zahlungsinformationen, Gesamtbetrag, Bezahlt, Offen, Zahlung aufteilen, Teilzahlung",
+				"description" => "Payments in plentymarkets: Erfahre alles über das Bearbeiten von Zahlungen.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich beta: Zahlungseingänge bearbeiten. Hier findest du folgende Informationen:",
+				"languageID" => "VBZTVJ8",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "fb83f5e1b22d710e55cf3e4535afd4b0",
 				"path" => "payment/bankdaten-verwalten",
 				"position" => 30,
