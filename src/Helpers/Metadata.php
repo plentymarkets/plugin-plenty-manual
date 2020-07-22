@@ -16775,6 +16775,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "51aa9a2e9026c28bc125d161b8fd0860",
+				"path" => "payment/beta-managing-payments-new",
+				"position" => 25,
+				"urlName" => "beta-managing-payments-new",
+				"url" => "/en/payment/beta-managing-payments",
+				"level" => 2,
+				"title" => "beta: Managing payments",
+				"keywords" => "payments, incoming payments, payment provider, assigning payments, automatic assignment, auto-assign, amount, total, credit, debit, currency, group function, detach, detaching, transaction type, ID, total, split payment, splitting payments, partial payments, properties, history, matching rate",
+				"description" => "Payments in plentymarkets: Get to know everything about working with and editing payments.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic beta: Managing payments. The following information is available:",
+				"languageID" => "VBZTVJ8",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "6a787c3a80f82ee6658e70e5a1bf77ce",
 				"path" => "payment/managing-bank-details",
 				"position" => 30,
