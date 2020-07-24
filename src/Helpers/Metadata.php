@@ -650,7 +650,7 @@ class Metadata {
 						"path" => "artikel/einstellungen/felder",
 						"position" => 105,
 						"urlName" => "felder",
-						"url" => "/artikel/einstellungen/felder",
+						"url" => "/artikel/einstellungen/freitextfelder",
 						"level" => 3,
 						"title" => "Freitextfelder",
 						"keywords" => "Freitextfeld, Freitextfelder, Frei, Freitext, Frei-Text, Frei-Text-Feld, Free text",
