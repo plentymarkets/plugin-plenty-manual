@@ -17077,6 +17077,22 @@ class Metadata {
 						"languageID" => "S6ALNG3",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "e3af5f16e631403b9b1e0902525f14af",
+						"path" => "fulfilment/practical-examples/practical-example-geoblocking",
+						"position" => 20,
+						"urlName" => "practical-example-geoblocking",
+						"url" => "/en/fulfilment/practical-examples/practical-example-geoblocking",
+						"level" => 3,
+						"title" => "Practical example: Geoblocking",
+						"keywords" => "geoblocking, best practices, Geoblocking, Geo Blocking, Geoblocking regulation, not commercially active, geoblocking countries",
+						"description" => "Learn more about geoblocking.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Practical example: Geoblocking. The following information is available:",
+						"languageID" => "XEWBOJ6",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -20157,7 +20173,7 @@ class Metadata {
 								"url" => "/en/markets/amazon/variation-export-old",
 								"level" => 4,
 								"title" => "Setting up variation export with old technology",
-								"keywords" => "Amazon, item export, variation export, Amazon catalogue, Export Amazon, Amazon Export, exporting items, exporting variations, exporting item data",
+								"keywords" => "Amazon, item export, variation export, Amazon catalog, Amazon catalogue, Export Amazon, Amazon Export, variation export, exporting item data to Amazon, exporting variation data to Amazon",
 								"description" => "Multi-Channel in plentymarkets: Export your variation data to the market Amazon.",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Setting up variation export with old technology. The following information is available:",
@@ -20172,11 +20188,11 @@ class Metadata {
 								"urlName" => "variation-export",
 								"url" => "/en/markets/amazon/variation-data-export",
 								"level" => 4,
-								"title" => "Setting up catalogs for variation export to Amazon (BETA)",
+								"title" => "Setting up catalogues for variation export to Amazon (BETA)",
 								"keywords" => "Amazon, item export, variation export, Amazon catalog, Amazon catalogue, Export Amazon, Amazon Export, variation export, exporting item data to Amazon, exporting variation data to Amazon",
 								"description" => "Multi-Channel in plentymarkets: Create a catalogue to export variation data to the market Amazon.",
 								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Setting up catalogs for variation export to Amazon (BETA). The following information is available:",
+								"linkListInto" => "Welcome to the topic Setting up catalogues for variation export to Amazon (BETA). The following information is available:",
 								"languageID" => "EABQJ7Y",
 								"children" => [],
 								"hasChildren" => false
