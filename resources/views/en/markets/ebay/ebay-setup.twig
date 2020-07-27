@@ -161,7 +161,7 @@
 <li><a href="#8100"><span>19.3.4.</span><span> Offering partial refund</span></a></li>
 <li><a href="#8150"><span>19.3.5.</span><span> Uploading your own label to eBay</span></a></li>
 <li><a href="#8200"><span>19.3.6.</span><span> Marking returns as received</span></a></li>
-<li><a href="#8300"><span>19.3.7.</span><span> Issuing refunds (PayPal)</span></a></li>
+<li><a href="#8300"><span>19.3.7.</span><span> Issuing refunds</span></a></li>
 <li><a href="#8400"><span>19.3.8.</span><span> Marking eBay refunds as sent (non-PayPal)</span></a></li>
 </ul>
 </li>
@@ -7188,9 +7188,31 @@ For existing listings, you have to match ePIDs manually.</p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="8300">19.3.7. Issuing refunds (PayPal)</h4>
+<h4 id="8300">19.3.7. Issuing refunds</h4>
 <div class="paragraph">
-<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to initiate a refund via PayPal to the customer.</p>
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to initiate a refund to the customer.<br></p>
+</div>
+<div class="paragraph">
+<p>You can also set up this event procedure if you use eBay’s Managed Payments service. In this case, the refund will be sent directly to eBay. eBay Managed Payments enables users to pay directly at eBay without having to enter a third-party page. eBay takes care of the entire payment and return process. Depending on whether you use eBay Managed Payments or not, you have to set different filters in this event procedure. If you use eBay Managed Payments, select the filter <strong>Order &gt; Payment Method: eBay Payments</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The event procedure can be triggered in three different cases if you use eBay Managed Payments:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A case was opened at eBay.<br>
+→ A refund for this case is sent to eBay.</p>
+</li>
+<li>
+<p>No case was opened at eBay.<br>
+→ Is there a return? If a return exists, a refund for this return is sent to eBay. You can also send a refund to eBay if the return was not imported into plentymarkets.</p>
+</li>
+<li>
+<p>No case was opened at eBay and there is no return.<br>
+→ A refund is sent to eBay.</p>
+</li>
+</ol>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Setting up an event procedure</div>
@@ -7262,7 +7284,8 @@ For existing listings, you have to match ePIDs manually.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 3</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PayPal</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">without eBay Managed Payments: <strong>PayPal</strong><br>
+with eBay Managed Payments: <strong>eBay Payments</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
@@ -7424,8 +7447,8 @@ For existing listings, you have to match ePIDs manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The seller sets the return status to <strong>Initiate eBay refund (PayPal)</strong>.<br>
-→ The event procedure <strong>Initiate eBay refund (PayPal)</strong> is triggered and the new status is transferred to eBay.<br>
+<p>The seller sets the return status to <strong>Initiate eBay refund</strong>.<br>
+→ The event procedure <strong>Initiate eBay refund</strong> is triggered and the new status is transferred to eBay.<br>
 → The refund amount is directly booked from the seller’s PayPal account to the buyer’s PayPal account.<br>
 → The return changes to the status <strong>eBay: return closed</strong>. The buyer does not have to confirm the receipt of the refund in order for the status to change.</p>
 </li>
@@ -7477,8 +7500,8 @@ For existing listings, you have to match ePIDs manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The seller sets the return status to <strong>Initiate eBay refund (PayPal)</strong>.<br>
-→ The event procedure <strong>Initiate eBay refund (PayPal)</strong> is triggered and the new status is transferred to eBay.<br>
+<p>The seller sets the return status to <strong>Initiate eBay refund</strong>.<br>
+→ The event procedure <strong>Initiate eBay refund</strong> is triggered and the new status is transferred to eBay.<br>
 → The refund amount is directly booked from the seller’s PayPal account to the buyer’s PayPal account.<br>
 → The return changes to the status <strong>eBay: return closed</strong>. The buyer does not have to confirm the receipt of the refund in order for the status to change.</p>
 </li>
