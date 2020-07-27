@@ -161,7 +161,7 @@
 <li><a href="#8100"><span>19.3.4.</span><span> Teilrückerstattung anbieten</span></a></li>
 <li><a href="#8150"><span>19.3.5.</span><span> Eigenes Etikett bei eBay hochladen</span></a></li>
 <li><a href="#8200"><span>19.3.6.</span><span> Retouren als erhalten markieren</span></a></li>
-<li><a href="#8300"><span>19.3.7.</span><span> Rückerstattungen veranlassen (PayPal)</span></a></li>
+<li><a href="#8300"><span>19.3.7.</span><span> Rückerstattungen veranlassen</span></a></li>
 <li><a href="#8400"><span>19.3.8.</span><span> Rückerstattungen als gesendet markieren (ohne PayPal)</span></a></li>
 </ul>
 </li>
@@ -7219,9 +7219,31 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 </table>
 </div>
 <div class="sect3">
-<h4 id="8300">19.3.7. Rückerstattungen veranlassen (PayPal)</h4>
+<h4 id="8300">19.3.7. Rückerstattungen veranlassen</h4>
 <div class="paragraph">
-<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um eine Rückerstattung über PayPal zu veranlassen.</p>
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um eine Rückerstattung zu veranlassen.<br></p>
+</div>
+<div class="paragraph">
+<p>Du kannst diese Ereignisaktion auch einrichten, wenn du den Zahlungsservice eBay Managed Payments nutzt. Die Erstattung wird dann direkt an eBay gesendet. Mit Managed Payments können Kund*innen direkt bei eBay bezahlen, ohne zu einem Drittanbieter zu wechseln. Dabei wickelt eBay den kompletten Zahlungs- und Rückgabeprozess ab. Je nachdem, ob du eBay Managed Payments nutzt oder nicht, musst du in dieser Ereignisaktion unterschiedliche Filter einstellen. Wenn du eBay Managed Payments nutzt, wähle den Filter <strong>Auftrag &gt; Zahlungsart: eBay Payments</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Die Ereignisaktion kann für eBay Managed Payments in drei verschiedenen Fällen ausgelöst werden:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Es wurde ein Fall bei eBay eröffnet.<br>
+→ Die Rückerstattung für diesen Fall wird an eBay gesendet.</p>
+</li>
+<li>
+<p>Es wurde kein Fall bei eBay eröffnet.<br>
+→ Es wird geprüft, ob es eine Retoure gibt. Ist eine Retoure vorhanden, wird eine Rückerstattung für die Retoure an eBay gesendet. Es kann auch eine Rückerstattung an eBay gesendet werden, wenn die Retoure nicht in plentymarkets importiert wurde.</p>
+</li>
+<li>
+<p>Es wurde kein Fall bei eBay eröffnet und es gibt keine Retoure.<br>
+→ Eine Rückerstattung wird an eBay gesendet.</p>
+</li>
+</ol>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
@@ -7277,7 +7299,7 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Statuswechsel &gt; eBay-Rückerstattung veranlassen (PayPal)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Statuswechsel &gt; eBay-Rückerstattung veranlassen</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -7293,11 +7315,12 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 3</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Zahlungsart</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Paypal</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ohne eBay Managed Payments: <strong>Paypal</strong><br>
+mit eBay Managed Payments: <strong>eBay Payments</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Market-Listings &gt; eBay-Rückerstattung veranlassen (PayPal)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Market-Listings &gt; eBay-Rückerstattung veranlassen</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -7455,8 +7478,8 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <div class="ulist">
 <ul>
 <li>
-<p>Du setzt den Status der Retoure auf <strong>eBay-Rückerstattung veranlassen (PayPal)</strong>.<br>
-→ Die Ereignisaktion <strong>eBay-Rückerstattung veranlassen (PayPal)</strong> wird ausgelöst und der neue Status an eBay übermittelt.<br>
+<p>Du setzt den Status der Retoure auf <strong>eBay-Rückerstattung veranlassen</strong>.<br>
+→ Die Ereignisaktion <strong>eBay-Rückerstattung veranlassen</strong> wird ausgelöst und der neue Status an eBay übermittelt.<br>
 → Der Rückerstattungsbetrag wird direkt vom Verkäufer-PayPal-Konto auf das PayPal-Konto der Käufer*innen gebucht.<br>
 → Die Retoure wechselt in den Status <strong>eBay: Retoure geschlossen</strong>, ohne dass Käufer*innen den Erhalt der Rückerstattung bestätigen müssen.</p>
 </li>
@@ -7508,8 +7531,8 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <div class="ulist">
 <ul>
 <li>
-<p>Du setzt den Status der Retoure auf <strong>eBay-Rückerstattung veranlassen (PayPal)</strong>.<br>
-→ Die Ereignisaktion <strong>eBay-Rückerstattung veranlassen (PayPal)</strong> wird ausgelöst und der neue Status an eBay übermittelt.<br>
+<p>Du setzt den Status der Retoure auf <strong>eBay-Rückerstattung veranlassen</strong>.<br>
+→ Die Ereignisaktion <strong>eBay-Rückerstattung veranlassen</strong> wird ausgelöst und der neue Status an eBay übermittelt.<br>
 → Der Rückerstattungsbetrag wird direkt vom Verkäufer-PayPal-Konto auf das PayPal-Konto der Käufer*innen gebucht.<br>
 → Die Retoure wechselt in den Status <strong>eBay: Retoure geschlossen</strong>, ohne dass Käufer*innen den Erhalt der Rückerstattung bestätigen muss.</p>
 </li>
