@@ -22,28 +22,21 @@
 </li>
 <li><a href="#1000"><span>2.</span><span> Legal compliance in Austria</span></a>
 <ul class="sectlevel2">
-<li><a href="#1100"><span>2.1.</span><span> Creating a Z2 receipt</span></a></li>
-<li><a href="#1200"><span>2.2.</span><span> Selling items with a faulty signature unit</span></a></li>
-<li><a href="#1300"><span>2.3.</span><span> Creating a Kontrollbeleg (control receipt) for tax authorities</span></a></li>
-</ul>
-</li>
-<li><a href="#1400"><span>3.</span><span> Operating plentyPOS in Austria</span></a>
+<li><a href="#1500"><span>2.1.</span><span> Overview: Implementing the POS</span></a></li>
+<li><a href="#1600"><span>2.2.</span><span> Creating the start receipt (Austria)</span></a></li>
+<li><a href="#1900"><span>2.3.</span><span> Creating a Z2 receipt</span></a>
 <ul class="sectlevel3">
-<li><a href="#1500"><span>3.1.</span><span> Overview: Implementing the POS</span></a></li>
-<li><a href="#1600"><span>3.2.</span><span> Creating the start receipt (Austria)</span></a></li>
-<li><a href="#1700"><span>3.3.</span><span> Documenting POS transactions for Austrian tax authorities</span></a>
+<li><a href="#2000"><span>2.3.1.</span><span> Assigning users the right to create Z2 receipts</span></a></li>
+</ul>
+</li>
+<li><a href="#1300"><span>2.4.</span><span> Creating a Kontrollbeleg (control receipt) for tax authorities</span></a></li>
+<li><a href="#1200"><span>2.5.</span><span> Selling items with a faulty signature unit</span></a></li>
+<li><a href="#1700"><span>2.6.</span><span> Documenting POS transactions for Austrian tax authorities</span></a>
 <ul class="sectlevel3">
-<li><a href="#1800"><span>3.3.1.</span><span> Creating a DEP export</span></a></li>
-<li><a href="#1900"><span>3.3.2.</span><span> Creating a Z2 receipt</span></a>
-<ul class="sectlevel4">
-<li><a href="#2000"><span>Assigning users the right to create Z2 receipts</span></a></li>
+<li><a href="#1800"><span>2.6.1.</span><span> Creating a DEP export</span></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#2100"><span>3.4.</span><span> SOS: The signature unit has failed. What do I need to do?</span></a></li>
-<li><a href="#2200"><span>3.5.</span><span> Creating a Kontrollbeleg (control receipt) for tax authorities</span></a></li>
-<li><a href="#2300"><span>3.6.</span><span> Decommissioning a POS</span></a></li>
+<li><a href="#2300"><span>2.7.</span><span> Decommissioning a POS</span></a></li>
 </ul>
 </li>
 </ul>
@@ -82,7 +75,7 @@
 <td class="content">
 <div class="title">Activate menu visibility for back end users</div>
 <div class="paragraph">
-<p>For POS users that use plentymarkets as back end users, activate the <a href="/en/business-decisions/user-accounts-access#100">menu visibility</a> so that those users have access to the menu described below.
+<p>For POS users that use plentymarkets as back end users, activate the <a href="/en/basics/admin-tasks/manage-users#100">menu visibility</a> so that those users have access to the menu described below.
 To do so, go to <strong>Setup » Settings » User » Rights » Open user » Rights</strong>. In the <strong>Menu visibilities</strong> area, go to <strong>Orders » POS</strong> and activate the option <strong>Cash journal</strong>. Then, click on <strong>Save</strong>.</p>
 </div>
 </td>
@@ -101,7 +94,7 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 <p>Select filters. Pay attention to the information given in <a href="#table-POS-cash-journal-menu">Table 1</a>.</p>
 </li>
 <li>
-<p>Click on Search (<span class="icon blue"><i class="fa fa-search  "></i></span>) to carry out the search.
+<p>Click on Search (<span class="icon blue"><i class="fa fa-search  "></i></span>) to carry out the search.<br>
 → The customers that correspond to the search criteria entered are listed.</p>
 </li>
 <li>
@@ -145,13 +138,13 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enter the receipt numbers of the first and last receipt to search for receipts of a specific receipt number range. To show a single receipt, enter the same receipt number in the field <strong>Receipt number: from</strong> and the field <strong>Receipt number: to</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Posting Account</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a <a href="/en/pos/integrating-plentymarkets-pos#950">booking account</a> to display the POS transactions for that booking account.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Posting account</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a <a href="/en/pos/pos-einrichten#950">booking account</a> to display the POS transactions for that booking account.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Include  gift card sales</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Do you want to treat sold coupons like revenue?<br>
-<strong>Check mark</strong> = Sold coupons contribute to the total revenue. The amounts are listed as “revenue (<strong>R</strong>)” in the cash journal. Sold coupons contribute to the value displayed in the <strong>Amount</strong> column on the right. Coupons are also treated like revenue in the PDF export and the CSV export.</p></td>
+<strong>Check mark placed</strong> = Sold coupons contribute to the total revenue. The amounts are listed as “revenue (<strong>R</strong>)” in the cash journal. Sold coupons contribute to the value displayed in the <strong>Amount</strong> column on the right. Coupons are also treated like revenue in the PDF export and the CSV export.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client (store)</strong></p></td>
@@ -278,7 +271,7 @@ To only show receipts of a custom period, select <strong>Date selection</strong>
 <td class="content">
 <div class="title">Activate menu visibility for back end users</div>
 <div class="paragraph">
-<p>For POS users that use plentymarkets as back end users, activate the <a href="/en/business-decisions/user-accounts-access#100">menu visibility</a> so that those users have access to the menu described above.
+<p>For POS users that use plentymarkets as back end users, activate the <a href="/en/basics/admin-tasks/manage-users#100">menu visibility</a> so that those users have access to the menu described above.
 To do so, go to <strong>Setup » Settings » User » Rights » Open user » Rights</strong>. In the <strong>Menu visibilities</strong> area, go to <strong>Orders » POS</strong> and activate the option <strong>IDEA export</strong>. Then, click on <strong>Save</strong>.</p>
 </div>
 </td>
@@ -300,7 +293,7 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 <td class="content">
 <div class="title">Latest information on German cash register regulations (Kassensicherungsverordnung)</div>
 <div class="paragraph">
-<p>The official registration process for TSE units has not yet been finalised by German tax authorities. Thus, you are currently still allowed to run POS that are not registered yet (Last updated in April 2020). Further information is available <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Weitere_Steuerthemen/Abgabenordnung/2019-11-05-nichtbeanstandungsregelung-bei-verwendung-elektronischer-aufzeichnungssysteme.pdf?__blob=publicationFile&amp;v=2" target="_blank" rel="noopener">here</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+<p>The official registration process for TSE units has not yet been finalised by German tax authorities. Thus, you are currently still allowed to run POS systems that are not registered yet (Last updated in April 2020). Further information is available <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Weitere_Steuerthemen/Abgabenordnung/2019-11-05-nichtbeanstandungsregelung-bei-verwendung-elektronischer-aufzeichnungssysteme.pdf?__blob=publicationFile&amp;v=2" target="_blank" rel="noopener">here</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
 </div>
 </td>
 </tr>
@@ -359,7 +352,7 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Buying hardware</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hardware bought after January 1, 2020, should either be compliant with German cash register regulations or be adjustable to comply with the regulations. We recommend that you contact your hardware provider to buy new receipt printers with an integrated TSE unit. <strong><em>Or</em></strong>: Clarify with your hardware provider if the hardware you are currently using can be adjusted or not.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hardware bought after 1st January 2020 should either be compliant with German cash register regulations or be adjustable to comply with the regulations. We recommend that you contact your hardware provider to buy new receipt printers with an integrated TSE unit. <strong><em>Or</em></strong>: Clarify with your hardware provider if the hardware you are currently using can be adjusted or not.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.</p></td>
@@ -498,7 +491,7 @@ However, following some additional steps is mandatory:</p>
 <p>Proceed as described below to download TSE export files.</p>
 </div>
 <div class="paragraph instruction">
-<p>Downloading TSE exports:</p>
+<p>Download TSE exports:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -531,7 +524,7 @@ However, following some additional steps is mandatory:</p>
 <td class="content">
 <div class="title">Activate menu visibility for back end users</div>
 <div class="paragraph">
-<p>For POS users that use plentymarkets as back end users, activate the <a href="/en/business-decisions/user-accounts-access#100">menu visibility</a> so that those users have access to the menu described above.
+<p>For POS users that use plentymarkets as back end users, activate the <a href="/en/basics/admin-tasks/manage-users#100">menu visibility</a> so that those users have access to the menu described above.
 To do so, go to <strong>Setup » Settings » User » Rights » Open user » Rights</strong>. In the <strong>Menu visibilities</strong> area, go to <strong>Orders » POS</strong> and activate the option <strong>TSE export</strong>. Then, click on <strong>Save</strong>.</p>
 </div>
 </td>
@@ -697,7 +690,7 @@ As soon as the TSE unit has been linked successfully, the default status <strong
 <td class="content">
 <div class="paragraph">
 <div class="title">Activate menu visibility for back end users</div>
-<p>For POS users that use plentymarkets as back end users, activate the menu visibility so that those users have access to the menu described above.
+<p>For POS users that use plentymarkets as back end users, activate the <a href="/en/basics/admin-tasks/manage-users#100">menu visibility</a> so that those users have access to the menu described above.
 To do so, go to <strong>Setup » Settings » User » Rights » Open user » Rights</strong>. In the <strong>Menu visibilities</strong> area, go to <strong>Orders » POS</strong> and activate the option <strong>DSFinV-K export</strong>. Then, click on <strong>Save</strong>.</p>
 </div>
 </td>
@@ -711,99 +704,10 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 <h2 id="1000">2. Legal compliance in Austria</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>By law, Austrian POS need to be equipped with a signature unit. These legal requirements mean that you need to follow special rules when operating a POS if you are based in Austria. These rules are described below.</p>
+<p>According to the Cash Register Directive (Registrierkassensicherheitsverordnung, RKSV) points of sale located in Austria have to be equipped with a technical signature unit that ensures that POS transaction data is temper-proof, i.e. cannot be deleted or edited. The QR code on the POS receipts provides visual proof that the POS is tamper-proof. The following chapters explain how to set up and run POS systems in Austria according to official regulations.</p>
 </div>
 <div class="sect2">
-<h3 id="1100">2.1. Creating a Z2 receipt</h3>
-<div class="paragraph">
-<p>A Z2 receipt is a monthly signed control receipt with an amount of zero (0.00 Euro). The RKSV requires you to create a Z2 receipt at the end of each month. The Z2 report for the month of December also serves as an end of year report.</p>
-</div>
-<div class="paragraph instruction">
-<p>Creating a Z2 receipt:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Log into the plentymarkets app.</p>
-</li>
-<li>
-<p>In the menu bar, tap the <strong>menu symbol</strong>.</p>
-</li>
-<li>
-<p>Tap <strong>POS</strong>.<br>
-→ The POS menu is displayed.</p>
-</li>
-<li>
-<p>Tap <strong>Z2 receipt (AT)</strong>.<br>
-→ The Z2 receipt is printed.<br>
-→ The Z2 receipt is imported to plentymarkets and saved in the <strong>Orders » Document archive</strong> menu.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="1200">2.2. Selling items with a faulty signature unit</h3>
-<div class="paragraph">
-<p>The RKSV stipulates what you need to do if the POS’s signature unit fails temporarily or permanently.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Document the time the TSE unit stopped working.</p>
-</li>
-<li>
-<p>If possible, move on to a POS with a functional signature unit.</p>
-</li>
-<li>
-<p>If no other POS is available, you can continue using the POS with the unavailable TSE unit. All receipts are marked <strong>Sicherheitseinrichtung ausgefallen</strong> (Security unit failed).</p>
-</li>
-<li>
-<p>Once the signature unit is functional again, a collective receipt is created and printed in plentymarkets POS automatically.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These steps are recommendations that can help you comply with the RKSV. Check with your supervisor how to proceed if the signature unit fails.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="1300">2.3. Creating a Kontrollbeleg (control receipt) for tax authorities</h3>
-<div class="paragraph">
-<p>In the case of a POS inspection by Austrian tax authorities, you need to be able to generate a zero amount control receipt (Kontrollbeleg) on the spot. This control receipt allows tax inspectors to validate the signature on the POS receipts on site in your store using a special app. You do not need any additional user rights to create a control receipt.</p>
-</div>
-<div class="paragraph instruction">
-<p>Creating a Kontrollbeleg (control receipt) on demand:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Log into the plentymarkets App.</p>
-</li>
-<li>
-<p>In the menu bar, tap the <strong>menu symbol</strong>.</p>
-</li>
-<li>
-<p>Tap <strong>POS</strong>.<br>
-→ The POS menu is displayed.</p>
-</li>
-<li>
-<p>Tap <strong>Control receipt</strong>.<br>
-→ Der control receipt is printed.<br>
-→ The control receipt is imported to plentymarkets and saved in the <strong>Orders » Document archive</strong> menu.<br>
-<strong><em>Note:</em></strong> The investigators can keep the control receipt as evidence.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="sect1">
-<h2 id="1400">3. Operating plentyPOS in Austria</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>According to the Cash Register Directive (Registrierkassensicherheitsverordnung, RKSV) points of sale located in Austria must be equipped with a technical signature unit that ensures that POS transaction data is temper-proof, i.e. cannot be deleted or edited. The QR code on the POS receipts provides visual proof that the POS is tamper-proof. Find out how to integrate and use a POS that is to be operated in Austria.</p>
-</div>
-<div class="sect3">
-<h4 id="1500">3.1. Overview: Implementing the POS</h4>
+<h3 id="1500">2.1. Overview: Implementing the POS</h3>
 <div class="paragraph">
 <p>For POS located in Austria, the steps described in <a href="#table-activating-POS-Austria">Table 4</a> are necessary to activate the signature unit required by the RKSV. Check the website of the <a href="https://english.bmf.gv.at/taxation/Cash_register_folder.html" target="_blank" rel="noopener">Austrian Federal Ministry of Finance</a> for detailed information on these legal requirements. This page of the manual describes only those steps necessary to implement a plentyPOS located in Austria. This description does not form legal or fiscal advice.</p>
 </div>
@@ -825,16 +729,8 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Get a signature card and a signature card reader</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>plentymarkets tests with the Feitian smartcard reader <a href="https://en.cryptoshop.com/feitian-br301-bluetooth-reader.html" target="_blank" rel="noopener">bR301</a>.</p>
-</li>
-<li>
-<p>plentymarkets tests with the signature cards of the service provider <a href="https://www.prime-sign.com/" target="_blank" rel="noopener">PrimeSign</a>.</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plentyPOS is optimised for use with the Feitian smartcard reader <a href="https://en.cryptoshop.com/feitian-br301-bluetooth-reader.html" target="_blank" rel="noopener">bR301</a>.
+* plentymarkets tests with the signature cards of the service provider <a href="https://www.prime-sign.com/" target="_blank" rel="noopener">PrimeSign</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.</p></td>
@@ -906,8 +802,8 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 </tbody></table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="1600">3.2. Creating the start receipt (Austria)</h4>
+<div class="sect2">
+<h3 id="1600">2.2. Creating the start receipt (Austria)</h3>
 <div class="paragraph">
 <p>Now create the start receipt (Startbeleg) to put the POS into operation. You need the PIN of the signature certificate to create the start receipt. You should have received this PIN from your certificate service provider (Vertrauensdiensteanbieter) together with your signature card. Go to the POS menu of the plentymarkets app to create the start receipt. After the start receipt is created, the location country of the POS cannot be changed.</p>
 </div>
@@ -937,7 +833,98 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 </div>
 </div>
 <div class="sect2">
-<h3 id="1700">3.3. Documenting POS transactions for Austrian tax authorities</h3>
+<h3 id="1900">2.3. Creating a Z2 receipt</h3>
+<div class="paragraph">
+<p>A Z2 receipt is a monthly signed control receipt with an amount of zero (0.00 Euro). The RKSV requires you to create a Z2 receipt at the end of each month. The Z2 report for the month of December also serves as an end of year report. You need to print and archive this yearly receipt every year and scan the barcode with the BMF receipt validation app.</p>
+</div>
+<div class="sect3">
+<h4 id="2000">2.3.1. Assigning users the right to create Z2 receipts</h4>
+<div class="paragraph">
+<p>Users with admin rights are able to create Z2 receipts by default. <strong>Backend</strong> users must be assigned this right.</p>
+</div>
+<div class="paragraph instruction">
+<p>Assigning users the right to create Z2 receipts:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Settings » User » Accounts</strong>.</p>
+</li>
+<li>
+<p>Open the account of the user.</p>
+</li>
+<li>
+<p>Click on the <strong>Mobile</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>POS functions</strong> section, activate the right <strong>Z2 receipt (AT)</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The POS user <a href="/en/pos/plentymarkets-pos-for-pos-users#270">can create Z2 receipts in plentyPOS</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1300">2.4. Creating a Kontrollbeleg (control receipt) for tax authorities</h3>
+<div class="paragraph">
+<p>In the case of a POS inspection by Austrian tax authorities, you need to be able to generate a zero amount control receipt (Kontrollbeleg) on the spot. This control receipt allows tax inspectors to validate the signature on the POS receipts on site in your store using a special app. You do not need any additional user rights to create a control receipt.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a Kontrollbeleg (control receipt) on demand:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log into the plentymarkets App.</p>
+</li>
+<li>
+<p>In the menu bar, tap the <strong>menu symbol</strong>.</p>
+</li>
+<li>
+<p>Tap <strong>POS</strong>.<br>
+→ The POS menu is displayed.</p>
+</li>
+<li>
+<p>Tap <strong>Control receipt</strong>.<br>
+→ Der control receipt is printed.<br>
+→ The control receipt is imported to plentymarkets and saved in the <strong>Orders » Document archive</strong> menu.<br>
+<strong><em>Note:</em></strong> The investigators can keep the control receipt as evidence.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1200">2.5. Selling items with a faulty signature unit</h3>
+<div class="paragraph">
+<p>The RKSV stipulates how you need to proceed if the signature unit of the POS fails:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the signature unit fails, you need to move on to a POS with a functioning signature unit.</p>
+</li>
+<li>
+<p>If no other POS is available, you can temporarily use the one with the failed signature unit.</p>
+</li>
+<li>
+<p>If the signature unit fails for more than 48 hours, you need to inform the tax authorities about the beginning and end of the failure via FinanzOnline within a week.</p>
+</li>
+<li>
+<p>All unsigned receipts must be marked <strong>Signatureinrichtung ausgefallen</strong> (Signature unit failed).<br>
+→ In plentyPOS, receipts are marked with this text automatically if the signature unit fails.</p>
+</li>
+<li>
+<p>As soon as the signature unit functions again, a collective receipt (Sammelbeleg) must be created. The signature of this receipt must contain all transactions that were generated with the POS while the signature unit was not in operation.<br>
+→ plentyPOS creates a collective receipt automatically once the signature unit functions again.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1700">2.6. Documenting POS transactions for Austrian tax authorities</h3>
 <div class="paragraph">
 <p>The Austrian Registrierkassensicherheitsverordnung (RKSV) stipulates that receipts must be electronically signed and furnished with a QR code. This QR code contains all relevant receipt data, an encrypted revenue counter and information on the previous receipt. This reference to the previous receipt ensures that preceding receipts cannot be manipulated or deleted. In addition, a data collection protocol (Datenerfassungsprotokoll, DEP) must be kept for each POS. You need to be able to export this DEP to a local storage medium at any time.</p>
 </div>
@@ -945,7 +932,7 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 <p>plentymarkets provides several export formats to allow you to comply with these legal requirements. These exports are designed to conform to German tax laws. Talk to your tax consultant to determine what data you need to export and archive to comply with local tax laws.</p>
 </div>
 <div class="sect3">
-<h4 id="1800">3.3.1. Creating a DEP export</h4>
+<h4 id="1800">2.6.1. Creating a DEP export</h4>
 <div class="paragraph">
 <p>According to §7 of the Austrian Registrierkassensicherheitsverordnung (RKSV), a data collection protocol (Datenerfassungsprotokoll, DEP) must be kept for every POS. At a minimum, the DEP must contain the signatures of any receipts resulting from cash sales and cash cancellations. The concatenation of the receipt signatures means that the DEP data is temper-proof. A separate DEP must be kept for each POS.</p>
 </div>
@@ -994,7 +981,7 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 <li>
 <p>Click on <strong>Download</strong>.<br>
 → The file is saved in the default download folder set for the browser.<br>
-<strong><em>Tip:</em></strong> The file name contains the export range, for example the file depExport9-1-2017-9-2-2017.json contains data from the 9th of January to the 9thofFebruary 2017.</p>
+<strong><em>Tip:</em></strong> The file name contains the export range, for example the file depExport9-1-2017-9-2-2017.json contains data from the 9th of January to the 9th of February2017.</p>
 </li>
 </ol>
 </div>
@@ -1007,7 +994,7 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 <td class="content">
 <div class="title">Activate menu visibility for back end users</div>
 <div class="paragraph">
-<p>For POS users that use plentymarkets as back end users, activate the <a href="/en/business-decisions/user-accounts-access#100">menu visibility</a> so that those users have access to the menu described above.
+<p>For POS users that use plentymarkets as back end users, activate the <a href="/en/basics/admin-tasks/manage-users#100">menu visibility</a> so that those users have access to the menu described above.
 To do so, go to <strong>Setup » Settings » User » Rights » Open user » Rights</strong>. In the <strong>Menu visibilities</strong> area, go to <strong>Orders » POS</strong> and activate the option <strong>DEP export</strong>. Then, click on <strong>Save</strong>.</p>
 </div>
 </td>
@@ -1015,77 +1002,9 @@ To do so, go to <strong>Setup » Settings » User » Rights » Open user » Righ
 </tbody></table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="1900">3.3.2. Creating a Z2 receipt</h4>
-<div class="paragraph">
-<p>A Z2 receipt is a monthly signed control receipt with an amount of zero (0.00 Euro). The RKSV requires you to create a Z2 receipt at the end of each month. The Z2 report for the month of December also serves as an end of year report. You need to print and archive this yearly receipt every year and scan the barcode with the BMF receipt validation app.</p>
-</div>
-<div class="sect4">
-<h5 id="2000">Assigning users the right to create Z2 receipts</h5>
-<div class="paragraph">
-<p>Users with admin rights are able to create Z2 receipts by default. <strong>Backend</strong> users must be assigned this right.</p>
-</div>
-<div class="paragraph instruction">
-<p>Assigning users the right to create Z2 receipts:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to <strong>Setup » Settings » User » Accounts</strong>.</p>
-</li>
-<li>
-<p>Open the account of the user.</p>
-</li>
-<li>
-<p>Click on the <strong>Mobile</strong> tab.</p>
-</li>
-<li>
-<p>In the <strong>POS functions</strong> section, activate the right <strong>Z2 receipt (AT)</strong>.</p>
-</li>
-<li>
-<p><strong>Save</strong> the settings.<br>
-→ The POS user <a href="/en/pos/plentymarkets-pos-for-pos-users#270">can create Z2 receipts in plentyPOS</a>.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
 </div>
 <div class="sect2">
-<h3 id="2100">3.4. SOS: The signature unit has failed. What do I need to do?</h3>
-<div class="paragraph">
-<p>The RKSV stipulates how you need to proceed if the signature unit of the POS fails:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>If the signature unit fails, you need to move on to a POS with a functioning signature unit.</p>
-</li>
-<li>
-<p>If no other POS is available, you can temporarily use the one with the failed signature unit.</p>
-</li>
-<li>
-<p>If the signature unit fails for more than 48 hours, you need to inform the tax authorities about the beginning and end of the failure via FinanzOnline within a week.</p>
-</li>
-<li>
-<p>All unsigned receipts must be marked <strong>Signatureinrichtung ausgefallen</strong> (Signature unit failed).<br>
-→ In plentyPOS, receipts are marked with this text automatically if the signature unit fails.</p>
-</li>
-<li>
-<p>As soon as the signature unit functions again, a collective receipt (Sammelbeleg) must be created. The signature of this receipt must contain all transactions that were generated with the POS while the signature unit was not in operation.<br>
-→ plentyPOS creates a collective receipt automatically once the signature unit functions again.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="2200">3.5. Creating a Kontrollbeleg (control receipt) for tax authorities</h3>
-<div class="paragraph">
-<p>In the case of a POS inspection by Austrian tax authorities, you need to be able to generate a zero amount control receipt (Kontrollbeleg) on the spot. This control receipt allows tax inspectors to validate the signature on the POS receipts on site in your store using an app. All POS users can create such a <a href="/en/pos/plentymarkets-pos-for-pos-users#270">control receipt on demand</a>. No additional user rights are necessary to create the control receipt.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="2300">3.6. Decommissioning a POS</h3>
+<h3 id="2300">2.7. Decommissioning a POS</h3>
 <div class="paragraph">
 <p>To permanently decommission a POS located in Austria, you need to create an end receipt. An end receipt is an electronically signed control receipt with an amount of zero (0.00). An end receipt can be created for POS for which a start receipt has already been created. Go to the POS menu of the plentymarkets app to create the end receipt. Once an end receipt is created, the POS can no longer be operated.</p>
 </div>
