@@ -1303,11 +1303,27 @@ class Metadata {
 				"url" => "/crm/kontakte-verwalten",
 				"level" => 2,
 				"title" => "Kontakte",
-				"keywords" => "Kontakt, Kunde, Adresse, Adressen, Addressen, Addresse, Adresse Kunde, Rechnungsadresse, Lieferadresse, primär, primäre Lieferadresse, primäre Rechnungsadresse, Firmen, Firma, Firmen Adresse, Ustidnummer, Ust ID Nummer, Handelsvertreter, Gastzugang, Gastbestellung, Gast Bestellung, eingeloggter Kunde, registrierter Kunde, regulärer Zugang, Events, Eigenschaften, Zugangsdaten, Passwort ändern, Passwortänderung, Kunde kann sich nicht einloggen, Login entsperren, Bankdaten, Zugangsdaten, Nachrichten, Messenger, Kundenklasse, Kunden Klasse, Kontaktklasse, Kontakt klasse, Massenger, Kunde anonymisieren, anonymisieren, Kundendaten löschen, Datensatz löschen, Kunde löschen, Kontakt löschen, Kontakt anonymisieren, DSGVO, alle Daten vom Kunden herunterladen, Adresslayout, Adressdesign, Adress Layout, Adress Design, Addresslayout, Kundentyp, Kunden Typ, Rabattsystem, Rabatte vergeben, Rabatte für Kundenklasse, Kontaktoption, Kontaktoptionen, Adressoptionen, Adressoption, Kontakt Option, Adress Option, Schnellsuche, Adressen suchen, Kontostand, Provision Handelsvertreter, Kostenstelle, Kontakte importieren, Kundendaten importieren, Kundendaten exportieren, Kunden importieren,",
+				"keywords" => "Kontakt, Kunde, Adresse, Adressen, Addressen, Addresse, Adresse Kunde, Rechnungsadresse, Lieferadresse, primär, primäre Lieferadresse, primäre Rechnungsadresse, Firmen, Firma, Firmen Adresse, Ustidnummer, Ust ID Nummer, Handelsvertreter, Gastzugang, Gastbestellung, Gast Bestellung, eingeloggter Kunde, registrierter Kunde, regulärer Zugang, Events, Eigenschaften, Zugangsdaten, Passwort ändern, Passwortänderung, Kunde kann sich nicht einloggen, Login entsperren, Bankdaten, Zugangsdaten, Nachrichten, Messenger, Kundenklasse, Kunden Klasse, Kontaktklasse, Kontakt klasse, Massenger, Kundendaten löschen, Datensatz löschen, Kunde löschen, Kontakt löschen, DSGVO, Adresslayout, Adressdesign, Adress Layout, Adress Design, Addresslayout, Kundentyp, Kunden Typ, Rabattsystem, Rabatte vergeben, Rabatte für Kundenklasse, Kontaktoption, Kontaktoptionen, Adressoptionen, Adressoption, Kontakt Option, Adress Option, Kontostand, Provision Handelsvertreter, Kostenstelle, Kontakte importieren, Kundendaten importieren, Kundendaten exportieren, Kunden importieren,",
 				"description" => "Erfahre, wie du in plentymarkets Kontakte, Adressen und Firmen verwaltest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Kontakte. Hier findest du folgende Informationen:",
 				"languageID" => "KO9RPU2",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "b17a2b33452fd5f740170d1d051ccbd7",
+				"path" => "crm/schnellsuche",
+				"position" => 15,
+				"urlName" => "schnellsuche",
+				"url" => "/crm/schnellsuche",
+				"level" => 2,
+				"title" => "Schnellsuche",
+				"keywords" => "Kontakt, Kunden suchen, Schnellsuche, Adress-Suche, Adresssuche, Adressen suchen, DSGVO, Gastzugang, Gastbestellung, Gast Bestellung, Gast suchen, Gastbesteller suchen, eingeloggter Kunde, registrierter Kunde, regulärer Zugang, Kunde anonymisieren, anonymisieren, Kundendaten löschen, Datensatz löschen, Kunde löschen, Kontakt löschen, Kontakt anonymisieren, DSGVO, alle Daten vom Kunden herunterladen, Kundendaten runterladen, Kundendaten herunterladen",
+				"description" => "Erfahre, wie du die Schnellsuche in plentymarkets verwendest.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Schnellsuche. Hier findest du folgende Informationen:",
+				"languageID" => "RZPMSR4",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -1416,7 +1432,7 @@ class Metadata {
 				"url" => "/auftraege/buchhaltung",
 				"level" => 2,
 				"title" => "Buchhaltung",
-				"keywords" => "Buchhaltung, Umsatzsteuer, Umsatzsteuersatz, Umsatzsteuersätze, Währung, Währungen, Umrechnungskurs, Umrechnungskurse, Auftragspreis, Auftragspreise, Berechnung, Berechnungen, Buchungsschlüssel, Erlöskonten, Erlöskonto, Debitorenkonto, Debitorenkonten, Dokumente, Standort, standortabhängig, standortspezifisch, Preisberechnung, Bruttopreis, Nettopreis, Preis, Preise, Variantenpreis, Variantenpreise, Auftragspositionsnummer, Auftragspositionsnummern, Einzelpreis, Einzelpreise, Auftragsposition, Bruttosumme, Nettosumme, Bruttoeinzelpreis, Nettoeinzelpreis, Anzahl, Nachkommastelle, Nachkommastellen, gerundet, Rundung, aufrunden, abrunden, Umsatzsteuerbetrag, Umsatzsteuerbeträge, Differenz, Berechnung, Berechnungen, gerundete Werte, gerundeter Wert, gerundete Einzelpreise, gerundeter Einzelpreis, gerundete Auftragspositionsnummer, gerundete Auftragspositionsnummer, Gesamtbetrag, Gesamtbeträge, gerundete Gesamtbeträge, gerundeter Gesamtbetrag, Runden, Runden einstellen, Mandant, Rundungseinstellungen, Rechnungsbetrag, Rechnungsbeträge, Summen, Summe, Gesamtpreis, Gesamtpreise, Rundungsverhalten, Warenwert, Rechnung, Rechnungen, Berechnungsvarianten, Einzelposition, Mehrwertsteuer, Mehrwertssteuer, Steuer, Steuern, besteuern, Umssatzsteuereinstellungen, Umsatzsteuereinstellung, Firmensitz, Versandland, Versandländer, Lieferland, Lieferländer, Produktivbetrieb, Ausfuhrlieferung, EU-Standort, EU-Standorte, Umsatzsteuer-ID, Lieferschwelle, Lieferschwellen, Steuerkonfiguration, Lieferschwellenüberschreitung, Steuersatz, Steuersätze, Standard-Standort, Hauptfirmensitz, Kleinunternehmerregelung, Mandant, Rechnungsstellung, EU-Lieferung, innergemeinschaftliche EU-Lieferung, Nettorechnung, Netto-Rechnung, Bruttorechnung, Brutto-Rechnung, Lieferempfänger, EU-Mitgliedsland, Gelangensbestätigung, Privatkauf, Privatkäufe, Rechnungsempfänger, Drittland, EU-Drittland, Ausfuhr-Lieferland, Niederlassung, Niederlassungen, Steuerabgabe, Steuerabgaben, Steuerkonfigurationen, Steuerkonfiguration, Differenzbesteuerung, digitale Artikel, Käufer, Steuersatz des Käufers, EU-Verordnung, B2C-Umsätze, B2B-Umsätze, DATEV, DATEV-Export, Steuerschlüssel, Standardsteuerschlüssel, Standardkontenrahmen, Kontenplan, Buchung, Buchungen, Soll, Haben, Export, Forderung, Forderungen, Standard-Debitorenkonto, Finanzbuchhaltung, Finanzbuchaltungsexport, Finanzbuchhaltungs-Export, umsatzsteuerfrei, Kassenvorfall, Kassenvorfälle, Einlage, Einlagen, Entnahme, Entnahmen, Kassensturz, Kassenstürze, Buchhaltungsdaten, Collmex, Collmex-Buchhaltung, Spezialexport",
+				"keywords" => "Buchhaltung, Umsatzsteuer, Umsatzsteuersatz, Umsatzsteuersätze, Währung, Währungen, Umrechnungskurs, Umrechnungskurse, Auftragspreis, Auftragspreise, Berechnung, Berechnungen, Buchungsschlüssel, Erlöskonten, Erlöskonto, Debitorenkonto, Debitorenkonten, Dokumente, Standort, standortabhängig, standortspezifisch, Preisberechnung, Bruttopreis, Nettopreis, Preis, Preise, Variantenpreis, Variantenpreise, Auftragspositionsnummer, Auftragspositionsnummern, Einzelpreis, Einzelpreise, Auftragsposition, Bruttosumme, Nettosumme, Bruttoeinzelpreis, Nettoeinzelpreis, Anzahl, Nachkommastelle, Nachkommastellen, gerundet, Rundung, aufrunden, abrunden, Umsatzsteuerbetrag, Umsatzsteuerbeträge, Differenz, Berechnung, Berechnungen, gerundete Werte, gerundeter Wert, gerundete Einzelpreise, gerundeter Einzelpreis, gerundete Auftragspositionsnummer, gerundete Auftragspositionsnummer, Gesamtbetrag, Gesamtbeträge, gerundete Gesamtbeträge, gerundeter Gesamtbetrag, Runden, Runden einstellen, Mandant, Rundungseinstellungen, Rechnungsbetrag, Rechnungsbeträge, Summen, Summe, Gesamtpreis, Gesamtpreise, Rundungsverhalten, Warenwert, Rechnung, Rechnungen, Berechnungsvarianten, Einzelposition, Mehrwertsteuer, Mehrwertssteuer, Steuer, Steuern, besteuern, Umssatzsteuereinstellungen, Umsatzsteuereinstellung, Firmensitz, Versandland, Versandländer, Lieferland, Lieferländer, Produktivbetrieb, Ausfuhrlieferung, EU-Standort, EU-Standorte, Umsatzsteuer-ID, Lieferschwelle, Lieferschwellen, Steuerkonfiguration, Lieferschwellenüberschreitung, Steuersatz, Steuersätze, Standard-Standort, Hauptfirmensitz, Kleinunternehmerregelung, Mandant, Rechnungsstellung, EU-Lieferung, innergemeinschaftliche EU-Lieferung, Nettorechnung, Netto-Rechnung, Bruttorechnung, Brutto-Rechnung, Lieferempfänger, EU-Mitgliedsland, Gelangensbestätigung, Privatkauf, Privatkäufe, Rechnungsempfänger, Drittland, EU-Drittland, Ausfuhr-Lieferland, Niederlassung, Niederlassungen, Steuerabgabe, Steuerabgaben, Steuerkonfigurationen, Steuerkonfiguration, Differenzbesteuerung, digitale Artikel, Käufer, Steuersatz des Käufers, EU-Verordnung, B2C-Umsätze, B2B-Umsätze, DATEV, DATEV-Export, Steuerschlüssel, Standardsteuerschlüssel, Standardkontenrahmen, Kontenplan, Buchung, Buchungen, Soll, Haben, Export, Forderung, Forderungen, Standard-Debitorenkonto, Finanzbuchhaltung, Finanzbuchaltungsexport, Finanzbuchhaltungs-Export, umsatzsteuerfrei, Kassenvorfall, Kassenvorfälle, Einlage, Einlagen, Entnahme, Entnahmen, Kassensturz, Kassenstürze, Buchhaltungsdaten, Collmex, Collmex-Buchhaltung, Spezialexport, Mehrwertssteuersenkung, Steuersenkung, abweichender Steuersatz",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Buchhaltung. Hier findest du folgende Informationen:",
@@ -4393,7 +4409,16 @@ class Metadata {
 								"languageID" => "PHIMGMR",
 								"children" => [],
 								"hasChildren" => false
-							],
+							]
+						],
+						"hasChildren" => true
+					]
+				],
+				"hasChildren" => true
+			]
+		],
+		"hasChildren" => true
+	],
 	[
 		"id" => "ff4f702de67a1b253fa049521ea62868",
 		"path" => "webshop",
@@ -5945,7 +5970,7 @@ class Metadata {
 						"level" => 3,
 						"title" => "Amazon Business einrichten",
 						"keywords" => "Amazon Business, Amazon B2B",
-						"description" => "Multi-Channel in plentymarkets: Verkaufe deine Artikel über den Marktplatz Amazon an gewerbliche Kunden.",
+						"description" => "Multi-Channel in plentymarkets: Verkaufe deine Artikel über den Marktplatz Amazon an gewerbliche Kund:innen.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Amazon Business einrichten. Hier findest du folgende Informationen:",
 						"languageID" => "22Z3MWM",
