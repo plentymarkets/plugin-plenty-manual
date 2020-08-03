@@ -4394,31 +4394,6 @@ class Metadata {
 								"children" => [],
 								"hasChildren" => false
 							],
-							[
-								"id" => "a70a888794f86e87386f1db5c2c1a257",
-								"path" => "daten/export-import/datenformate/warehouse",
-								"position" => 470,
-								"urlName" => "warehouse",
-								"url" => "/daten/export-import/datenformate/warehouse",
-								"level" => 4,
-								"title" => "Warehouse",
-								"keywords" => "Datenformat",
-								"description" => "Datenformat Warehouse",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Warehouse. Hier findest du folgende Informationen:",
-								"languageID" => "MBTTKOI",
-								"children" => [],
-								"hasChildren" => false
-							]
-						],
-						"hasChildren" => true
-					]
-				],
-				"hasChildren" => true
-			]
-		],
-		"hasChildren" => true
-	],
 	[
 		"id" => "ff4f702de67a1b253fa049521ea62868",
 		"path" => "webshop",
@@ -19037,31 +19012,6 @@ class Metadata {
 								"children" => [],
 								"hasChildren" => false
 							],
-							[
-								"id" => "6a6f10c7669eaeb4dcd2600c7deb4f62",
-								"path" => "data/export-import/data-formats/warehouse",
-								"position" => 350,
-								"urlName" => "warehouse",
-								"url" => "/en/data/export-import/data-formats/warehouse",
-								"level" => 4,
-								"title" => "Warehouse",
-								"keywords" => "Data format",
-								"description" => "Data format Warehouse",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Warehouse. The following information is available:",
-								"languageID" => "MBTTKOI",
-								"children" => [],
-								"hasChildren" => false
-							]
-						],
-						"hasChildren" => true
-					]
-				],
-				"hasChildren" => true
-			]
-		],
-		"hasChildren" => true
-	],
 	[
 		"id" => "a428dc27c09fbe613f60d10c87dc78a3",
 		"path" => "online-store",
