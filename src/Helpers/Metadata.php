@@ -15962,11 +15962,27 @@ class Metadata {
 				"url" => "/en/crm/managing-contacts",
 				"level" => 2,
 				"title" => "Contacts",
-				"keywords" => "",
+				"keywords" => "contact, customer, contacts, customers, address, adress, addresses, adresses, invoice address, delivery address, primary, primary delivery address, primary invoice address, account, accounts, company, companies, account address, company address, VAT number, VAT number check, sales representative, guest account, guest order, GDPR, logged in user, logged in customer, registered customer, registered contact, events, properties, access data, login details, change password, customer cannot log in, block login, bank details, bank data, messages, messenger, customer class, contact class, massenger, delete customer data, delete data record, delete customer, delete contact, address layout, address design, customer type, contact type, discount system, discount for customer class, contact option, address option, import customers,",
 				"description" => "Learn how to manage contacts, addresses and accounts in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Contacts. The following information is available:",
 				"languageID" => "KO9RPU2",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "48f43da22a641aae9128974522a449cb",
+				"path" => "crm/quick-search",
+				"position" => 15,
+				"urlName" => "quick-search",
+				"url" => "/en/crm/quick-search",
+				"level" => 2,
+				"title" => "Quick search",
+				"keywords" => "contact, search contact, contact search, quick search, address search, search address, GDPR, guest account, guest order, ordered as guest, search guest, registered customer, anonymise customer, anonymise, delete customer data, delete data record, delete guest, delete contact, anonymise contact, GDPR, download all data, download all customer data, download contact data",
+				"description" => "Learn how to use the quick search in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Quick search. The following information is available:",
+				"languageID" => "RZPMSR4",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -16075,7 +16091,7 @@ class Metadata {
 				"url" => "/en/orders/accounting",
 				"level" => 2,
 				"title" => "Accounting",
-				"keywords" => "accounting, VAT rates, currencies, exchange rates, price calculation, calculation of prices, calculation, booking keys, revenue, revenue account, account, debtor account, price, prices, documents, accounting, accounting location, gross price, net price, sum, variation price, quantity, decimal place, amount, VAT amount, rounded price, rounding prices, rounding single variation price, rounded order item sums, rounded totals, client, location, totals, round totals, invoice, VAT amount single unit, total cross, total net, invoice amount, net value, gross value, net sum, business address, EU, European Union, non-EU, delivery, export, export shipping, shipping costs, VAT ID, delivery threshold, default location, POS, country, small business owner regulation, deliveries, entry certificate, gross invoice, net invoice, VAT number, export shipping, export, export shipment, tax, taxes, revenue, revenues, B2C, B2B, posting key, DATEV, DATEV exports, pending amount, booking, tax key, Collmex, payment, payment method, account, accounting data, data export",
+				"keywords" => "accounting, VAT rates, currencies, exchange rates, price calculation, calculation of prices, calculation, booking keys, revenue, revenue account, account, debtor account, price, prices, documents, accounting, accounting location, gross price, net price, sum, variation price, quantity, decimal place, amount, VAT amount, rounded price, rounding prices, rounding single variation price, rounded order item sums, rounded totals, client, location, totals, round totals, invoice, VAT amount single unit, total cross, total net, invoice amount, net value, gross value, net sum, business address, EU, European Union, non-EU, delivery, export, export shipping, shipping costs, VAT ID, delivery threshold, default location, POS, country, small business owner regulation, deliveries, entry certificate, gross invoice, net invoice, VAT number, export shipping, export, export shipment, tax, taxes, revenue, revenues, B2C, B2B, posting key, DATEV, DATEV exports, pending amount, booking, tax key, Collmex, payment, payment method, account, accounting data, data export, differing VAT rate, lowered rate",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Accounting. The following information is available:",
@@ -19036,7 +19052,16 @@ class Metadata {
 								"languageID" => "PHIMGMR",
 								"children" => [],
 								"hasChildren" => false
-							],
+							]
+						],
+						"hasChildren" => true
+					]
+				],
+				"hasChildren" => true
+			]
+		],
+		"hasChildren" => true
+	],
 	[
 		"id" => "a428dc27c09fbe613f60d10c87dc78a3",
 		"path" => "online-store",
@@ -22301,8 +22326,8 @@ class Metadata {
 						"url" => "/en/business-decisions/legal-requirements/gdpr",
 						"level" => 3,
 						"title" => "GDPR",
-						"keywords" => "EU regulation, GDPR, gdpr, general data protection regulation, dsgvo, data protection, personal data, person-related data, record of processing activities, processing directory, processing activities, directory, May 25, 2018, processing documentation",
-						"description" => "Download an abridged version of the record of processing activities within the software plentymarkets according to GDPR.",
+						"keywords" => "DSGVO, GDPR, data protection, data protection regulation, record of processing activities, processing directory, May 25, 2018, person-related data, processing documentation",
+						"description" => "Via this page, download an abridged version of the record of processing activities within plentymarkets in accordance with GDPR.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic GDPR. The following information is available:",
 						"languageID" => "8NCZ7LJ",
