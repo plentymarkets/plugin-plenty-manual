@@ -1289,7 +1289,7 @@ class Metadata {
 		"url" => "/crm",
 		"level" => 1,
 		"title" => "CRM",
-		"keywords" => "Kundendaten verwalten, Ticketsystem nutzen, E-Mails versenden, Newsletter versenden",
+		"keywords" => "Kundendaten, Kontaktdaten, Ticketsystem, E-Mails, Emails, Newsletter, Schnellsuche, Messenger, Nachrichten",
 		"description" => "Erfahre, wie du Kontaktdaten verwaltest, das Ticketsystem für deine Kundenkommunikation nutzt und E-Mails und Newsletter versendest.",
 		"navAlias" => "Übersicht",
 		"linkListInto" => "Willkommen im Themenbereich CRM. Hier findest du folgende Informationen:",
