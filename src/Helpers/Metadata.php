@@ -16019,6 +16019,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "66b5ca05ed5404ce9ef2963b9657a865",
+				"path" => "crm/messenger",
+				"position" => 25,
+				"urlName" => "messenger",
+				"url" => "/en/crm/messenger",
+				"level" => 2,
+				"title" => "Messenger",
+				"keywords" => "messenger, massenger, messages, message, billable messages, billable events",
+				"description" => "Learn how to work with the messenger in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Messenger. The following information is available:",
+				"languageID" => "RQ7TB6P",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "a4225a4a586e7ae2e3ac48f82913aa89",
 				"path" => "crm/using-the-ticket-system",
 				"position" => 30,
