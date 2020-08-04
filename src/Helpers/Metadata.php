@@ -1344,6 +1344,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "66b5ca05ed5404ce9ef2963b9657a865",
+				"path" => "crm/messenger",
+				"position" => 25,
+				"urlName" => "messenger",
+				"url" => "/crm/messenger",
+				"level" => 2,
+				"title" => "Messenger",
+				"keywords" => "Messenger, massenger, Nachrichten, Nachrichten abrechnen, kostenpflichtige Nachrichten, kostenpflichtige Events",
+				"description" => "Erfahre, wie du mit dem Messenger in plentymarkets arbeitest.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Messenger. Hier findest du folgende Informationen:",
+				"languageID" => "RQ7TB6P",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "8dc0e69cabbd9bfce8d8259d73d463ef",
 				"path" => "crm/ticketsystem-nutzen",
 				"position" => 30,
