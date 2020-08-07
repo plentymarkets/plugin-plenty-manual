@@ -17,7 +17,13 @@
 <li><a href="#datenuebermittlung"><span>5.</span><span> Informationen zur Datenübermittlung</span></a></li>
 <li><a href="#service-filial-routing"><span>6.</span><span> Service Filial-Routing verwenden</span></a></li>
 <li><a href="#service-ident-check"><span>7.</span><span> Service Ident-Check verwenden</span></a></li>
-<li><a href="#dhl-warenpost"><span>8.</span><span> DHL Warenpost verwenden</span></a></li>
+<li><a href="#dhl-warenpost"><span>8.</span><span> DHL Warenpost verwenden</span></a>
+<ul class="sectlevel2">
+<li><a href="#dhl-warenpost-einstellungen-backend"><span>8.1.</span><span> Einstellungen im Backend</span></a></li>
+<li><a href="#dhl-warenpost-einstellungen-assistenten"><span>8.2.</span><span> Einstellungen in den Assistenten</span></a></li>
+<li><a href="#dhl-warenpost-einstellungen-gkp"><span>8.3.</span><span> Einstellungen im DHL Geschäftskundenportal</span></a></li>
+</ul>
+</li>
 <li><a href="#dhl-shipping-benutzerrechte"><span>9.</span><span> Benutzerrechte für Backend-Benutzer vergeben</span></a></li>
 <li><a href="#testmodus-aktivieren"><span>10.</span><span> Testmodus aktivieren</span></a></li>
 </ul>
@@ -599,68 +605,63 @@ Beachte, dass die folgenden Services <em>nicht</em> über das Polling-Format an 
 <p>Beim Anmelden des Auftrags prüft DHL das Höchstmaß und das Höchstgewicht. Mindestmaße werden seitens DHL bei der Anmeldung nicht überprüft.</p>
 </div>
 <div class="paragraph">
-<p>Nimm die folgenden Einstellungen vor:</p>
+<p>Nimm die in den folgenden Unterkapiteln beschriebenen Einstellungen im <a href="#dhl-warenpost-einstellungen-backend">plentymarkets Backend</a>, in den <a href="#dhl-warenpost-einstellungen-assistenten">Assistenten</a> und im <a href="#dhl-warenpost-einstellungen-gkp">DHL Geschäftskundenportal</a> vor:</p>
 </div>
+<div class="sect2">
+<h3 id="dhl-warenpost-einstellungen-backend">8.1. Einstellungen im Backend</h3>
 <div class="ulist">
 <ul>
 <li>
 <p>An den Varianten, die du mit DHL Warenpost versenden möchtest, ist es empfehlenswert, das Gewicht im Bereich <strong>Maße</strong> zu pflegen.</p>
 </li>
 <li>
-<p>Damit die Maße nicht überschritten werden, kannst du eine der beiden Optionen nutzen, die in den Versandpaketeinstellungen im Menü <strong>Einrichtung » Aufträge » Versand » Versandpakete</strong> unter <strong>Volumenangaben</strong> eingerichtet werden können</p>
+<p>Damit die Maße nicht überschritten werden, kannst du eine der beiden Optionen nutzen, die in den Versandpaketeinstellungen im Menü <strong>Einrichtung » Aufträge » Versand » Versandpakete</strong> unter <strong>Volumenangabe</strong> eingerichtet werden können.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/fulfillment/assets/DHL-Shipping-Warenpost-Versandpaket.png" alt="DHL Shipping Warenpost Versandpaket" width="640"></span></p>
+<div id="bild-dhl-shipping-warenpost-versandpaket" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/fulfillment/assets/DHL-Shipping-Warenpost-Versandpaket.png" alt="DHL Shipping Warenpost Versandpaket" width="640" height="360">
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>vom Versandpaket beziehen</strong></p>
-<div class="ulist">
-<ul>
-<li>
+<div class="title">Bild 1. Versandpaket für DHL Warenpost: Volumenangabe</div>
+</div>
+<div class="paragraph">
+<p>Die beiden Optionen zur Volumenangabe im Versandpaket werden im Folgenden näher erläutert:</p>
+</div>
+<h4 id="_vom_versandpaket_beziehen" class="discrete">vom Versandpaket beziehen</h4>
+<div class="paragraph">
 <p>Damit die Pakete im Versand-Center immer mit den korrekten Maßen generiert werden und der Auftrag mit DHL Warenpost erfolgreich angemeldet werden kann, kannst du die Option <strong>vom Versandpaket beziehen</strong> nutzen und die zulässigen Höchstmaße (Länge, Breite, Höhe) dort in cm speichern.</p>
-</li>
-</ul>
 </div>
-</li>
-</ul>
+<div id="bild-dhl-shipping-warenpost-masse" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/fulfillment/assets/dhl-shipping-warenpost-versandpaket-masse.png" alt="dhl shipping warenpost versandpaket masse" width="640" height="360">
+</div>
+<div class="title">Bild 2. Versandpaket für DHL Warenpost: Maße</div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/fulfillment/assets/dhl-shipping-warenpost-versandpaket-masse.png" alt="dhl shipping warenpost versandpaket masse" width="640"></span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
 <p>Wenn du die oben genannten Einstellungen wählst, werden die Maße vom Versandpaket und das Bruttogewicht aller Varianten im Auftrag an den Versanddienstleister übermittelt.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>von Artikeldaten beziehen (summiert)</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>Beachte:</em></strong> Wenn du die Option <strong>von Artikeldaten beziehen (summiert)</strong> wählst, wird <em>nur das Gewicht</em> an den Versanddienstleister übermittelt. Die Logik übermittelt die anderen Maße (Länge, Breite, Höhe) nicht.<br>
-Du kannst aber im Versandprofil das Volumen anhand einer Volumenbeschränkung berechnen lassen. Wähle dazu in der Region des entsprechenden Versandprofils den Beschränkungstyp <strong>Maximum (Kubikmeter)</strong> und speichere dort das berechnete Volumen aus den von DHL für die Warenpost vorgegebenen Höchstmaßen in m³:
+</div>
+<h4 id="_von_artikeldaten_beziehen_summiert" class="discrete">von Artikeldaten beziehen (summiert)</h4>
+<div class="paragraph">
+<p><strong><em>Beachte:</em></strong> Wenn du die Option <strong>von Artikeldaten beziehen (summiert)</strong> wählst, wird <em>nur das Gewicht</em> an den Versanddienstleister übermittelt. Die Logik übermittelt die anderen Maße (Länge, Breite, Höhe) nicht.</p>
+</div>
+<div class="paragraph">
+<p>Du kannst aber im Versandprofil das Volumen anhand einer Volumenbeschränkung berechnen lassen. Wähle dazu in der Region des entsprechenden Versandprofils den Beschränkungstyp <strong>Maximum (Kubikmeter)</strong> und speichere dort das berechnete Volumen aus den von DHL für die Warenpost vorgegebenen Höchstmaßen in m³:
 <code>353 mm x 250 mm x 50 mm = 0,0044 m³</code>.<br>
 Eine andere Möglichkeit ist es, den Beschränkungstyp <strong>Maximum (g)</strong> in der Region des Versandprofils zu wählen und dort das von DHL für die Warenpost vorgegebene Höchstgewicht von 1000 g zu speichern.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Das Versandpaket kannst du danach in der entsprechenden Region des aktuellen Versandprofils im Tab <strong>Portotabelle</strong> als Standardpaket wählen.</p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/fulfillment/assets/dhl-shipping-warenpost-standardpaket.png" alt="dhl shipping warenpost standardpaket" width="640"></span></p>
+<p>Das Versandpaket kannst du danach in der entsprechenden Region des aktuellen Versandprofils im Tab <strong>Portotabelle</strong> als Standardpaket wählen:</p>
 </div>
+<div id="bild-dhl-shipping-warenpost-standardpaket" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/fulfillment/assets/dhl-shipping-warenpost-standardpaket.png" alt="dhl shipping warenpost standardpaket" width="640" height="360">
+</div>
+<div class="title">Bild 3. Versandpaket für DHL Warenpost als Standardpaket im Versandprofil</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="dhl-warenpost-einstellungen-assistenten">8.2. Einstellungen in den Assistenten</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -672,26 +673,29 @@ Eine andere Möglichkeit ist es, den Beschränkungstyp <strong>Maximum (g)</stro
 <li>
 <p>Wähle im Assistenten <strong>DHL Shipping (Versenden): Einstellungsverknüpfung</strong> die Abrechnungsnummer für Warenpost und wähle die passenden Services, die du mit dieser Versandeinstellung verknüpfen möchtest.</p>
 </li>
-<li>
-<p>Wähle im DHL Geschäftskundenportal die passende Größe für die Versandlabels.</p>
-</li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="dhl-warenpost-einstellungen-gkp">8.3. Einstellungen im DHL Geschäftskundenportal</h3>
+<div class="paragraph">
+<p>Wähle im DHL Geschäftskundenportal die passende Größe für die Versandlabels:</p>
+</div>
+<div id="bild-dhl-shipping-warenpost" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/fulfillment/assets/dhl-warenpost-labelgroesse.png" alt="dhl warenpost labelgroesse" width="640" height="360">
+</div>
+<div class="title">Bild 4. Labelgrößen, die Warenpost für den Versand benötigt</div>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/fulfillment/assets/dhl-warenpost-labelgroesse.png" alt="dhl warenpost labelgroesse" width="640"></span></p>
+<p>Öffne im DHL Geschäftskundenportal den Bereich <strong>Versenden &gt; Einstellungen &gt; Allgemein</strong> und richte die Druckereinstellungen für deine Versandlabels ein. Du kannst aktivieren, dass für Warenpost die Labelgröße 100 x 70 mm verwendet wird. Beachte, dass bei dieser Labelgröße zusätzliche Informationen wie Name 2 und Name 3 bei der Absenderadresse und Name 3 bei der Empfängeradresse <em>nicht</em> auf dem Label gedruckt sind.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Öffne dort den Bereich <strong>Versenden &gt; Einstellungen &gt; Allgemein</strong> und richte die Druckereinstellungen für deine Versandlabels ein. Du kannst aktivieren, dass für Warenpost die Labelgröße 100 x 70 mm verwendet wird. Beachte, dass bei dieser Labelgröße zusätzliche Informationen wie Name 2 und Name 3 bei der Absenderadresse und Name 3 bei der Empfängeradresse <em>nicht</em> auf dem Label gedruckt sind.</p>
-</li>
-<li>
+<div class="paragraph">
 <p>Du kannst für Warenpost auch das bekannte Common Label im Format 100 x 200 mm verwenden.</p>
-</li>
-</ul>
 </div>
 <div class="paragraph">
 <p>Weitere Informationen zu DHL Warenpost findest du auf der <a href="https://www.dhl.de/de/geschaeftskunden/paket/leistungen-und-services/dhl-warenpost.html" target="_blank" rel="noopener">Webseite von DHL</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
 </div>
 </div>
 </div><div class="sect1">
