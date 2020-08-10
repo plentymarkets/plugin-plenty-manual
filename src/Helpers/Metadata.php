@@ -6854,11 +6854,11 @@ class Metadata {
 								"urlName" => "inventur",
 								"url" => "/app/funktionen/lagerverwaltung/inventur",
 								"level" => 4,
-								"title" => "Inventur durchführen",
+								"title" => "Inventur mit der App durchführen",
 								"keywords" => "Inventur, Inventurmodus, Inventur durchführen, Inventur vornehmen, Inventur personalisieren, Bestandszählung, Bestandszählungen, App Inventur, App-Inventur, Inventur über App, Bestandsdaten, Inventurbestand, Inventurbestände",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Inventur durchführen. Hier findest du folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Inventur mit der App durchführen. Hier findest du folgende Informationen:",
 								"languageID" => "",
 								"children" => [],
 								"hasChildren" => false
