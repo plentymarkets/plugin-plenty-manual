@@ -21419,11 +21419,11 @@ class Metadata {
 						"urlName" => "warehouse-management",
 						"url" => "/en/app/functions/warehouse-management",
 						"level" => 3,
-						"title" => "Mobile inventory management system",
+						"title" => "Mobile warehouse management",
 						"keywords" => "Mobile, app, mobile inventory, mobile inventory management, app stock management, box picking, booking in items, book in items, redistributing items, redistribute items, stocktaking, inventory, mobile warehouse management",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Mobile inventory management system. The following information is available:",
+						"linkListInto" => "Welcome to the topic Mobile warehouse management. The following information is available:",
 						"languageID" => "",
 						"children" => 						[
 							[
@@ -21481,11 +21481,11 @@ class Metadata {
 								"urlName" => "stocktaking",
 								"url" => "/en/app/functions/warehouse-management/stocktaking",
 								"level" => 4,
-								"title" => "Stocktaking",
-								"keywords" => "Stocktacking, stocktaking mode, carrying out stocktaking, managing stocktaking, manage stocktaking, customise stocktaking, customising stocktaking, personalise stocktaking, personalising stocktaking, stocktaking app, app stocktaking, stock data, counted quantity, counted quantities",
+								"title" => "App stocktaking",
+								"keywords" => "stocktacking, stocktaking mode, carrying out stocktaking, managing stocktaking, manage stocktaking, customise stocktaking, customising stocktaking, personalise stocktaking, personalising stocktaking, stocktaking app, app stocktaking, stock data, counted quantity, counted quantities",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Stocktaking. The following information is available:",
+								"linkListInto" => "Welcome to the topic App stocktaking. The following information is available:",
 								"languageID" => "",
 								"children" => [],
 								"hasChildren" => false
