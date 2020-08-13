@@ -10,6 +10,15 @@
 <li><a href="#220"><span>2.1.</span><span> Creating an order in the contact overview</span></a></li>
 <li><a href="#230"><span>2.2.</span><span> Creating an order from an existing order</span></a></li>
 <li><a href="#240"><span>2.3.</span><span> Creating an order for a cash sale</span></a></li>
+<li><a href="#240"><span>2.4.</span><span> beta: Creating an order or an offer in the contact overview</span></a>
+<ul class="sectlevel3">
+<li><a href="#250"><span>2.4.1.</span><span> Carrying out default settings</span></a></li>
+<li><a href="#260"><span>2.4.2.</span><span> Creating the order or the offer</span></a></li>
+<li><a href="#270"><span>2.4.3.</span><span> Order details</span></a></li>
+<li><a href="#280"><span>2.4.4.</span><span> Adding items</span></a></li>
+<li><a href="#280"><span>2.4.5.</span><span> Overview: Completing the order</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#300"><span>3.</span><span> Working with delivery orders</span></a>
@@ -163,7 +172,7 @@
 <h2 id="100">1. General information on creating orders in plentymarkets</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In plentymarkets, an order is automatically created when customers place orders in your online store or on one of your implemented markets. Separate orders with different order types are created for business transactions such as <a href="/en/orders/managing-orders#300">delivery orders</a>, <a href="/en/orders/managing-orders#400">returns</a>, <a href="/en/orders/managing-orders#500">credit notes</a>, <a href="/en/orders/managing-orders#600">warranties</a> and <a href="/en/orders/managing-orders#700">repairs</a>.  These orders are always linked to the main orders. The <a href="/en/orders/managing-orders#1400">order overview</a> allows you to open and edit orders regardless of the <a href="/en/orders/order-referrer">referrer</a>. For many order types, such as <a href="/en/orders/managing-orders#300">delivery orders</a>, it makes sense to set up <a href="/en/automation/event-procedures">event procedures</a> that allow you to automate part of your order processing. You will find some examples for using event procedures during order processing in the following chapters.<br>
+<p>In plentymarkets, an order is automatically created when customers place orders in your online store or on one of your implemented markets. Separate orders with different order types are created for business transactions such as <a href="/en/orders/managing-orders#300">delivery orders</a>, <a href="/en/orders/managing-orders#400">returns</a>, <a href="/en/orders/managing-orders#500">credit notes</a>, <a href="/en/orders/managing-orders#600">warranties</a> and <a href="/en/orders/managing-orders#700">repairs</a>. These orders are always linked to the main orders. The <a href="/en/orders/managing-orders#1400">order overview</a> allows you to open and edit orders regardless of the <a href="/en/orders/order-referrer">referrer</a>. For many order types, such as <a href="/en/orders/managing-orders#300">delivery orders</a>, it makes sense to set up <a href="/en/automation/event-procedures">event procedures</a> that allow you to automate part of your order processing. You will find some examples for using event procedures during order processing in the following chapters.<br>
 Orders that were not generated in the online store or on a market can be created <a href="/en/orders/managing-orders#200">manually</a> in your system. This can be the required for orders via telephone, email or cash sales.</p>
 </div>
 <div class="admonitionblock note">
@@ -351,13 +360,316 @@ Orders that were not generated in the online store or on a market can be created
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="240">2.4. beta: Creating an order or an offer in the contact overview</h3>
+<div class="paragraph">
+<p>This chapter describes how to create an order or an offer in the contact overview in the <strong>CRM » Contacts</strong> menu. This is a new user interface which will be a <em>beta</em> integration at first. All other ways to create orders remain unaffected by this and can still be used.</p>
+</div>
+<div class="sect3">
+<h4 id="250">2.4.1. Carrying out default settings</h4>
+<div class="paragraph">
+<p>When creating orders or offers via the contact overview, data such as addresses or clients are taken directly from the contact data if they are saved there. Thus, in most cases contact data have priority. Additionally, some default settings, which are a fallback if the data are not in the contact, are available.<br>
+In order to optimise the order creation, these default settings should be determined first. <em>Note</em> that these default settings also apply to offers which are created with this user interface.</p>
+</div>
+<div class="paragraph instruction">
+<p>Proceed as follows to carry out the default settings:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Order types » Sales Order [Beta]</strong>.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#table-default-settings-order-contact">Table 1</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-default-settings-order-contact" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Default settings for the order/offer creation in the contact overview</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-default-owner">Default owner</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a default owner to be preselected in the order details when creating an order or an offer. The owner is not taken from the contact data.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-default-client">Default client</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The default client selected here is preselected in the order details when creating an order or an offer if no client is set in the contact. If a client is set in the contact data, it has priority.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-default-referrer">Default referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The default referrer selected here is preselected in the order details when creating an order or an offer if no referrer is set in the contact. If a referrer is set in the contact data, it has priority.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Preselected filter for item search</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">After order details (e.g. invoice address or payment method) for the new order are entered, items are added in the next step. For this, an item search is used, for which you can select different filters. Set up a filter here which is preselected for this item search. Select from the drop-down list either <strong>No filter preselected</strong>, <strong>Item ID</strong>, <strong>Variation number</strong>, <strong>Variation ID</strong> or <strong>Item name</strong>. Even with a selected default, it is still possible to change the filter in the search if needed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Option ‘Only display items in stock’ is preselected for the item search</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate this option for it to be preselected in the item search. It means that only items with net stock are displayed in the item search.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Option ‘Only display sales warehouses’ is preselected for the item search</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate this option for it to be preselected in the item search. It means that only items stored in sales warehouses are displayed.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="260">2.4.2. Creating the order or the offer</h4>
+<div class="paragraph">
+<p>The order or the offer is created individually for a customer from the <strong>CRM » Contacts</strong> menu. The creation comprises three steps. As a first step, order details are entered. In the second step, order items are added and in the third step, the order is completed. First of all, select the contact for which the order or offer is to be created. To do so, proceed as follows.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating order or offer via contact:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » Contacts</strong>.</p>
+</li>
+<li>
+<p>Search the contact by means of the filter settings as described in the <a href="/en/crm/managing-contacts#200">Searching for a contact</a> chapter.<br>
+→ The contacts that match the search criteria are displayed.</p>
+</li>
+<li>
+<p>Click on <strong>Actions</strong> (<span class="icon "><i class="fa fa-bars  "></i></span>) in the row of the contact.<br>
+→ The available options open.</p>
+</li>
+<li>
+<p>Select <strong>New order [Beta]</strong> or <strong>New offer [Beta]</strong>.<br>
+→ You are redirected to the order details of the new order or offer.<br></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use the drop-down list above the order details to choose between order and offer, even later. The steps described in the following chapters are the same for orders and offers.</p>
+</div>
+<div class="paragraph">
+<p>The user interface is designed to create orders quickly and easily. This is especially helpful when orders are telephoned in. At first, the order details such as addresses and payment method are entered. After that, order items are added and the last step is the final check and completion of the order.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="270">2.4.3. Order details</h4>
+<div class="paragraph">
+<p>Because the new order or the new offer is created from the contact overview, some information are transferred from the contact data to the order details. Which information is transferred depends on the data saved in the contact. Otherwise the <a href="/en/orders/managing-orders#250">default settings</a> are preselected. Take <a href="#table-order-details-new-order">Table 2</a> into account for this. All fields in the order details are mandatory fields.</p>
+</div>
+<table id="table-order-details-new-order" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. New order: Order details</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Invoice address</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The invoice address is taken from the contact data. If there is more than one address, the one saved as the primary invoice address is taken. If no invoice address is saved as the primary one you can select the right address from the drop-down list.<br>
+Clicking on the the preview (<span class="icon blue"><i class="fa fa-eye  "></i></span>) redirects you to the contact data. The already carried out settings in the order details will remain.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Delivery address</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The delivery address is taken from the contact data. If there is more than one address, the one saved as the primary delivery address is taken. If no delivery address is saved as the primary one you can select the right address from the drop-down list.<br>
+Clicking on the the preview (<span class="icon blue"><i class="fa fa-eye  "></i></span>) redirects you to the contact data. The already carried out settings in the order details will remain.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Currency</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="/en/payment/currencies#30">system currency</a> is preselected. You can change the currency for the order in the drop-down list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If a payment method is defined for the contact, for example via a <a href="/en/crm/managing-contacts#15">customer class</a>, this is preselected. Otherwise select a payment method from the drop-down list. Available are all payment methods integrated in your plentymarkets system.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which options are available depends on the settings you set for <a href="/en/orders/basic settings#intable-warehouse-assignment">assignment of warehouses</a>.<br>
+- Is <strong>a) a warehouse can be assigned for each order</strong> set, you can select a warehouse for the order in the order details.<br>
+- Is <strong>b) a warehouse can be assigned for each stock unit</strong> set, <strong>Depending on the stock units</strong> is displayed in the order details. In the next step, order items are added. This selection means that you can select a warehouse for each variation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the client for this order from the drop-down list. Preselected is either the client set in the contact data or as a next option the <a href="/en/orders/managing-orders#intable-default-client">default client</a> if it is set.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Owner</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the owner for this order from the drop-down list. If you set a <a href="/en/orders/managing-orders#intable-default-owner">default owner</a>, it is preselected. Otherwise, owners with the user rights to create orders can be selected from the drop-down list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the referrer for this order from the drop-down list. Preselected is either the referrer set in the contact data or as a next option the <a href="/en/orders/managing-orders#intable-default-referrer">default referrer</a> if it is set. Otherwise the activated <a href="/en/orders/order-referrer">referrers</a> can be selected from the drop-down list.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>After you carried out all these settings, go to the next step by clicking on <strong>Add items</strong>. The order details are saved and you are redirected to the next step. There you add order items to the order.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="280">2.4.4. Adding items</h4>
+<div class="paragraph">
+<p>In this step, the order details are not displayed. They are available again in the third step where you finalise the order. Required adaptations can be made there. <em>But note</em> that addresses, currency and the warehouse cannot be edited in the third step.</p>
+</div>
+<div class="paragraph">
+<p>To complete an order, order items have to be added. Execute an item search to add items. You can choose between different filters for the item search.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Item ID</p>
+</li>
+<li>
+<p>Item name</p>
+</li>
+<li>
+<p>Variation number</p>
+</li>
+<li>
+<p>Variation ID</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additionally, you can activate the options <strong>Only display items in stock</strong> and <strong>Only display sales warehouses</strong>. If you set <strong>a) a warehouse can be assigned for each order</strong> in the basic settings you can only select the option <strong>Only display items in stock</strong> for the search because the warehouse is already determined by the setting. Moreover, the <a href="/en/orders/managing-orders#250">default settings</a> are preselected if you set them.</p>
+</div>
+<div class="paragraph">
+<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>) when you have set all the parameters for the search. A table with the corresponding items opens.</p>
+</div>
+<div class="paragraph">
+<p>Rows of items with net stock are displayed in white. Rows of items not in stock are displayed in red. For example, if you selected the option <strong>Only display items in stock</strong>, none of the rows are displayed in red at first. Only when stock units go below 0 while adding items to the shopping cart, the row is displayed in red. Thus you can see at first glance in which warehouse items are in stock and can finalise the order faster.</p>
+</div>
+<table id="table-overview-item-search" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Information item search</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item ID / Variation ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click on the item ID or the variation ID to be redirected to the item or variation data, if you need to.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variation number</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click on the variation number to be redirected to the variation data, if you need to.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The item description is displayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attributes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attributes of the item are displayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variation name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The variation name is displayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Purchase price</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The purchase price of the item is displayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Net stock</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The net stock of this item in the selected warehouse is displayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The warehouse of the item is displayed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Quantity</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the quantity to be added to the shopping cart. You can only enter whole numbers. Not allowed are negative quantities or quantities which exceed the net stock. If you enter quantities like these, an error message is displayed. If the quantity added sets the stock in the warehouse to 0 or lower, the row is displayed in red.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph instruction">
+<p>Adding items:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Search for the required items by using the filters.</p>
+</li>
+<li>
+<p>Enter the quantity of the item you want to add to the order.</p>
+</li>
+<li>
+<p>Add the items to the order by clicking on the shopping cart (<span class="icon darkGrey"><i class="fa fa-shopping-cart  "></i></span>) at the end of the row.</p>
+</li>
+<li>
+<p>Repeat these steps to add further items.</p>
+</li>
+<li>
+<p>When all items are added, go to the next step by clicking on <strong>Overview</strong>.<br>
+→ The shopping cart is saved.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The number of items added is displayed on the shopping cart icon (<span class="icon darkGrey"><i class="fa fa-shopping-cart  "></i></span>) which is located above the table. If you want to check or delete the added items, open this shopping cart (<span class="icon darkGrey"><i class="fa fa-shopping-cart  "></i></span>).</p>
+</div>
+<div class="paragraph discrete">
+<p>Shopping cart</p>
+</div>
+<div class="paragraph">
+<p>The added items are displayed in the shopping cart. You can edit the <strong>quantity</strong> as well as the <strong>price</strong>. If a price is entered that is lower than the purchase price, an error message is displayed. You can still set this lower price if you want to.</p>
+</div>
+<div class="paragraph">
+<p>You can also delete items in the shopping cart. To do so, click on <strong>Delete</strong> (<span class="icon red"><i class="fa fa-minus-circle  "></i></span>).</p>
+</div>
+<div class="paragraph">
+<p>After you added all the items in the required quantity and with the right prices to the shopping cart, click on <strong>Overview</strong>. You could also go back to the order details by clicking on <strong>Order details</strong>. <em>But note</em> that all shopping cart data is lost when you go back.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="280">2.4.5. Overview: Completing the order</h4>
+<div class="paragraph">
+<p>In this last step, the order is completed. The <strong>Total amount gross</strong> and <strong>Total amount net</strong> of the order are displayed above the order details. Also displayed are the number of order items.</p>
+</div>
+<div class="paragraph">
+<p>In the order details, the <strong>Shopping method</strong> and the <strong>Shopping costs</strong> can be adapted if required. Apart from the addresses, the currency and the warehouse, the order details are editable.</p>
+</div>
+<div class="paragraph">
+<p>Below the order details, a table with the added order items is displayed. In addition to the information given in the previous adding items view, the <strong>sales price</strong> and the <strong>VAT %</strong> rate are shown. The sales price can be edited as long as the order is not completed.</p>
+</div>
+<div class="paragraph">
+<p>If you change quantities, prices, shipping costs or the shipping method, the order has to be recalculated because the total amounts depend on these factors. Therefore, you have to click on <strong>Recalculate order</strong> before you can complete the order. The total amounts are updated because of the recalculation.</p>
+</div>
+<div class="paragraph">
+<p>To complete the order, click on <strong>Complete order</strong>. The order is now created and you are redirected to the order overview of the contact. The order is now also available in the order overview in the <strong>Orders » Edit orders</strong> menu.</p>
+</div>
+</div>
+</div>
 </div>
 </div><div class="sect1">
 <h2 id="300">3. Working with delivery orders</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Delivery orders</strong> enable you to create multiple delivery orders for the items included in the main order. This way, items from the main order can be shipped individually or in parts. Thus, delivery orders allow you to immediately ship items that are in stock and ship unavailable items later. Delivery orders can be shipped using one or several shipping providers.<br>
-You can create delivery orders <strong>manually</strong>,  <strong>automatically</strong> or using an <strong>event procedure</strong>.<br></p>
+You can create delivery orders <strong>manually</strong>, <strong>automatically</strong> or using an <strong>event procedure</strong>.<br></p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -429,7 +741,7 @@ For example, if a main order with the status <strong>5.0</strong> has two delive
 <p>Go to <strong>Setup » Orders » Order types » Delivery order</strong>.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#table-order-types-delivery-order-options">Table 1</a>.</p>
+<p>Carry out the settings according to <a href="#table-order-types-delivery-order-options">Table 4</a>.</p>
 </li>
 <li>
 <p>Save (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
@@ -437,7 +749,7 @@ For example, if a main order with the status <strong>5.0</strong> has two delive
 </ol>
 </div>
 <table id="table-order-types-delivery-order-options" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Options for splitting up orders into delivery orders:</caption>
+<caption class="title">Table 4. Options for splitting up orders into delivery orders:</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -544,7 +856,7 @@ For example, if a main order with the status <strong>5.0</strong> has two delive
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>When automatically creating delivery orders, the criteria for splitting up orders into delivery orders described in <a href="#table-order-types-delivery-order-options">Table 1</a>. apply. Thus, the items and quantities to be included in the delivery orders to not have to be selected manually. Instead, the system applies the selected option and transfers the items and quantities from the main order to the delivery orders.</p>
+<p>When automatically creating delivery orders, the criteria for splitting up orders into delivery orders described in <a href="#table-order-types-delivery-order-options">Table 4</a>. apply. Thus, the items and quantities to be included in the delivery orders to not have to be selected manually. Instead, the system applies the selected option and transfers the items and quantities from the main order to the delivery orders.</p>
 </div>
 <div class="paragraph instruction">
 <p>Automatically creating delivery orders</p>
@@ -599,13 +911,13 @@ For example, if a main order with the status <strong>5.0</strong> has two delive
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#table-event-procedure-delivery-order-when-new-order">Table 2</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#table-event-procedure-delivery-order-when-new-order">Table 5</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#table-event-procedure-delivery-order-when-new-order">Table 2</a> vor.</p>
+<p>Carry out the settings according to <a href="#table-event-procedure-delivery-order-when-new-order">Table 5</a> vor.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -618,7 +930,7 @@ For example, if a main order with the status <strong>5.0</strong> has two delive
 </div>
 </div>
 <table id="table-event-procedure-delivery-order-when-new-order" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Options for the event procedure “Create delivery order when order is received”</caption>
+<caption class="title">Table 5. Options for the event procedure “Create delivery order when order is received”</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -679,13 +991,13 @@ For example, if a main order with the status <strong>5.0</strong> has two delive
 <p>Assign a distinct name to the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>Event</strong> according to <a href="#table-event-procedure-delivery-order-status-5">Table 3</a>.</p>
+<p>Select the <strong>Event</strong> according to <a href="#table-event-procedure-delivery-order-status-5">Table 6</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#table-event-procedure-delivery-order-status-5">Table 3</a>.</p>
+<p>Carry out the settings according to <a href="#table-event-procedure-delivery-order-status-5">Table 6</a>.</p>
 </li>
 <li>
 <p>Select the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -698,7 +1010,7 @@ For example, if a main order with the status <strong>5.0</strong> has two delive
 </div>
 </div>
 <table id="table-event-procedure-delivery-order-status-5" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Options for the event procedure “Create delivery order when order changes to status 5”</caption>
+<caption class="title">Table 6. Options for the event procedure “Create delivery order when order changes to status 5”</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -757,13 +1069,13 @@ This allows you to edit the main order as necessary until an invoice is created 
 <p>Assign a distinct name to the event procedure.</p>
 </li>
 <li>
-<p>Select an <strong>Event</strong> according to <a href="#table-event-procedure-invoice-generated">Table 4</a>.</p>
+<p>Select an <strong>Event</strong> according to <a href="#table-event-procedure-invoice-generated">Table 7</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#table-event-procedure-invoice-generated">Table 4</a>.</p>
+<p>Carry out the settings according to <a href="#table-event-procedure-invoice-generated">Table 7</a>.</p>
 </li>
 <li>
 <p>Select the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -776,7 +1088,7 @@ This allows you to edit the main order as necessary until an invoice is created 
 </div>
 </div>
 <table id="table-event-procedure-invoice-generated" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Options for the event procedure “Create delivery order when generating an invoice”</caption>
+<caption class="title">Table 7. Options for the event procedure “Create delivery order when generating an invoice”</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -825,7 +1137,7 @@ This allows you to edit the main order as necessary until an invoice is created 
 <td class="content">
 <div class="title">User rights required for opening main orders</div>
 <div class="paragraph">
-<p>To open main orders, variable users have to be <a href="/en/business-decisions/user-accounts-access#100">authorised</a> to view all warehouses linked to the delivery orders of the main order. Check the settings in the menu  <strong>Setup» Settings » User »Accounts » Tab: Visibility</strong> for this.</p>
+<p>To open main orders, variable users have to be <a href="/en/business-decisions/user-accounts-access#100">authorised</a> to view all warehouses linked to the delivery orders of the main order. Check the settings in the menu <strong>Setup» Settings » User »Accounts » Tab: Visibility</strong> for this.</p>
 </div>
 </td>
 </tr>
@@ -942,11 +1254,11 @@ Before returns can be registered in your system, you have to set up reasons for 
 <p>Open the order or the warranty for which the return is to be created.</p>
 </li>
 <li>
-<p>In the table-settings-return  Overview tab, click on <strong>Return</strong> and select the option <strong>create</strong>.<br>
+<p>In the table-settings-return Overview tab, click on <strong>Return</strong> and select the option <strong>create</strong>.<br>
 → A window for creating the return opens.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#table-settings-return">Table 5</a>.</p>
+<p>Carry out the settings according to <a href="#table-settings-return">Table 8</a>.</p>
 </li>
 <li>
 <p>Save (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
@@ -955,7 +1267,7 @@ Before returns can be registered in your system, you have to set up reasons for 
 </ol>
 </div>
 <table id="table-settings-return" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Options for creating a return</caption>
+<caption class="title">Table 8. Options for creating a return</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1018,7 +1330,7 @@ If a reason is selected here, it has priority over all reasons for returns assig
 <h3 id="450">4.4. Creating a return slip</h3>
 <div class="paragraph">
 <p>You can include a return slip in every shipment of items sent to your customers. In this case, the return slip should contain blank fields for the reasons of return. Alternatively, you can allow your customers to fill out the return slip in the <strong>My account</strong> area of the online store and to print it after having filled in the reasons for the return. The return slip can then be included in the return delivery.
-Before creating return slips, the document template <strong>Return slip</strong> has to be set up in the menu  <strong>Setup » Client » Select client » Locations » Select location » Documents » Return label</strong>.</p>
+Before creating return slips, the document template <strong>Return slip</strong> has to be set up in the menu <strong>Setup » Client » Select client » Locations » Select location » Documents » Return label</strong>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1029,7 +1341,7 @@ Before creating return slips, the document template <strong>Return slip</strong>
 <td class="content">
 <div class="title">Displaying reasons for returns on the document template</div>
 <div class="paragraph">
-<p>To include a blank return slip in every shipment regardless whether items will be returned or not, create a return slip directly in the main order.  You can also allow your customers to register returns and select reasons for those returns in the My account area of the online store. Your customer can then print the filled in return slip. No matter which of these options you use: in order to be able to insert reasons for a return, the column including those reasons has to be placed below the list of items.</p>
+<p>To include a blank return slip in every shipment regardless whether items will be returned or not, create a return slip directly in the main order. You can also allow your customers to register returns and select reasons for those returns in the My account area of the online store. Your customer can then print the filled in return slip. No matter which of these options you use: in order to be able to insert reasons for a return, the column including those reasons has to be placed below the list of items.</p>
 </div>
 </td>
 </tr>
@@ -1067,7 +1379,7 @@ Before creating return slips, the document template <strong>Return slip</strong>
 <td class="content">
 <div class="title">Generating a return slip automatically</div>
 <div class="paragraph">
-<p>Set up an event procedure that automatically generates return slips. If you select  the event <strong>New return (by customer)</strong> and the filter <strong>Client (store)</strong>, blank return slips are generated with each incoming return and only have to be provided for downloading.</p>
+<p>Set up an event procedure that automatically generates return slips. If you select the event <strong>New return (by customer)</strong> and the filter <strong>Client (store)</strong>, blank return slips are generated with each incoming return and only have to be provided for downloading.</p>
 </div>
 </td>
 </tr>
@@ -1105,7 +1417,7 @@ Before creating return slips, the document template <strong>Return slip</strong>
 → A window for editing opens.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#table-reversing-stock-return">Table 6</a>.</p>
+<p>Carry out the settings according to <a href="#table-reversing-stock-return">Table 9</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>) the settings.</p>
@@ -1128,7 +1440,7 @@ Before creating return slips, the document template <strong>Return slip</strong>
 </tbody></table>
 </div>
 <table id="table-reversing-stock-return" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 6. Options for reversing stock</caption>
+<caption class="title">Table 9. Options for reversing stock</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1214,7 +1526,7 @@ Before creating return slips, the document template <strong>Return slip</strong>
 <h2 id="500">5. Working with credit note orders</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Credit note orders are used for reimbursing your customers, for example after a <a href="/en/orders/managing-orders#400">return order</a>.  A credit note in plentymarkets does not represent a reverse invoice but a refund. Credit note orders are created from an existing main order in the menu <strong>Orders » Edit orders</strong>. Thus, a credit note is always linked to a main order. The credit notes created in a credit note order are included in your financial accounting such as the <strong>DATEV</strong> export.</p>
+<p>Credit note orders are used for reimbursing your customers, for example after a <a href="/en/orders/managing-orders#400">return order</a>. A credit note in plentymarkets does not represent a reverse invoice but a refund. Credit note orders are created from an existing main order in the menu <strong>Orders » Edit orders</strong>. Thus, a credit note is always linked to a main order. The credit notes created in a credit note order are included in your financial accounting such as the <strong>DATEV</strong> export.</p>
 </div>
 <div class="sect2">
 <h3 id="510">5.1. Setting a default status for credit notes</h3>
@@ -1271,16 +1583,16 @@ Before creating return slips, the document template <strong>Return slip</strong>
 <p>Open the <strong>Overview</strong> tab of the order for which a credit note order is to be created.</p>
 </li>
 <li>
-<p>Click on the  <strong>Credit note</strong> drop-down list.</p>
+<p>Click on the <strong>Credit note</strong> drop-down list.</p>
 </li>
 <li>
-<p>Select an option according to the explanations given in <a href="#table-options-credit-note-order">Table 7</a>. <br>
+<p>Select an option according to the explanations given in <a href="#table-options-credit-note-order">Table 10</a>.<br>
 → The credit note order is created and opened in a separate window.</p>
 </li>
 </ol>
 </div>
 <table id="table-options-credit-note-order" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 7. Options when creating a credit note order</caption>
+<caption class="title">Table 10. Options when creating a credit note order</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1303,7 +1615,7 @@ Before creating return slips, the document template <strong>Return slip</strong>
 </tbody>
 </table>
 <div class="paragraph">
-<p>If a credit note order already exists for an order, there will be a note on the right-hand side of the <strong>Overview</strong> tab notifying you that there is a <strong>Credit note available</strong>. In addition, the credit note order is linked in the  <strong>Overview</strong> tab and can be found by using the <strong>Credit note / search</strong>  drop-down list.</p>
+<p>If a credit note order already exists for an order, there will be a note on the right-hand side of the <strong>Overview</strong> tab notifying you that there is a <strong>Credit note available</strong>. In addition, the credit note order is linked in the <strong>Overview</strong> tab and can be found by using the <strong>Credit note / search</strong> drop-down list.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1352,7 +1664,7 @@ Before creating return slips, the document template <strong>Return slip</strong>
 <div class="sect3">
 <h4 id="_setting_up_a_reversal_document_template">5.4.1. Setting up a reversal document template</h4>
 <div class="paragraph">
-<p>First set up a template for the reversal document. The fastest way to fill all required settings is to apply the settings from the default document template. <br>
+<p>First set up a template for the reversal document. The fastest way to fill all required settings is to apply the settings from the default document template.<br>
 The following steps describe how to apply the settings from a default document template.</p>
 </div>
 <div class="paragraph instruction">
@@ -1414,7 +1726,7 @@ The following steps describe how to apply the settings from a default document t
 → A new window with optional settings opens.</p>
 </li>
 <li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings. <br>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
 → The reversal document is generated and the settings of the credit note order are unlocked.</p>
 </li>
 <li>
@@ -1424,11 +1736,11 @@ The following steps describe how to apply the settings from a default document t
 <p>Click on the <strong>Receipts</strong> tab.</p>
 </li>
 <li>
-<p>Select the option <strong>Credit note</strong> from the <strong>Create receipt</strong> drop-down list. <br>
+<p>Select the option <strong>Credit note</strong> from the <strong>Create receipt</strong> drop-down list.<br>
 → A window with optional settings opens.</p>
 </li>
 <li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings. <br>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
 → The reversal document is generated and the settings of the credit note order are locked again.</p>
 </li>
 </ol>
@@ -1470,7 +1782,7 @@ The following steps describe how to apply the settings from a default document t
 <p>Open the <strong>Settings</strong> tab.</p>
 </li>
 <li>
-<p>Click on the  <strong>payment icon</strong> next to the <strong>Refund</strong> option.</p>
+<p>Click on the <strong>payment icon</strong> next to the <strong>Refund</strong> option.</p>
 </li>
 <li>
 <p>Check the <strong>Amount</strong> of the refund and adjust it when necessary.</p>
@@ -1534,7 +1846,7 @@ The following steps describe how to apply the settings from a default document t
 <p>Click on the reset link next to the option Outgoing items.</p>
 </li>
 <li>
-<p>A separate window opens. Select the required option as described in <a href="#table-settings-reverse-stock">Table 8</a>.</p>
+<p>A separate window opens. Select the required option as described in <a href="#table-settings-reverse-stock">Table 11</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings to carry out the process.</p>
@@ -1542,7 +1854,7 @@ The following steps describe how to apply the settings from a default document t
 </ol>
 </div>
 <table id="table-settings-reverse-stock" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. Options for reversing stock for credit notes</caption>
+<caption class="title">Table 11. Options for reversing stock for credit notes</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1614,7 +1926,7 @@ The following steps describe how to apply the settings from a default document t
 <h2 id="600">6. Working with warranties</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Warranties are quite similar to <a href="/en/orders/managing-orders#400">returns</a>. In both cases, the items of an order in <strong>status 7</strong> will be sent back to you.   In contrast to a return, customers expect a new delivery or a refund in the form of a <a href="/en/orders/managing-orders#500">credit note</a>.</p>
+<p>Warranties are quite similar to <a href="/en/orders/managing-orders#400">returns</a>. In both cases, the items of an order in <strong>status 7</strong> will be sent back to you.  In contrast to a return, customers expect a new delivery or a refund in the form of a <a href="/en/orders/managing-orders#500">credit note</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1687,10 +1999,10 @@ The following steps describe how to apply the settings from a default document t
 <p>Open the <strong>return</strong> or the original main <strong>order</strong> for which you want to create a warranty.</p>
 </li>
 <li>
-<p>Click on the  <strong>Warranty</strong> drop-down list.</p>
+<p>Click on the <strong>Warranty</strong> drop-down list.</p>
 </li>
 <li>
-<p>Select an option according to the explanations given in <a href="#table-options-warranty">Table 9</a>.</p>
+<p>Select an option according to the explanations given in <a href="#table-options-warranty">Table 12</a>.</p>
 </li>
 <li>
 <p>Save (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
@@ -1699,7 +2011,7 @@ The following steps describe how to apply the settings from a default document t
 </ol>
 </div>
 <table id="table-options-warranty" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. Options when creating a warranty</caption>
+<caption class="title">Table 12. Options when creating a warranty</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1899,7 +2211,7 @@ The following steps describe how to apply the settings from a default document t
 </li>
 <li>
 <p>Click on the <strong>Repair</strong> drop-down list and select <strong>create</strong>.<br>
-→ A window for editing opens. Enter the  <strong>status</strong> and the <strong>condition</strong> of the repair. Select the <strong>Item</strong>. Enter a <strong>Note</strong>, if you require it.</p>
+→ A window for editing opens. Enter the <strong>status</strong> and the <strong>condition</strong> of the repair. Select the <strong>Item</strong>. Enter a <strong>Note</strong>, if you require it.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
@@ -1937,7 +2249,7 @@ With both options, unpaid orders are combined in a multi-order in the menu <stro
 <p>Go to <strong>Setup » Orders » Order types » Multi-order</strong>.</p>
 </li>
 <li>
-<p>Carry out the settings as described in <a href="#table-multi-order-settings">Table 10</a>.</p>
+<p>Carry out the settings as described in <a href="#table-multi-order-settings">Table 13</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
@@ -1945,7 +2257,7 @@ With both options, unpaid orders are combined in a multi-order in the menu <stro
 </ol>
 </div>
 <table id="table-multi-order-settings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. Basic settings for multi-orders</caption>
+<caption class="title">Table 13. Basic settings for multi-orders</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1975,7 +2287,7 @@ With both options, unpaid orders are combined in a multi-order in the menu <stro
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order status of credit notes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select the status <a href="/en/orders/managing-orders#510">credit note orders</a> have to be in to be considered for multi-orders.  Multiple selections are possible.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the status <a href="/en/orders/managing-orders#510">credit note orders</a> have to be in to be considered for multi-orders. Multiple selections are possible.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2074,13 +2386,13 @@ After having set up a document template for multi-invoices, you can generate a m
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> as listed in <a href="#table-event-procedure-multi-invoice-automatic">Table 11</a>.</p>
+<p>Select the <strong>event</strong> as listed in <a href="#table-event-procedure-multi-invoice-automatic">Table 14</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#table-event-procedure-multi-invoice-automatic">Table 11</a>.</p>
+<p>Carry out the settings according to <a href="#table-event-procedure-multi-invoice-automatic">Table 14</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -2093,7 +2405,7 @@ After having set up a document template for multi-invoices, you can generate a m
 </div>
 </div>
 <table id="table-event-procedure-multi-invoice-automatic" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. Event procedure “Automatically generating a multi-invoice”</caption>
+<caption class="title">Table 14. Event procedure “Automatically generating a multi-invoice”</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2204,7 +2516,7 @@ All credit notes for a customer class are combined in one multi credit note. Dep
 <div class="sect2">
 <h3 id="1110">9.1. Release date</h3>
 <div class="paragraph">
-<p>You find the option  <strong>Release date</strong> within the area for editing items, listed in the <strong>Available</strong> tab. Here, you can use the calendar to enter the date on which the item will become available. To do so, proceed as described below.</p>
+<p>You find the option <strong>Release date</strong> within the area for editing items, listed in the <strong>Available</strong> tab. Here, you can use the calendar to enter the date on which the item will become available. To do so, proceed as described below.</p>
 </div>
 <div class="paragraph instruction">
 <p>Entering the release date</p>
@@ -2275,7 +2587,7 @@ All credit notes for a customer class are combined in one multi credit note. Dep
 </li>
 <li>
 <p>Select <strong>No limitation</strong> for the <strong>Limitation</strong> option.<br>
-→  The item can now be ordered and thus purchased, even without actually being in stock yet.</p>
+→ The item can now be ordered and thus purchased, even without actually being in stock yet.</p>
 </li>
 </ol>
 </div>
@@ -2378,7 +2690,7 @@ All credit notes for a customer class are combined in one multi credit note. Dep
 <p>The following 28 status entries are available by default in your plentymarkets system and some of them linked to automatic processes in the system. Those statuses linked to an automatic process are not deletable.</p>
 </div>
 <table id="table-default-statuses" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. Default statuses and automatic processes within the system</caption>
+<caption class="title">Table 15. Default statuses and automatic processes within the system</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2459,7 +2771,7 @@ If you use stock limitation and this status for insufficient stock, it is possib
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>[9]</strong> Return</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is automatically preselected when a return is created.  You can also change this standard status in the menu <strong>Setup » Orders » Settings</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is automatically preselected when a return is created. You can also change this standard status in the menu <strong>Setup » Orders » Settings</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>[9.1]</strong> Items are checked</p></td>
@@ -2511,7 +2823,7 @@ If you use stock limitation and this status for insufficient stock, it is possib
 <div class="sect2">
 <h3 id="1220">10.2. Creating and editing order statuses</h3>
 <div class="paragraph">
-<p>You can add statuses to the ones described in <a href="#table-default-statuses">Table 12</a> . Already existing statuses can be edited or renamed. Maintain statuses in different languages in order to inform your customers about the progress via email or in the customer account of the online store. Apart from statuses linked to automated processes within the system, all statuses can be deleted. Statuses linked to automated processes within the system can be renamed. However, you should make sure not to misuse those statuses linked to automated processes within the system.</p>
+<p>You can add statuses to the ones described in <a href="#table-default-statuses">Table 15</a> . Already existing statuses can be edited or renamed. Maintain statuses in different languages in order to inform your customers about the progress via email or in the customer account of the online store. Apart from statuses linked to automated processes within the system, all statuses can be deleted. Statuses linked to automated processes within the system can be renamed. However, you should make sure not to misuse those statuses linked to automated processes within the system.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2884,7 +3196,7 @@ The search for <strong>document type</strong> results in an overview of those or
 <h2 id="1400">12. Setting up the order overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following tools help you to easily keep track of and manage the search results. All of your orders are displayed in the menu <strong>Orders » Edit orders</strong>. Here you can see the most important information about each order. You are provided with information about the customer, the order status and the payment status. You can also tell which items are included in the order, whether the outgoing items were booked and whether an invoice was generated. In other words, you can easily keep track of the most important processes without having to open the order. Move the cursor over the icons to see tooltips with additional information. You can find a list of all the symbols with the corresponding explanantions in <a href="#table-symbols-order-overview">Table 13</a>.</p>
+<p>The following tools help you to easily keep track of and manage the search results. All of your orders are displayed in the menu <strong>Orders » Edit orders</strong>. Here you can see the most important information about each order. You are provided with information about the customer, the order status and the payment status. You can also tell which items are included in the order, whether the outgoing items were booked and whether an invoice was generated. In other words, you can easily keep track of the most important processes without having to open the order. Move the cursor over the icons to see tooltips with additional information. You can find a list of all the symbols with the corresponding explanantions in <a href="#table-symbols-order-overview">Table 16</a>.</p>
 </div>
 <div class="paragraph">
 <p>Click on an <strong>icon</strong> to open further areas within the order. For example, click on <strong>Calculate stock</strong> to check the current stock of the item or to reorder stock.
@@ -2915,7 +3227,7 @@ Use the arrows to switch between pages. You can also enter the required page num
 <div class="sect2">
 <h3 id="1410">12.1. Item list in the order overview</h3>
 <div class="paragraph">
-<p>The item list is displayed by default in the order overview. Thus, the items included in an order and their most important parameters such as <strong>name</strong>, <strong>size</strong> and <strong>price</strong> are immediately available to you. However, the item list can also be hidden, either for individual or for all orders.  To hide the item list of an individual order, use the arrow icon <strong>close item list.</strong> To hide the item list for all orders, proceed as described below.</p>
+<p>The item list is displayed by default in the order overview. Thus, the items included in an order and their most important parameters such as <strong>name</strong>, <strong>size</strong> and <strong>price</strong> are immediately available to you. However, the item list can also be hidden, either for individual or for all orders. To hide the item list of an individual order, use the arrow icon <strong>close item list.</strong> To hide the item list for all orders, proceed as described below.</p>
 </div>
 <div class="paragraph instruction">
 <p>Hiding the item lists for all orders:</p>
@@ -2942,7 +3254,7 @@ Use the arrows to switch between pages. You can also enter the required page num
 The following table contains an overview of all possible information that could be displayed. Some icons also allow you to perform actions directly. Note, that only those icons are displayed that correspond with the state the order is in.</p>
 </div>
 <table id="table-symbols-order-overview" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 13. Possible icons in the order overview</caption>
+<caption class="title">Table 16. Possible icons in the order overview</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3203,7 +3515,7 @@ The settings sub-tabs and their different functions and options are explained in
 </tbody></table>
 </div>
 <table id="table-options-tab-overview" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 14. Options in the <strong>Overview</strong> tab of an order</caption>
+<caption class="title">Table 17. Options in the <strong>Overview</strong> tab of an order</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3340,7 +3652,7 @@ The assignment of a storage location is especially important for pick lists and 
 <p>An order’s basic parameters are saved in the <strong>Settings</strong> tab, e.g. the <strong>Status</strong>, <strong>Referrer</strong> or the <strong>Payment method</strong>.</p>
 </div>
 <table id="table-options-tab-settings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 15. Options in the <strong>Settings</strong> tab of an order</caption>
+<caption class="title">Table 18. Options in the <strong>Settings</strong> tab of an order</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3556,7 +3868,7 @@ The documents are created with the help of document templates that are saved und
 <div class="sect2">
 <h3 id="1610">13.10. Tab: Stock</h3>
 <div class="paragraph">
-<p>The <strong>Stock</strong> tab displays the <a href="/en/stock-management/managing-stocks">stock data</a> for all of the items that are included in the order.  All of the functions of the <strong>Stock</strong> menu are available in this tab with the exception of the filter functions. You can view stocks and configure them as needed.</p>
+<p>The <strong>Stock</strong> tab displays the <a href="/en/stock-management/managing-stocks">stock data</a> for all of the items that are included in the order. All of the functions of the <strong>Stock</strong> menu are available in this tab with the exception of the filter functions. You can view stocks and configure them as needed.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3660,7 +3972,7 @@ Partial quantities are displayed as <strong>delivered</strong> if they are booke
 <ol class="arabic">
 <li>
 <p>Click on the <strong>shopping cart</strong> (<span class="icon green"><i class="fa fa-cart-plus  "></i></span>) in the <strong>reorder</strong> tab of the order.<br>
-→  The <strong>Reorder</strong> menu opens. Find out which items are included in a reorder by clicking on the <strong>Base</strong> tab and then opening the <strong>Item data</strong> submenu.</p>
+→ The <strong>Reorder</strong> menu opens. Find out which items are included in a reorder by clicking on the <strong>Base</strong> tab and then opening the <strong>Item data</strong> submenu.</p>
 </li>
 <li>
 <p>Open the <strong>Basic date</strong> submenu and click on the <strong>gear-wheel icon</strong> (<span class="icon darkGrey fa-stack fa-lg"><i class="fa fa-gear fa-stack-2x  "></i><span class="icon black"><i class="fa fa-long-arrow-right fa-stack-1x darkGrey"></i></span></span>) next to the <strong>Order</strong> option.<br>
@@ -3797,7 +4109,7 @@ Note that an invoice can only be reversed if no dunning letter exists for the co
 <div class="sect3">
 <h4 id="1680">13.13.1. Setting up a reversal document template</h4>
 <div class="paragraph">
-<p>Set up a template for the reversal document first. The fastest way to set up the template is to apply the settings from the default document template or to copy the settings from the invoice document template. <br>
+<p>Set up a template for the reversal document first. The fastest way to set up the template is to apply the settings from the default document template or to copy the settings from the invoice document template.<br>
 The following steps briefly describe how to apply the settings from the default document template.</p>
 </div>
 <div class="paragraph instruction">
@@ -3855,7 +4167,7 @@ The following steps briefly describe how to apply the settings from the default 
 <p>Click on the <strong>Receipts</strong> tab.</p>
 </li>
 <li>
-<p>Select the option <strong>Invoice</strong> from the <strong>Create receipt</strong> drop-down list. <br>
+<p>Select the option <strong>Invoice</strong> from the <strong>Create receipt</strong> drop-down list.<br>
 → A new window with optional settings opens.</p>
 </li>
 <li>
