@@ -825,22 +825,6 @@ class Metadata {
 				"languageID" => "DU8B7LL",
 				"children" => 				[
 					[
-						"id" => "52f251ceacbf32317b9669c81b44bf80",
-						"path" => "artikel/anwendungsfaelle/artikeldaten-status-pruefen",
-						"position" => 0,
-						"urlName" => "artikeldaten-status-pruefen",
-						"url" => "/artikel/anwendungsfaelle/artikeldaten-status-pruefen",
-						"level" => 3,
-						"title" => "Aktualität von Artikeldaten prüfen",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Aktualität von Artikeldaten prüfen. Hier findest du folgende Informationen:",
-						"languageID" => "PSROCEP",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "c78b862557f96dc1b49d274b049e8c87",
 						"path" => "artikel/anwendungsfaelle/multipacks-pakete-sets-verwalten",
 						"position" => 20,
