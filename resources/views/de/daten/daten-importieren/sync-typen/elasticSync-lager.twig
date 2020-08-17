@@ -4,8 +4,32 @@
             <div id="toc" class="toc">
 <div id="toctitle">Inhalt</div>
 <ul class="sectlevel1">
-<li><a href="#2231"><span>1.</span><span> Felder für den Lagerortabgleich</span></a></li>
-<li><a href="#2232"><span>2.</span><span> Felder für die Lagerortzuordnung</span></a></li>
+<li><a href="#10"><span>1.</span><span> Abgleichfelder</span></a></li>
+<li><a href="#20"><span>2.</span><span> Zuordnungsfelder</span></a>
+<ul class="sectlevel2">
+<li><a href="#30"><span>2.1.</span><span> Lagerorte</span></a>
+<ul class="sectlevel3">
+<li><a href="#40"><span>2.1.1.</span><span> Lagerort-ID</span></a></li>
+<li><a href="#50"><span>2.1.2.</span><span> Ebenen-ID</span></a></li>
+<li><a href="#60"><span>2.1.3.</span><span> Lagerortname</span></a></li>
+<li><a href="#70"><span>2.1.4.</span><span> Zweck</span></a></li>
+<li><a href="#80"><span>2.1.5.</span><span> Status</span></a></li>
+<li><a href="#90"><span>2.1.6.</span><span> Position</span></a></li>
+<li><a href="#100"><span>2.1.7.</span><span> Lagerorttyp</span></a></li>
+<li><a href="#110"><span>2.1.8.</span><span> Notizen</span></a></li>
+<li><a href="#120"><span>2.1.9.</span><span> Lagerort löschen</span></a></li>
+</ul>
+</li>
+<li><a href="#130"><span>2.2.</span><span> Ebenen der Lagerorte</span></a>
+<ul class="sectlevel3">
+<li><a href="#140"><span>2.2.1.</span><span> ID der Elternebene</span></a></li>
+<li><a href="#150"><span>2.2.2.</span><span> Dimension ID</span></a></li>
+<li><a href="#160"><span>2.2.3.</span><span> Position der Ebene</span></a></li>
+<li><a href="#170"><span>2.2.4.</span><span> Name der Ebene</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#2240"><span>3.</span><span> Lagerort anpassen</span></a></li>
 <li><a href="#2250"><span>4.</span><span> Lagerort erstellen</span></a></li>
 <li><a href="#2250"><span>5.</span><span> Lagerort löschen</span></a></li>
@@ -19,17 +43,47 @@
     <h1>Lager</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mit einem Sync des Typs <strong>Lager</strong> importierst du neue Lagerorte oder aktualisierst bestehende. Um Lagerorte per ElasticSync zu erstellen oder zu aktualisieren, musst du ein Lager angelegt haben.<br></p>
+<p>Diese Seite erläutert die Abgleich- und Zuordnungsfelder, die dir beim Importieren von Lagerorten zur Verfügung stehen.
+
+Diese Seite dient lediglich als Referenz und setzt voraus, dass du bereits Grundkenntnisse über das <a href="/daten/daten-importieren/ElasticSync">Import-Tool</a> hast.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Voraussetzungen</div>
 <div class="paragraph">
-<p>Diese Seite dient lediglich als Referenz und setzt voraus, dass du bereits über Grundkenntnisse des <a href="/daten/daten-importieren/ElasticSync">ElasticSync-Tools</a> verfügst.</p>
+<p>Um Lagerorte per Import zu erstellen oder zu aktualisieren, musst du bereits ein Lager angelegt haben.<br></p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Praxisbeispiel: Lagerorte anpassen</div>
+<div class="paragraph">
+<p>Hin und wieder kommt es vor, dass Daten von Lagerorten angepasst werden müssen. Wie du Lagerdaten exportierst, diese wie gewünscht anpasst und schließlich wieder importierst, ist in <a href="/daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-lagerorte">diesem Praxisbeispiel</a> Schritt für Schritt erläutert.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="2231">1. Felder für den Lagerortabgleich</h2>
+<h2 id="10">1. Abgleichfelder</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In <a href="#tabelle-abgleichfelder-lagerorte">Tabelle 1</a> werden Felder erläutert, die für den Abgleich von Lagerorten zur Verfügung stehen. Anhand des gewählten Abgleichfelds wird geprüft, ob der importierte Datensatz in plentymarkets vorhanden ist.</p>
+<p>In <a href="#tabelle-abgleichfelder-lagerorte">Tabelle 1</a> werden Felder erläutert, die für den Abgleich von Lagerorten zur Verfügung stehen.
+Anhand des gewählten Abgleichfelds wird geprüft, ob der importierte Datensatz in plentymarkets vorhanden ist.</p>
 </div>
 <div class="paragraph">
 <p>Weitere Informationen zu den Begrifflichkeiten Dimensionen, Ebenen und Lagerorte findest du auf der Handbuchseite <a href="https://knowledge.plentymarkets.com/warenwirtschaft/lager-einrichten" target="_blank" rel="noopener">Lager einrichten</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
@@ -37,8 +91,8 @@
 <table id="tabelle-abgleichfelder-lagerorte" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 1. Abgleichfelder für Lagerortimport</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
@@ -49,7 +103,7 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Level name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Ebene, z.B. R01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Ebene, z.B. R01 für Regal 01</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Level ID</p></td>
@@ -61,127 +115,369 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WarehouseLocationName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Lagerorts ohne Pfad</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Lagerorts, z.B. SL1 für Storage location 1</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="2232">2. Felder für die Lagerortzuordnung</h2>
+<h2 id="20">2. Zuordnungsfelder</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In <a href="#tabelle-zuordnungsfelder-lagerorte">Tabelle 2</a> werden Felder erläutert, die für die Zuordnung von Lagerortdaten zur Verfügung stehen. Anhand des gewählten Abgleichfelds wird geprüft, ob der importierte Datensatz in plentymarkets vorhanden ist.</p>
+<p>In diesem Kapitel werden Felder erläutert, die für die Zuordnung von Lagerorten zur Verfügung stehen.
+Mithilfe dieser Felder legst du fest, welche <em>Spalte deiner Datei</em> welchem <em>Datenfeld in deinem System</em> entspricht.</p>
+</div>
+<div class="paragraph instruction">
+<p>Grundlegende Vorgehensweise:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>In deiner CSV-Datei</em></strong>: Gib einen zulässigen Importwert in eine Spalte ein.</p>
+</li>
+<li>
+<p><strong><em>In plentymarkets</em></strong>: Ordne diese Spalte dem passenden Zuordnungsfeld zu.</p>
+</li>
+<li>
+<p><strong><em>Nach dem Import</em></strong>: Prüfe das Ergebnis im Backend.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Kein Zuordnungsfeld? Standardwert greift!</div>
+<div class="paragraph">
+<p>Wenn du eine bestimmte Information nicht in deine CSV-Datei aufnimmst, d.h. wenn du ein bestimmtes Zuordnungsfeld <em>nicht verwendest</em>, dann erhält dein Lagerort den Standardwert.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
 <p>Weitere Informationen zu den Begrifflichkeiten Dimensionen, Ebenen und Lagerorte findest du auf der Handbuchseite <a href="https://knowledge.plentymarkets.com/warenwirtschaft/lager-einrichten" target="_blank" rel="noopener">Lager einrichten</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
 </div>
-<table id="tabelle-zuordnungsfelder-lagerorte" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 2. Zuordnungsfelder für Lagerortimport</caption>
+<div class="sect2">
+<h3 id="30">2.1. Lagerorte</h3>
+<div class="sect3">
+<h4 id="40">2.1.1. Lagerort-ID</h4>
+<div class="paragraph">
+<p>Gib die ID des Lagerorts in deine CSV-Datei ein. Dies gilt nur für bestehende Lagerorte.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Numerisch</p>
+</div>
+<div class="paragraph">
+<p>Das Ergebnis des Imports findest du im Backend im Menü <strong>Einstellungen » Waren » Lager » <em>Lager wählen</em> » Lagerorte</strong>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="50">2.1.2. Ebenen-ID</h4>
+<div class="paragraph">
+<p>Gib die ID der Ebene in deine CSV-Datei ein. Eine Ebene ist eine konkrete Dimension, wie z.B. Regal 2 oder Fach 14.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Numerisch</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="60">2.1.3. Lagerortname</h4>
+<div class="paragraph">
+<p>Gib den Namen des Lagerorts in deine CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Alphanumerisch</p>
+</div>
+<div class="paragraph">
+<p>Das Ergebnis des Imports findest du im Backend im Menü <strong>Einrichtung » Waren » Lager » <em>Lager wählen</em> » Lagerorte</strong>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="70">2.1.4. Zweck</h4>
+<div class="paragraph">
+<p>Welchen Verwendungszweck hat der Lagerort?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Entnahme</p>
+</div>
+<table id="tabelle-zuordnung-zweck-lagerorte" class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Zuordnungsfeld</th>
-<th class="tableblock halign-left valign-top">Zulässige Importwerte</th>
-<th class="tableblock halign-left valign-top">Erläuterung</th>
+<th class="tableblock halign-left valign-top">Zulässige Importwerte in CSV-Datei</th>
+<th class="tableblock halign-left valign-top">Optionen in der Dropdown-Liste im Backend</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="3"><p class="tableblock"><strong>Lagerorte</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Nachschub</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nachschub</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lagerort-ID<br>
-(nur bei bestehenden Lagerorten)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Lagerorts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Entnahme</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entnahme</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ebenen-ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Ebene</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Wareneingang</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wareneingang</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lagerortname</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Lagerorts ohne Pfad</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Retoure</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retoure</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Zweck</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nachschub<br>
- Entnahme<br>
- Wareneingang<br>
- Retoure<br>
- Ladenlokal<br>
- Umlagerung<br>
- Box</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Verwedungszweck des Lagerorts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ladenlokal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ladenlokal</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Aktiv<br>
- Inaktiv<br>
- Für die Bestandsaufnahme gesperrt<br>
- Gesperrt<br>
- Reserviert</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status des Lagerorts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Umlagerung</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Umlagerung</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position des Lagerorts (Laufweg)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Notizen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Notizen zum Lagerort</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lagerort löschen</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes<br>
- No</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Löschfunktion für den Lagerort<br></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Yes = Lagerort löschen<br></p>
-</li>
-<li>
-<p>No = Lagerort nicht löschen</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="3"><p class="tableblock"><strong>Ebenen der Lagerorte</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Elternebene</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Elternebene</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dimension ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Dimension, z.B. Regal</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position der Ebene</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position der Ebene</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Ebene</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Ebene, z.B. R01, R02 usw.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Box</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Box (für die <a href="/app/funktionen/lagerverwaltung/rollende-kommissionierung">Rollende Kommissionierung</a>)</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Das Ergebnis des Imports findest du im Backend im Menü <a href="/warenwirtschaft/lager-einrichten#intable-zweck">Einrichtung » Waren » Lager » <em>Lager wählen</em> » Lagerorte</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="80">2.1.5. Status</h4>
+<div class="paragraph">
+<p>Welchen Status hat der Lagerort?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Aktiv</p>
+</div>
+<table id="tabelle-zuordnung-status-lagerorte" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Zulässige Importwerte in CSV-Datei</th>
+<th class="tableblock halign-left valign-top">Optionen in der Dropdown-Liste im Backend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Aktiv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aktiv</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Inaktiv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inaktiv</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Für die Bestandsaufnahme gesperrt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Für die Bestandsaufnahme gesperrt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gesperrt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gesperrt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Reserviert</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserviert</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Das Ergebnis des Imports findest du im Backend im Menü <a href="/warenwirtschaft/lager-einrichten#intable-status">Einrichtung » Waren » Lager » <em>Lager wählen</em> » Lagerorte</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="90">2.1.6. Position</h4>
+<div class="paragraph">
+<p>Gib die Position des Lagerorts in deine CSV-Datei ein. Die Position wird beispielsweise für den Laufweg beim Picken von Ware benötigt.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Numerisch</p>
+</div>
+<div class="paragraph">
+<p>Das Ergebnis des Imports findest du im Backend im Menü <strong>Einstellungen » Waren » Lager » <em>Lager wählen</em> » Lagerorte</strong>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="100">2.1.7. Lagerorttyp</h4>
+<div class="paragraph">
+<p>Gib den Lagerorttyp je nach Artikelgröße in deine CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<table id="tabelle-zuordnung-lagerorttyp-lagerorte" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Zulässige Importwerte in CSV-Datei</th>
+<th class="tableblock halign-left valign-top">Optionen in der Dropdown-Liste im Backend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>none</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kein Typ ausgewählt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>small</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Klein</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>medium</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mittel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>large</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Groß</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>europallet</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Europalette</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Das Ergebnis des Imports findest du im Backend im Menü <a href="/warenwirtschaft/wareneingaenge-verwalten#intable-lagerorttyp">Artikel » Artikel bearbeiten » Artikel öffnen » Tab: ID einer Variante » Tab: Lager » Spalte: Lagerorttyp</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="110">2.1.8. Notizen</h4>
+<div class="paragraph">
+<p>Gib Notizen zum Lagerort in deine CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Alphanumerisch</p>
+</div>
+<div class="paragraph">
+<p>Das Ergebnis des Imports findest du im Backend im Menü <a href="/warenwirtschaft/lager-einrichten#intable-notizen">Einrichtung » Waren » Lager » <em>Lager wählen</em> » Lagerorte » <em>Lagerort wählen</em></a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="120">2.1.9. Lagerort löschen</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Nur bei Lagerorten ohne Bestand möglich</span></p>
+</div>
+<div class="paragraph">
+<p>Möchtest du den Lagerort löschen?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: <code>No</code></p>
+</div>
+<table id="tabelle-zuordnung-lagerort-loeschen" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Zulässige Importwerte in CSV-Datei</th>
+<th class="tableblock halign-left valign-top">Ergebnis im Backend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>No</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lagerort wird <em>nicht</em> gelöscht</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Yes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lagerort wird gelöscht</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="130">2.2. Ebenen der Lagerorte</h3>
+<div class="sect3">
+<h4 id="140">2.2.1. ID der Elternebene</h4>
+<div class="paragraph">
+<p>Gib die übergeordnete Ebenen-ID in deine CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Numerisch</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="150">2.2.2. Dimension ID</h4>
+<div class="paragraph">
+<p>Gib die ID der Dimension, z.B. des Regals, in deine CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Numerisch</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="160">2.2.3. Position der Ebene</h4>
+<div class="paragraph">
+<p>Gib die Position der Ebene in deine CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Numerisch</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="170">2.2.4. Name der Ebene</h4>
+<div class="paragraph">
+<p>Gib den Namen der Ebene, z.B. RO1, RO2 usw., in deine CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Alphanumerisch</p>
+</div>
+<hr>
 <div class="admonitionblock important">
 <table>
 <tbody><tr>
@@ -199,7 +495,7 @@ Wählt man hingegen die ID einer höheren Dimension, sind die Lagerorte nicht me
 </tbody></table>
 </div>
 <table id="tabelle-ebenen-id" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 3. Ebenen-IDs und Ebenen-Namen</caption>
+<caption class="title">Tabelle 2. Ebenen-IDs und Ebenen-Namen</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -234,11 +530,13 @@ Wählt man hingegen die ID einer höheren Dimension, sind die Lagerorte nicht me
 </tbody>
 </table>
 </div>
+</div>
+</div>
 </div><div class="sect1">
 <h2 id="2240">3. Lagerort anpassen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Du kannst mit ElasticSync Lagerorte anpassen und z.B. den Namen oder die Position des Lagerortes ändern.</p>
+<p>Du kannst mit ElasticSync Lagerorte anpassen und z.B. den Namen oder die Position des Lagerorts ändern.</p>
 </div>
 <div class="paragraph instruction">
 <p>Lagerort anpassen:</p>
@@ -373,7 +671,7 @@ Wählt man hingegen die ID einer höheren Dimension, sind die Lagerorte nicht me
 <p>Aktiviere das Feld <strong>Lagerort löschen</strong>.</p>
 </li>
 <li>
-<p>Es können alle oder nur bestimmte Lagerorte gelöscht werden. Nimm die entsprechenden Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-lagerorte-loeschen">Tabelle 4</a>.</p>
+<p>Es können alle oder nur bestimmte Lagerorte gelöscht werden. Nimm die entsprechenden Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-lagerorte-loeschen">Tabelle 3</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -381,7 +679,7 @@ Wählt man hingegen die ID einer höheren Dimension, sind die Lagerorte nicht me
 </ol>
 </div>
 <table id="tabelle-lagerorte-loeschen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 4. Alle oder nur bestimmte Lagerorte löschen</caption>
+<caption class="title">Tabelle 3. Alle oder nur bestimmte Lagerorte löschen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
