@@ -2780,7 +2780,7 @@ class Metadata {
 								"url" => "/daten/daten-importieren/sync-typen/elasticsync-fahrzeugverwendungsliste",
 								"level" => 4,
 								"title" => "Fahrzeugverwendungsliste",
-								"keywords" => "ElasticSync, Fahrzeugverwendungsliste, Fitment, Sync, Sync-Typ",
+								"keywords" => "ElasticSync, Fahrzeugverwendungsliste, Fitment, Sync, Sync-Typ, Import-Typ, Import, Fahrzeugverwendungsliste importieren, parts fitment, Fahrzeugliste, eBay Fahrzeugverwendungsliste, eBay Fahrzeugliste",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Fahrzeugverwendungsliste. Hier findest du folgende Informationen:",
