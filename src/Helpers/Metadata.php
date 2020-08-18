@@ -20232,6 +20232,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "429a85f1fedf769380c9d7ea44ec8f79",
+						"path" => "markets/price-search-engines/belboon",
+						"position" => 18,
+						"urlName" => "belboon",
+						"url" => "/en/markets/price-search-engines/belboon",
+						"level" => 3,
+						"title" => "belboon",
+						"keywords" => "Affiliate network belboon, belboon Affiliate Marketing, Affiliate Marketing Network belboon, Online Marketing, Affiliate Marketing",
+						"description" => "Multi-Channel in plentymarkets: Set up the item data export to the affiliate network belboon in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic belboon. The following information is available:",
+						"languageID" => "H7VKSL8",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "03ef72793c4bebb602f0da2307fe915f",
 						"path" => "markets/price-search-engines/billiger-de",
 						"position" => 20,
