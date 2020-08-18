@@ -17616,7 +17616,7 @@ class Metadata {
 								"url" => "/en/data/importing-data/sync-types/elasticsync-parts-compatibility-listing",
 								"level" => 4,
 								"title" => "Parts compatibility listing",
-								"keywords" => "ElasticSync, parts compatibility listing, fitment, sync, sync type",
+								"keywords" => "ElasticSync, parts compatibility listing, fitment, sync, sync type, import type, import, import parts compatibility listing, parts fitment, fitment list, eBay parts compatibility listing, eBay vehicle list",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Parts compatibility listing. The following information is available:",
