@@ -5605,6 +5605,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "10e2656da92dc4003ddc3a3c64fa089e",
+						"path" => "maerkte/preisportale/criteo",
+						"position" => 30,
+						"urlName" => "criteo",
+						"url" => "/maerkte/preisportale/criteo",
+						"level" => 3,
+						"title" => "Criteo",
+						"keywords" => "Criteo, Werbeplattform Criteo, Werbeplattform, Dynamic Retargeting",
+						"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung zu Criteo in deinem plentymarkets System ein.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Criteo. Hier findest du folgende Informationen:",
+						"languageID" => "8K06N7W",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "31962a924c392c64b674e335cb7f8a2a",
 						"path" => "maerkte/preisportale/geizhals-de",
 						"position" => 40,
