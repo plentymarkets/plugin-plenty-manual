@@ -4,8 +4,32 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#2231"><span>1.</span><span> Fields for storage location matching</span></a></li>
-<li><a href="#2232"><span>2.</span><span> Fields for the storage location mapping</span></a></li>
+<li><a href="#10"><span>1.</span><span> Matching fields</span></a></li>
+<li><a href="#20"><span>2.</span><span> Mapping fields</span></a>
+<ul class="sectlevel2">
+<li><a href="#30"><span>2.1.</span><span> Storage locations</span></a>
+<ul class="sectlevel3">
+<li><a href="#40"><span>2.1.1.</span><span> Storage location ID</span></a></li>
+<li><a href="#50"><span>2.1.2.</span><span> Level ID</span></a></li>
+<li><a href="#60"><span>2.1.3.</span><span> Storage location name</span></a></li>
+<li><a href="#70"><span>2.1.4.</span><span> Purpose</span></a></li>
+<li><a href="#80"><span>2.1.5.</span><span> Status</span></a></li>
+<li><a href="#90"><span>2.1.6.</span><span> Position</span></a></li>
+<li><a href="#100"><span>2.1.7.</span><span> Storage location type</span></a></li>
+<li><a href="#110"><span>2.1.8.</span><span> Notes</span></a></li>
+<li><a href="#120"><span>2.1.9.</span><span> Deleting storage locations</span></a></li>
+</ul>
+</li>
+<li><a href="#130"><span>2.2.</span><span> Levels of storage locations</span></a>
+<ul class="sectlevel3">
+<li><a href="#140"><span>2.2.1.</span><span> Parent ID of the level</span></a></li>
+<li><a href="#150"><span>2.2.2.</span><span> Dimension ID</span></a></li>
+<li><a href="#160"><span>2.2.3.</span><span> Level Position</span></a></li>
+<li><a href="#170"><span>2.2.4.</span><span> Level name</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#2240"><span>3.</span><span> Adjusting storage locations</span></a></li>
 <li><a href="#2250"><span>4.</span><span> Creating storage locations</span></a></li>
 <li><a href="#2250"><span>5.</span><span> Deleting storage locations</span></a></li>
@@ -19,17 +43,47 @@
     <h1>Warehouse</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>With syncs of the type <strong>Warehouse</strong>, you import new storage locations or update existing ones. In order to create or update storage locations via ElasticSync, a warehouse must be created.<br></p>
+<p>This page explains the matching and mapping fields that you can use while importing storage locations.
+
+This page serves purely as a reference and it assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">import tool</a>.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Requirements</div>
 <div class="paragraph">
-<p>This page serves purely as a reference and it assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">ElasticSync tool</a>.</p>
+<p>In order to create or update storage locations via the import, a warehouse has to be created beforehand.<br></p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Practical example: Adjusting storage locations</div>
+<div class="paragraph">
+<p>Now and then, the data of storage locations has to be adjusted. How to export warehouse data, adjust the data accordingly and import it back into the system is explained step by step in <a href="/en/data/importing-data/elasticsync-best-practices/best-practices-elasticsync-storage-locations">this practical example</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="2231">1. Fields for storage location matching</h2>
+<h2 id="10">1. Matching fields</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-matching-fields-storage-locations">Table 1</a> explains the fields that are available for matching storage locations. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-matching-fields-storage-locations">Table 1</a> explains the fields that are available for matching storage locations.
+During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <div class="paragraph">
 <p>For further information on the terms dimensions, levels and storage locations, refer to the <a href="https://knowledge.plentymarkets.com/en/stock-management/setting-up-a-warehouse" target="_blank" rel="noopener">Setting up a warehouse</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> page of the manual.</p>
@@ -37,8 +91,8 @@
 <table id="table-matching-fields-storage-locations" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Matching fields for importing storage locations</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
@@ -49,7 +103,7 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Level name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the level, e.g. R01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the level, e.g. R01 for Rack 01</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Level ID</p></td>
@@ -57,131 +111,373 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WarehouseLocationId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the storage location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage location ID</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WarehouseLocationName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the storage location without path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the storage location, e.g. SL1 for storage location 1</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="2232">2. Fields for the storage location mapping</h2>
+<h2 id="20">2. Mapping fields</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-mapping-fields-storage-locations">Table 2</a> explains the fields that are available for mapping storage location data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p>This chapter explains the fields that are available for mapping storage locations.
+Use these fields to specify which <em>column of your file</em> corresponds to which <em>data field in your system</em>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Basic procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>In your CSV file</em></strong>: Enter a valid import value into a column.</p>
+</li>
+<li>
+<p><strong><em>In plentymarkets</em></strong>: Assign this column to the appropriate mapping field.</p>
+</li>
+<li>
+<p><strong><em>After the import</em></strong>: Check the result in the back end.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">No mapping field? Default value applies!</div>
+<div class="paragraph">
+<p>If you don’t include a certain piece of information in your CSV file, i.e. if you <em>don’t use</em> a certain mapping field, then your storage location will be given the default value.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
 <p>For further information on the terms dimensions, levels and storage locations, refer to the <a href="https://knowledge.plentymarkets.com/en/stock-management/setting-up-a-warehouse" target="_blank" rel="noopener">Setting up a warehouse</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> page of the manual.</p>
 </div>
-<table id="table-mapping-fields-storage-locations" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Mapping fields for importing storage locations</caption>
+<div class="sect2">
+<h3 id="30">2.1. Storage locations</h3>
+<div class="sect3">
+<h4 id="40">2.1.1. Storage location ID</h4>
+<div class="paragraph">
+<p>Enter the storage location ID in your CSV file. This only applies to existing storage locations.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <strong>Setup » Stock » Warehouse» <em>Select warehouse</em> » Storage locations</strong>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="50">2.1.2. Level ID</h4>
+<div class="paragraph">
+<p>Enter the level ID in your CSV file. A level is a concrete dimension, such as Rack 2 or Box 14.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="60">2.1.3. Storage location name</h4>
+<div class="paragraph">
+<p>Enter the name of the storage location into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alphanumeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <strong>Setup » Stock » Warehouse» <em>Select warehouse</em> » Storage locations</strong>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="70">2.1.4. Purpose</h4>
+<div class="paragraph">
+<p>What is the purpose of the storage location?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: Picking</p>
+</div>
+<table id="table-mapping-purpose-storage-locations" class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Mapping field</th>
-<th class="tableblock halign-left valign-top">Permitted import values</th>
-<th class="tableblock halign-left valign-top">Explanation</th>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Options in the drop-down list in the back end</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" colspan="3"><p class="tableblock"><strong>Storage locations</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Replenishment</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replenishment</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Storage location ID<br>
-(only for existing storage locations)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the storage location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Picking</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Picking</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Level ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Incoming items</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Incoming items</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Storage location name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the storage location without path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Return</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Return</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Purpose</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Replenishment<br>
- Picking<br>
- Incoming stock<br>
- Return<br>
- Local store<br>
- Transfer<br>
- Box</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Purpose of the storage location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Local store</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local store</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Active<br>
- Inactive<br>
- Locked for stock taking<br>
- Blocked<br>
- Reserved</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status of the storage location</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Transfer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position of the storage location (distance)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Notes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Notes on the storage location</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delete Storage Location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes<br>
- No</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Delete function for storage locations<br></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Yes = Delete storage location<br></p>
-</li>
-<li>
-<p>No = Do not delete storage location</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="3"><p class="tableblock"><strong>Levels of storage locations</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Level parent ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parent ID of the level</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dimension ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the dimension, e.g. rack</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Level Position</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position of the level</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Level name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the level, e.g. R01, R02 etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Box</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Box (for <a href="/en/app/functions/warehouse-management/mobile-box-picking">mobile box picking</a>)</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/stock-management/setting-up-a-warehouse#intable-purpose">Setup » Stock » Warehouse » <em>Select warehouse</em> » Storage locations</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="80">2.1.5. Status</h4>
+<div class="paragraph">
+<p>What is the status of the storage location?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: Active</p>
+</div>
+<table id="table-mapping-status-storage-locations" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Options in the drop-down list in the back end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Active</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Active</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Inactive</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inactive</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Locked for stock taking</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Locked for stock taking</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Blocked</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Blocked</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Reserved</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserved</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/stock-management/setting-up-a-warehouse#intable-status">Setup » Stock » Warehouse » <em>Select warehouse</em> » Storage locations</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="90">2.1.6. Position</h4>
+<div class="paragraph">
+<p>Enter the position of the storage location in your CSV file. The position is for example required for the pick path.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <strong>Setup » Stock » Warehouse» <em>Select warehouse</em> » Storage locations</strong>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="100">2.1.7. Storage location type</h4>
+<div class="paragraph">
+<p>Enter the storage location type according to the size of the variation into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<table id="table-mapping-storage-location-type-storage-locations" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Options in the drop-down list in the back end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>None</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No type selected</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Small</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Small</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Medium</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Medium</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Large</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Large</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Euro pallet</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Euro pallet</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/stock-management/new-incoming-items#intable-storage-location-type">Item » Edit item » Open item » Tab: ID of a variation » Tab: Warehouse » column: Storage location type</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="110">2.1.8. Notes</h4>
+<div class="paragraph">
+<p>Enter notes about the storage location into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alphanumeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/stock-management/setting-up-a-warehouse#intable-notes">Setup » Stock » Warehouse » <em>Select warehouse</em> » Storage locations » <em>Select storage location</em></a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="120">2.1.9. Deleting storage locations</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Only possible for storage locations without stock</span></p>
+</div>
+<div class="paragraph">
+<p>Do you want to delete the storage location?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>No</code></p>
+</div>
+<table id="table-mapping-delete-storage-location" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Result in the back end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>No</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage location will <em>not</em> be deleted.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Yes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage location will be deleted.</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="130">2.2. Levels of storage locations</h3>
+<div class="sect3">
+<h4 id="140">2.2.1. Parent ID of the level</h4>
+<div class="paragraph">
+<p>Enter the higher-level Level ID in your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="150">2.2.2. Dimension ID</h4>
+<div class="paragraph">
+<p>Enter the dimension ID, e.g. of the rack, in your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="160">2.2.3. Level Position</h4>
+<div class="paragraph">
+<p>Enter the level position in your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="170">2.2.4. Level name</h4>
+<div class="paragraph">
+<p>Enter the name of the level, e.g. R01 or R02, into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alphanumeric</p>
+</div>
+<hr>
 <div class="admonitionblock important">
 <table>
 <tbody><tr>
@@ -199,7 +495,7 @@ In case you select the ID of a higher dimension, the storage locations are no lo
 </tbody></table>
 </div>
 <table id="table-level-id" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Level IDs and level names</caption>
+<caption class="title">Table 2. Level IDs and level names</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -234,11 +530,13 @@ In case you select the ID of a higher dimension, the storage locations are no lo
 </tbody>
 </table>
 </div>
+</div>
+</div>
 </div><div class="sect1">
 <h2 id="2240">3. Adjusting storage locations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can adjust storage locations via ElasticSync such as changing the name or the position of the storage location.</p>
+<p>You can adjust storage locations via ElasticSync and for example change the name or the position of the storage location.</p>
 </div>
 <div class="paragraph instruction">
 <p>Adjusting storage locations:</p>
@@ -373,7 +671,7 @@ In case you select the ID of a higher dimension, the storage locations are no lo
 <p>Activate the field <strong>Delete storage location</strong>.</p>
 </li>
 <li>
-<p>You can either delete all storage locations or only specific ones. Carry out the respective settings. Pay attention to the explanations given in <a href="#table-deleting-storage-locations">Table 4</a>.</p>
+<p>You can either delete all storage locations or only specific ones. Carry out the respective settings. Pay attention to the explanations given in <a href="#table-deleting-storage-locations">Table 3</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
@@ -381,7 +679,7 @@ In case you select the ID of a higher dimension, the storage locations are no lo
 </ol>
 </div>
 <table id="table-deleting-storage-locations" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Deleting all storage locations or only specific ones</caption>
+<caption class="title">Table 3. Deleting all storage locations or only specific ones</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
