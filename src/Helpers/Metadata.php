@@ -2860,7 +2860,7 @@ class Metadata {
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-kontakte",
 								"level" => 4,
 								"title" => "Kontakte, Firmen und Adressen",
-								"keywords" => "ElasticSync, Import, Sync, Kontakte, Firmen, Adressen",
+								"keywords" => "ElasticSync, Import, Kontakte, Firmen, Adressen",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Kontakte, Firmen und Adressen. Hier findest du folgende Informationen:",
