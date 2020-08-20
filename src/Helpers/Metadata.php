@@ -1122,11 +1122,11 @@ class Metadata {
 						"urlName" => "best-practices-nachbestellungen-exportieren",
 						"url" => "/warenwirtschaft/nachbestellungen-verwalten/best-practices-nachbestellungen-exportieren",
 						"level" => 3,
-						"title" => "Best Practices: Nachbestellungen exportieren",
+						"title" => "Praxisbeispiel: Nachbestellungen exportieren",
 						"keywords" => "Nachbestellungen, Nachbestellungen exportieren, Elastischer Export, FormatDesigner, Export, Daten, Format-Designer, Format, orderItem, Zuordnungen, Zuordnung, OrderItemProperty, orderitemproperty.value, ecterne Artikel ID, Lager, Auftragsposition, Auftragspositionsfilter, Exportdatei, Exportdateien, Export-Datei, Export-Dateien, Lieferant, Bereitstellung",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Nachbestellungen exportieren. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Praxisbeispiel: Nachbestellungen exportieren. Hier findest du folgende Informationen:",
 						"languageID" => "Z7VI7TW",
 						"children" => [],
 						"hasChildren" => false
@@ -1599,22 +1599,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "4a3bd2733902257148e7640162f45874",
-						"path" => "auftraege/auftragsdokumente/best-pratices",
-						"position" => 100,
-						"urlName" => "best-pratices",
-						"url" => "/auftraege/auftragsdokumente/best-practices",
-						"level" => 3,
-						"title" => "Best Practices: Sammel-PDF erstellen",
-						"keywords" => "Sammelrechnung, Prozess",
-						"description" => "Erfahre wie Du mit einem Prozess eine Sammelrechnung erzeugst.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Sammel-PDF erstellen. Hier findest du folgende Informationen:",
-						"languageID" => "HDI34RR",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "9935d2877ea9a9311f4ec160e6aaa9ae",
 						"path" => "auftraege/auftragsdokumente/ruecksendeschein-erzeugen",
 						"position" => 100,
@@ -1707,6 +1691,22 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Picklisten. Hier findest du folgende Informationen:",
 						"languageID" => "C8MJJH7",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "4a3bd2733902257148e7640162f45874",
+						"path" => "auftraege/auftragsdokumente/best-pratices",
+						"position" => 180,
+						"urlName" => "best-pratices",
+						"url" => "/auftraege/auftragsdokumente/best-practices",
+						"level" => 3,
+						"title" => "Praxisbeispiel: Sammel-PDF erstellen",
+						"keywords" => "Sammelrechnung, Prozess",
+						"description" => "Erfahre wie Du mit einem Prozess eine Sammelrechnung erzeugst.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Praxisbeispiel: Sammel-PDF erstellen. Hier findest du folgende Informationen:",
+						"languageID" => "HDI34RR",
 						"children" => [],
 						"hasChildren" => false
 					]
