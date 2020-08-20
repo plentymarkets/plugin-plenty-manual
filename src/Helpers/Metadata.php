@@ -20296,6 +20296,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "fd690a47e40782c442386f151724593a",
+						"path" => "markets/price-search-engines/criteo",
+						"position" => 30,
+						"urlName" => "criteo",
+						"url" => "/en/markets/price-search-engines/criteo",
+						"level" => 3,
+						"title" => "Criteo",
+						"keywords" => "Criteo, advertising platform Criteo, advertising platform, Dynamic Retargeting",
+						"description" => "Multi-Channel in plentymarkets: Set up the item data export to Criteo in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Criteo. The following information is available:",
+						"languageID" => "8K06N7W",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "01c26c82c79c034f996dace82fed265c",
 						"path" => "markets/price-search-engines/geizhals-de",
 						"position" => 40,
@@ -21990,7 +22006,7 @@ class Metadata {
 				"level" => 2,
 				"title" => "Your contract with plentymarkets",
 				"keywords" => "Admin, System administrator, System administration, System admin, Account, My Account, Contract, Contracts, Service-Center, Service-Centre, Service Center, Service Centre, Rate, Change rate, Switch rate, Client, Clients, Book client, cancel, Cancel plentymarkets, Cancel contract, Cancellation, DSGVO, GDPR, Domain, Agency, Agencies, Access",
-				"description" => "",
+				"description" => "Learn how to access your My account area and make changes to your contract with plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Your contract with plentymarkets. The following information is available:",
 				"languageID" => "ZGJLXUS",
