@@ -20280,6 +20280,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "2396d123e32510ba0bc538d30d29b817",
+						"path" => "markets/price-search-engines/kupona",
+						"position" => 15,
+						"urlName" => "kupona",
+						"url" => "/en/markets/price-search-engines/kupona",
+						"level" => 3,
+						"title" => "KUPONA",
+						"keywords" => "Online Marketing, Affiliate Marketing, Online Performance Marketing, Display Performance Advertising, Retargeting, Affiliate Marketing, Product data marketing",
+						"description" => "Multi-Channel in plentymarkets: Set up the item data export to KUPONA in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic KUPONA. The following information is available:",
+						"languageID" => "XL2DXPW",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "36dda7f299802aa3fb847b7299067464",
 						"path" => "markets/price-search-engines/beezup",
 						"position" => 17,
