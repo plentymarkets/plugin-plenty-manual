@@ -2679,22 +2679,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "85cc72ccd6ea51c767509bc3b80ae7d1",
-						"path" => "daten/daten-importieren/sync-typen",
+						"id" => "5fc4b040e25caa24f6e4cacf35820415",
+						"path" => "daten/daten-importieren/import-typen",
 						"position" => 15,
-						"urlName" => "sync-typen",
+						"urlName" => "import-typen",
 						"url" => "/daten/daten-importieren/sync-typen",
 						"level" => 3,
-						"title" => "Sync-Typen",
-						"keywords" => "ElasticSync, Elastic Sync, Elastic-Sync, Import, Sync, Sync-Typen, Sync-Typ, Sync Typ, Abgleich, Zuordnung, Abgleichfeld, Abgleichsfeld, Zuordnungsfeld",
+						"title" => "Import-Typen",
+						"keywords" => "ElasticSync, Elastic Sync, Elastic-Sync, Import, Sync, Sync-Typen, Sync-Typ, Sync Typ, Import-Typen, Import-Typ, Import Typ, Abgleich, Zuordnung, Abgleichfeld, Abgleichsfeld, Zuordnungsfeld",
 						"description" => "Hier finden Sie praktische Anleitungen zum Datenimport mit ElasticSync.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Sync-Typen. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Import-Typen. Hier findest du folgende Informationen:",
 						"languageID" => "I6XYGLR",
 						"children" => 						[
 							[
-								"id" => "b5fb523b1d04f903bbe25d62aa204183",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-artikel",
+								"id" => "7fd63000e13dd4ee59248a95ca9a41aa",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-artikel",
 								"position" => 10,
 								"urlName" => "elasticSync-artikel",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-artikel",
@@ -2709,8 +2709,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "4e6305d1523e7015652695f3cf7d4621",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-attribute",
+								"id" => "40c7e9e49517056c9195b591fa3ea946",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-attribute",
 								"position" => 20,
 								"urlName" => "elasticSync-attribute",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-attribute",
@@ -2725,8 +2725,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "684774120bb3f6f02abe81ff726d1a86",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-auftraege",
+								"id" => "f43893e414afb667ad1361256ee5b2a5",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-auftraege",
 								"position" => 30,
 								"urlName" => "elasticSync-auftraege",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-auftraege",
@@ -2741,8 +2741,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "3a1c9bca84ac68d8b796a0d8c224b168",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-eigenschaften",
+								"id" => "be2376a9b35e0257c7c21da6a0d41796",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-eigenschaften",
 								"position" => 40,
 								"urlName" => "elasticSync-eigenschaften",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-eigenschaften",
@@ -2757,8 +2757,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "50d718418dab75d1d862a39021f5b806",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-facetten",
+								"id" => "c275410296242f0aafa74c837f9a9229",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-facetten",
 								"position" => 50,
 								"urlName" => "elasticSync-facetten",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-facetten",
@@ -2773,8 +2773,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "8e5432d580da20683f15dbdcd1c94e02",
-								"path" => "daten/daten-importieren/sync-typen/elasticsync-fahrzeugverwendungsliste",
+								"id" => "99fa44752215044d5a3653c5c60b762b",
+								"path" => "daten/daten-importieren/import-typen/elasticsync-fahrzeugverwendungsliste",
 								"position" => 60,
 								"urlName" => "elasticsync-fahrzeugverwendungsliste",
 								"url" => "/daten/daten-importieren/sync-typen/elasticsync-fahrzeugverwendungsliste",
@@ -2789,8 +2789,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "9fb44eb2ec9c12f5bc1dd99e56b23816",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-gutschein-codes",
+								"id" => "597e2a7bcfdbd6277dceb295caf1e425",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-gutschein-codes",
 								"position" => 68,
 								"urlName" => "elasticSync-gutschein-codes",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-gutschein-codes",
@@ -2805,8 +2805,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "8eaf2205b1e6b6a76b335bf5a93ab290",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-hersteller",
+								"id" => "7c828bc3a6827e9b13339b799709f2aa",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-hersteller",
 								"position" => 70,
 								"urlName" => "elasticSync-hersteller",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-hersteller",
@@ -2821,8 +2821,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "3ea9a8354d1f17f6712c0313f27ca42a",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-kampagnen",
+								"id" => "9b76feeb18ee03f6fba5293ae77f6a4d",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-kampagnen",
 								"position" => 72,
 								"urlName" => "elasticSync-kampagnen",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-kampagnen",
@@ -2837,8 +2837,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "cc9236b0dd6f06981e1805f20b71320f",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-kategorien",
+								"id" => "d2a1f02f86ef078cd9f7bc89cffe0681",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-kategorien",
 								"position" => 80,
 								"urlName" => "elasticSync-kategorien",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-kategorien",
@@ -2853,8 +2853,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "9ae072494a03015dffb682f2323b4607",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-kontakte",
+								"id" => "c9c7e527a99cb550e1d432c9363ec31e",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-kontakte",
 								"position" => 90,
 								"urlName" => "elasticSync-kontakte",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-kontakte",
@@ -2869,8 +2869,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "f2fe33b1617224b2d175bbba85484e6a",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-lager",
+								"id" => "4100d30f16130847157c0eec13456818",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-lager",
 								"position" => 100,
 								"urlName" => "elasticSync-lager",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-lager",
@@ -2885,8 +2885,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "d6886c193e769370db55c9cd3d568aaa",
-								"path" => "daten/daten-importieren/sync-typen/elasticsync-market-listing",
+								"id" => "0bf29f9ef8ec74896166265f6ee68022",
+								"path" => "daten/daten-importieren/import-typen/elasticsync-market-listing",
 								"position" => 110,
 								"urlName" => "elasticsync-market-listing",
 								"url" => "/daten/daten-importieren/sync-typen/elasticsync-market-listing",
@@ -2901,8 +2901,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "bfc4c1c8bd4ca924e283728f67976436",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-merkmale",
+								"id" => "b9c51d2f8008bbb8285824a005a1c84d",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-merkmale",
 								"position" => 120,
 								"urlName" => "elasticSync-merkmale",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-merkmale",
@@ -2917,8 +2917,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "ae34ecc1ef315dcb67eedc36894aeec5",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-newsletter-empfaenger",
+								"id" => "3f701082cebb0005fd058b0b8f3e908d",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-newsletter-empfaenger",
 								"position" => 130,
 								"urlName" => "elasticSync-newsletter-empfaenger",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-newsletter-empfaenger",
@@ -2933,8 +2933,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "ad40eba960def9d64f3794d3eafbe4f7",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-notizen",
+								"id" => "9d10f17eadab6d2e63e9651a6287e625",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-notizen",
 								"position" => 140,
 								"urlName" => "elasticSync-notizen",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-notizen",
@@ -2949,8 +2949,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "c3cbca619769122e4e89f6d70b784821",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-warenbestand",
+								"id" => "7328e8fbfc28b66a255ace28edf67b37",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-warenbestand",
 								"position" => 140,
 								"urlName" => "elasticSync-warenbestand",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-warenbestand",
@@ -2965,8 +2965,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "199abd6d1ec2ebb5f38884e2ee69b255",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-wareneingang",
+								"id" => "3ffe09102dcc2b1b368a71020e287c25",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-wareneingang",
 								"position" => 150,
 								"urlName" => "elasticSync-wareneingang",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-wareneingang",
@@ -2981,8 +2981,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "ba99008f5a0040072adeb78b2cccf253",
-								"path" => "daten/daten-importieren/sync-typen/elasticSync-zuordnung-zolltarifnummer",
+								"id" => "fc2b558de19695cd71265083a19602a9",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-zuordnung-zolltarifnummer",
 								"position" => 160,
 								"urlName" => "elasticSync-zuordnung-zolltarifnummer",
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-zuordnung-zolltarifnummer",
