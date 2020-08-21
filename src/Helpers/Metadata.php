@@ -17547,22 +17547,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "9cdb4b1402e21e58f5c5c504f67cf811",
-						"path" => "data/importing-data/sync-types",
+						"id" => "d995f9f48c67a7d316929b4ba64f603d",
+						"path" => "data/importing-data/import-types",
 						"position" => 15,
-						"urlName" => "sync-types",
+						"urlName" => "import-types",
 						"url" => "/en/data/importing-data/sync-types",
 						"level" => 3,
-						"title" => "Sync types",
+						"title" => "Import types",
 						"keywords" => "ElasticSync, Elastic Sync, Elastic-Sync, import, sync, sync types, sync type, matching, mapping, matching field, mapping field",
 						"description" => "Sync types available for importing data with ElasticSync.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Sync types. The following information is available:",
+						"linkListInto" => "Welcome to the topic Import types. The following information is available:",
 						"languageID" => "I6XYGLR",
 						"children" => 						[
 							[
-								"id" => "9bc76a90dcdcf4c677f2b06675e24dc0",
-								"path" => "data/importing-data/sync-types/elasticSync-item",
+								"id" => "6b0a8678246e8582b357991da9783836",
+								"path" => "data/importing-data/import-types/elasticSync-item",
 								"position" => 10,
 								"urlName" => "elasticSync-item",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-item",
@@ -17577,8 +17577,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "e013f099f04fcd2cdc1d45f25fb11271",
-								"path" => "data/importing-data/sync-types/elasticSync-assignment-taric-code",
+								"id" => "8e43312531066e3e0abb701ee518e917",
+								"path" => "data/importing-data/import-types/elasticSync-assignment-taric-code",
 								"position" => 10,
 								"urlName" => "elasticSync-assignment-taric-code",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-assignment-taric-code",
@@ -17593,8 +17593,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "c62b027c9b46b771778908e7817b4627",
-								"path" => "data/importing-data/sync-types/elasticSync-attributes",
+								"id" => "48da321e0688714e3f5c7a5e346c7c9a",
+								"path" => "data/importing-data/import-types/elasticSync-attributes",
 								"position" => 20,
 								"urlName" => "elasticSync-attributes",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-attributes",
@@ -17609,8 +17609,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "d7060bd032a645aaea9c39a89878a53b",
-								"path" => "data/importing-data/sync-types/elasticSync-orders",
+								"id" => "d752db2d38db94d1ea5b0c744519e953",
+								"path" => "data/importing-data/import-types/elasticSync-orders",
 								"position" => 30,
 								"urlName" => "elasticSync-orders",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-orders",
@@ -17625,8 +17625,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "3c15c96e5a389d916053e681334d0efb",
-								"path" => "data/importing-data/sync-types/elasticSync-properties",
+								"id" => "a1d43ed5352a5a6d557457d5fe5ffc4d",
+								"path" => "data/importing-data/import-types/elasticSync-properties",
 								"position" => 40,
 								"urlName" => "elasticSync-properties",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-properties",
@@ -17641,8 +17641,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "4ccb478ee70ef9e03a36f716caa6757f",
-								"path" => "data/importing-data/sync-types/elasticSync-facets",
+								"id" => "d0c7d87a27ae02087d832ce886e43b90",
+								"path" => "data/importing-data/import-types/elasticSync-facets",
 								"position" => 50,
 								"urlName" => "elasticSync-facets",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-facets",
@@ -17657,8 +17657,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "d5a47b7f0d3cb2693ad457af0f33c4e1",
-								"path" => "data/importing-data/sync-types/elasticsync-parts-compatibility-listing",
+								"id" => "ccba15b87b84fdbe22f9fea839507ee8",
+								"path" => "data/importing-data/import-types/elasticsync-parts-compatibility-listing",
 								"position" => 60,
 								"urlName" => "elasticsync-parts-compatibility-listing",
 								"url" => "/en/data/importing-data/sync-types/elasticsync-parts-compatibility-listing",
@@ -17673,8 +17673,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "d7813bf2443dbb90799e9e31110cc09a",
-								"path" => "data/importing-data/sync-types/elasticSync-coupon-codes",
+								"id" => "44377fc7b62e611d93c91c3f21895148",
+								"path" => "data/importing-data/import-types/elasticSync-coupon-codes",
 								"position" => 68,
 								"urlName" => "elasticSync-coupon-codes",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-coupon-codes",
@@ -17689,8 +17689,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "7a484322fe444e5a699f276d85c9435c",
-								"path" => "data/importing-data/sync-types/elasticSync-manufacturer",
+								"id" => "f1807300bcff4318756a79d44205a58c",
+								"path" => "data/importing-data/import-types/elasticSync-manufacturer",
 								"position" => 70,
 								"urlName" => "elasticSync-manufacturer",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-manufacturer",
@@ -17705,8 +17705,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "601735fe8fdd26132072432d557e4e10",
-								"path" => "data/importing-data/sync-types/elasticSync-campaigns",
+								"id" => "d43a3073650eaab9b32c88f6eb5bc21c",
+								"path" => "data/importing-data/import-types/elasticSync-campaigns",
 								"position" => 72,
 								"urlName" => "elasticSync-campaigns",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-campaigns",
@@ -17721,8 +17721,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "a4040a364e1548a1c30eca7c95a82f42",
-								"path" => "data/importing-data/sync-types/elasticSync-categories",
+								"id" => "078c64f7b1b196ae7044e24811179e80",
+								"path" => "data/importing-data/import-types/elasticSync-categories",
 								"position" => 80,
 								"urlName" => "elasticSync-categories",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-categories",
@@ -17737,8 +17737,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "a8265020387357c210f3992d85c50aea",
-								"path" => "data/importing-data/sync-types/elasticSync-contacts",
+								"id" => "aa4ac4b853c75e1dce2867f8f6d45b42",
+								"path" => "data/importing-data/import-types/elasticSync-contacts",
 								"position" => 90,
 								"urlName" => "elasticSync-contacts",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-contacts",
@@ -17753,8 +17753,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "93a8721314350d1d9c0e9e61cc806e63",
-								"path" => "data/importing-data/sync-types/elasticSync-warehouse",
+								"id" => "443d8347faab37a7b862648d6259b380",
+								"path" => "data/importing-data/import-types/elasticSync-warehouse",
 								"position" => 100,
 								"urlName" => "elasticSync-warehouse",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-warehouse",
@@ -17769,8 +17769,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "03009f9843932b7aa63f52ac866f7231",
-								"path" => "data/importing-data/sync-types/elasticsync-market-listing",
+								"id" => "d9f9faa9ac3326867a3202b88da68209",
+								"path" => "data/importing-data/import-types/elasticsync-market-listing",
 								"position" => 110,
 								"urlName" => "elasticsync-market-listing",
 								"url" => "/en/data/importing-data/sync-types/elasticsync-market-listing",
@@ -17785,8 +17785,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "ec0838fc1108295ca0240b179a4729bc",
-								"path" => "data/importing-data/sync-types/elasticSync-characteristic",
+								"id" => "9dd3a4a12ddb820f299b746a4e1dea93",
+								"path" => "data/importing-data/import-types/elasticSync-characteristic",
 								"position" => 120,
 								"urlName" => "elasticSync-characteristic",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-characteristic",
@@ -17801,8 +17801,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "2e6eeb730433579a57877137008265bb",
-								"path" => "data/importing-data/sync-types/elasticSync-newsletter-recipient",
+								"id" => "37f60bfa83d771f7f4c4f58f38faafcd",
+								"path" => "data/importing-data/import-types/elasticSync-newsletter-recipient",
 								"position" => 130,
 								"urlName" => "elasticSync-newsletter-recipient",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-newsletter-recipient",
@@ -17817,8 +17817,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "e1d6f0eb47dee0ede7e5b01a11cb0eae",
-								"path" => "data/importing-data/sync-types/elasticSync-notes",
+								"id" => "c3d4448b447068437c12a85ad55f6b4c",
+								"path" => "data/importing-data/import-types/elasticSync-notes",
 								"position" => 140,
 								"urlName" => "elasticSync-notes",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-notes",
@@ -17833,8 +17833,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "c5e031580f4560d9fd7cd5f61d5558e3",
-								"path" => "data/importing-data/sync-types/elasticSync-stock",
+								"id" => "86471c33501c5575f8a664375c66f962",
+								"path" => "data/importing-data/import-types/elasticSync-stock",
 								"position" => 140,
 								"urlName" => "elasticSync-stock",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-stock",
@@ -17849,8 +17849,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "7f2b28d38595cf3cf3a50575c9559c74",
-								"path" => "data/importing-data/sync-types/elasticSync-incoming-items",
+								"id" => "1348c04de5414fb8a89f05c8b4ae4976",
+								"path" => "data/importing-data/import-types/elasticSync-incoming-items",
 								"position" => 150,
 								"urlName" => "elasticSync-incoming-items",
 								"url" => "/en/data/importing-data/sync-types/elasticSync-incoming-items",
