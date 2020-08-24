@@ -5557,22 +5557,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "7d1cfda22ddb5f8924d22efa322c859f",
-						"path" => "maerkte/preisportale/kupona",
-						"position" => 15,
-						"urlName" => "kupona",
-						"url" => "/maerkte/preisportale/kupona",
-						"level" => 3,
-						"title" => "KUPONA",
-						"keywords" => "Online-Marketing, Affiliate-Marketing, Online Performance Marketing, Display Performance Advertising, Retargeting, Affiliate Marketing, Produktdatenmarketing, Produktdaten-Marketing",
-						"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung zu KUPONA in deinem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich KUPONA. Hier findest du folgende Informationen:",
-						"languageID" => "XL2DXPW",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "663f20820fc0a054d19d3ff152c88636",
 						"path" => "maerkte/preisportale/beezup",
 						"position" => 17,
@@ -5713,6 +5697,22 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Kelkoo. Hier findest du folgende Informationen:",
 						"languageID" => "MLKIIIX",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "7d1cfda22ddb5f8924d22efa322c859f",
+						"path" => "maerkte/preisportale/kupona",
+						"position" => 75,
+						"urlName" => "kupona",
+						"url" => "/maerkte/preisportale/kupona",
+						"level" => 3,
+						"title" => "KUPONA",
+						"keywords" => "Online-Marketing, Affiliate-Marketing, Online Performance Marketing, Display Performance Advertising, Retargeting, Affiliate Marketing, Produktdatenmarketing, Produktdaten-Marketing",
+						"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung zu KUPONA in deinem plentymarkets System ein.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich KUPONA. Hier findest du folgende Informationen:",
+						"languageID" => "XL2DXPW",
 						"children" => [],
 						"hasChildren" => false
 					],
