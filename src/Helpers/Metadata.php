@@ -5781,6 +5781,38 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "d38c03b6f0dafd88b112abe7fa563320",
+						"path" => "maerkte/preisportale/tracdelight",
+						"position" => 115,
+						"urlName" => "tracdelight",
+						"url" => "/maerkte/preisportale/tracdelight",
+						"level" => 3,
+						"title" => "tracdelight",
+						"keywords" => "Online-Marketing, Affiliate-Marketing, Online Performance Marketing, Display Performance Advertising, Retargeting, Affiliate Netzwerk, Produktdatenmarketing, Produktdaten-Marketing",
+						"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung zu tracdelight in deinem plentymarkets System ein.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich tracdelight. Hier findest du folgende Informationen:",
+						"languageID" => "VNQIFF5",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "6b6b920665ab08855f09c2c27c165e16",
+						"path" => "maerkte/preisportale/treepodia",
+						"position" => 117,
+						"urlName" => "treepodia",
+						"url" => "/maerkte/preisportale/treepodia",
+						"level" => 3,
+						"title" => "treepodia",
+						"keywords" => "Online-Marketing, Affiliate-Marketing, Online Performance Marketing, Display Performance Advertising, Retargeting, Affiliate Netzwerk, Produktdatenmarketing, Produktdaten-Marketing",
+						"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung zu treepodia in deinem plentymarkets System ein.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich treepodia. Hier findest du folgende Informationen:",
+						"languageID" => "O9XSU3O",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "bc190f72a6e2d76669ebf45a5e46c2cf",
 						"path" => "maerkte/preisportale/twenga",
 						"position" => 120,
