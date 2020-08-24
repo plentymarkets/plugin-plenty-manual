@@ -20536,6 +20536,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "7f3d94f462811f27be9c7d39c6f57e13",
+						"path" => "markets/price-search-engines/tracdelight",
+						"position" => 115,
+						"urlName" => "tracdelight",
+						"url" => "/en/markets/price-search-engines/tracdelight",
+						"level" => 3,
+						"title" => "tracdelight",
+						"keywords" => "Online Marketing, Affiliate Marketing, Online Performance Marketing, Display Performance Advertising, Retargeting, Affiliate network, Product data marketing",
+						"description" => "Multi-Channel in plentymarkets: Set up the item data export to tracdelight in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic tracdelight. The following information is available:",
+						"languageID" => "VNQIFF5",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "53b1b7eb3f49d6a0964502f05b27dda4",
 						"path" => "markets/price-search-engines/twenga",
 						"position" => 120,
