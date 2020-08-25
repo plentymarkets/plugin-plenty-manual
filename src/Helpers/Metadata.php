@@ -5804,7 +5804,7 @@ class Metadata {
 						"url" => "/maerkte/preisportale/treepodia",
 						"level" => 3,
 						"title" => "treepodia",
-						"keywords" => "Online-Marketing, Affiliate-Marketing, Online Performance Marketing, Display Performance Advertising, Retargeting, Affiliate Netzwerk, Produktdatenmarketing, Produktdaten-Marketing",
+						"keywords" => "Video-Marketing, Personalisiertes Video Marketing, Personalisiertes Video-Marketing, Personalisiertes Videomarketing, Videomarketing, Produktpräsentation, Videowerbung, Video Werbekampagnen, Produktvideos, Kundenbindungsvideos",
 						"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung zu treepodia in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich treepodia. Hier findest du folgende Informationen:",
