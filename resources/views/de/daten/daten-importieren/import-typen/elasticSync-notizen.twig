@@ -4,8 +4,18 @@
             <div id="toc" class="toc">
 <div id="toctitle">Inhalt</div>
 <ul class="sectlevel1">
-<li><a href="#10"><span>1.</span><span> Felder für den Abgleich</span></a></li>
-<li><a href="#20"><span>2.</span><span> Felder für die Notizzuordnung</span></a></li>
+<li><a href="#10"><span>1.</span><span> Abgleichfelder</span></a></li>
+<li><a href="#20"><span>2.</span><span> Zuordnungsfelder</span></a>
+<ul class="sectlevel2">
+<li><a href="#30"><span>2.1.</span><span> Notiz</span></a>
+<ul class="sectlevel3">
+<li><a href="#40"><span>2.1.1.</span><span> Benutzer-ID</span></a></li>
+<li><a href="#50"><span>2.1.2.</span><span> Text</span></a></li>
+<li><a href="#60"><span>2.1.3.</span><span> Sichtbar für Kunden</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -16,17 +26,20 @@
     <h1>Notizen</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Mit einem Sync des Typs <strong>Notizen</strong> importierst du Notizen. Je nach Abgleichfeld werden die Notizen am Kontakt, an der Variante, am Auftrag oder an der Kategorie gespeichert.</p>
+<p>Diese Seite erläutert die Abgleich- und Zuordnungsfelder, die dir beim Importieren von Notizen zur Verfügung stehen.
+Je nach Abgleichfeld werden die Notizen am Kontakt, an der Variante, am Auftrag oder an der Kategorie gespeichert.
+Diese Seite dient lediglich als Referenz und setzt voraus, dass du bereits Grundkenntnisse über das <a href="/daten/daten-importieren/ElasticSync">Import-Tool</a> hast.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="10">1. Felder für den Abgleich</h2>
+<h2 id="10">1. Abgleichfelder</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In <a href="#tabelle-abgleichfelder-notizen">Tabelle 1</a> werden Felder erläutert, die für den Abgleich von Notizen zur Verfügung stehen. Anhand des gewählten Abgleichfelds wird geprüft, ob der importierte Datensatz in plentymarkets vorhanden ist. Das Abgleichfeld, das du angibst, entscheidet auch darüber, an welchem Datensatz die Notiz beim Import gespeichert wird. Pro Notiztyp muss also ein eigener Sync erstellt werden.</p>
+<p>In <a href="#tabelle-abgleichfelder-notizen">Tabelle 1</a> werden Felder erläutert, die für den Abgleich von Notizdaten zur Verfügung stehen.
+Anhand des gewählten Abgleichfelds wird geprüft, ob der importierte Datensatz in plentymarkets vorhanden ist.</p>
 </div>
 <table id="tabelle-abgleichfelder-notizen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Abgleichfelder für Notizenimport</caption>
+<caption class="title">Tabelle 1. Abgleichfelder für Import von Notizen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -39,78 +52,136 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kontakt-ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Die Notizen des Syncs werden an dem Kontakt mit der im Abgleichfeld angegebenen ID gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kontakt-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In welcher Spalte der CSV-Datei werden Kontakt-IDs aufgelistet? Wähle diese Spalte hier. Diese Option ist sinnvoll, wenn du Notizen, die Kontakte betreffen, hinzufügen möchtest.<br>
+<em>Beachte</em>, dass es derzeit noch nicht möglich ist, Notizen zu Kontakten in den Messenger zu importieren. Dies ist derzeit in Planung.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Varianten-ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Die Notizen des Syncs werden an der Variante mit der im Abgleichfeld angegebenen ID gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Varianten-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In welcher Spalte der CSV-Datei werden Varianten-IDs aufgelistet? Wähle diese Spalte hier. Diese Option ist sinnvoll, wenn du Notizen, die Varianten betreffen, hinzufügen möchtest.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Auftrags-ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Die Notizen des Syncs werden an dem Auftrag mit der im Abgleichfeld angegebenen ID gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrags-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In welcher Spalte der CSV-Datei werden Auftrags-IDs aufgelistet? Wähle diese Spalte hier. Diese Option ist sinnvoll, wenn du Notizen, die Aufträge betreffen, hinzufügen möchtest.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kategorie-ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Die Notizen des Syncs werden an der Kategorie mit der im Abgleichfeld angegebenen ID gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kategorie-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In welcher Spalte der CSV-Datei werden Kategorie-IDs aufgelistet? Wähle diese Spalte hier. Diese Option ist sinnvoll, wenn du Notizen, die Kategorien betreffen, hinzufügen möchtest.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="20">2. Felder für die Notizzuordnung</h2>
+<h2 id="20">2. Zuordnungsfelder</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In <a href="#tabelle-zuordnungsfelder-notizen">Tabelle 2</a> werden Felder erläutert, die für die Zuordnung von Notizen zur Verfügung stehen. Anhand des gewählten Abgleichfelds wird geprüft, ob der importierte Datensatz in plentymarkets vorhanden ist.</p>
+<p>In diesem Kapitel werden Felder erläutert, die für die Zuordnung von Notizdaten zur Verfügung stehen.
+Mithilfe dieser Felder legst du fest, welche <em>Spalte deiner Datei</em> welchem <em>Datenfeld in deinem System</em> entspricht.</p>
 </div>
-<table id="tabelle-zuordnungsfelder-notizen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 2. Zuordnungsfelder für Notizenimport</caption>
+<div class="paragraph instruction">
+<p>Grundlegende Vorgehensweise:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>In deiner CSV-Datei</em></strong>: Gib einen zulässigen Importwert in eine Spalte ein.</p>
+</li>
+<li>
+<p><strong><em>In plentymarkets</em></strong>: Ordne diese Spalte dem passenden Zuordnungsfeld zu.</p>
+</li>
+<li>
+<p><strong><em>Nach dem Import</em></strong>: Prüfe das Ergebnis im Backend.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Kein Zuordnungsfeld? Standardwert greift!</div>
+<div class="paragraph">
+<p>Wenn du eine bestimmte Information nicht in deine CSV-Datei aufnimmst, d.h. wenn du ein bestimmtes Zuordnungsfeld <em>nicht verwendest</em>, dann erhält deine Notiz den Standardwert.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="30">2.1. Notiz</h3>
+<div class="paragraph">
+<p>Für den Import von Notizen stehen dir die in diesem Kapitel beschriebenen Felder zur Verfügung.</p>
+</div>
+<div class="sect3">
+<h4 id="40">2.1.1. Benutzer-ID</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Pflichtwert</span></p>
+</div>
+<div class="paragraph">
+<p>Gib die ID des Benutzers, dem die Notiz zugeordnet sein soll, in die CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Numerisch (interne Benutzer-ID)</p>
+</div>
+<div class="paragraph">
+<p>Die IDs von Benutzern findest du im Backend im Menü: <strong>Einrichtung » Einstellungen » Benutzer » Konten</strong>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="50">2.1.2. Text</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Pflichtwert</span></p>
+</div>
+<div class="paragraph">
+<p>Gib den Text, der der Notiz hinzugefügt werden soll, in die CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Alphanumerisch</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="60">2.1.3. Sichtbar für Kunden</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Pflichtwert</span></p>
+</div>
+<div class="paragraph">
+<p>Entscheide, ob die Notizen für Kunden sichtbar sein sollen. Die ist ein Pflichtwert für alle Notizen, hat aber nur Auswirkungen für Auftragsnotizen, da Notizen zu Kontakten, Varianten und Kategorien nur im plentymarkets Backend sichtbar sind. Auftragsnotizen können im Frontend im Mein-Konto Bereich für Kund:innen einsehbar sein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<table id="Tabelle-Notizen-sichtbar" class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Zuordnungsfeld</th>
-<th class="tableblock halign-left valign-top">Zulässige Importwerte</th>
-<th class="tableblock halign-left valign-top">Erläuterung</th>
+<th class="tableblock halign-left valign-top">Zulässige Importwerte in CSV-Datei</th>
+<th class="tableblock halign-left valign-top">Optionen in der Dropdown-Liste im Backend</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Benutzer-ID<br>
-(Pflichtfeld)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numerisch (interne ID)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Die ID der Person, die als Verfasserin oder Verfasser der Notiz gespeichert wird.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nicht sichtbar</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Text<br>
-(Pflichtfeld)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumerisch</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Notiztext</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sichtbar für Kunden<br>
-(Pflichtfeld)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
-1</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Gilt nur für Auftragsnotizen<br></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>0 = Nein<br></p>
-</li>
-<li>
-<p>1 = Ja</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sichtbar</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 </div>
 </div>
 </main>
