@@ -21793,7 +21793,7 @@ class Metadata {
 				"url" => "/en/pos/pos-legal-compliance",
 				"level" => 2,
 				"title" => "plentyPOS and legal compliance",
-				"keywords" => "plentymarkets POS, plentyPOS, POS, legal compliance, tax authorities, tax legislation, financial law, GoBD, financial data export",
+				"keywords" => "plentymarkets POS, plentyPOS, POS, legal compliance, tax authorities, tax legislation, financial law, GoBD, financial data export, TSE, technical security unit, Kassensicherungsverordnung, KassenSichV",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic plentyPOS and legal compliance. The following information is available:",
