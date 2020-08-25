@@ -6235,6 +6235,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "12ff8cf2086104b3497fc12ecd7f8403",
+						"path" => "maerkte/ebay/ebay-plugins",
+						"position" => 20,
+						"urlName" => "ebay-plugins",
+						"url" => "/maerkte/ebay/ebay-plugins",
+						"level" => 3,
+						"title" => "eBay Plugins",
+						"keywords" => "eBay, Multi-Channel, eBay Plugins, Plugins für eBay, eBay Marketing",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich eBay Plugins. Hier findest du folgende Informationen:",
+						"languageID" => "VH505GJ",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "4ec8639cd89e7be88bc11423020b0cd5",
 						"path" => "maerkte/ebay/best-practices-ebay-nicht-mehr-vorraetig-option",
 						"position" => 30,
