@@ -20552,6 +20552,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "5634828fd227f42a06a917fafe37eb5d",
+						"path" => "markets/price-search-engines/treepodia",
+						"position" => 117,
+						"urlName" => "treepodia",
+						"url" => "/en/markets/price-search-engines/treepodia",
+						"level" => 3,
+						"title" => "treepodia",
+						"keywords" => "Video Marketing, Personalised Video Marketing, videomarketing, product presentation, Video ads, video advertising, video ad campaigns, product videos",
+						"description" => "Multi-Channel in plentymarkets: Set up the item data export to treepodia in your plentymarkets system.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic treepodia. The following information is available:",
+						"languageID" => "O9XSU3O",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "53b1b7eb3f49d6a0964502f05b27dda4",
 						"path" => "markets/price-search-engines/twenga",
 						"position" => 120,
