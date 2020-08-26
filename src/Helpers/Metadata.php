@@ -6235,39 +6235,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "12ff8cf2086104b3497fc12ecd7f8403",
-						"path" => "maerkte/ebay/ebay-plugins",
-						"position" => 20,
-						"urlName" => "ebay-plugins",
-						"url" => "/maerkte/ebay/ebay-plugins",
-						"level" => 3,
-						"title" => "eBay Plugins",
-						"keywords" => "eBay, Multi-Channel, eBay Plugins, Plugins für eBay, eBay Marketing",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich eBay Plugins. Hier findest du folgende Informationen:",
-						"languageID" => "VH505GJ",
-						"children" => 						[
-							[
-								"id" => "1472635ad302850bbdb3f75e3315222d",
-								"path" => "maerkte/ebay/ebay-plugins/eBay-marketing",
-								"position" => 30,
-								"urlName" => "eBay-marketing",
-								"url" => "/maerkte/preisportale/ebay-marketing",
-								"level" => 4,
-								"title" => "eBay Marketing",
-								"keywords" => "",
-								"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung zu AWIN in deinem plentymarkets System ein.",
-								"navAlias" => "",
-								"linkListInto" => "",
-								"languageID" => "1K9G8HY",
-								"children" => [],
-								"hasChildren" => false
-							]
-						],
-						"hasChildren" => true
-					],
-					[
 						"id" => "4ec8639cd89e7be88bc11423020b0cd5",
 						"path" => "maerkte/ebay/best-practices-ebay-nicht-mehr-vorraetig-option",
 						"position" => 30,
@@ -6298,6 +6265,39 @@ class Metadata {
 						"languageID" => "VDXOOCT",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "12ff8cf2086104b3497fc12ecd7f8403",
+						"path" => "maerkte/ebay/ebay-plugins",
+						"position" => 200,
+						"urlName" => "ebay-plugins",
+						"url" => "/maerkte/ebay/ebay-plugins",
+						"level" => 3,
+						"title" => "eBay Plugins",
+						"keywords" => "eBay, Multi-Channel, eBay Plugins, Plugins für eBay, eBay Marketing",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich eBay Plugins. Hier findest du folgende Informationen:",
+						"languageID" => "VH505GJ",
+						"children" => 						[
+							[
+								"id" => "1472635ad302850bbdb3f75e3315222d",
+								"path" => "maerkte/ebay/ebay-plugins/eBay-marketing",
+								"position" => 30,
+								"urlName" => "eBay-marketing",
+								"url" => "/maerkte/preisportale/ebay-marketing",
+								"level" => 4,
+								"title" => "eBay Marketing",
+								"keywords" => "",
+								"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung zu AWIN in deinem plentymarkets System ein.",
+								"navAlias" => "",
+								"linkListInto" => "",
+								"languageID" => "1K9G8HY",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					]
 				],
 				"hasChildren" => true
