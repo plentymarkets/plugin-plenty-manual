@@ -21053,6 +21053,39 @@ class Metadata {
 						"languageID" => "VDXOOCT",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "87cdbc42ebec19914ea61fc80cb86582",
+						"path" => "markets/ebay/ebay-plugins",
+						"position" => 200,
+						"urlName" => "ebay-plugins",
+						"url" => "/en/markets/ebay/ebay-plugins",
+						"level" => 3,
+						"title" => "eBay Plugins",
+						"keywords" => "eBay, Multi-Channel, eBay Plugins, Plugins for eBay, eBay Marketing",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic eBay Plugins. The following information is available:",
+						"languageID" => "VH505GJ",
+						"children" => 						[
+							[
+								"id" => "51bbdfc4ba7ea3fe504a3d09610b88e7",
+								"path" => "markets/ebay/ebay-plugins/eBay-marketing",
+								"position" => 30,
+								"urlName" => "eBay-marketing",
+								"url" => "/en/markets/ebay/ebay-plugins/ebay-marketing",
+								"level" => 4,
+								"title" => "eBay Marketing",
+								"keywords" => "eBay Marketing, eBay campaigns, eBay Plugin, eBay promotions, eBay campaign, eBay promotion",
+								"description" => "Multi-Channel in plentymarkets: Set up the plugin eBay Marketing in your plentymarkets system.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic eBay Marketing. The following information is available:",
+								"languageID" => "1K9G8HY",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					]
 				],
 				"hasChildren" => true
