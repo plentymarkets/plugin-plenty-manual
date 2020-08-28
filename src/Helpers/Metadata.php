@@ -16822,6 +16822,39 @@ class Metadata {
 				"languageID" => "GDRKPMA",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "3d1e242192033282f8f67561da435e4d",
+				"path" => "orders/faq",
+				"position" => 110,
+				"urlName" => "faq",
+				"url" => "/en/orders/faq",
+				"level" => 2,
+				"title" => "FAQ",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic FAQ. The following information is available:",
+				"languageID" => "DJ47XUL",
+				"children" => 				[
+					[
+						"id" => "5c4dd3145ce755757720a8374993fa05",
+						"path" => "orders/faq/exceeding-delivery-threshold",
+						"position" => 50,
+						"urlName" => "exceeding-delivery-threshold",
+						"url" => "/en/orders/faq/exceeding-delivery-threshold",
+						"level" => 3,
+						"title" => "What to do when you exceed a delivery threshold?",
+						"keywords" => "exceeding delivery threshold, pass delivery threshold, delivery threshold, taxes, tax configuration, VAT rate, location, EU country, VAT configuration, VAT number, tax identification number",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic What to do when you exceed a delivery threshold?. The following information is available:",
+						"languageID" => "2SGCUHA",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
 			]
 		],
 		"hasChildren" => true
