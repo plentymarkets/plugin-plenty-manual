@@ -1792,6 +1792,39 @@ class Metadata {
 				"languageID" => "GDRKPMA",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "b86c9e36b5a62e25cf7771b86ace41f5",
+				"path" => "auftraege/faq",
+				"position" => 110,
+				"urlName" => "faq",
+				"url" => "/auftraege/faq",
+				"level" => 2,
+				"title" => "FAQ",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich FAQ. Hier findest du folgende Informationen:",
+				"languageID" => "DJ47XUL",
+				"children" => 				[
+					[
+						"id" => "d997d32bc1a72d6d5821022417223d8c",
+						"path" => "auftraege/faq/lieferschwellenueberschreitung",
+						"position" => 50,
+						"urlName" => "lieferschwellenueberschreitung",
+						"url" => "/auftraege/faq/ueberschreitung-lieferschwelle",
+						"level" => 3,
+						"title" => "Was tun bei Überschreitung der Lieferschwelle?",
+						"keywords" => "Lieferschwellenüberschreitung, Überschreitung der Lieferschwelle, Lieferschwelle, Steuerkonfiguration, Umsatzsteuer, Umsatzsteuer-ID, Standort, EU-Land, Steuersatz",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Was tun bei Überschreitung der Lieferschwelle?. Hier findest du folgende Informationen:",
+						"languageID" => "2SGCUHA",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
 			]
 		],
 		"hasChildren" => true
