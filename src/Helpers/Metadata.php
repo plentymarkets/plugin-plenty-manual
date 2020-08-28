@@ -7267,7 +7267,7 @@ class Metadata {
 				"title" => "Prozesse",
 				"keywords" => "Prozesse, Einstellungen, plentyBase",
 				"description" => "",
-				"navAlias" => "",
+				"navAlias" => "Übersicht",
 				"linkListInto" => "Willkommen im Themenbereich Prozesse. Hier findest du folgende Informationen:",
 				"languageID" => "BOVCLZL",
 				"children" => 				[
