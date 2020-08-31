@@ -7298,7 +7298,7 @@ class Metadata {
 				"url" => "/automatisierung/prozesse",
 				"level" => 2,
 				"title" => "Prozesse",
-				"keywords" => "Prozesse, Einstellungen, plentyBase",
+				"keywords" => "Prozesse, Prozess, Prozess Übersicht, Prozesse Übersicht, Prozesse Einstellung, Prozesse Einstellungen, Prozess Einstellungen, plentyBase",
 				"description" => "",
 				"navAlias" => "Übersicht",
 				"linkListInto" => "Willkommen im Themenbereich Prozesse. Hier findest du folgende Informationen:",
