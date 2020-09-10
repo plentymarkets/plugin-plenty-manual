@@ -14525,10 +14525,26 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 02. September 2020",
+		"navAlias" => "Changelog 09. September 2020",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
+			[
+				"id" => "112bee8af479c9f0ff01d59abaa1dc68",
+				"path" => "changelog/2020-09-02",
+				"position" => 870,
+				"urlName" => "2020-09-02",
+				"url" => "/changelog/2020-09-02",
+				"level" => 2,
+				"title" => "Changelog 02. September 2020",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 02. September 2020. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
 			[
 				"id" => "8baa0580851f5c231df0c356d3e79c36",
 				"path" => "changelog/juli-2020",
