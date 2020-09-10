@@ -7423,11 +7423,11 @@ class Metadata {
 						"urlName" => "FAQ",
 						"url" => "/automatisierung/prozesse/FAQ",
 						"level" => 3,
-						"title" => "Erste Hilfe für Prozesse",
+						"title" => "FAQ: Prozesse",
 						"keywords" => "Erste Hilfe, Client, plentymarkets Client, Client-Probleme, plentyBase, Prozesse, Prozessprobleme, Prozess Probleme, SOS Prozesse, Prozesse FAQ, Prozess Fehlermeldung",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Erste Hilfe für Prozesse. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich FAQ: Prozesse. Hier findest du folgende Informationen:",
 						"languageID" => "Q0SNALQ",
 						"children" => [],
 						"hasChildren" => false
