@@ -22252,6 +22252,22 @@ class Metadata {
 						"languageID" => "QKPEDOW",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "7c34afc622adece4ec0abf6371301611",
+						"path" => "automation/processes/faq",
+						"position" => 60,
+						"urlName" => "faq",
+						"url" => "/en/automation/processes/FAQ",
+						"level" => 3,
+						"title" => "FAQ: Processes",
+						"keywords" => "first help, Client, plentymarkets Client, Client problems, plentyBase, Processes, Processes problems, process problems, SOS processes, Processes FAQ, Process error message",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic FAQ: Processes. The following information is available:",
+						"languageID" => "Q0SNALQ",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
