@@ -15939,22 +15939,6 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
-				"id" => "c1b444c5e01ad2a5abeff5125ab1d808",
-				"path" => "item/managing-items",
-				"position" => 25,
-				"urlName" => "managing-items",
-				"url" => "/en/item/managing-items",
-				"level" => 2,
-				"title" => "Manually creating items",
-				"keywords" => "Item, Items, Variation, Variations, Product, Products, Default items, Default item, Standard item, Standard items, Items of the type default, Create item, Create items, Creating items, New item, New items, Create variation, Create variations, Creating variations, Item creation, Manage items, Managing items, Item management, Edit items, Manually create items, Item data, Item data record, Item data records",
-				"description" => "Learn how to create and manage items in plentymarkets.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Manually creating items. The following information is available:",
-				"languageID" => "ZVYHQWL",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "f25701ea6576975e2cdf95e95dbc46bc",
 				"path" => "item/use-cases",
 				"position" => 35,
