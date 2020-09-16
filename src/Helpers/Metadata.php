@@ -21217,6 +21217,39 @@ class Metadata {
 						"languageID" => "5MHIPVQ",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "be32fe03979974cac74c045f97e3b4f9",
+						"path" => "markets/amazon/amazon-plugins",
+						"position" => 500,
+						"urlName" => "amazon-plugins",
+						"url" => "/en/markets/amazon/plugins",
+						"level" => 3,
+						"title" => "Amazon plugins",
+						"keywords" => "",
+						"description" => "Multi-Channel in plentymarkets: Plugins for the market Amazon.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Amazon plugins. The following information is available:",
+						"languageID" => "WCM0RKV",
+						"children" => 						[
+							[
+								"id" => "be257ae5e0efa75c77c4fbc45dd2c968",
+								"path" => "markets/amazon/amazon-plugins/vcs-dashboard",
+								"position" => 100,
+								"urlName" => "vcs-dashboard",
+								"url" => "/en/markets/amazon/AmazonVCSDashboard",
+								"level" => 4,
+								"title" => "AmazonVCSDashboard",
+								"keywords" => "Amazon VCS, Amazon VCS Dashboard, Amazon Plugin, Amazon Plugins",
+								"description" => "Multi-Channel in plentymarkets: View and analyse your VCS reports in plentymarkets.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic AmazonVCSDashboard. The following information is available:",
+								"languageID" => "MZZLGM5",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					]
 				],
 				"hasChildren" => true
