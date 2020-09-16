@@ -6217,6 +6217,39 @@ class Metadata {
 						"languageID" => "5MHIPVQ",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "e6ea88ea51b06d230449a9bac5a72ea2",
+						"path" => "maerkte/amazon/amazon-plugins",
+						"position" => 500,
+						"urlName" => "amazon-plugins",
+						"url" => "/maerkte/amazon/plugins",
+						"level" => 3,
+						"title" => "Amazon-Plugins",
+						"keywords" => "",
+						"description" => "Multi-Channel in plentymarkets: Plugins für den Marktplatz Amazon.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Amazon-Plugins. Hier findest du folgende Informationen:",
+						"languageID" => "WCM0RKV",
+						"children" => 						[
+							[
+								"id" => "58b428141d557c9fe7bab3f3a530d06c",
+								"path" => "maerkte/amazon/amazon-plugins/vcs-dashboard",
+								"position" => 100,
+								"urlName" => "vcs-dashboard",
+								"url" => "/maerkte/amazon/AmazonVCSDashboard",
+								"level" => 4,
+								"title" => "AmazonVCSDashboard",
+								"keywords" => "Amazon VCS, Amazon VCS Dashboard, Amazon Plugin, Amazon Plugins",
+								"description" => "Multi-Channel in plentymarkets: VCS-Berichte einfach und bequem ansehen und auswerten.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich AmazonVCSDashboard. Hier findest du folgende Informationen:",
+								"languageID" => "MZZLGM5",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					]
 				],
 				"hasChildren" => true
@@ -14525,10 +14558,26 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 09. September 2020",
+		"navAlias" => "Changelog 16. September 2020",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
+			[
+				"id" => "e3dbb7286cc0bbb33850ae228bf2341c",
+				"path" => "changelog/2020-09-16",
+				"position" => 860,
+				"urlName" => "2020-09-16",
+				"url" => "/changelog/2020-09-16",
+				"level" => 2,
+				"title" => "Changelog 16. September 2020",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 16. September 2020. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
 			[
 				"id" => "112bee8af479c9f0ff01d59abaa1dc68",
 				"path" => "changelog/2020-09-02",
