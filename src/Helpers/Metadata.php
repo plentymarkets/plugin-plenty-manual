@@ -16902,7 +16902,7 @@ class Metadata {
 				"description" => "Get to know how you can create and work with subscriptions in plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Subscription. The following information is available:",
-				"languageID" => "UUPU7XL",
+				"languageID" => "EFRPGV6",
 				"children" => [],
 				"hasChildren" => false
 			],
