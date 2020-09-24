@@ -16891,18 +16891,18 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "7d76a65a5e7af7b06bffaab5b6741059",
-				"path" => "orders/scheduler",
-				"position" => 70,
-				"urlName" => "scheduler",
-				"url" => "/en/orders/scheduler",
+				"id" => "80fdde02f19e00f8a5d2399aebaec109",
+				"path" => "orders/subscription",
+				"position" => 60,
+				"urlName" => "subscription",
+				"url" => "/en/orders/subscription",
 				"level" => 2,
-				"title" => "Scheduler",
-				"keywords" => "",
-				"description" => "",
+				"title" => "Subscription",
+				"keywords" => "net order value, gross order value, subscription overview, scheduler, subscription, subscription module, subscription order, run, runs, run preview, subscription run preview, last run, subscription settings, due subscriptions, automatic run, manual run, interval, subscription function, start date, end date, cancelled, shipping cost subscription, shipping method, shipping method subscription, shipping profile combinations, shipping profile, shipping profile subscription, subscription interval",
+				"description" => "Get to know how you can create and work with subscriptions in plentymarkets.",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Scheduler. The following information is available:",
-				"languageID" => "XULCZ1F",
+				"linkListInto" => "Welcome to the topic Subscription. The following information is available:",
+				"languageID" => "UUPU7XL",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -16986,6 +16986,22 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
+			],
+			[
+				"id" => "7d76a65a5e7af7b06bffaab5b6741059",
+				"path" => "orders/scheduler",
+				"position" => 110,
+				"urlName" => "scheduler",
+				"url" => "/en/orders/scheduler",
+				"level" => 2,
+				"title" => "Old: Scheduler",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Old: Scheduler. The following information is available:",
+				"languageID" => "XULCZ1F",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
