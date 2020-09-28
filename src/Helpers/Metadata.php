@@ -26947,7 +26947,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Exporting items to Amazon. The following information is available:",
-								"languageID" => "YN95YDU",
+								"languageID" => "SP5M55K",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -27284,7 +27284,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Managing MFN returns. The following information is available:",
-								"languageID" => "MW8GFFU",
+								"languageID" => "0Y7CKL2",
 								"children" => [],
 								"hasChildren" => false
 							],
@@ -28377,7 +28377,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Using ElasticSync to import data. The following information is available:",
-								"languageID" => "FP9LG4E",
+								"languageID" => "NVEIVKK",
 								"children" => [],
 								"hasChildren" => false
 							],
