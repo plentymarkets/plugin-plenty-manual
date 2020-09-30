@@ -18861,7 +18861,7 @@ class Metadata {
 						"url" => "/en/data/exporting-data/managing-catalogues",
 						"level" => 3,
 						"title" => "Managing catalogues",
-						"keywords" => "Catalogue, Catalog, Catalogues, Catalogs, create catalogues, create catalogs, manage catalogs, manage catalogues, catalog templates, catalogue templates, templates, market, markets, marketplaces, sales channel, data sources, combine data sources, target data, copy catalogue, copy catalog, delete catalogue, delete catalog, transfer data",
+						"keywords" => "Catalogue, Catalog, Catalogues, Catalogs, create catalogues, create catalogs, manage catalogs, manage catalogues, catalog templates, catalogue templates, templates, market, markets, marketplaces, sales channel, data sources, combine data sources, target data, copy catalogue, copy catalog, delete catalogue, delete catalog, transfer data, marketplace format, standard format, export, data export, export data, restore catalogue, restore catalog, export catalogue, export catalog, data field, link data fields, map data fields, mapping, assignment, download catalogue, download catalog, restore version, delete data fields, data columns",
 						"description" => "The *Data » Catalogues* menu allows you to configure the export of variation data to markets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Managing catalogues. The following information is available:",
