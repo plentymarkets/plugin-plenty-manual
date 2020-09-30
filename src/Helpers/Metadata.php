@@ -15236,7 +15236,7 @@ class Metadata {
 				"url" => "/en/welcome/login-tour",
 				"level" => 2,
 				"title" => "First login and tour",
-				"keywords" => "Login, Logging in, Log in, Backend, Back end, New, New customer, New customers, System, Tour, Menu structure, Backend URL, Backend URLs, URL, URLs",
+				"keywords" => "Login, Logging in, Log in, Backend, Back end, New, New customer, New customers, System, Tour, Menu structure, Backend URL, Backend URLs, URL, URLs, Notification centre, Notification center, Notification service",
 				"description" => "This page is geared toward new plentymarkets users. Learn how to log into the system und navigate through the menu structure.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic First login and tour. The following information is available:",
