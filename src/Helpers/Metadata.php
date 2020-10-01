@@ -17663,18 +17663,18 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "6aaaec7562bd4a850c2f4c36d0146acf",
-				"path" => "fulfilment/ebay-fulfillment",
+				"id" => "df1eb469951ee1ad13d0f06173a339e3",
+				"path" => "fulfilment/ebay-fulfillment-by-orange-connex",
 				"position" => 40,
-				"urlName" => "ebay-fulfillment",
-				"url" => "/en/fulfilment/ebay-fulfillment",
+				"urlName" => "ebay-fulfillment-by-orange-connex",
+				"url" => "/en/fulfilment/ebay-fulfillment-by-orange-connex",
 				"level" => 2,
-				"title" => "eBay Fulfillment integration guide",
-				"keywords" => "eBay Fulfillment, Inbound, Outbound, Fiege, Ebay Fulfillment integration guide, ebay fulfilment, EBFSKU, ebay fulfillment sku, ebay sku, ebfsku, automatically assign ebay fulfillment warehouse, eBay Fulfillment warehouse, error inbound, error Outbound, ebay customer support, goods delivery announcement, advice note, inbound packages, Inbound not sent, eBay Fulfillment shipping release, eBay Fulfillment warehouse",
-				"description" => "Learn how to set up eBay Fulfillment in plentymarkets.",
+				"title" => "eBay Fulfillment by Orange Connex",
+				"keywords" => "eBay Fulfillment by Orange Connex, Outbound, Assistent, Orange Connex, sku, ebay sku, eBay Fulfillment warehouse",
+				"description" => "Learn how to set up eBay Fulfillment by Orange Connex with the help of an assistant.",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic eBay Fulfillment integration guide. The following information is available:",
-				"languageID" => "688XH7L",
+				"linkListInto" => "Welcome to the topic eBay Fulfillment by Orange Connex. The following information is available:",
+				"languageID" => "X44BHW0",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -17872,6 +17872,22 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
+			],
+			[
+				"id" => "6aaaec7562bd4a850c2f4c36d0146acf",
+				"path" => "fulfilment/ebay-fulfillment",
+				"position" => 130,
+				"urlName" => "ebay-fulfillment",
+				"url" => "/en/fulfilment/ebay-fulfillment",
+				"level" => 2,
+				"title" => "eBay Fulfillment integration guide (deprecated)",
+				"keywords" => "eBay Fulfillment, Inbound, Outbound, Fiege, Ebay Fulfillment integration guide, ebay fulfilment, EBFSKU, ebay fulfillment sku, ebay sku, ebfsku, automatically assign ebay fulfillment warehouse, eBay Fulfillment warehouse, error inbound, error Outbound, ebay customer support, goods delivery announcement, advice note, inbound packages, Inbound not sent, eBay Fulfillment shipping release, eBay Fulfillment warehouse",
+				"description" => "Learn how to set up eBay Fulfillment in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic eBay Fulfillment integration guide (deprecated). The following information is available:",
+				"languageID" => "688XH7L",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
