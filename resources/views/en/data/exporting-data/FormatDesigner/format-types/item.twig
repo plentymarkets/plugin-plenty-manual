@@ -70,7 +70,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">amazonFbaPlatform</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fulfillment by Amazon (FBA)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fulfilment by Amazon (FBA)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">amazonFedas</p></td>
@@ -98,7 +98,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">couponRestriction</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Coupon for special offers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Promotional coupon</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ebayCategory</p></td>
@@ -368,7 +368,7 @@ url;position,url;position,etc.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">url</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URL of the image</p></td>
 </tr>
 <tr>
@@ -739,11 +739,11 @@ ID of main variation of the item = Markets are inherited from the main variation
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">packingUnitTypeId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unit of packing units</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Packing unit type</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PackingUnits</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of packages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">packingUnits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of packing units</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">palletTypeId</p></td>
@@ -763,7 +763,7 @@ ID of the parent variation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PriceCalculationID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">priceCalculationId</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Price calculation</p></td>
 </tr>
 <tr>
@@ -1137,6 +1137,28 @@ Component:Quantity;Component:Quantity</p></td>
 <div class="paragraph">
 <p><a href="#table-fields-variation-properties">Table 17</a> lists the fields available for exporting property links at the variation level.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Why are the fields empty when exported? Why do they give me unexpected data?</div>
+<div class="paragraph">
+<p>The field is only filled if the property is linked.
+If the property is not linked, then the field will remain empty.</p>
+</div>
+<div class="paragraph">
+<p>Also remember to tell plentymarkets which property you want information about. In other words, <em>assign a property</em>. Click on <strong>assignment</strong> (<span class="icon darkGrey"><i class="fa fa-sign-in  "></i></span>) and choose the desired property from the drop-down list.</p>
+</div>
+<div class="paragraph">
+<p>The field <strong>all</strong> is an exception. Here you do not need to assign a specific property since you are receiving information about <em>all of the properties</em>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
 <table id="table-fields-variation-properties" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 17. Fields for exporting variation properties</caption>
 <colgroup>
@@ -1152,30 +1174,106 @@ Component:Quantity;Component:Quantity</p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All characteristics in the format<br>
-name:value:language;name:value:language</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns all of the properties. The information is formatted as follows:<br>
+<code>name:value:language;name:value:language</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cast</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type of the property<br>
-int = Whole number<br>
-float = Decimal number<br>
-select = Selection<br>
-date = Date<br>
-file = File<br>
-empty = None</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Returns the type of the assigned property, assuming it is linked. If the assigned property is not linked, then the field will be empty.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name in export file</th>
+<th class="tableblock halign-left valign-top">Property type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">empty</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Date</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">file</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>File</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Int</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Float</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">longText</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Long text</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shortText</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Short text</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selection</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Selection</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">multiSelection</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Multi selection</p>
+</div></div></td>
+</tr>
+</tbody>
+</table></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the property</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the ID of the assigned property, assuming it is linked.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">linked</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IDs of the linked properties</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Returns a 1 or 0.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1 = is linked</p>
+</li>
+<li>
+<p>0 = is not linked</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Property value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Returns the value that was saved for the assigned property within the variation.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1231,11 +1329,11 @@ empty = None</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the ASIN. You need this ID if you want to <a href="/en/data/importing-data/sync-types/elasticSync-item#2430">delete ASINs with the help of ElasticSync</a>. The ID is not visible in the plentymarkets back end.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID for the ASIN. You need this ID if you want to <a href="/en/data/importing-data/sync-types/elasticSync-item#2430">delete ASINs with the help of ElasticSync</a>. The ID is not visible in your plentymarkets system.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">position</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position of the ASIN. The position is not visible in the plentymarkets back end.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The ASIN’s position. The position is not visible in your plentymarkets system.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
@@ -1270,7 +1368,7 @@ empty = None</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Values of all properties (separated by semicolons), including language for properties of the types <strong>Selection</strong> and <strong>Text</strong><br>
-<em>Example:</em> 512;"AText":"en"</p></td>
+<em>Example:</em> 512;"SomeText":"en"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">allIds</p></td>
@@ -1635,7 +1733,7 @@ SupplierID:SupplierRowID,PurchasePrice:MinimumPurchase;…​.</p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">custom_value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Own value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Custom value</p></td>
 </tr>
 </tbody>
 </table>

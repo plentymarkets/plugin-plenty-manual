@@ -18615,7 +18615,7 @@ class Metadata {
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/item",
 										"level" => 5,
 										"title" => "Item",
-										"keywords" => "FormatDesigner, Format types, Export, Data, Data export, Export data, Exporting data, Items, Variations, Item data, Variation data, Exporting, Exporting item data, Exporting variation data, Exporting items, Exporting variations, Export items, Export variations",
+										"keywords" => "FormatDesigner, Format types, Export, Data, Data export, Export data, Exporting data, Item, Items, Variations, Item data, Variation, Variations, Variation data, Exporting, Exporting item data, Exporting variation data, Exporting items, Exporting variations, Export items, Export variations",
 										"description" => "Use the item format to export item and variation data.",
 										"navAlias" => "",
 										"linkListInto" => "Welcome to the topic Item. The following information is available:",
@@ -21633,7 +21633,7 @@ class Metadata {
 						"keywords" => "idealo, idealo.de, idealo Direktkauf, idealo Checkout, idealo setup, setting up idealo, market, marketplace, price comparison, idealo price comparison, CSV file, CSV export, elastic export, idealo plugin, checkoutApproved",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market idealo Checkout in your plentymarkets system.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Setting up idealo. Hier finden Sie folgende Informationen:",
+						"linkListInto" => "Welcome to the topic Setting up idealo. The following information is available:",
 						"languageID" => "JFWN4QY",
 						"children" => [],
 						"hasChildren" => false
