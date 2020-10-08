@@ -21729,11 +21729,11 @@ class Metadata {
 				"urlName" => "idealo-checkout",
 				"url" => "/en/markets/idealo-checkout",
 				"level" => 2,
-				"title" => "idealo Checkout",
+				"title" => "idealo",
 				"keywords" => "idealo, Multi-Channel",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic idealo Checkout. The following information is available:",
+				"linkListInto" => "Welcome to the topic idealo. The following information is available:",
 				"languageID" => "TOSZVB0",
 				"children" => 				[
 					[
