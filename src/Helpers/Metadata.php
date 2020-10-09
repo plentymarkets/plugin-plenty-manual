@@ -6365,6 +6365,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "2fb6f709e9b0b9fd26385f7248ca1749",
+						"path" => "maerkte/ebay/ebay-fulfillment-by-orange-connex",
+						"position" => 25,
+						"urlName" => "ebay-fulfillment-by-orange-connex",
+						"url" => "/maerkte/ebay/ebay-fulfillment-by-orange-connex",
+						"level" => 3,
+						"title" => "eBay Fulfillment by Orange Connex",
+						"keywords" => "eBay Fulfillment by Orange Connex, Outbound, Assistent, Orange Connex, sku, ebay sku, eBay Fulfillment Lager",
+						"description" => "Erfahre, wie du eBay Fulfillment by Orange Connex mit Hilfe eines Assistenten in plentymarkets einrichtest.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich eBay Fulfillment by Orange Connex. Hier findest du folgende Informationen:",
+						"languageID" => "M5V62EY",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "4ec8639cd89e7be88bc11423020b0cd5",
 						"path" => "maerkte/ebay/best-practices-ebay-nicht-mehr-vorraetig-option",
 						"position" => 30,

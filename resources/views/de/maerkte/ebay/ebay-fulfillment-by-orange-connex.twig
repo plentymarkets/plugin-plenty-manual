@@ -1,0 +1,1484 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#vorbereitende-einstellungen"><span>1.</span><span> Vorbereitende Einstellungen im plentymarkets Backend</span></a>
+<ul class="sectlevel2">
+<li><a href="#auftragsherkunft-aktivieren"><span>1.1.</span><span> Auftragsherkunft aktivieren</span></a></li>
+<li><a href="#lieferlaender-aktivieren"><span>1.2.</span><span> Lieferländer aktivieren</span></a></li>
+<li><a href="#e-mail-server-zugangsdaten"><span>1.3.</span><span> E-Mail-Server-Zugangsdaten speichern</span></a></li>
+<li><a href="#benutzerrechte-backend-benutzer"><span>1.4.</span><span> Benutzerrechte für Backend-Benutzer:innen vergeben</span></a></li>
+</ul>
+</li>
+<li><a href="#einstellungen-assistent"><span>2.</span><span> Einstellungen im Assistenten</span></a>
+<ul class="sectlevel2">
+<li><a href="#anmelden-registrieren"><span>2.1.</span><span> Authentifizierung</span></a></li>
+<li><a href="#datenuebertragung-lagereinstellungen"><span>2.2.</span><span> Datenübertragung und Lagereinstellungen</span></a></li>
+<li><a href="#auftragsstatus-auftraege-senden-stornieren"><span>2.3.</span><span> Status: Outbound-Aufträge senden/stornieren</span></a></li>
+<li><a href="#auftragsstatus-reaktion-ebay-fulfillment-orange-connex"><span>2.4.</span><span> Status: Reaktion von eBay Fulfillment by Orange Connex</span></a></li>
+<li><a href="#versandprofilverknuepfung"><span>2.5.</span><span> Versandprofilverknüpfung</span></a></li>
+<li><a href="#zusammenfassung"><span>2.6.</span><span> Zusammenfassung</span></a></li>
+</ul>
+</li>
+<li><a href="#artikel-einrichten-sku-erhalten"><span>3.</span><span> Artikel einrichten und SKU erhalten</span></a>
+<ul class="sectlevel2">
+<li><a href="#artikelpaket-einrichten"><span>3.1.</span><span> Artikelpaket (Bundle) einrichten</span></a></li>
+<li><a href="#bundle-mehrere-artikel-als-einheit"><span>3.2.</span><span> Bundle aus mehreren Artikeln als Einheit</span></a>
+<ul class="sectlevel3">
+<li><a href="#bundle-mehrere-einzelne-artikel"><span>3.2.1.</span><span> Bundle aus mehreren, einzelnen Artikeln</span></a></li>
+</ul>
+</li>
+<li><a href="#gruppenfunktion-verwenden"><span>3.3.</span><span> Gruppenfunktion verwenden</span></a></li>
+</ul>
+</li>
+<li><a href="#automatismen-einrichten"><span>4.</span><span> Automatismen einrichten</span></a>
+<ul class="sectlevel2">
+<li><a href="#ea-outbound-auftrag-verschieben"><span>4.1.</span><span> Ereignisaktion zum Verschieben des Outbound-Auftrags in den korrekten Status einrichten</span></a></li>
+<li><a href="#ea-outbound-auftrag-senden"><span>4.2.</span><span> Ereignisaktion zum Senden des Outbound-Auftrags an eBay Fulfillment by Orange Connex einrichten</span></a></li>
+<li><a href="#ea-warenausgang-buchen"><span>4.3.</span><span> Ereignisaktion zum Buchen des Warenausgangs einrichten</span></a></li>
+<li><a href="#ea-automatische-sendungsverfolgung"><span>4.4.</span><span> Ereignisaktion für die automatische Sendungsverfolgung (Tracking-URL) einrichten</span></a></li>
+<li><a href="#_ereignisaktion_zum_senden_einer_stornierungsanfrage_einrichten"><span>4.5.</span><span> Ereignisaktion zum Senden einer Stornierungsanfrage einrichten</span></a></li>
+</ul>
+</li>
+<li><a href="#versand-erster-artikel-aufträge-splitten"><span>5.</span><span> Versand des ersten Artikels und Splitten von Aufträgen</span></a>
+<ul class="sectlevel2">
+<li><a href="#versand-erster-artikel"><span>5.1.</span><span> Versand des ersten Artikels</span></a></li>
+<li><a href="#auftrage-splitten"><span>5.2.</span><span> Splitten von Aufträgen</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>eBay Fulfillment by Orange Connex</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>eBay erweitert sein Fulfillment-Programm mit dem Logistikpartner Orange Connex. eBay Fulfillment by Orange Connex bietet eBay-Verkäufern unkomplizierte, zuverlässige und bezahlbare Fulfillment-Dienstleistungen an, die speziell auf die Service-Standards im eCommerce zugeschnittenen sind.</p>
+</div>
+<h2 id="_an_der_beta_phase_teilnehmen" class="discrete">An der Beta-Phase teilnehmen</h2>
+<div class="paragraph">
+<p>Du möchtest eBay Fulfillment by Orange Connex nutzen? Dann bewirb dich jetzt für die <a href="https://cloud.forbusiness.ebay.com/fulfillment" target="_blank" rel="noopener">Beta-Phase</a>.</p>
+</div>
+<h2 id="_was_bedeutet_outbound" class="discrete">Was bedeutet Outbound?</h2>
+<div class="paragraph">
+<p>Der Begriff <em>Outbound</em> beschreibt den Prozess des Vertriebs und Versands, den der Fulfillment-Dienstleister für dich übernimmt: Er verpackt die Artikel, lagert diese zwischen und sendet die Artikel dann an deine Kund:innen. Diesen gesamten Prozess übernimmt eBay Fulfillment by Orange Connex für dich.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="vorbereitende-einstellungen">1. Vorbereitende Einstellungen im plentymarkets Backend</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nimm die in den folgenden Unterkapiteln beschriebenen Einstellungen im plentymarkets Backend vor.</p>
+</div>
+<div class="sect2">
+<h3 id="auftragsherkunft-aktivieren">1.1. Auftragsherkunft aktivieren</h3>
+<div class="paragraph">
+<p>Die Auftragsherkunft <strong>eBay Fulfillment by Orange Connex</strong> ist bereits im Menü <strong>Einrichtung » Aufträge » Auftragsherkunft</strong> vorhanden. Du musst diese Auftragsherkunft aktivieren.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Hinweis für Händler, die bereits die eBay Fulfillment-Lösung mit Fiege nutzen</div>
+<div class="paragraph">
+<p>Wenn du bereits die eBay Fulfillment-Lösung mit Fiege nutzt, ist es wichtig, dass du die korrekte Auftragsherkunft für <strong>eBay Fulfillment by Orange Connex</strong> aktivierst. Bevor der Umzug der Waren noch nicht vollständig abgeschlossen ist, solltest du die bisher verwendete Auftragsherkunft für eBay Fulfillment nicht deaktivieren.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Auftragsherkunft aktivieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne im plentymarkets Backend das Menü <strong>Einrichtung » Aufträge » Auftragsherkunft</strong>.</p>
+</li>
+<li>
+<p>Suche <strong>eBay Fulfillment by Orange Connex</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Option, indem du ein Häkchen setzt.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="lieferlaender-aktivieren">1.2. Lieferländer aktivieren</h3>
+<div class="paragraph">
+<p>eBay Fulfillment by Orange Connex bietet den Versand in folgende Länder an:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Belgien</p>
+</li>
+<li>
+<p>Bulgarien</p>
+</li>
+<li>
+<p>Deutschland</p>
+</li>
+<li>
+<p>Frankreich (außer Überseegebiete)</p>
+</li>
+<li>
+<p>Griechenland</p>
+</li>
+<li>
+<p>Irland</p>
+</li>
+<li>
+<p>Italien (außer Campione d’Italia, Livigno, San Marino, Vatikanstadt)</p>
+</li>
+<li>
+<p>Kroatien</p>
+</li>
+<li>
+<p>Luxemburg</p>
+</li>
+<li>
+<p>Malta</p>
+</li>
+<li>
+<p>Niederlande (außer Überseegebiete)</p>
+</li>
+<li>
+<p>Österreich</p>
+</li>
+<li>
+<p>Portugal (außer Azoren, Madeira)</p>
+</li>
+<li>
+<p>Rumänien</p>
+</li>
+<li>
+<p>Slowakei</p>
+</li>
+<li>
+<p>Slowenien</p>
+</li>
+<li>
+<p>Spanien (außer Kanarische Inseln, Ceuta, Melilla)</p>
+</li>
+<li>
+<p>Tschechische Republik</p>
+</li>
+<li>
+<p>Ungarn</p>
+</li>
+<li>
+<p>Vereinigtes Königreich und Nordirland (außer Überseegebiete)</p>
+</li>
+<li>
+<p>Zypern</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Um in plentymarkets korrekt mit diesen Lieferländern arbeiten zu können, müssen diese in deinem plentymarkets System aktiviert werden.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Hinweis</div>
+<div class="paragraph">
+<p>Es kann zu Einschränkungen bei der Belieferung über andere Marktplätze aufgrund der begrenzten Anzahl an aktiven Lieferländern kommen.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Lieferländer aktivieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Versand » Optionen</strong>.<br>
+→ Das Tab <strong>Lieferländer</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Wähle für die gewünschten Lieferländer in der Spalte <strong>Aktiv</strong> die Option <strong>Aktiv</strong> oder <strong>Backoffice aktiv</strong> aus der Dropdown-Liste.<br>
+→ <strong><em>Hinweis:</em></strong> Bei Wahl der Option <strong>Aktiv</strong> ist das Lieferland auch im Webshop sichtbar. Bei Wahl der Option <strong>Backoffice aktiv</strong> ist das Lieferland nur im plentymarkets System, aber nicht im Webshop sichtbar.</p>
+</li>
+<li>
+<p>Wähle in der Spalte <strong>Sprache</strong> die gewünschte Sprache, die für das Lieferland aktiviert werden soll.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="e-mail-server-zugangsdaten">1.3. E-Mail-Server-Zugangsdaten speichern</h3>
+<div class="paragraph">
+<p>Damit du über dein plentymarkets System E-Mails an deine Kund:innen senden kannst, ist es unbedingt erforderlich, die Zugangsdaten des E-Mail-Postfachs, aus dem du die E-Mails versenden möchtest, in plentymarkets zu speichern.</p>
+</div>
+<div class="paragraph instruction">
+<p>E-Mail-Server-Zugangsdaten speichern:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne im plentymarkets Backend das Menü <strong>Einrichtung » Mandant</strong> » <em>Mandant wählen</em> » <strong>E-Mail » Zugangsdaten</strong>.</p>
+</li>
+<li>
+<p>Nimm die gewünschten Einstellungen vor. Beachte die Erläuterungen in <a href="#tabelle-ebay-fulfillment-e-mail-server-zugangsdaten">Tabelle 1</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-ebay-fulfillment-e-mail-server-zugangsdaten" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Zugangsdaten des E-Mail-Servers speichern</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Einstellung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erläuterung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Testmodus</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktiv</strong> = Der Testmodus ist aktiviert. Alle E-Mails werden nur an die eingegebene E-Mail-Adresse gesendet. So kann vor dem Live-Betrieb die korrekte Funktionsweise geprüft werden.<br>
+<strong>Inaktiv</strong> = Der Live-Modus ist aktiviert.<br>
+<strong><em>Wichtig:</em></strong> Der Testmodus gilt nur für diesen Webshop. Die Einstellungen für weitere Mandanten werden im Menü des Mandanten konfiguriert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name des Absenders</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eigenen Namen oder Namen des Webshops eingeben. Der Name wird dem Empfänger angezeigt. Für die korrekte Darstellung die Verwendung von Sonderzeichen vermeiden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>E-Mail-Adresse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">E-Mail-Adresse eingeben, wie sie auch im E-Mail-Programm steht.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Postausgangsserver/SMTP-Server</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postausgangsserver wie vom Provider angegeben eingeben (meist smtp.domain.de oder mail.domain.de).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Benutzername</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benutzername zu der E-Mail-Adresse eingeben.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Passwort</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Passwort zu dem Benutzername und der E-Mail-Adresse eingeben.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Port</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wert <strong>465</strong> eingeben, wenn als Verschlüsselung <strong>SSL</strong> verwendet wird.<br>
+Wert <strong>25</strong> eingeben, wenn <strong>keine Verschlüsselung</strong> verwendet wird.<br>
+<strong><em>Hinweis:</em></strong> Ggf. den korrekten Port beim Provider erfragen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Verschlüsselung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SSL</strong>, <strong>TLS</strong> oder <strong>keine Verschlüsselung</strong> wählen.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="benutzerrechte-backend-benutzer">1.4. Benutzerrechte für Backend-Benutzer:innen vergeben</h3>
+<div class="paragraph">
+<p>Benutzer:innen vom Typ <strong>Backend</strong> sehen nur bestimmte Bereiche und Menüs im plentymarkets Backend. Somit können Sie nur eingeschränkt im System arbeiten. Sollen Mitarbeiter:innen mit diesem Zugang mit eBay Fulfillment by Orange Connex arbeiten können, muss eine Person mit <strong>Admin</strong>-Zugang die in <a href="#tabelle-ebay-fulfillment-benutzerrechte">Tabelle 2</a> beschriebenen Rechte für Benutzer:innen vom Typ <strong>Backend</strong> vergeben.</p>
+</div>
+<div class="paragraph instruction">
+<p>Benutzerrechte für Backend-Benutzer:innen vergeben:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne im plentymarkets Backend das Menü <strong>Einrichtung » Einstellungen » Benutzer » Rechte » Benutzer</strong>.</p>
+</li>
+<li>
+<p>Nutze die Suchfunktion (<span class="icon blue"><i class="fa fa-search  "></i></span>) und öffne das zu bearbeitende Konto.</p>
+</li>
+<li>
+<p>Aktiviere im Bereich <strong>Berechtigungen</strong> die Berechtigungen anhand von <a href="#tabelle-ebay-fulfillment-benutzerrechte">Tabelle 2</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-ebay-fulfillment-benutzerrechte" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Berechtigungen für Backend-Benutzer vergeben</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Einstellung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erläuterung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aufträge &gt; Anzeigen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erlaubt Backend-Benutzer:innen, Aufträge zu sehen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aufträge &gt; Auftragsstatus &gt; Anzeigen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erlaubt Backend-Benutzer:innen, Auftragsstatus zu sehen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aufträge &gt; Auftragsstatus &gt; Aktualisieren</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erlaubt Backend-Benutzer:innen, Auftragsstatus zu aktualisieren.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="einstellungen-assistent">2. Einstellungen im Assistenten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In den folgenden Unterkapiteln ist beschrieben, welche Einstellungen du in den einzelnen Schritten des Assistenten <strong>eBay Fulfillment by Orange Connex</strong> vornehmen kannst. Du findest den Assistenten im Menü <strong>Einrichtung » Assistenten</strong> im Bereich <strong>Integration</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="anmelden-registrieren">2.1. Authentifizierung</h3>
+<div class="paragraph">
+<p>Im ersten Schritt des Assistenten authentifizierst du dich für die Nutzung von eBay Fulfillment by Orange Connex. Öffne die Webseite, indem du auf die Schaltfläche <strong>Autorisieren</strong> klickst. Gib dort deine Zugangsdaten ein, die du von Orange Connex erhalten hast.</p>
+</div>
+<div class="paragraph">
+<p>Wenn du dann auf der Authentifizierungsseite die Schaltfläche <strong>Ich stimme zu</strong> geklickt hast, erhältst du eine Meldung, dass die Authentifizierung erfolgreich war und du das Browser-Tab schließen und zum Assistenten zurückkehren kannst.</p>
+</div>
+<div class="paragraph">
+<p>Sobald du dich erfolgreich authentifiziert und im Assistenten auf <strong>Weiter</strong> geklickt hast, ist der Schritt <strong>Authentifizierung</strong> im Assistenten nicht mehr sichtbar.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="datenuebertragung-lagereinstellungen">2.2. Datenübertragung und Lagereinstellungen</h3>
+<div class="paragraph">
+<p>Im Schritt <strong>Datenübertragung und Lagereinstellungen</strong> legst du fest, ob deine Artikel und der Warenbestand übertragen werden sollen. Wenn du diese Optionen aktivierst, werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>die Artikeldaten automatisch in regelmäßigen Abständen von plentymarkets an Orange Connex übertragen</p>
+</li>
+<li>
+<p>die Warenbestände automatisch in regelmäßigen Abständen von Orange Connex an plentymarkets zurückgemeldet</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Außerdem entscheidest du, ob du ein neues Lager für eBay Fulfillment by Orange Connex erstellen oder ein bestehendes Lager verwenden möchtest. Wenn du hier ein neues Lager erstellst, wird automatisch der Typ <strong>Vertrieb</strong> gewählt und alle Auftragsherkünfte werden für dieses Lager aktiviert. Der Name des Lagers ist <em>eBay Fulfillment</em>. Das Erstellen eines zweiten Lagers ist nicht notwendig. Wenn du ein bestehendes Lager wählst, werden dir hier nur Lager vom Typ <strong>Vertrieb</strong> angezeigt.</p>
+</div>
+<div class="paragraph">
+<p>Anschließend wählst du den Standardservice für den Inlandsversand und den internationalen Versand. Die hier gewählten Services werden dann als Standard bei allen Versandprofilen übertragen, außer du wählst im Versandprofil explizit einen anderen Service.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auftragsstatus-auftraege-senden-stornieren">2.3. Status: Outbound-Aufträge senden/stornieren</h3>
+<div class="paragraph">
+<p>Im Schritt <strong>Status: Outbound-Aufträge senden/stornieren</strong> kannst du zwei Status speichern: einen Status für Outbound-Aufträge, die an eBay Fulfillment by Orange Connex versendet werden können und einen Status für Outbound-Aufträge, die erfolgreich an eBay Fulfillment by Orange Connex versendet wurden, aber die du wieder stornieren möchtest.</p>
+</div>
+<div class="paragraph">
+<p>Du kannst entweder bestehende Status wählen oder neue Status erstellen.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Wenn du einen bestehenden Status wählst, stelle sicher, dass dieser Status in keinem anderen Prozess oder Ereignisaktion verwendet wird. Andernfalls könnte dies zu Problemen führen.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Erstelle einen Auftragsstatus für die folgenden zwei Ereignisse:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Outbound-Auftrag senden</p>
+</li>
+<li>
+<p>Stornierungsanfrage senden</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auftragsstatus-reaktion-ebay-fulfillment-orange-connex">2.4. Status: Reaktion von eBay Fulfillment by Orange Connex</h3>
+<div class="paragraph">
+<p>Im Schritt <strong>Status: Reaktion von eBay Fulfillment by Orange Connex</strong> kannst du die Status für Outbound-Aufträge speichern, die als Antwort von eBay Fulfillment by Orange Connex in dein plentymarkets System zurückkommen. Die Antwort von eBay Fulfillment by Orange Connex bezieht sich immer auf Outbound-Aufträge, die du bereits gesendet hast.</p>
+</div>
+<div class="paragraph">
+<p>Du kannst entweder bestehende Status wählen oder neue Status erstellen.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+Wenn du einen bestehenden Status wählst, stelle sicher, dass dieser Status in keinem anderen Prozess oder Ereignisaktion verwendet wird. Andernfalls könnte dies zu Problemen führen.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Erstelle einen neuen Auftragsstatus oder wähle einen bestehenden Auftragsstatus für die folgenden vier Reaktionen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Outbound-Auftrag erfolgreich gesendet</p>
+</li>
+<li>
+<p>Outbound-Auftrag abgelehnt</p>
+</li>
+<li>
+<p>Outbound-Auftrag storniert</p>
+</li>
+<li>
+<p>Outbound-Auftrag Ausnahme</p>
+</li>
+</ul>
+</div>
+<table id="tabelle-auftragsstatus" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Auftragsstatus für eBay Fulfillment by Orange Connex</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erläuterung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Outbound-Auftrag erfolgreich gesendet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wenn sich der Outbound-Auftrag in diesem Status in deinem plentymarkets System befindet, war die Übertragung an Orange Connex erfolgreich.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Outbound-Auftrag abgelehnt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wenn sich der Outbound-Auftrag in diesem Status in deinem plentymarkets System befindet, wurde der Outbound-Auftrag von Orange Connex abgelehnt.<br>
+Ein Grund dafür könnten fehlende Daten am Artikel sein. Der Grund wird als Auftragsnotiz gespeichert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Outbound-Auftrag storniert</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wenn sich der Outbound-Auftrag in diesem Status in deinem plentymarkets System befindet, hat Orange Connex die Stornierung des Outbound-Auftrags akzeptiert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Outbound-Auftrag Ausnahme</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wenn sich der Outbound-Auftrag in diesem Status in deinem plentymarkets System befindet, wurde der Outbound-Auftrag nachträglich abgelehnt. Das bedeutet, zunächst hat Orange Connex den Outbound-Auftrag akzeptiert und nachträglich dann doch abgelehnt.<br>
+Gründe dafür könnten z.B. die falsche Menge im Lager oder ein defekter Artikel sein. Der Grund wird als Auftragsnotiz gespeichert.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Nur freie Auftragsstatus verwenden</div>
+<div class="paragraph">
+<p>Du musst freie, noch unbesetzte Auftragsstatus suchen und diese dann verwenden. Überschreibe in keinem Fall bereits besetzte Auftragsstatus, da sich diese möglicherweise an anderer Stelle in deinem plentymarkets System (z.B. in Ereignisaktionen oder Prozessen) bereits in Verwendung befinden und Komplikationen die Folge sein könnten.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Tipp:</em></strong> Wähle die Status zwischen 5 und 8.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="versandprofilverknuepfung">2.5. Versandprofilverknüpfung</h3>
+<div class="paragraph">
+<p>Im Schritt <strong>Versandprofilverknüpfung</strong> verknüpfst du die eBay Fulfillment by Orange Connex-Dienstleister mit den plentymarkets Versandprofilen.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">eBay Fulfillment by Orange Connex legt Dienstleister fest</div>
+<div class="paragraph">
+<p>Die Dienstleister sind von eBay Fulfillment by Orange Connex festgelegt. Du kannst diese nicht löschen oder neue Dienstleister hinzufügen. eBay Fulfillment by Orange Connex entscheidet, welcher Dienstleister für den Fulfillment-Prozess verwendet wird. Aktuell werden DHL, DPD, GLS, Hermes, UPS und Deutsche Post eingesetzt.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Damit du deine Sendungen korrekt verfolgen kannst, musst du jedem eBay Fulfillment by Orange Connex-Dienstleister ein plentymarkets Versandprofil zuweisen. Du kannst ein bereits vorhandenes Versandprofil wählen oder ein neues Versandprofil erstellen.</p>
+</div>
+<h4 id="_neues_versandprofil_erstellen" class="discrete">Neues Versandprofil erstellen</h4>
+<div class="paragraph">
+<p>Klicke auf die Dropdown-Liste <strong>Versandprofil</strong> und wähle den Eintrag <strong>+ Neues Versandprofil erstellen</strong>, damit plentymarkets automatisiert ein neues Versandprofil und einen Versanddienstleister für dich erstellt. Der Name des Versandprofils setzt sich zusammen aus dem Namen des Versanddienstleisters und dem Anhang <em>eBay Fulfillment by Orange Connex</em>, z.B. <strong>Hermes eBay Fulfillment by Orange Connex</strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="zusammenfassung">2.6. Zusammenfassung</h3>
+<div class="paragraph">
+<p>In diesem Schritt wird eine Zusammenfassung aller getätigten Eingaben in den einzelnen Schritten aufgelistet. Du kannst deine Angaben prüfen, in den einzelnen Schritten ggf. Anpassungen vornehmen und den Assistenten danach über die Zusammenfassung abschließen.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="artikel-einrichten-sku-erhalten">3. Artikel einrichten und SKU erhalten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Richte die Artikel bzw. Varianten ein, die du über eBay Fulfillment by Orange Connex versenden möchtest. Die Variante wird an Orange Connex übertragen, wenn die folgenden Bedingungen erfüllt sind:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Markt (Auftragsherkunft) <strong>eBay Fulfillment by Orange Connex</strong> wurde im Tab <strong>Verfügbarkeit</strong> der Variante aktiviert.</p>
+</li>
+<li>
+<p>Der Verkaufspreis, für den die Auftragsherkunft <strong>eBay Fulfillment by Orange Connex</strong> aktiviert ist, wurde im Tab <strong>Einstellungen</strong> der Variante gespeichert.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Orange Connex prüft die Variante und überträgt die SKU nach positiver Prüfung automatisch an plentymarkets.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Stündlicher Abgleich der SKU</div>
+<div class="paragraph">
+<p>Beachte, dass es nach positiver Prüfung der Variante bis zu einer Stunde dauern kann, bis die SKU auch am Artikel bz. an der Variante sichtbar ist.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Im Folgenden ist beschrieben, wie du die Verkaufspreise und die Verfügbarkeit manuell einrichtest. Wie du diese Einstellungen über eine Gruppenfunktion für alle Varianten vornimmst, ist im Kapitel <a href="#gruppenfunktion-verwenden">Gruppenfunktion verwenden</a> beschrieben.</p>
+</div>
+<div class="paragraph instruction">
+<p>Artikel einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne im plentymarkets Backend das Menü <strong>Artikel » Artikel bearbeiten</strong>.</p>
+</li>
+<li>
+<p>Öffne die Variante, die du über eBay Fulfillment by Orange Connex versenden möchtest.<br>
+→ Die Hauptvariante wird geöffnet.</p>
+</li>
+<li>
+<p>Gib im Bereich <strong>Verkaufspreise</strong> den von dir gewünschten Verkaufspreis ein.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>Verfügbarkeit</strong>.</p>
+</li>
+<li>
+<p>Aktiviere im Bereich <strong>Märkte</strong> die Optionen <strong>eBay</strong>, <strong>eBay Fulfillment by Orange Connex</strong> und <strong>WEB-API</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Wechsele zurück in das Tab <strong>Einstellungen</strong>.</p>
+</li>
+<li>
+<p>Setze im Bereich <strong>Verfügbarkeit</strong> ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellung.<br>
+→ Der Artikel ist aktiviert und die SKU wird automatisch an plentymarkets übertragen.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Verfügbarkeit und eBay-Verkaufspreis müssen gespeichert sein</div>
+<div class="paragraph">
+<p>Artikelstammdaten werden nur von plentymarkets an eBay Fulfillment by Orange Connex übermittelt, wenn die Verfügbarkeit aktiviert und der Verkaufspreis, für den die Auftragsherkunft <strong>eBay Fulfillment by Orange Connex</strong> aktiviert ist, gespeichert sind.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="artikelpaket-einrichten">3.1. Artikelpaket (Bundle) einrichten</h3>
+<div class="paragraph">
+<p>Ein Bundle, ein sogenanntes Artikelpaket, besteht aus mehreren Artikeln. Der Paketpreis des Bundles kann dabei günstiger sein als die Summe der Einzelpreise.</p>
+</div>
+<div class="paragraph">
+<p>Wenn du in deinem plentymarkets System bereits Artikelpakete eingerichtet hast, gibt es dennoch 2 Einstellungsmöglichkeiten am Artikel, die du vornehmen musst, damit diese durch eBay Fulfillment by Orange Connex verarbeitet werden können.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bundle-mehrere-artikel-als-einheit">3.2. Bundle aus mehreren Artikeln als Einheit</h3>
+<div class="paragraph">
+<p>Das Bundle besteht aus mehreren Artikeln, die eine Einheit bilden. Das heißt, das Bundle wird als solche Einheit angeboten und wird in einer gemeinsamen Verpackung verpackt an eBay Fulfillment by Orange Connex versendet. Dem kompletten Paket wird eine SKU zugeordnet.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Beispiel eines Bundles aus mehreren Artikeln als Einheit</div>
+<div class="content">
+<div class="paragraph">
+<p>Ein etwas abstraktes Beispiel für ein “festes” Bundle ist ein Auto. Das Auto wird als Einheit verkauft und es ist nicht vorgesehen, beispielsweise nur das Lenkrad auszubauen und dann zu verkaufen, obwohl es sich bei dem Lenkrad trotzdem um einen einzelnen Artikel handeln kann.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="bundle-mehrere-einzelne-artikel">3.2.1. Bundle aus mehreren, einzelnen Artikeln</h4>
+<div class="paragraph">
+<p>Das Bundle besteht aus mehreren, einzelnen Artikeln. Das heißt, du musst in jedem Bestandteil dieses Pakets die Verfügbarkeit wie in Kapitel <a href="/fulfillment/ebay-fulfillment#artikel-einrichten-sku-erhalten">Artikel einrichten und SKU erhalten</a> beschrieben setzen. Dadurch verfügt jeder Artikel im Paket über eine eigene SKU. Bei der Bestellübermittlung an eBay Fulfillment by Orange Connex wird jeder Bestandteil des Artikelpakets wie die Bestellung einzelner Artikel behandelt.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Beispiel eines Bundles aus mehreren, einzelnen Artikeln</div>
+<div class="content">
+<div class="paragraph">
+<p>Du verkaufst Esszimmerstühle und Esszimmertische. Außerdem bietest du eine Kombination der Artikel als Bundle (1 Esszimmertisch und 4 Esszimmerstühle) an. Im Gegensatz zu den einzelnen Preisen ergibt sich der Bundlepreis wie folgt:</p>
+</div>
+<table id="tabelle-ebay-fulfillment-beispiel-bundle" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Beispielrechnung für Bundle</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Einzelpreis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gesamtpreis</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Esszimmerstuhl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">59,99 EUR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preis x 4 = 239,96 EUR</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Esszimmertisch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">299,99 EUR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">299,99 EUR</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">539,95 EUR</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">Bundlepreis = 499,99 EUR</p></td>
+</tr>
+</tbody>
+</table>
+<div id="bild-artikel-bearbeiten" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/fulfillment/assets/eBay-Fulfillment-Artikeluebersicht.png" alt="eBay Fulfillment Artikeluebersicht" width="640" height="360">
+</div>
+<div class="title">Bild 1. Übersicht im Menü <strong>Artikel » Artikel bearbeiten</strong></div>
+</div>
+<div id="bild-tab-bestand" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/fulfillment/assets/eBay-Fulfillment-Bundle-Tab-Bestand.png" alt="eBay Fulfillment Bundle Tab Bestand" width="640" height="360">
+</div>
+<div class="title">Bild 2. Ansicht in der Variante im Tab <strong>Bestand</strong></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="gruppenfunktion-verwenden">3.3. Gruppenfunktion verwenden</h3>
+<div class="paragraph">
+<p>Im Menü <strong>Artikel » Artikel bearbeiten</strong> kannst du über die Varianten-Gruppenfunktion schnell und komfortabel deine Varianten bearbeiten und so die Verkaufspreise ändern und die Martkplatz-Verfügbarkeit <strong>eBay Fulfillment by Orange Connex</strong> aktivieren.</p>
+</div>
+<div class="paragraph">
+<p>Gehe wie im Folgenden beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Gruppenfunktion verwenden:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten</strong>.</p>
+</li>
+<li>
+<p>Setze links den Filter <strong>Tabellentyp</strong> auf <strong>Varianten</strong>.</p>
+</li>
+<li>
+<p>Wähle ggf. weitere <a href="/artikel/einleitung/suche#100">Filter in der Spalte links</a>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Suchen</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) die zu bearbeitenden Varianten in der Übersicht rechts.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Varianten-Gruppenfunktion</strong>.<br>
+→ Das Fenster <strong>Varianten-Gruppenfunktion</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Wähle im Bereich <strong>Marktplatz-Verfügbarkeit</strong> die Option <strong>eBay Fulfillment by Orange Connex</strong>.</p>
+</li>
+<li>
+<p>Wähle die Checkboxen auf der linken und rechten Seite.</p>
+</li>
+<li>
+<p>Klicke auf <span class="icon "><i class="psicon-execute"></i></span> <strong>Ausführen</strong>, um die Einstellungen an den Varianten vorzunehmen.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Hinweis für Händler, die bereits die eBay Fulfillment-Lösung mit Fiege nutzen</div>
+<div class="paragraph">
+<p>Wenn du bereits die eBay Fulfillment-Lösung mit Fiege nutzt, kannst du über die Varianten-Gruppenfunktion die Marktplatz-Verfügbarkeit <strong>eBay Fulfillment by Orange Connex</strong> hinzufügen.<br>
+<strong><em>Wichtig:</em></strong> Füge die neue Verfügbarkeit hinzu, aber entferne <em>nicht</em> die vorherige eBay Fulfillment-Lösung mit Fiege. Andernfalls könnte es beim Übergang von Alt auf Neu zu Problemen führen.</p>
+</div>
+<div class="paragraph">
+<p>Setze im Menü <strong>Artikel » Artikel bearbeiten</strong> den Filter <strong>Tabellentyp</strong> auf <strong>Varianten</strong> und den Filter <strong>eBay Fulfillment</strong> auf <strong>Sichtbar</strong>, damit dir alle Varianten, die du mit Fiege abgewickelt hast, angezeigt werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Weitere Informationen zur Varianten-Gruppenfunktion findest du auf der Handbuchseite <a href="/artikel/import-export-anlage/anlage/massenbearbeitung#300">Massenbearbeitung</a>.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="automatismen-einrichten">4. Automatismen einrichten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In plentymarkets besteht die Möglichkeit Routineaufgaben wie beispielsweise das Verschieben von Aufträgen in den korrekten Status oder das Buchen von Warenausgängen automatisiert durch das System erledigen zu lassen. Somit kannst du den ganzen Outbound-Prozess automatisiert durchlaufen lassen.</p>
+</div>
+<div class="paragraph">
+<p>Mit den Ereignisaktionen stellen wir dir ein effektives Werkzeug zur Verfügung, mit dem du solche Automatismen einstellen und zuverlässig durch dein plentymarkets System ausführen lassen kannst. Das Grundprinzip von Ereignisaktionen ist leicht verständlich: Bestimmte Ereignisse lösen bestimmte Aktionen aus.</p>
+</div>
+<div class="sect2">
+<h3 id="ea-outbound-auftrag-verschieben">4.1. Ereignisaktion zum Verschieben des Outbound-Auftrags in den korrekten Status einrichten</h3>
+<div class="paragraph">
+<p>Gehe wie im Folgenden beschrieben vor, um die Ereignisaktion einzurichten.</p>
+</div>
+<div class="paragraph instruction">
+<p>Ereignisaktion zum Verschieben des Outbound-Auftrags in den korrekten Status einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne im plentymarkets Backend das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Gib den Namen, z.B. <em>Outbound-Auftrag verschieben</em> ein.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auslösendes Ereignis</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Ereignis</strong> die Option <strong>Auftragsänderung &gt; Statuswechsel</strong>.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Status</strong> den Status <strong>Freigabe Versand</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Filterkriterien für Aufträge</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Auftragstyp</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Auftrag</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Lieferauftrag</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Auftragslager</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere das eBay Fulfillment by Orange Connex Lager, das du im Assistenten erstellt hast.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Zahlungsart</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere alle Zahlungsarten mit Ausnahme von <strong>Nachnahme</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Versand &gt; Lieferland</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Länder, die du auch im Orange Connex-Backend im Bereich <em>Für eBay Fulfillment registrieren</em> aktiviert hast.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auszuführende Aktion</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke auf <strong>Aktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle die Aktion <strong>Auftrag &gt; Status ändern</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste den Status, den du im Assistenten erstellt hast, z.B. <em>Outbound-Auftrag senden</em>.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong>, um die Ereignisaktion zu aktivieren.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ea-outbound-auftrag-senden">4.2. Ereignisaktion zum Senden des Outbound-Auftrags an eBay Fulfillment by Orange Connex einrichten</h3>
+<div class="paragraph">
+<p>Gehe wie im Folgenden beschrieben vor, um die Ereignisaktion einzurichten.</p>
+</div>
+<div class="paragraph instruction">
+<p>Ereignisaktion zum Senden des Outbound-Auftrags an eBay Fulfillment by Orange Connex einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne im plentymarkets Backend das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Gib einen Namen ein, z.B. <em>eBay Fulfillment Outbound senden</em> ein.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auslösendes Ereignis</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Ereignis</strong> die Option <strong>Auftragsänderung &gt; Statuswechsel</strong>.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Status</strong> den Status, den du im Assistenten erstellt hast, z.B. <em>Outbound-Auftrag senden</em>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Filterkriterien für Aufträge</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Auftragstyp</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Auftrag</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Lieferauftrag</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Auftragslager</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere das eBay Fulfillment by Orange Connex Lager, das du im Assistenten erstellt hast.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Versand &gt; Lieferland</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Länder, die du auch im Orange Connex-Backend im Bereich <em>Für eBay Fulfillment registrieren</em> aktiviert hast.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auszuführende Aktion</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke auf <strong>Aktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle die Aktion <strong>Plugins &gt; eBay Fulfillment by Orange Connex: Auftrag senden</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong>, um die Ereignisaktion zu aktivieren.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ea-warenausgang-buchen">4.3. Ereignisaktion zum Buchen des Warenausgangs einrichten</h3>
+<div class="paragraph">
+<p>Wenn eBay Fulfillment by Orange Connex die Bestellung abwickeln kann, wird automatisch die Paketnummer im Outbound-Auftrag hinterlegt. Um anschließend den Warenausgang zu buchen und die Paketnummer an eBay Fulfillment by Orange Connex zu übermitteln, damit deine Kund:innen die Sendungsverfolgung nutzen können, richte eine weitere Ereignisaktion ein.</p>
+</div>
+<div class="paragraph instruction">
+<p>Ereignisaktion zum Buchen des Warenausgangs einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne im plentymarkets Backend das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Gib den Namen ein, z.B. <em>eBay Fulfillment Warenausgang</em>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auslösendes Ereignis</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Ereignis</strong> die Option <strong>Auftragsänderung &gt; Paketnummer</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Filterkriterien für Aufträge</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Auftragslager</strong>.</p>
+</li>
+<li>
+<p>Aktiviere das eBay Fulfillment by Orange Connex Lager, das du im Assistenten erstellt hast.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auszuführende Aktion</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke auf <strong>Aktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle die Aktion <strong>Auftrag &gt; Warenausgang buchen</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong>, um die Ereignisaktion zu aktivieren.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ea-automatische-sendungsverfolgung">4.4. Ereignisaktion für die automatische Sendungsverfolgung (Tracking-URL) einrichten</h3>
+<div class="paragraph">
+<p>Mit deinem plentymarkets System ist es möglich, eine Versandbestätigung via E-Mail an deine Kund:innen zu versenden. Dies setzt voraus, dass du die <a href="/fulfillment/ebay-fulfillment#e-mail-server-zugangsdaten">Zugangsdaten deines E-Mail-Servers gespeichert</a> und eine entsprechende E-Mail-Vorlage in deinem System erstellt hast.</p>
+</div>
+<div class="paragraph instruction">
+<p>Ereignisaktion für die automatische Sendungsverfolgung (Tracking-URL) einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne im plentymarkets Backend das Menü <strong>Einrichtung » Mandant » Standard » E-Mail » Vorlagen » Allgemeine Vorlagen &gt; Auftrag: Versandbestätigung</strong>.</p>
+</li>
+<li>
+<p>Wähle das Tab <strong>E-Mail-Nachricht</strong>.<br>
+→ Hier befindet sich ein Text, der standardmäßig in jedem System hinterlegt ist. Passe diesen Text ggf. nach deinen eigenen Wünschen an.</p>
+</li>
+<li>
+<p>Füge die Variable <code>$TrackingURL</code> an der gewünschten Stelle in deinem Text ein.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Übersicht über alle Template-Variablen</div>
+<div class="paragraph">
+<p>Klicke im Tab <strong>E-Mail-Vorlagen</strong> rechts neben der <strong>Speichern</strong>-Schaltfläche auf die Schaltfläche <strong>Template-Variablen und -Funktionen</strong> (<span class="icon blue"><i class="fa fa-code  "></i></span>), um eine Übersicht über alle Template-Variablen zu erhalten, die du in deine E-Mail-Vorlage einfügen kannst.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Die folgenden Schritte erklären, wie du eine Versandbestätigung automatisch an deine Kund:innen versenden kannst.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne im plentymarkets Backend das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Gib den Namen, z.B. <em>Automatisierung Sendungsverfolgung Outbound</em> ein.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auslösendes Ereignis</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Ereignis</strong> die Option <strong>Auftragsänderung &gt; Paketnummer</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Filterkriterien für Aufträge</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Auftragstyp</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Auftrag</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Lieferauftrag</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Auftragslager</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere das eBay Fulfillment by Orange Connex Lager, das du im Assistenten erstellt hast.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Herkunft</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.<br></p>
+</li>
+<li>
+<p>Aktiviere anschließend alle Herkünfte außer eBay.<br>
+→ <strong><em>Wichtig:</em></strong> eBay versendet eine eigene Bestätigungsmail mit der entsprechenden Tracking-URL.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auszuführende Aktion</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke auf <strong>Aktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle die Aktion <strong>Kunde &gt; E-Mail versenden</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Klicke innerhalb des Aktionsfenster auf den Pfeil auf der linken Seite, sodass sich die Aktionsübersicht öffnet.</p>
+</li>
+<li>
+<p>Klicke dort auf <strong>Hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle im ersten Feld die Option <strong>Auftrag: Versandbestätigung</strong>.</p>
+</li>
+<li>
+<p>Wähle im zweiten Feld die Option <strong>Kunde</strong>.<br>
+→ <a href="#bild-aktion-e-mail-versenden">Bild 3</a> zeigt die Übersicht einer fertiggestellten Aktion.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong>, um die Ereignisaktion zu aktivieren.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div id="bild-aktion-e-mail-versenden" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/fulfillment/assets/eBay-Fulfillment-Einstellungen-Aktion-E-Mail-versenden.png" alt="eBay Fulfillment Einstellungen Aktion E Mail versenden" width="640" height="360">
+</div>
+<div class="title">Bild 3. Einstellungen innerhalb der Aktion <strong>E-Mail versenden</strong></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ereignisaktion_zum_senden_einer_stornierungsanfrage_einrichten">4.5. Ereignisaktion zum Senden einer Stornierungsanfrage einrichten</h3>
+<div class="paragraph">
+<p>Du hast die Möglichkeit für einen Outbound-Auftrag eine Stornierungsanfrage zu senden, wenn du den Outbound-Auftrag vorher bereits zu eBay Fulfillment by Orange Connex übermittelt hast und der Outbound-Auftrag akzeptiert wurde. Richte eine Ereignisaktion ein, um diese Anfrage zu übermitteln.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Auftragsnotiz bei nicht erfolgter Stornierung</div>
+<div class="paragraph">
+<p>Wenn der Outbound-Auftrag seitens eBay Fulfillment by Orange Connex noch storniert werden kann, setzt dein plentymarkets System den Outbound-Auftrag in den von dir im Assistenten gewählten Status.<br>
+Wenn eine Stornierung nicht mehr möglich ist, weil das Paket bereits vollständig verpackt oder sogar schon abgeholt wurde, verbleibt der Outbound-Auftrag im Status der Stornierungsanfrage und dein plentymarkets System erstellt eine Auftragsnotiz, dass die Stornierung nicht möglich war.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne im plentymarkets Backend das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Gib einen Namen, z.B. <em>Stornierungsanfrage senden</em>, ein.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auslösendes Ereignis</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Ereignis</strong> die Option <strong>Auftragsänderung &gt; Statuswechsel</strong>.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Status</strong> den Status zum Senden der Stornierungsanfrage an Orange Connex, den du im Assistenten erstellt hast.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Filterkriterien für Aufträge</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Auftragstyp</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Auftrag</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Lieferauftrag</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Auftragslager</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere das eBay Fulfillment by Orange Connex Lager, das du im Assistenten erstellt hast.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auszuführende Aktion</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke auf <strong>Aktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle die Aktion <strong>Plugins &gt; eBay Fulfillment by Orange Connex: Auftrag stornieren</strong>.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong>, um die Ereignisaktion zu aktivieren.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="versand-erster-artikel-aufträge-splitten">5. Versand des ersten Artikels und Splitten von Aufträgen</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="versand-erster-artikel">5.1. Versand des ersten Artikels</h3>
+<div class="paragraph">
+<p>Sobald der Bestand im Lager von eBay Fulfillment by Orange Connex eingegangen und gebucht ist, wird der Bestand des eBay Fulfillment by Orange Connex Lagers in deinem plentymarkets System automatisch aktualisiert. Dazu musst du im Assistenten <strong>eBay Fulfillment by Orange Connex</strong> im Schritt <strong>Datenübertragung und Lagereinstellungen</strong> die Option  <strong>Warenbestand importieren</strong> <a href="#datenuebertragung-lagereinstellungen">aktivieren</a>.
+Ab diesem Moment und unter der Voraussetzung, dass alle Einstellungen in deinem plentymarkets System korrekt vorgenommen wurden, ist es möglich, den ersten Outbound-Auftrag an eBay Fulfillment by Orange Connex zu übertragen.</p>
+</div>
+<div class="paragraph">
+<p>Wenn du Bestellungen für den selben Artikel erhältst, den du zuvor aus deinem eigenen Lager verkauft hast, überträgt das plentymarkets System keinen Outbound-Auftrag an eBay Fulfillment by Orange Connex. Die Übertragung findet so lange nicht statt, bis der Bestand von eBay Fulfillment by Orange Connex für das entsprechende Lager aktualisiert wurde.</p>
+</div>
+<div class="paragraph">
+<p>Falls du dich bereits für ein <a href="/fulfillment/ebay-fulfillment#ea-outbound-auftrag-senden">automatisiertes Senden des Outbound-Auftrags</a> entschieden hast, steht der Abwicklung von eBay Fulfillment by Orange Connex-Aufträgen nichts mehr im Wege.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auftrage-splitten">5.2. Splitten von Aufträgen</h3>
+<div class="paragraph">
+<p>Beispiel:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ein Auftrag enthält 2 Artikel: A und B.</p>
+</li>
+<li>
+<p>Artikel A befindet sich im eigenen Lager.</p>
+</li>
+<li>
+<p>Artikel B befindet sich im Lager von eBay Fulfillment by Orange Connex.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ergebnis:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Artikel werden in unterschiedliche Lieferaufträge aufgeteilt.</p>
+</li>
+</ul>
+</div>
+<h4 id="_aufteilen_der_lieferaufträge_nach_artikelverfügbarkeit" class="discrete">Aufteilen der Lieferaufträge nach Artikelverfügbarkeit</h4>
+<div class="paragraph">
+<p>Wähle im Menü <strong>Einrichtung » Aufträge » Einstellungen</strong> in der Zeile <strong>Zuordnung des Lagers</strong> die Einstellung <strong>b) pro Artikelposition kann ein Lager zugeordnet werden</strong> und in der Zeile <strong>Automatische Lagerauswahl</strong> die Einstellung <strong>d) in Abhängigkeit der Lagerpriorität und des höchsten Warenbestandes</strong>.</p>
+</div>
+<h4 id="_ereignisaktion_zum_generieren_von_lieferaufträgen_einrichten" class="discrete">Ereignisaktion zum Generieren von Lieferaufträgen einrichten</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne im plentymarkets Backend das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Gib den gewünschten Namen für diese Ereignisaktion ein, wie z.B. <em>eBay Fulfillment Splitting</em>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auslösendes Ereignis</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Ereignis</strong> die Option <strong>Auftragsänderung &gt; Statuswechsel (Versandvorbereitung)</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Filterkriterien für Aufträge</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Auftragstyp</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Auftrag</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Filter hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Filter <strong>Auftrag &gt; Auftragslager</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Aktiviere in dem Filter die Option <strong>Mehrere Lager pro Auftrag</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Auszuführende Aktion</em></strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klicke auf <strong>Aktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle die Aktion <strong>Auftrag &gt; Lieferaufträge generieren</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong>, um die Ereignisaktion zu aktivieren.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</main>
