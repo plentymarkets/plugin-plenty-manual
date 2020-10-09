@@ -21593,7 +21593,7 @@ class Metadata {
 					[
 						"id" => "b0930d715510ba0840208417c9a5627b",
 						"path" => "markets/ebay/ebay-fulfillment-by-orange-connex",
-						"position" => 25,
+						"position" => 15,
 						"urlName" => "ebay-fulfillment-by-orange-connex",
 						"url" => "/en/markets/ebay/ebay-fulfillment-by-orange-connex",
 						"level" => 3,
