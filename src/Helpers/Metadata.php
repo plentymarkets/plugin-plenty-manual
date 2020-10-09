@@ -21591,6 +21591,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "b0930d715510ba0840208417c9a5627b",
+						"path" => "markets/ebay/ebay-fulfillment-by-orange-connex",
+						"position" => 25,
+						"urlName" => "ebay-fulfillment-by-orange-connex",
+						"url" => "/en/markets/ebay/ebay-fulfillment-by-orange-connex",
+						"level" => 3,
+						"title" => "eBay Fulfillment by Orange Connex",
+						"keywords" => "eBay Fulfillment by Orange Connex, Outbound, Assistent, Orange Connex, sku, ebay sku, eBay Fulfillment warehouse",
+						"description" => "Learn how to set up eBay Fulfillment by Orange Connex with the help of an assistant.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic eBay Fulfillment by Orange Connex. The following information is available:",
+						"languageID" => "M5V62EY",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "de1671c4a63f620a8f043c7937f83f10",
 						"path" => "markets/ebay/best-practices-ebay-out-of-stock-option",
 						"position" => 30,
