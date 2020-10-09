@@ -6349,6 +6349,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "2fb6f709e9b0b9fd26385f7248ca1749",
+						"path" => "maerkte/ebay/ebay-fulfillment-by-orange-connex",
+						"position" => 15,
+						"urlName" => "ebay-fulfillment-by-orange-connex",
+						"url" => "/maerkte/ebay/ebay-fulfillment-by-orange-connex",
+						"level" => 3,
+						"title" => "eBay Fulfillment by Orange Connex",
+						"keywords" => "eBay Fulfillment by Orange Connex, Outbound, Assistent, Orange Connex, sku, ebay sku, eBay Fulfillment Lager",
+						"description" => "Erfahre, wie du eBay Fulfillment by Orange Connex mit Hilfe eines Assistenten in plentymarkets einrichtest.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich eBay Fulfillment by Orange Connex. Hier findest du folgende Informationen:",
+						"languageID" => "M5V62EY",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "6dd65db7fb72e6d885cf2816a54dc2e4",
 						"path" => "maerkte/ebay/best-practices-ebay-listing-freischalten",
 						"position" => 20,
@@ -6361,22 +6377,6 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Best Practice: Artikel für eBay freischalten. Hier findest du folgende Informationen:",
 						"languageID" => "0ITKS35",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "2fb6f709e9b0b9fd26385f7248ca1749",
-						"path" => "maerkte/ebay/ebay-fulfillment-by-orange-connex",
-						"position" => 25,
-						"urlName" => "ebay-fulfillment-by-orange-connex",
-						"url" => "/maerkte/ebay/ebay-fulfillment-by-orange-connex",
-						"level" => 3,
-						"title" => "eBay Fulfillment by Orange Connex",
-						"keywords" => "eBay Fulfillment by Orange Connex, Outbound, Assistent, Orange Connex, sku, ebay sku, eBay Fulfillment Lager",
-						"description" => "Erfahre, wie du eBay Fulfillment by Orange Connex mit Hilfe eines Assistenten in plentymarkets einrichtest.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich eBay Fulfillment by Orange Connex. Hier findest du folgende Informationen:",
-						"languageID" => "M5V62EY",
 						"children" => [],
 						"hasChildren" => false
 					],
