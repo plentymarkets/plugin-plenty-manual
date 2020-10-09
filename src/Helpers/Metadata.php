@@ -2470,6 +2470,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "e62a0a9f571c173de3977db65fb49cbe",
+				"path" => "fulfillment/amazon-fba-inbound",
+				"position" => 35,
+				"urlName" => "amazon-fba-inbound",
+				"url" => "/fulfillment/amazon-fba-inbound",
+				"level" => 2,
+				"title" => "Amazon FBA Inbound",
+				"keywords" => "Amazon FBA Inbound",
+				"description" => "Erfahre, wie du Amazon FBA Inbound in plentymarkets einrichtest.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Amazon FBA Inbound. Hier findest du folgende Informationen:",
+				"languageID" => "FM7NTJB",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "709a6dcde16586be197c202d393e17d6",
 				"path" => "fulfillment/ebay-fulfillment-by-orange-connex",
 				"position" => 40,
