@@ -82,7 +82,7 @@
 <li><a href="#1750"><span>11.4.</span><span> Deleting a document</span></a></li>
 </ul>
 </li>
-<li><a href="#1800"><span>12.</span><span> Showing the account balance</span></a></li>
+<li><a href="#1800"><span>12.</span><span> Displaying the account balance</span></a></li>
 <li><a href="#1890"><span>13.</span><span> Managing bank details</span></a>
 <ul class="sectlevel2">
 <li><a href="#1900"><span>13.1.</span><span> Adding bank details</span></a></li>
@@ -797,7 +797,7 @@ All of the available payment methods are selected by default. When you integrate
 <h2 id="50">2. Assigning user rights for back end users for the contact menu</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Users of the type <strong>Back end</strong> can only access limited areas and menus in the plentymarkets back end. Thus, their access to the system is limited. If users of this type should be able to see the <strong>CRM » Contacts</strong> menu, a user of the type <strong>Admin</strong> has to assign at least the rights listed in <a href="#table-rights-contacts">Table 4</a> to users of the type <strong>Back end</strong>.</p>
+<p>Users of the type <strong>Back end</strong> can only access limited areas and menus in the plentymarkets back end. Thus, their access to the system is limited. If users of this type should be able to see the <strong>CRM » Contacts</strong> menu, a user of the type <strong>Admin</strong> has to assign at least the rights listed in <a href="#table-rights-address-contacts">[table-rights-address-contacts]</a> to users of the type <strong>Back end</strong>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2982,13 +2982,13 @@ If the delivery address has already been defined as primary, this setting can be
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1800">12. Showing the account balance</h2>
+<h2 id="1800">12. Displaying the account balance</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Account</strong> view lists the revenues of your contacts. In the top line, you see the total of the contact’s invoices, the amount granted to your customer in form of credit notes and the difference between the 2 amounts. Orders and credit notes for this contact are listed as processes in the table. The <strong>Paid</strong> and <strong>Outstanding</strong> columns are especially helpful. If a payment for an order is listed in the <strong>Outstanding</strong> column, the contact still has to pay the amount. As soon as the contact has paid, the amount is listed under <strong>Paid</strong>. If a payment for a credit note is listed in the <strong>Outstanding</strong> column, you still have to pay this amount to the contact. As soon as you have paid, the amount is listed under <strong>Paid</strong>.</p>
+<p>The <strong>Account balance</strong> view lists all the revenues of a contact. Proceed as follows to have the account balance of a contact displayed.</p>
 </div>
 <div class="paragraph instruction">
-<p>Showing the account balance:</p>
+<p>Displaying the account balance:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -3008,12 +3008,30 @@ If the delivery address has already been defined as primary, this setting can be
 → All data that is available for the account of the contact is displayed.</p>
 </li>
 <li>
-<p>Note <a href="#table-account-balance-contact">Table 12</a>.</p>
+<p>Note the explanations given in <a href="#table-amounts-contact">Table 12</a> and <a href="#table-account-balance-contact">Table 13</a>.</p>
 </li>
 </ol>
 </div>
-<table id="table-account-balance-contact" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. Settings in the <strong>Account</strong> area of the contact data record</caption>
+<div class="paragraph">
+<p>The revenues of the contact are displayed in detail above the table. Apart from <strong>Balance</strong> also information about invoices and credit notes. Note also the explanations given in <a href="#table-amounts-contact">Table 12</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Filter settings</div>
+<div class="paragraph">
+<p>When you open the area <strong>Account balance</strong> in a contact data record, totals are displayed above the table. <em>Note</em>:When you set <a href="#table-filter-account-data">filters</a> to search for specific information, the amounts will adapt according to the chosen filters.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table id="table-amounts-contact" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 12. Amounts in the account balance of a contact</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3028,25 +3046,47 @@ If the delivery address has already been defined as primary, this setting can be
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance">Balance</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shows the customer’s account balance.<br>
-<strong>+</strong> = Total of the contact’s outstanding payments<br>
+<strong>+</strong> = Total of the contact’s open payments.<br>
 <strong>-</strong> = Total of payments that still have to be paid to the contact if the contact has paid too much or if a credit note still has to be paid out.<br>
-<strong>0.0</strong> = No outstanding amounts</p></td>
+<strong>0,00</strong> = No open amounts.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-delta">Credit note amounts ÷ invoice amounts</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ratio of credit notes to invoices. 0 % means that no credit note has been paid out to the customer yet. 100 % means that every amount paid by the customer has been paid back in form of credit notes.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-invoices">Invoices</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Total invoice amounts of all orders and the number of invoices in parentheses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of invoices in parentheses and total invoice amounts of all orders.<br>
+<strong>Open</strong>: The amount the contact still has to pay.<br>
+<strong>Paid</strong>: The amount paid by the contact.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-credit-notes">Credit notes</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Total of all credit notes and the number of credit notes in parentheses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of credit notes in parentheses and total of all credit notes.<br>
+<strong>Open</strong>: This amount still has to be paid to the contact.<br>
+<strong>Paid</strong>: The amount paid to the contact.</p></td>
 </tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Orders, credit notes, returns etc. for this contact are listed as processes in the table. The table rows <strong>Paid</strong> and <strong>Open</strong> each refer to the individual process. If a payment for an order is listed in the <strong>Open</strong> column, the contact still has to pay the amount. As soon as the contact has paid, the amount is listed under <strong>Paid</strong>. If a payment for a credit note is listed in the <strong>Open</strong> column, you still have to pay this amount to the contact. As soon as you have paid, the amount is listed under <strong>Paid</strong>.</p>
+</div>
+<table id="table-account-balance-contact" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 13. Information in the <strong>Account balance</strong> area of the contact data record</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-delta">Delta</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Difference in percent between the paid credit notes and the total invoice amount paid by the customer. 0 % means that no credit note has been paid out to the customer yet. 100 % means that every amount paid by the customer has been paid back in form of credit notes.</p></td>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-date">Date</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date when the order was created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date when the order was created.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-order-id">Order ID</strong></p></td>
@@ -3054,7 +3094,7 @@ If the delivery address has already been defined as primary, this setting can be
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-event">Event</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type of order, either order or credit note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order type, for example order or credit note order.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-document">Document</strong></p></td>
@@ -3062,18 +3102,18 @@ If the delivery address has already been defined as primary, this setting can be
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-value">Value</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Invoice total of the order</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total invoice amount of the order.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-paid">Paid</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Amount already paid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amount already paid.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-payment-method">Payment method</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Payment method for the order</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment method of the order.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-outstanding">Outstanding</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-outstanding">Open</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Remaining amount that is due before the order is completely paid for.</p></td>
 </tr>
 <tr>
@@ -3084,38 +3124,11 @@ If the delivery address has already been defined as primary, this setting can be
 </table>
 <h3 id="_filtering_account_balance_data" class="discrete">Filtering account balance data</h3>
 <div class="paragraph">
-<p>Use filters to display the account balance data of your contact.</p>
-</div>
-<div class="paragraph instruction">
-<p>Filtering account balance data:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to <strong>CRM » Contacts</strong>.</p>
-</li>
-<li>
-<p>Search (<span class="icon blue"><i class="fa fa-search  "></i></span>) the contact by means of the filter settings as described in the <a href="/en/crm/managing-contacts#200">Searching for a contact</a> chapter.<br>
-→ The contacts that correspond to the search criteria entered are displayed.</p>
-</li>
-<li>
-<p>Click in the line of the contact.<br>
-→ The detail view of the contact opens.</p>
-</li>
-<li>
-<p>Click on <strong>Account</strong> on the left side in the context menu.<br>
-→ All data that is available for the account of the contact is displayed.</p>
-</li>
-<li>
-<p>Carry out the settings in the <strong>Filter</strong> area. Note <a href="#table-filter-account-data">Table 13</a>.</p>
-</li>
-<li>
-<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).</p>
-</li>
-</ol>
+<p>You can use various filters to retrieve specific information about your contact’s account balance. To do this, set the required filters in the <strong>Account balance</strong> area of the contact and then click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>). The filter settings are explained in the table below.<br>
+<em>Note</em> that the amounts above the table change when you search according to the selected filters. For example, when you select a certain time range or when you want to have processes in a certain order status displayed.</p>
 </div>
 <table id="table-filter-account-data" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 13. Filter settings in the <strong>Account</strong> area of the contact data record</caption>
+<caption class="title">Table 14. Filter settings in the <strong>Account</strong> area of the contact data record</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3137,26 +3150,26 @@ If the delivery address has already been defined as primary, this setting can be
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-filter-period">Period</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select one of the following settings from the drop-down list: <strong>ALL</strong>, <strong>This year</strong>, <strong>Last year</strong>, <strong>This month</strong>, <strong>Last month</strong> or <strong>Last 3 months</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can set a time range, for example to have only the data of the current month displayed. Select one of the following settings from the drop-down list to set a time range: <strong>ALL</strong>, <strong>This year</strong>, <strong>Last year</strong>, <strong>This month</strong>, <strong>Last month</strong> or <strong>Last 3 months</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-filter-outstanding">Outstanding</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-filter-outstanding">Open</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>ALL</strong>, <strong>Yes</strong> or <strong>No</strong>.<br>
-<strong>Yes</strong> = Only outstanding amounts are displayed.<br>
+<strong>Yes</strong> = Only open amounts are displayed.<br>
 <strong>No</strong> = Only paid amounts are displayed.<br>
-<strong>ALL</strong> = Outstanding and paid amounts are displayed.</p></td>
+<strong>ALL</strong> = open and paid amounts are displayed.<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-filter-relational-operator-status">Relational operator / Status</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select the relational operator and order status from the drop-down lists.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a relational operator in combination with an order status from the dropdown-list to narrow down processes to those in a certain status.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-filter-invoice-number">Invoice no.</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the invoice number.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search for a specific process by entering an invoice number.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-account-balance-filter-order-id">Order ID</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the order ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search for a specific order by entering an order ID.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3199,7 +3212,7 @@ If the delivery address has already been defined as primary, this setting can be
 → The <strong>New bank details</strong> view opens.</p>
 </li>
 <li>
-<p>Carry out the desired settings. Note <a href="#table-bank-details-contact">Table 14</a>.</p>
+<p>Carry out the desired settings. Note <a href="#table-bank-details-contact">Table 15</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
@@ -3207,7 +3220,7 @@ If the delivery address has already been defined as primary, this setting can be
 </ol>
 </div>
 <table id="table-bank-details-contact" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 14. Settings in the <strong>Bank details</strong> area of the contact data record</caption>
+<caption class="title">Table 15. Settings in the <strong>Bank details</strong> area of the contact data record</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3287,7 +3300,7 @@ Select an option from the drop-down list:<br>
 → The bank data record opens.</p>
 </li>
 <li>
-<p>Carry out the desired settings. Note <a href="#table-bank-details-contact">Table 14</a>.</p>
+<p>Carry out the desired settings. Note <a href="#table-bank-details-contact">Table 15</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
