@@ -797,7 +797,7 @@ Link at least the data fields <strong>Brand</strong>, <strong>Delivery type</str
 <h2 id="475">10. Linking variations with OTTO category groups</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After you created a catalogue template for OTTO Market with the <strong>OTTO Market Creating catalogues</strong> assistant or manually, the property <strong>OTTO category group</strong> is created in your plentymarkets system. A new selection value is added to the <strong>OTTO category group</strong> property for each OTTO category group selected in the <strong>Name and category group</strong> step of the assistant. In order for your variations to be exported in the appropriate catalogue, they have to be linked to the <strong>OTTO category group</strong> property in the <strong>Properties</strong> tab of a variation.</p>
+<p>After you created a marketplace format for OTTO Market with the <strong>OTTO Market Creating catalogues</strong> assistant or manually, the property <strong>OTTO category group</strong> is created in your plentymarkets system. A new selection value is added to the <strong>OTTO category group</strong> property for each OTTO category group selected in the <strong>Name and category group</strong> step of the assistant. In order for your variations to be exported in the appropriate catalogue, they have to be linked to the <strong>OTTO category group</strong> property in the <strong>Properties</strong> tab of a variation.</p>
 </div>
 <div class="paragraph instruction">
 <p>Linking a variation with an OTTO category group:</p>
@@ -852,7 +852,7 @@ Link at least the data fields <strong>Brand</strong>, <strong>Delivery type</str
 <li>
 <p>In the <strong>Active/Inactive</strong> column, move the toggle button to the right (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>).<br>
 → The catalogue is active.<br>
-→ The catalogue data is exported to OTTO Market einmal täglich nachts{if-active}.</p>
+→ The catalogue data is exported to OTTO Market once a day during the night{if-active}.</p>
 </li>
 </ol>
 </div>
@@ -1153,8 +1153,8 @@ Link at least the data fields <strong>Brand</strong>, <strong>Delivery type</str
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Status change</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example <strong>[8.1] Cancelled by customer</strong><br>
-<strong><em>Note:</em></strong> Orders that are cancelled by OTTO Market are imported with the status <strong>[8] Cancelled</strong>. Select a different status to make sure that you do not notify OTTO Market of a cancellation they triggered.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, e.g. <strong>[8.1] Cancelled by customer</strong><br>
+<strong><em>Note:</em></strong> Orders that are cancelled by OTTO Market are imported to plentymarkets with the status <strong>[8] Cancelled</strong>. As such, select a different status to make sure that you do not notify OTTO Market of a cancellation they triggered.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
@@ -1573,17 +1573,17 @@ Link at least the data fields <strong>Brand</strong>, <strong>Delivery type</str
 <li>
 <p><strong>Duplicate entry. Combination of the fields variationId, marketId and accountId must be unique.</strong></p>
 <div class="paragraph">
-<p>This error is also indicated as “SKU 1234 not generated” in the log.</p>
+<p>This error is also indicated as “SKU 1234 not generated” or “0:sku” in the log.</p>
 </div>
 <div class="paragraph">
 <p>How SKUs should be generated is defined in the catalogue. There is a distinction between the <strong>Parent SKU</strong> and the <strong>Variation SKU</strong>. The source selected here should be a data record which exists only once. Hence, it is not possible to use the same SKU for different items. For example, you could use the <strong>Item ID</strong> and the <strong>Variation ID</strong>. Both IDs are generated when the item is created in plentymarkets and only exist once. However, it might happen that the item export is carried out with errors because of missing information in the catalogue. The SKU is created anyway and can now be found in the <strong>Availability</strong> tab of a variation. During the next export, your plentymarkets system will try again to create an SKU from the sources selected in the catalogue. However, as this SKU already exists, the error “Duplicate entry. Combination of the fields variationId, marketId and accountId must be unique." / “SKU 1234 not generated.” occurs.</p>
 </div>
 <div class="paragraph">
-<p>Therefore it is necessary to add a fallback solution in the catalogue. The solution looks like this:</p>
+<p>As such, you need to add a fallback data field to the catalogue. The solution looks like this:</p>
 </div>
 <div id="add-source" class="imageblock">
 <div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/markets/otto/assets/otto-market_add_source.png" alt="Add source">
+<img src="{{plugin_path('PlentyManual')}}/images/markets/otto/assets/otto-market-add-source.png" alt="Add source">
 </div>
 <div class="title">Figure 6. Add source</div>
 </div>
@@ -1596,14 +1596,14 @@ Link at least the data fields <strong>Brand</strong>, <strong>Delivery type</str
 <td class="content">
 <div class="title">Add source</div>
 <div class="paragraph">
-<p>When adding another source, it is mandatory to use the <strong>Add source</strong> button (<span class="icon yellow"><i class="fa fa-link  "></i></span>) on the right-hand side of the catalogue. Do <em>not</em> use the <strong>+ Additional source</strong> button (<span class="icon green"><i class="fa fa-plus-square  "></i></span>) because in this case, your SKUs would be created twice and the error could not be solved.</p>
+<p>When adding another source, it is mandatory to use the  <strong>+ Add fallback data field</strong> button (<span class="icon yellow"><i class="fa fa-link  "></i></span>) on the right-hand side of the catalogue. Do <em>not</em> use the option <strong>Add data field</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>) because in this case, your SKUs would be created twice and the error cannot be resolved.</p>
 </div>
 </td>
 </tr>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>A second source is added. During the next export, the first source will be retrieved first. As the SKU is already included in this source, the second source will be ignored. If the first source does not contain an SKU, then a new SKU will be generated using the second source.</p>
+<p>This adds a <strong><em>second source</em></strong>. During the next export, the first source will be retrieved first. As the SKU is already included in this source, the second source will be ignored. If the first source does not contain an SKU, then a new SKU will be generated using the second source.</p>
 </div>
 </li>
 <li>
