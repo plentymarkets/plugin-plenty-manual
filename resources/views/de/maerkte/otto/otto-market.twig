@@ -1579,17 +1579,17 @@ Verknüpfe mindestens die Datenfelder <strong>Marke</strong>, <strong>Versandart
 <li>
 <p><strong>Duplicate entry. Combination of the fields variationId, marketId and accountId must be unique.</strong></p>
 <div class="paragraph">
-<p>Dieser Fehler wird im Log z.B. auch unter “SKU 1234 nicht generiert” angezeigt.</p>
+<p>Dieser Fehler wird im Log z.B. auch unter "SKU 1234 nicht generiert" oder "0:sku" angezeigt.</p>
 </div>
 <div class="paragraph">
 <p>Im Katalog wird an erster Stelle definiert, aus welcher Quelle die SKU generiert werden soll. Wir unterscheiden dort zwischen einer <strong>Parent-SKU</strong> und einer <strong>Variation-SKU</strong>. Die dort gewählte Quelle sollte sich auf eine Datenzeile beziehen, welche einmalig existiert. Es ist also nicht möglich, für verschiedene Artikel dieselbe SKU nochmals zu vergeben. Als Beispiel könntest du also die <strong>Artikel-ID</strong> sowie die <strong>Variation-ID</strong> verwenden. Beide IDs werden vom plentymarkets System bei der Anlage des Artikels vergeben und existieren jeweils nur einmal. Nun könnte jedoch der Fall eintreten, dass der Artikelexport stattgefunden hat und der Export aufgrund einer fehlenden Information im Katalog in einen Fehler gelaufen ist. Die SKU wurde aber trotzdem geschrieben und ist nun in der Variante im Tab <strong>Verfügbarkeit</strong> sichtbar. Beim nächsten Export würde das plentymarkets System wieder versuchen, eine SKU aus den im Katalog gewählten Quellen zu erstellen. Da diese SKU jedoch bereits existiert, kommt es zum Fehler "Duplicate entry. Combination of the fields variationId, marketId and accountId must be unique." / "SKU 1234 nicht generiert.".</p>
 </div>
 <div class="paragraph">
-<p>Deshalb ist es notwendig, eine Fallback-Lösung (Absicherung) im Katalog hinzuzufügen. Die Lösung würde dann wie folgt aussehen:</p>
+<p>Deshalb ist es notwendig, im Katalog ein Ausweich-Datenfeld hinzuzufügen. Die Lösung würde dann wie folgt aussehen:</p>
 </div>
 <div id="weitere-quelle" class="imageblock">
 <div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/otto-market_weitere_quelle.png" alt="Quelle hinzufügen">
+<img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/otto-market-weitere-quelle.png" alt="Quelle hinzufügen">
 </div>
 <div class="title">Bild 7. Quelle hinzufügen</div>
 </div>
@@ -1602,14 +1602,14 @@ Verknüpfe mindestens die Datenfelder <strong>Marke</strong>, <strong>Versandart
 <td class="content">
 <div class="title">Quelle hinzufügen</div>
 <div class="paragraph">
-<p>Wenn du eine weitere Quelle hinzufügst, ist es zwingend notwendig, dafür die Schaltfläche <strong>Quelle hinzufügen</strong> (<span class="icon yellow"><i class="fa fa-link  "></i></span>) auf der rechten Seite des Katalogs zu verwenden. Benutze <em>nicht</em> die Schaltfläche <strong>+ zusätzliche Quelle</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>), da ansonsten deine SKUs doppelt erstellt werden und der Fehler auf diese Weise nicht behoben werden kann.</p>
+<p>Wenn du eine weitere Quelle hinzufügst, ist es zwingend notwendig, dafür die Schaltfläche <strong>+ Ausweich-Datenfeld hinzufügen</strong> (<span class="icon yellow"><i class="fa fa-link  "></i></span>) auf der rechten Seite des Katalogs zu verwenden. Benutze <em>nicht</em> die Option <strong>Datenfeld hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>), da ansonsten deine SKUs doppelt erstellt werden und der Fehler auf diese Weise nicht behoben werden kann.</p>
 </div>
 </td>
 </tr>
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>Es wird also eine zweite Quelle hinzugefügt. Beim nächsten Export wird zuerst auf die erste Quelle geschaut. Da in dieser Quelle bereits eine SKU existiert, wird die zweite Quelle ignoriert. Sollte in der ersten Quelle keine SKU existieren, dann wird mittels der zweiten Quelle eine neue SKU erstellt.</p>
+<p>Es wird hiermit also eine <strong><em>zweite Quelle</em></strong> hinzugefügt. Beim nächsten Export wird zuerst auf die erste Quelle geschaut. Da in dieser Quelle bereits eine SKU existiert, wird die zweite Quelle ignoriert. Sollte in der ersten Quelle keine SKU existieren, dann wird mittels der zweiten Quelle eine neue SKU erstellt.</p>
 </div>
 </li>
 <li>
