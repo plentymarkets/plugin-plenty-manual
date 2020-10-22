@@ -30,8 +30,9 @@
 <li><a href="#1200"><span>14.</span><span> Matching reasons for return</span></a></li>
 <li><a href="#1300"><span>15.</span><span> Synchronising tax categories</span></a></li>
 <li><a href="#1400"><span>16.</span><span> Synchronising brands</span></a></li>
-<li><a href="#1500"><span>17.</span><span> Automatically updating the order status for REWE</span></a></li>
-<li><a href="#1600"><span>18.</span><span> REWE delivery periods</span></a></li>
+<li><a href="#1700"><span>17.</span><span> Deactivating the creation of contacts (plugin version 1.24.0 and higher)</span></a></li>
+<li><a href="#1500"><span>18.</span><span> Automatically updating the order status for REWE</span></a></li>
+<li><a href="#1600"><span>19.</span><span> REWE delivery periods</span></a></li>
 </ul>
 </div>
         </div>
@@ -748,7 +749,7 @@ If no commission is set, prices will also be displayed without commission on the
 <li>
 <p>In the <strong>Active/Inactive</strong> column, move the toggle button to the right (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>).<br>
 → The catalogue is active.<br>
-→ The catalogue data is exported to REWE once a day if the option <strong>Item export</strong> is activated in the <strong>Setup » Markets » REWE » Basic settings</strong> menu.</p>
+→ The catalogue data is exported to REWE once a day, if the option <strong>Item export</strong> is activated in the <strong>Setup » Markets » REWE » Basic settings</strong> menu.</p>
 </li>
 </ol>
 </div>
@@ -890,7 +891,159 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1500">17. Automatically updating the order status for REWE</h2>
+<h2 id="1700">17. Deactivating the creation of contacts (plugin version 1.24.0 and higher)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default, REWE orders are always assigned to the contact and the invoice address of REWE. Activate the option <strong>Deactivate contact creation</strong> if you do not want to create a contact. Instead, only addresses are saved. <a href="#rewe-deactivate-contact-creation">Table 2</a> describes the differences between the two options.</p>
+</div>
+<table id="rewe-deactivate-contact-creation" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Deactivating the creation of a contact</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deactivating the creation of a contact</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Deactivated</em> (<span class="icon darkGrey"><i class="fa fa-toggle-off  "></i></span>) (default setting) = When the first REWE order is imported, a contact is created for REWE. All other REWE orders are linked to this contact during the import. All invoice addresses are assigned to this contact.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In the order, the tab <strong>Contact</strong> is available.</p>
+</li>
+<li>
+<p>The customer record can be retrieved via the search function of the <strong>CRM » Contacts</strong> menu.</p>
+</li>
+<li>
+<p>The address records and the associated orders can be retrieved via the search function of the <strong>CRM » Quick search</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">The order import in detail</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check if an account already exists for REWE.</p>
+</li>
+<li>
+<p>If no account exists in the system, the account is created.</p>
+</li>
+<li>
+<p>Check if a contact already exists for REWE.</p>
+</li>
+<li>
+<p>If no contact exists in the system, the contact is created.</p>
+</li>
+<li>
+<p>If a new contact is created, the contact is linked to the account.</p>
+</li>
+<li>
+<p>Check if the invoice address already exists in the system.</p>
+</li>
+<li>
+<p>If the invoice address does not exist in the system, the invoice address is created.</p>
+</li>
+<li>
+<p>The invoice address is linked to the contact.</p>
+</li>
+<li>
+<p>The invoice address is linked to the order.</p>
+</li>
+<li>
+<p>A delivery address is created. There is no check if the delivery address already exists in the system. Also, the delivery address is not linked to the contact.</p>
+</li>
+<li>
+<p>The delivery address is linked to the order.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Activated</em> (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>) = No contact is created when REWE orders are imported. Invoice address and delivery address are created and linked to the order.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The tab <strong>Contact</strong> is not available in the order.</p>
+</li>
+<li>
+<p>The customer record cannot be retrieved via the search function of the <strong>CRM » Contacts</strong> menu.</p>
+</li>
+<li>
+<p>The address records and the associated orders can be retrieved via the search function of the <strong>CRM » Quick search</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">The order import in detail</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check if the invoice address already exists in the system.</p>
+</li>
+<li>
+<p>If the invoice address does not exist in the system, the invoice address is created.</p>
+</li>
+<li>
+<p>The invoice address is linked to the order.</p>
+</li>
+<li>
+<p>A delivery address is created. There is no check if the delivery address already exists in the system. Also, the delivery address is not linked to the contact.</p>
+</li>
+<li>
+<p>The delivery address is linked to the order.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph instruction">
+<p>Deactivating the creation of a contact:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Markets » REWE » Basic settings</strong>.</p>
+</li>
+<li>
+<p>Navigate to the <strong>Order import</strong> area.</p>
+</li>
+<li>
+<p>Activate the option <strong>Deactivate contact creation</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the setting.<br>
+→ Only the invoice address and delivery address are created and linked to the order.<br>
+→ No contact is created.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1500">18. Automatically updating the order status for REWE</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically update the order status on REWE whenever specific events occur. You can set up the following event procedures:</p>
@@ -942,13 +1095,13 @@ If no commission is set, prices will also be displayed without commission on the
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#rewe-procedure">Table 2</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#rewe-procedure">Table 3</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#rewe-procedure">Table 2</a> vor.</p>
+<p>Carry out the settings according to <a href="#rewe-procedure">Table 3</a> vor.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -961,7 +1114,7 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 <table id="rewe-procedure" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Event procedure for reporting order status to REWE</caption>
+<caption class="title">Table 3. Event procedure for reporting order status to REWE</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -1012,13 +1165,13 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1600">18. REWE delivery periods</h2>
+<h2 id="1600">19. REWE delivery periods</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The variation availability in plentymarkets is assigned to delivery periods at REWE. An overview of the delivery periods at REWE and the corresponding plentymarkets availabilities can be found in <a href="#rewe-availability">Table 3</a>.</p>
+<p>The variation availability in plentymarkets is assigned to delivery periods at REWE. An overview of the delivery periods at REWE and the corresponding plentymarkets availabilities can be found in <a href="#rewe-availability">Table 4</a>.</p>
 </div>
 <table id="rewe-availability" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. REWE delivery periods</caption>
+<caption class="title">Table 4. REWE delivery periods</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
