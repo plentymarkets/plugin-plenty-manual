@@ -30,8 +30,9 @@
 <li><a href="#1200"><span>14.</span><span> Retourengründe verknüpfen</span></a></li>
 <li><a href="#1300"><span>15.</span><span> Steuerklassen synchronisieren</span></a></li>
 <li><a href="#1400"><span>16.</span><span> Marken synchronisieren</span></a></li>
-<li><a href="#1500"><span>17.</span><span> Auftragsstatus bei REWE automatisch aktualisieren</span></a></li>
-<li><a href="#1600"><span>18.</span><span> REWE-Lieferzeiten</span></a></li>
+<li><a href="#1700"><span>17.</span><span> Kontakterstellung deaktivieren (ab Plugin-Version 1.24.0)</span></a></li>
+<li><a href="#1500"><span>18.</span><span> Auftragsstatus bei REWE automatisch aktualisieren</span></a></li>
+<li><a href="#1600"><span>19.</span><span> REWE-Lieferzeiten</span></a></li>
 </ul>
 </div>
         </div>
@@ -890,7 +891,159 @@ Wenn keine Provision eingestellt wird, werden die Preise auch auf dem Liefersche
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1500">17. Auftragsstatus bei REWE automatisch aktualisieren</h2>
+<h2 id="1700">17. Kontakterstellung deaktivieren (ab Plugin-Version 1.24.0)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Standardmäßig werden REWE-Aufträge immer dem Kontakt und der Rechnungsadresse von REWE zugeordnet. Optional kannst du die Option <strong>Kontakterstellung deaktivieren</strong> aktivieren, um keinen Kontakt zu pflegen und stattdessen nur die Adressen zu speichern. <a href="#rewe-kontakterstellung-deaktiveren">Tabelle 2</a> beschreibt die Unterschiede zwischen den beiden Einstellungsmöglichkeiten.</p>
+</div>
+<table id="rewe-kontakterstellung-deaktiveren" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Kontakterstellung deaktivieren</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kontakterstellung deaktivieren</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><em>Deaktiviert</em> (<span class="icon darkGrey"><i class="fa fa-toggle-off  "></i></span>) (Standardeinstellung) = Beim Import des ersten REWE-Auftrags wird für REWE ein Kontakt erstellt. Alle weiteren REWE-Aufträge werden mit diesem Kontakt verknüpft. Alle Rechnungsadressen werden diesem Kontakt zugeordnet.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Im Auftrag ist das Tab <strong>Kontakt</strong> verfügbar.</p>
+</li>
+<li>
+<p>Über das Menü <strong>CRM » Kontakte</strong> ist der Kund:innendatensatz auffindbar.</p>
+</li>
+<li>
+<p>Über das Menü <strong>CRM » Schnellsuche</strong> können die Adresseinträge und der zugehörige Auftrag gefunden werden.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ablauf des Auftragsimports im Detail</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Es wird geprüft, ob REWE bereits als Firma im System gespeichert ist.</p>
+</li>
+<li>
+<p>Wenn die Firma noch nicht im System gespeichert ist, wird die Firma erstellt.</p>
+</li>
+<li>
+<p>Es wird geprüft, ob REWE bereits als Kontakt im System gespeichert ist.</p>
+</li>
+<li>
+<p>Wenn der Kontakt noch nicht im System gespeichert ist, wird der Kontakt erstellt.</p>
+</li>
+<li>
+<p>Wenn ein neuer Kontakt erstellt wird, wird der Kontakt mit der Firma verknüpft.</p>
+</li>
+<li>
+<p>Es wird geprüft, ob die Rechnungsadresse bereits im System gespeichert ist.</p>
+</li>
+<li>
+<p>Wenn die Rechnungsadresse noch nicht im System gespeichert ist, wird die Rechnungsadresse erstellt.</p>
+</li>
+<li>
+<p>Die Rechnungsadresse wird mit dem Kontakt verknüpft.</p>
+</li>
+<li>
+<p>Die Rechnungsadresse wird mit dem Auftrag verknüpft.</p>
+</li>
+<li>
+<p>Eine Lieferadresse wird erstellt. Dabei wird nicht geprüft, ob die Lieferadresse bereits im System gespeichert ist. Die Lieferadresse wird außerdem nicht mit einem Kontakt verknüpft.</p>
+</li>
+<li>
+<p>Die Lieferadresse wird mit dem Auftrag verknüpft.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Aktiviert</em> (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>) = Beim Import von REWE-Aufträgen wird kein Kontakt erstellt. Rechnungsadresse und Lieferadresse werden erstellt und dem Auftrag zugeordnet.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Im Auftrag entfällt das Tab <strong>Kontakt</strong>.</p>
+</li>
+<li>
+<p>Über das Menü <strong>CRM » Kontakte</strong> ist der Kund:innendatensatz nicht mehr auffindbar.</p>
+</li>
+<li>
+<p>Über das Menü <strong>CRM » Schnellsuche</strong> können die Adresseinträge und der zugehörige Auftrag gefunden werden.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ablauf des Auftragsimports im Detail</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Es wird geprüft, ob die Rechnungsadresse bereits im System gespeichert ist.</p>
+</li>
+<li>
+<p>Wenn die Rechnungsadresse noch nicht im System gespeichert ist, wird die Rechnungsadresse erstellt.</p>
+</li>
+<li>
+<p>Die Rechnungsadresse wird mit dem Auftrag verknüpft.</p>
+</li>
+<li>
+<p>Eine Lieferadresse wird erstellt. Dabei wird nicht geprüft, ob die Lieferadresse bereits im System gespeichert ist. Die Lieferadresse wird außerdem nicht mit einem Kontakt verknüpft.</p>
+</li>
+<li>
+<p>Die Lieferadresse wird mit dem Auftrag verknüpft.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph instruction">
+<p>Kontakterstellung deaktivieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Märkte »&nbsp;REWE » Grundeinstellungen</strong>.</p>
+</li>
+<li>
+<p>Navigiere zum Bereich <strong>Auftragsimport</strong>.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Kontakterstellung deaktivieren</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellung.<br>
+→ Pro Auftrag werden nur Rechnungsadresse und Lieferadresse erstellt und dem Auftrag zugeordnet.<br>
+→ Ein Kontakt wird nicht erstellt.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1500">18. Auftragsstatus bei REWE automatisch aktualisieren</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um den Auftragsstatus bei REWE automatisch zu aktualisieren, wenn bestimmte Ereignisse eintreten. Folgende Ereignisaktionen können eingerichtet werden:</p>
@@ -942,13 +1095,13 @@ Wenn keine Provision eingestellt wird, werden die Preise auch auf dem Liefersche
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#rewe-ereignisaktion">Tabelle 2</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#rewe-ereignisaktion">Tabelle 3</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#rewe-ereignisaktion">Tabelle 2</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#rewe-ereignisaktion">Tabelle 3</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -961,7 +1114,7 @@ Wenn keine Provision eingestellt wird, werden die Preise auch auf dem Liefersche
 </div>
 </div>
 <table id="rewe-ereignisaktion" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 2. Ereignisaktion, um Auftragsstatus an REWE zu melden</caption>
+<caption class="title">Tabelle 3. Ereignisaktion, um Auftragsstatus an REWE zu melden</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -1012,13 +1165,13 @@ Wenn keine Provision eingestellt wird, werden die Preise auch auf dem Liefersche
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1600">18. REWE-Lieferzeiten</h2>
+<h2 id="1600">19. REWE-Lieferzeiten</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die Variantenverfügbarkeiten in plentymarkets werden bei REWE Lieferzeiten zugeordnet. Eine Übersicht zu den Lieferzeiten bei REWE und den entsprechenden Verfügbarkeiten in plentymarkets erhältst du in <a href="#rewe-verfügbarkeit">Tabelle 3</a>.</p>
+<p>Die Variantenverfügbarkeiten in plentymarkets werden bei REWE Lieferzeiten zugeordnet. Eine Übersicht zu den Lieferzeiten bei REWE und den entsprechenden Verfügbarkeiten in plentymarkets erhältst du in <a href="#rewe-verfügbarkeit">Tabelle 4</a>.</p>
 </div>
 <table id="rewe-verfügbarkeit" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 3. REWE-Lieferzeiten</caption>
+<caption class="title">Tabelle 4. REWE-Lieferzeiten</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
