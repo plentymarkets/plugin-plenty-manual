@@ -4,8 +4,40 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#2490"><span>1.</span><span> Fields for matching attributes</span></a></li>
-<li><a href="#2500"><span>2.</span><span> Fields for mapping attributes</span></a></li>
+<li><a href="#10"><span>1.</span><span> Matching fields</span></a></li>
+<li><a href="#20"><span>2.</span><span> Mapping fields</span></a>
+<ul class="sectlevel2">
+<li><a href="#30"><span>2.1.</span><span> Attribute</span></a>
+<ul class="sectlevel3">
+<li><a href="#40"><span>2.1.1.</span><span> Name (internal)</span></a></li>
+<li><a href="#50"><span>2.1.2.</span><span> Position</span></a></li>
+<li><a href="#60"><span>2.1.3.</span><span> Image link possible</span></a></li>
+<li><a href="#70"><span>2.1.4.</span><span> Attribute selection in store</span></a></li>
+<li><a href="#80"><span>2.1.5.</span><span> Groupable in item lists</span></a></li>
+<li><a href="#90"><span>2.1.6.</span><span> Delete attribute</span></a></li>
+</ul>
+</li>
+<li><a href="#100"><span>2.2.</span><span> Value</span></a>
+<ul class="sectlevel3">
+<li><a href="#110"><span>2.2.1.</span><span> Name (internal)</span></a></li>
+<li><a href="#120"><span>2.2.2.</span><span> Position</span></a></li>
+<li><a href="#130"><span>2.2.3.</span><span> Note</span></a></li>
+<li><a href="#140"><span>2.2.4.</span><span> Percentage</span></a></li>
+<li><a href="#150"><span>2.2.5.</span><span> Delete attribute value</span></a></li>
+</ul>
+</li>
+<li><a href="#160"><span>2.3.</span><span> Attribute name</span></a>
+<ul class="sectlevel3">
+<li><a href="#170"><span>2.3.1.</span><span> Name</span></a></li>
+</ul>
+</li>
+<li><a href="#180"><span>2.4.</span><span> Attribute value name</span></a>
+<ul class="sectlevel3">
+<li><a href="#190"><span>2.4.1.</span><span> Name</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -13,20 +45,23 @@
 </aside>
 
 <main id="main">
-    <h1>Attributes</h1><div id="preamble">
+    <h1>Attribute</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A sync of the type <strong>Attributes</strong> allows you to import attribute and attribute data. Imported data is saved in the <strong>Settings » Item » Attributes</strong> menu.</p>
+<p>This page explains the matching and mapping fields that you can use while importing attributes and attribute values.
+
+This page serves purely as a reference and it assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">import tool</a>.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="2490">1. Fields for matching attributes</h2>
+<h2 id="10">1. Matching fields</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-matching-fields-attributes">Table 1</a> explains the fields that are available for matching attribute data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-matching-fields-attributes">Table 1</a> explains the fields that are available for matching attribute data.
+During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-matching-fields-attributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Matching fields attribute import</caption>
+<caption class="title">Table 1. Matching fields for importing attributes</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -39,178 +74,438 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute ID</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the attribute IDs? Choose this column here.
+This option is useful if you want to <em>update existing attributes</em>.</p>
+<p class="tableblock"><strong><em>Background info</em></strong>: Every new attribute automatically receives an ID, which can not be changed.
+The ID is used to uniquely identify the attribute.
+Because the ID is unique, it’s a good way to check whether the imported data record already exists in plentymarkets.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the attribute value</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute value ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the attribute value IDs? Choose this column here.
+This option is useful if you want to <em>update existing attribute values</em>.</p>
+<p class="tableblock"><strong><em>Background info</em></strong>: Every new attribute value automatically receives an ID, which can not be changed.
+The ID is used to uniquely identify the attribute value.
+Because the ID is unique, it’s a good way to check whether the imported data record already exists in plentymarkets.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute name</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the internal attribute name? Choose this column here.
+This option is useful if you want to <em>create new attributes</em>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute value name</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute value name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the internal attribute value name? Choose this column here.
+This option is useful if you want to <em>create new attribute values</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>External attribute name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the external attribute name? Choose this column from the first drop-down list and choose the language from the second drop-down list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>External attribute value name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the external attribute value name? Choose this column from the first drop-down list and choose the language from the second drop-down list.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="2500">2. Fields for mapping attributes</h2>
+<h2 id="20">2. Mapping fields</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-mapping-fields-attributes">Table 2</a> explains the fields that are available for mapping attribute data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p>This chapter explains the fields that are available for mapping attribute data.
+Use these fields to specify which <em>column of your file</em> corresponds to which <em>data field in your system</em>.</p>
 </div>
-<table id="table-mapping-fields-attributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Mapping fields for importing attributes</caption>
+<div class="paragraph instruction">
+<p>Basic procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>In your CSV file</em></strong>: Enter a valid import value into a column.</p>
+</li>
+<li>
+<p><strong><em>In plentymarkets</em></strong>: Assign this column to the appropriate mapping field.</p>
+</li>
+<li>
+<p><strong><em>After the import</em></strong>: Check the result in the back end.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">No mapping field? Default value applies!</div>
+<div class="paragraph">
+<p>If you don’t include a certain piece of information in your CSV file, i.e. if you <em>don’t use</em> a certain mapping field, then your attribute will be given the default value.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="30">2.1. Attribute</h3>
+<div class="sect3">
+<h4 id="40">2.1.1. Name (internal)</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Required field</span> for creating new attributes</p>
+</div>
+<div class="paragraph">
+<p>Enter the attribute’s internal name into the CSV file.
+The internal name is used in the plentymarkets back end only and is not visible for the customers.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/attributes#100">Setup » Item » Attributes » Tab: Basic settings » Entry field: Name (internal)</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="50">2.1.2. Position</h4>
+<div class="paragraph">
+<p>Enter a position number in the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/attributes#100">Setup » Item » Attributes » Tab: Basic settings » Entry field: Position</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="60">2.1.3. Image link possible</h4>
+<div class="paragraph">
+<p>Should the item image change, e.g. on eBay, depending on which size or colour a customer chooses? In other words, should the appropriate images automatically be displayed on eBay?</p>
+</div>
+<div class="paragraph">
+<p>Enter your choice into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<table id="table-mapping-attributes-link-image" class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Mapping field</th>
-<th class="tableblock halign-left valign-top">Permitted import values</th>
-<th class="tableblock halign-left valign-top">Explanation</th>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Result in the back end</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Attribute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No. Check mark is not placed.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Internal name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Image link possible</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
-1</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>0 = No<br></p>
-</li>
-<li>
-<p>1 = Yes</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute selection in the online store</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dropdown<br>
-image<br>
-box</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>dropdown = Attributes are displayed as a drop-down list in the online store.<br></p>
-</li>
-<li>
-<p>image = Attributes are displayed as image tiles in the online store.<br></p>
-</li>
-<li>
-<p>box = Attributes are displayed as boxes with attribute values in the online store.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Groupable in item lists</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
-1</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>0 = No<br></p>
-</li>
-<li>
-<p>1 = Yes</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delete attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
-1</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>0 = No<br></p>
-</li>
-<li>
-<p>1 = Yes</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Value</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Internal name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Note</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Percentage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Percentages for automatic distribution of attribute values</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delete attribute value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
-1</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>0 = No<br></p>
-</li>
-<li>
-<p>1 = Yes</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Attribute name</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create one mapping per language.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Attribute value name</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create one mapping per language.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes. Check mark is placed.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/attributes#100">Setup » Item » Attributes » Tab: Basic settings » Check box: Image link possible</a></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Additional settings</em></strong>: Link your variations to the appropriate images. Make sure that you’ve made these images available for the marketplace. Then link the variation images to the market attributes. These steps are described in further detail <a href="/en/item/settings/attributes#900">in another chapter</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="70">2.1.4. Attribute selection in store</h4>
+<div class="paragraph">
+<p>How do you want customers to choose sizes or colours in your store? Should they choose the name from a drop-down list or click on an image?</p>
+</div>
+<div class="paragraph">
+<p>Enter your preferred method of selection into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>dropdown</code></p>
+</div>
+<table id="table-mapping-attribute-selection" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Options in the drop-down list in the back end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dropdown</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">With drop-down menu</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>image</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">With image</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>box</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">With box</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/attributes#100">Setup » Item » Attributes » Tab: Basic settings » Drop-down list: Attribute selection in store</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="80">2.1.5. Groupable in item lists</h4>
+<div class="paragraph">
+<p>Should variations that have this attribute be displayed individually or cumulatively in the online store?</p>
+</div>
+<div class="paragraph">
+<p>Enter your choice into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<table id="table-mapping-attributes-groupable" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Result in the back end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No. Check mark is not placed. The variations will be displayed cumulatively in the online store.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes. Check mark is placed. Each variation will be displayed as an individual product in the online store.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/attributes#100">Setup » Item » Attributes » Tab: Basic settings » Check box: Groupable in item lists</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="90">2.1.6. Delete attribute</h4>
+<div class="paragraph">
+<p>Do you want to delete the attribute?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<table id="table-mapping-attributes-delete-attribute" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Result in the back end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute will <em>not</em> be deleted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute will be deleted</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="100">2.2. Value</h3>
+<div class="sect3">
+<h4 id="110">2.2.1. Name (internal)</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Required field</span> for creating new attribute values</p>
+</div>
+<div class="paragraph">
+<p>Enter the attribute value’s internal name into the CSV file.
+The internal name is used in the plentymarkets back end only and is not visible for the customers.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/attributes#200">Setup » Item » Attributes » Tab: Values » Entry field: Name (internal)</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="120">2.2.2. Position</h4>
+<div class="paragraph">
+<p>Enter a position number in the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/attributes#200">Setup » Item » Attributes » Tab: Values » Entry field: Position</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="130">2.2.3. Note</h4>
+<div class="paragraph">
+<p>Enter an optional note about the attribute value into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/attributes#200">Setup » Item » Attributes » Tab: Values » Entry field: Note</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="140">2.2.4. Percentage</h4>
+<div class="paragraph">
+<p>Enter a percentage for the automatic distribution of attribute values.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/attributes#200">Setup » Item » Attributes » Tab: Values » Entry field: Percentage</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="150">2.2.5. Delete attribute value</h4>
+<div class="paragraph">
+<p>Do you want to delete the attribute value?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<table id="table-mapping-attributevalue-delete-value" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Result in the back end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute value will <em>not</em> be deleted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Attribute value will be deleted</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="160">2.3. Attribute name</h3>
+<div class="sect3">
+<h4 id="170">2.3.1. Name</h4>
+<div class="paragraph">
+<p>Enter the attribute’s external name into the CSV file.
+This is the name that’s displayed in the online store.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: If you don’t enter an external name, then the internal name will be used instead.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Also use the drop-down list to select the language.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/attributes#1000">Setup » Item » Attributes » Tab: Name</a></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="180">2.4. Attribute value name</h3>
+<div class="sect3">
+<h4 id="190">2.4.1. Name</h4>
+<div class="paragraph">
+<p>Enter the attribute value’s external name into the CSV file.
+This is the name that’s displayed in the online store.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: If you don’t enter an external name, then the internal name will be used instead.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Also use the drop-down list to select the language.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/attributes#200">Setup » Item » Attributes » Tab: Values » Entry field: Name</a></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </main>
