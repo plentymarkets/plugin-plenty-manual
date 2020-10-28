@@ -4628,22 +4628,6 @@ class Metadata {
 		"languageID" => "MRYCME4",
 		"children" => 		[
 			[
-				"id" => "19c42a3cacd3f873b67148b536ed0ba2",
-				"path" => "webshop/plentyshop-vorschau",
-				"position" => 0,
-				"urlName" => "plentyshop-vorschau",
-				"url" => "/webshop/plentyshop-vorschau",
-				"level" => 2,
-				"title" => "plentyShop-Vorschau",
-				"keywords" => "Ceres, plentyShop, Vorschau, Plugin-Set-Vorschau, Artikel-Vorschau, ShopBuilder-Vorschau",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich plentyShop-Vorschau. Hier findest du folgende Informationen:",
-				"languageID" => "BKON8DD",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "6451239269053e0c7726bdcb97fb373e",
 				"path" => "webshop/ceres-einrichten",
 				"position" => 10,
@@ -4688,6 +4672,22 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich ShopBuilder einrichten. Hier findest du folgende Informationen:",
 				"languageID" => "UC8C8W9",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "19c42a3cacd3f873b67148b536ed0ba2",
+				"path" => "webshop/plentyshop-vorschau",
+				"position" => 35,
+				"urlName" => "plentyshop-vorschau",
+				"url" => "/webshop/plentyshop-vorschau",
+				"level" => 2,
+				"title" => "plentyShop-Vorschau",
+				"keywords" => "Ceres, plentyShop, Vorschau, Plugin-Set-Vorschau, Artikel-Vorschau, ShopBuilder-Vorschau",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich plentyShop-Vorschau. Hier findest du folgende Informationen:",
+				"languageID" => "BKON8DD",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -14659,6 +14659,22 @@ class Metadata {
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
+			[
+				"id" => "585c9471a4d29cf38edcc45bc08d7af6",
+				"path" => "changelog/2020-10-21",
+				"position" => 800,
+				"urlName" => "2020-10-21",
+				"url" => "/changelog/2020-10-21",
+				"level" => 2,
+				"title" => "Changelog 14. Oktober 2020",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 14. Oktober 2020. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
 			[
 				"id" => "2804e2daa464aabc1e6e21eb2bbc23ac",
 				"path" => "changelog/2020-10-14",
