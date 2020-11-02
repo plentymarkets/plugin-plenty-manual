@@ -4,8 +4,20 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#100"><span>1.</span><span> Fields for matching coupon code data</span></a></li>
-<li><a href="#200"><span>2.</span><span> Fields for mapping coupon code data</span></a></li>
+<li><a href="#matching-fields"><span>1.</span><span> Matching fields</span></a></li>
+<li><a href="#mapping-fields"><span>2.</span><span> Mapping fields</span></a>
+<ul class="sectlevel2">
+<li><a href="#campaign-code"><span>2.1.</span><span> Campaign code</span></a>
+<ul class="sectlevel3">
+<li><a href="#code"><span>2.1.1.</span><span> Code</span></a></li>
+<li><a href="#campaign-id"><span>2.1.2.</span><span> Campaign ID</span></a></li>
+<li><a href="#number-redemptions"><span>2.1.3.</span><span> Number of redemptions</span></a></li>
+<li><a href="#redeemed-amount"><span>2.1.4.</span><span> Redeemed amount</span></a></li>
+<li><a href="#discount-value"><span>2.1.5.</span><span> Discount value</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -16,73 +28,172 @@
     <h1>Coupon codes</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>With a sync of the type <strong>Coupon code</strong>, you import coupon codes.</p>
+<p>This page explains the matching and mapping fields that you can use while importing coupon codes and campaign data. This page serves purely as a reference and it assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">import tool</a>.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="100">1. Fields for matching coupon code data</h2>
+<h2 id="matching-fields">1. Matching fields</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following fields are available for matching coupon code data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p>The following field is available for matching coupon codes and campaign data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Campaign ID</p>
-</li>
-</ul>
-</div>
-</div>
-</div><div class="sect1">
-<h2 id="200">2. Fields for mapping coupon code data</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="#table-mapping-fields-coupon-codes">Table 1</a> explains the fields that are available for matching coupon code data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
-</div>
-<table id="table-mapping-fields-coupon-codes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Mapping fields for importing coupon code data</caption>
+<table id="table-matching-field-coupon-codes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Matching field for importing coupon codes and campaign data</caption>
 <colgroup>
 <col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 50%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Mapping field</th>
-<th class="tableblock halign-left valign-top">Permitted import value</th>
+<th class="tableblock halign-left valign-top">Setting</th>
 <th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Campaign ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric (internal ID)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the campaign</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Coupon code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Coupon code</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Discount value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Discount value of the coupon</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of redemptions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number how often the coupon has already been redeemed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Amount redeemed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Amount of the coupon that has already been redeemed.<br>
-<strong><em>Important:</em></strong> During import, not the residual balance of the coupon is imported, but the amount already redeemed.<br>
-<strong><em>Example:</em></strong> The coupon has a value of EUR 100.00. The customer redeems EUR 80.00 of it. Thus, the residual balance is EUR 20.00. The value that is imported with this mapping field, is EUR 80.00.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the campaign IDs? Choose this column here. This option is useful if you want to <em>update existing coupon codes and campaign data</em>.<br>
+If you want to import new coupon codes, leave this field empty. The IDs for the campaigns are automatically assigned when carrying out the import.</p>
+<p class="tableblock"><strong><em>Background info:</em></strong> Every new campaign automatically receives an ID, which cannot be changed. The ID is used to uniquely identify the campaign. Because the ID is unique, it’s a good way to check whether the imported data record already exists in plentymarkets.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div><div class="sect1">
+<h2 id="mapping-fields">2. Mapping fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter explains the fields that are available for mapping coupon codes and campaign data. Use these fields to specify which <em>column of your file</em> corresponds to which <em>data field in your system</em>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Basic procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>In your CSV file</em></strong>: Enter a valid import value into a column.</p>
+</li>
+<li>
+<p><strong><em>In plentymarkets</em></strong>: Assign this column to the appropriate mapping field.</p>
+</li>
+<li>
+<p><strong><em>After the import</em></strong>: Check the result in the back end.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">No mapping field? Default value applies!</div>
+<div class="paragraph">
+<p>If you don’t include a certain piece of information in your CSV file, i.e. if you <em>don’t use</em> a certain mapping field, then your coupon will be given the default value.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="campaign-code">2.1. Campaign code</h3>
+<div class="sect3">
+<h4 id="code">2.1.1. Code</h4>
+<div class="paragraph">
+<p>Enter the coupon code into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value:</em></strong> No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values:</em></strong> Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu <a href="/en/orders/coupons"><strong>Orders » Coupons</strong> » <em>Open campaign</em> in the <strong>Codes</strong> tab</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="campaign-id">2.1.2. Campaign ID</h4>
+<div class="paragraph">
+<p>What’s the ID of the campaign that should be assigned to the coupon code? Enter the campaign ID in your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value:</em></strong> No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values:</em></strong> Numeric (internal ID)</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu <a href="/en/orders/coupons"><strong>Orders » Coupons</strong> » in the campaign overview</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="number-redemptions">2.1.3. Number of redemptions</h4>
+<div class="paragraph">
+<p>Enter the number of redemptions into your CSV file. The number refers to how often the coupon has already been redeemed.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value:</em></strong> No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values:</em></strong> Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu <a href="/en/orders/coupons"><strong>Orders » Coupons</strong> » in the campaign overview</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="redeemed-amount">2.1.4. Redeemed amount</h4>
+<div class="paragraph">
+<p>Enter the redeemed amount of the coupon into your CSV file. The redeemed amount can only be used for coupons of the type <strong>Multipurpose coupon</strong>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+During import, <em>not</em> the residual balance of the coupon is imported, but the amount already redeemed (see example below).
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value:</em></strong> No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values:</em></strong> Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu <a href="/en/orders/coupons"><strong>Orders » Coupons</strong> » <em>Open campaign</em> in the <strong>Codes</strong> tab</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Example:</em></strong> The coupon has a value of EUR 100.00. The customer redeems EUR 80.00 of it. Thus, the residual balance is EUR 20.00. The value that is imported with this mapping field, is EUR 80.00.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="discount-value">2.1.5. Discount value</h4>
+<div class="paragraph">
+<p>Enter the discount value of the coupon into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value:</em></strong> No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values:</em></strong> Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu <a href="/en/orders/coupons"><strong>Orders » Coupons</strong> » in the campaign overview and in the campaign in the <strong>Coupon</strong> area</a>.</p>
+</div>
+<hr>
+</div>
+</div>
 </div>
 </div>
 </main>
