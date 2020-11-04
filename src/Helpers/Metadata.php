@@ -5641,6 +5641,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "bb2156ac3eb6f988042d427726bbae48",
+				"path" => "maerkte/mirakl-conrad",
+				"position" => 0,
+				"urlName" => "mirakl-conrad",
+				"url" => "/maerkte/conrad",
+				"level" => 2,
+				"title" => "Conrad",
+				"keywords" => "Conrad, Marktplatz, Conrad.de, Conrad einrichten, Conrad Marktplatz, Multi-Channel, Multichannel, Multi-Channel Conrad, Multichannel Conrad, Multi Channel Conrad",
+				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Conrad in deinem plentymarkets System ein.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Conrad. Hier findest du folgende Informationen:",
+				"languageID" => "I96IKG1",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "8032e61417c1817283a392923afbfe16",
 				"path" => "maerkte/preisportale",
 				"position" => 5,
@@ -6526,22 +6542,6 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Check24. Hier findest du folgende Informationen:",
 				"languageID" => "BZ3ZIMQ",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "bb2156ac3eb6f988042d427726bbae48",
-				"path" => "maerkte/mirakl-conrad",
-				"position" => 55,
-				"urlName" => "mirakl-conrad",
-				"url" => "/maerkte/conrad",
-				"level" => 2,
-				"title" => "Conrad",
-				"keywords" => "Conrad, Marktplatz, Conrad.de, Conrad einrichten, Conrad Marktplatz, Multi-Channel, Multichannel, Multi-Channel Conrad, Multichannel Conrad, Multi Channel Conrad",
-				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Conrad in deinem plentymarkets System ein.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Conrad. Hier findest du folgende Informationen:",
-				"languageID" => "I96IKG1",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -14703,10 +14703,26 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 28. Oktober 2020",
+		"navAlias" => "Changelog 04. November 2020",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
+			[
+				"id" => "af729bbe214c9cfd0b5c3563f2cb7cc9",
+				"path" => "changelog/2020-10-28",
+				"position" => 790,
+				"urlName" => "2020-10-28",
+				"url" => "/changelog/2020-10-28",
+				"level" => 2,
+				"title" => "Changelog 28. Oktober 2020",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 28. Oktober 2020. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
 			[
 				"id" => "585c9471a4d29cf38edcc45bc08d7af6",
 				"path" => "changelog/2020-10-21",
