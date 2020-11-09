@@ -4,8 +4,38 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#3100"><span>1.</span><span> Fields for matching manufacturers</span></a></li>
-<li><a href="#3200"><span>2.</span><span> Fields for mapping manufacturers</span></a></li>
+<li><a href="#10"><span>1.</span><span> Matching fields</span></a></li>
+<li><a href="#20"><span>2.</span><span> Mapping fields</span></a>
+<ul class="sectlevel2">
+<li><a href="#30"><span>2.1.</span><span> Manufacturer</span></a>
+<ul class="sectlevel3">
+<li><a href="#40"><span>2.1.1.</span><span> Name</span></a></li>
+<li><a href="#50"><span>2.1.2.</span><span> External name</span></a></li>
+<li><a href="#60"><span>2.1.3.</span><span> Logo URL</span></a></li>
+<li><a href="#70"><span>2.1.4.</span><span> Homepage</span></a></li>
+<li><a href="#80"><span>2.1.5.</span><span> Street</span></a></li>
+<li><a href="#90"><span>2.1.6.</span><span> House No.</span></a></li>
+<li><a href="#100"><span>2.1.7.</span><span> Postcode</span></a></li>
+<li><a href="#110"><span>2.1.8.</span><span> Town</span></a></li>
+<li><a href="#120"><span>2.1.9.</span><span> Telephone number</span></a></li>
+<li><a href="#130"><span>2.1.10.</span><span> Fax number</span></a></li>
+<li><a href="#140"><span>2.1.11.</span><span> Email</span></a></li>
+<li><a href="#150"><span>2.1.12.</span><span> Country</span></a></li>
+<li><a href="#160"><span>2.1.13.</span><span> Pixmania-ID</span></a></li>
+<li><a href="#170"><span>2.1.14.</span><span> Neckermann.at Enterprise ID</span></a></li>
+<li><a href="#180"><span>2.1.15.</span><span> La Redoute-ID</span></a></li>
+<li><a href="#190"><span>2.1.16.</span><span> Position</span></a></li>
+<li><a href="#200"><span>2.1.17.</span><span> Comment</span></a></li>
+<li><a href="#210"><span>2.1.18.</span><span> Delete manufacturer</span></a></li>
+</ul>
+</li>
+<li><a href="#220"><span>2.2.</span><span> Manufacturer (external)</span></a>
+<ul class="sectlevel3">
+<li><a href="#230"><span>2.2.1.</span><span> Value</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -16,20 +46,23 @@
     <h1>Manufacturer</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A sync of the type <strong>Manufacturer</strong> allows you to import manufacturer data.</p>
+<p>This page explains the matching and mapping fields that you can use while importing manufacturer data records.
+
+This page serves purely as a reference and it assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">import tool</a>.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="3100">1. Fields for matching manufacturers</h2>
+<h2 id="10">1. Matching fields</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-matching-fields-manufacturer">Table 1</a> explains the fields that are available for matching manufacturer data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-matching-fields-manufacturers">Table 1</a> explains the fields that are available for matching manufacturer data.
+During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
-<table id="table-matching-fields-manufacturer" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Matching fields for importing manufacturers</caption>
+<table id="table-matching-fields-manufacturers" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Matching fields for importing manufacturer data</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
@@ -39,158 +72,415 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer ID</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Manufacturer ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the manufacturer IDs? Choose this column here.
+This option is useful if you want to <em>update existing manufacturer data records</em>.</p>
+<p class="tableblock"><strong><em>Background info</em></strong>: Every new manufacturer automatically receives an ID, which can not be changed.
+The ID is used to uniquely identify the manufacturer.
+Because the ID is unique, it’s a good way to check whether the imported data record already exists in plentymarkets.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer name</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Manufacturer name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the manufacturer name? Choose this column here.
+This option is useful if you want to <em>create new manufacturer data records</em>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">External manufacturer name</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>External manufacturer name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the external manufacturer name? Choose this column here.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="3200">2. Fields for mapping manufacturers</h2>
+<h2 id="20">2. Mapping fields</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-mapping-fields-manufacturer">Table 2</a> explains the fields that are available for mapping manufacturer data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p>This chapter explains the fields that are available for mapping manufacturer data.
+Use these fields to specify which <em>column of your file</em> corresponds to which <em>data field in your system</em>.</p>
 </div>
-<table id="table-mapping-fields-manufacturer" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Mapping fields for importing manufacturers</caption>
+<div class="paragraph instruction">
+<p>Basic procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>In your CSV file</em></strong>: Enter a valid import value into a column.</p>
+</li>
+<li>
+<p><strong><em>In plentymarkets</em></strong>: Assign this column to the appropriate mapping field.</p>
+</li>
+<li>
+<p><strong><em>After the import</em></strong>: Check the result in the back end.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">No mapping field? Default value applies!</div>
+<div class="paragraph">
+<p>If you don’t include a certain piece of information in your CSV file, i.e. if you <em>don’t use</em> a certain mapping field, then your manufacturer data record will be given the default value.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="30">2.1. Manufacturer</h3>
+<div class="sect3">
+<h4 id="40">2.1.1. Name</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Required field</span> for creating new manufacturer data records</p>
+</div>
+<div class="paragraph">
+<p>Enter the manufacturer’s internal name into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Name</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="50">2.1.2. External name</h4>
+<div class="paragraph">
+<p>Enter the manufacturer’s external name into the CSV file.
+When you transfer your item data to marketplaces later, this external manufacturer name will be transmitted.
+If there is no external manufacturer name, then the internal name will be used instead.
+The external name will also be transferred to <a href="/en/online-store/online-store/extras/findologic">FINDOLOGIC</a> and will be indexed for the search.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: External name</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="60">2.1.3. Logo URL</h4>
+<div class="paragraph">
+<p>Enter the URL that leads to the manufacturer’s logo into the CSV file.
+The URL can have up to 2,000 characters.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Logo URL</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="70">2.1.4. Homepage</h4>
+<div class="paragraph">
+<p>Enter the URL that leads to the manufacturer’s homepage into the CSV file.
+The URL can have up to 2,000 characters.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Homepage</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="80">2.1.5. Street</h4>
+<div class="paragraph">
+<p>Enter the manufacturer’s address data into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Street</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="90">2.1.6. House No.</h4>
+<div class="paragraph">
+<p>Enter the manufacturer’s address data into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: House No.</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="100">2.1.7. Postcode</h4>
+<div class="paragraph">
+<p>Enter the manufacturer’s address data into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Postcode</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="110">2.1.8. Town</h4>
+<div class="paragraph">
+<p>Enter the manufacturer’s address data into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Town</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="120">2.1.9. Telephone number</h4>
+<div class="paragraph">
+<p>Enter the manufacturer’s telephone number into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Telephone number</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="130">2.1.10. Fax number</h4>
+<div class="paragraph">
+<p>Enter the manufacturer’s fax number into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Fax number</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="140">2.1.11. Email</h4>
+<div class="paragraph">
+<p>Enter the manufacturer’s email address into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Email</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="150">2.1.12. Country</h4>
+<div class="paragraph">
+<p>Enter the appropriate <a href="/en/data/internal-IDs#20">internal country ID</a> into the CSV file.
+In other words, the plentymarkets ID for the country.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>Unknown</code></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric (internal country IDs)</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Drop-down list: Country</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="160">2.1.13. Pixmania-ID</h4>
+<div class="paragraph">
+<p>Enter the manufacturer ID for the market into the CSV file.
+You will receive the manufacturer ID when setting up the market.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: PIXmania-ID</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="170">2.1.14. Neckermann.at Enterprise ID</h4>
+<div class="paragraph">
+<p>Enter the manufacturer ID for the market into the CSV file.
+You will receive the manufacturer ID when setting up the market.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Neckermann.at Enterprise-ID</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="180">2.1.15. La Redoute-ID</h4>
+<div class="paragraph">
+<p>Enter the manufacturer ID for the market into the CSV file.
+You will receive the manufacturer ID when setting up the market.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: La Redoute-ID</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="190">2.1.16. Position</h4>
+<div class="paragraph">
+<p>Enter a position number for the manufacturer into the CSV file.
+If you leave this field blank, then the position number 0 will automatically be assigned.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Position</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="200">2.1.17. Comment</h4>
+<div class="paragraph">
+<p>Enter an optional comment about the manufacturer into the CSV file.
+This is an internal comment, i.e. it is only visible in your plentymarkets system.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Comment</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="210">2.1.18. Delete manufacturer</h4>
+<div class="paragraph">
+<p>Do you want to delete the manufacturer data record?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<table id="table-mapping-attributes-delete-attribute" class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Mapping field</th>
-<th class="tableblock halign-left valign-top">Permitted import values</th>
-<th class="tableblock halign-left valign-top">Explanation</th>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Result in the back end</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">Manufacturer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer will <em>not</em> be deleted</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">External name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Logo URL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Homepage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Street</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">House No.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Postcode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Town</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Phone number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fax number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Country</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PIXmania ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Neckermann.at Enterprise ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">La Redoute ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alphanumeric</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Deleting manufacturers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0<br>
-1</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>0 = No<br>
-1 = Yes</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock">Manufacturer-Extenal</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Value</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Netto Estores-ID<br>
-Cdiscount.com-ID</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Netto Estores-ID = ID is a manufacturer ID of the market Netto<br></p>
-</li>
-<li>
-<p>Cdiscount.com-ID = ID is a manufacturer ID of the market Cdiscount</p>
-</li>
-</ul>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer will be deleted</p></td>
 </tr>
 </tbody>
 </table>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="220">2.2. Manufacturer (external)</h3>
+<div class="sect3">
+<h4 id="230">2.2.1. Value</h4>
+<div class="paragraph">
+<p>Enter the manufacturer ID for the market Netto Estores or Cdiscount.com into the CSV file.
+You will receive the manufacturer ID when setting up the market.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the drop-down list to specify whether the ID is for Netto Estores or Cdiscount.com.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/manufacturers#100">Setup » Item » Manufacturers » Tab: Settings » Entry field: Netto Estores-ID or Cdiscount.com-ID</a></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </main>
