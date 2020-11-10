@@ -6821,55 +6821,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "854422d6850225cd12e47222ff10b250",
-				"path" => "maerkte/rakuten",
-				"position" => 180,
-				"urlName" => "rakuten",
-				"url" => "/maerkte/rakuten",
-				"level" => 2,
-				"title" => "Rakuten",
-				"keywords" => "rakuten.de, Multi-Channel, Marktplatz, Rakuten einrichten, Rakuten Marktplatz, Multi-Channel, Multichannel",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Rakuten. Hier findest du folgende Informationen:",
-				"languageID" => "9D5OZQ8",
-				"children" => 				[
-					[
-						"id" => "163fc1ea6b61f4af521934d5f09a0989",
-						"path" => "maerkte/rakuten/rakuten-einrichten",
-						"position" => 10,
-						"urlName" => "rakuten-einrichten",
-						"url" => "/maerkte/rakuten/rakuten-einrichten",
-						"level" => 3,
-						"title" => "Rakuten einrichten",
-						"keywords" => "Rakuten, rakuten.de, Rakuten einrichten, Marktplatz, Multi-Channel, Artikelexport, elastischer Export, RakutenDE-Plugin, Rakuten Versandgruppen, ElasticExportRakutenDE, Rakuten Payment, Rakuten Rechnung, Rakuten Lieferzeiten",
-						"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Rakuten in deinem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Rakuten einrichten. Hier findest du folgende Informationen:",
-						"languageID" => "VXWROW6",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "a3a7ded5c749e61c7f83af5ec4479d0e",
-						"path" => "maerkte/rakuten/best-practices-rakuten-artikelexport",
-						"position" => 20,
-						"urlName" => "best-practices-rakuten-artikelexport",
-						"url" => "/maerkte/rakuten/best-practices-rakuten-artikelexport",
-						"level" => 3,
-						"title" => "Best Practice: Rakuten",
-						"keywords" => "rakuten, Multi-Channel, Rakuten Artikelexport, elastischer Export, RakutenDE, Rakuten-Plugin, Rakuten Plugin, Rakuten elastischer Export",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practice: Rakuten. Hier findest du folgende Informationen:",
-						"languageID" => "ZUWDDQS",
-						"children" => [],
-						"hasChildren" => false
-					]
-				],
-				"hasChildren" => true
-			],
-			[
 				"id" => "da609c5895eff8091e0e474a63c6a4f0",
 				"path" => "maerkte/real-de",
 				"position" => 190,
