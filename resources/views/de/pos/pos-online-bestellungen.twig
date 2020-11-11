@@ -1,0 +1,276 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> Abholen und Bezahlen von Click &amp; Collect-Bestellungen vorbereiten</span></a></li>
+<li><a href="#200"><span>2.</span><span> Online-Bestellungen an der Kasse abschließen</span></a>
+<ul class="sectlevel2">
+<li><a href="#300"><span>2.1.</span><span> Versandeinstellungen</span></a>
+<ul class="sectlevel3">
+<li><a href="#400"><span>2.1.1.</span><span> Versanddienstleister für Abholung in der Filiale erstellen</span></a></li>
+<li><a href="#500"><span>2.1.2.</span><span> Versandprofil für Abholung in der Filiale erstellen</span></a></li>
+<li><a href="#600"><span>2.1.3.</span><span> Versandprofil für Abholung in der Filiale am Artikel aktivieren</span></a></li>
+</ul>
+</li>
+<li><a href="#700"><span>2.2.</span><span> Zahlungsart für Zahlung im Laden aktivieren</span></a></li>
+<li><a href="#800"><span>2.3.</span><span> Warenbewegungen festlegen</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Online-Bestellungen mit plentyPOS abwickeln</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Online-Bestellungen (auch als <strong>Click &amp; Collect bekannt</strong>) können über deinen Webshop, Marktplätze oder aus anderen Herkünften in dein System gelangen. Diese Aufträge kannst du auf zwei Wegen mit plentyPOS abbilden. Kund:innen bestellen die Ware online und bezahlen sie entweder online oder in deinem Ladengeschäft. Die Abholung erfolgt dann in deinem Ladengeschäft. Befolge die unten beschriebenen Schritte, um dein plentyPOS für Click &amp; Collect vorzubereiten.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. Abholen und Bezahlen von Click &amp; Collect-Bestellungen vorbereiten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die folgenden Vorbereitungen sind für plentyPOS notwendig, wenn du deinen Kund:innen anbieten möchtest, Online-Bestellungen im Ladengeschäft abzuwickeln.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Aufträge können nur anhand der Auftrags-ID in die Kasse geladen werden.<br>
+Stelle deshalb sicher, dass Auftragsbestätigungen die Auftrags-ID enthalten. Weise deine Kund:innen explizit darauf hin, dass diese Auftrags-ID benötigt wird, um den Auftrag im Laden zu bearbeiten.</p>
+</li>
+<li>
+<p>Erkläre deinen Kassenkräften, wie sie die Identität von Personen prüfen, die bezahlte Ware im Ladengeschäft abholen. Sonst kann es passieren, dass Kassenkräfte die Ware an Unbefugte aushändigen.</p>
+</li>
+<li>
+<p>Nutzt du Prozesse und/oder Ereignisaktionen, um Aufträge zu bearbeiten, die über den Webshop oder Marktplätze in dein plentymarkets System gelangen? Prüfe diese Ereignisaktionen und Prozesse, bevor du eine Abholung im Laden anbietest. Stelle sicher, dass Aufträge erst in den Status <strong>Warenausgang gebucht</strong> gesetzt werden, wenn die Ware im Laden abgeholt wurde.</p>
+</li>
+</ul>
+</div>
+<div class="exampleblock">
+<div class="title">Warenausgang am Auftrag prüfen</div>
+<div class="content">
+<div class="paragraph">
+<p>plentyPOS zeigt an, dass die Ware übergeben wurde, wenn in plentymarkets ein Warenausgang für den Auftrag gebucht wurde. Falls Probleme auftreten und jemand darauf besteht, die Ware noch nicht erhalten zu haben, prüfe den Auftrag im plentymarkets Backend. Möglicherweise wurde der Warenausgang zu früh automatisch gebucht.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Beachte außerdem die folgenden Hinweise und Einschränkungen beim Abholen und Zahlen von Online-Bestellungen im Laden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Online-Aufträge können an der Kasse nicht bearbeitet und nicht storniert werden. Das Kassenpersonal kann nur Zahlungen erstellen und Notizen zum Auftrag speichern.</p>
+</li>
+<li>
+<p>Online-Aufträge können an der Kasse erst ab App-Version 1.9.2 mit Mehrzweckgutscheinen bezahlt werden. Voraussetzung ist, dass für den Auftrag noch keine Zahlung durchgeführt wurde und noch kein Rechnungsdokument für den Auftrag erstellt wurde.</p>
+</li>
+<li>
+<p>Zahlungen, die an der Kasse getätigt werden, um einen Online-Auftrag zu bezahlen, sind für die Kasse umsatzneutral. Im Kassenjournal werden Zahlungen, die nicht umsatzrelevant für die Kasse sind, als Kassenvorfall des Typs <strong>Zahlung</strong> gespeichert.</p>
+</li>
+<li>
+<p>Für Online-Aufträge ist an der Kasse keine An- oder Teilzahlung möglich. Somit müssen Kund:innen diese Aufträge immer vollständig bezahlen.</p>
+</li>
+<li>
+<p>Über die Option <strong>Externer Auftrag: Warenausgang automatisch buchen</strong> in den Kasseneinstellungen legst du fest, ob nach der Bezahlung an der Kasse die Ware automatisch aus dem Lager ausgebucht wird. Diese Option ist bei Kassen, die ab 05.03.2019 erstellt werden, standardmäßig aktiviert. Wenn du die Funktion deaktivierst, erkläre deinen Kassenkräften, in welchen Fällen sie den Warenausgang manuell buchen sollen.</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="200">2. Online-Bestellungen an der Kasse abschließen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="/pos/pos-kassenbenutzer#450">Click &amp; Collect</a> bedeutet, dass Ware online bestellt und im Laden abgeholt werden kann. Der Auftrag wird in plentyPOS geladen und an der Kasse abgeschlossen. In der Kasse können die folgenden Fälle auftreten:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Auftrag wurde online bestellt und bezahlt. Die Ware wird im Laden abgeholt.</p>
+</li>
+<li>
+<p>Der Auftrag wurde online bestellt. Die Ware wird im Laden bezahlt und abgeholt.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In den folgenden Abschnitten erfährst du, welche Vorbereitungen du treffen musst, um Online-Bestellungen an der Kasse abzuschließen.</p>
+</div>
+<div class="sect2">
+<h3 id="300">2.1. Versandeinstellungen</h3>
+<div class="paragraph">
+<p>Wenn du schon eine Kasse nutzt, hast du bereits einen Versanddienstleister <strong>Selbstabholung</strong> und ein Versandprofil <strong>Selbstabholung</strong> eingerichtet. Wir empfehlen dir jedoch, für Click &amp; Collect einen eigenen Versanddienstleister und ein eigenes Versandprofil zu erstellen.</p>
+</div>
+<div class="sect3">
+<h4 id="400">2.1.1. Versanddienstleister für Abholung in der Filiale erstellen</h4>
+<div class="paragraph">
+<p>Gehe wie unten beschrieben vor, um einen <a href="/fulfillment/versand-vorbereiten#800">Versanddienstleister</a> für die Abholung in der Filiale zu erstellen. Im folgenden Beispiel nennen wir diesen Versanddienstleister <strong>Abholung in der Filiale</strong>. Natürlich kannst du auch einen anderen Namen verwenden.</p>
+</div>
+<div class="paragraph instruction">
+<p>Versanddienstleister für Abholung in der Filiale erstellen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Versand » Optionen » Tab: Versanddienstleister</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Neu</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Ganz unten wird eine neue Zeile hinzugefügt.</p>
+</li>
+<li>
+<p>Gib in die Spalte <strong>Namen (de)</strong> den Namen <strong>Abholung in der Filiale</strong> ein.</p>
+</li>
+<li>
+<p>Gib in die Spalte <strong>Namen (Backend)</strong> den Namen <strong>Abholung in der Filiale</strong> ein.</p>
+</li>
+<li>
+<p>Wähle in der Spalte <strong>Versanddienstleister</strong> die Option <strong>Selbstabholer</strong> aus der Dropdown-Liste.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon darkGrey"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="500">2.1.2. Versandprofil für Abholung in der Filiale erstellen</h4>
+<div class="paragraph">
+<p>Erstelle als nächstes ein <a href="/fulfillment/versand-vorbereiten#1000">Versandprofil</a> für die Abholung in der Filiale. In diesem Beispiel nennen wir dieses Versandprofil <strong>Abholung in der Filiale</strong>. Natürlich kannst du auch einen anderen Namen verwenden.</p>
+</div>
+<div class="paragraph instruction">
+<p>Versandprofil für Abholung in der Filiale erstellen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Versand » Optionen » Tab: Versandprofile</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Neu</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle den Versanddienstleister <strong>Abholung in der Filiale</strong> aus der Dropdown-Liste, den du gerade erstellt hast.</p>
+</li>
+<li>
+<p>Gib für die Option <strong>Namen (de)</strong> den Namen <strong>Abholung in der Filiale</strong> ein.</p>
+</li>
+<li>
+<p>Gib für die Option <strong>Namen (Backend)</strong> den Namen <strong>Abholung in der Filiale</strong> ein.</p>
+</li>
+<li>
+<p>Aktiviere den <strong>Mandanten (Shop)</strong>, für den du die Abholung in der Filiale anbieten möchtest.</p>
+</li>
+<li>
+<p>Aktiviere die <strong>Auftragsherkunft</strong>. Wir empfehlen die Herkünfte <strong>0 Manuelle Eingabe</strong> und den <strong>Mandanten (Shop)</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon darkGrey"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Das Tab <strong>Portotabelle</strong> wird angezeigt.<br>
+<strong><em>Hinweis:</em></strong> Die Abholung in der Filiale ist in der Regel versandkostenfrei. Daher werden in diesem Beispiel keine Versandkosten gespeichert.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon darkGrey"><i class="fa fa-save  "></i></span>) die Einstellungen des Tabs <strong>Portotabelle</strong> ohne Änderungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="600">2.1.3. Versandprofil für Abholung in der Filiale am Artikel aktivieren</h4>
+<div class="paragraph">
+<p>Aktiviere nun das Versandprofil <strong>Abholung in der Filiale</strong> bei den Artikeln, die online bestellt und im Laden abgeholt werden können.</p>
+</div>
+<div class="paragraph instruction">
+<p>Versandprofil für Abholung in der Filiale am Artikel aktivieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten</strong>.</p>
+</li>
+<li>
+<p>Öffne den Artikel.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>Global</strong>.</p>
+</li>
+<li>
+<p>Aktiviere das Versandprofil <strong>Selbstabholung</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon darkGrey"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Versandprofil für mehrere Artikeln aktivieren</div>
+<div class="paragraph">
+<p>Du möchtest das Versandprofil für eine größere Anzahl an Artikeln gleichzeitig aktivieren? Dann nutze die <a href="/artikel/artikel-verwalten#155">Artikel-Gruppenfunktion</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="700">2.2. Zahlungsart für Zahlung im Laden aktivieren</h3>
+<div class="paragraph">
+<p>Aktiviere nun die Zahlungsart <strong>Barzahlung</strong>, damit Online-Aufträge auch im Laden bezahlt werden können.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Stelle das Plugin <a href="https://marketplace.plentymarkets.com/plugins/payment/PayUponPickup_4757">Barzahlung</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> für den Mandanten bereit. Standardmäßig wird im Webshop der Name der Zahlungsart, also "Barzahlung" angezeigt. Ändere optional den Namen der Zahlungsart, zum Beispiel zu "Bezahlung in der Filiale".</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="800">2.3. Warenbewegungen festlegen</h3>
+<div class="paragraph">
+<p>Zum Schluss legst du fest, wie der Warenbestand von online bestellten Artikeln behandelt werden soll, die im Ladengeschäft abgeholt werden.</p>
+</div>
+<div class="paragraph instruction">
+<p>Warenbewegungen für Online-Aufträge festlegen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Mandant » Mandant wählen » POS</strong>.</p>
+</li>
+<li>
+<p>Öffne die Kasse.<br>
+→ Das Tab <strong>Grundeinstellungen</strong> öffnet sich.</p>
+</li>
+<li>
+<p>Die Option <strong>Externer Auftrag: Warenausgang automatisch buchen</strong> ist vorausgewählt. Der Warenausgang wird also nach der Bezahlung immer automatisch gebucht. Deaktiviere die Option, wenn der Warenausgang nur gebucht werden soll, wenn das Kassenpersonal auf <strong>Warenausgang buchen</strong> tippt.<br>
+<strong><em>Tipp:</em></strong> Deaktiviere die Option nur, wenn du eine separate Warenausgabe hast, also die Waren nach der Bezahlung nicht direkt an der Kasse aushändigst. Schule außerdem das Kassenpersonal, in welchen Fällen die Schaltfläche betätigt werden soll.</p>
+</li>
+<li>
+<p>Wenn die Ware aus dem Vertriebslager der Kasse ausgebucht werden soll, aktiviere die Option <strong>Warenausgang von externen Aufträgen: Ware aus POS-Vertriebslager buchen</strong>.<br>
+→ Wenn du die Option nicht aktivierst, wird die Ware aus dem Lager ausgebucht, das dem Auftrag bei der Erstellung zugewiesen wurde.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon darkGrey"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Bietest du Click &amp; Collect über deinen Webshop an, aktiviere zusätzlich die Auftragsherkünfte <strong>Manuelle Eingabe</strong>, <strong>Webshop</strong> und, falls zutreffend, die Auftragsherkunft des für Click &amp; Collect genutzten Marktplatzes.</p>
+</div>
+</div>
+</div>
+</div>
+</main>

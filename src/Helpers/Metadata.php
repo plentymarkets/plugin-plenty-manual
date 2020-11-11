@@ -7194,6 +7194,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "53ac06bb2fa3979e365ab689f42eb768",
+				"path" => "pos/pos-online-bestellungen",
+				"position" => 15,
+				"urlName" => "pos-online-bestellungen",
+				"url" => "/pos/pos-online-bestellungen",
+				"level" => 2,
+				"title" => "Online-Bestellungen mit plentyPOS abwickeln",
+				"keywords" => "plentymarkets POS, plentyPOS, plenty POS, Kasse, Kassensystem, Kassen, POS Click und Collect, POS Click&amp;Collect, POS Click und Collect, POS Click &amp; Collect, POS Selbstabholer, POS Selbstabholung, Ladengeschäft, Onlinebestellung, Online-Bestellung, POS Online-Bestellung, POS Online-Bestellungen, POS Onlinebestellung, POS Onlinebestellungen",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Online-Bestellungen mit plentyPOS abwickeln. Hier findest du folgende Informationen:",
+				"languageID" => "DB9REIS",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "bdb46280cc55b3da77dc2887d493144c",
 				"path" => "pos/pos-kassenbenutzer",
 				"position" => 20,
