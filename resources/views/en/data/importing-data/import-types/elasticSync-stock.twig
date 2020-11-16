@@ -4,8 +4,17 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#100"><span>1.</span><span> Fields for matching stock</span></a></li>
-<li><a href="#200"><span>2.</span><span> Fields for mapping stock</span></a></li>
+<li><a href="#100"><span>1.</span><span> Matching fields</span></a></li>
+<li><a href="#200"><span>2.</span><span> Mapping fields</span></a>
+<ul class="sectlevel3">
+<li><a href="#210"><span>2.1.</span><span> Warehouse ID</span></a></li>
+<li><a href="#220"><span>2.2.</span><span> Quantity</span></a></li>
+<li><a href="#230"><span>2.3.</span><span> Storage location ID</span></a></li>
+<li><a href="#240"><span>2.4.</span><span> Best before</span></a></li>
+<li><a href="#250"><span>2.5.</span><span> Batch</span></a></li>
+<li><a href="#260"><span>2.6.</span><span> Purchase price</span></a></li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -16,17 +25,17 @@
     <h1>Stock</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>With syncs of the type <strong>Stock</strong>, you import new stock data.<br></p>
-</div>
-<div class="paragraph">
-<p>This page serves purely as a reference and it assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">ElasticSync tool</a>.</p>
+<p>This page explains the matching and mapping fields that you can use while importing stock.
+
+This page serves purely as a reference and it assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">import tool</a>.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="100">1. Fields for matching stock</h2>
+<h2 id="100">1. Matching fields</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-matching-fields-stock">Table 1</a> explains the fields that are available for matching stock data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-matching-fields-stock">Table 1</a> explains the fields that are available for matching stock.
+During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
 <table id="table-matching-fields-stock" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Matching fields for stock</caption>
@@ -42,79 +51,168 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variation ID</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the variation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the item</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Barcode</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Barcode<br>
-<strong><em>Note</em></strong>: Make sure that under <strong>Item » Edit item</strong> in the <strong>Settings</strong> tab, the code of the barcode is entered. Moreover, in the matching of the sync, the barcode name (e.g. GTIN 13) has to be selected in the <strong>Barcode</strong> matching field on the right.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variation ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the variation</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variation number</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variation number</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item ID</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Barcode</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Barcode<br>
+<strong><em>Note</em></strong>: Make sure that you have entered the code for the barcode in the <strong>Settings</strong> tab of the <strong>Item » Edit item</strong> menu. Moreover, in the matching of the sync, the name of the barcode (e.g. GTIN 13) has to be selected in the <strong>Barcode</strong> matching field on the right.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="200">2. Fields for mapping stock</h2>
+<h2 id="200">2. Mapping fields</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="#table-mapping-fields-stock">Table 2</a> explains the fields that are available for mapping stock data. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p>This chapter explains the fields that are available for mapping stock.
+Use these fields to specify which <em>column of your file</em> corresponds to which <em>data field in your system</em>.</p>
 </div>
-<table id="table-mapping-fields-stock" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Mapping fields for importing stock</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Mapping field</th>
-<th class="tableblock halign-left valign-top">Permitted import values</th>
-<th class="tableblock halign-left valign-top">Explanation</th>
+<div class="paragraph instruction">
+<p>Basic procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>In your CSV file</em></strong>: Enter a valid import value into a column.</p>
+</li>
+<li>
+<p><strong><em>In plentymarkets</em></strong>: Assign this column to the appropriate mapping field.</p>
+</li>
+<li>
+<p><strong><em>After the import</em></strong>: Check the result in the back end.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">No mapping field? Default value applies!</div>
+<div class="paragraph">
+<p>If you don’t include a certain piece of information in your CSV file, i.e. if you <em>don’t use</em> a certain mapping field, then your stock will be given the default value.</p>
+</div>
+</td>
 </tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse ID (mandatory field)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the warehouse</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Quantity (mandatory field)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Quantity</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Storage location ID (mandatory field)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the storage location</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Best before</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date<br>
-(DD.MM.YYYY)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expiration date</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Batch</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Batch</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Purchase price</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Purchase price</p></td>
-</tr>
-</tbody>
-</table>
+</tbody></table>
+</div>
+<div class="sect3">
+<h4 id="210">2.1. Warehouse ID</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Required field</span></p>
+</div>
+<div class="paragraph">
+<p>Enter the ID of the warehouse that contains the stock into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu <a href="/en/stock-management/setting-up-a-warehouse#1500">Stock » Incoming items » <em>perform search</em> » <em>select incoming items data record</em> » tab: Item</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="220">2.2. Quantity</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Required field</span></p>
+</div>
+<div class="paragraph">
+<p>Enter the quantity of the stock into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu <a href="/en/stock-management/managing-incoming-items#500">Stock » Incoming items » <em>perform search</em> » <em>select incoming items data record</em> » tab: Item</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="230">2.3. Storage location ID</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Required field</span></p>
+</div>
+<div class="paragraph">
+<p>Enter the ID of the storage location that contains the stock into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu <a href="/en/stock-management/setting-up-a-warehouse#1500">Stock » Incoming items » <em>perform search</em> » <em>select incoming items data record</em> » tab: Item</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="240">2.4. Best before</h4>
+<div class="paragraph">
+<p>Enter the best before date of the item into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Date in the format dd.mm.yyyy</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu <a href="/en/stock-management/managing-bbd-batch#100">Stock » Incoming items » <em>perform search</em> » <em>select incoming items data record</em> » tab: Item</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="250">2.5. Batch</h4>
+<div class="paragraph">
+<p>Enter the batch of the stock into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu <a href="/en/stock-management/managing-bbd-batch#100">Stock » Incoming items » <em>perform search</em> » <em>select incoming items data record</em> » tab: Item</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="260">2.6. Purchase price</h4>
+<div class="paragraph">
+<p>Enter the purchase price of the stock into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric; use the same decimal notation as in the <a href="/en/data/importing-data/ElasticSync#1300">import options</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu <a href="/en/stock-management/managing-stocks#intable-purchase-price">Stock » Incoming items » <em>perform search</em> » <em>select incoming items data record</em> » tab: Item</a>.</p>
+</div>
+<hr>
+</div>
 </div>
 </div>
 </main>
