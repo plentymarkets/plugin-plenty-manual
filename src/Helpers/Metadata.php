@@ -6881,6 +6881,22 @@ class Metadata {
 						"languageID" => "TX8FAKB",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "71ff1470ad24b5223414dfaec1d126fd",
+						"path" => "maerkte/real-de/best-practices-real-rechnungen-hochladen",
+						"position" => 40,
+						"urlName" => "best-practices-real-rechnungen-hochladen",
+						"url" => "/maerkte/real-de/best-practices-real-rechnungen-hochladen",
+						"level" => 3,
+						"title" => "Best Practice: Automatisches Hochladen von Rechnungen einrichten",
+						"keywords" => "real.de, Rechnungsupload, Rechnungen hochladen",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Best Practice: Automatisches Hochladen von Rechnungen einrichten. Hier findest du folgende Informationen:",
+						"languageID" => "8ADEP04",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
