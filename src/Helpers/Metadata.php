@@ -5641,22 +5641,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "bb2156ac3eb6f988042d427726bbae48",
-				"path" => "maerkte/mirakl-conrad",
-				"position" => 0,
-				"urlName" => "mirakl-conrad",
-				"url" => "/maerkte/conrad",
-				"level" => 2,
-				"title" => "Conrad",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Conrad. Hier findest du folgende Informationen:",
-				"languageID" => "I96IKG1",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "8032e61417c1817283a392923afbfe16",
 				"path" => "maerkte/preisportale",
 				"position" => 5,
@@ -6542,6 +6526,22 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Check24. Hier findest du folgende Informationen:",
 				"languageID" => "BZ3ZIMQ",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "bb2156ac3eb6f988042d427726bbae48",
+				"path" => "maerkte/mirakl-conrad",
+				"position" => 55,
+				"urlName" => "mirakl-conrad",
+				"url" => "/maerkte/conrad",
+				"level" => 2,
+				"title" => "Conrad",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Conrad. Hier findest du folgende Informationen:",
+				"languageID" => "I96IKG1",
 				"children" => [],
 				"hasChildren" => false
 			],
