@@ -14709,7 +14709,7 @@ class Metadata {
 						"path" => "changelog/november-2020/2020-11-25",
 						"position" => 750,
 						"urlName" => "2020-11-25",
-						"url" => "/changelog",
+						"url" => "/changelog/november-2020/2020-11-25",
 						"level" => 3,
 						"title" => "plentymarkets Changelog",
 						"keywords" => "",
