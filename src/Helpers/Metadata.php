@@ -2813,7 +2813,7 @@ class Metadata {
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-auftraege",
 								"level" => 4,
 								"title" => "Aufträge",
-								"keywords" => "ElasticSync, Import, Aufträge, Sync, Sync-Typ, Auftragsimport",
+								"keywords" => "ElasticSync, Import, Aufträge, Sync, Sync-Typ, Auftragsimport, Importtyp, Import Typ",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Aufträge. Hier findest du folgende Informationen:",
