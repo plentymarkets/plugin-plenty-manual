@@ -4,8 +4,17 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#10"><span>1.</span><span> Fields for matching taric assignment</span></a></li>
-<li><a href="#20"><span>2.</span><span> Fields for mapping taric assignment</span></a></li>
+<li><a href="#10"><span>1.</span><span> Fields for taric code matching</span></a></li>
+<li><a href="#20"><span>2.</span><span> Fields for taric assignment mapping</span></a>
+<ul class="sectlevel2">
+<li><a href="#30"><span>2.1.</span><span> Mapping</span></a>
+<ul class="sectlevel3">
+<li><a href="#40"><span>2.1.1.</span><span> VAT</span></a></li>
+<li><a href="#50"><span>2.1.2.</span><span> Delete</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -16,55 +25,141 @@
     <h1>Assignment taric code</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
+<p>This page explains the matching and mapping fields that you can use while importing taric codes.
+
+This page serves purely as a reference and it assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">import tool</a>.</p>
+</div>
+<div class="paragraph">
 <p>A sync of the type <strong>Assignment taric code</strong> allows you to import data for the taric code table in the menu <strong>Setup » Client » Settings » Taric code</strong>. In order to provide taric codes for variations via import, go to the <a href="/en/data/importing-data/sync-types/elasticSync-item#2300">sync type Item</a>.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="10">1. Fields for matching taric assignment</h2>
+<h2 id="10">1. Fields for taric code matching</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following fields are available for matching the taric assignment. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+<p><a href="#table-mapping-taric">Table 1</a> explains the fields that are available for matching taric code data.
+During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Taric code</p>
-</li>
-<li>
-<p>Country</p>
-</li>
-</ul>
-</div>
-</div>
-</div><div class="sect1">
-<h2 id="20">2. Fields for mapping taric assignment</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="#table-mapping-fields-taric-assignment">Table 1</a> explains the fields that are available for mapping date for the taric assignment. During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
-</div>
-<table id="table-mapping-fields-taric-assignment" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Mapping fields for importing taric assignment</caption>
+<table id="table-mapping-taric" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Fields for taric matching</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Matching field</th>
+<th class="tableblock halign-left valign-top">Setting</th>
 <th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Assignment / VAT</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The VAT rates which are assigned to the taric codes and the corresponding country.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Taric code</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the taric codes? Choose this column here.<br>
+More information on taric codes in general can be found in the <a href="/en/orders/accounting#620">taric code</a> section of the manual.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Assignment / delete</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The VAT rate for the listed taric code and the corresponding country is deleted.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Country</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the countries? Choose this column here.<br>
+Either use the <strong>Country IDs</strong> or the <strong>IsoCodes</strong> to enter the countries into your CSV file. You can find both in the <a href="/en/data/internal-IDs#20">Countries</a> section of the manual.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div><div class="sect1">
+<h2 id="20">2. Fields for taric assignment mapping</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter explains the fields that are available for mapping taric codes.
+Use these fields to specify which <em>column of your file</em> corresponds to which <em>data field in your system</em>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Basic procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>In your CSV file</em></strong>: Enter a valid import value into a column.</p>
+</li>
+<li>
+<p><strong><em>In plentymarkets</em></strong>: Assign this column to the appropriate mapping field.</p>
+</li>
+<li>
+<p><strong><em>After the import</em></strong>: Check the result in the back end.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">No mapping field? Default value applies!</div>
+<div class="paragraph">
+<p>If you don’t include a certain piece of information in your CSV file, i.e. if you <em>don’t use</em> a certain mapping field, then  will be given the default value.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="30">2.1. Mapping</h3>
+<div class="sect3">
+<h4 id="40">2.1.1. VAT</h4>
+<div class="paragraph">
+<p>Which VAT rate do you want to assign? Enter this VAT rate into your CSV file.<br>
+Enter the percentage value of the VAT rate without the percentage sign. Whether the rate has to be entered separated by commas or points depends on the setting in the <strong>Matching</strong> of the import.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <strong>Setup » Client » Settings » Taric code</strong>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="50">2.1.2. Delete</h4>
+<div class="paragraph">
+<p>Decide whether you want to delete an already existing assignment between a VAT rate, a taric code and a country.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<table id="table-delete-taric-data" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Options in the drop-down list in the back end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do not delete</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <strong>Setup » Client » Settings » Taric code</strong>.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </main>
