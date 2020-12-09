@@ -86,6 +86,13 @@
 <li><a href="#_plugins_für_zahlungsarten_richtig_verknüpfen"><span>8.7.</span><span> Plugins für Zahlungsarten richtig verknüpfen</span></a></li>
 </ul>
 </li>
+<li><a href="#suche"><span>9.</span><span> Webshop-Suche einstellen</span></a>
+<ul class="sectlevel2">
+<li><a href="#_sortierung_der_suchergebnisse_nach_relevanz"><span>9.1.</span><span> Sortierung der Suchergebnisse nach Relevanz</span></a></li>
+<li><a href="#_sortierung_der_suchergebnisse_nach_empfohlen"><span>9.2.</span><span> Sortierung der Suchergebnisse nach Empfohlen</span></a></li>
+<li><a href="#_und_suche"><span>9.3.</span><span> UND-Suche</span></a></li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -1521,6 +1528,77 @@ Falls du eigenes Javascript über ein Plugin oder ein Theme einbindest, empfehle
 <div class="paragraph">
 <p>Wenn du Plugin-Zahlungsarten für deinen plentyShop verwendest, die eine große Menge an eigenen Daten beinhalten, wie beispielsweise AmazonPay oder PayPal, ist es für die Performance deines Webshops unerlässlich, dass du diese Plugins mit den richtigen Layout-Containern verknüpfst. In Ceres 5.0 wurden neue Layout-Container hinzugefügt, um Javascript und CSS der Zahlungsplugins nur an den Stellen zu laden, an denen sie wirklich gebraucht werden.<br>
 Die Plugin-Beschreibungen der jeweiligen Zahlungsarten, z.B. <a href="https://marketplace.plentymarkets.com/paypal_4690#80.">PayPal</a>, enthalten bereits detaillierte Anleitungen, wie du die Plugins mit den richtigen Containern verknüpfst. Generell gilt, dass du das Javascript der jeweiligen Zahlungsart mit dem Container <strong>Checkout.AfterScriptsLoaded</strong> und nicht mehr mit dem Container <strong>ScriptLoader.AfterScriptsLoaded</strong> verknüpfen solltest, um die Performance deines Webshops zu verbessern.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1 adoc">
+<h2 id="suche">9. Webshop-Suche einstellen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dieses Best Practice hilft dir dabei, die unterschiedlichen Sucheinstellungen, die dir für plentyShop zur Verfügung stehen, besser zu verstehen, sodass du die Webshop-Suche optimal für dich nutzen kannst.<br>
+Die Sucheinstellungen für den Webshop nimmst du hauptsächlich im Schritt <strong>Suche</strong> des Ceres-Assistenten vor. Diesen findest du unter <strong>Einrichtung » Assistenten » Plugins » Plugin-Set wählen » plentyShop Ceres</strong>.<br></p>
+</div>
+<div class="sect2">
+<h3 id="_sortierung_der_suchergebnisse_nach_relevanz">9.1. Sortierung der Suchergebnisse nach Relevanz</h3>
+<div class="paragraph">
+<p>Der Sortierungswert <strong>Relevanz</strong> sortiert die Suchergebnisse entlang eines vom System berechneten Punktewerts. Je höher der errechnete Wert, desto höher wird der jeweilige Artikel in der Liste der Suchergebnisse angezeigt. Wie die Berechnung dieses Punktewerts gewichtet wird, kannst du an 2 Stellen im System bestimmen: Im Assistenten findest du im Schritt <strong>Suche</strong> unter <strong>Gewichtung der Suchwerte für den Wert "Relevanz"</strong> eine abgespeckte Version der Einstellung. Im Menü <strong>Einrichtung » Artikel » Suche » Frontend » Sucheinstellungen</strong> findest du die vollständigen Einstellungen zur Gewichtung des Sortierungswerts <strong>Relevanz</strong>.<br></p>
+</div>
+<div class="paragraph">
+<p>Hier aktivierst du die Artikeldatenfelder, die für eine Sortierung nach <strong>Relevanz</strong> berücksichtigt werden sollen. Aktivierst du beispielsweise die Felder <strong>Name 1</strong>, <strong>Beschreibung</strong> und <strong>Keywords</strong>, so wird ein Artikel, bei dem der eingegeben Suchbegriff in allen drei Datenfeldern enthalten ist, als <strong>relevanter</strong> erachtet, als ein Artikel, bei dem der Suchbegriff nur im Artikelnamen steht, und dadurch weiter oben in der Liste der Suchergebnisse angezeigt.<br></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Du solltest das Feld <strong>Name (deprectated)</strong> deaktivieren. Dieses Feld fasst die dreit Datenfelder <strong>Name 1</strong>, <strong>Name 2</strong> und <strong>Name 3</strong> zusammen. Du kannst gezielter Einfluss auf die <strong>relevante</strong> Sortierung nehmen, wenn dieses Feld inaktiv ist.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Der <strong>Boost</strong> des jeweiligen Datenfelds dient dazu, eine Reihenfolge der Gewichtung festzulegen. Der genaue Wert, den du eingibst, spielt dabei keine Rolle, solange die jeweiligen Werte unterschiedlich hoch sind. Ist der Boost für das Feld <strong>Name 1</strong> höher als der Boost für <strong>Name 2</strong>, so wird ein Artikel, bei dem der eingegebene Suchbegriff im Feld <strong>Name 1</strong> steht, einen höheren Punktewert für die relevante Sortierung erhalten, als ein Artikel, der den Suchbegriff im Feld <strong>Name 2</strong> stehen hat, und wird somit weiter oben in der Liste der Suchergebnisse angezeigt.<br></p>
+</div>
+<div class="paragraph">
+<p>Die Sortierung nach <strong>Relevanz</strong> wird in aller Regel zuerst die Suchergebnisse auflisten, die sämtliche eingegebenen Suchbegriffe enthalten, gefolgt von Ergebnissen, die nur einen Teil der Suchergebnisse enthalten.<br></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Beachte, dass Artikeldatenfelder, die du im Bereich <strong>In den Suchvorschlägen berücksichtigen</strong> aktivierst, automatisch auch im Bereich <strong>In den Suchergebnissen berücksichtigen</strong> aktiviert werden. Stelle den Boost ggf. auf den Wert 0, wenn du nicht möchtest, dass diese Felder Einfluss auf den Sortierungswert <strong>Relevanz</strong> haben.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sortierung_der_suchergebnisse_nach_empfohlen">9.2. Sortierung der Suchergebnisse nach Empfohlen</h3>
+<div class="paragraph">
+<p>Der Sortierungswert <strong>Empfohlen</strong> sortiert die Suchergebnisse nach drei Werten, die du selbst bestimmst und miteinander verkettest. Du nimmst diese Einstellung im Schritt <strong>Suche</strong> des Assistenten im Feld <strong>Empfohlene Sortierung der Suchergebnisse</strong> vor.<br></p>
+</div>
+<div class="paragraph">
+<p>Die Verkettung der Sortierungswerte funktioniert so, dass deine Shop-Artikel im ersten Schritt auf den ersten Sortierungswert hin überprüft werden; liefert diese Prüfung 2 oder mehr Ergebnisse zurück, die nun in den Suchergebnissen gleich hoch priorisiert wären, so greift der zweite Sortierungswert, den du für die empfohlene Sortierung hinterlegt hast. Sollte es nach der Prüfung auf den zweiten Sortierungswert immer noch Artikel geben, die in den Suchergebnissen gleich hoch priorisiert wären, dann greift der dritte verkettete Wert und ordnet die Ergebnisse entsprechend an.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Beispiel:</strong><br>
+Du hast die empfohlene Sortierung in deinem Webshop so eingestellt, dass zuerst auf den Wert <strong>Relevanz</strong>, dann auf die <strong>Variantenposition</strong> und zuletzt auf <strong>Preis (aufsteigend)</strong> geprüft wird. Eine Kundin in deinem Webshop sucht den Begriff "Blaue Hose". Die Suche prüft nun deinen Artikelkatalog zuerst hinsichtlich der von dir eingestellten Gewichtung des Suchwerts <strong>Relevanz</strong>, wie oben beschrieben. Die Datenfelder deiner Artikel werden auf beide Suchbegriffe hin geprüft. Je nachdem, welche Artikeldatenfelder (Beschreibung, Variantenname, etc.) du aktiviert hast, können hier Artikel mit dem gleichen Relevanzwert gelistet werden. Im nächsten Schritt werden diese Ergebnisse daraufhin geprüft, ob du ihnen eine bestimmte <strong>Variantenposition</strong> zugewiesen hast. Dies kann auch über die Einstellung <strong>Variantenposition nach monatlichen Verkäufen berechnen</strong> erfolgt sein. Abschließend werden die Ergebnisse, die sowohl einen gleichen <strong>Relevanzwert</strong> und eine gleiche <strong>Variantenposition</strong> haben, aufsteigend nach Preis sortiert.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_und_suche">9.3. UND-Suche</h3>
+<div class="paragraph">
+<p>Zum gegenwärtigen Zeitpunkt ist es in plentyShops nicht möglich, eine reine "Und"-Suche einzustellen, die ausschließlich Suchergebnisse zurückliefert, die <strong>alle</strong> eingegebenen Suchbegriffe enthalten. Die plentyShop-Suche kann eine "Und"-Suche simulieren, indem für die Einstellung <strong>Standardsortierung für Suchergebnisse</strong> im Schritt <strong>Suche</strong> des Ceres-Assistenten der Wert <strong>Relevanz</strong> hinterlegt wird. Alternativ kann der Wert <strong>Empfohlen</strong> hinterlegt werden, um das gleiche Ergebnis zu erzielen, solange <strong>Relevanz</strong> als erster Wert der <strong>Empfohlen</strong>-Sortierung eingestellt wurde.<br>
+Dadurch werden zuerst Suchergebnisse in der Liste angezeigt, die sämtliche Suchbegriffe enthalten, gefolgt von Ergebnisen, die nur einen Teil der Suchergebnisse enthalten.</p>
 </div>
 </div>
 </div>
