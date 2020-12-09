@@ -7676,22 +7676,6 @@ class Metadata {
 				"languageID" => "CC4EFZF",
 				"children" => 				[
 					[
-						"id" => "c9781e1e8c824c3aabab0a18722473ec",
-						"path" => "business-entscheidungen/business-intelligence/myview-dashboard",
-						"position" => 10,
-						"urlName" => "myview-dashboard",
-						"url" => "/business-entscheidungen/business-intelligence/plenty-bi/myview-dashboard",
-						"level" => 3,
-						"title" => "Dashboard (Beta)",
-						"keywords" => "Statistik, Kundenstatistik, Auftragsstatistik, Amazon Statistik, eBay Statistik, Dashboard, Besucherstatistik, Rohdaten, Kennzahlen, Unternehmenskennzahlen",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Dashboard (Beta). Hier findest du folgende Informationen:",
-						"languageID" => "QPO2ICG",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "03ff3936fafd87b6792858540ae4b6c4",
 						"path" => "business-entscheidungen/business-intelligence/plenty-bi",
 						"position" => 10,
@@ -7705,6 +7689,22 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich plentyBI. Hier findest du folgende Informationen:",
 						"languageID" => "1UHXD6L",
 						"children" => 						[
+							[
+								"id" => "fa2a7103456900f0a332299f8dc65c5d",
+								"path" => "business-entscheidungen/business-intelligence/plenty-bi/myview-dashboard",
+								"position" => 10,
+								"urlName" => "myview-dashboard",
+								"url" => "/business-entscheidungen/business-intelligence/plenty-bi/myview-dashboard",
+								"level" => 4,
+								"title" => "Dashboard (Beta)",
+								"keywords" => "Statistik, Kundenstatistik, Auftragsstatistik, Amazon Statistik, eBay Statistik, Dashboard, Besucherstatistik, Rohdaten, Kennzahlen, Unternehmenskennzahlen",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Dashboard (Beta). Hier findest du folgende Informationen:",
+								"languageID" => "QPO2ICG",
+								"children" => [],
+								"hasChildren" => false
+							],
 							[
 								"id" => "99ac67bf6b5784ba9a52ed9a01e293a8",
 								"path" => "business-entscheidungen/business-intelligence/plenty-bi/kennzahlen",
