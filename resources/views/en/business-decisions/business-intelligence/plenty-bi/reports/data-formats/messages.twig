@@ -1,0 +1,249 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_technical_specifications"><span>1.</span><span> Technical specifications</span></a></li>
+<li><a href="#_data_columns"><span>2.</span><span> Data columns</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>messages</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <strong>messages</strong> data format creator to export Messages from the messenger and save this data in the cloud.
+The raw data file is stored in the cloud for a maximum of 6 months.
+Therefore, the data must be processed before this date.
+The following tables contain further information about the format.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_technical_specifications">1. Technical specifications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="#table-specifications-messages">Table 1</a> for further information on the available properties and their corresponding values.</p>
+</div>
+<table id="table-specifications-messages" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Technical specifications of the format <strong>messages</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">messages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the creator process and prefix of the created file.<br>
+File name: <strong>messages-xxx.csv.gz</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fileFormat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CSV, GZIP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data is provided as a GZIP-compressed CSV file (RFC 1952).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lines per request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 8,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written into a single file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 200,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2020-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column header</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">msg_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the column that contains the time stamp of the last data update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activated by default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data is only exported automatically in the background after you have activated the creator in the <strong>Setup » plentyBI » Raw data</strong> menu.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">daily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">With this setting, all data that has been changed since the last run is exported once a day, usually during the night.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">storableFromPlan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage starting from tariff</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plentyBI S</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum fee plan required for saving the data in cloud storage and making it available via REST.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">processableFromPlan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usage starting from tariff</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plentyBI L</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum fee plan required for making the data available in plentyBI Data Warehouse, i.e. for using, filtering and processing key figures.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="_data_columns">2. Data columns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See {dataColumns} for further information on the <strong>messages</strong> data columns included in the CSV file during raw data export.</p>
+</div>
+<table id="table-data-columns-messages" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Data columns of the format <strong>messages</strong></caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+<th class="tableblock halign-left valign-top">Full name</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>msg_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">msg_parent_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message parent id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the parent message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ac_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">account contact id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">msg_from_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message from type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of the message<br>
+Possible values:<br>
+User<br>
+Email<br>
+Contact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">msg_from_value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message from value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sender of the message<br>
+Possible values:<br>
+User ID<br>
+Email address<br>
+Contact ID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">msg_referrer_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message referrer type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Referrer of the message<br>
+Possible values:<br>
+Back end<br>
+Plugin<br>
+REST API<br>
+System</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">msg_minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message minutes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of minutes saved for the message, e.g.  “30 minutes support”</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">msg_chargeable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message chargeable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag that indicates whether the minutes are billed.<br>
+Possible values:<br>
+0 = Not to be billed<br>
+1 = To be billed</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">msg_done_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message done at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp when the message was closed<br>
+Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">msg_created_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message created at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the creation<br>
+Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>msg_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message updated at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last update<br>
+Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">msg_deleted_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message deleted at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the deletion<br>
+Date format: MM/DD/YYYY HH:MI:SS TZ</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
