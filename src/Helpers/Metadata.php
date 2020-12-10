@@ -8407,17 +8407,17 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "0498c3065cabffa7269e17704cf8bb19",
-												"path" => "business-entscheidungen/business-intelligence/plenty-bi/reports/datenformate/marketplaceVariationValidation",
+												"id" => "9c76bd13db88c15e7060219c11be686f",
+												"path" => "business-entscheidungen/business-intelligence/plenty-bi/reports/datenformate/VariationValidation",
 												"position" => 300,
-												"urlName" => "marketplaceVariationValidation",
+												"urlName" => "VariationValidation",
 												"url" => "/business-entscheidungen/business-intelligence/reports/datenformate/marketplacevariationvalidation",
 												"level" => 6,
-												"title" => "marketplaceVariationValidation",
-												"keywords" => "marketplaceVariationValidation, variationValidation, Report, Rohdaten",
+												"title" => "variationValidation",
+												"keywords" => "Report, Rohdaten",
 												"description" => "",
 												"navAlias" => "",
-												"linkListInto" => "Willkommen im Themenbereich marketplaceVariationValidation. Hier findest du folgende Informationen:",
+												"linkListInto" => "Willkommen im Themenbereich variationValidation. Hier findest du folgende Informationen:",
 												"languageID" => "63SM45X",
 												"children" => [],
 												"hasChildren" => false
