@@ -1,0 +1,623 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#register-with-clc"><span>1.</span><span> Registering with CLC</span></a></li>
+<li><a href="#set-up-clc"><span>2.</span><span> Setting up CLC in plentymarkets</span></a>
+<ul class="sectlevel2">
+<li><a href="#connection-ftp-server"><span>2.1.</span><span> Establishing the connection to the FTP server</span></a></li>
+<li><a href="#general-settings"><span>2.2.</span><span> Carrying out general settings</span></a></li>
+<li><a href="#event-procedure-transmission-orders"><span>2.3.</span><span> Setting up an event procedure for transferring the orders to CLC</span></a></li>
+<li><a href="#document-export"><span>2.4.</span><span> Preparing the document export</span></a>
+<ul class="sectlevel3">
+<li><a href="#event-procedure-document-export"><span>2.4.1.</span><span> Setting up an event procedure for the document export</span></a></li>
+<li><a href="#link-event-procedure-with-plugin"><span>2.4.2.</span><span> Linking the event procedure with the plugin</span></a></li>
+</ul>
+</li>
+<li><a href="#create-link-item-property"><span>2.5.</span><span> Creating an item property and linking it with the plugin</span></a>
+<ul class="sectlevel3">
+<li><a href="#create-item-property"><span>2.5.1.</span><span> Creating an item property</span></a></li>
+<li><a href="#link-item-property"><span>2.5.2.</span><span> Linking the item property with the plugin</span></a></li>
+</ul>
+</li>
+<li><a href="#order-properties"><span>2.6.</span><span> Order properties</span></a></li>
+<li><a href="#status-ready-for-dispatch"><span>2.7.</span><span> Status “Ready for dispatch”</span></a></li>
+<li><a href="#status-outgoing-items"><span>2.8.</span><span> Saving the status for outgoing items</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>CLC</h1><div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Download the CLC plugin</div>
+<div class="paragraph">
+<p>You need a plugin to link plentymarkets to CLC. Visit the <a href="https://marketplace.plentymarkets.com/en/clc_7015" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> to download the CLC plugin.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="register-with-clc">1. Registering with CLC</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to set up the interface for CLC in your plentymarkets system, you have to be registered with <a href="https://www.tietjegroup.com/en/kontakt/" target="_blank" rel="noopener">CLC</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>. Simply write an email to <a href="mailto:email">kontakt@clc.tietjegroup.com</a>.</p>
+</div>
+<div class="paragraph">
+<p>You receive the data from CLC that you need for the settings in plentymarkets.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="set-up-clc">2. Setting up CLC in plentymarkets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Proceed as described below to set up the CLC interface in plentymarkets.</p>
+</div>
+<div class="paragraph">
+<p>Once you have <a href="/en/plugins/installing-added-plugins#installing-plugins">installed the plugin in a plugin set</a>, the plugin is visible in the <strong>Plugins » Plugin set overview</strong> menu.</p>
+</div>
+<h3 id="_importing_stock" class="discrete">Importing stock</h3>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Importing stock</div>
+<div class="paragraph">
+<p>Stock is automatically imported. The import is carried out by cron jobs. Cron jobs are processes that run automatically at a specific time interval.</p>
+</div>
+<div class="paragraph">
+<p>There are 2 import types of stock:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Full stock import</p>
+</li>
+<li>
+<p>Stock correction import</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The full stock import is executed on a daily basis every day and overwrites the stock with an absolute value for all variations given.</p>
+</div>
+<div class="paragraph">
+<p>The stock correction import on the other hand executes a relative correction of the linked variations.</p>
+</div>
+<div class="paragraph">
+<p>Both processes are importing CSV files from an FTP server. Therefore, it is mandatory that a stable connection to this FTP server is established to make sure that the processes can be carried out successfully. Enter the login details in the <strong>Plugins » Plugin set overview</strong> » <em>Select plugin set</em> » <strong>CLC » Configuration » Login details</strong> menu.</p>
+</div>
+<div class="paragraph">
+<p>The cron jobs run automatically once you have installed the plugin and saved and deployed it in a plugin set. Manually triggering the processes is therefore <em>not</em> necessary. The only requirement is the successful connection with the FTP server using valid FTP data.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<h3 id="_item_export" class="discrete">Item export</h3>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Item export</div>
+<div class="paragraph">
+<p>In order that all your item data can be exported from plentymarkets to CLC, the following conditions have to be met:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the first barcode that is saved in the variation has to be of the type <strong>GTIN 13</strong></p>
+</li>
+<li>
+<p>in the <strong>Availability</strong> tab of the variation in the <strong>Markets</strong> area, the same markets need to be selected that are also activated in the plugin settings for the referrer</p>
+</li>
+<li>
+<p>the date of the last update of the variation must not be more than 25 hours in the past</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="connection-ftp-server">2.1. Establishing the connection to the FTP server</h3>
+<div class="paragraph">
+<p>In order to establish a connection between the plugin and the FTP server provided by CLC, you have to fill in all fields in the <strong>Login details</strong> menu of the plugin.</p>
+</div>
+<div class="paragraph instruction">
+<p>Establishing the connection to the FTP server:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » Plugin set overview</strong>.</p>
+</li>
+<li>
+<p>Open the plugin set that contains the CLC plugin.</p>
+</li>
+<li>
+<p>Click on <strong>CLC</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Configuration &gt; Login details</strong>.</p>
+</li>
+<li>
+<p>Carry out the settings. Note <a href="#table-save-login-details">Table 1</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-save-login-details" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Saving the login details</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Host</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the FTP address (does not contain the port).<br>
+<strong><em>Example:</em></strong> <code>ftp.clc.example.com</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Port</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the FTP port that is used in combination with the host to correctly set up the connection address.<br>
+<strong><em>Example:</em></strong> <code>990</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the user name for the FTP account.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Password</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the password for the FTP account.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="general-settings">2.2. Carrying out general settings</h3>
+<div class="paragraph">
+<p>Now carry out some general settings for the plugin. To do so, proceed as described below.</p>
+</div>
+<div class="paragraph instruction">
+<p>Carrying out general settings:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » Plugin set overview</strong>.</p>
+</li>
+<li>
+<p>Open the plugin set that contains the CLC plugin.</p>
+</li>
+<li>
+<p>Click on <strong>CLC</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Configuration &gt; Plugin settings</strong>.</p>
+</li>
+<li>
+<p>Carry out the settings. Note <a href="#table-general-settings">Table 2</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-general-settings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Carrying out general settings</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Barcode ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the ID of the barcode that should be transmitted to CLC when exporting the item data. Barcodes can be created in the <strong>Setup » Items » Barcode</strong> menu. Every barcode has a unique ID and can be used by the plugin.<br>
+For further information, refer to the <a href="/en/item/settings/barcodes#100">Barcodes and labels</a> page of the manual.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the ID of the warehouse that should be used by CLC for transferring the stock.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the ID of the referrer that identifies the orders for CLC.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="event-procedure-transmission-orders">2.3. Setting up an event procedure for transferring the orders to CLC</h3>
+<div class="paragraph">
+<p>Set up an event procedure for transferring the orders to CLC. To do so, proceed as described below.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up an event procedure for transferring the orders to CLC:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Enter a <strong>name</strong> for the event procedure, e.g. <code>Transfer CLC</code>.</p>
+</li>
+<li>
+<p>From the <strong>Event</strong> drop-down list, select the option <strong>Order change &gt; Status change</strong>.<br>
+<strong><em>Note:</em></strong> We recommend using the event <strong>Status change</strong>. You can, however, use any other event as long as it as order-related event.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Click on <strong>Add procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Select the setting <strong>Plugins &gt; CLC Shipping Order Export</strong>.</p>
+</li>
+<li>
+<p>Select the setting <strong>Active</strong> to activate the event procedure.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="document-export">2.4. Preparing the document export</h3>
+<div class="paragraph">
+<p>The CSV files contain additional shipping information such as the shipping service provider and the order ID and are exported to an FTP server. The export is done via an event procedure.</p>
+</div>
+<div class="paragraph">
+<p>Not only can you export CSV files but also PDF documents such as invoices and shipping labels. In the <strong>Document export</strong> area, save the IDs of the order referrers for which you want to export in addition the invoice, the delivery note and the shipping label.</p>
+</div>
+<div class="paragraph">
+<p>If you do not carry out any settings in this menu, your plentymarkets system does <strong>not</strong> transfer any additional documents to CLC.</p>
+</div>
+<div class="paragraph instruction">
+<p>Preparing the document export:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » Plugin set overview</strong>.</p>
+</li>
+<li>
+<p>Open the plugin set that contains the CLC plugin.</p>
+</li>
+<li>
+<p>Click on <strong>CLC</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Configuration &gt; Document export</strong>.</p>
+</li>
+<li>
+<p>Enter the IDs of the order referrers for the invoice export, delivery note export and shipping label export.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can automate this process by setting up an event procedure. How to proceed is described in the following. When the event procedure is triggered, the documents are exported for orders with the referrers that you saved in your plentymarkets system.
+If the system cannot find allowed referrers, the documents are not exported. This also effects the order export.</p>
+</div>
+<div class="sect3">
+<h4 id="event-procedure-document-export">2.4.1. Setting up an event procedure for the document export</h4>
+<div class="paragraph">
+<p>Set up an event procedure to export the documents containing additional shipping details. To do so, proceed as follows.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up an event procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ An editing window opens.</p>
+</li>
+<li>
+<p>Enter a <strong>name</strong> for the event procedure, e.g. <code>CLC Additional Shipping Details</code>.</p>
+</li>
+<li>
+<p>Select the order event <strong>Order change &gt; Status change</strong>.<br>
+<strong><em>Note:</em></strong> We recommend using the event <strong>Status change</strong>. You can, however, use any other event as long as it as order-related event.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="link-event-procedure-with-plugin">2.4.2. Linking the event procedure with the plugin</h4>
+<div class="paragraph">
+<p>In order that the CLC plugin can react to the event procedure, you have to link the event procedure with the plugin. To do so, proceed as described below.</p>
+</div>
+<div class="paragraph instruction">
+<p>Linking the event procedure with the CLC plugin:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on the event procedure for the additional shipping details that you have just created.</p>
+</li>
+<li>
+<p>Click on the right side on <strong>Add procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Select the setting <strong>Plugins &gt; CLC Additional Shipping Details Export</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Select in the upper area of the event procedure the setting <strong>Active</strong> to activate the event procedure.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-link-item-property">2.5. Creating an item property and linking it with the plugin</h3>
+<div class="paragraph">
+<p>Create an item property in the plentymarkets back end and link the property with the CLC plugin to make sure that the order export works correctly. To do so, proceed as described below.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">No item property? Variation number is transferred to CLC</div>
+<div class="paragraph">
+<p>If you do not create an item property and link it with the plugin, your plentymarkets system will transfer the variation number as package code to CLC.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect3">
+<h4 id="create-item-property">2.5.1. Creating an item property</h4>
+<div class="paragraph">
+<p>Go to <strong>Setup » Settings » Properties » Configuration</strong> in your plentymarkets back end and create a property for the <strong>Item</strong> area of the property type <strong>Text</strong>. All other settings in this menu are optional.
+For further information, refer to the <a href="/en/welcome/general-functions/properties">Properties</a> page of the manual.</p>
+</div>
+<div class="paragraph">
+<p>Afterwards, you have to link the property ID to make sure that the orders are exported correctly.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="link-item-property">2.5.2. Linking the item property with the plugin</h4>
+<div class="paragraph">
+<p>The field <strong>Property ID for package code</strong> is used for order items in the order export.</p>
+</div>
+<div class="paragraph instruction">
+<p>Linking the item property:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » Plugin set overview</strong>.</p>
+</li>
+<li>
+<p>Open the plugin set that contains the CLC plugin.</p>
+</li>
+<li>
+<p>Click on <strong>CLC</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Configuration &gt; Item properties</strong>.</p>
+</li>
+<li>
+<p>Enter the <strong>Property ID for package code</strong> that you have just created in the <strong>Setup » Settings » Properties » Configuration</strong> menu.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="order-properties">2.6. Order properties</h3>
+<div class="paragraph">
+<p>If you are using, for example, the program <strong>Prime by Seller</strong>, this information is saved in the order property of the order. This property is transferred to CLC so that CLC knows that this is a Prime order.</p>
+</div>
+<div class="paragraph">
+<p>The field <strong>Property ID for loyalty program</strong> is used for determining the loyalty program. This field is automatically filled. The following values are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DEFAULT</p>
+</li>
+<li>
+<p>ebay_plus</p>
+</li>
+<li>
+<p>Amazon_NextDay</p>
+</li>
+<li>
+<p>Amazon_SecondDay</p>
+</li>
+<li>
+<p>Amazon_Prime</p>
+</li>
+<li>
+<p>Amazon_Prime_NextDay</p>
+</li>
+<li>
+<p>Amazon_Prime_SecondDay</p>
+</li>
+<li>
+<p>Amazon_SameDay</p>
+</li>
+<li>
+<p>Amazon_Prime_SameDay</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="status-ready-for-dispatch">2.7. Status “Ready for dispatch”</h3>
+<div class="paragraph">
+<p>The cron job <strong>Ready for dispatch</strong> executes a data import from the FTP server on a daily basis. This cron job imports the Amazon properties ASN and ARN. The fields <strong>ID of the ASN property</strong> and <strong>ID of the ARN property</strong> in the <strong>Status “Ready for dispatch”</strong> menu can only be used with the Amazon Vendor plugin. This plugin is currently in development and will soon be available on the <a href="https://marketplace.plentymarkets.com/en/plugins/sales/marketplaces" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+<div class="paragraph">
+<p>If you then install the Amazon Vendor plugin at a later point in time, the order properties ASN and ARN are created automatically. You only have to save the IDs of the properties in the <strong>Status “Ready for dispatch”</strong> menu.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Note:</em></strong> You do <em>not</em> have to enter the IDs if you only want to carry out a simple import that does not contain any ASN and ARN values.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Property for Shipment ID</div>
+<div class="paragraph">
+<p>The field <strong>Property for Shipment ID</strong> is filled automatically after the plugin was successfully installed. It is <em>not</em> recommended to change the value of this property. If the <strong>Property for Shipment ID</strong> is not set correctly, this may cause the <strong>Ready for Dispatch</strong> cron job to not provide successful results.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="status-outgoing-items">2.8. Saving the status for outgoing items</h3>
+<div class="paragraph">
+<p>The <strong>status ID</strong> is a mandatory field. The ID is used to set the status of the orders. Once CLC fulfilled the order, the order is automatically set to the status that you saved in this menu.</p>
+</div>
+<div class="paragraph instruction">
+<p>Saving the status for outgoing items:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » Plugin set overview</strong>.</p>
+</li>
+<li>
+<p>Open the plugin set that contains the CLC plugin.</p>
+</li>
+<li>
+<p>Click on <strong>CLC</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Configuration &gt; Status for outgoing items</strong>.</p>
+</li>
+<li>
+<p>Enter the status ID.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>As a rule, the status that you save here should be equal to or greater than 7, e.g. <em>[7.1] Shipment CLC</em>. If you want to create a separate status for CLC orders, go to <strong>Setup » Orders » Statuses</strong>.</p>
+</div>
+<div class="paragraph">
+<p>For further information about the order status, refer to the <a href="/en/orders/managing-orders#1200">Managing orders</a> page of the manual.</p>
+</div>
+<h4 id="_setting_up_an_event_procedure_to_automatically_book_outgoing_items" class="discrete">Setting up an event procedure to automatically book outgoing items</h4>
+<div class="paragraph">
+<p>If you want that the outgoing items are booked automatically once an order is in status <em>[7.1] Shipment CLC</em>, set up an event procedure for this.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up an event procedure to automatically book outgoing items:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>) to create a new event procedure.<br>
+→ An editing window opens.</p>
+</li>
+<li>
+<p>Enter a <strong>name</strong> for the event procedure, e.g. <code>CLC book outgoing items</code>.</p>
+</li>
+<li>
+<p>Select the order event <strong>Order change &gt; Status change</strong>.</p>
+</li>
+<li>
+<p>Select the appropriate status from the drop-down list, e.g. <em>[7.1] Shipment CLC</em>.</p>
+</li>
+<li>
+<p>Click on <strong>Add procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Select the procedure <strong>Order &gt; Book outgoing items</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Select the setting <strong>Active</strong> to activate the event procedure.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</main>
