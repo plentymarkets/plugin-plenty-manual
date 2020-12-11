@@ -2422,6 +2422,22 @@ class Metadata {
 		"languageID" => "BELRROP",
 		"children" => 		[
 			[
+				"id" => "dc8998cdfcc84b9cf0b5678023a3ae9c",
+				"path" => "fulfillment/clc",
+				"position" => 0,
+				"urlName" => "clc",
+				"url" => "/fulfillment/clc",
+				"level" => 2,
+				"title" => "CLC",
+				"keywords" => "CLC, China Logistic Center",
+				"description" => "Erfahre, wie du CLC in plentymarkets einrichtest.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich CLC. Hier findest du folgende Informationen:",
+				"languageID" => "0PI6NSM",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "c16ecf83869b0b2f08c85a4a0697f8bb",
 				"path" => "fulfillment/versand-vorbereiten",
 				"position" => 10,
@@ -2592,6 +2608,22 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich DPD Shipping UK. Hier findest du folgende Informationen:",
 						"languageID" => "0PL7WV9",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "70f7b92b63eedf4fafbc42a9fc55e300",
+						"path" => "fulfillment/versanddienstleister-plugins/plugin-post-nl",
+						"position" => 600,
+						"urlName" => "plugin-post-nl",
+						"url" => "/fulfillment/versanddienstleister-plugins/plugin-post-nl",
+						"level" => 3,
+						"title" => "PostNL",
+						"keywords" => "postNL, postnl, post.nl, post-nl, Post Niederlande",
+						"description" => "Erfahre, wie du das Plugin \"PostNL\" in plentymarkets einrichtest.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich PostNL. Hier findest du folgende Informationen:",
+						"languageID" => "97CN7P2",
 						"children" => [],
 						"hasChildren" => false
 					]

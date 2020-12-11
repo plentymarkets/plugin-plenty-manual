@@ -1,0 +1,623 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#bei-clc-registrieren"><span>1.</span><span> Bei CLC registrieren</span></a></li>
+<li><a href="#clc-einrichten"><span>2.</span><span> CLC in plentymarkets einrichten</span></a>
+<ul class="sectlevel2">
+<li><a href="#verbindung-ftp-server"><span>2.1.</span><span> Verbindung zum FTP-Server herstellen</span></a></li>
+<li><a href="#allgemeine-einstellungen"><span>2.2.</span><span> Allgemeine Einstellungen vornehmen</span></a></li>
+<li><a href="#ereignisaktion-uebergabe-auftraege"><span>2.3.</span><span> Ereignisaktion für die Übergabe der Aufträge an CLC einrichten</span></a></li>
+<li><a href="#dokumentenxport"><span>2.4.</span><span> Dokumentenexport vorbereiten</span></a>
+<ul class="sectlevel3">
+<li><a href="#ereignisaktion-dokumentenxport"><span>2.4.1.</span><span> Ereignisaktion für den Dokumentenexport einrichten</span></a></li>
+<li><a href="#ereignisaktion-mit-plugin-verknuepfen"><span>2.4.2.</span><span> Ereignisaktion mit dem Plugin verknüpfen</span></a></li>
+</ul>
+</li>
+<li><a href="#artikeleigenschaft-erstellen-und-verknuepfen"><span>2.5.</span><span> Artikeleigenschaft erstellen und mit dem Plugin verknüpfen</span></a>
+<ul class="sectlevel3">
+<li><a href="#artikeleigenschaft-erstellen"><span>2.5.1.</span><span> Artikeleigenschaft erstellen</span></a></li>
+<li><a href="#artikeleigenschaft-verknuepfen"><span>2.5.2.</span><span> Artikeleigenschaft mit dem Plugin verknüpfen</span></a></li>
+</ul>
+</li>
+<li><a href="#auftragseigenschaften"><span>2.6.</span><span> Auftragseigenschaften</span></a></li>
+<li><a href="#status-versandbereit"><span>2.7.</span><span> Status “Versandbereit”</span></a></li>
+<li><a href="#status-warenausgang"><span>2.8.</span><span> Status für den Warenausgang speichern</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>CLC</h1><div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">CLC-Plugin herunterladen</div>
+<div class="paragraph">
+<p>Die Schnittstelle zu CLC wird über ein Plugin integriert. Um das CLC-Plugin nutzen zu können, lade das Plugin im <a href="https://marketplace.plentymarkets.com/CLC-Fulfillment_7015" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> herunter.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="bei-clc-registrieren">1. Bei CLC registrieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Um die Schnittstelle für CLC in deinem plentymarkets System einzurichten, musst du bei <a href="https://www.tietjegroup.com/kontakt/" target="_blank" rel="noopener">CLC</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> registriert sein. Schreibe einfach eine E-Mail an <a href="mailto:email">kontakt@clc.tietjegroup.com</a>.</p>
+</div>
+<div class="paragraph">
+<p>Du erhältst dann von CLC die Daten, die du für die Einstellungen in plentymarkets benötigst.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="clc-einrichten">2. CLC in plentymarkets einrichten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gehe wie im Folgenden beschrieben vor, um die Schnittstelle zu CLC in deinem plentymarkets System einzurichten.</p>
+</div>
+<div class="paragraph">
+<p>Sobald du das <a href="/plugins/hinzugefuegte-plugins-installieren#plugin-installieren">Plugin in einem Plugin-Set installiert</a> hast, ist das Plugin im Menü <strong>Plugins » Plugin-Set-Übersicht</strong> sichtbar.</p>
+</div>
+<h3 id="_import_von_warenbeständen" class="discrete">Import von Warenbeständen</h3>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Import von Warenbeständen</div>
+<div class="paragraph">
+<p>Die Warenbestände werden automatisch importiert. Den Import übernehmen Cron-Jobs. Cron-Jobs sind Prozesse, die in bestimmten Zeitintervallen automatisch ausgeführt werden.</p>
+</div>
+<div class="paragraph">
+<p>Es gibt 2 Importtypen von Warenbeständen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Vollständiger Bestandsimport</p>
+</li>
+<li>
+<p>Bestandsabgleichsimport</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Der vollständige Bestandsimport wird jeden Tag ausgeführt und überschreibt den Warenbestand aller Varianten mit einem absoluten Wert.</p>
+</div>
+<div class="paragraph">
+<p>Der Bestandsabgleich hingegen nimmt eine relative Korrektur der verknüpften Varianten vor.</p>
+</div>
+<div class="paragraph">
+<p>Beide Prozesse importieren CSV-Dateien von einem FTP-Server. Daher ist die erfolgreiche Verbindung zu diesem FTP-Server zwingend notwendig, damit die Prozesse erfolgreich ausgeführt werden können. Die Zugangsdaten gibst du im Menü <strong>Plugins » Plugin-Set-Übersicht</strong> » <em>Plugin-Set wählen</em> » <strong>CLC » Konfiguration » Zugangsdaten</strong> ein.</p>
+</div>
+<div class="paragraph">
+<p>Die Cron-Jobs laufen automatisch, sobald du das Plugin installiert und es in einem Plugin-Set gespeichert und bereitgestellt hast. Das manuelle Auslösen der Prozesse ist demnach <em>nicht</em> notwendig. Die einzige Voraussetzung ist die erfolgreiche Verbindung zum FTP-Server mit gültigen FTP-Daten.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<h3 id="_artikelexport" class="discrete">Artikelexport</h3>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Artikelexport</div>
+<div class="paragraph">
+<p>Damit all deine Artikeldaten von plentymarkets zu CLC exportiert werden können, müssen die folgenden Bedingungen erfüllt sein:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>der erste Barcode, der an der Variante gespeichert ist, muss vom Typ <strong>GTIN 13</strong> sein</p>
+</li>
+<li>
+<p>im Tab <strong>Verfügbarkeit</strong> der Variante müssen unter <strong>Märkte</strong> die selben Marktplätze gewählt sein, die auch in den Plugin-Einstellungen für die Herkunft aktiviert wurden</p>
+</li>
+<li>
+<p>das Änderungsdatum der Variante darf nicht länger als 25 Stunden zurückliegen</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="verbindung-ftp-server">2.1. Verbindung zum FTP-Server herstellen</h3>
+<div class="paragraph">
+<p>Um eine Verbindung zwischen dem Plugin und dem von CLC bereitgestellten FTP-Server herzustellen, musst du alle Felder im Menü <strong>Zugangsdaten</strong> des Plugins ausfüllen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Verbindung zum FTP-Server herstellen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Plugins » Plugin-Set-Übersicht</strong>.</p>
+</li>
+<li>
+<p>Öffne das Plugin-Set, in dem sich das CLC-Plugin befindet.</p>
+</li>
+<li>
+<p>Klicke auf die Zeile <strong>CLC</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Konfiguration &gt; Zugangsdaten</strong>.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#table-save-login-details">Tabelle 1</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="table-save-login-details" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Zugangsdaten speichern</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Host</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FTP-Adresse (beinhaltet nicht den Port) eingeben.<br>
+<strong><em>Beispiel:</em></strong> <code>ftp.clc.example.com</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Port</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FTP-Port eingeben, der in Kombination mit dem Host verwendet wird, um die Verbindungsadresse korrekt einzurichten.<br>
+<strong><em>Beispiel:</em></strong> <code>990</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Benutzername</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Benutzernamen für das FTP-Konto eingeben.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Passwort</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Passwort für das FTP-Konto eingeben.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="allgemeine-einstellungen">2.2. Allgemeine Einstellungen vornehmen</h3>
+<div class="paragraph">
+<p>Nimm nun einige allgemeine Einstellungen für das Plugin vor. Gehe dazu wie im Folgenden beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Allgemeine Einstellungen vornehmen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Plugins » Plugin-Set-Übersicht</strong>.</p>
+</li>
+<li>
+<p>Öffne das Plugin-Set, in dem sich das CLC-Plugin befindet.</p>
+</li>
+<li>
+<p>Klicke auf die Zeile <strong>CLC</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Konfiguration &gt; Plugin-Einstellungen</strong>.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#table-general-settings">Tabelle 2</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="table-general-settings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Allgemeine Einstellungen vornehmen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Barcode-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Barcodes eingeben, die beim Artikeldatenexport an CLC übertragen werden soll. Barcodes können im Menü <strong>Einrichtung » Artikel » Barcode</strong> erstellt werden. Jeder Barcode hat eine eindeutige ID und kann vom Plugin verwendet werden.<br>
+Weitere Informationen findest du auf der Handbuchseite  <a href="/artikel/einstellungen/barcodes#100">Barcodes und Etiketten</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lager-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Lagers eingeben, das für die Übertragung der Warenbestände von CLC genutzt werden soll.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Herkunft eingeben, die die Aufträge für CLC kennzeichnet.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="ereignisaktion-uebergabe-auftraege">2.3. Ereignisaktion für die Übergabe der Aufträge an CLC einrichten</h3>
+<div class="paragraph">
+<p>Richte für die Übergabe der Aufträge an CLC eine Ereignisaktion ein. Gehe dazu wie im Folgenden beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Ereignisaktion für die Übergabe der Aufträge an CLC einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>), um eine neue Ereignisaktion zu erstellen.</p>
+</li>
+<li>
+<p>Gib einen <strong>Namen</strong> für die Ereignisaktion ein, z.B. <code>Übergabe CLC</code>.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Ereignis</strong> die Einstellung <strong>Auftragsänderung &gt; Statuswechsel</strong>.<br>
+<strong><em>Hinweis:</em></strong> Wir empfehlen das Ereignis <strong>Statuswechsel</strong>. Du kannst jedoch jedes andere beliebige Ereignis wählen, solange es sich um ein auftragsrelevantes Ereignis handelt.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Aktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle die Einstellung <strong>Plugins &gt; CLC Shipping Order Export</strong>.</p>
+</li>
+<li>
+<p>Wähle die Einstellung <strong>Aktiv</strong>, um die Ereignisaktion zu aktivieren.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="dokumentenxport">2.4. Dokumentenexport vorbereiten</h3>
+<div class="paragraph">
+<p>Die CSV-Dateien enthalten zusätzliche Versandinformationen wie Versanddienstleister und Auftrags-ID und werden zu einem FTP-Server exportiert. Der Export erfolgt über eine Ereignisaktion.</p>
+</div>
+<div class="paragraph">
+<p>Nicht nur CSV-Dateien können exportiert werden, sondern auch PDF-Dokumente wie Rechnungen und Versandlabels. Im Bereich <strong>Dokumentenexport</strong> speicherst du die IDs der Auftragsherkünfte, für die du zusätzlich die Rechnung, den Lieferschein und das Versandlabel exportieren möchtest.</p>
+</div>
+<div class="paragraph">
+<p>Wenn du in diesem Menü keine Einstellungen vornimmst, übermittelt dein plentymarkets System <strong>keine</strong> zusätzlichen Dokumente an CLC.</p>
+</div>
+<div class="paragraph instruction">
+<p>Dokumentenexport vorbereiten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Plugins » Plugin-Set-Übersicht</strong>.</p>
+</li>
+<li>
+<p>Öffne das Plugin-Set, in dem sich das CLC-Plugin befindet.</p>
+</li>
+<li>
+<p>Klicke auf die Zeile <strong>CLC</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Konfiguration &gt; Dokumentenexport</strong>.</p>
+</li>
+<li>
+<p>Gib die IDs der Auftragsherkünfte für den Rechnungsexport, Lieferscheinexport und Versandlabelexport ein.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Du kannst diesen Prozess automatisieren, indem du eine Ereignisaktion einrichtest. Wie du dazu vorgehst, ist im Folgenden beschrieben. Wenn die Ereignisaktion ausgelöst wird, werden die Dokumente für Aufträge mit den Herkünften, die du in deinem plentymarkets System gespeichert hast, exportiert.
+Wenn das System keine erlaubte Herkunft findet, werden die Dokumente nicht exportiert. Dies betrifft auch den Auftragsexport.</p>
+</div>
+<div class="sect3">
+<h4 id="ereignisaktion-dokumentenxport">2.4.1. Ereignisaktion für den Dokumentenexport einrichten</h4>
+<div class="paragraph">
+<p>Richte eine Ereignisaktion ein, um die Dokumente mit den zusätzlichen Versandinformationen zu exportieren. Gehe wie im Folgenden beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Ereignisaktion einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>), um eine neue Ereignisaktion zu erstellen.<br>
+→ Ein Bearbeitungsfenster öffnet sich.</p>
+</li>
+<li>
+<p>Gib einen <strong>Namen</strong> für die Ereignisaktion ein, z.B. <code>CLC Additional Shipping Details</code>.</p>
+</li>
+<li>
+<p>Wähle das Auftragsereignis <strong>Auftragsänderung &gt; Statuswechsel</strong>.<br>
+<strong><em>Hinweis:</em></strong> Wir empfehlen das Ereignis <strong>Statuswechsel</strong>. Du kannst jedoch jedes andere beliebige Ereignis wählen, solange es sich um ein auftragsrelevantes Ereignis handelt.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ereignisaktion-mit-plugin-verknuepfen">2.4.2. Ereignisaktion mit dem Plugin verknüpfen</h4>
+<div class="paragraph">
+<p>Damit das CLC Plugin auf die Ereignisaktion reagieren kann, musst du die Ereignisaktion mit dem Plugin verknüpfen. Gehe dazu wie im Folgenden beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Ereignisaktion mit dem CLC Plugin verknüpfen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf die Ereignisaktion für die zusätzlichen Versandinformationen, die du gerade erstellt hast.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Aktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>) auf der rechten Seite des Bildschirms.</p>
+</li>
+<li>
+<p>Wähle die Einstellung <strong>Plugins &gt; CLC Additional Shipping Details Export</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Wähle im oberen Bereich der Ereignisaktion die Einstellung <strong>Aktiv</strong>, um die Ereignisaktion zu aktivieren.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="artikeleigenschaft-erstellen-und-verknuepfen">2.5. Artikeleigenschaft erstellen und mit dem Plugin verknüpfen</h3>
+<div class="paragraph">
+<p>Erstelle eine Artikeleigenschaft im plentymarkets Backend und verknüpfe die Eigenschaft mit dem CLC Plugin, um sicherzustellen, dass der Auftragsexport korrekt funktioniert. Gehe dazu wie im Folgenden beschrieben vor.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Keine Artikeleigenschaft? Variantennummer wird an CLC übermittelt</div>
+<div class="paragraph">
+<p>Wenn du keine Artikeleigenschaft erstellst und diese nicht mit dem Plugin verknüpfst, übermittelt dein plentymarkets System die Variantennummer als Paketcode an CLC.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect3">
+<h4 id="artikeleigenschaft-erstellen">2.5.1. Artikeleigenschaft erstellen</h4>
+<div class="paragraph">
+<p>Öffne in deinem plentymarkets Backend das Menü <strong>Einrichtung » Einstellungen » Eigenschaften » Konfiguration</strong> und erstelle eine Eigenschaft für den Bereich <strong>Artikel</strong> vom Eigenschaftstyp <strong>Text</strong>. Alle anderen Einstellungen in diesem Menü sind optional.
+Weitere Informationen zu Eigenschaften findest du auf der Handbuchseite <a href="/willkommen/allgemeine-funktionen/eigenschaften">Eigenschaften</a>.</p>
+</div>
+<div class="paragraph">
+<p>Anschließend musst du die Eigenschafts-ID verknüpfen, damit der Auftragsexport korrekt funktioniert.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="artikeleigenschaft-verknuepfen">2.5.2. Artikeleigenschaft mit dem Plugin verknüpfen</h4>
+<div class="paragraph">
+<p>Das Feld <strong>Eigenschafts-ID für Paketcode</strong> wird für Auftragspositionen im Auftragsexport verwendet.</p>
+</div>
+<div class="paragraph instruction">
+<p>Artikeleigenschaft verknüpfen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Plugins » Plugin-Set-Übersicht</strong>.</p>
+</li>
+<li>
+<p>Öffne das Plugin-Set, in dem sich das CLC-Plugin befindet.</p>
+</li>
+<li>
+<p>Klicke auf die Zeile <strong>CLC</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Konfiguration &gt; Artikeleigenschaften</strong>.</p>
+</li>
+<li>
+<p>Gib die <strong>Eigenschafts-ID für Paketcode</strong> ein, die du gerade im Menü <strong>Einrichtung » Einstellungen » Eigenschaften » Konfiguration</strong> erstellt hast, ein.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auftragseigenschaften">2.6. Auftragseigenschaften</h3>
+<div class="paragraph">
+<p>Wenn du beispielsweise das Programm <strong>Prime by Seller</strong> verwendest, wird diese Information in der Auftragseigenschaft des Auftrags gespeichert. Diese Eigenschaft wird an CLC übermittelt, damit CLC weiß, dass es sich um einen Prime-Auftrag handelt.</p>
+</div>
+<div class="paragraph">
+<p>Das Feld <strong>Eigenschafts-ID für Treueprogramm</strong> wird für die Ermittlung des Treueprogramms verwendet. Dieses Feld wird automatisch befüllt. Die folgenden Werte sind verfügbar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DEFAULT</p>
+</li>
+<li>
+<p>ebay_plus</p>
+</li>
+<li>
+<p>Amazon_NextDay</p>
+</li>
+<li>
+<p>Amazon_SecondDay</p>
+</li>
+<li>
+<p>Amazon_Prime</p>
+</li>
+<li>
+<p>Amazon_Prime_NextDay</p>
+</li>
+<li>
+<p>Amazon_Prime_SecondDay</p>
+</li>
+<li>
+<p>Amazon_SameDay</p>
+</li>
+<li>
+<p>Amazon_Prime_SameDay</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="status-versandbereit">2.7. Status “Versandbereit”</h3>
+<div class="paragraph">
+<p>Der Cron-Job <strong>Versandbereit</strong> führt täglich einen Datenimport vom FTP-Server aus. Dieser Cron-Job importiert die Amazon-Eigenschaften ASN und ARN. Die Felder <strong>ID der ASN-Eigenschaft</strong> und <strong>ID der ARN-Eigenschaft</strong> im Menü <strong>Status „Versandbereit“</strong> können nur in Verbindung mit dem Amazon Vendor-Plugin verwendet werden. Dieses Plugin befindet sich derzeit in der Entwicklung und wird in Kürze auf dem <a href="https://marketplace.plentymarkets.com/plugins/sales/marktplaetze" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> verfügbar sein.</p>
+</div>
+<div class="paragraph">
+<p>Wenn du das Amazon Vendor-Plugin dann zu einem späteren Zeitpunkt installiert hast, werden die Auftragseigenschaften ASN und ARN automatisch erstellt. Du musst die IDs der Eigenschaften dann lediglich im Menü <strong>Status „Versandbereit“</strong> speichern.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Hinweis:</em></strong> Du musst die IDs <em>nicht</em> eingeben, wenn du einen einfachen Import ausführen möchtest, der keine ASN- und ARN-Werte enthält.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Eigenschaft für Shipment ID</div>
+<div class="paragraph">
+<p>Das Feld <strong>Eigenschaft für Shipment ID</strong> wird automatisch befüllt, nachdem das Plugin erfolgreich installiert wurde. Das Ändern des Werts dieser Eigenschaft wird <em>nicht</em> empfohlen. Wenn die <strong>Eigenschaft für Shipment ID</strong> nicht korrekt gesetzt ist, kann dies dazu führen, dass der <strong>Ready for Dispatch</strong>-Cron-Job keine erfolgreichen Ergebnisse liefert.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="status-warenausgang">2.8. Status für den Warenausgang speichern</h3>
+<div class="paragraph">
+<p>Die <strong>Status-ID</strong> ist ein Pflichtfeld. Die ID wird verwendet, um den Status der Aufträge zu setzen. Sobald CLC den Auftrag ausgeführt hat, wird der Auftrag automatisch in den Status gesetzt, den du in diesem Menü speicherst.</p>
+</div>
+<div class="paragraph instruction">
+<p>Status für den Warenausgang speichern:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Plugins » Plugin-Set-Übersicht</strong>.</p>
+</li>
+<li>
+<p>Öffne das Plugin-Set, in dem sich das CLC-Plugin befindet.</p>
+</li>
+<li>
+<p>Klicke auf die Zeile <strong>CLC</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Konfiguration &gt; Status für Warenausgang</strong>.</p>
+</li>
+<li>
+<p>Gib die Status-ID ein.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Üblicherweise sollte der Status, den du hier speicherst, gleich oder größer als 7 sein, z.B. <em>[7.1] Versand CLC</em>. Wenn du einen eigenen Status für CLC Aufträge erstellen möchtest, öffne das Menü <strong>Einrichtung » Aufträge » Status</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Weitere Informationen zum Auftragsstatus findest du auf der Handbuchseite <a href="/auftraege/auftraege-verwalten#1200">Aufträge verwalten</a>.</p>
+</div>
+<h4 id="_ereignisaktion_für_den_automatischen_warenausgang_einrichten" class="discrete">Ereignisaktion für den automatischen Warenausgang einrichten</h4>
+<div class="paragraph">
+<p>Wenn du möchtest, dass der Warenausgang automatisch gebucht wird, sobald sich ein Auftrag in Status <em>[7.1] Versand CLC</em> befindet, richte dir eine Ereignisaktion ein.</p>
+</div>
+<div class="paragraph instruction">
+<p>Ereignisaktion für den automatischen Warenausgang einrichten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>), um eine neue Ereignisaktion zu erstellen.<br>
+→ Ein Bearbeitungsfenster öffnet sich.</p>
+</li>
+<li>
+<p>Gib einen <strong>Namen</strong> für die Ereignisaktion ein, z.B. <code>CLC Warenausgang buchen</code>.</p>
+</li>
+<li>
+<p>Wähle das Auftragsereignis <strong>Auftragsänderung &gt; Statuswechsel</strong>.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste den passenden Status, z.B. <em>[7.1] Versand CLC</em>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Aktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Wähle die Aktion <strong>Auftrag &gt; Warenausgang buchen</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Hinzufügen</strong>.</p>
+</li>
+<li>
+<p>Wähle die Einstellung <strong>Aktiv</strong>, um die Ereignisaktion zu aktivieren.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</main>
