@@ -6506,6 +6506,22 @@ class Metadata {
 								"languageID" => "1K9G8HY",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "fc46f592fdf1161364883b962a398a02",
+								"path" => "maerkte/ebay/ebay-plugins/eBay-OAuth2",
+								"position" => 50,
+								"urlName" => "eBay-OAuth2",
+								"url" => "/maerkte/ebay/ebay-plugins/ebay-OAuth2",
+								"level" => 4,
+								"title" => "eBay OAuth2 Account Management Plugin",
+								"keywords" => "eBay OAuth2 Account Management, eBay Plugin, eBay OAuth2",
+								"description" => "Multi-Channel in plentymarkets: Schalte neue Konten für eBay in deinem plentymarkets System frei.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich eBay OAuth2 Account Management Plugin. Hier findest du folgende Informationen:",
+								"languageID" => "BMY4DQO",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
