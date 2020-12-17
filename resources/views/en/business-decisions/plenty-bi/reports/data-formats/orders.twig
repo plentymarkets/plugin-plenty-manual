@@ -1,0 +1,352 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_technical_specifications"><span>1.</span><span> Technical specifications</span></a></li>
+<li><a href="#_data_columns"><span>2.</span><span> Data columns</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>orders</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the <strong>orders</strong> data format creator to export orders and save this data in the cloud.
+The raw data file is stored in the cloud for a maximum of 6 months.
+Therefore, the data must be processed before this date.
+The following tables contain further information about the format.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_technical_specifications">1. Technical specifications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="#table-specifications-orders">Table 1</a> for further information on the available properties and their corresponding values.</p>
+</div>
+<table id="table-specifications-orders" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Technical specifications of the format <strong>orders</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">orders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the creator process and prefix of the created file.<br>
+File name: <strong>orders-xxx.csv.gz</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fileFormat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CSV, GZIP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data is provided as a GZIP-compressed CSV file (RFC 1952).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limitPage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lines per request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 5,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written into a single file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">limitDay</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lines per day</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">up to 500,000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of data rows that is written on one day in total.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">earliestPossibleDataDate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Earliest point in time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2020-01-01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Point in time as of which the raw data can be collected. The data is filtered by the date saved in the <strong>dataUpdatedAtColumnName</strong> column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filterType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lastUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data are filtered based on the last update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataUpdatedAtColumnName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column header</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_updated_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the column that contains the time stamp of the last data update.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defaultActive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activated by default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As standard, the export runs automatically in the background.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interval</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">daily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">With this setting, all data that has been changed since the last run is exported once a day, usually during the night.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">storableFromPlan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage starting from tariff</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plentyBI XS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum fee plan required for saving the data in cloud storage and making it available via REST.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">processableFromPlan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usage starting from tariff</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plentyBI L</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum fee plan required for making the data available in plentyBI Data Warehouse, i.e. for using, filtering and processing key figures.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="_data_columns">2. Data columns</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="#table-data-columns-orders">Table 2</a> for further information on the <strong>orders</strong> data columns included in the CSV file during raw data export.</p>
+</div>
+<table id="table-data-columns-orders" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Data columns of the format <strong>orders</strong></caption>
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column name</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+<th class="tableblock halign-left valign-top">Full name</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plenty ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>o_id (Primary key)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_plenty_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order plenty ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the plentymarkets system or the client via which the order was created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_origin_order_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order origin order ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the main order. This ID is only exported for order types that are assigned to a so-called main order (e.g. credit notes, returns and delivery orders).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">os_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NUMERIC(6,4) NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status of the order in decimal format. Depending on the statuses set up in the system, numbers with up to 4 decimal places are exported. You can find the IDs of the standard statuses on the <a href="/en/data/internal-IDs#120">Internal IDs in plentymarkets</a> page of the manual.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_referrer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NUMERIC(5,2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order referrer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Referrer of the order.<br>
+Possible values:<br>
+0 = Manual entry<br>
+1 = Client (store)<br>
+2 = eBay<br>
+4 = Amazon<br>
+5 = Yatego<br>
+6 = Kelkoo<br>
+7 = Google Shopping<br>
+9 = Wish<br>
+101 = ricardo<br>
+102 = real.de<br>
+You can find further possible values for order referrers on the <a href="/en/data/internal-IDs#90">Internal IDs in plentymarkets</a> page of the manual.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_global_referrer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NUMERIC(5,2)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order global referrer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Global referrer of the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order type<br>
+Possible values:<br>
+order = Order<br>
+delivery order = Delivery order<br>
+return = Return<br>
+credit note = Credit note<br>
+warranty = Warranty<br>
+repair = Repair<br>
+offer = Offer<br>
+advance order = Advance order<br>
+multi-order = Multi-order<br>
+multi credit note = Multi credit note</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_is_main_order</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order is main order</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates whether the order is a main order.<br>
+1 = Yes<br>
+0 = No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_is_net</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order is net</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates whether the order was billed as net or gross.<br>
+1 = Net<br>
+0 = Gross</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_is_b2b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order is b2b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates whether it is a B2B order.<br>
+1 = Yes<br>
+0 = No</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ac_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">account contact id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the contact that is assigned to the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_payment_status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMALLINT NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order payment status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment status of the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_invoice_postal_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order invoice postal code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postcode listed in the invoice address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_invoice_town</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order invoice town</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Town listed in the invoice address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_invoice_country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order invoice country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country listed in the invoice address (ISO2 code)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_delivery_postal_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order delivery postal code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postcode listed in the delivery address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_delivery_town</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order delivery town</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Town listed in the delivery address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_delivery_country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order delivery country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country listed in the delivery address (ISO2 code)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_shipping_profile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order shipping profile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the shipping profile of the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_parcel_service</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INTEGER NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order parcel service</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping service provider of the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID of the warehouse associated with the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse country</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Country of the warehouse associated with the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">smw_postal_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARCHAR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stock management warehouse postal code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Postcode of the warehouse associated with the order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_entry_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order entry at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp of the entry of the order. This date is editable in the user interface in the back end. If no change has been made, this field is identical to the existing field <strong>o_created_at</strong> (timestamp at which the order has been saved in the database).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_created_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order created at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the order creation<br>
+Date format: MM/DD/YY HH:MI:SS TZ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_goods_issue_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order goods issue at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp for booking outgoing items<br>
+Date format: MM/DD/YY HH:MI:SS TZ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o_paid_at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPZ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order paid at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp for booking the incoming payment<br>
+Date format: MM/DD/YY HH:MI:SS TZ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>o_updated_at</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TIMESTAMPTZ NOT NULL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">order updated at</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time stamp of the last order update<br>
+Date format: MM/DD/YY HH:MI:SS TZ</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
