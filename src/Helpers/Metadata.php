@@ -7735,7 +7735,7 @@ class Metadata {
 				"title" => "plentyBI",
 				"keywords" => "BI, Business Intelligence, Kennzahl, Kennzahlen, Key Performance Indicator, Key Performance Indicators, KPI, KPIs, Statistik, Kundenstatistik, Besucherstatistik, Webalizer, Rohdaten",
 				"description" => "Erfahre mehr über die Tools in plentymarkets, die dir helfen, clevere Geschäftsentscheidungen zu treffen.",
-				"navAlias" => "",
+				"navAlias" => "Übersicht",
 				"linkListInto" => "Willkommen im Themenbereich plentyBI. Hier findest du folgende Informationen:",
 				"languageID" => "CC4EFZF",
 				"children" => 				[
