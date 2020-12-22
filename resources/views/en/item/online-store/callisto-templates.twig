@@ -4,9 +4,14 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#730"><span>1.</span><span> Old online store: Creating item templates in Callisto</span></a></li>
-<li><a href="#740"><span>2.</span><span> Old online store: Linking an item template with an item in Callisto</span></a></li>
-<li><a href="#750"><span>3.</span><span> Linking an item template with multiple items</span></a></li>
+<li><a href="#100"><span>1.</span><span> Creating a category for the item template</span></a></li>
+<li><a href="#200"><span>2.</span><span> Linking items with the template category</span></a>
+<ul class="sectlevel2">
+<li><a href="#300"><span>2.1.</span><span> Linking the template with one item</span></a></li>
+<li><a href="#400"><span>2.2.</span><span> Linking the template with multiple items</span></a></li>
+</ul>
+</li>
+<li><a href="#500"><span>3.</span><span> Deploying the plugin</span></a></li>
 </ul>
 </div>
         </div>
@@ -14,52 +19,70 @@
 </aside>
 
 <main id="main">
-    <h1>Item templates in Callisto</h1><div id="preamble">
+    <h1>Item templates (not recommended)</h1><div id="preamble">
 <div class="sectionbody">
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">ShopBuilder has replaced the item templates</div>
 <div class="paragraph">
-<p>Item templates can be used to create differing description texts for various categories of items in the online store.</p>
+<p>It’s technically possible to use item templates with the Ceres webshop.
+However, we don’t recommend doing so for two reasons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Item templates overwrite your “normal” product pages and are therefore not particularly useful in real life situations.</p>
+</li>
+<li>
+<p>This procedure is more complicated than <a href="https://vimeo.com/360260315">designing product pages with ShopBuilder</a> (see German video starting from minute 12:17).</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
-<p>Let’s assume you sell fashion and accessories. You would like a note to appear in the detailed view of each fashion item, reminding the customer to select a colour. However, you do not want this note to be shown for accessories. To put this into practice without having to add the note to the description of each <strong>fashion</strong> item individually, create a new category of the type <strong>Content</strong> that contains the information you want to display. The content consists of the template variable <strong>$Description</strong> as well as your note. The template variable <strong>$Description</strong> is important, because without it only the additional text will be displayed. Then you link the items with the new category. In the online store, the item description will then be displayed together with the additional text of the item template.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/item/assets/EN-Item-Item-Templates-01.png" alt="Inserting the template variable and the additional text">
-</div>
-<div class="title">Figure 1. Inserting the template variable and the additional text</div>
-</div>
-</div>
-</div><div class="sect1">
-<h2 id="730">1. Old online store: Creating item templates in Callisto</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In order to attach the additional text to item descriptions, proceed as follows.</p>
-</div>
-<div class="paragraph instruction">
-<p>Creating a category with an additional text:</p>
+<p>You can use item templates to design your webshop’s product pages.
+You’ll proceed as follows:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <strong>Item » Categories</strong>.</p>
+<p>Create a new category of the type “Content” and insert HTML code into the “Template” tab.</p>
 </li>
 <li>
-<p>Click on <strong>New category</strong>.<br>
+<p>Link the desired items to this category.</p>
+</li>
+<li>
+<p>Finally, deploy the Ceres plugin.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. Creating a category for the item template</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Category</strong>.</p>
+</li>
+<li>
+<p>Click on <span class="icon green"><i class="fa fa-plus  "></i></span> <strong>New category</strong>.<br>
 → The <strong>Create new category</strong> window opens.</p>
 </li>
 <li>
 <p>Enter a name for the category.</p>
 </li>
 <li>
-<p>Select <strong>Subcategory</strong> as the category level.<br>
-→ The category levels can now be selected.</p>
-</li>
-<li>
-<p>Select a main category for the new category.</p>
-</li>
-<li>
-<p>Click on <strong>Create</strong> to create the category.<br>
-→ The category is created and displayed as a subcategory in the directory tree on the left.</p>
+<p>Click on <span class="icon green"><i class="fa fa-save  "></i></span> <strong>Create</strong>.<br>
+→ The category is created and displayed in the directory tree on the left.</p>
 </li>
 <li>
 <p>Click on this category’s <strong>Settings</strong> tab.</p>
@@ -68,102 +91,114 @@
 <p>Select the type <strong>Content</strong>.</p>
 </li>
 <li>
-<p><strong>Save</strong> the settings.</p>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Click on the <strong>Description 1</strong> tab and enter the template variable <strong>$Description</strong> and the <strong>additional text</strong> (image 1).</p>
+<p>Click on the tab <strong>Template</strong> and insert HTML code. This is the template.</p>
 </li>
 <li>
-<p><strong>Save</strong> the settings.</p>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>Instead of the template variable <strong>$Description</strong>, the actual item description will be displayed in the <strong>description</strong> area in the online store. This was entered into the <strong>Item text</strong> field in the item’s <strong>Texts</strong> tab. The additional text entered into the item template will be attached to this description.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="title">Only use valid template variables and template functions</div>
-<div class="paragraph">
-<p>Only use the <strong>variables and functions</strong> valid for a template. In the category, click on <strong>Template variables and template functions</strong> to display the variables and functions sorted by templates. Only copy the variables and functions from the item view section, for example <strong>ItemViewSingleItem</strong> to create the item templates.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
 </div>
 </div><div class="sect1">
-<h2 id="740">2. Old online store: Linking an item template with an item in Callisto</h2>
+<h2 id="200">2. Linking items with the template category</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once you have created the item template, link the template with the item.</p>
+<p>Once you’ve created the item template, you’ll link this template with the desired items.
+You can either link the template with one single item or with several items at once.</p>
 </div>
-<div class="paragraph instruction">
-<p>Linking the item template:</p>
-</div>
+<div class="sect2">
+<h3 id="300">2.1. Linking the template with one item</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Go to <strong>Item » Edit item</strong>.</p>
 </li>
 <li>
-<p>Open the item.</p>
+<p><a href="/en/item/introduction/search#100">Search for</a> and open the item.</p>
 </li>
 <li>
-<p>Click on the <strong>Texts</strong> tab.</p>
+<p>Click on the <strong>Texts</strong> tab in the upper row.</p>
 </li>
 <li>
-<p>Use the <strong>Item template</strong> option to select the category.</p>
+<p>Scroll down to the option <strong>Item template</strong>.</p>
 </li>
 <li>
-<p><strong>Save</strong> the settings.</p>
+<p>Click on <strong>Assign category</strong> (<span class="icon yellow"><i class="fa fa-pencil  "></i></span>).<br>
+→ The <strong>Select item template</strong> window opens.</p>
+</li>
+<li>
+<p>Click on the category of the type “Content”.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="psicon-execute"></i></span> <strong>Select</strong>.<br>
+→ The template will be linked to the item.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 </ol>
 </div>
 </div>
-</div><div class="sect1">
-<h2 id="750">3. Linking an item template with multiple items</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Instead of linking the item template to an item, use the group function to link an item template with multiple items at the same time.</p>
-</div>
-<div class="paragraph instruction">
-<p>Linking an item template with multiple items:</p>
-</div>
+<div class="sect2">
+<h3 id="400">2.2. Linking the template with multiple items</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Go to <strong>Item » Edit item</strong>.</p>
 </li>
 <li>
-<p>Select the <strong>filters</strong>.</p>
+<p>Set the filter <strong>Table type</strong> to <strong>Item</strong>.</p>
 </li>
 <li>
-<p>Click on <strong>Search</strong>.<br>
-→ All items found is displayed in the overview.</p>
+<p>Choose additional <a href="/en/item/introduction/search#100">filters on the left</a> if needed and click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).</p>
 </li>
 <li>
-<p>Click on <strong>Select all</strong> in the header of the item overview.</p>
+<p>Select (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) the items to be edited from the overview on the right.</p>
 </li>
 <li>
-<p>Click on <strong>Item group function</strong>.</p>
+<p>Click on <strong>Item group function</strong>.<br>
+→ The <strong>Item group function</strong> window opens.</p>
 </li>
 <li>
-<p>In the <strong>Global</strong> area, activate the option <strong>Item template</strong>.</p>
+<p>Link the item template. To do so:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Search for the <strong>Item template</strong> option in the <strong>Global</strong> area.</p>
 </li>
 <li>
-<p>Click on <strong>Assign category</strong> to select the item template.</p>
+<p>Click on the check box (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) to the left of this option.</p>
 </li>
 <li>
-<p>Click on <strong>Execute</strong>.<br>
-→ The item template is linked with all items.</p>
+<p>Click on <strong>Assign category</strong> (<span class="icon yellow"><i class="fa fa-pencil  "></i></span>) to the right of this option.<br>
+→ The <strong>Select item template</strong> window opens.</p>
+</li>
+<li>
+<p>Click on the category of the type “Content”.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="psicon-execute"></i></span> <strong>Select</strong>.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="psicon-execute"></i></span> <strong>Execute</strong>.<br>
+→ The template will be linked to all of the selected items.</p>
 </li>
 </ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="500">3. Deploying the plugin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="/en/welcome/quick-start/quick-start-online-store#270">Deploy the Ceres plugin</a> and check what the template looks like in your webshop.
+Keep in mind that item templates overwrite your “normal” product pages and are therefore not particularly useful in real life situations.</p>
 </div>
 </div>
 </div>
