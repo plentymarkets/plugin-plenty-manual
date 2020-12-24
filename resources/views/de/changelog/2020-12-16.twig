@@ -1,0 +1,318 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Changelog 16. Dezember 2020</h1><div class="paragraph">
+<p>Erfahre, was sich in der Woche vom 10. Dezember 2020 bis zum 16. Dezember 2020 bei plentymarkets getan hat. Im Folgenden findest du alle Changelog-Einträge der letzten Woche für stable- und early-Systeme.</p>
+</div><div class="paragraph">
+<p>Wenn du mehr zu den einzelnen Versionen erfahren oder auf eine andere Version wechseln möchtest, siehe die Handbuchseite <a href="/business-entscheidungen/systemadministration/versionszyklus">Versionszyklus</a>. Um die Informationen, die auf dieser Seite gesammelt sind, in Echtzeit zu erhalten, abonniere die <a href="https://forum.plentymarkets.com/c/changelog" target="_blank" rel="noopener">Kategorie Changelog in unserem Forum</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div><div class="paragraph">
+<p>Wähle, welchen Changelog du sehen möchtest.</p>
+</div><ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
+                                <a class="nav-link active" id="stable-tab" data-toggle="tab" href="#stable" role="tab" aria-controls="stable" aria-selected="true">stable</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="early-tab" data-toggle="tab" href="#early" role="tab" aria-controls="early" aria-selected="false">early</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="plugin-updates-tab" data-toggle="tab" href="#plugin-updates" role="tab" aria-controls="plugin-updates" aria-selected="false">Plugin-Updates</a>
+                            </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="stable" role="tabpanel" aria-labelledby="stable-tab">
+<h2 id="_neu" class="discrete">Neu</h2>
+<div class="paragraph">
+<p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
+</div>
+<h3 id="_kataloge" class="discrete">Kataloge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ab sofort können auch die Formateinstellungen für Marktplatzkataloge genutzt werden.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_geändert" class="discrete">Geändert</h2>
+<div class="paragraph">
+<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
+</div>
+<h3 id="_amazon" class="discrete">Amazon</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Beim Ausführen der Ereignisaktion <strong>Rechnung bei Amazon hochladen</strong> ändert sich Folgendes:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Bisher fügte die Ereignisaktion nur neue Einträge zur Warteschlange des Rechnungsuploads hinzu oder aktualisierte Einträge im Status Ausstehend. Ab jetzt werden damit auch fehlgeschlagene Einträge und Einträge, die laut Status seit über einer Stunde in Bearbeitung sind, wieder eingereiht. Letztere sind aufgrund eines Fehlverhaltens immer noch in diesem Status.</p>
+</li>
+<li>
+<p>Einträge in der Warteschlange des Rechnungsuploads werden nur noch überschrieben, wenn es tatsächlich eine Änderung gab, da sich sonst der Rechnungsupload unnötigerweise um 3 Stunden verzögert.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Beim Import des VCS-Berichts für VCS Lite bzw. VCS plentymarkets ändern sich folgende Dinge:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Bisher wurden erst am Ende der Verarbeitung des Berichts alle Aufträge gesammelt zur Warteschleife des Rechnungsupload hinzugefügt. Ab sofort werden die Transaktionen einzeln während der Verarbeitung des Berichts zur Warteschleife hinzugefügt.</p>
+</li>
+<li>
+<p>Wenn ein Auftrag auf Basis des Berichts korrigiert werden musste, wird immer ein Eintrag zur Warteschleife des Rechnungsuploads hinzugefügt.</p>
+</li>
+<li>
+<p>Wenn ein Auftrag nicht auf Basis des Berichtes korrigiert werden musste, wird der Auftrag trotzdem neu zur Warteschleife hinzugefügt, wenn sich der Auftrag mehr als 3 Stunden im Status <strong>Abgeschlossen</strong> befindet, da dann davon auszugehen ist, dass es beim letzten Upload zu einem Fehler bei der Verarbeitung auf Amazon kam.</p>
+</li>
+<li>
+<p>Einträge in der Warteschlange des Rechnungsuploads werden nur noch überschrieben, wenn es tatsächlich eine Änderung gab, da sich sonst der Rechnungsupload unnötigerweise um 3 Stunden verzögert.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Beim Cron-Prozess des Rechnungsuploads, der alle 15 Minuten ausgeführt wird, ändert sich Folgendes:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Anhand der Existenz der Auftragseigenschaft mit der Typ-ID 44 wird entschieden, ob ein Auftrag mit VCS berechnet wurde oder nicht. Der Wert der Eigenschaft spielt dabei keine Rolle. Existiert die Eigenschaft, dann wird ein Auftrag so behandelt, als wäre der Auftrag mit VCS berechnet worden und entsprechende Metainformationen beim Upload mitgeliefert. Dieses Verhalten wird nur ausgehebelt, wenn bei keinem der zugehörigen Konten des entsprechenden Verkäuferkontos die Einstellungen Rechnung erzeugen unter <strong>Einrichtung » Märkte » Amazon » Einstellungen »</strong> <em>Konto öffnen</em> <strong>» Tab: Einstellungen » Bereich: Basiseinstellungen</strong> die Auswahl <strong>VCS plentymarkets</strong> getroffen wurde. Dann wird die Rechnung so hochgeladen, als läge keine VCS-Berechnung zugrunde.</p>
+</li>
+<li>
+<p>Wenn ein Auftrag mit VCS berechnet wurde und es sich um einen FBA-Auftrag handelt, wird ab jetzt immer die ID der Lieferung beim Rechnungsupload in den Metainformationen mitgegeben. Vorher wurde diese ID nur mitgegeben, wenn es zum Zeitpunkt des Uploads mehrere Aufträge zu einer Amazon-Auftrags-ID gab.</p>
+</li>
+<li>
+<p>Zwischen dem Upload von zwei Rechnungen muss seitens Amazon eine Pause von 3 Sekunden gemacht werden. Bisher wurde eine Pause von 5,5 Sekunden gemacht, da es vor allem in der Anfangsphase Probleme mit niedrigeren Intervallen gab. Das Intervall wurde nun testweise wieder auf 4 Sekunden reduziert.</p>
+</li>
+<li>
+<p>Wie bisher auch, lädt der Prozess maximal 150 Rechnungen aus dem Status <strong>Ausstehend</strong> pro Lauf zu Amazon hoch. Zusätzlich versucht der Prozess automatisch, jeweils 25 Rechnungen erneut hochzuladen, die entweder im Status <strong>Fehlgeschlagen</strong> sind oder seit über einer Stunde im Status <strong>In Bearbeitung</strong> sind. Dabei werden aber nur Einträge berücksichtigt, die maximal drei Tage alt sind. Ältere Einträge können weiterhin unter <strong>Einrichtung » Märkte » Amazon » Datenaustausch » Berichte » Tab: Rechnungen hochladen</strong> manuell neu hinzugefügt werden.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Alle Log-Einträge zum Thema Rechnungsupload sind ab jetzt unter dem Identifikator <strong>AmazonInvoiceUpload</strong> zu finden. Jeder Versuch, einen Eintrag in der Warteschlange zu aktualisieren und jeder Versuch, eine Rechnung hochzuladen, wird dabei mit mindestens einem Log-Eintrag festgehalten. Abgesehen von besonders schweren Ausnahmefehlern, steht immer der Referenztyp <strong>orderId</strong> zum Filtern zur Verfügung und wo dies möglich war, ebenfalls der Referenztyp <strong>amazonOrderId</strong>.</p>
+</li>
+<li>
+<p>Bisher wurde auch immer ein Log geschrieben, wenn ein Eintrag zur Warteschlange des Rechnungsuploads nicht geschrieben wurde, weil der aktuelle Eintrag dem neuen Eintrag entspricht. Dieses Verhalten produzierte jedoch deutlich mehr Log-Einträge als erwartet. Deshalb wurde dieses Log auf das Debug-Level umgestellt und wird nur noch geschrieben, wenn dieser aktiviert wurde.</p>
+</li>
+</ul>
+</div>
+<h3 id="_import" class="discrete">Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Abgleich der Variante wird nun in einem eigenen Bereich names <strong>Daten ergänzen</strong> angezeigt. Da bei diesem Abgleichfeld die im System hinterlegten Informationen der Varianten geladen und dem Auftrag hinzugefügt werden. Weitere Informationen findest du auf der Handbuchseite <a href="/daten/daten-importieren/sync-typen/elasticSync-auftraege">Import-Typen » Aufträge</a>.</p>
+</li>
+</ul>
+</div>
+<h3 id="_otto" class="discrete">OTTO</h3>
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::changelog/_textblocks/otto-master-file.adoc[]</p>
+</div>
+<hr>
+<h2 id="_behoben" class="discrete">Behoben</h2>
+<div class="paragraph">
+<p>Folgende Fehler wurden in den letzten 7 Tagen auf <strong>stable</strong> behoben.</p>
+</div>
+<h3 id="_amazon_2" class="discrete">Amazon</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Durch einen falschen Wert schlug die Aktualisierung der Einträge in der Warteschlange für den Rechnungsupload fehl. Dadurch wurden Aufträge nicht in die Warteschlange für den Rechnungsupload eingereiht.</p>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">To-Do</div>
+<div class="paragraph">
+<p>Händler:innen, die VCS Lite bzw. VCS plentymarkets nutzen, müssen nichts unternehmen, da ihre Rechnungen automatisch durch den Import des VCS-Berichts erneut hochgeladen wurden.</p>
+</div>
+<div class="paragraph">
+<p>Händler:innen, die kein VCS nutzen, müssen Folgendes durchführen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Unter Daten » Log mit den folgenden Suchparametern nach Einträgen suchen:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Identifikator</strong> = <code>AmazonInvoiceUpload</code></p>
+</li>
+<li>
+<p><strong>Level</strong> = <code>critical</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Für jeden gefundenen Eintrag mit der Nachricht <code>Eintrag in Warteschlange für Rechnungsupload nicht aktualisiert. Kontaktiere den Support im Forum.</code> die Auftrags-ID aus den Referenzen herauskopieren.</p>
+</li>
+<li>
+<p>Unter <strong>Einrichtung » Märkte » Amazon » Datenaustausch » Berichte » Tab: Rechnungen hochladen</strong> die gesammelten Auftrags-IDs kommagetrennt eintragen und ausführen. Dadurch werden die Aufträge der Warteschlange hinzugefügt.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</li>
+<li>
+<p>Die Logs zum tatsächlichen Rechnungsupload wurden wegen eines Fehlers in der Log-Nachricht nicht geschrieben.</p>
+</li>
+<li>
+<p>Ein paar Logs hatten noch nicht den neuen Identifikator AmazonInvoiceUpload.</p>
+</li>
+<li>
+<p>Bereits übertragene Rechnungen wurden bereits vor der erwarteten Pufferzeit von 3 Stunden nach dem letzten Upload wieder in die Warteschlange eingereiht, wenn diese noch im VCS-Bericht beinhaltet sind.</p>
+</li>
+</ul>
+</div>
+<h3 id="_aufträge" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Es war bisher möglich, Leerzeichen am Anfang und Ende von Paketnummern an Versandpaketen zu setzen. Diese werden nun beim Speichern entfernt.</p>
+</li>
+<li>
+<p>Führende und nachfolgende Leerzeichen in der externen Auftrags-ID wurden mit gespeichert, sodass die Suche nach Aufträgen über die externe Auftrags-ID zu keinem Treffer führte. Nun werden alle Leerzeichen vor dem Speichern entfernt.</p>
+</li>
+<li>
+<p>Bei der Aktualisierung von Versandkosten direkt über die Auftragssuche konnte es bei Aufträgen in Fremdwährung zu einem Fehler kommen, wodurch die Versandkosten nicht gespeichert wurden.
+Dies wurde behoben.</p>
+</li>
+<li>
+<p>Wenn an einer Artikelposition im Auftrag ein Lager zugeordnet ist das gelöscht wurde, konnte das Lager nicht mehr aktualisiert werden. Dies wurde behoben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_crm" class="discrete">CRM</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Eigenschaften vom Typ Kontakt wurden auf dem Adressetikett nicht korrekt ausgegeben. Dieser Fehler wurde behoben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_elastischer_export" class="discrete">Elastischer Export</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Beim Exportieren wurden nur die Lagerorte der ersten Zeile geliefert. Der Fehler wurde behoben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_import_2" class="discrete">Import</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Beim Import bereits bestätigter Newsletter-Empfänger kam es zu einem Fehler, welcher den Import nicht beenden ließ. Dieser Fehler wurde behoben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_netto" class="discrete">Netto</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Es wird nicht länger ein negativer Bestand für Varianten an Netto übermittelt. Ist der Bestand kleiner 0, wird stattdessen <code>0</code> übertragen.</p>
+</li>
+</ul>
+</div>
+</div><div class="tab-pane fade" id="early" role="tabpanel" aria-labelledby="early-tab">
+<h2 id="_neu_2" class="discrete">Neu</h2>
+<div class="paragraph">
+<p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
+</div>
+<h3 id="_aufträge_2" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Im Menü <strong>Waren » Bestellwesen » Bestellung</strong> wurden zwei neue Spalten zur Übersichtstabelle hinzugefügt. Die neuen Spalten sind <strong>Gesamtwert</strong> (nur für Nachbestellungen verfügbar) und <strong>Zahlungsziel</strong>. Diese Spalten sind optional. Sie werden nicht standardmäßig in der Tabelle angezeigt. Klicke auf <strong>Spalten konfigurieren</strong>, um sie zur Tabelle hinzuzufügen.</p>
+</li>
+<li>
+<p>Alle Tabellen im Abo-Modul wurden in Angular-Material-Komponenten umgewandelt. Benutzerdefinierte Spaltenüberschriften wurden ebenfalls hinzugefügt. Mit den neuen Tabellen ist es nun möglich, Spalten nach Wunsch zu konfigurieren.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_behoben_2" class="discrete">Behoben</h2>
+<div class="paragraph">
+<p>Folgende Fehler wurden in den letzten 7 Tagen auf <strong>early</strong> behoben.</p>
+</div>
+<h3 id="_aufträge_3" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Wir haben Optimierungen an der automatischen Zuordnung von Zahlungen vorgenommen und konnten so die Suche nach offenen Aufträgen unter gewissen Voraussetzungen enorm beschleunigen. Beachte hier bitte, dass der Effekt, je nach der Menge deiner Daten, mehr oder weniger zu spüren ist. Es ergibt sich aber auf keinen Fall ein Nachteil daraus.</p>
+</li>
+</ul>
+</div>
+<h3 id="_crm_2" class="discrete">CRM</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Liste der Feldnamen werden nicht mehr mehrfach angezeigt, wenn das Layout-Design ausgewählt wird. Die Namen in der Feldliste werden nach einem Neuladen nicht angezeigt.</p>
+</li>
+<li>
+<p>Die Umlaute Ä,Ö,Ü &amp; ß wurden nach dem Versenden einer Nachricht mit Messenger in der Übersicht als Entities dargestellt und auch als solche auf Nachbestellungs-Dokumenten ausgegeben. Dieser Fehler wurde behoben.</p>
+</li>
+</ul>
+</div>
+<h3 id="_versand" class="discrete">Versand</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In einigen Fällen kam es vor, dass trotz der Einstellung <strong>Versanddaten des Artikelpakets übermitteln</strong> die Versanddaten des Basisartikel übermittelt wurden. Dieses Fehlverhalten wurde behoben.</p>
+</li>
+</ul>
+</div>
+</div><div class="tab-pane fade" id="plugin-updates" role="tabpanel" aria-labelledby="plugin-updates-tab">
+<div class="paragraph">
+<p>Folgende Plugins wurden in den letzten 7 Tagen in einer neuen Version auf plentyMarketplace veröffentlicht:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Plugin-Updates</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 20%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin-Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To-do</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/clc_7017" target="_blank" rel="noopener">CLC</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/cookiebar_4809" target="_blank" rel="noopener">Cookiebar</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Konfiguriere die neuen Plugin-Einstellungen nach deinen Vorstellungen und speichere sie.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/cytautomaticcrossselling_7016" target="_blank" rel="noopener">Wird oft gekauft mit…​</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/tcontrolledcontent_7018" target="_blank" rel="noopener">Zeitgesteuerter Content</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Wenn du dir weitere neue oder aktualisierte Plugins anschauen möchtest, findest du eine <a href="https://marketplace.plentymarkets.com/plugins?sorting=variation.createdAt_desc&amp;page=1&amp;items=50" target="_blank" rel="noopener">Übersicht direkt auf plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+</div></div>
+</main>
