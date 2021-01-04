@@ -4289,6 +4289,22 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
+			],
+			[
+				"id" => "f1bd5ee9323f4ce8015d0d13e29da667",
+				"path" => "daten/statistiken",
+				"position" => 90,
+				"urlName" => "statistiken",
+				"url" => "/business-entscheidungen/plenty-bi/statistiken",
+				"level" => 2,
+				"title" => "Alt: Statistiken",
+				"keywords" => "Statistik, Kundenstatistik, Besucherstatistik, Webalizer, Rohdaten",
+				"description" => "Erfahre, wie du das Statistikmodul in plentymarkets verwendest.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Alt: Statistiken. Hier findest du folgende Informationen:",
+				"languageID" => "MSLDK1U",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
@@ -7627,22 +7643,6 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
-					],
-					[
-						"id" => "058c40c0f1da72be03e0373a4dfdea62",
-						"path" => "business-entscheidungen/plenty-bi/statistiken",
-						"position" => 20,
-						"urlName" => "statistiken",
-						"url" => "/business-entscheidungen/plenty-bi/statistiken",
-						"level" => 3,
-						"title" => "Alt: Statistiken",
-						"keywords" => "Statistik, Kundenstatistik, Besucherstatistik, Webalizer, Rohdaten",
-						"description" => "Erfahre, wie du das Statistikmodul in plentymarkets verwendest.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Alt: Statistiken. Hier findest du folgende Informationen:",
-						"languageID" => "MSLDK1U",
-						"children" => [],
-						"hasChildren" => false
 					],
 					[
 						"id" => "68a1bbe12052a0a7640c66f0b158aaa6",
