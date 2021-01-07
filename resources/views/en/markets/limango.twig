@@ -1,0 +1,953 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> About limango</span></a></li>
+<li><a href="#150"><span>2.</span><span> Becoming a limango partner</span></a></li>
+<li><a href="#200"><span>3.</span><span> Overview of automatic data exchange with limango</span></a></li>
+<li><a href="#220"><span>4.</span><span> Workflow of a limango order</span></a></li>
+<li><a href="#170"><span>5.</span><span> Installing the limango plugin</span></a></li>
+<li><a href="#300"><span>6.</span><span> Setting up limango</span></a></li>
+<li><a href="#600"><span>7.</span><span> Activating the order referrer</span></a></li>
+<li><a href="#500"><span>8.</span><span> Defining a sales price</span></a></li>
+<li><a href="#750"><span>9.</span><span> Setting the variation availability</span></a></li>
+<li><a href="#900"><span>10.</span><span> Setting up the item export</span></a>
+<ul class="sectlevel2">
+<li><a href="#_notes_on_the_limango_item_data_structure"><span>10.1.</span><span> Notes on the limango item data structure</span></a></li>
+<li><a href="#902"><span>10.2.</span><span> Creating a catalogue</span></a></li>
+<li><a href="#903"><span>10.3.</span><span> Mapping data fields in the catalogue</span></a></li>
+<li><a href="#800"><span>10.4.</span><span> Linking variations with the property limangoTemplate</span></a></li>
+<li><a href="#904"><span>10.5.</span><span> Activating the catalogue</span></a></li>
+</ul>
+</li>
+<li><a href="#_automatically_notify_limango_about_cancellations"><span>11.</span><span> Automatically notify limango about cancellations</span></a></li>
+<li><a href="#1300"><span>12.</span><span> Setting up automatic shipping confirmations</span></a>
+<ul class="sectlevel2">
+<li><a href="#1400"><span>12.1.</span><span> Notifying limango of complete shipment</span></a></li>
+<li><a href="#1500"><span>12.2.</span><span> Notifying limango of partial shipments</span></a></li>
+</ul>
+</li>
+<li><a href="#1000"><span>13.</span><span> Setting up return management</span></a>
+<ul class="sectlevel2">
+<li><a href="#1010"><span>13.1.</span><span> Workflow for returns</span></a></li>
+<li><a href="#1030"><span>13.2.</span><span> Automatically notify limango about completed returns</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>limango</h1><div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Download the limango plugin</div>
+<div class="paragraph">
+<p>You need a plugin to link plentymarkets to limango. Visit the <a href="https://marketplace.plentymarkets.com/en/plugins/sales/marktplaetze/xxxx_xxxx" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> to download the limango plugin.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. About limango</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>limango, a member of the Otto Group, is the number one platform for young families. Besides its private Shopping Club, limango also operates the <a href="https://www.limango.de/shop" target="_blank" rel="noopener">online shop</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> which is accessible without registration. Since the marketplace was launched in 2017, end users also take advantage of a broad and permanent product range that is now provided by more than 300 merchants.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="150">2. Becoming a limango partner</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Join the leading platform for family shopping and click ink:https://entdecke.limango.de/marktplatz-partnerprogramm[here^]&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> for more information on the limango marketplace and our partner program and to send your registration request (please note: information is only available in German).</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can also contact our team of partner managers by sending an email to <a href="mailto:marketplace@limango.de">marketplace@limango.de</a>. A partner manager will get in touch with you soon and will work with you to evaluate the potential on <a href="https://www.limango.de" target="_blank" rel="noopener">limango.de</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> and talk about your next steps.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="200">3. Overview of automatic data exchange with limango</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After installing and setting up the plugin, the automatic processes described in <a href="#data-exchange-limango">Table 1</a> become available:</p>
+</div>
+<table id="data-exchange-limango" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Frequency of data exchange</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Data</th>
+<th class="tableblock halign-left valign-top">Interval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Item data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item export</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">once a day</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stock synchronisation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hourly<br>
+<strong><em>Tip:</em></strong> For technical reasons, shorter stock update intervals are not possible. Set a <a href="#300">stock buffer</a> to prevent overselling.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Price synchronisation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hourly</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Order data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order import</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Every 15 minutes<br>
+<strong><em>Note:</em></strong> Customers make their payments to limango. As such, all orders are imported with the status <strong>[5] Paid</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="220">4. Workflow of a limango order</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Your products are listed in the limango marketplace. The name of your company is shown with your products.</p>
+</li>
+<li>
+<p>Customers place an order on limango.</p>
+</li>
+<li>
+<p>Customers make their payments to limango.</p>
+</li>
+<li>
+<p>→ The order is imported to plentymarkets.<br>
+<strong><em>Note:</em></strong> Because customers make their payments to limango, orders are imported with the status <strong>[5] Paid</strong>.</p>
+</li>
+<li>
+<p>When you receive the order, you ship the products (drop shipping).</p>
+</li>
+<li>
+<p>limango communicates with the customer and takes care of customer service.</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="170">5. Installing the limango plugin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To connect to limango in plentymarkets, install the <a href="https://marketplace.plentymarkets.com/en/limango_7023" target="_blank" rel="noopener">limango plugin</a> in your plentymarkets system. You can download the plugin in the <a href="https://marketplace.plentymarkets.com/en" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Not sure how to install the limango plugin?</div>
+<div class="content">
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::../../../plugins/_textblocks/instructions/plugin-installieren-en_gb.adoc[]</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="300">6. Setting up limango</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you have installed the limango plugin, set up the market in the plugin settings.</p>
+</div>
+<div class="paragraph instruction">
+<p>Setting up limango:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » Plugin set overview</strong>.<br>
+→ The list of plugin sets is shown.</p>
+</li>
+<li>
+<p>Click on the plugin set in which you have installed the limango plugin.<br>
+→ The plugin set opens.</p>
+</li>
+<li>
+<p>Click on the plugin <strong>limango</strong>.<br>
+→ The plugin settings open.</p>
+</li>
+<li>
+<p>Carry out the settings. Pay attention to the information given in <a href="#limango-setup">Table 2</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="limango-setup" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Setting up limango</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>SFTP credentials</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Host</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter <code>ftp-partner.limango.de</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Port</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter port <code>22</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User name</strong><br>
+<strong>Password</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You will receive these credentials from limango.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Plugin item properties</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>limango category property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The ID of the property <strong>limangoTemplate</strong> that is created automatically when the plugin is installed. The ID is filled in automatically.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Fields created by plugin</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order referrer ID created by plugin</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The ID of the order referrer <strong>limango</strong> that is created automatically when you install the plugin. The ID is filled in automatically.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status of last price export</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>1</strong> = The prices were exported to limango. You can check the last time the export was successful <strong>Timestamp of last successful price export</strong>.</p>
+</li>
+<li>
+<p><strong>2</strong> = The last price export failed.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Time of last successful price export</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The timestamp of the last successful price export.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Stock export</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stock buffer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The stock of all warehouses is exported to limango. Enter a whole number to reduce the exported stock information by the entered amount.<br>
+<strong><em>Note:</em></strong> Stock information is exported to limango once per hour. For technical reasons, shorter stock update intervals are not possible. Use the stock buffer to prevent overselling.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="600">7. Activating the order referrer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An order referrer tags an order with the sales channel on which the order was generated. You also need to activate the order referrer in order to link items, characteristics etc. with limango. Go to <strong>Setup » Orders » Order referrer</strong> to activate the order referrer.</p>
+</div>
+<div class="paragraph instruction">
+<p>Activating the order referrer for limango:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Order referrer</strong>.</p>
+</li>
+<li>
+<p>Activate the option <strong>limango</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="500">8. Defining a sales price</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Proceed as described below to define a sales price for the order referrer limango. This price is displayed on limango.</p>
+</div>
+<div class="paragraph instruction">
+<p>Defining a sales price for limango:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Item » Sales prices » [Open sales price] » Tab: Settings</strong>.</p>
+</li>
+<li>
+<p>Activate the referrer <strong>limango</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="750">9. Setting the variation availability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You need to activate all variations that you want to sell on limango. This is done in the <strong>Availability</strong> tab of a variation within the <strong>Item » Edit item » [Open item] » Tab: Variation ID</strong> menu.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Use group function or batch processing</div>
+<div class="paragraph">
+<p>You can edit the availability of several variations at once by using either the <a href="/en/item/managing-items#100">variation group function</a> or <a href="/en/item/managing-items#400">batch processing</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Setting the variation availability for limango:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » Tab: Variation ID » Tab: Settings</strong>.</p>
+</li>
+<li>
+<p>Open the variation that you want to sell on limango.<br>
+<strong><em>Tip:</em></strong> To sell all variations of an item on limango, carry out the settings for the item’s main variation. This activates the availability of all variations of the item.</p>
+</li>
+<li>
+<p>In the <strong>Availability</strong> area, activate the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>Availability</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Markets</strong> area, click in the selection field.<br>
+→ A list of all available markets is displayed.</p>
+</li>
+<li>
+<p>Activate the option <strong>limango</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The market is added.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The variation is available for limango.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="900">10. Setting up the item export</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Item data is exported to limango via catalogue formats. Go to <strong>Data » Catalogues</strong> to create catalogues. Is this your first time working with catalogues? Then read up on the <a href="#en/data/exporting-data/managing-catalogues">principle of catalogues first</a>.</p>
+</div>
+<div class="paragraph">
+<p>To export your item data to limango, you need to create a catalogue. Link the limango data fields with the item data saved in plentymarkets in the marketplace format afterwards. After you activate the catalogue, the catalogue data is automatically exported to limango in regular intervals.</p>
+</div>
+<div class="sect2">
+<h3 id="_notes_on_the_limango_item_data_structure">10.1. Notes on the limango item data structure</h3>
+<div class="paragraph">
+<p>The structure of limango item data differs from the structure in plentymarkets. The limango item data is categorised into three levels:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Product group:</strong> Corresponds to a product in all its different versions</p>
+</li>
+<li>
+<p><strong>Product:</strong> Corresponds to a specific colour version of the product</p>
+</li>
+<li>
+<p><strong>Variation:</strong> Is equivalent to the size / EAN / SKU</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If the product is only available in a single version, then product group = variant.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="902">10.2. Creating a catalogue</h3>
+<div class="paragraph">
+<p>Item data is exported to limango via catalogue using the marketplace format <strong>limango</strong>. Create a catalogue in the <strong>Data » Catalogue</strong> menu to export your items to limango. Link the limango data fields with item data saved in plentymarkets in the marketplace format afterwards. Is this your first time working with catalogues? Then read up on the <a href="#en/data/exporting-data/managing-catalogues">principle of catalogues first</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can create only one catalogue for limango. Multiple catalogues are currently not supported for limango.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Creating a catalogue:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Create catalogue</strong>.</p>
+</li>
+<li>
+<p>Enter a name for the catalogue.</p>
+</li>
+<li>
+<p>In the drop-down list <strong>Export type</strong>, select the option <strong>limango</strong>.</p>
+</li>
+<li>
+<p>In the drop-down list <strong>Format type</strong>, select the option <strong>Item</strong>.</p>
+</li>
+<li>
+<p>In the drop-down list <strong>Format</strong>, select a category of the marketplace.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The catalogue is created.<br>
+→ The catalogue is opened for editing.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="903">10.3. Mapping data fields in the catalogue</h3>
+<div class="paragraph">
+<p>After you have created a catalogue, map the market’s data fields to item data saved in plentymarkets. Check the documentation of the sales channel to find out what data the market expects for the individual data fields.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Using properties</div>
+<div class="paragraph">
+<p>Use <a href="/en/item/managing-items#4800">properties</a> to export values for data fields that have no corresponding item data saved in plentymarkets.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Mapping data fields in the catalogue:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.</p>
+</li>
+<li>
+<p>Click on the catalogue.<br>
+→ The <strong>Mapping</strong> tab with the market data fields opens.<br>
+→ In the left-hand column, the market’s data fields are listed.<br>
+<strong><em>Tip:</em></strong> Mandatory fields are flagged with an asterisk (*).</p>
+</li>
+<li>
+<p>To the right of the first marketplace data field, click on <strong>Add data field</strong>.<br>
+→ To the left, the plentymarkets data fields are listed in groups.</p>
+</li>
+<li>
+<p>Click on a group to expand the associated data fields.<br>
+→ The data fields are shown.</p>
+</li>
+<li>
+<p>Next to the data field you want to select, click on the plus.<br>
+→ The data field is added to the view.<br>
+<strong><em>Tip:</em></strong> Do you want to export a fixed value for every variation for one of the market data fields? Click on the plus next to <strong>Own value</strong>.<br>
+→ The field for the own value is added to the view.</p>
+</li>
+<li>
+<p>Enter a value into the input field.</p>
+</li>
+<li>
+<p>Click on the X to close the editing mode.<br>
+→ The data field is mapped.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Do you want to export two or more plentymarkets fields for a single marketplace data field?</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>To the right of the data field you just mapped, click on <strong>Add data field</strong> (<span class="icon "><i class="fa fa-link fa-rotate-90 "></i></span>).</p>
+</li>
+<li>
+<p>Map an additional plentymarkets data field to the marketplace data field as described above.</p>
+</li>
+<li>
+<p>To the right of the column, click on <strong>Settings</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>).</p>
+</li>
+<li>
+<p>Select a separator from the drop-down list <strong>Separator</strong> or add a custom separator.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The additional data field is mapped. During the export, the content of the two plentymarkets data fields is combined and exported as one field.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Click on <strong>Add fallback data field</strong> to select a data field that is exported in case another one is not available or empty. You can also add more than one fallback data field.<br>
+<strong><em>Note:</em></strong> Even if you assign a fallback data field to a market data field, only one value is exported. The fields are checked in the order in which you mapped them. This means that if the first data field does not provide a value, the first fallback data field is exported etc.</p>
+</li>
+<li>
+<p>Repeat this mapping for all data fields of the market that you want to export.<br>
+<strong><em>Note:</em></strong> All fields flagged with asterisks (*) are mandatory and must be mapped to a plentymarkets data field.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The mappings are saved.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="800">10.4. Linking variations with the property limangoTemplate</h3>
+<div class="paragraph">
+<p>Items that you want to sell on limango have to be linked with the <strong>limangoTemplate</strong> variation property. This variation property is created in your plentymarkets system automatically as soon as you install the limango plugin.</p>
+</div>
+<div class="paragraph instruction">
+<p>Linking variations with the property limangoTemplate:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » Tab: Variation ID » Tab: Properties</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Variation properties</strong> area, click on <strong>Add</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+<strong><em>Tip:</em></strong> To link all variations of an item, carry out these settings for the main variation. The settings are passed on to all variations of the item.</p>
+</li>
+<li>
+<p>Activate the property <strong>limangoTemplate</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="904">10.5. Activating the catalogue</h3>
+<div class="paragraph">
+<p>You have set up limango and created a catalogue for exporting your item data? Then start the export of your item data.</p>
+</div>
+<div class="paragraph instruction">
+<p>Activating the catalogue export to limango:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogues are listed.</p>
+</li>
+<li>
+<p>Scroll to the limango catalogue.</p>
+</li>
+<li>
+<p>In the <strong>Active/Inactive</strong> column, move the toggle button to the right (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>).<br>
+→ The catalogue is active.<br>
+→ The catalogue data is exported to limango once a day during the night{if-active}.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_automatically_notify_limango_about_cancellations">11. Automatically notify limango about cancellations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically notify limango of cancellations.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-cancellation-limango">[event-procedure-cancellation-limango]</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#event-procedure-cancellation-limango">[event-procedure-cancellation-limango]</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-cancellations-limango" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Event procedure to notify limango of cancellations</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Setting</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Option</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selection</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, e.g. <strong>[8] Cancelled</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>limango</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; limango: Send order cancellation to limango</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1300">12. Setting up automatic shipping confirmations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up <a href="/en/automation/event-procedures">event procedures</a> to automatically notify limango when you ship complete or partial orders. You can set up the following event procedures for shipping statuses:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Notify limango of complete shipment - <a href="#1400">Not sure how it’s done?</a></p>
+</li>
+<li>
+<p>Notify limango of partial shipments - <a href="#1500">Not sure how it’s done?</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="1400">12.1. Notifying limango of complete shipment</h3>
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send a shipping confirmation to limango when all outgoing items have been booked for an order.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-shipping-confirmation-limango">Table 4</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#event-procedure-shipping-confirmation-limango">Table 4</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-shipping-confirmation-limango" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Event procedure for notifying limango of complete shipments</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example [7] <strong>Outgoing items booked</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>limango</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Notify limango of complete shipments</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1500">12.2. Notifying limango of partial shipments</h3>
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send a shipping confirmation to limango when some of the outgoing items of an order have been booked.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-partial-shipping-confirmation-limango">Table 5</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#event-procedure-partial-shipping-confirmation-limango">Table 5</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-partial-shipping-confirmation-limango" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Event procedure for notify limango of partial shipments</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example <strong>Order change: Status change</strong><br>
+<strong><em>Note:</em></strong> Select a status that suits your workflow. For example, you might want to create the status <strong>[7.x] *Outgoing items - partial delivery</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>limango</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Notify limango of partial shipments - How it’s done</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1000">13. Setting up return management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now set up the processing of returns for limango.</p>
+</div>
+<div class="sect2">
+<h3 id="1010">13.1. Workflow for returns</h3>
+<div class="paragraph">
+<p>The workflow of limango returns is as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Customers announce the return to limango.</p>
+</li>
+<li>
+<p>You process the return in plentymarkets manually.</p>
+</li>
+<li>
+<p>Customers return the items to you.</p>
+</li>
+<li>
+<p>You notify limango when you have received the items.</p>
+</li>
+<li>
+<p>limango reimburses the customer.<br>
+<strong><em>Note:</em></strong> When you notify limango that the return is completed, limango triggers a credit note and the buyer receives a refund. As such, only notify limango about completing the return after you have received and checked the returned items.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1030">13.2. Automatically notify limango about completed returns</h3>
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform limango when you have completed processing a return.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-returns-limango">[event-procedure-returns-limango]</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#event-procedure-returns-limango">[event-procedure-returns-limango]</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-return-limango" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Event procedure for automatically sending returns to limango</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example <strong>Order change: Status change</strong><br>
+<strong><em>Note:</em></strong> Select a status that suits your workflow. Select the status <strong>[9.12] Send return to limango</strong>, for example.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Return</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>limango</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Notify limango of return completion</strong><br>
+<strong><em>Note:</em></strong> The procedure <strong>Notify limango about completing a return</strong> triggers a credit note.  As such, a refund will be issued to the buyer. As such, make sure the event procedure is only triggered after you have received and checked the returned items.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
