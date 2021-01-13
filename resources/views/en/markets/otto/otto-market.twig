@@ -38,7 +38,26 @@
 <li><a href="#1400"><span>14.3.</span><span> Credit note import</span></a></li>
 </ul>
 </li>
-<li><a href="#1300"><span>15.</span><span> FAQ</span></a></li>
+<li><a href="#1000"><span>15.</span><span> Viewing the log</span></a></li>
+<li><a href="#1300"><span>16.</span><span> FAQ</span></a>
+<ul class="sectlevel2">
+<li><a href="#1301"><span>16.1.</span><span> Which product title is shown at OTTO Market?</span></a></li>
+<li><a href="#1302"><span>16.2.</span><span> Why aren’t my items being exported to OTTO Market?</span></a></li>
+<li><a href="#1303"><span>16.3.</span><span> How can I assign a return package to the correct order in my plentymarkets system?</span></a></li>
+<li><a href="#1304"><span>16.4.</span><span> How do I find OTTO Market orders in my plentymarkets system?</span></a></li>
+<li><a href="#1305"><span>16.5.</span><span> The log shows an error. How do I fix this error?</span></a>
+<ul class="sectlevel3">
+<li><a href="#1306"><span>16.5.1.</span><span> Duplicate entry. Combination of the fields variationId, marketId and accountId must be unique.</span></a></li>
+<li><a href="#1307"><span>16.5.2.</span><span> Code: 200009 - ATTRIBUTE_CHANGE_DENIED or title: Der Wert dieses Feldes kann nicht geändert werden. (title: The value of this field cannot be changed.)</span></a></li>
+<li><a href="#1308"><span>16.5.3.</span><span> productDescription.brand</span></a></li>
+<li><a href="#1309"><span>16.5.4.</span><span> mediaAssets.IMAGE</span></a></li>
+<li><a href="#13010"><span>16.5.5.</span><span> delivery.type</span></a></li>
+<li><a href="#13011"><span>16.5.6.</span><span> productDescription.category</span></a></li>
+<li><a href="#13012"><span>16.5.7.</span><span> Error messages concerning order processing: Carrier ID (X) not mapped in OTTO market config.</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -223,6 +242,33 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link plentymarkets shipping service provider DHL with:</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">For each plentymarkets shipping service provider, select an OTTO Market shipping service provider from the drop-down list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Step <strong>Return shipping service provider</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link plentymarkets shipping service provider DHL with:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For each plentymarkets shipping service provider for returns, select the appropriate OTTO Market shipping service provider for returns from the drop-down list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Select a shipping service provider to be used as fallback for the above settings.</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select the shipping service provider that is to be used if return tracking numbers are added to the system via REST API. For return tracking numbers that are added via REST API, the settings for <strong>OTTO Market shipping service provider for returns</strong> cannot be appied. Return tracking numbers are for example added via REST API if you work with an external fulfilment company that is connected via this API.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Use service provider from shipping profile</strong> (Default option) = The shipping service provider of the order’s shipping profile is also used as the shipping service provider for the return.</p>
+</li>
+<li>
+<p><strong>Alternative return shipping service provider</strong> = Select a shipping service provider from the drop-down list. This shipping service provider is used for all shipments to which the settings above cannot be applied.</p>
+</li>
+<li>
+<p><strong>No alternative shipping service provider</strong> = No attempt is made to select an alternative shipping service provider for the return.<br>
+<strong><em>Note:</em></strong> Every shipping confirmation that you send to OTTO Market must contain a tracking number to be used for a possible return. If you select the option <strong>No alternative shipping service provider</strong>, the shipping confirmation may not be sent to OTTO Market.</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -843,6 +889,7 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 </li>
 <li>
 <p>Select the desired category group from the <strong>Value</strong> drop-down list for the <strong>OTTO category group</strong> property.<br>
+<strong><em>Note:</em></strong> The export to OTTO Market contains the name of the catalogue, not the name of the marketplace format.<br>
 → The variation will be exported in this catalogue.<br>
 <strong><em>Example:</em></strong> If you select the value <strong>Betten</strong> (Beds), then the variation will be exported in the catalogue for the OTTO category group <strong>Betten</strong>.</p>
 </li>
@@ -887,8 +934,8 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 <table id="otto-market-variation-mandatory" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Requirements for exporting variations</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
+<col style="width: 40%;">
+<col style="width: 60%;">
 </colgroup>
 <thead>
 <tr>
@@ -949,6 +996,36 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is the variation linked to the property <strong>OTTO category group</strong>?</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The variation must be linked to the property <strong>OTTO category group</strong>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » Tab: Variation ID » Tab: Settings</strong>.</p>
+</li>
+<li>
+<p>Open the variation that you want to sell on OTTO Market.</p>
+</li>
+<li>
+<p>Open the <strong>Properties</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Variation properties</strong> area, select the property <strong>OTTO category group</strong> from the <strong>Properties</strong> drop-down list and click on <strong>Add</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The property is added.</p>
+</li>
+<li>
+<p>Select the desired category group from the <strong>Value</strong> drop-down list for the <strong>OTTO category group</strong> property.<br>
+→ The variation will be exported in this catalogue.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Is the net stock positive?</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The net stock of the variation must be positive.</p>
@@ -991,7 +1068,7 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Are the data fields mapped?</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>As a minimum, plentymarkets data fields must be mapped to all mandatory fields of the marketplace. The mandatory fields are different for different OTTO category groups.</p>
+<p>As a minimum, plentymarkets data fields must be mapped to all mandatory fields of the marketplace. The mandatory fields are different for different OTTO category groups. All mandatory fields in the catalogue are marked with an asterisk (*).</p>
 </div>
 <div class="ulist">
 <ul>
@@ -999,6 +1076,36 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 <p><a href="#600">How to map one or more plentymarkets data fields to the marketplace data feld.</a></p>
 </li>
 </ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Couldn’t find any errors?</em></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>You have confirmed that the above settings are correct but the variation is still not exported? Then check the data log.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Log</strong>.</p>
+</li>
+<li>
+<p>From the drop-down list <strong>Integration</strong>, select the option <strong>OTTO itemexport</strong> and select <strong>Plenty\\Modules\\Otto\\Item\\Services\\ItemExportService</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).</p>
+</li>
+<li>
+<p>Check all entries for the levels <strong>warning</strong> and <strong>error</strong>.</p>
+</li>
+<li>
+<p>Open the logs containing the message <strong>Variation invalid</strong>.<br>
+→ The the variation ID and the reason for the rejection or the missing characteristic are shown.</p>
+</li>
+<li>
+<p>Correct the variation data.<br>
+<strong><em>Tip:</em></strong> The <a href="#1300">FAQ</a> give an example for dealing with a log entry.</p>
+</li>
+</ol>
 </div></div></td>
 </tr>
 </tbody>
@@ -1617,19 +1724,72 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1300">15. FAQ</h2>
+<h2 id="1000">15. Viewing the log</h2>
 <div class="sectionbody">
-<div class="qlist qanda">
-<ol>
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::_textblocks/instructions/viewing_logs.adoc[]</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1300">16. FAQ</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter contains answers to frequently asked questions.</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><em>Which product title is shown at OTTO Market?</em></p>
-<p>The product title which is displayed on OTTO Market is composed of the following OTTO Market fields that can be mapped in the catalogue: <strong>Brand</strong> + <strong>Model</strong> + <strong>Specific characteristics</strong> + all fields that have the information <strong>Namenbildend</strong> indicated in parentheses.</p>
+<p><a href="#1301">Which product title is shown at OTTO Market?</a></p>
 </li>
 <li>
-<p><em>Why aren’t my items being exported to OTTO Market?</em></p>
+<p><a href="#1302">Why aren’t my items being exported to OTTO Market?</a></p>
+</li>
+<li>
+<p><a href="#1303">How can I assign a return package to the correct order in my plentymarkets system?</a></p>
+</li>
+<li>
+<p><a href="#1304">How do I find OTTO Market orders in my plentymarkets system?</a></p>
+</li>
+<li>
+<p><a href="#1305">The log shows an error. How do I fix this error?</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#1306">Duplicate entry. Combination of the fields variationId, marketId and accountId must be unique.</a></p>
+</li>
+<li>
+<p><a href="#1307">Code: 200009 - ATTRIBUTE_CHANGE_DENIED or title: Der Wert dieses Feldes kann nicht geändert werden.</a></p>
+</li>
+<li>
+<p>&lt;&lt;<a href="#1308">productDescription.brand</a></p>
+</li>
+<li>
+<p>&lt;&lt;<a href="#1309">mediaAssets.IMAGE</a></p>
+</li>
+<li>
+<p><a href="#13010">delivery.type</a></p>
+</li>
+<li>
+<p>&lt;&lt;<a href="#13011">productDescription.category</a></p>
+</li>
+<li>
+<p><a href="#13012">Error messages concerning order processing: Carrier ID (X) not mapped in OTTO market config.</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="1301">16.1. Which product title is shown at OTTO Market?</h3>
+<div class="paragraph">
+<p>The product title which is displayed on OTTO Market is composed of the following OTTO Market fields that can be mapped in the catalogue: <strong>Brand</strong> + <strong>Model</strong> + <strong>Specific characteristics</strong> \+ all fields that have the information <strong>Namenbildend</strong> indicated in parentheses.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1302">16.2. Why aren’t my items being exported to OTTO Market?</h3>
+<div class="paragraph">
 <p>You can find out why some of your items are not exported to OTTO Market and therefore are not available on the online market by looking at the following logs.</p>
-</li>
-</ol>
 </div>
 <div class="olist arabic instruction">
 <ol class="arabic">
@@ -1653,6 +1813,9 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 </li>
 <li>
 <p>Click on <strong>Add brand</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>) to add the brand <strong>AudioAffairs</strong>.</p>
+</li>
+</ol>
+</div>
 <table id="filters-item-export-log" class="tableblock frame-all grid-none stretch">
 <caption class="title">Table 9. Search terms for OTTO Market in the log</caption>
 <colgroup>
@@ -1680,21 +1843,24 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 </tr>
 </tbody>
 </table>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">How can I assign a return package to the correct order in my plentymarkets system?</dt>
-<dd>
+</div>
+<div class="sect2">
+<h3 id="1303">16.3. How can I assign a return package to the correct order in my plentymarkets system?</h3>
+<div class="paragraph">
 <p>An example of a DHL return label is provided below. The label contains all necessary data.</p>
+</div>
 <div id="dhl-return-label" class="imageblock">
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/markets/otto/assets/dhl-return-label.png" alt="DHL return label">
 </div>
 <div class="title">Figure 3. DHL return label</div>
 </div>
-</dd>
-<dt class="hdlist1">How do I find OTTO Market orders in my plentymarkets system?</dt>
-<dd>
+</div>
+<div class="sect2">
+<h3 id="1304">16.4. How do I find OTTO Market orders in my plentymarkets system?</h3>
+<div class="paragraph">
 <p>As this question frequently arises in the plentymarkets forum, a short explanation is provided below.</p>
+</div>
 <div class="paragraph">
 <p>The <strong>PositionID</strong> (example: 715e9369-01e3-4d09-ae91-8688dfa139b2) and the <strong>SalesOrderID</strong> (example: 4245eac7-4647-4f76-8c48-261afb19aa96) are frequently mentioned in the plentymarkets forum. However, these IDs are not relevant for you as seller. You cannot see these IDs. They serve to identify an order and the order positions in the plentymarkets database.</p>
 </div>
@@ -1723,7 +1889,7 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 <div class="title">Figure 5. Searching for the external order number</div>
 </div>
 <div class="paragraph">
-<p>The external order number can be found in the <strong>Settings</strong> tab of an order (<strong>Ext. order number</strong>).</p>
+<p>The external order number can be found in the <strong>Settings</strong> tab of an order (<strong>Ext. order number</strong>):</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1737,13 +1903,14 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 <div class="paragraph">
 <p>Additionally, you can use the <strong>Referrer</strong> filter to filter OTTO Market orders.</p>
 </div>
-</dd>
-<dt class="hdlist1">The log shows an error. How can I solve this error?</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Duplicate entry. Combination of the fields variationId, marketId and accountId must be unique.</strong></p>
+</div>
+<div class="sect2">
+<h3 id="1305">16.5. The log shows an error. How do I fix this error?</h3>
+<div class="paragraph">
+<p>The following chapters list common error messages in the log and helps you to resolve them.</p>
+</div>
+<div class="sect3">
+<h4 id="1306">16.5.1. Duplicate entry. Combination of the fields variationId, marketId and accountId must be unique.</h4>
 <div class="paragraph">
 <p>This error is also indicated as “SKU 1234 not generated” or “0:sku” in the log.</p>
 </div>
@@ -1777,11 +1944,11 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 <div class="paragraph">
 <p>This adds a <strong><em>second</em></strong> data field. During the next export, the first data field will be retrieved first. Because the SKU is already included in this source, the second data field will be ignored. If the first data field does not contain an SKU, then a new SKU will be generated using the second data field.</p>
 </div>
-</li>
-<li>
-<p><strong>Code: 200009 - ATTRIBUTE_CHANGE_DENIED</strong> or <strong>title: Der Wert dieses Feldes kann nicht geändert werden.</strong> (title: The value of this field cannot be changed.)</p>
+</div>
+<div class="sect3">
+<h4 id="1307">16.5.2. <strong>Code: 200009 - ATTRIBUTE_CHANGE_DENIED</strong> or <strong>title: Der Wert dieses Feldes kann nicht geändert werden.</strong> (title: The value of this field cannot be changed.)</h4>
 <div class="paragraph">
-<p>These errors indicate that you changed an OTTO item attribute. However, OTTO does not accept the change and it is not possible to the change the attribute for this item. The indicated attribute can relate to a variation attribute or a title attribute. Other OTTO attributes are important here, too.</p>
+<p>These errors indicate that you changed an OTTO item attribute. However, OTTO does not accept the change and it is not possible the change the attribute for this item. The indicated attribute can relate to a variation attribute or a title attribute. Other OTTO attributes are important here, too.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1798,62 +1965,63 @@ Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</stro
 </tr>
 </tbody></table>
 </div>
-</li>
-<li>
-<p><strong>productDescription.brand</strong></p>
+</div>
+<div class="sect3">
+<h4 id="1308">16.5.3. productDescription.brand</h4>
 <div class="paragraph">
 <p>This error indicates that the variation’s brand that should be exported has not been mapped in the catalogue. The brand can be linked to the variation in two different ways:</p>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>via the <strong>Manufacturer</strong> setting in an item’s <strong>Global</strong> tab</p>
 </li>
 <li>
 <p>via property</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>Make sure that a source is saved for the brand in the catalogue and that the data field is linked to the item.</p>
 </div>
-</li>
-<li>
-<p><strong>mediaAssets.IMAGE</strong></p>
+</div>
+<div class="sect3">
+<h4 id="1309">16.5.4. mediaAssets.IMAGE</h4>
 <div class="paragraph">
 <p>This error indicates that either you did not select a data field as the source in the catalogue or that none of your item images is linked to the referrer <strong>OTTO Market</strong>. To do so, open an item’s <strong>Images</strong> tab and activate the referrer <strong>OTTO market</strong> as described in the <a href="#350">Setting the availability for images</a> chapter.</p>
 </div>
-</li>
-<li>
-<p><strong>delivery.type</strong></p>
+</div>
+<div class="sect3">
+<h4 id="13010">16.5.5. delivery.type</h4>
 <div class="paragraph">
 <p>This error indicates that the shipping method is not linked. The shipping method can be defined via two different data fields:</p>
 </div>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>via a shipping profile</p>
 </li>
 <li>
 <p>via property</p>
-<div class="paragraph">
-<p>Make sure that the data field saved in the catalogue is linked to the item. For the shipping profile, activate the shipping profile in the item’s <strong>Global</strong> tab. For the property, activate the property for the desired variation.</p>
-</div>
-</li>
-<li>
-<p><strong>productDescription.category</strong></p>
-<div class="paragraph">
-<p>This error indicates that the category mapping in the catalogue is missing. In the catalogue, check whether at least one category of the desired variation is linked to an OTTO Market category.</p>
-</div>
-</li>
-<li>
-<p>Error messages concerning order processing: <strong>Carrier ID (X) not mapped in OTTO market config.</strong></p>
-<div class="paragraph">
-<p>Check whether shipping service providers were linked to OTTO Market. This is done in the <strong>Shipping service provider</strong> step of the <strong>OTTO Market Basic settings</strong> assistant in the <strong>Setup » Assistants » Omni-Channel</strong> menu.</p>
-</div>
 </li>
 </ul>
 </div>
-</dd>
-</dl>
+<div class="paragraph">
+<p>Make sure that the data field saved in the catalogue is linked to the item. For the shipping profile, activate the shipping profile in the item’s <strong>Global</strong> tab. For the property, activate the property for the desired variation.</p>
 </div>
-</li>
-</ol>
+</div>
+<div class="sect3">
+<h4 id="13011">16.5.6. productDescription.category</h4>
+<div class="paragraph">
+<p>This error indicates that the category mapping in the catalogue is missing. In the catalogue, check whether at least one category of the desired variation is linked to an OTTO Market category.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="13012">16.5.7. Error messages concerning order processing: Carrier ID (X) not mapped in OTTO market config.</h4>
+<div class="paragraph">
+<p>Check whether shipping service providers were linked to OTTO Market. This is done in the <strong>Shipping service provider</strong> step of the <strong>OTTO Market Basic settings</strong> assistant in the <strong>Setup » Assistants » Omni-Channel</strong> menu.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
