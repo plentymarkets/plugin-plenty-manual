@@ -7651,11 +7651,11 @@ class Metadata {
 						"urlName" => "reports",
 						"url" => "/business-entscheidungen/plent-bi/reports",
 						"level" => 3,
-						"title" => "Reports",
+						"title" => "Rohdaten",
 						"keywords" => "Report, Rohdaten, Business Intelligence, BI",
 						"description" => "Erfahre, wie du Rohdaten exportierst.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Reports. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Rohdaten. Hier findest du folgende Informationen:",
 						"languageID" => "AZ5LGXN",
 						"children" => 						[
 							[
