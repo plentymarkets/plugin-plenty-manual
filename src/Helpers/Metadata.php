@@ -14724,6 +14724,22 @@ class Metadata {
 		"languageID" => "",
 		"children" => 		[
 			[
+				"id" => "4f33d8015fb85011f123f6d432eca357",
+				"path" => "changelog/2021-01-06",
+				"position" => 840,
+				"urlName" => "2021-01-06",
+				"url" => "/changelog/2021-01-06",
+				"level" => 2,
+				"title" => "Changelog 06. Januar 2020",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 06. Januar 2020. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "3d75e8ff09b543a14cd8dbe9dc50a52f",
 				"path" => "changelog/dezember-2020",
 				"position" => 890,
