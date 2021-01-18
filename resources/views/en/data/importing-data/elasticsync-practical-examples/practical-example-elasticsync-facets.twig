@@ -1,0 +1,351 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_practical_example_initial_situation"><span>1.</span><span> Practical example: Initial situation</span></a></li>
+<li><a href="#_setting_up_the_csv_file"><span>2.</span><span> Setting up the CSV file</span></a></li>
+<li><a href="#_choosing_the_sync_settings"><span>3.</span><span> Choosing the sync settings</span></a></li>
+<li><a href="#_choosing_the_matching_settings"><span>4.</span><span> Choosing the matching settings</span></a></li>
+<li><a href="#_choosing_the_mapping_settings"><span>5.</span><span> Choosing the mapping settings</span></a></li>
+<li><a href="#_did_it_work"><span>6.</span><span> Did it work?</span></a></li>
+<li><a href="#_after_the_import_webshop_settings"><span>7.</span><span> After the import: webshop settings</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Importing new facets</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some online shop visitors know exactly what they’re looking for.
+For example, imagine you sell shoes.
+A customer searches for black Nike shoes that cost less than €150.
+Online shop visitors can use search filters to limit which products they see.
+The more products a shop category includes, the more important search filters are.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Filters or facets?</div>
+<div class="paragraph">
+<p>In plentymarkets, search filters are also called <em>facets</em>.
+Don’t get confused if someone talks about the so-called <em>faceted search</em>.
+This refers to the search filters in the online shop.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Requirements</div>
+<div class="paragraph">
+<p>This page assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">import tool</a>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_practical_example_initial_situation">1. Practical example: Initial situation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Imagine you sell shoes in your online shop.
+For example, if customers should be able to search for black Nike shoes, then you’ll need to create the filters “Colour” and “Brand”.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-facets-initial-situation.png" alt="best practice facets initial situation">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">What about a price filter?</div>
+<div class="paragraph">
+<p>Very few settings need to be configured for the price filter.
+You’ll probably be quicker if you <a href="/en/item/frontend-item-search#20">manually create the price filter</a>.
+For this reason, the price filter is not discussed further on this page.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_setting_up_the_csv_file">2. Setting up the CSV file</h2>
+<div class="sectionbody">
+<h4 id="_filters" class="discrete">Filters</h4>
+<div class="paragraph">
+<p>First, transfer the filters into a CSV file.
+This is the file that you’ll import into plentymarkets later.
+In our example, the filters would look like this in the CSV file:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-facets-filters.png" alt="best practice facets filters">
+</div>
+</div>
+<div class="paragraph">
+<p>You are free to choose any names for the column headers.
+In this example, I’ve put the following filter information in the columns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong> = The name of the filter, as it should be displayed in the online shop.</p>
+</li>
+<li>
+<p><strong>Type</strong> = What sort of facet do you want to create?
+Enter the type into the CSV file.
+This setting can not be changed once you’ve created the facet.
+<a href="/en/data/importing-data/sync-types/elasticSync-facets#70">Further information about the type</a>.</p>
+</li>
+<li>
+<p><strong>Sorting</strong> = How should the values be sorted within the facet?
+For example, if you’re creating the facet “Brand name”, then you could sort the individual brands alphabetically.
+Enter your preferred sorting method into the CSV file.
+<a href="/en/data/importing-data/sync-types/elasticSync-facets#60">Further information about the sorting method</a>.</p>
+</li>
+<li>
+<p><strong>SelectionType</strong> = What should happen when customers select multiple filter criteria? Should they see products that fulfil <em>all of these criteria</em> or <em>any one of the criteria</em>?
+Enter your preferred selection type into the CSV file.
+<a href="/en/data/importing-data/sync-types/elasticSync-facets#100">Further information about the selection type</a>.</p>
+</li>
+</ul>
+</div>
+<h4 id="_filter_values" class="discrete">Filter values</h4>
+<div class="paragraph">
+<p>Now add the individual values to the filter.
+For example, if you’re creating the filter “Colour”, then you’ll need values like “Blue”, “Red” and “Black”.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-facets-filtervalues.png" alt="best practice facets filtervalues">
+</div>
+</div>
+<h4 id="_linking_filter_values" class="discrete">Linking filter values</h4>
+<div class="paragraph">
+<p>Finally, link each filter value to existing data in your system, i.e. to existing attributes, characteristics, properties, manufacturers or availabilities.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-facets-filtervaluelinks.png" alt="best practice facets filtervaluelinks">
+</div>
+</div>
+<div class="paragraph">
+<p>The link consists of two pieces of information:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>LinkType</strong> = What <em>sort of back end information</em> do you want to link the facet value to?
+Enter the appropriate type into the CSV file.
+<a href="/en/data/importing-data/sync-types/elasticSync-facets#190">Further information about the link type</a>.</p>
+</li>
+<li>
+<p><strong>LinkID</strong> = What <em>specific piece of back end information</em> do you want to link the facet value to?
+Enter the ID of the back end information into the CSV file.
+<a href="/en/data/importing-data/sync-types/elasticSync-facets#200">Further information about the ID</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_choosing_the_sync_settings">3. Choosing the sync settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="/en/data/importing-data/ElasticSync#1210">Create a new sync</a>.
+Most of the settings can be chosen freely.
+However, since you want to import <em>facet data</em>, make sure you’ve set the <strong>Type</strong> to <strong>Facet</strong>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_choosing_the_matching_settings">4. Choosing the matching settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>During the import, plentymarkets will check whether the facet already exists.
+This is done with the help of a so-called matching field.</p>
+</div>
+<div class="paragraph">
+<p>Since we want to import <em>new facets</em> in this example, configure the settings as follows.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Facet name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the facet name? Choose this column here.
+This option is useful if you want to <em>create new facets</em>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Import options</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Since you’ll be importing new facets, choose the option <strong>Only import new data</strong> or <strong>Import new, update existing data</strong>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="_choosing_the_mapping_settings">5. Choosing the mapping settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Your CSV file is already filled with a bunch of facet information.
+Now you’ll decide <em>where in plentymarkets</em> each piece of information should appear when you import the file.
+<a href="/en/data/importing-data/sync-types/elasticSync-facets#20">Take a look at this page</a> while you map the columns of your CSV file to the fields in plentymarkets.
+In this example, I’ve configured the settings as follows.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/importing-data/assets/best-practice-facets-mapping.png" alt="best practice facets mapping">
+</div>
+</div>
+<div class="paragraph">
+<p>I created the filters by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>mapping the <strong>Name</strong> column of my CSV file with the <strong>Facet name / Name</strong> data field in plentymarkets.</p>
+</li>
+<li>
+<p>mapping the <strong>Type</strong> column of my CSV file with the <strong>Facet / Type</strong> data field in plentymarkets.</p>
+</li>
+<li>
+<p>mapping the <strong>Sorting</strong> column of my CSV file with the <strong>Facet / Sorting</strong> data field in plentymarkets.</p>
+</li>
+<li>
+<p>mapping the <strong>SelectionType</strong> column of my CSV file with the <strong>Facet / Selection type</strong> data field in plentymarkets.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I created the filter values by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>mapping the <strong>*ValueName</strong> column of my CSV file with the <strong>Facet value name / Name</strong> data field in plentymarkets.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I created the links by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>mapping the <strong>LinkType</strong> column of my CSV file with the <strong>Link / Type</strong> data field in plentymarkets.</p>
+</li>
+<li>
+<p>mapping the <strong>LinkID</strong> column of my CSV file with the <strong>Link / Value ID</strong> data field in plentymarkets.</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_did_it_work">6. Did it work?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ready to import your filters?
+Start the sync and check whether the data was correctly imported into plentymarkets.</p>
+</div>
+<div class="paragraph instruction">
+<p>Starting the sync and checking the result:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Activate the lines that should be imported (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>).</p>
+</li>
+<li>
+<p>Test the sync (<span class="icon "><i class="psicon-plugin_stage_deploy"></i></span>) or start the sync (<span class="icon darkGrey"><i class="fa fa-play-circle-o  "></i></span>).<br>
+<strong><em>Note:</em></strong> This can take a few minutes.</p>
+</li>
+<li>
+<p>Go to <strong>Setup » Client » Settings » Services » Faceted search</strong>.</p>
+</li>
+<li>
+<p>Open a few filters to check their settings and values.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Do a trial run</div>
+<div class="paragraph">
+<p>We recommend testing the sync (<span class="icon "><i class="psicon-plugin_stage_deploy"></i></span>) before you start it for the first time.
+This imports the first 10 rows of the file and bypasses the cache.
+It gives you time to check whether the sync works correctly. If the sync does not perform as expected, you can correct it before importing the entire file.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Resetting the cache</div>
+<div class="paragraph">
+<p>Directly within the sync, you’ll find the button <strong>Reset cache</strong> (<span class="icon "><i class="psicon-reload"></i></span>).
+This button allows you to reset the sync cache in order to reimport a file that does not contain any changes.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_after_the_import_webshop_settings">7. After the import: webshop settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you’ve imported the filters, you’ll still need to configure a few settings so that the filters appear in the webshop.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/en/item/frontend-item-search#110">Specify which webshop the filters should appear in</a>.</p>
+</li>
+<li>
+<p><a href="/en/item/frontend-item-search#150">Design the appearance in the webshop</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
