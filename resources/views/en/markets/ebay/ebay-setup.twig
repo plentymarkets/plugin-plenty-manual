@@ -493,7 +493,7 @@
 <div class="sect2">
 <h3 id="500">2.3. Loading eBay shop categories</h3>
 <div class="paragraph">
-<p>Import the eBay shop categories to plentymarkets or synchronise them in this area. Shop categories can be selected in a listing or be transferred to a listing with a listing template. In order to display categories in a template, the <strong>&#123;&#37; GetListingStoreCategories() %</strong>} function must be used in layout templates. For further information, refer to the <a href="#2800">Managing layout templates</a> chapter.</p>
+<p>Import the eBay shop categories to plentymarkets or synchronise them in this area. Shop categories can be selected in a listing or be transferred to a listing with a listing template. In order to display categories in a template, the <strong>&#123;&#37; GetListingStoreCategories() &#37;&#125;</strong> function must be used in layout templates. For further information, refer to the <a href="#2800">Managing layout templates</a> chapter.</p>
 </div>
 <div class="paragraph instruction">
 <p>Loading eBay shop categories:</p>
@@ -581,10 +581,16 @@ The barcodes from the item settings can be selected for this option.</p></td>
 <li>
 <p><strong>No (recommended)</strong> = The listing ID is transferred with the variation ID. The SKU is generated automatically with the following pattern:<br>
 For listings with only one variation:<br>
-Prefix <code>#MLID#</code> + <em>Market-Listing-ID</em> (e.g.: #MLID#123)<br>
-For listings with more than one variation:<br>
-Prefix <code>#MLID#</code> + <em>Market-Listing-ID</em> <code>-</code> <em>AttributeValueSetId</em> (e.g.: #MLID#123-456)<br>
+Prefix <code>#MLID#</code> + <em>Market-listing-ID</em> (e.g.: #MLID#123)<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>For listings with more than one variation:<br>
+Prefix <code>#MLID#</code> + <em>Market-listing-ID</em> <code>-</code> <em>AttributeValueSetId</em> (e.g.: #MLID#123-456)<br>
 <strong><em>Tip:</em></strong> The AttributeValueSetId is an ID for an exact combination of attributes and attribute values.<br></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Yes</strong> = The variation number is transferred as the SKU. This setting is not recommended because after a variation was changed and the listing was not updated, no synchronisation will take place.</p>
@@ -624,7 +630,7 @@ If you select <strong>No</strong>, the eBay variations are sorted according to t
 <p><strong>Yes</strong> = The first image of the first variation is used as the gallery image for eBay.<br></p>
 </li>
 <li>
-<p><strong>No</strong> (recommended)= No gallery image is transferred to eBay.<br>
+<p><strong>No</strong> = No gallery image is transferred to eBay.<br>
 <strong>No</strong> is recommended because eBay recommends a gallery image which shows all of an item’s variations.</p>
 </li>
 </ul>
@@ -685,7 +691,7 @@ If you select <strong>No</strong>, the eBay variations are sorted according to t
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Activate automatic stock update</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Activate or deactivate the <a href="#1100">automatic stock update</a> for GTC offers (= listings with a fixed price that are automatically restarted after 30 days)<br></p>
+<p>Activate or deactivate the <a href="#1100">automatic stock update</a> for GTC offers (= listings with a fixed price that are automatically restarted after 30 days).<br></p>
 </div>
 <div class="ulist">
 <ul>
@@ -709,7 +715,7 @@ If you have listings with a specific duration, e.g. 7 days, then you can maintai
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Number of days after the submission of an offer in which a potential customer can complete the purchase</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether the SCO should be ended after <strong>1</strong>, <strong>3</strong>, <strong>5</strong> or <strong>7 days</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether the SCO should be ended after <strong>1</strong>, <strong>3</strong>, <strong>5</strong>, or <strong>7 days</strong>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -760,11 +766,20 @@ Synchronisation is important in certain cases. For example, GTC listings must be
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retrieve eBay returns</strong>
-*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether <a href="#7400">eBay returns</a> should be retrieved or not.<br></p>
-<p class="tableblock">* <strong>Yes</strong> = Activates the eBay return process in plentymarkets. New eBay returns are imported into plentymarkets every 20 minutes.<br>
-* <strong>No</strong> = The eBay return process is deactivated in plentymarkets. New eBay returns are not imported into plentymarkets. eBay returns must be edited in the seller’s My eBay area instead.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retrieve eBay returns</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select whether <a href="#7400">eBay returns</a> should be retrieved or not.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Yes</strong> = Activates the eBay return process in plentymarkets. New eBay returns are imported into plentymarkets every 20 minutes.<br></p>
+</li>
+<li>
+<p><strong>No</strong> = The eBay return process is deactivated in plentymarkets. New eBay returns are not imported into plentymarkets. eBay returns must be edited in the seller’s My eBay area instead.</p>
+</li>
+</ul>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retrieve eBay purchase cancellations</strong></p></td>
@@ -807,13 +822,9 @@ Synchronisation is important in certain cases. For example, GTC listings must be
 <ul>
 <li>
 <p><strong>Hourly (with description)</strong> = Price changes are synchronised automatically every hour. The listing’s description is also updated. Use this option if you use a place holder for prices in the listing’s description. If the listings' price is tied to the item price, the price synchronisation takes place as soon as the item price is changed. If the listings' price is not tied to the item price, the price synchronisation takes place as soon as the price for the market listing is changed.<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Hourly (without description)* = Price changes are synchronised automatically every hour. The listing’s description is not updated. If the listings' price is tied to the item price, the price synchronisation takes place as soon as the item price is changed. If the listings' price is not tied to the item price, the price synchronisation takes place as soon as the price for the market listing is changed.<br></p>
 </li>
-</ul>
-</div>
+<li>
+<p><strong>Hourly (without description)</strong> = Price changes are synchronised automatically every hour. The listing’s description is not updated. If the listings' price is tied to the item price, the price synchronisation takes place as soon as the item price is changed. If the listings' price is not tied to the item price, the price synchronisation takes place as soon as the price for the market listing is changed.<br></p>
 </li>
 <li>
 <p><strong>No</strong> = There is no automatic stock update.</p>
@@ -887,11 +898,10 @@ The stock is reduced by the value of this number.</p></td>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>eBay sales record number</strong> = The old eBay order number. This number is increased per customer and for each new order at eBay.<br></p>
+<p><strong>eBay sales record number</strong> (default setting) = The old eBay order number. This number is increased per customer and for each new order at eBay.<br></p>
 </li>
 <li>
-<p><strong>eBay order number</strong> = The new eBay order number. This number is assigned individually for each order. eBay introduced the new order number 1 July 2019 and will distribute it stepwise. The new eBay order number replaces the old eBay sales record number.<br>
-The <strong>eBay sales record number</strong> is selected by default.</p>
+<p><strong>eBay order number</strong> = The new eBay order number. This number is assigned individually for each order. eBay introduced the new order number 1 July 2019 and will distribute it stepwise. The new eBay order number replaces the old eBay sales record number.<br></p>
 </li>
 </ul>
 </div></div></td>
@@ -903,11 +913,11 @@ Variation availabilities are organised in the <strong>Setup » Item » Availabil
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock important">
+<div class="admonitionblock tip">
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 <div class="title">Manually retrieving orders</div>
@@ -1000,11 +1010,11 @@ If the <strong>Do not retrieve sales</strong> option is selected for the <strong
 <div class="paragraph">
 <p>For further information about editing eBay returns and using event procedures for partial automation, refer to the <a href="#7400">Processing returns</a> chapter.</p>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock important">
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 <div class="title">New or edited reasons for return</div>
@@ -1152,7 +1162,7 @@ If the <strong>Do not retrieve sales</strong> option is selected for the <strong
 </li>
 <li>
 <p>Select the <strong>positive feedback received</strong> option from the <strong>eBay</strong> drop-down list.<br>
-→ All other options are greyed out</p>
+→ All other options are greyed out.</p>
 </li>
 <li>
 <p>Click on the <strong>Procedure</strong> tab.</p>
@@ -1252,17 +1262,17 @@ If the <strong>Do not retrieve sales</strong> option is selected for the <strong
 <ul>
 <li>
 <p>For listings with only one variation:<br>
-Prefix <code>#MLID#</code> + <em>Market-Listing-ID</em> (e.g.: #MLID#123)<br></p>
+Prefix <code>#MLID#</code> + <em>Market-listing-ID</em> (e.g.: #MLID#123)<br></p>
 </li>
 <li>
 <p>For listings with more than one variation:<br>
-Prefix <code>#MLID#</code> + <em>Market listing ID</em> <code>-</code> <em>AttributeValueSetId</em> (e.g.: #MLID#123-456)</p>
+Prefix <code>#MLID#</code> + <em>Market-listing-ID</em> <code>-</code> <em>AttributeValueSetId</em> (e.g.: #MLID#123-456)</p>
 </li>
 </ul>
 </div>
 </div><div class="tab-pane fade" id="option--strong-yes--strong-" role="tabpanel" aria-labelledby="option--strong-yes--strong--tab">
 <div class="paragraph">
-<p>If you selected the option <strong>Yes</strong> for the setting <strong>Use variation number as SKU</strong>, you can add SKUs manually. To do so, go to <strong>Item » Edit item » [Open item] » Tab: Variations » [Open variation] » Tab: Settings</strong> menu if needed.</p>
+<p>If you selected the option <strong>Yes</strong> for the setting <strong>Use variation number as SKU</strong>, you can add SKUs manually. To do so, go to <strong>Item » Edit item » [Open item] » Tab: Variations » [Open variation] » Tab: Settings</strong> if needed.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1333,8 +1343,8 @@ Prefix <code>#MLID#</code> + <em>Market listing ID</em> <code>-</code> <em>Attri
 <td class="content">
 <div class="title">Currency conversion for eBay listings</div>
 <div class="paragraph">
-<p>In the <strong>Setup » Orders » Payment » Currencies</strong> menu, you can set up currency conversion for listings by selecting <strong>Yes</strong> for the <strong>Automatically update conversion factors daily *option. For all currencies that you use, a conversion factor must be entered.<br>
-If you do not want to use currency conversion, pay attention to linking the correct sales price. For example, if you do not want to convert USD into another currency for a listing, the same sales price must be selected for the currency USD and for the platform *eBay United States</strong>.</p>
+<p>In the <strong>Setup » Orders » Payment » Currencies</strong> menu, you can set up currency conversion for listings by selecting <strong>Yes</strong> for the <strong>Automatically update conversion factors daily</strong> option. For all currencies that you use, a conversion factor must be entered.<br>
+If you do not want to use currency conversion, pay attention to linking the correct sales price. For example, if you do not want to convert USD into another currency for a listing, the same sales price must be selected for the currency USD and for the platform <strong>eBay United States</strong>.</p>
 </div>
 </td>
 </tr>
@@ -1649,7 +1659,7 @@ If the eBay platform <strong>Motors</strong> is selected, the search filter <str
 <div class="title">Offering SCOs for minimum bids</div>
 <div class="paragraph">
 <p>Enter an amount for the item into the <strong>SCO minimum price</strong> field, e.g. 100.00 EUR. The highest bidder’s bid is 110.00 EUR and wins the auction. All defeated bidders with a bid equal to or higher than the entered amount of 100.00 EUR automatically receive an SCO to buy the item at their last bid amount. All defeated bidders with a lower bid than the entered amount do not receive an SCO.<br>
- If you enter the value <strong>0.00</strong>, the function is deactivated. However, you can still submit Second Chance Offers manually in the <strong>Setup » Markets » eBay » Second Chance Offer</strong> menu.</p>
+If you enter the value <strong>0.00</strong>, the function is deactivated. However, you can still submit Second Chance Offers manually in the <strong>Setup » Markets » eBay » Second Chance Offer</strong> menu.</p>
 </div>
 </td>
 </tr>
@@ -1731,7 +1741,7 @@ Select <strong>No</strong> to deactivate the holiday settings.</p>
 <div class="sect2">
 <h3 id="1800">2.16. Defining business policies</h3>
 <div class="paragraph">
-<p>This chapter teaches you how to define <strong>Terms of payment</strong>, <strong>Shipping condition*s, and a *Return policy</strong> for your eBay listings and how to create <strong>Shipping profiles</strong>. These settings must be carried out for every eBay account and every platform individually.</p>
+<p>This chapter teaches you how to define <strong>Terms of payment</strong>, <strong>Shipping conditions</strong>, and a <strong>Return policy</strong> for your eBay listings and how to create <strong>Shipping profiles</strong>. These settings must be carried out for every eBay account and every platform individually.</p>
 </div>
 <div class="paragraph">
 <p>Watch this video for a summary of the settings for eBay business policies:</p>
@@ -1863,7 +1873,7 @@ If you activate this option, customers need to complete the checkout prior to th
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping options</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">In the <strong>Domestic</strong> area, select the <strong>Shipping methods</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In the <strong>Domestic</strong> area, select the <strong>Shipping</strong> methods.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Costs</strong></p></td>
@@ -1946,7 +1956,7 @@ If you activate this option, customers need to complete the checkout prior to th
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>International rate tables</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether the rate tables should be applied. Rate tables must be set up on eBay. For further information, refer to eBay’s <a href="https://www.ebay.co.uk/help/selling/posting-items/setting-postage-options?id=4089#tables" target="_blank" rel="noopener">Setting up your postage options</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> page.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether the rate tables should be applied. Rate tables must be set up on eBay. For further information, refer to eBay’s <a href="https://www.ebay.co.uk/help/selling/posting-items/setting-postage-options?id=4089" target="_blank" rel="noopener">Setting up your postage options</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> page.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Additional ship to locations: buyers contact for costs</strong></p></td>
@@ -1996,7 +2006,7 @@ If you activate this option, customers need to complete the checkout prior to th
 </ol>
 </div>
 <table id="ebay-return-policy" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. Settings for eBay return policy</caption>
+<caption class="title">Table 10. Settings for <strong>eBay return policy</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2032,7 +2042,7 @@ If you activate this option, customers need to complete the checkout prior to th
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gutschrift</strong><br>
 (for some eBay platforms only, e.g. USA)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify which options buyers should be given when they return an item. Availalbe options are:</p>
+<p>Specify which options buyers should be given when they return an item. Available options are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2046,7 +2056,7 @@ If you activate this option, customers need to complete the checkout prior to th
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cancellation fee</strong>*<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cancellation fee</strong><br>
 (for some eBay platforms only, e.g. USA)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specify whether a percentage of the purchase price should be charged as a fee when items are returned.</p></td>
 </tr>
@@ -2075,7 +2085,7 @@ If you activate this option, customers need to complete the checkout prior to th
 </ol>
 </div>
 <table id="settings-shipping-profiles" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. Settings for shipping profiles</caption>
+<caption class="title">Table 11. Settings for <strong>shipping profiles</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2160,10 +2170,13 @@ The profiles in the <strong>Overview</strong> tab are either marked by <strong>Y
 <h2 id="2250">3. Activating the payment method</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The payment method eBay purchase on invoice is appropriate for items within the price range of 1.50 € - 1.500 €. However, this payment method cannot be used for digital products. In order to use eBay purchase on invoice the item must be paid for by PayPal. Activate the <a href="/en/payment/managing-payment-methods">payment method</a> <strong>eBay purchase on invoice</strong> as described below.</p>
+<p>The payment method eBay purchase on invoice is appropriate for items within the price range of 1.50 € - 1.500 €. In order to use eBay purchase on invoice the item must be paid for by PayPal.</p>
+</div>
+<div class="paragraph">
+<p>Activate the <a href="/en/payment/managing-payment-methods">payment method</a> <strong>eBay purchase on invoice</strong> as described below.</p>
 </div>
 <div class="paragraph instruction">
-<p>Activate the eBay purchase on invoice payment method:</p>
+<p>Activating the payment method eBay purchase on invoice:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2171,11 +2184,17 @@ The profiles in the <strong>Overview</strong> tab are either marked by <strong>Y
 <p>Go to <strong>Setup » Orders » Payment » Methods</strong>.</p>
 </li>
 <li>
-<p>Click on the folder <strong>DE &gt; eBay purchase on invoice</strong>. <br>
-→ The settings for the eBay payment method are displayed.</p>
+<p>Activate the option <strong>Also show inactive</strong>.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the explanations given in <a href="#settings-payment-method-ebay">Table 12</a>.</p>
+<p>Open the folder <strong>DE</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>eBay purchase on invoice</strong>.<br>
+→ The <strong>Settings</strong> tab opens.</p>
+</li>
+<li>
+<p>Carry out the settings. Pay attention to the information given in <a href="#table-payment-method">[table-payment-method]</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong>.</p>
@@ -2185,7 +2204,7 @@ The profiles in the <strong>Overview</strong> tab are either marked by <strong>Y
 </li>
 </ol>
 </div>
-<table id="settings-payment-method-ebay" class="tableblock frame-all grid-all stretch">
+<table id="able-payment-method" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 12. Settings for the payment method</caption>
 <colgroup>
 <col style="width: 25%;">
@@ -2204,7 +2223,7 @@ The profiles in the <strong>Overview</strong> tab are either marked by <strong>Y
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the name that should be displayed in the online store and on invoices etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the name that should be displayed in the online store and on invoices etc.<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Info page</strong></p></td>
@@ -2254,8 +2273,9 @@ Click on <strong>Upload files</strong> and select the logo that you want to uplo
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Costs: Flat rate or percentage</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If the payment method results in additional costs, enter the percentage value or flat rate value. The selection depends on the conditions of your contract.<br>
-<strong><em>Important:</em></strong> Do not enter a value into both fields. <br>
-For further information, refer to the <a href="/en/business-decisions/plenty-bi/statistics">Managing statistics</a> page. For an example of flat rate and percentage costs, refer to the <a href="/en/payment/managing-payment-methods#20">Managing payment methods</a> page.</p></td>
+<strong><em>Important:</em></strong> Do not enter a value into both fields.<br>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/statistics">Statistics</a> page of the manual.<br>
+For an example of flat rate and percentage costs, refer to the <a href="/en/payment/managing-payment-methods#20">Managing payment methods</a> page.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2367,7 +2387,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </ol>
 </div>
 <table id="options-stock" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 14. Options for the stock</caption>
+<caption class="title">Table 14. Options for the <strong>stock</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2479,10 +2499,12 @@ GTC offers for which <strong>Yes</strong> was selected for the <strong>Use "out 
 <p><strong>Status 1</strong> = The order is incomplete and the status must be changed after editing the order.<br></p>
 </li>
 <li>
-<p><strong>Status 3</strong> = The customer receives a summary of the order and does not have to be active. However, the customers can change some data, e.g. their addresses.<br>
-You can also change the order status in the listing settings. This listing setting takes priority over the setting that is chosen here.</p>
+<p><strong>Status 3</strong> = The customer receives a summary of the order and does not have to be active. However, the customers can change some data, e.g. their addresses.<br></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>You can also change the order status in the listing settings. This listing setting takes priority over the setting that is chosen here.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -3127,7 +3149,7 @@ hr {
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Function</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>{GetCSSFile() &#37;&#125;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetCSSFile() &#37;&#125;</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Generates the &lt;link&gt; tag for the CSS file.</p></td>
 </tr>
 <tr>
@@ -3150,17 +3172,17 @@ type = The cross-selling type. The following types are available:<br>
 Optional parameter:<br>
 lang = Language that should be used. The following languages can be used: DE, EN, FR, IT, ES, TR, NL, PL, NN, DA, SE, CZ, ZH, VI<br>
 <strong><em>Examples:</em></strong><br>
-<strong>GetItemDescription()</strong> = The item text in the listing’s language.<br>
-<strong>GetItemDescription('en')</strong> = The item text in English.</p></td>
+<strong>GetItemDescription()</strong> = The item text in the listing’s language<br>
+<strong>GetItemDescription('en')</strong> = The item text in English</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetItemName() &#37;&#125;</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Item name<br>
 Optional parameters:<br>
-nameId = The name that should be displayed (1–3).<br>
+nameId = The name that should be displayed (1–3)<br>
 lang = Language that should be used. The following languages can be used: DE, EN, FR, IT, ES, TR, NL, PL, NN, DA, SE, CZ<br>
 <strong><em>Examples:</em></strong><br>
-<strong>GetItemName()</strong> = Name 1 in the listing’s language.<br>
+<strong>GetItemName()</strong> = Name 1 in the listing’s language<br>
 <strong>GetItemName(2, 'en')</strong> = Name 2 in English</p></td>
 </tr>
 <tr>
@@ -3170,18 +3192,18 @@ The following parameters are required:<br>
 characterID = Property ID<br>
 type = <strong>unit</strong> or <strong>value</strong><br>
 <strong><em>Examples:</em></strong><br>
-<strong>GetItemPropertyById(2, 'unit')</strong> = Unit type of the property with ID 2.<br>
-<strong>GetItemPropertyById(3, 'value')</strong> = Value of the property with ID 3.</p></td>
+<strong>GetItemPropertyById(2, 'unit')</strong> = Unit type of the property with ID 2<br>
+<strong>GetItemPropertyById(3, 'value')</strong> = Value of the property with ID 3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetItemPropertyByName() &#37;&#125;</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Item properties<br>
 The following parameters are required:<br>
-characterName = The property’s back end name.<br>
+characterName = The property’s back end name<br>
 type = <strong>unit</strong> or <strong>value</strong><br>
 <strong><em>Examples:</em></strong><br>
-<strong>GetItemPropertyByName('abstract_motives', 'unit')</strong> = The unit type of the property with the back end name "abstract_motives".<br>
-<strong>GetItemPropertyByName('abstract_motives', 'value')</strong> = The value of the property with the back end name "abstract_motives".</p></td>
+<strong>GetItemPropertyByName('abstract_motives', 'value')</strong> = The unit type of the property with the back end name "abstract_motives"<br>
+<strong>GetItemPropertyByName('abstract_motives', 'value')</strong> = The value of the property with the back end name "abstract_motives"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetItemShortDescription() &#37;&#125;</strong></p></td>
@@ -3189,8 +3211,8 @@ type = <strong>unit</strong> or <strong>value</strong><br>
 Optional parameter:<br>
 lang = Language that should be used. The following languages can be used: DE, EN, FR, IT, ES, TR, NL, PL, NN, DA, SE, CZ, ZH, VI<br>
 <strong><em>Examples:</em></strong><br>
-<strong>GetItemShortDescription()</strong> = The preview text in the listing’s language.<br>
-<strong>GetItemShortDescription('en')</strong> = The preview text in English.</p></td>
+<strong>GetItemShortDescription()</strong> = The preview text in the listing’s language<br>
+<strong>GetItemShortDescription('en')</strong> = The preview text in English</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetItemTechnicalData() &#37;&#125;</strong></p></td>
@@ -3198,8 +3220,8 @@ lang = Language that should be used. The following languages can be used: DE, EN
 Optional parameter:<br>
 lang = Language that should be used. The following languages can be used: DE, EN, FR, IT, ES, TR, NL, PL, NN, DA, SE, CZ, ZH, VI<br>
 <strong><em>Examples:</em></strong><br>
-<strong>GetItemTechnicalData()</strong> = Technical data in the listing’s language.<br>
-<strong>GetItemTechnicalData('en')</strong> = Technical data in English.</p></td>
+<strong>GetItemTechnicalData()</strong> = Technical data in the listing’s language<br>
+<strong>GetItemTechnicalData('en')</strong> = Technical data in English</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetListingStoreCategories() &#37;&#125;</strong></p></td>
@@ -3207,8 +3229,8 @@ lang = Language that should be used. The following languages can be used: DE, EN
 Optional parameter:<br>
 type = <strong>flat</strong> or <strong>hierarchical</strong><br>
 <strong><em>Examples:</em></strong><br>
-<strong>GetListingStoreCategories(flat)</strong> = Returns all shop categories individually.<br>
-<strong>GetListingStoreCategories(hierachical)</strong> = Returns main categories with subordinate subcategories.</p></td>
+<strong>GetListingStoreCategories(flat)</strong> = Returns all shop categories individually<br>
+<strong>GetListingStoreCategories(hierachical)</strong> = Returns main categories with subordinate subcategories</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>{GetPlentymarketsBranding() &#37;&#125;</strong></p></td>
@@ -3502,8 +3524,10 @@ For example, you can have eBay galleries created here: <a href="http://www.ayee.
 <p>Click on the <strong>New directory</strong> tab.</p>
 </li>
 <li>
-<p>Enter a name for the directory or subdirectory.<br>
-→ If you want to create a <strong>subdirectory</strong>, use the <strong>Directory</strong> option to select which <strong>main directory</strong> it should be in.</p>
+<p>Enter a name for the directory or subdirectory.<br></p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> If you want to create a <strong>subdirectory</strong>, use the <strong>Directory</strong> option to select which <strong>main directory</strong> it should be in.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
@@ -3694,7 +3718,7 @@ Either select a listing template for which a market is defined or select a <stro
 </li>
 <li>
 <p>Click on the <strong>Listing ID (LID)</strong> to open a listing.<br>
-→ Make sure that you click on the <strong>Listing ID (LID)</strong> and not on the market listing ID.</p>
+<strong><em>Note:</em></strong> Make sure that you click on the <strong>Listing ID (LID)</strong> and not on the market listing ID.</p>
 </li>
 <li>
 <p>Click on <strong>New Market listing</strong>.<br>
@@ -3727,7 +3751,7 @@ Either select a listing template for which a market is defined or select a <stro
 <td class="content">
 <div class="title">Save a listing template for an item</div>
 <div class="paragraph">
-<p>You can define a listing template in the <strong>Listing default settings</strong> area of the <strong>Multi-Channel</strong> tab of an item. An eBay listing is created for an item using the group function or batch processing if no <strong>listing template</strong> was defined in the item’s settings.</p>
+<p>You can define a listing template in the <strong>Listing default settings</strong> area of the <strong>Multi-Channel</strong> tab of an item. An eBay listing is created for an <strong>item</strong> using the group function or batch processing if no <strong>listing template</strong> was defined in the item’s settings.</p>
 </div>
 </td>
 </tr>
@@ -3830,7 +3854,7 @@ Either select a listing template for which a market is defined or select a <stro
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Directory</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Directory that the listing was sorted into in the* Listings » Edit listings » Tab: Directory* menu.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Directory that the listing was sorted into in the <strong>Listings » Edit listings » Tab: Directory</strong> menu.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Platform</strong></p></td>
@@ -4399,7 +4423,7 @@ For further information, refer to eBay’s <a href="https://www.ebay.co.uk/help/
 <td class="tableblock halign-left valign-top"><p class="tableblock">The account that the market listing was set up with. The account can be changed.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Category 1</strong>; <br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Category 1</strong>;<br>
 <strong>Category 2</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enter a category ID or click on <strong>Search</strong> to select a category.</p></td>
 </tr>
@@ -5422,7 +5446,7 @@ The <strong>None</strong> option must be activated in the <strong>Procedures</st
 <p>Select the filters. Pay attention to the explanations given in <a href="#filter-options-listings">Table 27</a> and <a href="#filter-options-active-listings">Table 29</a>.</p>
 </li>
 <li>
-<p>Carry out the desired settings. Pay attention to the explanations given in <a href="#procedures-group-function">Table 30</a>.</p>
+<p>Carry out the settings. Pay attention to the explanations given in <a href="#procedures-group-function">Table 30</a>.</p>
 </li>
 <li>
 <p>Click on <strong>Execute</strong> to carry out the settings.<br>
@@ -5454,10 +5478,10 @@ The <strong>None</strong> option must be activated in the <strong>Procedures</st
 </tbody></table>
 </div>
 <div class="paragraph">
-<p>The <strong>Listings » Listing processes</strong> menu contains an overview of all listing processes that will be carried out in the future. Listing processes include all automatic processes which are carried out for listings, such as starting, updating, relisting, and ending listings. At present, this menu displays only listings that you have <em>started</em> individually or via group function. The menu also contains information about when the process was started and when it is estimated to be finished.</p>
+<p>The <strong>Listings » Listing processes</strong> menu contains an overview of all listing processes that will be carried out in the future. Listing processes include all automatic processes which are carried out for listings, such as <strong>starting</strong>, <strong>updating</strong>, <strong>relisting</strong>, and <strong>ending</strong> listings. At present, this menu displays only listings that you have <em>started</em> individually or via group function. The menu also contains information about when the process was started and when it is estimated to be finished.</p>
 </div>
 <div class="paragraph">
-<p>You can open market listings directly from this overview to edit or check them. Moreover, you can use the group function to delete planned listing processes and thus prevent processes from being started.</p>
+<p>You can open the item and the market listing directly from the overview to edit or check the settings. Moreover, you can use the group function to delete planned listing processes and thus prevent processes from being started.</p>
 </div>
 <table id="overview-listing-processes" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 31. Overview of listing processes</caption>
@@ -5695,7 +5719,7 @@ Processes can have the statuses <strong>Planned</strong>, <strong>Started</stron
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
-→ The attribute and the eBay property drop-down list are displayed in the line below.</p>
+→ The attribute and the <strong>eBay property</strong> drop-down list are displayed in the line below.</p>
 </li>
 <li>
 <p>Select an <strong>eBay property</strong> or enter a <strong>customised name</strong>.<br>
@@ -5831,7 +5855,7 @@ Therefore, if you want to create offers with many variations, be sure to calcula
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-<div class="title">Exception:</div>
+<div class="title">Exception</div>
 <div class="paragraph">
 <p>All of the values that were already taken care of with the variation link must not be set here again.</p>
 </div>
@@ -6182,13 +6206,13 @@ For existing listings, you have to match ePIDs manually.</p>
 <p>The variation that you want to match with an ePID has to have an active or hidden listing.</p>
 </li>
 <li>
-<p>The selection <strong>Transmit ePID</strong> must be selected for the * Transfer as item number* option within the <strong>Listings » Edit listings » [Open listing ID] » Edit listing</strong> menu.</p>
+<p>The selection <strong>Transmit ePID</strong> must be selected for the <strong>Transfer as item number</strong> option within the <strong>Listings » Edit listings » [Open listing ID] » Edit listing</strong> menu.</p>
 </li>
 <li>
 <p>An EAN must be saved for the variation within <strong>Item » Edit item » [Open item] » Tab: Variation ID</strong> in the <strong>Barcode</strong> area.</p>
 </li>
 <li>
-<p>In the <strong>Setup » Markets » eBay » Settings » Tab: Initial settings</strong> menu, the <strong>Add item details from the eBay catalogue</strong> option has to be set to <strong>Yes</strong>.</p>
+<p>- In the <strong>Setup » Markets » eBay » Settings » Tab: Initial settings</strong> menu, the <strong>Add item details from the eBay catalogue</strong> option has to be set to <strong>Yes</strong>.</p>
 </li>
 <li>
 <p>At the moment, ePID matching is only possible for the platforms eBay Germany, eBay UK, eBay United States, eBay Canada, and eBay Australia.</p>
@@ -6367,7 +6391,7 @@ For existing listings, you have to match ePIDs manually.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="title">Deactivating eBay Plus for individual listings:</div>
+<div class="title">Deactivate eBay Plus for individual listings</div>
 <div class="paragraph">
 <p>Even if you selected <strong>Yes</strong> for the <strong>Automatically activate eBay Plus for new listings</strong> option in the <strong>Setup » Markets » eBay » Settings » Account settings</strong> menu, it is still possible to deactivate individual listings for eBay Plus. To do so, select <strong>No</strong> for the <strong>eBay Plus</strong> option in the market listing’s <strong>Market</strong> tab.</p>
 </div>
@@ -6695,7 +6719,7 @@ For existing listings, you have to match ePIDs manually.</p>
 <h2 id="7400">19. Processing returns</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Different ways of processing incoming return requests from eBay customers are available in plentymarkets.</p>
+<p>Different ways of processing incoming return requests from eBay customers are available in plentymarkets:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -6820,7 +6844,7 @@ For existing listings, you have to match ePIDs manually.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Market listings &gt; eBay return</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Accept return</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Accept return, with eBay label</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -7075,7 +7099,7 @@ For existing listings, you have to match ePIDs manually.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Status change</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eBay: Offering partial refund</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eBay: Offer partial refund</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
@@ -7090,7 +7114,7 @@ For existing listings, you have to match ePIDs manually.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Market listings &gt; eBay return</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Offering partial refund</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Offer partial refund</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -7546,8 +7570,8 @@ with eBay Managed Payments: <strong>eBay Payments</strong></p></td>
 <p>The seller carries out the refund.</p>
 </li>
 <li>
-<p>The seller sets the return status to <strong>eBay: Mark refund as sent (non-PayPal)</strong><br>
-→ The event procedure <strong>eBay refund sent</strong> is triggered and the new status is transferred to eBay.</p>
+<p>The seller sets the return status to <strong>eBay: Mark refund as sent (non-PayPal)</strong>.<br>
+→ The event procedure <strong>Mark refund as sent (non-PayPal)</strong> is triggered and the new status is transferred to eBay.</p>
 </li>
 <li>
 <p>The buyer confirms the receipt of the refund in his or her “My eBay” account.<br>
@@ -7599,8 +7623,8 @@ with eBay Managed Payments: <strong>eBay Payments</strong></p></td>
 <p>The seller carries out the refund.</p>
 </li>
 <li>
-<p>The seller sets the return status to <strong>eBay: Mark refund as sent (non-PayPal)</strong><br>
-→ The event procedure <strong>eBay refund sent</strong> is triggered and the new status is transferred to eBay.</p>
+<p>The seller sets the return status to <strong>eBay: Mark refund as sent (non-PayPal)</strong>.<br>
+→ The event procedure <strong>Mark refund as sent (non-PayPal)</strong> is triggered and the new status is transferred to eBay.</p>
 </li>
 <li>
 <p>The buyer confirms the receipt of the refund in his or her “My eBay” account.<br>
@@ -7630,7 +7654,7 @@ with eBay Managed Payments: <strong>eBay Payments</strong></p></td>
 </li>
 <li>
 <p>The seller offers a new price to the customer. The seller enters a suggestion for the new item price under <strong>Orders » Edit orders » [Open return] » Tab: Edit</strong> next to the option <strong>Price [gross]</strong>.<br>
-<strong><em>Or:</em></strong> Alternatively, the seller enters the new price into the <strong>Credit note</strong>.<br>
+<strong><em>Or:</em></strong> Alternatively, the seller enters the new price into the <strong>Credit note</strong>.
 Afterwards, the seller sets the return status to <strong>eBay: Offer partial refund</strong>.<br>
 → The event procedure <strong>Offer partial refund</strong> is triggered and your decision is transferred to eBay.</p>
 </li>
@@ -7655,7 +7679,7 @@ Afterwards, the seller sets the return status to <strong>eBay: Offer partial ref
 </li>
 <li>
 <p>The seller sets the return status to <strong>eBay: Mark refund as sent (non-PayPal)</strong>.<br>
-→ The event procedure <strong>eBay refund sent</strong> is triggered and the new status is transferred to eBay.</p>
+→ The event procedure <strong>Mark refund as sent (non-PayPal)</strong> is triggered and the new status is transferred to eBay.</p>
 </li>
 <li>
 <p>The buyer confirms the receipt of the refund in his or her “My eBay” account.<br>
@@ -7727,7 +7751,7 @@ Afterwards, the seller sets the return status to <strong>eBay: Offer partial ref
 <div class="sect3">
 <h4 id="9200">20.2.1. Changing the order status to accept requests</h4>
 <div class="paragraph">
-<p>If you have linked the eBay purchase cancellation statuses with your own statuses as described above, then purchase cancellation requests are imported with status *8.6 Purchase cancellation requested. By changing the order status, you can process each request individually.</p>
+<p>If you have linked the eBay purchase cancellation statuses with your own statuses as described above, then purchase cancellation requests are imported with status <strong>8.6 Purchase cancellation requested</strong>. By changing the order status, you can process each request individually.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -7763,8 +7787,10 @@ The status in the example below was selected as an example. Select the status th
 <p>Change the order’s status to <strong>[8.5] eBay: Purchase cancellation accepted</strong>.</p>
 </li>
 <li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
-→ Create the event procedure described below to automatically inform eBay about your decision.</p>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+<li>
+<p>Create the event procedure described below to automatically inform eBay about your decision.</p>
 </li>
 </ol>
 </div>
@@ -7828,11 +7854,13 @@ To accept a purchase cancellation request for an outstanding order, delete this 
 <p>Select an order.</p>
 </li>
 <li>
-<p>Change the order’s status to <strong>[8.7] eBay: Purchase cancellation rejected</strong>.</p>
+<p>Change the order’s status to *[8.7] eBay: Purchase cancellation rejected.</p>
 </li>
 <li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
-→ Create the event procedure described below to automatically inform eBay about your decision.</p>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Create the event procedure described below to automatically inform eBay about your decision.</p>
 </li>
 </ol>
 </div>
@@ -8418,11 +8446,11 @@ This status depends on which reason you specify for the purchase cancellation. W
 </li>
 </ol>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock tip">
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 <div class="title">Importing and combining orders</div>
@@ -8572,7 +8600,8 @@ This status depends on which reason you specify for the purchase cancellation. W
 <p>Select an account from the drop-down list.</p>
 </li>
 <li>
-<p>Click on <strong>Start</strong> to import the special sales.</p>
+<p>Click on <strong>Start</strong> to import the special sales.<br>
+→ The special sales are synchronised.</p>
 </li>
 </ol>
 </div>
@@ -8851,7 +8880,7 @@ If you select this option, the following settings must be saved for the item: Th
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>View the current status of the import.<br></p>
+<p>View the current status of the import:<br></p>
 </div>
 <div class="ulist">
 <ul>
@@ -8973,7 +9002,7 @@ If you select this option, the following settings must be saved for the item: Th
 <p>In the <strong>Regions</strong> column, select the setting <strong>worldwide</strong> or select specific regions.</p>
 </li>
 <li>
-<p><strong>Exclude</strong> <strong>countries of delivery</strong> that you do not want to ship to.</p>
+<p><strong>Exclude</strong> any <strong>countries of delivery</strong> that you do not want to ship to.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
@@ -9115,7 +9144,7 @@ If you select this option, the following settings must be saved for the item: Th
 <p>In the <strong>Regions</strong> column, select a country of delivery or delivery regions.</p>
 </li>
 <li>
-<p>Exclude countries of delivery that you do not want to ship to.</p>
+<p>Exclude any countries of delivery that you do not want to ship to.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
