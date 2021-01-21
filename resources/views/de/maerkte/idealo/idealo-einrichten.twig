@@ -39,10 +39,15 @@
 </li>
 <li><a href="#1600"><span>14.</span><span> Ereignisaktionen für idealo Direktkauf erstellen</span></a>
 <ul class="sectlevel2">
-<li><a href="#1650"><span>14.1.</span><span> Auftragsbestätigungen automatisch senden</span></a></li>
-<li><a href="#1700"><span>14.2.</span><span> Versandbestätigungen automatisch senden</span></a></li>
-<li><a href="#1750"><span>14.3.</span><span> Retouren automatisch senden</span></a></li>
-<li><a href="#1800"><span>14.4.</span><span> Stornierungen automatisch senden</span></a></li>
+<li><a href="#1700"><span>14.1.</span><span> Versandbestätigungen automatisch senden</span></a></li>
+<li><a href="#1750"><span>14.2.</span><span> Retouren automatisch melden</span></a></li>
+<li><a href="#1800"><span>14.3.</span><span> Stornierungen automatisch melden</span></a>
+<ul class="sectlevel3">
+<li><a href="#1801"><span>14.3.1.</span><span> Stornierungen durch Händler automatisch melden</span></a></li>
+<li><a href="#1802"><span>14.3.2.</span><span> Stornierungen durch Kunden automatisch melden</span></a></li>
+</ul>
+</li>
+<li><a href="#1750"><span>14.4.</span><span> Rückerstattungen automatisch melden</span></a></li>
 </ul>
 </li>
 <li><a href="#1900"><span>15.</span><span> Log abrufen</span></a></li>
@@ -352,6 +357,11 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Möchtest du deine idealo Direktkauf-Aufträge in plentymarkets importieren?</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Aktivieren, um Aufträge automatisch alle 15 Minuten zu importieren.<br>
 <strong><em>Hinweis:</em></strong> Artikeldaten und Bestandsinformationen können nur übertragen werden, wenn diese Option aktiviert ist.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Welcher Auftragsstatus soll vor dem Import stornierten idealo Direktkauf-Aufträgen zugewiesen werden?</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manche idealo Direktkauf-Aufträge werden schon vor dem ersten Import in dein plentymarkets System storniert. Auftragsstatus wählen, der diesen stornierten Aufträgen beim Import zugewiesen werden soll.<br>
+<strong><em>Hinweis:</em></strong> Der Import dieser stornierten idealo Direktkauf-Aufträge löst die für den gewählten Status eingerichteten Ereignisaktionen aus. Wähle deshalb einen Status, bei dem keine Ereignisaktionen (z.B. Stornierungsbestätigung an Kunden) ausgelöst werden.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1608,7 +1618,7 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 </ol>
 </div>
 <div class="paragraph">
-<p>Im Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Tab: Merkmale</strong> verknüpfst anschließend das Merkmal mit dem Artikel.</p>
+<p>Im Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Tab: Merkmale</strong> verknüpfst du anschließend das Merkmal mit dem Artikel.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1684,7 +1694,7 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 <h2 id="1600">14. Ereignisaktionen für idealo Direktkauf erstellen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Du verwendest idealo Direktkauf? Dann richte Ereignisaktionen ein, um Änderungen am Auftragsstatus automatisch an idealo zu senden. Du kannst mit Ereignisaktionen Auftragsbestätigungen, Versandbestätigungen, Retouren und Stornierungen automatisch an idealo Direktkauf senden.</p>
+<p>Du verwendest idealo Direktkauf? Dann richte Ereignisaktionen ein, um Änderungen am Auftragsstatus automatisch an idealo zu senden. Du kannst mit Ereignisaktionen Versandbestätigungen, Retouren und Stornierungen automatisch an idealo Direktkauf senden.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1693,7 +1703,7 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 <i class="fa icon-tip" title="Hinweis"></i>
 </td>
 <td class="content">
-<div class="title">Ereignisaktionen für idealo Direktkauf</div>
+<div class="title">Ereignisaktionen nur für idealo Direktkauf</div>
 <div class="paragraph">
 <p>Ereignisaktionen müssen nur eingerichtet werden, wenn du idealo Direktkauf nutzt.</p>
 </div>
@@ -1702,84 +1712,7 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 </tbody></table>
 </div>
 <div class="sect2">
-<h3 id="1650">14.1. Auftragsbestätigungen automatisch senden</h3>
-<div class="paragraph">
-<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um nach Eingang eines Auftrags automatisch eine Auftragsbestätigung an idealo zu senden.</p>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Ereignisaktion einrichten</div>
-<div class="content">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
-</li>
-<li>
-<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
-→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
-</li>
-<li>
-<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
-</li>
-<li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#auftragsbestaetigung-idealo">Tabelle 6</a>.</p>
-</li>
-<li>
-<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
-</li>
-<li>
-<p>Nimm die Einstellungen gemäß <a href="#auftragsbestaetigung-idealo">Tabelle 6</a> vor.</p>
-</li>
-<li>
-<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
-</li>
-<li>
-<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br></p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<table id="auftragsbestaetigung-idealo" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 6. Ereignisaktion zum automatischen Senden von Auftragsbestätigungen an idealo</caption>
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Einstellung</th>
-<th class="tableblock halign-left valign-top">Option</th>
-<th class="tableblock halign-left valign-top">Auswahl</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsanlage: Neuer Auftrag</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>idealo Direktkauf</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragsbestätigung an idealo senden</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="1700">14.2. Versandbestätigungen automatisch senden</h3>
+<h3 id="1700">14.1. Versandbestätigungen automatisch senden</h3>
 <div class="paragraph">
 <p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um automatisch eine Versandbestätigung an idealo zu senden, nachdem ein Warenausgang gebucht wurde.</p>
 </div>
@@ -1799,13 +1732,13 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#versandbestaetigung-idealo">Tabelle 7</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#versandbestaetigung-idealo">Tabelle 6</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#versandbestaetigung-idealo">Tabelle 7</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#versandbestaetigung-idealo">Tabelle 6</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1818,7 +1751,7 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 </div>
 </div>
 <table id="versandbestaetigung-idealo" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 7. Ereignisaktion zum automatischen Senden von Versandbestätigungen an idealo</caption>
+<caption class="title">Tabelle 6. Ereignisaktion zum automatischen Senden von Versandbestätigungen an idealo</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1834,7 +1767,7 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Warenausgang gebucht</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis wählen, z.B. <strong>Auftragsänderung: Warenausgang gebucht</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1849,14 +1782,14 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Versand &gt; Versandbestätigung an idealo senden</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Versandbestätigung an idealo senden</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1750">14.3. Retouren automatisch senden</h3>
+<h3 id="1750">14.2. Retouren automatisch melden</h3>
 <div class="paragraph">
 <p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um idealo automatisch über Retouren zu informieren.</p>
 </div>
@@ -1876,13 +1809,13 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#retouren-idealo">Tabelle 8</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#retouren-idealo">Tabelle 7</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#retouren-idealo">Tabelle 8</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#retouren-idealo">Tabelle 7</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1895,7 +1828,7 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 </div>
 </div>
 <table id="retouren-idealo" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 8. Ereignisaktion zum automatischen Senden von Retouren an idealo</caption>
+<caption class="title">Tabelle 7. Ereignisaktion zum automatischen Melden von Retouren an idealo</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1911,7 +1844,7 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsanlage: Neue Retoure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis wählen, z.B. <strong>Auftragsanlage: Neue Retoure</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1926,16 +1859,195 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retoure &gt; Retoure an idealo senden</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Retoure an idealo melden</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1800">14.4. Stornierungen automatisch senden</h3>
+<h3 id="1800">14.3. Stornierungen automatisch melden</h3>
 <div class="paragraph">
-<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um idealo automatisch über Stornierungen zu informieren.</p>
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um idealo automatisch über Stornierungen zu informieren. Für Stornierungen stehen die folgenden Aktionen zur Verfügung:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Stornierung durch Händler an idealo melden</p>
+</li>
+<li>
+<p>Stornierung durch Käufer an idealo melden</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="1801">14.3.1. Stornierungen durch Händler automatisch melden</h4>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#stornierungen-haendler-idealo">Tabelle 8</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen gemäß <a href="#stornierungen-haendler-idealo">Tabelle 8</a> vor.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="stornierungen-haendler-idealo" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 8. Ereignisaktion zum automatischen Melden von Stornierungen durch Händler an idealo</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis wählen, z.B. <strong>Statuswechsel: [8] Storniert</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>idealo Direktkauf</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Stornierung durch Händler an idealo senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="1802">14.3.2. Stornierungen durch Kunden automatisch melden</h4>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#stornierungen-kaeufer-idealo">Tabelle 9</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen gemäß <a href="#stornierungen-kaeufer-idealo">Tabelle 9</a> vor.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="stornierungen-kaeufer-idealo" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 9. Ereignisaktion zum automatischen Melden von Stornierungen durch Kunden an idealo</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis wählen, z.B. <strong>Statuswechsel: [8.1] Storniert durch Kunden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>idealo Direktkauf</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Stornierung durch Käufer an idealo senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1750">14.4. Rückerstattungen automatisch melden</h3>
+<div class="paragraph">
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um idealo automatisch über Rückerstattungen zu informieren.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Nur Zahlungsart <strong>idealo Direktkauf Payments</strong></div>
+<div class="paragraph">
+<p>Die Ereignisaktion <strong>Rückerstattung an idealo melden</strong> wird nur für Aufträge ausgelöst, die über die Zahlungsart <strong>idealo Direktkauf Payments</strong> bezahlt wurden. Für Aufträge, die via PayPal bezahlt wurden, kann die Ereignisaktion nicht verwendet werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
@@ -1953,13 +2065,13 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#stornierungen-idealo">Tabelle 9</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#erstattung-idealo">Tabelle 10</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#stornierungen-idealo">Tabelle 9</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#erstattung-idealo">Tabelle 10</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1971,8 +2083,8 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 </div>
 </div>
 </div>
-<table id="stornierungen-idealo" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 9. Ereignisaktion zum automatischen Senden von Stornierungen an idealo</caption>
+<table id="erstattung-idealo" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 10. Ereignisaktion zum automatischen Melden von Rückerstattungen an idealo</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1988,13 +2100,13 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Statuswechsel: [8] Storniert</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis wählen, z.B. <strong>Auftragsanlage: Neue Gutschrift</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gutschrift</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
@@ -2003,7 +2115,7 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag: Stornierung an idealo senden</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Rückerstattung an idealo melden</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
