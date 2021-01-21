@@ -9,7 +9,7 @@
 <li><a href="#3000"><span>3.</span><span> Select a method for item data export</span></a></li>
 <li><a href="#2400"><span>4.</span><span> Installing the necessary plugins</span></a></li>
 <li><a href="#200"><span>5.</span><span> Completing the idealo assistant</span></a></li>
-<li><a href="#300"><span>6.</span><span> idealo price comparison and idealo Checkout</span></a></li>
+<li><a href="#300"><span>6.</span><span> Using idealo price comparison and idealo Checkout</span></a></li>
 <li><a href="#400"><span>7.</span><span> Activating the order referrer</span></a></li>
 <li><a href="#500"><span>8.</span><span> Setting the variation availability</span></a></li>
 <li><a href="#600"><span>9.</span><span> Defining a sales price</span></a></li>
@@ -19,13 +19,13 @@
 <li><a href="#850"><span>11.1.</span><span> Item data export via API (PWS 2.0)</span></a></li>
 <li><a href="#900"><span>11.2.</span><span> Item data export via elastic export</span></a>
 <ul class="sectlevel3">
-<li><a href="#950"><span>11.2.1.</span><span> Setting up the data format IdealoDE plugin in plentymarkets</span></a></li>
+<li><a href="#950"><span>11.2.1.</span><span> Setting up the data format idealo-Plugin in plentymarkets</span></a></li>
 <li><a href="#1000"><span>11.2.2.</span><span> Available columns for the export file</span></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#1100"><span>12.</span><span> Activating the idealo payment method</span></a></li>
+<li><a href="#1100"><span>12.</span><span> Activating the payment method idealo Checkout</span></a></li>
 <li><a href="#1200"><span>13.</span><span> Creating characteristics</span></a>
 <ul class="sectlevel2">
 <li><a href="#1250"><span>13.1.</span><span> Creating the characteristics material and gender</span></a></li>
@@ -39,10 +39,15 @@
 </li>
 <li><a href="#1600"><span>14.</span><span> Creating event procedures for idealo Checkout</span></a>
 <ul class="sectlevel2">
-<li><a href="#1650"><span>14.1.</span><span> Automatically sending order confirmations</span></a></li>
-<li><a href="#1700"><span>14.2.</span><span> Automatically sending shipping confirmations</span></a></li>
-<li><a href="#1750"><span>14.3.</span><span> Automatically sending returns</span></a></li>
-<li><a href="#1800"><span>14.4.</span><span> Automatically sending cancellations</span></a></li>
+<li><a href="#1700"><span>14.1.</span><span> Automatically sending shipping confirmations</span></a></li>
+<li><a href="#1750"><span>14.2.</span><span> Automatically sending returns</span></a></li>
+<li><a href="#1800"><span>14.3.</span><span> Automatically sending cancellations</span></a>
+<ul class="sectlevel3">
+<li><a href="#1801"><span>14.3.1.</span><span> Automatically sending seller cancellations</span></a></li>
+<li><a href="#1802"><span>14.3.2.</span><span> Automatically sending buyer cancellations</span></a></li>
+</ul>
+</li>
+<li><a href="#1750"><span>14.4.</span><span> Automatically sending refund notifications</span></a></li>
 </ul>
 </li>
 <li><a href="#1900"><span>15.</span><span> Viewing the log</span></a></li>
@@ -205,7 +210,7 @@
 </div>
 </div>
 <div id="175" class="openblock collapseBox">
-<div class="title">Installing the plugin <strong>Elastic Export</strong></div>
+<div class="title">Installing the <strong>Elastic Export</strong> plugin</div>
 <div class="content">
 <div class="paragraph instruction">
 <p>Installing plugins:</p>
@@ -352,6 +357,11 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Would you like to import your idealo Checkout orders into plentymarkets?</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Activate to import orders every 15 minutes automatically.<br>
 <strong><em>Note:</em></strong> You need to activate this option to export item data and stock information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>What order status do you want to assign to idealo Checkout orders cancelled before the import?</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Some idealo Checkout orders are cancelled before they are first imported to your plentymarkets system. Select the order status that is to be assigned to such cancelled orders during the import.<br>
+<strong><em>Note:</em></strong> The import of these cancelled idealo Checkout orders triggers the event procedures set up for the selected status. As such, select a status that does not trigger any event procedures (such as cancellation confirmations being sent to customers).</p></td>
 </tr>
 </tbody>
 </table>
@@ -542,7 +552,7 @@ Variation URL</p></td>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="300">6. idealo price comparison and idealo Checkout</h2>
+<h2 id="300">6. Using idealo price comparison and idealo Checkout</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Depending on whether you only want to use the idealo price comparison or whether you want to enable your customers to buy items directly at idealo without having to enter your online store, different settings must be carried out. The overview below lists the settings required for idealo Checkout.</p>
@@ -829,7 +839,7 @@ The "price range" feature must also be activated at idealo.</p>
 <p>How to set up the elastic export to export your items to idealo is described in the following chapters <a href="#950">Setting up the data format IdealoDE plugin in plentymarkets</a> and <a href="#1000">Available columns for the export file</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="950">11.2.1. Setting up the data format IdealoDE plugin in plentymarkets</h4>
+<h4 id="950">11.2.1. Setting up the data format idealo-Plugin in plentymarkets</h4>
 <div class="admonitionblock tip">
 <table>
 <tbody><tr>
@@ -1138,7 +1148,7 @@ According to the format setting <strong>Description</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>article_no</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The variation number within <strong>Item » Edit item » [Open item] » [Open variation] » Settings » Basic settings.</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The variation number as per <strong>Item » Edit item » [Open item] » [Open variation] » Settings » Basic settings</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>producer</strong></p></td>
@@ -1146,7 +1156,7 @@ According to the format setting <strong>Description</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>model</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The model within <strong>Item » Edit item » [Open item] » [Open variation] » Settings » Basic settings</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The model as per <strong>Item » Edit item » [Open item] » [Open variation] » Settings » Basic settings</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>availability</strong></p></td>
@@ -1164,7 +1174,7 @@ For idealo, the delivery time must be indicated in days.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>fedas</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Amazon product type within <strong>Items » Edit item » [Open item] » Multi-Channel » Amazon</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Amazon product type as per <strong>Items » Edit item » [Open item] » Multi-Channel » Amazon</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>warranty</strong></p></td>
@@ -1181,7 +1191,7 @@ The sales price of the variation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>weight</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The gross weight in gram within <strong>Items » Edit item » [Open item] » [Open variation] » Settings » Measurements</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The gross weight in gram as per <strong>Items » Edit item » [Open item] » [Open variation] » Settings » Measurements</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>category1-6</strong></p></td>
@@ -1207,16 +1217,16 @@ URL of the image according to the format setting <strong>Image</strong>.</p></td
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>free_text_field</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The value of a characteristic of type <strong>Text</strong> or <strong>Selection</strong> with a link to idealo.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The value of a characteristic of the type <strong>Text</strong> or <strong>Selection</strong> with a link to idealo.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>checkoutApproved</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is true if the order referrer idealo Checkout within <strong>Items » Edit item » [Open item] » [Open variation] » Availability » Markets</strong> is set or a characteristic of type <strong>No</strong> and the link to the idealo Checkout characteristic <strong>CheckoutApproved</strong> is configured.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is true if the order referrer idealo Checkout is activated in the <strong>Items » Edit item » [Open item] » [Open variation] » Availability » Markets</strong> menu or if a characteristic of the type <strong>No</strong> and the link to the idealo Checkout characteristic CheckoutApproved is configured.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>itemsInStock</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Requirement</strong>: checkoutApproved is true.<br>
-The net stock of the variation. For items which are not limited to the net stock, <strong>999</strong> will be exported.</p></td>
+The net stock of the variation. For items which are not limited to the net stock, 999 will be exported.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>fulfillmentType</strong></p></td>
@@ -1244,7 +1254,7 @@ All payment methods will be exported, according to the format setting <strong>Sh
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1100">12. Activating the idealo payment method</h2>
+<h2 id="1100">12. Activating the payment method idealo Checkout</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Activate the payment method <strong>idealo Checkout</strong>. This allows payments to be made for orders on idealo and to be displayed in your plentymarkets system.</p>
@@ -1256,7 +1266,7 @@ All payment methods will be exported, according to the format setting <strong>Sh
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="title">Payment method for idealo Checkout</div>
+<div class="title">Payment method for idealo Checkout only</div>
 <div class="paragraph">
 <p>You only have to activate the payment method <strong>idealo Checkout</strong> if you use idealo Checkout.</p>
 </div>
@@ -1399,7 +1409,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 <td class="content">
 <div class="title">PayPal payment method</div>
 <div class="paragraph">
-<p>If you offer the PayPal payment method, it is mandatory to create and configure this payment method in your plentymarkets system.</p>
+<p>If you offer the PayPal payment method, it is mandatory to create and configure this payment method in your plentymarkets system. This is to ensure that the payment is imported and assigned to the order correctly.</p>
 </div>
 </td>
 </tr>
@@ -1684,7 +1694,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 <h2 id="1600">14. Creating event procedures for idealo Checkout</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Do you use idealo Checkout? Then set up event procedures to automatically inform idealo about changes in the order status. You can use event procedures to automatically send order confirmations, shipping confirmations, returns, and cancellations to idealo Checkout.</p>
+<p>Do you use idealo Checkout? Then set up event procedures to automatically inform idealo about changes in the order status. You can use event procedures to automatically send shipping confirmations, returns, and cancellations to idealo Checkout.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1693,7 +1703,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="title">Event procedures for idealo Checkout</div>
+<div class="title">Event procedures for idealo Checkout only</div>
 <div class="paragraph">
 <p>You only have to set up event procedures if you use idealo Checkout.</p>
 </div>
@@ -1702,84 +1712,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </tbody></table>
 </div>
 <div class="sect2">
-<h3 id="1650">14.1. Automatically sending order confirmations</h3>
-<div class="paragraph">
-<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send an order confirmation to idealo.</p>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Setting up an event procedure</div>
-<div class="content">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to <strong>Setup » Orders » Events</strong>.</p>
-</li>
-<li>
-<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
-→ The <strong>Create new event procedure</strong> window opens.</p>
-</li>
-<li>
-<p>Enter a distinct name for the event procedure.</p>
-</li>
-<li>
-<p>Select the <strong>event</strong> according to <a href="#order-confirmation-idealo">Table 6</a>.</p>
-</li>
-<li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
-</li>
-<li>
-<p>Carry out the settings according to <a href="#order-confirmation-idealo">Table 6</a>.</p>
-</li>
-<li>
-<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
-</li>
-<li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<table id="order-confirmation-idealo" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 6. Event procedure for automatically sending order confirmations to idealo</caption>
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Setting</th>
-<th class="tableblock halign-left valign-top">Option</th>
-<th class="tableblock halign-left valign-top">Selection</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order generation: New order</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>idealo Checkout</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Send order confirmation to idealo</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="1700">14.2. Automatically sending shipping confirmations</h3>
+<h3 id="1700">14.1. Automatically sending shipping confirmations</h3>
 <div class="paragraph">
 <p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send a shipping confirmation to idealo when the outgoing items have been booked.</p>
 </div>
@@ -1799,13 +1732,13 @@ If you transfer your items with via CSV file with the elastic export, you can on
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#shipping-confirmation-idealo">Table 7</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#shipping-confirmation-idealo">Table 6</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#shipping-confirmation-idealo">Table 7</a>.</p>
+<p>Carry out the settings according to <a href="#shipping-confirmation-idealo">Table 6</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1818,7 +1751,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </div>
 </div>
 <table id="shipping-confirmation-idealo" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 7. Event procedure for automatically sending shipping confirmations to idealo</caption>
+<caption class="title">Table 6. Event procedure for automatically sending shipping confirmations to idealo</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1834,7 +1767,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Outgoing items booked</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example <strong>Order change: Outgoing items booked</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1849,14 +1782,14 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping &gt; Send shipping confirmation to idealo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Send shipping confirmation to idealo</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1750">14.3. Automatically sending returns</h3>
+<h3 id="1750">14.2. Automatically sending returns</h3>
 <div class="paragraph">
 <p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform idealo about returns.</p>
 </div>
@@ -1876,13 +1809,13 @@ If you transfer your items with via CSV file with the elastic export, you can on
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#returns-idealo">Table 8</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#returns-idealo">Table 7</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#returns-idealo">Table 8</a>.</p>
+<p>Carry out the settings according to <a href="#returns-idealo">Table 7</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1895,7 +1828,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </div>
 </div>
 <table id="returns-idealo" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. Event procedure for automatically sending returns to idealo</caption>
+<caption class="title">Table 7. Event procedure for automatically notifying idealo of returns</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1911,7 +1844,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order generation: New return</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example <strong>Order generation: New return</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1926,16 +1859,195 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Return &gt; Send return to idealo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Send return notification to idealo</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="1800">14.4. Automatically sending cancellations</h3>
+<h3 id="1800">14.3. Automatically sending cancellations</h3>
 <div class="paragraph">
-<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform idealo of cancellations.</p>
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform idealo of cancellations. The following actions are available for cancellations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Send seller cancellation to idealo</p>
+</li>
+<li>
+<p>Send buyer cancellation to idealo</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="1801">14.3.1. Automatically sending seller cancellations</h4>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#cancellations-seller-idealo">[cancellations-seller-idealo]</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#cancellations-seller-idealo">[cancellations-seller-idealo]</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="cancellation-seller-idealo" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. Event procedure for automatically notifying idealo of cancellations by seller</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, e.g. <strong>Status change: [8] Cancelled</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>idealo Checkout</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Send seller cancellation to idealo</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="1802">14.3.2. Automatically sending buyer cancellations</h4>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#cancellations-buyer-idealo">[cancellations-buyer-idealo]</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#cancellations-buyer-idealo">[cancellations-buyer-idealo]</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="cancellation-buyer-idealo" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Event procedure for automatically notifying idealo of cancellations by buyer</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, e.g. <strong>Status change: [8.1] Cancelled by buyer</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>idealo Checkout</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Send buyer cancellation to idealo</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1750">14.4. Automatically sending refund notifications</h3>
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform idealo of refunds.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Payment method <strong>idealo Checkout Payments</strong> only</div>
+<div class="paragraph">
+<p>The event procedure <strong>Send refund notification to idealo</strong> only is triggered for orders that were paid using the payment method <strong>idealo Checkout Payments</strong>. The event procedure cannot be used for orders that were paid for using PayPal.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Setting up an event procedure</div>
@@ -1953,13 +2065,13 @@ If you transfer your items with via CSV file with the elastic export, you can on
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#cancellations-idealo">Table 9</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#refund-idealo">Table 10</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#cancellations-idealo">Table 9</a>.</p>
+<p>Carry out the settings according to <a href="#refund-idealo">Table 10</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1971,8 +2083,8 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </div>
 </div>
 </div>
-<table id="cancellations-idealo" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. Event procedure for automatically sending cancellations to idealo</caption>
+<table id="refund-idealo" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 10. Event procedure for automatically notifying idealo of credit notes</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1988,13 +2100,13 @@ If you transfer your items with via CSV file with the elastic export, you can on
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change: [8] Cancelled</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example <strong>Order generation: New credit note</strong>.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Credit note</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
@@ -2003,7 +2115,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Send cancellation to idealo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Send refund notification to idealo</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
