@@ -8,7 +8,7 @@
 
 <main id="main">
     <h1>plentymarkets Changelog</h1><div class="paragraph">
-<p>Erfahre, was sich in der Woche vom 07. Januar 2020 bis zum 13. Januar 2021 bei plentymarkets getan hat. Im Folgenden findest du alle Changelog-Einträge der letzten Woche für stable- und early-Systeme.</p>
+<p>Erfahre, was sich in der Woche vom 14. Januar 2021 bis zum 20. Januar 2021 bei plentymarkets getan hat. Im Folgenden findest du alle Changelog-Einträge der letzten Woche für stable- und early-Systeme.</p>
 </div><div class="paragraph">
 <p>Wenn du mehr zu den einzelnen Versionen erfahren oder auf eine andere Version wechseln möchtest, siehe die Handbuchseite <a href="/business-entscheidungen/systemadministration/versionszyklus">Versionszyklus</a>. Um die Informationen, die auf dieser Seite gesammelt sind, in Echtzeit zu erhalten, abonniere die <a href="https://forum.plentymarkets.com/c/changelog" target="_blank" rel="noopener">Kategorie Changelog in unserem Forum</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
 </div><div class="paragraph">
@@ -24,149 +24,7 @@
 <div class="paragraph">
 <p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
 </div>
-<h3 id="_auftragsdokumente" class="discrete">Auftragsdokumente</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Die Freitextfelder 1 und 2 in den Dokumenteinstellungen für Auftragsdokumente stehen zwei neue Platzhalter zur Verfügung:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>[OrderID]</code>: Gibt die ID des aktuellen Auftrages aus.</p>
-</li>
-<li>
-<p><code>[ParentOrderID]</code>: Gibt die ID des Auftrages aus, aus dem der aktuelle Auftrag erzeugt wurde (z.B. bei Gutschriften, Lieferaufträge usw.). Wenn der Auftrag keine Referenz zu einem Elternauftrag hat, dann wird <code>[OrderID]</code> ausgegeben.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<hr>
-<h2 id="_geändert" class="discrete">Geändert</h2>
-<div class="paragraph">
-<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
-</div>
-<h3 id="_amazon_vcs" class="discrete">Amazon VCS</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Mit dem Brexit übernimmt Amazon seit dem 01.01.2021 die Steuerberechnung und Rechnungserstellung für UK-Aufträge unter einem Auftragswert von 135£. Dies passiert auch, wenn man VCS nicht nutzt oder nur VCS Lite (VCS plentymarkets) und regulär die Rechnung selbst erstellt.</p>
-<div class="paragraph">
-<p>In einem ersten Schritt wurde nun der Import des entsprechenden VCS-Berichtes so angepasst, dass die betroffenen Aufträge auf Basis des VCS-Berichts korrigiert und die externe Rechnung importiert wird. Sollte bereits eine Rechnung am Auftrag vorliegen, wird ein Stornobeleg erzeugt.</p>
-</div>
-<div class="paragraph">
-<p>In einem zweiten Schritt werden wir prüfen, ob wir beim Auftragsimport sinnvoll Aufträge herausfiltern können, bei denen wir das Erstellen der Rechnung sperren können, um ein unnötiges Erzeugen der Rechnungen zu verhindern. Dies steht aber noch aus.</p>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_ereignisaktionen" class="discrete">Ereignisaktionen</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Der Filter <strong>Letzter Statuswechsel</strong> hat bei der Auswahl <strong>Tage eingeben</strong> neben der Anzahl Tage jetzt auch feinere Optionen, die sich auf die Tage beziehen: <strong>vor genau</strong>, <strong>vor über</strong>, <strong>vor über oder genau</strong>, <strong>vor weniger als</strong> und vor <strong>weniger als oder genau</strong>.</p>
-<div class="admonitionblock note">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-note" title="Anmerkung"></i>
-</td>
-<td class="content">
-<div class="title">Kein To-do</div>
-<div class="paragraph">
-<p>Es muss nichts weiter unternommen werden, der Standardwert ist <strong>vor genau</strong> und hat damit dasselbe Verhalten wie bisher.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-</li>
-</ul>
-</div>
-<hr>
-<h2 id="_behoben" class="discrete">Behoben</h2>
-<div class="paragraph">
-<p>Folgende Fehler wurden in den letzten 7 Tagen auf <strong>stable</strong> behoben.</p>
-</div>
 <h3 id="_aufträge" class="discrete">Aufträge</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Bei der manuellen Anlage einer Retoure über einen Auftrag wurde in der neuen Auftragslogik der Retouren-Code nicht übernommen. Jetzt wird ein Versandpaket für die Retoure angelegt und der Retouren-Code als Paketnummer gespeichert (Modell <code>OrderShippingPackage</code>, Felder <code>packageNumber</code> und <code>returnPackageNumber</code>).</p>
-</li>
-<li>
-<p>Es konnte vorkommen, dass die Artikelanzahl in Umbuchungen nicht korrekt gespeichert wurde.</p>
-</li>
-<li>
-<p>Wenn eine Nachbestellung in einer Fremdwährung angelegt wurde, kann der Einkaufspreis in der Auftragspositionstabelle geändert werden.</p>
-</li>
-</ul>
-</div>
-<h3 id="_dokumente" class="discrete">Dokumente</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>In den Dokumenteinstellungen können nun auch für die Stornobelege (zu Rechnung, Gutschrift und Mahnung) die Bestellmerkmale an der Artikelbezeichnung ausgewählt werden und somit ausgegeben werden.</p>
-</li>
-</ul>
-</div>
-<h3 id="_import" class="discrete">Import</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Bis jetzt war es nicht möglich Mengen mit Dezimalzahlen zu importieren. Der Fehler wurde nun behoben.</p>
-</li>
-<li>
-<p>Es war nicht möglich über den Kategorieimport Daten an Untermandanten zu importieren. Dieses Verhalten wurde nun korrigiert.</p>
-</li>
-</ul>
-</div>
-<h3 id="_kataloge" class="discrete">Kataloge</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Aufgrund eines Fehlers wurden nicht notwendige Datenfelder im Data Picker angezeigt. Diesen Fehler haben wir behoben.</p>
-</li>
-</ul>
-</div>
-<h3 id="_plugins" class="discrete">Plugins</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Unter bestimmten Umständen wurden Container-Verknüpfungen nicht richtig gespeichert. Dies hatte zur Folge, dass sich Verknüpfungen nicht mehr ändern ließen. Dieses Problem besteht nicht mehr.</p>
-<div class="admonitionblock note">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-note" title="Anmerkung"></i>
-</td>
-<td class="content">
-<div class="title">Kein To-Do</div>
-<div class="paragraph">
-<p>Im Zuge des Updates haben wir fehlerhafte Container-Verknüpfungen automatisch behoben. Es ist keine Aktion von deiner Seite notwendig.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="_zahlung" class="discrete">Zahlung</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Bei der Berechnung des offenen Betrages nach dem Teilen von Zahlungen wurden Gutscheine, Ermäßigungen und Coupons nicht berücksichtigt. Dies wurde nun behoben.</p>
-</li>
-</ul>
-</div>
-</div><div class="tab-pane fade" id="early" role="tabpanel" aria-labelledby="early-tab">
-<h2 id="_neu_2" class="discrete">Neu</h2>
-<div class="paragraph">
-<p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
-</div>
-<h3 id="_aufträge_2" class="discrete">Aufträge</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -177,7 +35,7 @@
 </li>
 </ul>
 </div>
-<h3 id="_dokumente_2" class="discrete">Dokumente</h3>
+<h3 id="_dokumente" class="discrete">Dokumente</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -188,7 +46,7 @@
 </li>
 </ul>
 </div>
-<h3 id="_kataloge_2" class="discrete">Kataloge</h3>
+<h3 id="_kataloge" class="discrete">Kataloge</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -199,12 +57,20 @@
 </li>
 </ul>
 </div>
-<hr>
-<h2 id="_geändert_2" class="discrete">Geändert</h2>
-<div class="paragraph">
-<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
+<h3 id="_shopbuilder" class="discrete">ShopBuilder</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Im ShopBuilder 2.0 wurde die Vorschaufunktion hinzugefügt.</p>
+</li>
+</ul>
 </div>
-<h3 id="_kataloge_3" class="discrete">Kataloge</h3>
+<hr>
+<h2 id="_geändert" class="discrete">Geändert</h2>
+<div class="paragraph">
+<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>stable</strong> veröffentlicht.</p>
+</div>
+<h3 id="_kataloge_2" class="discrete">Kataloge</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -216,11 +82,11 @@
 </ul>
 </div>
 <hr>
-<h2 id="_behoben_2" class="discrete">Behoben</h2>
+<h2 id="_behoben" class="discrete">Behoben</h2>
 <div class="paragraph">
-<p>Folgende Fehler wurden in den letzten 7 Tagen auf <strong>early</strong> behoben.</p>
+<p>Folgende Fehler wurden in den letzten 7 Tagen auf <strong>stable</strong> behoben.</p>
 </div>
-<h3 id="_aufträge_3" class="discrete">Aufträge</h3>
+<h3 id="_aufträge_2" class="discrete">Aufträge</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -231,7 +97,15 @@
 </li>
 </ul>
 </div>
-<h3 id="_kataloge_4" class="discrete">Kataloge</h3>
+<h3 id="_dokumente_2" class="discrete">Dokumente</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Platzhalter für Rechnungsdatum hatte auf Auftragsdokumenten in manchen Fällen nicht funktioniert.</p>
+</li>
+</ul>
+</div>
+<h3 id="_kataloge_3" class="discrete">Kataloge</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -260,6 +134,90 @@
 </li>
 </ul>
 </div>
+</div><div class="tab-pane fade" id="early" role="tabpanel" aria-labelledby="early-tab">
+<h2 id="_neu_2" class="discrete">Neu</h2>
+<div class="paragraph">
+<p>Folgende Neuerungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
+</div>
+<h3 id="_aufträge_3" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Unter <strong>Einrichtung » Aufträge » Status</strong> kann mittels eines Toggles die Status-ID dem Namen vorangestellt werden. Die ID und der Name werden dabei durch eine Pipe (|) getrennt. Der Status wird dann an allen Stellen im System entsprechend mit ID und Name ausgegeben.</p>
+<div class="paragraph">
+<p><span class="image"><img src="{{plugin_path('PlentyManual')}}/images/changelog/assets/toggle-status-id.png" alt="Der Toggle für die Status-ID und Auswirkungen auf die Tabelle." width="640"></span></p>
+</div>
+<div class="paragraph">
+<p>Weitere Informationen findest du auf der Handbuchseite <a href="/auftraege/auftraege-verwalten#1200">Aufträge verwalten</a>.</p>
+</div>
+</li>
+<li>
+<p>Wenn nun eine Gutschrift (PDF) erstellt wird, wird eine Referenz zur aktuell gültigen Rechnung des Auftrages erstellt.</p>
+</li>
+<li>
+<p>Die Spalte mit dem Burger Icon in der Dokumententabelle der Nachbestellung und der Umbuchung wurde geändert. Statt des Burger Icons gibt es nun zwei Spalten. Eine mit einer Schaltfläche für Download und die andere mit einer Schaltfläche für Löschen.</p>
+</li>
+<li>
+<p>Die Spalten Varianten-ID und Variantennr. wurden in den Tabellen der Nachbestellung und Umbuchung hinzugefügt. Die Anzeige dieser Spalten ist optional, sie sind nicht standardmäßig ausgewählt. Nutze zur Auswahl Spalten konfigurieren.</p>
+</li>
+</ul>
+</div>
+<h3 id="_kataloge_4" class="discrete">Kataloge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ab sofort können Feldgruppen aus dem Data Picker hinzugefügt werden.</p>
+</li>
+</ul>
+</div>
+<h3 id="_otto_market" class="discrete">OTTO Market</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Wir haben den Assistenten der OTTO Market-Grundeinstellungen um Einstellungen für Retouren-Versanddienstleister erweitert. Mit dieser Einstellung können die Retouren-Versanddienstleister aus plentymarkets mit denen von OTTO Market verknüpft werden. Außerdem ist es möglich, über diese Einstellung das Verhalten einer alternativen Ermittlung des Retouren-Versanddienstleisters zu konfigurieren.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_geändert_2" class="discrete">Geändert</h2>
+<div class="paragraph">
+<p>Folgende Änderungen wurden in den letzten 7 Tagen auf <strong>early</strong> veröffentlicht.</p>
+</div>
+<h3 id="_otto" class="discrete">OTTO</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In einem OTTO Katalog wird nun immer das virtuelle Gesamtlager genommen, wenn kein Warenhaus bei Bestand verknüpft ist.</p>
+</li>
+</ul>
+</div>
+<h3 id="_otto_market_2" class="discrete">OTTO Market</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Der Rückerstattungs-Import in OTTO Market kann nun damit umgehen, wenn wir die serverseitige Drosselung von OTTO erreichen.</p>
+</li>
+</ul>
+</div>
+<hr>
+<h2 id="_behoben_2" class="discrete">Behoben</h2>
+<div class="paragraph">
+<p>Folgende Fehler wurden in den letzten 7 Tagen auf <strong>early</strong> behoben.</p>
+</div>
+<h3 id="_aufträge_4" class="discrete">Aufträge</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Mit der neuen Auftragslogik wurden bei der Erstellung von Retouren und Gutschriften aus Aufträgen mit verkauften Gutscheinen auch Codes für die Gutscheine generiert, die aber nirgends zu sehen waren. Dies wurde behoben, es werden nur noch Codes generiert für Aufträge, Vorbestellungen, Gewährleistungen und Reparaturen generiert.</p>
+</li>
+<li>
+<p>Bei Abonnements wurden die Artikelnamen in der Artikelliste konnten nicht geändert werden. Dies wurde nun behoben, Artikelnamen können dort wieder angepasst werden.</p>
+</li>
+<li>
+<p>Bei einem Wechsel der Zahlungsart wurde der Rabatt der Kundenklasse nicht korrekt neu bestimmt.</p>
+</li>
+</ul>
+</div>
 </div><div class="tab-pane fade" id="plugin-updates" role="tabpanel" aria-labelledby="plugin-updates-tab">
 <div class="paragraph">
 <p>Folgende Plugins wurden in den letzten 7 Tagen in einer neuen Version auf plentyMarketplace veröffentlicht:</p>
@@ -278,73 +236,93 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">To-do</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/addresscheckdhl_6455" target="_blank" rel="noopener">AddressCheckDHL</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/amazonvcsdashboard_6279" target="_blank" rel="noopener">AmazonVCSDashboard</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/cfourarticlenotifications5_6976" target="_blank" rel="noopener">Artikel Verfügbarkeitsbenachrichtigung 5</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/dhlshipping_4871" target="_blank" rel="noopener">DHL Shipping (Versenden)</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.1.5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/dpdshippinguk_5121" target="_blank" rel="noopener">DPD Shipping UK</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/payuponpickup_4757" target="_blank" rel="noopener">Barzahlung</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2.0.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/dpdshippingservices_6320" target="_blank" rel="noopener">DPD Versand Services</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.6.11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/ceres_4697" target="_blank" rel="noopener">Ceres</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.20</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/findologic_6390" target="_blank" rel="noopener">Findologic - Search &amp; Navigation Platform</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3.3.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/clearvat_6925" target="_blank" rel="noopener">ClearVAT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/klarna_6731" target="_blank" rel="noopener">Klarna</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/elasticexport_4763" target="_blank" rel="noopener">Elastischer Export</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.6.6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/formatdesigner_6483" target="_blank" rel="noopener">FormatDesigner</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/hermesshippinginterface_5437" target="_blank" rel="noopener">Hermes</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/elasticexportidealode_4723" target="_blank" rel="noopener">idealo.de</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.0</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/io_4696" target="_blank" rel="noopener">IO</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.0.20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/invoice_4760" target="_blank" rel="noopener">Kauf auf Rechnung</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.0.8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/debit_6362" target="_blank" rel="noopener">Lastschrift</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.12</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/mirakl_6917" target="_blank" rel="noopener">Mirakl Connector</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.19</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/mollie_6272" target="_blank" rel="noopener">Mollie</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.1.1</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/multicontentwidget_6082" target="_blank" rel="noopener">Multicontent-Widget</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4.4.13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/paypal_4690" target="_blank" rel="noopener">PayPal</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.5.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/scalerion_6926" target="_blank" rel="noopener">Scalerion</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/sendcloudplugin_6985" target="_blank" rel="noopener">SendCloud</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.9.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/shopify_4944" target="_blank" rel="noopener">Shopify</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.7.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/prepayment_4758" target="_blank" rel="noopener">Vorkasse</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.0.5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/simplyletter_5104" target="_blank" rel="noopener">Simplyletter</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2.2.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/woocommerce_5102" target="_blank" rel="noopener">woocommerce</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.6.0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/socialmedia_4702" target="_blank" rel="noopener">SocialMedia</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://marketplace.plentymarkets.com/d2gpmpluginpaymenticons_7033" target="_blank" rel="noopener">Zahlungs Icons Widget</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
 </tr>
 </tbody>
