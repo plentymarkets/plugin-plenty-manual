@@ -14719,10 +14719,26 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 20. Januar 2021",
+		"navAlias" => "Changelog 27. Januar 2021",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
+			[
+				"id" => "c87666206e6110c8fe978d27a0dbb329",
+				"path" => "changelog/2021-01-20",
+				"position" => 820,
+				"urlName" => "2021-01-20",
+				"url" => "/changelog/2021-01-20",
+				"level" => 2,
+				"title" => "Changelog 20. Januar 2021",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 20. Januar 2021. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
 			[
 				"id" => "a86a6ed8df776aed4413cd3f03f337ac",
 				"path" => "changelog/2021-01-13",
