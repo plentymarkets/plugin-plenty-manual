@@ -18,8 +18,9 @@
 <li><a href="#_notes_on_the_limango_item_data_structure"><span>10.1.</span><span> Notes on the limango item data structure</span></a></li>
 <li><a href="#902"><span>10.2.</span><span> Creating a catalogue</span></a></li>
 <li><a href="#903"><span>10.3.</span><span> Mapping data fields in the catalogue</span></a></li>
-<li><a href="#800"><span>10.4.</span><span> Linking variations with the property limangoTemplate</span></a></li>
-<li><a href="#904"><span>10.5.</span><span> Activating the catalogue</span></a></li>
+<li><a href="#905"><span>10.4.</span><span> Notes on mapping data fields</span></a></li>
+<li><a href="#800"><span>10.5.</span><span> Linking variations with the property limangoTemplate</span></a></li>
+<li><a href="#904"><span>10.6.</span><span> Activating the catalogue</span></a></li>
 </ul>
 </li>
 <li><a href="#_automatically_notify_limango_about_cancellations"><span>11.</span><span> Automatically notify limango about cancellations</span></a></li>
@@ -464,7 +465,7 @@ You can create only one catalogue for limango. Multiple catalogues are currently
 <td class="content">
 <div class="title">Using properties</div>
 <div class="paragraph">
-<p>Use <a href="/en/item/managing-items#4800">properties</a> to export values for data fields that have no corresponding item data saved in plentymarkets.</p>
+<p>Use <a href="/en/item/managing-items#4800">properties</a> to export values for marketplace data fields that have no corresponding field in plentymarkets.</p>
 </div>
 </td>
 </tr>
@@ -495,11 +496,18 @@ You can create only one catalogue for limango. Multiple catalogues are currently
 <li>
 <p>Next to the data field you want to select, click on the plus.<br>
 → The data field is added to the view.<br>
-<strong><em>Tip:</em></strong> Do you want to export a fixed value for every variation for one of the market data fields? Click on the plus next to <strong>Own value</strong>.<br>
+<strong><em>Optional:</em></strong> Do you want to export a fixed value for every variation for one of the market data fields?</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click on the plus next to <strong>Own value</strong>.<br>
 → The field for the own value is added to the view.</p>
 </li>
 <li>
 <p>Enter a value into the input field.</p>
+</li>
+</ol>
+</div>
 </li>
 <li>
 <p>Click on the X to close the editing mode.<br>
@@ -544,7 +552,168 @@ You can create only one catalogue for limango. Multiple catalogues are currently
 </div>
 </div>
 <div class="sect2">
-<h3 id="800">10.4. Linking variations with the property limangoTemplate</h3>
+<h3 id="905">10.4. Notes on mapping data fields</h3>
+<div class="paragraph">
+<p>Every market structures item data differently. As such, there are some particularities for each market when mapping data fields. <a href="#catalogue-limango-mappings">Table 3</a> contains mapping information for important data fields for limango.</p>
+</div>
+<table id="catalogue-limango-mappings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Notes on catalogue mappings</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Marketplace data field</th>
+<th class="tableblock halign-left valign-top">plentymarkets data field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If you want to sell shoes on the market, all information regarding the material of your products must be exported to limango using the data field <strong>Description</strong>. To do this, you combine two plentymarkets data fields and export them as one filed to limango.</p>
+</div>
+<div class="paragraph">
+<p>First, decide how you want to manage material information for your items. There are two ways to manage material information for limango:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter the material information in the data field <strong>Technical data</strong> of the item.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a property of the type <strong>Text</strong>. Link this property to the main variation of the item and manage the material information in this property.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Now, map the plentymarkets data field that you want in the catalogue:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Map the plentymarkets data field that contains the item description to the marketplace data field <strong>Description</strong>.</p>
+</li>
+<li>
+<p>To the right of this data field, click on <strong>Add data field</strong> (<span class="icon "><i class="fa fa-link fa-rotate-90 "></i></span>).</p>
+</li>
+<li>
+<p>Map the plentymarkets data field that contains the material information.<br>
+<strong><em>Tip:</em></strong> This is either the field <strong>Technical data</strong> or the property that you created for the material information.</p>
+</li>
+<li>
+<p>To the right of the column, click on <strong>Settings</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>).</p>
+</li>
+<li>
+<p>From the drop-down list <strong>Separator</strong>, select the option <strong>Space</strong>.</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Measurements with corresponding data fields in plentymarkets<br>
+(<strong>Length</strong>;<br>
+<strong>Width</strong>;<br>
+<strong>Height</strong>;<br>
+etc.)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Measurements must be exported to limango with the format <strong>[numeric value];[unit]</strong>. In plentymarkets, the numerical value and the unit are saved in separate data fields. As such, for mapping you combine two plentymarkets data fields and use a semicolon as the separator.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example:</em></strong> Exporting the length to limango</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Map the marketplace data field <strong>Length</strong> to the plentymarkets data field <strong>Length mm</strong>.</p>
+</li>
+<li>
+<p>To the right of this data field, click on <strong>Add data field</strong> (<span class="icon "><i class="fa fa-link fa-rotate-90 "></i></span>).</p>
+</li>
+<li>
+<p>Map a field <strong>Own value</strong>.</p>
+</li>
+<li>
+<p>Enter <strong>mm</strong> in this field.</p>
+</li>
+<li>
+<p>To the right of the column, click on <strong>Settings</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>).</p>
+</li>
+<li>
+<p>From the drop-down list <strong>Separator</strong>, select the option <strong>Semicolon</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Measurements without corresponding data fields in plentymarkets<br>
+(e.g. <strong>Diameter</strong>;<br>
+<strong>Leg height</strong>;<br>
+<strong>Heel height</strong>;<br>
+etc.)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Measurements must be exported to limango with the format <strong>[numeric value];[unit]</strong>. Create two properties for measurements for which no data field exists in plentymarkets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>One property of the type <strong>Decimal number</strong> for the numerical value.</p>
+</li>
+<li>
+<p>One property of the type <strong>Selection</strong> for the unit.</p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example:</em></strong> Exporting the diameter to limango</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a property of the type <strong>Decimal number</strong> with the name <strong>Diameter</strong>.</p>
+</li>
+<li>
+<p>Create a property of the type <strong>Selection</strong> with the name <strong>Diameter unit</strong>.</p>
+</li>
+<li>
+<p>Add the units you need to the property <strong>Diameter unit</strong> as property values.<br>
+<strong><em>Tip:</em></strong> If you are sure that you only need one unit for all your items, you can also export the unit by entering it as an own value (as in the example for <strong>Length</strong> above).</p>
+</li>
+<li>
+<p>Map the marketplace data field <strong>Diameter</strong> to the plentymarkets data field <strong>Diameter</strong>.</p>
+</li>
+<li>
+<p>To the right of this data field, click on <strong>Add data field</strong> (<span class="icon "><i class="fa fa-link fa-rotate-90 "></i></span>).</p>
+</li>
+<li>
+<p>Map the property <strong>Diameter unit</strong>.</p>
+</li>
+<li>
+<p>To the right of the column, click on <strong>Settings</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>).</p>
+</li>
+<li>
+<p>From the drop-down list <strong>Separator</strong>, select the option <strong>Semicolon</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="800">10.5. Linking variations with the property limangoTemplate</h3>
 <div class="paragraph">
 <p>Items that you want to sell on limango have to be linked with the <strong>limangoTemplate</strong> variation property. This variation property is created in your plentymarkets system automatically as soon as you install the limango plugin.</p>
 </div>
@@ -574,7 +743,7 @@ You can create only one catalogue for limango. Multiple catalogues are currently
 </div>
 </div>
 <div class="sect2">
-<h3 id="904">10.5. Activating the catalogue</h3>
+<h3 id="904">10.6. Activating the catalogue</h3>
 <div class="paragraph">
 <p>You have set up limango and created a catalogue for exporting your item data? Then start the export of your item data.</p>
 </div>
@@ -640,7 +809,7 @@ You can create only one catalogue for limango. Multiple catalogues are currently
 </div>
 </div>
 <table id="event-procedure-cancellations-limango" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Event procedure to notify limango of cancellations</caption>
+<caption class="title">Table 4. Event procedure to notify limango of cancellations</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -674,7 +843,7 @@ You can create only one catalogue for limango. Multiple catalogues are currently
 <h2 id="1300">12. Setting up automatic shipping confirmations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send a shipping confirmation to notify limango when outgoing items have been booked for an order.</p>
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send a shipping confirmation to limango when outgoing items have been booked for an order.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Setting up an event procedure</div>
@@ -692,13 +861,13 @@ You can create only one catalogue for limango. Multiple catalogues are currently
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#event-procedure-shipping-confirmation-limango">Table 4</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-shipping-confirmation-limango">Table 5</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#event-procedure-shipping-confirmation-limango">Table 4</a>.</p>
+<p>Carry out the settings according to <a href="#event-procedure-shipping-confirmation-limango">Table 5</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -711,7 +880,7 @@ You can create only one catalogue for limango. Multiple catalogues are currently
 </div>
 </div>
 <table id="event-procedure-shipping-confirmation-limango" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Event procedure for notifying limango of complete shipments</caption>
+<caption class="title">Table 5. Event procedure to notify limango of shipments</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -743,7 +912,7 @@ You can create only one catalogue for limango. Multiple catalogues are currently
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Notify limango of complete shipments</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send shipping confirmation to limango</strong></p></td>
 </tr>
 </tbody>
 </table>
@@ -820,7 +989,7 @@ You can create only one catalogue for limango. Multiple catalogues are currently
 </div>
 </div>
 <table id="event-procedure-return-limango" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Event procedure for automatically sending returns to limango</caption>
+<caption class="title">Table 6. Event procedure for automatically sending returns to limango</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
