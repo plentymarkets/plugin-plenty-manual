@@ -22472,7 +22472,7 @@ class Metadata {
 								"url" => "/en/app/functions/warehouse-management/reshelving",
 								"level" => 4,
 								"title" => "Reshelving items",
-								"keywords" => "Reshelving stock, Reshelve stock, Reshelving items, Reshelve item, rack, racks, box, boxes, app storage location, app storage locations, app warehouse management, suggested storage location, storage location suggestion, source storage location, target storage location, stock movement, item movement, item movements",
+								"keywords" => "",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Reshelving items. The following information is available:",
