@@ -702,7 +702,7 @@ Der Name kann jederzeit geändert werden. Der Name wird den Empfänger:innen nic
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Inhalt</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Wählen, ob der Inhalt der E-Mail-Vorlage als <strong>Nur reiner Text</strong> oder <strong>Nur HTML-formatierter Text</strong> gespeichert werden soll.<br>
-<strong><em>Tipp:</em></strong> HTML-formatierten Text verwenden. Der Link zur Auftragsabwicklung (Template-Funktion <code>&#123;&#37;Link_Checkout()&#37;&#125;</code>) kann sehr lang sein. Bei reinen Text-E-Mails kann dies zu Zeilenumbrüchen führen, die den Link unter Umständen beschädigen.<br>
+<strong><em>Tipp:</em></strong> Verwende HTML-formatierten Text. Der Link zur Auftragsabwicklung, der über die Template-Funktion <code>&#123;&#37;Link_Checkout()&#37;&#125;</code> abgebildet wird, kann sehr lang sein. Bei reinen Text-E-Mails kann dies zu Zeilenumbrüchen führen, die den Link unter Umständen beschädigen.<br>
 <strong><em>Wichtig:</em></strong> Wenn du weitere Sprachen im HTML-Format hinzufügst, achte darauf, dass im Tab <strong>Einstellungen</strong> in der Dropdown-Liste <strong>Inhalt</strong> wieder die Einstellung <strong>Nur HTML-formatierter Text</strong> gewählt ist. Die Auswahl <strong>Nur reiner Text</strong> ist die Standardeinstellung für alle Sprachen.</p></td>
 </tr>
 <tr>
@@ -767,7 +767,7 @@ Gib in diese Tabs den Text bzw. die Artikelauflistung als <strong>reinen Text</s
 <td class="content">
 <div class="title">Tipp: HTML-formatierten Text verwenden</div>
 <div class="paragraph">
-<p>plentymarkets empfiehlt die Verwendung von HTML-formatiertem Text, weil der Link zur Auftragsabwicklung sehr lang sein kann. Bei reinen Text-E-Mails kann dies zu Zeilenumbrüchen führen, die möglicherweise den Link beschädigen. Des Weiteren hast du bei der Verwendung von HTML-formatierten Text die Möglichkeit, den Text mit dem integrierten HTML-Editor zu formatieren.</p>
+<p>plentymarkets empfiehlt die Verwendung von HTML-formatiertem Text, weil der Link zur Auftragsabwicklung beispielsweise sehr lang sein kann. Bei reinen Text-E-Mails kann dies zu Zeilenumbrüchen führen, die möglicherweise den Link beschädigen. Des Weiteren hast du bei der Verwendung von HTML-formatierten Text die Möglichkeit, den Text mit dem integrierten HTML-Editor zu formatieren.</p>
 </div>
 <div class="paragraph">
 <p>Im Menü <strong>Einrichtung » Einstellungen » Editoren</strong> legst du fest, welche Editoren für bestimmte Bereiche in deinem plentymarkets System zur Verfügung stehen sollen. Wähle den <strong>Editor</strong>, den <strong>Syntax-Editor</strong> oder das <strong>Textfeld</strong>.</p>
@@ -803,9 +803,12 @@ Gib in diese Tabs den Text bzw. die Artikelauflistung als <strong>reinen Text</s
 <i class="fa icon-tip" title="Hinweis"></i>
 </td>
 <td class="content">
-<div class="title">Link zur Auftragsabwicklung in E-Mail-Vorlage einfügen</div>
+<div class="title">Link zur Auftragsabwicklung</div>
 <div class="paragraph">
-<p>Möglichst in jeder E-Mail an deine Kund:innen sollte der Link zur Auftragsabwicklung enthalten sein, weil die Kund:innen darüber jederzeit den aktuellen Status ihrer Aufträge einsehen können. Füge dazu die Template-Funktion <code>Link_Checkout()</code> in die E-Mail-Vorlage ein. Für die korrekte Ausgabe der URL musst die Template-Funktion folgendermaßen in die E-Mail-Vorlage einfügen: <code>&#123;&#37;Link_Checkout()&#37;&#125;</code>.</p>
+<p>Wenn du möchtest, dass sich deine Kund:innen jederzeit über den aktuellen Status ihrer Aufträge informieren können, füge die Template-Funktion <code>Link_Checkout()</code> in die E-Mail-Vorlage ein. Für die korrekte Ausgabe der URL musst du die Template-Funktion folgendermaßen in die E-Mail-Vorlage einfügen: <code>&#123;&#37;Link_Checkout()&#37;&#125;</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Hinweis:</em></strong><em> Die Template-Funktion <code>&#123;&#37;Link_Checkout()&#37;&#125;</code> ist _nicht</em> automatisch in der E-Mail-Vorlage <strong>Webshop: Eingangsbestätigung Bestellung</strong> enthalten.</p>
 </div>
 </td>
 </tr>
@@ -1155,7 +1158,8 @@ Swift: BIC WERTIUANEBQJ
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Neue Bestellung über den Webshop</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sendet Kund:innen eine E-Mail mit der Auftragsbestätigung, nachdem der Kaufvorgang im Webshop abgeschlossen wurde.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sendet Kund:innen eine E-Mail mit der Auftragsbestätigung, nachdem der Kaufvorgang im Webshop abgeschlossen wurde.<br>
+<strong>Hinweis:_</strong> Wenn du möchtest, dass dein:e Kund:in über diese E-Mail in die Auftragsabwicklung in deinem Webshop gelangen kann, um den Status der Bestellung einzusehen, musst du die Template-Funktion <code>&#123;&#37;Link_Checkout()&#37;&#125;</code> in die E-Mail-Vorlage, die du für dieses automatische Ereignis wählst, einfügen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sende Kunde E-Mail zur Passwortänderung</strong></p></td>
@@ -1187,34 +1191,7 @@ Voraussetzung ist, dass die potenziellen Käufer:innen beim Besuch im Webshop an
 </table>
 <h3 id="_automatischer_e_mail_versand_am_beispiel_einer_neuen_bestellung_über_ebay" class="discrete">Automatischer E-Mail-Versand am Beispiel einer neuen Bestellung über eBay</h3>
 <div class="paragraph">
-<p>Nachdem Kund:innen einen Artikel über eBay erworben haben, wird in plentymarkets automatisch ein Auftrag angelegt. Wenn du z.B. die E-Mail-Vorlage Auftragsbestätigung eBay <a href="/crm/e-mails-versenden#1200">erstellt</a> und diese im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » E-Mail » Automatischer Versand</strong> für das Ereignis <strong>Neue Bestellung über eBay</strong> aus der Dropdown-Liste definiert hast, wird automatisch eine E-Mail an die Kund:innen versendet. In der folgenden grünen Box findest du einen Beispieltext für die E-Mail-Vorlage.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-tip" title="Hinweis"></i>
-</td>
-<td class="content">
-<div class="title">Beispieltext für eine E-Mail-Vorlage für den Versand nach einem Kauf über eBay</div>
-<div class="paragraph">
-<p>Sehr geehrte(r)$CustomerFullName,</p>
-</div>
-<div class="paragraph">
-<p>herzlichen Glückwunsch zur gewonnenen Auktion.</p>
-</div>
-<div class="paragraph">
-<p>Um die Kaufabwicklung so einfach wie möglich zu gestalten, klicken Sie bitte auf den folgenden Link oder kopieren Sie den Link in die Adresszeile Ihres Browsers.</p>
-</div>
-<div class="paragraph">
-<p>Sie können über die Kaufabwicklung Ihre Daten einsehen und ändern sowie unsere Bankdaten einsehen. Verwenden Sie für Überweisungen immer den dort angegebenen Verwendungszweck.</p>
-</div>
-<div class="paragraph">
-<p><code>&#123;&#37;Link_Checkout()&#37;&#125;</code></p>
-</div>
-</td>
-</tr>
-</tbody></table>
+<p>Nachdem Kund:innen einen Artikel über eBay erworben haben, wird in plentymarkets automatisch ein Auftrag angelegt. Wenn du z.B. die E-Mail-Vorlage Auftragsbestätigung eBay <a href="/crm/e-mails-versenden#1200">erstellt</a> und diese im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » E-Mail » Automatischer Versand</strong> für das Ereignis <strong>Neue Bestellung über eBay</strong> aus der Dropdown-Liste definiert hast, wird automatisch eine E-Mail an die Kund:innen versendet.</p>
 </div>
 <div class="paragraph">
 <p>Parallel zum E-Mail-Versand kann den Kund:innen auch eine Nachricht über das eBay-Nachrichtensystem gesendet werden. Dazu musst du im Menü <strong>Einrichtung » Märkte » eBay » Einstellungen</strong> im Tab <strong>Kontoeinstellungen</strong> und dort im Untermenü <strong>Nachricht nach Kauf</strong> den Text speichern. Weitere Informationen findest du auf der Handbuchseite <a href="/maerkte/ebay/ebay-einrichten">eBay einrichten</a> im Kapitel <a href="/maerkte/ebay/ebay-einrichten#1500">Nachrichten nach Kauf versenden</a>.</p>
@@ -1284,7 +1261,7 @@ Voraussetzung ist, dass die potenziellen Käufer:innen beim Besuch im Webshop an
 <td class="content">
 <div class="title">Korrekte Ausgabe von Template-Funktionen</div>
 <div class="paragraph">
-<p>Damit Template-Funktionen korrekt als URL ausgegeben werden, muss die Template-Funktion von <strong>&#123;&#37;</strong> und <strong>&#37;&#125;</strong> umschlossen sein.</p>
+<p>Damit Template-Funktionen korrekt als URL ausgegeben werden, muss die Template-Funktion von <code>&#123;&#37;</code> und <code>&#37;&#125;</code> umschlossen sein.</p>
 </div>
 </td>
 </tr>
@@ -1398,7 +1375,7 @@ Als <code>$field</code> kann sowohl der Feldname selbst als auch der Alternativw
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Link_Checkout()</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Diese Funktion gibt die URL zum Checkout-Bereich des Auftrags im Webshops aus.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diese Funktion gibt die URL zum Checkout-Bereich des Auftrags im Webshop aus.<br>
 <strong><em>Hinweis:</em></strong> Für die korrekte Ausgabe der URL <code>&#123;&#37;Link_Checkout()&#37;&#125;</code> in der E-Mail-Vorlage einfügen.</p></td>
 </tr>
 <tr>
