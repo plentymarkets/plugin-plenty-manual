@@ -701,7 +701,7 @@ The name can be changed at any time. The name is not displayed to the recipient.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Content</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select whether the content of the email template should be saved as <strong>plain text</strong> or in <strong>HTML format</strong>.<br>
-<strong><em>Tip:</em></strong> Use text in HTML format. The link for order processing (template function <code>&#123;&#37;Link_Checkout()&#37;&#125;</code>) can be very long. Pure text emails can lead to line breaks that can damage the link.<br>
+<strong><em>Tip:</em></strong> Use text in HTML format. The link for order processing that is returned via the template function <code>&#123;&#37;Link_Checkout()&#37;&#125;</code> might be very long. Pure text emails can lead to line breaks that can damage the link.<br>
 <strong><em>Important:</em></strong> If you add further languages in HTML format, pay attention that the setting <strong>Only in HTML format</strong> is selected in the drop-down list <strong>Content</strong> in the <strong>Settings</strong> tab. The selection <strong>Plain text only</strong> is the standard setting for all languages.</p></td>
 </tr>
 <tr>
@@ -766,7 +766,7 @@ In these tabs, enter the text respectively the item list as <strong>plain text</
 <td class="content">
 <div class="title">Tip: Use text in HTML format</div>
 <div class="paragraph">
-<p>plentymarkets recommends that you use text which was formatted with HTML because the link for order processing can be very long. Pure text emails can lead to line breaks that might damage the link. Furthermore, if you use HTML-formatted text, you have the possibility to format the text by means of the integrated HTML editor.</p>
+<p>plentymarkets recommends that you use text which was formatted with HTML because the link for order processing, for example, might be very long. Pure text emails can lead to line breaks that might damage the link. Furthermore, if you use HTML-formatted text, you have the possibility to format the text by means of the integrated HTML editor.</p>
 </div>
 <div class="paragraph">
 <p>Go to <strong>Setup » Settings » Editors</strong> and determine which editors should be available for certain areas in your plentymarkets system. Select the <strong>editor</strong>, <strong>syntax editor</strong> or <strong>text field</strong>.</p>
@@ -802,9 +802,12 @@ In these tabs, enter the text respectively the item list as <strong>plain text</
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="title">Inserting the link to the order processing in the email template</div>
+<div class="title">Order processing link in email template</div>
 <div class="paragraph">
-<p>If possible, every email that is sent to a contact should include a link to the order processing. The contact can use this link to look at the order’s current status any time. Insert the template function <code>Link_Checkout()</code> in the email template. In order that the URL is correctly translated, you have to insert the template function into the email template as follows: <code>&#123;&#37;Link_Checkout()&#37;&#125;</code>.</p>
+<p>If you want that your customers can have a look at the order’s current state at any time, insert the template function <code>Link_Checkout()</code> in the email template. In order that the URL is correctly translated, you have to insert the template function into the email template as follows: <code>&#123;&#37;Link_Checkout()&#37;&#125;</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Note:</em></strong> The template function <code>&#123;&#37;Link_Checkout()&#37;&#125;</code> is <em>not</em> available automatically in the email template <strong>Confirmation of online shop order</strong>.</p>
 </div>
 </td>
 </tr>
@@ -1154,7 +1157,8 @@ Swift: BIC WERTIUANEBQJ
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New order from online store</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The contacts receive an email including the order confirmation after the purchase has been completed in the online shop.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The contacts receive an email including the order confirmation after the purchase has been completed in the online shop.<br>
+<strong><em>Note:</em></strong> If you want that your customers can see the order’s current state and thus access the order processing in your online shop via this email, you have to insert the template function <code>&#123;&#37;Link_Checkout()&#37;&#125;</code> in the email template that you selected for this automatic event.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send customer email to change password</strong></p></td>
@@ -1186,34 +1190,7 @@ The only requirement is that potential customers were registered and logged into
 </table>
 <h3 id="_automatic_email_despatch_taking_a_new_order_on_ebay_as_an_example" class="discrete">Automatic email despatch taking a new order on eBay as an example</h3>
 <div class="paragraph">
-<p>An order is automatically created in plentymarkets after a contact has purchased an item on eBay. If you have <a href="/en/crm/sending-emails#1200">created</a> the email template "Order confirmation eBay" for example and selected this template from the drop-down list for the event <strong>New order from eBay</strong> in the <strong>Setup » Client » [Select client] » Email » Automatic</strong> menu, an email is automatically sent to the contact. The following green box contains an example text for the email template.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">Example email template that should be sent after a purchase is made on eBay</div>
-<div class="paragraph">
-<p>Dear $CustomerFullName,</p>
-</div>
-<div class="paragraph">
-<p>Congratulations on winning the auction!</p>
-</div>
-<div class="paragraph">
-<p>In order to keep the checkout process as simple as possible, click on the following link or copy and paste it into the address line of your browser.</p>
-</div>
-<div class="paragraph">
-<p>In the checkout area, you are able to view and make changes to your personal data as well as view our bank details. When making a bank transfer, always specify the designated use that is saved in this area.</p>
-</div>
-<div class="paragraph">
-<p><code>&#123;&#37;Link_Checkout()&#37;&#125;</code></p>
-</div>
-</td>
-</tr>
-</tbody></table>
+<p>An order is automatically created in plentymarkets after a contact has purchased an item on eBay. If you have <a href="/en/crm/sending-emails#1200">created</a> the email template "Order confirmation eBay" for example and selected this template from the drop-down list for the event <strong>New order from eBay</strong> in the <strong>Setup » Client » [Select client] » Email » Automatic</strong> menu, an email is automatically sent to the contact.</p>
 </div>
 <div class="paragraph">
 <p>Along with the automatic email despatch, a message can also be sent to the contact via the eBay messaging system. Go to <strong>Setup » Markets » eBay » Settings</strong>. Click on the <strong>Account settings</strong> tab and save the text in the sub-menu <strong>Message after purchase</strong>. For further information, refer to the <a href="/en/markets/ebay/ebay-setup#1500">Sending messages after purchase</a> chapter on the <a href="/en/markets/ebay/ebay-setup">Setting up eBay</a> page of the manual.</p>
@@ -1283,7 +1260,7 @@ The only requirement is that potential customers were registered and logged into
 <td class="content">
 <div class="title">Correct "translation" of template functions</div>
 <div class="paragraph">
-<p>In order to ensure that the template functions are correctly displayed as a URL, the template function has to be enclosed by <strong>&#123;&#37;</strong> and <strong>&#37;&#125;</strong>.</p>
+<p>In order to ensure that the template functions are correctly displayed as a URL, the template function has to be enclosed by <code>&#123;&#37;</code> and <code>&#37;&#125;</code>.</p>
 </div>
 </td>
 </tr>
