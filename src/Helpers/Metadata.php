@@ -2445,7 +2445,7 @@ class Metadata {
 								"url" => "/daten/daten-importieren/sync-typen/elasticSync-artikel",
 								"level" => 4,
 								"title" => "Artikel",
-								"keywords" => "ElasticSync, Import, Artikel, Artikelanlage",
+								"keywords" => "ElasticSync, Import, Artikel, Artikelanlage, Variantenanlage",
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Artikel. Hier findest du folgende Informationen:",
