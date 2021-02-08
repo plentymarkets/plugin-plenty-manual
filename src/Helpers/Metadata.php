@@ -889,6 +889,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "c999dab57eec70c0f8122f3f47a8f11c",
+						"path" => "artikel/anwendungsfaelle/aenderungen",
+						"position" => 50,
+						"urlName" => "aenderungen",
+						"url" => "/artikel/anwendungsfaelle/aenderungen",
+						"level" => 3,
+						"title" => "Änderungen nachvollziehen",
+						"keywords" => "Artikeländerung, Artikel-Änderung, Artikeländerungen, Artikel-Änderungen, Änderungshistorie, Historie, Datenhistorie, Aufbewahrungspflicht, Aufzeichnungspflicht, Archiv, Datenarchiv, Daten-Archiv, Audit-Log, Auditlog, Audit Log, Audit Trail, Audit-Trail, Audittrail, Audit-Protokoll, Audit Protokoll, Audit-Protokolle, Audit Protokolle, Änderung, Änderungen, Löschung, Änderungsaufzeichnung, Änderungsaufzeichnungen, 10 Jahre, 11 Jahre, Aufbewahrung, aufbewahren, Log-Datei, Log-Dateien, GoBD, GoBD-konform, GoBD-Konformität, IDW PS 880",
+						"description" => "Mit plentymarkets kannst du den gesamten Lebensweg eines Artikels nachvollziehen.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Änderungen nachvollziehen. Hier findest du folgende Informationen:",
+						"languageID" => "XS26ZKV",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "3e44b54361d6565d7d39381395ac0e56",
 						"path" => "artikel/anwendungsfaelle/suchverhalten",
 						"position" => 70,
@@ -3463,11 +3479,11 @@ class Metadata {
 				"urlName" => "aenderungshistorie",
 				"url" => "/daten/aenderungshistorie",
 				"level" => 2,
-				"title" => "Änderungshistorie",
-				"keywords" => "Änderungshistorie, Historie, Datenhistorie",
-				"description" => "Erfahre mehr über die Änderungshistorie in plentymarkets.",
+				"title" => "Änderungen nachvollziehen",
+				"keywords" => "Änderungshistorie, Historie, Datenhistorie, Aufbewahrungspflicht, Aufzeichnungspflicht, Archiv, Datenarchiv, Daten-Archiv, Audit-Log, Auditlog, Audit Log, Audit Trail, Audit-Trail, Audittrail, Audit-Protokoll, Audit Protokoll, Audit-Protokolle, Audit Protokolle, Änderung, Änderungen, Löschung, Änderungsaufzeichnung, Änderungsaufzeichnungen, 10 Jahre, 11 Jahre, Aufbewahrung, aufbewahren, Log-Datei, Log-Dateien, GoBD, GoBD-konform, GoBD-Konformität, IDW PS 880",
+				"description" => "Mit plentymarkets kannst du den gesamten Lebensweg eines Artikels oder eines Auftrags nachvollziehen.",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Änderungshistorie. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Änderungen nachvollziehen. Hier findest du folgende Informationen:",
 				"languageID" => "B499GID",
 				"children" => [],
 				"hasChildren" => false
@@ -6171,6 +6187,22 @@ class Metadata {
 						"linkListInto" => "Willkommen im Themenbereich eBay Plugins. Hier findest du folgende Informationen:",
 						"languageID" => "VH505GJ",
 						"children" => 						[
+							[
+								"id" => "914ad2c2daf02b8d97f0c54366acc931",
+								"path" => "maerkte/ebay/ebay-plugins/eBay-feedback",
+								"position" => 20,
+								"urlName" => "eBay-feedback",
+								"url" => "/maerkte/ebay/ebay-plugins/ebay-feedback",
+								"level" => 4,
+								"title" => "eBay Feedback",
+								"keywords" => "eBay Feedback beantworten, Feedback beantworten",
+								"description" => "Multi-Channel in plentymarkets: Richte das Plugin eBay Feedback in deinem plentymarkets System ein.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich eBay Feedback. Hier findest du folgende Informationen:",
+								"languageID" => "RUNTV0K",
+								"children" => [],
+								"hasChildren" => false
+							],
 							[
 								"id" => "1472635ad302850bbdb3f75e3315222d",
 								"path" => "maerkte/ebay/ebay-plugins/eBay-marketing",
