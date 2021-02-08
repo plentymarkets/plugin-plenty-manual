@@ -21883,6 +21883,22 @@ class Metadata {
 						"languageID" => "VH505GJ",
 						"children" => 						[
 							[
+								"id" => "09f531835b50e19a1a8e822221e3a067",
+								"path" => "markets/ebay/ebay-plugins/eBay-analytics",
+								"position" => 10,
+								"urlName" => "eBay-analytics",
+								"url" => "/en/markets/ebay/ebay-plugins/ebay-analytics",
+								"level" => 4,
+								"title" => "eBay Analytics",
+								"keywords" => "",
+								"description" => "Multi-Channel in plentymarkets: Set up the plugin eBay Analytics in your plentymarkets system.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic eBay Analytics. The following information is available:",
+								"languageID" => "6GPO1NB",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "4879c55f9602d73ff38fa35efc877349",
 								"path" => "markets/ebay/ebay-plugins/eBay-feedback",
 								"position" => 20,
