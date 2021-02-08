@@ -16761,6 +16761,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "544bf6d6331651e5f34dcfc686f30808",
+						"path" => "item/use-cases/changes",
+						"position" => 50,
+						"urlName" => "changes",
+						"url" => "/en/item/use-cases/changes",
+						"level" => 3,
+						"title" => "Tracking changes",
+						"keywords" => "Item change, Item changes, Change history, History, Data history, Obligation to retain records, Keep records, Retaining records, Archive, Data archive, Audit-Log, Audit log, Audit-Trail, Audit trail, Audit-Protocol, Audit protocol, Change, Changes, Deletion, Change record, Record of change, Record of changes, 10 years, 11 years, Storage, Storing, Log file, Log files, GoBD, GoBD-compliant, GoBD-compliance, IDW PS 880",
+						"description" => "plentymarkets lets you track the entire life cycle of an item.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Tracking changes. The following information is available:",
+						"languageID" => "XS26ZKV",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "91d527bddb76675e40cd188915c0e39e",
 						"path" => "item/use-cases/search-behaviour",
 						"position" => 70,
@@ -19303,11 +19319,11 @@ class Metadata {
 				"urlName" => "change-history",
 				"url" => "/en/data/change-history",
 				"level" => 2,
-				"title" => "Change history",
-				"keywords" => "change history, history, data history",
-				"description" => "Learn more about the change history in plentymarkets.",
+				"title" => "Tracking changes",
+				"keywords" => "Change history, History, Data history, Obligation to retain records, Keep records, Retaining records, Archive, Data archive, Audit-Log, Audit log, Audit-Trail, Audit trail, Audit-Protocol, Audit protocol, Change, Changes, Deletion, Change record, Record of change, Record of changes, 10 years, 11 years, Storage, Storing, Log file, Log files, GoBD, GoBD-compliant, GoBD-compliance, IDW PS 880",
+				"description" => "plentymarkets lets you track the entire life cycle of an item or an order.",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Change history. The following information is available:",
+				"linkListInto" => "Welcome to the topic Tracking changes. The following information is available:",
 				"languageID" => "B499GID",
 				"children" => [],
 				"hasChildren" => false
@@ -21850,6 +21866,22 @@ class Metadata {
 						"linkListInto" => "Welcome to the topic eBay Plugins. The following information is available:",
 						"languageID" => "VH505GJ",
 						"children" => 						[
+							[
+								"id" => "4879c55f9602d73ff38fa35efc877349",
+								"path" => "markets/ebay/ebay-plugins/eBay-feedback",
+								"position" => 20,
+								"urlName" => "eBay-feedback",
+								"url" => "/en/markets/ebay/ebay-plugins/ebay-feedback",
+								"level" => 4,
+								"title" => "eBay Feedback",
+								"keywords" => "reply to eBay feedback, replying to eBay feedback, answer ebay feedback",
+								"description" => "Multi-Channel in plentymarkets: Set up the plugin eBay Feedback in your plentymarkets system.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic eBay Feedback. The following information is available:",
+								"languageID" => "RUNTV0K",
+								"children" => [],
+								"hasChildren" => false
+							],
 							[
 								"id" => "51bbdfc4ba7ea3fe504a3d09610b88e7",
 								"path" => "markets/ebay/ebay-plugins/eBay-marketing",
