@@ -5337,6 +5337,22 @@ class Metadata {
 		"languageID" => "MFX1Q1C",
 		"children" => 		[
 			[
+				"id" => "372093f1f8ab036641b0a18dfdfa78a4",
+				"path" => "maerkte/mirakl-mediamarkt",
+				"position" => 0,
+				"urlName" => "mirakl-mediamarkt",
+				"url" => "/maerkte/mediamarkt",
+				"level" => 2,
+				"title" => "Mediamarkt",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Mediamarkt. Hier findest du folgende Informationen:",
+				"languageID" => "VWRH3XA",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "8c6e077aaa0e230992e5d6fe31d22805",
 				"path" => "maerkte/limango",
 				"position" => 0,
@@ -6431,22 +6447,6 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Kauflux. Hier findest du folgende Informationen:",
 				"languageID" => "GKYZVIJ",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "372093f1f8ab036641b0a18dfdfa78a4",
-				"path" => "maerkte/mirakl-mediamarkt",
-				"position" => 125,
-				"urlName" => "mirakl-mediamarkt",
-				"url" => "/maerkte/mediamarkt",
-				"level" => 2,
-				"title" => "Mediamarkt",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Mediamarkt. Hier findest du folgende Informationen:",
-				"languageID" => "VWRH3XA",
 				"children" => [],
 				"hasChildren" => false
 			],
