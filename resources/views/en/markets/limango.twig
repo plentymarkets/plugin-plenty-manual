@@ -428,15 +428,15 @@
 <p><strong>Product group:</strong> A product in all its different versions</p>
 </li>
 <li>
-<p><strong>Product:</strong> A specific colour version of the product</p>
+<p><strong>Product:</strong> A colour version of the product</p>
 </li>
 <li>
-<p><strong>Variation:</strong> Equivalent to the size / EAN / SKU</p>
+<p><strong>Variation:</strong> The size / EAN / SKU</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>If the product is only available in a single version, then the product group equals the variant.</p>
+<p>If the product is only available in a single version, then the product group is equivalent to the variant.</p>
 </div>
 </div>
 <div class="sect2">
@@ -769,6 +769,74 @@ etc.)</p></td>
 </div>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data fields under Material composition</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Material information is exported to limango using a property of the type <strong>Short text</strong>. You need one property for each marketplace data field. This property is used to save all components of the material mix for a main variation.
+Enter the material composition in the following format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>{"material1": "percentage","material2": "percentage","material3": "percentage"}</strong><br>
+<strong><em>Example:</em></strong> <strong>{"baumwolle": "90","elastan": "10"}</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Specify the individual materials in descending order based on the percentage value. As such, the first material is the one with the highest percentage value, the last one that with the lowest percentage value. The sum of all percentages must be 100. You can specify as many materials as you need.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example:</em></strong> Exporting material information for a blazer to limango</div>
+<div class="content">
+<div class="paragraph">
+<p>The following example shows you how to save material information for a blazer for the limango export.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a property of the type <strong>Short text</strong> with the name <strong>Material 1</strong>.</p>
+</li>
+<li>
+<p>Map the marketplace data field <strong>Material 1</strong> to the plentymarkets data field <strong>Material 1</strong>.</p>
+</li>
+<li>
+<p>Link the property <strong>Material 1</strong> to the main variation of the item.</p>
+</li>
+<li>
+<p>Our blazer is made of 65% polyester, 32% rayon and 3% elastane. Enter the following into the text field of the property:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>{"polyester": "65","viskose": "32","elastan": "3"}</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Save the settings.</p>
+</li>
+<li>
+<p>Create a property of the type <strong>Short text</strong> with the name <strong>Lining 1</strong>.</p>
+</li>
+<li>
+<p>Map the marketplace data field <strong>Lining 1</strong> to the plentymarkets data field <strong>Lining 1</strong>.</p>
+</li>
+<li>
+<p>Link the property <strong>Lining 1</strong> to the main variation of the item.</p>
+</li>
+<li>
+<p>The lining of the blazer is made of 100% rayon. Enter the following into the text field of the property:
+*</p>
+</li>
+<li>
+<p>Save the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -900,7 +968,7 @@ etc.)</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bild-URL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">All available images</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>All available images</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The first 10 images with the referrer <strong>limango</strong> are exported. These images are sorted by position. Any images with identical positions are sorted by ID.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
 </tr>
@@ -997,7 +1065,7 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>plentymarkets field <strong>Length in mm</strong> + separator ; \+ Own value: <code>mm</code><br>
+<p>plentymarkets field <strong>Length in mm</strong> + Separator <strong>;</strong> \+ Own value <code>mm</code><br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
@@ -1011,7 +1079,7 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>plentymarkets field <strong>Width in mm</strong> + separator ; \+ Own value <code>mm</code><br>
+<p>plentymarkets field <strong>Width in mm</strong> + Separator <strong>;</strong> \+ Own value <code>mm</code><br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
@@ -1025,7 +1093,7 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>plentymarkets field <strong>Net weight in g</strong> + separator ; \+ Own value <code>g</code><br>
+<p>plentymarkets field <strong>Net weight in g</strong> + Separator <strong>;</strong> \+ Own value <code>g</code><br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
@@ -1039,7 +1107,7 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>plentymarkets field <strong>Height in mm</strong> + separator ; \+ Own value <code>mm</code><br>
+<p>plentymarkets field <strong>Height in mm</strong> + Separator <strong>;</strong> \+ Own value <code>mm</code><br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
@@ -1053,7 +1121,7 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Property for value + separator ; + Property for unit<br>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
@@ -1067,7 +1135,7 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>plentymarkets field <strong>Content quantity</strong> + separator ; * plentymarkets field <strong>Content unit</strong><br>
+<p>plentymarkets field <strong>Content quantity</strong> + Separator <strong>;</strong> * plentymarkets field <strong>Content unit</strong><br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
@@ -1084,7 +1152,7 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Property for value + separator ; + Property for unit<br>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
@@ -1098,7 +1166,7 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Property for value + separator ; + Property for unit<br>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
@@ -1112,7 +1180,7 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Property for value + separator ; + Property for unit<br>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
@@ -1126,7 +1194,7 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Property for value + separator ; + Property for unit<br>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
@@ -1140,7 +1208,7 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Property for value + separator ; + Property for unit<br>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
@@ -1280,29 +1348,14 @@ etc.)</p></td>
 <td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Material composition</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Material composition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"> — </p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Property linked to main variation</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Material</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Material</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"> — </p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Property linked to main variation</p>
+<p>Property linked to main variation<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
 </div></div></td>
