@@ -21032,6 +21032,22 @@ class Metadata {
 		"languageID" => "MFX1Q1C",
 		"children" => 		[
 			[
+				"id" => "c16334b0910d125dcf06b025c88a8e94",
+				"path" => "markets/mirakl-mediamarkt",
+				"position" => 0,
+				"urlName" => "mirakl-mediamarkt",
+				"url" => "/en/markets/mediamarkt",
+				"level" => 2,
+				"title" => "Mediamarkt",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Mediamarkt. The following information is available:",
+				"languageID" => "VWRH3XA",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "8931c53cefbff81de6297240c5344a3a",
 				"path" => "markets/limango",
 				"position" => 0,
@@ -22126,22 +22142,6 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Kauflux. The following information is available:",
 				"languageID" => "GKYZVIJ",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "c16334b0910d125dcf06b025c88a8e94",
-				"path" => "markets/mirakl-mediamarkt",
-				"position" => 125,
-				"urlName" => "mirakl-mediamarkt",
-				"url" => "/en/markets/mediamarkt",
-				"level" => 2,
-				"title" => "Mediamarkt",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Mediamarkt. The following information is available:",
-				"languageID" => "VWRH3XA",
 				"children" => [],
 				"hasChildren" => false
 			],
