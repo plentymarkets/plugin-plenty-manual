@@ -6220,6 +6220,22 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "f21ea7b888bd654e9ef15469de0c438f",
+								"path" => "maerkte/ebay/ebay-plugins/eBay-nba",
+								"position" => 25,
+								"urlName" => "eBay-nba",
+								"url" => "/maerkte/ebay/ebay-plugins/ebay-nba",
+								"level" => 4,
+								"title" => "eBay NBA",
+								"keywords" => "eBay Optimierung, Next Best Action, Listings optimieren",
+								"description" => "Multi-Channel in plentymarkets: Richte das Plugin eBay NBA in deinem plentymarkets System ein.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich eBay NBA. Hier findest du folgende Informationen:",
+								"languageID" => "OS1N3EV",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "1472635ad302850bbdb3f75e3315222d",
 								"path" => "maerkte/ebay/ebay-plugins/eBay-marketing",
 								"position" => 30,
