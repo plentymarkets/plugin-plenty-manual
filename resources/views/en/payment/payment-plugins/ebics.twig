@@ -1,0 +1,710 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#70"><span>1.</span><span> Applying for EBICS at your bank</span></a>
+<ul class="sectlevel2">
+<li><a href="#80"><span>1.1.</span><span> Account numbers</span></a></li>
+<li><a href="#90"><span>1.2.</span><span> Provision of bank statements</span></a></li>
+<li><a href="#100"><span>1.3.</span><span> Participants</span></a></li>
+<li><a href="#110"><span>1.4.</span><span> Order type</span></a></li>
+</ul>
+</li>
+<li><a href="#120"><span>2.</span><span> Creating an EBICS account</span></a>
+<ul class="sectlevel2">
+<li><a href="#130"><span>2.1.</span><span> Carrying out EBICS account settings</span></a></li>
+<li><a href="#140"><span>2.2.</span><span> Initialising the account</span></a></li>
+</ul>
+</li>
+<li><a href="#150"><span>3.</span><span> Retrieval times of transactions</span></a></li>
+<li><a href="#160"><span>4.</span><span> Retrieval times of interim transaction reports</span></a></li>
+<li><a href="#170"><span>5.</span><span> Managing transactions</span></a>
+<ul class="sectlevel2">
+<li><a href="#_loading_inactive_transactions"><span>Loading inactive transactions</span></a></li>
+<li><a href="#190"><span>5.1.</span><span> Adding new transactions</span></a></li>
+</ul>
+</li>
+<li><a href="#200"><span>6.</span><span> Migrating the old integration</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>EBICS</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>With the plugin EBICS, you integrate <strong>EBICS</strong> (Electronic Banking Internet Communication Standard) into your system. To do so, download the EBICS plugin from the <a href="https://marketplace.plentymarkets.com/en/ebics_5098" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>. To set up EBICS you have to carry out a few basic settings in your plentymarkets system.<br></p>
+</div>
+<div class="paragraph">
+<p>EBICS (Electronic Banking Internet Communication Standard) is a transmission protocol for banking information for usage by banking clients. With the help of the standardised EBICS procedure, retrieving payments has become even easier. This plugin completely integrates EBICS in plentymarkets. No third party providers are required.</p>
+</div>
+<div class="paragraph">
+<p>For communication via EBICS, your sales figures are saved on the bank server in a file, comparable to bank statements. This file is imported in your plentymarkets system and the sales figures are booked in plentymarkets. The linked EBICS account can be seen as a combined account of several bank accounts. A file with the sales figures of an EBICS account is generated daily (Format CAMT053 or MT940) after activation by the bank. This file can be retrieved at night and all incoming payments are available the next morning. In addition, multiple interim transaction report files are generated daily (Format CAMT052 or MT942) which can be retrieved to book interim transaction reports in your plentymarkets system.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Booking the EBICS module</div>
+<div class="paragraph">
+<p>To set up an account, the EBICS module first has to be booked in the configurator.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="70">1. Applying for EBICS at your bank</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first step in using EBICS in plentymarkets is registering for the procedure with your bank to receive the necessary documents to fill out and return.  Once completed, you will receive all data you need to use EBICS, e.g., the bank customer ID.<br>
+The following details for EBICS have to be entered in the form.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Existing EBICS accounts</div>
+<div class="paragraph">
+<p>It is not allowed to set up existing EBICS accounts which are already in use in plentymarkets. Multiple users (participants) can be listed in an EBICS account.  If you already hold an account, then apply for a new one (technical user is also possible). Only use this account for plentymarkets.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="80">1.1. Account numbers</h3>
+<div class="paragraph">
+<p>Enter the account numbers for the accounts that you would like revenue to be retrieved and booked into plentymarkets from. Entering account numbers is optional because the retrieval is technically based on the user data. For further information about entering or not entering of account numbers refer to <a href="#table-provision-bank-statements">Table 1</a>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Only save business accounts</div>
+<div class="paragraph">
+<p>There is currently no option in plentymarkets for setting up accounts individually for EBICS retrieval. This means that payment transactions can only be retrieved globally by the plentymarkets system for all accounts saved. This includes e.g. payment transactions on your private account as well, if this account was saved. For this reason, only save the account numbers of your business accounts.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">One account for several users</div>
+<div class="paragraph">
+<p>If several different users all refer to the same account (some banks manage multiple accounts together), then problems may occur if retrieval is carried out simultaneously. This is true even if the users work with different plentymarkets systems. There is currently no solution to prevent this.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="90">1.2. Provision of bank statements</h3>
+<div class="paragraph">
+<p>Provisioning of bank statements can either be done based on the date of the bookkeeping entry or based on bank statements.</p>
+</div>
+<table id="table-provision-bank-statements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Provision of bank statements</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Based on date of bookkeeping entry</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A fictitious, consecutive number is included. This setting is activated by default.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Based on bank statements</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An effective bank statement number is included. Provided that automatic bank statement retrieval is carried out on a daily basis.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="100">1.3. Participants</h3>
+<div class="paragraph">
+<p>When setting up your accounts for EBICS, you create one or more <a href="/en/business-decisions/user-accounts-access#10">users</a> for your accounts. EBICS users are called participants (German: Teilnehmer). You can create participants including different order types. One of these participants has to be saved in the plentymarkets system with the <strong>participant ID</strong> that you received from your bank.</p>
+</div>
+<div class="paragraph">
+<p>plentymarkets only requires one participant, e.g. a user account with the lowest rights, in order to carry out the EBICS payment retrieval. Only one participant may be set up per EBICS account.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="110">1.4. Order type</h3>
+<div class="paragraph">
+<p>Plentymarkets needs the order types as explained in <a href="#table-order-signature-types">Table 2</a> in order to successfully retrieve the transactions on your EBICS account. Also pay attention to the notes about order and signature types given on your bank’s forms.</p>
+</div>
+<table id="table-order-signature-types" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Order and signature types</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>STA</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Statement of account <strong>MT940</strong> or <strong>CAMT053</strong>. <a href="/en/payment/managing-bank-details#180">Retrieval of the transactions</a> at the end of the day.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VMK</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Interim transaction report <strong>MT942</strong> or <strong>CAMT052.</strong> Depending on the respective bank, interim transaction reports are created and made ready for retrieval several times a day. This <a href="/en/payment/managing-bank-details#190">information</a> is optional for plentymarkets.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EU Type "T"</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signature type that provides authorisation exclusively for the retrieval of transaction data.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="120">2. Creating an EBICS account</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To use EBICS, you have to create an account first. To do so, proceed as described below.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating an account:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Payment » Plugin » EBICS</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Create new account</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new account</strong> window opens.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#tabelle-ebics-kontoeinstellungen">[tabelle-ebics-kontoeinstellungen]</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The account is created.</p>
+</li>
+</ol>
+</div>
+<table id="table-ebics-account-settings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. EBICS account settings</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Active</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toggle to mark the account as active.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Account name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the internal name under which the account appears in the overview.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>First name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the account holder’s first name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Last name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the account holder’s last name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bank subscriber ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the bank subscriber ID as submitted by the bank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bank customer ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the bank customer ID as submitted by the bank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bank</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a bank from the list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create new bank</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activate to add a bank not listed in the list.<br>
+<strong>Bank</strong>: Enter the name of the bank.<br>
+<strong>URL</strong>: Enter the host URL as submitted by the bank.<br>
+This option is only available when creating a new account.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Account version</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select from the drop-down list which account version is be used. Details are available at the bank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EBICS version</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select from the drop-down list which EBICS version your bank is using. Details are available at the bank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Interim transaction report</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select from the drop-down list with which method the interim transaction reports are accessed. Details are available at the bank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Daily account statements</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select from the drop-down list with which method the daily account statements are accessed. Details are available at the bank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IBAN / Account number</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter IBANs resp. account numbers of linked accounts separated by commas. The CAMT method requires the IBAN, the MT method requires the account number.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="130">2.1. Carrying out EBICS account settings</h3>
+<div class="paragraph">
+<p>After creating the account, you can change the settings by accessing it from the account overview. With a set up account, several functions are available to you. These are described in the following. In addition, the log next to the account lists the events for the specific account.</p>
+</div>
+<div class="paragraph instruction">
+<p>Editing the account</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Payment » Plugin » EBICS</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Edit</strong> to open the account.<br>
+→ The window <strong>Account settings</strong> is opened.</p>
+</li>
+<li>
+<p>Carry out the settings. Pay attention to the explanations given in <a href="#table-ebics-settings">Table 4</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Domain transfer</div>
+<div class="paragraph">
+<p>Save the basic settings again after carrying out a <a href="/en/business-decisions/system-administration/domains">domain transfer</a>. This updates the EBICS data.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table id="table-ebics-settings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. EBICS settings</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Account settings</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The settings for the selected account.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Transactions</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manages the business transactions to be retrieved.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Manual payment retrieval</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves all orders of a certain date in case of a technical error.<br>
+<em>Note</em>: This function only retrieves the data already saved in the system; the bank is not contacted again.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Get status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the current initialisation status from the EBICS tool.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Get order types</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the order types available on the account. These are the order types currently available on the server. Attention: Using this function too often can cause errors.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Initialise account</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The keys are generated and sent to the bank via INI. HIA is activated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Initialisation letter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a PDF initialisation letter from the generated keys and downloads the document. It has to be signed and sent to the bank for initialisation. The button is inactive until the keys are successfully created.<br>
+<em>Note</em>: For the download of the initialisation letter to work properly, the pop-up blocker of your browser has to be deactivated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Finish initialisation (HPB)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Completes the initialisation with the bank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Expert Mode</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All the following buttons are exclusively intended for the case that the bank required a new execution. The buttons are only available after the activation of the toggle.<br>
+<em>Important:</em> Using the expert mode can damage your account in a way it has to be reset by the bank. Use these functions only if demanded by your bank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create keys</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates keys for initialisation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>INI</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initialises the EBICS account.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HIA</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activates HIA.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HPB</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activates HPB.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Contact your bank before making changes</div>
+<div class="paragraph">
+<p>Carry out changes only after consultation with your bank. For example, if you want to use the new CAMT formats, then ask your bank whether or not this format is supported and have the format activated. Then make any necessary changes to the basic settings and interim transaction report as described here.</p>
+</div>
+<div class="paragraph">
+<p>If an account was reset and your bank needs new keys, then we recommend that you set up the EBICS account again in plentymarkets. This way new keys will be generated.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="140">2.2. Initialising the account</h3>
+<div class="paragraph">
+<p>After you have entered your access data into plentymarkets, the system electronically registers at your bank. Secret key values are necessary for retrieval via EBICS. They are generated by the system. After these key values were created and the initial electronic registration was carried out, the values have to be printed out, signed and handed in at your bank. Only the participant saved in plentymarkets is authorised to sign this document. The bank will not activate the EBICS interface if the signature was not given by the participant saved in the system.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Browser pop-up blocker</div>
+<div class="paragraph">
+<p>For the download of the initialisation letter to work properly, the pop-up blocker of your browser has to be deactivated.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Initialising the account:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Payment » Plugin » EBICS</strong>.</p>
+</li>
+<li>
+<p>Click on the card of the account you want to initialise on <strong>Edit</strong>.<br>
+→ The window <strong>Account settings</strong> is opened.</p>
+</li>
+<li>
+<p>Click on <strong>Initialise account</strong>.<br>
+→ The keys are generated, INI and HIA are executed.<br>
+Once all processes are completed successfully, the button <strong>Create initialisation letter</strong> is activated.</p>
+</li>
+<li>
+<p>Click on <strong>Create initialisation letter</strong>.<br>
+→ The initialisation letter is downloaded as a pdf document.</p>
+</li>
+<li>
+<p>Sign the initialisation letter and submit it to your bank.<br>
+→ The bank checks the information and approves the account. You are informed once this process is complete.</p>
+</li>
+<li>
+<p>Click on <strong>Finish initialisation (HPB)</strong>.<br>
+→ The account is successfully initialised.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The electronically submitted values will be compared with the values on the printed document. Then, the EBICS interface will be activated. From this moment on, the transactions will be retrieved at the retrieval times listed below.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="150">3. Retrieval times of transactions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Maximum twice a day, your bank provides the day’s transactions in a data format. Currently, plentymarkets retrieves this data at 6am, 1pm and 11pm. Transaction data is available in the system approximately one hour after the retrieval. In addition, the bank provides interim transaction reports in data format several times a day. These can be retrieved and include the transactions of the current day.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="160">4. Retrieval times of interim transaction reports</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Since the times when interim transaction reports are made available differ from bank to bank, plentymarkets retrieves them from the banks, if they are available, every hour between 8am and 6pm. For EBICS postings that have unconfirmed interim transactions, the words <strong>interim transaction</strong> will be displayed in red. If the interim transaction has been confirmed, then the lettering will change from red to green. Additionally, the confirmed posting will be assigned to the corresponding order without having to book the payment again.  You have to activate the statement of account in order for interim transaction reports to be confirmed. Pay attention to the explanations given in <a href="#table-provision-bank-statements">Table 1</a>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="170">5. Managing transactions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Business transactions are all order types you conduct with your credit institute. The plugin installation does not imbed any transactions. To automatically import and assign the most common transactions, activate the following standard business transactions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>005 – Direct Debit</p>
+</li>
+<li>
+<p>006 – Other debit entry advice</p>
+</li>
+<li>
+<p>020 - Transfer order</p>
+</li>
+<li>
+<p>051 - Transfer credit note</p>
+</li>
+<li>
+<p>052 – Recurring entry credit memo</p>
+</li>
+<li>
+<p>063 – Remittance credit – EU standard remittance</p>
+</li>
+<li>
+<p>065 – Remittance credit (cross-border remittance without reporting data)</p>
+</li>
+<li>
+<p>070 – Cheque presentation</p>
+</li>
+<li>
+<p>088 – Remittance credit with fixed value date</p>
+</li>
+<li>
+<p>104 - SEPA Direct Debit (single entry – debit, B2B)</p>
+</li>
+<li>
+<p>105 - SEPA Direct Debit (single entry – debit, Core)105 - SEPA Direct Debit (single entry – debit, B2B)</p>
+</li>
+<li>
+<p>106 – SEPA Cards Clearing (single entry - debit)</p>
+</li>
+<li>
+<p>107 – SEPA Direct Debit (single entry - debit, direct debit generated by debit card at the point of sale)</p>
+</li>
+<li>
+<p>152 – SEPA Credit Transfer (credit, recurring instalment payment)</p>
+</li>
+<li>
+<p>159 – SEPA Credit Transfer return (credit) for remittance that cannot be credited (reverse remittance)</p>
+</li>
+<li>
+<p>166 - SEPA Credit Transfer (single entry – credit)</p>
+</li>
+<li>
+<p>169 – SEPA Credit Transfer (single entry – credit, charity payment)</p>
+</li>
+<li>
+<p>181 – SEPA Direct Debit (credit; recredit, Core)</p>
+</li>
+<li>
+<p>184 – SEPA Direct Debit (credit; recredit, B2B)</p>
+</li>
+<li>
+<p>201 – Payment order</p>
+</li>
+<li>
+<p>202 – Cross-border payment</p>
+</li>
+<li>
+<p>206 – Cross-border remittance</p>
+</li>
+<li>
+<p>211 – Receipt of electronic payment</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Managing transactions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Payment » Plugin » EBICS</strong>.</p>
+</li>
+<li>
+<p>Click on the card of the account you want to manage on <strong>Edit</strong>.<br>
+→ The window <strong>Account settings</strong> is opened.</p>
+</li>
+<li>
+<p>Click on <strong>Transactions</strong>.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#table-ebics-settings-transactions">Table 5</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-ebics-settings-transactions" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Managing settings for business transactions</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Code</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the code of a specific transaction and click <strong>Search</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the description of a specific transaction and click <strong>Search</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Display</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As a standard, only active transactions are displayed.<br>
+<strong>All</strong>: Displays a list of all transactions.<br>
+<strong>Active only</strong>: Displays all active transactions.<br>
+<strong>Inactive only</strong>: Displays all inactive transactions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Group</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>All</strong>: Displays a list of all transactions.<br>
+<strong>Credit</strong>: Displays all transactions of type Credit.<br>
+<strong>Debit</strong>: Displays all transactions of type Debit.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_loading_inactive_transactions">Loading inactive transactions</h3>
+<div class="paragraph">
+<p>If you receive payments with a transaction you have not activated, the EBICS plugin cannot process them. Add these transactions to your account.</p>
+</div>
+<div class="paragraph instruction">
+<p>Loading inactive transactions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Payment » Plugin » EBICS</strong>.</p>
+</li>
+<li>
+<p>Click on the card of the account you want to initialise on <strong>Edit</strong>.<br>
+→ The window <strong>Account settings</strong> is opened.</p>
+</li>
+<li>
+<p>Click on <strong>Transactions</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Load inactive transactions</strong>.<br>
+→The search window is opened.</p>
+</li>
+<li>
+<p>Enter the date for which you want to load the transactions.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong>.<br>
+→ All payments for the selected date which do not fall under the activated transactions are displayed.</p>
+</li>
+<li>
+<p>Select the transactions you want to activate.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The transactions are activated.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>To assign the payments, execute the Manual payment retrieval as described above. All future payments are automatically assigned.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="190">5.1. Adding new transactions</h3>
+<div class="paragraph">
+<p>If you receive payments with a transaction code that has not yet been activated, it will automatically be added to the global list. From there, they can be activated as described above.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="200">6. Migrating the old integration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are using the current EBICS integration, you can migrate your existing accounts to the new plugin. To do so, proceed as follows.
+The migration button is displayed only if the old integration has accounts that are active and correctly initialised by the bank.</p>
+</div>
+<div class="paragraph instruction">
+<p>Migrating data:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Payment » Plugin » EBICS</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Migration of existing EBICS accounts</strong>.<br>
+→ All data of the existing integration are migrated to the plugin.<br>
+→ The button is deactivated.<br>
+→ All accounts are activated in the plugin.<br></p>
+</li>
+<li>
+<p>Deactivate the accounts in the old integration.</p>
+</li>
+<li>
+<p>Activate the transactions in the accounts in the plugin as described above.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
