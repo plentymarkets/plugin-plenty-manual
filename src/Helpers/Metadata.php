@@ -2030,7 +2030,7 @@ class Metadata {
 				"title" => "Payment Plugins",
 				"keywords" => "",
 				"description" => "",
-				"navAlias" => "Übersicht",
+				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Payment Plugins. Hier findest du folgende Informationen:",
 				"languageID" => "XOT86AY",
 				"children" => 				[
