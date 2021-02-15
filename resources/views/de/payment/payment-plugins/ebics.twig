@@ -1,0 +1,710 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#70"><span>1.</span><span> EBICS bei deiner Bank beantragen</span></a>
+<ul class="sectlevel2">
+<li><a href="#80"><span>1.1.</span><span> Kontonummern</span></a></li>
+<li><a href="#90"><span>1.2.</span><span> Auszugsbereitstellung</span></a></li>
+<li><a href="#100"><span>1.3.</span><span> Teilnehmer</span></a></li>
+<li><a href="#110"><span>1.4.</span><span> Auftragstyp</span></a></li>
+</ul>
+</li>
+<li><a href="#120"><span>2.</span><span> EBICS-Konto anlegen</span></a>
+<ul class="sectlevel2">
+<li><a href="#130"><span>2.1.</span><span> Einstellungen am EBICS-Konto vornehmen</span></a></li>
+<li><a href="#140"><span>2.2.</span><span> Konto initialisieren</span></a></li>
+</ul>
+</li>
+<li><a href="#150"><span>3.</span><span> Abrufintervalle für Transaktionen</span></a></li>
+<li><a href="#160"><span>4.</span><span> Abrufintervalle Vormerkposten</span></a></li>
+<li><a href="#170"><span>5.</span><span> Geschäftsvorfälle verwalten</span></a>
+<ul class="sectlevel2">
+<li><a href="#_inaktive_geschäftsvorfälle_laden"><span>Inaktive Geschäftsvorfälle laden</span></a></li>
+<li><a href="#190"><span>5.1.</span><span> Noch nicht verwendete Geschäftsfälle hinzufügen</span></a></li>
+</ul>
+</li>
+<li><a href="#200"><span>6.</span><span> Alte Integration migrieren</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>EBICS</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mit dem EBICS-Plugin bindest du <strong>EBICS</strong> (Electronic Banking Internet Communication Standard) in dein System ein. Lade dafür das EBICS-Plugin im <a href="https://marketplace.plentymarkets.com/ebics_5098" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> herunter. Für die Einrichtung von EBICS musst du einige grundlegende Einstellungen in deinem plentymarkets System ausführen.<br></p>
+</div>
+<div class="paragraph">
+<p>EBICS (Electronic Banking Internet Communication Standard) bezeichnet einen in Deutschland multibankfähigen Standard für die Übertragung von Zahlungsverkehrsdaten über das Internet. Durch die Umstellung auf das standardisierte EBICS-Verfahren wird der Abruf von Zahlungen vereinfacht und einheitlich. Dieses Plugin integriert EBICS vollständig in plentymarkets, der Umweg über Drittanbieter ist nicht nötig.</p>
+</div>
+<div class="paragraph">
+<p>Für die Kommunikation per EBICS werden deine Umsätze in einer Datei ähnlich einem Kontoauszug bei deiner Bank gespeichert. Die Datei wird von plentymarkets importiert und die Umsätze werden in deinem plentymarkets System gebucht. Das verknüpfte EBICS-Konto stellt eine Art Verbundkonto dar, das mehrere Bankkonten umfassen kann. Täglich wird eine Datei mit allen Umsätzen des EBICS-Kontos erzeugt (Format CAMT053 oder MT940), sofern diese bei der Bank aktiviert sind. Diese Datei kann dann nachts abgerufen werden und am nächsten Morgen stehen alle Eingänge des Tages zur Verfügung. Außerdem werden täglich mehrere Dateien mit Vormerkposten erzeugt (Format CAMT052 oder MT942), die ebenfalls abgerufen werden können, um die Vormerkposten in dein plentymarkets System einzubuchen.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">EBICS-Modul buchen</div>
+<div class="paragraph">
+<p>Um ein Konto anzulegen, muss zuerst das EBICS-Modul über den Konfigurator gebucht werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="70">1. EBICS bei deiner Bank beantragen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der erste Schritt zur Nutzung von EBICS in plentymarkets ist die Anmeldung für das Verfahren bei deiner Bank. Von dieser erhältst du Dokumente, die du ausfüllst und zurückschickst. Daraufhin erhältst du die für die Nutzung benötigte Daten wie z.B. die Bank-Kunden-ID von deiner Bank.<br>
+Die nachfolgenden Angaben in den Unterlagen sind für EBICS Pflicht.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Bestehende EBICS-Konten</div>
+<div class="paragraph">
+<p>Bereits bestehende und verwendete EBICS-Konten dürfen nicht in plentymarkets eingerichtet werden. Ein EBICS-Konto kann mehrere Benutzer, Teilnehmer genannt, haben. Beantrage also ggf. einen neuen Teilnehmer (auch technische Teilnehmer möglich), den du ausschließlich für plentymarkets verwendest.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="80">1.1. Kontonummern</h3>
+<div class="paragraph">
+<p>Gib die Kontonummern der Konten ein, für die der Abruf der Umsätze in plentymarkets eingebucht werden soll. Die Angabe von Kontonummern ist optional, da der Abruf technisch über die Benutzerdaten erfolgt. Weitere Informationen zur Angabe bzw. Nichtangabe von Kontonummern findest du in <a href="#tabelle-bankdaten-auszugsbereitstellung">Tabelle 1</a>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Nur Geschäftskonten hinterlegen</div>
+<div class="paragraph">
+<p>Es besteht in plentymarkets derzeit keine Möglichkeit, einzelne Konten individuell für den EBICS-Abruf einzurichten. Das heißt, dass die Zahlungsvorgänge deiner Bank nur global für alle angegebenen Konten des plentymarkets Systems abgerufen werden können. Dazu zählen z.B. auch Zahlungsvorgänge deines Privatkontos, falls dieses hinterlegt wurde. Um dies zu vermeiden, hinterlege nur die Kontonummern der Geschäftskonten.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Gleiches Konto für mehrere Benutzer:innen</div>
+<div class="paragraph">
+<p>Verweisen mehrere Benutzer:innen auch aus verschiedenen plentymarkets Systemen auf dasselbe Konto (bei vielen Banken werden mehrere Konten auch in einem Verbundskonto geführt), kann dies zu Problemen beim Abruf führen, wenn die Aufrufe parallel laufen. Dies lässt sich derzeit nicht abfangen.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="90">1.2. Auszugsbereitstellung</h3>
+<div class="paragraph">
+<p>Die Auszugsbereitstellung kann entweder buchungstagsorientiert oder auszugsorientiert erfolgen.</p>
+</div>
+<table id="tabelle-bankdaten-auszugsbereitstellung" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Auszugsbereitstellung</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Buchungstagsorientiert</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eine fiktive fortlaufende Auszugsnummer wird mitgeliefert. Diese Einstellung ist standardmäßig voreingestellt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auszugsorientiert</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die effektive Auszugsnummer wird mitgeliefert. Voraussetzung hierfür ist eine tägliche automatische Auszugserstellung.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="100">1.3. Teilnehmer</h3>
+<div class="paragraph">
+<p>Bei der Umstellung deiner Konten auf EBICS erstellst du für deine Konten einen oder mehrere <a href="/business-entscheidungen/benutzerkonten-zugaenge#10">Benutzer</a>. Benutzer werden unter EBICS als Teilnehmer bezeichnet. Du kannst Teilnehmer mit unterschiedlichen Auftragstypen anlegen. Von diesen Teilnehmern muss ein Teilnehmer mittels der von der Bank erhaltenen <strong>Teilnehmer-ID</strong> im plentymarkets System gespeichert werden.</p>
+</div>
+<div class="paragraph">
+<p>plentymarkets benötigt nur einen Teilnehmer, z.B. einen technischen Teilnehmer mit den niedrigsten Berechtigungen, um den EBICS-Zahlungsabruf durchzuführen. Pro EBICS-Konto darf nur ein Teilnehmer eingerichtet werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="110">1.4. Auftragstyp</h3>
+<div class="paragraph">
+<p>In der folgenden <a href="#tabelle-auftrag-unterschrift-typen">Tabelle 2</a> werden die Auftragstypen erläutert, die plentymarkets für einen erfolgreichen Abruf der Buchungen deines EBICS-Kontos benötigt. Beachte zudem die Erläuterungen zu den Auftrags- und Unterschriftstypen im Formular deiner Bank.</p>
+</div>
+<table id="tabelle-auftrag-unterschrift-typen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 2. Auftrags- und Unterschriftstypen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Typ</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>STA</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tagesumsätze <strong>MT940</strong> bzw. <strong>CAMT053</strong>. Der <a href="/payment/bankdaten-verwalten#180">Abruf der Transaktionen</a> erfolgt am Ende des Tages.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>VMK</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vormerkposten <strong>MT942</strong> bzw. <strong>CAMT052</strong>. Vormerkposten der Transaktionen, die von Bank zu Bank unterschiedlich mehrmals am Tag erzeugt und zum Download bereitgestellt werden. Diese <a href="/payment/bankdaten-verwalten#190">Angabe</a> ist für plentymarkets optional.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EU&nbsp;Typ&nbsp;„T“</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unterschriftstyp, der ausschließlich zum Abruf der Transaktionsdaten berechtigt.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="120">2. EBICS-Konto anlegen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Um EBICS zu nutzen, lege zunächst ein Konto an. Gehe dazu wie im Folgenden beschrieben vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Konto anlegen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Zahlung » Plugins » EBICS</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Neues Konto erstellen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neues Konto</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen gemäß <a href="#tabelle-ebics-kontoeinstellungen">Tabelle 3</a> vor.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Das Konto wird erstellt.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-ebics-kontoeinstellungen" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Kontoeinstellungen für EBICS</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktiv</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Schaltfläche aktivieren, um dieses Konto als aktiv zu markieren.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kontoname</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Den internen Namen eingeben, unter dem das Konto in der Übersicht erscheinen soll.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Vorname</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Den Vornamen des Kontoinhabers eingeben.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nachname</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Den Nachnamen des Kontoinhabers eingeben.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bank-Teilnehmer-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Bank-Teilnehmer-ID eingeben wie von der Bank erhalten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bank-Kunden-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Bank-Kunden-ID eingeben wie von der Bank erhalten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bank</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bank aus der Liste wählen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bank erstellen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aktivieren, um eine Bank hinzuzufügen, die nicht in der oben beschriebenen Liste aufgeführt ist.<br>
+<strong>Bank</strong>: Bankparameter manuell eingeben (wie von der Bank erhalten).<br>
+<strong>URL</strong>: URL der Bank eingeben.<br>
+Diese Option ist nur beim Erstellen eines Kontos verfügbar.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Accountversion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aus der Dropdown-Liste wählen, welche Accountversion verwendet werden soll. Details sind bei der Bank verfügbar.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>EBICS-Version</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aus der Dropdown-Liste wählen, welche EBICS-Version ihre Bank verwendet. Details sind bei der Bank verfügbar.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Vormerkposten</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aus der Dropdown-Liste wählen, mit welchem Verfahren die Vormerkposten abgerufen werden sollen. Details sind bei der Bank verfügbar.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tagesumsätze</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aus der Dropdown-Liste wählen, mit welchem Verfahren die Tagesumsätze abgerufen werden sollen. Details sind bei der Bank verfügbar.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IBAN/Kontonummer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IBANs bzw. Kontonummern der verknüpften Konten kommasepariert eingeben. Das CAMT-Format benötigt die Eingabe der IBAN, das MT-Format benötigt die Eingabe der Kontonummer.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="130">2.1. Einstellungen am EBICS-Konto vornehmen</h3>
+<div class="paragraph">
+<p>Nachdem das Konto angelegt wurde, kann es aus der Kontoübersicht bearbeitet werden. Mit einem eingerichteten Konto stehen dir verschiedene Funktionen zur Verfügung. Diese werden im Folgenden erläutert. Des Weiteren wird neben dem Konto der Log mit Meldungen für dieses individuelle Konto angezeigt.</p>
+</div>
+<div class="paragraph instruction">
+<p>Konto bearbeiten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Zahlung » Plugins » EBICS</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Bearbeiten</strong>, um das Konto zu öffnen.<br>
+→ Das Fenster <strong>Kontoeinstellungen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#table-ebics-settings">Tabelle 4</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Domainwechsel</div>
+<div class="paragraph">
+<p>Speichere nach einem <a href="/business-entscheidungen/systemadministration/domains">Domainwechsel</a> die Grundeinstellungen des Kontos erneut, um die EBICS-Daten zu aktualisieren.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<table id="table-ebics-settings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Einstellungen für EBICS</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kontoeinstellungen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Einstellungen des ausgewählten Kontos.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Geschäftsvorfälle</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verwaltet die automatisch abgerufenen Geschäftsvorfälle.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Manueller Zahlungsabruf</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ermöglicht im Falle eines technischen Fehlers den manuellen Abruf aller Aufträge zu einem bestimmten Datum.<br>
+<em>Hinweis</em>: Diese Funktion ruft lediglich die im System vorhandenen Daten noch einmal ab, es findet kein erneuter Abgleich mit der Bank statt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status abrufen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ruft den aktuellen Initialisierungsstatus des Kontos vom EBICS-Tool ab.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsarten abrufen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ruft die auf dem Konto verfügbaren Auftragsarten ab. Es handelt sich dabei um die Arten, die gerade auf dem Server verfügbar sind. Achtung: Wenn du diese Funktion zu häufig nutzt, kann es zu Fehlfunktionen kommen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Konto initialisieren</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Schlüssel werden generiert und mittels INI zum Abgleich an die Bank übermittelt. HIA wird ausgeführt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>INI-Brief</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erstellt aus den generierten Schlüsseln einen INI-Brief als PDF und lädt das Dokument herunter. Dieser Brief muss ausgedruckt und an die Bank geschickt werden. Die Schaltfläche ist inaktiv, bis die Schlüssel erfolgreich erstellt wurden.<br>
+<em>Hinweis</em>: Für den fehlerfreien Download des INI-Briefs muss der Pop-up-Blocker Ihres Browsers deaktiviert sein.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Initialisierung abschließen (HPB)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schließt den Initialisierungsvorgang mit der Bank ab.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Experten-Modus</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle folgenden Schaltflächen sind ausschließlich für den Fall vorgesehen, dass die Bank eine erneute Ausführung anfordert, und stehen erst nach Aktivierung des Toggle-Buttons zur Verfügung.<br>
+<em>Wichtig</em>: Die Nutzung des Expertenmodus kann dein EBICS-Konto außer Kraft setzen, sodass es durch das Kreditinstitut zurückgesetzt werden muss. Nutze diese Funktionen ausschließlich, wie von deinem Kreditinstitut gefordert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schlüssel erstellen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erstellt die Schlüssel für die Initialisierung.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>INI</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Initialisiert das EBICS-Konto.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HIA</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Führt HIA aus.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HPB</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Führt HPB aus.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Änderungen nur nach Rücksprache mit der Bank</div>
+<div class="paragraph">
+<p>Nimm Änderungen nur nach Rücksprache mit deiner Bank vor. Wenn du z.B. die neuen CAMT-Formate nutzen möchtest, kläre mit deiner Bank, ob das Format unterstützt wird und lasse das Format aktivieren. Passe dann die <strong>Grundeinstellungen</strong> und ggf. die Vormerkposten wie hier beschrieben an.</p>
+</div>
+<div class="paragraph">
+<p>Wenn ein Konto zurückgesetzt wurde und deine Bank neue Schlüssel benötigt, empfehlen wir, den betreffenden EBICS-Account in plentymarkets neu einzurichten, da nur dann neue Schlüssel erzeugt werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="140">2.2. Konto initialisieren</h3>
+<div class="paragraph">
+<p>Nachdem du die Zugangsdaten in plentymarkets eingegeben hast, meldet sich plentymarkets auf elektronischem Weg bei deiner Bank an. Für einen EBICS-Abruf sind geheime Schlüsselwerte nötig, die programmintern generiert werden. Nachdem die Schlüssel erzeugt wurden und die elektronische Erstanmeldung abgeschlossen ist, müssen die Schlüssel unterschrieben und in ausgedruckter Form an die Bank geliefert werden. Nur der in plentymarkets hinterlegte Teilnehmer ist zu dieser Unterschrift berechtigt. Die Bank wird keine Freigabe der EBICS-Schnittstelle erteilen, wenn die Unterschrift nicht von genau diesem hinterlegten Teilnehmer stammt.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Pop-up-Blocker im Browser</div>
+<div class="paragraph">
+<p>Für den fehlerfreien Download des INI-Briefs muss der Pop-up-Blocker deines Browsers deaktiviert sein.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Konto initialisieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Zahlung » Plugins » EBICS</strong>.</p>
+</li>
+<li>
+<p>Klicke auf der Karte des Kontos, das du initialisieren willst, auf <strong>Bearbeiten</strong>.<br>
+→ Das Tab Kontoeinstellungen wird geöffnet.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Konto initialisieren</strong>.<br>
+→ Die Schlüssel werden generiert, INI und HIA werden ausgeführt.<br>
+→ Sind alle Vorgänge erfolgreich abgeschlossen, wird die Schaltfläche INI-Brief erstellen aktiviert.</p>
+</li>
+<li>
+<p>Klicke auf <strong>INI-Brief erstellen</strong>.<br>
+→ Der INI-Brief wird als pdf-Dokument heruntergeladen.</p>
+</li>
+<li>
+<p>Unterschreibe den INI-Brief und übermittele ihn an deine Bank.<br>
+→ Die Bank prüft die Daten und gibt das Konto frei. Du erfährst von deiner Bank, wann dieser Vorgang abgeschlossen ist.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Initialisierung abschließen (HPB)</strong>.<br>
+→ Das Konto ist erfolgreich initialisiert.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Sind alle Werte bei der Bank eingegangen, werden die ausgedruckten Werte mit den elektronisch gesendeten Werten verglichen und die EBICS-Schnittstelle wird freigegeben. Ab diesem Moment werden die Transaktionen in den unten beschriebenen Intervallen abgerufen.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="150">3. Abrufintervalle für Transaktionen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Deine Bank stellt maximal zweimal täglich die Transaktionen des jeweiligen Tages in Datenform zur Abholung bereit. plentymarkets ruft die Daten aktuell um 6:00 Uhr, um 13:00 Uhr und um 23:00 Uhr ab. Die Transaktionsdaten sind etwa eine Stunde nach Abruf in den Systemen verfügbar. Zudem stellt die Bank mehrmals am Tag Vormerkposten mit den Transaktionen des aktuellen Tages in Datenform zur Abholung bereit.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="160">4. Abrufintervalle Vormerkposten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Da die Zeiten, in denen die Vormerkposten bereitgestellt werden, von Kreditinstitut zu Kreditinstitut unterschiedlich sind, ruft plentymarkets die Daten, falls verfügbar, zwischen 8:00 und 18:00 stündlich von den Kreditinstituten ab. Bei EBICS-Buchungen mit unbestätigtem Vormerkposten wird die Angabe <strong>Vormerkposten</strong> in roter Schrift dargestellt. Wird der Vormerkposten bestätigt, wechselt der Schriftzug von rot auf grün. Zusätzlich wird die bestätigte Buchung dem entsprechenden Auftrag zugeordnet, ohne die Zahlung nochmals zu buchen. Damit Vormerkposten bestätigt werden, ist die Aktivierung der Tagesumsätze erforderlich. Beachte dazu die Erläuterungen in <a href="#table-ebics-settings">Tabelle 4</a>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="170">5. Geschäftsvorfälle verwalten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Geschäftsvorfälle sind die bankfachlichen Auftragsarten, die du mit deinem Kreditinstitut abwickelst. Nach dem Anlegen sind noch keine Geschäftsvorfälle aktiviert. Für den automatischen Import und die Zuordnung der üblichen Geschäftsvorfälle aktiviere die folgenden Standardgeschäftsvorfälle:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>005 – Lastschrift (Einzugsermächtigungsverfahren)</p>
+</li>
+<li>
+<p>006 – Sonstige Einzugspapiere</p>
+</li>
+<li>
+<p>020 - Überweisung</p>
+</li>
+<li>
+<p>051 - Überweisungsgutschrift</p>
+</li>
+<li>
+<p>052 – Dauerauftragsgutschrift</p>
+</li>
+<li>
+<p>063 – GS EU-Standardüberweisung</p>
+</li>
+<li>
+<p>065 – Überweisungsgutschrift (Ausl.-Überweisung ohne Meldeteil)</p>
+</li>
+<li>
+<p>070 – Scheckeinreichung</p>
+</li>
+<li>
+<p>088 – Überweisungsgutschrift P1 DTE</p>
+</li>
+<li>
+<p>104 - SEPA Direct Debit (Einzelbuchung-Soll, B2B)</p>
+</li>
+<li>
+<p>105 - SEPA Direct Debit (Einzelbuchung-Soll, Core)</p>
+</li>
+<li>
+<p>106 – SEPA Cards Clearing (EB-Soll)</p>
+</li>
+<li>
+<p>107 – SEPA Direct Debit (EB, Karte am Point of Sale)</p>
+</li>
+<li>
+<p>152 – SEPA-Dauerauftragsgutschrift</p>
+</li>
+<li>
+<p>159 – SEPA Credit Transfer Retoure (Haben) für unanbringliche Über</p>
+</li>
+<li>
+<p>166 - SEPA Credit Transfer (Einzelbuchung-Haben)</p>
+</li>
+<li>
+<p>169 – SEPA Credit Transfer (EB Haben Spende)</p>
+</li>
+<li>
+<p>181 – SEPA Direct Debit (Haben; Wiedergutschrift)</p>
+</li>
+<li>
+<p>184 – SEPA Direct Debit (Haben; Wiedergutschrift, B2B)</p>
+</li>
+<li>
+<p>201 – Zahlungsauftrag</p>
+</li>
+<li>
+<p>202 – Auslandsvergütung</p>
+</li>
+<li>
+<p>206 – Auslandsüberweisung</p>
+</li>
+<li>
+<p>211 – Zahlungseingang über elektronische Medien</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Geschäftsvorfälle verwalten:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Zahlung » Plugins » EBICS</strong>.</p>
+</li>
+<li>
+<p>Klicke auf der Karte des Kontos, das du verwalten willst, auf <strong>Bearbeiten</strong>.<br>
+→ Das Fenster Kontoeinstellungen wird geöffnet.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Geschäftsvorfälle</strong>.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen gemäß <a href="#tabelle-ebics-einstellungen-geschäftsvorfälle">Tabelle 5</a> vor.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<table id="tabelle-ebics-einstellungen-geschäftsvorfälle" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Einstellungen für Geschäftsvorfälle vornehmen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Code</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code eines spezifischen Geschäftsvorfalls eingeben und <strong>Suchen</strong> klicken.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bezeichnung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beschreibung eines spezifischen Geschäftsvorfalls eingeben und <strong>Suchen</strong> klicken.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Anzeigen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Standardmäßig werden nur aktive Geschäftsvorfälle angezeigt.<br>
+<strong>Alle</strong>: Zeigt eine Liste mit allen Geschäftsvorfällen.<br>
+<strong>Nur aktive</strong>: Zeigt alle aktivierten Geschäftsvorfälle.<br>
+<strong>Nur inaktive</strong>: Zeigt alle nicht aktivierten Geschäftsvorfälle.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gruppe</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Alle</strong>: Zeigt eine Liste mit allen Geschäftsvorfällen.<br>
+<strong>Credit</strong>: Zeigt alle Geschäftsvorfälle vom Typ Credit.<br>
+<strong>Debit</strong>: Zeigt alle Geschäftsvorfälle vom Typ Debit.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_inaktive_geschäftsvorfälle_laden">Inaktive Geschäftsvorfälle laden</h3>
+<div class="paragraph">
+<p>Wenn auf deinem Konto Zahlungen eingehen, deren Geschäftsvorfall du nicht aktiviert hast, können diese vom EBICS-Plugin nicht erfasst werden. Füge diese Geschäftsvorfälle deinem Konto hinzu.</p>
+</div>
+<div class="paragraph instruction">
+<p>Inaktive Geschäftsvorfälle laden:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Zahlung » Plugins » EBICS</strong>.</p>
+</li>
+<li>
+<p>Klicke auf der Karte des Kontos, das du bearbeiten willst, auf <strong>Bearbeiten</strong>.<br>
+→ Das Fenster <strong>Kontoeinstellungen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Geschäftsvorfälle</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Inaktive Geschäftsvorfälle laden</strong>.<br>
+→ Das Fenster zur Suche wird geöffnet.</p>
+</li>
+<li>
+<p>Gib das Datum ein, für das du die Geschäftsvorfälle laden willst.</p>
+</li>
+<li>
+<p>Kicke auf <strong>Suchen</strong>.<br>
+→ Alle Zahlungen des eingegebenen Tages, für die keine Geschäftsvorfälle aktiv sind, werden angezeigt.</p>
+</li>
+<li>
+<p>Wähle die Geschäftsvorfälle, die du aktivieren willst.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Die Geschäftsvorfälle sind aktiviert.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Um die Zahlungen zuzuordnen, muss für dieses Datum ein Manueller Zahlungsabruf durchgeführt werden wie oben beschrieben. Alle zukünftigen Zahlungen werden automatisch zugeordnet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="190">5.1. Noch nicht verwendete Geschäftsfälle hinzufügen</h3>
+<div class="paragraph">
+<p>Wenn Zahlungen unter einem Geschäftsvorfallcode eingehen, der nicht aktiv ist, wird dieser automatisch zur globalen Liste der Geschäftsvorfälle hinzugefügt und können von dort aus wie oben beschrieben aktiviert werden.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="200">6. Alte Integration migrieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wenn du die bisherige EBICS-Integration nutzt, kannst du deine vorhandenen Konten in das neue Plugin überführen. Führe dafür die folgenden Schritte durch.
+Der Button für die Migration wird nur angezeigt, wenn Konten in der alten Integration vorhanden, aktiv und vollständig durch die Bank freigeschaltet sind.</p>
+</div>
+<div class="paragraph instruction">
+<p>Migration durchführen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Zahlung » Plugins » EBICS</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Migration von bestehenden EBICS-Konten</strong>.<br>
+→ Alle Daten der alten Integration werden ins Plugin migriert.<br>
+→ Der Button wird ausgeblendet.<br>
+→ Die Konten werden im Plugin aktiviert.<br></p>
+</li>
+<li>
+<p>Deaktiviere die Konten in der alten Integration.</p>
+</li>
+<li>
+<p>Aktiviere die Geschäftsvorfälle in den Konten im Plugin wie oben beschrieben.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</main>
