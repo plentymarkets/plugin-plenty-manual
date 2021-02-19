@@ -19140,7 +19140,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Importing new facets. The following information is available:",
-								"languageID" => "26Y9QBJ",
+								"languageID" => "7W9YV2L",
 								"children" => [],
 								"hasChildren" => false
 							],
