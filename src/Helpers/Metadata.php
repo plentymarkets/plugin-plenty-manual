@@ -3043,7 +3043,7 @@ class Metadata {
 								"description" => "",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Neue Facetten importieren. Hier findest du folgende Informationen:",
-								"languageID" => "26Y9QBJ",
+								"languageID" => "7W9YV2L",
 								"children" => [],
 								"hasChildren" => false
 							],
