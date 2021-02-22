@@ -18251,7 +18251,7 @@ class Metadata {
 						"url" => "/en/payment/payment-plugins/paypal",
 						"level" => 3,
 						"title" => "PayPal",
-						"keywords" => "payment, payment method, payments, PayPal, PayPal PLUS, PayPal invoice, PayPal Express, express-button, PayPal Express checkout, PayPal Upon Invoice, PayPal Installments, PayPal-account, PayPal address validation, paypal-template, paypal checkout, paypal-checkout, paypal wall, paypall-wall, PayPal-webhook, paypal-integration, paypal-plugin, payment-plugin",
+						"keywords" => "payment, payment method, payments, PayPal, PayPal PLUS, PayPal invoice, PayPal Express, express-button, PayPal Express checkout, PayPal Upon Invoice, PayPal Installments, PayPal-account, PayPal address validation, paypal-template, paypal checkout, paypal-checkout, paypal wall, paypall-wall, PayPal-webhook, paypal-integration, paypal-plugin, payment-plugin, faq",
 						"description" => "Integration of the PayPal plugin.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic PayPal. The following information is available:",
@@ -18277,38 +18277,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "672b38ad2eae00e00d79ec2dd9cd63fc",
-				"path" => "payment/faq-paypal",
-				"position" => 50,
-				"urlName" => "faq-paypal",
-				"url" => "/en/payment/faq-en-paypal",
-				"level" => 2,
-				"title" => "FAQ PayPal-Plugin",
-				"keywords" => "PayPal, linking account, setting up account, PayPal-account, browser, plugin, PayPal-plugin, activation, code 87",
-				"description" => "Find answers to some FAQ about setting up your PayPal account in plentymarkets.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic FAQ PayPal-Plugin. The following information is available:",
-				"languageID" => "JU7XBIA",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "69add9b798084e162fee8af0c8105afc",
-				"path" => "payment/faq-ebics",
-				"position" => 60,
-				"urlName" => "faq-ebics",
-				"url" => "/en/payment/faq-en-ebics",
-				"level" => 2,
-				"title" => "FAQ: EBICS-Plugin",
-				"keywords" => "EBICS, EBICS-plugin, faq, account, bank letter, INI-letter, INI, INI-Call, INI call, HIA, HIA-Call, HIA call, initialisation, HPB, account-initialisation, business transactions, payment retrieval, CAMT, MT, transaction file, interim transaction report, daily account statement",
-				"description" => "Find answers to some FAQs about the EBICS-Plugin.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic FAQ: EBICS-Plugin. The following information is available:",
-				"languageID" => "G5J2ZQP",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
