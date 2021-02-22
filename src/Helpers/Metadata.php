@@ -2058,7 +2058,7 @@ class Metadata {
 						"url" => "/payment/payment-plugins/EBICS",
 						"level" => 3,
 						"title" => "EBICS",
-						"keywords" => "Zahlungen, ebics, EBICS, EBIC, Electronic Banking, EBICS-Plugin, Zahlungsverkehrsdaten, Zahlungsübertragung, EBISC, EBICS-Konto, Umsatzdatei, CAMT052, MT940, Vormerkposten, CAMT052, MT942, EBISC-Modul, Geschäftsvorfall, Geschäftsvorfälle, Initialisierungsstatus, EBICS-Tool, INI, HIA, INI-Brief, HPB, Initialisierung",
+						"keywords" => "Zahlungen, ebics, EBICS, EBIC, Electronic Banking, EBICS-Plugin, Zahlungsverkehrsdaten, Zahlungsübertragung, EBISC, EBICS-Konto, Umsatzdatei, CAMT052, MT940, Vormerkposten, CAMT052, MT942, EBISC-Modul, Geschäftsvorfall, Geschäftsvorfälle, Initialisierungsstatus, EBICS-Tool, INI, HIA, INI-Brief, HPB, Initialisierung, FAQ",
 						"description" => "Integration des EBICS-Plugins.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich EBICS. Hier findest du folgende Informationen:",
@@ -2170,7 +2170,7 @@ class Metadata {
 						"url" => "/payment/payment-plugins/paypal",
 						"level" => 3,
 						"title" => "PayPal",
-						"keywords" => "Zahlungsarten, Zahlungen, PayPal, PayPal PLUS, PayPal Rechnung, Express-Button, PayPal Ratenzahlung, PayPal-Rechnung, PayPal-Ratenzahlung, PayPal-Plugin, PayPalplugin, PayPal-Assistent, PayPalassistent, PayPal-Konfiguration, PayPalkonfiguration, Paypalzahlung, Paypal-Zahlung, Paypal-Zahlungsart, Paypalzahlungsart, PayPal-Geschäftskonto, Paypalkonto, Paypal-Konto, Paypalgeschäftskonto, Adressvalidierung, Paypal-Adressvalidierung, Paypal-Template, Paypaltemplate, paypal-Checkout, Checkout, Paypal-Style, PayPal-Wall, Paypal Wall, PayPalwall, PayPal-Banner, PayPal-Plus, PayPal-Webhook, Paypal-Schnittstelle, Paypal-Konfiguration, Paypalkonfiguration, PayPal-Rückzahlung, Paypalrückzahlung, Paypalexpress, PayPal-Express, PayPalPlus, Zahlungsplugin, Zahlungs-Plugin, Payment-Plugin, Paymentplugin, Payment-Integration, Paymentintegration, Paymentschnittstelle, Payment-Schnittstelle",
+						"keywords" => "Zahlungsarten, Zahlungen, PayPal, PayPal PLUS, PayPal Rechnung, Express-Button, PayPal Ratenzahlung, PayPal-Rechnung, PayPal-Ratenzahlung, PayPal-Plugin, PayPalplugin, PayPal-Assistent, PayPalassistent, PayPal-Konfiguration, PayPalkonfiguration, Paypalzahlung, Paypal-Zahlung, Paypal-Zahlungsart, Paypalzahlungsart, PayPal-Geschäftskonto, Paypalkonto, Paypal-Konto, Paypalgeschäftskonto, Adressvalidierung, Paypal-Adressvalidierung, Paypal-Template, Paypaltemplate, paypal-Checkout, Checkout, Paypal-Style, PayPal-Wall, Paypal Wall, PayPalwall, PayPal-Banner, PayPal-Plus, PayPal-Webhook, Paypal-Schnittstelle, Paypal-Konfiguration, Paypalkonfiguration, PayPal-Rückzahlung, Paypalrückzahlung, Paypalexpress, PayPal-Express, PayPalPlus, Zahlungsplugin, Zahlungs-Plugin, Payment-Plugin, Paymentplugin, Payment-Integration, Paymentintegration, Paymentschnittstelle, Payment-Schnittstelle, FAQ PayPal, COde 87",
 						"description" => "Integration des PayPal-Plugins.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich PayPal. Hier findest du folgende Informationen:",
@@ -2212,38 +2212,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "672b38ad2eae00e00d79ec2dd9cd63fc",
-				"path" => "payment/faq-paypal",
-				"position" => 50,
-				"urlName" => "faq-paypal",
-				"url" => "/payment/faq-paypal",
-				"level" => 2,
-				"title" => "FAQ PayPal-Plugin",
-				"keywords" => "PayPal, PayPal einrichten, PayPal verknüpfen, PayPal PLUS, Konto, Ceres, Plugin, Callisto, PayPal-Konto, Konto, Kontoverknüpfung, Browser, Konto-Einrichtung, Konto einrichten, Kontoeinrichtung, Code 87",
-				"description" => "Finde Antworten auf einige FAQ zum des PayPal-Plugin.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich FAQ PayPal-Plugin. Hier findest du folgende Informationen:",
-				"languageID" => "PBKWNPM",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "69add9b798084e162fee8af0c8105afc",
-				"path" => "payment/faq-ebics",
-				"position" => 60,
-				"urlName" => "faq-ebics",
-				"url" => "/payment/faq-ebics",
-				"level" => 2,
-				"title" => "FAQ: EBICS-Plugin",
-				"keywords" => "EBICS, EBICS-Plugin, FAQ, Konto, Bankbuchung, Vorkasse, Überweisung, HBCI, IBAN, Zahlung, Plugin, CAMT, MT, INI, INI-Brief, Zahlungen, Tagesumsatz, Tagesumsätze, Vormerkposten, Zahlungsabruf, Transaktionsfile, Konto-Initialisierung, Konto initalisieren, Geschäftsvorfälle, Zahlungsabruf",
-				"description" => "Finde Antworten auf einige FAQ zum EBICS-Plugin.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich FAQ: EBICS-Plugin. Hier findest du folgende Informationen:",
-				"languageID" => "YHMKO3V",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
