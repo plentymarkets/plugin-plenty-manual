@@ -101,6 +101,10 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Aktionsgutschein</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">customsTariffNumber</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zolltarifnummer</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ebayCategory</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Listing Kategorie 1</p></td>
 </tr>
@@ -764,7 +768,11 @@ ID der übergeordneten Variante</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">priceCalculationId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preiskalkulation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/artikel/einstellungen/preise#2300">Alte Preiskalkulation</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">priceCalculationUUID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="/artikel/einstellungen/preise#1000">Neue Preiskalkulation</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">propertyVariationId</p></td>
@@ -1121,6 +1129,10 @@ Komponente:Menge;Komponente:Menge</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">branchId</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ID der Kategorie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">branchName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Kategorie</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">manually</p></td>
@@ -1536,9 +1548,13 @@ Ist die Eigenschaft nicht verknüpft, bleibt das Feld leer.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alle verknüpfte Lieferanten-IDs, Namen, EKs und Verknüpfungs-IDs werden kommasepariert in einem Feld exportiert.<br>
-ID, Name, EK und Verknüpfungs-ID eines einzigen Lieferantens werden mit Doppelpunkt getrennt. Unterschiedliche Lieferanten werden mit Semikolon getrennt. Beispiel:<br>
-id:supplierId:supplierName:purchasePrice;…​</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle verknüpfte Lieferanten-IDs, Namen, EKs, Verknüpfungs-IDs und Firmennamen werden kommasepariert in einem Feld exportiert.<br>
+ID, Name, EK, Verknüpfungs-ID und Firmenname eines einzigen Lieferantens werden mit Doppelpunkt getrennt. Unterschiedliche Lieferanten werden mit Semikolon getrennt. Beispiel:<br>
+<code>id:supplierId:supplierName:purchasePrice:companyName;…​</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allCompanyNames</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gibt alle Firmennamen kommasepariert zurück</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">allIds</p></td>
@@ -1547,6 +1563,19 @@ id:supplierId:supplierName:purchasePrice;…​</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">allNames</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Alle verknüpfte Lieferanten-Namen werden kommasepariert in einem Feld exportiert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allNamesWithCompany</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gibt alle verknüpfte Lieferanten-Namen mit Firmenname zurück.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">companyName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gibt den zugeordneten Firmennamen zurück.
+Klicke auf <strong>assignment</strong> (<span class="icon darkGrey"><i class="fa fa-sign-in  "></i></span>) und wähle den betreffenden Lieferanten.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">currencyPurchasePrice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EK in Systemwährung</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">deliveryTimeInDays</p></td>
@@ -1586,7 +1615,7 @@ id:supplierId:supplierName:purchasePrice;…​</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">purchasePrice</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Einkaufspreis (EK)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EK in Bestellwährung</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">supplierId</p></td>
@@ -1595,7 +1624,7 @@ id:supplierId:supplierName:purchasePrice;…​</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">supplierPriceList</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Lieferantenpreisliste im Format<br>
-SupplierID:SupplierRowID,PurchasePrice:MinimumPurchase;…​.</p></td>
+<code>SupplierID:SupplierRowID,PurchasePrice:MinimumPurchase;…​</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">supplierRowId</p></td>
