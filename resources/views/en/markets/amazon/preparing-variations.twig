@@ -18,6 +18,13 @@
 <li><a href="#800"><span>5.1.</span><span> Defining a sales price</span></a></li>
 <li><a href="#820"><span>5.2.</span><span> Defining an RRP</span></a></li>
 <li><a href="#850"><span>5.3.</span><span> Defining special offers</span></a></li>
+<li><a href="#860"><span>5.4.</span><span> Preparing the export of unit price information</span></a>
+<ul class="sectlevel3">
+<li><a href="#bp-100"><span>5.4.1.</span><span> Creating properties for unit price information</span></a></li>
+<li><a href="#bp-200"><span>5.4.2.</span><span> Saving unit price information for a variation</span></a></li>
+<li><a href="#bp-300"><span>5.4.3.</span><span> Examples for unit price information</span></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#900"><span>6.</span><span> Setting up freely definable fields in the Amazon export (Seller Central)</span></a>
@@ -498,7 +505,7 @@ No entry for the database created. = The ASIN was not saved in the database.</p>
 <h2 id="780">5. Defining prices</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this chapter, you will learn how to define sales prices, RRPs, and special offers for Amazon.</p>
+<p>In this chapter, you will learn how to define sales prices, RRPs, and special offers for Amazon. In addition, it describes how you need to export the information that Amazon expects as a basis for calculating the unit price.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -529,7 +536,7 @@ No entry for the database created. = The ASIN was not saved in the database.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If you already use the new catalogues for the export, you can skip the step*Defining the sales price for country platforms*. The assistant <strong>Create catalogues - Amazon</strong> can automatically create a sales price.
+If you already use the new catalogues for the export, you can skip the step <strong>Defining the sales price for country platforms</strong>. The assistant <strong>Create catalogues - Amazon</strong> can automatically create a sales price.
 </td>
 </tr>
 </tbody></table>
@@ -542,7 +549,8 @@ If you already use the new catalogues for the export, you can skip the step*Defi
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <strong>Setup » Item » Sales prices » [Open sales price] » Tab: Settings</strong>.</p>
+<p>Go to <strong>Setup » Item » Sales prices » [Open sales price] » Tab: Settings</strong>.<br>
+<strong><em>Note:</em></strong> Select a sales price with no price type (RRP, special offer, set price). Otherwise, your items will not be exported.</p>
 </li>
 <li>
 <p>Activate the Amazon referrer.</p>
@@ -747,6 +755,387 @@ If you already use the new catalogues for the export, you can skip the step*Defi
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="860">5.4. Preparing the export of unit price information</h3>
+<div class="paragraph">
+<p>In some countries, the unit price must be specified for products that are sold by weight, volume, length or surface area.</p>
+</div>
+<div class="paragraph">
+<p>Amazon calculates the unit price based on the price, the quantity and the unit of measure that you export. Amazon expects different fields for different categories. Check the Amazon flatfile for the category to find out which values need to be exported.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a property for each field that Amazon expects to receive for calculating the unit price of your variations.</p>
+</li>
+<li>
+<p>Link the properties with the variation and save the values for the variation.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="bp-100">5.4.1. Creating properties for unit price information</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Settings » Properties » Configuration</strong>.<br>
+→ The overview of the properties opens.</p>
+</li>
+<li>
+<p>Click on <strong>Add property</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>In the drop-down list <strong>Section</strong>, select the option <strong>Items</strong>.</p>
+</li>
+<li>
+<p>Carry out the additional settings. Pay attention to the information given in <a href="#table-amazon-property-base-price">Table 4</a>.</p>
+</li>
+<li>
+<p>Enter a position number for the property.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The property is created and opened for editing.</p>
+</li>
+<li>
+<p>Carry out any additional settings as described in <a href="#table-amazon-property-base-price">Table 4</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-amazon-property-base-price" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Creating a property</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Setting</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Option</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">View <strong>General</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Section</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select the option <strong>Item</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Property type</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>To specify quantities, select the option <strong>Decimal number</strong>.</p>
+</li>
+<li>
+<p>To specify units of measure, select the option <strong>Selection</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enter the name of the Amazon field.<br>
+<strong><em>Note:</em></strong> Save the name for all languages that are used for the Amazon platform.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">View <strong>Visibility</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">View <strong>Values</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Values</strong> (only type <strong>Selection</strong>)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Save values for the units of measure that Amazon allows.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">View <strong>Amazon</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Amazon platform</strong>;<br>
+<strong>Category</strong>;<br>
+<strong>Field</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select the Amazon platform, category and field from the drop-down lists.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="bp-200">5.4.2. Saving unit price information for a variation</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Settings</strong>.<br>
+<strong><em>Tip:</em></strong> To link all variations of an item, carry out these settings for the main variation. The settings are passed on to all variations of the item.</p>
+</li>
+<li>
+<p>In the <strong>Variation properties</strong>, click into the field <strong>Properties</strong>.<br>
+→ A drop-down list of available variation properties opens.</p>
+</li>
+<li>
+<p>Activate the property that you just created.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The property is added to the property list.</p>
+</li>
+<li>
+<p>In the column <strong>Value</strong>, select the unit from the drop-down list, e.g. <strong>GR</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="bp-300">5.4.3. Examples for unit price information</h4>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The following examples show you how to create properties for the quantity <strong>item_display_weight</strong> and the unit of measure <strong>item_display_weight_unit_of_measure</strong>. However, note that Amazon expects different fields for different product categories. Check the Amazon flatfile for the category to find out which values need to be exported.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example:</em></strong> Quantity <strong>item_display_weight</strong></div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Create a property <strong>item_display_weight</strong>.</p>
+</li>
+<li>
+<p>Link the property <strong>item_display_weight</strong> with a variation and save a weight.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Creating a property for the quantity item_display_weight:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Settings » Properties » Configuration</strong>.<br>
+→ The overview of the properties opens.</p>
+</li>
+<li>
+<p>Click on <strong>Add property</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>In the drop-down list <strong>Section</strong>, select the option <strong>Items</strong>.</p>
+</li>
+<li>
+<p>In the drop-down list <strong>Property type</strong>, select the option <strong>Decimal number</strong>.</p>
+</li>
+<li>
+<p>In the field <strong>Name</strong>, enter the name <strong>item_display_weight</strong>.<br>
+<strong><em>Note:</em></strong> Save the name for all languages that are used for the Amazon platform.</p>
+</li>
+<li>
+<p>Enter a position number for the property.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The property is created and opened for editing.</p>
+</li>
+<li>
+<p>Open the <strong>Visibility</strong> view.</p>
+</li>
+<li>
+<p>In the <strong>Referrer</strong> area, activate the desired Amazon platforms.</p>
+</li>
+<li>
+<p>Open the <strong>Amazon</strong> view.</p>
+</li>
+<li>
+<p>Click on <strong>Add correlation</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Select an <strong>Amazon platform</strong> from the drop-down list.</p>
+</li>
+<li>
+<p>Select a <strong>category</strong> from the drop-down list.</p>
+</li>
+<li>
+<p>From the drop-down list <strong>Field</strong>, select the option <strong>item_display_weight</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The property is saved and can be linked to variations.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Linking a variation with the property <strong>item_display_weight</strong> and saving a value:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Settings</strong>.<br>
+<strong><em>Tip:</em></strong> To link all variations of an item, carry out these settings for the main variation. The settings are passed on to all variations of the item.</p>
+</li>
+<li>
+<p>In the <strong>Variation properties</strong>, click into the field <strong>Properties</strong>.<br>
+→ A drop-down list of available variation properties opens.</p>
+</li>
+<li>
+<p>Activate the property <strong>item_display_weight</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The property is added to the property list.</p>
+</li>
+<li>
+<p>In the column <strong>Value</strong>, enter the weight of the variation as a decimal number, e.g. `150\`.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example:</em></strong> unit of measure <strong>item_display__weight_unit_of_measure</strong></div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Create a property <strong>item_display_weight_unit_of_measure</strong>.</p>
+</li>
+<li>
+<p>Link the property <strong>item_display_weight_unit_of_measure</strong> with a variation and select a property value.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Creating the property <strong>item_display_weight_unit_of_measure</strong>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Settings » Properties » Configuration</strong>.<br>
+→ The overview of the properties opens.</p>
+</li>
+<li>
+<p>Click on <strong>Add property</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>In the drop-down list <strong>Section</strong>, select the option <strong>Items</strong>.</p>
+</li>
+<li>
+<p>In the drop-down list <strong>Property type</strong>, select the option <strong>Selection</strong>.</p>
+</li>
+<li>
+<p>In the field <strong>Name</strong>, enter the name <strong>item_display_weight_unit_of_measure</strong>.<br>
+<strong><em>Note:</em></strong> Save the name for all languages that are used for the Amazon platform.</p>
+</li>
+<li>
+<p>Enter a position number for the property.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The property is created and opened for editing.</p>
+</li>
+<li>
+<p>Open the <strong>Visibility</strong> view.</p>
+</li>
+<li>
+<p>In the <strong>Referrer</strong> area, activate the desired Amazon platforms.</p>
+</li>
+<li>
+<p>Open the <strong>Values</strong> view.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add</strong>.</p>
+</li>
+<li>
+<p>Enter the unit <strong>KG</strong> for kilograms in the name field.</p>
+</li>
+<li>
+<p>Save the setting.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add</strong> again.</p>
+</li>
+<li>
+<p>Enter the unit <strong>GR</strong> for grams in the name field.</p>
+</li>
+<li>
+<p>Save the setting.</p>
+</li>
+<li>
+<p>Open the <strong>Amazon</strong> view.</p>
+</li>
+<li>
+<p>Click on <strong>Add correlation</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Select an <strong>Amazon platform</strong> from the drop-down list.</p>
+</li>
+<li>
+<p>Select a <strong>category</strong> from the drop-down list.</p>
+</li>
+<li>
+<p>From the drop-down list <strong>Field</strong>, select the option <strong>item_display_weight_unit_of_measure</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The property is saved and can be linked to variations.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Linking a variation with the property <strong>item_display_weight_unit_of_measure</strong> and saving a value:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Settings</strong>.<br>
+<strong><em>Tip:</em></strong> To link all variations of an item, carry out these settings for the main variation. The settings are passed on to all variations of the item.</p>
+</li>
+<li>
+<p>In the <strong>Variation properties</strong>, click into the field <strong>Properties</strong>.<br>
+→ A drop-down list of available variation properties opens.</p>
+</li>
+<li>
+<p>Activate the property <strong>item_display_weight_unit_of_measure</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The property is added to the property list.</p>
+</li>
+<li>
+<p>In the column <strong>Value</strong>, select the unit from the drop-down list, e.g. <strong>GR</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div><div class="sect1">
 <h2 id="900">6. Setting up freely definable fields in the Amazon export (Seller Central)</h2>
@@ -853,7 +1242,7 @@ If you already use the new catalogues for the export, you can skip the step*Defi
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
-→ The free text fields will be available the next day in the editing window of the items in the <strong>Fields</strong> tab. Then, enter the <strong>number</strong>. Pay attention to the explanations given in <a href="#options-item-condition">Table 4</a> and <a href="#options-will-ship-internationally">Table 5</a>.</p>
+→ The free text fields will be available the next day in the editing window of the items in the <strong>Fields</strong> tab. Then, enter the <strong>number</strong>. Pay attention to the explanations given in <a href="#options-item-condition">Table 5</a> and <a href="#options-will-ship-internationally">Table 6</a>.</p>
 </li>
 </ol>
 </div>
@@ -891,7 +1280,7 @@ If you already use the new catalogues for the export, you can skip the step*Defi
 <p>The following values are possible for the <strong>item-condition</strong> field:</p>
 </div>
 <table id="options-item-condition" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Options in the <strong>item-condition</strong> field</caption>
+<caption class="title">Table 5. Options in the <strong>item-condition</strong> field</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -975,7 +1364,7 @@ If you already use the new catalogues for the export, you can skip the step*Defi
 <p>The following values are possible for the <strong>will-ship-internationally</strong> field:</p>
 </div>
 <table id="options-will-ship-internationally" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Options in the <strong>will-ship-internationally</strong> field</caption>
+<caption class="title">Table 6. Options in the <strong>will-ship-internationally</strong> field</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
