@@ -85,9 +85,14 @@
 <li><a href="#810"><span>8.1.</span><span> Carrying out basic settings for multi-orders</span></a></li>
 <li><a href="#820"><span>8.2.</span><span> Creating a multi-order per customer class</span></a></li>
 <li><a href="#830"><span>8.3.</span><span> Creating a multi-order per customer</span></a></li>
-<li><a href="#840"><span>8.4.</span><span> Generating a multi-invoice</span></a></li>
-<li><a href="#845"><span>8.5.</span><span> Generating dunning letters for multi-orders</span></a></li>
-<li><a href="#850"><span>8.6.</span><span> Generating a multi credit note</span></a></li>
+<li><a href="#840"><span>8.4.</span><span> Generating a multi-invoice</span></a>
+<ul class="sectlevel3">
+<li><a href="#_generating_multi_invoices_with_an_event_procedure"><span>8.4.1.</span><span> Generating multi-invoices with an event procedure</span></a></li>
+<li><a href="#845"><span>8.4.2.</span><span> Generating dunning letters for multi-orders</span></a></li>
+</ul>
+</li>
+<li><a href="#850"><span>8.5.</span><span> Generating a multi credit note</span></a></li>
+<li><a href="#860"><span>8.6.</span><span> Generating a multi credit note document</span></a></li>
 </ul>
 </li>
 <li><a href="#1100"><span>9.</span><span> Working with advance orders</span></a>
@@ -428,7 +433,7 @@ By default, the toggle is deactivated. If you want the VAT rate as read only in 
 <strong>As one order position, quantities of order items are increased</strong> = Same items are added as one order item, only the quantities are adapted.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Endpoint after completing an order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-endpoint-after-completion">Endpoint after completing an order</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select where in the system you want to be redirected to after an order is completed. You can choose between:<br>
 <strong>Order overview of the contact</strong> = Redirects you to the order overview in the contact data record of the contact of the just created order. This is the default setting.<br>
 <strong>Order overview</strong> = Redirects you to the general order overview.<br>
@@ -931,7 +936,7 @@ You can edit the <strong>quantity</strong> as well as the <strong>price</strong>
 <p>If you change quantities, prices, VAT rates, shipping costs or the shipping method, the order has to be recalculated because the total amounts depend on these factors. Therefore, you have to click on <strong>Recalculate order</strong> before you can complete the order. The total amounts are updated because of the recalculation.</p>
 </div>
 <div class="paragraph">
-<p>To complete the order, click on <strong>Complete order</strong>. The order is now created and you are redirected to the order overview of the contact. The order is now also available in the order overview in the <strong>Orders » Edit orders</strong> menu.</p>
+<p>To complete the order, click on <strong>Complete order</strong>. The order is now created and you are redirected to the menu you chose in the <a href="/en/orders/managing-orders#intable-endpoint-after-completion">default settings</a>. The order is now also available in the order overview in the <strong>Orders » Edit orders</strong> menu.</p>
 </div>
 </div>
 </div>
@@ -1441,7 +1446,7 @@ Before returns can be registered in your system, you have to set up <a href="/en
 <p>Enter reasons for returns.</p>
 </li>
 <li>
-<p><strong>Save</strong> (<span class="icon ”green”"><i class="fa fa-save  "></i></span> the settings.</p>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 </ol>
 </div>
@@ -1563,7 +1568,7 @@ If a reason is selected here, it has priority over all reasons for returns assig
 <h3 id="450">4.4. Creating a return slip</h3>
 <div class="paragraph">
 <p>You can include a return slip in every shipment of items sent to your customers. In this case, the return slip should contain blank fields for the reasons of return. Alternatively, you can allow your customers to fill out the return slip in the <strong>My account</strong> area of the online store and to print it after having filled in the reasons for the return. The return slip can then be included in the return delivery.
-Before creating return slips, the document template <a href="#orders/order-documents/generating-return-slips">Return slip</a> has to be set up in the menu <strong>Setup » Client » [Select client] » Locations » [Select location] » Documents » Return slip</strong>.</p>
+Before creating return slips, the document template <a href="/en/orders/order-documents/generating-return-slips">Return slip</a> has to be set up in the menu <strong>Setup » Client » [Select client] » Locations » [Select location] » Documents » Return slip</strong>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1908,7 +1913,7 @@ The following steps describe how to apply the settings from a default document t
 </ol>
 </div>
 <div class="paragraph">
-<p>Because the information in a reversal document is identical with the information included in an invoice, further information on the required settings can be found on the <a href="/en/orders/order-documents/generating-an-invoice">invoice</a> manual page.</p>
+<p>Because the information in a reversal document is identical with the information included in an invoice, further information on the required settings can be found on the <a href="/en/orders/order-documents/generating-invoices">invoice</a> manual page.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2570,9 +2575,80 @@ For these cases, go to <strong>CRM » Contacts</strong> to create a multi-order 
 <div class="sect2">
 <h3 id="840">8.4. Generating a multi-invoice</h3>
 <div class="paragraph">
-<p>Multi-invoices can only be generated in the corresponding multi-order. The first step consists of setting up a document template for multi-invoices in the menu <strong>Setup » Client » [Select client] » Locations » [Select location] » Documents » Multi-invoice</strong>. Here, you can specify detailed settings for the document and also save a <a href="/en/orders/order-documents">document template</a> as a PDF file. Customise the template as required. Default values are set in the basic settings of the document template. You can also transfer further settings, e.g. from the document template <strong>invoice</strong>, to complete the values.<br>
-After having set up a document template for multi-invoices, you can generate a multi-invoice in the <strong>Receipts</strong> tab of a multi-order.</p>
+<p>Multi-invoices can only be generated in the corresponding multi-order. The first step consists of setting up a document template for multi-invoices in the menu <strong>Setup » Client » [Select client] » Locations » [Select location] » Documents » Multi-invoice</strong>. Here, you can specify detailed settings for the document and also save a <a href="/en/orders/order-documents">document template</a> as a PDF file. Customise the template as required. Default values are set in the basic settings of the document template. You can also transfer further settings, e.g. from the document template <strong>invoice</strong>, to complete the values.</p>
 </div>
+<div class="paragraph">
+<p>After having set up a document template for multi-invoices, you can generate a multi-invoice in the <strong>Receipts</strong> tab of a multi-order. To do so, proceed as follows.</p>
+</div>
+<div class="paragraph instruction">
+<p>Generating a multi-invoice:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Orders » Edit orders</strong>.<br>
+→ The order overview opens.</p>
+</li>
+<li>
+<p>Use the filters to search (<span class="icon blue"><i class="fa fa-search  "></i></span>) for the multi-order for which you want to generate a multi-invoice.</p>
+</li>
+<li>
+<p>Open the multi-order.</p>
+</li>
+<li>
+<p>Go to the <strong>Receipts</strong> tab.</p>
+</li>
+<li>
+<p>Select the document <strong>Multi-invoice</strong> from the <strong>Create receipt</strong> drop-down list.<br></p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#table-orders-receipts-multi-invoice">Table 15</a>.<br></p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings to generate the multi-invoice.<br>
+→ A <strong>PDF file</strong> of the just generated multi-invoice opens.</p>
+</li>
+</ol>
+</div>
+<table id="table-orders-receipts-multi-invoice" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 15. Settings for multi-invoices in Create receipt menu.</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a date to be displayed on the multi-invoice. The present date is set by default.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Number</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The document number is assigned automatically. No entry is required in this field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Integrate the invoices of these orders</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select by choosing <strong>YES</strong> or <strong>NO</strong> whether the invoices of the individual orders of the multi-order are generated as well.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Book outgoing items</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select by choosing <strong>YES</strong> or <strong>NO</strong> whether outgoing items should be booked when the multi-invoice is created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Change order status to status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose an order status to which the order is to be changed after the multi-invoice is created. If you don’t want the order status to change, select <strong>No change</strong> .</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Comment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The text entered here is displayed below the order items. The entry of a text is optional.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock important">
 <table>
 <tbody><tr>
@@ -2588,6 +2664,8 @@ After having set up a document template for multi-invoices, you can generate a m
 </tr>
 </tbody></table>
 </div>
+<div class="sect3 discrete">
+<h4 id="_generating_multi_invoices_with_an_event_procedure">8.4.1. Generating multi-invoices with an event procedure</h4>
 <div class="paragraph">
 <p>Use the event procedures available in your plentymarkets system to automatically generate a multi-invoice as soon as a multi-order is created. To do so, proceed as described below:</p>
 </div>
@@ -2607,13 +2685,13 @@ After having set up a document template for multi-invoices, you can generate a m
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> as listed in <a href="#table-event-procedure-multi-invoice-automatic">Table 15</a>.</p>
+<p>Select the <strong>event</strong> as listed in <a href="#table-event-procedure-multi-invoice-automatic">Table 16</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#table-event-procedure-multi-invoice-automatic">Table 15</a>.</p>
+<p>Carry out the settings according to <a href="#table-event-procedure-multi-invoice-automatic">Table 16</a>.</p>
 </li>
 <li>
 <p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -2626,7 +2704,7 @@ After having set up a document template for multi-invoices, you can generate a m
 </div>
 </div>
 <table id="table-event-procedure-multi-invoice-automatic" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 15. Event procedure “Automatically generating a multi-invoice”</caption>
+<caption class="title">Table 16. Event procedure “Automatically generating a multi-invoice”</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2649,8 +2727,8 @@ After having set up a document template for multi-invoices, you can generate a m
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="845">8.5. Generating dunning letters for multi-orders</h3>
+<div class="sect3">
+<h4 id="845">8.4.2. Generating dunning letters for multi-orders</h4>
 <div class="paragraph">
 <p>Just like invoices for multi-orders, you can generate dunning letters for multi-orders in the <strong>Receipts</strong> tab of the respective multi-order. To do so, proceed as follows:</p>
 </div>
@@ -2678,8 +2756,9 @@ After having set up a document template for multi-invoices, you can generate a m
 </ol>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="850">8.6. Generating a multi credit note</h3>
+<h3 id="850">8.5. Generating a multi credit note</h3>
 <div class="paragraph">
 <p>Multi credit note are generated in the menu <strong>Orders » Multi-orders</strong>.<br>
 All credit notes for a customer class are combined in one multi credit note. Depending on your workflow, we recommend creating specific <a href="/en/crm/managing-contacts#15">customer classes</a> for multi credit notes.</p>
@@ -2696,14 +2775,91 @@ All credit notes for a customer class are combined in one multi credit note. Dep
 <p>Open the submenu <strong>Generate multi credit notes</strong>.</p>
 </li>
 <li>
-<p>Select the <strong>Customer class</strong> and an optional <strong>Period</strong>. The time period refers to the date of the order income.</p>
+<p>Select the <strong>Customer class</strong>.</p>
 </li>
 <li>
-<p>Click on the gear-wheel icon (<span class="icon "><i class="fa fa-cog  "></i></span>).<br>
+<p>Optionally, select a <strong>Period</strong>. The time period refers to the date of the order income.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="psicon-execute"></i></span>.<br>
 → The multi credit note is generated.</p>
 </li>
 </ol>
 </div>
+</div>
+<div class="sect2">
+<h3 id="860">8.6. Generating a multi credit note document</h3>
+<div class="paragraph">
+<p>Multi credit note documents can only be generated in the corresponding order type multi credit note. The first step consists of setting up a document template for multi credit note documents in the menu <strong>Setup » Client » [Select client] » Locations » [Select location] » Documents » Multi credit note</strong>. Here, you can specify detailed settings for the document and also save a <a href="/en/orders/order-documents">document template</a> as a PDF file. Customise the template as required. Default values are set in the basic settings of the document template. You can also transfer further settings, e.g. from the document template <strong>Credit note</strong>, to complete the values.</p>
+</div>
+<div class="paragraph">
+<p>After having set up a document template for multi credit note documents, you can generate a multi credit note document in the <strong>Receipts</strong> tab of a multi credit note. To do so, proceed as follows.</p>
+</div>
+<div class="paragraph instruction">
+<p>Generating a multi credit note document:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Orders » Edit orders</strong>.<br>
+→ The order overview opens.</p>
+</li>
+<li>
+<p>Use the filters to search (<span class="icon blue"><i class="fa fa-search  "></i></span>) for the multi credit note for which you want to generate a multi cedit note document.</p>
+</li>
+<li>
+<p>Open the multi credit note.</p>
+</li>
+<li>
+<p>Go to the <strong>Receipts</strong> tab.</p>
+</li>
+<li>
+<p>Select the document <strong>Multi credit note</strong> from the <strong>Create receipt</strong> drop-down list.<br></p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#table-orders-generate-document.multi-credit-note">Table 17</a>.<br></p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings to generate the multi credit note document.<br>
+→ A <strong>PDF file</strong> of the just generated multi credit note opens.</p>
+</li>
+</ol>
+</div>
+<table id="table-orders-generate-document.multi-credit-note" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 17. Settings for multi credit note documents in <strong>Create receipt</strong> menu.</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Date</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter a date to be displayed on the multi credit note document. The present date is set by default.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Number</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The document number is assigned automatically. No entry is required in this field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Book outgoing items</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select by choosing <strong>YES</strong> or <strong>NO</strong> whether outgoing items should be booked when the multi credit note document is created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Change order status to status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose an order status to which the order is to be changed after the multi credit note document is created. If you don’t want the order status to change, select <strong>No change</strong> .</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Comment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The text entered here is displayed below the order items. The entry of a text is optional.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div><div class="sect1">
@@ -2910,7 +3066,7 @@ All credit notes for a customer class are combined in one multi credit note. Dep
 <p>The following 28 status entries are available by default in your plentymarkets system and some of them linked to automatic processes in the system. Those statuses linked to an automatic process are not deletable.</p>
 </div>
 <table id="table-default-statuses" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 16. Default statuses and automatic processes within the system</caption>
+<caption class="title">Table 18. Default statuses and automatic processes within the system</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3043,7 +3199,7 @@ If you use stock limitation and this status for insufficient stock, it is possib
 <div class="sect2">
 <h3 id="1220">10.2. Creating and editing order statuses</h3>
 <div class="paragraph">
-<p>In the <strong>Setup » Orders » Status</strong> menu, you can add statuses to the ones described in <a href="#table-default-statuses">Table 16</a> . Already existing statuses can be edited or renamed. Maintain statuses in different languages in order to inform your customers about the progress via email or in the customer account of the online store. Apart from statuses linked to automated processes within the system, all statuses can be deleted. Statuses linked to automated processes within the system can be renamed. However, you should make sure not to misuse those statuses linked to automated processes within the system.<br>
+<p>In the <strong>Setup » Orders » Status</strong> menu, you can add statuses to the ones described in <a href="#table-default-statuses">Table 18</a> . Already existing statuses can be edited or renamed. Maintain statuses in different languages in order to inform your customers about the progress via email or in the customer account of the online store. Apart from statuses linked to automated processes within the system, all statuses can be deleted. Statuses linked to automated processes within the system can be renamed. However, you should make sure not to misuse those statuses linked to automated processes within the system.<br>
 Additionally, you can decide how the order statuses are displayed in your plentymarkets system. Use the toggle <strong>Show status ID in status name</strong> to decide whether only the given status name or whether the status ID is displayed additionally.</p>
 </div>
 <div class="admonitionblock tip">
@@ -3417,7 +3573,7 @@ The search for <strong>document type</strong> results in an overview of those or
 <h2 id="1400">12. Setting up the order overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following tools help you to easily keep track of and manage the search results. All of your orders are displayed in the menu <strong>Orders » Edit orders</strong>. Here you can see the most important information about each order. You are provided with information about the customer, the order status and the payment status. You can also tell which items are included in the order, whether the outgoing items were booked and whether an invoice was generated. In other words, you can easily keep track of the most important processes without having to open the order. Move the cursor over the icons to see tooltips with additional information. You can find a list of all the symbols with the corresponding explanantions in <a href="#table-symbols-order-overview">Table 17</a>.</p>
+<p>The following tools help you to easily keep track of and manage the search results. All of your orders are displayed in the menu <strong>Orders » Edit orders</strong>. Here you can see the most important information about each order. You are provided with information about the customer, the order status and the payment status. You can also tell which items are included in the order, whether the outgoing items were booked and whether an invoice was generated. In other words, you can easily keep track of the most important processes without having to open the order. Move the cursor over the icons to see tooltips with additional information. You can find a list of all the symbols with the corresponding explanantions in <a href="#table-symbols-order-overview">Table 19</a>.</p>
 </div>
 <div class="paragraph">
 <p>Click on an <strong>icon</strong> to open further areas within the order. For example, click on <strong>Calculate stock</strong> to check the current stock of the item or to reorder stock.
@@ -3475,7 +3631,7 @@ Use the arrows to switch between pages. You can also enter the required page num
 The following table contains an overview of all possible information that could be displayed. Some icons also allow you to perform actions directly. Note, that only those icons are displayed that correspond with the state the order is in.</p>
 </div>
 <table id="table-symbols-order-overview" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 17. Possible icons in the order overview</caption>
+<caption class="title">Table 19. Possible icons in the order overview</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3722,7 +3878,7 @@ Most of the order’s tabs do not include a save icon. Settings made in these ta
 </tbody></table>
 </div>
 <table id="table-options-tab-overview" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 18. Options in the <strong>Overview</strong> tab of an order</caption>
+<caption class="title">Table 20. Options in the <strong>Overview</strong> tab of an order</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -3809,7 +3965,7 @@ Generally, orders should not be deleted. Errors can occur when orders are delete
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bank details</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Click on the <strong>small plus</strong> icon to display and edit the <a href="/en/payment/managing-bank-details#63#">customer’s bank details</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click on the <strong>small plus</strong> icon to display and edit the <a href="/en/payment/managing-bank-details#63">customer’s bank details</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Customer notes</strong></p></td>
@@ -3858,7 +4014,7 @@ The assignment of a storage location is especially important for pick lists and 
 <p>An order’s basic parameters are saved in the <strong>Settings</strong> tab, e.g. the <strong>Status</strong>, <strong>Referrer</strong> or the <strong>Payment method</strong>.</p>
 </div>
 <table id="table-options-tab-settings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 19. Options in the <strong>Settings</strong> tab of an order</caption>
+<caption class="title">Table 21. Options in the <strong>Settings</strong> tab of an order</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -4346,7 +4502,7 @@ The following steps briefly describe how to apply the settings from the default 
 </ol>
 </div>
 <div class="paragraph">
-<p>Since the information in a reversal document is identical with the information included in an invoice, further information on the required settings can be found on the <a href="/en/orders/order-documents/generating-an-invoice">invoice</a> manual page.</p>
+<p>Since the information in a reversal document is identical with the information included in an invoice, further information on the required settings can be found on the <a href="/en/orders/order-documents/generating-invoices">invoice</a> manual page.</p>
 </div>
 </div>
 <div class="sect3">
