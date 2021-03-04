@@ -15,24 +15,17 @@
 <li><a href="#250"><span>4.</span><span> Activating the order referrer</span></a></li>
 <li><a href="#300"><span>5.</span><span> Setting the variation availability</span></a></li>
 <li><a href="#400"><span>6.</span><span> Linking categories</span></a></li>
-<li><a href="#450"><span>7.</span><span> Creating characteristics</span></a></li>
+<li><a href="#450"><span>7.</span><span> Creating and linking characteristics</span></a></li>
 <li><a href="#500"><span>8.</span><span> Defining a sales price</span></a></li>
 <li><a href="#600"><span>9.</span><span> Setting up the item export</span></a></li>
-<li><a href="#650"><span>10.</span><span> Activating the payment method</span></a></li>
-<li><a href="#700"><span>11.</span><span> Automatically sending shipping confirmations</span></a></li>
-<li><a href="#900"><span>12.</span><span> Automatically sending cancellations</span></a></li>
-<li><a href="#800"><span>13.</span><span> Automatically sending the return status</span></a></li>
-<li><a href="#810"><span>14.</span><span> Sending information on direct returns to bol.com</span></a></li>
-<li><a href="#1000"><span>15.</span><span> Viewing log entries</span></a></li>
-<li><a href="#1100"><span>16.</span><span> FAQ</span></a>
-<ul class="sectlevel2">
-<li><a href="#1200"><span>16.1.</span><span> Requirements for listing offers on bol.com</span></a>
-<ul class="sectlevel4">
-<li><a href="#_which_settings_have_to_be_saved_to_sell_a_variation_on_bol_com"><span>Which settings have to be saved to sell a variation on bol.com?</span></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#211"><span>10.</span><span> Setting up Fulfilment by bol.com (FBB/LVB)</span></a></li>
+<li><a href="#1200"><span>11.</span><span> Check list: Requirements for listing offers on bol.com</span></a></li>
+<li><a href="#650"><span>12.</span><span> Activating the payment method</span></a></li>
+<li><a href="#700"><span>13.</span><span> Automatically sending shipping confirmations</span></a></li>
+<li><a href="#900"><span>14.</span><span> Automatically sending cancellations</span></a></li>
+<li><a href="#800"><span>15.</span><span> Automatically sending the return status</span></a></li>
+<li><a href="#810"><span>16.</span><span> Sending information on direct returns to bol.com</span></a></li>
+<li><a href="#1000"><span>17.</span><span> Viewing log entries</span></a></li>
 </ul>
 </div>
         </div>
@@ -354,7 +347,7 @@
 <h2 id="300">5. Setting the variation availability</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong><em>Tip:</em></strong> The settings you need to activate in order to sell a variation on bol.com are described in the <a href="#1200">FAQ</a>.</p>
+<p><strong><em>Tip:</em></strong> The settings you need to activate in order to sell a variation on bol.com are described in the <a href="#Requirements for listing offers on bol.com">FAQ</a>.</p>
 </div>
 <div class="paragraph">
 <p>You need to activate all variations that you want to sell on bol.com. This is done in the <strong>Availability</strong> tab of a variation within the <strong>Item » Edit item » [Open item] » Tab: Variation ID</strong> menu.</p>
@@ -448,14 +441,67 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="450">7. Creating characteristics</h2>
+<h2 id="450">7. Creating and linking characteristics</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Next, create <a href="/en/item/settings/properties#100">characteristics</a> and link these characteristics to the bol.com characteristics. Matching characteristics to a bol.com category can be found within the bol.com data model file. Download the bol.com data model file <a href="https://developers.bol.com/datamodel/" target="_blank" rel="noopener">here</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> .</p>
+<p>Now, create <a href="/en/item/settings/properties#100">characteristics</a> and link these characteristics to the bol.com characteristics. You need different characteristics depending on the bol.com category. Matching characteristics to a bol.com category can be found within the bol.com data model file. Download the bol.com data model file <a href="https://developers.bol.com/datamodel/" target="_blank" rel="noopener">here</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> .</p>
 </div>
-<div class="paragraph instruction">
-<p>Creating a characteristic:</p>
+<table id="table-bol-characs" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Important bol.com characteristics</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Characteristic</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bol_fulfillment</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The characteristic <strong>bol_fulfillment</strong> determines if the variations of an item are shipped by you or by bol.com.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Characteristic not linked to item</em> = You ship the variations.</p>
+</li>
+<li>
+<p><em>Characteristic linked to item</em> = bol.com ships the variations (FBB/LVB).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you create the characteristics, in the line <strong>bol.com characteristic</strong>, enter the bol.com characteristic <strong>bol_fulfillment</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bol_used</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If you want to sell used items on bol.com, you have to indicate this used condition by using the property <strong>bol_used</strong>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Characteristic not linked to item</em> = The item is new.</p>
+</li>
+<li>
+<p><em>Characteristic linked to item</em> = The item is used.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you create the characteristics, in the line <strong>bol.com characteristic</strong>, enter the bol.com characteristic <strong>bol_used</strong>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="openblock collapseBox">
+<div class="title">Creating a characteristic</div>
+<div class="content">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -477,18 +523,48 @@
 <p>Select the option <strong>Text</strong> from the <strong>Characteristic type</strong> drop-down list.</p>
 </li>
 <li>
-<p>Enter the bol.com characteristic which can be found in the column <strong>Attribute name</strong> within the bol.com data model file into the line <strong>bol.com characteristic</strong>.</p>
+<p>In the row <strong>bol.com characteristic</strong>, enter the bol.com characteristic from the column <strong>Attribute name</strong> of the bol.com data model file.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><strong>bol_fulfillment</strong> is a mandatory field for the offer export. This indicates whether the item is shipped by you or by bol.com. In the line <strong>bol.com characteristic</strong>, enter the bol.com characteristic <strong>bol_fulfillment</strong>.</p>
 </div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Linking the characteristic to an item</div>
+<div class="content">
 <div class="paragraph">
-<p>If you want to sell used items on bol.com, you have to indicate this by using the property <strong>bol_used</strong>. In the line <strong>bol.com characteristic</strong>, enter the bol.com characteristic <strong>bol_used</strong>.</p>
+<p>Link the bol.com characteristics with the items that you want to sell on bol.com.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item</strong>.</p>
+</li>
+<li>
+<p>Open the item.</p>
+</li>
+<li>
+<p>Click on the <strong>Characteristics</strong> tab.</p>
+</li>
+<li>
+<p>Activate the characteristic in the <strong>Activate further characteristics</strong> area.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The characteristic is displayed in the <strong>Characteristics</strong> area.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Carry out additional settings. Pay attention to the explanations regarding <a href="/en/item/managing-items#80">characteristics</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 </div><div class="sect1">
@@ -563,7 +639,7 @@
 <p>Click on <strong>New export</strong>.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the explanations given in <a href="#settings-item-export-bol">Table 2</a>.</p>
+<p>Carry out the settings. Pay attention to the explanations given in <a href="#settings-item-export-bol">Table 3</a>.</p>
 </li>
 <li>
 <p>Carry out further settings for item filters and format settings. Pay attention to the explanations given in table 2 on the <a href="/en/data/exporting-data/elastic-export#300">Elastic export</a> page.</p>
@@ -578,7 +654,7 @@
 </ol>
 </div>
 <table id="settings-item-export-bol" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Settings for the item export</caption>
+<caption class="title">Table 3. Settings for the item export</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -644,7 +720,224 @@
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="650">10. Activating the payment method</h2>
+<h2 id="211">10. Setting up Fulfilment by bol.com (FBB/LVB)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>bol.com orders can be fulfilled in two different ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fulfilment by Retailer (FBR) = You ship the order yourself.</p>
+</li>
+<li>
+<p>Fulfilment by bol.com (FBB/LVB) = bol.com ships the order.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note that plentymarkets does not fully support Fulfilment by bol.com. You can mark your items for Fulfilment by bol.com when you export item data to bol.com. However, FBB orders and returns are not imported to plentymarkets. In addition, stock information can not be retrieved from the bol.com fulfilment warehouse.</p>
+</div>
+<div class="paragraph">
+<p>To sell a variation with Fulfilment by bol.com (FBB or LVB), the settings described in <a href="#table-bol-fbb">Table 4</a> are necessary:</p>
+</div>
+<table id="table-bol-fbb" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Settings for bol.com FBB</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linking the characteristic</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="openblock collapseBox">
+<div class="title">Create the characteristic <strong>bol_fulfillment</strong> and link it to the variation.</div>
+<div class="content">
+<div class="paragraph instruction">
+<p>Creating the characteristic bol_fulfillment:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Item » Characteristics</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>New characteristic</strong> tab.</p>
+</li>
+<li>
+<p>Enter a name for the characteristic under <strong>Name (internal)</strong>.</p>
+</li>
+<li>
+<p>Select <strong>nl</strong> for Dutch from the <strong>Language</strong> drop-down list.</p>
+</li>
+<li>
+<p>Enter the Dutch name that you want to use for this characteristic into the <strong>Name</strong> field.</p>
+</li>
+<li>
+<p>Select the option <strong>Text</strong> from the <strong>Characteristic type</strong> drop-down list.</p>
+</li>
+<li>
+<p>In the row <strong>bol.com characteristic</strong>, enter the text <strong>bol_fulfillment</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Linking the characteristic bol_fulfillment to an item:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item</strong>.</p>
+</li>
+<li>
+<p>Open the item.</p>
+</li>
+<li>
+<p>Click on the <strong>Characteristics</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Activate further characteristics</strong> area, activate the characteristic <strong>bol.fulfillment</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The characteristic is displayed in the <strong>Characteristics</strong> area.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the setting.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Availability</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="openblock collapseBox">
+<div class="title">Activate the market availability <strong>bol.com FBB</strong> for the variation.</div>
+<div class="content">
+<div class="paragraph instruction">
+<p>Activating the market availability bol.com FBB:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » Tab: Variation ID » Tab: Settings</strong>.</p>
+</li>
+<li>
+<p>Open the variation that you want to sell on OTTO Market.</p>
+</li>
+<li>
+<p>Click on the <strong>Availability</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Markets</strong> area, click in the selection field.<br>
+→ A list of all available markets is displayed.</p>
+</li>
+<li>
+<p>Activate the option <strong>bol.com FBB</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1200">11. <em>Check list:</em> Requirements for listing offers on bol.com</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to list your variations as offers on bol.com, the following settings have to be carried out:</p>
+</div>
+<table id="table-bol-variation-checklist" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Mandatory fields for the variation</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Mandatory data</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EAN or ISBN</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An EAN or an ISBN must be saved for the variation.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the <strong>Setup » Item » Barcode</strong> menu, an EAN or ISBN must be created and linked to the referrer bol.com.</p>
+</li>
+<li>
+<p>The EAN must be added to the <strong>Settings</strong> tab of the variation in the <strong>Barcode</strong> area and a barcode code must be entered.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Price</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A price must be saved for the variation.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The sales price must be activated for the referrer bol.com in the <strong>Setup » Item » Sales prices</strong>.</p>
+</li>
+<li>
+<p>The sales price must be added in the <strong>Settings</strong> tab in the <strong>Sales price</strong> area of the variation.</p>
+</li>
+<li>
+<p>A price must be saved for the sales price.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Availability</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The variation must be available for the market.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the <strong>Availability</strong> tab of the variation in the <strong>Markets</strong> area, the marketplace availabilities <strong>bol.com</strong> or <strong>bol.com FBB</strong> must be activated.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Referrer <strong>bol.com</strong> = You ship orders yourself.<br></p>
+</li>
+<li>
+<p>Referrer <strong>bol.com FBB</strong> = bol.com ships your orders.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="650">12. Activating the payment method</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Activate the <a href="/en/payment/managing-payment-methods">payment method</a> <strong>Bol.com</strong> as described below.</p>
@@ -679,7 +972,7 @@
 </ol>
 </div>
 <table id="able-payment-method" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Settings for the payment method</caption>
+<caption class="title">Table 6. Settings for the payment method</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -792,7 +1085,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="700">11. Automatically sending shipping confirmations</h2>
+<h2 id="700">13. Automatically sending shipping confirmations</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send shipping confirmations to bol.com when the outgoing items have been booked.</p>
@@ -813,13 +1106,13 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#event-procedure-shipping-confirmation-bol">Table 4</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-shipping-confirmation-bol">Table 7</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#event-procedure-shipping-confirmation-bol">Table 4</a>.</p>
+<p>Carry out the settings according to <a href="#event-procedure-shipping-confirmation-bol">Table 7</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -832,7 +1125,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </div>
 </div>
 <table id="event-procedure-shipping-confirmation-bol" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Event procedure for automatically sending shipping confirmations to bol.com</caption>
+<caption class="title">Table 7. Event procedure for automatically sending shipping confirmations to bol.com</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -870,7 +1163,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="900">12. Automatically sending cancellations</h2>
+<h2 id="900">14. Automatically sending cancellations</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform bol.com of cancellations. Whenever you are dealing with cancellations, you need to send bol.com a reason for the cancellation. Open the <strong>System » Orders » Status</strong> menu and create additional order statuses as needed. The following cancellation reasons can be transferred to bol.com:</p>
@@ -931,13 +1224,13 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#event-procedure-cancellations-bol">Table 5</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-cancellations-bol">Table 8</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#event-procedure-cancellations-bol">Table 5</a>.</p>
+<p>Carry out the settings according to <a href="#event-procedure-cancellations-bol">Table 8</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -950,7 +1243,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </div>
 </div>
 <table id="event-procedure-cancellations-bol" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Event procedure for automatically sending cancellations to bol.com</caption>
+<caption class="title">Table 8. Event procedure for automatically sending cancellations to bol.com</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -988,7 +1281,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="800">13. Automatically sending the return status</h2>
+<h2 id="800">15. Automatically sending the return status</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform bol.com of the status of a return. bol.com requests the status of returns. The following return statuses can be sent to bol.com:</p>
@@ -1031,13 +1324,13 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#event-procedure-return-status-bol">Table 6</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-return-status-bol">Table 9</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#event-procedure-return-status-bol">Table 6</a>.</p>
+<p>Carry out the settings according to <a href="#event-procedure-return-status-bol">Table 9</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1050,7 +1343,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </div>
 </div>
 <table id="event-procedure-return-status-bol" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 6. Event procedure for automatically sending return statuses to bol.com</caption>
+<caption class="title">Table 9. Event procedure for automatically sending return statuses to bol.com</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1088,7 +1381,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="810">14. Sending information on direct returns to bol.com</h2>
+<h2 id="810">16. Sending information on direct returns to bol.com</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In addition, set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform bol.com about returns that customers sent back to you directly without registering the return with bol.com first. bol.com requests the status of returns. The following return statuses can be sent to bol.com:</p>
@@ -1131,13 +1424,13 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#event-procedure-return-bol">Table 7</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-return-bol">Table 10</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#event-procedure-return-bol">Table 7</a>.</p>
+<p>Carry out the settings according to <a href="#event-procedure-return-bol">Table 10</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1150,7 +1443,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </div>
 </div>
 <table id="event-procedure-return-bol" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 7. Event procedure to inform bol.com about returns</caption>
+<caption class="title">Table 10. Event procedure to inform bol.com about returns</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1188,7 +1481,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="1000">15. Viewing log entries</h2>
+<h2 id="1000">17. Viewing log entries</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <strong>Data » Log</strong> menu contains a history of processes that run via the bol.com interface. For bol.com, you can filter by the identifier <strong>bol.com</strong>.</p>
@@ -1219,10 +1512,10 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </ol>
 </div>
 <div class="paragraph">
-<p>Use the reference types and reference values listed in <a href="#table-reference-types">Table 8</a> to filter the search results:</p>
+<p>Use the reference types and reference values listed in <a href="#table-reference-types">Table 11</a> to filter the search results:</p>
 </div>
 <table id="table-reference-types" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. Reference types and reference values for bol.com</caption>
+<caption class="title">Table 11. Reference types and reference values for bol.com</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -1297,92 +1590,6 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </tr>
 </tbody>
 </table>
-</div>
-</div><div class="sect1">
-<h2 id="1100">16. FAQ</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="1200">16.1. Requirements for listing offers on bol.com</h3>
-<div class="sect4">
-<h5 id="_which_settings_have_to_be_saved_to_sell_a_variation_on_bol_com">Which settings have to be saved to sell a variation on bol.com?</h5>
-<div class="paragraph indented">
-<p>In order to list your variations as offers on bol.com, the following settings have to be carried out:</p>
-</div>
-<table id="bol-variations-mandatory" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. Mandatory fields for the variation</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Mandatory data</th>
-<th class="tableblock halign-left valign-top">Explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EAN or ISBN</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>An EAN or an ISBN must be saved for the variation.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>In the <strong>Setup » Item » Barcode</strong> menu, an EAN or ISBN must be created and linked to the referrer bol.com.</p>
-</li>
-<li>
-<p>The EAN must be added to the <strong>Settings</strong> tab of the variation in the <strong>Barcode</strong> area and a barcode code must be entered.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Price</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A price must be saved for the variation.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The sales price must be activated for the referrer bol.com in the <strong>Setup » Item » Sales prices</strong>.</p>
-</li>
-<li>
-<p>The sales price must be added in the <strong>Settings</strong> tab in the <strong>Sales price</strong> area of the variation.</p>
-</li>
-<li>
-<p>A price must be saved for the sales price.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Availability</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The variation must be available for the market.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>In the <strong>Availability</strong> tab of the variation in the <strong>Markets</strong> area, the marketplace availabilities <strong>bol.com</strong> or <strong>bol.com FBB</strong> must be added.<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Referrer <strong>bol.com</strong> = You ship orders yourself.<br></p>
-</li>
-<li>
-<p>Referrer <strong>bol.com FBB</strong> = bol.com ships your orders.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 </div>
 </div>
 </main>
