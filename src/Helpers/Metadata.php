@@ -22327,22 +22327,6 @@ class Metadata {
 						"languageID" => "WGTAT45",
 						"children" => 						[
 							[
-								"id" => "61491b8e786957807c6591367ae7da9a",
-								"path" => "business-decisions/plenty-bi/key-figures/usage",
-								"position" => 0,
-								"urlName" => "usage",
-								"url" => "/en/business-decisions/plenty-bi/key-figures/usage",
-								"level" => 4,
-								"title" => "Usage",
-								"keywords" => "Usage, Usage data, Use, Change history, History, Costs, Business Intelligence, BI, Statistic, Statistics, Key figure, Key figures, Dashboard, KPI, KPIs, Key Performance Indicator",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Usage. The following information is available:",
-								"languageID" => "UU0TJVT",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "0e2e6e9fe8698f9729aca4684496c197",
 								"path" => "business-decisions/plenty-bi/key-figures/average-number-of-order-items",
 								"position" => 100,
@@ -22531,6 +22515,22 @@ class Metadata {
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Shipping revenue. The following information is available:",
 								"languageID" => "HDE116B",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "61491b8e786957807c6591367ae7da9a",
+								"path" => "business-decisions/plenty-bi/key-figures/usage",
+								"position" => 1300,
+								"urlName" => "usage",
+								"url" => "/en/business-decisions/plenty-bi/key-figures/usage",
+								"level" => 4,
+								"title" => "Usage",
+								"keywords" => "Usage, Usage data, Use, Change history, History, Costs, Business Intelligence, BI, Statistic, Statistics, Key figure, Key figures, Dashboard, KPI, KPIs, Key Performance Indicator",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Usage. The following information is available:",
+								"languageID" => "UU0TJVT",
 								"children" => [],
 								"hasChildren" => false
 							],
