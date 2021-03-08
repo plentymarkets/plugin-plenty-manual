@@ -7033,22 +7033,6 @@ class Metadata {
 						"languageID" => "WGTAT45",
 						"children" => 						[
 							[
-								"id" => "9e453addbc83de066347ac6aed1d452b",
-								"path" => "business-entscheidungen/plenty-bi/kennzahlen/verbrauch",
-								"position" => 0,
-								"urlName" => "verbrauch",
-								"url" => "/business-entscheidungen/plenty-bi/kennzahlen/verbrauch",
-								"level" => 4,
-								"title" => "Verbrauch",
-								"keywords" => "Verbrauch, Verbrauchsdaten, Nutzung, Nutzungsdaten, Usage, Änderungshistorie, Historie, Kosten, Business Intelligence, Statistik, Statistiken, Kennzahl, Kennzahlen, Dashboard, KPI, KPIs, Key Performance Indicator",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Verbrauch. Hier findest du folgende Informationen:",
-								"languageID" => "UU0TJVT",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "a5aaa47416a1604c85dc5c2ab04ad9d3",
 								"path" => "business-entscheidungen/plenty-bi/kennzahlen/absatz",
 								"position" => 100,
@@ -7237,6 +7221,22 @@ class Metadata {
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Umsatzsteuer gesamt. Hier findest du folgende Informationen:",
 								"languageID" => "W464CF4",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "9e453addbc83de066347ac6aed1d452b",
+								"path" => "business-entscheidungen/plenty-bi/kennzahlen/verbrauch",
+								"position" => 1300,
+								"urlName" => "verbrauch",
+								"url" => "/business-entscheidungen/plenty-bi/kennzahlen/verbrauch",
+								"level" => 4,
+								"title" => "Verbrauch",
+								"keywords" => "Verbrauch, Verbrauchsdaten, Nutzung, Nutzungsdaten, Usage, Änderungshistorie, Historie, Kosten, Business Intelligence, Statistik, Statistiken, Kennzahl, Kennzahlen, Dashboard, KPI, KPIs, Key Performance Indicator",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Verbrauch. Hier findest du folgende Informationen:",
+								"languageID" => "UU0TJVT",
 								"children" => [],
 								"hasChildren" => false
 							],
