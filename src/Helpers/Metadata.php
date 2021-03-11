@@ -6528,7 +6528,7 @@ class Metadata {
 				"url" => "/pos/pos-einrichten",
 				"level" => 2,
 				"title" => "plentyPOS einrichten",
-				"keywords" => "plentymarkets POS, plentyPOS, plenty POS, Kasse, Kassensystem, Kassen, IDEA-Export, IDEA, GoBD, Kassenjournal, Kassenbuch, GoBD konform, Registrierkasse, RKSV, DEP-Export, mobile Kasse, mobile Registrierkasse, Smartphone-Kasse, Kasse Sicherheitseinrichtung, Vertrauensdiensteanbieter POS, Vertrauensdiensteanbieter Kasse, Registrierkassensicherheitsverordnung, Kasse Österreich, POS Österreich, rechtssichere Kasse, RKSV-konform, plentyPOS, RKSV, Startbeleg, QR-Code, mobile Kassa, Kassasoftware, Kassensoftware, Kassa-Software, Kassen-Software, Laufkundschaft, Laufkunden, Kundenkarte, Kundenkarten, Barcode-Karte, Barcode-Karten",
+				"keywords" => "plentymarkets POS, plentyPOS, plenty POS, Kasse, Kassensystem, Kassen, IDEA-Export, IDEA, GoBD, Kassenjournal, Kassenbuch, GoBD konform, Registrierkasse, RKSV, DEP-Export, mobile Kasse, mobile Registrierkasse, Smartphone-Kasse, Kasse Sicherheitseinrichtung, Vertrauensdiensteanbieter POS, Vertrauensdiensteanbieter Kasse, Registrierkassensicherheitsverordnung, Kasse Österreich, POS Österreich, rechtssichere Kasse, RKSV-konform, plentyPOS, RKSV, Startbeleg, QR-Code, mobile Kassa, Kassasoftware, Kassensoftware, Kassa-Software, Kassen-Software, Laufkundschaft, Laufkunden, Kundenkarte, Kundenkarten, Barcode-Karte, Barcode-Karten, Kasse entkoppeln, POS entkoppeln, plentyPOS entkoppeln, Gerät entkoppeln, Geräte entkoppeln",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich plentyPOS einrichten. Hier findest du folgende Informationen:",
@@ -14334,7 +14334,7 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 04. März 2021",
+		"navAlias" => "Changelog 10. März 2021",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
