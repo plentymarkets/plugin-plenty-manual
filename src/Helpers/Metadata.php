@@ -21871,7 +21871,7 @@ class Metadata {
 				"url" => "/en/pos/integrating-plentymarkets-pos",
 				"level" => 2,
 				"title" => "Integrating plentyPOS",
-				"keywords" => ":keywords: plentymarkets POS, POS, point of sale, POS system, points of sale, IDEA export, IDEA, GoBD, cash journal, POS journal, RKSV, DEP export, mobile POS, smartphone POS, plentyPOS, POS system, IDEA export, IDEA, GoBD, cash journal, mobile POS, smartphone POS, security device, POS Austria, POS legal, RKSV conformity, QR code, loyalty card, loyalty cards, barcode card, barcode cards",
+				"keywords" => ":keywords: plentymarkets POS, POS, point of sale, POS system, points of sale, IDEA export, IDEA, GoBD, cash journal, POS journal, RKSV, DEP export, mobile POS, smartphone POS, plentyPOS, POS system, IDEA export, IDEA, GoBD, cash journal, mobile POS, smartphone POS, security device, POS Austria, POS legal, RKSV conformity, QR code, loyalty card, loyalty cards, barcode card, barcode cards, unlink POS, unlink plentyPOS, unlink device, unlink devices",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Integrating plentyPOS. The following information is available:",
