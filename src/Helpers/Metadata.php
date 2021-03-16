@@ -21887,7 +21887,7 @@ class Metadata {
 				"url" => "/en/pos/pos-online-orders",
 				"level" => 2,
 				"title" => "Processing online orders with plentyPOS",
-				"keywords" => "plentymarkets POS, plentyPOS, plenty POS, point of sale, point of sale system, points of sale, POS Click and Collect, POS Click&amp;Collect, POS Click and Collect, POS Click &amp; Collect, POS self-pickup, brick-and-mortar store, online order, POS online order, POS online orders",
+				"keywords" => "plentymarkets POS, plentyPOS, plenty POS, POS, POS system, point of sale system, POS Click and Collect, POS Click&amp;Collect, Click &amp; Collect, POS self-pickup, brick-and-mortar store, online order, POS online order, online orders, POS online orders",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Processing online orders with plentyPOS. The following information is available:",
