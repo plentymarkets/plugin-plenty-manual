@@ -40,13 +40,7 @@
 <li><a href="#2000"><span>2.2.4.</span><span> Error logs</span></a></li>
 </ul>
 </li>
-<li><a href="#2100"><span>2.3.</span><span> Applying the calculation to products</span></a>
-<ul class="sectlevel3">
-<li><a href="#2120"><span>2.3.1.</span><span> Manually</span></a></li>
-<li><a href="#2140"><span>2.3.2.</span><span> Import</span></a></li>
-<li><a href="#2160"><span>2.3.3.</span><span> Group function or batch processing</span></a></li>
-</ul>
-</li>
+<li><a href="#2100"><span>2.3.</span><span> Applying the calculation to products</span></a></li>
 <li><a href="#2200"><span>2.4.</span><span> FAQ</span></a></li>
 </ul>
 </li>
@@ -668,6 +662,9 @@ The old tool is <a href="/en/item/settings/prices#2300">described here</a>.</p>
 <li>
 <p><a href="/en/item/settings/prices#2100">Apply the calculation to your products</a></p>
 </li>
+<li>
+<p><a href="/en/item/settings/prices#2000">Check the error log and fix any problems</a></p>
+</li>
 </ul>
 </div>
 <div class="sect2">
@@ -755,7 +752,7 @@ Rather, the recalculation starts after a short delay (about 3 minutes).</p>
 For example, you could start with the purchase price and then add transportation costs, storage costs and taxes.
 Finally, you could add a 7% profit margin on top.
 In this case, the formula might look something like this:<br>
-<code>Purchase + Transport + Storage + VAT) * 1.07</code></p>
+<code>(Purchase + Transport + Storage + VAT) * 1.07</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1434,8 +1431,13 @@ Click on a variation ID to open the variation and fix the errors.</p></td>
 </div>
 <div class="sect2">
 <h3 id="2100">2.3. Applying the calculation to products</h3>
-<div class="sect3">
-<h4 id="2120">2.3.1. Manually</h4>
+<ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
+                                <a class="nav-link active" id="manually-tab" data-toggle="tab" href="#manually" role="tab" aria-controls="manually" aria-selected="true">Manually</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="import-tab" data-toggle="tab" href="#import" role="tab" aria-controls="import" aria-selected="false">Import</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="group-function-or-batch-processing-tab" data-toggle="tab" href="#group-function-or-batch-processing" role="tab" aria-controls="group-function-or-batch-processing" aria-selected="false">Group function or batch processing</a>
+                            </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="manually" role="tabpanel" aria-labelledby="manually-tab">
 <div class="paragraph">
 <p>If you only want to save the price calculation <em>for a few items</em>, then it makes sense to manually link the price calculation.</p>
 </div>
@@ -1456,19 +1458,12 @@ Click on a variation ID to open the variation and fix the errors.</p></td>
 </li>
 </ol>
 </div>
-</div>
-<div class="sect3">
-<h4 id="2140">2.3.2. Import</h4>
+</div><div class="tab-pane fade" id="import" role="tabpanel" aria-labelledby="import-tab">
 <div class="paragraph">
 <p>If you want to save the price calculation <em>for lots of items</em>, then we would recommend linking the price calculation via import.
 Use the mapping field <strong>Item variations / Price calculation UUID</strong> to do so.</p>
 </div>
 <h5 id="_further_information" class="discrete">Further information</h5>
-<div class="exampleblock row">
-<div class="content">
-<div class="exampleblock col-md-6">
-<div class="title">Import-Tool</div>
-<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -1479,13 +1474,7 @@ Use the mapping field <strong>Item variations / Price calculation UUID</strong> 
 </li>
 </ul>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="2160">2.3.3. Group function or batch processing</h4>
+</div><div class="tab-pane fade" id="group-function-or-batch-processing" role="tabpanel" aria-labelledby="group-function-or-batch-processing-tab">
 <div class="paragraph">
 <p>If you want to save the price calculation <em>for lots of items</em>, then we would recommend linking the price calculation via group function or batch processing.</p>
 </div>
@@ -1536,7 +1525,7 @@ Use the mapping field <strong>Item variations / Price calculation UUID</strong> 
 </li>
 </ol>
 </div>
-</div>
+</div></div>
 </div>
 <div class="sect2">
 <h3 id="2200">2.4. FAQ</h3>
@@ -1555,7 +1544,7 @@ You will see how many variations are affected.</p>
 </li>
 <li>
 <p><strong><em>Modifying the value for a variable</em></strong>: Imagine your prices are calculated with the following formula:
-<code>Purchase + Transport + Storage + VAT) * 1.07</code>.
+<code>(Purchase + Transport + Storage + VAT) * 1.07</code>.
 If you change a product’s purchase price, transportation costs, storage costs or VAT, then new data will flow into the formula and the price will be recalculated.
 <a href="/en/item/settings/prices#1350">The variables</a> that can be added to a formula are constantly being monitored for changes.</p>
 </li>
@@ -1589,7 +1578,7 @@ If the prices were recalculated immediately, then the first recalculation might 
 <div class="paragraph">
 <p>The price will not be calculated.
 Imagine your prices are calculated with the following formula:
-<code>Purchase + Transport + Storage + VAT) * 1.07</code>.
+<code>(Purchase + Transport + Storage + VAT) * 1.07</code>.
 In this example, if you forgot to save a purchase price for an item, then its price will not be calculated.
 <a href="/en/item/settings/prices#2000">Open the error log</a> to see if any values are missing for your products.
 The error log tells you which variations cannot be calculated and why.</p>
