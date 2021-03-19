@@ -1,0 +1,361 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Warenkorbaktualisierung</h1><div class="sect1">
+<h2 id="_warenkorbaktualisierung_mit_benutzer_feedback">Warenkorbaktualisierung mit Benutzer-Feedback</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mit der <a href="/cms-syntax/rest-api">REST-API</a> ist es möglich, Elemente im Shop zu aktualisieren, ohne die Seite dafür neu laden zu müssen. In diesem Beispiel wird die REST-API verwendet, um
+die Anzahl der Artikel im Warenkorb zu aktualisieren und die Warenkorbvorschau drei Sekunden einzublenden, nachdem der Kunde einen Artikel in den Warenkorb gelegt hat.</p>
+</div>
+<div class="paragraph">
+<p>Verwendete REST-URIs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/webshop/webshop-einrichten/_cms-syntax/fallbeispiele/warenkorbaktualisierung#checkout/basketitemslist">POST /rest/checkout/basketitemslist/</a></p>
+</li>
+<li>
+<p><a href="/webshop/webshop-einrichten/_cms-syntax/fallbeispiele/warenkorbaktualisierung#checkout/basketitemslist">GET /rest/checkout/basketitemslist/</a></p>
+</li>
+<li>
+<p><a href="/webshop/webshop-einrichten/_cms-syntax/fallbeispiele/warenkorbaktualisierung#itemview/container_itemviewbasketpreviewlist">GET /rest/itemview/container_itemviewbasketpreviewlist/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Der in diesem Beispiel gezeigte Code kann nach jeder Schaltfläche eingefügt werden, der im Bereich der ItemView-Templates verwendet wird und
+das CLASS-Attribut mit dem Wert <strong>add_Basket_Item</strong> besitzt.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_voraussetzungen">Voraussetzungen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Für dieses Fallbeispiel wird Folgendes vorausgesetzt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Grundkenntnisse des Frameworks jQuery</p>
+</li>
+<li>
+<p>Verwendung des Designs callisto_light</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_artikel_serverseitig_ablegen">Artikel serverseitig ablegen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ein Artikel wird durch Aufrufen der REST-URI <strong>/rest/checkout/basketitemslist/</strong> mit der POST-Methode serverseitig in den Warenkorb gelegt.</p>
+</div>
+<div class="paragraph">
+<p>Unten findest du ein Beispiel für einen Aufruf, über den ein Artikel per REST an den Server gesendet wird.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&lt;script type="text/javascript"&gt;
+	{# Senden der Artikel an den Server per REST-Methode. #}
+	$.ajax(
+		"/rest/checkout/basketitemslist/",
+		{
+			type: 'POST',
+			dataType: 'json',
+			data: article,
+			success: function ()
+			{
+				{#
+					Ist das Ablegen der Artikel auf dem Server positiv,
+					wird diese Funktion ausgeführt.
+				#}
+			},
+			error: function ()
+			{
+				{# Fehlerbehandlung #}
+			}
+		}
+	);
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_frontend_aktualisieren">Frontend aktualisieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nachdem ein Artikel serverseitig in den Warenkorb gelegt wurde, müssen die Elemente im Frontend aktualisiert werden,
+damit dem Kunden die neue Artikelanzahl angezeigt wird. Dazu wird zunächst die neue Anzahl der Artikel im Warenkorb über die REST-Schnittstelle abgefragt.</p>
+</div>
+<div class="sect2">
+<h3 id="_artikel_im_warenkorb_berechnen">Artikel im Warenkorb berechnen</h3>
+<div class="paragraph">
+<p>Mit der REST-URI <strong>/rest/checkout/basketitemslist/</strong> wird durch die GET-Methode die aktuelle Anzahl der Artikel im Warenkorb abgefragt.</p>
+</div>
+<div class="paragraph">
+<p>Verschiedene Artikel können verschiedene Mengen haben. Es ist daher nötig, alle Artikel zu iterieren und die Gesamtmenge zu addieren.
+Die Artikel aus dem Warenkorb befinden sich im <em>data</em>-Array des Response-Objekts, das der Success-Funktion übergeben wird. Die Eigenschaft <strong>BasketItemQuantity</strong> beschreibt die Anzahl eines Artikels.
+Nachdem die Anzahl der Artikel im Warenkorb berechnet wurde, wird das jQuery-Element <strong>$('#basket_quantity')</strong>, das die Anzahl der Artikel im Warenkorb anzeigt, aktualisiert.</p>
+</div>
+<div class="paragraph">
+<p>Unten findest du ein Beispiel für einen REST-Aufruf, um die Anzahl der Artikel im Warenkorb abzufragen und zu addieren.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&lt;script type="text/javascript"&gt;
+	{#
+		Abrufen des aktuellen Stands des Warenkorbs.
+
+		Dieses Code-Beispiel veranschaulicht die Berechnung der Anzahl der Artikel
+		die sich im Warenkorb befinden und welche Manipulationen im Frontend
+		angewandt werden müssen, um die Warenkorbvorschau zu aktualisieren.
+	#}
+	$.ajax(
+		"/rest/checkout/basketitemslist/",
+		{
+			type: 'GET',
+			dataType: 'json',
+			{#
+				Verlief das Abrufen des aktuellen Stands des
+				Warenkorbs positiv, wird die Success-Funktion aufgerufen.
+			#}
+			success: function(response)
+			{
+				{# Berechnen der Anzahl der Arikel im Warenkorb. #}
+				var count = 0;
+				$.each(response.data, function(i, el)
+				{
+					count += el.BasketItemQuantity;
+				});
+
+				{# Ersetzen der Anzahl der Artikel im Warenkorb im Header-Menü. #}
+				$('#basket_quantity').text(count);
+
+				{# Entsperren des Warenkorbmenüs, wenn der Warenkorb vorher leer war. #}
+				$("[data-plenty-basket-empty]").removeClass("disabled");
+			},
+			error: function()
+			{
+				{# Fehlerbehandlung #}
+			}
+		}
+	);
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_warenkorbliste_aktualisieren">Warenkorbliste aktualisieren</h3>
+<div class="paragraph">
+<p>In diesem Schritt wird die veraltete Liste des Warenkorbs durch die neue Liste ersetzt. Der REST-URI <strong>/rest/itemview/container_itemviewbasketpreviewlist/</strong> liefert ein HTML-Fragment zurück, das nur noch an der gewünschten Stelle eingefügt werden muss.</p>
+</div>
+<div class="paragraph">
+<p>Wie im Beispiel zuvor, befindet sich das HTML-Fragment im Response-Objekt, das der Success-Funktion übergeben wird - ebenfalls im <em>data</em>-Array.
+Das HTML-Element, das im Design callisto_light die Warenkorbvorschau enthält, kannst du mit dem jQuery-Selektor <strong>$('[data-plenty-remotetabs-id="aside"]')</strong> wählen. Die veraltete Warenkorbliste wird entfernt, indem die jQuery-Funktion empty() auf das zuvor
+gewählte Element angewendet wird. Dadurch ist sichergestellt, dass nicht zwei Warenkorblisten in der Warenkorbvorschau auftauchen. Um die Warenkorbvorschau anschließend
+für wenige Sekunden einzublenden, wird der jQuery-Selektor <strong>$(".isBasketPreview &gt; .dropdown-menu")</strong> verwendet. Für die Zeitverzögerung, um die
+Warenkorbvorschau wieder auszublenden, empfiehlt es sich, die native JavaScript-Funktion <strong>setTimeout()</strong> zu verwenden.</p>
+</div>
+<div class="paragraph">
+<p>Unten findest du ein Code-Beispiel, um die Warenkorbvorschau zu aktualisieren und den Warenkorb drei Sekunden einzublenden.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&lt;script type="text/javascript"&gt;
+	{#
+		Aktualisieren der Warenkorbliste in der Warenkorbvorschau.
+
+		Der REST-URI gibt ein HTML-Fragment mit einer Liste der	im Warenkorb
+		befindlichen Artikeln zurück.
+		Wenn der Aufruf erfolgreich war, wird die alte Warenkorbliste mit der neuen
+		vom Server generierten Liste ersetzt. Im Anschluss wird die
+		Warenkorbvorschau für 3 Sekunden eingeblendet.
+	#}
+	$.ajax(
+		"/rest/itemview/container_itemviewbasketpreviewlist/",
+		{
+			type: "GET",
+			dataType: "json",
+			{#
+				Verlief das Abrufen der aktuellen Liste des Warenkorbbestands
+				positiv, wird die Success-Funktion aufgerufen.
+			#}
+			success: function(response)
+			{
+				{#
+					Vor dem Einfügen des Containers mit der Warenkorbliste, wird
+					der Container mit der "alten" Liste durch die Funktion
+					"empty()" entfernt. Danach wird die neue Liste eingefügt.
+				#}
+				$('[data-plenty-remotetabs-id="aside"]').empty().append($(response.data[0]));
+
+				{# Einblenden des Warenkorbs. #}
+				$(".isBasketPreview &gt; .dropdown-menu").fadeIn();
+				setTimeout(function()
+				{
+					{# Ausblenden des Warenkorbs nach 3 Sekunden. #}
+					$(".isBasketPreview &gt; .dropdown-menu").removeAttr("style");
+				}, 3000);
+			},
+			error: function()
+			{
+				{# Fehlerbehandlung	#}
+			}
+		}
+	);
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_zusammengefasstes_code_beispiel">Zusammengefasstes Code-Beispiel</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Das folgende Code-Beispiel enthält alle Operationen, die auf dieser Seite behandelt wurden, um die Anzahl der Artikel im Warenkorb und den Warenkorb im Header-Bereich zu aktualisieren und die Warenkorbvorschau für drei Sekunden einzublenden.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">{#
+	In diesem Beispiel wird einem Button-Element ein Click-Event angehangen, das
+	- einen ausgewählten Artikel serverseitig in den Warenkorb legt,
+	- den neuen Warenkorbbestand abruft,
+	- aus dem Warenkorbbestand die Anzahl der Artikel im Warenkorb berechnet,
+	- eine aktuelle Liste der im Warenkorb befindlichen Arikeln als HTML-Fragment
+	  vom Server anfordert,
+	- die Warenkorblist der Warenkorbvorschau mit dieser Liste ersetzt und
+	- die Warenkorbvorschau für 3 Sekunden einblendet.
+#}
+&lt;button type="button" class="btn btn-primary add_To_Basket"&gt;
+	&lt;span class="glyphicon glyphicon-shopping-cart"&gt;&lt;/span&gt; in den Warenkorb
+&lt;/button&gt;
+&lt;script type="text/javascript"&gt;
+	(function($)
+	{
+		{# Minimalbeispiel für ein Artikel-Objekt. #}
+		var article = JSON.stringify(
+					[{
+						BasketItemItemID: $ID, 			{# ID des Artikels, den du in den Warenkorb legen willst. #}
+						BasketItemPriceID: $PriceID, 	{# Die ID des Preissets des Artikels. #}
+						BasketItemQuantity: 1 			{# Die Stückzahl der Artikel die du in den Warenkorb legen willst. #}
+					}]);
+
+		{# Hinzufügen eines Click-Events an Button mit der CSS-Klasse "add_To_Basket". #}
+		$(".add_To_Basket").click(function()
+		{
+			{# Senden der Artikel an den Server per REST-Methode. #}
+			$.ajax(
+				"/rest/checkout/basketitemslist/",
+				{
+					type: 'POST',
+					dataType: 'json',
+					data: article,
+					success: function ()
+					{
+						{#
+							Sofern das Ablegen der Artikel auf dem Server positiv
+							verlaufen ist, wird diese Funktion ausgeführt.
+						#}
+
+						{# Abrufen des neuen/aktuellen Stand des Warenkorbs. #}
+						$.ajax(
+							"/rest/checkout/basketitemslist/",
+							{
+								type: 'GET',
+								dataType: 'json',
+								success: function(response)
+								{
+									{#
+										Sofern das Abrufen des aktuellen Stand des
+										Warenkorbs positiv verlief, wird diese
+										Funktion aufgerufen.
+									#}
+
+									var count = 0;
+									$.each(response.data, function(i, el)
+									{
+										count += el.BasketItemQuantity;
+									});
+
+									{#
+										Ersetzen der Anzahl der Artikel im
+										Warenkorb im Header-Menü.
+									#}
+									$('#basket_quantity').text(count);
+
+									{#
+										Entsperren des Warenkorbmenüs, wenn der
+										Warenkorb vorher leer war.
+									#}
+									$("[data-plenty-basket-empty]").removeClass("disabled");
+								},
+								error: function()
+								{
+									{# Fehlerbehandlung #}
+								}
+							}
+						);
+
+						{#
+							Aktualisieren der Warenkorbliste in der Warenkorbvorschau.
+
+							Der REST-URI gibt ein HTML-Fragment mit einer Liste der
+							im Warenkorb befindlichen Artikeln zurück.
+						#}
+						$.ajax(
+							"/rest/itemview/container_itemviewbasketpreviewlist/",
+							{
+								type: "GET",
+								dataType: "json",
+								success: function(response)
+								{
+									{#
+										Sofern das Abrufen der aktuellen Liste des
+										Warenkorbbestands positiv verlief, wird diese
+										Funktion aufgerufen.
+									#}
+
+									{#
+										Vor dem Einfügen des Containers mit der
+										Warenkorbliste, wird erst der Container mit
+										der "alten" Liste durch die Funktion empty()
+										entfernt.
+									#}
+									$('[data-plenty-remotetabs-id="aside"]').empty().append($(response.data[0]));
+
+									{# Einblenden des Warenkorbs. #}
+									$(".isBasketPreview &gt; .dropdown-menu").fadeIn();
+									setTimeout(function()
+									{
+										{# Ausblenden des Warenkorbs nach 3 Sekunden. #}
+										$(".isBasketPreview &gt; .dropdown-menu").removeAttr("style");
+									}, 3000);
+								},
+								error: function()
+								{
+									{# Fehlerbehandlung	#}
+								}
+							});
+					},
+					error: function ()
+					{
+						{# Fehlerbehandlung #}
+					}
+				}
+			);
+		});
+	})(jQuery);
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</main>

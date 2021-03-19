@@ -1,0 +1,209 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>if</h1><div class="sect1">
+<h2 id="_video_tutorial">Video-Tutorial</h2>
+<div class="sectionbody">
+<div class="videoblock">
+<div class="content">
+<iframe src="https://player.vimeo.com/video/128941700" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_if">if</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ein if-Konstrukt ermöglicht die Darstellung von Inhalten, wenn bestimmte Bedingungen erfüllt sind.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">if &lt;emAusdruck&lt;/em&gt;
+&lt;emInhalt&lt;/em&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Darstellung von <em>Inhalt</em> erfolgt erst, wenn <em>Ausdruck</em> wahr ist. <em>Ausdruck</em> wird zu einem boolschen Wahrheitswert (TRUE oder FALSE) ausgewertet. Evaluiert <em>Ausdruck</em> zu <strong>TRUE</strong>, wird <em>Inhalt</em> ausgegeben, andernfalls wird <em>Inhalt</em> ignoriert.</p>
+</div>
+<div class="paragraph">
+<p>In der einfachsten Form besteht ein if-Konstrukt aus nur einer Bedingung, die durch den Ausdruck <strong>if</strong> eingeleitet wird. Der darauf folgende Inhalt wird dargestellt oder ein Funktionsaufruf ausgeführt.</p>
+</div>
+<div class="paragraph">
+<p>In einzeiligen Code-Blöcken muss ein if-Konstrukt mit dem Ausdruck <strong>endif</strong> abgeschlossen werden.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if $_a &gt; $_b &#37;&#125;
+	a ist größer als b
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	if($_a &gt; $_b)
+	{
+ 		print("a ist größer als b");
+	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_else">else</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Oft ist der Wunsch eine Anweisung auszuführen, wenn eine bestimmte Bedingung erfüllt ist, und eine andere Anweisung, wenn die Bedienung nicht erfüllt ist. Dies ist der Einsatzzweck von <strong>else</strong>. else erweitert eine if-Anweisung um eine weitere Anweisung, die ausgeführt werden soll, wenn der Ausdruck in der if-Anweisung zu <strong>FALSE</strong> ausgewertet wird. Der unten beschriebene Programmcode würde <em>a ist größer als b</em> ausgeben, wenn der Wert in$<em>agrößer als der Wert in$_bist, ansonsten wäre die Ausgabe: _a ist NICHT größer als b</em>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if $_a &gt; $_b &#37;&#125;
+	a ist größer als b
+&#123;&#37; else &#37;&#125;
+	a ist NICHT größer als b
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative_2" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	if($_a &gt; $_b)
+ 	{
+		print("a ist größer als b");
+	}
+	else
+	{
+		print("a ist NICHT größer als b");
+ 	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die else-Anweisung wird nur ausgeführt, wenn der if-Ausdruck als <strong>FALSE</strong> ausgewertet wurde.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_elseif">elseif</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>elseif</strong> ist eine Kombination aus <strong>if</strong> und <strong>else</strong>. Wie <strong>else</strong> erweitert <strong>elseif</strong> ein if-Konstrukt, um alternative Inhalte darzustellen, wenn die ursprüngliche if-Bedingung nicht zutrifft. Im Gegensatz zu <strong>else</strong> werden die Alternativinhalte aber nur dargestellt, wenn die <strong>elseif</strong>-Bedingung zutrifft. Der folgende Beispielcode gibt <em>a ist größer als b</em>, <em>a ist genauso groß wie b</em> oder <em>a ist kleiner als b</em> aus:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if $_a &gt; $_b &#37;&#125;
+	a ist größer als b
+&#123;&#37; elseif $_a == $_b &#37;&#125;
+	a ist genauso groß wie b
+&#123;&#37; else &#37;&#125;
+	a ist kleiner als b
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative_3" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	if($_a &gt; $_b)
+	{
+ 		print("a ist größer als b");
+	}
+	elseif($_a == $_b)
+	{
+ 		print("a ist gleich groß wie b");
+	}
+	else
+	{
+ 		print("a ist kleiner als b");
+	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Innerhalb einer if-Kontrollstruktur können mehrere elseif-Strukturen benutzt werden. Die erste, deren Bedingung zutrifft, wird ausgeführt.</p>
+</div>
+<div class="paragraph">
+<p>Der elseif-Teil wird nur ausgeführt, wenn die vorhergehende if-Bedingung und alle vorhergehenden elseif-Bedingungen nicht zutreffen (<strong>FALSE</strong>) und die aktuelle elseif-Bedingung zutrifft (<strong>TRUE</strong>).</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_contains">contains</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die <strong>contains</strong>-Bedingung ist ein Sonderfall, der für besondere Anwendungsfälle implementiert wurde. Mit der Bedingung werden Inhalte dargestellt, die in einer Zeichenkette enthalten sind. Natürlich ist diese Darstellung auch durch mehrere Einzelbedingungen möglich. Somit stellt die <strong>contains</strong>-Bedingung für solche Fälle eine vereinfachte Schreibweise dar.</p>
+</div>
+<div class="paragraph">
+<p>Im folgenden Beispiel erfolgt die Darstellung von Zahlungsinformationen nur, wenn <strong>$MethodOfPaymentID</strong> in der Zeichenkette <strong>"1|2|3"</strong> enthalten ist, also entweder dem Wert 1, 2 oder 3 entspricht. Die Template-Variable <strong>$MethodOfPaymentID</strong> gibt nur Zahlenwerte aus. Dieses Beispiel kann in E-Mail-Vorlagen verwendet werden.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if "1|2|3" contains $MethodOfPaymentID &#37;&#125;
+	Zahlungsinformationen für Nachnahme (ID 1), Rechnung (ID 2) und Lastschrift (ID 3)
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_komplexe_ausdrücke">Komplexe Ausdrücke</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ausdrücke können auch aus mehreren Bedingungen bestehen, die mit einem logischen Operator (*&amp;&amp;, || *) verknüpft werden.</p>
+</div>
+<div class="paragraph">
+<p>Die Verwendung von runden Klammern ist nötig, wenn unterschiedliche Bedingungen gruppiert werden sollen. Bedingungen in einer runden Klammer werden auch als Gruppe ausgewertet und das Ergebnis (TRUE oder FALSE) mit den weiteren Bedingungen ausgewertet.</p>
+</div>
+<div class="paragraph">
+<p>Im folgenden Beispiel muss somit eine Bedingung innerhalb der runden Klammer zutreffen und gleichzeitig <strong>$_d</strong> den boolschen Wert <strong>TRUE</strong> beinhalten. Es würde in dem Beispiel auch ausreichen, wenn <strong>$_b</strong> den Wert <strong>1</strong> und <strong>$_d</strong> den Wert <strong>TRUE</strong> hat.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if ( $_a &amp;gt; 0 || $_b &amp;gt; 0 || $_c &amp;gt; 0) &amp;amp;&amp;amp; $_d == TRUE &#37;&#125;
+	Inhalt
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative_4" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	if(( $_a &gt; 0 || $_b &gt; 0 || $_c &gt; 0) &amp;&amp; $_d == TRUE)
+	{
+		print("Inhalt");
+	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Im nächsten Beispiel wird <em>Inhalt</em> sowohl dargestellt, wenn nur der Wert von <strong>$_a</strong>, <strong>$_b</strong> oder <strong>$_c</strong> größer 0 ist, als auch, wenn der Wert von zweien oder allen dreien größer 0 ist.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if $_a &amp;gt; 0 || $_b &amp;gt; 0 || $_c &amp;gt; 0 &amp;amp;&amp;amp; $_d == TRUE &#37;&#125;
+	Inhalt
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative_5" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	if($_a &amp;gt; 0 || $_b &amp;gt; 0 || $_c &amp;gt; 0 &amp;amp;&amp;amp; $_d == TRUE)
+ 	{
+		print("Inhalt");
+	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Du musst bei der Definition von komplexen Ausrücken also genau wissen, welche Abhängigkeiten zwischen den einzelnen Bedingungen bestehen sollen, um das gewünschte Ergebnis zu erzielen.</p>
+</div>
+</div>
+</div>
+</main>

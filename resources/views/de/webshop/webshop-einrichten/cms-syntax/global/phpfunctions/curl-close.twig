@@ -1,0 +1,87 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>curl_close</h1><div class="sect1">
+<h2 id="_kurzbeschreibung">Kurzbeschreibung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Beendet eine cURL-Session.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_funktionsbeschreibung">Funktionsbeschreibung</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">curl_close( resource $_resource  ) :</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_beispiele">Beispiele</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	# API data
+	$_apiFunction = "ratingstars";
+	$_svStoreID = "5675";
+	$_apiKey = "28ea3dc072c326691814641c3daf5b7e";
+
+	# Builds API URL retrieved
+	$_apiUrl = "https://api.shopvote.de/ratings/v1/"
+			   . $_apiFunction . "/"
+			   . $_svStoreID . "/"
+			   . $_apiKey;
+
+	# Initializes Curl session
+	$_ch = curl_init();
+
+	# Prepares Useragent options as strings
+	$_opt = "SVApiV1; L25ext for ShopID ";
+	$_opt .= $_svStoreID;
+
+	# Sets options for Curl session
+	curl_setopt( $_ch , "CURLOPT_USERAGENT" , $_opt );
+	curl_setopt( $_ch , "CURLOPT_HEADER" , false );
+	curl_setopt( $_ch , "CURLOPT_RETURNTRANSFER" , 1 );
+	curl_setopt( $_ch , "CURLOPT_URL" , $_apiUrl);
+
+	# Runs Curl session and stores result
+	$_output = curl_exec($_ch);
+
+	# Closes Curl session
+	curl_close($_ch);
+
+	# If return value can be converted to simpleXML element,
+	# element is cached and different values written to variables.
+	if (simplexml_load_string($_output) != null)
+	{
+		$_xml = simplexml_load_string($_output);
+		$_storename = $_xml-&gt;name;
+		$_storeprofile = $_xml-&gt;profile;
+		$_storeurl = $_xml-&gt;storeurl;
+		$_rating_stars = $_xml-&gt;rating_summary-&gt;rating_value[0];
+		$_rating_value = $_xml-&gt;rating_summary-&gt;rating_value[1];
+		$_rating_count = $_xml-&gt;rating_summary-&gt;ratings_count;
+		$_positive_rating_count = $_xml-&gt;rating_summary-&gt;ratings_positive;
+		$_neutral_rating_count = $_xml-&gt;rating_summary-&gt;ratings_neutral;
+		$_negative_rating_count = $_xml-&gt;rating_summary-&gt;ratings_negative;
+	}
+&#37;&#125;
+
+{# Output of cached variables with appropriate text #}
+&lt;div&gt;
+	ShopVote rating of $_storeurl: $_rating_value (that are $_ratingstarts / 5 Stars) out of $_rating_count ratings.
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</main>

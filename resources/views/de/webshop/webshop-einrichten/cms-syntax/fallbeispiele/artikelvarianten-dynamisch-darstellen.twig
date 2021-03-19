@@ -1,0 +1,545 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Artikelvarianten dynamisch darstellen</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>In plentymarkets kannst du Artikeln einzelne Attribute zuordnen und über diese Attribute Artikelvarianten erstellen. Die Eigenschaften dieser Artikelvarianten, wie Aufpreise und Attributbilder, sollen visuell und dynamisch im Webshop dargestellt werden. Dabei sollen die angezeigten Informationen und Artikelbilder je nach Auswahl automatisch angepasst werden.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="title">Einstellungen in allen relevanten Templates durchführen</div>
+<div class="paragraph">
+<p>Damit die dynamische Darstellung in allen Ansichten funktioniert, musst di die beschriebenen Schritte in allen relevanten Templates durchführen. Suchergebnisse werden beispielsweise nur dynamisch dargestellt, wenn du das Template unter <strong>CMS » Webdesign » Layout » ItemView » ItemViewSearchResultsList</strong> bearbeitet hast.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_template_variablen_zur_darstellung_von_attributen_einfügen">Template-Variablen zur Darstellung von Attributen einfügen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mit der Template-Variable <strong>$AttributeSelect</strong> werden die Attribute eines Artikels als Dropdown-Liste dargestellt. Mit der Template-Variable <strong>$ImageAttributeList</strong> werden die Attribute eines Artikels nicht nur als Dropdown-Liste dargestellt, sondern auch als Liste mit Vorschaubildern. Die Optionen in der Dropdown-Liste werden dann dynamisch geändert. Auch die Features <strong>Dynamischer Artikelpreis</strong> und <strong>Dynamische Artikelbilder</strong> können genutzt werden. Die Template-Variable <strong>$ImageAttributeList</strong> funktioniert nur, wenn die Attribute einem Bild zugeordnet wurden.</p>
+</div>
+<div class="paragraph">
+<p>Gehe wie unten beschrieben vor, um die Template-Variablen einzufügen. Das Einfügen der Template-Variablen wird beispielhaft für das Template <strong>ItemViewSingleItem</strong> beschrieben. Die Template-Variablen funktionieren aber auch in allen anderen Bereichen, in denen die Template-Variable <strong>$AttributeSelect</strong> eingesetzt werden kann.</p>
+</div>
+<div class="paragraph instruction">
+<p>Template-Variablen einfügen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>CMS » Webdesign</strong> und dort dann <strong>Layout » ItemView » ItemViewSingleItem</strong>.</p>
+</li>
+<li>
+<p>Füge die Template-Variablen <strong>$AttributeSelect</strong> und <strong>$ImageAttributeList</strong> in das Template ein.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_artikelpreise_dynamisch_anzeigen">Artikelpreise dynamisch anzeigen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Um einen dynamischen Artikelpreis anzuzeigen, ersetzt du im Template <strong>ItemViewSingleItem</strong> die Template-Variable <strong>$Price</strong> durch die Template-Variable <strong>$PriceDynamic</strong>. Durch Verwendung der Template-Variable <strong>$PriceDynamic</strong> wird die Anzeige des Artikelpreises je nach Auswahl eines Attributs angepasst. Voraussetzung ist, dass den Artikeln Attribute mit Aufpreisen zugeordnet wurden. Gehe wie unten beschrieben vor, um den Artikelpreis dynamisch anzuzeigen.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/webshop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/DE-CMS-BestPractice-ArtikelvariantenDyn-01-SI.png" alt="DE CMS BestPractice ArtikelvariantenDyn 01 SI">
+</div>
+<div class="title">Figure 1. Beispielansicht für dynamische Artikelpreise</div>
+</div>
+<div class="paragraph instruction">
+<p>Artikelpreise dynamisch anzeigen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>CMS » Webdesign</strong> und dort dann <strong>Layout » ItemView » ItemViewSingleItem</strong>.</p>
+</li>
+<li>
+<p>Füge die Template-Variable <strong>$AttributeSelect</strong> in das Template ein, falls die Variable noch nicht vorhanden ist.</p>
+</li>
+<li>
+<p>Ersetze die Template-Variable <strong>$Price</strong> durch die Template-Variable <strong>$PriceDynamic</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Anzeige der Aufpreise deaktivieren</div>
+<div class="paragraph">
+<p>Um Aufpreise im Auswahlfeld nicht anzuzeigen, öffne das Menü <a href="/webshop/webshop-einrichten/artikelansichten">Einrichtung » Mandant » Mandant wählen » Artikelansichten » Einstellungen</a>. Wähle dort für die Option <strong>Attribut-Aufpreis</strong> die Einstellung <strong>nicht anzeigen</strong>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_artikelbilder_dynamisch_anzeigen">Artikelbilder dynamisch anzeigen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Führe die unten beschrieben Schritte aus, um Artikelbilder dynamisch anzuzeigen.</p>
+</div>
+<div class="sect2">
+<h3 id="_bilderverknüpfung_aktivieren">Bilderverknüpfung aktivieren</h3>
+<div class="paragraph">
+<p>Damit bei Auswahl eines Attributs das richtige <a href="/artikel/artikel-verwalten#450">Artikelbild</a> angezeigt wird, aktivierst du zunächst bei den Attributen die Option <strong>Bildverknüpfung</strong>. Gehe dazu wie folgt vor.</p>
+</div>
+<div class="paragraph instruction">
+<p>Bildverknüpfung aktivieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <a href="/artikel/artikel-verwalten#390">Einrichtung » Artikel » Attribute</a>.</p>
+</li>
+<li>
+<p>Klicke auf das <strong>Plus</strong> bei dem Attribut, das du bearbeiten möchten.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Bildverknüpfung</strong>.</p>
+</li>
+<li>
+<p>Prüfe, ob du die benötigten Attribute den gewünschten Artikeln zugeordnet und die Attribute mit den Artikelbildern verknüpft haben.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_client_prüfung_aktivieren">Client-Prüfung aktivieren</h3>
+<div class="paragraph">
+<p>Aktiviere nun die <a href="/webshop/webshop-einrichten/artikelansichten">Client-Prüfung</a>, um die Attributbilder dynamisch anzuzeigen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_layout_einstellungen_vornehmen">Layout-Einstellungen vornehmen</h3>
+<div class="paragraph">
+<p>Prüfe nun im Menü <strong>CMS » Webdesign</strong> im Bereich <strong>Layout » ItemView</strong>, ob im Template <strong>ItemViewSingleItem</strong> die Template-Variable <strong>$AttributeSelect</strong> vorhanden ist. Erweitere außerdem das Template um das folgende <strong>JavaScript</strong>. Gehe dazu wie unten beschrieben vor.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&lt;script language="javascript" type="text/javascript"&gt;
+   var dynamic_article_image = "middle";
+&lt;/script&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph instruction">
+<p>Code für die Darstellung von Attributbildern im Webdesign einfügen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>CMS » Webdesign</strong> und dort dann <strong>Layout » ItemView » ItemViewSingleItem</strong>.</p>
+</li>
+<li>
+<p>Stelle sicher, dass sich die Template-Variable <strong>$AttributeSelect</strong> im Template befindet.</p>
+</li>
+<li>
+<p>Füge das obige JavaScript in das Template ein.</p>
+</li>
+<li>
+<p>Bearbeite den Wert der Variable <strong>dynamic_article_image</strong>, wenn Bilder nicht in mittlerer Auflösung angezeigt werden sollen. Ersetze den Wert <strong>"middle"</strong> durch <strong>"preview"</strong>, wenn die Vorschaubilder angezeigt werden sollen, oder durch <strong>"normal"</strong>, wenn Bilder in höchster Auflösung angezeigt werden sollen.</p>
+</li>
+<li>
+<p>Dies ist abhängig von der Art deines gewählten Vorschaubilds, erkennbar an der danach eingefügten Variable für das Artikelbild.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Nachfolgend ein Bild eines Beispielcodes, der von Zeile 5 bis 7 das JavaScript und in Zeile 21 die Template-Variable enthält.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/webshop/webshop-einrichten/_cms-syntax/fallbeispiele/assets/DE-CMS-BestPractice-ArtikelvariantenDyn-02-SI.png" alt="DE CMS BestPractice ArtikelvariantenDyn 02 SI">
+</div>
+<div class="title">Figure 2. Beispielcode für dynamische Artikelbilder</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="title">Dynamische Bilder</div>
+<div class="paragraph">
+<p>Dynamische Bilder stehen dir auch im Menü <strong>CMS » Webdesign</strong> und dort unter <strong>Layout » ItemView</strong> im Template <strong>ItemViewCategoriesList</strong> zur Verfügung.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mehr_als_ein_bild_pro_variante_zuordnen">Mehr als ein Bild pro Variante zuordnen</h3>
+<div class="paragraph">
+<p>Einem Attributwert einer Variante im Tab <a href="/artikel/artikel-verwalten#660">Bilder</a> des Artikels können bis zu 7 Bilder zugeordnet werden. Damit der Bilderwechsel in der ItemViewSingleItem-Ansicht funktioniert, müssen die Vorschaubilder in einem DIV-Container mit der ID <strong>PlentyDynamicPreviewImagesContainer</strong> liegen. Außerdem müssen die Bilder in einem a-Tag mit dem unten dargestellten schematischen Aufbau liegen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&lt;div id="PlentyDynamicPreviewImagesContainer" class="articlepicswrapper"&gt;
+    &lt;a href="$ImageURL[1]" name="$MiddleSizeImageURL[1]" rel="{gallery: 'gal1', smallimage: '$MiddleSizeImageURL[1]', largeimage: '$ImageURL[1]'}"&gt;
+    &lt;img src="$PreviewImageURL[1]" alt="$Name[1] 001" class="previewimages"&gt;
+    &lt;/a&gt;
+    &#123;&#37; if $ImageURL[2]!="" &#37;&#125;
+    &lt;a href="$ImageURL[2]" name="$MiddleSizeImageURL[2]" rel="{gallery: 'gal1', smallimage: '$MiddleSizeImageURL[2]',largeimage: '$ImageURL[2]'}"&gt;
+    &lt;img src="$PreviewImageURL[2]" alt="$Name[1] 002" class="previewimages"&gt;
+    &lt;/a&gt;
+    &#123;&#37; endif &#37;&#125;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Das "große" Artikelbild muss folgenden schematischen Aufbau haben (wichtig insbesondere <strong>class</strong> und <strong>rel</strong>), damit die Bilder zum gewählten Attributwert angezeigt werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&lt;a href="$ImageURL[1]" class="jqzoom" rel="gal1"&gt;
+$MiddleSizeImage[1]
+&lt;/a&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_css_anpassen">CSS anpassen</h3>
+<div class="paragraph">
+<p>Die Ansichten der hier beschriebenen Features passt du per CSS an. Wir stellen dir nachfolgend CSS-Codes dazu vor. Die Codes sind Beispiele und können nach Belieben angepasst werden.</p>
+</div>
+<div class="sect3">
+<h4 id="_css_für_client_prüfung_anpassen">CSS für Client-Prüfung anpassen</h4>
+<div class="paragraph">
+<p>Füge den folgenden <a href="/webshop/webshop-einrichten/cms#webdesign-webdesign-bearbeiten-css">CSS-Code</a> im Menü <strong>CMS » Webdesign » Layout » CSS » CSSContent</strong> am Ende des vorhandenen Codes ein. Sichere den vorhandenen Code, bevor du den folgenden Code einfügst.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="title">Hinweis zum Standard-Design farbfinal</div>
+<div class="paragraph">
+<p>Wenn du in deinem Webshop eines unserer Standard-Designs farbfinal nutzen, achte darauf, dass der Abschnitt /* DROPDOWN RESET FOR FARBFINAL OR OTHER LAYOUTS */ in deinem CSS vorhanden ist.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">/* NEW ATTRIBUTE SELECT */
+
+
+
+/* clear */
+.clear {
+clear: both;
+}
+
+/* wrapper */
+.plentyAttributeSelectWrapper {
+margin-bottom: 5px;
+}
+/* wrapper title */
+.plentyAttributeSelectWrapperTitle { }
+/* wrapper content */
+.plentyAttributeSelectWrapperContent {
+display: inline-block;
+}
+
+/* ul (all) */
+
+/* ul */
+.plentyAttributeSelectWrapperContent ul {
+padding-left: 0;
+}
+/* li */
+.plentyAttributeSelectWrapperContent ul &gt; li {
+list-style: none;
+margin-left: 0;
+overflow: hidden;
+}
+
+/* disabled */
+li.plentyAttributeSelectDisabled {
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+filter: alpha(opacity=50);
+-moz-opacity: 0.5;
+-khtml-opacity: 0.5;
+opacity: 0.5;
+cursor: default !important;
+}
+li.plentyAttributeSelectDisabled a {
+cursor: default !important;
+}
+
+
+
+/* DROPDOWN */
+
+/* dropdown container */
+.plentyAttributeSelectHasDropdown {
+position: relative;
+}
+/* height if dropdown closed */
+.plentyAttributeSelectHasDropdown,
+.plentyAttributeSelectHasDropdown &gt; div,
+.plentyAttributeSelectHasDropdown &gt; .plentyAttributeSelectWrapperInnerClosed:hover {
+height: 18px;
+}
+/* openable container */
+.plentyAttributeSelectHasDropdown &gt; div {
+position: absolute;
+/*width: 100%;*/ /*has conflict with parent clearfix*/
+overflow: hidden;
+background: #ffffff;
+border: 1px solid #cccccc;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}
+/* open dropdown if hovered */
+.plentyAttributeSelectHasDropdown:hover &gt; div {
+height: auto;
+z-index: 10000;
+-moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+-webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* selectet item */
+
+/* value (all) */
+.plentyAttributeSelectedValue,
+.plentyAttributeSelectValue &gt; a {
+padding: 0 0 0 7px;
+white-space: nowrap;
+}
+/* value selected */
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectedValue {
+position: relative;
+padding-right: 20px;
+}
+/* arrow container */
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectedValue &gt; .plentyAttributeSelectedArrow {
+position: absolute;
+right: 2px;
+top: 2px;
+width: 12px;
+height: 12px;
+}
+/* arrow inner */
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectedValue &gt; .plentyAttributeSelectedArrow &gt; span {
+display: inline-block;
+border-style: solid;
+border-width: 5px;
+border-color: #999999 transparent transparent;
+}
+/* arrow hover */
+.plentyAttributeSelectHasDropdown &gt; div:hover .plentyAttributeSelectedValue &gt; .plentyAttributeSelectedArrow &gt; span {
+border-color: #777777 transparent transparent;
+}
+
+
+/* list */
+
+/* list wrapper */
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectListWrapper {
+max-height: 108px; /*adapt to height of li*/
+overflow-y: auto;
+overflow-x: hidden;
+}
+/* ul */
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectListWrapper &gt; ul {
+}
+/* li */
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectListWrapper &gt; ul &gt; li {
+height: 18px;
+}
+/* a */
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectListWrapper &gt; ul &gt; li a {
+display: block;
+padding-right: 20px;
+white-space: nowrap;
+}
+/* li hover / a focus */
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectListWrapper &gt; ul &gt; li:hover a,
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectListWrapper &gt; ul &gt; li a:focus {
+background: #eeeeee;
+color: #000000;
+cursor: pointer;
+}
+/* reset li hover / a focus if disabled */
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectListWrapper &gt; ul &gt; li.plentyAttributeSelectDisabled:hover a,
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectListWrapper &gt; ul &gt; li.plentyAttributeSelectDisabled a:focus {
+background: transparent;
+color: #000000;
+}
+/* li / a selected */
+.plentyAttributeSelectHasDropdown .plentyAttributeSelectListWrapper &gt; ul &gt; li.plentyAttributeSelectSelected a {
+background: #eeeeee;
+}
+/* value &amp; markup */
+.plentyAttributeSelectValueName {
+/*float: left;*/
+}
+.plentyAttributeSelectValueMarkup {
+padding-left: 5px;
+/*float: right;*/
+}
+
+
+/* IMAGE GALLERY / TEXT BOX */
+
+/* ul */
+.plentyAttributeSelectHasImageGallery ul,
+.plentyAttributeSelectHasTextList ul {
+margin: 0 -5px -5px 0;
+}
+/* ul image gallery / text boxes */
+.plentyAttributeSelectHasImageGallery ul,
+.plentyAttributeSelectHasTextList ul {
+line-height: 0;
+}
+/* ul text boxes */
+.plentyAttributeSelectHasTextList ul &gt; li {
+line-height: 1.5em;
+}
+/* image box size */
+.plentyAttributeSelectHasImageGallery ul &gt; li,
+.plentyAttributeSelectHasImageGallery ul &gt; li &gt; a {
+width: 60px; /*adapt box dimension to image dimension*/
+height: 60px;
+}
+/* li */
+.plentyAttributeSelectHasImageGallery ul &gt; li,
+.plentyAttributeSelectHasTextList ul &gt; li,
+.plentyAttributeSelectHasImageGallery ul &gt; li.plentyAttributeSelectDisabled:hover,
+.plentyAttributeSelectHasTextList ul &gt; li.plentyAttributeSelectDisabled:hover {
+display: inline-block;
+margin: 0 5px 5px 0;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+padding: 3px;
+}
+/* li hover / selected */
+.plentyAttributeSelectHasImageGallery ul &gt; li:hover,
+.plentyAttributeSelectHasTextList ul &gt; li:hover,
+.plentyAttributeSelectHasImageGallery ul &gt; li.plentyAttributeSelectSelected,
+.plentyAttributeSelectHasTextList ul &gt; li.plentyAttributeSelectSelected {
+border-color: #999999;
+cursor: pointer;
+-moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+-webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+}
+/* li selected image gallery */
+.plentyAttributeSelectHasImageGallery ul &gt; li.plentyAttributeSelectSelected {
+background: #DDDDDD;
+}
+/* li selected text box */
+.plentyAttributeSelectHasTextList ul &gt; li.plentyAttributeSelectSelected {
+background: #eeeeee;
+}
+/* reset li hover / selected if selected */
+.plentyAttributeSelectHasImageGallery ul &gt; li.plentyAttributeSelectDisabled:hover,
+.plentyAttributeSelectHasTextList ul &gt; li.plentyAttributeSelectDisabled:hover {
+border-color: #DDDDDD;
+-moz-box-shadow: none;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+/* a */
+.plentyAttributeSelectHasImageGallery ul &gt; li &gt; a {
+display: block;
+overflow: hidden;
+}
+/* img */
+.plentyAttributeSelectHasImageGallery ul &gt; li &gt; a &gt; img {
+border: none;
+}
+/* a hover / a focus text box */
+.plentyAttributeSelectHasTextList ul &gt; li a:hover,
+.plentyAttributeSelectHasTextList ul &gt; li a:focus {
+color: #000000;
+}
+/* value text boxes */
+.plentyAttributeSelectHasTextList .plentyAttributeSelectValue {
+padding-left: 5px;
+}
+/* value text boxes */
+.plentyAttributeSelectHasTextList .plentyAttributeSelectValue {
+padding-left: 5px;
+padding-right: 5px;
+}
+
+
+/* UPDATE (FIX FOR ANY DOCTYPE) */
+.plentyAttributeSelectedArrow &gt; span {
+position: absolute;
+top: 5px;
+}
+
+
+/* DROPDOWN RESET FOR FARBFINAL OR OTHER LAYOUTS  */
+
+.plentyAttributeSelectHasDropdown &gt; div {
+text-align: left;
+line-height: 18px;
+}
+#ff01_maincontent .plentyAttributeSelectHasDropdown &gt; div {
+right: 0; /* use only if text-align of dropdown parent container is right */
+}
+.plentyAttributeSelectWrapperContent.plentyAttributeSelectHasDropdown ul {
+margin: 0 !important;
+padding: 0 !important;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_artikelbildgrößen">Artikelbildgrößen</h4>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="title">Tipp: Containergröße für das Attributbild</div>
+<div class="paragraph">
+<p>Du kannst die Containergröße für den Ausschnitt des Attributbilds im CSS-Code einstellen. Änderungen nimmst du in den Zeilen <strong>/*adapt box dimension to image dimension</strong>/* und <strong>/</strong> image box size <strong>/</strong> vor.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Im Menü <a href="/artikel/artikel-verwalten#660">Einrichtung » Artikel » Bilder</a> hinterlegst du Maximalwerte für die Breite und Höhe von <a href="/artikel/artikel-verwalten#450">Artikelattributbildern</a>. Die Werte werden in Pixeln angegeben.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>

@@ -1,0 +1,168 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Typen</h1><div class="sect1">
+<h2 id="_allgemeines_zu_typen">Allgemeines zu Typen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Du kannst verschiedene Typen von Variablen in plentymarkets verwenden. Die nachfolgend vorgestellten primitiven Typen werden aktuell unterstützt.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_boolean">Boolean</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dies ist der einfachste Typ. Ein boolscher Ausdruck ist ein Wahrheitswert der entweder <strong>TRUE</strong> (wahr) oder <strong>FALSE</strong> (falsch) sein kann.</p>
+</div>
+<div class="paragraph">
+<p>Ein boolean Wert wird über die Schlüsselworte <strong>TRUE</strong> und <strong>FALSE</strong> spezifiziert, Groß- und Kleinschreibung ist dabei nicht von Bedeutung.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_foo = true; &#37;&#125;
+
+{# weist $_foo den Wert TRUE zu #}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Normalerweise wird ein boolean von einem Operator zurückgegeben und an eine Kontrollstruktur weitergegeben.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if $_a == 5 &#37;&#125;
+	$_a ist 5
+&#123;&#37; endif &#37;&#125;
+
+{# == ist ein Operator, welcher auf Gültigkeit prüft und ein boolean Ergebnis zurückgibt #}</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_integer">Integer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ein Integer ist eine Zahl aus dem Wertebereich Z = {…​, -2, -1, 0, 1, 2, …​}.</p>
+</div>
+<div class="paragraph">
+<p>Integer können auch mit Vorzeichen definiert werden. Bei positiven Zahlen ist ein Vorzeichen optional, bei negativen Zahlen nicht.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_a = 1234; &#37;&#125;
+{# $_a enthält die Zahl 1234 #}
+
+&#123;&#37; $_b = +1234; &#37;&#125;
+{# $_b enthält nun auch die Zahl 1234 #}
+
+&#123;&#37; $_c = -123; &#37;&#125;
+{# $_c enthält die Zahl -123 #}</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_float_double">Float / Double</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Fließkommazahlen müssen immer mit dem Dezimaltrennzeichen Punkt (.) definiert werden. Die Angabe eines Tausendertrennzeichens ist nicht möglich.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_a = 1.234; &#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_string">String</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ein String ist eine Zeichenkette. Strings müssen entweder mit einfachen (') oder doppelten (") Anführungszeichen am Anfang und Ende definiert werden. Innerhalb einer selbst definierten Zeichenkette darf das umschließende Anführungszeichen nicht vorkommen.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_a = "das ist eine Zeichenkette"; &#37;&#125;
+
+&#123;&#37; if $_a == "das ist eine Zeichenkette" &#37;&#125;
+	$_a enthält den Wert: das ist eine Zeichenkette
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_array">Array</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ein Array ist eine Liste von Werten, die einem Schlüssel (Position 0-n) zugewiesen werden. Die CMS-Syntax unterstützt Listen einer Dimension (Wert1, Wert2, Wert3, …​, Wert 100). Innerhalb einer Liste können die einzelnen Werte unterschiedliche Typen haben. Die zulässige Anzahl der Elemente pro Array ist auf 100 Elemente begrenzt.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_a = [127, 9.49, "plenty"]; &#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_assoziatives_array">Assoziatives Array</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ein assoziatives Array ist eine Liste von Werten, die einem individuellen Schlüssel zugewiesen werden. Die CMS-Syntax unterstützt Listen mehrerer Dimensionen. Der Schlüssel muss immer vom Typ <strong>string</strong> sein. Die einzelnen Werte können unterschiedliche Typen haben.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="title">Technische Begrenzung</div>
+<div class="paragraph">
+<p>Auch wenn es theoretisch keine Begrenzung der Verschachtelungstiefe und Anzahl der Elemente gibt, kann eine zu große Konstruktion zu Fehlern bei der Ausgabe oder beim Übersetzen führen. Prüfe daher das Verhalten eines verwendeten assoziativen Arrays sorgfältig und passe es an, falls unerwünschte Effekte auftreten.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_a = {"plentymarkets":"Willkommen bei plentymarkets", "name":"Max Mustermann"} &#37;&#125;
+$_a["plentymarkets"] $_a["name"].
+
+# Willkommen bei plentymarkets, Max Mustermann.</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_null">NULL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der spezielle Wert <strong>NULL</strong> repräsentiert eine Variable ohne Wert. <strong>NULL</strong> ist der einzig mögliche Wert des Typs NULL.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_a = NULL; &#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_object">Object</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ein Object ist ein Container für weitere Daten.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_customerAddress = GetCheckoutCustomerInvoiceAddress() &#37;&#125;
+$_customerAddress-&gt;Company&lt;br/&gt;
+$_customerAddress-&gt;FirstName $_customerAddress-&gt;LastName&lt;br/&gt;
+$_customerAddress-&gt;Street $_customerAddress-&gt;HouseNo&lt;br/&gt;
+$_customerAddress-&gt;ZIP $_customerAddress-&gt;City&lt;br/&gt;
+$_customerAddress-&gt;Country</code></pre>
+</div>
+</div>
+</div>
+</div>
+</main>

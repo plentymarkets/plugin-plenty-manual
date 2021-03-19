@@ -1,0 +1,198 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>for</h1><div class="sect1">
+<h2 id="_for_schleife">for-Schleife</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eine for-Schleife kann angewendet werden, indem eine Zählervariable und ein Zahlenbereich definiert wird. Alternativ kann eine Iteration über ein <a href="/webshop/webshop-einrichten/cms-syntax#grundlagen-typen">Array</a> vorgenommen werden.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_video_tutorial">Video-Tutorial</h2>
+<div class="sectionbody">
+<div class="videoblock">
+<div class="content">
+<iframe src="https://player.vimeo.com/video/131042605" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_zahlenbereich">Zahlenbereich</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Für diese Variante muss zuerst eine Zählervariable definiert werden (hier$_i) und dann ein Zahlenbereich (hier von 1 bis 10):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; for $_i in 1..10 &#37;&#125;
+	Hallo, ich bin Durchlauf $_i
+&#123;&#37; endfor &#37;&#125;
+
+{#
+	Ausgabe:
+	Hallo, ich bin Durchlauf 1
+	Hallo, ich bin Durchlauf 2
+	...
+	Hallo, ich bin Durchlauf 10
+#}</code></pre>
+</div>
+</div>
+<h3 id="_alternative" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	for($_i in 1..10)
+
+	{
+		print("Hallo, ich bin Durchlauf " .$_i);
+	}
+
+	# Ausgabe:
+	# Hallo, ich bin Durchlauf 1
+	# Hallo, ich bin Durchlauf 2
+	# ...
+	# Hallo, ich bin Durchlauf 10
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Diese Variante ist optimal, um beispielsweise Artikelbilder darzustellen. Artikelbilder werden in den entsprechenden Templates als Array zur Verfügung gestellt.</p>
+</div>
+<div class="paragraph">
+<p>Wenn du bei einigen Artikeln mehrere Bilder angelegt hast, aber nicht mehr als fünf, ist die folgende Schleife eine interessante Möglichkeit zur Darstellung von Bildern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; for $_i in 1..5 &#37;&#125;
+	&#123;&#37; if $ImageURL[$_i]!="" &#37;&#125;
+		$Image[$_i]
+	&#123;&#37; endif &#37;&#125;
+&#123;&#37; endfor &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative_2" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	for($_i in 1..5)
+	{
+		if($ImageURL[$_i] != "")
+		{
+			print($Image[$_i]);
+		}
+	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_iteration_über_array">Iteration über Array</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eine Iteration über ein Array ist auf zwei Arten möglich. Entweder wird nur der Wert der aktuellen Array-Position zurückgeliefert oder sowohl die Position als auch der Wert.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_a = ["Hallo", "Du!", "Wie", "geht", "es", "dir?"] &#37;&#125;
+
+&#123;&#37; for $_word in $_a &#37;&#125;
+	$_word
+&#123;&#37; endfor &#37;&#125;
+
+{# Ausgabe: Hallo Du! Wie geht es dir? #}</code></pre>
+</div>
+</div>
+<h3 id="_alternative_3" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	$_a = ["Hallo", "Du!", "Wie", "geht", "es", "dir?"];
+
+		for($_word in $_a)
+		{
+			print($_word);
+		}
+
+	# Ausgabe: Hallo Du! Wie geht es dir?
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wenn du auch die Position (hier$_key) erhalten möchten, verwende die folgende Schleifen-Variante:</p>
+</div>
+<div class="sect2">
+<h3 id="_iteration_über_array_mit_schleife_bei_einzeiligem_code_block">Iteration über Array mit Schleife bei einzeiligem Code-Block</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_a = ["Hallo", "Du!", "Wie", "geht", "es", "dir?"] &#37;&#125;
+
+&#123;&#37; for $_key, $_word in $_a &#37;&#125;
+	Wort $_key: $_word
+&#123;&#37; endfor &#37;&#125;
+
+{#
+	Ausgabe:
+	Wort 1: Hallo Wort 2: Du! ...
+#}</code></pre>
+</div>
+</div>
+<h3 id="_alternative_4" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	for($_key, $_word in $_a)
+
+	{
+		print("Wort ");
+		print($_key);
+		print(": ");
+		print($_word);
+	}
+
+	# Ausgabe:
+	# Wort 1: Hallo Wort 2: Du! ...
+&#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_verfügbare_template_variablen">Verfügbare Template-Variablen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Innerhalb einer for-Schleife stehend die folgenden Template-Variablen zur Verfügung. Wenn mehrere Schleifen ineinander verschachtelt sind, erfolgt die Nummerierung von außen nach innen.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">{# bricht die Schleife ab #}
+$LoopBreak[1]
+
+{# überspringt ein Element und fährt mit dem nächsten fort #}
+$LoopContinue[1]
+
+{# ist erster Durchlauf #}
+$LoopIsFirst[1]
+
+{# ist letzter Durchlauf #}
+$LoopIsLast[1]
+
+{# Gesamtanzahl der Durchläufe #}
+$LoopCount[1]
+
+{# aktueller Durchlauf #}
+$LoopPosition[1]
+
+{# aktuell noch zu durchlaufende Durchläufe #}
+$LoopRevPosition[1]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</main>
