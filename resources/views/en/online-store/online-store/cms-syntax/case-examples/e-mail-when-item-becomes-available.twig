@@ -1,0 +1,349 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>email when item becomes available</h1><div class="sect1">
+<h2 id="_sending_an_email_to_a_customer_once_an_item_is_available">Sending an email to a customer once an item is available</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sometimes items are temporarily out of stock and can not be delivered. Customers should be allowed to save their email addresses if they are interested in purchasing an item that can not be delivered at the moment. The email address is then used to inform the customer once the item is back in stock. The email should only be sent once, rather than every time the item’s net stock is positive. This case example demonstrates how all this is done.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_creating_an_email_template">Creating an email template</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First, create an <a href="/en/omni-channel/online-store/setting-up-clients/cms-syntax#email-email">email template</a>. Once the item is back in stock, this email will be sent to all of the customers who saved their email addresses. Below, you will find a list of template variables and template functions that can be used for this email template. We also provide you with an example text, which you can customize as needed.</p>
+</div>
+<div class="paragraph">
+<p>Possible template variables and template functions for an email template regarding item availability:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. possible template variables and template functions for an email template regarding item availability</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Variable/function</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemASIN</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon Standard Ident Number (ASIN) of the item</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemEAN</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">International item number (EAN)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemImageURL</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item image URL</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemISBN</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item ISBN code</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemModel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item model name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemName</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemNumber</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemPrice</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gross item price</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemPriceNet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Net item price</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemProducerName</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item manufacturer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$VariantName</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; Link_Item($ItemID) &#37;&#125;</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link to the item in the online store</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>An example text for the email template is displayed below. You can customize this example text to meet your needs. Open the email template and insert this text into the tab <strong>Content » Text in HTML format</strong>. Proceed as described below to save this text or a different text for the email template.</p>
+</div>
+<div class="paragraph instruction">
+<p>Saving text for the email template:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a new <a href="/en/omni-channel/online-store/setting-up-clients/cms-syntax#email-email">email template</a> in HTML format.</p>
+</li>
+<li>
+<p>Copy the example text (<em>Message</em>). Open the tab <strong>Email message » Content » Text in HTML format</strong> with the syntax editor and insert the text into the text field.</p>
+</li>
+<li>
+<p>Edit the example text and the HTML formatting to meet your needs.</p>
+</li>
+<li>
+<p>Copy the second example. Open the tab <strong>Item list</strong> with the syntax editor and insert the example into the text field.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Message</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&lt;p&gt;Dear customer,&lt;/p&gt;
+
+&lt;p&gt;You are receiving this email because you are interested in the following item in our online store:&lt;/p&gt;
+
+$ItemListHTML
+
+&lt;p&gt;We have good news for you: &lt;strong&gt;this item is now available!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We hope you will come and visit our store!&lt;/p&gt;
+
+$SignatureHTML</code></pre>
+</div>
+</div>
+<div class="paragraph instruction">
+<p>Item list</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&lt;p&gt;&lt;strong&gt;$ItemName&lt;/strong&gt;&lt;br /&gt;
+Item number: $ItemNumber&lt;br /&gt;
+$ItemPrice GBP &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="&#123;&#37; Link_Item($ItemID) &#37;&#125;"&gt;$ItemName&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr&gt;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_linking_an_email_template_for_automatic_emailing">Linking an email template for automatic emailing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now link the email template with the option <strong>Notification when item is in stock</strong>. Once the item is back in stock, the template is sent to all interested parties who saved their email addresses. To do so, proceed as follows.</p>
+</div>
+<div class="paragraph instruction">
+<p>Linking an email template for automatic emailing:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Select client » Email » Automatic</strong>.</p>
+</li>
+<li>
+<p>Select the email template from the drop-down list <strong>Notification when item is in stock</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_editing_an_inserting_the_example_code_for_the_form">Editing an inserting the example code for the form</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Next you need to insert a form into your design. This form is displayed if an item can not be delivered. At minimum, this form should consist of an entry field and a button. Interested parties enter their email addresses into the field. By clicking on the button, the interested party agrees to receiving an email when the item becomes available. The REST call <strong>/rest/positive_stock_notification/</strong> saves the email address and notifies all of the saved email addresses once the item’s net stock is positive.</p>
+</div>
+<div class="paragraph">
+<p>Further below, you will find an example code which is suited to our responsive design <strong>Callisto Light</strong>. Use this code as the basis for inserting the form in your design. Edit the code to meet your needs before you use it in your online store. Proceed as described below to insert the example code in your design.</p>
+</div>
+<div class="paragraph instruction">
+<p>Inserting example code into the design:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Edit the example code to adjust it to your requirements.</p>
+</li>
+<li>
+<p>Copy the code to the clipboard (<strong>Ctrl + C</strong> or <strong>Cmd + C</strong>).</p>
+</li>
+<li>
+<p>Go to <strong>CMS » Web design » Layout » ItemView » ItemViewSingleItem</strong>.</p>
+</li>
+<li>
+<p>Insert the code example at an appropriate position of the template.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">{#
+	Displays a form where interested parties can enter their email address.
+
+	The following IF condition may need to be customized further.
+	Which availability should cause the form to be displayed?
+#}
+
+&lt;div data-plenty="stocknotification" &#123;&#37; if $AvailabilityId &lt;= 2 &#37;&#125;style="display:none"&#123;&#37; endif &#37;&#125;&gt;
+	&lt;div class="row margin-bottom-1"&gt;
+		&lt;h3&gt;We will get back to you&lt;br&gt;as soon as the item is available!&lt;/h3&gt;
+		&lt;div class="col-lg-7 col-md-6 col-sm-6 col-xs-12"&gt;
+			&lt;input type="text" placeholder="deine E-Mail" class="emailNotification PlentyText" /&gt;
+		&lt;/div&gt;
+		&lt;div class="col-lg-5 col-md-6 col-sm-6"&gt;
+			&lt;button type="button" data-href="positive_stock_notification/" data-loading-text="Bitte warten..." class="btn btn-primary btnNotification" autocomplete="off"&gt;
+			  Absenden
+			&lt;/button&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	{# The result is displayed in the following container #}
+	&lt;div class="responseNotification margin-bottom-1 collapse"&gt;&lt;/div&gt;
+
+	{#
+		The logic portion begins here. It carries out the REST call.
+		It has to be displayed on the same page.
+	#}
+
+	&lt;script type="text/javascript"&gt;
+
+		{# Completes the current attribute selection if this item has attributes #}
+
+		&#123;&#37; if $AttributeExist &#37;&#125;
+
+			function getAttributeValueSetID()
+			{
+				var aAttrID = [];
+				$('[name^=ArticleAttribute]').each(function(index)
+				{
+		   			aAttrID.push(jQuery(this).val());
+				});
+
+				return aAttrID;
+			}
+
+		&#123;&#37; endif &#37;&#125;
+
+		var $btn = null;
+
+		function showMessage(msg,state)
+		{
+			$('.responseNotification').text(msg).addClass(state);
+			$('.responseNotification').fadeIn();
+			$btn.button('reset');
+			setTimeout(function()
+				{
+					$('.responseNotification').hide().removeClass(state);
+				},
+				3000);
+		}
+
+		$(document).ready(function()
+		{
+			jQuery('.btnNotification').click(function()
+			{
+	   	   		$btn = $(this).button('loading');
+	   	   		var $data = "positive_stock_notification_post";
+	   	   		var $path = jQuery(this).data("href");
+
+	   	   		{# Creates the data object for the request #}
+
+	   	   		var $postObjects = {
+		           positive_stock_notification_post:
+		           {
+		                   ItemID:$ID,
+		                   Email:jQuery('.emailNotification').val(),
+						   &#123;&#37; if $AttributeExist &#37;&#125;AttributeValues:getAttributeValueSetID(),&#123;&#37; endif &#37;&#125;
+						   PriceID:$PriceID
+		           }
+	   	   		}
+
+	   	   		{# The REST request is carried out here and the result is analysed #}
+
+	   	   		$.ajax("/rest/"+$path,
+					{
+						data:        JSON.stringify($postObjects[$data]),
+						dataType:    'json',
+						type:        'POST',
+
+						success: function(response)
+						{
+							showMessage("E-mail address "+response.data.Email+" was successfully saved.", "plentyMessageBox");
+						},
+
+						error: function(response)
+						{
+							showMessage("An error occurred. Please check your email address.", "PlentyErrorMessageBox");
+						}
+					}
+				);
+
+	           return false;
+	   	   });
+	   });
+	&lt;/script&gt;
+&lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Activate the option <strong>Client check</strong> under <strong>Attribute availability</strong> in the menu <strong>Setup » Client » Select client » Item layouts » Settings</strong> and add the following code example to dynamically show or hide the previously created form depending on the availability of the variation.</p>
+</div>
+<div class="paragraph instruction">
+<p>Inserting example code into the design:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Edit the example code to adjust it to your requirements.</p>
+</li>
+<li>
+<p>Copy the code to the clipboard (<strong>Ctrl + C</strong> or <strong>Cmd + C</strong>).</p>
+</li>
+<li>
+<p>Go to <strong>CMS » Web design » Layout » ItemView » ItemViewSingleItem</strong>.</p>
+</li>
+<li>
+<p>Search for the code line <strong>$(window).on('variationChanged', function(event, variation) {</strong>.</p>
+</li>
+<li>
+<p>Insert the code example below the code line.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">$(window).on('variationChanged', function(event, variation) {
+
+	// This code is already there
+	...
+
+
+	// Add the following code
+	if(variation.availabilityId &gt; 2)
+	{
+		$('[data-plenty="stocknotification"]').show();
+	}
+	else
+	{
+		$('[data-plenty="stocknotification"]').hide();
+	}
+});</code></pre>
+</div>
+</div>
+</div>
+</div>
+</main>

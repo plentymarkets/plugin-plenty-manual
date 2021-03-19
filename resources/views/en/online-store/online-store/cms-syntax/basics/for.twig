@@ -1,0 +1,198 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>for</h1><div class="sect1">
+<h2 id="_for_loop">for loop</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>for loops can be applied by defining a counter variable and a number range. Alternatively, an iteration can be performed through an <a href="/en/omni-channel/online-store/setting-up-clients/_cms-syntax/basics/types#6">array</a>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_video_tutorial">Video tutorial</h2>
+<div class="sectionbody">
+<div class="videoblock">
+<div class="content">
+<iframe src="https://player.vimeo.com/video/138870068" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_number_range">Number range</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For this variation, a counter variable (in this case$_i) and then a number range (in this case from 1 to 10) need to be defined:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; for $_i in 1..10 &#37;&#125;
+	Hello, I am pass $_i
+&#123;&#37; endfor &#37;&#125;
+
+{#
+	Output:
+	Hello, I am pass 1
+	Hello, I am pass 2
+	...
+	Hello, I am pass 10
+#}</code></pre>
+</div>
+</div>
+<h3 id="_alternative" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	for($_i in 1..10)
+
+	{
+		print("Hello, I am pass " .$_i);
+	}
+
+	# Output:
+	# Hello, I am pass 1
+	# Hello, I am pass 2
+	# ...
+	# Hello, I am pass 10
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This variation is optional and can e.g. be used to display item images. Item images are made available within the templates as arrays.</p>
+</div>
+<div class="paragraph">
+<p>If you have saved more than one but no more than five images for some items, the following loop is an interesting option for displaying images:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; for $_i in 1..5 &#37;&#125;
+	&#123;&#37; if $ImageURL[$_i]!="" &#37;&#125;
+		$Image[$_i]
+	&#123;&#37; endif &#37;&#125;
+&#123;&#37; endfor &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative_2" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	for($_i in 1..5)
+	{
+		if($ImageURL[$_i] != "")
+		{
+			print($Image[$_i]);
+		}
+	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_iteration_through_array">Iteration through array</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An iteration through an array can be performed in two different ways. Either the value of the current array position is returned or both the position and the value.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_a = ["Hello", "there!", "How", "are", "you", "today?"] &#37;&#125;
+
+&#123;&#37; for $_word in $_a &#37;&#125;
+	$_word
+&#123;&#37; endfor &#37;&#125;
+
+{# Output: Hello there! How are you today? #}</code></pre>
+</div>
+</div>
+<h3 id="_alternative_3" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	$_a = ["Hello", "there!", "How", "are", "you", "today?"];
+
+		for($_word in $_a)
+		{
+			print($_word);
+		}
+
+	# Output: Hello there! How are you today?
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use the following loop variation if you want to return the position (in this case$_key) as well:</p>
+</div>
+<div class="sect2">
+<h3 id="_iteration_through_array_with_loop_for_single_line_code_block">Iteration through array with loop for single-line code block</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; $_a = ["Hello", "there!", "How", "are", "you", "today?"] &#37;&#125;
+
+&#123;&#37; for $_key, $_word in $_a &#37;&#125;
+	Word $_key: $_word
+&#123;&#37; endfor &#37;&#125;
+
+{#
+	Output:
+	Word 1: Hello Word 2: there! ...
+#}</code></pre>
+</div>
+</div>
+<h3 id="_alternative_4" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	for($_key, $_word in $_a)
+
+	{
+		print("Word ");
+		print($_key);
+		print(": ");
+		print($_word);
+	}
+
+	# Output:
+	# Word 1: Hello Word 2: there! ...
+&#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_available_template_variables">Available template variables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following template variables are available within for loops. If several loops are nested, the numbering is done from outside to inside.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">{# breaks the loop #}
+$LoopBreak[1]
+
+{# skips one element and continues with the next #}
+$LoopContinue[1]
+
+{# is the first pass #}
+$LoopIsFirst[1]
+
+{# is the last pass #}
+$LoopIsLast[1]
+
+{# Total number of passes #}
+$LoopCount[1]
+
+{# current pass #}
+$LoopPosition[1]
+
+{# passes still to be performed #}
+$LoopRevPosition[1]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</main>

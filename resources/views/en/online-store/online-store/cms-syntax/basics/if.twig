@@ -1,0 +1,208 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>if</h1><div class="sect1">
+<h2 id="_video_tutorial">Video tutorial</h2>
+<div class="sectionbody">
+<div class="videoblock">
+<div class="content">
+<iframe src="https://player.vimeo.com/video/136936292" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_if">if</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>if constructs allow you to display content if specified conditions are met.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">if &lt;emExpression&lt;/em&gt; &lt;emContent&lt;/em&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Content</em> is only displayed if <em>Expression</em> is true. <em>Expression</em> is evaluated to a boolean logical value (TRUE or FALSE). If <em>Expression</em> is evaluated to <strong>TRUE</strong>, then <em>Content</em> is displayed. If not, <em>Content</em> is ignored.</p>
+</div>
+<div class="paragraph">
+<p>At its most basic, an if construct consists of only one condition that is introduced using the expression <strong>if</strong>. The content that follows it is displayed or a function is called.</p>
+</div>
+<div class="paragraph">
+<p>In single-line code blocks, if constructs must end with the expression <strong>endif</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if $_a &gt; $_b &#37;&#125;
+	a is greater than b
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	if($_a &gt; $_b)
+	{
+ 		print("a is greater than b");
+	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_else">else</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is often necessary to run one statement if a specific condition is met and a different statement if that condition is not met. In these cases, <strong>else</strong> is used. else extends if statements to include an additional statement that is run if the expression within the if statement is evaluated as <strong>FALSE</strong>. The following programming code returns <em>a is greater than b</em> if the value of$<em>ais greater than the value of$_b. Otherwise, it returns _a is NOT greater than b</em>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if $_a &gt; $_b &#37;&#125;
+	a is greater than b
+&#123;&#37; else &#37;&#125;
+	a is NOT greater than b
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative_2" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	if($_a &gt; $_b)
+ 	{
+		print("a is greater than b");
+	}
+	else
+	{
+		print("a is NOT greater than b");
+ 	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The else statement is only run when the if expression is evaluated as <strong>FALSE</strong>.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_elseif">elseif</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>elseif</strong> is a combination of <strong>if</strong> and <strong>else</strong>. Comparable to <strong>else</strong>, the expression <strong>elseif</strong> extends an if construct to display alternative content if the original if condition is not met. However, in contrast to <strong>else</strong>, the alternative content is only displayed if the <strong>elseif</strong> condition is met. The following example code returns <em>a is greater than b</em>, <em>a equals b</em> or <em>a is less than b</em>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if $_a &gt; $_b &#37;&#125;
+	a is greater than b
+&#123;&#37; elseif $_a == $_b &#37;&#125;
+	a equals b
+&#123;&#37; else &#37;&#125;
+	a is less than b
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative_3" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	if($_a &gt; $_b)
+	{
+ 		print("a is greater than b");
+	}
+	elseif($_a == $_b)
+	{
+ 		print("a equals b");
+	}
+	else
+	{
+ 		print("a is less than b");
+	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Several elseif structures can be used within a single if control structure. The first structure that meets the condition is run.</p>
+</div>
+<div class="paragraph">
+<p>The elseif part is only run if the previous if condition and all other previous elseif conditions do not apply (<strong>FALSE</strong>) and if the current elseif condition applies (<strong>TRUE</strong>).</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_contains">contains</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong>contains</strong> condition was implemented to take account of specific use cases. With this condition, contents which are contained in a string are displayed. This can also be the case if several individual conditions apply. In such cases, the <strong>contains</strong> condition allows for simplified notation.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, payment data is only displayed if <strong>$MethodOfPaymentID</strong> is contained in the string <strong>"1|2|3"</strong>, i.e. is equivalent to the values 1, 2 or 3. The template variable <strong>$MethodOfPaymentID</strong> only outputs numbers. This code can be used in email templates.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if "1|2|3" contains $MethodOfPaymentID &#37;&#125;
+	Payment information for cash on delivery (ID 1), invoice (ID 2) and debit (ID 3)
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_complex_expressions">Complex expressions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Expressions can also consist of several conditions linked by a logical operator (*&amp;&amp;, || *).</p>
+</div>
+<div class="paragraph">
+<p>If different conditions are to be grouped together, brackets must be used. Conditions within brackets are evaluated as a group and the result (TRUE or FALSE) is evaluated with the additional conditions.</p>
+</div>
+<div class="paragraph">
+<p>In the following example, one of the conditions within the brackets must be met. At the same time, <strong>$_d</strong> must contain the boolean value <strong>TRUE</strong>. In this example, it is also sufficient that <strong>$_b</strong> has the value <strong>1</strong> and <strong>$_d</strong> has the value <strong>TRUE</strong>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if ( $_a &amp;gt; 0 || $_b &amp;gt; 0 || $_c &amp;gt; 0) &amp;amp;&amp;amp; $_d == TRUE &#37;&#125;
+	Content
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative_4" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	if(( $_a &gt; 0 || $_b &gt; 0 || $_c &gt; 0) &amp;&amp; $_d == TRUE)
+	{
+		print("Content");
+	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the next example the <em>content</em> is displayed both if the value of <strong>$_a</strong>, <strong>$_b</strong> or <strong>$_c</strong> is greater than 0 and if the value of two or all is greater than 0.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37; if $_a &amp;gt; 0 || $_b &amp;gt; 0 || $_c &amp;gt; 0 &amp;amp;&amp;amp; $_d == TRUE &#37;&#125;
+	Content
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+<h3 id="_alternative_5" class="discrete">Alternative</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-plenty" data-lang="plenty">&#123;&#37;
+	if($_a &amp;gt; 0 || $_b &amp;gt; 0 || $_c &amp;gt; 0 &amp;amp;&amp;amp; $_d == TRUE)
+ 	{
+		print("Content");
+	}
+&#37;&#125;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This means that when defining complex expressions, you need to understand the dependencies that exist for the individual conditions to achieve the desired result.</p>
+</div>
+</div>
+</div>
+</main>
