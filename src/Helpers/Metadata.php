@@ -43669,7 +43669,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Event procedures. The following information is available:",
-						"languageID" => "",
+						"languageID" => "AVRPLVZ",
 						"children" => 						[
 							[
 								"id" => "cfb1c888d8f07128f1ffe09a3b0776a6",
