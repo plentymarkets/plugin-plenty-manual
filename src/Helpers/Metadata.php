@@ -20323,7 +20323,7 @@ class Metadata {
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Ereignisaktionen. Hier findest du folgende Informationen:",
-						"languageID" => "",
+						"languageID" => "AVRPLVZ",
 						"children" => 						[
 							[
 								"id" => "2a9579fe4dba53d6cbf46d1a9e323d88",
