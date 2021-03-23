@@ -38262,11 +38262,11 @@ class Metadata {
 						"urlName" => "myview-dashboard",
 						"url" => "/en/business-decisions/plenty-bi/myview-dashboard",
 						"level" => 3,
-						"title" => "Dashboard (Beta)",
+						"title" => "Dashboard",
 						"keywords" => "Statistics, customer statistics, order statistic, Amazon statistc, eBay statistic, dashboard, visitor statistic, raw data, key figures, business key figures",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Dashboard (Beta). The following information is available:",
+						"linkListInto" => "Welcome to the topic Dashboard. The following information is available:",
 						"languageID" => "QPO2ICG",
 						"children" => [],
 						"hasChildren" => false
