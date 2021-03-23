@@ -14980,11 +14980,11 @@ class Metadata {
 						"urlName" => "myview-dashboard",
 						"url" => "/business-entscheidungen/plenty-bi/myview-dashboard",
 						"level" => 3,
-						"title" => "Dashboard (Beta)",
+						"title" => "Dashboard",
 						"keywords" => "Statistik, Kundenstatistik, Auftragsstatistik, Amazon Statistik, eBay Statistik, Dashboard, Besucherstatistik, Rohdaten, Kennzahlen, Unternehmenskennzahlen",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Dashboard (Beta). Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Dashboard. Hier findest du folgende Informationen:",
 						"languageID" => "QPO2ICG",
 						"children" => [],
 						"hasChildren" => false
