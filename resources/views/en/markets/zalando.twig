@@ -22,10 +22,11 @@
 <li><a href="#1600"><span>16.</span><span> Automatically sending returns (zDirect)</span></a></li>
 <li><a href="#1500"><span>17.</span><span> Activating the Zalando account</span></a></li>
 <li><a href="#850"><span>18.</span><span> Order status changes (old API)</span></a></li>
-<li><a href="#900"><span>19.</span><span> Retrieving reports</span></a>
+<li><a href="#900"><span>19.</span><span> Download reports</span></a>
 <ul class="sectlevel2">
-<li><a href="#905"><span>19.1.</span><span> Retrieving the export log</span></a></li>
-<li><a href="#910"><span>19.2.</span><span> Retrieving product status reports</span></a></li>
+<li><a href="#905"><span>19.1.</span><span> Downloading the export log</span></a></li>
+<li><a href="#910"><span>19.2.</span><span> Downloading a product status report</span></a></li>
+<li><a href="#915"><span>19.3.</span><span> Downloading price reports</span></a></li>
 </ul>
 </li>
 <li><a href="#1000"><span>20.</span><span> Viewing the API log</span></a></li>
@@ -107,7 +108,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item name</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Select <strong>Name 1</strong>, <strong>Name 2</strong> or <strong>Name 3</strong>. The name you select will be exported to Zalando.</p>
+<p>Select <strong>Name 1</strong>, <strong>Name 2</strong>, or <strong>Name 3</strong>. The name you select will be exported to Zalando.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -518,7 +519,7 @@ Only the most important settings for the import are described here. Is this your
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <strong>Setup » Assistants » Plugins »</strong> <em>Select plugin set</em>.</p>
+<p>Go to <strong>Setup » Assistants » Plugins » [Select plugin set]</strong>.</p>
 </li>
 <li>
 <p>Click on the assistant <strong>Account settings - Zalando</strong>.</p>
@@ -581,7 +582,11 @@ Only the most important settings for the import are described here. Is this your
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Do you want to export prices to Zalando?</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Activate price update</strong> = Activate option to export your prices to Zalando every 15 minutes.</p>
+<p><strong>Activate price update</strong> = Activate option to export your prices to Zalando every 15 minutes.<br>
+<strong><em>Tip:</em></strong> The price reports contain information on the status of price updates.</p>
+</div>
+<div class="paragraph">
+<p><a href="#915">How to download price reports</a></p>
 </div></div></td>
 </tr>
 <tr>
@@ -603,7 +608,18 @@ Only the most important settings for the import are described here. Is this your
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Should warnings by Zalando for price updates be ignored?</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>This option is currently not in use.</p>
+<p>During price updates, Zalando checks the plausibility of your prices based on specific criteria. For example, Zalando compares the prices of the same variations on different platforms and compares the regular price with the reduced price. If any significant differences are detected, Zalando triggers a warning. Select if such warnings should be ignored when prices are updated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="icon green"><i class="fa fa-toggle-on  "></i></span> = The new prices are published even if Zalando sends a warning.</p>
+</li>
+<li>
+<p><span class="icon darkGrey"><i class="fa fa-toggle-off  "></i></span> (default setting) = Zalando rejects new prices if they do not pass the plausibility checks.<br>
+<strong><em>Tip:</em></strong> Check the <strong>Data » Log</strong> menu and the price reports for warnings.</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -662,7 +678,7 @@ Only the most important settings for the import are described here. Is this your
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Would you like to import your Zalando orders into plentymarkets?</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Activate to automatically import orders once a day.<br>
+<p>Activate to automatically import orders every five minutes.<br>
 <strong><em>Note:</em></strong> You need to activate this option to export item data and stock information to Zalando.</p>
 </div></div></td>
 </tr>
@@ -1279,16 +1295,16 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 <div class="ulist">
 <ul>
 <li>
-<p><a href="/en/fulfilment/shipping-centre#retrieve-return-label-main-order">Create a return label via the shipping center</a></p>
+<p><a href="/en/fulfilment/shipping-centre#retrieve-return-label-main-order">Create a return label via the shipping centre.</a></p>
 </li>
 <li>
 <p><a href="/en/automation/processes/procedures#380">Create a return label with a process procedure.</a></p>
 </li>
 <li>
-<p><a href="https://developers.plentymarkets.com/rest-doc#/Returns/put_rest_orders<em>orderId</em>shipping_returns_assign_label__returnsId_" target="_blank" rel="noopener">Add the return label via REST</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+<p><a href="https://developers.plentymarkets.com/rest-doc#/Returns/put_rest_orders<em>orderId</em>shipping_returns_assign_label__returnsId_" target="_blank" rel="noopener">Add the return label via REST.</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
 </li>
 <li>
-<p><a href="https://developers.plentymarkets.com/rest-doc#/Order/put_rest_orders<em>orderId</em>shipping_packages__orderShippingPackageId_" target="_blank" rel="noopener">Add the tracking ID of the return to a package at the order via REST</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+<p><a href="https://developers.plentymarkets.com/rest-doc#/Order/put_rest_orders<em>orderId</em>shipping_packages__orderShippingPackageId_" target="_blank" rel="noopener">Add the tracking ID of the return to a package at the order via REST.</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
 </li>
 </ul>
 </div>
@@ -1429,9 +1445,9 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change: [8.0] Cancelled</strong><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e.g. <strong>[8.0] Cancelled</strong><br>
 <strong><em>Note:</em></strong> You can select a different event. However, ensure that the selected event is not triggered for orders that are flagged as shipped or that are cancelled by customers.</p></td>
-<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
@@ -1638,10 +1654,10 @@ In the forum post, provide the following information:</p>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="900">19. Retrieving reports</h2>
+<h2 id="900">19. Download reports</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Go to the <strong>Setup » Markets » Zalando » Settings » Tab: processing reports</strong> menu to download the following reports for Zalando:</p>
+<p>There are a number of reports available for Zalando. Go to the <strong>Setup » Markets » Zalando » Settings » Tab: processing reports</strong> menu to download the following reports:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1656,40 +1672,63 @@ In the forum post, provide the following information:</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Export-Log</strong></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Export-Log</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>zalandoArticleExportLog.txt</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The export log contains log entries for variations that could not be exported to Zalando. The report is generated once every night.<br>
-<a href="#905">How to get the export log</a></p>
+<p>The export log <strong>zalandoArticleExportLog.txt</strong> contains log entries for variations that could not be exported to Zalando. The report is generated once every night.</p>
+</div>
+<div class="paragraph">
+<p><a href="#905">How to download the export log</a></p>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Reports</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Product status reports</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The product status reports are generated by Zalando. As such, these reports only contain information regarding variations that were successfully exported to Zalando.</p>
+<p>Zalando generates the product status reports are generated once daily during the night. These reports only contain information regarding variations that were successfully exported to Zalando.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>ProductErrorReport.csv</em></strong>: Contains variations that cannot be sold on Zalando since the last export. The report is generated once every night.</p>
-</li>
-<li>
-<p><strong><em>ProductLiveReport.csv</em></strong>: Contains variations that can be sold on Zalando since the last export as well as stock and price of each variation on the different Zalando channels (DE, FR, etc.) at the time that the file was generated. The report is generated once every night.</p>
-</li>
-</ul>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>ProductErrorReport.csv</em></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains variations that cannot be sold on Zalando since the last export. The report is generated once every night.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>ProductLiveReport.csv</em></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains variations that can be sold on Zalando since the last export as well as stock and price of each variation on the different Zalando channels (DE, FR, etc.) at the time that the file was generated. The report is generated once every night.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><a href="#910">How to download product status reports</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Price reports</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Zalando generates a price report for each active channel once daily during the night. These reports contain information on the processing status of all price updates that Zalando received in the last seven days.</p>
 </div>
 <div class="paragraph">
-<p><a href="#910">How to get product status reports</a></p>
+<p><a href="#915">How to download price reports</a></p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="905">19.1. Retrieving the export log</h3>
+<h3 id="905">19.1. Downloading the export log</h3>
 <div class="paragraph">
 <p>The export log contains plentymarkets log entries for items that could not be exported to Zalando.</p>
 </div>
 <div class="paragraph instruction">
-<p>Retrieving the export log:</p>
+<p>Downloading the export log:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1710,7 +1749,7 @@ In the forum post, provide the following information:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="910">19.2. Retrieving product status reports</h3>
+<h3 id="910">19.2. Downloading a product status report</h3>
 <div class="paragraph">
 <p>Product status reports contain information regarding the items that were exported to Zalando. These reports are generated by Zalando. As such, these reports only contain information regarding variations that were successfully exported to Zalando. The following reports are available:</p>
 </div>
@@ -1753,7 +1792,7 @@ In the forum post, provide the following information:</p>
 </div>
 </div>
 <div class="paragraph instruction">
-<p>Retrieving a product status report:</p>
+<p>Downloading a product status report:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1785,6 +1824,249 @@ In the forum post, provide the following information:</p>
 <p>Save the CSV file on your computer.</p>
 </li>
 </ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="915">19.3. Downloading price reports</h3>
+<div class="paragraph">
+<p>Zalando generates a price report for each active channel once daily during the night. These reports contain information on the processing status of all price updates that Zalando received in the last seven days. As such, the reports may contain several entries for the same EAN.</p>
+</div>
+<div class="paragraph instruction">
+<p>Downloading price reports:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Markets » Zalando » Settings</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>Processing reports</strong> tab.<br>
+→ In the area <strong>Price reports</strong>, files are available for all active channels.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> By default, the file is updated once every night. In the column <strong>Actions</strong>, click on <strong>Update file</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>) to get current data from Zalando before downloading the file.</p>
+</li>
+<li>
+<p>Go to the <strong>Price reports</strong> area. In the row of a processing report, click on <strong>Download file</strong> (<span class="icon blue"><i class="fa fa-eye  "></i></span>).<br>
+→ The CSV file is generated.</p>
+</li>
+<li>
+<p>Save the CSV file on your computer.</p>
+</li>
+</ol>
+</div>
+<div class="openblock collapseBox">
+<div class="title">What information do the price reports contain?</div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the latest timestamp from the columns <strong>Status History</strong> and <strong>Scheduled Price (1-3) - Status History</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EAN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The EAN of the variation whose price has been updated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ignore Warnings?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Corresponds to the setting <strong>Ignore Warnings</strong> in the <strong>Setup » Assistants » Omni-Channel » Zalando account settings » [Open account] » Step: Prices for [target country]</strong> menu at the time the update was transferred.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regular Price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transferred value of the regular price.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regular Price Currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transferred currency of the regular price.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Promotional Price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transferred value of the reduced price.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Promotional Price Currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transferred currency of the reduced price.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Status of the processing. Possible statuses:</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RECEIVED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has been received.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ACCEPTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has been accepted and forwarded for further validation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REJECTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has not passed validation. See the status messages in <strong>Status History</strong> for more information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FAILED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An unexpected error occurred during the price update. See the status messages in <strong>Status History</strong> for more information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCHEDULED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has been successfully validated and is awaiting submission.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SUBMITTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has been submitted and will be shown in the shop shortly.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWAITING_ONBOARDING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has been accepted but the item has not yet been activated. The price will be applied once onboarding is complete.</p></td>
+</tr>
+</tbody>
+</table></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status History</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Status change history. For each change, the cell contains a paragraph with the following pattern (placeholders in square brackets):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[timestamp]: FROM [original status] TO [new status] - code: [code] [severity] [message]</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Start</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start date of the scheduled price.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - End</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">End date of the scheduled price.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Regular Price</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transferred value of the regular price for the scheduled price.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Regular Price Currency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transferred currency of the regular price.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Promotional Price</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transferred value of the reduced price.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Promotional Price Currency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transferred currency of the reduced price.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Status</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Status of the processing of the scheduled price. Possible statuses:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RECEIVED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has been received.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ACCEPTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has been accepted and forwarded for further validation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REJECTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has not passed validation. See the status messages in <strong>Scheduled Price (1-3) - Status History</strong> for more information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FAILED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An unexpected error occurred during the price update. See the status messages in <strong>Scheduled Price (1-3) - Status History</strong> for more information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCHEDULED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has been successfully validated and is awaiting submission.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OVERRIDDEN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price was scheduled but overwritten by a new price update before it could be submitted.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SUBMITTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has been submitted and will be shown in the shop shortly.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWAITING_ONBOARDING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The price has been accepted but the item has not yet been activated. The price will be applied once onboarding is complete.</p></td>
+</tr>
+</tbody>
+</table></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Status History</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="paragraph">
+<p>While the file is being generated, an error log is also written for all entries that have been in the REJECTED, FAILED or OVERRIDDEN status since the file was last generated (minus one hour as a buffer). These log entries are then searchable in the <strong>Data » Log</strong> menu with the following search parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Identifier » Zalando</p>
+</li>
+<li>
+<p>Level: Error</p>
+</li>
+<li>
+<p>References:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reference type » action<br>
+Reference value » PriceUpdate</p>
+</li>
+<li>
+<p>Reference type » ean<br>
+Reference value » EAN of variation</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Errors that occur during the generation of the file can be found in the <strong>Data » Log</strong> menu with the following search parameters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Identifier » Zalando</p>
+</li>
+<li>
+<p>Reference type » action</p>
+</li>
+<li>
+<p>Reference value » PriceReporting</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
