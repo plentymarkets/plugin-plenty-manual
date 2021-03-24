@@ -22,10 +22,11 @@
 <li><a href="#1600"><span>16.</span><span> Retouren automatisch senden (zDirect)</span></a></li>
 <li><a href="#1500"><span>17.</span><span> Zalando-Konto aktivieren</span></a></li>
 <li><a href="#850"><span>18.</span><span> Änderungen am Auftragsstatus (alte API)</span></a></li>
-<li><a href="#900"><span>19.</span><span> Berichte abrufen</span></a>
+<li><a href="#900"><span>19.</span><span> Berichte herunterladen</span></a>
 <ul class="sectlevel2">
-<li><a href="#905"><span>19.1.</span><span> Export-Log abrufen</span></a></li>
-<li><a href="#910"><span>19.2.</span><span> Produkt-Status-Bericht abrufen</span></a></li>
+<li><a href="#905"><span>19.1.</span><span> Export-Log herunterladen</span></a></li>
+<li><a href="#910"><span>19.2.</span><span> Produkt-Status-Bericht herunterladen</span></a></li>
+<li><a href="#915"><span>19.3.</span><span> Preis-Berichte herunterladen</span></a></li>
 </ul>
 </li>
 <li><a href="#1000"><span>20.</span><span> API-Log abrufen</span></a></li>
@@ -581,7 +582,11 @@ Hier werden nur die wichtigsten Einstellungen für den Import beschrieben. Du ar
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Möchtest du Preise zu Zalando exportieren?</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Preisexport aktivieren</strong> = Option aktivieren, um alle 15 Minuten  deine Preise zu Zalando zu exportieren.</p>
+<p><strong>Preisexport aktivieren</strong> = Option aktivieren, um alle 15 Minuten deine Preise zu Zalando zu exportieren.<br>
+<strong><em>Tipp:</em></strong> Informationen zu den Preis-Updates findest du in den Preis-Berichten.</p>
+</div>
+<div class="paragraph">
+<p><a href="#915">So lädst du Preis-Berichte herunter</a></p>
 </div></div></td>
 </tr>
 <tr>
@@ -603,7 +608,18 @@ Hier werden nur die wichtigsten Einstellungen für den Import beschrieben. Du ar
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sollen Warnungen zu Preisaktualisierungen von Zalando ignoriert werden?</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Diese Option ist zurzeit ohne Funktion.</p>
+<p>Bei Preisaktualisierungen prüft Zalando die Plausibilität deiner Preise anhand von bestimmten Kriterien. Zalando vergleicht zum Beispiel die Preise der Varianten auf den verschiedenen Plattformen miteinander und gleicht den normalen Preis mit dem reduzierten Preis ab. Bei Auffälligkeiten gibt Zalando eine Warnung aus. Wähle, ob solche Warnungen bei Preisaktualisierungen ignoriert werden sollen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="icon green"><i class="fa fa-toggle-on  "></i></span> = Die neuen Preise gehen trotz Warnung live.</p>
+</li>
+<li>
+<p><span class="icon darkGrey"><i class="fa fa-toggle-off  "></i></span> (Standardeinstellung) = Zalando lehnt neue Preise ab, wenn sie die Plausibilitätsprüfung nicht bestehen.<br>
+<strong><em>Tipp:</em></strong> Warnungen findest du im Menü <strong>Daten » Log</strong> und in den Preis-Berichten.</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -662,7 +678,7 @@ Hier werden nur die wichtigsten Einstellungen für den Import beschrieben. Du ar
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Möchtest du Zalando-Aufträge in plentymarkets importieren?</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Aktivieren, um Aufträge automatisch einmal täglich zu importieren.<br>
+<p>Aktivieren, um Aufträge automatisch alle fünf Minuten zu importieren.<br>
 <strong><em>Hinweis:</em></strong> Artikeldaten und Bestandsinformationen können nur zu Zalando übertragen werden, wenn diese Option aktiviert ist.</p>
 </div></div></td>
 </tr>
@@ -1638,10 +1654,10 @@ Gib in deinem Foren-Post die folgenden Informationen an:</p>
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="900">19. Berichte abrufen</h2>
+<h2 id="900">19. Berichte herunterladen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Im Menü <strong>Einrichtung » Märkte » Zalando » Einstellungen » Tab: Verarbeitungsberichte</strong> kannst du die folgenden Berichte für Zalando herunterladen:</p>
+<p>Für Zalando stehen verschiedene Berichte zur Verfügung. Im Menü <strong>Einrichtung » Märkte » Zalando » Einstellungen » Tab: Verarbeitungsberichte</strong> kannst du die folgenden Berichte herunterladen:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1656,40 +1672,63 @@ Gib in deinem Foren-Post die folgenden Informationen an:</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Export-Log</strong></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Export-Log</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>zalandoArticleExportLog.txt</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Das Export-Log enthält Log-Einträge für Varianten, die nicht zu Zalando exportiert werden konnten. Der Bericht wird einmal pro Nacht automatisch generiert.<br>
-<a href="#905">So rufst du das Export-Log ab</a></p>
+<p>Das Export-Log <strong>zalandoArticleExportLog.txt</strong> enthält Log-Einträge für Varianten, die nicht zu Zalando exportiert werden konnten. Der Bericht wird einmal pro Nacht automatisch generiert.</p>
+</div>
+<div class="paragraph">
+<p><a href="#905">So lädst du das Export-Log herunter</a></p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Produkt-Status-Berichte</strong></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Berichte</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikelstatusberichte</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Die Produkt-Status-Berichte werden von Zalando generiert. Diese Berichte enthalten deshalb nur Informationen zu Varianten, die erfolgreich zu Zalando exportiert wurden.</p>
+<p>Die Artikelstatusberichte werden einmal täglich über Nacht von Zalando generiert. Die Berichte enthalten nur Informationen zu Varianten, die erfolgreich zu Zalando exportiert wurden.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>ProductErrorReport.csv</em></strong>: Enthält Varianten, die seit dem letzten Export nicht auf Zalando verkauft werden können. Der Bericht wird einmal pro Nacht automatisch generiert.</p>
-</li>
-<li>
-<p><strong><em>ProductLiveReport.csv</em></strong>: Enthält Varianten, die seit dem letzten Export auf Zalando verkauft werden können sowie Bestand und Preis jeder Variante auf den Zalando-Channels (DE, FR usw.) zu dem Zeitpunkt, zu dem die Datei generiert wurde. Der Bericht wird einmal pro Nacht automatisch generiert.</p>
-</li>
-</ul>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>ProductErrorReport.csv</em></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enthält Varianten, die seit dem letzten Export nicht auf Zalando verkauft werden können. Der Bericht wird einmal pro Nacht automatisch generiert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>ProductLiveReport.csv</em></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enthält Varianten, die seit dem letzten Export auf Zalando verkauft werden können sowie Bestand und Preis jeder Variante auf den Zalando-Channels (DE, FR usw.) zu dem Zeitpunkt, zu dem die Datei generiert wurde. Der Bericht wird einmal pro Nacht automatisch generiert.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><a href="#910">So lädst du Produkt-Status-Berichte herunter</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Preis-Berichte</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die Preis-Berichte werden einmal täglich über Nacht pro aktiven Channel von Zalando generiert. Diese Berichte enthalten Informationen zum Verarbeitungsstatus aller Preis-Updates, die in den letzten sieben Tagen bei Zalando eingegangen sind.</p>
 </div>
 <div class="paragraph">
-<p><a href="#910">So rufst du Produkt-Status-Berichte ab</a></p>
+<p><a href="#915">So lädst du Preis-Berichte herunter</a></p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="905">19.1. Export-Log abrufen</h3>
+<h3 id="905">19.1. Export-Log herunterladen</h3>
 <div class="paragraph">
 <p>Das Export-Log enthält plentymarkets Log-Einträge für Artikel, die nicht zu Zalando exportiert werden konnten.</p>
 </div>
 <div class="paragraph instruction">
-<p>Export-Log abrufen:</p>
+<p>Export-Log herunterladen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1710,7 +1749,7 @@ Gib in deinem Foren-Post die folgenden Informationen an:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="910">19.2. Produkt-Status-Bericht abrufen</h3>
+<h3 id="910">19.2. Produkt-Status-Bericht herunterladen</h3>
 <div class="paragraph">
 <p>Produkt-Status-Berichte enthalten Informationen zu den Artikeln, die zu Zalando exportiert wurden. Diese Berichte werden von Zalando generiert. Deshalb enthalten die Berichte nur Informationen zu Varianten, die erfolgreich zu Zalando exportiert wurden. Folgende Berichte sind verfügbar:</p>
 </div>
@@ -1753,7 +1792,7 @@ Gib in deinem Foren-Post die folgenden Informationen an:</p>
 </div>
 </div>
 <div class="paragraph instruction">
-<p>Produkt-Status-Bericht abrufen:</p>
+<p>Produkt-Status-Bericht herunterladen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1785,6 +1824,249 @@ Gib in deinem Foren-Post die folgenden Informationen an:</p>
 <p>Speichere die CSV-Datei auf deinem Rechner.</p>
 </li>
 </ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="915">19.3. Preis-Berichte herunterladen</h3>
+<div class="paragraph">
+<p>Zalando generiert einmal täglich über Nacht einen Preis-Bericht pro aktiven Channel. Diese Berichte enthalten Informationen zum Verarbeitungsstatus aller Preis-Updates, die in den letzten sieben Tagen bei Zalando eingegangen sind. Die Berichte können also mehrere Einträge für dieselbe EAN enthalten.</p>
+</div>
+<div class="paragraph instruction">
+<p>Preis-Berichte herunterladen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Märkte » Zalando » Einstellungen</strong>.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>Verarbeitungsberichte</strong>.<br>
+→ Im Bereich <strong>Preis-Berichte</strong> sind Dateien für alle aktiven Channels verfügbar.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Standardmäßig wird die Datei einmal pro Nacht aktualisiert. Klicke in der Spalte <strong>Aktionen</strong> auf <strong>Datei aktualisieren</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>), um vor dem Herunterladen aktuelle Daten bei Zalando abzurufen.</p>
+</li>
+<li>
+<p>Klicke im Bereich <strong>Preis-Berichte</strong> in der Zeile eines Verarbeitungsberichts auf <strong>Datei herunterladen</strong> (<span class="icon blue"><i class="fa fa-eye  "></i></span>).<br>
+→ Die CSV-Datei wird generiert.</p>
+</li>
+<li>
+<p>Speichere die CSV-Datei auf deinem Rechner.</p>
+</li>
+</ol>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Welche Informationen sind in Preis-Berichten enthalten?</div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entspricht dem aktuellsten Zeitstempel aus den Spalten <strong>Status History</strong> und <strong>Scheduled Price (1-3) - Status History</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EAN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die EAN der Variante, deren Preis aktualisiert wurde.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ignore Warnings?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Entspricht der Einstellung <strong>Ignoriere Warnungen</strong> unter <strong>Einrichtung » Assistenten » Omni-Channel » Zalando Kontoeinstellungen » [Konto öffnen] » Schritt: Preise für [Zielland]</strong> zum Zeitpunkt der Übertragung des Updates.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regular Price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Übertragener Wert des normalen Preises.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Regular Price Currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Übertragene Währung des normalen Preises.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Promotional Price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Übertragener Wert des reduzierten Preises.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Promotional Price Currency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Übertragene Währung des reduzierten Preises.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Status der Verarbeitung. Mögliche Status:</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RECEIVED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis ist eingegangen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ACCEPTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis wurde akzeptiert und zur weiteren Validierung weitergeleitet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REJECTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis hat die Validierung nicht bestanden. Siehe die Statusmeldungen in <strong>Status History</strong> für weitere Informationen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FAILED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bei der Preisaktualisierung ist ein unerwarteter Fehler aufgetreten. Siehe die Statusmeldungen in <strong>Status History</strong> für weitere Informationen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCHEDULED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis wurde erfolgreich validiert und wartet auf die Übermittlung.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SUBMITTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis wurde eingereicht und wird in Kürze im Shop angezeigt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWAITING_ONBOARDING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis wurde akzeptiert, aber der Artikel wurde noch nicht aktiviert. Der Preis wird angewendet, wenn das Onboarding abgeschlossen ist.</p></td>
+</tr>
+</tbody>
+</table></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status History</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Verlauf der Statusänderung. Je Änderung gibt es einen Absatz in der Zelle mit dem folgenden Schema (Platzhalter in eckigen Klammern):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[Zeitstempel]: FROM [Ursprungsstatus] TO [Neuer Status] - Code: [Code] [Schweregrad] [Nachricht]</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Start</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Startdatum des geplanten Preises.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - End</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enddatum des geplanten Preises.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Regular Price</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Übertragener Wert des normalen Preises für den geplanten Preis.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Regular Price Currency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Übertragene Währung des normalen Preises.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Promotional Price</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Übertragener Wert des reduzierten Preises.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Promotional Price Currency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Übertragene Währung des reduzierten Preises.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Status</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Status der Verarbeitung des geplanten Preises. Mögliche Status:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RECEIVED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis ist eingegangen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ACCEPTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis wurde akzeptiert und zur weiteren Validierung weitergeleitet.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REJECTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis hat die Validierung nicht bestanden. Siehe die Statusmeldungen in <strong>Scheduled Price (1-3) - Status History</strong> für weitere Informationen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FAILED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bei der Preisaktualisierung ist ein unerwarteter Fehler aufgetreten. Siehe die Statusmeldungen in <strong>Scheduled Price (1-3) - Status History</strong> für weitere Informationen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCHEDULED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis wurde erfolgreich validiert und wartet auf die Übermittlung.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OVERRIDDEN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis wurde geplant, aber durch eine neue Preisaktualisierung überschrieben, bevor er übermittelt werden konnte.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SUBMITTED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis wurde eingereicht und wird in Kürze im Shop angezeigt.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWAITING_ONBOARDING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Preis wurde akzeptiert, aber der Artikel wurde noch nicht aktiviert. Der Preis wird angewendet, wenn das Onboarding abgeschlossen ist.</p></td>
+</tr>
+</tbody>
+</table></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scheduled Price (1-3) - Status History</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="paragraph">
+<p>Beim Generieren der Datei wird für alle Einträge, die seit dem letzten Generieren der Datei (minus einer Stunde als Puffer) in den Status REJECTED, FAILED oder OVERRIDDEN geschoben wurden, ein Fehlerlog geschrieben. Die Log-Einträge sind unter <strong>Daten » Log</strong> mit den folgenden Suchparametern durchsuchbar:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Identifikator » Zalando</p>
+</li>
+<li>
+<p>Level: Error</p>
+</li>
+<li>
+<p>Referenzen:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Referenztyp » action<br>
+Referenzwert » PriceUpdate</p>
+</li>
+<li>
+<p>Referenztyp » ean<br>
+Referenzwert » EAN der Variante</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Fehler beim Generieren der Datei sind unter <strong>Daten » Log</strong> mit den folgenden Suchparametern zu finden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Identifikator » Zalando</p>
+</li>
+<li>
+<p>Referenztyp » action</p>
+</li>
+<li>
+<p>Referenzwert » PriceReporting</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
