@@ -13,7 +13,7 @@
 <li><a href="#600"><span>2.4.</span><span> Grundeinstellungen vornehmen</span></a></li>
 <li><a href="#700"><span>2.5.</span><span> Versandprofile verknüpfen</span></a></li>
 <li><a href="#800"><span>2.6.</span><span> Retourengründe und -status verknüpfen</span></a></li>
-<li><a href="#900"><span>2.7.</span><span> Kaufabbruchstatus verknüpfen</span></a></li>
+<li><a href="#900"><span>2.7.</span><span> Kaufabbruchstatus festlegen und verknüpfen</span></a></li>
 <li><a href="#1000"><span>2.8.</span><span> Warenbestand abgleichen</span></a>
 <ul class="sectlevel3">
 <li><a href="#1100"><span>2.8.1.</span><span> Bestandsautomatik aktivieren</span></a></li>
@@ -175,26 +175,20 @@
 </li>
 <li><a href="#8900"><span>20.</span><span> Kaufabbrüche abwickeln</span></a>
 <ul class="sectlevel2">
-<li><a href="#9000"><span>20.1.</span><span> Anfragen importieren</span></a></li>
-<li><a href="#9100"><span>20.2.</span><span> Anfragen akzeptieren</span></a>
+<li><a href="#8900-1"><span>20.1.</span><span> Kaufabbrüche durch Kund:innen abwickeln</span></a>
 <ul class="sectlevel3">
-<li><a href="#9200"><span>20.2.1.</span><span> Auftragsstatus ändern, um Anfragen zu akzeptieren</span></a></li>
-<li><a href="#9300"><span>20.2.2.</span><span> Kaufabbruch von ausstehenden Aufträgen akzeptieren</span></a></li>
+<li><a href="#9000"><span>20.1.1.</span><span> Kaufabbruch: Anfragen importieren</span></a></li>
 </ul>
 </li>
-<li><a href="#9400"><span>20.3.</span><span> Anfragen ablehnen</span></a>
+<li><a href="#9700"><span>20.2.</span><span> Ereignisaktionen erstellen, um eBay Entscheidungen automatisch mitzuteilen</span></a>
 <ul class="sectlevel3">
-<li><a href="#9500"><span>20.3.1.</span><span> Auftragsstatus ändern, um Anfragen abzulehnen</span></a></li>
-<li><a href="#9600"><span>20.3.2.</span><span> Anfragen für bezahlte Aufträge automatisch ablehnen</span></a></li>
+<li><a href="#9800"><span>20.2.1.</span><span> Kaufabbruch akzeptiert mitteilen</span></a></li>
+<li><a href="#9900"><span>20.2.2.</span><span> Kaufabbruch abgelehnt mitteilen</span></a></li>
+<li><a href="#9300"><span>20.2.3.</span><span> Kaufabbruch: Anfragen akzeptieren</span></a></li>
+<li><a href="#9400"><span>20.2.4.</span><span> Kaufabbruch: Anfragen ablehnen</span></a></li>
 </ul>
 </li>
-<li><a href="#9700"><span>20.4.</span><span> Entscheidungen eBay automatisch mitteilen</span></a>
-<ul class="sectlevel3">
-<li><a href="#9800"><span>20.4.1.</span><span> Kaufabbruch akzeptiert mitteilen</span></a></li>
-<li><a href="#9900"><span>20.4.2.</span><span> Kaufabbruch abgelehnt mitteilen</span></a></li>
-</ul>
-</li>
-<li><a href="#9950"><span>20.5.</span><span> Kaufabbruch auf eBay automatisch starten</span></a></li>
+<li><a href="#9950"><span>20.3.</span><span> Kaufabbrüche durch Händler:in automatisieren</span></a></li>
 </ul>
 </li>
 <li><a href="#10000"><span>21.</span><span> API-Log abrufen</span></a></li>
@@ -1017,12 +1011,92 @@ Wenn die Option <strong>Verkäufe nicht abrufen</strong> bei der Einstellung <st
 </div>
 </div>
 <div class="sect2">
-<h3 id="900">2.7. Kaufabbruchstatus verknüpfen</h3>
+<h3 id="900">2.7. Kaufabbruchstatus festlegen und verknüpfen</h3>
 <div class="paragraph">
-<p>Bei der Bearbeitung von Kaufabbrüchen im eBay-Backend werden Kaufabbruchstatus verwendet. Um eBay-Kaufabbrüche in plentymarkets zu importieren und zu bearbeiten, erstellst du neue <a href="/auftraege/auftraege-verwalten#1200">Auftragsstatus</a> und verknüpfst die erstellten Auftragsstatus mit den Kaufabbruchstatus von eBay. Der passende Status wird im Auftrag automatisch eingestellt, wenn eine Kaufabbruchanfrage importiert wird.</p>
+<p>Prinzipieller Ablauf:</p>
 </div>
-<div class="paragraph instruction">
-<p>Kaufabbruchstatus verknüpfen:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#900-1">Du legst Auftragsstatus fest.</a></p>
+</li>
+<li>
+<p><a href="#900-2">Du prüfst den Statusbereich für stornierte Aufträge und passt den Bereich bei Bedarf an.</a></p>
+</li>
+<li>
+<p><a href="#900-3">Du verknüpfst die Kaufabbruchstatus mit den Status von eBay.</a></p>
+</li>
+</ul>
+</div>
+<h5 id="900-1" class="discrete">Auftragsstatus festlegen</h5>
+<div class="paragraph">
+<p>Bei der Bearbeitung von Kaufabbrüchen im eBay-Backend werden Kaufabbruchstatus verwendet. Du kannst entweder vorhandene Auftragsstatus verwenden oder neue <a href="/auftraege/auftraege-verwalten#1200">Auftragsstatus erstellen</a>. Um eBay-Kaufabbrüche in plentymarkets zu importieren und zu bearbeiten, benötigst du die folgenden Auftragsstatus:</p>
+</div>
+<div class="paragraph">
+<p>Die Nummern für diese Status hängen davon ab, welchen Status du für Stornierungen nutzt. Wenn du den Standardstatus <strong>[8] Storniert</strong> für Stornierungen nutzt, solltest du Nummern im Bereich [8.xx] zuordnen.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Auftragsstatus erstellen</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Status</strong>.</p>
+</li>
+<li>
+<p>Prüfe, welchen Status</p>
+</li>
+<li>
+<p>Klicke auf <strong>Neuen Status erstellen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
+</li>
+<li>
+<p>Trage eine Statusnummer ein.<br>
+→ Die höchstmögliche Nummer ist 19.9999.</p>
+</li>
+<li>
+<p>Gib einen Namen ein.<br></p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Eingabefelder für weitere Einstellungen werden sichtbar.<br></p>
+</li>
+<li>
+<p>Füge bei Bedarf weitere Sprachen für den Auftragsstatus hinzu.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<h5 id="900-2" class="discrete">Statusbereich für stornierte Aufträge prüfen und ggf. anpassen</h5>
+<div class="paragraph">
+<p>Bei Kaufabbrüchen sollte der reservierte Bestand wieder freigegeben werden. Prüfe deshalb den Statusbereich für stornierte Aufträge deines Systems und passe diesen Statusbereich bei Bedarf an.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Einstellungen</strong>.</p>
+</li>
+<li>
+<p>Navigiere zu der Einstellung <strong>Status stornierter Aufträge (Keine Reservierung von Beständen)</strong>.</p>
+</li>
+<li>
+<p>Prüfe, ob der eingestellte Statusbereich die Status abdeckt, die du für das Bearbeiten von eBay-Kaufabbrüchen festgelegt hast.<br>
+<strong><em>Tipp:</em></strong> Standardmäßig ist hier ein Statusbereich von <strong>[8] Storniert</strong> bis <strong>[8.1] Storniert durch Kunden</strong> eingestellt.</p>
+</li>
+<li>
+<p>Wenn der eingestellte Statusbereich die Kaufabbruchstatus nicht abdeckt, wähle aus der Dropdown-Liste <strong>bis</strong> den höchsten Status, den du für die Status nutzt.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<h5 id="900-3" class="discrete">Kaufabbruchstatus verknüpfen</h5>
+<div class="paragraph">
+<p>Die Auftragsstatus verknüpfst du mit den Kaufabbruchstatus von eBay. Wenn eine Kaufabbruchanfrage importiert wird, wird so der passende Status im Auftrag automatisch eingestellt.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1030,14 +1104,40 @@ Wenn die Option <strong>Verkäufe nicht abrufen</strong> bei der Einstellung <st
 <p>Öffne das Menü <strong>Einrichtung » Märkte » eBay » Einstellungen » Tab: Kaufabbruch</strong>.</p>
 </li>
 <li>
-<p>Wähle für jeden <strong>eBay-Kaufabbruchstatus</strong> einen passenden Kaufabbruchstatus aus den Dropdown-Listen.<br>
-→ Du kannst einen bereits vorhandenen Status wählen oder einen eigenen Status <a href="/auftraege/auftraege-verwalten#1220">erstellen</a>, der am besten zu deinem Arbeitsablauf passt.</p>
+<p>Wähle in der Spalte <strong>Eigener Status</strong> für jeden <strong>eBay-Kaufabbruchstatus</strong> den passenden plentymarkets Status. Beachte die Erläuterungen in <a href="#table-ebay-status">Tabelle 3</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 </ol>
 </div>
+<table id="table-ebay-status" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Status für eBay-Kaufabbrüche</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">eBay-Kaufabbruch-Status</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kaufabbruch angefragt</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Dieser Status wird Aufträgen zugewiesen, wenn Kund:innen bei eBay einen Kaufabbruch anfordern.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kaufabbruch-Anfrage geschlossen</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Der Status wird eBay-Aufträgen zugewiesen, wenn der Kaufabbruch komplett abgewickelt ist und keine weiteren Aktionen mehr erforderlich und/oder möglich sind.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>Wie du Kaufabbrüche weiter bearbeitest, wird im Kapitel <a href="#8900">Kaufabbrüche abwickeln</a> beschrieben.</p>
 </div>
@@ -1436,13 +1536,13 @@ Soll keine Währungsumrechnung erfolgen, muss darauf geachtet werden, dass die r
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#automatische-ebay-nachrichten">Tabelle 4</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#automatische-ebay-nachrichten">Tabelle 5</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#automatische-ebay-nachrichten">Tabelle 4</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#automatische-ebay-nachrichten">Tabelle 5</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1455,7 +1555,7 @@ Soll keine Währungsumrechnung erfolgen, muss darauf geachtet werden, dass die r
 </div>
 </div>
 <table id="automatische-ebay-nachrichten" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 4. Ereignisaktion zum automatischen Versenden von eBay-Nachrichten</caption>
+<caption class="title">Tabelle 5. Ereignisaktion zum automatischen Versenden von eBay-Nachrichten</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1530,7 +1630,7 @@ Du kannst Fahrzeugverwendungslisten auch über das Import-Tool im Menü <strong>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen vor. Beachte dabei die Erläuterungen in <a href="#einstellungen-fahrzeugverwendungsliste">Tabelle 5</a>.</p>
+<p>Nimm die Einstellungen vor. Beachte dabei die Erläuterungen in <a href="#einstellungen-fahrzeugverwendungsliste">Tabelle 6</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -1538,7 +1638,7 @@ Du kannst Fahrzeugverwendungslisten auch über das Import-Tool im Menü <strong>
 </ol>
 </div>
 <table id="einstellungen-fahrzeugverwendungsliste" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 5. Einstellungen für neue Fahrzeugverwendungsliste</caption>
+<caption class="title">Tabelle 6. Einstellungen für neue Fahrzeugverwendungsliste</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1720,7 +1820,7 @@ Wenn du den Wert <strong>0,00</strong> einträgst, dann ist diese Funktion deakt
 <p>Öffne das Menü <strong>Einrichtung » Märkte » eBay » Einstellungen » Tab: Kontoeinstellungen</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-abwesenheitseinstellungen">Tabelle 6</a>.</p>
+<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-abwesenheitseinstellungen">Tabelle 7</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -1728,7 +1828,7 @@ Wenn du den Wert <strong>0,00</strong> einträgst, dann ist diese Funktion deakt
 </ol>
 </div>
 <table id="tabelle-abwesenheitseinstellungen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 6. Abwesenheitseinstellungen</caption>
+<caption class="title">Tabelle 7. Abwesenheitseinstellungen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1806,7 +1906,7 @@ Wähle <strong>Nein</strong>, wenn du die Abwesenheitseinstellungen wieder deakt
 <p>Öffne das Menü <strong>Einrichtung » Märkte » eBay » Rahmenbedingungen » Tab: eBay-Zahlungsbedingungen » Neu</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ebay-zahlungsbedingungen">Tabelle 7</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ebay-zahlungsbedingungen">Tabelle 8</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -1814,7 +1914,7 @@ Wähle <strong>Nein</strong>, wenn du die Abwesenheitseinstellungen wieder deakt
 </ol>
 </div>
 <table id="ebay-zahlungsbedingungen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 7. eBay-Zahlungsbedingungen</caption>
+<caption class="title">Tabelle 8. eBay-Zahlungsbedingungen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1874,7 +1974,7 @@ Mit dieser Option müssen Käufer:innen die Kaufabwicklung bereits vor dem Kauf 
 <p>Öffne das Menü <strong>Einrichtung » Märkte » eBay » Rahmenbedingungen » Tab: eBay-Versandbedingungen » Tab: Neu</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#einstellungen-nationaler-versand">Tabelle 8</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#einstellungen-nationaler-versand">Tabelle 9</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -1882,7 +1982,7 @@ Mit dieser Option müssen Käufer:innen die Kaufabwicklung bereits vor dem Kauf 
 </ol>
 </div>
 <table id="einstellungen-nationaler-versand" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 8. Einstellungen nationaler Versand</caption>
+<caption class="title">Tabelle 9. Einstellungen nationaler Versand</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1981,7 +2081,7 @@ Mit dieser Option müssen Käufer:innen die Kaufabwicklung bereits vor dem Kauf 
 <p>Öffne das Menü <strong>Einrichtung » Märkte » eBay » Rahmenbedingungen » Tab: eBay-Versandbedingungen » Tab: Neu</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#einstellungen-nationaler-versand">Tabelle 8</a> und <a href="#einstellungen-internationaler-versand">Tabelle 9</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#einstellungen-nationaler-versand">Tabelle 9</a> und <a href="#einstellungen-internationaler-versand">Tabelle 10</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -1989,7 +2089,7 @@ Mit dieser Option müssen Käufer:innen die Kaufabwicklung bereits vor dem Kauf 
 </ol>
 </div>
 <table id="einstellungen-internationaler-versand" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 9. Einstellungen internationaler Versand</caption>
+<caption class="title">Tabelle 10. Einstellungen internationaler Versand</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2063,7 +2163,7 @@ Mit dieser Option müssen Käufer:innen die Kaufabwicklung bereits vor dem Kauf 
 <p>Öffne das Menü <strong>Einrichtung » Märkte » eBay » Rahmenbedingungen » Tab: eBay-Rücknahmebedingungen » Tab: Neu</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ebay-rücknahmebedingungen">Tabelle 10</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ebay-rücknahmebedingungen">Tabelle 11</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -2071,7 +2171,7 @@ Mit dieser Option müssen Käufer:innen die Kaufabwicklung bereits vor dem Kauf 
 </ol>
 </div>
 <table id="ebay-rücknahmebedingungen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 10. Einstellungen <strong>eBay-Rücknahmebedingungen</strong></caption>
+<caption class="title">Tabelle 11. Einstellungen <strong>eBay-Rücknahmebedingungen</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2154,7 +2254,7 @@ Mit dieser Option müssen Käufer:innen die Kaufabwicklung bereits vor dem Kauf 
 <p>Öffne das Menü <strong>Einrichtung » Märkte » eBay » Rahmenbedingungen » Tab: Versandprofile » Tab: Neu</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#einstellungen-versandprofile">Tabelle 11</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#einstellungen-versandprofile">Tabelle 12</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -2162,7 +2262,7 @@ Mit dieser Option müssen Käufer:innen die Kaufabwicklung bereits vor dem Kauf 
 </ol>
 </div>
 <table id="einstellungen-versandprofile" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 11. Einstellungen für <strong>Versandprofile</strong> vornehmen</caption>
+<caption class="title">Tabelle 12. Einstellungen für <strong>Versandprofile</strong> vornehmen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2291,7 +2391,7 @@ Profile im Tab <strong>Übersicht</strong> werden entweder mit <strong>Y</strong
 → Das Tab <strong>Einstellungen</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-zahlungsart-aktivieren">Tabelle 12</a>.</p>
+<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-zahlungsart-aktivieren">Tabelle 13</a>.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong>.</p>
@@ -2302,7 +2402,7 @@ Profile im Tab <strong>Übersicht</strong> werden entweder mit <strong>Y</strong
 </ol>
 </div>
 <table id="tabelle-zahlungsart-aktivieren" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 12. Einstellungen der Zahlungsart</caption>
+<caption class="title">Tabelle 13. Einstellungen der Zahlungsart</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2434,7 +2534,7 @@ Ein Beispiel für pauschale und prozentuale Kosten findest du auf der Handbuchse
 <p>Öffne das Menü <strong>Einrichtung » Listings » Einstellungen</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#grundeinstellungen-listings">Tabelle 13</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#grundeinstellungen-listings">Tabelle 14</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -2442,7 +2542,7 @@ Ein Beispiel für pauschale und prozentuale Kosten findest du auf der Handbuchse
 </ol>
 </div>
 <table id="grundeinstellungen-listings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 13. Grundeinstellungen für Listings</caption>
+<caption class="title">Tabelle 14. Grundeinstellungen für Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2498,7 +2598,7 @@ Ein Beispiel für pauschale und prozentuale Kosten findest du auf der Handbuchse
 <p>Öffne das Menü <strong>Einrichtung » Listings » Warenbestand</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#optionen-warenbestand">Tabelle 14</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#optionen-warenbestand">Tabelle 15</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -2506,7 +2606,7 @@ Ein Beispiel für pauschale und prozentuale Kosten findest du auf der Handbuchse
 </ol>
 </div>
 <table id="optionen-warenbestand" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 14. Optionen zum <strong>Warenbestand</strong></caption>
+<caption class="title">Tabelle 15. Optionen zum <strong>Warenbestand</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2589,7 +2689,7 @@ GTC-Angebote, bei denen <strong>Ja</strong> für die Einstellung <strong>"Nicht 
 <p>Öffne das Menü <strong>Einrichtung » Listings » Kaufabwicklung</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#einstellungen-kaufabwicklung">Tabelle 15</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#einstellungen-kaufabwicklung">Tabelle 16</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -2597,7 +2697,7 @@ GTC-Angebote, bei denen <strong>Ja</strong> für die Einstellung <strong>"Nicht 
 </ol>
 </div>
 <table id="einstellungen-kaufabwicklung" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 15. Einstellungen zur Kaufabwicklung</caption>
+<caption class="title">Tabelle 16. Einstellungen zur Kaufabwicklung</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2741,7 +2841,7 @@ Down-Selling bedeutet, dass Kund:innen die bei eBay erworbene Menge in plentymar
 <p>Klicke auf <strong>Neuen Verkaufsplaner anlegen</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#einstellungen-verkaufsplaner">Tabelle 16</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#einstellungen-verkaufsplaner">Tabelle 17</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -2749,7 +2849,7 @@ Down-Selling bedeutet, dass Kund:innen die bei eBay erworbene Menge in plentymar
 </ol>
 </div>
 <table id="einstellungen-verkaufsplaner" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 16. Einstellungen des Verkaufsplaners</caption>
+<caption class="title">Tabelle 17. Einstellungen des Verkaufsplaners</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2875,7 +2975,7 @@ Down-Selling bedeutet, dass Kund:innen die bei eBay erworbene Menge in plentymar
 <p>Füge in den Tabs <strong>Mainframe</strong>, <strong>HTMLStructure</strong> und <strong>CSS</strong> Code ein.</p>
 </li>
 <li>
-<p>Nimm im Tab <strong>Einstellungen</strong> die Einstellungen gemäß <a href="#layout-vorlage">Tabelle 17</a> vor.</p>
+<p>Nimm im Tab <strong>Einstellungen</strong> die Einstellungen gemäß <a href="#layout-vorlage">Tabelle 18</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -2883,7 +2983,7 @@ Down-Selling bedeutet, dass Kund:innen die bei eBay erworbene Menge in plentymar
 </ol>
 </div>
 <table id="layout-vorlage" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 17. Layout-Vorlagen</caption>
+<caption class="title">Tabelle 18. Layout-Vorlagen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3248,7 +3348,7 @@ hr {
 <p>Wähle die <strong>Layout-Vorlage</strong> aus der Dropdown-Liste, die du mit dem Listing verknüpfen möchtest.</p>
 </li>
 <li>
-<p>Beachte die Erläuterungen zu den Variablen in <a href="#table-template-variables">Tabelle 18</a>.</p>
+<p>Beachte die Erläuterungen zu den Variablen in <a href="#table-template-variables">Tabelle 19</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
@@ -3284,7 +3384,7 @@ hr {
 <p>Die folgende Tabelle erläutert die Template-Variablen und -Funktionen für den Bereich <strong>Layout-Vorlagen</strong> in alphabetischer Reihenfolge:</p>
 </div>
 <table id="table-template-variables" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 18. Template-Variablen und -Funktionen für Layout-Vorlagen</caption>
+<caption class="title">Tabelle 19. Template-Variablen und -Funktionen für Layout-Vorlagen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3955,7 +4055,7 @@ Nach §2 Abschnitt 3 der PAngV (Preisangabenverordnung) muss bei bestimmten Arti
 → Das Fenster <strong>Neues Market-Listing</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#einstellungen-neues-market-listing">Tabelle 19</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#einstellungen-neues-market-listing">Tabelle 20</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
@@ -3964,7 +4064,7 @@ Nach §2 Abschnitt 3 der PAngV (Preisangabenverordnung) muss bei bestimmten Arti
 </ol>
 </div>
 <table id="einstellungen-neues-market-listing" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 19. Einstellungen im Fenster <strong>Neues Market-Listing</strong></caption>
+<caption class="title">Tabelle 20. Einstellungen im Fenster <strong>Neues Market-Listing</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4202,7 +4302,7 @@ Entweder hier eine Listing-Vorlage wählen, in der ein Marktplatz festgelegt ist
 <p>Im Menü <strong>Listings » Listings bearbeiten</strong> werden Listings in einer Übersicht aufgelistet. Die Listing-Übersicht zeigt die wichtigsten Einstellungen auf einen Blick. Über die Funktion <strong>Ansicht einrichten</strong> wählst du, welche Einstellungen angezeigt werden. In der Übersicht nimmst du Änderungen an einzelnen Listings vor. Außerdem bearbeitest du mehrere Listings per <strong>Gruppenfunktion</strong> oder per <strong>Stapelverarbeitung</strong>.</p>
 </div>
 <table id="listing-übersicht" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 20. Listing-Übersicht</caption>
+<caption class="title">Tabelle 21. Listing-Übersicht</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4348,7 +4448,7 @@ Entweder hier eine Listing-Vorlage wählen, in der ein Marktplatz festgelegt ist
 → Das Market-Listing wird geöffnet.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#market-listing-bearbeiten">Tabelle 21</a>, <a href="#base-tab-marketlisting">Tabelle 22</a>, <a href="#beschreibung-layout-marketlisting">Tabelle 23</a> und <a href="#tab-marktplatz">Tabelle 24</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#market-listing-bearbeiten">Tabelle 22</a>, <a href="#base-tab-marketlisting">Tabelle 23</a>, <a href="#beschreibung-layout-marketlisting">Tabelle 24</a> und <a href="#tab-marktplatz">Tabelle 25</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -4364,7 +4464,7 @@ Entweder hier eine Listing-Vorlage wählen, in der ein Marktplatz festgelegt ist
 <p><em>Bild 1: Symbolleiste eines Market-Listings</em></p>
 </div>
 <table id="market-listing-bearbeiten" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 21. Market-Listing bearbeiten</caption>
+<caption class="title">Tabelle 22. Market-Listing bearbeiten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4450,7 +4550,7 @@ Entweder hier eine Listing-Vorlage wählen, in der ein Marktplatz festgelegt ist
 <p>Im Tab <strong>Base</strong> des Market-Listings nimmst du marktplatz- und plattformunabhängige Einstellungen vor. Die Optionen in diesem Tab weichen je nach Listing-Typ leicht voneinander ab. Ein Festpreis-Listing verfügt z.B. nicht über die Optionen <strong>Startpreis</strong> und <strong>Mindestpreis</strong>.</p>
 </div>
 <table id="base-tab-marketlisting" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 22. Tab <strong>Base</strong> eines Market-Listings</caption>
+<caption class="title">Tabelle 23. Tab <strong>Base</strong> eines Market-Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4598,7 +4698,7 @@ Das Starten von Listings mit Varianten ist nur auf bestimmten Plattformen mögli
 <p>Im Tab <strong>Beschreibung und Layout</strong> trägst du Texte für das Listing ein und wählst ein Layout.</p>
 </div>
 <table id="beschreibung-layout-marketlisting" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 23. Tab <strong>Beschreibung und Layout</strong> eines Market-Listings</caption>
+<caption class="title">Tabelle 24. Tab <strong>Beschreibung und Layout</strong> eines Market-Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4657,7 +4757,7 @@ Für die Bearbeitung der Beschreibung im Syntax-Editor ist die Einstellung <stro
 <p>Im Tab <strong>Marktplatz</strong> nimmst du Einstellungen für den Marktplatz eBay vor.</p>
 </div>
 <table id="tab-marktplatz" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 24. Tab <strong>Marktplatz</strong> eines Market-Listings</caption>
+<caption class="title">Tabelle 25. Tab <strong>Marktplatz</strong> eines Market-Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -4860,7 +4960,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 → Das Fenster <strong>Gruppenfunktion</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 25</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 26</a> vor.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Einstellungen an den Listings vorzunehmen.</p>
@@ -4868,7 +4968,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 </ol>
 </div>
 <table id="gruppenfunktion-stapelverarbeitung" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 25. Listings per <strong>Gruppenfunktion</strong> oder per <strong>Stapelverarbeitung</strong> bearbeiten</caption>
+<caption class="title">Tabelle 26. Listings per <strong>Gruppenfunktion</strong> oder per <strong>Stapelverarbeitung</strong> bearbeiten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5248,10 +5348,10 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <p>Öffne das Menü <strong>Listings » Stapelverarbeitung » Listings</strong>.</p>
 </li>
 <li>
-<p>Wähle die Filter gemäß <a href="#filteroptionen-stapelverarbeitung">Tabelle 26</a>.</p>
+<p>Wähle die Filter gemäß <a href="#filteroptionen-stapelverarbeitung">Tabelle 27</a>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 25</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 26</a> vor.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Einstellungen an den Listings vorzunehmen.</p>
@@ -5259,7 +5359,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 </ol>
 </div>
 <table id="filteroptionen-stapelverarbeitung" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 26. Filteroptionen für die <strong>Stapelverarbeitung</strong></caption>
+<caption class="title">Tabelle 27. Filteroptionen für die <strong>Stapelverarbeitung</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5500,7 +5600,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <p>Folgende Filterelemente und -funktionen sind im Menü <strong>Listings » Listings bearbeiten</strong> verfügbar:</p>
 </div>
 <table id="filteroptionen-listings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 27. Filteroptionen für Listings</caption>
+<caption class="title">Tabelle 28. Filteroptionen für Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5742,7 +5842,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <p>Wähle <strong>Listings starten</strong> als Aktion.</p>
 </li>
 <li>
-<p>Wähle einen Startzeitpunkt gemäß <a href="#zeitliche-optionen">Tabelle 28</a>.</p>
+<p>Wähle einen Startzeitpunkt gemäß <a href="#zeitliche-optionen">Tabelle 29</a>.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Market-Listings zu starten.</p>
@@ -5768,7 +5868,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <p>Wähle <strong>Starten</strong> unter <strong>Aktionen</strong>.</p>
 </li>
 <li>
-<p>Wähle einen Startzeitpunkt gemäß <a href="#zeitliche-optionen">Tabelle 28</a>.</p>
+<p>Wähle einen Startzeitpunkt gemäß <a href="#zeitliche-optionen">Tabelle 29</a>.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Market-Listings zu starten.</p>
@@ -5776,7 +5876,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 </ol>
 </div>
 <table id="zeitliche-optionen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 28. Zeitliche Optionen für den Start</caption>
+<caption class="title">Tabelle 29. Zeitliche Optionen für den Start</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -5917,7 +6017,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 → Das Fenster <strong>Gruppenfunktion</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 25</a> im Kapitel <a href="#3800">Listings bearbeiten</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 26</a> im Kapitel <a href="#3800">Listings bearbeiten</a> vor.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Neue Vorlage speichern</strong>.<br>
@@ -5941,7 +6041,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <p>Öffne das Menü <strong>Listings » Stapelverarbeitung » Listings</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 25</a> im Kapitel <a href="#3800">Listings bearbeiten</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 26</a> im Kapitel <a href="#3800">Listings bearbeiten</a> vor.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Neue Vorlage speichern</strong>.<br>
@@ -5969,10 +6069,10 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <div class="sect2">
 <h3 id="5700">11.1. Aktive Listings suchen</h3>
 <div class="paragraph">
-<p>In der Übersicht des Menüs <strong>Listings » Aktive Listings</strong> siehst du alle aktiven Listings. Diese Listings kannst du über Filter für <a href="#4800">Einstellungen</a>, <a href="#4900">Kategorien</a> oder <a href="#5000">Verzeichnisse</a> weiter eingrenzen. Zusätzlich zu den Filtermöglichkeiten aus <a href="#filteroptionen-listings">Tabelle 27</a> findest du hier folgende Optionen:</p>
+<p>In der Übersicht des Menüs <strong>Listings » Aktive Listings</strong> siehst du alle aktiven Listings. Diese Listings kannst du über Filter für <a href="#4800">Einstellungen</a>, <a href="#4900">Kategorien</a> oder <a href="#5000">Verzeichnisse</a> weiter eingrenzen. Zusätzlich zu den Filtermöglichkeiten aus <a href="#filteroptionen-listings">Tabelle 28</a> findest du hier folgende Optionen:</p>
 </div>
 <table id="filteroptionen-aktive-listings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 29. Filteroptionen für aktive Listings</caption>
+<caption class="title">Tabelle 30. Filteroptionen für aktive Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6080,7 +6180,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 → Das Fenster <strong>Gruppenfunktion</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Wähle eine Aktion gemäß <a href="#aktionen-gruppenfunktion">Tabelle 30</a>.</p>
+<p>Wähle eine Aktion gemäß <a href="#aktionen-gruppenfunktion">Tabelle 31</a>.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Aktion für die gewählten Listings auszuführen.</p>
@@ -6088,7 +6188,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 </ol>
 </div>
 <table id="aktionen-gruppenfunktion" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 30. Aktionen der Gruppenfunktion</caption>
+<caption class="title">Tabelle 31. Aktionen der Gruppenfunktion</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6169,7 +6269,7 @@ Unter <strong>Aktionen</strong> muss die Option <strong>Keine</strong> eingestel
 <div class="sect2">
 <h3 id="5900">11.3. Aktive Listings per Stapelverarbeitung bearbeiten</h3>
 <div class="paragraph">
-<p>Die Stapelverarbeitung bietet die gleichen Optionen wie die Gruppenfunktion. Bei der Stapelverarbeitung werden jedoch zuvor gefilterte Listings bearbeitet. Die Filter zur Eingrenzung der Listings stimmen mit den Filtern in <a href="#filteroptionen-listings">Tabelle 27</a> und <a href="#filteroptionen-aktive-listings">Tabelle 29</a> überein. Die Aktionen stimmen wiederum mit denen der Gruppenfunktion in <a href="#aktionen-gruppenfunktion">Tabelle 30</a> überein.</p>
+<p>Die Stapelverarbeitung bietet die gleichen Optionen wie die Gruppenfunktion. Bei der Stapelverarbeitung werden jedoch zuvor gefilterte Listings bearbeitet. Die Filter zur Eingrenzung der Listings stimmen mit den Filtern in <a href="#filteroptionen-listings">Tabelle 28</a> und <a href="#filteroptionen-aktive-listings">Tabelle 30</a> überein. Die Aktionen stimmen wiederum mit denen der Gruppenfunktion in <a href="#aktionen-gruppenfunktion">Tabelle 31</a> überein.</p>
 </div>
 <div class="paragraph instruction">
 <p>Aktive Listings per Stapelverarbeitung bearbeiten:</p>
@@ -6180,10 +6280,10 @@ Unter <strong>Aktionen</strong> muss die Option <strong>Keine</strong> eingestel
 <p>Öffne das Menü <strong>Listings » Stapelverarbeitung » Aktive Listings</strong>.</p>
 </li>
 <li>
-<p>Wähle die Filter gemäß <a href="#filteroptionen-listings">Tabelle 27</a> und <a href="#filteroptionen-aktive-listings">Tabelle 29</a>.</p>
+<p>Wähle die Filter gemäß <a href="#filteroptionen-listings">Tabelle 28</a> und <a href="#filteroptionen-aktive-listings">Tabelle 30</a>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#aktionen-gruppenfunktion">Tabelle 30</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#aktionen-gruppenfunktion">Tabelle 31</a> vor.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Einstellungen auszuführen.<br>
@@ -6221,7 +6321,7 @@ Unter <strong>Aktionen</strong> muss die Option <strong>Keine</strong> eingestel
 <p>Aus der Übersicht kannst du den Artikel und das Market-Listing öffnen, um diese zu bearbeiten oder zu prüfen. Außerdem hast du in diesem Menü die Möglichkeit, geplante Listing-Prozesse per Gruppenfunktion zu löschen und so den Start des Prozesses abzubrechen.</p>
 </div>
 <table id="uebersicht-listing-prozesse" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 31. Übersicht zu Listing-Prozessen</caption>
+<caption class="title">Tabelle 32. Übersicht zu Listing-Prozessen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -6298,10 +6398,10 @@ Unter <strong>Aktionen</strong> muss die Option <strong>Keine</strong> eingestel
 <div class="sect2">
 <h3 id="5955">12.1. Listing-Prozesse suchen</h3>
 <div class="paragraph">
-<p>Mit den Filtern auf der linken Seite des Menüs <strong>Listings » Listing-Prozesse</strong> kannst du die Suchergebnisse weiter eingrenzen, um dir nur bestimmte Prozesse anzeigen zu lassen. In <a href="#filter-zukuenftige-listings">Tabelle 32</a> erhältst du eine Übersicht über alle verfügbaren Filter. Wähle einen oder mehrere Filter und klicke auf <strong>Suchen</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>), um die Suchergebnisse anzuzeigen.</p>
+<p>Mit den Filtern auf der linken Seite des Menüs <strong>Listings » Listing-Prozesse</strong> kannst du die Suchergebnisse weiter eingrenzen, um dir nur bestimmte Prozesse anzeigen zu lassen. In <a href="#filter-zukuenftige-listings">Tabelle 33</a> erhältst du eine Übersicht über alle verfügbaren Filter. Wähle einen oder mehrere Filter und klicke auf <strong>Suchen</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>), um die Suchergebnisse anzuzeigen.</p>
 </div>
 <table id="filter-zukuenftige-listings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 32. Filter für zukünftige Listings</caption>
+<caption class="title">Tabelle 33. Filter für zukünftige Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -7023,10 +7123,10 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 </div>
 <h5 id="_varianten_ohne_epid_verknüpfung_filtern" class="discrete">Varianten ohne ePID-Verknüpfung filtern</h5>
 <div class="paragraph">
-<p>Im Menü <strong>Einrichtung » Märkte » eBay » ePID-Verknüpfung</strong> hast du die Möglichkeit, Varianten ohne ePID-Verknüpfung zu filtern. Du kannst beispielsweise nach MLID oder Artikel-ID suchen oder nur Varianten anzeigen lassen, die einem bestimmten Verzeichnis angehören. Weitere Informationen zu Filteroptionen für Varianten ohne ePID-Verknüpfung findest du in <a href="#filter-epid">Tabelle 33</a>.</p>
+<p>Im Menü <strong>Einrichtung » Märkte » eBay » ePID-Verknüpfung</strong> hast du die Möglichkeit, Varianten ohne ePID-Verknüpfung zu filtern. Du kannst beispielsweise nach MLID oder Artikel-ID suchen oder nur Varianten anzeigen lassen, die einem bestimmten Verzeichnis angehören. Weitere Informationen zu Filteroptionen für Varianten ohne ePID-Verknüpfung findest du in <a href="#filter-epid">Tabelle 34</a>.</p>
 </div>
 <table id="filter-epid" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 33. Filteroptionen für Varianten ohne ePID-Verknüpfung</caption>
+<caption class="title">Tabelle 34. Filteroptionen für Varianten ohne ePID-Verknüpfung</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -7418,7 +7518,7 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p>Klicke auf das Tab <strong>Neue Aktion</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#automatische-mahnaktionen">Tabelle 34</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#automatische-mahnaktionen">Tabelle 35</a> vor.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -7426,7 +7526,7 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 </ol>
 </div>
 <table id="automatische-mahnaktionen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 34. Einstellungen für automatische Mahnaktionen</caption>
+<caption class="title">Tabelle 35. Einstellungen für automatische Mahnaktionen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -7589,13 +7689,13 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-retouren-akzeptieren">Tabelle 35</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-retouren-akzeptieren">Tabelle 36</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-retouren-akzeptieren">Tabelle 35</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-retouren-akzeptieren">Tabelle 36</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -7611,7 +7711,7 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p><strong><em>Hinweis:</em></strong> Der Status in der Ereignisaktion wurde beispielhaft gewählt. Wähle den Status, der am besten zu deinem Arbeitsablauf passt. Dazu kannst du einen vorhandenen Status wählen oder einen eigenen Status <a href="/auftraege/auftraege-verwalten#1220">erstellen</a>.</p>
 </div>
 <table id="ereignisaktion-retouren-akzeptieren" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 35. Ereignisaktion zum automatischen Akzeptieren von Retouren mit eBay-Etikett</caption>
+<caption class="title">Tabelle 36. Ereignisaktion zum automatischen Akzeptieren von Retouren mit eBay-Etikett</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -7684,13 +7784,13 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-retoure-eigenes-etikett">Tabelle 36</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-retoure-eigenes-etikett">Tabelle 37</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-retoure-eigenes-etikett">Tabelle 36</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-retoure-eigenes-etikett">Tabelle 37</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -7706,7 +7806,7 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p><strong><em>Hinweis:</em></strong> Der Status in der Ereignisaktion wurde beispielhaft gewählt. Wähle den Status, der am besten zu deinem Arbeitsablauf passt. Dazu kannst du einen vorhandenen Status wählen oder einen eigenen Status <a href="/auftraege/auftraege-verwalten#1220">erstellen</a>.</p>
 </div>
 <table id="ereignisaktion-retoure-eigenes-etikett" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 36. Ereignisaktion zum automatischen Akzeptieren von Retouren mit eigenem Etikett</caption>
+<caption class="title">Tabelle 37. Ereignisaktion zum automatischen Akzeptieren von Retouren mit eigenem Etikett</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -7779,13 +7879,13 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-retouren-ablehnen">Tabelle 37</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-retouren-ablehnen">Tabelle 38</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-retouren-ablehnen">Tabelle 37</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-retouren-ablehnen">Tabelle 38</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -7801,7 +7901,7 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p><strong><em>Hinweis:</em></strong> Der Status in der Ereignisaktion wurde beispielhaft gewählt. Wähle den Status, der am besten zu deinem Arbeitsablauf passt. Dazu kannst du einen vorhandenen Status wählen oder einen eigenen Status <a href="/auftraege/auftraege-verwalten#1220">erstellen</a>.</p>
 </div>
 <table id="ereignisaktion-retouren-ablehnen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 37. Ereignisaktion zum automatischen Ablehnen von Retouren</caption>
+<caption class="title">Tabelle 38. Ereignisaktion zum automatischen Ablehnen von Retouren</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -7859,13 +7959,13 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-teilrückerstattung">Tabelle 38</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-teilrückerstattung">Tabelle 39</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-teilrückerstattung">Tabelle 38</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-teilrückerstattung">Tabelle 39</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -7881,7 +7981,7 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p><strong><em>Hinweis:</em></strong> Der Status in der Ereignisaktion wurde beispielhaft gewählt. Wähle den Status, der am besten zu deinem Arbeitsablauf passt. Dazu kannst du einen vorhandenen Status wählen oder einen eigenen Status <a href="/auftraege/auftraege-verwalten#1220">erstellen</a>.</p>
 </div>
 <table id="ereignisaktion-teilrückerstattung" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 38. Ereignisaktion zum automatischen Anbieten von Teilrückerstattungen</caption>
+<caption class="title">Tabelle 39. Ereignisaktion zum automatischen Anbieten von Teilrückerstattungen</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -7954,13 +8054,13 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-eigenes-etikett">Tabelle 39</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-eigenes-etikett">Tabelle 40</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-eigenes-etikett">Tabelle 39</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-eigenes-etikett">Tabelle 40</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -7976,7 +8076,7 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p><strong><em>Hinweis:</em></strong> Der Status in der Ereignisaktion wurde beispielhaft gewählt. Wähle den Status, der am besten zu deinem Arbeitsablauf passt. Dazu kannst du einen vorhandenen Status wählen oder einen eigenen Status <a href="/auftraege/auftraege-verwalten#1220">erstellen</a>.</p>
 </div>
 <table id="ereignisaktion-eigenes-etikett" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 39. Ereignisaktion zum Übermitteln des eigenen Etiketts</caption>
+<caption class="title">Tabelle 40. Ereignisaktion zum Übermitteln des eigenen Etiketts</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -8034,13 +8134,13 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-retoure-markieren">Tabelle 40</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-retoure-markieren">Tabelle 41</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-retoure-markieren">Tabelle 40</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-retoure-markieren">Tabelle 41</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -8056,7 +8156,7 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p><strong><em>Hinweis:</em></strong> Der Status in der Ereignisaktion wurde beispielhaft gewählt. Wähle den Status, der am besten zu deinem Arbeitsablauf passt. Dazu kannst du einen vorhandenen Status wählen oder einen eigenen Status <a href="/auftraege/auftraege-verwalten#1220">erstellen</a>.</p>
 </div>
 <table id="ereignisaktion-retoure-markieren" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 40. Ereignisaktion zum automatischen Markieren von erhaltenen Retouren</caption>
+<caption class="title">Tabelle 41. Ereignisaktion zum automatischen Markieren von erhaltenen Retouren</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -8136,13 +8236,13 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-automatische-rückerstattung">Tabelle 41</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-automatische-rückerstattung">Tabelle 42</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-automatische-rückerstattung">Tabelle 41</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-automatische-rückerstattung">Tabelle 42</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -8158,7 +8258,7 @@ Für bestehende Listings findet keine automatische Verknüpfung statt und du mus
 <p><strong><em>Hinweis:</em></strong> Der Status in der Ereignisaktion wurde beispielhaft gewählt. Wähle den Status, der am besten zu deinem Arbeitsablauf passt. Dazu kannst du einen vorhandenen Status wählen oder einen eigenen Status <a href="/auftraege/auftraege-verwalten#1220">erstellen</a>.</p>
 </div>
 <table id="ereignisaktion-automatische-rückerstattung" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 41. Ereignisaktion zum automatischen Veranlassen von Rückerstattungen über PayPal</caption>
+<caption class="title">Tabelle 42. Ereignisaktion zum automatischen Veranlassen von Rückerstattungen über PayPal</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -8222,13 +8322,13 @@ mit eBay Managed Payments: <strong>eBay Payments</strong></p></td>
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-versendete-rückerstattungen">Tabelle 42</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-versendete-rückerstattungen">Tabelle 43</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-versendete-rückerstattungen">Tabelle 42</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ereignisaktion-versendete-rückerstattungen">Tabelle 43</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -8244,7 +8344,7 @@ mit eBay Managed Payments: <strong>eBay Payments</strong></p></td>
 <p><strong><em>Hinweis:</em></strong> Der Status in der Ereignisaktion wurde beispielhaft gewählt. Wähle den Status, der am besten zu deinem Arbeitsablauf passt. Dazu kannst du einen vorhandenen Status wählen oder einen eigenen Status <a href="/auftraege/auftraege-verwalten#1220">erstellen</a>.</p>
 </div>
 <table id="ereignisaktion-versendete-rückerstattungen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 42. Ereignisaktion zum automatischen Markieren von versendeten Rückerstattungen (ohne PayPal)</caption>
+<caption class="title">Tabelle 43. Ereignisaktion zum automatischen Markieren von versendeten Rückerstattungen (ohne PayPal)</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -8517,12 +8617,27 @@ Danach setzt du den Status der Retoure auf <strong>eBay: Teilrückerstattung anb
 <h2 id="8900">20. Kaufabbrüche abwickeln</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die <a href="https://verkaeuferportal.ebay.de/kauf-abbrechen#19872anchor2" target="_blank" rel="noopener">Kaufabbruchfunktion</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> von eBay ermöglicht es Käufer:innen, innerhalb von einer Stunde nach Kauf um den Abbruch des Kaufs zu bitten, wenn der Artikel noch nicht verschickt wurde. Du hast drei Tage Zeit, die Anfrage zu akzeptieren oder abzulehnen. Reagierst du innerhalb der drei Tage nicht auf den Kaufabbruch, wird die Anfrage automatisch akzeptiert, wenn Käufer:innen den Artikel noch nicht bezahlt haben. Wurde der Artikel bereits bezahlt, wird der Kaufabbruch automatisch abgelehnt.</p>
+<p>Bei eBay gibt es zwei Arten von Kaufabbrüchen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#8900-1">Kaufabbrüche durch Kund:innen</a></p>
+</li>
+<li>
+<p><a href="#9950">Kaufabbrüche durch Händler:in</a></p>
+</li>
+</ul>
 </div>
 <div class="sect2">
-<h3 id="9000">20.1. Anfragen importieren</h3>
+<h3 id="8900-1">20.1. Kaufabbrüche durch Kund:innen abwickeln</h3>
 <div class="paragraph">
-<p>Nimm die folgende Einstellung vor, um eBay-Kaufabbruchanfragen zu importieren. Nach dem Import wird im Menü <strong>Aufträge » Aufträge bearbeiten</strong> der Kaufabbruchstatus angezeigt, der im Menü <strong>Einrichtung » Märkte » eBay » Einstellungen » Tab: Kaufabbruch</strong> mit dem eBay-Kaufabbruchstatus verknüpft wurde. Nimm daher zuerst die Verknüpfungen vor.</p>
+<p>Die <a href="https://verkaeuferportal.ebay.de/kauf-abbrechen#19872anchor2" target="_blank" rel="noopener">Kaufabbruchfunktion</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> von eBay ermöglicht es Käufer:innen, innerhalb von einer Stunde nach Kauf um den Abbruch des Kaufs zu bitten, wenn der Artikel noch nicht verschickt wurde. Du hast drei Tage Zeit, die Anfrage zu akzeptieren oder abzulehnen. Reagierst du innerhalb der drei Tage nicht auf den Kaufabbruch, wird die Anfrage automatisch akzeptiert, wenn Käufer:innen den Artikel noch nicht bezahlt haben. Wurde der Artikel bereits bezahlt, wird der Kaufabbruch automatisch abgelehnt.</p>
+</div>
+<div class="sect3">
+<h4 id="9000">20.1.1. Kaufabbruch: Anfragen importieren</h4>
+<div class="paragraph">
+<p>Nimm die folgende Einstellung vor, um eBay-Kaufabbruchanfragen zu importieren. Nach dem Import wird im Menü <strong>Aufträge » Aufträge bearbeiten</strong> der Kaufabbruchstatus angezeigt, der im Menü <strong>Einrichtung » Märkte » eBay » Einstellungen » Tab: Kaufabbruch</strong> mit dem eBay-Kaufabbruchstatus verknüpft wurde. Nimm daher zuerst <a href="#900">die Verknüpfungen vor</a>.</p>
 </div>
 <div class="paragraph instruction">
 <p>Kaufabbruchanfragen automatisch importieren:</p>
@@ -8540,7 +8655,8 @@ Danach setzt du den Status der Retoure auf <strong>eBay: Teilrückerstattung anb
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
-→ Die Anfragen werden automatisch importiert und der Auftragsstatus wird anhand der erstellten Statusverknüpfungen eingestellt.</p>
+→ Die Anfragen werden automatisch importiert.<br>
+→ Die Anfragen erhalten den Status, den du für eBay-Kaufabbruchanfragen festgelegt hast.</p>
 </li>
 </ol>
 </div>
@@ -8548,34 +8664,211 @@ Danach setzt du den Status der Retoure auf <strong>eBay: Teilrückerstattung anb
 <p>Wie und in welchen Menüs du die Anfragen bearbeitest, wird in den folgenden Kapiteln beschrieben. Prinzipiell kannst du Anfragen akzeptieren oder ablehnen.</p>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="9100">20.2. Anfragen akzeptieren</h3>
+<h3 id="9700">20.2. Ereignisaktionen erstellen, um eBay Entscheidungen automatisch mitzuteilen</h3>
 <div class="paragraph">
-<p>Du hast 2 Möglichkeiten, Anfragen zu akzeptieren, zum einen, indem du den Auftragsstatus änderst und zum anderen, indem du ausstehende Aufträge löschst.</p>
+<p>Erstelle die folgenden Ereignisaktionen, um eBay automatisch über Entscheidungen zu Kaufabbruchanfragen zu informieren. Diese Ereignisaktionen werden ausgelöst, wenn sich der Status eines Auftrags ändert, für den es eine Anfrage gibt.</p>
 </div>
 <div class="sect3">
-<h4 id="9200">20.2.1. Auftragsstatus ändern, um Anfragen zu akzeptieren</h4>
+<h4 id="9800">20.2.1. Kaufabbruch akzeptiert mitteilen</h4>
 <div class="paragraph">
-<p>Wenn du die eBay-Kaufabbruchstatus wie oben beschrieben mit eigenen Status verknüpft hast, dann werden Kaufabbruchanfragen im Status <strong>8.6 Kaufabbruch angefragt</strong> importiert. Indem du den Auftragsstatus änderst, bearbeitest du die Anfragen ganz individuell.</p>
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um eBay darüber zu informieren, dass du einen Kaufabbruch akzeptierst.</p>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock important">
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-tip" title="Hinweis"></i>
+<i class="fa icon-important" title="Wichtig"></i>
 </td>
 <td class="content">
-<div class="title">Status stornierter Aufträge</div>
+<div class="title">Rückerstattung</div>
 <div class="paragraph">
-<p>Beachte bei der Einrichtung von Kaufabbrüchen deine Einstellung für die Option <strong>Status stornierter Aufträge</strong> im Menü <strong>Einrichtung » Aufträge » Einstellungen</strong>. Der <strong>Status stornierter Aufträge</strong> muss zu den unten gewählten Status passen, da es ansonsten passieren kann, dass die Bestände weiterhin reserviert werden.<br>
-Der Status im Beispiel unten wurde beispielhaft gewählt. Wähle den Status, der am besten zu deinem Arbeitsablauf passt. Dazu kannst du einen vorhandenen Status wählen oder einen eigenen Status <a href="/auftraege/auftraege-verwalten#1220">erstellen</a>.</p>
+<p>Falls der Artikel bereits bezahlt wurde und du dem Kaufabbruch zugestimmt hast, hast du 10 Tage Zeit, das Geld zurückzuzahlen.</p>
 </div>
 </td>
 </tr>
 </tbody></table>
 </div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#mitteilung-akzeptierter-kaufabbruch">Tabelle 44</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen gemäß <a href="#mitteilung-akzeptierter-kaufabbruch">Tabelle 44</a> vor.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="mitteilung-akzeptierter-kaufabbruch" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 44. Ereignisaktion zum automatischen Mitteilen von akzeptierten Kaufabbrüchen an eBay</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Statuswechsel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status für <strong>eBay: Kaufabbruch akzeptiert</strong> wählen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eBay Deutschland</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Market-Listings &gt; eBay-Kaufabbruch akzeptieren</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="9900">20.2.2. Kaufabbruch abgelehnt mitteilen</h4>
+<div class="paragraph">
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um eBay darüber zu informieren, dass du einen Kaufabbruch ablehnst.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#mitteilung-abgelehnter-kaufabbruch">Tabelle 45</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen gemäß <a href="#mitteilung-abgelehnter-kaufabbruch">Tabelle 45</a> vor.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="mitteilung-abgelehnter-kaufabbruch" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 45. Ereignisaktion zum automatischen Mitteilen von abgelehnten Kaufabbrüchen an eBay</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Statuswechsel</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status für <strong>eBay: Kaufabbruch abgelehnt</strong> wählen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eBay Deutschland</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Market-Listings &gt; eBay-Kaufabbruch ablehnen</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="9300">20.2.3. Kaufabbruch: Anfragen akzeptieren</h4>
+<div class="paragraph">
+<p>Du hast zwei Möglichkeiten, Anfragen für Kaufabbrüche zu akzeptieren: Du kannst entweder den Auftragsstatus ändern oder ausstehende Aufträge löschen.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Rückerstattung</div>
+<div class="paragraph">
+<p>Falls der Artikel bereits bezahlt wurde und du dem Kaufabbruch zugestimmt hast, hast du 10 Tage Zeit, das Geld zurückzuzahlen.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
+                                <a class="nav-link active" id="kaufabbruch-akzeptieren--auftragsstatus--ndern-tab" data-toggle="tab" href="#kaufabbruch-akzeptieren--auftragsstatus--ndern" role="tab" aria-controls="kaufabbruch-akzeptieren--auftragsstatus--ndern" aria-selected="true">Kaufabbruch akzeptieren: Auftragsstatus ändern</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="kaufabbruch-akzeptieren--ausstehende-auftr-ge-l-schen-tab" data-toggle="tab" href="#kaufabbruch-akzeptieren--ausstehende-auftr-ge-l-schen" role="tab" aria-controls="kaufabbruch-akzeptieren--ausstehende-auftr-ge-l-schen" aria-selected="false">Kaufabbruch akzeptieren: Ausstehende Aufträge löschen</a>
+                            </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="kaufabbruch-akzeptieren--auftragsstatus--ndern" role="tabpanel" aria-labelledby="kaufabbruch-akzeptieren--auftragsstatus--ndern-tab">
+<div class="paragraph">
+<p>Wenn du die eBay-Kaufabbruchstatus <a href="#900">wie oben beschrieben</a> mit plentymarkets Status verknüpft hast, werden Kaufabbruchanfragen mit dem Status importiert, den du für "eBay Kaufabbruch angefragt" festgelegt hast. Indem du den Auftragsstatus änderst, bearbeitest du die Anfragen ganz individuell.</p>
+</div>
 <div class="paragraph instruction">
-<p>Auftragsstatus ändern:</p>
+<p>Auftragsstatus ändern, um Kaufabbruch zu akzeptieren:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -8583,13 +8876,13 @@ Der Status im Beispiel unten wurde beispielhaft gewählt. Wähle den Status, der
 <p>Öffne das Menü <strong>Aufträge » Aufträge bearbeiten</strong>.</p>
 </li>
 <li>
-<p>Suche nach Aufträgen im Status <strong>[8.6] eBay: Kaufabbruch angefragt</strong>.</p>
+<p>Suche nach Aufträgen in dem Status für <strong>eBay-Kaufabbruch angefragt</strong></p>
 </li>
 <li>
 <p>Wähle einen Auftrag aus.</p>
 </li>
 <li>
-<p>Ändere den Status des Auftrags auf <strong>[8.5] eBay: Kaufabbruch akzeptiert</strong>.</p>
+<p>Ändere den Status des Auftrags in den Status für <strong>Bay-Kaufabbruch akzeptiert</strong>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br></p>
@@ -8600,20 +8893,17 @@ Der Status im Beispiel unten wurde beispielhaft gewählt. Wähle den Status, der
 </ol>
 </div>
 <div class="paragraph">
-<p>Um mehrere Aufträge gleichzeitig zu ändern, nutze die Gruppenfunktion. Wenn du bei noch unbezahlten Aufträgen die Anfrage akzeptieren willst, suche alle unbezahlten Aufträge im Status 8.6 und ändere den Status der Aufträge per <a href="/auftraege/auftraege-verwalten#1700">Gruppenfunktion</a>.</p>
+<p>Um mehrere Aufträge gleichzeitig zu ändern, nutze die Gruppenfunktion. Wenn du bei noch unbezahlten Aufträgen die Anfrage akzeptieren willst, suche alle unbezahlten Aufträge im richtigen Status und ändere den Status der Aufträge per <a href="/auftraege/auftraege-verwalten#1700">Gruppenfunktion</a>.</p>
 </div>
 <div class="paragraph">
-<p>Vielleicht kannst du anhand deiner spezifischen Arbeitsabläufe auch eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a>, die Anfragen durch Filter automatisch akzeptiert, einrichten.</p>
+<p>Vielleicht kannst du anhand deiner spezifischen Arbeitsabläufe auch eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> einrichten, die Anfragen durch Filter automatisch akzeptiert.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="9300">20.2.2. Kaufabbruch von ausstehenden Aufträgen akzeptieren</h4>
+</div><div class="tab-pane fade" id="kaufabbruch-akzeptieren--ausstehende-auftr-ge-l-schen" role="tabpanel" aria-labelledby="kaufabbruch-akzeptieren--ausstehende-auftr-ge-l-schen-tab">
 <div class="paragraph">
-<p>Ausstehende Aufträge sind Aufträge, bei denen die Kaufabwicklung auf eBay noch nicht abgeschlossen ist. Ausstehende Aufträge werden in plentymarkets nur angezeigt, wenn du im Menü <strong>Einrichtung » Listings » Kaufabwicklung</strong> für <strong>Versandkosten neuer eBay-Aufträge</strong> die Einstellung <strong>von eBay übernehmen</strong> gewählt hast. Du findest ausstehende Aufträge im Menü <strong>Einrichtung » Märkte » eBay » Datenaustausch</strong>.<br>
-Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösche den ausstehenden Auftrag.</p>
+<p>Ausstehende Aufträge sind Aufträge, bei denen die Kaufabwicklung auf eBay noch nicht abgeschlossen ist. Ausstehende Aufträge werden in plentymarkets nur angezeigt, wenn du im Menü <strong>Einrichtung » Listings » Kaufabwicklung</strong> für <strong>Versandkosten neuer eBay-Aufträge</strong> die Einstellung <strong>von eBay übernehmen</strong> gewählt hast. Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösche den ausstehenden Auftrag.</p>
 </div>
 <div class="paragraph instruction">
-<p>Ausstehende Aufträge löschen:</p>
+<p>Ausstehende Aufträge löschen, um Kaufabbruch zu akzeptieren:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -8632,20 +8922,23 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="9400">20.3. Anfragen ablehnen</h3>
-<div class="paragraph">
-<p>Du hast 2 Möglichkeiten Anfragen abzulehnen, zum einen, indem du den Auftragsstatus änderst und zum anderen, indem du eine Ereignisaktion einrichtest.</p>
+</div></div>
 </div>
 <div class="sect3">
-<h4 id="9500">20.3.1. Auftragsstatus ändern, um Anfragen abzulehnen</h4>
+<h4 id="9400">20.2.4. Kaufabbruch: Anfragen ablehnen</h4>
 <div class="paragraph">
-<p>Wenn du die eBay-Kaufabbruchstatus wie oben beschrieben mit eigenen Status verknüpft hast, dann werden Kaufabbruchanfragen im Status <strong>8.6 Kaufabbruch angefragt</strong> importiert. Indem du den Auftragsstatus änderst, bearbeitest du die Anfragen ganz individuell.</p>
+<p>Du hast zwei Möglichkeiten, Anfragen abzulehnen: Du kannst entweder den Auftragsstatus ändern oder eine Ereignisaktion erstellen, um Anfragen zu bezahlten Aufträgen automatisch abzulehnen.</p>
+</div>
+<ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
+                                <a class="nav-link active" id="kaufabbruch-ablehnen--auftragsstatus--ndern-tab" data-toggle="tab" href="#kaufabbruch-ablehnen--auftragsstatus--ndern" role="tab" aria-controls="kaufabbruch-ablehnen--auftragsstatus--ndern" aria-selected="true">Kaufabbruch ablehnen: Auftragsstatus ändern</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="kaufabbruch-f-r-bezahlte-auftr-ge-ablehnen--ereignisaktionen-tab" data-toggle="tab" href="#kaufabbruch-f-r-bezahlte-auftr-ge-ablehnen--ereignisaktionen" role="tab" aria-controls="kaufabbruch-f-r-bezahlte-auftr-ge-ablehnen--ereignisaktionen" aria-selected="false">Kaufabbruch für bezahlte Aufträge ablehnen: Ereignisaktionen</a>
+                            </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="kaufabbruch-ablehnen--auftragsstatus--ndern" role="tabpanel" aria-labelledby="kaufabbruch-ablehnen--auftragsstatus--ndern-tab">
+<div class="paragraph">
+<p>Wenn du die eBay-Kaufabbruchstatus <a href="#900">wie oben beschrieben</a> mit plentymarkets Status verknüpft hast, werden Kaufabbruchanfragen mit dem Status importiert, den du für "eBay Kaufabbruch angefragt" festgelegt hast. Indem du den Auftragsstatus änderst, bearbeitest du die Anfragen ganz individuell.</p>
 </div>
 <div class="paragraph instruction">
-<p>Auftragsstatus ändern:</p>
+<p>Auftragsstatus ändern, um Anfragen abzulehnen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -8653,13 +8946,13 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 <p>Öffne das Menü <strong>Aufträge » Aufträge bearbeiten</strong>.</p>
 </li>
 <li>
-<p>Suche nach Aufträgen im Status <strong>[8.6] eBay: Kaufabbruch angefragt</strong>.</p>
+<p>Suche nach Aufträgen in dem Status für <strong>eBay-Kaufabbruch angefragt</strong></p>
 </li>
 <li>
-<p>Wähle einen Auftrag aus.</p>
+<p>Wähle einen Auftrag.</p>
 </li>
 <li>
-<p>Ändere den Status des Auftrags auf <strong>[8.7] eBay: Kaufabbruch abgelehnt</strong>.</p>
+<p>Ändere den Status des Auftrags in den Status für <strong>eBay-Kaufabbruch abgelehnt</strong>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
@@ -8669,13 +8962,11 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 </li>
 </ol>
 </div>
-</div>
-<div class="sect3">
-<h4 id="9600">20.3.2. Anfragen für bezahlte Aufträge automatisch ablehnen</h4>
+</div><div class="tab-pane fade" id="kaufabbruch-f-r-bezahlte-auftr-ge-ablehnen--ereignisaktionen" role="tabpanel" aria-labelledby="kaufabbruch-f-r-bezahlte-auftr-ge-ablehnen--ereignisaktionen-tab">
 <div class="paragraph">
 <p>Richte zwei <a href="/automatisierung/ereignisaktionen">Ereignisaktionen</a> ein, um bei bereits bezahlten Aufträgen Kaufabbruchanfragen automatisch abzulehnen.</p>
 </div>
-<div class="openblock collapseBox">
+<div class="exampleblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
 <div class="content">
 <div class="olist arabic">
@@ -8691,13 +8982,13 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#bezahlte-aufträge-markieren">Tabelle 43</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#bezahlte-aufträge-markieren">Tabelle 46</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#bezahlte-aufträge-markieren">Tabelle 43</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#bezahlte-aufträge-markieren">Tabelle 46</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -8710,7 +9001,7 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 </div>
 </div>
 <table id="bezahlte-aufträge-markieren" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 43. Ereignisaktion zum automatischen Markieren von bezahlten Aufträgen</caption>
+<caption class="title">Tabelle 46. Ereignisaktion zum automatischen Markieren von bezahlten Aufträgen</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -8736,7 +9027,7 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 </tr>
 </tbody>
 </table>
-<div class="openblock collapseBox">
+<div class="exampleblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
 <div class="content">
 <div class="olist arabic">
@@ -8752,13 +9043,13 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#kaufabbruch-automatisch-ablehnen">Tabelle 44</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#kaufabbruch-automatisch-ablehnen">Tabelle 47</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#kaufabbruch-automatisch-ablehnen">Tabelle 44</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#kaufabbruch-automatisch-ablehnen">Tabelle 47</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -8771,7 +9062,7 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 </div>
 </div>
 <table id="kaufabbruch-automatisch-ablehnen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 44. Ereignisaktion zum automatischen Ablehnen von Kaufabbrüchen</caption>
+<caption class="title">Tabelle 47. Ereignisaktion zum automatischen Ablehnen von Kaufabbrüchen</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -8807,94 +9098,91 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 </tr>
 </tbody>
 </table>
+</div></div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="9700">20.4. Entscheidungen eBay automatisch mitteilen</h3>
+<h3 id="9950">20.3. Kaufabbrüche durch Händler:in automatisieren</h3>
 <div class="paragraph">
-<p>Erstelle die folgenden Ereignisaktionen, um eBay automatisch über deine Entscheidung zum Kaufabbruch zu informieren. Diese Ereignisaktionen werden ausgelöst, wenn sich der Status eines Auftrags, für den es eine Anfrage gibt, ändert.</p>
+<p>Als Händler:in hast du die Möglichkeit, selbst Kaufabbrüche auf eBay zu starten.</p>
 </div>
-<div class="sect3">
-<h4 id="9800">20.4.1. Kaufabbruch akzeptiert mitteilen</h4>
 <div class="paragraph">
-<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um eBay darüber zu informieren, dass du einen Kaufabbruch akzeptierst.</p>
+<p>Prinzipieller Ablauf:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#9950-1">Du legst Auftragsstatus für die zulässigen Gründe fest.</a></p>
+</li>
+<li>
+<p><a href="#9950-2">Du erstellst eine Ereignisaktion, um Kaufabbrüche automatisch zu starten</a></p>
+</li>
+<li>
+<p><a href="#9950-3">Bei Aufträgen, für die du einen Kaufabbruch einleiten möchtest, änderst du dann nur noch den Auftragsstatus.</a></p>
+</li>
+</ul>
+</div>
+<h5 id="9950-1" class="discrete">Auftragsstatus für Gründe festlegen</h5>
+<div class="paragraph">
+<p>Um Kaufabbrüche auf eBay zu starten, must du einen Grund angeben. Lege für jeden der folgenden Gründe einen eigenen Auftragsstatus fest:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lieferadresse des Käufers war nicht korrekt</p>
+</li>
+<li>
+<p>Käufer hat um Abbruch des Kaufs gebeten</p>
+</li>
+<li>
+<p>Ich kann den Artikel nicht wie vereinbart liefern</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Du kannst entweder vorhandene Auftragsstatus verwenden oder <a href="/auftraege/auftraege-verwalten#1200">neue Auftragsstatus erstellen</a>.</p>
 </div>
 <div class="openblock collapseBox">
-<div class="title">Ereignisaktion einrichten</div>
+<div class="title">Auftragsstatus erstellen</div>
 <div class="content">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Status</strong>.</p>
 </li>
 <li>
-<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
-→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+<p>Prüfe, welchen Status</p>
 </li>
 <li>
-<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+<p>Klicke auf <strong>Neuen Status erstellen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#mitteilung-akzeptierter-kaufabbruch">Tabelle 45</a>.</p>
+<p>Trage eine Statusnummer ein.<br>
+→ Die höchstmögliche Nummer ist 19.9999.</p>
+</li>
+<li>
+<p>Gib einen Namen ein.<br></p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Eingabefelder für weitere Einstellungen werden sichtbar.<br></p>
+</li>
+<li>
+<p>Füge bei Bedarf weitere Sprachen für den Auftragsstatus hinzu.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
-</li>
-<li>
-<p>Nimm die Einstellungen gemäß <a href="#mitteilung-akzeptierter-kaufabbruch">Tabelle 45</a> vor.</p>
-</li>
-<li>
-<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
-</li>
-<li>
-<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br></p>
 </li>
 </ol>
 </div>
 </div>
 </div>
-<table id="mitteilung-akzeptierter-kaufabbruch" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 45. Ereignisaktion zum automatischen Mitteilen von akzeptierten Kaufabbrüchen an eBay</caption>
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Einstellung</th>
-<th class="tableblock halign-left valign-top">Option</th>
-<th class="tableblock halign-left valign-top">Auswahl</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Statuswechsel &gt; eBay: Kaufabbruch akzeptiert</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eBay Deutschland</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Market-Listings &gt; eBay-Kaufabbruch akzeptieren</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="9900">20.4.2. Kaufabbruch abgelehnt mitteilen</h4>
+<h5 id="9950-2" class="discrete">Ereignisaktion erstellen, um Kaufabbrüche automatisch zu starten</h5>
 <div class="paragraph">
-<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um eBay darüber zu informieren, dass du einen Kaufabbruch ablehnst.</p>
+<p>Richte nun für jeden Grund eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um automatisch Kaufabbrüche auf eBay zu starten.</p>
+</div>
+<div class="paragraph">
+<p>Im Folgenden wird beispielhaft eine Ereignisaktion beschrieben, in der ein Kauf abgebrochen wird, weil die Lieferadresse nicht korrekt war. Richte für die Gründe <strong>Käufer hat um Abbruch des Kaufs gebeten</strong> und <strong>Ich kann den Artikel nicht wie vereinbart liefern</strong> weitere Ereignisaktionen auf die gleiche Weise ein.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
@@ -8912,109 +9200,13 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#mitteilung-abgelehnter-kaufabbruch">Tabelle 46</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#tabelle-kaufabbrüche-starten">Tabelle 48</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#mitteilung-abgelehnter-kaufabbruch">Tabelle 46</a> vor.</p>
-</li>
-<li>
-<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
-</li>
-<li>
-<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br></p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<table id="mitteilung-abgelehnter-kaufabbruch" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 46. Ereignisaktion zum automatischen Mitteilen von abgelehnten Kaufabbrüchen an eBay</caption>
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Einstellung</th>
-<th class="tableblock halign-left valign-top">Option</th>
-<th class="tableblock halign-left valign-top">Auswahl</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Statuswechsel &gt; eBay: Kaufabbruch abgelehnt</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>eBay Deutschland</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Market-Listings &gt; eBay-Kaufabbruch ablehnen</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Wichtig"></i>
-</td>
-<td class="content">
-<div class="title">Rückerstattung</div>
-<div class="paragraph">
-<p>Falls der Artikel bereits bezahlt wurde und du dem Kaufabbruch zugestimmt hast, hast du 10 Tage Zeit, das Geld zurückzuzahlen.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="9950">20.5. Kaufabbruch auf eBay automatisch starten</h3>
-<div class="paragraph">
-<p>Als Händler:in hast du die Möglichkeit, einen Kaufabbruch auf eBay zu starten. Dazu must du eine Begründung angeben. Zur Auswahl stehen die Gründe <strong>Lieferadresse des Käufers war nicht korrekt</strong>, <strong>Käufer hat um Abbruch des Kaufs gebeten</strong> und <strong>Ich kann den Artikel nicht wie vereinbart liefern</strong>.<br></p>
-</div>
-<div class="paragraph">
-<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um automatisch einen Kaufabbruch auf eBay zu starten. Im Folgenden wird beispielhaft eine Ereignisaktion beschrieben, in der ein Kauf abgebrochen wird, weil die Lieferadresse nicht korrekt war. Richte weitere Ereignisaktionen zum Kaufabbruch auf eBay auf die gleiche Weise ein.</p>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Ereignisaktion einrichten</div>
-<div class="content">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
-</li>
-<li>
-<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
-→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
-</li>
-<li>
-<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
-</li>
-<li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#tabelle-kaufabbrüche-starten">Tabelle 47</a>.</p>
-</li>
-<li>
-<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
-</li>
-<li>
-<p>Nimm die Einstellungen gemäß <a href="#tabelle-kaufabbrüche-starten">Tabelle 47</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#tabelle-kaufabbrüche-starten">Tabelle 48</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -9027,7 +9219,7 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 </div>
 </div>
 <table id="tabelle-kaufabbrüche-starten" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 47. Ereignisaktion, um Kaufabbrüche auf eBay automatisch zu starten</caption>
+<caption class="title">Tabelle 48. Ereignisaktion, um Kaufabbrüche auf eBay automatisch zu starten</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -9044,8 +9236,7 @@ Um eine Kaufabbruchanfrage für einen ausstehenden Auftrag zu akzeptieren, lösc
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Statuswechsel</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status wählen.<br>
-Der Status hängt davon ab, welche Begründung du für den Kaufabbruch angibst. Wir empfehlen, für die Ereignisaktionen zum automatischen Starten von Kaufabbrüchen auf eBay neue Status zu erstellen. Erstelle z.B. für die Begründung <strong>Käufer hat um Abbruch des Kaufes gebeten</strong> den Auftragsstatus <strong>Kauf abbrechen, weil Käufer um Kaufabbruch gebeten hat</strong>. Erstelle weitere Status für die unterschiedlichen Gründe.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status wählen, den du für den Grund <strong>Lieferadresse des Käufers war nicht korrekt</strong> festgelegt hast.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Filter 1</p></td>
@@ -9064,6 +9255,24 @@ Der Status hängt davon ab, welche Begründung du für den Kaufabbruch angibst. 
 </tr>
 </tbody>
 </table>
+<h5 id="9950-3" class="discrete">Auftragsstatus ändern, um einen Kaufabbruch zu starten</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Aufträge » Aufträge bearbeiten</strong>.</p>
+</li>
+<li>
+<p>Wähle einen Auftrag.</p>
+</li>
+<li>
+<p>Ändere den Status des Auftrags in den Status für den Grund, den du an eBay senden möchtest.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+→ Die Ereignisaktion wird ausgelöst und eBay so über den Kaufabbruch informiert.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div><div class="sect1">
@@ -9540,7 +9749,7 @@ Der Status hängt davon ab, welche Begründung du für den Kaufabbruch angibst. 
 <p>Öffne das Menü <strong>Daten » eBay-Listings</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ebay-listings-importieren">Tabelle 48</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ebay-listings-importieren">Tabelle 49</a> vor.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Sync</strong>, um die eBay-Listings zu importieren.<br>
@@ -9549,7 +9758,7 @@ Der Status hängt davon ab, welche Begründung du für den Kaufabbruch angibst. 
 </ol>
 </div>
 <table id="ebay-listings-importieren" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 48. Import von eBay-Listings</caption>
+<caption class="title">Tabelle 49. Import von eBay-Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -9706,7 +9915,7 @@ Wenn du diese Option wählst, müssen folgende Einstellungen am Artikel gespeich
 <p>Im Bereich <strong>Bearbeitungsstatus</strong> hast du während des Importprozesses Einsicht in den aktuellen Verlauf des Imports. Zusätzlich kann der Import hier abgebrochen und neu gestartet werden. Bereits importierte Listings werden beim Neustarten des Imports übersprungen. Auch bereits abgeschlossene Importprozesse können in diesem Bereich eingesehen werden.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 49. Bearbeitungsstatus</caption>
+<caption class="title">Tabelle 50. Bearbeitungsstatus</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
