@@ -22305,10 +22305,26 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 17. März 2021",
+		"navAlias" => "Changelog 24. März 2021",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
+			[
+				"id" => "f9eb0a83671b46424c668b5ba8ed718f",
+				"path" => "changelog/2021-03-17",
+				"position" => 740,
+				"urlName" => "2021-03-17",
+				"url" => "/changelog/2021-03-17",
+				"level" => 2,
+				"title" => "Changelog 17. März 2021",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 17. März 2021. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
 			[
 				"id" => "a9780794782dd7100aba6d58d30bdf27",
 				"path" => "changelog/2021-03-10",
