@@ -37190,7 +37190,7 @@ class Metadata {
 							[
 								"id" => "91cd301edc59f27e56e83cea9cf1cc53",
 								"path" => "markets/ebay/faq/best-practices-ebay-activate-listings",
-								"position" => 0,
+								"position" => 20,
 								"urlName" => "best-practices-ebay-activate-listings",
 								"url" => "/en/markets/ebay/best-practices-ebay-activate-listings",
 								"level" => 4,
