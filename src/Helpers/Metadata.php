@@ -323,22 +323,6 @@ class Metadata {
 				"languageID" => "FY8U5SO",
 				"children" => 				[
 					[
-						"id" => "45b5508c069248e6fdd583214bca675a",
-						"path" => "willkommen/allgemeine-funktionen/eigenschaften",
-						"position" => 10,
-						"urlName" => "eigenschaften",
-						"url" => "/willkommen/allgemeine-funktionen/eigenschaften",
-						"level" => 3,
-						"title" => "Eigenschaften",
-						"keywords" => "Eigenschaften, Eigenschaft, Eigenschaft Typ Artikel, Eigenschaft Variante, Eigenschaft Typ Lagerort, Eigenschaft Typ Lager, Eigenschaft Typ Kontakt, Eigenschaftstyp Artikel, Eigenschaftstyp Variante, Eigenschaftstyp Lagerort, Eigenschaftstyp",
-						"description" => "Erfahre auf dieser Handbuchseite, wie du Eigenschaften in plentymarkets verwaltest.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Eigenschaften. Hier findest du folgende Informationen:",
-						"languageID" => "CZTLTV9",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "070aa152d3d1f0df74fd8ead73c988de",
 						"path" => "willkommen/allgemeine-funktionen/tags",
 						"position" => 20,
