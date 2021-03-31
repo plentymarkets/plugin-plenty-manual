@@ -24074,22 +24074,6 @@ class Metadata {
 				"languageID" => "FY8U5SO",
 				"children" => 				[
 					[
-						"id" => "755f3210fc6166ca74aacad43c66a32e",
-						"path" => "welcome/general-functions/properties",
-						"position" => 10,
-						"urlName" => "properties",
-						"url" => "/en/welcome/general-functions/properties",
-						"level" => 3,
-						"title" => "Properties",
-						"keywords" => "Property, properties, property type item, property variation, property type warehouse, property type storage location, property type contact, property group, property type, property types",
-						"description" => "Learn how to manage properties in plentymarkets.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Properties. The following information is available:",
-						"languageID" => "CZTLTV9",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "bf5526c1d1e1819f105e3205942d1a93",
 						"path" => "welcome/general-functions/tags",
 						"position" => 20,
