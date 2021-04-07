@@ -23887,11 +23887,11 @@ class Metadata {
 						"urlName" => "quick-start-online-store-introduction",
 						"url" => "/en/welcome/quick-start/quick-start-online-store-introduction",
 						"level" => 3,
-						"title" => "Setting up the webshop: Introduction",
+						"title" => "Setting up the online store: Introduction",
 						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Setting up the webshop: Introduction. The following information is available:",
+						"linkListInto" => "Welcome to the topic Setting up the online store: Introduction. The following information is available:",
 						"languageID" => "QCU0NOG",
 						"children" => [],
 						"hasChildren" => false
