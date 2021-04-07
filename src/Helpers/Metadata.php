@@ -37954,11 +37954,11 @@ class Metadata {
 								"urlName" => "receiving-rebooking",
 								"url" => "/en/app/functions/warehouse-management/receiving-rebooking",
 								"level" => 4,
-								"title" => "Receiving goods and redistributing stock",
+								"title" => "Booking in and redistributing items",
 								"keywords" => "Incoming goods, incoming stock, book in items, booking in items, book incoming goods, booking in incoming goods, book incoming items, redistribute items, redistributing items, redistribution, customise redistribution, customising redistribution, receiving goods, receive goods, receiving items, receive items, app redistribution, redistribution using the app, book incoming items app, book incoming goods app",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Receiving goods and redistributing stock. The following information is available:",
+								"linkListInto" => "Welcome to the topic Booking in and redistributing items. The following information is available:",
 								"languageID" => "",
 								"children" => [],
 								"hasChildren" => false
