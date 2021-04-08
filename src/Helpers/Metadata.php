@@ -24277,7 +24277,7 @@ class Metadata {
 						"url" => "/en/item/settings/categories",
 						"level" => 3,
 						"title" => "Categories",
-						"keywords" => "Category, Categories, Ceres, Callisto, ShopBuilder, Webshop, Shop, Store, Online store, Store category, Store categories, Category tree, Category structure, Product line, Product portfolio, Category data, Category depth, Item category structure, Item category, Content category, Category level, Category levels, Subcategory, Main category, Content, Content page, Canonical, Meta title, Meta description, Meta keywords, Sitemap, Robots, SEO, In link list, Description 1, Description 2, Documents, Editor, HTML editor, Text field, Syntax editor, Category images, Category image, Note, Discount, Discounts, Category discount, Category discounts, Minimum quantity",
+						"keywords" => "Category, Categories, Ceres, plentyShop, ShopBuilder, Webshop, Shop, Store, Online store, Store category, Store categories, Category tree, Category structure, Product line, Product portfolio, Category data, Category depth, Item category structure, Item category, Content category, Category level, Category levels, Subcategory, Main category, Content, Content page, Canonical, Meta title, Meta description, Meta keywords, Sitemap, Robots, SEO, In link list, Description 1, Description 2, Documents, Editor, HTML editor, Text field, Syntax editor, Category images, Category image, Note, Discount, Discounts, Category discount, Category discounts, Minimum quantity",
 						"description" => "Learn how to use categories to group your products.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Categories. The following information is available:",
