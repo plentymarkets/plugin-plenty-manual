@@ -69,9 +69,10 @@
 <li><a href="#7010"><span>7.4.</span><span> Fehlerbehebung: Rechnungen manuell hochladen</span></a></li>
 </ul>
 </li>
-<li><a href="#4500"><span>8.</span><span> Zahlungsart Amazon aktivieren</span></a></li>
-<li><a href="#6600"><span>9.</span><span> API-Log abrufen</span></a></li>
-<li><a href="#_nächste_schritte"><span>10.</span><span> Nächste Schritte</span></a></li>
+<li><a href="#unlock-vcs-orders"><span>8.</span><span> Fehlerbehebung: VCS-Aufträge für manuelle Rechnungserzeugung entsperren</span></a></li>
+<li><a href="#4500"><span>9.</span><span> Zahlungsart Amazon aktivieren</span></a></li>
+<li><a href="#6600"><span>10.</span><span> API-Log abrufen</span></a></li>
+<li><a href="#_nächste_schritte"><span>11.</span><span> Nächste Schritte</span></a></li>
 </ul>
 </div>
         </div>
@@ -2817,7 +2818,136 @@ MFN-Bestellberichte erkennst du an ihrer Bezeichnung <strong>GET ORDERS DATA</st
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="4500">8. Zahlungsart Amazon aktivieren</h2>
+<h2 id="unlock-vcs-orders">8. Fehlerbehebung: VCS-Aufträge für manuelle Rechnungserzeugung entsperren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wenn du den VCS-Service nutzt, erzeugst du selbst keine Rechnungsdokumente. Stattdessen werden alle Rechnungsdokumente automatisch erzeugt, wenn die VCS-Berichte importiert werden. Deshalb sind VCS-Aufträge für die manuelle Rechnungserstellung gesperrt. In bestimmten Fällen ist es jedoch notwendig, Rechnungen für VCS-Aufträge manuell zu erzeugen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon selbst hat den Kauf getätigt.</p>
+</li>
+<li>
+<p>Du hast in der Seller Central keine Umsatzsteuer-Identifikationsnummer (USt-IdNr.) für das Land des Auftrags gespeichert.</p>
+</li>
+<li>
+<p>Der Auftrag ist eigentlich kein VCS-Auftrag und wurde nachträglich importiert. Das passiert, wenn der Kauf vor dem Aktivieren von VCS getätigt, der Auftrag aber erst nach dem Aktivieren von VCS importiert wurde.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In solchen Fällen musst du die VCS-Aufträge manuell entsperren. Erst dann kannst du selbst Rechnungsdokumente erzeugen.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+Die VCS-Berichte von Amazon haben oberste Priorität. Das gilt auch für entsperrte VCS-Aufträge, für die du manuell Rechnungsdokumente erzeugt hast. Wenn Amazon mit einem späteren VCS-Bericht doch noch eigene Belege übermittelt, werden deshalb für diese Aufträge automatisch ein Stornobeleg und eine neue Rechnung erzeugt.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>VCS-Aufträge entsperren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Märkte » Amazon » Datenaustausch » Berichte</strong>.</p>
+</li>
+<li>
+<p>Wechsle in das Tab <strong>VCS-Aufträge entsperren</strong>.</p>
+</li>
+<li>
+<p>Wähle in der Dropdown-Liste <strong>Auftrags-ID-Typ</strong>, ob du die <strong>Amazon Auftrags-ID</strong> oder die plentymarkets <strong>Auftrags-ID</strong> eingeben möchtest, um die Aufträge zu suchen.</p>
+</li>
+<li>
+<p>Gib in das Feld <strong>Auftrags-ID-Liste</strong> die ID der Aufträge ein. Mehrere ID kannst du durch Kommas getrennt eingeben.</p>
+</li>
+<li>
+<p>Klicke auf <strong>VCS-Aufträge entsperren</strong> (<span class="icon "><i class="psicon-execute"></i></span>).<br>
+→ Im Bereich <strong>Ergebnisse</strong> wird angezeigt, wie viele Aufträge entsperrt wurden. In der Tabelle siehst du den Status der einzelnen Aufträge.<br>
+→ Du kannst für die entsperrten Aufträge manuell Rechnungsdokumente erzeugen.<br>
+<strong><em>Wichtig:</em></strong> Wenn Amazon mit einem späteren VCS-Bericht doch noch eigene Belege übermittelt, werden die manuell erzeugten Rechnungsdokumente ungültig: Deine Rechnungsdokumente werden also storniert und es wird eine neue Rechnung erstellt.</p>
+</li>
+</ol>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Entsperrvorgänge im Daten-Log anzeigen</div>
+<div class="content">
+<div class="paragraph">
+<p>Im Menü <strong>Daten » Log</strong> kannst du bei Bedarf nachvollziehen, wann und durch welche:n Benutzer:in Aufträge entsperrt wurden. <a href="#list-log-filters">Tabelle 9</a> zeigt, welche Filter du verwenden kannst, um Entsperrvorgänge im Log zu finden.</p>
+</div>
+<table id="list-log-filters" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 9. Empfohlene Filter für Entsperrvorgänge</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Filter</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integration</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>PlentyLegacy\ModMarkets</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifikator</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>AmazonUnlockVcsOrder</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Referenzen</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>amazonOrderId</p>
+</li>
+<li>
+<p>orderId</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph instruction">
+<p>Entsperrvorgänge im Daten-Log anzeigen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Daten » Log</strong>.</p>
+</li>
+<li>
+<p>Wähle in der Spalte links geeignete Filtereinstellungen aus den Dropdown-Listen.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Wähle Filter für Datum und/oder Uhrzeit, um nur Einträge anzuzeigen, die in einem bestimmten Zeitraum erstellt wurden.<br>
+<strong><em>Tipp:</em></strong> Weitere Informationen zu den Filtern findest du auf der Handbuchseite <a href="/daten/datenlog">Daten-Log</a>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Suchen</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).<br>
+→ Die Ergebnisse werden angezeigt.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="4500">9. Zahlungsart Amazon aktivieren</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Die Zahlungsart <strong>Amazon</strong> ist für Aufträge, die über den Marktplatz Amazon in dein plentymarkets System kommen und nicht zu verwechseln mit der Zahlungsart <strong>Amazon Pay</strong>, die für Kund:innen ist, die über den Marktplatz Amazon in deinem plentyShop einkaufen.</p>
@@ -2872,7 +3002,7 @@ Weitere Informationen findest du auf der Handbuchseite <a href="/payment/zahlung
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="6600">9. API-Log abrufen</h2>
+<h2 id="6600">10. API-Log abrufen</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Im Menü <strong>Daten » API-Log</strong> findest du eine Historie über Vorgänge, die über die Amazon-Schnittstelle ausgeführt wurden. Folgende Formate stehen dir für Amazon zur Auswahl:</p>
@@ -2953,7 +3083,7 @@ Weitere Informationen findest du auf der Handbuchseite <a href="/payment/zahlung
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="_nächste_schritte">10. Nächste Schritte</h2>
+<h2 id="_nächste_schritte">11. Nächste Schritte</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Nachdem du nun die Schnittstelle zu Amazon in plentymarkets eingerichtet hast, bereitest du als Nächstes <a href="/maerkte/amazon/varianten-vorbereiten">deine Varianten für den Export zu Amazon vor</a>.</p>
