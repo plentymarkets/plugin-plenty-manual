@@ -24649,7 +24649,7 @@ class Metadata {
 						"level" => 3,
 						"title" => "Personalised items",
 						"keywords" => "Personalisation, Customisation, Personalised items, Order characteristic, Order characteristics, Characteristic, Characteristics, Characteristic group, Characteristic groups, Characteristic type, Surcharge, Deposit, Deposits, Additional costs, Single selection, Multiple selection",
-						"description" => "Learn how to sell personalised items in your online store. This page guides you through the process step-by-step.",
+						"description" => "Learn how to sell personalised items in your plentyShop. This page guides you through the process step-by-step.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Personalised items. The following information is available:",
 						"languageID" => "34VX1BK",
@@ -24730,11 +24730,11 @@ class Metadata {
 				"urlName" => "online-store",
 				"url" => "/en/item/online-store",
 				"level" => 2,
-				"title" => "Appearance in the online store",
+				"title" => "Appearance in the plentyShop",
 				"keywords" => "Item, Items, Variation, Variations, Webshop, Ceres, plentyShop, Shop, Store, Online shop, Online store, Category, Categories, Item isn't visible, Items aren't visible, Category isn't visible, Categories aren't visible, Visibility, Facet, Facets, Filter, Filters, Faceted search, Item search, Search bar, Search field, Frontend, Front end, Frontend search, Front end search, Cross-Selling, Store special, Store specials",
-				"description" => "Decide just how items should be featured in your online store. Find quick help if your items or categories aren't appearing in the store.",
+				"description" => "Decide just how items should be featured in your plentyShop. Find quick help if your items or categories aren't appearing.",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Appearance in the online store. The following information is available:",
+				"linkListInto" => "Welcome to the topic Appearance in the plentyShop. The following information is available:",
 				"languageID" => "F9L7GVU",
 				"children" => 				[
 					[
