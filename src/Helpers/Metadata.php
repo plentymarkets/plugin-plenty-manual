@@ -833,7 +833,7 @@ class Metadata {
 						"level" => 3,
 						"title" => "Personalisierte Artikel",
 						"keywords" => "Personalisierung, Individualisierung, Personalisierte Artikel, Bestellmerkmal, Bestellmerkmale, Merkmal, Merkmale, Merkmalgruppe, Merkmalgruppen, Merkmaltyp, Aufpreis, Pfand, Pfandbetrag, Pfandbeträge, Zusatzkosten, Einfachauswahl, Mehrfachauswahl",
-						"description" => "Lerne, wie du personalisierte Artikel in deinem Webshop verkaufst. Diese Seite führt dich Schritt für Schritt durch den Ablauf.",
+						"description" => "Lerne, wie du personalisierte Artikel in deinem plentyShop verkaufst. Diese Seite führt dich Schritt für Schritt durch den Ablauf.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Personalisierte Artikel. Hier findest du folgende Informationen:",
 						"languageID" => "34VX1BK",
@@ -914,11 +914,11 @@ class Metadata {
 				"urlName" => "webshop",
 				"url" => "/artikel/webshop",
 				"level" => 2,
-				"title" => "Darstellung im Webshop",
+				"title" => "Darstellung im plentyShop",
 				"keywords" => "Artikel, Variante, Webshop, Ceres, plentyShop, Shop, Online-Shop, Kategorie, Kategorien, Artikel nicht sichtbar, Kategorie nicht sichtbar, Kategorien nicht sichtbar, Sichtbarkeit, Facette, Facetten, Filter, Filters, Facettensuche, Artikelsuche, Suchleiste, Suchfeld, Frontend, Frontend-Suche, Frontendsuche, Cross-Selling, Shop-Aktionen, Shop-Aktion",
-				"description" => "Präsentiere Artikel im Webshop genau nach deiner Vorstellungen. Finde außerdem schnelle Hilfe, falls deine Artikel oder Kategorien nicht im Webshop angezeigt werden.",
+				"description" => "Präsentiere Artikel im plentyShop genau nach deiner Vorstellungen. Finde außerdem schnelle Hilfe, falls deine Artikel oder Kategorien nicht angezeigt werden.",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Darstellung im Webshop. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Darstellung im plentyShop. Hier findest du folgende Informationen:",
 				"languageID" => "F9L7GVU",
 				"children" => 				[
 					[
@@ -22517,7 +22517,7 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 07. März 2021",
+		"navAlias" => "Changelog 07. April 2021",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
