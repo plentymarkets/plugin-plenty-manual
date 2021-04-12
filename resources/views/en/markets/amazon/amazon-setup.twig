@@ -69,9 +69,10 @@
 <li><a href="#7010"><span>7.4.</span><span> Troubleshooting: Manually uploading invoices</span></a></li>
 </ul>
 </li>
-<li><a href="#4500"><span>8.</span><span> Activating the Amazon payment method</span></a></li>
-<li><a href="#6600"><span>9.</span><span> Viewing the API log</span></a></li>
-<li><a href="#_next_steps"><span>10.</span><span> Next steps</span></a></li>
+<li><a href="#unlock-vcs-orders"><span>8.</span><span> Troubleshooting: Unlocking VCS orders for manual invoice creation</span></a></li>
+<li><a href="#4500"><span>9.</span><span> Activating the Amazon payment method</span></a></li>
+<li><a href="#6600"><span>10.</span><span> Viewing the API log</span></a></li>
+<li><a href="#_next_steps"><span>11.</span><span> Next steps</span></a></li>
 </ul>
 </div>
         </div>
@@ -2562,7 +2563,7 @@ MFN order reports can be identified by the name <strong>GET ORDERS DATA</strong>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Amazon</strong> or a suitable Amazon sub-referrer, e.g. Amazon France</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Amazon</strong> or a suitable Amazon sub-referrer, for example Amazon France</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
@@ -2780,7 +2781,136 @@ MFN order reports can be identified by the name <strong>GET ORDERS DATA</strong>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="4500">8. Activating the Amazon payment method</h2>
+<h2 id="unlock-vcs-orders">8. Troubleshooting: Unlocking VCS orders for manual invoice creation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you use the VCS service, you do not generate invoice documents yourself. Instead, all order documents are generated automatically when the VCS reports are imported. As such, orders are locked for manual invoice generation. However, in some cases you need to manually generate invoices for VCS orders:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon is the customer.</p>
+</li>
+<li>
+<p>You did not save a VAT identification number (VATIN) for the country in which the order originated in Seller Central.</p>
+</li>
+<li>
+<p>The order is not really a VCS order and was imported retroactively. This happens if the order was placed before you activated VCS but imported after you activated VCS.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In such cases, you need to unlock the VCS orders manually. This allows you to generate the necessary invoice documents.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+VCS reports still have the highest priority. That includes unlocked orders for which you have manually generated invoice documents. If Amazon sends invoice documents in a subsequent VCS report, the invoices you generated are cancelled and a new invoice is generated.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Unlocking VCS orders:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Markets » Amazon » Data exchange » Reports</strong>.</p>
+</li>
+<li>
+<p>Open the tab <strong>Unlock VCS orders</strong>.</p>
+</li>
+<li>
+<p>In the drop-down list <strong>Order ID type</strong>, select if you want to enter the <strong>Amazon order ID</strong> or the plentymarkets <strong>Order ID</strong> to search for the orders.</p>
+</li>
+<li>
+<p>In the field <strong>Order ID list</strong>, enter the ID of the orders. To enter several IDs, separate them by commas.</p>
+</li>
+<li>
+<p>Click on <strong>Unlock VCS orders</strong> (<span class="icon "><i class="psicon-execute"></i></span>).<br>
+→ The <strong>Results</strong> area shows how many orders were unlocked. The table shows the status of each order.<br>
+→ You can manually generate invoice documents for the unlocked orders.<br>
+<strong><em>Important:</em></strong> If Amazon transfers their own documents in a subsequent VCS report, the invoice documents that you created manually will become invalid: As a result, your invoice documents are cancelled and a new invoice is created.</p>
+</li>
+</ol>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Viewing unlocking events in the data log</div>
+<div class="content">
+<div class="paragraph">
+<p>Go to <strong>Data » Log</strong> to find out when and by which user orders were unlocked. <a href="#list-log-filters">Table 9</a> shows the filters you can use to find unlocking events in the log.</p>
+</div>
+<table id="list-log-filters" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Recommended filters for unlocking events</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Filter</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integration</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>PlentyLegacy\\ModMarkets</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identifier</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>AmazonUnlockVcsOrder</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">References</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>amazonOrderId</p>
+</li>
+<li>
+<p>orderId</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph instruction">
+<p>Viewing unlocking events in the data log:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Log</strong>.</p>
+</li>
+<li>
+<p>In the column to the left, select appropriate filters from the drop-down lists.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Select filters for dates and/or times to only show entries from a specific period.<br>
+<strong><em>Tip:</em></strong> For further information about the filters, refer to the <a href="/en/data/datalog">Data log</a> page of the manual.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).<br>
+→ The results are shown.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="4500">9. Activating the Amazon payment method</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <strong>Amazon</strong> payment method is used for orders that were placed on Amazon and transferred to your plentymarkets system. Do not confuse this with <strong>Amazon Pay</strong>, which is a way for customers to use the Amazon checkout process when placing orders in your plentyShop.</p>
@@ -2835,7 +2965,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="6600">9. Viewing the API log</h2>
+<h2 id="6600">10. Viewing the API log</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <strong>Data » API log</strong> menu contains a history of processes that run via the Amazon interface. The following formats are available for Amazon:</p>
@@ -2916,7 +3046,7 @@ For further information, refer to the <a href="/en/payment/managing-payment-meth
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="_next_steps">10. Next steps</h2>
+<h2 id="_next_steps">11. Next steps</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>After you have set up the interface to Amazon, it is now time to <a href="/en/markets/amazon/preparing-variations">prepare your variations for the export to Amazon</a>.</p>
