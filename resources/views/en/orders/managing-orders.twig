@@ -156,7 +156,12 @@
 <li><a href="#1690"><span>13.13.2.</span><span> Correcting an invoice:</span></a></li>
 </ul>
 </li>
-<li><a href="#1700"><span>13.14.</span><span> Using group functions</span></a></li>
+<li><a href="#1700"><span>13.14.</span><span> Using group functions</span></a>
+<ul class="sectlevel3">
+<li><a href="#_grouping_orders"><span>13.14.1.</span><span> Grouping orders</span></a></li>
+<li><a href="#_examples"><span>13.14.2.</span><span> Examples</span></a></li>
+</ul>
+</li>
 <li><a href="#1800"><span>13.15.</span><span> Check list for sales prices</span></a></li>
 </ul>
 </li>
@@ -4009,10 +4014,13 @@ Generally, orders should not be deleted. Errors can occur when orders are delete
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Split up</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Splits the order. You are asked which of the items are to be transferred to the partial order. Orders are only to be split when the following conditions apply:<br>
-- No incoming payment has been booked yet,<br>
-- outgoing items have not been booked yet and<br>
-- no invoice was generated yet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Splits the order. When splitting an order, 2 new orders are created. The original order is deleted. The shipping costs are recalculated for the new orders. Before splitting the order you are asked how the order items are to be distributed.<br>
+An order can be split when:<br>
+- It is not locked,<br>
+- outgoing items have not been booked yet,<br>
+- no child orders have been created (e.g. returns, delivery orders)<br>
+- no tax-relevant documents have been created and<br>
+- no payments have been assigned to the order yet.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Return; Credit note; Warranty</strong></p></td>
@@ -4626,11 +4634,29 @@ The following steps briefly describe how to apply the settings from the default 
 <div class="paragraph">
 <p>You can use the <strong>group function</strong> to carry out processes for several orders at the same time. This means that processes, such as a status change or an email service, will be applied to all selected orders. The group function is particularly recommended if you need to edit a large number of orders and it would be too time consuming to edit each one individually.</p>
 </div>
+<div class="sect3 discrete">
+<h4 id="_grouping_orders">13.14.1. Grouping orders</h4>
+<div class="paragraph">
+<p>By using the group function <strong>Group orders</strong>, you can group certain orders. This means that the selected orders are combined into a new order. The original orders are deleted. Shipping costs are recalculated for the new order. Orders can be grouped when:<br>
+- They are not locked,<br>
+- outgoing items have not been booked yet,<br>
+- no payments have been assigned to the order yet,<br>
+- they have the same plentyID,<br>
+- they are of the same order type,<br>
+- they have the same referrer,<br>
+- they have the same owner,<br>
+- they have the same  contact,<br>
+- they have the same address,+
+- they have the same currency and exchange rate.</p>
+</div>
+</div>
+<div class="sect3 discrete">
+<h4 id="_examples">13.14.2. Examples</h4>
 <div class="paragraph">
 <p>Below, you can find two examples how to work with group functions. Example A describes how to book outgoing items for several orders at once. Example B describes how to inform customers about the availability of an item.</p>
 </div>
 <div class="paragraph instruction">
-<p><strong>Example A</strong>: Booking outgoing items with a group function:</p>
+<p><strong>Example A</strong>: Booking outgoing items with a group function</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -4651,15 +4677,15 @@ The following steps briefly describe how to apply the settings from the default 
 → The current date and time are selected by default. However, both, date and time are adaptable. You are required to select a date and time to use this group function.</p>
 </li>
 <li>
-<p>Click on <strong>Apply</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>) to carry out the procedure.</p>
+<p>Click on <strong>Apply</strong> (<span class="icon "><i class="psicon-execute"></i></span>) to carry out the procedure.</p>
 </li>
 </ol>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock tip">
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 <div class="title">Default settings for editing orders by variable users</div>
@@ -4672,7 +4698,7 @@ Variable users also need to be given the <a href="/en/business-decisions/user-ac
 </tbody></table>
 </div>
 <div class="paragraph instruction">
-<p><strong>Example B</strong>: Informing customers about item availability with a group function.</p>
+<p><strong>Example B</strong>: Informing customers about item availability with a group function</p>
 </div>
 <div class="paragraph">
 <p><strong>Initial situation</strong>: A highly demanded item in your plentyShop is temporarily out of stock but you you already received quite a few orders for this particular item. Usually, there is nothing sellers can do about such delivery delays, but the customers have to be informed as soon as possible about the delay.</p>
@@ -4700,7 +4726,7 @@ Variable users also need to be given the <a href="/en/business-decisions/user-ac
 → Make sure that you set up an <a href="/en/crm/sending-emails#1200">email template</a> first. That way you can now select it here for the group function.</p>
 </li>
 <li>
-<p>Click on <strong>Apply</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>) to carry out the procedure.<br>
+<p>Click on <strong>Apply</strong> (<span class="icon "><i class="psicon-execute"></i></span>) to carry out the procedure.<br>
 → The email is sent to the customers.</p>
 </li>
 </ol>
@@ -4719,6 +4745,7 @@ Variable users also need to be given the <a href="/en/business-decisions/user-ac
 </td>
 </tr>
 </tbody></table>
+</div>
 </div>
 </div>
 <div class="sect2">
