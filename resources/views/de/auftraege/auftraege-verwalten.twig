@@ -156,7 +156,12 @@
 <li><a href="#1690"><span>13.13.2.</span><span> Rechnung korrigieren</span></a></li>
 </ul>
 </li>
-<li><a href="#1700"><span>13.14.</span><span> Gruppenfunktionen nutzen und mehrere Aufträge bearbeiten</span></a></li>
+<li><a href="#1700"><span>13.14.</span><span> Gruppenfunktionen nutzen und mehrere Aufträge bearbeiten</span></a>
+<ul class="sectlevel3">
+<li><a href="#_aufträge_gruppieren"><span>13.14.1.</span><span> Aufträge gruppieren</span></a></li>
+<li><a href="#_beispiele"><span>13.14.2.</span><span> Beispiele</span></a></li>
+</ul>
+</li>
 <li><a href="#1800"><span>13.15.</span><span> Checkliste für Verkaufspreise</span></a></li>
 </ul>
 </li>
@@ -4010,10 +4015,13 @@ Generell sollten Aufträge nicht gelöscht werden. Durch die Verknüpfung mit Ar
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Teilen</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Teilt den Auftrag. Es erfolgt eine Abfrage, welche Artikel in den Teilauftrag übernommen werden sollen. Ein Auftrag kann geteilt werden, wenn:<br>
-- Noch kein Zahlungseingang erfolgt ist,<br>
-- noch kein Warenausgang gebucht wurde und<br>
-- Noch keine Rechnung erzeugt wurde.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Teilt den Auftrag. Beim Teilen eines Auftrages werden 2 neue Aufträge erstellt. Der ursprüngliche Auftrag wird gelöscht. Für die neuen Aufträge werden jeweils die Versandkosten neu ermittelt. Bevor der Auftrag geteilt wird erfolgt eine Abfrage zur Verteilung der Auftragspositionen.<br>
+Ein Auftrag kann geteilt werden, wenn:<br>
+- Er nicht gesperrt ist,<br>
+- noch kein Warenausgang gebucht wurde,<br>
+- keine Kindaufträge erzeugt wurden (z.B. eine Retoure oder Lieferaufträge),<br>
+- keine steuerrelevenaten Dokumente am Auftrag hängen und<br>
+- dem Auftrag noch keine Zahlung zugeordnet wurde.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retoure; Gutschrift; Gewährleistung</strong></p></td>
@@ -4634,11 +4642,29 @@ Im Folgenden wird kurz das Übernehmen der Standard-Dokumentvorlage beschrieben.
 <div class="paragraph">
 <p>Mit der <strong>Gruppenfunktion</strong> ist es möglich, Prozesse für eine größere Menge an Aufträgen gleichzeitig auszuführen. Damit werden Vorgänge, z.B. eine Statusänderung oder ein E-Mail-Service, auf alle markierten Aufträge angewendet. Die Gruppenfunktion ist besonders zu empfehlen, wenn viele Aufträge bearbeitet werden müssen und die individuelle Bearbeitung sehr zeitaufwändig wäre.</p>
 </div>
+<div class="sect3 discrete">
+<h4 id="_aufträge_gruppieren">13.14.1. Aufträge gruppieren</h4>
+<div class="paragraph">
+<p>Mit der Gruppenfunktion <strong>Aufträge gruppieren</strong> können bestimmte Aufträge gruppiert werden. Das bedeutet, dass die ausgewählten Aufträge in einem neuen Auftrag zusammengefasst werden. Die ursprünglichen Aufträge werden dabei gelöscht. Die Versandkosten werden dann für den neuen Auftrag neu berechnet. Damit Aufträge gruppiert werden können, müssen sie folgende Kriterien erfüllen:<br>
+- Die Aufträge dürfen nicht gesperrt sein.<br>
+- Der Warenausgang darf nicht gebucht sein.<br>
+- Den Aufträgen dürfen noch keine Zahlungen zugeordnet sein.<br>
+- Die Aufträge müssen die gleiche plentyID haben.<br>
+- Die Aufträge müssen vom gleichen Auftragstyp sein.<br>
+- Die Aufträge müssen die gleiche Herkunft haben.<br>
+- Die Aufträge müssen den gleichen Eigner haben.<br>
+- Die Aufträge müssen den gleichen Kontakt haben.<br>
+- Die Aufträge müssen die gleiche Adresse haben.<br>
+- Die Aufträge müssen die gleiche Währung und den gleichen Wechselkurs haben.</p>
+</div>
+</div>
+<div class="sect3 discrete">
+<h4 id="_beispiele">13.14.2. Beispiele</h4>
 <div class="paragraph">
 <p>Nachfolgend findest du zwei Beispiele für die Verwendung der Gruppenfunktion. In Beispiel A soll der Warenausgang für mehrere Aufträge gleichzeitig gebucht werden, in Beispiel B sollen Kunden per Mail über eine Artikelverfügbarkeit informiert werden.</p>
 </div>
 <div class="paragraph instruction">
-<p><strong>Beispiel A</strong>: Warenausgang per Gruppenfunktion buchen:</p>
+<p><strong>Beispiel A</strong>: Warenausgang per Gruppenfunktion buchen</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -4659,15 +4685,15 @@ Im Folgenden wird kurz das Übernehmen der Standard-Dokumentvorlage beschrieben.
 → Für das Datum und die Uhrzeit wird automatisch das aktuelle Datum und die derzeitige Uhrzeit gewählt, dies ist jedoch änderbar. Die Wahl des Datums und der Uhrzeit ist bei dieser Gruppenfunktion Pflicht.</p>
 </li>
 <li>
-<p>Klicke auf <strong>Anwenden</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>), um die Aktion auszuführen.</p>
+<p>Klicke auf <strong>Anwenden</strong> (<span class="icon "><i class="psicon-execute"></i></span>), um die Aktion auszuführen.</p>
 </li>
 </ol>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock tip">
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-important" title="Wichtig"></i>
+<i class="fa icon-tip" title="Hinweis"></i>
 </td>
 <td class="content">
 <div class="title">Grundeinstellungen zur Auftragsbearbeitung durch variable Benutzer:innen</div>
@@ -4680,7 +4706,7 @@ Außerdem müssen diese Benutzer:innen für die Erstellung und Bearbeitung von A
 </tbody></table>
 </div>
 <div class="paragraph instruction">
-<p><strong>Beispiel B</strong>: Kund:innen informieren durch E-Mail mit Gruppenfunktion.</p>
+<p><strong>Beispiel B</strong>: Kund:innen informieren durch E-Mail mit Gruppenfunktion</p>
 </div>
 <div class="paragraph">
 <p><strong>Ausgangssituation</strong>: Ein begehrter Artikel in deinem Shop ist vorübergehend nicht lieferbar, es liegen aber bereits eine ganze Reihe von Bestellungen dafür vor. Gegen solche Lieferverzögerungen sind Händler in aller Regel machtlos, müssen aber die betroffenen Kund:innen schnellstmöglich über einen solchen Umstand informieren.</p>
@@ -4708,7 +4734,7 @@ Außerdem müssen diese Benutzer:innen für die Erstellung und Bearbeitung von A
 → Achte darauf, dass du vorher eine <a href="/crm/e-mails-versenden#1200">E-Mail-Vorlage</a> erstellt hast, damit sie dir hier als Auswahl zur Verfügung steht.</p>
 </li>
 <li>
-<p>Klicke auf <strong>Anwenden</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>), um die Aktion auszuführen.<br>
+<p>Klicke auf <strong>Anwenden</strong> (<span class="icon "><i class="psicon-execute"></i></span>), um die Aktion auszuführen.<br>
 → Die E-Mail wird an die Kund:innen versendet.</p>
 </li>
 </ol>
@@ -4727,6 +4753,7 @@ Außerdem müssen diese Benutzer:innen für die Erstellung und Bearbeitung von A
 </td>
 </tr>
 </tbody></table>
+</div>
 </div>
 </div>
 <div class="sect2">
