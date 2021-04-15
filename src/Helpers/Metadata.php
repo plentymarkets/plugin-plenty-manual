@@ -24906,7 +24906,7 @@ class Metadata {
 						"url" => "/en/item/online-store/store-specials",
 						"level" => 3,
 						"title" => "Store specials",
-						"keywords" => "Webshop, Ceres, plentyShop, Shop, Online shop, Online store, Item, Items, Variation, Variations, Sale, Sales, Specials, Special offers, New items, Top item, Bestseller, Best seller, Bestsellers, Best sellers, Store special, Store specials, Tag, Tags",
+						"keywords" => "Webshop, Ceres, plentyShop, Shop, Online shop, Online store, Item, Items, Variation, Variations, Sale, Sales, Special, Specials, Offer, Offers, Special offer, Special offers, Promotional offer, Promotional offers, Deal, Deals, New item, New items, Top item, Top items, Bestseller, Best seller, Bestsellers, Best sellers, Store special, Store specials, Tag, Tags, Offer price, Deal price, Strikethrough price, RRP",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Store specials. The following information is available:",
