@@ -1025,7 +1025,7 @@ class Metadata {
 						"url" => "/artikel/webshop/shop-aktionen",
 						"level" => 3,
 						"title" => "Shop-Aktionen",
-						"keywords" => "Webshop, Ceres, plentyShop, Shop, Online-Shop, Artikel, Variante, Sonderangeboten, Neuheiten, Top-Artikel, Shop-Aktion, Shop-Aktionen, Bestseller, Bestsellers, Tag, Tags",
+						"keywords" => "Webshop, Ceres, plentyShop, Shop, Online-Shop, Artikel, Variante, Angebot, Angebote, Sonderangebot, Sonderangeboten, Neuheit, Neuheiten, Neue Artikel, Top-Artikel, Shop-Aktion, Shop-Aktionen, Bestseller, Bestsellers, Tag, Tags, Aktion, Aktionen, Aktionspreis, Angebotspreis, Streichpreis, UVP",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Shop-Aktionen. Hier findest du folgende Informationen:",
@@ -16244,22 +16244,6 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich DSGVO. Hier findest du folgende Informationen:",
 						"languageID" => "8NCZ7LJ",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "dcb238571de089cc3daba50186aef72e",
-						"path" => "business-entscheidungen/rechtliches/best-practices-callisto-dsgvo",
-						"position" => 30,
-						"urlName" => "best-practices-callisto-dsgvo",
-						"url" => "/business-entscheidungen/rechtliches/best-practices-callisto-dsgvo",
-						"level" => 3,
-						"title" => "Best Practices: Callisto und DSGVO",
-						"keywords" => "Callisto, DSGVO, anpassen, Kontaktformular anpassen, Newsletter-Anmeldung, Datenschutzerklärung, Eingabefeld, Standard-Layout, Datenübermittlung, Versanddienstleister, Einwilligung",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Best Practices: Callisto und DSGVO. Hier findest du folgende Informationen:",
-						"languageID" => "RDZYNPP",
 						"children" => [],
 						"hasChildren" => false
 					]
