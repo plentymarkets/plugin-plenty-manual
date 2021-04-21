@@ -26,8 +26,9 @@
 </ul>
 </li>
 <li><a href="#80"><span>4.2.</span><span> Mapping and linking data fields</span></a></li>
-<li><a href="#90"><span>4.3.</span><span> Deleting data fields</span></a></li>
-<li><a href="#100"><span>4.4.</span><span> Available plentymarkets data sources</span></a></li>
+<li><a href="#85"><span>4.3.</span><span> Transferring combined mappings to a marketplace</span></a></li>
+<li><a href="#90"><span>4.4.</span><span> Deleting data fields</span></a></li>
+<li><a href="#100"><span>4.5.</span><span> Available plentymarkets data sources</span></a></li>
 </ul>
 </li>
 <li><a href="#110"><span>5.</span><span> Managing catalogues with standard formats</span></a>
@@ -40,7 +41,8 @@
 </ul>
 </li>
 <li><a href="#160"><span>5.2.</span><span> Adding and linking data fields</span></a></li>
-<li><a href="#170"><span>5.3.</span><span> Deleting data fields</span></a></li>
+<li><a href="#mathematical-calculations"><span>5.3.</span><span> Adjusting values via mathematical calculations</span></a></li>
+<li><a href="#170"><span>5.4.</span><span> Deleting data fields</span></a></li>
 </ul>
 </li>
 <li><a href="#180"><span>6.</span><span> Managing catalogues</span></a>
@@ -865,9 +867,23 @@ This field is only visible if you have selected <strong>Schedule</strong> for th
 </div>
 </div>
 <div class="sect2">
-<h3 id="90">4.3. Deleting data fields</h3>
+<h3 id="85">4.3. Transferring combined mappings to a marketplace</h3>
 <div class="paragraph">
-<p>In the <strong>Mapping</strong> tab of a catalogue with a marketplace format you can delete individual or several data fields at once. When using marketplace formats, you can also remove the selected fallback data fields.</p>
+<p>Combined mappings allow you to transfer data fields that have a dependency to a marketplace.<br>
+<em>Example</em> (see Figure 1): You want to transfer the data field <strong>Barcode</strong> and additionally need the Barcode type <strong>ASIN</strong>. Therefore, you specify the Barcode type <strong>ASIN</strong> as additional information and define that this will be transferred, if the data field <strong>Barcode</strong> can be filled with the value from the plentymarkets data field <strong>Amazon Germany</strong>.<br>
+If this is not possible, because no value can be found, the next possibility is checked. Thus, the Barcode type <strong>GTIN</strong> will be transferred to the marketplace, if the data field <strong>Barcode</strong> can be filled with the value from the plentymarkets data field <strong>GTIN 13</strong> <em>or</em> <strong>GTIN 128</strong>.<br>
+<strong><em>Note:</em></strong> In case none of the defined possibilities applies, neither <strong>Barcode</strong> nor <strong>Barcode type</strong> will be transferred.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/exporting-data/assets/combined-mappings-png" alt="combined mappings png">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="90">4.4. Deleting data fields</h3>
+<div class="paragraph">
+<p>In the <strong>Mapping</strong> tab of a catalogue with a marketplace format you can delete individual or several data fields at once. You can also remove the selected fallback data fields.</p>
 </div>
 <div class="paragraph instruction">
 <p>Deleting data fields:</p>
@@ -895,7 +911,7 @@ This field is only visible if you have selected <strong>Schedule</strong> for th
 </div>
 </div>
 <div class="sect2">
-<h3 id="100">4.4. Available plentymarkets data sources</h3>
+<h3 id="100">4.5. Available plentymarkets data sources</h3>
 <div class="paragraph">
 <p>Check the information in the user guide of the sales channel’s plugin for details on the target data fields. <a href="#table-catalogue-fields">Table 6</a> contains information regarding the plentymarkets data sources and how to map these data sources.</p>
 </div>
@@ -1547,7 +1563,7 @@ This field is only visible if you have selected <strong>Schedule</strong> for th
 <div class="sect2">
 <h3 id="160">5.2. Adding and linking data fields</h3>
 <div class="paragraph">
-<p>In catalogues with standard formats, you can also add and link several data fields for the export from your plentymarkets system.</p>
+<p>In catalogues with standard formats, you can also add and link several data fields for the export from your plentymarkets system. Moreover, you can add so-called fallback data fields. In case a value does not exist, you can define here which value should be exported instead.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1556,9 +1572,9 @@ This field is only visible if you have selected <strong>Schedule</strong> for th
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="title">Select a column name</div>
+<div class="title">Determining an export key for added data fields</div>
 <div class="paragraph">
-<p>Below each selected data field you will find an input field. Use it to enter the name that you want to be displayed as column name in the CSV file.</p>
+<p>To the left of newly added data fields, you can enter an export key. All values of the respective row will then be exported under the key name. Make sure that the key is unique and do not use any special characters such as spaces . / etc.</p>
 </div>
 </td>
 </tr>
@@ -1604,7 +1620,8 @@ This field is only visible if you have selected <strong>Schedule</strong> for th
 → The field for the own value is added to the view.</p>
 </li>
 <li>
-<p>If you selected <strong>Own value</strong>, enter a value into the input field below.</p>
+<p>If you selected <strong>Own value</strong>, enter a value into the input field below.
+<strong><em>Optional</em></strong>: Click on <strong>Add fallback data field</strong> to select a data field that is exported in case another one is not available. You can also add more than one fallback data field.<br></p>
 </li>
 <li>
 <p><strong><em>Optional</em></strong>: To link another data field to an existing one, click on <strong>Add data field</strong> (<span class="icon "><i class="fa fa-link fa-rotate-90 "></i></span>) on the right.<br>
@@ -1665,7 +1682,55 @@ This field is only visible if you have selected <strong>Schedule</strong> for th
 </div>
 </div>
 <div class="sect2">
-<h3 id="170">5.3. Deleting data fields</h3>
+<h3 id="mathematical-calculations">5.3. Adjusting values via mathematical calculations</h3>
+<div class="paragraph">
+<p>The so-called mathematical calculations help you to adjust values during the export. For example, you are planning a discount campaign and want to have certain prices calculated during the export? Here, the mathematical calculations are just what you need! Note that this function is only applicable to data fields that contain numerical values.</p>
+</div>
+<div class="paragraph instruction">
+<p>Adjusting values via mathematical calculations:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>Open a catalogue.<br>
+→ The <strong>Data fields</strong> tab with all available data fields opens.</p>
+</li>
+<li>
+<p>In the side navigation, click on the plus next to <strong>Formula</strong> (<span class="icon "><i class="material-calculate"></i></span>).<br>
+→ The field <strong>Formula</strong> is added to the view.</p>
+</li>
+<li>
+<p>Click on the field <strong>Formula</strong>.<br>
+→ The <strong>Modify value</strong> window opens.</p>
+</li>
+<li>
+<p>Select a decimal separator from the drop-down list.</p>
+</li>
+<li>
+<p>Enter numbers and mathematical operators with the calculator or the keyboard.</p>
+</li>
+<li>
+<p>On the right, select available data fields in order to add them to the calculation (<span class="icon "><i class="material-add"></i></span>).<br>
+*<em>Tip:</em>*Use the search in order to find specific data fields.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The entered formula is displayed in the overview.<br>
+<strong><em>Tip:</em></strong> Take a look at the preview (<span class="icon "><i class="material-preview"></i></span>). Note that this is not possible for each format.<br>
+→ The calculation will be carried out in the next export.</p>
+</li>
+<li>
+<p>In order to start the export, click on <strong>Download data</strong> (<span class="icon "><i class="material-download"></i></span>).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="170">5.4. Deleting data fields</h3>
 <div class="paragraph">
 <p>In the <strong>Mapping</strong> tab of a catalogue with a standard format you can delete individual or several data fields at once.</p>
 </div>
