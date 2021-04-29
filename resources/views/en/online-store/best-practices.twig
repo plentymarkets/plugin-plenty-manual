@@ -67,17 +67,20 @@
 <li><a href="#psi"><span>7.</span><span> Improving your Google Page Speed Insights rating</span></a>
 <ul class="sectlevel2">
 <li><a href="#_activating_the_live_mode_in_the_ceres_plugin"><span>7.1.</span><span> Activating the Live Mode in the Ceres plugin</span></a></li>
-<li><a href="#_optimising_image_widgets"><span>7.2.</span><span> Optimising image widgets</span></a>
+<li><a href="#_activating_vue_server_side_rendering"><span>7.2.</span><span> Activating Vue Server-Side Rendering</span></a></li>
+<li><a href="#_optimising_image_widgets"><span>7.3.</span><span> Optimising image widgets</span></a>
 <ul class="sectlevel3">
-<li><a href="#_using_modern_image_formats"><span>7.2.1.</span><span> Using modern image formats</span></a></li>
-<li><a href="#_activating_lazy_loading"><span>7.2.2.</span><span> Activating lazy loading</span></a></li>
+<li><a href="#_preloading_images_in_the_visible_area"><span>7.3.1.</span><span> Preloading images in the visible area</span></a></li>
+<li><a href="#_activating_lazy_loading_for_images_that_are_not_initially_visible"><span>7.3.2.</span><span> Activating lazy loading for images that are not initially visible</span></a></li>
+<li><a href="#_using_modern_image_formats"><span>7.3.3.</span><span> Using modern image formats</span></a></li>
+<li><a href="#_identifying_the_largest_contenful_paint_lcp"><span>7.3.4.</span><span> Identifying the Largest Contenful Paint (LCP)</span></a></li>
 </ul>
 </li>
-<li><a href="#_reducting_the_number_of_widgets"><span>7.3.</span><span> Reducting the number of widgets</span></a></li>
-<li><a href="#_avoid_invisible_text_caused_by_custom_fonts"><span>7.4.</span><span> Avoid invisible text caused by custom fonts</span></a></li>
+<li><a href="#_reducting_the_number_of_widgets"><span>7.4.</span><span> Reducting the number of widgets</span></a></li>
 <li><a href="#_activating_the_shopbooster"><span>7.5.</span><span> Activating the ShopBooster</span></a></li>
-<li><a href="#_avoiding_javascript_in_code_widgets"><span>7.6.</span><span> Avoiding Javascript in code widgets</span></a></li>
-<li><a href="#_linking_payment_plugins_to_the_right_containers"><span>7.7.</span><span> Linking payment plugins to the right containers</span></a></li>
+<li><a href="#_avoid_invisible_text_caused_by_custom_fonts"><span>7.6.</span><span> Avoid invisible text caused by custom fonts</span></a></li>
+<li><a href="#_avoiding_javascript_in_code_widgets"><span>7.7.</span><span> Avoiding Javascript in code widgets</span></a></li>
+<li><a href="#_linking_payment_plugins_to_the_right_containers"><span>7.8.</span><span> Linking payment plugins to the right containers</span></a></li>
 </ul>
 </li>
 <li><a href="#search"><span>8.</span><span> Adjusting the online shop search</span></a>
@@ -1264,22 +1267,8 @@ class MyThemeContext extends SingleItemContext implements ContextInterface
 <div class="paragraph">
 <p>In this Best Practice you will learn which measures you can take to improve the <a href="https://developers.google.com/speed/pagespeed/insights/?hl=de">Google Page Speed Insights</a> performance rating of your plentyShop. In a first step, you will learn which of the standard Ceres functionality you can use in order to achieve higher PSI values. At a later point, this guide will also include modifications you can implement via a theme in order to attain a higher performance rating. The measures explicated below require no background in programming whatsoever.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>The measures we suggest in this guide can only improve the performance rating of your plentyShop to a certain degree. The release of plentyShop 6.0 will include adjustments that positively impact the PSI rating. We are alsways striving to improve the performance of plentyShop Ceres with each new version we release.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-<div class="paragraph">
-<p>The following chapters detail 7 adjustments you can make to your plentyShop that you can implement without the need to code:</p>
+<p>The following chapters detail a number of adjustments you can make to your plentyShop that you can implement without the need to code:</p>
 </div>
 <div class="sect2">
 <h3 id="_activating_the_live_mode_in_the_ceres_plugin">7.1. Activating the Live Mode in the Ceres plugin</h3>
@@ -1320,43 +1309,122 @@ class MyThemeContext extends SingleItemContext implements ContextInterface
 </div>
 </div>
 <div class="sect2">
-<h3 id="_optimising_image_widgets">7.2. Optimising image widgets</h3>
+<h3 id="_activating_vue_server_side_rendering">7.2. Activating Vue Server-Side Rendering</h3>
+<div class="paragraph">
+<p>With the release of Ceres v5.0.29, we’re introducing Vue Server-Side Rendering (SSR). SSR makes it possible that many components of the online shop are already processed on the server. Therefore, the browser receives pages that have already been rendered. The browser does not need to execute the received code again. This improves the rating of mobile pages in particular.<br></p>
+</div>
+<div class="paragraph">
+<p>We added the setting <strong>Activate Vue Server-Sider Rendering</strong> to the plentyShop assistant and the Ceres settings in the <strong>Performance</strong> settings. You should initially activate this setting in a separate plugin set and test your shop thoroughly before you activate SSR for your productive system.<br></p>
+</div>
+<div class="paragraph">
+<p>If you want to use SSR, you should also adjust the image widgets that you use on your pages. You have two important settings for image widgets at your disposal: Peloading and lazy loading. The following chapters explain how to optimise your image widgets.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_optimising_image_widgets">7.3. Optimising image widgets</h3>
 <div class="paragraph">
 <p>Image files are one of the major culprits for low online store performance. You should, if possible, only include as many image widgets on your online store pages as you need for your purposes. A lower number of image widgets per page will positively impact the performance of your plentyShop.<br></p>
 </div>
 <div class="sect3">
-<h4 id="_using_modern_image_formats">7.2.1. Using modern image formats</h4>
+<h4 id="_preloading_images_in_the_visible_area">7.3.1. Preloading images in the visible area</h4>
 <div class="paragraph">
-<p>Furthermore, we advise you to use modern image formats for the images you include in your online store. For the widgets <strong>Background image</strong>, <strong>Image box</strong>, and <strong>Image carousel</strong>, we recommend that you use the input field <strong>Image selection</strong> to store images in the format <strong>WebP</strong>. If you store a WebP image, the additional input field <strong>Image selection for older browsers</strong> will be displayed, which serves to display fallback images in browsers, that are not yet compatible with modern image formats. IF possible, we advise you to store images in JPEG format for these browsers.<br></p>
+<p>With the release of Ceres v5.0.29 we added the setting <strong>Preload image</strong> to the widgets image box, image carousel, background widget, and item image. This setting can only be used in combination with Server-Side Rendering (see above). By peloading images that are located in the initially visible viewport of your pages, you can significantly decrease the Largest Contentful Paint (LCP). The LCP is the largest rendered content element in the visible area. Usually, this is a large image.<br>
+You should activate the setting <strong>Preload image</strong> for all images that are visible on the page before the user scrolls further down the page. You can learn how to identify the Largest Contentful Paint on your pages below.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_activating_lazy_loading">7.2.2. Activating lazy loading</h4>
+<h4 id="_activating_lazy_loading_for_images_that_are_not_initially_visible">7.3.2. Activating lazy loading for images that are not initially visible</h4>
 <div class="paragraph">
-<p>Additionally, we recommend that you activate the option <strong>Only load visible content</strong> in the widget settings of every widget that includes images. This option, the so-called "Lazy loading", makes sure that image files which are not visible upon the initial access of the relevant page are loaded at a later time. The initial loading time of your online store pages is positively impacted by activating this option.</p>
+<p>Additionally, we recommend that you activate the option <strong>Only load visible content</strong> in the widget settings of every widget that includes images. This option, the so-called "Lazy loading", makes sure that image files which are not visible upon the initial access of the relevant page are loaded at a later time. The initial loading time of your online store pages is positively impacted by activating this option.<br>
+This setting is deactivated by default in the ShopBuilder presets.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you use Server-Side Rendering (SSR), it is important that you only activate lazy loading for image widgets that are <strong>not</strong> located in the initially visible viewport.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_modern_image_formats">7.3.3. Using modern image formats</h4>
+<div class="paragraph">
+<p>Furthermore, we advise you to use modern image formats for the images you include in your online store. For the widgets <strong>Background image</strong>, <strong>Image box</strong>, and <strong>Image carousel</strong>, we recommend that you use the input field <strong>Image selection</strong> to store images in the format <strong>WebP</strong>. If you store a WebP image, the additional input field <strong>Image selection for older browsers</strong> will be displayed, which serves to display fallback images in browsers, that are not yet compatible with modern image formats. If possible, we advise you to store images in JPEG format for these browsers.<br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_identifying_the_largest_contenful_paint_lcp">7.3.4. Identifying the Largest Contenful Paint (LCP)</h4>
+<div class="paragraph">
+<p>You can use <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a> to identify the Largest Contentful Paint of your pages.<br></p>
+</div>
+<div class="paragraph instruction">
+<p>Identifying the LCP:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a>.</p>
+</li>
+<li>
+<p>Enter the URL of the page for which you want to identify the LCP.</p>
+</li>
+<li>
+<p>Click on <strong>Analyze</strong>.
+→ The page analysis is started.</p>
+</li>
+<li>
+<p>After the analysis has been concluded, scroll down to the <strong>Diagnostics</strong> area.</p>
+</li>
+<li>
+<p>Click on <strong>Largest Contentful Paint element</strong>, to expand the section.</p>
+</li>
+<li>
+<p>The content element displayed there is the LCP of this page.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After you have identified the page’s LCP, you can now check if you:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>activated the setting <strong>Preloaded image</strong> in combination with SSR</p>
+</li>
+<li>
+<p>stored the image in WebP image format</p>
+</li>
+<li>
+<p>can decrease the image’s file size</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>These three measures can help you significantly in reducing the page’s Largest Contentful Paint.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_reducting_the_number_of_widgets">7.3. Reducting the number of widgets</h3>
+<h3 id="_reducting_the_number_of_widgets">7.4. Reducting the number of widgets</h3>
 <div class="paragraph">
 <p>The number of widgets you include on each online store page is prone to negatively affecting the performance of your plentyShop. The larger the number of widgets per page, the slower the loading times. This is particularly applicable to image widgets and to widgets that necessitate a large quantity of item data. Each additional widget impacts the time to first full interactivity of the page.<br>
 We therefore recommend you use only as many widgets per page as is necessary for your purposes. On category pages, in particular, it is advisable to reduce the numver of displayed items, since category pages need to load large quantities of data and complex Javascript.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_avoid_invisible_text_caused_by_custom_fonts">7.4. Avoid invisible text caused by custom fonts</h3>
-<div class="paragraph">
-<p>If you include custom fonts for your online store and do not use the drsign settings of the ShopBuilder, it is possible that browsers try to display certain sections of text before the custom font is loaded. As a result, your online store may be prone to a so-called <strong>Flash of invisible text (FOIT)</strong>, meaning a short time during which the text you want to display cannot be displayed by the browser.<br></p>
-</div>
-<div class="paragraph">
-<p>In order to avoit FOITS, you can use a CSS command to intermittenly display a system font instead of your custom font. to do so, you add the directive <strong>font-display: swap</strong> in your <strong>@font-face</strong> styles, for instance by using the <a href="https://marketplace.plentymarkets.com/plugins/storefront/widgets/cfourcustomcssjs_5143">Custom CSS/JS in the front end</a>) plugin. You can thereby prevent annyoing FOITS to happen, which can have a positive impact on the PSI rating of your online store.</p>
-</div>
-</div>
-<div class="sect2">
 <h3 id="_activating_the_shopbooster">7.5. Activating the ShopBooster</h3>
 <div class="paragraph">
-<p>The Time to first Byte (TTFB) is also part of the parameters evaluated by PSI, albeit to a small degree. In order to improve your TTFB values, you can activate the additional ShopBooster module for a fee. By activating the ShopBooster, page contents of your plentyShop are written into the cache, so that a second access to the page will benefit from greatly improved TTFB times.</p>
+<p>The Time to first Byte (TTFB) is also part of the parameters evaluated by PSI, albeit to a small degree. In order to improve your TTFB values, you can activate the additional ShopBooster module for a fee. By activating the ShopBooster, page contents of your plentyShop are written into the cache, so that a second access to the page will benefit from greatly improved TTFB times.<br></p>
+</div>
+<div class="paragraph">
+<p>The use of ShopBooster is particularly fruitful in combination with Server-Side Rendering (SSR), since using SSR can slightly increase the TTFB of your shop.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1415,14 +1483,23 @@ We therefore recommend you use only as many widgets per page as is necessary for
 </div>
 </div>
 <div class="sect2">
-<h3 id="_avoiding_javascript_in_code_widgets">7.6. Avoiding Javascript in code widgets</h3>
+<h3 id="_avoid_invisible_text_caused_by_custom_fonts">7.6. Avoid invisible text caused by custom fonts</h3>
+<div class="paragraph">
+<p>If you include custom fonts for your online store and do not use the drsign settings of the ShopBuilder, it is possible that browsers try to display certain sections of text before the custom font is loaded. As a result, your online store may be prone to a so-called <strong>Flash of invisible text (FOIT)</strong>, meaning a short time during which the text you want to display cannot be displayed by the browser.<br></p>
+</div>
+<div class="paragraph">
+<p>In order to avoit FOITS, you can use a CSS command to intermittenly display a system font instead of your custom font. to do so, you add the directive <strong>font-display: swap</strong> in your <strong>@font-face</strong> styles, for instance by using the <a href="https://marketplace.plentymarkets.com/plugins/storefront/widgets/cfourcustomcssjs_5143">Custom CSS/JS in the front end</a>) plugin. You can thereby prevent annyoing FOITS to happen, which can have a positive impact on the PSI rating of your online store.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_avoiding_javascript_in_code_widgets">7.7. Avoiding Javascript in code widgets</h3>
 <div class="paragraph">
 <p>The ShopBuilder provides a code widget via which you can integrate additional adjustments that are not covered by ShopBuilder itself. If you want to inplement a piece of code, we advise you to avoid using Javascript in the code widget of the ShopBuilder. Instead, you can, for instance, use the <a href="https://marketplace.plentymarkets.com/plugins/storefront/widgets/cfourcustomcssjs_5143">Custom CSS/JS in the front end</a> plugin or include the Javascript in a theme. Including additional Javascript in code widgets negatively impacts the loading times of your plentyShop.<br>
 If you integrate additional Javascript via an external plugin or a theme, we recommend that you place the Javascript at the lower end of the HTML body.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_linking_payment_plugins_to_the_right_containers">7.7. Linking payment plugins to the right containers</h3>
+<h3 id="_linking_payment_plugins_to_the_right_containers">7.8. Linking payment plugins to the right containers</h3>
 <div class="paragraph">
 <p>If you use payment plugins for your plentyShop that involve larger quantities of data (such as AmazonPay or PayPal), it is imperative for the performance of your online store to link these plugins to the correct corresponding template containers. We added new template containers with the release of Ceres 5.0 in order to load Javascript and CSS of payment plugins only in the places that they are needed for the successful order process.<br>
 The plugin guides of the respective payment plugins, such as <a href="https://marketplace.plentymarkets.com/paypal_4690#80.">PayPal</a>, already include detailed descriptions on how to link the contents of the plugins to the corresponding template containers. In general, you should link the Javascript of the payment method to the container <strong>Checkout.AfterScriptsLoaded</strong> and no longer to <strong>ScriptLoader.AfterScriptsLoaded</strong>. This can positively impact the performance of the online store.</p>
