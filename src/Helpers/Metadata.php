@@ -3281,7 +3281,7 @@ class Metadata {
 										"level" => 5,
 										"title" => "Artikel",
 										"keywords" => "FormatDesigner, Format-Typen, Export, Daten, Data, Daten-Export, Datenexport, Daten exportieren, Artikel, Varianten, Artikeldaten, Variantendaten, Exportieren, Artikeldaten exportieren, Variantendaten exportieren, Artikel exportieren, Varianten exportieren",
-										"description" => "Mit Formaten des Typs Artikel exportierst du Artikel- und Variantendaten.",
+										"description" => "Hier findest du eine Liste der Datenfelder, die dir beim Export von Artikel- und Variationsdaten zur Verfügung stehen.",
 										"navAlias" => "",
 										"linkListInto" => "Willkommen im Themenbereich Artikel. Hier findest du folgende Informationen:",
 										"languageID" => "",
