@@ -25361,7 +25361,7 @@ class Metadata {
 				"url" => "/en/orders/basic-settings",
 				"level" => 2,
 				"title" => "Basic settings",
-				"keywords" => "basic settings, order settings, status, statuses, standard settings, referrer, standard referrer, standard status for return, standard status for credit note, standard status for repairs, standard status for multi-invoice, standard status for multi credit note, standard status for reversal, last status, status of cancelled orders, status for order reservation, display of item prices, assignment of warehouse, status change, rights back end users, back end users",
+				"keywords" => "basic settings, order settings, status, statuses, standard settings, referrer, standard referrer, standard status for return, standard status for credit note, standard status for repairs, standard status for multi-invoice, standard status for multi credit note, standard status for reversal, last status, status of cancelled orders, status for order reservation, display of item prices, assignment of warehouse, status change, rights back end users, back end users, splitting, grouping",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Basic settings. The following information is available:",
