@@ -38737,7 +38737,7 @@ class Metadata {
 				"url" => "/en/business-decisions/your-contract",
 				"level" => 2,
 				"title" => "Your contract with plentymarkets",
-				"keywords" => "Admin, System administrator, System administration, System admin, Account, My Account, Contract, Contracts, Service-Center, Service-Centre, Service Center, Service Centre, Rate, Change rate, Switch rate, Client, Clients, Book client, cancel, Cancel plentymarkets, Cancel contract, Cancellation, DSGVO, GDPR, Domain, Agency, Agencies, Access",
+				"keywords" => "Admin, System administrator, System administration, System admin, Account, My Account, Contract, Contracts, Service-Center, Service-Centre, Service Center, Service Centre, Rate, Change rate, Switch rate, Client, Clients, Book client, cancel, Cancel plentymarkets, Cancel contract, Cancellation, DSGVO, GDPR, Domain, Agency, Agencies, Access, Clearing account, Clearing account access, View clearing account, Clearing account balance",
 				"description" => "Learn how to access your My account area and make changes to your contract with plentymarkets.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Your contract with plentymarkets. The following information is available:",
