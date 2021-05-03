@@ -15260,7 +15260,7 @@ class Metadata {
 				"url" => "/business-entscheidungen/dein-vertrag",
 				"level" => 2,
 				"title" => "Dein Vertrag mit plentymarkets",
-				"keywords" => "Admin, Systemadministrator, System-Administrator, Systemadministration, System-Administration, Systemadmin, System-Admin, Konto, Mein Konto, Vertrag, Verträge, Service-Center, Service-Centre, Service Center, Service Centre, Tarif, Tarifwechsel, Tarif wechseln, Mandant, Mandant buchen, kündigen, plentymarkets kündigen, Vertrag kündigen, Kündigung, DSGVO, Domain, Agentur, Agenturen, Zugang, Zugriff",
+				"keywords" => "Admin, Systemadministrator, System-Administrator, Systemadministration, System-Administration, Systemadmin, System-Admin, Konto, Mein Konto, Vertrag, Verträge, Service-Center, Service-Centre, Service Center, Service Centre, Tarif, Tarifwechsel, Tarif wechseln, Mandant, Mandant buchen, kündigen, plentymarkets kündigen, Vertrag kündigen, Kündigung, DSGVO, Domain, Agentur, Agenturen, Zugang, Zugriff, Verrechnungskonto, Verrechnungskonto Guthaben, Verrechnungskonto einsehen",
 				"description" => "Lerne, wie du auf den Mein Konto-Bereich zugreifst und Änderungen an deinem plentymarkets-Vertrag vornimmst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Dein Vertrag mit plentymarkets. Hier findest du folgende Informationen:",
