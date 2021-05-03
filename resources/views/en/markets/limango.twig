@@ -29,7 +29,12 @@
 </li>
 <li><a href="#750"><span>11.</span><span> Setting the variation availability</span></a></li>
 <li><a href="#_automatically_notify_limango_about_cancellations"><span>12.</span><span> Automatically notify limango about cancellations</span></a></li>
-<li><a href="#1300"><span>13.</span><span> Setting up automatic shipping confirmations</span></a></li>
+<li><a href="#1300"><span>13.</span><span> Setting up automatic shipping confirmations</span></a>
+<ul class="sectlevel2">
+<li><a href="#13001"><span>13.1.</span><span> Workflow for automatic order confirmations</span></a></li>
+<li><a href="#13002"><span>13.2.</span><span> Automatically sending shipping confirmations to limango</span></a></li>
+</ul>
+</li>
 <li><a href="#1000"><span>14.</span><span> Setting up return management</span></a>
 <ul class="sectlevel2">
 <li><a href="#1010"><span>14.1.</span><span> Workflow for returns</span></a></li>
@@ -273,8 +278,8 @@
 <table id="limango-setup" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Setting up limango</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
 </colgroup>
 <thead>
 <tr>
@@ -353,9 +358,50 @@
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order status for orders with no shipping service provider (&gt;= 7)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order status for orders without shipping carrier mapping (&gt; 5 - &lt; 7)</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Enter an order status of 7 or higher. This status is assigned to orders if the shipping service provider in the order is not linked to a shipping service provider in plentymarkets.</p>
+<p>Which status is assigned to orders if the shipping service provider in the order is not linked to a shipping service provider in plentymarkets?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>The selected status must be:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Greater than 5</p>
+</li>
+<li>
+<p>Less than 7</p>
+</li>
+<li>
+<p>Less than the status for <strong>Order status for orders with shipping carrier mapping (&gt; 5 - &lt; 7)</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After correcting the shipping carrier mapping, move orders with this status into the status for <strong>Order status for orders with shipping carrier mapping (&gt; 5 - &lt; 7)</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order status for orders with shipping carrier mapping (&gt; 5 - &lt; 7)</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Which status is assigned to orders if the shipping service provider in the order is linked to a shipping service provider in plentymarkets?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>The selected status must be:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Greater than 5</p>
+</li>
+<li>
+<p>Less than 7</p>
+</li>
+<li>
+<p>Greater than the status for <strong>Order status for orders without shipping carrier mapping (&gt; 5 - &lt; 7)</strong></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -929,6 +975,100 @@ Enter the material composition in the following format:</p>
 </div>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Colour value</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>limango distinguishes by colours but not by shades. For example, if you offer a dress in both light and dark green, both are presented if customers search for green dresses on the market.</p>
+</div>
+<div class="paragraph">
+<p>To ensure that different products are created for variations in different shades of the same colour, the colour value saved in plentymarkets is exported as part of the merchant product ID and the product name instead of the limango colour value.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example:</em></strong> Mapping different shades of green to the colour value <strong>green</strong></div>
+<div class="content">
+<div class="paragraph">
+<p>This example shows you how to map different shades of green to the colour value <strong>green</strong>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Assumed scenario:</p>
+</div>
+<div class="paragraph">
+<p>You want to map all your shades of green to the limango colour value <strong>green</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The following shades of green are saved as values of the attribute <strong>Colour</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Light green</p>
+</li>
+<li>
+<p>Dark green</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following shades of green are saved as property values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lime green</p>
+</li>
+<li>
+<p>Coriander</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Mapping different shades of green to the colour value <strong>green</strong>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the limango catalogue.</p>
+</li>
+<li>
+<p>Navigate to the area <strong>Colour</strong>.</p>
+</li>
+<li>
+<p>Map the marketplace data field <strong>Colour</strong> to a plentymarkets data field:<br>
+<strong><em>Alternative 1:</em></strong> Field <strong>Value name</strong> of the attribute for <strong>Colour</strong>.<br>
+<strong><em>Alternative 2:</em></strong> Property for <strong>Colour</strong>.</p>
+</li>
+<li>
+<p>Navigate to the area <strong>Colour value</strong>.</p>
+</li>
+<li>
+<p>Map the marketplace data field <strong>Colour value: green</strong> to the plentymarkets attribute value <strong>Light green</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add fallback data field</strong>.</p>
+</li>
+<li>
+<p>As the first fallback data field, map the plentymarkets attribute value <strong>Dark green</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add fallback data field</strong>.</p>
+</li>
+<li>
+<p>As the second fallback data field, map the plentymarkets property value <strong>Lime green</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add fallback data field</strong>.</p>
+</li>
+<li>
+<p>As the third fallback data field, map the plentymarkets property value <strong>Coriander</strong>.<br>
+→ The shade of green that is saved for the variation is exported as part of the merchant product ID and the product name.<br>
+→ On limango, all products are listed with the colour Green.<br>
+<strong><em>Tip:</em></strong> The order for mapping the different shades described here is random. You can map the values in any order.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1004,7 +1144,7 @@ Enter the material composition in the following format:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>* <strong>Name 1</strong> + Own value <code>in</code> + Values of a property <strong>Colour</strong> for variations</p>
+<p><strong>Name 1</strong> + Own value <code>in</code> + Values of a property <strong>Colour</strong> for variations</p>
 </li>
 </ul>
 </div></div></td>
@@ -1078,6 +1218,15 @@ Enter the material composition in the following format:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>All available images</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The first 10 images activated for the referrer <strong>limango</strong> are exported that are linked to the colour variation with the highest position. Images are sorted by position. Any images with identical positions are sorted by ID.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Colour</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value name of the attribute <strong>Colour</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instead of the value name of the attribute <strong>Colour</strong>, you can use values of a variation property <strong>Colour</strong>.<br>
+<strong><em>Tip:</em></strong> This field tells limango which attribute or property you use for colours. However, the export contains the value names that you mapped for the field <strong>Colour value</strong>.
+(see <a href="#905">Notes on mapping data fields</a>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
 </tr>
 <tr>
@@ -1439,13 +1588,15 @@ Enter the material composition in the following format:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Colour</p></td>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Colour value</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Colour</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Colour value</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Values of the attribute <strong>Colour</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Instead of values of the attribute <strong>Colour</strong>, you can use values of a variation property <strong>Colour</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Values of the attribute <strong>Colour</strong><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instead of values of the attribute <strong>Colour</strong>, you can use values of a variation property <strong>Colour</strong>.<br>
+If necessary, add different shades of the same colour as fallback data fields.<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
 </tr>
 <tr>
@@ -1503,9 +1654,10 @@ Enter the material composition in the following format:</p>
 <td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock">Fields that are exported without a mapping</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Product ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merchant product ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parent SKU</strong> - value for <strong>Colour</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parent-SKU</strong> - plentymarkets value for <strong>Colour value</strong><br>
+(see <a href="#905">Notes on mapping data fields</a>)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
 </tr>
@@ -1764,7 +1916,7 @@ Enter the material composition in the following format:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, e.g. <strong>[8] Cancelled</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example [8] <strong>Waiting for payment</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
@@ -1783,7 +1935,97 @@ Enter the material composition in the following format:</p>
 <h2 id="1300">13. Setting up automatic shipping confirmations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>limango expects each shipping confirmation to contain a tracking number. As such, set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically book outgoing items whe a tracking number is created.</p>
+<p>Shipping confirmations for limango must contain a tracking number. In addition, the shipping service provider of the order must be linked to the limango shipping service provider correctly in the plugin settings.</p>
+</div>
+<div class="paragraph">
+<p>You need two event procedures to automatically confirm the shipping to limango:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Event procedure 1: Send shipping confirmation to limango</p>
+</li>
+<li>
+<p>Event procedure 2: Book outgoing items</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="13001">13.1. Workflow for automatic order confirmations</h3>
+<div class="paragraph">
+<p>The workflow for automated shipping confirmations depends on whether or not the order’s shipping service provider is correctly linked to the limango shipping service provider in the plugin settings.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Case</th>
+<th class="tableblock halign-left valign-top">Procedure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping service provider linked</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>A package number is saved for the order.</p>
+</li>
+<li>
+<p>The event procedure <strong>Send shipping confirmation to limango</strong> checks if the shipping service provider is linked correctly.</p>
+</li>
+<li>
+<p>The procedure <strong>Send shipping confirmation to limango</strong> is triggered: A shipping confirmation is sent to limango.</p>
+</li>
+<li>
+<p>The order is moved to the status for <strong>Order status for orders with shipping carrier mapping (&gt; 5 - &lt; 7)</strong>.</p>
+</li>
+<li>
+<p>Only procedure 1 of the event procedure <strong>Book outgoing items</strong> is triggered.<br>
+→ The outgoing items are booked.<br>
+→ No second shipping confirmation is sent to limango.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping service provider linked correctly</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>A package number is saved for the order.</p>
+</li>
+<li>
+<p>The event procedure <strong>Send shipping confirmation to limango</strong> checks if the shipping service provider is linked correctly.</p>
+</li>
+<li>
+<p>The order is moved to the status for <strong>Order status for orders without shipping carrier mapping (&gt; 5 - &lt; 7)</strong>.</p>
+</li>
+<li>
+<p>You check and correct the shipping service provider in the plugin settings and then move the order into the status for <strong>Order status for orders with shipping carrier mapping (&gt; 5 - &lt; 7)</strong>.<br>
+Go to <strong>Plugins » Plugin set overview » [Open plugin set] » Open limango plugin » Shipping service provider</strong> to correct the link.</p>
+</li>
+<li>
+<p>Procedure 1 of the event procedure <strong>Book outgoing items</strong> is triggered.<br>
+→ The outgoing items are booked.</p>
+</li>
+<li>
+<p>Procedure 2 of the event procedure <strong>Book outgoing items</strong> is triggered.<br>
+→ A shipping confirmation is sent to limango.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="13002">13.2. Automatically sending shipping confirmations to limango</h3>
+<div class="paragraph">
+<p>For event procedure 1 for shipping confirmations, set up the <a href="/en/automation/event-procedures">event procedure</a> described in <a href="#event-procedure-package-number-limango">[event-procedure-package-number-limango]</a>.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Setting up an event procedure</div>
@@ -1801,13 +2043,13 @@ Enter the material composition in the following format:</p>
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#event-procedure-tracking-number-limango">Table 5</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-package-number-limango">[event-procedure-package-number-limango]</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#event-procedure-tracking-number-limango">Table 5</a>.</p>
+<p>Carry out the settings according to <a href="#event-procedure-package-number-limango">[event-procedure-package-number-limango]</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1819,8 +2061,8 @@ Enter the material composition in the following format:</p>
 </div>
 </div>
 </div>
-<table id="event-procedure-tracking-number-limango" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Event procedure for booking outgoing items</caption>
+<table id="event-procedure-shipping-info-limango" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Event procedure 1 for shipping confirmations</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -1836,13 +2078,14 @@ Enter the material composition in the following format:</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Package number</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change &gt; Package number</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong><br>
+* Delivery order*</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
@@ -1851,13 +2094,13 @@ Enter the material composition in the following format:</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Book outgoing items</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send shipping confirmation to limango</strong></p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Now, set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send a shipping confirmation to limango when outgoing items have been booked for an order.</p>
+<p>For event procedure 2 for shipping confirmations, set up the <a href="/en/automation/event-procedures">event procedure</a> described in <a href="#event-procedure-booking-items-limango">[event-procedure-booking-items-limango]</a>.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Setting up an event procedure</div>
@@ -1875,13 +2118,13 @@ Enter the material composition in the following format:</p>
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#event-procedure-shipping-confirmation-limango">Table 6</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-booking-items-limango">[event-procedure-booking-items-limango]</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#event-procedure-shipping-confirmation-limango">Table 6</a>.</p>
+<p>Carry out the settings according to <a href="#event-procedure-booking-items-limango">[event-procedure-booking-items-limango]</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1894,7 +2137,7 @@ Enter the material composition in the following format:</p>
 </div>
 </div>
 <table id="event-procedure-shipping-confirmation-limango" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 6. Event procedure to send shipping confirmations to limango</caption>
+<caption class="title">Table 6. Event procedure 2 for shipping confirmations</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -1911,12 +2154,14 @@ Enter the material composition in the following format:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example [7] <strong>Outgoing items booked</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the status for <strong>Order status for orders with shipping carrier mapping (&gt; 5 - &lt; 7)</strong><br>
+You set this status in the menu <strong>Plugins » Plugin set overview » [Open plugin set] » Open limango plugin » Order status</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong><br>
+* Delivery order*</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
@@ -1924,12 +2169,18 @@ Enter the material composition in the following format:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>limango</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Book outgoing items</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure 2</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send shipping confirmation to limango</strong></p></td>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 </div><div class="sect1">
 <h2 id="1000">14. Setting up return management</h2>
