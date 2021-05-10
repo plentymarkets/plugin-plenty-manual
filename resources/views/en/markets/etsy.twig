@@ -4,29 +4,34 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#100"><span>1.</span><span> Registering with Etsy</span></a></li>
-<li><a href="#200"><span>2.</span><span> Installing the Etsy plugin in plentymarkets</span></a>
+<li><a href="#20"><span>1.</span><span> Overview of automatic data exchange with Etsy</span></a></li>
+<li><a href="#100"><span>2.</span><span> Registering with Etsy</span></a></li>
+<li><a href="#200"><span>3.</span><span> Installing the Etsy plugin in plentymarkets</span></a></li>
+<li><a href="#250"><span>4.</span><span> Activating the interface</span></a></li>
+<li><a href="#300"><span>5.</span><span> Setting up Etsy in plentymarkets</span></a></li>
+<li><a href="#301"><span>6.</span><span> Setting up export languages</span></a></li>
+<li><a href="#400"><span>7.</span><span> Activating the order referrer</span></a></li>
+<li><a href="#500"><span>8.</span><span> Setting the variation availability</span></a></li>
+<li><a href="#550"><span>9.</span><span> _Optional:_Saving existing Etsy listing IDs</span></a></li>
+<li><a href="#600"><span>10.</span><span> Defining a sales price</span></a></li>
+<li><a href="#900"><span>11.</span><span> Saving legal information</span></a></li>
+<li><a href="#900"><span>12.</span><span> Setting up the item export</span></a>
 <ul class="sectlevel2">
-<li><a href="#250"><span>2.1.</span><span> Activating the interface</span></a></li>
-<li><a href="#300"><span>2.2.</span><span> Setting up Etsy in plentymarkets</span></a></li>
+<li><a href="#700"><span>12.1.</span><span> Creating a catalogue</span></a></li>
+<li><a href="#map-data-fields"><span>12.2.</span><span> Mapping data fields in the catalogue</span></a>
+<ul class="sectlevel3">
+<li><a href="#905"><span>12.2.1.</span><span> Notes on mapping data fields</span></a></li>
 </ul>
 </li>
-<li><a href="#400"><span>3.</span><span> Activating the order referrer</span></a></li>
-<li><a href="#500"><span>4.</span><span> Setting the variation availability</span></a></li>
-<li><a href="#550"><span>5.</span><span> Saving existing Etsy listing IDs</span></a></li>
-<li><a href="#600"><span>6.</span><span> Defining a sales price</span></a></li>
-<li><a href="#900"><span>7.</span><span> Setting up the item export</span></a>
-<ul class="sectlevel2">
-<li><a href="#700"><span>7.1.</span><span> Creating a catalogue</span></a></li>
-<li><a href="#map-data-fields"><span>7.2.</span><span> Mapping data fields in the catalogue</span></a></li>
+<li><a href="#904"><span>12.3.</span><span> Activating the catalogue</span></a></li>
 </ul>
 </li>
-<li><a href="#800"><span>8.</span><span> Updating Etsy categories</span></a></li>
-<li><a href="#900"><span>9.</span><span> Transferring legal information</span></a></li>
-<li><a href="#1000"><span>10.</span><span> Automatically sending payment confirmations</span></a></li>
-<li><a href="#1100"><span>11.</span><span> Automatically sending shipping confirmations</span></a></li>
-<li><a href="#1200"><span>12.</span><span> Assigning user rights</span></a></li>
-<li><a href="#1300"><span>13.</span><span> License</span></a></li>
+<li><a href="#2200"><span>13.</span><span> Check list: Requirements for exporting variations</span></a></li>
+<li><a href="#10001"><span>14.</span><span> Automating order processing</span></a></li>
+<li><a href="#1000"><span>15.</span><span> Automatically sending payment confirmations</span></a></li>
+<li><a href="#1100"><span>16.</span><span> Automatically sending shipping confirmations</span></a></li>
+<li><a href="#1200"><span>17.</span><span> Assigning user rights</span></a></li>
+<li><a href="#1300"><span>18.</span><span> Brand and licensing information</span></a></li>
 </ul>
 </div>
         </div>
@@ -39,43 +44,138 @@
 <div class="paragraph">
 <p><a href="https://www.etsy.com/" target="_blank" rel="noopener">Etsy</a> is an American online market focused on handmade and vintage items.</p>
 </div>
-<h5 id="_note" class="discrete">Note</h5>
-<div class="paragraph">
-<p>The term “Etsy” is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="title">Installing the Etsy plugin</div>
+</div><div class="sect1">
+<h2 id="20">1. Overview of automatic data exchange with Etsy</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>The interface to Etsy is integrated via a <a href="https://marketplace.plentymarkets.com/en/plugins/sales/marktplaetze/etsy_4689" target="_blank" rel="noopener">plugin</a>. Download the Etsy plugin in the plentyMarketplace in order to use it.</p>
+<p>After you have set up Etsy in plentymarkets, data is exchanged with the market in the intervals described in <a href="#data-exchange-etsy">Table 1</a>:</p>
 </div>
-</td>
+<table id="data-exchange-etsy" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Frequency of data exchange</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Data</th>
+<th class="tableblock halign-left valign-top">Interval</th>
 </tr>
-</tbody></table>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item export</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>once a day</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stock synchronisation</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Hourly</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Price synchronisation</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>once a day</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order import</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Hourly</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="100">2. Registering with Etsy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Register as an Etsy seller before you set up Etsy in your plentymarkets system.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="100">1. Registering with Etsy</h2>
+<h2 id="200">3. Installing the Etsy plugin in plentymarkets</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In order to set up Etsy in your plentymarkets system, you have to register as a Etsy seller first.</p>
+<p>You need a plugin to link plentymarkets to Etsy. To connect to limango in plentymarkets, install the <a href="https://marketplace.plentymarkets.com/plugins/sales/marktplaetze/etsy_4689" target="_blank" rel="noopener">Etsy plugin</a> in your plentymarkets system. You can download the plugin in the <a href="https://marketplace.plentymarkets.com/en" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Adding and installing the plugin <strong>Etsy</strong> in your plentymarkets system</div>
+<div class="content">
+<div class="paragraph instruction">
+<p>Adding plugin to the system:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » plentyMarketplace</strong>.<br>
+→ The marketplace opens in a new tab.</p>
+</li>
+<li>
+<p>Navigate to the plugin <strong>Etsy</strong>.<br>
+<strong><em>Tip:</em></strong> Either use the search function or open the category <strong>Plugins » Sales » Marketplaces</strong>.</p>
+</li>
+<li>
+<p>Open the detail view of the plugin.</p>
+</li>
+<li>
+<p>In the column to the right, click on <strong>Go to checkout</strong>.<br>
+→ The <strong>Checkout</strong> window opens.</p>
+</li>
+<li>
+<p>Read and accept the General Terms and Conditions.</p>
+</li>
+<li>
+<p>Click on <strong>Order now</strong>.<br>
+→ Wait a few minutes before installing the plugin.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Installing plugins:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » Plugin set overview</strong>.</p>
+</li>
+<li>
+<p>Click on the plugin set in which you want to install the plugin.<br>
+→ The plugin set opens.</p>
+</li>
+<li>
+<p>Click on <span class="icon green"><i class="fa fa-plus-square  "></i></span> <strong>Add new plugin</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Etsy</strong> from the plugin list.</p>
+</li>
+<li>
+<p>Click on <span class="icon purple"><i class="fa fa-download  "></i></span> <strong>Install</strong>.<br>
+→ The plugin is installed.<br>
+→ The plugin set is shown.</p>
+</li>
+<li>
+<p>Switch the plugin active (<span class="icon blue"><i class="fa fa-toggle-on  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the plugin set.<br>
+<strong><em>Tip:</em></strong> Problems saving the plugin set? Click on <strong>Open details</strong> to show additional information.</p>
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="200">2. Installing the Etsy plugin in plentymarkets</h2>
+<h2 id="250">4. Activating the interface</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After buying the Etsy plugin in the plentyMarketplace, install the market in the <strong>Plugins » Plugin overview</strong> menu. Select the filter <strong>Not installed</strong> or <strong>All</strong> to display plugins that have not yet been installed. For further information about downloading and installing plugins, see <a href="/en/plugins/adding-plugins-system#marketplace-plugins">Adding plugins to the system</a>.</p>
-</div>
-<div class="sect2">
-<h3 id="250">2.1. Activating the interface</h3>
-<div class="paragraph">
-<p>First, the interface has to be activated in the <strong>Setup » Markets » Etsy » Authentication</strong> menu. This is to grant plentymarkets access to your Etsy account.</p>
+<p>First, the interface has to be activated in the <strong>Setup » Markets » Etsy » Authentication</strong> menu. This grants plentymarkets access to your Etsy account.</p>
 </div>
 <div class="paragraph instruction">
 <p>Activating the interface:</p>
@@ -87,20 +187,25 @@
 </li>
 <li>
 <p>Click on the globe icon (<span class="icon green"><i class="fa fa-globe  "></i></span>).<br>
-→ A new window opens and you are forwarded to Etsy.</p>
+→ A new window opens and you are forwarded to Etsy.<br>
+<strong><em>Troubleshooting:</em></strong> You are not redirected?
+Then deactivate your pop-up blocker or try a different browser.</p>
 </li>
 <li>
 <p>Enter your Etsy access data.</p>
 </li>
 <li>
 <p>Click on <strong>Allow access</strong>.<br>
-→ The interface to Etsy is activated and you can carry out further settings.</p>
+→ plentymarkets can access your Etsy account.<br>
+→ You can continue the setup.<br>
+<strong><em>Troubleshooting:</em></strong> Are you redirected to the start page of your plentyShop? Then your plentyShop is probably locked. Go to <strong>Setup » Client » Standard » Online store » Lock store</strong> to unlock the store. Once the authentication is completed, go back and relock the store.</p>
 </li>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="300">2.2. Setting up Etsy in plentymarkets</h3>
+</div><div class="sect1">
+<h2 id="300">5. Setting up Etsy in plentymarkets</h2>
+<div class="sectionbody">
 <div class="admonitionblock important">
 <table>
 <tbody><tr>
@@ -110,7 +215,7 @@
 <td class="content">
 <div class="title">Pay attention to the Renewal options at Etsy</div>
 <div class="paragraph">
-<p>Prior to setting up Etsy in plentymarkets, you have to set the setting <strong>Renewal options</strong> to <strong>Manual</strong> in the <strong>Shop-Manager » Listings » [Open listing]</strong> menu at Etsy. Otherwise, the Etsy plugin will not work correctly.</p>
+<p>Prior to setting up Etsy in plentymarkets, you have to set the setting <strong>Renewal options</strong> to <strong>Manual</strong> in the <strong>Shop-Manager » Listings » [Open listing]</strong> menu of the Etsy back end. Otherwise, the Etsy plugin will not work correctly.</p>
 </div>
 </td>
 </tr>
@@ -135,7 +240,10 @@
 </li>
 </ol>
 </div>
-<h5 id="_setting_up_export_languages" class="discrete">Setting up export languages</h5>
+</div>
+</div><div class="sect1">
+<h2 id="301">6. Setting up export languages</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>In the <strong>Export languages</strong> area, you carry out settings for export languages. The <strong>Shop language</strong> is exported by default. Other languages are used for translations of your offers.</p>
 </div>
@@ -148,18 +256,30 @@
 <p>Go to <strong>Setup » Markets » Etsy » Settings</strong>.</p>
 </li>
 <li>
-<p>Select the languages that your offers should be translated into. Available languages are <strong>English</strong>, <strong>German</strong>, and <strong>French</strong>.<br>
-<strong><em>Note:</em></strong> The defined <strong>Shop language</strong> is exported by default.</p>
+<p>Activate the languages that you want to export for your offers. The following languages are available:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>English</p>
 </li>
 <li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+<p>German</p>
+</li>
+<li>
+<p>French</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+<strong><em>Note:</em></strong> The <strong>Shop language</strong> that you set is exported irrespective of these settings.</p>
 </li>
 </ol>
 </div>
 </div>
-</div>
 </div><div class="sect1">
-<h2 id="400">3. Activating the order referrer</h2>
+<h2 id="400">7. Activating the order referrer</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>An order referrer tags an order with the sales channel on which the order was generated. You also need to activate the order referrer in order to link items, characteristics etc. with Etsy. Go to <strong>Setup » Orders » Order referrer</strong> to activate the order referrer.</p>
@@ -182,7 +302,7 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="500">4. Setting the variation availability</h2>
+<h2 id="500">8. Setting the variation availability</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You need to activate the variations that you want to sell on Etsy. This is done in the <strong>Availability</strong> tab of a variation within the <strong>Item » Edit item » [Open item] » Tab: Variation ID</strong> menu.</p>
@@ -321,7 +441,7 @@
 </div></div>
 </div>
 </div><div class="sect1">
-<h2 id="550">5. Saving existing Etsy listing IDs</h2>
+<h2 id="550">9. _Optional:_Saving existing Etsy listing IDs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you already sell a variation on Etsy, save the Etsy listing ID as an SKU for the referrer <strong>Etsy</strong>. By doing so, variations will be assigned to the variations already listed on Etsy during the item export. This is to prevent overselling.<br></p>
@@ -362,7 +482,7 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="600">6. Defining a sales price</h2>
+<h2 id="600">10. Defining a sales price</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Sales prices define the conditions under which a variation is sold at a specific price and on a specific sales channel. That means that to sell variations on Etsy, you need a sales price in which the order referrer Etsy is activated. The price that you save for this sales price is the price that will be shown on Etsy.</p>
@@ -389,15 +509,42 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="900">7. Setting up the item export</h2>
+<h2 id="900">11. Saving legal information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The item texts for Etsy offers must contain specific legal information, for example relating to delivery time and cancellation rights. Save this in formation in all languages in which you offer your products. The legal information is automatically added to the item description during the export.</p>
+</div>
+<div class="paragraph instruction">
+<p>Saving legal information:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Markets » Etsy » Legal information</strong>.<br>
+→ The window <strong>Legal information</strong> opens.</p>
+</li>
+<li>
+<p>Select the language in which you want to save legal information.</p>
+</li>
+<li>
+<p>Enter the text.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="900">12. Setting up the item export</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Item data is exported to Etsy via catalogues. The marketplace format <strong>Listing - Etsy</strong> creates a catalogue for exporting data for all Etsy product categories.</p>
 </div>
 <div class="sect2">
-<h3 id="700">7.1. Creating a catalogue</h3>
+<h3 id="700">12.1. Creating a catalogue</h3>
 <div class="paragraph">
-<p>Item data is exported to Etsy via catalogue using the marketplace format <strong>Listing - Etsy</strong>. Create a catalogue in the <strong>Data » Catalogue</strong> menu to export your items to Etsy. Link the Etsy data fields with item data saved in plentymarkets in the marketplace format afterwards. The catalogue data is automatically exported to Etsy once a day if you have activated the <strong>Item export</strong> in the <strong>Setup » Markets » Etsy » Settings</strong> menu. Is this your first time working with catalogues? Then read up on the basic principle of <a href="#en/data/exporting-data/managing-catalogues">catalogues first</a>.</p>
+<p>Item data is exported to Etsy via catalogue using the marketplace format <strong>Listing - Etsy</strong>. To export your items to Etsy, create a catalogue in the <strong>Data » Catalogue</strong> menu. Link the Etsy data fields with item data saved in plentymarkets in the marketplace format afterwards. The catalogue data is automatically exported to Etsy once a day if you have activated the <strong>Item export</strong> in the <strong>Setup » Markets » Etsy » Settings</strong> menu. Is this your first time working with catalogues? Then read up on the <a href="#en/data/exporting-data/managing-catalogues">basic concept of the plentymarkets catalogues first</a>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -459,17 +606,20 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 </div>
 </div>
 <div class="sect2">
-<h3 id="map-data-fields">7.2. Mapping data fields in the catalogue</h3>
-<div class="admonitionblock important">
+<h3 id="map-data-fields">12.2. Mapping data fields in the catalogue</h3>
+<div class="paragraph">
+<p>After you have created a catalogue, map the market’s data fields to item data saved in plentymarkets. Check the documentation of the sales channel to find out what data the market expects for the individual data fields.</p>
+</div>
+<div class="admonitionblock tip">
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="title">Notes for the Etsy marketplace format</div>
+<div class="title">Using properties</div>
 <div class="paragraph">
-<p>The <strong>Shop sections</strong> data field in the <strong>Listing - Etsy</strong> template provides all shop sections that you created at Etsy. The shop sections can be selected from the drop-down list and can be linked to data saved in plentymarkets.</p>
+<p>Use <a href="/en/item/managing-items#4800">properties</a> to export values for marketplace data fields that have no corresponding field in plentymarkets.</p>
 </div>
 </td>
 </tr>
@@ -498,7 +648,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <div class="ulist">
 <ul>
 <li>
-<p><strong><em>Possibility 1:</em> Map one or more plentymarkets data fields</strong></p>
+<p><strong><em>Alternative 1:</em> Map one or more plentymarkets data fields</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -520,7 +670,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 </div>
 </li>
 <li>
-<p><strong><em>Possibility 2:</em> Always export the same value for the market data field</strong></p>
+<p><strong><em>Alternative 2:</em> Always export the same value for the market data field</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -582,57 +732,89 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 </div>
 </div>
 </div>
-</div>
-</div>
-</div><div class="sect1">
-<h2 id="800">8. Updating Etsy categories</h2>
-<div class="sectionbody">
+<div class="sect3">
+<h4 id="905">12.2.1. Notes on mapping data fields</h4>
 <div class="paragraph">
-<p>In order to update Etsy categories in plentymarkets, delete your credentials in the <strong>Setup » Markets » Etsy » Authentication</strong> menu and add them again.</p>
+<p>Every market structures item data differently. As such, there are some particularities for each market when mapping data fields. <a href="#catalogue-etsy-mappings">Table 2</a> contains mapping information for important data fields for Etsy.</p>
+</div>
+<table id="catalogue-etsy-mappings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Notes on mapping data fields</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Marketplace data field</th>
+<th class="tableblock halign-left valign-top">plentymarkets data field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shop sections</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>For this marketplace data field, all shop sections that you created on Etsy are available.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="904">12.3. Activating the catalogue</h3>
+<div class="paragraph">
+<p>You have set up Etsy and created a catalogue for exporting your item data? Then start the export of your item data.</p>
 </div>
 <div class="paragraph instruction">
-<p>Updating Etsy categories:</p>
+<p>Activating the catalogue export to Etsy:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <strong>Setup » Markets » Etsy » Authentication</strong>.</p>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogues are listed.</p>
 </li>
 <li>
-<p>Click on <strong>Delete</strong> to delete the credentials.</p>
+<p>Scroll to the Etsy catalogue.</p>
 </li>
 <li>
-<p>Click on the globe icon (<span class="icon green"><i class="fa fa-globe  "></i></span>) to add new credentials.<br>
-→ You are forwarded to Etsy.</p>
-</li>
-<li>
-<p>Click on <strong>Allow access</strong> at Etsy.<br>
-→ New credentials are created and saved in plentymarkets.<br>
-→ The Etsy categories are updated.</p>
+<p>In the <strong>Active/Inactive</strong> column, move the toggle button to the right (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>).<br>
+→ The catalogue is active.<br>
+→ The catalogue data is exported to Etsy once a day during the night{if-active}.</p>
 </li>
 </ol>
 </div>
 </div>
+</div>
 </div><div class="sect1">
-<h2 id="900">9. Transferring legal information</h2>
+<h2 id="2200">13. <em>Check list:</em> Requirements for exporting variations</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In order to transfer legal information to Etsy, you have to save the information for each language you use for Etsy. The legal information is then added to the item description.</p>
+<p>To export a variation to Etsy, this variation has to meet the following requirements:</p>
 </div>
-<div class="paragraph instruction">
-<p>Saving legal information:</p>
+<div class="openblock collapseBox">
+<div class="title">Is the market availability active?</div>
+<div class="content">
+<div class="paragraph">
+<p>The variation must be available for the market.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <strong>Setup » Markets » Etsy » Legal information</strong>.<br>
-→ The window <strong>Legal information</strong> opens.</p>
+<p>Go to <strong>Item » Edit item » [Open item] » Tab: Variation ID » Tab: Settings</strong>.</p>
 </li>
 <li>
-<p>Select the language in which you want to save legal information.</p>
+<p>Open the variation that you want to sell on Etsy.</p>
 </li>
 <li>
-<p>Enter the text.</p>
+<p>Click on the <strong>Availability</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Markets</strong> area, click in the selection field.<br>
+→ A list of all available markets is displayed.</p>
+</li>
+<li>
+<p>Activate the option <strong>Etsy</strong>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
@@ -640,8 +822,228 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 </ol>
 </div>
 </div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Have you activated the variation?</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » Tab: Variation ID » Tab: Settings</strong>.</p>
+</li>
+<li>
+<p>Open the variation that you want to sell on Etsy.<br></p>
+</li>
+<li>
+<p>In the <strong>Availability</strong> area, activate the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Does the variation have positive net stock?</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » Tab: Variation ID » Tab: Settings</strong>.</p>
+</li>
+<li>
+<p>Open the variation that you want to sell on Etsy.</p>
+</li>
+<li>
+<p>Click on the <strong>Stock</strong> tab.<br>
+→ The net stock of each warehouse is listed in the <strong>Net</strong> column.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Are the sales price settings correct?</div>
+<div class="content">
+<div class="paragraph instruction">
+<p>Check the sales price:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Item » Sales prices</strong>.</p>
+</li>
+<li>
+<p>For the filter <strong>Referrer</strong>, select <strong>Etsy</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).<br>
+→ The sales price that is active for the referrer is shown.</p>
+</li>
+<li>
+<p>Check the settings of the sales price.</p>
+</li>
+<li>
+<p>Make any necessary corrections.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Check the price:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.<br>
+→ The sales prices are listed in the tab <strong>Settings</strong>.</p>
+</li>
+<li>
+<p>Check the following settings:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Is the sales price for the referrer linked?</p>
+</li>
+<li>
+<p>Does the price for the referrer have the correct price?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Make any necessary corrections.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Does the variation have at least one image?</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.</p>
+</li>
+<li>
+<p>In the lower menu bar, click on the <strong>Images</strong> tab.</p>
+</li>
+<li>
+<p>Confirm that at least one image is linked to the variation.<br>
+<strong><em>Tip:</em></strong> Linked images have a green border. Images that are not linked are greyed out.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>In the upper menu bar, click on the <strong>Images</strong> tab.</p>
+</li>
+<li>
+<p>Expand the drop-down list <strong>Availability</strong> and confirm that the option <strong>Etsy</strong> is checked.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Did you map all mandatory fields of the market in the catalogue?</div>
+<div class="content">
+<div class="paragraph">
+<p>As a minimum, plentymarkets data fields must be mapped to all mandatory fields of the market. In the catalogue, mandatory fields are marked with an asterisk.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#map-data-fields">How to map one or more plentymarkets data fields to the market data field.</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Is the catalogue active?</div>
+<div class="content">
+<div class="paragraph">
+<p>The catalogue that the variation is associated with must be activated.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogues are listed.</p>
+</li>
+<li>
+<p>Scroll to the Etsy catalogue.</p>
+</li>
+<li>
+<p>In the <strong>Active/Inactive</strong> column, move the toggle button (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>) to the right.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><em>Couldn’t find any errors?</em></div>
+<div class="content">
+<div class="paragraph">
+<p>You have confirmed that the above settings are correct but the variation is still not exported? Then check the data log.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Log</strong>.</p>
+</li>
+<li>
+<p>Use the following filters:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Etsy</strong><br></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).</p>
+</li>
+<li>
+<p>Check all entries for the levels <strong>warning</strong> and <strong>error</strong>.</p>
+</li>
+<li>
+<p>Open the logs containing the message <strong>Variation invalid</strong>.<br>
+→ The the variation ID and the reason for the rejection or the missing characteristic are shown.</p>
+</li>
+<li>
+<p>Correct the variation data.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 </div><div class="sect1">
-<h2 id="1000">10. Automatically sending payment confirmations</h2>
+<h2 id="10001">14. Automating order processing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following event procedures are available for automating order processing:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Automatically send payment confirmations (<a href="#1000">How?</a>)</p>
+</li>
+<li>
+<p>Automatically send shipping confirmations (<a href="#1100">How?</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1000">15. Automatically sending payment confirmations</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send payment confirmations to Etsy when incoming payment is booked.</p>
@@ -662,13 +1064,13 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#etsy-payment-confirmation">Table 1</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#etsy-payment-confirmation">Table 3</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#etsy-payment-confirmation">Table 1</a>.</p>
+<p>Carry out the settings according to <a href="#etsy-payment-confirmation">Table 3</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -681,7 +1083,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 </div>
 </div>
 <table id="etsy-payment-confirmation" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Automatically sending payment confirmations to Etsy</caption>
+<caption class="title">Table 3. Automatically sending payment confirmations to Etsy</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -719,7 +1121,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="1100">11. Automatically sending shipping confirmations</h2>
+<h2 id="1100">16. Automatically sending shipping confirmations</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send shipping confirmations to Etsy when the outgoing items are booked.</p>
@@ -740,13 +1142,13 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#etsy-shipping-confirmation">Table 2</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#etsy-shipping-confirmation">Table 4</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#etsy-shipping-confirmation">Table 2</a>.</p>
+<p>Carry out the settings according to <a href="#etsy-shipping-confirmation">Table 4</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -759,7 +1161,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 </div>
 </div>
 <table id="etsy-shipping-confirmation" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Automatically sending shipping confirmations to Etsy</caption>
+<caption class="title">Table 4. Automatically sending shipping confirmations to Etsy</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -797,7 +1199,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="1200">12. Assigning user rights</h2>
+<h2 id="1200">17. Assigning user rights</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Users with <strong>Back end</strong> access need rights to use the Etsy plugin. Open the <strong>Setup » Settings » User » Rights » User</strong> menu to assign rights.</p>
@@ -826,8 +1228,11 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1300">13. License</h2>
+<h2 id="1300">18. Brand and licensing information</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The term “Etsy” is a trademark of Etsy, Inc. The plentymarkets Etsy plugin uses the Etsy API. However, the plugin is not endorsed or certified by Etsy, Inc.</p>
+</div>
 <div class="paragraph">
 <p>This project is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE. Find further information in the file <a href="https://github.com/plentymarkets/plugin-etsy/blob/master/LICENSE.md" target="_blank" rel="noopener">LICENSE.md</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
 </div>
