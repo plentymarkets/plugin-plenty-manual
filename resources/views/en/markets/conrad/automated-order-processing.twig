@@ -1,0 +1,610 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#event-procedures"><span>1.</span><span> Setting up event procedures</span></a>
+<ul class="sectlevel2">
+<li><a href="#1000"><span>1.1.</span><span> Report order confirmation to Conrad</span></a></li>
+<li><a href="#1005"><span>1.2.</span><span> Report order cancellation to Conrad</span></a></li>
+<li><a href="#1010"><span>1.3.</span><span> Report shipping confirmation to Conrad</span></a></li>
+<li><a href="#1020"><span>1.4.</span><span> Report order cancellation to Conrad</span></a></li>
+</ul>
+</li>
+<li><a href="#archive-orders"><span>2.</span><span> Archiving unconfirmed orders</span></a>
+<ul class="sectlevel2">
+<li><a href="#1110"><span>2.1.</span><span> Archiving rejected orders</span></a></li>
+<li><a href="#1120"><span>2.2.</span><span> Archiving cancelled orders</span></a></li>
+<li><a href="#1130"><span>2.3.</span><span> Archiving order with credit notes</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Setting up automated order processing</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph previous-navigation">
+<p><a href="/en/markets/conrad/automatic-data-exchange"><span class="icon "><i class="fa fa-long-arrow-left  "></i></span> Automatic product and offer data exchange </a></p>
+</div>
+<hr>
+<div class="paragraph">
+<p>The orders are automatically imported in your plentymarkets system every 15 minutes.
+The seller accepts the order via an event procedure. The payment is collected by Conrad.
+With the payment confirmation, the invoice and delivery address on the order are updated in your plentymarkets system. Via an event procedure, the shipping service provider as well as the package number are updated on the order in Mirakl.
+In the next step, the shipping notification is reported to Conrad via another event procedure. The invoice created by Conrad is imported to the order in your plentymarkets system.
+You can also set up event procedures for refunds and order cancellations.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="event-procedures">1. Setting up event procedures</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically update the order status on Conrad whenever specific events occur. You can set up the following event procedures:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Report order confirmation to Conrad</p>
+</li>
+<li>
+<p>Report order cancellation to Conrad</p>
+</li>
+<li>
+<p>Report shipping confirmation to Conrad</p>
+</li>
+<li>
+<p>Report order cancellation to Conrad</p>
+</li>
+<li>
+<p>Report refund to Conrad</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>How to set up the event procedures in plentymarkets is described in the following chapters.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Additional procedures</div>
+<div class="paragraph">
+<p>In addition to the event procedures listed above, the Conrad plugin provides several other event procedures. These procedures exist because order processing differs between plentymarkets and Mirakl.</p>
+</div>
+<div class="paragraph">
+<p>However, we recommend that you only use the procedures described in detail.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="1000">1.1. Report order confirmation to Conrad</h3>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#Conrad-event-procedure-order-confirmation">Table 1</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#Conrad-event-procedure-order-confirmation">Table 1</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="Conrad-event-procedure-order-confirmation" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Event procedure to send an order confirmation to Conrad</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Setting</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Option</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selection</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example [3] <strong>Waiting for payment</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Conrad</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugins &gt; Conrad: Accept order</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1005">1.2. Report order cancellation to Conrad</h3>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#Conrad-event-procedure-order-cancellation">Table 2</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#Conrad-event-procedure-order-cancellation">Table 2</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="Conrad-event-procedure-order-cancellation" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Event procedure to send an order cancellation to Conrad</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Setting</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Option</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selection</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example [8] <strong>Waiting for payment</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Conrad</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Conrad: Accept order</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1010">1.3. Report shipping confirmation to Conrad</h3>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#Conrad-event-procedure-shipping-confirmation">Table 3</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#Conrad-event-procedure-shipping-confirmation">Table 3</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="Conrad-event-procedure-shipping-confirmation" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Event procedure to send shipping confirmations to Conrad</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Setting</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Option</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selection</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example [7] <strong>Outgoing items booked</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Conrad</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Conrad: Update the carrier tracking information for a specific order</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Conrad: Validate shipping</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1020">1.4. Report order cancellation to Conrad</h3>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#Conrad-event-procedure-order-cancellation">Table 2</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#Conrad-event-procedure-order-cancellation">Table 2</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="Conrad-event-procedure-order-cancellation" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Event procedure to send a cancellation to Conrad</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Setting</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Option</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selection</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example [8] <strong>Waiting for payment</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Conrad</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; {marketplace}: Cancel the order item</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>'../../../../../../_includes/textblocks/instructions/EA.adoc'</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="archive-orders">2. Archiving unconfirmed orders</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When an order was rejected or cancelled, or there’s a credit note for an order, you should archive the order. You can do this automatically by using the procedure manager.</p>
+</div>
+<div class="paragraph">
+<p>You have to create a separate procedure for each status.</p>
+</div>
+<div class="sect2">
+<h3 id="1110">2.1. Archiving rejected orders</h3>
+<div class="openblock collapseBox">
+<div class="title">Setting up a procedure:</div>
+<div class="content">
+<div class="paragraph instruction">
+<p>Setting up a procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Procedures</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>New action</strong> tab.
+Carry out the desired settings according to <a href="#Conrad-procedure-manager-rejected-orders">Table 5</a>.</p>
+</li>
+<li>
+<p>Click on the <strong>Filter</strong> tab.</p>
+</li>
+<li>
+<p>Carry out the desired settings according to <a href="#Conrad-procedure-manager-rejected-orders">Table 5</a>.</p>
+</li>
+<li>
+<p>Click on the <strong>Procedure</strong> tab.</p>
+</li>
+<li>
+<p>Carry out the desired settings according to <a href="#Conrad-procedure-manager-rejected-orders">Table 5</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The procedure is created.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="Conrad-procedure-manager-rejected-orders" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Procedure manager settings</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tab</th>
+<th class="tableblock halign-left valign-top">Setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Activate the option <strong>Active</strong>.<br>
+Select when the procedure should be carried out each day.<br>
+Enter a name.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>From the <strong>Status</strong> drop-down list, select the option <strong>[7] Outgoing items booked</strong>.<br>
+From the <strong>Last status change</strong> drop-down list, select the option <strong>Enter the days</strong>. Enter the value <code>2</code> in the new text field.<br>
+From the <strong>Order referrer</strong> list, select the option Conrad.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select a final status from the <strong>Change order status</strong> drop-down list, for example <strong>[7.99]</strong>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1120">2.2. Archiving cancelled orders</h3>
+<div class="openblock collapseBox">
+<div class="title">Setting up a procedure:</div>
+<div class="content">
+<div class="paragraph instruction">
+<p>Setting up a procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Procedures</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>New action</strong> tab.</p>
+</li>
+<li>
+<p>Carry out the desired settings according to <a href="#Conrad-procedure-manager-cancelled-orders">Table 6</a>.</p>
+</li>
+<li>
+<p>Click on the <strong>Filter</strong> tab.</p>
+</li>
+<li>
+<p>Carry out the desired settings according to <a href="#Conrad-procedure-manager-cancelled-orders">Table 6</a>.</p>
+</li>
+<li>
+<p>Click on the <strong>Procedure</strong> tab.</p>
+</li>
+<li>
+<p>Carry out the desired settings according to <a href="#Conrad-procedure-manager-cancelled-orders">Table 6</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The procedure is created.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="Conrad-procedure-manager-cancelled-orders" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Procedure manager settings</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tab</th>
+<th class="tableblock halign-left valign-top">Setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Activate the option <strong>Active</strong>.<br>
+Select when the procedure should be carried out each day.<br>
+Enter a name.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>From the <strong>Status</strong> drop-down list, select the option <strong>[8] Cancelled</strong>.<br>
+From the <strong>Last status change</strong> drop-down list, select the option <strong>Enter the days</strong>. Enter the value <code>2</code> in the new text field.<br>
+From the <strong>Order referrer</strong> list, select the option Conrad.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select a final status from the <strong>Change order status</strong> drop-down list, for example [8.99].</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1130">2.3. Archiving order with credit notes</h3>
+<div class="openblock collapseBox">
+<div class="title">Setting up a procedure:</div>
+<div class="content">
+<div class="paragraph instruction">
+<p>Setting up a procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Procedures</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>New action</strong> tab.</p>
+</li>
+<li>
+<p>Carry out the desired settings according to <a href="#Conrad-procedure-manager-credit-notes">Table 7</a>.</p>
+</li>
+<li>
+<p>Click on the <strong>Filter</strong> tab.</p>
+</li>
+<li>
+<p>Carry out the desired settings according to <a href="#Conrad-procedure-manager-credit-notes">Table 7</a>.</p>
+</li>
+<li>
+<p>Click on the <strong>Procedure</strong> tab.</p>
+</li>
+<li>
+<p>Carry out the desired settings according to <a href="#Conrad-procedure-manager-credit-notes">Table 7</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The procedure is created.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="Conrad-procedure-manager-credit-notes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Procedure manager settings</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tab</th>
+<th class="tableblock halign-left valign-top">Setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Activate the option <strong>Active</strong>.<br>
+Select when the procedure should be carried out each day.<br>
+Enter a name.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>From the <strong>Status</strong> drop-down list, select the option <strong>[11] Credit note</strong>.<br>
+From the <strong>Last status change</strong> drop-down list, select the option <strong>Enter the days</strong>. Enter the value <code>2</code> in the new text field.<br>
+From the <strong>Order referrer</strong> list, select the option Conrad.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select a final status from the <strong>Change order status</strong> drop-down list, for example [11.99].</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="paragraph previous-navigation">
+<p><a href="/en/markets/conrad/automatic-data-exchange"><span class="icon "><i class="fa fa-long-arrow-left  "></i></span> Automatic product and offer data exchange </a></p>
+</div>
+</div>
+</div>
+</div>
+</main>
