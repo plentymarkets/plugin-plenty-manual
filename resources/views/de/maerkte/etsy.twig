@@ -205,7 +205,7 @@ Dann deaktiviere deinen Popup-Blocker oder verwende einen anderen Browser.</p>
 <p>Klicke auf <strong>Gestatte den Zugang</strong>.<br>
 → Die Schnittstelle zu Etsy ist freigeschaltet.<br>
 → Du kannst weitere Einstellungen vornehmen.<br>
-<strong><em>Fehlerbehebung:</em></strong> Du wirst auf die Startseite deines plentyShops weitergeleitet? Dann ist dein plentyShop wahrscheinlich gesperrt.<br>
+<strong><em>Fehlerbehebung:</em></strong> Du wirst auf die Startseite deines plentyShops weitergeleitet? Dann ist wahrscheinlich dein plentyShop gesperrt.<br>
 Entsperre den plentyShop im Menü <strong>Einrichtung » Mandant » Standard » Webshop » Shop sperren</strong>. Sperre den Shop wieder, wenn die Authentifizierung abgeschlossen ist.</p>
 </li>
 </ol>
@@ -313,7 +313,8 @@ Entsperre den plentyShop im Menü <strong>Einrichtung » Mandant » Standard » 
 <h2 id="500">8. Variantenverfügbarkeit einstellen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Varianten, die du auf Etsy verkaufen möchtest, müssen im Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen]</strong> im Tab <strong>Verfügbarkeit</strong> aktiviert werden.</p>
+<p>Varianten, die du auf Etsy verkaufen möchtest, müssen im Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen]</strong> im Tab <strong>Verfügbarkeit</strong> aktiviert werden.
+Bei Etsy muss außerdem die Hauptvariante des Artikels für den Marktplatz aktiviert werden. Grund ist, dass die Daten aus der Hauptvariante benötigt werden, um das Listing zu erstellen. Erst wenn ein Listing existiert, können Varianten hinzugefügt werden.</p>
 </div>
 <ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
                                 <a class="nav-link active" id="f-r-eine-variante-tab" data-toggle="tab" href="#f-r-eine-variante" role="tab" aria-controls="f-r-eine-variante" aria-selected="true">Für eine Variante</a>
@@ -354,6 +355,21 @@ Entsperre den plentyShop im Menü <strong>Einrichtung » Mandant » Standard » 
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
 → Die Variante ist für Etsy verfügbar.</p>
+</li>
+<li>
+<p>Öffne die Hauptvariante des Artikels.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>Verfügbarkeit</strong>.</p>
+</li>
+<li>
+<p>Klicke im Bereich <strong>Märkte</strong> in das Auswahlfeld.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Etsy</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 </ol>
 </div>
@@ -674,7 +690,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <div class="ulist">
 <ul>
 <li>
-<p><strong><em>Möglichkeit 1:</em> Ein plentymarkets Datenfeld zuordnen</strong></p>
+<p><strong><em>Möglichkeit 1:</em> Ein plentymarkets Datenfeld und optional ein Ausweich-Datenfeld zuordnen</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -696,7 +712,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 </div>
 </li>
 <li>
-<p><strong><em>Möglichkeit 2:</em> Für das Marktplatz-Datenfeld immer denselben Wert übergeben</strong></p>
+<p><strong><em>Möglichkeit 2:</em> Für ein Marktplatz-Datenfeld immer denselben Wert übergeben</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -790,6 +806,34 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <p>Wenn du nur die Exportsprache "Deutsch" verwendest, speichere die Werte auf Deutsch. Wenn du eine andere Exportsprache verwendest, entweder statt oder zusätzlich zu der Shop-Sprache "Deutsch", speichere die Werte auf Englisch.</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Wer hat es gemacht?</strong> (who_made);<br>
+<strong>Wann wurde es gemacht?</strong> (when_made);<br>
+<strong>Ist es Zubehör oder ein Werkzeug, um etwas herzustellen?</strong> (is_supply)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die Kombination aus diesen drei Marktplatz-Datenfeldern entscheidet darüber, ob ein Produkt auf Etsy verkauft werden darf:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Produkte müssen entweder von dir hergestellt, Vintage (älter als 20 Jahre) oder Zubehör/Werkzeug sein.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Daraus ergeben sich folgende Regeln für den Export:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Wenn <strong>who_made</strong> "someone_else" und <strong>is_supply</strong> "false", muss <strong>when_made</strong> mindestens 20 Jahre zurückliegen.</p>
+</li>
+<li>
+<p>Wenn <strong>who_made</strong> "someone_else" und <strong>when_made</strong> weniger als 20 Jahre zurückliegt, muss <strong>is_supply</strong> "true" sein.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -803,9 +847,9 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <div class="content">
 <table id="recommended-mappings-limango" class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 42.8572%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 50.0001%;">
 </colgroup>
 <thead>
 <tr>
@@ -855,7 +899,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <div class="ulist">
 <ul>
 <li>
-<p>Eigenschaft, Sprache <strong>Deutsch</strong></p>
+<p>Eigenschaft an Hauptvariante, Sprache <strong>Deutsch</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -897,7 +941,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <div class="ulist">
 <ul>
 <li>
-<p>Eigenschaft, Sprache <strong>Englisch</strong></p>
+<p>Eigenschaft an Hauptvariante, Sprache <strong>Englisch</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -939,7 +983,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <div class="ulist">
 <ul>
 <li>
-<p>Eigenschaft, Sprache <strong>Französisch</strong></p>
+<p>Eigenschaft an Hauptvariante, Sprache <strong>Französisch</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -960,7 +1004,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <div class="ulist">
 <ul>
 <li>
-<p>Eigenschaft, Sprache <strong>Deutsch</strong></p>
+<p>Eigenschaft an Hauptvariante, Sprache <strong>Deutsch</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -978,7 +1022,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <div class="ulist">
 <ul>
 <li>
-<p>Eigenschaft, Sprache <strong>Englisch</strong></p>
+<p>Eigenschaft an Hauptvariante, Sprache <strong>Englisch</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -996,7 +1040,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <div class="ulist">
 <ul>
 <li>
-<p>Eigenschaft, Sprache <strong>Französisch</strong></p>
+<p>Eigenschaft an Hauptvariante, Sprache <strong>Französisch</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -1010,7 +1054,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Artikeltext » Meta-Keywords</strong>, Sprache <strong>Deutsch</strong><br>
-<strong><em>Tipp:</em></strong> Deutsche Tags dürfen maximal 30 Zeichen haben. Pro Variante kannst du bis zu 13 Tags angeben.</p>
+<strong><em>Tipp:</em></strong> Deutsche Tags dürfen maximal 30 Zeichen haben. Pro Listing kannst du bis zu 13 Tags angeben.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1019,7 +1063,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Artikeltext » Meta-Keywords</strong>, Sprache <strong>Englisch</strong><br>
-<strong><em>Tipp:</em></strong> Englische Tags dürfen maximal 20 Zeichen haben. Pro Variante kannst du bis zu 13 Tags angeben.</p>
+<strong><em>Tipp:</em></strong> Englische Tags dürfen maximal 20 Zeichen haben. Pro Listing kannst du bis zu 13 Tags angeben.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1028,7 +1072,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Artikeltext » Meta-Keywords</strong>, Sprache <strong>Französisch</strong> <br>
-<strong><em>Tipp:</em></strong> Pro Variante kannst du bis zu 13 Tags angeben.</p>
+<strong><em>Tipp:</em></strong> Pro Listing kannst du bis zu 13 Tags angeben.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1038,7 +1082,7 @@ Du kannst für Etsy nur einen Katalog erstellen. Mehrere Kataloge werden für Et
 <td class="tableblock halign-left valign-top"><p class="tableblock">Automatisch erneuern (Siehe Doku!)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Auswahl</strong> mit folgendem Wert:</p>
+<p>Eigenschaft des Typs <strong>Auswahl</strong> an Hauptvariante mit folgendem Wert:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1059,7 +1103,7 @@ Eigener Wert <code>0</code> oder <code>false</code> oder <code>n</code></p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong><em>Hinweis:</em></strong> Wenn du an der Variante keinen der Werte für "Nein" speichert, werden auf Etsy ausverkaufte Artikel mit positivem plentymarkets Warenbestand automatisch wieder aktiviert und kostenpflichtig wieder gelistet.</p>
+<p><strong><em>Hinweis:</em></strong> Wenn du an der Hauptvariante keinen der Werte für "Nein" speichert, werden auf Etsy ausverkaufte Artikel mit positivem plentymarkets Warenbestand automatisch wieder aktiviert und kostenpflichtig wieder gelistet. Wähle im Etsy-Backend im Menü <strong>Shop-Manager » Artikel » [Artikel öffnen]</strong> für die Einstellung <strong>Erneuerungsoptionen</strong> außerdem die Option <strong>Manuell</strong>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1067,7 +1111,7 @@ Eigener Wert <code>0</code> oder <code>false</code> oder <code>n</code></p>
 (who_made)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Auswahl</strong> mit folgenden möglichen Werten:</p>
+<p>Eigenschaft des Typs <strong>Auswahl</strong> an Hauptvariante mit folgenden möglichen Werten:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1088,14 +1132,17 @@ Eigener Wert <code>0</code> oder <code>false</code> oder <code>n</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Das Produkt wurde von mehreren Parteien hergestellt.</p></td>
 </tr>
 </tbody>
-</table></div></td>
+</table>
+<div class="paragraph">
+<p>(siehe <a href="#905">Besonderheiten</a>)</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Wann wurde es gemacht?<br>
 (when_made)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Auswahl</strong> mit folgenden möglichen Werten:</p>
+<p>Eigenschaft des Typs <strong>Auswahl</strong> an Hauptvariante mit folgenden möglichen Werten:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1176,14 +1223,17 @@ Eigener Wert <code>0</code> oder <code>false</code> oder <code>n</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Das Produkt wurde vor 1700 hergestellt.</p></td>
 </tr>
 </tbody>
-</table></div></td>
+</table>
+<div class="paragraph">
+<p>(siehe <a href="#905">Besonderheiten</a>)</p>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ist es Zubehör oder ein Werkzeug, um etwas herzustellen?<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ist es Zubehör oder ein Werkzeug, um etwas herzustellen?</strong><br>
 (is_supply)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Auswahl</strong> mit den folgenden Werten:</p>
+<p>Eigenschaft des Typs <strong>Auswahl</strong> an Hauptvariante mit den folgenden Werten:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1200,14 +1250,17 @@ Eigener Wert <code>0</code> oder <code>false</code> oder <code>n</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Das Produkt ist Zubehör oder ein Werkzeug.</p></td>
 </tr>
 </tbody>
-</table></div></td>
+</table>
+<div class="paragraph">
+<p>(siehe <a href="#905">Besonderheiten</a>)</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Material</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Kurztext</strong><br>
-An der Variante speicherst du bis zu 13 kommaseparierte Werte.<br>
+<p>Eigenschaft des Typs <strong>Kurztext</strong> an Hauptvariante<br>
+An der Hauptvariante speicherst du bis zu 13 kommaseparierte Werte.<br>
 <strong><em>Beispiel:</em></strong> <code>Baumwolle, Elastan</code></p>
 </div></div></td>
 </tr>
@@ -1216,7 +1269,7 @@ An der Variante speicherst du bis zu 13 kommaseparierte Werte.<br>
 (occasion)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Auswahl</strong> mit folgenden möglichen Werten:<br>
+<p>Eigenschaft des Typs <strong>Auswahl</strong> an Hauptvariante mit folgenden möglichen Werten:<br>
 <strong><em>Hinweis:</em></strong> Wenn du nur die Exportsprache "Deutsch" verwendest, speichere die Werte auf Deutsch. Wenn du eine andere Exportsprache verwendest, entweder statt oder zusätzlich zu der Shop-Sprache "Deutsch", speichere die Werte auf Englisch.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1369,7 +1422,7 @@ An der Variante speicherst du bis zu 13 kommaseparierte Werte.<br>
 (recipient)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Auswahl</strong> mit folgenden möglichen Werten:<br>
+<p>Eigenschaft des Typs <strong>Auswahl</strong> an Hauptvariante mit folgenden möglichen Werten:<br>
 <strong><em>Hinweis:</em></strong> Wenn du nur die Exportsprache "Deutsch" verwendest, speichere die Werte auf Deutsch. Wenn du eine andere Exportsprache verwendest, entweder statt oder zusätzlich zu der Shop-Sprache "Deutsch", speichere die Werte auf Englisch.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1461,7 +1514,7 @@ An der Variante speicherst du bis zu 13 kommaseparierte Werte.<br>
 <p><strong><em>Hinweis:</em></strong> Ordne für dieses Marktplatz-Datenfeld nur ein plentymarkets Datenfeld zu, wenn du auf Etsy die Option <strong>Anfragen für Spezialanfertigungen</strong> aktiviert hast.</p>
 </div>
 <div class="paragraph">
-<p>Eigenschaft des Typs <strong>Auswahl</strong> mit folgenden Werten:</p>
+<p>Eigenschaft des Typs <strong>Auswahl</strong> an Hauptvariante mit folgenden Werten:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1485,7 +1538,7 @@ An der Variante speicherst du bis zu 13 kommaseparierte Werte.<br>
 (non_taxable)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Auswahl</strong> mit folgenden Werten:</p>
+<p>Eigenschaft des Typs <strong>Auswahl</strong> an Hauptvariante mit folgenden Werten:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1509,8 +1562,8 @@ An der Variante speicherst du bis zu 13 kommaseparierte Werte.<br>
 (processing_min)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Ganze Zahl</strong><br>
-An der Variante speicherst du die minimale Bearbeitungsdauer in Tagen.<br>
+<p>Eigenschaft des Typs <strong>Ganze Zahl</strong> an Hauptvariante<br>
+An der Hauptvariante speicherst du die minimale Bearbeitungsdauer in Tagen.<br>
 Auf Etsy werden die Informationen wie folgt angezeigt:<br></p>
 </div>
 <div class="paragraph">
@@ -1522,8 +1575,8 @@ Auf Etsy werden die Informationen wie folgt angezeigt:<br></p>
 (processing_max)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Ganze Zahl</strong><br>
-An der Variante speicherst du die maximale Bearbeitungsdauer in Tagen.<br>
+<p>Eigenschaft des Typs <strong>Ganze Zahl</strong> an Hauptvariante<br>
+An der Hauptvariante speicherst du die maximale Bearbeitungsdauer in Tagen.<br>
 Auf Etsy werden die Informationen wie folgt angezeigt:<br></p>
 </div>
 <div class="paragraph">
@@ -1535,7 +1588,7 @@ Auf Etsy werden die Informationen wie folgt angezeigt:<br></p>
 (style)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Kurztext</strong> mit bis zu zwei kommaseparierten Werten<br>
+<p>Eigenschaft des Typs <strong>Kurztext</strong> an Hauptvariante mit bis zu zwei kommaseparierten Werten<br>
 <strong><em>Beispiel:</em></strong> Shabby, Vintage</p>
 </div></div></td>
 </tr>
@@ -1636,7 +1689,7 @@ Auf Etsy werden die Informationen wie folgt angezeigt:<br></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shop-Abteilung</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Eigenschaft des Typs <strong>Auswahl</strong> mit Werten, die deinen Shop-Abteilungen entsprechen<br>
+<p>Eigenschaft des Typs <strong>Auswahl</strong> an Hauptvariante mit Werten, die deinen Shop-Abteilungen entsprechen<br>
 <strong><em>Tipp:</em></strong> Für dieses Marktplatz-Datenfeld stehen die Shop-Abteilungen zur Verfügung, die du bei Etsy erstellt hast.</p>
 </div></div></td>
 </tr>
@@ -1691,6 +1744,35 @@ Auf Etsy werden die Informationen wie folgt angezeigt:<br></p>
 </li>
 <li>
 <p>Öffne die Variante, die du auf Etsy verkaufen möchtest.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>Verfügbarkeit</strong>.</p>
+</li>
+<li>
+<p>Klicke im Bereich <strong>Märkte</strong> in das Auswahlfeld.<br>
+→ Eine Liste mit allen verfügbaren Märkten wird angezeigt.</p>
+</li>
+<li>
+<p>Aktiviere die Option <strong>Etsy</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ist die Marktplatzverfügbarkeit der Hauptvariante aktiviert?</div>
+<div class="content">
+<div class="paragraph">
+<p>Bei Etsy muss die Hauptvariante des Artikels für den Marktplatz aktiviert werden. Grund ist, dass die Daten aus der Hauptvariante benötigt werden, um das Listing zu erstellen. Erst wenn ein Listing existiert, können Varianten hinzugefügt werden.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen]</strong>.<br>
+→ Die Hauptvariante des Artikels wird geöffnet.</p>
 </li>
 <li>
 <p>Wechsele in das Tab <strong>Verfügbarkeit</strong>.</p>
