@@ -313,7 +313,8 @@ Go to <strong>Setup » Client » Standard » Online store » Lock store</strong>
 <h2 id="500">8. Setting the variation availability</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You need to activate the variations that you want to sell on Etsy. This is done in the <strong>Availability</strong> tab of a variation within the <strong>Item » Edit item » [Open item] » [Open variation]</strong> menu.</p>
+<p>You need to activate the variations that you want to sell on Etsy. This is done in the <strong>Availability</strong> tab of a variation within the <strong>Item » Edit item » [Open item] » [Open variation]</strong> menu.
+For Etsy, you also need to activate the main variation of the item for the market. This is because the main variation data is needed to create the listing. Variations can only be added once the listing has been created.</p>
 </div>
 <ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
                                 <a class="nav-link active" id="for-one-variation-tab" data-toggle="tab" href="#for-one-variation" role="tab" aria-controls="for-one-variation" aria-selected="true">For one variation</a>
@@ -354,6 +355,21 @@ Go to <strong>Setup » Client » Standard » Online store » Lock store</strong>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
 → The variation is available for Etsy.</p>
+</li>
+<li>
+<p>Open the main variation of the item.</p>
+</li>
+<li>
+<p>Click on the <strong>Availability</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Markets</strong> area, click in the selection field.</p>
+</li>
+<li>
+<p>Activate the option <strong>Etsy</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 </ol>
 </div>
@@ -674,7 +690,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <div class="ulist">
 <ul>
 <li>
-<p><strong><em>Alternative 1:</em> Map a plentymarkets data field</strong></p>
+<p><strong><em>Alternative 1:</em> Map a plentymarkets data field + optional fallback data fields</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -696,7 +712,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 </div>
 </li>
 <li>
-<p><strong><em>Alternative 2:</em> Always export the same value for the market data field</strong></p>
+<p><strong><em>Alternative 2:</em> Always export the same value for a market data field</strong></p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -790,6 +806,34 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <p>If you only use the export language "German", export the values in German. If you use other export languages, either in addition to or instead of German, export the values in English.</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Who made it?</strong> (who_made);<br>
+<strong>When was it made?</strong> (when_made);<br>
+<strong>A supply or tool to make things?</strong> (is_supply)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The combination of these three marketplace data fields determines if a product can be sold on Etsy:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Products must be either made by you, vintage (older than 20 years) or they must be supply/tools.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This results in the following rules for the export:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If <strong>who_made</strong> is "someone_else" and <strong>is_supply</strong> is "false", then <strong>when_made</strong> must be at least 20 years ago.</p>
+</li>
+<li>
+<p>If <strong>who_made</strong> is "someone_else" and <strong>when_made</strong> is less than 20 years ago, then <strong>is_supply</strong> must be "true".</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -803,9 +847,9 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <div class="content">
 <table id="recommended-mappings-limango" class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 28.5714%;">
-<col style="width: 42.8572%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 50.0001%;">
 </colgroup>
 <thead>
 <tr>
@@ -855,7 +899,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <div class="ulist">
 <ul>
 <li>
-<p>Property, language <strong>German</strong></p>
+<p>Property linked to main variation, language <strong>German</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -897,7 +941,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <div class="ulist">
 <ul>
 <li>
-<p>Property, language <strong>English</strong></p>
+<p>Property linked to main variation, language <strong>English</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -939,7 +983,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <div class="ulist">
 <ul>
 <li>
-<p>Property, language <strong>French</strong></p>
+<p>Property linked to main variation, language <strong>French</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -960,7 +1004,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <div class="ulist">
 <ul>
 <li>
-<p>Property, language <strong>German</strong></p>
+<p>Property linked to main variation, language <strong>German</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -978,7 +1022,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <div class="ulist">
 <ul>
 <li>
-<p>Property, language <strong>English</strong></p>
+<p>Property linked to main variation, language <strong>English</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -996,7 +1040,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <div class="ulist">
 <ul>
 <li>
-<p>Property, language <strong>French</strong></p>
+<p>Property linked to main variation, language <strong>French</strong></p>
 </li>
 </ul>
 </div></div></td>
@@ -1010,7 +1054,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Item text » Meta keywords</strong>, language <strong>German</strong><br>
-<strong><em>Tip:</em></strong> German tags can be up to 30 characters long. You can specify up to 13 tags for a variation.</p>
+<strong><em>Tip:</em></strong> German tags can be up to 30 characters long. You can specify up to 13 tags for a listing.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1019,7 +1063,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Item text » Meta keywords</strong>, language <strong>English</strong><br>
-<strong><em>Tip:</em></strong> English tags can be up to 20 characters long. You can specify up to 13 tags for a variation.</p>
+<strong><em>Tip:</em></strong> English tags can be up to 20 characters long. You can specify up to 13 tags for a listing.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1028,7 +1072,7 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Item text » Meta keywords</strong>, language <strong>French</strong> <br>
-<strong><em>Tip:</em></strong> You can specify up to 13 tags for a variation.</p>
+<strong><em>Tip:</em></strong> You can specify up to 13 tags for a listing.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1038,12 +1082,12 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <td class="tableblock halign-left valign-top"><p class="tableblock">Renew automatically? (See documentation!)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property of the type <strong>Selection</strong> with the following value:</p>
+<p>Property of the type <strong>Selection</strong> linked to main variation with the following value:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>false</code> or <code>0</code> or <code>n</code></p>
+<p><code>0</code> or <code>false</code> or <code>n</code></p>
 </li>
 </ul>
 </div>
@@ -1054,12 +1098,12 @@ You can create only one catalogue for Etsy. Multiple catalogues are currently no
 <ul>
 <li>
 <p>To never automatically renew listings:<br>
-Own value <code>false</code> or <code>0</code> or <code>n</code></p>
+Own value <code>0</code> or <code>false</code> or <code>n</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong><em>Note:</em></strong> If you save none of the values for "no" for a variation, variations with positive net stock in plentymarkets are automatically relisted on Etsy as soon as they are sold out. The usual listings fees are applied.</p>
+<p><strong><em>Note:</em></strong> If you save none of the values for "no" for a main variation, variations with positive net stock in plentymarkets are automatically relisted on Etsy as soon as they are sold out. The usual listings fees are applied. In the Etsy back end, go to <strong>Shop-Manager » Listings » [Open listing]</strong> and set the setting <strong>Renewal options</strong> to <strong>Manual</strong>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1067,7 +1111,7 @@ Own value <code>false</code> or <code>0</code> or <code>n</code></p>
 (who_made)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property of the type <strong>Selection</strong> with the following possible values:</p>
+<p>Property of the type <strong>Selection</strong> linked to main variation with the following allowed values:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1088,14 +1132,17 @@ Own value <code>false</code> or <code>0</code> or <code>n</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The product was made by several people.</p></td>
 </tr>
 </tbody>
-</table></div></td>
+</table>
+<div class="paragraph">
+<p>(see <a href="#905">Notes on mapping data fields</a>)</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">When was it made?<br>
 (when_made)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property of the type <strong>Selection</strong> with the following values:</p>
+<p>Property of the type <strong>Selection</strong> linked to main variation with the following allowed values:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1176,14 +1223,17 @@ Own value <code>false</code> or <code>0</code> or <code>n</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The product was made before 1700.</p></td>
 </tr>
 </tbody>
-</table></div></td>
+</table>
+<div class="paragraph">
+<p>(see <a href="#905">Notes on mapping data fields</a>)</p>
+</div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A supply or tool to make things?<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>A supply or tool to make things?</strong><br>
 (is_supply)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property of the type <strong>Selection</strong> with the following values:</p>
+<p>Property of the type <strong>Selection</strong> linked to main variation with the following allowed values:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1200,14 +1250,17 @@ Own value <code>false</code> or <code>0</code> or <code>n</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The product is supply or a tool to make things.</p></td>
 </tr>
 </tbody>
-</table></div></td>
+</table>
+<div class="paragraph">
+<p>(see <a href="#905">Notes on mapping data fields</a>)</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Material</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property of the type <strong>Short text</strong><br>
-You can save up to 13 values for a variation. Separate multiple values by commas.<br>
+<p>Property of the type <strong>Short text</strong> linked to main variation<br>
+You can save up to 13 values for a main variation. Separate multiple values by commas.<br>
 <strong><em>Example:</em></strong> <code>Cotton, Spandex</code></p>
 </div></div></td>
 </tr>
@@ -1216,7 +1269,7 @@ You can save up to 13 values for a variation. Separate multiple values by commas
 (occasion)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property of the type <strong>Selection</strong> with the following possible values:<br>
+<p>Property of the type <strong>Selection</strong> linked to main variation with the following allowed values:<br>
 <strong><em>Note:</em></strong> If you only use the export language "German", export the values in German. If you use other export languages, either in addition to or instead of German, export the values in English.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1369,7 +1422,7 @@ You can save up to 13 values for a variation. Separate multiple values by commas
 (recipient)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property of the type <strong>Selection</strong> with the following possible values:<br>
+<p>Property of the type <strong>Selection</strong> linked to main variation with the following allowed values:<br>
 <strong><em>Note:</em></strong> If you only use the export language "German", export the values in German. If you use other export languages, either in addition to or instead of German, export the values in English.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -1461,7 +1514,7 @@ You can save up to 13 values for a variation. Separate multiple values by commas
 <p><strong><em>Note:</em></strong> Only map a plentymarkets data field to this marketplace data field if you have activated the option <strong>Accept custom orders</strong> on Etsy.</p>
 </div>
 <div class="paragraph">
-<p>Property of the type <strong>Selection</strong> with the following values:</p>
+<p>Property of the type <strong>Selection</strong> linked to main variation with the following values:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1485,7 +1538,7 @@ You can save up to 13 values for a variation. Separate multiple values by commas
 (non_taxable)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property of the type <strong>Selection</strong> with the following values:</p>
+<p>Property of the type <strong>Selection</strong> linked to main variation with the following values:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1509,8 +1562,8 @@ You can save up to 13 values for a variation. Separate multiple values by commas
 (processing_min)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property of the type <strong>Int</strong> (whole number) with a number between 1 and 10<br>
-For the variation, save the minimum processing time in days.<br>
+<p>Property of the type <strong>Int</strong> (whole number) linked to main variation<br>
+For the main variation, save the minimum processing time in days.<br>
 On Etsy, the information is shown like this:<br></p>
 </div>
 <div class="paragraph">
@@ -1522,8 +1575,8 @@ On Etsy, the information is shown like this:<br></p>
 (processing_max)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property of the type <strong>Int</strong> (whole number) with a number between 1 and 10<br>
-For the variation, save the maximm processing time in days.<br>
+<p>Property of the type <strong>Int</strong> (whole number) linked to main variation<br>
+For the main variation, save the maximum processing time in days.<br>
 On Etsy, the information is shown like this:<br></p>
 </div>
 <div class="paragraph">
@@ -1535,7 +1588,7 @@ On Etsy, the information is shown like this:<br></p>
 (style)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Property of the type <strong>Short text</strong> with up to two values separated by commas<br>
+<p>Property of the type <strong>Short text</strong> linked to main variation with up to two values separated by commas<br>
 <strong><em>Example:</em></strong> Shabby, Vintage</p>
 </div></div></td>
 </tr>
@@ -1636,7 +1689,7 @@ On Etsy, the information is shown like this:<br></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Shop sections</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Properties of the type <strong>Selection</strong> with values that correspond to your shop sections<br>
+<p>Properties of the type <strong>Selection</strong> linked to main variation with values that correspond to your shop sections<br>
 <strong><em>Tip:</em></strong> For this marketplace data field, the shop sections that you created on Etsy are available.</p>
 </div></div></td>
 </tr>
@@ -1691,6 +1744,35 @@ On Etsy, the information is shown like this:<br></p>
 </li>
 <li>
 <p>Open the variation that you want to sell on Etsy.</p>
+</li>
+<li>
+<p>Click on the <strong>Availability</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Markets</strong> area, click in the selection field.<br>
+→ A list of all available markets is displayed.</p>
+</li>
+<li>
+<p>Activate the option <strong>Etsy</strong>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Is the market availability active for the main variation?</div>
+<div class="content">
+<div class="paragraph">
+<p>For Etsy, you need to activate the main variation of the item for the market. This is because the main variation data is needed to create the listing. Variations can only be added once the listing has been created.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item]</strong>.<br>
+→ The main variation of the item opens.</p>
 </li>
 <li>
 <p>Click on the <strong>Availability</strong> tab.</p>
