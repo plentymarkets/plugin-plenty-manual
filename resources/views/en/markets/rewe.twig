@@ -18,21 +18,22 @@
 <li><a href="#800"><span>8.</span><span> Linking variations with the property REWE product type</span></a></li>
 <li><a href="#900"><span>9.</span><span> Setting up the item export</span></a>
 <ul class="sectlevel2">
-<li><a href="#_creating_a_catalogue_in_the_assistant"><span>9.1.</span><span> Creating a catalogue in the assistant</span></a></li>
-<li><a href="#600"><span>9.2.</span><span> Mapping additional data fields in the catalogue (not in assistant)</span></a></li>
-<li><a href="#602"><span>9.3.</span><span> Example: Mapping the data field "Product description"</span></a></li>
+<li><a href="#1001"><span>9.1.</span><span> Notes on the REWE item data structure: product groups and variations</span></a></li>
+<li><a href="#_creating_a_catalogue_in_the_assistant"><span>9.2.</span><span> Creating a catalogue in the assistant</span></a></li>
+<li><a href="#600"><span>9.3.</span><span> Mapping additional data fields in the catalogue (not in assistant)</span></a></li>
+<li><a href="#905"><span>9.4.</span><span> Particularities for mapping data fields</span></a></li>
+<li><a href="#602"><span>9.5.</span><span> Example: Mapping the data field "Product description"</span></a></li>
 </ul>
 </li>
 <li><a href="#701"><span>10.</span><span> Linking data fields created in the assistant with variations</span></a></li>
 <li><a href="#2000"><span>11.</span><span> Activating the catalogue export to REWE</span></a></li>
-<li><a href="#1000"><span>12.</span><span> REWE product groups and variants</span></a></li>
-<li><a href="#1100"><span>13.</span><span> Matching shipping service providers</span></a></li>
-<li><a href="#1200"><span>14.</span><span> Matching reasons for return</span></a></li>
-<li><a href="#1300"><span>15.</span><span> Synchronising tax categories</span></a></li>
-<li><a href="#1400"><span>16.</span><span> Synchronising brands</span></a></li>
-<li><a href="#1700"><span>17.</span><span> Deactivating the creation of contacts</span></a></li>
-<li><a href="#1500"><span>18.</span><span> Automatically updating the order status for REWE</span></a></li>
-<li><a href="#1600"><span>19.</span><span> REWE delivery periods</span></a></li>
+<li><a href="#1100"><span>12.</span><span> Matching shipping service providers</span></a></li>
+<li><a href="#1200"><span>13.</span><span> Matching reasons for return</span></a></li>
+<li><a href="#1300"><span>14.</span><span> Synchronising tax categories</span></a></li>
+<li><a href="#1400"><span>15.</span><span> Synchronising brands</span></a></li>
+<li><a href="#1700"><span>16.</span><span> Deactivating the creation of a contact</span></a></li>
+<li><a href="#1500"><span>17.</span><span> Automatically updating the order status for REWE</span></a></li>
+<li><a href="#1600"><span>18.</span><span> REWE delivery periods</span></a></li>
 </ul>
 </div>
         </div>
@@ -243,7 +244,7 @@
 <h2 id="450">4. Defining stock export</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>By default, the stock information for each variation is exported based on the option you selected for the <strong>Limitation</strong> setting. However, you can also ignore this setting and instead export the actual net stock for all variations to REWE.</p>
+<p>By default, the stock information for each variation is exported based on the option you selected for the <strong>Limitation</strong> setting. You can also ignore this setting and instead export the actual net stock for all variations to REWE.</p>
 </div>
 <div class="paragraph instruction">
 <p>Defining stock export:</p>
@@ -553,7 +554,20 @@ If no commission is set, prices will also be displayed without commission on the
 <h2 id="800">8. Linking variations with the property REWE product type</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Variations that you want to sell on REWE have to be linked with the <strong>REWE product type</strong> variation property. This variation property is created in your plentymarkets system as soon as you have installed the REWE plugin.</p>
+<p>Variations that you want to sell on REWE have to be linked with the <strong>REWE product type</strong> variation property. This variation property is created in your plentymarkets system as soon as you have installed the REWE plugin. Examples for REWE product types are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Household</p>
+</li>
+<li>
+<p>Garden</p>
+</li>
+<li>
+<p>Fashion</p>
+</li>
+</ul>
 </div>
 <div class="paragraph instruction">
 <p>Linking variations with the property REWE product type:</p>
@@ -620,13 +634,26 @@ If no commission is set, prices will also be displayed without commission on the
 <p><strong>Garden</strong></p>
 </li>
 <li>
-<p><strong>Food</strong></p>
+<p><strong>Baby Supplies</strong></p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong><em>Information for the food product category:</em></strong></p>
-</div>
+<li>
+<p><strong>Contact Lenses</strong></p>
+</li>
+<li>
+<p><strong>New Media (DVD etc.)</strong></p>
+</li>
+<li>
+<p><strong>Books and Magazines</strong></p>
+</li>
+<li>
+<p><strong>AFG</strong> (Soft Drinks)</p>
+</li>
+<li>
+<p><strong>Alcoholic beverages</strong></p>
+</li>
+<li>
+<p><strong>Food</strong><br>
+<strong><em>Information for the food product category:</em></strong><br></p>
 <div class="ulist">
 <ul>
 <li>
@@ -640,8 +667,164 @@ If no commission is set, prices will also be displayed without commission on the
 </li>
 </ul>
 </div>
+</li>
+</ul>
+</div>
 <div class="sect2">
-<h3 id="_creating_a_catalogue_in_the_assistant">9.1. Creating a catalogue in the assistant</h3>
+<h3 id="1001">9.1. Notes on the REWE item data structure: product groups and variations</h3>
+<div class="paragraph">
+<p>REWE differentiates between <strong>product groups</strong> and <strong>variation groups</strong>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product group</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>The variations look different.</p>
+</li>
+<li>
+<p>As a result, every plentymarkets variation has its own images.</p>
+</li>
+<li>
+<p>Product group attributes are attributes that influence how the product looks</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Examples:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An item is sold in different colours and/or with different prints.</p>
+</li>
+<li>
+<p>An item is sold in different sizes and the packaging for each size is different.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>In plentymarkets:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>In plentymarkets, product groups are items with variations with at least one REWE group attribute, depending on the product type.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Example for attribute:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>For the product type Food, the following <strong>Attributes for product group</strong> are available (as of 05/2021):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Flavour</p>
+</li>
+<li>
+<p>Package size</p>
+</li>
+<li>
+<p>Variety</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Notes on mapping data fields:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Items in plentymarkets can have more than one REWE group attribute. However, only one REWE group attribute can be used to form product groups. Therefore, the <strong>Attribute for product group</strong> field has to be matched so that the first attribute will always be the attribute that you want to use to form a product group. If an item differs in colour and print and the print should be used as the REWE group attribute, you first have to map the print in the marketplace data field <strong>Attribute for product group</strong> and only then map the colour.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>The REWE group attributes for each product type are available in the catalogue templates. To do so, open the drop-down list <strong>Attribute for product group</strong> in the marketplace format.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variations</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>The variations look the same.</p>
+</li>
+<li>
+<p>As a result, the images for all variations are identical.</p>
+</li>
+<li>
+<p>Variation attributes are attributes that do not influence how the product looks.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Examples:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>An item is available in different sizes. All sizes look the same.</p>
+</li>
+<li>
+<p>An item is available in different package sizes. However, the images are identical for all variations.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>In plentymarkets:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>In plentymarkets, <strong>variations</strong> are variations of an item no more than one REWE variation attribute, depending on the product type.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Example for attribute:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>For the product type Food, the following <strong>Attributes for variation group</strong> are available (as of 05/2021):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Diameter</p>
+</li>
+<li>
+<p>Dimensions</p>
+</li>
+<li>
+<p>General size</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Notes on mapping data fields:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For REWE variation attributes, only one variation attribute can be set, for example only size or only volume.</p>
+</li>
+<li>
+<p>An item should not be linked to more than one attribute which was assigned as REWE variation attribute in the catalogue.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>The REWE variation attributes for each product type are available in the catalogue templates. To do so, open the drop-down list <strong>Attribute for variation group</strong> in the marketplace format.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_creating_a_catalogue_in_the_assistant">9.2. Creating a catalogue in the assistant</h3>
 <div class="paragraph instruction">
 <p>Creating a catalogue in the assistant:</p>
 </div>
@@ -706,27 +889,27 @@ If no commission is set, prices will also be displayed without commission on the
 <div class="title">Step <strong>Mapping basic data fields</strong></div>
 <div class="content">
 <div class="paragraph">
-<p>In this step of the assistant, you decide which variation data saved in plentymarkets you want to send to the market. To do so, you are going to map each field of the market with the data field in plentymarkets that contains the data that you want to export to the market. Instead of mapping an existing data field, you can also instead create a new data field for some fields.</p>
+<p>In this step of the assistant, you decide which variation data saved in plentymarkets you want to send to the market. To do so, you are going to map each data field of the market with the plentymarkets data field that contains the data that you want to export to the market. Instead of mapping an existing data field, you can also instead create a new data field for some fields.</p>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>SKU</strong> = From the drop-down list, select the data field in plentymarkets that contains the SKU.<br>
-<strong><em>Tip:</em></strong> We recommend to link the data field <strong>SKU</strong> with the plentymarkets data field <strong>Variation ID</strong> because the variation ID is clearly assigned to the variation.</p>
+<p><strong>SKU</strong> = From the drop-down list, select the data field that contains the SKU.<br>
+<strong><em>Recommendation:</em></strong> The variation ID is unique for each variation. Map the marketplace data field <strong>SKU</strong> to the plentymarkets data field <strong>Variation ID</strong>.</p>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>Select data field</strong> = A data field that already exists in plentymarkets will be exported to REWE. Select the data field from the drop-down list <strong>Data field</strong>.<br>
+<p><strong>Select data field</strong> = A data field that already exists in plentymarkets will be exported to REWE. Select a data field from the drop-down list <strong>Data field</strong>.<br>
 <strong><em>Note:</em></strong> The mappings you create will not be checked in terms of logic. As such, check your mappings carefully before starting the export.</p>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>Create property</strong> = Creates a <a href="/en/item/settings/properties#500">property</a> and maps this property to the data field. Properties make it possible to export values for data fields that have no corresponding item data saved in plentymarkets, such as <strong>Durchmesser</strong> (diameter).</p>
+<p><strong>Create property</strong> = Creates a <a href="/en/item/settings/properties#500">property</a> and maps this property to the data field. Properties can be used to export values for data fields that have no corresponding item data saved in plentymarkets, such as <strong>Diameter</strong>.</p>
 </div>
 <div class="paragraph">
-<p>The automatically created property will be saved in the <a href="/en/item/settings/properties#500">Setup » Settings » Properties » Configuration</a> menu.</p>
+<p>Automatically created property will be saved in the <a href="/en/item/settings/properties#500">Setup » Settings » Properties » Configuration</a> menu.</p>
 </div>
 <div class="paragraph">
-<p>The property is created with the following settings:</p>
+<p>Automatically created properties are created with the following settings:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -734,13 +917,13 @@ If no commission is set, prices will also be displayed without commission on the
 <p>Section = Item</p>
 </li>
 <li>
-<p>Property type = <em>depending on the market’s requirements</em></p>
+<p>Property type = <em>depending on the market data field</em></p>
 </li>
 <li>
 <p>Language = German</p>
 </li>
 <li>
-<p>Name = Name of the product category</p>
+<p>Name = <em>Name of the product category</em></p>
 </li>
 <li>
 <p>Group = REWE</p>
@@ -749,10 +932,10 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>Creating a sales price</strong> = Creates a sales price and maps this sales price to the data field. You can check and edit this sales price in the <a href="/en/en/item/settings/prices#400">Setup » Item » Sales prices</a> menu.</p>
+<p><strong>Creating a sales price</strong> = Creates a sales price and maps this sales price to the data field. You can check and edit automatically created sales prices in the <a href="/en/en/item/settings/prices#400">Setup » Item » Sales prices</a> menu.</p>
 </div>
 <div class="paragraph">
-<p>The sales price is created with the following settings:</p>
+<p>Automatically created sales prices are created with the following settings:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -790,13 +973,13 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>Create barcode</strong> = Creates a barcode <strong>REWE</strong> and maps this barcode to the data field. If a barcode with the name <strong>REWE</strong> already exists in the system, that barcode is mapped instead. You can check and edit this barcode in the <a href="/en/en/item/settings/barcodes#100">Setup » Item » Barcodes</a> menu.</p>
+<p><strong>Create barcode</strong> = Creates a barcode <strong>REWE</strong> and maps this barcode to the data field. If a barcode with the name <strong>REWE</strong> already exists in the system, that barcode is mapped instead. You can check and edit automatically created barcodes in the <a href="/en/en/item/settings/barcodes#100">Setup » Item » Barcodes</a> menu.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="600">9.2. Mapping additional data fields in the catalogue (not in assistant)</h3>
+<h3 id="600">9.3. Mapping additional data fields in the catalogue (not in assistant)</h3>
 <div class="paragraph">
 <p>You have already mapped important mandatory fields for the REWE product category in the assistant. However, after you have completed the assistant, you need to map additional data fields to send more information regarding your products to REWE.</p>
 </div>
@@ -909,7 +1092,435 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 <div class="sect2">
-<h3 id="602">9.3. <em>Example:</em> Mapping the data field "Product description"</h3>
+<h3 id="905">9.4. Particularities for mapping data fields</h3>
+<div class="paragraph">
+<p>Every market structures item data differently. As such, there are some particularities for each market when mapping data fields. <a href="#catalogue-rewe-mappings">Table 2</a> contains mapping information for important data fields for REWE.</p>
+</div>
+<table id="catalogue-rewe-mappings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Notes on mapping data fields</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Marketplace data field</th>
+<th class="tableblock halign-left valign-top">plentymarkets data field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute for product group</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>As <a href="#1001">described above</a>, REWE distinguishes between product bgroups and variation groups.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Reminder:</em></strong> You need a REWE product group if the variations of an item have different images because they look different. Product group attributes are attributes that influence how the product looks.</p>
+</div>
+<div class="paragraph">
+<p>As such, you would pap the following plentymarkets data field to the marketplace data field <strong>Attribute for product group</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Alternative 1:</em></strong> Attribute that changes the look of the variations</p>
+</li>
+<li>
+<p><strong><em>Alternative 2:</em></strong> Property that changes the look of the variations</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Of course you can also map fallback data fields. This might be necessary if you use both attributes and properties in plentymarkets for the data that you want to export for the marketplace data field <strong>Attribute for product group</strong>.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example 1:</em></strong> Mapping colour information for product type "Fashion"</div>
+<div class="content">
+<div class="paragraph">
+<p>The following example describes how you can map colour information in a catalogue for the product type "Fashion".</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The colour changes how the variations look. Because of this, you specify the colours using the marketplace data field <strong>Attribute for product group</strong>.</p>
+</li>
+<li>
+<p>In addition, the same plentymarkets data field must be mapped to the marketplace data filed <strong>Colour</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Summary for catalogue experts:</em></strong></p>
+</div>
+<div class="paragraph instruction">
+<p>Mapping colour information for product type "Fashion":</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Map the following plentymarkets data field to this marketplace data field:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Alternative 1:</em></strong> Field <strong>Value name</strong> of the attribute for colour, language <strong>German</strong></p>
+</li>
+<li>
+<p><strong><em>Alternative 2:</em></strong> Property for colour, language <strong>German</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Navigate to the area <strong>Attribute for product group</strong>.</p>
+</li>
+<li>
+<p>Map the following plentymarkets data field to the marketplace data field <strong>Attribute for product group</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Alternative 1:</em></strong> The same attribute for colour</p>
+</li>
+<li>
+<p><strong><em>Alternative 2:</em></strong> The same property for colour</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Detailed description for first-time catalogue users:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>The following two descriptions illustrate the settings in detail:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How to map an attribute for colour</p>
+</li>
+<li>
+<p>How to map a property for colour</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Mapping colour information in attributes for product type "Fashion":</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the REWE catalogue with the format <strong>Fashion</strong>.</p>
+</li>
+<li>
+<p>Navigate to the market data field <strong>Colour</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add data field</strong>.</p>
+</li>
+<li>
+<p>In the list of the data fields, click on the group <strong>Attribute</strong>.</p>
+</li>
+<li>
+<p>Click on the attribute.<br>
+→ Additional options are shown.</p>
+</li>
+<li>
+<p>Click on <strong>Value name</strong>.</p>
+</li>
+<li>
+<p>From the drop-down list underneath <strong>Value name</strong>, select the language <strong>German</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Confirm</strong>.<br>
+→ The plentymarkets data field is mapped.</p>
+</li>
+<li>
+<p>Navigate to the marketplace data field <strong>Attribute for product group</strong>.</p>
+</li>
+<li>
+<p>Click on the data field <strong>Attribute for product group</strong>.<br>
+→ The marketplace attributes are shown.</p>
+</li>
+<li>
+<p>Click on the marketplace attribute <strong>Colour</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add data field</strong>.</p>
+</li>
+<li>
+<p>In the list of the data fields, click on the group <strong>Attribute</strong>.</p>
+</li>
+<li>
+<p>Click on the plus sign to the right of the same attribute.</p>
+</li>
+<li>
+<p>Click on <strong>Confirm</strong>.<br>
+→ The plentymarkets data field is mapped.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Mapping colour information in properties for product type "Fashion":</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the REWE catalogue with the format <strong>Fashion</strong>.</p>
+</li>
+<li>
+<p>Navigate to the market data field <strong>Colour</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add data field</strong>.</p>
+</li>
+<li>
+<p>In the list of the data fields, click on the group <strong>Property</strong>.</p>
+</li>
+<li>
+<p>Click on the group with the property.<br>
+→ The properties of the group are shown.</p>
+</li>
+<li>
+<p>Click on the property.</p>
+</li>
+<li>
+<p>From the drop-down list underneath the name of the property, select the language <strong>German</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Confirm</strong>.<br>
+→ The plentymarkets data field is mapped.</p>
+</li>
+<li>
+<p>Navigate to the marketplace data field <strong>Attribute for product group</strong>.</p>
+</li>
+<li>
+<p>Click on the data field <strong>Attribute for product group</strong>.<br>
+→ The marketplace attributes are shown.</p>
+</li>
+<li>
+<p>Click on the marketplace attribute <strong>Colour</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add data field</strong>.</p>
+</li>
+<li>
+<p>In the list of the data fields, click on the group <strong>Property</strong>.</p>
+</li>
+<li>
+<p>Click on the group with the property.</p>
+</li>
+<li>
+<p>Click on the plus sign to the right of the same property.</p>
+</li>
+<li>
+<p>Click on <strong>Confirm</strong>.<br>
+→ The plentymarkets data field is mapped.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example 2:</em></strong> Mapping package sizes for product type "Household"</div>
+<div class="content">
+<div class="paragraph">
+<p>The following example describes how you can map package size information in a catalogue for the product type "Household".</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The packaging is different for the variations. Because of this, you specify the package size using the marketplace data field <strong>Attribute for product group</strong>.</p>
+</li>
+<li>
+<p>In addition, the same plentymarkets data field must be mapped to the marketplace data filed <strong>General size</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Summary for catalogue experts:</em></strong></p>
+</div>
+<div class="paragraph instruction">
+<p>Mapping package sizes for product type "Household":</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the REWE catalogue with the format <strong>Household</strong>.</p>
+</li>
+<li>
+<p>Navigate to the market data field <strong>General size</strong>.</p>
+</li>
+<li>
+<p>Map the following plentymarkets data field to this marketplace data field:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Alternative 1:</em></strong> Field <strong>Value name</strong> of the attribute for size, language <strong>German</strong></p>
+</li>
+<li>
+<p><strong><em>Alternative 2:</em></strong> Property for size, language <strong>German</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Navigate to the area <strong>Attribute for product group</strong>.</p>
+</li>
+<li>
+<p>Map the following plentymarkets data field to the marketplace data field <strong>Attribute for product group</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Alternative 1:</em></strong> The same attribute for size</p>
+</li>
+<li>
+<p><strong><em>Alternative 2:</em></strong> The same property for size</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Detailed description for first-time catalogue users:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>The following two descriptions illustrate the settings in detail:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>How to map an attribute for package size</p>
+</li>
+<li>
+<p>How to map a property for package size</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Mapping package sizes in attributes for product type "Household":</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the REWE catalogue with the format <strong>Household</strong>.</p>
+</li>
+<li>
+<p>Navigate to the market data field <strong>General size</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add data field</strong>.</p>
+</li>
+<li>
+<p>In the list of the data fields, click on the group <strong>Attribute</strong>.</p>
+</li>
+<li>
+<p>Click on the attribute.<br>
+→ Additional options are shown.</p>
+</li>
+<li>
+<p>Click on <strong>Value name</strong>.</p>
+</li>
+<li>
+<p>From the drop-down list underneath <strong>Value name</strong>, select the language <strong>German</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Confirm</strong>.<br>
+→ The plentymarkets data field is mapped.</p>
+</li>
+<li>
+<p>Navigate to the marketplace data field <strong>Attribute for product group</strong>.</p>
+</li>
+<li>
+<p>Click on the data field <strong>Attribute for product group</strong>.<br>
+→ The marketplace attributes are shown.</p>
+</li>
+<li>
+<p>Click on the marketplace attribute <strong>Package size</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add data field</strong>.</p>
+</li>
+<li>
+<p>In the list of the data fields, click on the group <strong>Attribute</strong>.</p>
+</li>
+<li>
+<p>Click on the plus sign to the right of the same attribute.</p>
+</li>
+<li>
+<p>Click on <strong>Confirm</strong>.<br>
+→ The plentymarkets data field is mapped.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Mapping package sizes in properties for product type "Household":</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the REWE catalogue with the format <strong>Household</strong>.</p>
+</li>
+<li>
+<p>Navigate to the market data field <strong>General size</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add data field</strong>.</p>
+</li>
+<li>
+<p>In the list of the data fields, click on the group <strong>Property</strong>.</p>
+</li>
+<li>
+<p>Click on the group with the property.<br>
+→ The properties of the group are shown.</p>
+</li>
+<li>
+<p>Click on the property.</p>
+</li>
+<li>
+<p>From the drop-down list underneath the name of the property, select the language <strong>German</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Confirm</strong>.<br>
+→ The plentymarkets data field is mapped.</p>
+</li>
+<li>
+<p>Navigate to the marketplace data field <strong>Attribute for product group</strong>.</p>
+</li>
+<li>
+<p>Click on the data field <strong>Attribute for product group</strong>.<br>
+→ The marketplace attributes are shown.</p>
+</li>
+<li>
+<p>Click on the marketplace attribute <strong>Package size</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add data field</strong>.</p>
+</li>
+<li>
+<p>In the list of the data fields, click on the group <strong>Property</strong>.</p>
+</li>
+<li>
+<p>Click on the group with the property.</p>
+</li>
+<li>
+<p>Click on the plus sign to the right of the same property.</p>
+</li>
+<li>
+<p>Click on <strong>Confirm</strong>.<br>
+→ The plentymarkets data field is mapped.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="602">9.5. <em>Example:</em> Mapping the data field "Product description"</h3>
 <div class="paragraph">
 <p>An example of how you can link the mandatory field <strong>Produktbeschreibung</strong> (product description) to data saved in plentymarkets is described below.</p>
 </div>
@@ -923,13 +1534,16 @@ If no commission is set, prices will also be displayed without commission on the
 → The catalogue opens.</p>
 </li>
 <li>
-<p>Select a plentymarkets data field for the REWE catalogue field <strong>Produktbeschreibung</strong> (product description) from the drop-down list, for example <strong>Item text &gt; Name 1, Name 2, Name 3</strong> that should be displayed on REWE as the product description.</p>
+<p>For the REWE data field <strong>Product description</strong>, select a plentymarkets data field from the drop-down list.
+<strong><em>Example:</em></strong> <strong>Item text &gt; Name 1</strong>, <strong>Name 2</strong> or <strong>Name 3</strong></p>
 </li>
 <li>
-<p>Link the other data fields in the same way. Link at least all mandatory fields.</p>
+<p>Link the other data fields in the same way. Link at least all mandatory fields.<br>
+<strong><em>Tip:</em></strong> Mandatory fields are flagged with an asterisk (*).</p>
 </li>
 <li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ The content of the selected plentymarkets data field is shown as the product description on REWE.</p>
 </li>
 </ol>
 </div>
@@ -983,36 +1597,7 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1000">12. REWE product groups and variants</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>REWE differentiates between <strong>product groups</strong> and <strong>variants</strong>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Product groups</strong> in plentymarkets are items with variations with at least one REWE group attribute, depending on the product type.</p>
-</li>
-<li>
-<p><strong>Variants</strong> in plentymarkets are variations of an item which do not have more than one REWE variant attribute, depending on the product type.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For REWE group attributes, more than one different attributes can be set, for example colour and motive. For REWE variant attributes, only one variant attribute can be set, for example only size or only volume.</p>
-</div>
-<div class="paragraph">
-<p>The REWE group attributes and REWE variant attributes for each product type are available in the catalogue templates. Open the drop-down lists <strong>Attribute for variant group</strong> and <strong>Attribute for product group</strong> in the marketplace format to view the available attributes.</p>
-</div>
-<div class="paragraph">
-<p>Items in plentymarkets can have more than one REWE group attribute. However, only one REWE group attribute can be used to form product groups. Therefore, the <strong>Attribute for product group</strong> field has to be matched so that the first attribute will always be the attribute that you want to use to form a product group. If an item, for example a t-shirt, differs in colour and print and the print should be used as the REWE group attribute, you first have to link the print in the <strong>Attribute for product group</strong> field and the colour only afterwards.</p>
-</div>
-<div class="paragraph">
-<p>An item should not be linked to more than one attribute which was assigned as REWE variant attribute in the catalogue.</p>
-</div>
-</div>
-</div><div class="sect1">
-<h2 id="1100">13. Matching shipping service providers</h2>
+<h2 id="1100">12. Matching shipping service providers</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Shipping service providers saved in plentymarkets are matched with REWE shipping service providers in the <strong>Setup » Markets » REWE » Shipping service provider matching</strong> menu. If you do not match shipping service providers, then the shipping service provider <strong>unknown</strong> is sent to REWE.</p>
@@ -1035,7 +1620,7 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1200">14. Matching reasons for return</h2>
+<h2 id="1200">13. Matching reasons for return</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Return reasons saved in plentymarkets are matched with REWE return reasons int the <strong>Setup » Markets » REWE » Return reason matching</strong> menu. If you do not match reasons for return, then the reason for return <strong>Other</strong> is sent to REWE. For further information about REWE reasons for return, refer to the seller documentation that you have received from REWE.</p>
@@ -1058,7 +1643,7 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1300">15. Synchronising tax categories</h2>
+<h2 id="1300">14. Synchronising tax categories</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If the tax categories were changed at REWE, you have to synchronise the tax categories in plentymarkets. Tax categories are synchronised with REWE in the <strong>Setup » Markets » REWE » Basic settings</strong> menu in the <strong>Tax categories</strong> area.</p>
@@ -1097,7 +1682,7 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1400">16. Synchronising brands</h2>
+<h2 id="1400">15. Synchronising brands</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Brands are automatically synchronised with REWE once per day. Additionally, you can manually synchronise brands with REWE at any time. To do so, open the <strong>Setup » Markets » REWE » Basic settings</strong> menu.</p>
@@ -1119,13 +1704,13 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1700">17. Deactivating the creation of contacts</h2>
+<h2 id="1700">16. Deactivating the creation of a contact</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>By default, REWE orders are always assigned to the contact and the invoice address of REWE. Activate the option <strong>Deactivate contact creation</strong> if you do not want to create a contact. Instead, only addresses are saved. <a href="#rewe-deactivate-contact-creation">Table 2</a> describes the differences between the two options.</p>
+<p>By default, REWE orders are always assigned to the contact and the invoice address of REWE. Activate the option <strong>Deactivate contact creation</strong> if you do not want to create a contact. Instead, only addresses are saved. <a href="#rewe-deactivate-contact-creation">Table 3</a> describes the differences between the two options.</p>
 </div>
 <table id="rewe-deactivate-contact-creation" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Deactivating the creation of a contact</caption>
+<caption class="title">Table 3. Deactivating the creation of a contact</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1271,7 +1856,7 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1500">18. Automatically updating the order status for REWE</h2>
+<h2 id="1500">17. Automatically updating the order status for REWE</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically update the order status on REWE whenever specific events occur. You can set up the following event procedures:</p>
@@ -1323,13 +1908,13 @@ If no commission is set, prices will also be displayed without commission on the
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#rewe-procedure">Table 3</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#rewe-procedure">Table 4</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#rewe-procedure">Table 3</a>.</p>
+<p>Carry out the settings according to <a href="#rewe-procedure">Table 4</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1342,7 +1927,7 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 <table id="rewe-procedure" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Event procedure for reporting order status to REWE</caption>
+<caption class="title">Table 4. Event procedure for reporting order status to REWE</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -1393,13 +1978,13 @@ If no commission is set, prices will also be displayed without commission on the
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1600">19. REWE delivery periods</h2>
+<h2 id="1600">18. REWE delivery periods</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The variation availability in plentymarkets is assigned to delivery periods at REWE. An overview of the delivery periods at REWE and the corresponding plentymarkets availabilities can be found in <a href="#rewe-availability">Table 4</a>.</p>
+<p>The variation availability in plentymarkets is assigned to delivery periods at REWE. An overview of the delivery periods at REWE and the corresponding plentymarkets availabilities can be found in <a href="#rewe-availability">Table 5</a>.</p>
 </div>
 <table id="rewe-availability" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. REWE delivery periods</caption>
+<caption class="title">Table 5. REWE delivery periods</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
