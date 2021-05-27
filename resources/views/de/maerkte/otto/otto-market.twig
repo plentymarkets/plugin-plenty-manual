@@ -4,7 +4,7 @@
             <div id="toc" class="toc">
 <div id="toctitle">Inhalt</div>
 <ul class="sectlevel1">
-<li><a href="#100"><span>1.</span><span> OTTO Market</span></a></li>
+<li><a href="#100"><span>1.</span><span> Übersicht des automatischen Datenaustauschs</span></a></li>
 <li><a href="#200"><span>2.</span><span> Konto einrichten</span></a></li>
 <li><a href="#275"><span>3.</span><span> Auftragsherkunft aktivieren</span></a></li>
 <li><a href="#300"><span>4.</span><span> Variantenverfügbarkeit einstellen</span></a></li>
@@ -23,20 +23,26 @@
 <li><a href="#475"><span>10.</span><span> Varianten mit OTTO-Kategoriegruppe verknüpfen</span></a></li>
 <li><a href="#2000"><span>11.</span><span> Katalogexport zu OTTO Market aktivieren</span></a></li>
 <li><a href="#2200"><span>12.</span><span> Checkliste: Voraussetzungen für den Variantenexport</span></a></li>
-<li><a href="#500"><span>13.</span><span> Ereignisaktionen einrichten</span></a>
+<li><a href="#1050"><span>13.</span><span> Auftragsbearbeitung bei OTTO Market</span></a>
 <ul class="sectlevel2">
-<li><a href="#550"><span>13.1.</span><span> Retourenlabel generieren</span></a></li>
-<li><a href="#700"><span>13.2.</span><span> Versandinformation an OTTO melden</span></a></li>
-<li><a href="#800"><span>13.3.</span><span> Auftragsstornierung an OTTO melden</span></a></li>
-<li><a href="#900"><span>13.4.</span><span> Retoure an OTTO melden</span></a></li>
-<li><a href="#1000"><span>13.5.</span><span> Ablehnung der Retoure an OTTO melden</span></a></li>
+<li><a href="#1100"><span>13.1.</span><span> Auftragsimport</span></a></li>
+<li><a href="#1200"><span>13.2.</span><span> Rechnungsimport</span></a></li>
+<li><a href="#1400"><span>13.3.</span><span> Gutschriftenimport</span></a></li>
 </ul>
 </li>
-<li><a href="#1050"><span>14.</span><span> Auftragsbearbeitung bei OTTO Market</span></a>
+<li><a href="#500"><span>14.</span><span> Auftragsabwicklung automatisieren</span></a>
 <ul class="sectlevel2">
-<li><a href="#1100"><span>14.1.</span><span> Auftragsimport</span></a></li>
-<li><a href="#1200"><span>14.2.</span><span> Rechnungsimport</span></a></li>
-<li><a href="#1400"><span>14.3.</span><span> Gutschriftenimport</span></a></li>
+<li><a href="#550"><span>14.1.</span><span> Retourenlabel generieren</span></a>
+<ul class="sectlevel3">
+<li><a href="#550-1"><span>14.1.1.</span><span> DHL-Retourenlabel generieren</span></a></li>
+<li><a href="#550-1"><span>14.1.2.</span><span> GLS-Retourenlabel generieren</span></a></li>
+<li><a href="#550-2"><span>14.1.3.</span><span> Hermes-Retourenlabel generieren</span></a></li>
+</ul>
+</li>
+<li><a href="#700"><span>14.2.</span><span> Versandinformation an OTTO melden</span></a></li>
+<li><a href="#800"><span>14.3.</span><span> Auftragsstornierung an OTTO melden</span></a></li>
+<li><a href="#900"><span>14.4.</span><span> Retoure an OTTO melden</span></a></li>
+<li><a href="#1000"><span>14.5.</span><span> Ablehnung von Retouren an OTTO melden</span></a></li>
 </ul>
 </li>
 <li><a href="#10000"><span>15.</span><span> Log abrufen</span></a></li>
@@ -65,41 +71,74 @@
     <h1>OTTO Market</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Auf dieser Handbuchseite erhältst du Informationen zum Marktplatzmodell OTTO Market von OTTO.</p>
+<p>OTTO Market ist das Marktplatzmodell von OTTO. Du wirst als Verkäufer:in an deinen Produkten angezeigt. Die Kommunikation mit Kund:innen läuft aber über OTTO.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="100">1. OTTO Market</h2>
+<h2 id="100">1. Übersicht des automatischen Datenaustauschs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>OTTO Market ist das Marktplatzmodell von OTTO. Du wirst als Verkäufer:in an deinen Produkten angezeigt. Die Kommunikation mit Kund:innen läuft aber über OTTO.<br></p>
+<p>Nachdem du das Plugin installiert und eingerichtet hast, stehen die in <a href="#data-exchange-market">Tabelle 1</a> beschriebenen automatisierten Abläufe bereit:</p>
 </div>
-<div class="paragraph">
-<p>Die Anbindung von OTTO Market an plentymarkets stellt folgende automatisierte Prozesse bereit:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Auftragsimport einmal pro Stunde</p>
-</li>
-<li>
-<p>Bestandsabgleich alle 15 Minuten<br>
-<strong><em>Hinweis:</em></strong> Fällt eine Variante auf Bestand 0, wird diese Variante zum Schutz des Artikel-Rankings auf OTTO Market nach 15 Tagen automatisch deaktiviert. Wenn neuer Bestand für eine solche deaktivierte Variante gebucht wird, wird die Variante mit dem nächtlichen Artikelexport wieder aktiviert.</p>
-</li>
-<li>
-<p>Einmal pro Nacht Aktualisierung von Artikeldaten inklusive Preisabgleich</p>
-</li>
-<li>
-<p>Stündlicher Import von Retouren-Anmeldungen durch Endkund:innen</p>
-</li>
-<li>
-<p>Zweimal wöchentlich Aktualisierung der Kategoriegruppen/Katalogvorlagen</p>
-</li>
-<li>
-<p>Alle drei Stunden Aktualisierung der Liste der Marken</p>
-</li>
-</ul>
-</div>
+<table id="data-exchange-market" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Häufigkeit des Datenaustauschs</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Daten</th>
+<th class="tableblock halign-left valign-top">Intervall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Artikelexport</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>einmal pro Nacht</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preisabgleich</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>einmal pro Nacht zeitgleich mit Artikelexport</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bestandsabgleich</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>alle 15 Minuten<br>
+<strong><em>Hinweis:</em></strong> Fällt eine Variante auf Bestand 0, wird diese Variante zum Schutz des Artikel-Rankings auf OTTO Market nach 15 Tagen automatisch deaktiviert.<br>
+Wenn neuer Bestand für eine solche deaktivierte Variante gebucht wird, wird die Variante mit dem nächtlichen Artikelexport wieder aktiviert.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftragsimport</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>einmal pro Stunde</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Import von Retouren-Anmeldungen durch Endkund:innen</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>einmal pro Stunde</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aktualisierung der Kategoriegruppen/Katalogvorlagen</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>zweimal wöchentlich</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aktualisierung der Liste der Marken</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>alle drei Stunden</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div><div class="sect1">
 <h2 id="200">2. Konto einrichten</h2>
@@ -327,7 +366,7 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Tab: Einstellungen</strong>.</p>
+<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Varianten-Tab: Einstellungen</strong>.</p>
 </li>
 <li>
 <p>Öffne die Variante, die du auf OTTO Market verkaufen möchtest.<br>
@@ -454,7 +493,7 @@
 <h2 id="350">5. Verfügbarkeit am Bild einstellen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Damit Artikelbilder auf OTTO Market angezeigt werden, muss im Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » Tab: Bilder</strong> die Verfügbarkeit <strong>OTTO Market</strong> am Bild hinzugefügt werden.</p>
+<p>Damit Artikelbilder auf OTTO Market angezeigt werden, muss im Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » Artikel-Tab: Bilder</strong> die Verfügbarkeit <strong>OTTO Market</strong> am Bild hinzugefügt werden.</p>
 </div>
 <div class="paragraph instruction">
 <p>Verfügbarkeit am Bild einstellen:</p>
@@ -462,7 +501,7 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » Tab: Bilder</strong>.</p>
+<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » Artikel-Tab: Bilder</strong>.</p>
 </li>
 <li>
 <p>Aktiviere in der Dropdown-Liste <strong>Verfügbarkeit</strong> die Option <strong>OTTO Market</strong>.</p>
@@ -526,7 +565,7 @@
 → Das Tab <strong>Einstellungen</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-zahlungsart-aktivieren">Tabelle 1</a>.</p>
+<p>Nimm die Einstellungen vor. Beachte dazu die Erläuterungen in <a href="#tabelle-zahlungsart-aktivieren">Tabelle 2</a>.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong>.</p>
@@ -537,7 +576,7 @@
 </ol>
 </div>
 <table id="tabelle-zahlungsart-aktivieren" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 1. Einstellungen der Zahlungsart</caption>
+<caption class="title">Tabelle 2. Einstellungen der Zahlungsart</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -955,10 +994,10 @@ Klicke dazu in der Liste der plentymarkets Datenfelder neben dem gewünschten pl
 <div class="sect2">
 <h3 id="905">8.3. Besonderheiten bei der Zuordnung von Datenfeldern</h3>
 <div class="paragraph">
-<p>Jeder Marktplatz strukturiert Artikeldaten anders. Deshalb treten beim Zuordnen von Datenfeldern bestimmte Sonderfälle auf. In <a href="#catalogue-otto-market-mappings">Tabelle 2</a> findest du Hinweise dazu, was du beim Zuordnen von Datenfeldern für OTTO Market beachten solltest.</p>
+<p>Jeder Marktplatz strukturiert Artikeldaten anders. Deshalb treten beim Zuordnen von Datenfeldern bestimmte Sonderfälle auf. In <a href="#catalogue-otto-market-mappings">Tabelle 3</a> findest du Hinweise dazu, was du beim Zuordnen von Datenfeldern für OTTO Market beachten solltest.</p>
 </div>
 <table id="catalogue-otto-market-mappings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 2. Besonderheiten bei der Katalogzuordnung</caption>
+<caption class="title">Tabelle 3. Besonderheiten bei der Katalogzuordnung</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1261,7 +1300,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Tab: Einstellungen</strong>.</p>
+<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Varianten-Tab: Einstellungen</strong>.</p>
 </li>
 <li>
 <p>Öffne die Variante, die du auf OTTO Market verkaufen möchtest.<br></p>
@@ -1285,7 +1324,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Tab: Einstellungen</strong>.</p>
+<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Varianten-Tab: Einstellungen</strong>.</p>
 </li>
 <li>
 <p>Öffne die Variante, die du auf OTTO Market verkaufen möchtest.</p>
@@ -1313,7 +1352,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Tab: Einstellungen</strong>.</p>
+<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Varianten-Tab: Einstellungen</strong>.</p>
 </li>
 <li>
 <p>Öffne die Variante, die du auf OTTO Market verkaufen möchtest.</p>
@@ -1387,7 +1426,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Tab: Einstellungen</strong>.</p>
+<p>Öffne das Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Varianten-Tab: Einstellungen</strong>.</p>
 </li>
 <li>
 <p>Öffne die Variante, die du auf OTTO Market verkaufen möchtest.</p>
@@ -1490,7 +1529,75 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="500">13. Ereignisaktionen einrichten</h2>
+<h2 id="1050">13. Auftragsbearbeitung bei OTTO Market</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Im Folgenden erfährst du, wie Aufträge bei OTTO Market verarbeitet werden.</p>
+</div>
+<div class="sect2">
+<h3 id="1100">13.1. Auftragsimport</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OTTO Market-Aufträge werden als unbezahlt in Status <strong>[3] Warten auf Zahlung</strong> in plentymarkets importiert.</p>
+</li>
+<li>
+<p>Nachdem ein Auftrag von OTTO Market bestätigt wurde, wechselt der Auftrag in den Status <strong>[5] Freigabe Versand</strong>.</p>
+</li>
+<li>
+<p>In plentymarkets wird eine Zahlung für den Auftrag erstellt und der Auftrag als <strong>bezahlt</strong> gekennzeichnet.<br>
+Falls der Auftrag bei OTTO Market per Überweisung bezahlt wurde, kann die Auftragsbestätigung länger dauern als bei anderen Zahlungsarten. In plentymarkets wird die Zahlungsart immer als <strong>OTTO Payment</strong> angezeigt.<br></p>
+</li>
+<li>
+<p>Wenn ein Auftrag nicht bezahlt wird, storniert OTTO Market den Auftrag nach einer gewissen Zeit und sendet eine Stornierung an plentymarkets. In plentymarkets wechselt der unbezahlte Auftrag dann automatisch in den Status <strong>[8] Storniert</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1200">13.2. Rechnungsimport</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Rechnungen für OTTO Market-Aufträge werden von OTTO Market selbst erstellt und automatisch in plentymarkets importiert, sobald du den Versand der Ware bei OTTO Market bestätigt hast.</p>
+</li>
+<li>
+<p>Eine Versandbestätigung sendest du mit der Ereignisaktion <a href="#700">Versandinformation an OTTO melden</a> an OTTO Market.</p>
+</li>
+<li>
+<p>Die Rechnungsdokumente sind nach erfolgreicher Versandbestätigung im Tab <strong>Belege</strong> des Hauptauftrags verfügbar. Das heißt, dass du für OTTO Market keine Rechnungen in plentymarkets erstellen kannst.</p>
+</li>
+<li>
+<p>Da Rechnungen immer dann von OTTO Market erstellt werden, wenn der Versand eines Artikels bestätigt wurde, werden auch Rechnungen für Teillieferungen generiert.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1400">13.3. Gutschriftenimport</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Gutschriften und Teilgutschriften für OTTO Market-Aufträge werden von OTTO Market selbst erstellt und automatisch in plentymarkets importiert, sobald du eine Retoure der Ware bei OTTO Market bestätigt hast.</p>
+</li>
+<li>
+<p>Die Gutschriftendokumente sind nach erfolgreicher Retourenbestätigung im Tab <strong>Belege</strong> des Auftrags verfügbar.</p>
+</li>
+<li>
+<p>Eine Retoure bestätigst du mit der Ereignisaktion <strong>Retoure an OTTO melden</strong>.</p>
+</li>
+<li>
+<p>Wenn du eine Retoure meldest, werden die Bestandteile der einzelnen Positionen deiner Gutschrift/Retoure an OTTO gesendet. Das führt dazu, dass OTTO immer den kompletten Verkaufspreis einer Position erstattet. Es ist deshalb nicht möglich, OTTO Market Teilerstattungen für eine Auftragsposition zu melden. Auch wenn du einzelne Positionen im Preis korrigiert hast, hat dies also keinen Einfluss auf das von OTTO erstellte Erstattungsdokument.</p>
+</li>
+<li>
+<p>Da Gutschriften immer dann von OTTO Market erstellt werden, wenn die Retoure eines Artikels bestätigt wurde, werden auch Gutschriften für Teilretouren generiert.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="500">14. Auftragsabwicklung automatisieren</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Richte <a href="/automatisierung/ereignisaktionen">Ereignisaktionen</a> ein, um OTTO Market automatisch über Änderungen des Auftragsstatus zu informieren. Folgende Ereignisaktionen stehen für OTTO Market zur Verfügung:</p>
@@ -1498,21 +1605,21 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <div class="ulist">
 <ul>
 <li>
-<p>Versandinformation an OTTO melden</p>
+<p>Retourenlabel generieren (<a href="#550">Wie?</a>)</p>
 </li>
 <li>
-<p>Auftragsstornierung an OTTO melden</p>
+<p>Versandinformation an OTTO melden (<a href="#700">Wie?</a>)</p>
 </li>
 <li>
-<p>Retoure an OTTO melden</p>
+<p>Auftragsstornierung an OTTO melden (<a href="#800">Wie?</a>)</p>
 </li>
 <li>
-<p>Ablehnung der Retoure an OTTO melden</p>
+<p>Retoure an OTTO melden (<a href="#900">Wie?</a>)</p>
+</li>
+<li>
+<p>Ablehnung der Retoure an OTTO melden (<a href="#1000">Wie?</a>)</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>In den folgenden Kapiteln wird beschrieben, wie du die Ereignisaktionen in plentymarkets einrichtest.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1530,40 +1637,28 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </tbody></table>
 </div>
 <div class="sect2">
-<h3 id="550">13.1. Retourenlabel generieren</h3>
+<h3 id="550">14.1. Retourenlabel generieren</h3>
 <div class="paragraph">
 <p>Wenn OTTO Market-Aufträge in dein plentymarkets System importiert wurden, müssen für diese Aufträge Retourenlabels generiert werden, bevor der Versand bei OTTO Market bestätigt wird. Mit einer Ereignisaktion zum Erstellen eines Retourenlabels wird automatisch eine Tracking-Nummer für eine Retoure (retTrackingNumber) erstellt, die am Auftrag gespeichert wird. Dadurch kann sichergestellt werden, dass es eine Tracking-Nummer für eine Retoure gibt, falls Kund:innen einen Artikel zurücksenden möchten.<br></p>
 </div>
 <div class="paragraph">
-<p>Damit die Tracking-Nummer zusammen mit der Versandbestätigung an OTTO Market gesendet wird, musst du ein Retourenlabel erstellen. Retourenlabels kannst du mit den Versanddienstleister-Plugins <a href="https://marketplace.plentymarkets.com/plugins/integration/dhlretoureonline_6714" target="_blank" rel="noopener">DHL Retoure Online</a>, <a href="https://marketplace.plentymarkets.com/plugins/integration/glsshipping_6463" target="_blank" rel="noopener">GLS Shipping</a> und <a href="https://marketplace.plentymarkets.com/plugins/integration/hermesshippinginterface_5437" target="_blank" rel="noopener">Hermes</a> erstellen.</p>
+<p>Damit die Tracking-Nummer zusammen mit der Versandbestätigung an OTTO Market gesendet wird, muss ein Retourenlabel erstellen werden. Retourenlabels können zurzeit mit DHL, Hermes und GLS Shipping generiert werden. Du benötigst dazu die folgenden Versanddienstleister-Plugins:</p>
 </div>
-<div class="paragraph">
-<p><strong><em>Hinweis:</em></strong> Retourenlabels können momentan nur mit DHL, Hermes und GLS Shipping generiert werden.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://marketplace.plentymarkets.com/plugins/integration/dhlretoureonline_6714" target="_blank" rel="noopener">DHL Retoure Online</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.plentymarkets.com/plugins/integration/glsshipping_6463" target="_blank" rel="noopener">GLS Shipping</a></p>
+</li>
+<li>
+<p><a href="https://marketplace.plentymarkets.com/plugins/integration/hermesshippinginterface_5437" target="_blank" rel="noopener">Hermes</a></p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Wichtig"></i>
-</td>
-<td class="content">
-<div class="title">Plugins installieren</div>
-<div class="paragraph">
-<p>Um ein Retouren-Label generieren zu können, müssen die Plugins <strong>DHL Retoure Online</strong>, <strong>Hermes</strong> oder <strong>GLS Shipping</strong> in deinem plentymarkets System installiert, aktiviert und eingerichtet sein, je nachdem, für welchen Versanddienstleister du ein Retourenlabel erstellen möchtest. Die Plugins erhältst du im <a href="https://marketplace.plentymarkets.com/plugins/fulfillment-stock/versand" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-<div class="paragraph">
-<p>Wie du eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> einrichtest, um ein DHL-Retourenlabel zu generieren, ist im Folgenden beschrieben.</p>
-</div>
-<div class="paragraph">
-<p>Um ein Retourenlabel mit GLS Shipping zu erstellen, wähle in der Ereignisaktion die Aktion <strong>Plugins &gt; GLSShipping: Register return label</strong>. Weitere Informationen findest du im <a href="https://marketplace.plentymarkets.com/plugins/integration/glsshipping_6463" target="_blank" rel="noopener">User Guide</a> des GLS Shipping-Plugins.</p>
-</div>
-<div class="paragraph">
-<p>Bei Hermes können Retourenlabels nicht über eine Ereignisaktion erstellt werden. Bevor das Versandetikett für OTTO Market erstellt wird, muss deshalb das Retourenlabel für Hermes entweder manuell über das <a href="/fulfillment/versand-center">Versand-Center</a> oder über eine <a href="/automatisierung/prozesse/aktionen#preamble">Aktion</a> in einem Prozess erstellt werden. Weitere Informationen findest du im <a href="https://marketplace.plentymarkets.com/plugins/integration/hermesshippinginterface_5437" target="_blank" rel="noopener">User Guide</a> des Hermes-Plugins.</p>
-</div>
+<div class="sect3">
+<h4 id="550-1">14.1.1. DHL-Retourenlabel generieren</h4>
 <div class="openblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
 <div class="content">
@@ -1580,13 +1675,13 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#dhl-retouren-label-otto">Tabelle 3</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#dhl-retouren-label-otto">Tabelle 4</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#dhl-retouren-label-otto">Tabelle 3</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#dhl-retouren-label-otto">Tabelle 4</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1600,7 +1695,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </div>
 </div>
 <table id="dhl-retouren-label-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 3. Ereignisaktion zum Erstellen eines DHL-Retourenlabels</caption>
+<caption class="title">Tabelle 4. Ereignisaktion zum Erstellen eines DHL-Retourenlabels</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1632,14 +1727,99 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; DHL Retoure Online-Label generieren</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; DHL Retoure Online-Label generieren</strong><br>
+<strong><em>Hinweis:</em></strong> Das Plugin <a href="https://marketplace.plentymarkets.com/plugins/integration/dhlretoureonline_6714" target="_blank" rel="noopener">DHL Retoure Online</a> muss installiert, aktiviert und eingerichtet sein, damit diese Aktion verfügbar ist.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
 </div>
+<div class="sect3">
+<h4 id="550-1">14.1.2. GLS-Retourenlabel generieren</h4>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#gls-retouren-label-otto">Tabelle 5</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen gemäß <a href="#gls-retouren-label-otto">Tabelle 5</a> vor.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
+<strong><em>Hinweis:</em></strong> Die Daten werden nicht live beim Auslösen der Ereignisaktion übermittelt, sondern in einer Warteschlange registriert. Daher kann es zu Verzögerungen im Sekunden- bis Minutenbereich kommen, wenn viele Jobs vorhanden sind. Dafür können bei fehlender Erreichbarkeit oder Drosslung des Zielservers mehrere Übermittlungsversuche unternommen werden.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="gls-retouren-label-otto" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Ereignisaktion zum Erstellen eines GLS-Retourenlabels</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis wählen, z.B. <strong>Statuswechsel: [5] Freigabe Versand</strong><br>
+<strong><em>Hinweis:</em></strong> Wähle ein Ereignis, das vor der Versandbestätigung liegt. Das Ereignis <strong>Neuer Auftrag</strong> wird <em>nicht</em> empfohlen.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OTTO Market</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; GLSShipping: Register return label</strong><br>
+<strong><em>Hinweis:</em></strong> Das Plugin <a href="https://marketplace.plentymarkets.com/plugins/integration/glsshipping_6463" target="_blank" rel="noopener">GLS Shipping</a> muss installiert, aktiviert und eingerichtet sein, damit diese Aktion verfügbar ist.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="550-2">14.1.3. Hermes-Retourenlabel generieren</h4>
+<div class="paragraph">
+<p>Bei Hermes können Retourenlabels nicht über eine Ereignisaktion erstellt werden. Bevor das Versandetikett für OTTO Market erstellt wird, muss deshalb das Retourenlabel für Hermes entweder manuell über das <a href="/fulfillment/versand-center">Versand-Center</a> oder über eine <a href="/automatisierung/prozesse/aktionen#preamble">Aktion</a> in einem Prozess erstellt werden. Weitere Informationen findest du im <a href="https://marketplace.plentymarkets.com/plugins/integration/hermesshippinginterface_5437" target="_blank" rel="noopener">User Guide</a> des Hermes-Plugins.</p>
+</div>
+</div>
+</div>
 <div class="sect2">
-<h3 id="700">13.2. Versandinformation an OTTO melden</h3>
+<h3 id="700">14.2. Versandinformation an OTTO melden</h3>
 <div class="paragraph">
 <p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO Market über den Versand des Artikels zu informieren.</p>
 </div>
@@ -1652,7 +1832,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <td class="content">
 <div class="title">Adresse des Absenders speichern</div>
 <div class="paragraph">
-<p>Die Versandbestätigung wird nur an OTTO Market gesendet, wenn die Absenderadresse des Händlers gespeichert wurde. Die Adresse speicherst du in den Einstellungen eines Lagers unter <strong>Einrichtung » Waren » Lager » [Lager wählen] » Einstellungen</strong>. Du musst die Adresse in dem Lager speichern, das für den jeweiligen Auftrag verwendet wird.</p>
+<p>Die Versandbestätigung wird nur an OTTO Market gesendet, wenn die Absenderadresse des Händlers gespeichert wurde. Die Adresse speicherst du in den Einstellungen eines Lagers unter <strong>Einrichtung » Waren » Lager » [Lager wählen] » Einstellungen</strong>. Die Adresse muss in dem Lager gespeichert sein, das für den jeweiligen Auftrag verwendet wird.</p>
 </div>
 </td>
 </tr>
@@ -1674,13 +1854,13 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#versandbestaetigung-otto">Tabelle 4</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#versandbestaetigung-otto">Tabelle 6</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#versandbestaetigung-otto">Tabelle 4</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#versandbestaetigung-otto">Tabelle 6</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1694,7 +1874,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </div>
 </div>
 <table id="versandbestaetigung-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 4. Ereignisaktion um Versandinformation an OTTO Market zu melden</caption>
+<caption class="title">Tabelle 6. Ereignisaktion um Versandinformation an OTTO Market zu melden</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1711,7 +1891,8 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Statuswechsel</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status wählen, zum Beispiel <strong>[7] Warenausgang gebucht</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status wählen, zum Beispiel <strong>[7] Warenausgang gebucht</strong><br>
+<strong><em>Hinweis:</em></strong> Wenn noch kein Retourenlabel erstellt wurde, kann keine Versandbestätigung an OTTO Market gesendet werden. Wähle deshalb ein Ereignis, das erst eintritt, nachdem die Ereignisaktion <strong>Retourenlabel generieren</strong> ausgelöst wurde.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
@@ -1732,9 +1913,9 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </table>
 </div>
 <div class="sect2">
-<h3 id="800">13.3. Auftragsstornierung an OTTO melden</h3>
+<h3 id="800">14.3. Auftragsstornierung an OTTO melden</h3>
 <div class="paragraph">
-<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO Market über die Stornierung eines Auftrags zu informieren. Es kann aus verschiedenen Gründen erforderlich sein, Aufträge zu stornieren. Wenn zum Beispiel Kund:innen den Auftrag stornieren, wähle <strong>Status [8.1] Storniert durch Kunden</strong>.</p>
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO Market über die Stornierung von Aufträgen zu informieren. Es kann aus verschiedenen Gründen erforderlich sein, Aufträge zu stornieren. Wenn zum Beispiel Kund:innen den Auftrag stornieren, wähle <strong>Status [8.1] Storniert durch Kunden</strong>.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
@@ -1752,13 +1933,13 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#auftragsstornierung-otto">Tabelle 5</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#auftragsstornierung-otto">Tabelle 7</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#auftragsstornierung-otto">Tabelle 5</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#auftragsstornierung-otto">Tabelle 7</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1772,7 +1953,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </div>
 </div>
 <table id="auftragsstornierung-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 5. Ereignisaktion um Auftragsstornierung an OTTO Market zu melden</caption>
+<caption class="title">Tabelle 7. Ereignisaktion, um Auftragsstornierungen an OTTO Market zu melden</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1790,7 +1971,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Statuswechsel</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis wählen, zum Beispiel <strong>[8.1] Storniert durch Kunden</strong><br>
-<strong><em>Hinweis:</em></strong> Aufträge, die OTTO Market storniert, werden mit dem Status <strong>[8] Storniert</strong> in plentymarkets importiert. Wähle deshalb einen anderen Status, da du sonst OTTO Market über eine dort bereits durchgeführte Stornierung informierst.</p></td>
+<strong><em>Hinweis:</em></strong> Aufträge, die OTTO Market storniert, werden mit dem Status <strong>[8] Storniert</strong> in plentymarkets importiert. Wähle deshalb einen anderen Status, weil du sonst OTTO Market über eine dort bereits durchgeführte Stornierung informierst.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
@@ -1811,15 +1992,28 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </table>
 </div>
 <div class="sect2">
-<h3 id="900">13.4. Retoure an OTTO melden</h3>
+<h3 id="900">14.4. Retoure an OTTO melden</h3>
 <div class="paragraph">
-<p>Für die Annahme der Retoure muss ein Auftrag vom Typ <strong>Gutschrift</strong> erstellt werden. Richte dazu eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein.</p>
+<p>Für die Annahme einer Retoure muss zuerst ein Auftrag vom Typ <strong>Gutschrift</strong> erstellt werden. In einem zweiten Schritt wird die Retoure an OTTO gemeldet. Für Retourenmeldungen benötigst du also zwei Ereignisaktionen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ereignisaktion 1: Aufträge vom Typ <strong>Gutschrift</strong> erstellen</p>
+</li>
+<li>
+<p>Ereignisaktion 2: Retouren an OTTO melden</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Richte diese Ereignisaktionen wie unten beschrieben ein.</p>
 </div>
 <div id="bild-retoure-otto-gutschrift" class="imageblock">
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/otto-market-retoure-gutschrift.png" alt="otto market retoure gutschrift" width="640" height="360">
 </div>
-<div class="title">Bild 1. Ereignisaktion um einen Auftrag vom Typ <strong>Gutschrift</strong> zu erstellen</div>
+<div class="title">Bild 1. Ereignisaktion, um Aufträge vom Typ <strong>Gutschrift</strong> zu erstellen</div>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
@@ -1837,13 +2031,13 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#retoure-otto-gutschrift">Tabelle 6</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#retoure-otto-gutschrift">Tabelle 8</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#retoure-otto-gutschrift">Tabelle 6</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#retoure-otto-gutschrift">Tabelle 8</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1857,7 +2051,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </div>
 </div>
 <table id="retoure-otto-gutschrift" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 6. Ereignisaktion um einen Auftrag vom Typ <strong>Gutschrift</strong> zu erstellen</caption>
+<caption class="title">Tabelle 8. Ereignisaktion, um Aufträge vom Typ <strong>Gutschrift</strong> zu erstellen</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1895,13 +2089,13 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </tbody>
 </table>
 <div class="paragraph">
-<p>Richte eine weitere <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO Market über eine Retoure zu informieren.</p>
+<p>Richte eine weitere <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO Market über die Retouren zu informieren.</p>
 </div>
 <div id="bild-retoure-otto" class="imageblock">
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/otto-market-retoure-von-otto-annehmen.png" alt="otto market retoure von otto annehmen" width="640" height="360">
 </div>
-<div class="title">Bild 2. Ereignisaktion um eine Retoure an OTTO Market zu melden</div>
+<div class="title">Bild 2. Ereignisaktion, um Retouren an OTTO Market zu melden</div>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
@@ -1919,13 +2113,13 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#retoure-otto">Tabelle 7</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#retoure-otto">Tabelle 9</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#retoure-otto">Tabelle 7</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#retoure-otto">Tabelle 9</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1939,7 +2133,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </div>
 </div>
 <table id="retoure-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 7. Ereignisaktion, um Retouren an OTTO Market zu melden</caption>
+<caption class="title">Tabelle 9. Ereignisaktion, um Retouren an OTTO Market zu melden</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1989,9 +2183,9 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </table>
 </div>
 <div class="sect2">
-<h3 id="1000">13.5. Ablehnung der Retoure an OTTO melden</h3>
+<h3 id="1000">14.5. Ablehnung von Retouren an OTTO melden</h3>
 <div class="paragraph">
-<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO Market über die Ablehnung einer Retoure zu informieren.</p>
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO Market über die Ablehnung von Retouren zu informieren.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
@@ -2009,13 +2203,13 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ablehnung-retoure-otto">Tabelle 8</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ablehnung-retoure-otto">Tabelle 10</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ablehnung-retoure-otto">Tabelle 8</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ablehnung-retoure-otto">Tabelle 10</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -2029,7 +2223,7 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </div>
 </div>
 <table id="ablehnung-retoure-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 8. Ereignisaktion um die Ablehnung einer Retoure an OTTO Market zu melden</caption>
+<caption class="title">Tabelle 10. Ereignisaktion um die Ablehnung einer Retoure an OTTO Market zu melden</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -2069,44 +2263,13 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1050">14. Auftragsbearbeitung bei OTTO Market</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Im Folgenden erfährst du, wie Aufträge bei OTTO Market verarbeitet werden.</p>
-</div>
-<div class="sect2">
-<h3 id="1100">14.1. Auftragsimport</h3>
-<div class="paragraph">
-<p>OTTO Market-Aufträge werden als unbezahlt in Status <strong>[3] Warten auf Zahlung</strong> in plentymarkets importiert. Nachdem ein Auftrag von OTTO Market bestätigt wurde, wechselt der Auftrag in den Status <strong>[5] Freigabe Versand</strong>. In plentymarkets wird eine Zahlung für den Auftrag erstellt und der Auftrag als <strong>bezahlt</strong> gekennzeichnet. Falls der Auftrag bei OTTO Market per Überweisung bezahlt wurde, kann die Auftragsbestätigung länger dauern als bei anderen Zahlungsarten. In plentymarkets wird die Zahlungsart immer als <strong>OTTO Payment</strong> angezeigt.<br></p>
-</div>
-<div class="paragraph">
-<p>Wenn ein Auftrag nicht bezahlt wird, storniert OTTO Market den Auftrag nach einer gewissen Zeit und sendet eine Stornierung an plentymarkets. In plentymarkets wechselt der unbezahlte Auftrag dann automatisch in Status <strong>[8] Storniert</strong>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="1200">14.2. Rechnungsimport</h3>
-<div class="paragraph">
-<p>Rechnungen für OTTO Market-Aufträge werden von OTTO Market selbst erstellt und automatisch in plentymarkets importiert, sobald du den Versand der Ware bei OTTO Market bestätigt hast. Eine Versandbestätigung sendest du mit der Ereignisaktion <a href="#700">Versandinformation an OTTO melden</a> an OTTO Market. Die Rechnungsdokumente sind nach erfolgreicher Versandbestätigung im Tab <strong>Belege</strong> des Hauptauftrags verfügbar. Das heißt, dass du für OTTO Market keine Rechnungen in plentymarkets erstellen kannst.<br></p>
-</div>
-<div class="paragraph">
-<p>Da Rechnungen immer dann von OTTO Market erstellt werden, wenn der Versand eines Artikels bestätigt wurde, werden auch Rechnungen für Teillieferungen generiert.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="1400">14.3. Gutschriftenimport</h3>
-<div class="paragraph">
-<p>Gutschriften und Teilgutschriften für OTTO Market-Aufträge werden von OTTO Market selbst erstellt und automatisch in plentymarkets importiert, sobald du eine Retoure der Ware bei OTTO Market bestätigt hast. Die Gutschriftendokumente sind nach erfolgreicher Retourenbestätigung im Tab <strong>Belege</strong> des Auftrags verfügbar. Eine Retoure bestätigst du mit der Ereignisaktion <strong>Retoure an OTTO melden</strong>. Bei der Bestätigung einer Retoure werden die Bestandteile der einzelnen Positionen deiner Gutschrift/Retoure an OTTO gemeldet. Das führt dazu, dass OTTO immer den kompletten Verkaufspreis einer Position erstattet. Es ist deshalb nicht möglich, OTTO Market Teilerstattungen für eine Auftragsposition zu melden. Auch wenn du einzelne Positionen im Preis korrigiert hast, hat dies also keinen Einfluss auf das von OTTO erstellte Erstattungsdokument.</p>
-</div>
-<div class="paragraph">
-<p>Da Gutschriften immer dann von OTTO Market erstellt werden, wenn die Retoure eines Artikels bestätigt wurde, werden auch Gutschriften für Teilretouren generiert.</p>
-</div>
-</div>
-</div>
-</div><div class="sect1">
 <h2 id="10000">15. Log abrufen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Im Menü <strong>Daten » Log</strong> findest du eine Historie über Vorgänge, die über die Schnittstelle zu OTTO Market ausgeführt wurden. Für OTTO Market eignen sich die folgenden Filter:</p>
+<p>Im Menü <strong>Daten » Log</strong> findest du eine Historie über Vorgänge, die über die Schnittstelle zu OTTO Market ausgeführt wurden. Beachte, dass Integrationen und Identifikatoren erst in den Dropdown-Listen als Filter verfügbar sind, wenn der Vorgang mindestens einmal ausgeführt wurde.</p>
+</div>
+<div class="paragraph">
+<p>Für OTTO Market eignen sich die folgenden Filter:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2114,18 +2277,6 @@ Beim Export übersetzt OTTO die Werte in die Kund:innen bekannten Lieferaussagen
 <p><strong>Identifikator</strong> » <strong>Otto Market</strong></p>
 </li>
 </ul>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-tip" title="Hinweis"></i>
-</td>
-<td class="content">
-Integrationen und Identifikatoren werden erst in den Dropdown-Listen angezeigt, wenn der Vorgang mindestens einmal ausgeführt wurde.
-</td>
-</tr>
-</tbody></table>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Log-Einträge filtern und prüfen</div>
