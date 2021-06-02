@@ -13548,22 +13548,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "1b63ce25a06fa09b0e16663ccf0da9a1",
-								"path" => "maerkte/amazon/faq/best-practices-amazon-manuelle-berichtserstellung-fba",
-								"position" => 400,
-								"urlName" => "best-practices-amazon-manuelle-berichtserstellung-fba",
-								"url" => "/maerkte/amazon/best-practices-amazon-manuelle-berichtserstellung-fba",
-								"level" => 4,
-								"title" => "Best Practice: Manuelle Berichtserstellung für FBA-Aufträge und Retouren",
-								"keywords" => "Amazon, Artikel, Export, Amazon Berichte, Auftragsberichte",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Best Practice: Manuelle Berichtserstellung für FBA-Aufträge und Retouren. Hier findest du folgende Informationen:",
-								"languageID" => "UKCQIBV",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "9d91252e1621c404fcc30d7c42f3e2fe",
 								"path" => "maerkte/amazon/faq/best-practices-amazon-mfn-auftragsimport",
 								"position" => 500,
