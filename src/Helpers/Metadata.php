@@ -37139,22 +37139,6 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "93d90eb2c40ea2817e953ba2a7f51aee",
-								"path" => "markets/amazon/faq/best-practices-amazon-manual-order-generation-fba",
-								"position" => 400,
-								"urlName" => "best-practices-amazon-manual-order-generation-fba",
-								"url" => "/en/markets/amazon/best-practices-amazon-manual-order-generation-fba",
-								"level" => 4,
-								"title" => "Best practice: Manually generating reports for FBA orders and returns",
-								"keywords" => "Amazon, items, export, Amazon reports, order reports",
-								"description" => "",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Best practice: Manually generating reports for FBA orders and returns. The following information is available:",
-								"languageID" => "UKCQIBV",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
 								"id" => "c9f2bbdbc690a9411f4538e3e1eb3ad1",
 								"path" => "markets/amazon/faq/best-practices-amazon-mfn-order-import",
 								"position" => 500,
