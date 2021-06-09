@@ -38622,7 +38622,7 @@ class Metadata {
 						"url" => "/en/automation/processes/setting-up-processes",
 						"level" => 3,
 						"title" => "Setting up processes",
-						"keywords" => "Setting up processes, process setup, process settings, process element, process elements, work step, work steps, import process, import processes, plentyBase, plenty Base",
+						"keywords" => "Setting up processes, set up process, set up processes, process setup, process settings, process element, process elements, work step, work steps, import process, import processes, plentyBase, plenty Base",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Setting up processes. The following information is available:",
