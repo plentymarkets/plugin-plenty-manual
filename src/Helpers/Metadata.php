@@ -27201,6 +27201,22 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
+										"id" => "afd5104d4f1a6902856feba7993fcb67",
+										"path" => "data/exporting-data/FormatDesigner/format-types/purchase-order-item",
+										"position" => 55,
+										"urlName" => "purchase-order-item",
+										"url" => "/en/data/exporting-data/FormatDesigner/format-types/purchase-order-items",
+										"level" => 5,
+										"title" => "Purchase order items",
+										"keywords" => "FormatDesigner, Format types, Export, Data, Export data, Exporting data, Data export, reorders, redistributions, purchaseorder, purchase order, order items, purchase order items",
+										"description" => "Mit Formaten des Typs Auftragspositionen Bestellungen exportierst du Auftragspositionen von Nachbestellungen und Umbuchungen.",
+										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Purchase order items. The following information is available:",
+										"languageID" => "",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
 										"id" => "995d44fe1a7234032637bccf1f386775",
 										"path" => "data/exporting-data/FormatDesigner/format-types/newsletter-recipient",
 										"position" => 60,
@@ -27212,6 +27228,22 @@ class Metadata {
 										"description" => "Use the contactNewsletter format to export newsletter data.",
 										"navAlias" => "",
 										"linkListInto" => "Welcome to the topic Newsletter Recipient. The following information is available:",
+										"languageID" => "",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
+										"id" => "a5c69eea4a197cb9e73520b598e5eda4",
+										"path" => "data/exporting-data/FormatDesigner/format-types/purchase-order",
+										"position" => 60,
+										"urlName" => "purchase-order",
+										"url" => "/en/data/exporting-data/FormatDesigner/format-types/purchase-order",
+										"level" => 5,
+										"title" => "PurchaseOrder",
+										"keywords" => "FormatDesigner, Format types, Export, Data, Export data, Exporting data, Data export, reorders, redistributions, purchaseorder, purchase order",
+										"description" => "Use the order format to export reorders and redistributions.",
+										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic PurchaseOrder. The following information is available:",
 										"languageID" => "",
 										"children" => [],
 										"hasChildren" => false
@@ -27313,22 +27345,6 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "9e0a6a3692c2e2b850134d4bcd7127c7",
-										"path" => "data/exporting-data/FormatDesigner/format-types/contacts",
-										"position" => 130,
-										"urlName" => "contacts",
-										"url" => "/en/data/exporting-data/FormatDesigner/format-types/contacts",
-										"level" => 5,
-										"title" => "Contacts",
-										"keywords" => "FormatDesigner, Format types, Export, Data, Export data, Exporting data, Data export, Contacts, Contact data, Address data, Company data, Export contacts, Exporting contacts, Export contact data, Exporting contact data",
-										"description" => "Use formats of the type Contacts to export contact data.",
-										"navAlias" => "",
-										"linkListInto" => "Welcome to the topic Contacts. The following information is available:",
-										"languageID" => "",
-										"children" => [],
-										"hasChildren" => false
-									],
-									[
 										"id" => "030dc962a0ef6e31d72713dfb7dbad72",
 										"path" => "data/exporting-data/FormatDesigner/format-types/warehouses",
 										"position" => 130,
@@ -27340,6 +27356,22 @@ class Metadata {
 										"description" => "Use the warehouse format to export warehouse data.",
 										"navAlias" => "",
 										"linkListInto" => "Welcome to the topic Warehouses. The following information is available:",
+										"languageID" => "",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
+										"id" => "9e0a6a3692c2e2b850134d4bcd7127c7",
+										"path" => "data/exporting-data/FormatDesigner/format-types/contacts",
+										"position" => 130,
+										"urlName" => "contacts",
+										"url" => "/en/data/exporting-data/FormatDesigner/format-types/contacts",
+										"level" => 5,
+										"title" => "Contacts",
+										"keywords" => "FormatDesigner, Format types, Export, Data, Export data, Exporting data, Data export, Contacts, Contact data, Address data, Company data, Export contacts, Exporting contacts, Export contact data, Exporting contact data",
+										"description" => "Use formats of the type Contacts to export contact data.",
+										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Contacts. The following information is available:",
 										"languageID" => "",
 										"children" => [],
 										"hasChildren" => false
