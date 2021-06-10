@@ -3353,6 +3353,22 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
+										"id" => "3cca72dd6a80612c29175b3a00eedbb9",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/auftragspositionen-bestellungen",
+										"position" => 55,
+										"urlName" => "auftragspositionen-bestellungen",
+										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/auftragspositionen-bestellungen",
+										"level" => 5,
+										"title" => "Auftragspositionen Bestellungen",
+										"keywords" => "FormatDesigner, Format-Typen, Export, Data, Daten, Daten-Export, Datenexport, Daten exportieren,Auftragsposition, Nachbestellung, Umbuchung, Purchase Order, PurchaseOrder, Bestellung, Bestellwesen, Nachbestellungsposition, Umbuchungsposition",
+										"description" => "Mit Formaten des Typs Auftragspositionen Bestellungen exportierst du Auftragspositionen von Nachbestellungen und Umbuchungen.",
+										"navAlias" => "",
+										"linkListInto" => "Willkommen im Themenbereich Auftragspositionen Bestellungen. Hier findest du folgende Informationen:",
+										"languageID" => "",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
 										"id" => "b5bbcecf83336b10f860a78d3837cb5e",
 										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/newsletter-empfaenger",
 										"position" => 60,
@@ -3364,6 +3380,22 @@ class Metadata {
 										"description" => "Mit Formaten des Typs Newsletter-Empfänger exportierst du Newsletter-Daten.",
 										"navAlias" => "",
 										"linkListInto" => "Willkommen im Themenbereich contactNewsletter. Hier findest du folgende Informationen:",
+										"languageID" => "",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
+										"id" => "8a79be14906e4b2162024d3232278c9d",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/bestellwesen",
+										"position" => 60,
+										"urlName" => "bestellwesen",
+										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/bestellwesen",
+										"level" => 5,
+										"title" => "Bestellwesen",
+										"keywords" => "FormatDesigner, Format-Typen, Export, Data, Daten, Daten-Export, Datenexport, Daten exportieren, Bestellwesen, Bestellung, Bestellungen, Nachbestellung, Umbuchung, Nachbestellungsexport, Umbuchungsexport",
+										"description" => "Mit Formaten des Typs Bestellwesen exportierst du Nachbestellungen und Umbuchungen.",
+										"navAlias" => "",
+										"linkListInto" => "Willkommen im Themenbereich Bestellwesen. Hier findest du folgende Informationen:",
 										"languageID" => "",
 										"children" => [],
 										"hasChildren" => false
