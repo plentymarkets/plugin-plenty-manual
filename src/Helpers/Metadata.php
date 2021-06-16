@@ -13564,6 +13564,22 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "3ab4eff77c19c3279e480f521b96803f",
+								"path" => "maerkte/amazon/faq/best-practices-amazon-fba-bestandsanzeige",
+								"position" => 250,
+								"urlName" => "best-practices-amazon-fba-bestandsanzeige",
+								"url" => "/maerkte/amazon/best-practices-amazon-fba-bestandsanzeige",
+								"level" => 4,
+								"title" => "Best Practice: Bestandsanzeige Amazon FBA für EU und UK",
+								"keywords" => "Amazon, FBA, Bestand, Bestandsanzeige, Bestand EU, Bestand UK, Bestandsimport",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Best Practice: Bestandsanzeige Amazon FBA für EU und UK. Hier findest du folgende Informationen:",
+								"languageID" => "1X9TX72",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "a7b79191420d0f510a4a438519bcc1db",
 								"path" => "maerkte/amazon/faq/best-practices-amazon-fehler-request-throttled",
 								"position" => 300,
