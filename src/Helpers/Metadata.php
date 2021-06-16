@@ -37203,6 +37203,22 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "0e778ffed4fcc84080d26c6b20413e97",
+								"path" => "markets/amazon/faq/best-practices-amazon-fba-stock",
+								"position" => 250,
+								"urlName" => "best-practices-amazon-fba-stock",
+								"url" => "/en/markets/amazon/best-practices-amazon-fba-stock-display",
+								"level" => 4,
+								"title" => "Best practice: Amazon FBA stock display for EU and UK",
+								"keywords" => "Amazon, FBA, stock, stock display, stock EU, stock UK, stock import",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Best practice: Amazon FBA stock display for EU and UK. The following information is available:",
+								"languageID" => "1X9TX72",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "f6509dbf5d31cf4205c7c22c1b6d4b7f",
 								"path" => "markets/amazon/faq/best-practices-amazon-error-request-throttled",
 								"position" => 300,
