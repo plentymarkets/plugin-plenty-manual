@@ -8,7 +8,8 @@
 <li><a href="#30"><span>2.</span><span> Permitting the payment method in a customer class</span></a></li>
 <li><a href="#50"><span>3.</span><span> Offering a discount based on a payment method</span></a></li>
 <li><a href="#60"><span>4.</span><span> Shipping without payment</span></a></li>
-<li><a href="#70"><span>5.</span><span> Payment methods for markets</span></a></li>
+<li><a href="#65"><span>5.</span><span> Overview of payment methods in the system</span></a></li>
+<li><a href="#70"><span>6.</span><span> Payment methods for markets</span></a></li>
 </ul>
 </div>
         </div>
@@ -19,8 +20,8 @@
     <h1>Managing payment methods</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Payment methods are integrated via plugins. To access the available payment plugins as well as instructions on how to install them, visit the payment section in the <a href="https://marketplace.plentymarkets.com/en/plugins/payment" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.
-On this page, you will find information on how to manage payment methods and which settings to select. Moreover, you will find an overview of market payment methods. For a detailed description on how to activate market payment methods, refer to the pages of the corresponding <a href="/en/markets">markets</a>.</p>
+<p>Payment methods are integrated with plugins. You can download the payment plugins in the payment section in the <a href="https://marketplace.plentymarkets.com/en/plugins/payment" target="_blank" rel="noopener">plentyMarketplace</a>. Instructions for setup are also in the plentyMarketplace or in the manual section <a href="/en/payment/payment-plugins">Payment plugins</a>.<br>
+On this page, you will find information on how to manage payment methods and which settings to select.  Moreover, you will find an overview of market payment methods. For a detailed description on how to activate market payment methods, refer to the pages of the corresponding <a href="/en/markets">markets</a>.</p>
 </div>
 </div>
 </div><div class="sect1">
@@ -79,7 +80,7 @@ On this page, you will find information on how to manage payment methods and whi
 <h2 id="60">4. Shipping without payment</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Some payment methods require items to be shipped before the payment was received, e.g. with payment on invoice. If the <a href="/en/stock-management/managing-stocks">stock</a> is limited to net stock, then the system will check whether stock is available and will set the corresponding order in status 4 or 5. To solve this, go to <a href="/en/orders/basic-settings">Setup » Orders » Settings</a> and select <strong>YES</strong> for the option <strong>Status changes to 4 instead of 5 if stock is missing</strong>. If there is no limitation set up for the stock, then the order will be placed directly in status 5.</p>
+<p>Some payment methods require items to be shipped before the payment was received, e.g. with payment on invoice. If the <a href="/en/stock-management/managing-stocks">stock</a> is limited to net stock, then the system will check whether stock is available and will set the corresponding order in status 4 or 5. To apply this setting, go to <a href="/en/orders/basic-settings">Setup » Orders » Settings</a> and select <strong>YES</strong> for the option <strong>Status changes to 4 instead of 5 if stock is missing</strong>. If you select <strong>NO</strong> for this setting, no stock limitation is set. The order will then be directly cleared for shipping and set to order status 5.</p>
 </div>
 <div class="paragraph">
 <p>The following payment methods require shipping before payment:</p>
@@ -105,13 +106,64 @@ On this page, you will find information on how to manage payment methods and whi
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="70">5. Payment methods for markets</h2>
+<h2 id="65">5. Overview of payment methods in the system</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Payment methods for markets are payment methods which are necessary to flag incoming payments from integrated markets. In general, the market payment methods do not have to be completely set up. They only have to be activated. Not activating the payment method can cause problems during payment processing. Learn how to activate the payment methods for markets on the respective markets' pages. <a href="#table-overview-payment-method-markets">Table 1</a> provides an overview.</p>
+<p>You can find an overview of all payment methods and their IDs in your plentymarkets system in the <strong>Setup » Orders » Payment » Methods</strong> menu. By default, the plugin payment methods are displayed. If you want to see all the existing system payment methods, use the toggle (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>) above the table.</p>
+</div>
+<table id="table-payment-methods-overview" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Overview of payment methods</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Table column</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The unique ID of the payment method.<br>
+This is a default column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the payment method.<br>
+This is a default column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Back end searchable</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If a payment is back end searchable, it is displayed everywhere in the system, where payment methods can be selected. For example in drop-down lists in event procedures etc.<br>
+<span class="icon green"><i class="fa fa-check-square  "></i></span> = The payment method is searchable in the back end.<br>
+<span class="icon red"><i class="fa fa-minus-circle  "></i></span> = The payment method is noch searchable in the back end.<br>
+This is a default column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Back end active</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If a payment method is back end active, it can be assigned during manual order creation. Additionally, it is also searchable in the back end, which means that it is displayed everywhere in the system, where payment methods can be selected. For example in drop-down lists in event procedures etc.<br>
+<span class="icon green"><i class="fa fa-check-square  "></i></span> = The payment method is active in the back end.<br>
+<span class="icon red"><i class="fa fa-minus-circle  "></i></span> = The payment method is not active in the back end.<br>
+This is a default column.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>pluginKey</strong> and <strong>paymentKey</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These are unique values used to identify a payment method system-wide. They are defined by the developer when registering the payment method. Thus, these values are mostly usable for developers, e.g. to read out the ID of a payment method from the system.<br>
+This is not a default column.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="70">6. Payment methods for markets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Payment methods for markets are payment methods which are necessary to flag incoming payments from integrated markets. In general, the market payment methods do not have to be completely set up. They only have to be activated. Not activating the payment method can cause problems during payment processing. Learn how to activate the payment methods for markets on the respective markets' pages. <a href="#table-overview-payment-method-markets">Table 2</a> provides an overview.</p>
 </div>
 <table id="table-overview-payment-method-markets" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Overview of payment methods for markets</caption>
+<caption class="title">Table 2. Overview of payment methods for markets</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">

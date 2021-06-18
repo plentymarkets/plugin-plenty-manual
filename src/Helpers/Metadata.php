@@ -25845,7 +25845,7 @@ class Metadata {
 				"url" => "/en/payment/managing-payment-methods",
 				"level" => 2,
 				"title" => "Managing payment methods",
-				"keywords" => "payment, payment method, ceres, plugins, plentymarketplace, marketplace, plenty-marketplace, customer classes, SSL, SSL-certificate, encryption, default payment method, discount, payment methods for markets",
+				"keywords" => "payment, payment method, plugins, plentymarketplace, marketplace, plenty-marketplace, SSL, SSL-certificate, default payment method, discount, payment methods for markets, payment-plugins, payment plugins",
 				"description" => "Payment in plentymarkets: Set up and activate payment methods in your plentymarkets system.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Managing payment methods. The following information is available:",
