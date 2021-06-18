@@ -1948,7 +1948,7 @@ class Metadata {
 				"url" => "/payment/zahlungsarten-verwalten",
 				"level" => 2,
 				"title" => "Zahlungsarten verwalten",
-				"keywords" => "Zahlungsart, Zahlungsarten, Schnittstellen, Kundenklassen, Marktplatz-Zahlungsart, Standardzahlungsart, Standard-Zahlungsart, SSL, Verschlüsselung, SSL-Verschlüsselung, Rabatt, Gastbestellung, Zahlungseingang, Warenbestand, Ceres, Plugin, plentyMarketplace, Marketplace",
+				"keywords" => "Zahlungsart, Zahlungsarten, Schnittstellen, Marktplatz-Zahlungsart, Standardzahlungsart, Standard-Zahlungsart, SSL, Verschlüsselung, SSL-Verschlüsselung, Rabatt, Plugin, plentyMarketplace, Marketplace, plugin-zahlungsart, Zahlungsartenübersicht",
 				"description" => "Payment in plentymarkets: Richte Zahlungsarten in deinem plentymarkets System ein und aktiviere diese.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Zahlungsarten verwalten. Hier findest du folgende Informationen:",
