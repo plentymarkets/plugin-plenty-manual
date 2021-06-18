@@ -22576,11 +22576,11 @@ class Metadata {
 				"urlName" => "april-2021",
 				"url" => "/changelog/april-2021",
 				"level" => 2,
-				"title" => "Changelogs März 2021",
+				"title" => "Changelogs April 2021",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Changelogs März 2021. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Changelogs April 2021. Hier findest du folgende Informationen:",
 				"languageID" => "",
 				"children" => 				[
 					[
