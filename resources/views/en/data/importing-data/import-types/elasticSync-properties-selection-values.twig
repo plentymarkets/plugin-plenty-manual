@@ -1,0 +1,405 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#100"><span>1.</span><span> Matching fields</span></a></li>
+<li><a href="#200"><span>2.</span><span> Mapping fields</span></a>
+<ul class="sectlevel2">
+<li><a href="#300"><span>2.1.</span><span> Selection values</span></a>
+<ul class="sectlevel3">
+<li><a href="#310"><span>2.1.1.</span><span> Property ID</span></a></li>
+<li><a href="#320"><span>2.1.2.</span><span> Position</span></a></li>
+<li><a href="#330"><span>2.1.3.</span><span> Name</span></a></li>
+<li><a href="#340"><span>2.1.4.</span><span> Delete value</span></a></li>
+</ul>
+</li>
+<li><a href="#400"><span>2.2.</span><span> Name of selection values</span></a>
+<ul class="sectlevel3">
+<li><a href="#410"><span>2.2.1.</span><span> ID</span></a></li>
+<li><a href="#420"><span>2.2.2.</span><span> Name</span></a></li>
+<li><a href="#430"><span>2.2.3.</span><span> Description</span></a></li>
+<li><a href="#440"><span>2.2.4.</span><span> Delete name</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Properties: Selection values</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Do you have properties of the type <strong>Selection</strong> or <strong>Multi-selection</strong>?
+The unique thing about these two property types is that they have individual <em>values</em> that are available for <em>selection</em>.
+Such selection values can be created manually or they can be imported.</p>
+</div>
+<div class="paragraph">
+<p>This page explains the matching and mapping fields that you can use while importing selection values.
+
+This page serves purely as a reference and it assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">import tool</a>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Requirements</div>
+<div class="paragraph">
+<p>Make sure you’ve already created properties of the type <strong>Selection</strong> or <strong>Multi-selection</strong>.
+This can either be done <a href="/en/item/settings/properties#600">manually</a> or <a href="/en/data/importing-data/sync-types/elasticSync-properties">via import</a>.
+Afterwards, you can import the selection values as described on this page.</p>
+</div>
+<div class="paragraph">
+<p>In other words, it’s not possible to create the properties and their selection values together in one import.
+This needs to be done in two separate imports.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">1. Matching fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="#table-matching-fields-property-selection-values">Table 1</a> explains the fields that are available for matching selection values.
+During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+</div>
+<table id="table-matching-fields-property-selection-values" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Matching fields for selection values</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Matching field</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selection ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the selection value IDs?
+Choose this column here.
+This option is useful if you want to <em>update existing selection values</em>.</p>
+<p class="tableblock"><strong><em>Background info</em></strong>: Every new selection value automatically receives an ID, which can not be changed.
+The ID is used to uniquely identify the selection value.
+Because the ID is unique, it’s a good way to check whether the imported data record already exists in plentymarkets.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selection name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file contains the selection value’s name?
+Choose this column here.
+Then select the name’s language from the second drop-down list.
+This option is useful if you want to <em>create new selection values</em>.</p>
+<p class="tableblock"><strong><em>Additional settings</em></strong>:
+This option can only be used together with the matching field <strong>Property ID</strong> or <strong>Property name</strong>.<br>
+Why?
+It’s possible to save the same selection name for multiple properties.
+The selection name alone isn’t a unique identifier.
+Therefore, use the selection name together with the property ID or the property name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Property ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Did you choose <strong>Selection name</strong> as the matching field?
+If so, then you’ll also need to use <strong>Property ID</strong> or <strong>Property name</strong>.</p>
+<p class="tableblock"><strong><em>Background info</em></strong>:
+It’s possible to save the same selection name for multiple properties.
+The selection name alone isn’t a unique identifier.
+Therefore, use the selection name together with the property ID or the property name.</p>
+<p class="tableblock">Which column of your CSV file lists the property IDs?
+Choose this column here.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Property name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Did you choose <strong>Selection name</strong> as the matching field?
+If so, then you’ll also need to use <strong>Property ID</strong> or <strong>Property name</strong>.</p>
+<p class="tableblock"><strong><em>Background info</em></strong>:
+It’s possible to save the same selection name for multiple properties.
+The selection name alone isn’t a unique identifier.
+Therefore, use the selection name together with the property ID or the property name.</p>
+<p class="tableblock">Which column of your CSV file contains the property name?
+Choose this column here.
+Then select the property name’s language from the second drop-down list.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="200">2. Mapping fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter explains the fields that are available for mapping selection values.
+Use these fields to specify which <em>column of your file</em> corresponds to which <em>data field in your system</em>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Basic procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>In your CSV file</em></strong>: Enter a valid import value into a column.</p>
+</li>
+<li>
+<p><strong><em>In plentymarkets</em></strong>: Assign this column to the appropriate mapping field.</p>
+</li>
+<li>
+<p><strong><em>After the import</em></strong>: Check the result in the back end.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">No mapping field? Default value applies!</div>
+<div class="paragraph">
+<p>If you don’t include a certain piece of information in your CSV file, i.e. if you <em>don’t use</em> a certain mapping field, then your selection value will be given the default value.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="300">2.1. Selection values</h3>
+<div class="sect3">
+<h4 id="310">2.1.1. Property ID</h4>
+<div class="paragraph">
+<p>This field is relevant if you want to create new selection values and you <em>did not</em> already select the property ID as the matching field.
+This field tells plentymarkets which property the values are being created for.</p>
+</div>
+<div class="paragraph">
+<p>Enter the property ID into the CSV file.
+You can find the property IDs in the menu <strong>Setup » Settings » Properties » Configuration</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric (internal ID)</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="320">2.1.2. Position</h4>
+<div class="paragraph">
+<p>Which selection value should be displayed first, second, third, etc?
+Enter a position number in the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/properties#700">Setup » Settings » Properties » Configuration » [Open property] » Values</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="330">2.1.3. Name</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Required field</span> for creating new selection values</p>
+</div>
+<div class="paragraph">
+<p>Enter the name of the selection value into the CSV file.
+Write the text in your plentymarkets system’s default language.
+Additionally, use the field <a href="/en/data/importing-data/sync-types/elasticSync-properties-selection-values#420">Name of selection values / Name</a> if you want to save the name in other languages too.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/properties#700">Setup » Settings » Properties » Configuration » [Open property] » Values</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="340">2.1.4. Delete value</h4>
+<div class="paragraph">
+<p>Do you want to delete the selection value?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Result in the back end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selection value will <em>not</em> be deleted.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selection value will be deleted.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/properties#700">Setup » Settings » Properties » Configuration » [Open property] » Values</a></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="400">2.2. Name of selection values</h3>
+<div class="sect3">
+<h4 id="410">2.2.1. ID</h4>
+<div class="paragraph">
+<p>This field is relevant if you want to delete the name of a selection value.
+This field tells plentymarkets which selection value the names are being deleted for.</p>
+</div>
+<div class="paragraph">
+<p>Enter the selection value ID into the CSV file.
+You can find the selection value IDs in the menu <strong>Setup » Settings » Properties » Configuration » [Open property] » Values</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric (internal ID)</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Additional settings</em></strong>:
+Use this field together with the field <a href="/en/data/importing-data/sync-types/elasticSync-properties-selection-values#440">Name of selection values / Delete name</a>.</p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="420">2.2.2. Name</h4>
+<div class="paragraph">
+<p>Enter the name of the selection value into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p>In contrast to the field <a href="/en/data/importing-data/sync-types/elasticSync-properties-selection-values#330">Selection values / Name</a>, you can use this field to save the names in multiple languages.
+Add the field once per language.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Also use the drop-down list to select the language.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/properties#700">Setup » Settings » Properties » Configuration » [Open property] » Values</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="430">2.2.3. Description</h4>
+<div class="paragraph">
+<p>Enter a description of the selection value into the CSV file.
+If you want to save the description in multiple languages, then add the field once per language.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Also use the drop-down list to select the language.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>You can find the result of the import in the back end menu: <a href="/en/item/settings/properties#700">Setup » Settings » Properties » Configuration » [Open property] » Values</a></p>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="440">2.2.4. Delete name</h4>
+<div class="paragraph">
+<p>Do you want to delete the name of a selection value?
+Enter your answer into the CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: <code>0</code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Permitted import values in CSV file</th>
+<th class="tableblock halign-left valign-top">Result in the back end</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selection value will <em>not</em> be deleted.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selection value will be deleted.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Also use the drop-down list to select the language.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p><strong><em>Additional settings</em></strong>:
+Use this field together with the field <a href="/en/data/importing-data/sync-types/elasticSync-properties-selection-values#410">Name of selection values / ID</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
