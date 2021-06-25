@@ -28,25 +28,31 @@
 <h2 id="_raw_data">1. Raw data</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Raw data is collected in the background, usually over night. The raw data to be saved is set in the <strong>Setup » plentyBI » Raw data</strong> menu. You can retrieve the generated files via the REST API and process the data externally.</p>
+<p>Raw data is collected in the background, usually over night.  The settings made in the <strong>Setup » plentyBI » Raw data</strong> determine which types of raw data are saved.  You can retrieve the generated files via the REST API and process the data externally.</p>
 </div>
 <div class="sect2">
 <h3 id="_for_end_users">1.1. For end users</h3>
 <div class="paragraph">
-<p>We have observed that business decisions are often not made based on key figures, but rather intuitively. In order to change this behaviour, we recommend using a business intelligence tool. Ideally, such a toll analyses different data from several sources. This allows you to identify specific recommendations for action. Start now and use our integrated plentyBI dashboard to keep track of relevant data and key figures. Further information is available in the <a href="/en/business-decisions/plenty-bi">plentyBI</a> section of the manual.</p>
+<p>We have observed that business decisions are often not made based on key figures, but rather intuitively. In order to change this behaviour, we recommend using a business intelligence tool. Ideally, such a tool analyses different data from several sources. Start now and use our integrated plentyBI dashboard to keep track of relevant data and key figures. Further information is available in the <a href="/en/business-decisions/plenty-bi">plentyBI</a> section of the manual.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_for_developers">1.2. For developers</h3>
 <div class="paragraph">
-<p>Raw data is available in CSV format and can therefore easily be processed. All plentymarkets systems have a standardised REST API. You can find the documentation on <a href="https://developers.plentymarkets.com/" target="_blank" rel="noopener">this page</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+<p>Raw data is available in CSV format and can therefore easily be processed.  All plentymarkets systems have a standardised REST API. The documentation is available on <a href="https://developers.plentymarkets.com/" target="_blank" rel="noopener">this page</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
 </div>
 <div class="paragraph">
-<p>Raw data is retrieved in two steps. We recommend retrieving the data once a day after around noon. At this point, the process of generating raw data is completed for all systems.</p>
+<p>Raw data is retrieved in two steps. We recommend retrieving the data once a day after around noon. the process of generating raw data is completed for all systems.</p>
 </div>
-<div class="paragraph">
-<p>First, a list of available raw data files is retrieved via this <a href="https://developers.plentymarkets.com/rest-doc#/Report/get_rest_report_raw_data" target="_blank" rel="noopener">route</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>. The time at which the latest file of the last retrieval was created serves as a filter for the next retrieval. In this way, the files are not retrieved several times. The number of files that are generated per day may vary depending on how many creator processes are activated for a plentymarkets system. Furthermore, only a certain number of data rows is written in each file. If required, another file is created. With this route, either all files of a single creator or all files that were created during the retrieval interval are exported.
-With this <a href="https://developers.plentymarkets.com/rest-doc#/Report/get_rest_report_raw_data_file" target="_blank" rel="noopener">route</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>, a raw data file is exported. The required file path is contained in the sample space of the REST route listed in point 1. Raw data files are provided as a GZIP-compressed CSV file (RFC 1952). A comma is used as column separator.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>First, a list of available raw data files is retrieved via this <a href="https://developers.plentymarkets.com/en-gb/plentymarkets-rest-api/index.html#/BI/get_rest_bi_raw_data" target="_blank" rel="noopener">route</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>. The time at which the latest file of the last retrieval was created serves as a filter for the next retrieval so that data is not requested several times. The number of files that are generated per day may vary depending on how many creator processes are activated for a plentymarkets system. Furthermore, only a certain number of data rows is written in each file. If required, a additional file is created. With this route, either all files of a single creator or all files that were created during the retrieval interval are exported.</p>
+</li>
+<li>
+<p>With this <a href="https://developers.plentymarkets.com/en-gb/plentymarkets-rest-api/index.html#/BI/get_rest_bi_raw_data_file" target="_blank" rel="noopener">route</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>, a raw data file is exported. The required file path is contained in the sample space of the REST route listed in point 1.  Raw data files are provided as a GZIP-compressed CSV file (RFC 1952). A comma is used as column separator.</p>
+</li>
+</ol>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -70,7 +76,7 @@ With this <a href="https://developers.plentymarkets.com/rest-doc#/Report/get_res
 <p>The creator is a specific process that provides a raw data format. Each creator only saves data after you have activated the creator in the <strong>Setup » plentyBI » Raw data</strong> menu.</p>
 </div>
 <div class="paragraph">
-<p>For explanations and links to individual format pages, see <a href="#table-reports-data-formats">Table 1</a>.</p>
+<p>The individual data formats are named in English. For explanations and links to individual format pages, refer to <a href="#table-reports-data-formats">Table 1</a>.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -79,28 +85,48 @@ With this <a href="https://developers.plentymarkets.com/rest-doc#/Report/get_res
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-<div class="title">Limited saving of raw data</div>
+<div class="title">Limited storage periods for raw data and calculation results</div>
 <div class="paragraph">
-<p>In plentymarkets, raw data are the data basis for the key figures available in the <a href="/en/business-decisions/plenty-bi">plentyBI</a> module. Depending on the plentyBI edition that was booked, raw data are saved for different periods of time in the system. In general, the following periods apply:<br></p>
+<p>Within your plentymarkets system, raw data serve as the data basis for the key figures available in the <a href="/en/business-decisions/plenty-bi">plentyBI</a> module. Depending on the plentyBI edition that was booked, raw data is stored for different periods of time.
+The following storage periods apply per plentyBI edition:<br></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>plentyBI XS: 3 months</p>
+<p>plentyBI XS: 6 months</p>
 </li>
 <li>
-<p>plentyBI S:  6 months</p>
+<p>plentyBI S: 12 months</p>
 </li>
 <li>
-<p>plentyBI M:  12 months</p>
+<p>plentyBIM:14 months</p>
 </li>
 <li>
-<p>plentyBI L:  48 months</p>
+<p>plentyBI L: 48 months</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>More detailed information for each raw data format can be accessed by clicking on the links in <a href="#table-reports-data-formats">Table 1</a>.</p>
+<p>The calculation results yielded by the stored raw data are available for different periods of time, according to your plentyBI edition:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>plentyBI XS: 12 months</p>
+</li>
+<li>
+<p>plentyBI S: 24 months</p>
+</li>
+<li>
+<p>plentyBI M: 36 months</p>
+</li>
+<li>
+<p>plentyBI L: 120 months</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>More detailed information on each raw data format is available by clicking on the links in <a href="#table-reports-data-formats">Table 1</a>.</p>
 </div>
 </td>
 </tr>
@@ -121,143 +147,143 @@ With this <a href="https://developers.plentymarkets.com/rest-doc#/Report/get_res
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accountContacts</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Contact<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/accountcontacts">accountContacts</a> page.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contact person<br>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/accountcontacts">accountContacts</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accounts</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Company<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/accounts">accounts</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/accounts">accounts</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">categories</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Categories<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/categories">categories</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/categories">categories</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">feedbacks</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Feedbacks<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/feedbacks">feedbacks</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/feedbacks">feedbacks</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">itemManufacturer</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/itemmanufacturer">itemManufacturer</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/itemmanufacturers">itemManufacturer</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">itemVariations</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variation<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/itemvariations">ItemVariations</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/itemvariations">itemVariations</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">itemVariationSuppliers</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Links between suppliers and variations<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/itemvariationsuppliers">itemVariationSuppliers</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/itemvariationsuppliers">itemVariationSuppliers</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">marketplaceStockMovement</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stock information that was exported to specific markets<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/marketplaceStockMovement">marketplaceStockMovement</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/marketplaceStockMovement">marketplaceStockMovement</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">messages</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Messages<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/messages">messages</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/messages">messages</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">messageTagRelations</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tag relations of messages<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/messagetagrelations">messageTagRelations</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/messageTagRelations">messageTagRelations</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">orderDocuments</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order documents<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orderdocuments">orderDocuments</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orderdocuments">orderDocuments</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">orderItemAmounts</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of order items<br>
-For further information, see the <a href="/en/business-decisions/plenty-bib/reports/data-formats/orderitemamounts">orderItemAmounts</a> page.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value of order items<br>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orderitemamounts">orderItemAmounts</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">orderItemProperties</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Property of the order item<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orderitemproperties">orderItemProperties</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orderitemproperties">orderItemProperties</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">orderItems</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order item<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orderitems">orderItems</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orderitems">orderItems</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">orderProperties</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order property<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orderproperties">orderProperties</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orderproperties">orderProperties</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">orders</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orders">orders</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orders">orders</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">orderStatuses</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order status<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orderstatuses">orderStatuses</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/orderstatuses">orderStatuses</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">paymentOrderRelations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Links between payments and orders<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/paymentorderrelations">paymentOrderRelations</a> page.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Relations between payments and orders<br>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/paymentorderrelations">paymentOrderRelations</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">payments</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Payments<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/payments">payments</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/payments">payments</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">properties</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Properties<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/properties">properties</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/properties">properties</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">propertyRelations</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Links between properties and other data<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/propertyrelations">propertyRelations</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/propertyrelations">propertyRelations</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stockManagementStock</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stock<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/stockmanagementstock">stockManagementStock</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/stockmanagementstock">stockManagementStock</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stockManagementStockMovements</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stock movements<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/stockmanagementstockmovements">stockManagementStockMovements</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/stockmanagementstockmovements">stockManagementStockMovements</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">stockManagementWarehouses</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Warehouses<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/stockmanagementwarehouses">stockManagementWarehouses</a> page.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage<br>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/stockmanagementwarehouses">stockManagementWarehouses</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tags<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/tags">tags</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/tags">tags</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tagRelations</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tag links<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/tagrelations">tagRelations</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/tagrelations">tagRelations</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">users</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Users<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/users">users</a> page.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User<br>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/users">users</a> page of the manual.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">variationValidation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variations that have been exported to markets but have been rejected<br>
-For further information, see the <a href="/en/business-decisions/plenty-bi/reports/data-formats/marketplacevariationvalidation">marketplaceVariationValidation</a> page.</p></td>
+For further information, refer to the <a href="/en/business-decisions/plenty-bi/reports/data-formats/marketplacevariationvalidation">variationValidation#, variationValidation</a> page of the manual.</p></td>
 </tr>
 </tbody>
 </table>
