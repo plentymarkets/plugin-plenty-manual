@@ -122,7 +122,7 @@ class FeedbackHandler {
 
         console.log(window)
 
-        $('.feedback-popup, .fa-times').on('click touch', function () {
+        $('.feedback-popup, .fa-window-close').on('click touch', function () {
             $('.feedback-form-popup-wrapper').toggleClass('d-flex')
         })
     })
