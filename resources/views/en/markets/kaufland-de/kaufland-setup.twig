@@ -5,7 +5,11 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#100"><span>1.</span><span> Registering with Kaufland.de</span></a></li>
-<li><a href="#200"><span>2.</span><span> Setting up Kaufland.de in plentymarkets</span></a></li>
+<li><a href="#200"><span>2.</span><span> Setting up Kaufland.de in plentymarkets</span></a>
+<ul class="sectlevel2">
+<li><a href="#225"><span>2.1.</span><span> Deemed supplier model</span></a></li>
+</ul>
+</li>
 <li><a href="#250"><span>3.</span><span> Activating the order referrer</span></a></li>
 <li><a href="#300"><span>4.</span><span> Setting the variation availability</span></a></li>
 <li><a href="#350"><span>5.</span><span> Optional: Saving SKU</span></a></li>
@@ -239,19 +243,6 @@ This setting applies to item data and order data.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Select the warehouses from which stock should be transferred to Kaufland.de. Select one warehouse or <strong>Total in all warehouses</strong>.<br></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Total in all warehouses</strong> = The stock from all distribution warehouses is added up and transferred.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item quantity for items that are not limited to stock</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Items for which <strong>no limitation</strong> has been selected in the <a href="/en/stock-management/managing-stocks">Stock tab</a> of an item are offered on Kaufland.de with the quantity entered here. As soon as an item has been sold, the quantity saved here is newly transmitted for sale at the next full hour.</p>
@@ -282,6 +273,14 @@ A minimum price must be saved for the item for the selected price. The minimum p
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>This option enables you to link the Kaufland.de shipping groups to the plentymarkets shipping profiles. If an item has more than one shipping profile, the shipping profile with the lowest category and the highest priority is exported. The category and the priority of a shipping profile are configured within <strong>Setup » Orders » Shipping » Settings » Tab: Shipping profiles</strong> in the <strong>Base</strong> tab of each shipping profile.<br>
 <strong><em>Important:</em></strong> If the shipping groups are changed on Kaufland.de, you can update them by clicking on <strong>Update shipping groups</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-linking-warehouse">Linking warehouses</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Warehouses located outside the EU have to be linked with a Kaufland.de warehouse. Use the setting <strong>Linking warehouses</strong> for this. Here, all of your sales warehouses are listed. Select your warehouses and link each of them to the correspondent Kaufland.de warehouse. This way, the stock of your warehouses is linked to the Kaufland.de warehouses. This setting is not relevant if your warehouses are within the EU.<br>
+<strong>–</strong> = The warehouse is linked to the Kaufland.de default warehouse.<br>
+<strong>Do not export</strong> = The stock of this warehouse is not transmitted to Kaufland.de</p>
 </div></div></td>
 </tr>
 <tr>
@@ -350,6 +349,32 @@ The plentymarkets availability IDs 1-10 correspond to the item availabilities de
 <p>image export selected in the item’s <strong>Images</strong> tab</p>
 </li>
 </ul>
+</div>
+<div class="sect2">
+<h3 id="225">2.1. Deemed supplier model</h3>
+<div class="paragraph">
+<p>Due to the so-called EU Digital Package which comes into force on 01/07/2021, the regulations regarding VAT in EU countries changed. Kaufland.de reacted to this with the <strong>Deemed supplier</strong> model. Because of the legal changes, Kaufland.de becomes a deemed supplier and thus partially liable for VAT. The model is based on the location of the company, the location of warehouses and the value of a delivery. Therefore, the model concerns:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deliveries sent from a location in the EU to a customer in the EU, even if the seller is not located in the EU.</p>
+</li>
+<li>
+<p>Deliveries sent from a location outside the EU to a customer in the EU if the value of the delivery does not exceed € 150.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These sales are handled differently regarding processes and issuing invoices. Sales outside of the Deemed supplier model are not affected.<br>
+It is checked whether orders which are imported into your plentymarkets system from Kaufland.de are part of the Deemed supplier model. Information about these orders are provided to you by Kaufland.de via the seller portal, CSV reports and via the API. In case not all the order items are subject to the model, the order is split. Both orders get an individual order ID and are simultaneously imported into your plentymarkets system. This ensures that the handling of individual orders and order items can proceed correctly.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Important</em></strong>: You do not issue invoices for orders which are subject to the Deemed supplier model. Checking the orders also ensures that you cannot create invoices for these orders. Since Kaufland.de is obligated to withhold and pay VAT, Kaufland.de will send the invoices to customers in these cases.</p>
+</div>
+<div class="paragraph">
+<p>Also take note of the required <a href="/en/markets/kaufland-de/kaufland-setup#intable-linking-warehouse">warehouse settings</a> for warehouses outside the EU. If items are delivered from outside the EU, the corresponding warehouses have to be linked to Kaufland.de warehouses. You do this via the setting <strong>Linking warehouses</strong> in the <strong>Setup » Markets » Kaufland.de » Settings</strong> menu.</p>
+</div>
 </div>
 </div>
 </div><div class="sect1">
