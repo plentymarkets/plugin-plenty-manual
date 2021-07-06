@@ -1376,6 +1376,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "3b3396cf9cbea600f9d772f7725fc3b2",
+				"path" => "crm/op-liste",
+				"position" => 28,
+				"urlName" => "op-liste",
+				"url" => "/crm/op-liste",
+				"level" => 2,
+				"title" => "Offene Posten",
+				"keywords" => "OP-Liste, offene Posten, OP, offener Betrag, Forderung, offene Forderung, Forderungen, offen, op, opliste, OPliste",
+				"description" => "Erfahre, wie du mit der Offenen Posten Liste in plentymarkets arbeitest.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Offene Posten. Hier findest du folgende Informationen:",
+				"languageID" => "Q8I4OGC",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "8dc0e69cabbd9bfce8d8259d73d463ef",
 				"path" => "crm/ticketsystem-nutzen",
 				"position" => 30,
