@@ -25386,6 +25386,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "c3335c9e1323e4c3bc8384d5a64ff834",
+				"path" => "crm/ar-list",
+				"position" => 28,
+				"urlName" => "ar-list",
+				"url" => "/en/crm/ar-list",
+				"level" => 2,
+				"title" => "Accounts receivable",
+				"keywords" => "ar-list, ar list, accounts receivable, receivables, outstanding, claims, pending, pending amount, open amount, amount due, ar, AR",
+				"description" => "Learn how to work with the AR list in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Accounts receivable. The following information is available:",
+				"languageID" => "Q8I4OGC",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "a4225a4a586e7ae2e3ac48f82913aa89",
 				"path" => "crm/using-the-ticket-system",
 				"position" => 30,
