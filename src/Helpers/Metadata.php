@@ -922,22 +922,6 @@ class Metadata {
 				"languageID" => "F9L7GVU",
 				"children" => 				[
 					[
-						"id" => "e735a43ed30869d47d317afdf20a7d20",
-						"path" => "artikel/webshop/tab-tabellen",
-						"position" => 0,
-						"urlName" => "tab-tabellen",
-						"url" => "/artikel/webshop/tab-tabellen",
-						"level" => 3,
-						"title" => "Testseite für Formatierung",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Testseite für Formatierung. Hier findest du folgende Informationen:",
-						"languageID" => "",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "d77c93b4acea6f4d90b8ee667a24ad4b",
 						"path" => "artikel/webshop/checkliste-kategorien-anzeige",
 						"position" => 10,
