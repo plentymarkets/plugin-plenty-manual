@@ -383,11 +383,11 @@ class Metadata {
 		"urlName" => "artikel",
 		"url" => "/artikel",
 		"level" => 1,
-		"title" => "Artikel",
+		"title" => "Artikel (PIM)",
 		"keywords" => "Artikel, Produkt, Produkte, Artikelverwaltung, Produktverwaltung, PIM, Product Information Management, Produkt Informations Management",
 		"description" => "Verschaffe dir schnell einen Überblick über die Artikelverwaltung in plentymarkets. Erfahre, welche Themen in diesem Kapitel erläutert werden.",
 		"navAlias" => "Übersicht",
-		"linkListInto" => "Willkommen im Themenbereich Artikel. Hier findest du folgende Informationen:",
+		"linkListInto" => "Willkommen im Themenbereich Artikel (PIM). Hier findest du folgende Informationen:",
 		"languageID" => "TP9OCLS",
 		"children" => 		[
 			[
@@ -4555,11 +4555,11 @@ class Metadata {
 				"urlName" => "ceres-einrichten",
 				"url" => "/webshop/ceres-einrichten",
 				"level" => 2,
-				"title" => "Ceres-Webshop einrichten",
+				"title" => "plentyShop Ceres einrichten",
 				"keywords" => "Webshop, Mandant, Standard, Ceres, IO, Plugin, Standard-Lieferland, Standard-Versandart, Standard-Versandprofil, Standard-Zahlungsart, Positionsnummer, Konfiguration, EHI, Trusted Shops, Bestellmerkmal, Filter, Mehrsprachigkeit, Template, Kontaktseite, ShopBuilder",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Ceres-Webshop einrichten. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich plentyShop Ceres einrichten. Hier findest du folgende Informationen:",
 				"languageID" => "GW5QHSI",
 				"children" => [],
 				"hasChildren" => false

@@ -82,11 +82,12 @@
 <li><a href="#_largest_contenful_paint_lcp_identifizieren"><span>8.3.4.</span><span> Largest Contenful Paint (LCP) identifizieren</span></a></li>
 </ul>
 </li>
-<li><a href="#_anzahl_der_widgets_reduzieren"><span>8.4.</span><span> Anzahl der Widgets reduzieren</span></a></li>
-<li><a href="#_shopbooster_aktivieren"><span>8.5.</span><span> ShopBooster aktivieren</span></a></li>
-<li><a href="#_unsichtbaren_text_durch_eigene_schriftarten_vermeiden"><span>8.6.</span><span> Unsichtbaren Text durch eigene Schriftarten vermeiden</span></a></li>
-<li><a href="#_javascript_in_code_widgets_vermeiden"><span>8.7.</span><span> Javascript in Code-Widgets vermeiden</span></a></li>
-<li><a href="#_plugins_für_zahlungsarten_richtig_verknüpfen"><span>8.8.</span><span> Plugins für Zahlungsarten richtig verknüpfen</span></a></li>
+<li><a href="#_anzahl_der_plugins_reduzieren"><span>8.4.</span><span> Anzahl der Plugins reduzieren</span></a></li>
+<li><a href="#_anzahl_der_widgets_reduzieren"><span>8.5.</span><span> Anzahl der Widgets reduzieren</span></a></li>
+<li><a href="#_shopbooster_aktivieren"><span>8.6.</span><span> ShopBooster aktivieren</span></a></li>
+<li><a href="#_unsichtbaren_text_durch_eigene_schriftarten_vermeiden"><span>8.7.</span><span> Unsichtbaren Text durch eigene Schriftarten vermeiden</span></a></li>
+<li><a href="#_javascript_in_code_widgets_vermeiden"><span>8.8.</span><span> Javascript in Code-Widgets vermeiden</span></a></li>
+<li><a href="#_plugins_für_zahlungsarten_richtig_verknüpfen"><span>8.9.</span><span> Plugins für Zahlungsarten richtig verknüpfen</span></a></li>
 </ul>
 </li>
 <li><a href="#suche"><span>9.</span><span> Webshop-Suche einstellen</span></a>
@@ -1485,14 +1486,22 @@ Lazy Loading ist für Widgets in ShopBuilder-Vorlagen standardmäßig deaktivier
 </div>
 </div>
 <div class="sect2">
-<h3 id="_anzahl_der_widgets_reduzieren">8.4. Anzahl der Widgets reduzieren</h3>
+<h3 id="_anzahl_der_plugins_reduzieren">8.4. Anzahl der Plugins reduzieren</h3>
+<div class="paragraph">
+<p>Jedes zusätzliche Frontend-Plugin, das du in deinem plentyShop einbindest, kann deine Shop-Performance negativ beeinflussen. Dies gilt insbesondere für Plugins, die eine große Menge Javascript mit sich bringen. Du solltest also nur die Plugins in deinem aktiven Plugin-Set aktivieren, die du wirklich für den Produktivbetrieb deines plentyShops brauchst.<br>
+Um zu überprüfen, welche Plugins sich besonders negativ auf deine Performance auswirken, kannst du eine Plugin-Set-Kopie deines jetzigen plentyShops anlegen und zunächst alle Plugins bis auf Ceres und IO deaktivieren. Nach einem PSI-Test schaltest du nun das nächste Plugin, von dem du denkst, dass es für deinen plentyShop notwendig ist, aktiv, machst den nächsten PSI-Test und wiederholst den Vorgang für alle weiteren Plugins deiner Plugin-Set-Kopie.<br>
+Falls du SSR nutzt, ist es sinnvoll, Plugins einzubinden, die bereits ein SSR-fähiges Update erhalten haben. Wende dich im Zweifelsfall an die Entwickler:innen der betreffenden Plugins. In <a href="https://forum.plentymarkets.com/t/known-issues-plugins/643980">diesem Thema</a> sind Plugins aufgelistet, bei denen Inkompatibilitäten mit SSR bekannt sind.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_anzahl_der_widgets_reduzieren">8.5. Anzahl der Widgets reduzieren</h3>
 <div class="paragraph">
 <p>Die Zahl der Widgets, die du auf deinen Webshop-Seiten verbaust, können die Performance deines Webshops negativ beeinflussen: Je mehr Widgets du pro Seite nutzt, desto langsamer lädt diese Seite. Dies gilt insbesondere für Bilder-Widgets und für Widgets, die eine große Menge an Artikeldaten enthalten. Jedes zusätzliche Widget beinträchtigt die Zeit bis zur ersten vollständigen Interaktivität der Seite.<br>
 Wir empfehlen dir daher, nur so viele Widgets pro Seite zu verwenden, wie für deine Zwecke nötig sind. Vor allem auf Kategorieseiten, auf denen große Datenmengen und komplexes Javascript geladen werden muss, solltest du, wenn möglich, die Anzahl der dargestellten Artikel reduzieren und dadurch die Ladezeit verbessern.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_shopbooster_aktivieren">8.5. ShopBooster aktivieren</h3>
+<h3 id="_shopbooster_aktivieren">8.6. ShopBooster aktivieren</h3>
 <div class="paragraph">
 <p>Die Time-to-first-Byte (TTFB) ist ebenfalls Bestandteil der PSI-Erfassung, auch wenn sie nur einen geringen Teil der Wertung darstellt. Um deine TTFB zu verbessern, kannst du für deinen plentyShop Ceres das kostenpflichtige Zusatzmodul ShopBooster aktivieren. Dadurch werden Seiteninhalte von Ceres Webshops bei einem zweiten Aufruf in den Cache geschrieben, um dadurch deutlich bessere Ladezeiten für deine Nutzer:innen zu erzielen.<br></p>
 </div>
@@ -1577,21 +1586,21 @@ Wir empfehlen dir daher, nur so viele Widgets pro Seite zu verwenden, wie für d
 </div>
 </div>
 <div class="sect2">
-<h3 id="_unsichtbaren_text_durch_eigene_schriftarten_vermeiden">8.6. Unsichtbaren Text durch eigene Schriftarten vermeiden</h3>
+<h3 id="_unsichtbaren_text_durch_eigene_schriftarten_vermeiden">8.7. Unsichtbaren Text durch eigene Schriftarten vermeiden</h3>
 <div class="paragraph">
 <p>Falls du eigene Schriftarten einbindest, ohne dabei auf die Design-Einstellungen des ShopBuilders zurückzugreifen, kann es dazu kommen, dass manche Browser versuchen, den Text darzustellen, bevor die betroffene Font-Datei geladen wurde. Dadurch kommt es zu einem sogenannten <strong>Flash of invisible text (FOIT)</strong>, also einer kurzen Zeit, in der der darzustellende Text vom Browser nicht angezeigt werden kann.<br>
 Um dies zu vermeiden, kannst du über eine CSS-Anweisung vorübergehend eine Systemschriftart anzeigen lassen, bis die betroffene Schriftart geladen wurde. Dazu fügst du in deinem eigenen CSS (beispielsweise über das Plugin <a href="https://marketplace.plentymarkets.com/plugins/storefront/widgets/cfourcustomcssjs_5143">Custom CSS/JS im Frontend</a>) die Anweisung <strong>font-display: swap</strong> in deinen <strong>@font-face</strong> Styles ein. Dadurch vermeidest du unangenehme FOIT, was sich positiv auf den PSI-Wert deines Webshops auswirkt.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_javascript_in_code_widgets_vermeiden">8.7. Javascript in Code-Widgets vermeiden</h3>
+<h3 id="_javascript_in_code_widgets_vermeiden">8.8. Javascript in Code-Widgets vermeiden</h3>
 <div class="paragraph">
 <p>Im ShopBuilder steht dir ein Code-Widget zur Verfügung, über das du zusätzliche Anpassungen vornehmen kannst, die der ShopBuilder nicht von selbst bereitstellt. Wenn du eigenen Code einbinden möchtest, raten wir dir dazu, eigenes Javascript nicht über Code-Widgets zu realisieren, sondern beispielsweise über das Plugin <a href="https://marketplace.plentymarkets.com/plugins/storefront/widgets/cfourcustomcssjs_5143">Custom CSS/JS im Frontend</a> oder ein eigenes Theme. Zusätzliches Javascript in Code-Widgets zu verarbeiten, wirkt sich negativ auf die Ladezeit der Seite aus.<br>
 Falls du eigenes Javascript über ein Plugin oder ein Theme einbindest, empfehlen wir dir, das Javascript ganz am Ende des HTML-Body zu verbauen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_plugins_für_zahlungsarten_richtig_verknüpfen">8.8. Plugins für Zahlungsarten richtig verknüpfen</h3>
+<h3 id="_plugins_für_zahlungsarten_richtig_verknüpfen">8.9. Plugins für Zahlungsarten richtig verknüpfen</h3>
 <div class="paragraph">
 <p>Wenn du Plugin-Zahlungsarten für deinen plentyShop verwendest, die eine große Menge an eigenen Daten beinhalten, wie beispielsweise AmazonPay oder PayPal, ist es für die Performance deines Webshops unerlässlich, dass du diese Plugins mit den richtigen Layout-Containern verknüpfst. In Ceres 5.0 wurden neue Layout-Container hinzugefügt, um Javascript und CSS der Zahlungsplugins nur an den Stellen zu laden, an denen sie wirklich gebraucht werden.<br>
 Die Plugin-Beschreibungen der jeweiligen Zahlungsarten, z.B. <a href="https://marketplace.plentymarkets.com/paypal_4690#80.">PayPal</a>, enthalten bereits detaillierte Anleitungen, wie du die Plugins mit den richtigen Containern verknüpfst. Generell gilt, dass du das Javascript der jeweiligen Zahlungsart mit dem Container <strong>Checkout.AfterScriptsLoaded</strong> und nicht mehr mit dem Container <strong>ScriptLoader.AfterScriptsLoaded</strong> verknüpfen solltest, um die Performance deines Webshops zu verbessern.</p>
