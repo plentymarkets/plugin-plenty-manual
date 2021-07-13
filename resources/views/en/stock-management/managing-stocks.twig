@@ -15,12 +15,13 @@
 <li><a href="#1300"><span>5.</span><span> Redistributing stock with the plentymarkets app</span></a></li>
 <li><a href="#600"><span>6.</span><span> Searching variations that are below or have reached the reorder level</span></a></li>
 <li><a href="#700"><span>7.</span><span> Reordering variations that are below or have reached the reorder level</span></a></li>
-<li><a href="#800"><span>8.</span><span> Checking reserved stock</span></a></li>
-<li><a href="#900"><span>9.</span><span> Releasing reserved stocks</span></a></li>
-<li><a href="#950"><span>10.</span><span> Importing negative stock</span></a></li>
-<li><a href="#1000"><span>11.</span><span> Exporting or importing stock data</span></a></li>
-<li><a href="#1100"><span>12.</span><span> Viewing the stock movements history</span></a></li>
-<li><a href="#1200"><span>13.</span><span> Making automatic processes dependent on stock</span></a></li>
+<li><a href="#750"><span>8.</span><span> Working without reorder level</span></a></li>
+<li><a href="#800"><span>9.</span><span> Checking reserved stock</span></a></li>
+<li><a href="#900"><span>10.</span><span> Releasing reserved stocks</span></a></li>
+<li><a href="#950"><span>11.</span><span> Importing negative stock</span></a></li>
+<li><a href="#1000"><span>12.</span><span> Exporting or importing stock data</span></a></li>
+<li><a href="#1100"><span>13.</span><span> Viewing the stock movements history</span></a></li>
+<li><a href="#1200"><span>14.</span><span> Making automatic processes dependent on stock</span></a></li>
 </ul>
 </div>
         </div>
@@ -588,7 +589,50 @@ However, you cannot increase the quantity when redistributing. In other words, r
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="800">8. Checking reserved stock</h2>
+<h2 id="750">8. Working without reorder level</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can decide whether you want to define a reorder level for your items and thus receive reorder suggestions. If you don’t want to do so, it is not necessary to define a value for the reorder level in the <strong>Warehouse</strong> tab. In this case, proceed as follows:</p>
+</div>
+<div class="paragraph instruction">
+<p>Working without reorder level:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [select item] » tab: Warehouse</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Reorder level</strong> field, delete the default value <code>0</code>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+→ No reorder level will be specified for this item.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In case you have defined several warehouses for this variation in the <strong>Warehouse</strong> tab, enter the value <code>0</code> for each warehouse in the <strong>Reorder level</strong> field. Here you can also define whether you want to activate (define a value) the reorder level for a variation in a specific warehouse, but deactivate (do not define a value) it in other warehouses.<br>
+If you want to delete the value for several variations, use the import type <strong>Item</strong>. In the mapping, select the field <strong>Warehouse/Reorder level</strong> as target field and activate it via the toggle button on the left. By doing so, the respective column in the CSV file will be empty.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Use reorder level for main variation only</div>
+<div class="paragraph">
+<p>If you want to use the reorder level for a main variation but not for a side variation, you need to deactivate the inheritance on the side variation. Otherwise, the reorder level of the main variation will be used for the side variation, too.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="800">9. Checking reserved stock</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Booking out variations is crucial for managing stocks correctly. If you note that reserved stock exists for a variation or that more stock is reserved than should be and you know for sure that all orders have been shipped, you can search for orders that have not been booked out. Stock remains reserved until you booked out the variations. This means that the order status does not influence whether or not stock is reserved. The important step is to actually book the variations out.</p>
@@ -639,7 +683,7 @@ For further info on the order status see <a href="/en/orders/managing-orders#120
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="900">9. Releasing reserved stocks</h2>
+<h2 id="900">10. Releasing reserved stocks</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you or your customer cancel an order, the stock that was reserved for that order can be released again. You can only create a cancellation as long as no variations have been booked out. In case variations have already been booked out and the order is about to be shipped or has already been delivered to your customer you need to create a return. The stock calculation is not based on order statuses but on events and actions. This means if the status of an order changes, the stock will not automatically be released.</p>
@@ -665,7 +709,7 @@ For further info on the order status see <a href="/en/orders/managing-orders#120
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="950">10. Importing negative stock</h2>
+<h2 id="950">11. Importing negative stock</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>With imports of the type <strong>Item</strong>, <strong>Stock</strong> or <strong>Incoming items</strong> you can import negative stock. This is useful if you notice a difference in your stock after inspecting your inventory or if less items were delivered than you actually ordered.
@@ -702,7 +746,7 @@ When using the import type Incoming items, however, the values are subtracted fr
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1000">11. Exporting or importing stock data</h2>
+<h2 id="1000">12. Exporting or importing stock data</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can export or import stock data and this way you can let your system know about the latest stocktaking that you carried out. The data format <a href="/en/data/export-import/data-formats/stock">Stock</a> contains the relevant stock data from your system. Data formats that might generally be useful when working with stock are:</p>
@@ -728,7 +772,7 @@ When using the import type Incoming items, however, the values are subtracted fr
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1100">12. Viewing the stock movements history</h2>
+<h2 id="1100">13. Viewing the stock movements history</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can view a variation’s stock movements in the <strong>Stock movement</strong> tab of the variation. You can open the <strong>stock movements</strong> by either opening the variation or by clicking on the physical stock of one of the results in the stock results list. This tab shows you how your stock reached its current level. In other words, you will see the different bookings that led to the current result. This will increase transparency of your stock management and in addition it enables you to understand your bookings later. <br>
@@ -756,7 +800,7 @@ Item bundles do not have an own stock movements tab, because the stock of bundle
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1200">13. Making automatic processes dependent on stock</h2>
+<h2 id="1200">14. Making automatic processes dependent on stock</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>For example, the item’s display in the online store can depend on its stock: If the item can be delivered, it is offered in the online store. As soon as the net stock is 0, the item is no longer displayed. Furthermore listings can depend on stock. This is a way to avoid overselling. You can choose your hood and ricardo settings to end listings if the stock is low. You can also choose to end eBay listings if the stock is low, but in addition you can choose to automatically relist eBay listings if stock has increased. To get a more detailed description of the settings, open the <a href="/en/markets/ebay/ebay-setup#11000">eBay listings</a> page.</p>
