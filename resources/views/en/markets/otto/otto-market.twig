@@ -1426,6 +1426,10 @@ During the export, the values are converted to the delivery statements that cust
 <p>OTTO Market orders are imported into plentymarkets with status <strong>[3] Waiting for payment</strong>.</p>
 </li>
 <li>
+<p>Orders with the OTTO Market status ANNOUNCED are imported to plentymarkets without address details and with the status <strong>[1] Incomplete data</strong>. These are orders with the payment method cash in advance that have not been paid. As soon as the order changes to the status PROCESSABLE at OTTO Market, the address is added tot he order and the order is moved to status <strong>[3] Waiting for payment</strong>.<br>
+<strong><em>Important:</em></strong> No stock is reserved for orders in status <strong>[1] Invalid data</strong> by default. To make sure that stock is reserved for these orders, go to <strong>Setup » Orders » Settings</strong>. Go to the setting <strong>Status for order reservation (Reservation of stocks)</strong>. For the option <strong>to</strong>, select the status <strong>[1] Incomplete data</strong>. In the drop-down list to the far right, select the option <strong>All orders</strong>.</p>
+</li>
+<li>
 <p>After an order was confirmed by OTTO Market, the order changes to status <strong>[5] Shipment process started</strong>.</p>
 </li>
 <li>
@@ -2355,7 +2359,7 @@ For shipments to be carried out by a shipping company, enter a surcharge. This s
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Property with the values that are allowed by OTTO.</p>
+<p>Property with the values that are allowed by OTTO</p>
 </li>
 </ul>
 </div></div></td>
@@ -2611,6 +2615,43 @@ Go to <strong>Setup » Item » Units</strong> to find the ISO codes in the colum
 <div class="paragraph">
 <p>In some cases, errors can occur during order processing. Possible causes and frequent errors are described here.</p>
 </div>
+<div id="13026-1" class="openblock collapseBox">
+<div class="title">Why are some orders imported without address details and with the status <strong>[1] Incomplete data</strong>?</div>
+<div class="content">
+<div class="paragraph">
+<p>If customers want to pay cash in advance and have not paid yet, OTTO Market assigns the status ANNOUNCED to the order. Orders with this status are imported to plentymarkets without address details and with the status <strong>[1] Incomplete data</strong>. As soon as the order changes to the status PROCESSABLE at OTTO Market, the address is added tot he order and the order is moved to status <strong>[3] Waiting for payment</strong>.<br>
+<strong><em>Important:</em></strong> No stock is reserved for orders in status <strong>[1] Invalid data</strong> by default. Use the settings described below to reserve stock for these orders.</p>
+</div>
+<div class="paragraph instruction">
+<p>Reserving stock for orders with a status of 1:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Settings</strong>.</p>
+</li>
+<li>
+<p>Select the following options for the setting <strong>Status for order reservation (Reservation of stocks)</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Option <strong>from</strong>: status <strong>[1] Incomplete data</strong></p>
+</li>
+<li>
+<p>In the drop-down list to the far right, select the option <strong>All orders</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Save the settings.<br>
+→ Stock is reserved for orders with this status.<br>
+<strong><em>Note:</em></strong> This setting is applied to all orders, i.e. not just to OTTO Market orders.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
 <div id="1303" class="openblock collapseBox">
 <div class="title">How can I assign a return package to the correct order in my plentymarkets system?</div>
 <div class="content">
@@ -2660,7 +2701,7 @@ Go to <strong>Setup » Item » Units</strong> to find the ISO codes in the colum
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/plentymarkets_externe-auftragsnummer.png" alt="externe Auftragsnummer in plentymarkets">
+<img src="{{plugin_path('PlentyManual')}}/images/markets/otto/assets/otto-market_search_external-order-number.png" alt="Search external order number">
 </div>
 <div class="title">Figure 7. Searching for the external order number</div>
 </div>
