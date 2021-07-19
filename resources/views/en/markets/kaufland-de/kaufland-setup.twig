@@ -7,7 +7,7 @@
 <li><a href="#100"><span>1.</span><span> Registering with Kaufland.de</span></a></li>
 <li><a href="#200"><span>2.</span><span> Setting up Kaufland.de in plentymarkets</span></a>
 <ul class="sectlevel2">
-<li><a href="#225"><span>2.1.</span><span> Deemed supplier model</span></a></li>
+<li><a href="#225"><span>2.1.</span><span> Deemed Supplier Model</span></a></li>
 </ul>
 </li>
 <li><a href="#250"><span>3.</span><span> Activating the order referrer</span></a></li>
@@ -25,7 +25,7 @@
 <li><a href="#800"><span>11.</span><span> Activating the payment method</span></a></li>
 <li><a href="#850"><span>12.</span><span> Editing the invoice</span></a>
 <ul class="sectlevel2">
-<li><a href="#860"><span>12.1.</span><span> Entering a note for the payment method Kaufland.de Payment:</span></a></li>
+<li><a href="#860"><span>12.1.</span><span> Entering a note for the payment method Kaufland.de Payment</span></a></li>
 <li><a href="#870"><span>12.2.</span><span> Hiding bank details on Kaufland.de invoices</span></a></li>
 </ul>
 </li>
@@ -239,8 +239,10 @@ This setting applies to item data and order data.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Minimum price</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Select the minimum price, i.e. the lowest price that the item should be offered for.<br>
-A minimum price must be saved for the item for the selected price. The minimum price must be released for the referrer Kaufland.de.<br>
+<p>Select a sales price for the minimum price to set up repricing (Tiefpreisautomatik) for Kaufland.de.<br>
+If other sellers offer the same product, your price is automatically reduced. Your price plus shipping is then always once cent cheaper than the prices of your competitors. As such, the minimum price is the lowest price that can be used to undercut the competition.<br>
+<strong><em>Note:</em></strong> For the minimum price, select a different price from the normal sales price that you <a href="#400">set for Kaufland.de</a>. The referrer Kaufland.de must be activated for the sales price that you select as the minimum price.<br>
+Activate the repricing by linking the sales price that you selected as the minimum price with the variation and entering the lowest possible price.<br>
 <strong><em>Important:</em></strong> The minimum price does not apply to item variations which have surcharges for attributes. In this case, <strong>deactivate</strong> this option. If you would like to use the minimum price, then create each variation as a separate item with a defined minimum price.</p>
 </div></div></td>
 </tr>
@@ -266,9 +268,9 @@ A minimum price must be saved for the item for the selected price. The minimum p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-linking-warehouse">Linking warehouses</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Warehouses located outside the EU have to be linked with a Kaufland.de warehouse. Use the setting <strong>Linking warehouses</strong> for this. Here, all of your sales warehouses are listed. Select your warehouses and link each of them to the correspondent Kaufland.de warehouse. This way, the stock of your warehouses is linked to the Kaufland.de warehouses. This setting is not relevant if your warehouses are within the EU.<br>
+<p>Warehouses located outside the EU have to be linked with a Kaufland.de warehouse. Use the setting <strong>Linking warehouses</strong> for this. Here, all of your warehouses of the type <strong>Sales</strong> are listed. Select your warehouses and link each of them to the correspondent Kaufland.de warehouse. This way, the stock of your warehouses is linked to the Kaufland.de warehouses. This setting is not relevant if your warehouses are within the EU.<br>
 <strong>–</strong> = The warehouse is linked to the Kaufland.de default warehouse.<br>
-<strong>Do not export</strong> = The stock of this warehouse is not transmitted to Kaufland.de</p>
+<strong>Do not export</strong> = The stock of this warehouse is not transmitted to Kaufland.de.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -339,9 +341,9 @@ The plentymarkets availability IDs 1-10 correspond to the item availabilities de
 </ul>
 </div>
 <div class="sect2">
-<h3 id="225">2.1. Deemed supplier model</h3>
+<h3 id="225">2.1. Deemed Supplier Model</h3>
 <div class="paragraph">
-<p>Due to the so-called EU Digital Package which comes into force on 01/07/2021, the regulations regarding VAT in EU countries changed. Kaufland.de reacted to this with the <strong>Deemed supplier</strong> model. Because of the legal changes, Kaufland.de becomes a deemed supplier and thus partially liable for VAT. The model is based on the location of the company, the location of warehouses and the value of a delivery. Therefore, the model concerns:</p>
+<p>On 01/07/2021, the new EU Digital Package came into force. This package results in changes to the regulations regarding VAT in EU countries. Due to these legal changes, Kaufland.de becomes a deemed supplier and is thus partially liable for VAT. Kaufland.de has reacted to this by introducing the <strong>Deemed Supplier</strong> model. The model is based on the location of the company, the location of warehouses and the value of a delivery. As such, the model is relevant for the following types of deliveries:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -354,14 +356,23 @@ The plentymarkets availability IDs 1-10 correspond to the item availabilities de
 </ul>
 </div>
 <div class="paragraph">
-<p>These sales are handled differently regarding processes and issuing invoices. Sales outside of the Deemed supplier model are not affected.<br>
-It is checked whether orders which are imported into your plentymarkets system from Kaufland.de are part of the Deemed supplier model. Information about these orders are provided to you by Kaufland.de via the seller portal, CSV reports and via the API. In case not all the order items are subject to the model, the order is split. Both orders get an individual order ID and are simultaneously imported into your plentymarkets system. This ensures that the handling of individual orders and order items can proceed correctly.</p>
+<p>Some special rules for order processing and invoice creation apply for orders covered by the Deemed Supplier model:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>During the import of Kaufland.de orders to your plentymarkets system, an automatic check determines if these orders are covered by the Deemed Supplier model. Information about these orders are provided to you by Kaufland.de via the seller portal, CSV reports and via the API.</p>
+</li>
+<li>
+<p>In cases where not all order items of an order are subject to the model, the order is split. Both orders get an individual order ID and are simultaneously imported into your plentymarkets system. This ensures that the handling of individual orders and order items can proceed correctly.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p><strong><em>Important</em></strong>: You do not issue invoices for orders which are subject to the Deemed supplier model. Checking the orders also ensures that you cannot create invoices for these orders. Since Kaufland.de is obligated to withhold and pay VAT, Kaufland.de will send the invoices to customers in these cases.</p>
+<p><strong><em>Important</em></strong>: Kaufland.de is obliged to withhold and pay VAT for Deemed Supplier orders. As such, Kaufland.de issues invoices for these orders. As a result, you cannot create invoices for these orders.</p>
 </div>
 <div class="paragraph">
-<p>Also take note of the required <a href="/en/markets/kaufland-de/kaufland-setup#intable-linking-warehouse">warehouse settings</a> for warehouses outside the EU. If items are delivered from outside the EU, the corresponding warehouses have to be linked to Kaufland.de warehouses. You do this via the setting <strong>Linking warehouses</strong> in the <strong>Setup » Markets » Kaufland.de » Settings</strong> menu.</p>
+<p>Also note the required <a href="/en/markets/kaufland-de/kaufland-setup#intable-linking-warehouse">warehouse settings</a> for warehouses outside of the EU. If items are delivered from outside the EU, the corresponding warehouses have to be linked to Kaufland.de warehouses. You do this via the setting <strong>Linking warehouses</strong> in the <strong>Setup » Markets » Kaufland.de » Settings</strong> menu.</p>
 </div>
 </div>
 </div>
@@ -749,7 +760,7 @@ Only the most important settings for the import are described here. Is this your
 </ol>
 </div>
 <div class="paragraph">
-<p>Afterwards, <a href="/en/item/settings/prices#300">link</a> the barcode with the desired variations if you have not done so.</p>
+<p>Afterwards, <a href="/en/item/settings/barcodes#300">link</a> the barcode with the desired variations if you have not done so.</p>
 </div>
 </div>
 </div><div class="sect1">
@@ -949,7 +960,7 @@ The Kaufland.de attributes EAN, title, description, manufacturer and picture are
 <p>How to carry out these adjustments is described below.</p>
 </div>
 <div class="sect2">
-<h3 id="860">12.1. Entering a note for the payment method Kaufland.de Payment:</h3>
+<h3 id="860">12.1. Entering a note for the payment method Kaufland.de Payment</h3>
 <div class="paragraph">
 <p>The following note must appear on Kaufland.de invoices:</p>
 </div>
