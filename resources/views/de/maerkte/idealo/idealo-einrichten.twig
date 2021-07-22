@@ -45,6 +45,7 @@
 <ul class="sectlevel3">
 <li><a href="#1801"><span>14.3.1.</span><span> Stornierungen durch Händler automatisch melden</span></a></li>
 <li><a href="#1802"><span>14.3.2.</span><span> Stornierungen durch Kunden automatisch melden</span></a></li>
+<li><a href="#1803"><span>14.3.3.</span><span> Stornierungen durch Käufer:in akzeptieren</span></a></li>
 </ul>
 </li>
 <li><a href="#1755"><span>14.4.</span><span> Rückerstattungen automatisch melden</span></a></li>
@@ -430,6 +431,21 @@
 <p>Die Merchant Order API von idealo ist eine Rest-API, die das Abholung und Bearbeiten von Direktkauf-Bestellungen ermöglicht. Im Januar 2021 hat idealo diese Rest-API von Version 1.0 auf Version 2.0 umgestellt. Aktiviere diese Einstellung, wenn du mit diesem Konto schon über die alte MOA-1.0-Schnittstelle Aufträge importiert hast. Offene Aufträge werden dann weiter über dieses Konto automatisch bearbeitet. Wenn du ein neues idealo-Konto einrichtest, kannst du diese Einstellung ignorieren.</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-status-cancellation-by-buyer">In welchen Status soll ein Auftrag wechseln, wenn Kund:innen eine Stornierung anfragen?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Für manche idealo Direktkauf-Aufträge stellen Kund:innen erst eine Stornierungsanfrage, nachdem der Auftrag schon in dein plentymarkets System importiert wurde. Solche Stornierungsanfragen werden alle 15 Minuten in plentymarkets importiert. Damit solche Aufträge für dich sichtbar sind und du sie weiter bearbeiten kannst, wählst du hier einen eigenen Auftragsstatus, der diesen Aufträgen zugewiesen wird.<br>
+<strong><em>Tipp:</em></strong> Richte eine Ereignisaktion <a href="#1803">Stornierung durch Käufer:in akzeptieren</a> ein, um Stornierungsanfragen automatisch zu bearbeiten.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bis zu welchem Status sollen Anfragen zu Auftragsstornierungen von Kund:innen berücksichtigt werden?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Welchen der von Kund:innen stornierten Aufträgen soll der oben ausgewählte eigene Auftragsstatus zugewiesen werden? Auftragsstatus festlegen, bis zu dem die Anfragen berücksichtigt werden.<br>
+→ Aufträge mit diesem oder einem niedrigeren Status werden bei einer Stornierungsanfrage von Kund:innen in den unter <strong>In welchen Status soll ein Auftrag wechseln, wenn Kund:innen eine Stornierung anfragen?</strong> gewählten Auftragsstatus verschoben.<br>
+→ Aufträge mit einem höheren Auftragsstatus bleiben im bisherigen Auftragsstatus und werden nicht in den Status für stornierte Aufträge durch Kund:innen verschoben.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -536,11 +552,230 @@ Varianten-URL</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mit welchen Attributen, die du in plentymarkets angelegt hast, pflegst du Farben an deinen Artikeln?</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Aktiviere die Attribute, über die du Farben an deinen Artikeln pflegst.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Aktiviere die Attribute, über die du Farben an deinen Artikeln pflegst.</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mit welchen Attributen, die du in plentymarkets angelegt hast, pflegst du Größen an deinen Artikeln?</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Aktiviere die Attribute, über die du Größen an deinen Artikeln pflegst.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Aktiviere die Attribute, über die du Größen an deinen Artikeln pflegst.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Welche plentymarkets Eigenschaft nutzt du für das Energieeffizienzklassen-Attribut "Energieeffizienzklasse" von idealo?</strong><br>
+(ab Plugin-Version 3.3.5)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Mit dieser Eigenschaft exportierst du Energieeffizienzklassen für kennzeichnungspflichtige Artikel.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Erlaubte Werte:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Neue Energieeffizienzskala (ab 1. März 2021):<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code><br>
+<strong><em>Beispiel:</em></strong> <code>C</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alte Energieeffizienzskala (bis 28. Februar 2021):<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>A+++</code>, <code>A++</code>, <code>A+</code>, <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code><br>
+<strong><em>Beispiel:</em></strong> <code>A+++</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Hinweis:</em></strong> Welche Energieeffizienzskala verwendet wird, gibst du über das idealo-Attribut <strong>Version</strong> an.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Neue Eigenschaft erstellen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erstellt eine Eigenschaft des Typs <strong>Zeichenkette</strong> und verknüpft diese Eigenschaft mit dem idealo-Attribut. Der Wert, der für diese Eigenschaft an den Varianten gespeichert ist, wird an idealo exportiert.<br>
+<strong><em>Tipp:</em></strong> Die Eigenschaft wird in der Eigenschaftsgruppe <strong>idealo</strong> gespeichert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Vorhandene Eigenschaft verknüpfen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wähle eine Eigenschaft des Typs <strong>Zeichenkette</strong> aus der Dropdown-Liste. Der Wert, der für diese Eigenschaft an den Varianten gespeichert ist, wird an idealo exportiert.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em>Tipp:</em></strong> Wie du Eigenschaften mit Varianten verknüpfst, erfährst du im Kapitel <a href="/artikel/einstellungen/eigenschaften#1420">Eigenschaft verknüpfen und Wert speichern</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Welche plentymarkets Eigenschaft nutzt du für das Energieeffizienzklassen-Attribut "Spektrum" für idealo?</strong><br>
+(ab Plugin-Version 3.3.5)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Mit dieser Eigenschaft exportierst du das Spektrum der verfügbaren Effizienzklassen eines Produkts an idealo. Trenne Bereiche durch ein Minus.<br></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Erlaubte Werte:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Neue Energieeffizienzskala (ab 1. März 2021):<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code><br>
+<strong><em>Beispiel:</em></strong> <code>A-G</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alte Energieeffizienzskala (bis 28. Februar 2021):<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>A+++</code>, <code>A++</code>, <code>A+</code>, <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code><br>
+<strong><em>Beispiel:</em></strong> <code>A+++-G</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Hintergrund:</em></strong> Das Spektrum ist abhängig von der Art des Geräts. Zum Beispiel wird für Haushaltswaschmaschinen ein Spektrum von A bis D verwendet. Für Haushaltskühlgeräte reicht das Spektrum aber von A bis G.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Neue Eigenschaft erstellen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erstellt eine Eigenschaft des Typs <strong>Zeichenkette</strong> und verknüpft diese Eigenschaft mit dem idealo-Attribut. Der Wert, der für diese Eigenschaft an den Varianten gespeichert ist, wird an idealo exportiert.<br>
+<strong><em>Tipp:</em></strong> Die Eigenschaft wird in der Eigenschaftsgruppe <strong>idealo</strong> gespeichert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Vorhandene Eigenschaft verknüpfen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wähle eine Eigenschaft des Typs <strong>Zeichenkette</strong> aus der Dropdown-Liste. Der Wert, der für diese Eigenschaft an den Varianten gespeichert ist, wird an idealo exportiert.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em>Tipp:</em></strong> Wie du Eigenschaften mit Varianten verknüpfst, erfährst du im Kapitel <a href="/artikel/einstellungen/eigenschaften#1420">Eigenschaft verknüpfen und Wert speichern</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Welche plentymarkets Eigenschaft nutzt du für das Energieeffizienzklassen-Attribut "Link zum Label" von idealo?</strong><br>
+(ab Plugin-Version 3.3.5)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Mit dieser Eigenschaft exportierst du Links zu Bilddateien, die Labels der EU-Energieverbrauchskennzeichnung für kennzeichnungspflichtige Artikel enthalten.<br>
+<strong><em>Beispiel:</em></strong> <code><a href="http://www.link.to/label.jpg" class="bare">http://www.link.to/label.jpg</a></code><br>
+<strong><em>Wichtig:</em></strong> Achte darauf, dass die Bildauflösung ausreicht, um den QR-Code der Labels zu scannen.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Neue Eigenschaft erstellen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erstellt eine Eigenschaft des Typs <strong>Datei</strong> und verknüpft diese Eigenschaft mit dem idealo-Attribut. Der Wert, der für diese Eigenschaft an den Varianten gespeichert ist, wird an idealo exportiert.<br>
+<strong><em>Tipp:</em></strong> Die Eigenschaft wird in der Eigenschaftsgruppe <strong>idealo</strong> gespeichert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Vorhandene Eigenschaft verknüpfen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wähle eine Eigenschaft des Typs <strong>Datei</strong> aus der Dropdown-Liste. Der Wert, der für diese Eigenschaft an den Varianten gespeichert ist, wird an idealo exportiert.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em>Tipp:</em></strong> Wie du Eigenschaften mit Varianten verknüpfst, erfährst du im Kapitel <a href="/artikel/einstellungen/eigenschaften#1420">Eigenschaft verknüpfen und Wert speichern</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Welche plentymarkets Eigenschaft nutzt du für das Energieeffizienzklassen-Attribut "Link zum Datenblatt" von idealo?</strong><br>
+(ab Plugin-Version 3.3.5)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Mit dieser Eigenschaft exportierst du Links zu PDF-Dateien, die EEK-Datenblätter für kennzeichnungspflichtige Artikel enthalten.<br>
+<strong><em>Beispiel:</em></strong> <code><a href="http://www.example.com/datasheet.pdf" class="bare">http://www.example.com/datasheet.pdf</a></code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Neue Eigenschaft erstellen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erstellt eine Eigenschaft des Typs <strong>Datei</strong> und verknüpft diese Eigenschaft mit dem idealo-Attribut. Der Wert, der für diese Eigenschaft an den Varianten gespeichert ist, wird an idealo exportiert.<br>
+<strong><em>Tipp:</em></strong> Die Eigenschaft wird in der Eigenschaftsgruppe <strong>idealo</strong> gespeichert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Vorhandene Eigenschaft verknüpfen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wähle eine Eigenschaft des Typs <strong>Datei</strong> aus der Dropdown-Liste. Der Wert, der für diese Eigenschaft an den Varianten gespeichert ist, wird an idealo exportiert.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em>Tipp:</em></strong> Wie du Eigenschaften mit Varianten verknüpfst, erfährst du im Kapitel <a href="/artikel/einstellungen/eigenschaften#1420">Eigenschaft verknüpfen und Wert speichern</a>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Welche plentymarkets Eigenschaft nutzt du für das Energieeffizienzklassen-Attribut "Version" für idealo?</strong><br>
+(ab Plugin-Version 3.3.5)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Mit dieser Eigenschaft gibst du an, ob sich die Daten, die du in den restlichen idealo-Attributen angegeben hast, auf die alte oder die neue Energieeffizienzskala beziehen.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Erlaubte Werte:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>0</code> = alte Energieeffizienzskala (bis 28. Februar 2021)</p>
+</li>
+<li>
+<p><code>1</code> = neue Energieeffizienzskala (ab 1. März 2021)</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Neue Eigenschaft erstellen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erstellt eine Eigenschaft des Typs <strong>Ganze Zahl</strong> und verknüpft diese Eigenschaft mit dem idealo-Attribut. Der Wert, der für diese Eigenschaft an den Varianten gespeichert ist, wird an idealo exportiert.<br>
+<strong><em>Tipp:</em></strong> Die Eigenschaft wird in der Eigenschaftsgruppe <strong>idealo</strong> gespeichert.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Vorhandene Eigenschaft verknüpfen</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wähle eine Eigenschaft des Typs <strong>Ganze Zahl</strong> aus der Dropdown-Liste. Der Wert, der für diese Eigenschaft an den Varianten gespeichert ist, wird an idealo exportiert.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em>Tipp:</em></strong> Wie du Eigenschaften mit Varianten verknüpfst, erfährst du im Kapitel <a href="/artikel/einstellungen/eigenschaften#1420">Eigenschaft verknüpfen und Wert speichern</a>.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -2288,7 +2523,7 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 </div>
 </div>
 <table id="stornierungen-kaeufer-idealo" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 9. Ereignisaktion zum automatischen Melden von Stornierungen durch Kunden an idealo</caption>
+<caption class="title">Tabelle 9. Ereignisaktion zum automatischen Melden von Stornierungen durch Kund:innen an idealo</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -2320,6 +2555,80 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Stornierung durch Käufer an idealo senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="1803">14.3.3. Stornierungen durch Käufer:in akzeptieren</h4>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#stornierungen-kaeufer-akzeptieren-idealo">Tabelle 10</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die Einstellungen gemäß <a href="#stornierungen-kaeufer-akzeptieren-idealo">Tabelle 10</a> vor.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="stornierungen-kaeufer-akzeptieren-idealo" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 10. Ereignisaktion, um Stornierungen durch Kund:innen zu akzeptieren</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis wählen, zum Beispiel <strong>Statuswechsel</strong>. Wähle hier den im <a href="/maerkte/idealo/idealo-einrichten#intable-status-cancellation-by-buyer">Assistenten festgelegten Status</a> für Aufträge, für die Kund:innen eine Stornierung angefragt haben.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>idealo Direktkauf</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Stornierung durch Käufer:in akzeptieren</strong></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -2362,13 +2671,13 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#erstattung-idealo">Tabelle 10</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#erstattung-idealo">Tabelle 11</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#erstattung-idealo">Tabelle 10</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#erstattung-idealo">Tabelle 11</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -2381,7 +2690,7 @@ Wenn du deine Artikel per CSV-Datei mit dem elastischen Export überträgst, kan
 </div>
 </div>
 <table id="erstattung-idealo" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 10. Ereignisaktion zum automatischen Melden von Rückerstattungen an idealo</caption>
+<caption class="title">Tabelle 11. Ereignisaktion zum automatischen Melden von Rückerstattungen an idealo</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
