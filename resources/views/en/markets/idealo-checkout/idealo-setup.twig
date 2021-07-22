@@ -45,6 +45,7 @@
 <ul class="sectlevel3">
 <li><a href="#1801"><span>14.3.1.</span><span> Automatically sending seller cancellations</span></a></li>
 <li><a href="#1802"><span>14.3.2.</span><span> Automatically sending buyer cancellations</span></a></li>
+<li><a href="#1803"><span>14.3.3.</span><span> Automatically accepting cancellation by buyer</span></a></li>
 </ul>
 </li>
 <li><a href="#1755"><span>14.4.</span><span> Automatically sending refund notifications</span></a></li>
@@ -430,6 +431,21 @@
 <p>The idealo Merchant Order API is a REST API for retrieving and processing idealo Checkout orders. In January 2021, idealo updated this REST API from version 1.0 to version 2.0. Activate this setting if you used this account to import orders with the old MOA 1.0 interface. Any open orders will then be processed automatically as usual. Ignore this setting if you are setting up a new idealo account.</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-status-cancellation-by-buyer">What status should an order change to when customers request a cancellation?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Customers might only request a cancellation after an idealo Checkout order is already imported into your plentymarkets system. Such cancellation requests are imported into plentymarkets every 15 minutes. Select an order status that is assigned to these orders. A separate status allows you to view and process these orders individually.<br>
+<strong><em>Tip:</em></strong> Set up the event procedure <a href="#1803">Accept cancellation by buyer</a> to process cancellation requests automatically.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Up to which status should requests for order cancellations by customers be considered?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Which orders cancelled by customers should be moved to the order status that you selected above? Set a limit for accepting cancellation requests.<br>
+→ Orders with this or a lower status are moved to the status you selected for <strong>What status should an order change to when customers request a cancellation?</strong> if customers request a cancellation.<br>
+→ Orders with a higher order status remain in their original status, i.e. are not moved into the status for orders cancelled by customers.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -536,11 +552,230 @@ Variation URL</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Select the attributes that you have created in plentymarkets to specify colours for your items.</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Activate the attributes that you use to create variations based on colour.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Activate the attributes that you use to create variations based on colour.</p>
+</div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Select the attributes that you have created in plentymarkets to specify sizes for your items.</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Activate the attributes that you use to create variations based on size.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Activate the attributes that you use to create variations based on size.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>What plentymarkets property do you use for the idealo energy efficiency attribute "Energy efficiency class"?</strong><br>
+(plugin version 3.3.5 and higher)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>This property is used to export the energy efficiency class of products that need to be labelled.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Allowed values:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>New energy efficiency scale (from 1st of March 2021):<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code><br>
+<strong><em>Example:</em></strong> <code>C</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Old energy efficiency scale (up to 28th of February 2021):<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>A+++</code>, <code>A++</code>, <code>A+</code>, <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code><br>
+<strong><em>Example:</em></strong> <code>A+++</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Note:</em></strong> You specify the energy efficiency scale used with the idealo attribute <strong>Version</strong>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create new property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a property of the type <strong>Character string</strong> and links this property with the idealo attribute. When you link this property to a variation and save a value, this value is exported to idealo.<br>
+<strong><em>Tip:</em></strong> The property is saved in the property group <strong>idealo</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link existing property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From the drop-down list, select a property of the type <strong>Character string</strong>. When you link this property to a variation and save a value, this value is exported to idealo.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> Learn how to link properties to variations in the <a href="/en/item/settings/properties#1420">Linking properties and saving a value</a> chapter.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>What plentymarkets property do you use for the idealo energy efficiency attribute "Spectrum"?</strong><br>
+(plugin version 3.3.5 and higher)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>This property is used to export the spectrum of available energy efficiency classes of products that need to be labelled. Use a minus sign to specify a range.<br></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Allowed values:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>New energy efficiency scale (from 1st of March 2021):<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code><br>
+<strong><em>Example:</em></strong> <code>A-G</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Old energy efficiency scale (up to 28th of February 2021):<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>A+++</code>, <code>A++</code>, <code>A+</code>, <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, <code>F</code>, <code>G</code><br>
+<strong><em>Example:</em></strong> <code>A+++-G</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Background:</em></strong> The spectrum depends on the device type. For example, a spectrum of A to D is used for household washing machines. However, for household refrigerating appliances, the spectrum range is A to G.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create new property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a property of the type <strong>Character string</strong> and links this property with the idealo attribute. When you link this property to a variation and save a value, this value is exported to idealo.<br>
+<strong><em>Tip:</em></strong> The property is saved in the property group <strong>idealo</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link existing property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From the drop-down list, select a property of the type <strong>Character string</strong>. When you link this property to a variation and save a value, this value is exported to idealo.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> Learn how to link properties to variations in the <a href="/en/item/settings/properties#1420">Linking properties and saving a value</a> chapter.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>What plentymarkets property do you use for the idealo energy efficiency attribute "Link to label"?</strong><br>
+(plugin version 3.3.5 and higher)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>This property is used to export links to image files that contain the energy efficiency labels of products that need to be labelled.<br>
+<strong><em>Example:</em></strong> <code><a href="http://www.link.to/label.jpg" class="bare">http://www.link.to/label.jpg</a></code><br>
+<strong><em>Important:</em></strong> Make sure that the image’s resolution is high enough to allow customers to scan the label’s QR code.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create new property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a property of the type <strong>File</strong> and links this property with the idealo attribute. When you link this property to a variation and save a value, this value is exported to idealo.<br>
+<strong><em>Tip:</em></strong> The property is saved in the property group <strong>idealo</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link existing property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From the drop-down list, select a property of the type <strong>File</strong>. When you link this property to a variation and save a value, this value is exported to idealo.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> Learn how to link properties to variations in the <a href="/en/item/settings/properties#1420">Linking properties and saving a value</a> chapter.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>What plentymarkets property do you use for the idealo energy efficiency attribute "Link to data sheet"?</strong><br>
+(plugin version 3.3.5 and higher)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>This property is used to export links to PDF files that contain the EEK data sheets of products that need to be labelled.<br>
+<strong><em>Example:</em></strong> <code><a href="http://www.example.com/datasheet.pdf" class="bare">http://www.example.com/datasheet.pdf</a></code></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create new property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a property of the type <strong>File</strong> and links this property with the idealo attribute. When you link this property to a variation and save a value, this value is exported to idealo.<br>
+<strong><em>Tip:</em></strong> The property is saved in the property group <strong>idealo</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link existing property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From the drop-down list, select a property of the type <strong>File</strong>. When you link this property to a variation and save a value, this value is exported to idealo.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> Learn how to link properties to variations in the <a href="/en/item/settings/properties#1420">Linking properties and saving a value</a> chapter.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>What plentymarkets property do you use for the idealo energy efficiency attribute "Version"?</strong><br>
+(plugin version 3.3.5 and higher)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>This property is used to specify if the data that you export with the other idealo attributes is based on the old or the new energy efficiency scale.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Allowed values:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>0</code> = Old energy efficiency scale (up to 28th of February 2021)</p>
+</li>
+<li>
+<p><code>1</code> = New energy efficiency scale (from 1st of March 2021)</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Create new property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a property of the type <strong>Whole number</strong> and links this property with the idealo attribute. When you link this property to a variation and save a value, this value is exported to idealo.<br>
+<strong><em>Tip:</em></strong> The property is saved in the property group <strong>idealo</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Link existing property</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From the drop-down list, select a property of the type <strong>Whole number</strong>. When you link this property to a variation and save a value, this value is exported to idealo.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> Learn how to link properties to variations in the <a href="/en/item/settings/properties#1420">Linking properties and saving a value</a> chapter.</p>
+</div></div></td>
 </tr>
 </tbody>
 </table>
@@ -1276,7 +1511,7 @@ An overview of the columns which are available in plentymarkets can be found in 
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Variations</strong> = Select <strong>Transfer all</strong> or <strong>Only transfer main variations</strong>.<br></p>
+<p><strong>Variations</strong> = <strong>Transfer all</strong> or <strong>Only transfer main variations</strong>.<br></p>
 </li>
 <li>
 <p><strong>Markets</strong> = Select <strong>idealo</strong>.<br></p>
@@ -1649,14 +1884,14 @@ Characteristic of type <strong>No</strong> with link to one of the options for t
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>twoManHandlingPrice</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Requirement</strong>: checkoutApproved is true and fulfillmentType is "Spedition".<br>
+<p><strong>Requirement</strong>: checkoutApproved is true and fulfillmentType is “Spedition”.<br>
 Characteristic of type <strong>Text</strong>, <strong>Selection</strong> or <strong>float</strong> and the link to the idealo Checkout characteristic <strong>twoManHandlingPrice</strong>.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>disposalPrice</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Requirement</strong>: checkoutApproved is true and fulfillmentType is "Spedition".<br>
+<p><strong>Requirement</strong>: checkoutApproved is true and fulfillmentType is “Spedition”.<br>
 Characteristic of type <strong>Text</strong>, <strong>Selection</strong> or <strong>float</strong> and the link to the idealo Checkout characteristic <strong>disposalPrice</strong>.</p>
 </div></div></td>
 </tr>
@@ -1676,7 +1911,7 @@ All payment methods will be exported, according to the format setting <strong>Sh
 <h2 id="1100">12. Activating the payment method idealo Checkout</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As soon as an active account for idealo exists, the payment method <strong>idealo Checkout</strong> is automatically available in your plentymarkets system. No separate configurations are needed for this. You just need to permit the payment method in one or more customer classes.</p>
+<p>As soon as an active account for {market} exists, the payment method <strong>idealo Checkout</strong> is automatically available in your plentymarkets system. No separate configurations are needed for this. You just need to permit the payment method in one or more customer classes.</p>
 </div>
 <div class="paragraph instruction">
 <p>Permitting the payment method in a customer class:</p>
@@ -1706,7 +1941,7 @@ All payment methods will be exported, according to the format setting <strong>Sh
 <td class="content">
 <div class="title">PayPal payment method</div>
 <div class="paragraph">
-<p>If you offer PayPal as a payment method, it is mandatory to create and configure <a href="/en/payment/payment-plugins/paypal">PayPal</a> in your plentymarkets system first. This is to ensure that the payment is imported and assigned to the order correctly.</p>
+<p>If you offer the payment method <a href="/en/payment/payment-plugins/paypal">PayPal</a>, it is mandatory to create and configure this payment method in your plentymarkets system. This is to ensure that the payment is imported and assigned to the order correctly.</p>
 </div>
 </td>
 </tr>
@@ -1767,7 +2002,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </ol>
 </div>
 <div class="paragraph">
-<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Characteristics</strong> menu.</p>
+<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Variation tab: Characteristics</strong> menu.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1805,11 +2040,11 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </ol>
 </div>
 <div class="paragraph">
-<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Characteristics</strong> menu.</p>
+<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Variation tab: Characteristics</strong> menu.</p>
 </div>
 <h5 id="_further_characteristics_for_shipping_methods" class="discrete">Further characteristics for shipping methods</h5>
 <div class="paragraph">
-<p>For items which have the shipping method shipping company, it is also possible to transfer the additional services <strong>TwoManHandlingPrice</strong> and <strong>DisposalPrice</strong> to idealo Checkout. DisposalPrice can only be used in combination with TwoManHandlingPrice. That means you have to create the characteristic <strong>TwoManHandlingPrice</strong> as well as the property <strong>DisposalPrice</strong> and link them to the item. In both cases, select <strong>decimal number</strong> as the characteristic type. Go to <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Characteristics</strong> and enter the surcharge for the additional service with two decimal places behind the decimal separator. Use a period for the decimal separator (19.99).</p>
+<p>For items which have the shipping method shipping company, it is also possible to transfer the additional services <strong>TwoManHandlingPrice</strong> and <strong>DisposalPrice</strong> to idealo Checkout. DisposalPrice can only be used in combination with TwoManHandlingPrice. That means you have to create the characteristic <strong>TwoManHandlingPrice</strong> as well as the property <strong>DisposalPrice</strong> and link them to the item. In both cases, select <strong>decimal number</strong> as the characteristic type. Go to <strong>Item » Edit item » [Open item] » [Open variation] » Variation tab: Characteristics</strong> and enter the surcharge for the additional service with two decimal places behind the decimal separator. Use a period for the decimal separator (19.99).</p>
 </div>
 </div>
 <div class="sect2">
@@ -1843,7 +2078,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </ol>
 </div>
 <div class="paragraph">
-<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Characteristics</strong> menu.</p>
+<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Variation tab: Characteristics</strong> menu.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1881,7 +2116,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </ol>
 </div>
 <div class="paragraph">
-<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Characteristics</strong> menu.</p>
+<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Variation tab: Characteristics</strong> menu.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1915,7 +2150,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </ol>
 </div>
 <div class="paragraph">
-<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Characteristics</strong> menu.</p>
+<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Variation tab: Characteristics</strong> menu.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1949,7 +2184,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </ol>
 </div>
 <div class="paragraph">
-<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Characteristics</strong> menu.</p>
+<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Variation tab: Characteristics</strong> menu.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1983,7 +2218,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </ol>
 </div>
 <div class="paragraph">
-<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Characteristics</strong> menu.</p>
+<p>Next, you have to link the characteristic to the item in the <strong>Item » Edit item » [Open item] » [Open variation] » Variation tab: Characteristics</strong> menu.</p>
 </div>
 </div>
 </div>
@@ -2325,6 +2560,80 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </tbody>
 </table>
 </div>
+<div class="sect3">
+<h4 id="1803">14.3.3. Automatically accepting cancellation by buyer</h4>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct name for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>event</strong> according to <a href="#accept-cancellations-buyer-idealo">Table 10</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the settings according to <a href="#accept-cancellations-buyer-idealo">Table 10</a>.</p>
+</li>
+<li>
+<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="accept-cancellations-buyer-idealo" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 10. Event procedure for automatically accepting cancellations by buyer</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example <strong>Status change</strong>. Select the status that you <a href="/en/markets/idealo-checkout/idealo-setup#intable-status-cancellation-by-buyer">set in the assistant</a> for orders that customers want to cancel.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>idealo Checkout</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Accept cancellation by buyer</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="1755">14.4. Automatically sending refund notifications</h3>
@@ -2362,13 +2671,13 @@ If you transfer your items with via CSV file with the elastic export, you can on
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#refund-idealo">Table 10</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#refund-idealo">Table 11</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#refund-idealo">Table 10</a>.</p>
+<p>Carry out the settings according to <a href="#refund-idealo">Table 11</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -2381,7 +2690,7 @@ If you transfer your items with via CSV file with the elastic export, you can on
 </div>
 </div>
 <table id="refund-idealo" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. Event procedure for automatically notifying idealo of credit notes</caption>
+<caption class="title">Table 11. Event procedure for automatically notifying idealo of credit notes</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
