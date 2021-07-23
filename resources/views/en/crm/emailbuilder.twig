@@ -1,0 +1,2282 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#assign-rights"><span>1.</span><span> Assigning rights for back end users</span></a></li>
+<li><a href="#manage-folders"><span>2.</span><span> Managing folders</span></a>
+<ul class="sectlevel2">
+<li><a href="#create-folder"><span>2.1.</span><span> Creating a folder</span></a></li>
+<li><a href="#rename-folder"><span>2.2.</span><span> Renaming the folder</span></a></li>
+<li><a href="#create-sub-folder"><span>2.3.</span><span> Creating a sub-folder</span></a></li>
+<li><a href="#delete-folder"><span>2.4.</span><span> Deleting a folder</span></a></li>
+</ul>
+</li>
+<li><a href="#manage-templates"><span>3.</span><span> Managing templates</span></a>
+<ul class="sectlevel2">
+<li><a href="#template-header-footer"><span>3.1.</span><span> Creating templates for header and footer</span></a>
+<ul class="sectlevel3">
+<li><a href="#create-header"><span>3.1.1.</span><span> Creating a header template</span></a></li>
+<li><a href="#create-footer"><span>3.1.2.</span><span> Creating a footer template</span></a></li>
+</ul>
+</li>
+<li><a href="#create-template"><span>3.2.</span><span> Creating a template</span></a></li>
+<li><a href="#insert-widget"><span>3.3.</span><span> Inserting a widget into a template</span></a></li>
+<li><a href="#edit-widget"><span>3.4.</span><span> Editing the widget</span></a></li>
+<li><a href="#use-default-templates"><span>3.5.</span><span> Using default templates</span></a></li>
+<li><a href="#template-show-preview"><span>3.6.</span><span> Showing the preview of the template</span></a></li>
+<li><a href="#search-templates"><span>3.7.</span><span> Searching for a template</span></a></li>
+<li><a href="#edit-template"><span>3.8.</span><span> Editing a template</span></a></li>
+<li><a href="#delete-template"><span>3.9.</span><span> Deleting a template</span></a></li>
+</ul>
+</li>
+<li><a href="#variables-emailbuilder"><span>4.</span><span> Available variables for the EmailBuilder</span></a></li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>EmailBuilder (Test phase)</h1><div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">EmailBuilder is continuously being developed further</div>
+<div class="paragraph">
+<p>On this page, we will present you the functions of the new EmailBuilder. The EmailBuilder is continuously being developed further; more functions and features will be added. In the course of development, also this page of the user manual will be completed step-by-step.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>The EmailBuilder is a modular construction kit for quickly creating and editing your email templates via drag-and-drop. No programming skills are required.</p>
+</div>
+<div class="paragraph">
+<p>The EmailBuilder consists of 2 views: the configuration manager and the editor. With the configuration manager, you create folders and, if needed, sub-folders, templates as well as templates for your footer and your header. With the editor, you fill your templates, headers and footers with content. You can create a template for an invoice, for example, and use this template for all invoices that are sent to your customers in the future.<br>
+You can then use the header and footer templates in the email templates as desired. Header and footer are globally active; changes you make to the header and footer affect the rest of all existing templates and all other templates that you will create in the future.</p>
+</div>
+<div class="paragraph">
+<p>The header, the footer and the settings in the template such as the name, the subject etc. form the framework of your email, so to say. The content of the template is formed with widgets and variables. In the emails that are sent to your customer, the variables will then be replaced with the correct content. For example: The variable <code>Delivery address First name and last name</code> will be replaced in the email with the first name and the last name of the contact from the delivery address.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="assign-rights">1. Assigning rights for back end users</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Back end</strong> type users <a href="/en/business-decisions/user-accounts-access#105">can only see certain areas and menus</a> in plentymarkets. This means they only have limited access to the system. If you want <strong>back end</strong> type users to work with the EmailBuilder, you have to grant them the following rights:</p>
+</div>
+<div class="paragraph">
+<p>ifdef::[*CRM &gt; Email &gt; Edit automatic email*]
+* *CRM &gt; Email &gt; Edit automatic email*
+ifdef::[*CRM &gt; Email &gt; Edit HTML design*]
+* *CRM &gt; Email &gt; Edit HTML design*
+ifdef::[*CRM &gt; Email &gt; Edit info service*]
+* *CRM &gt; Email &gt; Edit info service*
+ifdef::[*CRM &gt; Email &gt; Edit newsletter*]
+* *CRM &gt; Email &gt; Edit newsletter*
+ifdef::[*CRM &gt; Email &gt; Edit signature*]
+* *CRM &gt; Email &gt; Edit signature*
+ifdef::[*CRM &gt; Email &gt; Edit template*]
+* *CRM &gt; Email &gt; Edit template*
+ifdef::[*CRM &gt; Email &gt; Edit access data*]
+* *CRM &gt; Email &gt; Edit access data*
+ifdef::[in the *Menü visibilites* area: *CRM &gt; EmailBuilder*]
+* in the *Menü visibilites* area: *CRM &gt; EmailBuilder*
+ifdef::[{right-nine}]
+* {right-nine}</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Tip: How to grant rights</div>
+<div class="content">
+<div class="paragraph">
+<p>Note that only <strong>Admin</strong> users can grant rights.</p>
+</div>
+<div class="paragraph instruction">
+<p>Assigning rights:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Settings » User » Rights » User</strong>.<br>
+→ The overview opens.</p>
+</li>
+<li>
+<p>Select a user.<br>
+→ The <strong>Rights</strong> menu item containing the visibilities opens.</p>
+</li>
+<li>
+<p>Assign the rights for the respective area by ticking the check boxes indicated above.<br>
+<strong><em>Note</em></strong>: You can either grant rights for complete areas or limit the rights you grant the user. To only grant limited rights in a certain area, expand the area.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <strong>Rights</strong> and <strong>Menu visibilities</strong> are linked. This means that if you grant a right in one of the two areas, plentymarkets automatically grants the corresponding rights in the other area.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="manage-folders">2. Managing folders</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can create as many folders and sub-folders as you like in the EmailBuilder. After you created a folder, you can create new sub-folders, new templates in general and new header and footer templates via the context menu (<span class="icon "><i class="material-more_vert"></i></span>).</p>
+</div>
+<div class="paragraph">
+<p>Your plentymarkets system contains a folder with pre-defined default templates. These are explained further down on this page in the <a href="#use-default-templates">Using default templates</a> chapter.</p>
+</div>
+<div id="image-emailbuilder-folder-structure" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/crm/assets/emailbuilder-folder-structure.png" alt="emailbuilder folder structure" width="640" height="360">
+</div>
+<div class="title">Figure 1. Folder structure in the EmailBuilder</div>
+</div>
+<div class="sect2">
+<h3 id="create-folder">2.1. Creating a folder</h3>
+<div class="paragraph">
+<p>Create folders to get a better overview of your email templates at a later point in time. Proceed as described below to create a new folder.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a folder:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>Click at the bottom left on <span class="icon green"><i class="fa fa-plus  "></i></span> <strong>New main folder</strong>.<br>
+→ The <strong>Create new folder</strong> window opens.</p>
+</li>
+<li>
+<p>Enter the name for the folder.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The new folder is added to the folder list.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Once you have carried out all settings as described in the following – so you have created sub-folders, templates, headers and footers –, you can open the main folder by clicking on <span class="icon "><i class="material-chevron_right"></i></span>. You will see there at a glance all sub-folders, templates, headers and footers that you created directly in the main folder.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rename-folder">2.2. Renaming the folder</h3>
+<div class="paragraph">
+<p>You can update the folder name at any time. To do so, proceed as described below.</p>
+</div>
+<div class="paragraph instruction">
+<p>Renaming the folder:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>In the line of the folder that you want to rename, click on the context menu (<span class="icon "><i class="material-more_vert"></i></span>).<br>
+→ A window opens.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="material-edit"></i></span> <strong>Rename</strong>.<br>
+→ The <strong>Rename folder</strong> window opens.</p>
+</li>
+<li>
+<p>Enter an other name for the folder.</p>
+</li>
+<li>
+<p>Click on <strong>Update</strong>.<br>
+→ The new folder name is updated and shown in the list.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-sub-folder">2.3. Creating a sub-folder</h3>
+<div class="paragraph">
+<p>Create sub-folders in your folders to group your email templates in even more detailed topics. You can create as many sub-folders as you like. Also the number of levels is unlimited.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Create a draft for your folder structure in advance</div>
+<div class="paragraph">
+<p>We recommend creating a draft in advance to avoid confusing and unclear nesting levels in your folder structure. Because: The more levels you create, the more complex the structure will be.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Creating a sub-folder:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>In the line of the folder that you want to create a sub-folder for, click on the context menu (<span class="icon "><i class="material-more_vert"></i></span>).<br>
+→ A window opens.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="fa fa-plus  "></i></span> <strong>New sub-folder</strong>.<br>
+→ The <strong>Create new folder</strong> window opens.</p>
+</li>
+<li>
+<p>Enter the name for the sub-folder.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.<br>
+→ The sub-folder is created within the main folder.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Open the sub-folder by opening the main folder with a click on <span class="icon "><i class="material-chevron_right"></i></span>. You can see all sub-folders that you created at a glance.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-folder">2.4. Deleting a folder</h3>
+<div class="paragraph">
+<p>You can delete folders and sub-folders at any time. Note that the entire content in the folder will also be deleted.</p>
+</div>
+<div class="paragraph instruction">
+<p>Deleting a folder:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>In the line of the folder or sub-folder that you want to delete, click on the context menu (<span class="icon "><i class="material-more_vert"></i></span>).<br>
+→ A window opens and you need to confirm your decision.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.<br>
+→ The folder with all corresponding sub-folders and templates contained in there will be deleted.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="manage-templates">3. Managing templates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Learn in the following sub-chapters how to create, search for and edit templates for <a href="#create-header">headers</a> and <a href="#create-footer">footers</a> and <a href="#create-template">general templates</a>. You can also use pre-defined <a href="#use-default-templates">default templates</a>. Moreover, you will learn everything about the available <a href="#insert-widget">widgets</a> and how you can use these widgets.</p>
+</div>
+<div class="paragraph">
+<p>The widgets and variables that are contained in the template form the actual content of your email. Via the widgets, you can insert as many variables as you like into a template by using drag-and-drop. These variables will then be replaced with the correct content when the email is sent to your customers.</p>
+</div>
+<div class="paragraph">
+<p>To see which variables are available for your email templates, refer to the lists on the bottom of this page in the <a href="#variables-emailbuilder">Available variables for the EmailBuilder</a> chapter.</p>
+</div>
+<div class="sect2">
+<h3 id="template-header-footer">3.1. Creating templates for header and footer</h3>
+<div class="paragraph">
+<p>Create templates for the header and the footer that you can later use in all of your email templates. Header and footer are globally active. This means: changes you make to the header and footer affect the rest of all existing templates and all other templates that you will create in the future.</p>
+</div>
+<div class="paragraph">
+<p>You can insert, for example, your company logo into the header and insert into the footer your signature and the general company details such as the address, links to social media, the legal structure of your company, details about your company’s executive board, and much more.</p>
+</div>
+<div class="paragraph">
+<p>Proceed as described below to create a template for the <a href="#create-header">header</a> and the <a href="#create-footer">footer</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="create-header">3.1.1. Creating a header template</h4>
+<div class="paragraph">
+<p>Proceed as described below to create a template for the header of your email template.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a header template:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>In the line of the folder or sub-folder in which you want to create a header, click on the context menu (<span class="icon "><i class="material-more_vert"></i></span>).</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="fa fa-plus  "></i></span> <strong>New header</strong>.</p>
+</li>
+<li>
+<p>Enter a name for the header.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon "><i class="material-save"></i></span>) the settings.<br>
+→ The template is created.</p>
+</li>
+<li>
+<p>Click on <strong>Edit</strong> (<span class="icon "><i class="material-edit"></i></span>).</p>
+</li>
+<li>
+<p>Edit the header according to your wishes and insert <a href="#insert-widget">widgets</a> and <a href="#variables-emailbuilder">variables</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<h4 id="show-header-preview" class="discrete">Showing the preview of the header</h4>
+<div class="paragraph">
+<p>Check the header by opening the preview.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>Expand the folder (<span class="icon "><i class="material-chevron_right"></i></span>) that contains the header for which you want to show the preview.</p>
+</li>
+<li>
+<p>Click on the header.</p>
+</li>
+<li>
+<p>Click on <strong>Preview</strong> (<span class="icon "><i class="material-preview"></i></span>).</p>
+</li>
+<li>
+<p>Select <strong>Preview HTML</strong> or <strong>Preview plain text</strong>.<br>
+→ The preview opens in a separate window.</p>
+</li>
+<li>
+<p>Check the header.</p>
+</li>
+<li>
+<p>Close the window by clicking on <strong>Close</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you are not satisfied with the result, edit the content of your header again.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="create-footer">3.1.2. Creating a footer template</h4>
+<div class="paragraph">
+<p>Proceed as described below to create a template for the footer of your email template.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a footer template:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>In the line of the folder or sub-folder in which you want to create a footer, click on the context menu (<span class="icon "><i class="material-more_vert"></i></span>).</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="fa fa-plus  "></i></span> <strong>New footer</strong>.<br>
+→ A new view opens.</p>
+</li>
+<li>
+<p>Enter a name for the footer.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon "><i class="material-save"></i></span>) the settings.<br>
+→ The template is created.</p>
+</li>
+<li>
+<p>Click on <strong>Edit</strong> (<span class="icon "><i class="material-edit"></i></span>).</p>
+</li>
+<li>
+<p>Edit the footer according to your wishes and insert <a href="#insert-widget">widgets</a> and <a href="#variables-emailbuilder">variables</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+<h4 id="show-footer-preview" class="discrete">Showing the preview of the footer</h4>
+<div class="paragraph">
+<p>Check the footer by opening the preview.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>Expand the folder (<span class="icon "><i class="material-chevron_right"></i></span>) that contains the footer for which you want to show the preview.</p>
+</li>
+<li>
+<p>Click on the footer.</p>
+</li>
+<li>
+<p>Click on <strong>Preview</strong> (<span class="icon "><i class="material-preview"></i></span>).</p>
+</li>
+<li>
+<p>Select <strong>Preview HTML</strong> or <strong>Preview plain text</strong>.<br>
+→ The preview opens in a separate window.</p>
+</li>
+<li>
+<p>Check the footer.</p>
+</li>
+<li>
+<p>Close the window by clicking on <strong>Close</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you are not satisfied with the result, edit the content of your footer again.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-template">3.2. Creating a template</h3>
+<div class="paragraph">
+<p>Now create the template and save basic settings such as the name, the subject, CC and BCC and select the appropriate header and footer for the template. Proceed as described below to create a new template.</p>
+</div>
+<div class="paragraph instruction">
+<p>Creating a template:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>In the line of the folder or sub-folder in which you want to create a template, click on the context menu (<span class="icon "><i class="material-more_vert"></i></span>).</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="fa fa-plus  "></i></span> <strong>New template</strong>.</p>
+</li>
+<li>
+<p>Carry out the settings. Note <a href="#table-email-builder-create-template">[table-email-builder-create-template]</a> and <a href="#image-emailbuilder-template">Figure 2</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon "><i class="material-save"></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<div id="image-emailbuilder-template" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/crm/assets/emailbuilder-create-new-template.png" alt="emailbuilder create new template" width="640" height="360">
+</div>
+<div class="title">Figure 2. Creating a template in the EmailBuilder</div>
+</div>
+<table id="table-emailbuilder-create-template" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Creating a template in the EmailBuilder</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Save</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Saves the settings.</p>
+<p class="tableblock">////</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Preview</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows a preview of the template.<br>
+Select whether you want to see the preview in HTML format or in plain text.
+Depending on which preview type you select, a window with the content of the email template opens in HTML format or in plain text.
+////</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Name</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What’s the name of the template? Enter a descriptive name so you can easily find the template at a later point in time.<br>
+<strong><em>Note:</em></strong> This field is a mandatory field.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Content</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Click on <span class="icon "><i class="material-edit"></i></span> to edit the content of the template and to use <a href="#insert-widget">widgets</a> and <a href="#variables-emailbuilder">variables</a>.<br>
+The editor area opens and you can edit the content of the template by clicking on the widgets.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Build from default template</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expand the area (<span class="icon "><i class="fa fa-caret-down  "></i></span>) to select one of the <a href="#use-default-templates">default templates</a> and to link it with the new template.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Settings</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Header</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which header do you want to show in this template? Select a header from the drop-down list (<span class="icon "><i class="fa fa-caret-down  "></i></span>).<br>
+The list contains all <a href="#create-header">headers</a> that you have already created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Footer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which footer do you want to show in this template? Select a footer from the drop-down list (<span class="icon "><i class="fa fa-caret-down  "></i></span>).<br>
+The list contains all <a href="#create-footer">footers</a> that you have already created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Subject</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">What’s the subject of your email?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reply to</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Who is the recipient of this email? Enter the email address(es).<br>
+<strong><em>Note:</em></strong> When you enter several email addresses, separate them with a comma each.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CC</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To whom do you want to send a copy of this email? Enter the email address(es).<br>
+<strong><em>Note:</em></strong> When you enter several email addresses, separate them with a comma each.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>BCC</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To whom do you want to send a blind copy of this email? Enter the email address(es).<br>
+<strong><em>Note:</em></strong> When you enter several email addresses, separate them with a comma each.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Now structure the content of your email by inserting variables via the widgets. How to proceed is described in the following chapter <a href="/en/insert-widget">Inserting a widget into a template</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="insert-widget">3.3. Inserting a widget into a template</h3>
+<div class="paragraph">
+<p>In the editor, you can find a selection of widgets whose contents are already pre-configured for you. For example, you will find in the <strong>Order items</strong> widget a pre-defined list with the most important variables around the ordered item such as item name, the number of ordered items, the prices, the shipping costs and the total invoice amount. You can, however, customise the content anytime and add more column names and single positions. <a href="#image-emailbuilder-widget-order-items">Figure 3</a> shows the editing mode of the pre-defined <strong>Order items</strong> widget.</p>
+</div>
+<div id="image-emailbuilder-widget-order-items" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/crm/assets/emailbuilder-editing-mode-order-items.png" alt="emailbuilder editing mode order items" width="640" height="360">
+</div>
+<div class="title">Figure 3. Editing mode of the pre-defined widget <strong>Order items</strong></div>
+</div>
+<div class="paragraph">
+<p><a href="#table-available-widgets-emailbuilder">Table 2</a> lists all widgets that are available in the EmailBuilder as well as an explanation how you can use the widgets.</p>
+</div>
+<table id="table-available-widgets-emailbuilder" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Available widgets in the EmailBuilder</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Widget</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Two-column layout</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Allows to display text in a two-column layout. Click on <span class="icon "><i class="material-settings"></i></span> to open the settings. You can also determine the relation how the fields are displayed. The following values are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>50% / 50% (standard)</p>
+</li>
+<li>
+<p>30% / 70%</p>
+</li>
+<li>
+<p>70% / 30%</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Click on <strong>Close settings</strong> (<span class="icon "><i class="material-close"></i></span>) to close the settings. Click on <strong>Delete widget</strong> (<span class="icon "><i class="material-delete"></i></span>) to remove the widget.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Text</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In this widget, you can insert text and use variables.</p>
+<p class="tableblock">Click on <span class="icon "><i class="material-edit"></i></span> to open the list with the variables on the left side of the screen. Use the search function to find the variables or find the appropriate variables by expanding the individual areas (<span class="icon "><i class="material-chevron_right"></i></span>). Click on the variable that you want to insert. Enter additional text in the widget, if needed.</p>
+<p class="tableblock">Click on <span class="icon "><i class="material-settings"></i></span> to open the settings. Here, you can remove the widget by clicking on <strong>Delete widget</strong> (<span class="icon "><i class="material-delete"></i></span>). Further settings cannot be carried out in this area. Click on <strong>Close settings</strong> (<span class="icon "><i class="material-close"></i></span>) to close the settings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Code</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In this widget, you can insert text in HTML format. To do so, some basic HTML skills are needed.</p>
+<p class="tableblock">Click on <span class="icon darkGrey"><i class="fa fa-code  "></i></span> to open the view.</p>
+<p class="tableblock">Click on <span class="icon "><i class="material-settings"></i></span> to open the settings. Here, you can remove the widget by clicking on <strong>Delete widget</strong> (<span class="icon "><i class="material-delete"></i></span>). Further settings cannot be carried out in this area. Click on <strong>Close settings</strong> (<span class="icon "><i class="material-close"></i></span>) to close the settings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contact address</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This widget contains sample data of the contact address. The layout of the address depends on the settings that you saved in the <strong>Setup » CRM » Address layout</strong> menu. This means: The layout in the EmailBuilder is displayed in the same way as the address layout that you defined as the standard address layout in the <strong>Setup » CRM » Address layout</strong> menu.</p>
+<p class="tableblock">Click on <span class="icon "><i class="material-settings"></i></span> to open the settings. Select the address type <strong>Invoice address</strong> or <strong>Delivery address</strong> from the drop-down list.</p>
+<p class="tableblock">Click on <strong>Close settings</strong> (<span class="icon "><i class="material-close"></i></span>) to close the settings. Click on <strong>Delete widget</strong> (<span class="icon "><i class="material-delete"></i></span>) to remove the widget.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order address</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This widget contains sample data of the order address. The layout of the address depends on the settings that you saved in the <strong>Setup » CRM » Address layout</strong> menu. This means: The layout in the EmailBuilder is displayed in the same way as the address layout that you defined as the standard address layout in the <strong>Setup » CRM » Address layout</strong> menu.</p>
+<p class="tableblock">Click on <span class="icon "><i class="material-settings"></i></span> to open the settings. Select the address type <strong>Invoice address</strong> or <strong>Delivery address</strong> from the drop-down list.</p>
+<p class="tableblock">Click on <strong>Close settings</strong> (<span class="icon "><i class="material-close"></i></span>) to close the settings. Click on <strong>Delete widget</strong> (<span class="icon "><i class="material-delete"></i></span>) to remove the widget.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order items</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This widget contains an already pre-defined layout for the order items with sample data. The sample data will then be replaced with the correct values in the email. <a href="#image-emailbuilder-widget-order-items">Figure 3</a> shows the standard widget with further settings options.</p>
+<p class="tableblock">Click on <span class="icon "><i class="material-settings"></i></span> to open the settings. Here you can select from the drop-down lists which contents should be shown.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item list</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In this widget, you can insert text and use variables. Note that you can only use variables from the sub-category <a href="#variables-order-order-items">Order / Order items</a> in this widget.</p>
+<p class="tableblock">Click on <span class="icon "><i class="material-edit"></i></span> to open the list with the variables on the left side of the screen. Use the search function to find the variables or find the appropriate variables by expanding the individual areas (<span class="icon "><i class="material-chevron_right"></i></span>). Click on the variable that you want to insert. Enter additional text in the widget, if needed.</p>
+<p class="tableblock">Click on <span class="icon "><i class="material-settings"></i></span> to open the settings. Here, you can remove the widget by clicking on <strong>Delete widget</strong> (<span class="icon "><i class="material-delete"></i></span>). Further settings cannot be carried out in this area. Click on <strong>Close settings</strong> (<span class="icon "><i class="material-close"></i></span>) to close the settings.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Proceed as described in the following to insert a widget into a template.</p>
+</div>
+<div class="paragraph instruction">
+<p>Inserting a widget into a template:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>Expand the folder (<span class="icon "><i class="material-chevron_right"></i></span>) that contains the template you want to edit.</p>
+</li>
+<li>
+<p>Click on the template.</p>
+</li>
+<li>
+<p>Click on <strong>Edit</strong> (<span class="icon "><i class="material-edit"></i></span>).<br>
+→ The editor opens and the widgets are loaded.</p>
+</li>
+<li>
+<p>Click on the widget on the left side and drag-and-drop it to the shaded area.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="material-edit"></i></span> or on <span class="icon "><i class="material-settings"></i></span> and carry out the settings.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon "><i class="material-save"></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<h4 id="show-widget-preview" class="discrete">Showing the preview of the widget</h4>
+<div class="paragraph">
+<p>Check the widget by opening the preview.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>Expand the folder (<span class="icon "><i class="material-chevron_right"></i></span>) that contains the template for which you want to show the preview.</p>
+</li>
+<li>
+<p>Click on the template.</p>
+</li>
+<li>
+<p>Click on <strong>Preview</strong> (<span class="icon "><i class="material-preview"></i></span>).</p>
+</li>
+<li>
+<p>Select <strong>Preview HTML</strong> or <strong>Preview plain text</strong>.<br>
+→ The preview opens in a separate window.</p>
+</li>
+<li>
+<p>Check the widget.</p>
+</li>
+<li>
+<p>Close the window by clicking on <strong>Close</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you are not satisfied with the result, <a href="#edit-widget">edit</a> the widget.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="edit-widget">3.4. Editing the widget</h3>
+<div class="paragraph">
+<p>You can edit the content of the widgets at any time. To do so, proceed as described below.</p>
+</div>
+<div class="paragraph instruction">
+<p>Editing a widget:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>Expand the folder (<span class="icon "><i class="material-chevron_right"></i></span>) that contains the template you want to edit.</p>
+</li>
+<li>
+<p>Click on the template.</p>
+</li>
+<li>
+<p>Click on <strong>Edit</strong> (<span class="icon "><i class="material-edit"></i></span>).<br>
+→ The editor opens and the widgets are loaded.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="material-settings"></i></span>.<br>
+→ The widget settings open – if they are available.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="material-edit"></i></span> - if available.<br>
+→ The variables open on the left side.</p>
+</li>
+<li>
+<p>Use the search function to find the variables or find the appropriate variables by expanding the individual areas (<span class="icon "><i class="material-chevron_right"></i></span>).</p>
+</li>
+<li>
+<p>Click on the variable that you want to show in the widget.<br>
+The variable is taken to the widget.</p>
+</li>
+<li>
+<p><strong>Save</strong> the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-default-templates">3.5. Using default templates</h3>
+<div class="paragraph">
+<p>Before you <a href="#create-folder">created a new folder</a>, you might have recognised the folders <strong>Standardvorlagen</strong> and <strong>Default templates</strong>? These folders contain pre-defined templates in German and English language. You can use the templates as they are or adjust the contents just as you like.</p>
+</div>
+<div class="paragraph">
+<p>Besides the content of the email, the name of the template as well as the subject are already filled in in a default template. This means that you only have to select the header and footer and fill the fields <strong>Reply to</strong> and, if needed, also <strong>CC</strong> and <strong>BCC</strong>.</p>
+</div>
+<div class="paragraph">
+<p>If you want to have another variable displayed in the subject line, put the English variable into a double curly bracket and – if present – replace the blank space with a dot.<br>
+Example: Replace <code>orderId</code> with <code>{{order.id}}</code>.</p>
+</div>
+<div id="image-emailbuilder-example-default-template" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/crm/assets/emailbuilder-example-default-template-shipping-confirmation.png" alt="emailbuilder example default template shipping confirmation" width="640" height="360">
+</div>
+<div class="title">Figure 4. Example: Default template <strong>Order: Shipping confirmation</strong></div>
+</div>
+<div class="paragraph">
+<p>Would you like to know which default templates are already available in the EmailBuilder and how their subjects are? Simply expand the following area by clicking on <span class="icon "><i class="material-expand-more"></i></span>.</p>
+</div>
+<div id="default-templates-name-and-subject" class="openblock collapseBox">
+<div class="title">Default templates in the EmailBuilder and their subjects</div>
+<div class="content">
+<div class="paragraph">
+<p><strong>German default templates in the EmailBuilder and their subjects</strong></p>
+</div>
+<table id="table-default-templates-german" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. German default templates in the EmailBuilder and their subjects</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">German template</th>
+<th class="tableblock halign-left valign-top">Subject</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftrag: Änderung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftragsänderung Ihrer Bestellung mit der ID {{order.id}}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftrag: Teilzahlung erhalten</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Teilzahlung für Auftrags-ID {{order.id}} erhalten</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftrag: Versandbestätigung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Versandbestätigung für Ihre Bestellung mit der ID {{order.id}}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftrag: Zahlungseingang vollständig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zahlung für Auftrag {{order.id}} vollständig erhalten</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eBay: Disput / Storno, keine Zahlung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ihre Bestellung mit der ID {{order.id}} wurde storniert</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eBay: Eingangsbestätigung Bestellung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eBay-Auktion gewonnen: Auftrags-ID {{order.id}}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eBay: Eingangsbestätigung mit Bankdaten ohne Checkout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eingangsbestätigung zum eBay-Auftrag mit der ID {{order.id}}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shop: Neues Passwort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ihre angeforderten Zugangsdaten zu unserem Webshop</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shop: Newsletter-Anmeldung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bestätigung zur Newsletter-Anmeldung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shop: Eingangsbestätigung Bestellung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Auftragsbestätigung für Auftrags-ID {{order.id}}</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>English default templates in the EmailBuilder and their subjects</strong></p>
+</div>
+<table id="table-default-templates-english" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. English default templates in the EmailBuilder and their subjects</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">English template</th>
+<th class="tableblock halign-left valign-top">Subject</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order: Changes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change to your order with ID {{order.id}}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order: Partial payment received</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Partial payment for order ID {{order.id}} received</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order: Shipping confirmation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping confirmation for your order with ID {{order.id}}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order: Payment complete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment for order ID {{order.id}} fully received</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eBay: dispute / cancellation, no payment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Your order with the ID {{order.id}} was canceled</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eBay: Order confirmation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eBay auction won: Order ID {{order.id}}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eBay: Order confirmation with bank details without checkout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order confirmation for your eBay order with the ID {{order.id}}</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shop: New password</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Your requested login details for our online shop</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shop: Newsletter registration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Confirmation of newsletter registration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shop: Order confirmation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order confirmation for your order with ID {{order.id}}</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="template-show-preview">3.6. Showing the preview of the template</h3>
+<div class="paragraph">
+<p>Check the email template by opening the preview.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>Expand the folder (<span class="icon "><i class="material-chevron_right"></i></span>) that contains the template for which you want to show the preview.</p>
+</li>
+<li>
+<p>Click on the template.</p>
+</li>
+<li>
+<p>Click on <strong>Preview</strong> (<span class="icon "><i class="material-preview"></i></span>).</p>
+</li>
+<li>
+<p>Select <strong>Preview HTML</strong> or <strong>Preview plain text</strong>.<br>
+→ The preview opens in a separate window.</p>
+</li>
+<li>
+<p>Check the template.</p>
+</li>
+<li>
+<p>Close the window by clicking on <strong>Close</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you are not satisfied with the result, <a href="#edit-template">edit</a> the content of your template.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="search-templates">3.7. Searching for a template</h3>
+<div class="paragraph">
+<p>The following instructions describes how to search for templates in general. The procedure is thus identical for searching for all templates, i.e. also searching for the templates that you created for the header and the footer.</p>
+</div>
+<div class="paragraph instruction">
+<p>Searching for a template:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>Select the language and/or client from the drop-down lists.<br>
+→ The templates that correspond to the search criteria entered are shown.</p>
+</li>
+<li>
+<p>Click on the template to open it.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="edit-template">3.8. Editing a template</h3>
+<div class="paragraph">
+<p>The following instruction describes how to edit templates in general. The procedure is thus identical for editing all templates, i.e. also editing the templates that you created for the header and the footer.</p>
+</div>
+<div class="paragraph instruction">
+<p>Editing a template:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>Expand the folder (<span class="icon "><i class="material-chevron_right"></i></span>) that contains the template you want to edit.</p>
+</li>
+<li>
+<p>Click on the template.</p>
+</li>
+<li>
+<p>Carry out the changes. Note <a href="#table-email-builder-create-template">[table-email-builder-create-template]</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon "><i class="material-save"></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-template">3.9. Deleting a template</h3>
+<div class="paragraph">
+<p>Proceed as described below to delete templates. Only the assembled template will be deleted but <em>not</em> the components contained in it such as the header and footer.</p>
+</div>
+<div class="paragraph instruction">
+<p>Deleting a template:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>CRM » EmailBuilder (Test phase)</strong>.</p>
+</li>
+<li>
+<p>Expand the folder (<span class="icon "><i class="material-chevron_right"></i></span>) that contains the template you want to delete.</p>
+</li>
+<li>
+<p>In the line of the template that you want to delete, click on the context menu (<span class="icon "><i class="material-more_vert"></i></span>).</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.<br>
+→ A window opens and you need to confirm your decision.</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong>.<br>
+→ The template is deleted.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="variables-emailbuilder">4. Available variables for the EmailBuilder</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The available variables for the EmailBuilder are grouped into different categories and sub-categories:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Order</p>
+<div class="ulist">
+<ul>
+<li>
+<p>General order variables</p>
+</li>
+<li>
+<p>Delivery address</p>
+</li>
+<li>
+<p>Invoice address</p>
+</li>
+<li>
+<p>Order items</p>
+</li>
+<li>
+<p>Shipping</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Contact</p>
+<div class="ulist">
+<ul>
+<li>
+<p>General contact variables</p>
+</li>
+<li>
+<p>Delivery address</p>
+</li>
+<li>
+<p>Invoice address</p>
+</li>
+<li>
+<p>Options</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Global</p>
+</li>
+<li>
+<p>Newsletter</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Do you want to know which variables are available for the individual categories? Simply expand the following area by clicking on <span class="icon "><i class="material-expand-more"></i></span>.</p>
+</div>
+<div id="variables-order" class="openblock collapseBox">
+<div class="title">Variables in the <strong>Order</strong> category</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Order ID</p>
+</li>
+<li>
+<p>Main order ID</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ID of the highest preceding order. Usually, this is a normal order.<br>
+<strong><em>Example:</em></strong> In case of a credit note C1 coming from a return R1 from the order O1, the <code>Parent Order ID</code> returns the ID of R1 and <code>$OriginOrderID</code> returns the ID of O1.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Parent order ID</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ID of the direct preceding order<br>
+<strong><em>Example:</em></strong> In case of a credit note, this could be the ID of the return or of the order from which the credit note was generated.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Status</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name of the order status as it is saved in the <strong>Setup » Orders » Statuses</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Status ID</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ID of the order status as it is saved in the <strong>Setup » Orders » Statuses</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Flag</p>
+</li>
+<li>
+<p>Customer sign</p>
+</li>
+<li>
+<p>External order ID</p>
+</li>
+<li>
+<p>Currency</p>
+</li>
+<li>
+<p>Invoice address VAT number</p>
+</li>
+<li>
+<p>Delivery address VAT number</p>
+</li>
+<li>
+<p>Value of the item</p>
+</li>
+<li>
+<p>Total invoice amount</p>
+</li>
+<li>
+<p>Total invoice amount, separated by a full stop</p>
+</li>
+<li>
+<p>Total invoice amount, net</p>
+</li>
+<li>
+<p>VAT total</p>
+</li>
+<li>
+<p>Net total order</p>
+</li>
+<li>
+<p>Date and time of incoming order</p>
+</li>
+<li>
+<p>Date of incoming payment</p>
+</li>
+<li>
+<p>Payment method</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name of the payment method as it is saved in the <strong>Setup » Orders » Payment » Payment methods</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Payment method ID</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The ID is automatically assigned by the system. The IDs are listed in the <strong>Setup » Orders » Payment » Payment methods</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Referrers</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name of the order referrer as it is saved in the <strong>Setup » Orders » Referrers</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Referrer ID</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name of the order referrer as it is saved in the <strong>Setup » Orders » Referrers</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Amount paid</p>
+</li>
+<li>
+<p>Open amount</p>
+</li>
+<li>
+<p>Overpaid amount</p>
+</li>
+<li>
+<p>Order warehouse ID</p>
+</li>
+<li>
+<p>Client ID</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The ID is automatically assigned by the system and cannot be changed. You can find the ID in the <strong>Setup » Client » [Select client] » Settings</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Seller account</p>
+</li>
+<li>
+<p>eBay payment ID</p>
+</li>
+<li>
+<p>Barcode ID</p>
+</li>
+<li>
+<p>Customer wish</p>
+<div class="ulist">
+<ul>
+<li>
+<p>During the checkout via the online store, the contact can enter a wish regarding the items they ordered. This wish is saved as order note in the order data.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Order type</p>
+</li>
+<li>
+<p>Access order in the online shop</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Opens the URL to the order in your online shop</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Reorder ID</p>
+</li>
+<li>
+<p>Coupon value</p>
+</li>
+<li>
+<p>Invoice number ID</p>
+</li>
+<li>
+<p>DHL Retoure Online QR code</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Sends your customers a QR code for DHL Retoure Online. If your customers want to send back an item, they have to show the QR code on their smartphone to one of the employees in the post office and they will print the return label and attach it to the parcel. Thus, your customers do no longer need a printer at home and you do no longer have to send the return label attached as PDF.<br>
+The QR code is shown as an URL in the email of your customers. After clicking on the URL, the QR code appears in a separate window.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="variables-order-delivery-address" class="openblock collapseBox">
+<div class="title">Variables in the <strong>Order / Delivery address</strong> sub-category</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Delivery address First name + Last name</p>
+</li>
+<li>
+<p>Delivery address Additional address information</p>
+</li>
+<li>
+<p>Delivery address First name</p>
+</li>
+<li>
+<p>Delivery address Last name</p>
+</li>
+<li>
+<p>Delivery address Company name</p>
+</li>
+<li>
+<p>Delivery address Contact person</p>
+</li>
+<li>
+<p>Delivery address Telephone</p>
+</li>
+<li>
+<p>Delivery address Street</p>
+</li>
+<li>
+<p>Delivery address Town + Postcode</p>
+</li>
+<li>
+<p>Delivery address Town</p>
+</li>
+<li>
+<p>Delivery address Postcode</p>
+</li>
+<li>
+<p>Delivery address Country</p>
+</li>
+<li>
+<p>Delivery address Country ID</p>
+</li>
+<li>
+<p>Delivery address Country ISO code 2</p>
+</li>
+<li>
+<p>Delivery address Country ISO code 3</p>
+</li>
+<li>
+<p>Delivery address State/region etc.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="variables-order-invoice-address" class="openblock collapseBox">
+<div class="title">Variables in the <strong>Order / Invoice address</strong> sub-category</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Invoice address First name + Last name</p>
+</li>
+<li>
+<p>Invoice address Additional address information</p>
+</li>
+<li>
+<p>Invoice address First name</p>
+</li>
+<li>
+<p>Invoice address Last name</p>
+</li>
+<li>
+<p>Invoice address Company name</p>
+</li>
+<li>
+<p>Invoice address Contact person</p>
+</li>
+<li>
+<p>Invoice address Telephone</p>
+</li>
+<li>
+<p>Invoice address Street</p>
+</li>
+<li>
+<p>Invoice address Town + Postcode</p>
+</li>
+<li>
+<p>Invoice address Town</p>
+</li>
+<li>
+<p>Invoice address Postcode</p>
+</li>
+<li>
+<p>Invoice address Country</p>
+</li>
+<li>
+<p>Invoice address Country ID</p>
+</li>
+<li>
+<p>Invoice address Country ISO code 2</p>
+</li>
+<li>
+<p>Invoice address Country ISO code 3</p>
+</li>
+<li>
+<p>Invoice address State/region etc.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="variables-order-order-items" class="openblock collapseBox">
+<div class="title">Variables in the <strong>Order / Order items</strong> sub-category</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Item ID</p>
+</li>
+<li>
+<p>Item properties</p>
+</li>
+<li>
+<p>Status ID of the returned item</p>
+</li>
+<li>
+<p>Name of the returned item</p>
+</li>
+<li>
+<p>Variation number</p>
+</li>
+<li>
+<p>Item name</p>
+</li>
+<li>
+<p>Item quantity</p>
+</li>
+<li>
+<p>Gross price</p>
+</li>
+<li>
+<p>Net price</p>
+</li>
+<li>
+<p>VAT rate</p>
+</li>
+<li>
+<p>Referrers</p>
+</li>
+<li>
+<p>External item ID</p>
+</li>
+<li>
+<p>External variation ID</p>
+</li>
+<li>
+<p>External token ID</p>
+</li>
+<li>
+<p>Content</p>
+</li>
+<li>
+<p>Unit</p>
+</li>
+<li>
+<p>Variation name</p>
+</li>
+<li>
+<p>Variation ID</p>
+</li>
+<li>
+<p>Attribute values</p>
+</li>
+<li>
+<p>Model</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Model name of the item</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>GTIN</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Global Trade Item Number (GTIN) of the item</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>ISBN</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ISBN code of the item</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>ASIN</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon Standard Ident Number (ASIN) of the item</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Availability text</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name of the item availability of the net stock</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Availability ID</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ID of the item availability of the net stock</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Availability text physical stock</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name of the item availability of the physical stock</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Availability ID physical stock</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ID of the item availability of the physical stock</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Free text fields 1 to 20</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Free text fields for the items as they are saved in the <strong>Setup » Items » Free text fields</strong> menu.<br>
+<strong><em>Example:</em></strong> <code>Free text field 3</code> displays the text that is saved in <strong>Field 3</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>URL to variation image</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Returns the URL to the variation image.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Manufacturer name</p>
+</li>
+<li>
+<p>Warehouse ID</p>
+</li>
+<li>
+<p>Return comment</p>
+</li>
+<li>
+<p>Value of the return in percent</p>
+</li>
+<li>
+<p>Return reason ID</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ID of the return reason as it is saved in the <strong>Setup » Orders » Order types » Return</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Return reason</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name of the return reason as it is saved in the <strong>Setup » Orders » Order types » Return</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Codes of a coupon</p>
+</li>
+<li>
+<p>Customs tariff number</p>
+</li>
+<li>
+<p>Release date</p>
+</li>
+<li>
+<p>Total price (unit price x quantity)</p>
+</li>
+<li>
+<p>Discount per order item</p>
+</li>
+<li>
+<p>URL to the item</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Returns the URL to the item in the online shop.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="variables-order-shipping" class="openblock collapseBox">
+<div class="title">Variables in the <strong>Order / Shipping</strong> sub-category</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Possible delivery date</p>
+</li>
+<li>
+<p>Estimated shipping date</p>
+</li>
+<li>
+<p>Date when the return was received</p>
+</li>
+<li>
+<p>Estimated delivery date</p>
+</li>
+<li>
+<p>Return package number</p>
+</li>
+<li>
+<p>Total shipping costs</p>
+</li>
+<li>
+<p>Package number list</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Package numbers/tracking numbers are saved in the orders <strong>Settings</strong> tab at the shipping service provider after the order was successfully registered.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tracking URL</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The tracking URL is used to track shipments. The URL is saved in the <strong>Setup » Orders » Shipping » Settings</strong> menu in the <strong>Shipping service provider</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Shipping service provider</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name of the shipping service provider as it is saved in the <strong>Setup » Orders » Shipping » Settings</strong> menu in the <strong>Shipping service provider</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Shipping service provider ID</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Is automatically saved by the system. You can find the ID of the shipping service provider in the <strong>Setup » Orders » Shipping » Settings</strong> menu in the <strong>Shipping service provider</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Shipping profile</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name of the shipping profile as it is saved in the <strong>Setup » Orders » Shipping » Settings</strong> menu in the <strong>Shipping profiles</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Shipping profile ID</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Is automatically saved by the system. You can find the ID of the shipping profile in the <strong>Setup » Orders » Shipping » Settings</strong> menu in the <strong>Shipping profiles</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Delivery note ID</p>
+</li>
+<li>
+<p>Reorder Delivery date</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="variables-contact" class="openblock collapseBox">
+<div class="title">Variables in the <strong>Contact</strong> category</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Contact ID</p>
+</li>
+<li>
+<p>First name</p>
+</li>
+<li>
+<p>Last name</p>
+</li>
+<li>
+<p>Full name</p>
+</li>
+<li>
+<p>Form of address</p>
+</li>
+<li>
+<p>Form of address</p>
+</li>
+<li>
+<p>Salutation business</p>
+</li>
+<li>
+<p>Salutation private</p>
+</li>
+<li>
+<p>Company name</p>
+</li>
+<li>
+<p>Language</p>
+</li>
+<li>
+<p>Class</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Class that is assigned to the contact. Classes are created in the <strong>Setup » CRM » Customer classes</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Number</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Additional number for the contact.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Title</p>
+</li>
+<li>
+<p>First and last name of the system user</p>
+<div class="ulist">
+<ul>
+<li>
+<p>First name and last name of the system user who is saved as owner in the contact data record.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Signature of the system user</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Signature of the system user who is saved as owner in the contact data record, in text format.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Signature of the system user in HTML format</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Signature of the system user who is saved as owner in the contact data record, in HTML format.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Account holder (contact)</p>
+</li>
+<li>
+<p>Bank name of the contact</p>
+</li>
+<li>
+<p>IBAN of the contact</p>
+</li>
+<li>
+<p>BIC of the contact</p>
+</li>
+<li>
+<p>Number of orders</p>
+</li>
+<li>
+<p>Newsletter: Confirmation by contact</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Date when the contact has confirmed the newsletter receipt.<br>
+Date format in the email: <code>mm-dd-yyyy</code>.<br>
+In the contact data record, the timestamp in the format <code>00:00:00</code> is also saved in addition to the date in the format <code>dd-mm-yyyy</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="variables-contact-delivery-address" class="openblock collapseBox">
+<div class="title">Variables in the <strong>Contact / Delivery address</strong> sub-category</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Delivery address First name + Last name</p>
+</li>
+<li>
+<p>Delivery address Additional address information</p>
+</li>
+<li>
+<p>Delivery address First name</p>
+</li>
+<li>
+<p>Delivery address Last name</p>
+</li>
+<li>
+<p>Delivery address Company name</p>
+</li>
+<li>
+<p>Delivery address Telephone</p>
+</li>
+<li>
+<p>Delivery address Street</p>
+</li>
+<li>
+<p>Delivery address Town + Postcode</p>
+</li>
+<li>
+<p>Delivery address Town</p>
+</li>
+<li>
+<p>Delivery address Postcode</p>
+</li>
+<li>
+<p>Delivery address Country</p>
+</li>
+<li>
+<p>Delivery address Country ID</p>
+</li>
+<li>
+<p>Delivery address Country ISO code 2</p>
+</li>
+<li>
+<p>Delivery address Country ISO code 3</p>
+</li>
+<li>
+<p>Delivery address State/region etc.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="variables-contact-invoice-address" class="openblock collapseBox">
+<div class="title">Variables in the <strong>Contact / Invoice address</strong> sub-category</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Invoice address First name + Last name</p>
+</li>
+<li>
+<p>Invoice address Additional address information</p>
+</li>
+<li>
+<p>Invoice address First name</p>
+</li>
+<li>
+<p>Invoice address Last name</p>
+</li>
+<li>
+<p>Invoice address Company name</p>
+</li>
+<li>
+<p>Invoice address Telephone</p>
+</li>
+<li>
+<p>Invoice address Street</p>
+</li>
+<li>
+<p>Invoice address Town + Postcode</p>
+</li>
+<li>
+<p>Invoice address Town</p>
+</li>
+<li>
+<p>Invoice address Postcode</p>
+</li>
+<li>
+<p>Invoice address Country</p>
+</li>
+<li>
+<p>Invoice address Country ID</p>
+</li>
+<li>
+<p>Invoice address Country ISO code 2</p>
+</li>
+<li>
+<p>Invoice address Country ISO code 3</p>
+</li>
+<li>
+<p>Invoice address State/region etc.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Variables in the <strong>Contact / Options</strong> sub-category</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Email private</p>
+</li>
+<li>
+<p>Phone private</p>
+</li>
+<li>
+<p>Mobile private</p>
+</li>
+<li>
+<p>Fax private</p>
+</li>
+<li>
+<p>Email business</p>
+</li>
+<li>
+<p>Phone business</p>
+</li>
+<li>
+<p>Mobile business</p>
+</li>
+<li>
+<p>Fax business</p>
+</li>
+<li>
+<p>eBay name</p>
+</li>
+<li>
+<p>Email PayPal</p>
+</li>
+<li>
+<p>Additional contact person</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="variables-global" class="openblock collapseBox">
+<div class="title">Variables in the <strong>Global</strong> category</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>URL to checkout</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Returns the URL to the checkout area of the order in the online shop.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>URL to basket</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Returns the URL to the basket in the online shop.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>URL to Terms and Conditions</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Returns the URL for the terms and conditions.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>URL to online shop</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Returns the URL of the online shop.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>URL to new password</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Returns the URL to a form that allows to create a new password. The contact enters their email address in this form.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>URL to change password</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Returns the URL for the <strong>Change password</strong> area in the online shop. The contact can enter a new password.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>URL to confirm email address</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Returns the URL to confirm the email address change of the contact.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cancellation rights in HTML format.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to <strong>Setup » Client » [Select client] » Online store » Legal » [Expand language]</strong>. Click on the <strong>Cancellation rights</strong> tab and save the text in the <strong>HTML</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cancellation rights in plain text</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to <strong>Setup » Client » [Select client] » Online store » Legal » [Expand language]</strong>. Click on the <strong>Cancellation rights</strong> tab and save the text in the <strong>Text</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Privacy policy in plain text</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to <strong>Setup » Client » [Select client] » Online store » Legal » [Expand language]</strong>. Click on the <strong>Privacy policy</strong> tab and save the text in the <strong>Text</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Privacy policy in HTML format</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to <strong>Setup » Client » [Select client] » Online store » Legal » [Expand language]</strong>. Click on the <strong>Privacy policy</strong> tab and save the text in the <strong>HTML</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Legal disclosure in plain text</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to <strong>Setup » Client » [Select client] » Online store » Legal » [Expand language]</strong>. Click on the <strong>Legal disclosure</strong> tab and save the text in the <strong>Text</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Legal disclosure in HTML format</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to <strong>Setup » Client » [Select client] » Online store » Legal » [Expand language]</strong>. Click on the <strong>Legal disclosure</strong> tab and save the text in the <strong>HTML</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cancellation form in plain text</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to <strong>Setup » Client » [Select client] » Online store » Legal » [Expand language]</strong>. Click on the <strong>Cancellation form</strong> and save the text in the <strong>Text</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Cancellation form in HTML format</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to <strong>Setup » Client » [Select client] » Online store » Legal » [Expand language]</strong>. Click on the <strong>Cancellation form</strong> tab and save the text in the *HTML *tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Today’s date</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Returns today’s date in the format dd-mm-yyyy.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Bank name (master data)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Bank name from the master data of your plentymarkets system. Is saved in the <strong>Basics</strong> assistant in the <strong>Bank details</strong> step. You can find the assistant in the <strong>Setup » Assistants » Basic settings</strong> menu.<br>
+As an alternative, you can find the saved bank name in the <strong>Setup » Settings » Bank</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>IBAN (master data)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>IBAN from the master data of your plentymarkets system. Is saved in the <strong>Basics</strong> assistant in the <strong>Bank details</strong> step. You can find the assistant in the <strong>Setup » Assistants » Basic settings</strong> menu.<br>
+As an alternative, you can find the saved IBAN in the <strong>Setup » Settings » Bank</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>BIC</p>
+<div class="ulist">
+<ul>
+<li>
+<p>BIC from the master data of your plentymarkets system. Is saved in the <strong>Basics</strong> assistant in the <strong>Bank details</strong> step. You can find the assistant in the <strong>Setup » Assistants » Basic settings</strong> menu.<br>
+As an alternative, you can find the saved BIC in the <strong>Setup » Settings » Bank</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Account holder</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Account holder from the master data of your plentymarkets system. Is saved in the <strong>Basics</strong> assistant in the <strong>Bank details</strong> step. You can find the assistant in the <strong>Setup » Assistants » Basic settings</strong> menu.<br>
+As an alternative, you can find the account holder in the <strong>Setup » Settings » Bank</strong> menu.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Signature in plain text</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The signature is saved in the <strong>Setup » Client » [Select client] » Email » Signature</strong> menu in the <strong>Plain text signature</strong> area.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Signature in HTML format</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The signature is saved in the <strong>Setup » Client » [Select client] » Email » Signature</strong> menu in the <strong>HTML signature</strong> area.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Coupon code (1) to (10)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Coupon codes are generated in the campaign in the <strong>Orders » Coupons</strong> menu. A coupon code can always be assigned to only one campaign to send this coupon code from the campaign in an email template.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>EORI number</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Unique identification number that is required for customs-related procedures.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="variables-newsletter" class="openblock collapseBox">
+<div class="title">Variables in the <strong>Newsletter</strong> category</div>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>URL to confirm newsletter subscription</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Returns the URL to confirm the newsletter subscription.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
