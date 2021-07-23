@@ -1296,6 +1296,22 @@ class Metadata {
 		"languageID" => "IWIIOPV",
 		"children" => 		[
 			[
+				"id" => "7ff576a74678e3f47790db7e755a3ffd",
+				"path" => "crm/emailbuilder",
+				"position" => 0,
+				"urlName" => "emailbuilder",
+				"url" => "/crm/emailbuilder-testphase",
+				"level" => 2,
+				"title" => "EmailBuilder (Testphase)",
+				"keywords" => "",
+				"description" => "Erfahre, wie du den EmailBuilder in plentymarkets verwendest.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich EmailBuilder (Testphase). Hier findest du folgende Informationen:",
+				"languageID" => "MYFLVYO",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "b17a2b33452fd5f740170d1d051ccbd7",
 				"path" => "crm/schnellsuche",
 				"position" => 100,
