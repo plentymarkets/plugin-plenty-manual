@@ -41,8 +41,8 @@
 </li>
 <li><a href="#700"><span>14.2.</span><span> Sending shipping confirmations to OTTO</span></a></li>
 <li><a href="#800"><span>14.3.</span><span> Sending order cancellations to OTTO</span></a></li>
-<li><a href="#900"><span>14.4.</span><span> Sending returns to OTTO</span></a></li>
-<li><a href="#1000"><span>14.5.</span><span> Sending return rejections to OTTO</span></a></li>
+<li><a href="#900"><span>14.4.</span><span> Accepting OTTO Market returns</span></a></li>
+<li><a href="#1000"><span>14.5.</span><span> Rejecting OTTO Market returns</span></a></li>
 </ul>
 </li>
 <li><a href="#10000"><span>15.</span><span> Viewing the log</span></a></li>
@@ -754,7 +754,7 @@ If new stock is booked for such a variation, the variation is reactivated during
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Map at least the data fields <strong>Brand</strong>, <strong>Delivery type</strong> and <strong>Category</strong> with plentymarkets data fields.
+Map at least the marketplace data fields <strong>Brand</strong>, <strong>Delivery type</strong> and <strong>Category</strong> with plentymarkets data fields.
 </td>
 </tr>
 </tbody></table>
@@ -1880,28 +1880,32 @@ If customers paid an OTTO Market order per bank transfer, it might take longer t
 </table>
 </div>
 <div class="sect2">
-<h3 id="900">14.4. Sending returns to OTTO</h3>
+<h3 id="900">14.4. Accepting OTTO Market returns</h3>
 <div class="paragraph">
-<p>In order that OTTO Market accepts the return, you first have to create an order of the type <strong>Credit note</strong>. In a second step, the return information is sent to OTTO. As such, you need two event procedures to inform OTTO about returns:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Event procedure 1: Create orders of the type <strong>Credit note</strong></p>
-</li>
-<li>
-<p>Event procedure 2: Send return to OTTO</p>
-</li>
-</ul>
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to notify OTTO Market when you accept returns.</p>
 </div>
 <div class="paragraph">
-<p>Set up these event procedures as described below.</p>
+<p><strong><em>Workflow of the return process:</em></strong></p>
 </div>
-<div id="image-return-otto-credit-note" class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/markets/otto/assets/otto-market-return-credit-note.png" alt="otto market return credit note" width="640" height="360">
-</div>
-<div class="title">Figure 1. Event procedure for creating orders of the type <strong>Credit note</strong></div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The plentymarkets action <strong>Send return to OTTO</strong> is triggered.</p>
+</li>
+<li>
+<p>OTTO creates a credit note receipt.</p>
+</li>
+<li>
+<p>An order of the type <strong>Credit note</strong> is created in plentymarkets.<br>
+<strong><em>Note:</em></strong> If prices and/or shipping costs do not match, this information is updated based on the receipt data.</p>
+</li>
+<li>
+<p>The credit note receipt that OTTO created is saved to the order of the type <strong>Credit note</strong>.</p>
+</li>
+<li>
+<p>A child order of the type <strong>Credit note</strong> is created for the return.</p>
+</li>
+</ol>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Setting up an event procedure</div>
@@ -1919,13 +1923,13 @@ If customers paid an OTTO Market order per bank transfer, it might take longer t
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#return-otto-credit-note">Table 7</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#return-otto">Table 7</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#return-otto-credit-note">Table 7</a>.</p>
+<p>Carry out the settings according to <a href="#return-otto">Table 7</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1938,8 +1942,8 @@ If customers paid an OTTO Market order per bank transfer, it might take longer t
 </div>
 </div>
 </div>
-<table id="return-otto-credit-note" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 7. Event procedure for creating orders of the type <strong>Credit note</strong></caption>
+<table id="return-otto" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Event procedure to send returns to OTTO Market</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1956,94 +1960,13 @@ If customers paid an OTTO Market order per bank transfer, it might take longer t
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example <strong>Order change: Status change</strong>.<br>
-<strong><em>Note:</em></strong> Select a status that suits your workflow. Select the status <strong>[9.11] Send return to OTTO</strong>, for example.</p></td>
+<strong><em>Note:</em></strong> Select a status that suits your workflow. For example, you could create a status <strong>[9.11] Send return to OTTO</strong>.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Return</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OTTO Market</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Create credit note (order)</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Set up another <a href="/en/automation/event-procedures">event procedure</a> to inform OTTO Market about returns.</p>
-</div>
-<div id="image-return-otto" class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/markets/otto/assets/otto-market-accept-return.png" alt="otto market accept return" width="640" height="360">
-</div>
-<div class="title">Figure 2. Event procedure to send returns to OTTO Market</div>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Setting up an event procedure</div>
-<div class="content">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to <strong>Setup » Orders » Events</strong>.</p>
-</li>
-<li>
-<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
-→ The <strong>Create new event procedure</strong> window opens.</p>
-</li>
-<li>
-<p>Enter a distinct name for the event procedure.</p>
-</li>
-<li>
-<p>Select the <strong>event</strong> according to <a href="#return-otto">Table 8</a>.</p>
-</li>
-<li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
-</li>
-<li>
-<p>Carry out the settings according to <a href="#return-otto">Table 8</a>.</p>
-</li>
-<li>
-<p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
-</li>
-<li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
-<strong><em>Note:</em></strong> The data is not transferred in real time when the event procedure is triggered. Instead, the data is registered in a queue. As such, transferring the data can take up to several minutes if a large number of jobs need to be processed. On the plus side, this means that several retries will be performed if the target server is throttled or not responding.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<table id="return-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. Event procedure to send returns to OTTO Market</caption>
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Setting</th>
-<th class="tableblock halign-left valign-top">Option</th>
-<th class="tableblock halign-left valign-top">Selection</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example <strong>Order generation: New credit note</strong>.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Credit note</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
@@ -2059,10 +1982,10 @@ If customers paid an OTTO Market order per bank transfer, it might take longer t
 <div class="ulist">
 <ul>
 <li>
-<p>The procedure <strong>Send return to OTTO</strong> triggers a credit note and the buyer receives a refund. The credit note document created by OTTO is automatically attached to the order of the type <strong>Credit note</strong>.</p>
+<p>If the original order was part of a discount campaign, that discount campaign is also imported to the credit note order as an order item and the prices are applied.</p>
 </li>
 <li>
-<p>OTTO will refund the complete sales price of an order item. You cannot notify OTTO Market of a partial refund for an order item. As such, even if you adjust the price of an order item, this does not affect the refund document that OTTO creates.</p>
+<p>OTTO will refund the complete sales price of an order item. You cannot notify OTTO Market of a partial refund for an order item. As such, even if you adjust the price of an order item, this adjustment does not affect the refund document that OTTO creates.</p>
 </li>
 </ul>
 </div></div></td>
@@ -2071,9 +1994,9 @@ If customers paid an OTTO Market order per bank transfer, it might take longer t
 </table>
 </div>
 <div class="sect2">
-<h3 id="1000">14.5. Sending return rejections to OTTO</h3>
+<h3 id="1000">14.5. Rejecting OTTO Market returns</h3>
 <div class="paragraph">
-<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to inform OTTO Market about the rejection of returns.</p>
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to notify OTTO Market when you reject returns.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Setting up an event procedure</div>
@@ -2091,13 +2014,13 @@ If customers paid an OTTO Market order per bank transfer, it might take longer t
 <p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> according to <a href="#return-rejection-otto">Table 9</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#return-rejection-otto">Table 8</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings according to <a href="#return-rejection-otto">Table 9</a>.</p>
+<p>Carry out the settings according to <a href="#return-rejection-otto">Table 8</a>.</p>
 </li>
 <li>
 <p>Place a check mark next to the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -2111,7 +2034,7 @@ If customers paid an OTTO Market order per bank transfer, it might take longer t
 </div>
 </div>
 <table id="return-rejection-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. Event procedure to send the rejection of a return to OTTO market</caption>
+<caption class="title">Table 8. Event procedure to send the rejection of a return to OTTO market</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -2586,7 +2509,7 @@ Go to <strong>Setup » Item » Units</strong> to find the ISO codes in the colum
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/markets/otto/assets/otto-market-add-source.png" alt="Add data field">
 </div>
-<div class="title">Figure 3. Add data field</div>
+<div class="title">Figure 1. Add data field</div>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -2662,7 +2585,7 @@ Go to <strong>Setup » Item » Units</strong> to find the ISO codes in the colum
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/markets/otto/assets/dhl-return-label.png" alt="DHL return label">
 </div>
-<div class="title">Figure 4. DHL return label</div>
+<div class="title">Figure 2. DHL return label</div>
 </div>
 </div>
 </div>
@@ -2682,7 +2605,7 @@ Go to <strong>Setup » Item » Units</strong> to find the ISO codes in the colum
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/markets/otto/assets/otto-market_order-number.png" alt="OTTO market order number">
 </div>
-<div class="title">Figure 5. "Mein Konto” (My account) area at OTTO Market</div>
+<div class="title">Figure 3. "Mein Konto” (My account) area at OTTO Market</div>
 </div>
 <div class="paragraph">
 <p>The order number is saved as external order number at the order in plentymarkets.</p>
@@ -2694,7 +2617,7 @@ Go to <strong>Setup » Item » Units</strong> to find the ISO codes in the colum
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/markets/otto/assets/otto-market_search_external-order-number.png" alt="Search external order number">
 </div>
-<div class="title">Figure 6. Searching for the external order number</div>
+<div class="title">Figure 4. Searching for the external order number</div>
 </div>
 <div class="paragraph">
 <p>The external order number can be found in the <strong>Settings</strong> tab of an order (<strong>Ext. order number</strong>):</p>
@@ -2703,7 +2626,7 @@ Go to <strong>Setup » Item » Units</strong> to find the ISO codes in the colum
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/markets/otto/assets/otto-market_search_external-order-number.png" alt="Search external order number">
 </div>
-<div class="title">Figure 7. Searching for the external order number</div>
+<div class="title">Figure 5. Searching for the external order number</div>
 </div>
 <div class="paragraph">
 <p>If customers have further questions concerning an order, you can find an order by searching for the external order number.</p>
