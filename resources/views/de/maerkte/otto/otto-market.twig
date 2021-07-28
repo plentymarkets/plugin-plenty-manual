@@ -41,8 +41,8 @@
 </li>
 <li><a href="#700"><span>14.2.</span><span> Versandinformation an OTTO melden</span></a></li>
 <li><a href="#800"><span>14.3.</span><span> Auftragsstornierung an OTTO melden</span></a></li>
-<li><a href="#900"><span>14.4.</span><span> Retoure an OTTO melden</span></a></li>
-<li><a href="#1000"><span>14.5.</span><span> Ablehnung von Retouren an OTTO melden</span></a></li>
+<li><a href="#900"><span>14.4.</span><span> OTTO Market-Retouren annehmen</span></a></li>
+<li><a href="#1000"><span>14.5.</span><span> OTTO Market-Retouren ablehnen</span></a></li>
 </ul>
 </li>
 <li><a href="#10000"><span>15.</span><span> Log abrufen</span></a></li>
@@ -1874,28 +1874,32 @@ Falls der Auftrag bei OTTO Market per Überweisung bezahlt wurde, kann die Auftr
 </table>
 </div>
 <div class="sect2">
-<h3 id="900">14.4. Retoure an OTTO melden</h3>
+<h3 id="900">14.4. OTTO Market-Retouren annehmen</h3>
 <div class="paragraph">
-<p>Für die Annahme einer Retoure muss zuerst ein Auftrag vom Typ <strong>Gutschrift</strong> erstellt werden. In einem zweiten Schritt wird die Retoure an OTTO gemeldet. Für Retourenmeldungen benötigst du also zwei Ereignisaktionen:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Ereignisaktion 1: Aufträge vom Typ <strong>Gutschrift</strong> erstellen</p>
-</li>
-<li>
-<p>Ereignisaktion 2: Retouren an OTTO melden</p>
-</li>
-</ul>
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO Market zu informieren, wenn du Retouren annimmst.</p>
 </div>
 <div class="paragraph">
-<p>Richte diese Ereignisaktionen wie unten beschrieben ein.</p>
+<p><strong><em>Ablauf des Retourenprozesses:</em></strong></p>
 </div>
-<div id="bild-retoure-otto-gutschrift" class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/otto-market-retoure-gutschrift.png" alt="otto market retoure gutschrift" width="640" height="360">
-</div>
-<div class="title">Bild 1. Ereignisaktion, um Aufträge vom Typ <strong>Gutschrift</strong> zu erstellen</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Die plentymarkets Aktion <strong>Retoure an OTTO melden</strong> wird ausgelöst.</p>
+</li>
+<li>
+<p>OTTO erstellt einen Gutschriftbeleg.</p>
+</li>
+<li>
+<p>In plentymarkets wird ein Auftrag des Typs <strong>Gutschrift</strong> erstellt.<br>
+<strong><em>Hinweis:</em></strong> Wenn Preise und/oder Versandkosten abweichen, werden diese Information anhand der Belegdaten korrigiert.</p>
+</li>
+<li>
+<p>Der von OTTO erstellte Gutschriftbeleg wird am Auftrag des Typs <strong>Gutschrift</strong> gespeichert.</p>
+</li>
+<li>
+<p>An der Retoure wird ein Kindauftrag des Typs <strong>Gutschrift</strong> erstellt.</p>
+</li>
+</ol>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
@@ -1913,13 +1917,13 @@ Falls der Auftrag bei OTTO Market per Überweisung bezahlt wurde, kann die Auftr
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#retoure-otto-gutschrift">Tabelle 7</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#retoure-otto">Tabelle 7</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#retoure-otto-gutschrift">Tabelle 7</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#retoure-otto">Tabelle 7</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -1932,8 +1936,8 @@ Falls der Auftrag bei OTTO Market per Überweisung bezahlt wurde, kann die Auftr
 </div>
 </div>
 </div>
-<table id="retoure-otto-gutschrift" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 7. Ereignisaktion, um Aufträge vom Typ <strong>Gutschrift</strong> zu erstellen</caption>
+<table id="retoure-otto" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 7. Ereignisaktion, um Retouren an OTTO Market zu melden</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1950,94 +1954,13 @@ Falls der Auftrag bei OTTO Market per Überweisung bezahlt wurde, kann die Auftr
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis wählen, zum Beispiel <strong>Auftragsänderung: Statuswechsel</strong><br>
-<strong><em>Hinweis:</em></strong> Wähle einen Status, der zu deinem Arbeitsablauf passt. Du kannst dafür beispielsweise den Status <strong>[9.11] Retoure an OTTO melden</strong> erstellen.</p></td>
+<strong><em>Hinweis:</em></strong> Wähle einen Status, der zu deinem Arbeitsablauf passt. Du kannst zum Beispiel den Status <strong>[9.11] Retoure an OTTO melden</strong> erstellen.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retoure</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OTTO Market</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Gutschrift (Auftrag) anlegen</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Richte eine weitere <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO Market über die Retouren zu informieren.</p>
-</div>
-<div id="bild-retoure-otto" class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/otto-market-retoure-von-otto-annehmen.png" alt="otto market retoure von otto annehmen" width="640" height="360">
-</div>
-<div class="title">Bild 2. Ereignisaktion, um Retouren an OTTO Market zu melden</div>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Ereignisaktion einrichten</div>
-<div class="content">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
-</li>
-<li>
-<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
-→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
-</li>
-<li>
-<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
-</li>
-<li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#retoure-otto">Tabelle 8</a>.</p>
-</li>
-<li>
-<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
-</li>
-<li>
-<p>Nimm die Einstellungen gemäß <a href="#retoure-otto">Tabelle 8</a> vor.</p>
-</li>
-<li>
-<p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
-</li>
-<li>
-<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.<br>
-<strong><em>Hinweis:</em></strong> Die Daten werden nicht live beim Auslösen der Ereignisaktion übermittelt, sondern in einer Warteschlange registriert. Daher kann es zu Verzögerungen im Sekunden- bis Minutenbereich kommen, wenn viele Jobs vorhanden sind. Dafür können bei fehlender Erreichbarkeit oder Drosselung des Zielservers mehrere Übermittlungsversuche unternommen werden.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<table id="retoure-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 8. Ereignisaktion, um Retouren an OTTO Market zu melden</caption>
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 42.8571%;">
-<col style="width: 42.8572%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Einstellung</th>
-<th class="tableblock halign-left valign-top">Option</th>
-<th class="tableblock halign-left valign-top">Auswahl</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ereignis wählen, zum Beispiel <strong>Auftragsanlage: Neue Gutschrift</strong></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gutschrift</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
@@ -2053,10 +1976,10 @@ Falls der Auftrag bei OTTO Market per Überweisung bezahlt wurde, kann die Auftr
 <div class="ulist">
 <ul>
 <li>
-<p>Durch die Aktion <strong>Retoure an OTTO melden</strong> wird eine Gutschrift ausgelöst und Endkund:innen erhalten eine Rückerstattung. Das von OTTO erstellte Gutschriftendokument wird automatisch an den Auftrag vom Typ <strong>Gutschrift</strong> angehängt.</p>
+<p>Wenn im ursprünglichen Auftrag eine Rabattaktion verwendet wurde, wird diese Rabattaktion auch im Gutschriften-Auftrag als Artikelposition importiert und die Preise werden berücksichtigt.</p>
 </li>
 <li>
-<p>OTTO erstattet immer den kompletten Verkaufspreis einer Position. Es ist nicht möglich, OTTO Market Teilerstattungen für eine Auftragsposition zu melden. Auch wenn du einzelne Positionen im Preis korrigiert hast, hat dies also keinen Einfluss auf das von OTTO erstellte Erstattungsdokument.</p>
+<p>OTTO erstattet immer den kompletten Verkaufspreis einer Position. Teilerstattungen für eine Auftragsposition können nicht an OTTO Market gemeldet werden. Auch wenn du einzelne Positionen im Preis korrigiert hast, hat diese Korrektur also keinen Einfluss auf das von OTTO erstellte Erstattungsdokument.</p>
 </li>
 </ul>
 </div></div></td>
@@ -2065,9 +1988,9 @@ Falls der Auftrag bei OTTO Market per Überweisung bezahlt wurde, kann die Auftr
 </table>
 </div>
 <div class="sect2">
-<h3 id="1000">14.5. Ablehnung von Retouren an OTTO melden</h3>
+<h3 id="1000">14.5. OTTO Market-Retouren ablehnen</h3>
 <div class="paragraph">
-<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO Market über die Ablehnung von Retouren zu informieren.</p>
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um OTTO Market zu informieren, wenn du Retouren ablehnst.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Ereignisaktion einrichten</div>
@@ -2085,13 +2008,13 @@ Falls der Auftrag bei OTTO Market per Überweisung bezahlt wurde, kann die Auftr
 <p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
 </li>
 <li>
-<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ablehnung-retoure-otto">Tabelle 9</a>.</p>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ablehnung-retoure-otto">Tabelle 8</a>.</p>
 </li>
 <li>
 <p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#ablehnung-retoure-otto">Tabelle 9</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#ablehnung-retoure-otto">Tabelle 8</a> vor.</p>
 </li>
 <li>
 <p>Setze ein Häkchen bei <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -2105,7 +2028,7 @@ Falls der Auftrag bei OTTO Market per Überweisung bezahlt wurde, kann die Auftr
 </div>
 </div>
 <table id="ablehnung-retoure-otto" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 9. Ereignisaktion um die Ablehnung einer Retoure an OTTO Market zu melden</caption>
+<caption class="title">Tabelle 8. Ereignisaktion um die Ablehnung einer Retoure an OTTO Market zu melden</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -2580,7 +2503,7 @@ Die ISO-Codes findest du im Menü <strong>Einrichtung » Artikel » Einheiten</s
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/otto-market-weitere-quelle.png" alt="Datenfeld hinzufügen">
 </div>
-<div class="title">Bild 3. Datenfeld hinzufügen</div>
+<div class="title">Bild 1. Datenfeld hinzufügen</div>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -2656,7 +2579,7 @@ Die ISO-Codes findest du im Menü <strong>Einrichtung » Artikel » Einheiten</s
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/dhl-retourenetikett.png" alt="DHL-Retourenetikett">
 </div>
-<div class="title">Bild 4. DHL-Retourenetikett</div>
+<div class="title">Bild 2. DHL-Retourenetikett</div>
 </div>
 </div>
 </div>
@@ -2676,7 +2599,7 @@ Die ISO-Codes findest du im Menü <strong>Einrichtung » Artikel » Einheiten</s
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/otto-market_auftragsnummer.png" alt="OTTO Market-Auftragsnummer">
 </div>
-<div class="title">Bild 5. "Mein Konto"-Bereich bei OTTO Market</div>
+<div class="title">Bild 3. "Mein Konto"-Bereich bei OTTO Market</div>
 </div>
 <div class="paragraph">
 <p>Die Auftragsnummer wird in plentymarkets als externe Auftragsnummer am Auftrag gespeichert.</p>
@@ -2688,7 +2611,7 @@ Die ISO-Codes findest du im Menü <strong>Einrichtung » Artikel » Einheiten</s
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/otto-market_suche_externe-auftragsnummer.png" alt="Suche externe Auftragsnummer">
 </div>
-<div class="title">Bild 6. Suche nach externer Auftragsnummer</div>
+<div class="title">Bild 4. Suche nach externer Auftragsnummer</div>
 </div>
 <div class="paragraph">
 <p>Im Tab <strong>Einstellungen</strong> des Auftrags findest du die externe Auftragsnummer (<strong>Ext. Auftragsnummer</strong>):</p>
@@ -2697,7 +2620,7 @@ Die ISO-Codes findest du im Menü <strong>Einrichtung » Artikel » Einheiten</s
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/maerkte/otto/assets/plentymarkets_externe-auftragsnummer.png" alt="externe Auftragsnummer in plentymarkets">
 </div>
-<div class="title">Bild 7. Suche nach externer Auftragsnummer</div>
+<div class="title">Bild 5. Suche nach externer Auftragsnummer</div>
 </div>
 <div class="paragraph">
 <p>Wenn Kund:innen eine Rückfrage zum Auftrag haben, findest du den Auftrag anhand der externen Auftragsnummer.</p>
