@@ -12907,6 +12907,22 @@ class Metadata {
 		"languageID" => "MFX1Q1C",
 		"children" => 		[
 			[
+				"id" => "c2d6d8358fda835001b0309f6912bb95",
+				"path" => "maerkte/plus-gartenxxl-new",
+				"position" => 0,
+				"urlName" => "plus-gartenxxl-new",
+				"url" => "/maerkte/plus-gartenxxl-entwurf",
+				"level" => 2,
+				"title" => "Netto Marken-Discount",
+				"keywords" => "Netto, Marktplatz, netto.de, Netto einrichten, Netto Marktplatz, Multi-Channel, Multichannel, Multi-Channel Netto, Multichannel Netto, Multi Channel Netto, gartenxxl, plus.de",
+				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Netto Marken-Discount in deinem plentymarkets System ein.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Netto Marken-Discount. Hier findest du folgende Informationen:",
+				"languageID" => "49Y2YPF",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "b4eaf2b968bdbd44677baa46bd165ba6",
 				"path" => "maerkte/scalerion",
 				"position" => 0,
