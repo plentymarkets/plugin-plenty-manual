@@ -1908,55 +1908,6 @@ class Metadata {
 		"languageID" => "EJC9AQU",
 		"children" => 		[
 			[
-				"id" => "e247b27d1bdc588a4846c4dbd38a0b6e",
-				"path" => "payment/zahlungsanbieter",
-				"position" => 0,
-				"urlName" => "zahlungsanbieter",
-				"url" => "/payment/zahlungsanbieter",
-				"level" => 2,
-				"title" => "Zahlungsanbieter",
-				"keywords" => "Zahlungsanbieter, Zahlungsarten, Zahlungen",
-				"description" => "Payment in plentymarkets: Schnittstellen zu Zahlungsarten und Zahlungsanbietern einrichten.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Zahlungsanbieter. Hier findest du folgende Informationen:",
-				"languageID" => "X3QHMOA",
-				"children" => 				[
-					[
-						"id" => "7a989b1bdfd633e752bcdb36c488730f",
-						"path" => "payment/zahlungsanbieter/paypal",
-						"position" => 10,
-						"urlName" => "paypal",
-						"url" => "/payment/zahlungsanbieter/paypal",
-						"level" => 3,
-						"title" => "Alter Webshop: PayPal",
-						"keywords" => "PayPal, Zahlungsart",
-						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu PayPal in deinem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: PayPal. Hier findest du folgende Informationen:",
-						"languageID" => "LLZC8U7",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "c7d33689460e1105fce21446d0adc579",
-						"path" => "payment/zahlungsanbieter/paypal-plus",
-						"position" => 20,
-						"urlName" => "paypal-plus",
-						"url" => "/payment/zahlungsanbieter/paypal-plus",
-						"level" => 3,
-						"title" => "Alter Webshop: PayPal PLUS",
-						"keywords" => "PayPal Plus, Zahlungsart",
-						"description" => "Payment in plentymarkets: Richte die Schnittstelle zu PayPal PLUS in deinem plentymarkets System ein.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Alter Webshop: PayPal PLUS. Hier findest du folgende Informationen:",
-						"languageID" => "LCFSITP",
-						"children" => [],
-						"hasChildren" => false
-					]
-				],
-				"hasChildren" => true
-			],
-			[
 				"id" => "43a4e201d915a714ebc3e023f2b023b9",
 				"path" => "payment/zahlungsarten-verwalten",
 				"position" => 10,
