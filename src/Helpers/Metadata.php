@@ -25967,55 +25967,6 @@ class Metadata {
 		"languageID" => "EJC9AQU",
 		"children" => 		[
 			[
-				"id" => "1b973ab3b0301db022fc574542c680e8",
-				"path" => "payment/payment-providers",
-				"position" => 0,
-				"urlName" => "payment-providers",
-				"url" => "/en/payment/payment-providers",
-				"level" => 2,
-				"title" => "Payment providers",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Payment providers. The following information is available:",
-				"languageID" => "X3QHMOA",
-				"children" => 				[
-					[
-						"id" => "49473f10701e7ff55669bc4ca3c37703",
-						"path" => "payment/payment-providers/paypal",
-						"position" => 10,
-						"urlName" => "paypal",
-						"url" => "/en/payment/payment-providers/paypal",
-						"level" => 3,
-						"title" => "Old online store: PayPal",
-						"keywords" => "PayPal, payment method",
-						"description" => "Payment in plentymarkets: Set up the interface to PayPal in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Old online store: PayPal. The following information is available:",
-						"languageID" => "LLZC8U7",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "f49506a9b6b200bcdc1980eed106ff51",
-						"path" => "payment/payment-providers/paypal-plus",
-						"position" => 20,
-						"urlName" => "paypal-plus",
-						"url" => "/en/payment/payment-providers/paypal-plus",
-						"level" => 3,
-						"title" => "Old online store: PayPal PLUS",
-						"keywords" => "PayPal Plus, payment method",
-						"description" => "Payment in plentymarkets: Set up the interface to PayPal PLUS in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Old online store: PayPal PLUS. The following information is available:",
-						"languageID" => "LCFSITP",
-						"children" => [],
-						"hasChildren" => false
-					]
-				],
-				"hasChildren" => true
-			],
-			[
 				"id" => "890bd1f41cbf0f22902dbca17931a01f",
 				"path" => "payment/managing-payment-methods",
 				"position" => 10,
