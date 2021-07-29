@@ -84,6 +84,108 @@ Hast du Ein-Klick-Zahlungen aktiviert kannst du sehen, welche deiner Kund:innen 
 </div>
 </div>
 </div>
+<div class="openblock collapseBox">
+<div class="title"><strong>Nur für Verwendung der Zahlungsart in mehreren Mandanten: Assistent mehrmals durchlaufen</strong></div>
+<div class="content">
+<div class="paragraph">
+<p>Abhängig von der Konfiguration deiner Plugin-Sets und Mandanten muss der Mollie-Assistent mehrmals durchlaufen werden. Nur so ist gewährleistet, dass die Mollie-Zahlungsarten korrekt konfiguriert sind und alle Funktionen wie Ereignisaktionen und Crons im Hintergrund ohne Einschränkungen ablaufen.</p>
+</div>
+<div class="paragraph">
+<p>Entnehme der folgenden Aufstellung, welche Assistenten in welchem Plugin-Set du durchlaufen musst. Die obere Zeile gibt die Konfiguration der Plugin-Sets und Mandanten wieder. Die zweite Zeile listet korrespondierend auf, in welchem Set der Mollie-Assistent für welchen Mandanten durchlaufen werden muss.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Wichtig</em></strong>: Es geht in den Beispielen nicht um entweder oder. Der Assistent muss für Multi-Mandanten mehrmals durchlaufen werden, da er zusätzlich immer auch in dem Plugin-Set durchlaufen werden muss, das mit dem Hauptmandanten verknüpft ist.</p>
+</div>
+<div class="paragraph">
+<p><strong>Beispiel 1:</strong></p>
+</div>
+<table id="multi-client-and-assistants-example-one" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deine Plugin-Sets und Mandanten:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin-Set 1 ist verknüpft mit Hauptmandant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin-Set 2 ist verknüpft mit Multi-Mandant 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin-Set 3 ist verknüpft mit Multi-Mandant 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Durchlaufe den Assistenten:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durchlaufe den Mollie-Assistenten in diesem Plugin-Set für alle Mandanten. D.h. für den Hauptmandanten, für Multi-Mandant 1 und für Multi-Mandant 2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durchlaufe den Mollie-Assistenten in diesem Plugin-Set für Multi-Mandant 1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durchlaufe den Mollie-Assistenten in diesem Plugin-Set für Multi-Mandant 2.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Beispiel 2:</strong></p>
+</div>
+<table id="multi-client-and-assistants-example-two" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deine Plugin-Sets und Mandanten:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin-Set 1 ist verknüpft mit Hauptmandant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin-Set 2 ist verknüpft mit Multi-Mandant 1 und mit Multi-Mandant 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Durchlaufe den Assistenten:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durchlaufe den Mollie-Assistenten in diesem Plugin-Set für alle Mandanten. D.h. für den Hauptmandanten, für Multi-Mandant 1 und für Multi-Mandant 2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durchlaufe den Mollie-Assistenten in diesem Plugin-Set für Multi-Mandant 1 und für Multi-Mandant 2.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Beispiel 3:</strong></p>
+</div>
+<table id="multi-client-and-assistants-example-three" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deine Plugin-Sets und Mandanten:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin-Set 1 ist verknüpft mit Hauptmandant und mit Multi-Mandant 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin-Set 2 ist verknüpft mit Multi-Mandant 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Durchlaufe den Assistenten:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durchlaufe den Mollie-Assistenten in diesem Plugin-Set für alle Mandanten. D.h. für den Hauptmandanten, für Multi-Mandant 1 und für Multi-Mandant 2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durchlaufe den Mollie-Assistenten in diesem Plugin-Set für Multi-Mandant 2.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><strong>Beispiel 4:</strong></p>
+</div>
+<table id="multi-client-and-assistants-example-four" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Deine Plugin-Sets und Mandanten:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin-Set 1 ist verknüpft mit Hauptmandant, mit Multi-Mandant 1 und mit Multi-Mandant 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Durchlaufe den Assistenten:</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durchlaufe den Mollie-Assistenten in diesem Plugin-Set für alle Mandanten. D.h. für den Hauptmandanten, für Multi-Mandant 1 und für Multi-Mandant 2.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div><div class="sect1">
 <h2 id="30">3. Template Container verknüpfen</h2>
