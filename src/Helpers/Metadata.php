@@ -671,11 +671,11 @@ class Metadata {
 				"urlName" => "import-export-anlage",
 				"url" => "/artikel/import-export-anlage",
 				"level" => 2,
-				"title" => "Import, Export, manuelle Anlage",
+				"title" => "Import, Export, manuelle Bearbeitung",
 				"keywords" => "Artikel, Variante, Produkt, Produkte, Standard-Artikel, Artikel des Typs Standard, Artikel vom Typ Standard, Artikel erstellen, Artikeldaten erstellen, Artikel anlegen, Artikeldaten anlegen, Variante erstellen, Variantendaten erstellen, Variante anlegen, Variantendaten anlegen, Artikelanlage, Artikelverwaltung, Artikel verwalten, Artikel bearbeiten, Artikel manuell anlegen, Artikel manuell erstellen, Artikeldaten, Artikeldatensatz, Artikeldatensätze, Neuer Artikel, Neue Artikel, Assistant, Assistent, Assistenten, ElasticSync, Import, Importieren, Datenaustausch, Daten-Export, Datenexport, Daten-Import, Datenimport, Artikelimport, Artikel importieren, Varianten importieren, Artikeldaten importieren, Variantendaten importieren, CSV, Artikel exportieren, Artikelexport, Artikeldaten exportieren, FormatDesigner, Format-Typen, Daten",
 				"description" => "Erfahre, wie du deine Artikeldaten in plentymarkets importierst, exportierst und manuell verwaltest.",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Import, Export, manuelle Anlage. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Import, Export, manuelle Bearbeitung. Hier findest du folgende Informationen:",
 				"languageID" => "9LJNOFH",
 				"children" => 				[
 					[
@@ -717,11 +717,11 @@ class Metadata {
 						"urlName" => "anlage",
 						"url" => "/artikel/import-export-anlage/anlage",
 						"level" => 3,
-						"title" => "Manuelle Anlage",
+						"title" => "Manuelle Bearbeitung",
 						"keywords" => "Artikel, Variante, Produkt, Produkte, Standard-Artikel, Artikel des Typs Standard, Artikel vom Typ Standard, Artikel erstellen, Artikeldaten erstellen, Artikel anlegen, Artikeldaten anlegen, Variante erstellen, Variantendaten erstellen, Variante anlegen, Variantendaten anlegen, Artikelanlage, Artikelverwaltung, Artikel verwalten, Artikel bearbeiten, Artikel manuell anlegen, Artikel manuell erstellen, Artikeldaten, Artikeldatensatz, Artikeldatensätze, Neuer Artikel, Neue Artikel",
 						"description" => "Erfahre, wie du deine Artikeldaten in plentymarkets manuell verwaltest.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Manuelle Anlage. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Manuelle Bearbeitung. Hier findest du folgende Informationen:",
 						"languageID" => "0PUDF05",
 						"children" => 						[
 							[
