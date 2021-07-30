@@ -24746,11 +24746,11 @@ class Metadata {
 				"urlName" => "import-export-create",
 				"url" => "/en/item/import-export-create",
 				"level" => 2,
-				"title" => "Import, export, manual creation",
+				"title" => "Import, export, manual processing",
 				"keywords" => "Item, Items, Variation, Variations, Variant, Variants, Product, Products, Default item, Standard item, Item of the type Default, Item of the type Standard, Create item, Create items, Create item data, Creating items, Add item, Add items, Adding items, Create variation, Create variation data, Add variation, Add variation data, Item creation, Item management, Manage items, Managing items, Edit item, Edit items, Editing items, Manually create items, Manual creation, Item data, Item data record, Item data records, New item, New items, Assistant, Assistent, ElasticSync, Import, Importing, Data exchange, Data export, Data import, Item import, Importing items, Importing variations, Importing item data, Importing variation data, CSV, Exporting items, Item export, Exporting item data, FormatDesigner, Format types, Data",
 				"description" => "Learn how to import, export and manually create item data in plentymarkets.",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Import, export, manual creation. The following information is available:",
+				"linkListInto" => "Welcome to the topic Import, export, manual processing. The following information is available:",
 				"languageID" => "9LJNOFH",
 				"children" => 				[
 					[
@@ -24792,11 +24792,11 @@ class Metadata {
 						"urlName" => "create",
 						"url" => "/en/item/import-export-create/create",
 						"level" => 3,
-						"title" => "Manual creation",
+						"title" => "Manual processing",
 						"keywords" => "Item, Items, Variation, Variations, Variant, Variants, Product, Products, Default item, Item of the type Default, Standard item, Item of the type Standard, Create items, Creating items, Create item data, Add item, Adding items, Add item data, Create variation, Create variations, Create variation data, Item creation, Item management, Manage items, Edit items, Manually edit items, Manually create items, Item data, Item data record, Item data records, New item, New items",
 						"description" => "Learn how to manually create item data in plentymarkets.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Manual creation. The following information is available:",
+						"linkListInto" => "Welcome to the topic Manual processing. The following information is available:",
 						"languageID" => "0PUDF05",
 						"children" => 						[
 							[
