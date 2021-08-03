@@ -25371,22 +25371,6 @@ class Metadata {
 		"languageID" => "IWIIOPV",
 		"children" => 		[
 			[
-				"id" => "7ff576a74678e3f47790db7e755a3ffd",
-				"path" => "crm/emailbuilder",
-				"position" => 0,
-				"urlName" => "emailbuilder",
-				"url" => "/en/crm/emailbuilder-testphase",
-				"level" => 2,
-				"title" => "EmailBuilder (Test phase)",
-				"keywords" => "",
-				"description" => "Learn how to use the EmailBuilder in plentymarkets.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic EmailBuilder (Test phase). The following information is available:",
-				"languageID" => "MYFLVYO",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "48f43da22a641aae9128974522a449cb",
 				"path" => "crm/quick-search",
 				"position" => 100,
@@ -25431,6 +25415,22 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Messenger. The following information is available:",
 				"languageID" => "RQ7TB6P",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "7ff576a74678e3f47790db7e755a3ffd",
+				"path" => "crm/emailbuilder",
+				"position" => 600,
+				"urlName" => "emailbuilder",
+				"url" => "/en/crm/emailbuilder-testphase",
+				"level" => 2,
+				"title" => "EmailBuilder (Test phase)",
+				"keywords" => "",
+				"description" => "Learn how to use the EmailBuilder in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic EmailBuilder (Test phase). The following information is available:",
+				"languageID" => "MYFLVYO",
 				"children" => [],
 				"hasChildren" => false
 			],
