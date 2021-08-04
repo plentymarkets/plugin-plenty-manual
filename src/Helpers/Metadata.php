@@ -316,7 +316,7 @@ class Metadata {
 				"url" => "/willkommen/allgemeine-funktionen",
 				"level" => 2,
 				"title" => "Allgemeine Funktionen",
-				"keywords" => "Eigenschaft, Eigenschaften, Tag, Tags, Board, Boards, Aufgabe, Aufgaben, Kalender",
+				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Allgemeine Funktionen. Hier findest du folgende Informationen:",
