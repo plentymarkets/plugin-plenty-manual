@@ -38200,7 +38200,7 @@ class Metadata {
 						"url" => "/en/markets/otto/otto-market",
 						"level" => 3,
 						"title" => "OTTO Market",
-						"keywords" => "OTTO Market, OTTO, marketplace, Otto assistant, Otto category group, Otto marketplace, Otto setup, setting up Otto",
+						"keywords" => "OTTO Market, OTTO, Otto assistant, Otto category group, Otto marketplace, Otto setup, setting up Otto",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to OTTO Market in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic OTTO Market. The following information is available:",
