@@ -25083,11 +25083,11 @@ class Metadata {
 						"urlName" => "frontend-item-search",
 						"url" => "/en/item/frontend-item-search",
 						"level" => 3,
-						"title" => "Search filters",
+						"title" => "Faceted search (filters)",
 						"keywords" => "Filter, Filters, Filtering, Search filter, Search filters, Facet, Facets, Faceted search, Webshop search function, Webshop search, Store search, Online store search, Search function, Search, Frontend, Front end, Webshop, Item search, Ceres, Shop, Online shop, Online store, plentyShop, Front end search, Frontend search, Front end item search, Widget, Widgets, Weighting, Weight, Boost, Boost value",
 						"description" => "",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Search filters. The following information is available:",
+						"linkListInto" => "Welcome to the topic Faceted search (filters). The following information is available:",
 						"languageID" => "NKJXE3I",
 						"children" => [],
 						"hasChildren" => false
