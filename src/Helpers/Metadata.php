@@ -25132,7 +25132,7 @@ class Metadata {
 						"url" => "/en/item/online-store/callisto-templates",
 						"level" => 3,
 						"title" => "Item templates (not recommended)",
-						"keywords" => "Webshop, Shop, Online shop, Online store, Ceres, plentyShop, Frontend, Front end, Item, Items, Template, Templates, Item template, Item templates, Descriptive texts, Descriptive text, Item texts, Item text, Texts, Text, Category, Categories",
+						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Item templates (not recommended). The following information is available:",
