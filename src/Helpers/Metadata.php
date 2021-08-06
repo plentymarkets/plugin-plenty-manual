@@ -1025,7 +1025,7 @@ class Metadata {
 						"url" => "/artikel/webshop/callisto-vorlagen",
 						"level" => 3,
 						"title" => "Artikelvorlagen (nicht empfohlen)",
-						"keywords" => "Webshop, Shop, Online-Shop, Ceres, plentyShop, Frontend, Artikel, Vorlage, Vorlagen, Artikelvorlage, Artikelvorlagen, Beschreibungstexte, Beschreibungstext, Artikeltexte, Artikeltext, Texte, Text, Kategorie, Kategorien",
+						"keywords" => "",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Artikelvorlagen (nicht empfohlen). Hier findest du folgende Informationen:",
