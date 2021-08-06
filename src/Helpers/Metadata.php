@@ -38184,7 +38184,7 @@ class Metadata {
 						"url" => "/en/markets/otto/otto-interface",
 						"level" => 3,
 						"title" => "OTTO",
-						"keywords" => "OTTO, market, marketplace, Otto Direktversand, Otto cooperation, Otto integration, Direktversand, cooperation, integration, Otto interface, Otto setup, setting up Otto",
+						"keywords" => "OTTO, Otto Direktversand, Otto Cooperation, Otto Integration, Otto interface, setting up Otto",
 						"description" => "Multi-Channel in plentymarkets: Set up the interface to the market OTTO in your plentymarkets system.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic OTTO. The following information is available:",
