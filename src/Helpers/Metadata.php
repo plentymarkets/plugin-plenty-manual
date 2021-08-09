@@ -36708,6 +36708,38 @@ class Metadata {
 		"languageID" => "MFX1Q1C",
 		"children" => 		[
 			[
+				"id" => "8931c53cefbff81de6297240c5344a3a",
+				"path" => "markets/limango",
+				"position" => 0,
+				"urlName" => "limango",
+				"url" => "/en/markets/limango",
+				"level" => 2,
+				"title" => "limango",
+				"keywords" => "limango, market, marketplace, limango.de, setting up limango, limango market, limango marketplace, Multi-Channel, Multichannel, Multi-Channel limango, Multichannel limango, Multi Channel limango",
+				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market limango in your plentymarkets system.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic limango. The following information is available:",
+				"languageID" => "ZG3WRBH",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "3d244a95ba526491ea907005efbfd899",
+				"path" => "markets/scalerion",
+				"position" => 0,
+				"urlName" => "scalerion",
+				"url" => "/en/markets/scalerion",
+				"level" => 2,
+				"title" => "Scalerion",
+				"keywords" => "",
+				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market solution Scalerion in your plentymarkets system.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Scalerion. The following information is available:",
+				"languageID" => "EYIGFAS",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "001cf71fdb01003b96e380c752be8d7b",
 				"path" => "markets/mediamarkt",
 				"position" => 0,
@@ -36787,38 +36819,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "3d244a95ba526491ea907005efbfd899",
-				"path" => "markets/scalerion",
-				"position" => 0,
-				"urlName" => "scalerion",
-				"url" => "/en/markets/scalerion",
-				"level" => 2,
-				"title" => "Scalerion",
-				"keywords" => "",
-				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market solution Scalerion in your plentymarkets system.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Scalerion. The following information is available:",
-				"languageID" => "EYIGFAS",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "8931c53cefbff81de6297240c5344a3a",
-				"path" => "markets/limango",
-				"position" => 0,
-				"urlName" => "limango",
-				"url" => "/en/markets/limango",
-				"level" => 2,
-				"title" => "limango",
-				"keywords" => "limango, market, marketplace, limango.de, setting up limango, limango market, limango marketplace, Multi-Channel, Multichannel, Multi-Channel limango, Multichannel limango, Multi Channel limango",
-				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market limango in your plentymarkets system.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic limango. The following information is available:",
-				"languageID" => "ZG3WRBH",
-				"children" => [],
-				"hasChildren" => false
 			],
 			[
 				"id" => "40e7b4d7bb75cd77da8f3a8e2d51ed70",
@@ -38194,22 +38194,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "d1492790f1bee764e180f1d21f97b0c9",
-				"path" => "markets/pixmania",
-				"position" => 160,
-				"urlName" => "pixmania",
-				"url" => "/en/markets/pixmania",
-				"level" => 2,
-				"title" => "PIXmania",
-				"keywords" => "PIXmania, market, marketplace, marketplace PIXmania, pixmania.de, setting up PIXmania, PIXmania setup, multichannel, multi-channel, multi channel, market place",
-				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market PIXmania in your plentymarkets system.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic PIXmania. The following information is available:",
-				"languageID" => "XMVLNKP",
-				"children" => [],
-				"hasChildren" => false
 			],
 			[
 				"id" => "0f4349159d44c4ddf40e814b78bbb7de",
