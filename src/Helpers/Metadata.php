@@ -16204,9 +16204,25 @@ class Metadata {
 		"hasChildren" => true
 	],
 	[
+		"id" => "8e2550c12799cab0419ee94be8086db1",
+		"path" => "glossar",
+		"position" => 300,
+		"urlName" => "glossar",
+		"url" => "/glossar",
+		"level" => 1,
+		"title" => "plentymarkets Glossar",
+		"keywords" => "",
+		"description" => "Glossar für plentymarkets",
+		"navAlias" => "",
+		"linkListInto" => "Willkommen im Themenbereich plentymarkets Glossar. Hier findest du folgende Informationen:",
+		"languageID" => "GJA5K7N",
+		"children" => [],
+		"hasChildren" => false
+	],
+	[
 		"id" => "cce3df80f07d36b56db4376a4802d6c2",
 		"path" => "videos",
-		"position" => 147,
+		"position" => 10147,
 		"urlName" => "videos",
 		"url" => "/videos",
 		"level" => 1,
@@ -16220,7 +16236,7 @@ class Metadata {
 			[
 				"id" => "f50b020a01988e56646635ba7ad8a855",
 				"path" => "videos/basics",
-				"position" => 10,
+				"position" => 10010,
 				"urlName" => "basics",
 				"url" => "/videos/basics",
 				"level" => 2,
@@ -16426,7 +16442,7 @@ class Metadata {
 					[
 						"id" => "55ca6984f12f09224e949ac8ccbbb3de",
 						"path" => "videos/basics/willkommen-bei-plentymarkets",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "willkommen-bei-plentymarkets",
 						"url" => "/videos/basics/willkommen-bei-plentymarkets",
 						"level" => 3,
@@ -16442,7 +16458,7 @@ class Metadata {
 					[
 						"id" => "417c7db9eb492f695d0fb297e4850199",
 						"path" => "videos/basics/verkaufe-ueberall",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "verkaufe-ueberall",
 						"url" => "/videos/basics/verkaufe-ueberall",
 						"level" => 3,
@@ -16458,7 +16474,7 @@ class Metadata {
 					[
 						"id" => "43e63c7f27255dd26936dd39d34202f8",
 						"path" => "videos/basics/artikelstruktur-importoptionen",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "artikelstruktur-importoptionen",
 						"url" => "/videos/basics/artikelstruktur-importoptionen",
 						"level" => 3,
@@ -16474,7 +16490,7 @@ class Metadata {
 					[
 						"id" => "833ece0df52e3b10c208c078f6c786a6",
 						"path" => "videos/basics/einfuehrung-auftragsabwicklung",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "einfuehrung-auftragsabwicklung",
 						"url" => "/videos/basics/einfuehrung-auftragsabwicklung",
 						"level" => 3,
@@ -16493,7 +16509,7 @@ class Metadata {
 			[
 				"id" => "8a4c1e590ae60b81e0424943c4bf99b9",
 				"path" => "videos/grundeinstellungen",
-				"position" => 20,
+				"position" => 10020,
 				"urlName" => "grundeinstellungen",
 				"url" => "/videos/grundeinstellungen",
 				"level" => 2,
@@ -16555,7 +16571,7 @@ class Metadata {
 					[
 						"id" => "79bf96ad0f499a1278e596aec90fcc48",
 						"path" => "videos/grundeinstellungen/unternehmensdaten",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "unternehmensdaten",
 						"url" => "/videos/grundeinstellungen/unternehmensdaten",
 						"level" => 3,
@@ -16571,7 +16587,7 @@ class Metadata {
 					[
 						"id" => "3b87fafe3d2785d2de03189f1e8b3ae0",
 						"path" => "videos/grundeinstellungen/benutzerkonten",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "benutzerkonten",
 						"url" => "/videos/grundeinstellungen/benutzerkonten",
 						"level" => 3,
@@ -16585,7 +16601,7 @@ class Metadata {
 							[
 								"id" => "98f5b6d5d644a735cba8bc0ab05ce5a1",
 								"path" => "videos/grundeinstellungen/benutzerkonten/passwortsicherheitsstandard",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "passwortsicherheitsstandard",
 								"url" => "/videos/grundeinstellungen/benutzerkonten/passwortsicherheitsstandard",
 								"level" => 4,
@@ -16604,7 +16620,7 @@ class Metadata {
 					[
 						"id" => "83037b43400da93599b604e7c6170ece",
 						"path" => "videos/grundeinstellungen/e-mail-verkehr",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "e-mail-verkehr",
 						"url" => "/videos/grundeinstellungen/e-mail-verkehr",
 						"level" => 3,
@@ -16794,7 +16810,7 @@ class Metadata {
 							[
 								"id" => "f99b1357c88043d3d5662b8ec748aeef",
 								"path" => "videos/grundeinstellungen/e-mail-verkehr/mailboxorg",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "mailboxorg",
 								"url" => "/videos/grundeinstellungen/e-mail-verkehr/mailboxorg",
 								"level" => 4,
@@ -16810,7 +16826,7 @@ class Metadata {
 							[
 								"id" => "90fcf0de1f0588a5b8bafd8ee539f782",
 								"path" => "videos/grundeinstellungen/e-mail-verkehr/e-mail-konto-verknuepfen",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "e-mail-konto-verknuepfen",
 								"url" => "/videos/grundeinstellungen/e-mail-verkehr/e-mail-konto-verknuepfen",
 								"level" => 4,
@@ -16826,7 +16842,7 @@ class Metadata {
 							[
 								"id" => "b6d60f14716fb5eec8bf2a7a86bef6f3",
 								"path" => "videos/grundeinstellungen/e-mail-verkehr/e-mail-vorlagen",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "e-mail-vorlagen",
 								"url" => "/videos/grundeinstellungen/e-mail-verkehr/e-mail-vorlagen",
 								"level" => 4,
@@ -16842,7 +16858,7 @@ class Metadata {
 							[
 								"id" => "1e3f83d513d9c911fa986a834a0a28f9",
 								"path" => "videos/grundeinstellungen/e-mail-verkehr/template-variablen-if-konstrukte",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "template-variablen-if-konstrukte",
 								"url" => "/videos/grundeinstellungen/e-mail-verkehr/template-variablen-if-konstrukte",
 								"level" => 4,
@@ -16858,7 +16874,7 @@ class Metadata {
 							[
 								"id" => "d682e2874f3051e6c4a5f24927723640",
 								"path" => "videos/grundeinstellungen/e-mail-verkehr/automatischer-versand",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "automatischer-versand",
 								"url" => "/videos/grundeinstellungen/e-mail-verkehr/automatischer-versand",
 								"level" => 4,
@@ -16877,7 +16893,7 @@ class Metadata {
 					[
 						"id" => "8336e1ee25d26a036f03d38a4021fbc3",
 						"path" => "videos/grundeinstellungen/buchhaltung-rechnungsdokumente",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "buchhaltung-rechnungsdokumente",
 						"url" => "/videos/grundeinstellungen/buchhaltung-rechnungsdokumente",
 						"level" => 3,
@@ -16891,7 +16907,7 @@ class Metadata {
 							[
 								"id" => "2f2de9c072b5fce902dc115f6f02d88b",
 								"path" => "videos/grundeinstellungen/buchhaltung-rechnungsdokumente/standorte",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "standorte",
 								"url" => "/videos/grundeinstellungen/buchhaltung/standorte",
 								"level" => 4,
@@ -16907,7 +16923,7 @@ class Metadata {
 							[
 								"id" => "30c960b4cb7d2fbcf325f0f4464a29a1",
 								"path" => "videos/grundeinstellungen/buchhaltung-rechnungsdokumente/buchhaltung-standorte",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "buchhaltung-standorte",
 								"url" => "/videos/grundeinstellungen/buchhaltung/buchhaltung-standorte",
 								"level" => 4,
@@ -16923,7 +16939,7 @@ class Metadata {
 							[
 								"id" => "52bf733a1096989efc6d76b476c71c69",
 								"path" => "videos/grundeinstellungen/buchhaltung-rechnungsdokumente/rechnung",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "rechnung",
 								"url" => "/videos/grundeinstellungen/buchhaltung/rechnung",
 								"level" => 4,
@@ -16939,7 +16955,7 @@ class Metadata {
 							[
 								"id" => "d1f4c2011bf76b7cd3f159061f1ad691",
 								"path" => "videos/grundeinstellungen/buchhaltung-rechnungsdokumente/sepa-lastschriftmandat",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "sepa-lastschriftmandat",
 								"url" => "/videos/grundeinstellungen/buchhaltung/sepa-lastschriftmandat",
 								"level" => 4,
@@ -16955,7 +16971,7 @@ class Metadata {
 							[
 								"id" => "6e1814daa3906b066fdd4b43706bec71",
 								"path" => "videos/grundeinstellungen/buchhaltung-rechnungsdokumente/nummernkreise",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "nummernkreise",
 								"url" => "/videos/grundeinstellungen/buchhaltung/nummernkreise",
 								"level" => 4,
@@ -16977,7 +16993,7 @@ class Metadata {
 			[
 				"id" => "2b70e492daa01ea1fc08e62ff1f91214",
 				"path" => "videos/artikel",
-				"position" => 30,
+				"position" => 10030,
 				"urlName" => "artikel",
 				"url" => "/videos/artikel",
 				"level" => 2,
@@ -17439,7 +17455,7 @@ class Metadata {
 					[
 						"id" => "839f30bf4c08bde959425bf5ba63899f",
 						"path" => "videos/artikel/artikelstruktur",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "artikelstruktur",
 						"url" => "/videos/artikel/artikelstruktur",
 						"level" => 3,
@@ -17455,7 +17471,7 @@ class Metadata {
 					[
 						"id" => "10a14481ad62c0c21aaf71c0080381a7",
 						"path" => "videos/artikel/pflichtfelder",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "pflichtfelder",
 						"url" => "/videos/artikel/pflichtfelder",
 						"level" => 3,
@@ -17471,7 +17487,7 @@ class Metadata {
 					[
 						"id" => "4e6bdc95252ae355a2cde92284605769",
 						"path" => "videos/artikel/attribute",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "attribute",
 						"url" => "/videos/artikel/attribute",
 						"level" => 3,
@@ -17487,7 +17503,7 @@ class Metadata {
 					[
 						"id" => "1b10da6ba42117d28b5c78a0315ed05d",
 						"path" => "videos/artikel/verkaufspreise",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "verkaufspreise",
 						"url" => "/videos/artikel/verkaufspreise",
 						"level" => 3,
@@ -17503,7 +17519,7 @@ class Metadata {
 					[
 						"id" => "7718acaa84b3a37df2163b696cfdcefe",
 						"path" => "videos/artikel/artikel-anlegen",
-						"position" => 50,
+						"position" => 10050,
 						"urlName" => "artikel-anlegen",
 						"url" => "/videos/artikel/artikel-anlegen",
 						"level" => 3,
@@ -17519,7 +17535,7 @@ class Metadata {
 					[
 						"id" => "9ce05d3abcf4ade415f873f11e80db6c",
 						"path" => "videos/artikel/hauptvariante",
-						"position" => 60,
+						"position" => 10060,
 						"urlName" => "hauptvariante",
 						"url" => "/videos/artikel/hauptvariante",
 						"level" => 3,
@@ -17535,7 +17551,7 @@ class Metadata {
 					[
 						"id" => "d9ef19576252b7c0b2ea222f3c69070c",
 						"path" => "videos/artikel/global",
-						"position" => 70,
+						"position" => 10070,
 						"urlName" => "global",
 						"url" => "/videos/artikel/global",
 						"level" => 3,
@@ -17551,7 +17567,7 @@ class Metadata {
 					[
 						"id" => "e8b75bc4c3f4ddca681e62112d94cb63",
 						"path" => "videos/artikel/kategorien",
-						"position" => 80,
+						"position" => 10080,
 						"urlName" => "kategorien",
 						"url" => "/videos/artikel/kategorien",
 						"level" => 3,
@@ -17567,7 +17583,7 @@ class Metadata {
 					[
 						"id" => "503bd32bee7b0fe8b89142767b726bff",
 						"path" => "videos/artikel/vererbung",
-						"position" => 90,
+						"position" => 10090,
 						"urlName" => "vererbung",
 						"url" => "/videos/artikel/vererbung",
 						"level" => 3,
@@ -17586,7 +17602,7 @@ class Metadata {
 			[
 				"id" => "c3884e0524090de1b9c54f0bc7a2fe8b",
 				"path" => "videos/auftragsabwicklung",
-				"position" => 40,
+				"position" => 10040,
 				"urlName" => "auftragsabwicklung",
 				"url" => "/videos/auftragsabwicklung",
 				"level" => 2,
@@ -17600,7 +17616,7 @@ class Metadata {
 					[
 						"id" => "a982dbf95afc1fe3fd23069da476b350",
 						"path" => "videos/auftragsabwicklung/einstieg-rundgang-auftragsabwicklung",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "einstieg-rundgang-auftragsabwicklung",
 						"url" => "/videos/auftragsabwicklung/einstieg-rundgang-auftragsabwicklung",
 						"level" => 3,
@@ -17616,7 +17632,7 @@ class Metadata {
 					[
 						"id" => "1e77fd360b48d1a4e7079acd46aee08f",
 						"path" => "videos/auftragsabwicklung/einstellungen-vorab-einrichten",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "einstellungen-vorab-einrichten",
 						"url" => "/videos/auftragsabwicklung/einstellungen-vorab-einrichten",
 						"level" => 3,
@@ -17742,7 +17758,7 @@ class Metadata {
 							[
 								"id" => "7194894f715938ff40519b7c9ac9f239",
 								"path" => "videos/auftragsabwicklung/einstellungen-vorab-einrichten/auftraege-mit-status",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "auftraege-mit-status",
 								"url" => "/videos/auftragsabwicklung/einstellungen-vorab-einrichten/auftraege-mit-status",
 								"level" => 4,
@@ -17758,7 +17774,7 @@ class Metadata {
 							[
 								"id" => "22a8f70e3b7c19c05947b40cd16c9c78",
 								"path" => "videos/auftragsabwicklung/einstellungen-vorab-einrichten/auftragseinstellungen",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "auftragseinstellungen",
 								"url" => "/videos/auftragsabwicklung/einstellungen-vorab-einrichten/auftragseinstellungen",
 								"level" => 4,
@@ -17777,7 +17793,7 @@ class Metadata {
 					[
 						"id" => "9b4fced316a887433dec851d9e4fb298",
 						"path" => "videos/auftragsabwicklung/auftraege-abwickeln",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "auftraege-abwickeln",
 						"url" => "/videos/auftragsabwicklung/auftrage-abwickeln",
 						"level" => 3,
@@ -17919,7 +17935,7 @@ class Metadata {
 							[
 								"id" => "3ecb5b54cdee4d765c1a54139cf2f8b7",
 								"path" => "videos/auftragsabwicklung/auftraege-abwickeln/erste-schritte",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "erste-schritte",
 								"url" => "/videos/auftragsabwicklung/auftraege-abwickeln/erste-schritte",
 								"level" => 4,
@@ -17935,7 +17951,7 @@ class Metadata {
 							[
 								"id" => "bbb063baf1ed22fa2f1f5bc2379f32a7",
 								"path" => "videos/auftragsabwicklung/auftraege-abwickeln/stornobeleg",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "stornobeleg",
 								"url" => "/videos/auftragsabwicklung/auftraege-abwickeln/stornobeleg",
 								"level" => 4,
@@ -17951,7 +17967,7 @@ class Metadata {
 							[
 								"id" => "58fa0725b0de36ffb1ff043bed2ad3fc",
 								"path" => "videos/auftragsabwicklung/auftraege-abwickeln/schnellfunktionen-auftragsuebersicht",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "schnellfunktionen-auftragsuebersicht",
 								"url" => "/videos/auftragsabwicklung/auftraege-abwickeln/schnellfunktionen-auftragsuebersicht",
 								"level" => 4,
@@ -17967,7 +17983,7 @@ class Metadata {
 							[
 								"id" => "b497204ce0ea60510ff4d82fd24cdaf6",
 								"path" => "videos/auftragsabwicklung/auftraege-abwickeln/fulfillment-mit-prozessen",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "fulfillment-mit-prozessen",
 								"url" => "/videos/auftragsabwicklung/auftraege-abwickeln/fulfillment-mit-prozessen",
 								"level" => 4,
@@ -17983,7 +17999,7 @@ class Metadata {
 							[
 								"id" => "80047bdd4c686828190d7da7d8fd2f31",
 								"path" => "videos/auftragsabwicklung/auftraege-abwickeln/lieferauftraege",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "lieferauftraege",
 								"url" => "/videos/auftragsabwicklung/auftraege-abwickeln/lieferauftraege",
 								"level" => 4,
@@ -18002,7 +18018,7 @@ class Metadata {
 					[
 						"id" => "c4059a8a7a4f094897d8307030851e24",
 						"path" => "videos/auftragsabwicklung/versand",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "versand",
 						"url" => "/videos/versand",
 						"level" => 3,
@@ -18064,7 +18080,7 @@ class Metadata {
 							[
 								"id" => "bb87c38f4443541e9310bc585b7c9658",
 								"path" => "videos/auftragsabwicklung/versand/versandoptionen-konfigurieren",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "versandoptionen-konfigurieren",
 								"url" => "/videos/auftragsabwicklung/versand/versandoptionen-konfigurieren",
 								"level" => 4,
@@ -18080,7 +18096,7 @@ class Metadata {
 							[
 								"id" => "43786bb825fd59b5d2aad06ce8ffabb2",
 								"path" => "videos/auftragsabwicklung/versand/versandprofile",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "versandprofile",
 								"url" => "/videos/auftragsabwicklung/versand/versandprofile",
 								"level" => 4,
@@ -18096,7 +18112,7 @@ class Metadata {
 							[
 								"id" => "5346cf58c2002c2eb792e83190262527",
 								"path" => "videos/auftragsabwicklung/versand/portotabellen",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "portotabellen",
 								"url" => "/videos/auftragsabwicklung/versand/portotabellen",
 								"level" => 4,
@@ -18112,7 +18128,7 @@ class Metadata {
 							[
 								"id" => "3dc149a835e73cca7065bda0f75e3b41",
 								"path" => "videos/auftragsabwicklung/versand/versandkonfiguration-beispiel-dhl",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "versandkonfiguration-beispiel-dhl",
 								"url" => "/videos/auftragsabwicklung/versand/versandkonfiguration-beispiel-dhl",
 								"level" => 4,
@@ -18131,7 +18147,7 @@ class Metadata {
 					[
 						"id" => "7314595c9b13bd2cf960a17fee135811",
 						"path" => "videos/auftragsabwicklung/retouren-und-storno",
-						"position" => 50,
+						"position" => 10050,
 						"urlName" => "retouren-und-storno",
 						"url" => "/videos/auftragsabwicklung/retouren-und-storno",
 						"level" => 3,
@@ -18385,7 +18401,7 @@ class Metadata {
 							[
 								"id" => "8436a9831b62a9a2745ce8c9a073d2a8",
 								"path" => "videos/auftragsabwicklung/retouren-und-storno/retoure-oder-storno",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "retoure-oder-storno",
 								"url" => "/videos/auftragsabwicklung/retouren-und-storno/retoure-oder-storno",
 								"level" => 4,
@@ -18401,7 +18417,7 @@ class Metadata {
 							[
 								"id" => "04b8fe11748820452aa5f8416af08b15",
 								"path" => "videos/auftragsabwicklung/retouren-und-storno/auftraege-stornieren",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "auftraege-stornieren",
 								"url" => "/videos/auftragsabwicklung/retouren-und-storno/auftraege-stornieren",
 								"level" => 4,
@@ -18417,7 +18433,7 @@ class Metadata {
 							[
 								"id" => "911ad88ffb51b8a9968cf55153cfc498",
 								"path" => "videos/auftragsabwicklung/retouren-und-storno/retoureneinstellungen",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "retoureneinstellungen",
 								"url" => "/videos/auftragsabwicklung/retouren-und-storno/retoureneinstellungen",
 								"level" => 4,
@@ -18433,7 +18449,7 @@ class Metadata {
 							[
 								"id" => "9c7ec342d288471301a62ce3c4fc7a8e",
 								"path" => "videos/auftragsabwicklung/retouren-und-storno/manuelle-retourenanlage",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "manuelle-retourenanlage",
 								"url" => "/videos/auftragsabwicklung/retouren-und-storno/manuelle-retourenanlage",
 								"level" => 4,
@@ -18449,7 +18465,7 @@ class Metadata {
 							[
 								"id" => "3a6b190f9ff81096736cd98eb3ecd2e3",
 								"path" => "videos/auftragsabwicklung/retouren-und-storno/automatisierte-retourenanlage",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "automatisierte-retourenanlage",
 								"url" => "/videos/auftragsabwicklung/retouren-und-storno/automatisierte-retourenanlage",
 								"level" => 4,
@@ -18465,7 +18481,7 @@ class Metadata {
 							[
 								"id" => "793f3c525fec2f25da764f8f75f54b4b",
 								"path" => "videos/auftragsabwicklung/retouren-und-storno/gewaehrleistung",
-								"position" => 60,
+								"position" => 10060,
 								"urlName" => "gewaehrleistung",
 								"url" => "/videos/auftragsabwicklung/retouren-und-storno/gewaehrleistung",
 								"level" => 4,
@@ -18487,7 +18503,7 @@ class Metadata {
 			[
 				"id" => "401db287bd6edcf90ee87105383e7373",
 				"path" => "videos/webshop",
-				"position" => 50,
+				"position" => 10050,
 				"urlName" => "webshop",
 				"url" => "/videos/webshop",
 				"level" => 2,
@@ -18677,7 +18693,7 @@ class Metadata {
 					[
 						"id" => "f964c2857bff70ed487e3ff3aa5c144d",
 						"path" => "videos/webshop/erste-schritte",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "erste-schritte",
 						"url" => "/videos/webshop/erste-schritte",
 						"level" => 3,
@@ -18693,7 +18709,7 @@ class Metadata {
 					[
 						"id" => "2792bd56b956e4ff136890806d292c51",
 						"path" => "videos/webshop/individualisiere-look-deines-ceres-shops",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "individualisiere-look-deines-ceres-shops",
 						"url" => "/videos/webshop/individualsiere-deinen-shop",
 						"level" => 3,
@@ -18709,7 +18725,7 @@ class Metadata {
 					[
 						"id" => "1b4b0feececbd047871469ca8c6ad138",
 						"path" => "videos/webshop/deine-artikel",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "deine-artikel",
 						"url" => "/videos/webshop/deine-artikel",
 						"level" => 3,
@@ -18728,7 +18744,7 @@ class Metadata {
 			[
 				"id" => "35b416314e564bc77164b73ed1a67705",
 				"path" => "videos/ebay",
-				"position" => 60,
+				"position" => 10060,
 				"urlName" => "ebay",
 				"url" => "/videos/ebay",
 				"level" => 2,
@@ -18790,7 +18806,7 @@ class Metadata {
 					[
 						"id" => "b5f5662f1db6e96b04fafbc52347d9c8",
 						"path" => "videos/ebay/countdown-ebay-einstieg",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "countdown-ebay-einstieg",
 						"url" => "/videos/ebay/countdown-ebay-einstieg",
 						"level" => 3,
@@ -18806,7 +18822,7 @@ class Metadata {
 					[
 						"id" => "7ba224d9a3626ee611bc5c1713640e30",
 						"path" => "videos/ebay/einstellungen",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "einstellungen",
 						"url" => "/videos/ebay/einstellungen",
 						"level" => 3,
@@ -18932,7 +18948,7 @@ class Metadata {
 							[
 								"id" => "808de6f2c3c919e6236b19928e65b778",
 								"path" => "videos/ebay/einstellungen/schnittstelle-einrichten",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "schnittstelle-einrichten",
 								"url" => "/videos/ebay/einstellungen/schnittstelle-einrichten",
 								"level" => 4,
@@ -18948,7 +18964,7 @@ class Metadata {
 							[
 								"id" => "50b9651273674aa70d510ffc3f82499e",
 								"path" => "videos/ebay/einstellungen/rahmenbedingungen",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "rahmenbedingungen",
 								"url" => "/videos/ebay/einstellungen/rahmenbedingungen",
 								"level" => 4,
@@ -18967,7 +18983,7 @@ class Metadata {
 					[
 						"id" => "40946b821e96e26ba65cafa70a3996b8",
 						"path" => "videos/ebay/listings",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "listings",
 						"url" => "/videos/ebay/listings",
 						"level" => 3,
@@ -19349,7 +19365,7 @@ class Metadata {
 							[
 								"id" => "9db40e5f4c958ef64e014897f0ada45d",
 								"path" => "videos/ebay/listings/import-listing-import",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "import-listing-import",
 								"url" => "/videos/ebay/listings/import-listing-import",
 								"level" => 4,
@@ -19365,7 +19381,7 @@ class Metadata {
 							[
 								"id" => "4abb7d4d88470727f7333bd0b80f909e",
 								"path" => "videos/ebay/listings/listings-anlegen",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "listings-anlegen",
 								"url" => "/videos/ebay/listings/listings-anlegen",
 								"level" => 4,
@@ -19381,7 +19397,7 @@ class Metadata {
 							[
 								"id" => "1c297b7aa60f0217014e958d34a133c8",
 								"path" => "videos/ebay/listings/listings-bearbeiten",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "listings-bearbeiten",
 								"url" => "/videos/ebay/listings/listings-bearbeiten",
 								"level" => 4,
@@ -19397,7 +19413,7 @@ class Metadata {
 							[
 								"id" => "e3d0f2c07de1bf66e913db9e303a541a",
 								"path" => "videos/ebay/listings/listings-starten",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "listings-starten",
 								"url" => "/videos/ebay/listings/listings-starten",
 								"level" => 4,
@@ -19413,7 +19429,7 @@ class Metadata {
 							[
 								"id" => "a51842a6c71602729df1da498d1bc193",
 								"path" => "videos/ebay/listings/mehrere-listings-bearbeiten",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "mehrere-listings-bearbeiten",
 								"url" => "/videos/ebay/listings/mehrere-listings-bearbeiten",
 								"level" => 4,
@@ -19429,7 +19445,7 @@ class Metadata {
 							[
 								"id" => "bdab8f6de53cc0b14e95acff72535e5a",
 								"path" => "videos/ebay/listings/layout-vorlagen",
-								"position" => 60,
+								"position" => 10060,
 								"urlName" => "layout-vorlagen",
 								"url" => "/videos/ebay/listings/layout-vorlagen",
 								"level" => 4,
@@ -19445,7 +19461,7 @@ class Metadata {
 							[
 								"id" => "29485836860b8f9f6ccf161afbb302e8",
 								"path" => "videos/ebay/listings/retouren",
-								"position" => 70,
+								"position" => 10070,
 								"urlName" => "retouren",
 								"url" => "/videos/ebay/listings/retouren",
 								"level" => 4,
@@ -19464,7 +19480,7 @@ class Metadata {
 					[
 						"id" => "cef58a147b2bd1aaf0678fda6ff83e7a",
 						"path" => "videos/ebay/plugins",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "plugins",
 						"url" => "/videos/ebay/plugins",
 						"level" => 3,
@@ -19638,7 +19654,7 @@ class Metadata {
 							[
 								"id" => "b570b9210d300bbb1f14d188907846d3",
 								"path" => "videos/ebay/plugins/analytics",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "analytics",
 								"url" => "/videos/ebay/plugins/analytics",
 								"level" => 4,
@@ -19654,7 +19670,7 @@ class Metadata {
 							[
 								"id" => "841c454e0e4b7cccb60f2fad6115f015",
 								"path" => "videos/ebay/plugins/marketing-aktionen",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "marketing-aktionen",
 								"url" => "/videos/ebay/plugins/marketing-aktionen",
 								"level" => 4,
@@ -19670,7 +19686,7 @@ class Metadata {
 							[
 								"id" => "e193cfb9dfbfa778b792f9b4b5b362d2",
 								"path" => "videos/ebay/plugins/marketing-kampagnen",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "marketing-kampagnen",
 								"url" => "/videos/ebay/plugins/marketing-kampagnen",
 								"level" => 4,
@@ -19686,7 +19702,7 @@ class Metadata {
 							[
 								"id" => "2381637e27237b4cb5773901dbd5ba20",
 								"path" => "videos/ebay/plugins/seo",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "seo",
 								"url" => "/videos/ebay/plugins/seo",
 								"level" => 4,
@@ -19702,7 +19718,7 @@ class Metadata {
 							[
 								"id" => "2ba0dc58fba904acac4f85f85fa7ca71",
 								"path" => "videos/ebay/plugins/feedback",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "feedback",
 								"url" => "/videos/ebay/plugins/feedback",
 								"level" => 4,
@@ -19724,7 +19740,7 @@ class Metadata {
 			[
 				"id" => "0294ba9a478d6ac07c059c15204079ae",
 				"path" => "videos/amazon",
-				"position" => 70,
+				"position" => 10070,
 				"urlName" => "amazon",
 				"url" => "/videos/amazon",
 				"level" => 2,
@@ -19786,7 +19802,7 @@ class Metadata {
 					[
 						"id" => "2510117d83311f71b5b1fe3658e31e15",
 						"path" => "videos/amazon/einleitung",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "einleitung",
 						"url" => "/videos/amazon/einleitung",
 						"level" => 3,
@@ -19802,7 +19818,7 @@ class Metadata {
 					[
 						"id" => "52a4c8bd0a878445c0a2c62c92c3decc",
 						"path" => "videos/amazon/mws-schnittstelle",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "mws-schnittstelle",
 						"url" => "/videos/amazon/mws-schnittstelle",
 						"level" => 3,
@@ -19818,7 +19834,7 @@ class Metadata {
 					[
 						"id" => "f5d1fa83eae7074c904dfeb8e7398aa4",
 						"path" => "videos/amazon/artikel",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "artikel",
 						"url" => "/videos/amazon/artikel",
 						"level" => 3,
@@ -20056,7 +20072,7 @@ class Metadata {
 							[
 								"id" => "7191042d775d8a651ed3dbfa40d0480f",
 								"path" => "videos/amazon/artikel/verkauf",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "verkauf",
 								"url" => "/videos/amazon/artikel/verkauf",
 								"level" => 4,
@@ -20072,7 +20088,7 @@ class Metadata {
 							[
 								"id" => "10fb2e0c8fdd617311fff66bc6edd7dc",
 								"path" => "videos/amazon/artikel/eigenschaften",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "eigenschaften",
 								"url" => "/videos/amazon/artikel/eigenschaften",
 								"level" => 4,
@@ -20088,7 +20104,7 @@ class Metadata {
 							[
 								"id" => "5a2b6bd8a45a1068a6169e5cfd91d2dc",
 								"path" => "videos/amazon/artikel/artikelexport",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "artikelexport",
 								"url" => "/videos/amazon/artikel/artikelexport",
 								"level" => 4,
@@ -20104,7 +20120,7 @@ class Metadata {
 							[
 								"id" => "6a3b35a178f1754894c7eaf01116c703",
 								"path" => "videos/amazon/artikel/flat-files",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "flat-files",
 								"url" => "/videos/amazon/artikel/flat-files",
 								"level" => 4,
@@ -20123,7 +20139,7 @@ class Metadata {
 					[
 						"id" => "8e8e426d73c1e7b19c21126e10d06ba2",
 						"path" => "videos/amazon/auftraege",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "auftraege",
 						"url" => "/videos/amazon/auftraege",
 						"level" => 3,
@@ -20425,7 +20441,7 @@ class Metadata {
 							[
 								"id" => "9851c3ade04fabd710e50717c939f087",
 								"path" => "videos/amazon/auftraege/mfn-fba",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "mfn-fba",
 								"url" => "/videos/amazon/auftraege/mfn-fba",
 								"level" => 4,
@@ -20441,7 +20457,7 @@ class Metadata {
 							[
 								"id" => "e199939f528344965d4c857f9c2f87d0",
 								"path" => "videos/amazon/auftraege/mfn-auftraege",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "mfn-auftraege",
 								"url" => "/videos/amazon/auftraege/mfn-auftraege",
 								"level" => 4,
@@ -20457,7 +20473,7 @@ class Metadata {
 							[
 								"id" => "a79e722742edae78a582a9c388f52b1e",
 								"path" => "videos/amazon/auftraege/mfn-retouren",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "mfn-retouren",
 								"url" => "/videos/amazon/auftraege/mfn-retouren",
 								"level" => 4,
@@ -20473,7 +20489,7 @@ class Metadata {
 							[
 								"id" => "c2b373b364b9c74dcd3bec738b34c611",
 								"path" => "videos/amazon/auftraege/prime",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "prime",
 								"url" => "/videos/amazon/auftraege/prime",
 								"level" => 4,
@@ -20489,7 +20505,7 @@ class Metadata {
 							[
 								"id" => "66aad59c68426499c9fa1924ba3464a1",
 								"path" => "videos/amazon/auftraege/fba",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "fba",
 								"url" => "/videos/amazon/auftraege/fba",
 								"level" => 4,
@@ -20505,7 +20521,7 @@ class Metadata {
 							[
 								"id" => "2ff2453a8e3edbad0ad828ca673fe2ef",
 								"path" => "videos/amazon/auftraege/multi-channel",
-								"position" => 60,
+								"position" => 10060,
 								"urlName" => "multi-channel",
 								"url" => "/videos/amazon/auftraege/multi-channel",
 								"level" => 4,
@@ -20527,7 +20543,7 @@ class Metadata {
 			[
 				"id" => "7d02ca16ea532a098295c8c6700d8a51",
 				"path" => "videos/automatisierung",
-				"position" => 80,
+				"position" => 10080,
 				"urlName" => "automatisierung",
 				"url" => "/videos/automatisierung",
 				"level" => 2,
@@ -20541,7 +20557,7 @@ class Metadata {
 					[
 						"id" => "c88b0141b27f144b815364e2228960b4",
 						"path" => "videos/automatisierung/einstieg",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "einstieg",
 						"url" => "/videos/automatisierung/einstieg",
 						"level" => 3,
@@ -20557,7 +20573,7 @@ class Metadata {
 					[
 						"id" => "7fae524517195683653ae39b87196fd6",
 						"path" => "videos/automatisierung/ereignisaktionen",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "ereignisaktionen",
 						"url" => "/videos/automatisierung/ereignisaktionen",
 						"level" => 3,
@@ -20619,7 +20635,7 @@ class Metadata {
 							[
 								"id" => "a96ce5d0f80d1b9ce605280e3ddb3f18",
 								"path" => "videos/automatisierung/ereignisaktionen/grundlagen",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "grundlagen",
 								"url" => "/videos/automatisierung/ereignisaktionen/grundlagen",
 								"level" => 4,
@@ -20635,7 +20651,7 @@ class Metadata {
 							[
 								"id" => "22eafef8213b94fe8e29c9c93b050fb9",
 								"path" => "videos/automatisierung/ereignisaktionen/auftragsabwicklung-automatisieren",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "auftragsabwicklung-automatisieren",
 								"url" => "/videos/automatisierung/ereignisaktionen/auftragsabwicklung-automatisieren",
 								"level" => 4,
@@ -20651,7 +20667,7 @@ class Metadata {
 							[
 								"id" => "da1bf41d827e96a4a9158d8591a3c6ed",
 								"path" => "videos/automatisierung/ereignisaktionen/tracking-url",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "tracking-url",
 								"url" => "/videos/automatisierung/ereignisaktionen/tracking-url",
 								"level" => 4,
@@ -20667,7 +20683,7 @@ class Metadata {
 							[
 								"id" => "e5ad4aaea121f0a161f2c91568edc8d7",
 								"path" => "videos/automatisierung/ereignisaktionen/gratis-artikel",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "gratis-artikel",
 								"url" => "/videos/automatisierung/ereignisaktionen/gratis-artikel",
 								"level" => 4,
@@ -20686,7 +20702,7 @@ class Metadata {
 					[
 						"id" => "8a28bedcf10cbdd32358d71161b4eded",
 						"path" => "videos/automatisierung/prozesse",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "prozesse",
 						"url" => "/videos/automatisierung/prozesse",
 						"level" => 3,
@@ -21004,7 +21020,7 @@ class Metadata {
 							[
 								"id" => "bb5e0b704fe09072292008034be07fb4",
 								"path" => "videos/automatisierung/prozesse/plentybase",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "plentybase",
 								"url" => "/videos/automatisierung/prozesse/plentybase",
 								"level" => 4,
@@ -21020,7 +21036,7 @@ class Metadata {
 							[
 								"id" => "17388e9c91dd972c5122788cde5603f9",
 								"path" => "videos/automatisierung/prozesse/drucker",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "drucker",
 								"url" => "/videos/automatisierung/prozesse/drucker",
 								"level" => 4,
@@ -21036,7 +21052,7 @@ class Metadata {
 							[
 								"id" => "7efdd9ce68cf99d2292f154812a83ba4",
 								"path" => "videos/automatisierung/prozesse/anlegen-starten",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "anlegen-starten",
 								"url" => "/videos/automatisierung/prozesse/anlegen-starten",
 								"level" => 4,
@@ -21052,7 +21068,7 @@ class Metadata {
 							[
 								"id" => "fd6be72282edbd5bb571d1d1aca2f293",
 								"path" => "videos/automatisierung/prozesse/arbeitsschritte",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "arbeitsschritte",
 								"url" => "/videos/automatisierung/prozesse/arbeitsschritte",
 								"level" => 4,
@@ -21068,7 +21084,7 @@ class Metadata {
 							[
 								"id" => "177739c21f33236d0f834d30de3ba150",
 								"path" => "videos/automatisierung/prozesse/aktionen-subaktionen",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "aktionen-subaktionen",
 								"url" => "/videos/automatisierung/prozesse/aktionen-subaktionen",
 								"level" => 4,
@@ -21084,7 +21100,7 @@ class Metadata {
 							[
 								"id" => "b3d580e1b46c4c9e8843c3d7f6439f11",
 								"path" => "videos/automatisierung/prozesse/import-export",
-								"position" => 60,
+								"position" => 10060,
 								"urlName" => "import-export",
 								"url" => "/videos/automatisierung/prozesse/import-export",
 								"level" => 4,
@@ -21100,7 +21116,7 @@ class Metadata {
 							[
 								"id" => "0467ddcb11971caf19ddd1370c7802f0",
 								"path" => "videos/automatisierung/prozesse/steuerelemente",
-								"position" => 70,
+								"position" => 10070,
 								"urlName" => "steuerelemente",
 								"url" => "/videos/automatisierung/prozesse/steuerelemente",
 								"level" => 4,
@@ -21116,7 +21132,7 @@ class Metadata {
 							[
 								"id" => "b03fa20add2e64ac74625e9944ba6737",
 								"path" => "videos/automatisierung/prozesse/loop",
-								"position" => 80,
+								"position" => 10080,
 								"urlName" => "loop",
 								"url" => "/videos/automatisierung/prozesse/loop",
 								"level" => 4,
@@ -21132,7 +21148,7 @@ class Metadata {
 							[
 								"id" => "c02704c3706c8b54530dedff9406ef3b",
 								"path" => "videos/automatisierung/prozesse/split",
-								"position" => 90,
+								"position" => 10090,
 								"urlName" => "split",
 								"url" => "/videos/automatisierung/prozesse/split",
 								"level" => 4,
@@ -21148,7 +21164,7 @@ class Metadata {
 							[
 								"id" => "b20edc1070bbb2ea67d7016632d19b65",
 								"path" => "videos/automatisierung/prozesse/filter",
-								"position" => 100,
+								"position" => 100100,
 								"urlName" => "filter",
 								"url" => "/videos/automatisierung/prozesse/filter",
 								"level" => 4,
@@ -21164,7 +21180,7 @@ class Metadata {
 							[
 								"id" => "80589c308fbbdb9ef210ff82e99b4bbc",
 								"path" => "videos/automatisierung/prozesse/dialog",
-								"position" => 110,
+								"position" => 100110,
 								"urlName" => "dialog",
 								"url" => "/videos/automatisierung/prozesse/dialog",
 								"level" => 4,
@@ -21180,7 +21196,7 @@ class Metadata {
 							[
 								"id" => "73af1bbb4b50892b79a7a5c6c7632b25",
 								"path" => "videos/automatisierung/prozesse/fallbeispiel-multi",
-								"position" => 120,
+								"position" => 100120,
 								"urlName" => "fallbeispiel-multi",
 								"url" => "/videos/automatisierung/prozesse/fallbeispiel-multi",
 								"level" => 4,
@@ -21196,7 +21212,7 @@ class Metadata {
 							[
 								"id" => "1f2ce3736edf2c1d7cb301438d4c0a54",
 								"path" => "videos/automatisierung/prozesse/fallbeispiel-single",
-								"position" => 130,
+								"position" => 100130,
 								"urlName" => "fallbeispiel-single",
 								"url" => "/videos/automatisierung/prozesse/fallbeispiel-single",
 								"level" => 4,
@@ -21218,7 +21234,7 @@ class Metadata {
 			[
 				"id" => "f7357ea25b797d2cb7f3685615fffe15",
 				"path" => "videos/datenuebernahme",
-				"position" => 90,
+				"position" => 10090,
 				"urlName" => "datenuebernahme",
 				"url" => "/videos/datenuebernahme",
 				"level" => 2,
@@ -21232,7 +21248,7 @@ class Metadata {
 					[
 						"id" => "6ce40b91a825f0b45e772175330238fb",
 						"path" => "videos/datenuebernahme/vorstellung-elasticsync",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "vorstellung-elasticsync",
 						"url" => "/videos/datenuebernahme/vorstellung-elasticsync",
 						"level" => 3,
@@ -21248,7 +21264,7 @@ class Metadata {
 					[
 						"id" => "1cb0d7df7d64e86c0a399594d4da0110",
 						"path" => "videos/datenuebernahme/grundlagen",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "grundlagen",
 						"url" => "/videos/datenuebernahme/grundlagen",
 						"level" => 3,
@@ -21358,7 +21374,7 @@ class Metadata {
 							[
 								"id" => "5a0ab6424fb87cab7e81aff54cd48408",
 								"path" => "videos/datenuebernahme/grundlagen/datenimport-mit-elasticsync",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "datenimport-mit-elasticsync",
 								"url" => "/videos/datenuebernahme/grundlagen/datenimport-mit-elasticsync",
 								"level" => 4,
@@ -21374,7 +21390,7 @@ class Metadata {
 							[
 								"id" => "6bc77176973b314f8ca0e38c76c569bf",
 								"path" => "videos/datenuebernahme/grundlagen/artikel-manuell-importieren",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "artikel-manuell-importieren",
 								"url" => "/videos/datenuebernahme/grundlagen/artikel-manuell-importieren",
 								"level" => 4,
@@ -21390,7 +21406,7 @@ class Metadata {
 							[
 								"id" => "79f34423963eb304338a742071f2dd18",
 								"path" => "videos/datenuebernahme/grundlagen/daten-automatisch-importieren",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "daten-automatisch-importieren",
 								"url" => "/videos/datenuebernahme/grundlagen/daten-automatisch-importieren",
 								"level" => 4,
@@ -21409,7 +21425,7 @@ class Metadata {
 					[
 						"id" => "6e7c854839be01023563f184b2dc8ebd",
 						"path" => "videos/datenuebernahme/zusatzfeatures",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "zusatzfeatures",
 						"url" => "/videos/datenuebernahme/zusatzfeatures",
 						"level" => 3,
@@ -21423,7 +21439,7 @@ class Metadata {
 							[
 								"id" => "dd8637e801f487a01ca699a689331025",
 								"path" => "videos/datenuebernahme/zusatzfeatures/zusatzinformationen-sync",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "zusatzinformationen-sync",
 								"url" => "/videos/datenuebernahme/zusatzfeatures/zusatzinformationen-sync",
 								"level" => 4,
@@ -21439,7 +21455,7 @@ class Metadata {
 							[
 								"id" => "7d41ccbc0dd91518d32b545fdb29f795",
 								"path" => "videos/datenuebernahme/zusatzfeatures/informationen-austauschen",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "informationen-austauschen",
 								"url" => "/videos/datenuebernahme/zusatzfeatures/informationen-austauschen",
 								"level" => 4,
@@ -21455,7 +21471,7 @@ class Metadata {
 							[
 								"id" => "abe3af283ac11869800964f1b1a00ad1",
 								"path" => "videos/datenuebernahme/zusatzfeatures/informationen-aendern",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "informationen-aendern",
 								"url" => "/videos/datenuebernahme/zusatzfeatures/informationen-aendern",
 								"level" => 4,
@@ -21474,7 +21490,7 @@ class Metadata {
 					[
 						"id" => "d1105fd6e914e1980f603db2215d2894",
 						"path" => "videos/datenuebernahme/praxisbeispiele",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "praxisbeispiele",
 						"url" => "/videos/datenuebernahme/praxisbeispiele",
 						"level" => 3,
@@ -21648,7 +21664,7 @@ class Metadata {
 							[
 								"id" => "67278f9f02f9ddf9c674a1ef88049495",
 								"path" => "videos/datenuebernahme/praxisbeispiele/import-export",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "import-export",
 								"url" => "/videos/datenuebernahme/praxisbeispiele/import-export",
 								"level" => 4,
@@ -21664,7 +21680,7 @@ class Metadata {
 							[
 								"id" => "7cb2e4a6243f23f5702d71d78629bba3",
 								"path" => "videos/datenuebernahme/praxisbeispiele/artikel-und-varianten-anlegen",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "artikel-und-varianten-anlegen",
 								"url" => "/videos/datenuebernahme/praxisbeispiele/artikel-und-varianten-anlegen",
 								"level" => 4,
@@ -21680,7 +21696,7 @@ class Metadata {
 							[
 								"id" => "946309a5e8805f46fd6a76c526cc9756",
 								"path" => "videos/datenuebernahme/praxisbeispiele/auftraege-importieren",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "auftraege-importieren",
 								"url" => "/videos/datenuebernahme/praxisbeispiele/auftraege-importieren",
 								"level" => 4,
@@ -21702,7 +21718,7 @@ class Metadata {
 			[
 				"id" => "71a181c30a4f5a3407efc7bd9a2c1ea1",
 				"path" => "videos/pos",
-				"position" => 100,
+				"position" => 100100,
 				"urlName" => "pos",
 				"url" => "/videos/pos",
 				"level" => 2,
@@ -21716,7 +21732,7 @@ class Metadata {
 					[
 						"id" => "1b2ff405b9b216272110e239883cc216",
 						"path" => "videos/pos/einstieg",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "einstieg",
 						"url" => "/videos/pos/einstieg",
 						"level" => 3,
@@ -21732,7 +21748,7 @@ class Metadata {
 					[
 						"id" => "ff9d28f316bffb7402eb4cc1b1a95d71",
 						"path" => "videos/pos/pos-einrichtung",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "pos-einrichtung",
 						"url" => "/videos/pos/pos-einrichtung",
 						"level" => 3,
@@ -22034,7 +22050,7 @@ class Metadata {
 							[
 								"id" => "49675a7aa3cf9e91619489178f07063e",
 								"path" => "videos/pos/pos-einrichtung/backend",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "backend",
 								"url" => "/videos/pos/pos-einrichtung/backend",
 								"level" => 4,
@@ -22050,7 +22066,7 @@ class Metadata {
 							[
 								"id" => "2cc85134f1b68f7848831174b22dac3b",
 								"path" => "videos/pos/pos-einrichtung/app",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "app",
 								"url" => "/videos/pos/pos-einrichtung/app",
 								"level" => 4,
@@ -22066,7 +22082,7 @@ class Metadata {
 							[
 								"id" => "10f712f9e2fbd3a7e566a2813ed77700",
 								"path" => "videos/pos/pos-einrichtung/ec-karten",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "ec-karten",
 								"url" => "/videos/pos/pos-einrichtung/ec-karten",
 								"level" => 4,
@@ -22082,7 +22098,7 @@ class Metadata {
 							[
 								"id" => "176fc1c2a0970110f97d58c43c2032e8",
 								"path" => "videos/pos/pos-einrichtung/diversartikel",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "diversartikel",
 								"url" => "/videos/pos/pos-einrichtung/diversartikel",
 								"level" => 4,
@@ -22101,7 +22117,7 @@ class Metadata {
 					[
 						"id" => "558da2657e33d89c3ed4084bfd2dd5cf",
 						"path" => "videos/pos/arbeiten-mit-pos",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "arbeiten-mit-pos",
 						"url" => "/videos/arbeiten-mit-pos",
 						"level" => 3,
@@ -22371,7 +22387,7 @@ class Metadata {
 							[
 								"id" => "b788769f253d80c167ad79f8e5fccae3",
 								"path" => "videos/pos/arbeiten-mit-pos/kassieren",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "kassieren",
 								"url" => "/videos/pos/arbeiten-mit-pos/kassieren",
 								"level" => 4,
@@ -22387,7 +22403,7 @@ class Metadata {
 							[
 								"id" => "8eb83226819af18924279ba9213ea3c0",
 								"path" => "videos/pos/arbeiten-mit-pos/einlagen-entnahmen",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "einlagen-entnahmen",
 								"url" => "/videos/pos/arbeiten-mit-pos/einlagen-entnahmen",
 								"level" => 4,
@@ -22403,7 +22419,7 @@ class Metadata {
 							[
 								"id" => "c7729389deb5c77789413813858c7082",
 								"path" => "videos/pos/arbeiten-mit-pos/kassensturz",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "kassensturz",
 								"url" => "/videos/pos/arbeiten-mit-pos/kassensturz",
 								"level" => 4,
@@ -22419,7 +22435,7 @@ class Metadata {
 							[
 								"id" => "7346cb5053f99b2d16cef0322ea5715e",
 								"path" => "videos/pos/arbeiten-mit-pos/tagesabschluss",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "tagesabschluss",
 								"url" => "/videos/pos/arbeiten-mit-pos/tagesabschluss",
 								"level" => 4,
@@ -22441,7 +22457,7 @@ class Metadata {
 			[
 				"id" => "9229d3d9897033bb903f8251dc54ea4f",
 				"path" => "videos/warenwirtschaft",
-				"position" => 120,
+				"position" => 100120,
 				"urlName" => "warenwirtschaft",
 				"url" => "/videos/warenwirtschaft",
 				"level" => 2,
@@ -22519,7 +22535,7 @@ class Metadata {
 					[
 						"id" => "b61c77e6d7fcab1c853ba64bdbeb5167",
 						"path" => "videos/warenwirtschaft/lager-anlegen-und-verwalten",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "lager-anlegen-und-verwalten",
 						"url" => "/videos/warenwirtschaft/lager-anlegen-und-verwalten",
 						"level" => 3,
@@ -22541,7 +22557,7 @@ class Metadata {
 	[
 		"id" => "6b306396aa9fdbc560492611d41dd56f",
 		"path" => "changelog",
-		"position" => 150,
+		"position" => 10150,
 		"urlName" => "changelog",
 		"url" => "/changelog",
 		"level" => 1,
@@ -22555,7 +22571,7 @@ class Metadata {
 			[
 				"id" => "582859adde30bc23a3c0e2581950d958",
 				"path" => "changelog/juli-2021",
-				"position" => 830,
+				"position" => 10830,
 				"urlName" => "juli-2021",
 				"url" => "/changelog/juli-2021",
 				"level" => 2,
@@ -22569,7 +22585,7 @@ class Metadata {
 					[
 						"id" => "64d5547d902cb238060a32b4b039997d",
 						"path" => "changelog/juli-2021/2021-07-15",
-						"position" => 640,
+						"position" => 10640,
 						"urlName" => "2021-07-15",
 						"url" => "/changelog/juli-2021/2021-07-15",
 						"level" => 3,
@@ -22585,7 +22601,7 @@ class Metadata {
 					[
 						"id" => "a3b99035548c2168c74763b8b0cb444f",
 						"path" => "changelog/juli-2021/2021-07-08",
-						"position" => 650,
+						"position" => 10650,
 						"urlName" => "2021-07-08",
 						"url" => "/changelog/juli-2021/2021-07-08",
 						"level" => 3,
@@ -22601,7 +22617,7 @@ class Metadata {
 					[
 						"id" => "644f099ce42e534ac1b791a398c4d80d",
 						"path" => "changelog/juli-2021/2021-07-28",
-						"position" => 650,
+						"position" => 10650,
 						"urlName" => "2021-07-28",
 						"url" => "/changelog/juli-2021/2021-07-28",
 						"level" => 3,
@@ -22617,7 +22633,7 @@ class Metadata {
 					[
 						"id" => "0903a3d61d33b396b4b9512d5fa3a55b",
 						"path" => "changelog/juli-2021/2021-07-21",
-						"position" => 660,
+						"position" => 10660,
 						"urlName" => "2021-07-21",
 						"url" => "/changelog/juli-2021/2021-07-21",
 						"level" => 3,
@@ -22636,7 +22652,7 @@ class Metadata {
 			[
 				"id" => "2a5106f241f806799c2f18ca9c6dd0c7",
 				"path" => "changelog/juni-2021",
-				"position" => 840,
+				"position" => 10840,
 				"urlName" => "juni-2021",
 				"url" => "/changelog/juni-2021",
 				"level" => 2,
@@ -22650,7 +22666,7 @@ class Metadata {
 					[
 						"id" => "5c7b786273a1c5c381af995a3aa5ab09",
 						"path" => "changelog/juni-2021/2021-06-30",
-						"position" => 660,
+						"position" => 10660,
 						"urlName" => "2021-06-30",
 						"url" => "/changelog/juni-2021/2021-06-30",
 						"level" => 3,
@@ -22666,7 +22682,7 @@ class Metadata {
 					[
 						"id" => "73bd65edb00c5939c2073772aeb73866",
 						"path" => "changelog/juni-2021/2021-06-23",
-						"position" => 670,
+						"position" => 10670,
 						"urlName" => "2021-06-23",
 						"url" => "/changelog/juni-2021/2021-06-23",
 						"level" => 3,
@@ -22682,7 +22698,7 @@ class Metadata {
 					[
 						"id" => "7e58c76950b8076257642d07b53baeda",
 						"path" => "changelog/juni-2021/2021-06-17",
-						"position" => 680,
+						"position" => 10680,
 						"urlName" => "2021-06-17",
 						"url" => "/changelog/juni-2021/2021-06-17",
 						"level" => 3,
@@ -22701,7 +22717,7 @@ class Metadata {
 			[
 				"id" => "eed19db707cdb96c2f3c6baf9da3b272",
 				"path" => "changelog/april-2021",
-				"position" => 850,
+				"position" => 10850,
 				"urlName" => "april-2021",
 				"url" => "/changelog/april-2021",
 				"level" => 2,
@@ -22715,7 +22731,7 @@ class Metadata {
 					[
 						"id" => "30c7acba96692ef0fa7e556b984e8b80",
 						"path" => "changelog/april-2021/2021-04-28",
-						"position" => 690,
+						"position" => 10690,
 						"urlName" => "2021-04-28",
 						"url" => "/changelog/april-2021/2021-04-28",
 						"level" => 3,
@@ -22731,7 +22747,7 @@ class Metadata {
 					[
 						"id" => "1bc1a84db56a25b7bba0589b6665e346",
 						"path" => "changelog/april-2021/2021-04-21",
-						"position" => 700,
+						"position" => 10700,
 						"urlName" => "2021-04-21",
 						"url" => "/changelog/april-2021/2021-04-21",
 						"level" => 3,
@@ -22747,7 +22763,7 @@ class Metadata {
 					[
 						"id" => "fdb89845267f97ca6dd6618b25edb3d9",
 						"path" => "changelog/april-2021/2021-04-14",
-						"position" => 710,
+						"position" => 10710,
 						"urlName" => "2021-04-14",
 						"url" => "/changelog/april-2021/2021-04-14",
 						"level" => 3,
@@ -22763,7 +22779,7 @@ class Metadata {
 					[
 						"id" => "636c20dde3d8134493a3f26f4a4561bc",
 						"path" => "changelog/april-2021/2021-04-07",
-						"position" => 720,
+						"position" => 10720,
 						"urlName" => "2021-04-07",
 						"url" => "/changelog/april-2021/2021-04-07",
 						"level" => 3,
@@ -22782,7 +22798,7 @@ class Metadata {
 			[
 				"id" => "10f70601f563edd1c786cd4c0c8990d9",
 				"path" => "changelog/march-2021",
-				"position" => 860,
+				"position" => 10860,
 				"urlName" => "march-2021",
 				"url" => "/changelog/march-2021",
 				"level" => 2,
@@ -22796,7 +22812,7 @@ class Metadata {
 					[
 						"id" => "a2b805cae9496a34621edcaaa252ad36",
 						"path" => "changelog/march-2021/2021-03-31",
-						"position" => 720,
+						"position" => 10720,
 						"urlName" => "2021-03-31",
 						"url" => "/changelog/march-2021/2021-03-31",
 						"level" => 3,
@@ -22812,7 +22828,7 @@ class Metadata {
 					[
 						"id" => "c530a0acb78d76bc0ff7ff2fbaf6b127",
 						"path" => "changelog/march-2021/2021-03-24",
-						"position" => 730,
+						"position" => 10730,
 						"urlName" => "2021-03-24",
 						"url" => "/changelog/march-2021/2021-03-24",
 						"level" => 3,
@@ -22828,7 +22844,7 @@ class Metadata {
 					[
 						"id" => "5dbfcdaaa4a2db0b0adfff97b866213c",
 						"path" => "changelog/march-2021/2021-03-17",
-						"position" => 740,
+						"position" => 10740,
 						"urlName" => "2021-03-17",
 						"url" => "/changelog/march-2021/2021-03-17",
 						"level" => 3,
@@ -22844,7 +22860,7 @@ class Metadata {
 					[
 						"id" => "72e43eb255bc3b64e0437dc9bbeda5a9",
 						"path" => "changelog/march-2021/2021-03-10",
-						"position" => 750,
+						"position" => 10750,
 						"urlName" => "2021-03-10",
 						"url" => "/changelog/march-2021/2021-03-10",
 						"level" => 3,
@@ -22860,7 +22876,7 @@ class Metadata {
 					[
 						"id" => "3493dbb60e70181373e5404e35ba6a88",
 						"path" => "changelog/march-2021/2021-03-03",
-						"position" => 760,
+						"position" => 10760,
 						"urlName" => "2021-03-03",
 						"url" => "/changelog/march-2021/2021-03-03",
 						"level" => 3,
@@ -22879,7 +22895,7 @@ class Metadata {
 			[
 				"id" => "aff09c357fc9c87b883bfdf65961d4a7",
 				"path" => "changelog/februar-2021",
-				"position" => 870,
+				"position" => 10870,
 				"urlName" => "februar-2021",
 				"url" => "/changelog/februar-2021",
 				"level" => 2,
@@ -22893,7 +22909,7 @@ class Metadata {
 					[
 						"id" => "4fc34173a6cc09aecdeec536772a7c3f",
 						"path" => "changelog/februar-2021/2021-02-24",
-						"position" => 770,
+						"position" => 10770,
 						"urlName" => "2021-02-24",
 						"url" => "/changelog/februar-2021/2021-02-24",
 						"level" => 3,
@@ -22909,7 +22925,7 @@ class Metadata {
 					[
 						"id" => "7610209d228981a4daccdd3df659c789",
 						"path" => "changelog/februar-2021/2021-02-17",
-						"position" => 780,
+						"position" => 10780,
 						"urlName" => "2021-02-17",
 						"url" => "/changelog/februar-2021/2021-02-17",
 						"level" => 3,
@@ -22925,7 +22941,7 @@ class Metadata {
 					[
 						"id" => "4a1a1065da0825b4cb553006e7d328a4",
 						"path" => "changelog/februar-2021/2021-02-10",
-						"position" => 790,
+						"position" => 10790,
 						"urlName" => "2021-02-10",
 						"url" => "/changelog/februar-2021/2021-02-10",
 						"level" => 3,
@@ -22941,7 +22957,7 @@ class Metadata {
 					[
 						"id" => "bf2513688ddac2d3df44b4d7804dbfdf",
 						"path" => "changelog/februar-2021/2021-02-03",
-						"position" => 800,
+						"position" => 10800,
 						"urlName" => "2021-02-03",
 						"url" => "/changelog/februar-2021/2021-02-03",
 						"level" => 3,
@@ -22960,7 +22976,7 @@ class Metadata {
 			[
 				"id" => "500498b44ed6bebf29425b27e569a051",
 				"path" => "changelog/januar-2021",
-				"position" => 880,
+				"position" => 10880,
 				"urlName" => "januar-2021",
 				"url" => "/changelog/januar-2021",
 				"level" => 2,
@@ -22974,7 +22990,7 @@ class Metadata {
 					[
 						"id" => "6570308b45f09f69f3ffd999f2bba70d",
 						"path" => "changelog/januar-2021/2021-01-27",
-						"position" => 810,
+						"position" => 10810,
 						"urlName" => "2021-01-27",
 						"url" => "/changelog/januar-2021/2021-01-27",
 						"level" => 3,
@@ -22990,7 +23006,7 @@ class Metadata {
 					[
 						"id" => "fcf986f76982fe47fc7840383f46b175",
 						"path" => "changelog/januar-2021/2021-01-20",
-						"position" => 820,
+						"position" => 10820,
 						"urlName" => "2021-01-20",
 						"url" => "/changelog/januar-2021/2021-01-20",
 						"level" => 3,
@@ -23006,7 +23022,7 @@ class Metadata {
 					[
 						"id" => "91dba3244cc7441f15dc661121d13e41",
 						"path" => "changelog/januar-2021/2021-01-13",
-						"position" => 830,
+						"position" => 10830,
 						"urlName" => "2021-01-13",
 						"url" => "/changelog/januar-2021/2021-01-13",
 						"level" => 3,
@@ -23022,7 +23038,7 @@ class Metadata {
 					[
 						"id" => "d5cd54c5e9618eac1b3208dddb12c5ff",
 						"path" => "changelog/januar-2021/2021-01-06",
-						"position" => 840,
+						"position" => 10840,
 						"urlName" => "2021-01-06",
 						"url" => "/changelog/januar-2021/2021-01-06",
 						"level" => 3,
@@ -23041,7 +23057,7 @@ class Metadata {
 			[
 				"id" => "c298e69f7f4c2a805940256593e65203",
 				"path" => "changelog/archiv-2020",
-				"position" => 890,
+				"position" => 10890,
 				"urlName" => "archiv-2020",
 				"url" => "/changelog/archiv-2020",
 				"level" => 2,
@@ -23055,7 +23071,7 @@ class Metadata {
 					[
 						"id" => "ed659e34f17c512162ac27b9c4adcc58",
 						"path" => "changelog/archiv-2020/dezember-2020",
-						"position" => 890,
+						"position" => 10890,
 						"urlName" => "dezember-2020",
 						"url" => "/changelog/archiv-2020/dezember-2020",
 						"level" => 3,
@@ -23069,7 +23085,7 @@ class Metadata {
 							[
 								"id" => "b9b26ed52a69ff51d17e0366f0e31c4f",
 								"path" => "changelog/archiv-2020/dezember-2020/2020-12-30",
-								"position" => 850,
+								"position" => 10850,
 								"urlName" => "2020-12-30",
 								"url" => "/changelog/archiv-2020/dezember-2020/2020-12-30",
 								"level" => 4,
@@ -23085,7 +23101,7 @@ class Metadata {
 							[
 								"id" => "c5276a413b766b975a3a0a1bac41b596",
 								"path" => "changelog/archiv-2020/dezember-2020/2020-12-23",
-								"position" => 860,
+								"position" => 10860,
 								"urlName" => "2020-12-23",
 								"url" => "/changelog/archiv-2020/dezember-2020/2020-12-23",
 								"level" => 4,
@@ -23101,7 +23117,7 @@ class Metadata {
 							[
 								"id" => "469fcf7b2c781d6043f2eee98a492433",
 								"path" => "changelog/archiv-2020/dezember-2020/2020-12-16",
-								"position" => 870,
+								"position" => 10870,
 								"urlName" => "2020-12-16",
 								"url" => "/changelog/archiv-2020/dezember-2020/2020-12-16",
 								"level" => 4,
@@ -23117,7 +23133,7 @@ class Metadata {
 							[
 								"id" => "16462345468fae1ce968343b3b8982f8",
 								"path" => "changelog/archiv-2020/dezember-2020/2020-12-09",
-								"position" => 880,
+								"position" => 10880,
 								"urlName" => "2020-12-09",
 								"url" => "/changelog/archiv-2020/dezember-2020/2020-12-09",
 								"level" => 4,
@@ -23133,7 +23149,7 @@ class Metadata {
 							[
 								"id" => "1a35e46c604d3891f58e065c26fb9471",
 								"path" => "changelog/archiv-2020/dezember-2020/2020-12-02",
-								"position" => 890,
+								"position" => 10890,
 								"urlName" => "2020-12-02",
 								"url" => "/changelog/archiv-2020/dezember-2020/2020-12-02",
 								"level" => 4,
@@ -23152,7 +23168,7 @@ class Metadata {
 					[
 						"id" => "f0b120f3d94e57f19292773594a1604d",
 						"path" => "changelog/archiv-2020/november-2020",
-						"position" => 900,
+						"position" => 10900,
 						"urlName" => "november-2020",
 						"url" => "/changelog/archiv-2020/november-2020",
 						"level" => 3,
@@ -23166,7 +23182,7 @@ class Metadata {
 							[
 								"id" => "081534f478949c24d984b548db5f58e2",
 								"path" => "changelog/archiv-2020/november-2020/2020-11-25",
-								"position" => 750,
+								"position" => 10750,
 								"urlName" => "2020-11-25",
 								"url" => "/changelog/archiv-2020/november-2020/2020-11-25",
 								"level" => 4,
@@ -23182,7 +23198,7 @@ class Metadata {
 							[
 								"id" => "1ac16597e0a78ed1ef8c37bec1af5c77",
 								"path" => "changelog/archiv-2020/november-2020/2020-11-18",
-								"position" => 760,
+								"position" => 10760,
 								"urlName" => "2020-11-18",
 								"url" => "/changelog/archiv-2020/november-2020/2020-11-18",
 								"level" => 4,
@@ -23198,7 +23214,7 @@ class Metadata {
 							[
 								"id" => "f6d767cefe71c8c6bf722d39a2f1b566",
 								"path" => "changelog/archiv-2020/november-2020/2020-11-11",
-								"position" => 770,
+								"position" => 10770,
 								"urlName" => "2020-11-11",
 								"url" => "/changelog/archiv-2020/november-2020/2020-11-11",
 								"level" => 4,
@@ -23214,7 +23230,7 @@ class Metadata {
 							[
 								"id" => "b61f6346cf8424ded81f679371dc82f2",
 								"path" => "changelog/archiv-2020/november-2020/2020-11-04",
-								"position" => 780,
+								"position" => 10780,
 								"urlName" => "2020-11-04",
 								"url" => "/changelog/archiv-2020/november-2020/2020-11-04",
 								"level" => 4,
@@ -23233,7 +23249,7 @@ class Metadata {
 					[
 						"id" => "f339c195b787c8293b05cae23a0fdf18",
 						"path" => "changelog/archiv-2020/oktober-2020",
-						"position" => 910,
+						"position" => 10910,
 						"urlName" => "oktober-2020",
 						"url" => "/changelog/archiv-2020/oktober-2020",
 						"level" => 3,
@@ -23247,7 +23263,7 @@ class Metadata {
 							[
 								"id" => "9dead2045dec0b1358f0fe58c5e87e2a",
 								"path" => "changelog/archiv-2020/oktober-2020/2020-10-28",
-								"position" => 790,
+								"position" => 10790,
 								"urlName" => "2020-10-28",
 								"url" => "/changelog/archiv-2020/oktober-2020/2020-10-28",
 								"level" => 4,
@@ -23263,7 +23279,7 @@ class Metadata {
 							[
 								"id" => "7dc6a49e707db88730cbd7e510cbfee7",
 								"path" => "changelog/archiv-2020/oktober-2020/2020-10-21",
-								"position" => 800,
+								"position" => 10800,
 								"urlName" => "2020-10-21",
 								"url" => "/changelog/archiv-2020/oktober-2020/2020-10-21",
 								"level" => 4,
@@ -23279,7 +23295,7 @@ class Metadata {
 							[
 								"id" => "b0c0962e043051bd70dd4cf4b9bee391",
 								"path" => "changelog/archiv-2020/oktober-2020/2020-10-14",
-								"position" => 810,
+								"position" => 10810,
 								"urlName" => "2020-10-14",
 								"url" => "/changelog/archiv-2020/oktober-2020/2020-10-14",
 								"level" => 4,
@@ -23295,7 +23311,7 @@ class Metadata {
 							[
 								"id" => "2ab93a0d4146a8d17225809c33a79de3",
 								"path" => "changelog/archiv-2020/oktober-2020/2020-10-07",
-								"position" => 820,
+								"position" => 10820,
 								"urlName" => "2020-10-07",
 								"url" => "/changelog/archiv-2020/oktober-2020/2020-10-07",
 								"level" => 4,
@@ -23314,7 +23330,7 @@ class Metadata {
 					[
 						"id" => "010f6461bdd9424da3d28a29597acda2",
 						"path" => "changelog/archiv-2020/september-2020",
-						"position" => 920,
+						"position" => 10920,
 						"urlName" => "september-2020",
 						"url" => "/changelog/archiv-2020/september-2020",
 						"level" => 3,
@@ -23328,7 +23344,7 @@ class Metadata {
 							[
 								"id" => "0807c18ac37d2834a63a1541f0c86af4",
 								"path" => "changelog/archiv-2020/september-2020/2020-09-30",
-								"position" => 830,
+								"position" => 10830,
 								"urlName" => "2020-09-30",
 								"url" => "/changelog/archiv-2020/september-2020/2020-09-30",
 								"level" => 4,
@@ -23344,7 +23360,7 @@ class Metadata {
 							[
 								"id" => "09ff345795b863a68d1f216e6ec215b0",
 								"path" => "changelog/archiv-2020/september-2020/2020-09-24",
-								"position" => 840,
+								"position" => 10840,
 								"urlName" => "2020-09-24",
 								"url" => "/changelog/archiv-2020/september-2020/2020-09-24",
 								"level" => 4,
@@ -23360,7 +23376,7 @@ class Metadata {
 							[
 								"id" => "5bbbd1cd0badfeeade5f31edb551d43a",
 								"path" => "changelog/archiv-2020/september-2020/2020-09-16",
-								"position" => 850,
+								"position" => 10850,
 								"urlName" => "2020-09-16",
 								"url" => "/changelog/archiv-2020/september-2020/2020-09-16",
 								"level" => 4,
@@ -23376,7 +23392,7 @@ class Metadata {
 							[
 								"id" => "3dc4aa04f55e9ef6fbab0576972a1455",
 								"path" => "changelog/archiv-2020/september-2020/2020-09-09",
-								"position" => 860,
+								"position" => 10860,
 								"urlName" => "2020-09-09",
 								"url" => "/changelog/archiv-2020/september-2020/2020-09-09",
 								"level" => 4,
@@ -23392,7 +23408,7 @@ class Metadata {
 							[
 								"id" => "cc9c614c18ebd86eee6e2d23bf83e8dc",
 								"path" => "changelog/archiv-2020/september-2020/2020-09-02",
-								"position" => 870,
+								"position" => 10870,
 								"urlName" => "2020-09-02",
 								"url" => "/changelog/archiv-2020/september-2020/2020-09-02",
 								"level" => 4,
@@ -23411,7 +23427,7 @@ class Metadata {
 					[
 						"id" => "bfbdf81f9deae68cbe1d75f484d3e0a6",
 						"path" => "changelog/archiv-2020/august-2020",
-						"position" => 930,
+						"position" => 10930,
 						"urlName" => "august-2020",
 						"url" => "/changelog/archiv-2020/august-2020",
 						"level" => 3,
@@ -23425,7 +23441,7 @@ class Metadata {
 							[
 								"id" => "dfdaf8095db5a7ef66fecae9c6772c6e",
 								"path" => "changelog/archiv-2020/august-2020/2020-08-26",
-								"position" => 880,
+								"position" => 10880,
 								"urlName" => "2020-08-26",
 								"url" => "/changelog/archiv-2020/august-2020/2020-08-26",
 								"level" => 4,
@@ -23441,7 +23457,7 @@ class Metadata {
 							[
 								"id" => "bbb54437ddd1393b23ffcf413d54c07b",
 								"path" => "changelog/archiv-2020/august-2020/2020-08-19",
-								"position" => 890,
+								"position" => 10890,
 								"urlName" => "2020-08-19",
 								"url" => "/changelog/archiv-2020/august-2020/2020-08-19",
 								"level" => 4,
@@ -23457,7 +23473,7 @@ class Metadata {
 							[
 								"id" => "efe6b9968b34a3e51467217fbf375eeb",
 								"path" => "changelog/archiv-2020/august-2020/2020-08-12",
-								"position" => 900,
+								"position" => 10900,
 								"urlName" => "2020-08-12",
 								"url" => "/changelog/archiv-2020/august-2020/2020-08-12",
 								"level" => 4,
@@ -23473,7 +23489,7 @@ class Metadata {
 							[
 								"id" => "aac835e8badb4ae7b7a1b49683de0cea",
 								"path" => "changelog/archiv-2020/august-2020/2020-08-05",
-								"position" => 910,
+								"position" => 10910,
 								"urlName" => "2020-08-05",
 								"url" => "/changelog/archiv-2020/august-2020/2020-08-05",
 								"level" => 4,
@@ -23492,7 +23508,7 @@ class Metadata {
 					[
 						"id" => "a62e8ae138e249ef1585d738bebb4ac5",
 						"path" => "changelog/archiv-2020/juli-2020",
-						"position" => 940,
+						"position" => 10940,
 						"urlName" => "juli-2020",
 						"url" => "/changelog/archiv-2020/juli-2020",
 						"level" => 3,
@@ -23506,7 +23522,7 @@ class Metadata {
 							[
 								"id" => "f3c36882be778d6c12bd1aadae1a2850",
 								"path" => "changelog/archiv-2020/juli-2020/2020-07-29",
-								"position" => 910,
+								"position" => 10910,
 								"urlName" => "2020-07-29",
 								"url" => "/changelog/archiv-2020/juli-2020/2020-07-29",
 								"level" => 4,
@@ -23522,7 +23538,7 @@ class Metadata {
 							[
 								"id" => "8b5b9f3f9b0611477f36c88b38a16733",
 								"path" => "changelog/archiv-2020/juli-2020/2020-07-22",
-								"position" => 920,
+								"position" => 10920,
 								"urlName" => "2020-07-22",
 								"url" => "/changelog/archiv-2020/juli-2020/2020-07-22",
 								"level" => 4,
@@ -23538,7 +23554,7 @@ class Metadata {
 							[
 								"id" => "3247946126d1b56431f7f7960c98c699",
 								"path" => "changelog/archiv-2020/juli-2020/2020-07-15",
-								"position" => 930,
+								"position" => 10930,
 								"urlName" => "2020-07-15",
 								"url" => "/changelog/archiv-2020/juli-2020/2020-07-15",
 								"level" => 4,
@@ -23554,7 +23570,7 @@ class Metadata {
 							[
 								"id" => "bf26b55c58ce4346863c66d2bc63e2f6",
 								"path" => "changelog/archiv-2020/juli-2020/2020-07-08",
-								"position" => 940,
+								"position" => 10940,
 								"urlName" => "2020-07-08",
 								"url" => "/changelog/archiv-2020/juli-2020/2020-07-08",
 								"level" => 4,
@@ -23573,7 +23589,7 @@ class Metadata {
 					[
 						"id" => "5468f8f5968a7470449182ebb699978b",
 						"path" => "changelog/archiv-2020/juni-2020",
-						"position" => 950,
+						"position" => 10950,
 						"urlName" => "juni-2020",
 						"url" => "/changelog/archiv-2020/juni-2020",
 						"level" => 3,
@@ -23587,7 +23603,7 @@ class Metadata {
 							[
 								"id" => "7beb846e445f02ef03728b2b1fe3a720",
 								"path" => "changelog/archiv-2020/juni-2020/2020-06-17",
-								"position" => 340,
+								"position" => 10340,
 								"urlName" => "2020-06-17",
 								"url" => "/changelog/archiv-2020/juni-2020/2020-06-17",
 								"level" => 4,
@@ -23603,7 +23619,7 @@ class Metadata {
 							[
 								"id" => "254aa50871089e91a94b1be5949aa339",
 								"path" => "changelog/archiv-2020/juni-2020/2020-06-24",
-								"position" => 340,
+								"position" => 10340,
 								"urlName" => "2020-06-24",
 								"url" => "/changelog/archiv-2020/juni-2020/2020-06-24",
 								"level" => 4,
@@ -23619,7 +23635,7 @@ class Metadata {
 							[
 								"id" => "702505ca7fc1d0c9f8cf4ccc950282d7",
 								"path" => "changelog/archiv-2020/juni-2020/2020-06-30",
-								"position" => 340,
+								"position" => 10340,
 								"urlName" => "2020-06-30",
 								"url" => "/changelog/archiv-2020/juni-2020/2020-06-30",
 								"level" => 4,
@@ -23635,7 +23651,7 @@ class Metadata {
 							[
 								"id" => "883e40c89082c96d81467bfe8f509277",
 								"path" => "changelog/archiv-2020/juni-2020/2020-06-10",
-								"position" => 360,
+								"position" => 10360,
 								"urlName" => "2020-06-10",
 								"url" => "/changelog/archiv-2020/juni-2020/2020-06-10",
 								"level" => 4,
@@ -23651,7 +23667,7 @@ class Metadata {
 							[
 								"id" => "889ed20dfc008efec4cc31e0142da5a8",
 								"path" => "changelog/archiv-2020/juni-2020/2020-06-03",
-								"position" => 370,
+								"position" => 10370,
 								"urlName" => "2020-06-03",
 								"url" => "/changelog/archiv-2020/juni-2020/2020-06-03",
 								"level" => 4,
@@ -23670,7 +23686,7 @@ class Metadata {
 					[
 						"id" => "4c8b1f09c88cf2a767ee0348b56f46ec",
 						"path" => "changelog/archiv-2020/mai-2020",
-						"position" => 960,
+						"position" => 10960,
 						"urlName" => "mai-2020",
 						"url" => "/changelog/archiv-2020/mai-2020",
 						"level" => 3,
@@ -23684,7 +23700,7 @@ class Metadata {
 							[
 								"id" => "e7ad1db2e3763542e60bb3aa550f27da",
 								"path" => "changelog/archiv-2020/mai-2020/2020-05-27",
-								"position" => 380,
+								"position" => 10380,
 								"urlName" => "2020-05-27",
 								"url" => "/changelog/archiv-2020/mai-2020/2020-05-27",
 								"level" => 4,
@@ -23700,7 +23716,7 @@ class Metadata {
 							[
 								"id" => "62848dfa58d3f7dc5c220dd34ad4085d",
 								"path" => "changelog/archiv-2020/mai-2020/2020-05-20",
-								"position" => 390,
+								"position" => 10390,
 								"urlName" => "2020-05-20",
 								"url" => "/changelog/archiv-2020/mai-2020/2020-05-20",
 								"level" => 4,
@@ -23716,7 +23732,7 @@ class Metadata {
 							[
 								"id" => "4aaa8ef06778b95fe826329b80169204",
 								"path" => "changelog/archiv-2020/mai-2020/2020-05-13",
-								"position" => 400,
+								"position" => 10400,
 								"urlName" => "2020-05-13",
 								"url" => "/changelog/archiv-2020/mai-2020/2020-05-13",
 								"level" => 4,
@@ -23732,7 +23748,7 @@ class Metadata {
 							[
 								"id" => "b5c6bb2bfb8680e300b35a27e919491e",
 								"path" => "changelog/archiv-2020/mai-2020/2020-05-06",
-								"position" => 410,
+								"position" => 10410,
 								"urlName" => "2020-05-06",
 								"url" => "/changelog/archiv-2020/mai-2020/2020-05-06",
 								"level" => 4,
@@ -23751,7 +23767,7 @@ class Metadata {
 					[
 						"id" => "143820f461abf19e7deac455e5da2cb0",
 						"path" => "changelog/archiv-2020/april-2020",
-						"position" => 970,
+						"position" => 10970,
 						"urlName" => "april-2020",
 						"url" => "/changelog/archiv-2020/april-2020",
 						"level" => 3,
@@ -23765,7 +23781,7 @@ class Metadata {
 							[
 								"id" => "d9af208404af75d056c0c33c2abc6b28",
 								"path" => "changelog/archiv-2020/april-2020/2020-04-29",
-								"position" => 410,
+								"position" => 10410,
 								"urlName" => "2020-04-29",
 								"url" => "/changelog/archiv-2020/april-2020/2020-04-29",
 								"level" => 4,
@@ -23781,7 +23797,7 @@ class Metadata {
 							[
 								"id" => "8794125a96f463d27bcff8a3e3bd694b",
 								"path" => "changelog/archiv-2020/april-2020/2020-04-22",
-								"position" => 420,
+								"position" => 10420,
 								"urlName" => "2020-04-22",
 								"url" => "/changelog/archiv-2020/april-2020/2020-04-22",
 								"level" => 4,
@@ -23797,7 +23813,7 @@ class Metadata {
 							[
 								"id" => "44f47a5641ddcbee185ef25b24f0516a",
 								"path" => "changelog/archiv-2020/april-2020/2020-04-15",
-								"position" => 430,
+								"position" => 10430,
 								"urlName" => "2020-04-15",
 								"url" => "/changelog/archiv-2020/april-2020/2020-04-15",
 								"level" => 4,
@@ -23813,7 +23829,7 @@ class Metadata {
 							[
 								"id" => "21c6cda7b7873f7618e4617043110b02",
 								"path" => "changelog/archiv-2020/april-2020/2020-04-08",
-								"position" => 440,
+								"position" => 10440,
 								"urlName" => "2020-04-08",
 								"url" => "/changelog/archiv-2020/april-2020/2020-04-08",
 								"level" => 4,
@@ -23829,7 +23845,7 @@ class Metadata {
 							[
 								"id" => "ccfa009d901adf0f7ba99707001e0e03",
 								"path" => "changelog/archiv-2020/april-2020/2020-04-01",
-								"position" => 450,
+								"position" => 10450,
 								"urlName" => "2020-04-01",
 								"url" => "/changelog/archiv-2020/april-2020/2020-04-01",
 								"level" => 4,
@@ -23848,7 +23864,7 @@ class Metadata {
 					[
 						"id" => "7620faf7ed3f36f0eb458ccdc322c632",
 						"path" => "changelog/archiv-2020/maerz-2020",
-						"position" => 980,
+						"position" => 10980,
 						"urlName" => "maerz-2020",
 						"url" => "/changelog/archiv-2020/maerz-2020",
 						"level" => 3,
@@ -23862,7 +23878,7 @@ class Metadata {
 							[
 								"id" => "20ab933ed50c0e121eed9b48fac50e7b",
 								"path" => "changelog/archiv-2020/maerz-2020/2020-03-25",
-								"position" => 460,
+								"position" => 10460,
 								"urlName" => "2020-03-25",
 								"url" => "/changelog/archiv-2020/maerz-2020/2020-03-25",
 								"level" => 4,
@@ -23878,7 +23894,7 @@ class Metadata {
 							[
 								"id" => "d525efe6b9f1829927b1ade8d20ca7cd",
 								"path" => "changelog/archiv-2020/maerz-2020/2020-03-18",
-								"position" => 470,
+								"position" => 10470,
 								"urlName" => "2020-03-18",
 								"url" => "/changelog/archiv-2020/maerz-2020/2020-03-18",
 								"level" => 4,
@@ -23894,7 +23910,7 @@ class Metadata {
 							[
 								"id" => "d9087b97086d1308e1b1a3eb2068f604",
 								"path" => "changelog/archiv-2020/maerz-2020/2020-03-11",
-								"position" => 480,
+								"position" => 10480,
 								"urlName" => "2020-03-11",
 								"url" => "/changelog/archiv-2020/maerz-2020/2020-03-11",
 								"level" => 4,
@@ -23910,7 +23926,7 @@ class Metadata {
 							[
 								"id" => "4c7c5eed4b5af444a1b692d937a1b79c",
 								"path" => "changelog/archiv-2020/maerz-2020/2020-03-04",
-								"position" => 490,
+								"position" => 10490,
 								"urlName" => "2020-03-04",
 								"url" => "/changelog/archiv-2020/maerz-2020/2020-03-04",
 								"level" => 4,
@@ -23929,7 +23945,7 @@ class Metadata {
 					[
 						"id" => "34cc1ff4ad8229bbb8cc4bd1664a5aa9",
 						"path" => "changelog/archiv-2020/februar-2020",
-						"position" => 990,
+						"position" => 10990,
 						"urlName" => "februar-2020",
 						"url" => "/changelog/archiv-2020/februar-2020",
 						"level" => 3,
@@ -23943,7 +23959,7 @@ class Metadata {
 							[
 								"id" => "90f36e2759604e46c696df218bdaca85",
 								"path" => "changelog/archiv-2020/februar-2020/2020-02-26",
-								"position" => 500,
+								"position" => 10500,
 								"urlName" => "2020-02-26",
 								"url" => "/changelog/archiv-2020/februar-2020/2020-02-26",
 								"level" => 4,
@@ -23959,7 +23975,7 @@ class Metadata {
 							[
 								"id" => "bb724d689d9d20beb1823bee4e312da4",
 								"path" => "changelog/archiv-2020/februar-2020/2020-02-19",
-								"position" => 510,
+								"position" => 10510,
 								"urlName" => "2020-02-19",
 								"url" => "/changelog/archiv-2020/februar-2020/2020-02-19",
 								"level" => 4,
@@ -23975,7 +23991,7 @@ class Metadata {
 							[
 								"id" => "33c567961166c3627c19f1902916c8f2",
 								"path" => "changelog/archiv-2020/februar-2020/2020-02-12",
-								"position" => 520,
+								"position" => 10520,
 								"urlName" => "2020-02-12",
 								"url" => "/changelog/archiv-2020/februar-2020/2020-02-12",
 								"level" => 4,
@@ -23991,7 +24007,7 @@ class Metadata {
 							[
 								"id" => "bb3a971ff57a96a5675e5bbb1f0d7657",
 								"path" => "changelog/archiv-2020/februar-2020/2020-02-05",
-								"position" => 530,
+								"position" => 10530,
 								"urlName" => "2020-02-05",
 								"url" => "/changelog/archiv-2020/februar-2020/2020-02-05",
 								"level" => 4,
@@ -24010,7 +24026,7 @@ class Metadata {
 					[
 						"id" => "cc2000661e4d24a2bf96001be6eb3231",
 						"path" => "changelog/archiv-2020/januar-2020",
-						"position" => 1000,
+						"position" => 101000,
 						"urlName" => "januar-2020",
 						"url" => "/changelog/archiv-2020/januar-2020",
 						"level" => 3,
@@ -24024,7 +24040,7 @@ class Metadata {
 							[
 								"id" => "313b5767090c56e9aeb1c3e50ebf0636",
 								"path" => "changelog/archiv-2020/januar-2020/2020-01-29",
-								"position" => 540,
+								"position" => 10540,
 								"urlName" => "2020-01-29",
 								"url" => "/changelog/archiv-2020/januar-2020/2020-01-29",
 								"level" => 4,
@@ -24040,7 +24056,7 @@ class Metadata {
 							[
 								"id" => "f8d7eced5e416aaac7e19a1cb4de5789",
 								"path" => "changelog/archiv-2020/januar-2020/2020-01-22",
-								"position" => 550,
+								"position" => 10550,
 								"urlName" => "2020-01-22",
 								"url" => "/changelog/changelog-2020-01-22",
 								"level" => 4,
@@ -24061,22 +24077,6 @@ class Metadata {
 			]
 		],
 		"hasChildren" => true
-	],
-	[
-		"id" => "8e2550c12799cab0419ee94be8086db1",
-		"path" => "glossar",
-		"position" => 300,
-		"urlName" => "glossar",
-		"url" => "/glossar",
-		"level" => 1,
-		"title" => "plentymarkets Glossar",
-		"keywords" => "",
-		"description" => "Glossar für plentymarkets",
-		"navAlias" => "",
-		"linkListInto" => "Willkommen im Themenbereich plentymarkets Glossar. Hier findest du folgende Informationen:",
-		"languageID" => "GJA5K7N",
-		"children" => [],
-		"hasChildren" => false
 	]
 ];
     const EN = [
