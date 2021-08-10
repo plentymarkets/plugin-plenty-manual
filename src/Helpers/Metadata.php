@@ -39990,9 +39990,25 @@ class Metadata {
 		"hasChildren" => true
 	],
 	[
+		"id" => "d63aadefb84d945d3faa8eaa35f5015d",
+		"path" => "glossary",
+		"position" => 300,
+		"urlName" => "glossary",
+		"url" => "/en/glossary",
+		"level" => 1,
+		"title" => "plentymarkets glossary",
+		"keywords" => "",
+		"description" => "Glossary for plentymarkets",
+		"navAlias" => "",
+		"linkListInto" => "Welcome to the topic plentymarkets glossary. The following information is available:",
+		"languageID" => "GJA5K7N",
+		"children" => [],
+		"hasChildren" => false
+	],
+	[
 		"id" => "cce3df80f07d36b56db4376a4802d6c2",
 		"path" => "videos",
-		"position" => 147,
+		"position" => 10147,
 		"urlName" => "videos",
 		"url" => "/en/videos",
 		"level" => 1,
@@ -40006,7 +40022,7 @@ class Metadata {
 			[
 				"id" => "f50b020a01988e56646635ba7ad8a855",
 				"path" => "videos/basics",
-				"position" => 10,
+				"position" => 10010,
 				"urlName" => "basics",
 				"url" => "/en/videos/basics",
 				"level" => 2,
@@ -40228,7 +40244,7 @@ class Metadata {
 					[
 						"id" => "3bea2fea4501cab76325287b3d52323b",
 						"path" => "videos/basics/welcome-to-plentymarkets",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "welcome-to-plentymarkets",
 						"url" => "/en/videos/basics/welcome-to-plentymarkets",
 						"level" => 3,
@@ -40244,7 +40260,7 @@ class Metadata {
 					[
 						"id" => "e59ded5ef02c4cf5444d0f7ef640af20",
 						"path" => "videos/basics/omni-channel-sales-command-centre",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "omni-channel-sales-command-centre",
 						"url" => "/en/videos/basics/omni-channel-sales-command-centre",
 						"level" => 3,
@@ -40260,7 +40276,7 @@ class Metadata {
 					[
 						"id" => "82e89d14de7b13a15153d20159b8db43",
 						"path" => "videos/basics/item-structure-import-options",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "item-structure-import-options",
 						"url" => "/en/videos/basics/item-structure-import-options",
 						"level" => 3,
@@ -40276,7 +40292,7 @@ class Metadata {
 					[
 						"id" => "192680d9c939fae0c0f29710f539b4bf",
 						"path" => "videos/basics/fulfil-orders-ship-packages",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "fulfil-orders-ship-packages",
 						"url" => "/en/videos/basics/fulfil-orders-ship-packages",
 						"level" => 3,
@@ -40295,7 +40311,7 @@ class Metadata {
 			[
 				"id" => "1569bb07d3613bdd938af4739b8ef6a6",
 				"path" => "videos/personalisation",
-				"position" => 20,
+				"position" => 10020,
 				"urlName" => "personalisation",
 				"url" => "/en/videos/personalisation",
 				"level" => 2,
@@ -40357,7 +40373,7 @@ class Metadata {
 					[
 						"id" => "392f55fca7a417f8e86bef83a1efc6f7",
 						"path" => "videos/personalisation/company-data",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "company-data",
 						"url" => "/en/videos/personalisation/company-data",
 						"level" => 3,
@@ -40373,7 +40389,7 @@ class Metadata {
 					[
 						"id" => "677d4aa69aec1e6a3c008e79364aed42",
 						"path" => "videos/personalisation/user-accounts",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "user-accounts",
 						"url" => "/en/videos/personalisation/user-accounts",
 						"level" => 3,
@@ -40387,7 +40403,7 @@ class Metadata {
 							[
 								"id" => "acfb40309560ddf59e6c99ea46f32515",
 								"path" => "videos/personalisation/user-accounts/password-rules",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "password-rules",
 								"url" => "/en/videos/personalisation/user-accounts/password-rules",
 								"level" => 4,
@@ -40406,7 +40422,7 @@ class Metadata {
 					[
 						"id" => "d7c164756831eb0d0a57cedf799a232d",
 						"path" => "videos/personalisation/emails",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "emails",
 						"url" => "/en/videos/personalisation/emails",
 						"level" => 3,
@@ -40612,7 +40628,7 @@ class Metadata {
 							[
 								"id" => "02660555e692ee5dbe89871473b114cd",
 								"path" => "videos/personalisation/emails/mailboxorg",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "mailboxorg",
 								"url" => "/en/videos/personalisation/emails/mailboxorg",
 								"level" => 4,
@@ -40628,7 +40644,7 @@ class Metadata {
 							[
 								"id" => "067aed27dc8f12928225a1bb07d56b6b",
 								"path" => "videos/personalisation/emails/link-email-account",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "link-email-account",
 								"url" => "/en/videos/personalisation/emails/link-email-account",
 								"level" => 4,
@@ -40644,7 +40660,7 @@ class Metadata {
 							[
 								"id" => "c702f9179e82cb8b271025b5dd33eb4a",
 								"path" => "videos/personalisation/emails/email-templates",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "email-templates",
 								"url" => "/en/videos/personalisation/emails/email-templates",
 								"level" => 4,
@@ -40660,7 +40676,7 @@ class Metadata {
 							[
 								"id" => "8b888d509efd5294e86be723b0f4a612",
 								"path" => "videos/personalisation/emails/template-variables-if-queries",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "template-variables-if-queries",
 								"url" => "/en/videos/personalisation/emails/template-variables-if-queries",
 								"level" => 4,
@@ -40676,7 +40692,7 @@ class Metadata {
 							[
 								"id" => "df9f8fb85e9b100971f3bc99d317562b",
 								"path" => "videos/personalisation/emails/automatic-despatch",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "automatic-despatch",
 								"url" => "/en/videos/personalisation/emails/automatic-despatch",
 								"level" => 4,
@@ -40695,7 +40711,7 @@ class Metadata {
 					[
 						"id" => "c5b7e170919c06dc5247b733439da901",
 						"path" => "videos/personalisation/accounting-invoicing",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "accounting-invoicing",
 						"url" => "/en/videos/personalisation/accounting-invoicing",
 						"level" => 3,
@@ -40709,7 +40725,7 @@ class Metadata {
 							[
 								"id" => "2270bcc5650db5e3ffafa72f79efa82f",
 								"path" => "videos/personalisation/accounting-invoicing/locations",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "locations",
 								"url" => "/en/videos/personalisation/accounting-invoicing/locations",
 								"level" => 4,
@@ -40725,7 +40741,7 @@ class Metadata {
 							[
 								"id" => "a2813be380f5d3648fdf6ea51f51f1a1",
 								"path" => "videos/personalisation/accounting-invoicing/locations-accounting",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "locations-accounting",
 								"url" => "/en/videos/personalisation/accounting-invoicing/locations-accounting",
 								"level" => 4,
@@ -40741,7 +40757,7 @@ class Metadata {
 							[
 								"id" => "231fc2441dd5297110c7526b65dcb94d",
 								"path" => "videos/personalisation/accounting-invoicing/invoice",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "invoice",
 								"url" => "/en/videos/personalisation/accounting-invoicing/invoice",
 								"level" => 4,
@@ -40757,7 +40773,7 @@ class Metadata {
 							[
 								"id" => "fd4bab02680029e187f1865babed4b45",
 								"path" => "videos/personalisation/accounting-invoicing/sepa-direct-debit-mandate",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "sepa-direct-debit-mandate",
 								"url" => "/en/videos/personalisation/accounting-invoicing/sepa-direct-debit-mandate",
 								"level" => 4,
@@ -40773,7 +40789,7 @@ class Metadata {
 							[
 								"id" => "7d12873c203d4642a2c88e0b614316eb",
 								"path" => "videos/personalisation/accounting-invoicing/numbers",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "numbers",
 								"url" => "/en/videos/personalisation/accounting-invoicing/numbers",
 								"level" => 4,
@@ -40795,7 +40811,7 @@ class Metadata {
 			[
 				"id" => "bb024836219e5ec44175be6278f35613",
 				"path" => "videos/items",
-				"position" => 30,
+				"position" => 10030,
 				"urlName" => "items",
 				"url" => "/en/videos/items",
 				"level" => 2,
@@ -41241,7 +41257,7 @@ class Metadata {
 					[
 						"id" => "d093c4117e0075086e0404e9dde7f52d",
 						"path" => "videos/items/structure",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "structure",
 						"url" => "/en/videos/items/structure",
 						"level" => 3,
@@ -41257,7 +41273,7 @@ class Metadata {
 					[
 						"id" => "6cc0aef57908b1d0d027781aef822342",
 						"path" => "videos/items/mandatory-settings",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "mandatory-settings",
 						"url" => "/en/videos/items/mandatory-settings",
 						"level" => 3,
@@ -41273,7 +41289,7 @@ class Metadata {
 					[
 						"id" => "64aba4cef9f2e6a7ebf9578db22dff7b",
 						"path" => "videos/items/attributes",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "attributes",
 						"url" => "/en/videos/items/attributes",
 						"level" => 3,
@@ -41289,7 +41305,7 @@ class Metadata {
 					[
 						"id" => "2b3c1739ae8eb54475dba7ea30c6897d",
 						"path" => "videos/items/sales-prices",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "sales-prices",
 						"url" => "/en/videos/items/sales-prices",
 						"level" => 3,
@@ -41305,7 +41321,7 @@ class Metadata {
 					[
 						"id" => "d44c93211d76d5a11418b7c7e66d82a0",
 						"path" => "videos/items/create-item",
-						"position" => 50,
+						"position" => 10050,
 						"urlName" => "create-item",
 						"url" => "/en/videos/items/create-item",
 						"level" => 3,
@@ -41321,7 +41337,7 @@ class Metadata {
 					[
 						"id" => "54eeb18ea84ae80e76d205bf3b6335ac",
 						"path" => "videos/items/main-variation",
-						"position" => 60,
+						"position" => 10060,
 						"urlName" => "main-variation",
 						"url" => "/en/videos/items/main-variation",
 						"level" => 3,
@@ -41337,7 +41353,7 @@ class Metadata {
 					[
 						"id" => "f2ef5660f0b1ea4f5e6c0c75ffad2542",
 						"path" => "videos/items/global",
-						"position" => 70,
+						"position" => 10070,
 						"urlName" => "global",
 						"url" => "/en/videos/items/global",
 						"level" => 3,
@@ -41353,7 +41369,7 @@ class Metadata {
 					[
 						"id" => "f839aaa9352c3dabc9be33a90deb4103",
 						"path" => "videos/items/create-categories",
-						"position" => 80,
+						"position" => 10080,
 						"urlName" => "create-categories",
 						"url" => "/en/videos/items/create-categories",
 						"level" => 3,
@@ -41369,7 +41385,7 @@ class Metadata {
 					[
 						"id" => "5e43b879bb4d4104b7f2c82728f049a6",
 						"path" => "videos/items/inheritance",
-						"position" => 90,
+						"position" => 10090,
 						"urlName" => "inheritance",
 						"url" => "/en/videos/items/inheritance",
 						"level" => 3,
@@ -41388,7 +41404,7 @@ class Metadata {
 			[
 				"id" => "29f7977d5eba337a0ffa8741cefb507d",
 				"path" => "videos/order-processing",
-				"position" => 40,
+				"position" => 10040,
 				"urlName" => "order-processing",
 				"url" => "/en/videos/order-processing",
 				"level" => 2,
@@ -41402,7 +41418,7 @@ class Metadata {
 					[
 						"id" => "af5a92b24f9ffd145579497cc5ac927f",
 						"path" => "videos/order-processing/introduction-order-processing-step-by-step",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "introduction-order-processing-step-by-step",
 						"url" => "/en/videos/order-processing/introduction-order-processing-step-by-step",
 						"level" => 3,
@@ -41418,7 +41434,7 @@ class Metadata {
 					[
 						"id" => "76430298320709f1e4b4fc0bed79a393",
 						"path" => "videos/order-processing/configuring-settings",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "configuring-settings",
 						"url" => "/en/videos/order-processing/configuring-settings",
 						"level" => 3,
@@ -41544,7 +41560,7 @@ class Metadata {
 							[
 								"id" => "8cdb3da834c59ba2cfe7e25560bbf8c2",
 								"path" => "videos/order-processing/configuring-settings/order-statuses",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "order-statuses",
 								"url" => "/en/videos/order-processing/configuring-settings/order-statuses",
 								"level" => 4,
@@ -41560,7 +41576,7 @@ class Metadata {
 							[
 								"id" => "05ee6274edbd8a95ba53586865a1d3d8",
 								"path" => "videos/order-processing/configuring-settings/order-settings",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "order-settings",
 								"url" => "/en/videos/order-processing/configuring-settings/order-settings",
 								"level" => 4,
@@ -41579,7 +41595,7 @@ class Metadata {
 					[
 						"id" => "b560dad72e7e332938d369736b0d6c6e",
 						"path" => "videos/order-processing/processing-orders",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "processing-orders",
 						"url" => "/en/videos/order-processing/processing-orders",
 						"level" => 3,
@@ -41769,7 +41785,7 @@ class Metadata {
 							[
 								"id" => "dc3048fb4ffdbbfab68a67fca98f8224",
 								"path" => "videos/order-processing/processing-orders/fulfilling-orders",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "fulfilling-orders",
 								"url" => "/en/videos/order-processing/processing-orders/fulfilling-orders",
 								"level" => 4,
@@ -41785,7 +41801,7 @@ class Metadata {
 							[
 								"id" => "8acfc60922b2865cafecebd467bfac9e",
 								"path" => "videos/order-processing/processing-orders/reversal-document",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "reversal-document",
 								"url" => "/en/videos/order-processing/processing-orders/reversal-document",
 								"level" => 4,
@@ -41801,7 +41817,7 @@ class Metadata {
 							[
 								"id" => "b7b9d59e0fb86a9ef057ca4b517f38b2",
 								"path" => "videos/order-processing/processing-orders/quicklinks-order-overview",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "quicklinks-order-overview",
 								"url" => "/en/videos/order-processing/processing-orders/quicklinks-order-overview",
 								"level" => 4,
@@ -41817,7 +41833,7 @@ class Metadata {
 							[
 								"id" => "614d644cfdd3b2b487ee40d6dadac988",
 								"path" => "videos/order-processing/processing-orders/fulfill-orders-with-processes",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "fulfill-orders-with-processes",
 								"url" => "/en/videos/order-processing/processing-orders/fulfill-orders-with-processes",
 								"level" => 4,
@@ -41836,7 +41852,7 @@ class Metadata {
 					[
 						"id" => "412414b9950e6ad741c7e4b371ec4789",
 						"path" => "videos/order-processing/shipping",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "shipping",
 						"url" => "/en/videos/order-processing/shipping",
 						"level" => 3,
@@ -41898,7 +41914,7 @@ class Metadata {
 							[
 								"id" => "fe7f3ff6f8c8ad724df84caa204de98f",
 								"path" => "videos/order-processing/shipping/options",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "options",
 								"url" => "/en/videos/order-processing/shipping/options",
 								"level" => 4,
@@ -41914,7 +41930,7 @@ class Metadata {
 							[
 								"id" => "ee14f557cdb498f6570e133fc53f0c70",
 								"path" => "videos/order-processing/shipping/profiles",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "profiles",
 								"url" => "/en/videos/order-processing/shipping/profiles",
 								"level" => 4,
@@ -41930,7 +41946,7 @@ class Metadata {
 							[
 								"id" => "b50f098dcd4b17db45991c62c1b93382",
 								"path" => "videos/order-processing/shipping/tables-shipping-charges",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "tables-shipping-charges",
 								"url" => "/en/videos/order-processing/shipping/tables-shipping-charges",
 								"level" => 4,
@@ -41946,7 +41962,7 @@ class Metadata {
 							[
 								"id" => "8da980085e2846f17061615e1c9ba168",
 								"path" => "videos/order-processing/shipping/example-dpd",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "example-dpd",
 								"url" => "/en/videos/order-processing/shipping/example-dpd",
 								"level" => 4,
@@ -41965,7 +41981,7 @@ class Metadata {
 					[
 						"id" => "e73b86038046af087187305c2853157b",
 						"path" => "videos/order-processing/returns-and-cancellations",
-						"position" => 50,
+						"position" => 10050,
 						"urlName" => "returns-and-cancellations",
 						"url" => "/en/videos/order-processing/returns-and-cancellations",
 						"level" => 3,
@@ -42235,7 +42251,7 @@ class Metadata {
 							[
 								"id" => "78e368feb9fe34a65d71c8c5213c15eb",
 								"path" => "videos/order-processing/returns-and-cancellations/return-or-cancellation",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "return-or-cancellation",
 								"url" => "/en/videos/order-processing/returns-and-cancellations/return-or-cancellation",
 								"level" => 4,
@@ -42251,7 +42267,7 @@ class Metadata {
 							[
 								"id" => "686a4748fe57b920eeec5354e30299bc",
 								"path" => "videos/order-processing/returns-and-cancellations/cancelling-orders",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "cancelling-orders",
 								"url" => "/en/videos/order-processing/returns-and-cancellations/cancelling-orders",
 								"level" => 4,
@@ -42267,7 +42283,7 @@ class Metadata {
 							[
 								"id" => "ee7a97892811090ba0b6fc8d5267a09d",
 								"path" => "videos/order-processing/returns-and-cancellations/return-settings",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "return-settings",
 								"url" => "/en/videos/order-processing/returns-and-cancellations/return-settings",
 								"level" => 4,
@@ -42283,7 +42299,7 @@ class Metadata {
 							[
 								"id" => "8693d2cfdfdbe367f7c18b3c5e20503c",
 								"path" => "videos/order-processing/returns-and-cancellations/manual-returns",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "manual-returns",
 								"url" => "/en/videos/order-processing/returns-and-cancellations/manual-returns",
 								"level" => 4,
@@ -42299,7 +42315,7 @@ class Metadata {
 							[
 								"id" => "ff5d03777630c48f3f539ac39d138ade",
 								"path" => "videos/order-processing/returns-and-cancellations/automatic-returns",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "automatic-returns",
 								"url" => "/en/videos/order-processing/returns-and-cancellations/automatic-returns",
 								"level" => 4,
@@ -42315,7 +42331,7 @@ class Metadata {
 							[
 								"id" => "a85a30f6909dda1b5b9e53104be6e82c",
 								"path" => "videos/order-processing/returns-and-cancellations/compensating-customers",
-								"position" => 60,
+								"position" => 10060,
 								"urlName" => "compensating-customers",
 								"url" => "/en/videos/order-processing/returns-and-cancellations/compensating-customers",
 								"level" => 4,
@@ -42337,7 +42353,7 @@ class Metadata {
 			[
 				"id" => "3243236c76e9eb23dbacd15020ecaced",
 				"path" => "videos/online-store",
-				"position" => 50,
+				"position" => 10050,
 				"urlName" => "online-store",
 				"url" => "/en/videos/online-store",
 				"level" => 2,
@@ -42543,7 +42559,7 @@ class Metadata {
 					[
 						"id" => "f717c0b05f0db7f2c9724812e74e4555",
 						"path" => "videos/online-store/first-step",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "first-step",
 						"url" => "/en/videos/online-store/first-step",
 						"level" => 3,
@@ -42559,7 +42575,7 @@ class Metadata {
 					[
 						"id" => "665f1a07dfec9bf737035ab5dbec9674",
 						"path" => "videos/online-store/customise-your-online-store",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "customise-your-online-store",
 						"url" => "/en/videos/online-store/customise-your-online-store",
 						"level" => 3,
@@ -42575,7 +42591,7 @@ class Metadata {
 					[
 						"id" => "a0ca44097c0a58aa066fddbfd40c44f1",
 						"path" => "videos/online-store/featuring-specific-items",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "featuring-specific-items",
 						"url" => "/en/videos/online-store/featuring-items",
 						"level" => 3,
@@ -42594,7 +42610,7 @@ class Metadata {
 			[
 				"id" => "35b416314e564bc77164b73ed1a67705",
 				"path" => "videos/ebay",
-				"position" => 60,
+				"position" => 10060,
 				"urlName" => "ebay",
 				"url" => "/en/videos/ebay",
 				"level" => 2,
@@ -42656,7 +42672,7 @@ class Metadata {
 					[
 						"id" => "b2c63283a279a1465a9493dd93612006",
 						"path" => "videos/ebay/ebay-introduction",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "ebay-introduction",
 						"url" => "/en/videos/ebay/ebay-introduction",
 						"level" => 3,
@@ -42672,7 +42688,7 @@ class Metadata {
 					[
 						"id" => "2e83c25484d3ad2a86d9407b8f2e51d6",
 						"path" => "videos/ebay/settings",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "settings",
 						"url" => "/en/videos/ebay/settings",
 						"level" => 3,
@@ -42798,7 +42814,7 @@ class Metadata {
 							[
 								"id" => "6b894e479d2476e74333cb5ef0b6a843",
 								"path" => "videos/ebay/settings/ebay-account",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "ebay-account",
 								"url" => "/en/videos/ebay/settings/ebay-account",
 								"level" => 4,
@@ -42814,7 +42830,7 @@ class Metadata {
 							[
 								"id" => "1aeb78229ca9840d4583a35496a33ca0",
 								"path" => "videos/ebay/settings/business-policies",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "business-policies",
 								"url" => "/en/videos/ebay/settings/business-policies",
 								"level" => 4,
@@ -42833,7 +42849,7 @@ class Metadata {
 					[
 						"id" => "40946b821e96e26ba65cafa70a3996b8",
 						"path" => "videos/ebay/listings",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "listings",
 						"url" => "/en/videos/ebay/listings",
 						"level" => 3,
@@ -43215,7 +43231,7 @@ class Metadata {
 							[
 								"id" => "3b7992cdb98d7bbca54599a27ec8f659",
 								"path" => "videos/ebay/listings/listing-import",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "listing-import",
 								"url" => "/en/videos/ebay/listings/listing-import",
 								"level" => 4,
@@ -43231,7 +43247,7 @@ class Metadata {
 							[
 								"id" => "4a005391b3cbc917dfdd04fce864d481",
 								"path" => "videos/ebay/listings/create-listings",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "create-listings",
 								"url" => "/en/videos/ebay/listings/create-listings",
 								"level" => 4,
@@ -43247,7 +43263,7 @@ class Metadata {
 							[
 								"id" => "e8206d6249786defee9fdf3a3228219d",
 								"path" => "videos/ebay/listings/edit-listings",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "edit-listings",
 								"url" => "/en/videos/ebay/listings/edit-listings",
 								"level" => 4,
@@ -43263,7 +43279,7 @@ class Metadata {
 							[
 								"id" => "c8335c9735bc397b0a8d02101ec3d10d",
 								"path" => "videos/ebay/listings/start-listings",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "start-listings",
 								"url" => "/en/videos/ebay/listings/start-listings",
 								"level" => 4,
@@ -43279,7 +43295,7 @@ class Metadata {
 							[
 								"id" => "de36afd7eb549010c4b8a5130f4922e0",
 								"path" => "videos/ebay/listings/modify-listings",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "modify-listings",
 								"url" => "/en/videos/ebay/listings/modify-listings",
 								"level" => 4,
@@ -43295,7 +43311,7 @@ class Metadata {
 							[
 								"id" => "b2d1cbe08b5b5102f9f3ec1939c90db0",
 								"path" => "videos/ebay/listings/layout-templates",
-								"position" => 60,
+								"position" => 10060,
 								"urlName" => "layout-templates",
 								"url" => "/en/videos/ebay/listings/layout-templates",
 								"level" => 4,
@@ -43311,7 +43327,7 @@ class Metadata {
 							[
 								"id" => "47bcfebe8613ad66b34424ba5539041e",
 								"path" => "videos/ebay/listings/ebay-returns",
-								"position" => 70,
+								"position" => 10070,
 								"urlName" => "ebay-returns",
 								"url" => "/en/videos/ebay/listings/ebay-returns",
 								"level" => 4,
@@ -43330,7 +43346,7 @@ class Metadata {
 					[
 						"id" => "cef58a147b2bd1aaf0678fda6ff83e7a",
 						"path" => "videos/ebay/plugins",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "plugins",
 						"url" => "/en/videos/ebay/plugins",
 						"level" => 3,
@@ -43520,7 +43536,7 @@ class Metadata {
 							[
 								"id" => "93da2d849b72526e29f8cc36c9302e68",
 								"path" => "videos/ebay/plugins/sales-activity",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "sales-activity",
 								"url" => "/en/videos/ebay/plugins/sales-activity",
 								"level" => 4,
@@ -43536,7 +43552,7 @@ class Metadata {
 							[
 								"id" => "d4af775e651c89dbf552c5e3e4542bdf",
 								"path" => "videos/ebay/plugins/sales-promotions",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "sales-promotions",
 								"url" => "/en/videos/ebay/plugins/sales-promotions",
 								"level" => 4,
@@ -43552,7 +43568,7 @@ class Metadata {
 							[
 								"id" => "37f8b0505610b57bd0f1c8f032cd531d",
 								"path" => "videos/ebay/plugins/promoted-listings",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "promoted-listings",
 								"url" => "/en/videos/ebay/plugins/promoted-listings",
 								"level" => 4,
@@ -43568,7 +43584,7 @@ class Metadata {
 							[
 								"id" => "efa99e423e90ae6e1c31934f876f1a1e",
 								"path" => "videos/ebay/plugins/ebay-seo",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "ebay-seo",
 								"url" => "/en/videos/ebay/plugins/ebay-seo",
 								"level" => 4,
@@ -43584,7 +43600,7 @@ class Metadata {
 							[
 								"id" => "f37cde5d39c3bc1430738a977dda435c",
 								"path" => "videos/ebay/plugins/ebay-feedback",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "ebay-feedback",
 								"url" => "/en/videos/ebay/plugins/ebay-feedback",
 								"level" => 4,
@@ -43606,7 +43622,7 @@ class Metadata {
 			[
 				"id" => "0294ba9a478d6ac07c059c15204079ae",
 				"path" => "videos/amazon",
-				"position" => 70,
+				"position" => 10070,
 				"urlName" => "amazon",
 				"url" => "/en/videos/amazon",
 				"level" => 2,
@@ -43668,7 +43684,7 @@ class Metadata {
 					[
 						"id" => "5b6b98a1a949e663b98614c1b3dcc3f5",
 						"path" => "videos/amazon/introduction",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "introduction",
 						"url" => "/en/videos/amazon/introduction",
 						"level" => 3,
@@ -43684,7 +43700,7 @@ class Metadata {
 					[
 						"id" => "e6d9f1e35d6a031f771ac0ff9a22d4fb",
 						"path" => "videos/amazon/interface-introduction",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "interface-introduction",
 						"url" => "/en/videos/amazon/interface-introduction",
 						"level" => 3,
@@ -43700,7 +43716,7 @@ class Metadata {
 					[
 						"id" => "e245f48cbd11258f9535353cf8e3a8cd",
 						"path" => "videos/amazon/items",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "items",
 						"url" => "/en/videos/amazon/items",
 						"level" => 3,
@@ -43938,7 +43954,7 @@ class Metadata {
 							[
 								"id" => "3c1a7efbf0457db2877fe983fd6b2939",
 								"path" => "videos/amazon/items/sale",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "sale",
 								"url" => "/en/videos/amazon/items/sale",
 								"level" => 4,
@@ -43954,7 +43970,7 @@ class Metadata {
 							[
 								"id" => "52b1a449bd2ce759473c914a393caffa",
 								"path" => "videos/amazon/items/properties",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "properties",
 								"url" => "/en/videos/amazon/items/properties",
 								"level" => 4,
@@ -43970,7 +43986,7 @@ class Metadata {
 							[
 								"id" => "8538d77630656b484f3c68d9747a0a34",
 								"path" => "videos/amazon/items/export",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "export",
 								"url" => "/en/videos/amazon/items/export",
 								"level" => 4,
@@ -43986,7 +44002,7 @@ class Metadata {
 							[
 								"id" => "2e4ce7ecd067be650254c1b567faf1fa",
 								"path" => "videos/amazon/items/flat-files",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "flat-files",
 								"url" => "/en/videos/amazon/items/flat-files",
 								"level" => 4,
@@ -44005,7 +44021,7 @@ class Metadata {
 					[
 						"id" => "d23f92a72183bcc9a761513c0322ebbe",
 						"path" => "videos/amazon/orders",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "orders",
 						"url" => "/en/videos/amazon/orders",
 						"level" => 3,
@@ -44307,7 +44323,7 @@ class Metadata {
 							[
 								"id" => "86c3db7880970461f2bca5362bb4f7dd",
 								"path" => "videos/amazon/orders/mfn-fba",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "mfn-fba",
 								"url" => "/en/videos/amazon/orders/mfn-fba",
 								"level" => 4,
@@ -44323,7 +44339,7 @@ class Metadata {
 							[
 								"id" => "4d89f78c5d9a4a457908130abd43e972",
 								"path" => "videos/amazon/orders/mfn-orders",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "mfn-orders",
 								"url" => "/en/videos/amazon/orders/mfn-orders",
 								"level" => 4,
@@ -44339,7 +44355,7 @@ class Metadata {
 							[
 								"id" => "3f81b19346ec3575eb6f0d13b3f4f3e6",
 								"path" => "videos/amazon/orders/mfn-returns",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "mfn-returns",
 								"url" => "/en/videos/amazon/orders/mfn-returns",
 								"level" => 4,
@@ -44355,7 +44371,7 @@ class Metadata {
 							[
 								"id" => "0ad22905e5858073ad7411f0be6fa66e",
 								"path" => "videos/amazon/orders/amazon-prime",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "amazon-prime",
 								"url" => "/en/videos/amazon/orders/amazon-prime",
 								"level" => 4,
@@ -44371,7 +44387,7 @@ class Metadata {
 							[
 								"id" => "be3fcd34a578ec0303fede3ff5bc39df",
 								"path" => "videos/amazon/orders/fba-orders",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "fba-orders",
 								"url" => "/en/videos/amazon/orders/fba-orders",
 								"level" => 4,
@@ -44387,7 +44403,7 @@ class Metadata {
 							[
 								"id" => "95dc9f5dbcb796e51e57be80240396b6",
 								"path" => "videos/amazon/orders/multi-channel-fba",
-								"position" => 60,
+								"position" => 10060,
 								"urlName" => "multi-channel-fba",
 								"url" => "/en/videos/amazon/orders/multi-channel-fba",
 								"level" => 4,
@@ -44409,7 +44425,7 @@ class Metadata {
 			[
 				"id" => "50d56ef170dc1852c41b7eede00443be",
 				"path" => "videos/automation",
-				"position" => 80,
+				"position" => 10080,
 				"urlName" => "automation",
 				"url" => "/en/videos/automation",
 				"level" => 2,
@@ -44423,7 +44439,7 @@ class Metadata {
 					[
 						"id" => "c52a7380a99d2351ff359edfead1e7dd",
 						"path" => "videos/automation/introduction",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "introduction",
 						"url" => "/en/videos/automation/introduction",
 						"level" => 3,
@@ -44439,7 +44455,7 @@ class Metadata {
 					[
 						"id" => "da821dcab3ec17ce73e8ad25fea18820",
 						"path" => "videos/automation/event-procedures",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "event-procedures",
 						"url" => "/en/videos/automation/event-procedures",
 						"level" => 3,
@@ -44501,7 +44517,7 @@ class Metadata {
 							[
 								"id" => "8637dcc54b34b84dd192366107889932",
 								"path" => "videos/automation/event-procedures/introduction",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "introduction",
 								"url" => "/en/videos/automation/event-procedures/introduction",
 								"level" => 4,
@@ -44517,7 +44533,7 @@ class Metadata {
 							[
 								"id" => "3e5b61ffa387df7485b48208e5ed4c3b",
 								"path" => "videos/automation/event-procedures/fulfill-orders",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "fulfill-orders",
 								"url" => "/en/videos/automation/event-procedures/fulfill-orders",
 								"level" => 4,
@@ -44533,7 +44549,7 @@ class Metadata {
 							[
 								"id" => "2dbe215b0b9361fc962a1e0772288db6",
 								"path" => "videos/automation/event-procedures/tracking-url",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "tracking-url",
 								"url" => "/en/videos/automation/event-procedures/tracking-url",
 								"level" => 4,
@@ -44549,7 +44565,7 @@ class Metadata {
 							[
 								"id" => "31c157b390e640c0061a8a3c65e4af07",
 								"path" => "videos/automation/event-procedures/free-gift",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "free-gift",
 								"url" => "/en/videos/automation/event-procedures/free-gift",
 								"level" => 4,
@@ -44568,7 +44584,7 @@ class Metadata {
 					[
 						"id" => "657734cb5dcd8968da4879b2232f9b63",
 						"path" => "videos/automation/processes",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "processes",
 						"url" => "/en/videos/automation/processes",
 						"level" => 3,
@@ -44886,7 +44902,7 @@ class Metadata {
 							[
 								"id" => "7de00e832d77ab8eb34d7004bcc0aa32",
 								"path" => "videos/automation/processes/plentybase",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "plentybase",
 								"url" => "/en/videos/automation/processes/plentybase",
 								"level" => 4,
@@ -44902,7 +44918,7 @@ class Metadata {
 							[
 								"id" => "147ce433cb95a8d4fb000da00855b51b",
 								"path" => "videos/automation/processes/printer",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "printer",
 								"url" => "/en/videos/automation/processes/printer",
 								"level" => 4,
@@ -44918,7 +44934,7 @@ class Metadata {
 							[
 								"id" => "8b57e0f51cdbf673103c689f4634fa10",
 								"path" => "videos/automation/processes/creating-starting",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "creating-starting",
 								"url" => "/en/videos/automation/processes/creating-starting",
 								"level" => 4,
@@ -44934,7 +44950,7 @@ class Metadata {
 							[
 								"id" => "bacf9be88be49b18bb59184a89999d8d",
 								"path" => "videos/automation/processes/work-steps",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "work-steps",
 								"url" => "/en/videos/automation/processes/work-steps",
 								"level" => 4,
@@ -44950,7 +44966,7 @@ class Metadata {
 							[
 								"id" => "f3aca17a331c5167b39c27eb5dd2d340",
 								"path" => "videos/automation/processes/procedures",
-								"position" => 50,
+								"position" => 10050,
 								"urlName" => "procedures",
 								"url" => "/en/videos/automation/processes/procedures",
 								"level" => 4,
@@ -44966,7 +44982,7 @@ class Metadata {
 							[
 								"id" => "87d216287556fbe83c29589cccf8ed24",
 								"path" => "videos/automation/processes/import-export",
-								"position" => 60,
+								"position" => 10060,
 								"urlName" => "import-export",
 								"url" => "/en/videos/automation/processes/import-export",
 								"level" => 4,
@@ -44982,7 +44998,7 @@ class Metadata {
 							[
 								"id" => "0620af59e3962a7ec6fb69ce88e17be1",
 								"path" => "videos/automation/processes/control-elements",
-								"position" => 70,
+								"position" => 10070,
 								"urlName" => "control-elements",
 								"url" => "/en/videos/automation/processes/control-elements",
 								"level" => 4,
@@ -44998,7 +45014,7 @@ class Metadata {
 							[
 								"id" => "2913182b738b5f987160a8066ee522da",
 								"path" => "videos/automation/processes/loop",
-								"position" => 80,
+								"position" => 10080,
 								"urlName" => "loop",
 								"url" => "/en/videos/automation/processes/loop",
 								"level" => 4,
@@ -45014,7 +45030,7 @@ class Metadata {
 							[
 								"id" => "3995714be1694bcdb44ed70609ceeb00",
 								"path" => "videos/automation/processes/split",
-								"position" => 90,
+								"position" => 10090,
 								"urlName" => "split",
 								"url" => "/en/videos/automation/processes/split",
 								"level" => 4,
@@ -45030,7 +45046,7 @@ class Metadata {
 							[
 								"id" => "c57d00f67ef163f149a52c0e5827be22",
 								"path" => "videos/automation/processes/filter",
-								"position" => 100,
+								"position" => 100100,
 								"urlName" => "filter",
 								"url" => "/en/videos/automation/processes/filter",
 								"level" => 4,
@@ -45046,7 +45062,7 @@ class Metadata {
 							[
 								"id" => "a9e2c5d0b38088025acf631d302075d9",
 								"path" => "videos/automation/processes/dialogue",
-								"position" => 110,
+								"position" => 100110,
 								"urlName" => "dialogue",
 								"url" => "/en/videos/automation/processes/dialogue",
 								"level" => 4,
@@ -45062,7 +45078,7 @@ class Metadata {
 							[
 								"id" => "f62fe77c3a0659bd8b0142295d864ab4",
 								"path" => "videos/automation/processes/example-multi",
-								"position" => 120,
+								"position" => 100120,
 								"urlName" => "example-multi",
 								"url" => "/en/videos/automation/processes/example-multi",
 								"level" => 4,
@@ -45078,7 +45094,7 @@ class Metadata {
 							[
 								"id" => "e453b4f524eb52ba1ce37f0749bc8770",
 								"path" => "videos/automation/processes/example-single",
-								"position" => 130,
+								"position" => 100130,
 								"urlName" => "example-single",
 								"url" => "/en/videos/automation/processes/example-single",
 								"level" => 4,
@@ -45100,7 +45116,7 @@ class Metadata {
 			[
 				"id" => "2f64119753c0980de004a95881b8faf9",
 				"path" => "videos/data-transfer",
-				"position" => 90,
+				"position" => 10090,
 				"urlName" => "data-transfer",
 				"url" => "/en/videos/data-transfer",
 				"level" => 2,
@@ -45114,7 +45130,7 @@ class Metadata {
 					[
 						"id" => "5d5c2d8b87d1be1c936e61750e0591ed",
 						"path" => "videos/data-transfer/introducing-elasticsync",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "introducing-elasticsync",
 						"url" => "/en/videos/data-transfer/introducing-elasticsync",
 						"level" => 3,
@@ -45130,7 +45146,7 @@ class Metadata {
 					[
 						"id" => "38b71b931bbd3a3fadc8a4d32c9daa6f",
 						"path" => "videos/data-transfer/basics",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "basics",
 						"url" => "/en/videos/data-transfer/basics",
 						"level" => 3,
@@ -45192,7 +45208,7 @@ class Metadata {
 							[
 								"id" => "4954c0dc81bb115363a58f42d53981f7",
 								"path" => "videos/data-transfer/basics/importing-data-with-elasticsync",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "importing-data-with-elasticsync",
 								"url" => "/en/videos/data-transfer/basics/importing-data-with-elasticsync",
 								"level" => 4,
@@ -45208,7 +45224,7 @@ class Metadata {
 							[
 								"id" => "b64459ef21fa0bae984b0acc57180e63",
 								"path" => "videos/data-transfer/basics/manually-importing-files",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "manually-importing-files",
 								"url" => "/en/videos/data-transfer/basics/manually-importing-files",
 								"level" => 4,
@@ -45224,7 +45240,7 @@ class Metadata {
 							[
 								"id" => "fcf863ebfeed387632352f201b89f07e",
 								"path" => "videos/data-transfer/basics/automatically-importing-files",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "automatically-importing-files",
 								"url" => "/en/videos/data-transfer/basics/automatically-importing-files",
 								"level" => 4,
@@ -45243,7 +45259,7 @@ class Metadata {
 					[
 						"id" => "b47804f91d3d4d1a09f3e4ee9fa8def0",
 						"path" => "videos/data-transfer/extra-features",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "extra-features",
 						"url" => "/en/videos/data-transfer/extra-features",
 						"level" => 3,
@@ -45257,7 +45273,7 @@ class Metadata {
 							[
 								"id" => "3959dc2ecec88a9a21fd4108996bb6e7",
 								"path" => "videos/data-transfer/extra-features/extra-information-sync",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "extra-information-sync",
 								"url" => "/en/videos/data-transfer/extra-features/extra-information-sync",
 								"level" => 4,
@@ -45273,7 +45289,7 @@ class Metadata {
 							[
 								"id" => "057a1f06b3ccd8f736d2142fc31b005c",
 								"path" => "videos/data-transfer/extra-features/trading-information",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "trading-information",
 								"url" => "/en/videos/data-transfer/extra-features/trading-information",
 								"level" => 4,
@@ -45289,7 +45305,7 @@ class Metadata {
 							[
 								"id" => "42a558970e7b6cd2756ba56359bddb59",
 								"path" => "videos/data-transfer/extra-features/modifying-information",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "modifying-information",
 								"url" => "/en/videos/data-transfer/extra-features/modifying-information",
 								"level" => 4,
@@ -45308,7 +45324,7 @@ class Metadata {
 					[
 						"id" => "673a324c2abe2730727462603e27874e",
 						"path" => "videos/data-transfer/case-examples",
-						"position" => 40,
+						"position" => 10040,
 						"urlName" => "case-examples",
 						"url" => "/en/videos/data-transfer/case-examples",
 						"level" => 3,
@@ -45482,7 +45498,7 @@ class Metadata {
 							[
 								"id" => "9df936074f9485387fbb440d196e24f8",
 								"path" => "videos/data-transfer/case-examples/import-export",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "import-export",
 								"url" => "/en/videos/data-transfer/case-examples/import-export",
 								"level" => 4,
@@ -45498,7 +45514,7 @@ class Metadata {
 							[
 								"id" => "84017188161427341137395ccd1048b9",
 								"path" => "videos/data-transfer/case-examples/creating-items-with-variations",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "creating-items-with-variations",
 								"url" => "/en/videos/data-transfer/case-examples/creating-items-with-variations",
 								"level" => 4,
@@ -45514,7 +45530,7 @@ class Metadata {
 							[
 								"id" => "05f65066d103a42b805bdca662b5f574",
 								"path" => "videos/data-transfer/case-examples/importing-order-information",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "importing-order-information",
 								"url" => "/en/videos/data-transfer/case-examples/importing-order-information",
 								"level" => 4,
@@ -45536,7 +45552,7 @@ class Metadata {
 			[
 				"id" => "71a181c30a4f5a3407efc7bd9a2c1ea1",
 				"path" => "videos/pos",
-				"position" => 100,
+				"position" => 100100,
 				"urlName" => "pos",
 				"url" => "/en/videos/pos",
 				"level" => 2,
@@ -45550,7 +45566,7 @@ class Metadata {
 					[
 						"id" => "90a067acd246a900039ba0d88d6f4722",
 						"path" => "videos/pos/introduction",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "introduction",
 						"url" => "/en/videos/pos/introduction",
 						"level" => 3,
@@ -45566,7 +45582,7 @@ class Metadata {
 					[
 						"id" => "c48abe33d7ebfbcd8e23fd68cc1c4ec1",
 						"path" => "videos/pos/setting-up-pos",
-						"position" => 20,
+						"position" => 10020,
 						"urlName" => "setting-up-pos",
 						"url" => "/en/videos/pos/setting-up-pos",
 						"level" => 3,
@@ -45868,7 +45884,7 @@ class Metadata {
 							[
 								"id" => "2247d23154ccdcb98532f01df9075e9a",
 								"path" => "videos/pos/setting-up-pos/backend",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "backend",
 								"url" => "/en/videos/pos/setting-up-pos/backend",
 								"level" => 4,
@@ -45884,7 +45900,7 @@ class Metadata {
 							[
 								"id" => "3ea07c6b5a7b5cbf59d3ab81d0abc464",
 								"path" => "videos/pos/setting-up-pos/app",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "app",
 								"url" => "/en/videos/pos/setting-up-pos/app",
 								"level" => 4,
@@ -45900,7 +45916,7 @@ class Metadata {
 							[
 								"id" => "e5be566cac6c92ce07716d01b794d64d",
 								"path" => "videos/pos/setting-up-pos/card-terminals",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "card-terminals",
 								"url" => "/en/videos/pos/setting-up-pos/card-terminals",
 								"level" => 4,
@@ -45916,7 +45932,7 @@ class Metadata {
 							[
 								"id" => "47152e3171bdf4df943c5eda44bbab75",
 								"path" => "videos/pos/setting-up-pos/miscellaneous",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "miscellaneous",
 								"url" => "/en/videos/pos/setting-up-pos/miscellaneous",
 								"level" => 4,
@@ -45935,7 +45951,7 @@ class Metadata {
 					[
 						"id" => "007b41a3978ab57744177d4c78042b25",
 						"path" => "videos/pos/working-with-app",
-						"position" => 30,
+						"position" => 10030,
 						"urlName" => "working-with-app",
 						"url" => "/en/videos/pos/working-with-app",
 						"level" => 3,
@@ -46205,7 +46221,7 @@ class Metadata {
 							[
 								"id" => "ea56ed7804a983fca925523bd8d2285c",
 								"path" => "videos/pos/working-with-app/ringing-up-customers",
-								"position" => 10,
+								"position" => 10010,
 								"urlName" => "ringing-up-customers",
 								"url" => "/en/videos/pos/working-with-app/ringing-up-customers",
 								"level" => 4,
@@ -46221,7 +46237,7 @@ class Metadata {
 							[
 								"id" => "315d97a00593f008f99dfd2176aa5ca9",
 								"path" => "videos/pos/working-with-app/deposits-withdrawals",
-								"position" => 20,
+								"position" => 10020,
 								"urlName" => "deposits-withdrawals",
 								"url" => "/en/videos/pos/working-with-app/deposits-withdrawals",
 								"level" => 4,
@@ -46237,7 +46253,7 @@ class Metadata {
 							[
 								"id" => "1aa483275c141391d05400d521d63047",
 								"path" => "videos/pos/working-with-app/cash-on-hand",
-								"position" => 30,
+								"position" => 10030,
 								"urlName" => "cash-on-hand",
 								"url" => "/en/videos/pos/working-with-app/cash-on-hand",
 								"level" => 4,
@@ -46253,7 +46269,7 @@ class Metadata {
 							[
 								"id" => "4c14bde5ef0d15f5b5ec2733fd4ca5c9",
 								"path" => "videos/pos/working-with-app/z-report",
-								"position" => 40,
+								"position" => 10040,
 								"urlName" => "z-report",
 								"url" => "/en/videos/pos/working-with-app/z-report",
 								"level" => 4,
@@ -46275,7 +46291,7 @@ class Metadata {
 			[
 				"id" => "308c5e235c0fbef2483abf024c6707c5",
 				"path" => "videos/stock-management",
-				"position" => 120,
+				"position" => 100120,
 				"urlName" => "stock-management",
 				"url" => "/en/videos/stock-management",
 				"level" => 2,
@@ -46353,7 +46369,7 @@ class Metadata {
 					[
 						"id" => "3c5221258c9f61e9a8c7f3e2f710eb99",
 						"path" => "videos/stock-management/setting-up-and-managing-storage-locations",
-						"position" => 10,
+						"position" => 10010,
 						"urlName" => "setting-up-and-managing-storage-locations",
 						"url" => "/en/videos/stock-management/setting-up-and-managing-storage-locations",
 						"level" => 3,
@@ -46371,22 +46387,6 @@ class Metadata {
 			]
 		],
 		"hasChildren" => true
-	],
-	[
-		"id" => "d63aadefb84d945d3faa8eaa35f5015d",
-		"path" => "glossary",
-		"position" => 300,
-		"urlName" => "glossary",
-		"url" => "/en/glossary",
-		"level" => 1,
-		"title" => "plentymarkets glossary",
-		"keywords" => "",
-		"description" => "Glossary for plentymarkets",
-		"navAlias" => "",
-		"linkListInto" => "Welcome to the topic plentymarkets glossary. The following information is available:",
-		"languageID" => "GJA5K7N",
-		"children" => [],
-		"hasChildren" => false
 	]
 ];
 
