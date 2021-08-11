@@ -25095,7 +25095,7 @@ class Metadata {
 					[
 						"id" => "325361a0a871558174dc1e20f0bfbb95",
 						"path" => "item/online-store/callisto-templates",
-						"position" => 60,
+						"position" => 10060,
 						"urlName" => "callisto-templates",
 						"url" => "/en/item/online-store/callisto-templates",
 						"level" => 3,
