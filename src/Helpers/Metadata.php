@@ -1020,7 +1020,7 @@ class Metadata {
 					[
 						"id" => "109699753eea6559406d483f572a739d",
 						"path" => "artikel/webshop/callisto-vorlagen",
-						"position" => 60,
+						"position" => 10060,
 						"urlName" => "callisto-vorlagen",
 						"url" => "/artikel/webshop/callisto-vorlagen",
 						"level" => 3,
