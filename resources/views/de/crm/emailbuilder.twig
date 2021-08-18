@@ -37,11 +37,18 @@
 <li><a href="#vorlage-loeschen"><span>3.9.</span><span> Vorlage löschen</span></a></li>
 </ul>
 </li>
-<li><a href="#variablen-emailbuilder"><span>4.</span><span> Verfügbare Variablen für den EmailBuilder</span></a></li>
+<li><a href="#variablen-emailbuilder"><span>4.</span><span> Verfügbare Variablen und twig expressions für das Code-Widget und den Betreff</span></a></li>
 <li><a href="#e-mail-versand-automatisieren"><span>5.</span><span> E-Mail-Versand automatisieren</span></a>
 <ul class="sectlevel2">
 <li><a href="#_automatischen_e_mail_versand_einrichten"><span>5.1.</span><span> Automatischen E-Mail-Versand einrichten</span></a></li>
 <li><a href="#ereignisaktionen-einrichten"><span>5.2.</span><span> Ereignisaktionen einrichten</span></a></li>
+</ul>
+</li>
+<li><a href="#code-beispiele-code-widget"><span>6.</span><span> Code-Beispiele für das Code-Wigdet</span></a>
+<ul class="sectlevel2">
+<li><a href="#code-beispiel-versandprofil"><span>6.1.</span><span> Code-Beispiel: Versandprofil</span></a></li>
+<li><a href="#code-beispiel-bankdaten"><span>6.2.</span><span> Code-Beispiel: Bankdaten</span></a></li>
+<li><a href="#code-beispiel-auftragspositionen"><span>6.3.</span><span> Code-Beispiel: Auftragspositionen</span></a></li>
 </ul>
 </li>
 </ul>
@@ -474,7 +481,7 @@ Wenn du alle Einstellungen wie im Folgenden beschrieben vorgenommen hast – als
 <p>Die Widgets und Variablen, die in der Vorlage enthalten sind, bilden den eigentlichen Inhalt deiner E-Mail. In einer Vorlage kannst du über die verfügbaren Widgets beliebig viele Variablen per Drag-and-drop einfügen, die dann in der E-Mail an deine Kund:innen durch den korrekten Inhalt ersetzt werden.</p>
 </div>
 <div class="paragraph">
-<p>Welche Variablen dir für deine E-Mail-Vorlagen zur Verfügung stehen, findest du in den Listen ganz unten auf dieser Seite im Kapitel <a href="#variablen-emailbuilder">Verfügbare Variablen für den EmailBuilder</a>.</p>
+<p>Welche Variablen dir für deine E-Mail-Vorlagen zur Verfügung stehen, findest du in den Listen ganz unten auf dieser Seite im Kapitel <a href="#variablen-emailbuilder">Verfügbare Variablen und twig expressions für das Code-Widget und den Betreff</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="vorlage-header-footer">3.1. Vorlagen für Header und Footer erstellen</h3>
@@ -1084,7 +1091,7 @@ Die Liste enthält alle <a href="#footer-erstellen">Footer</a>, die du bereits e
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">eBay: dispute / cancellation, no payment</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your order with the ID {⁠{order.id}⁠} was canceled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Your order with the ID {⁠{order.id}⁠} was cancelled</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">eBay: Order confirmation</p></td>
@@ -1230,8 +1237,9 @@ Die Liste enthält alle <a href="#footer-erstellen">Footer</a>, die du bereits e
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="variablen-emailbuilder">4. Verfügbare Variablen für den EmailBuilder</h2>
+<h2 id="variablen-emailbuilder">4. Verfügbare Variablen und twig expressions für das Code-Widget und den Betreff</h2>
 <div class="sectionbody">
+<h3 id="verfuegbare-variablen" class="discrete">Verfügbare Variablen</h3>
 <div class="paragraph">
 <p>Die verfügbaren Variablen für den EmailBuilder sind in verschiedene Kategorien bzw. Unterkategorien gruppiert:</p>
 </div>
@@ -1251,7 +1259,7 @@ Die Liste enthält alle <a href="#footer-erstellen">Footer</a>, die du bereits e
 <p>Rechnungsadresse</p>
 </li>
 <li>
-<p>Auftragspositionen</p>
+<p>Auftragspositionen (nur für Artikellisten-Widget)</p>
 </li>
 <li>
 <p>Versand</p>
@@ -1287,927 +1295,257 @@ Die Liste enthält alle <a href="#footer-erstellen">Footer</a>, die du bereits e
 </ul>
 </div>
 <div class="paragraph">
-<p>Möchtest du wissen, welche Variablen für die einzelnen Kategorien und Unterkategorien zur Verfügung stehen? Dann klappe die Bereiche mit einem Klick auf <span class="icon "><i class="material-expand_more"></i></span> einfach auf.</p>
+<p>Möchtest du wissen, welche Variablen für die einzelnen Kategorien und Unterkategorien zur Verfügung stehen und wie die twig expressions lauten, die du im Code-Widget und im Betreff einer Vorlage verwenden kannst? Dann klappe die Bereiche mit einem Klick auf <span class="icon "><i class="material-expand_more"></i></span> einfach auf.</p>
+</div>
+<h3 id="twig" class="discrete">Twig expressions für das Code-Widget und den Betreff</h3>
+<div class="paragraph">
+<p>In den folgenden aufklappbaren Bereichen findest du neben den Variablen auch die twig expressions, die du im Code-Widget und im Betreff einer Vorlage verwenden kannst.</p>
+</div>
+<div class="paragraph">
+<p><strong>Twig expression im Betreff</strong></p>
+</div>
+<div class="paragraph">
+<p>Wenn du eine twig expression im Betreff der Vorlage verwenden möchtest, muss diese von doppelt geschweiften Klammern umgeben sein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Beispiel:</em></strong> Wenn du im Betreff deiner Vorlage den Versanddienstleister anzeigen möchtest, öffnest du den aufklappbaren Bereich <strong>Auftrag / Versand</strong>, suchst nach der Variable <strong>Versanddienstleister</strong> und setzt dann die entsprechende twig expression wie folgt in den Betreff deiner Vorlage ein:  <code>{⁠{order.formattedShipping.providerName}⁠}</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Twig expression im Code-Widget</strong></p>
+</div>
+<div class="paragraph">
+<p>Wenn du im Code-Widget beispielsweise mit <a href="https://twig.symfony.com/doc/3.x/tags/if.html" target="_blank" rel="noopener">if-Abfragen</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> arbeitest, benötigst du in der if-Abfrage selbst keine doppelt geschweiften Klammern zusätzlich, sondern nur im Fließtext.</p>
+</div>
+<div class="paragraph">
+<p>Weitere Informationen zu Twig findest du in der <a href="https://twig.symfony.com/doc/3.x/" target="_blank" rel="noopener">Twig Documentation</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+<div class="paragraph">
+<p>Im Kapitel <a href="#code-beispiele-code-widget">Code-Beispiele für das Code-Wigdet</a> findest du einige if-Abfragen, die du einfach in dein Code-Widget kopieren kannst.</p>
+</div>
+<div class="paragraph">
+<p>Möchtest du wissen, welche Variablen für die einzelnen Kategorien und Unterkategorien zur Verfügung stehen und wie die twig expressions lauten, die du im Code-Widget verwenden kannst? Dann klappe die Bereiche mit einem Klick auf <span class="icon "><i class="material-expand_more"></i></span> einfach auf.</p>
 </div>
 <div id="variablen-auftrag" class="openblock collapseBox">
 <div class="title">Variablen in der Kategorie <strong>Auftrag</strong></div>
 <div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>Auftrags-ID</code></p>
-</li>
-<li>
-<p><code>ID des Hauptauftrags</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>ID des obersten Vorgängerauftrags. Dies ist in der Regel ein normaler Auftrag.<br>
-<strong><em>Beispiel:</em></strong> Bei einer Gutschrift G1 aus einer Retoure R1 aus einem Auftrag A1 gibt die Variable <code>ID des Elternauftrags</code> die ID von R1 und <code>ID des Hauptauftrags</code> die ID von A1 aus.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>ID des Elternauftrags</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>ID des direkten Vorgängerauftrags<br>
-<strong><em>Beispiel:</em></strong> Bei einer Gutschrift kann es die ID der Retoure oder des Auftrags sein, aus dem die Gutschrift erzeugt wurde.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Status</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Name des Auftragsstatus wie im Menü <strong>Einrichtung » Aufträge » Status</strong> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Status-ID</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>ID des Auftragsstatus wie im Menü <strong>Einrichtung » Aufträge » Status</strong> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Markierung</code></p>
-</li>
-<li>
-<p><code>Kundenzeichen</code></p>
-</li>
-<li>
-<p><code>Externe Auftrags-ID</code></p>
-</li>
-<li>
-<p><code>Währung</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse USt-IdNr.</code></p>
-</li>
-<li>
-<p><code>Lieferadresse USt-IdNr.</code></p>
-</li>
-<li>
-<p><code>Wert des Artikels</code></p>
-</li>
-<li>
-<p><code>Gesamtrechnungsbetrag</code></p>
-</li>
-<li>
-<p><code>Gesamtrechnungsbetrag, durch Punkt getrennt</code></p>
-</li>
-<li>
-<p><code>Gesamtrechnungsbetrag netto</code></p>
-</li>
-<li>
-<p><code>Gesamtbetrag der Mehrwertsteuer</code></p>
-</li>
-<li>
-<p><code>Gesamtbetrag des Auftrags netto</code></p>
-</li>
-<li>
-<p><code>Datum und Uhrzeit des Auftragseingangs</code></p>
-</li>
-<li>
-<p><code>Datum des Zahlungseingangs</code></p>
-</li>
-<li>
-<p><code>Zahlungsart</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Name der Zahlungsart wie im Menü <strong>Einrichtung » Aufträge » Zahlung » Zahlungsarten</strong> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Zahlungsart-ID</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Die ID wird vom System vergeben. Die IDs sind im Menü <strong>Einrichtung » Aufträge » Zahlung » Zahlungsarten</strong> aufgeführt.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Herkunft</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Name der Auftragsherkunft wie im Menü <strong>Einrichtung » Aufträge » Auftragsherkunft</strong> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Herkunfts-ID</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>ID der Auftragsherkunft wie im Menü <strong>Einrichtung » Aufträge » Auftragsherkunft</strong> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Bezahlter Betrag</code></p>
-</li>
-<li>
-<p><code>Offener Betrag</code></p>
-</li>
-<li>
-<p><code>Überbezahlter Betrag</code></p>
-</li>
-<li>
-<p><code>Auftrag Lager-ID</code></p>
-</li>
-<li>
-<p><code>Mandanten-ID</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Die ID wird vom System vergeben und kann nicht geändert werden. Du findest die ID im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Einstellungen</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Verkäuferkonto</code></p>
-</li>
-<li>
-<p><code>eBay-Zahlungs-ID</code></p>
-</li>
-<li>
-<p><code>Barcode-ID</code></p>
-</li>
-<li>
-<p><code>Kundenwunsch</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Kund:innen können bei der Bestellung über den Webshop einen Wunsch angeben. Dieser Wunsch wird als Auftragsnotiz in den Auftragsdaten gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Auftragstyp</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Typ des Auftrags, z.B. Lieferauftrag, Retoure, Gutschrift oder Reparatur.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Auftrag im Webshop aufrufen</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Öffnet die URL des Auftrags in deinem Webshop</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Nachbestellungs-ID</code></p>
-</li>
-<li>
-<p><code>Gutscheinwert</code></p>
-</li>
-<li>
-<p><code>Rechnungsnummer-ID</code></p>
-</li>
-<li>
-<p><code>DHL Retoure Online QR-Code</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Sendet deinen Kund:innen einen QR-Code für DHL Retoure Online. Wenn deine Kund:innen einen Artikel zurücksenden möchten, müssen sie dem Personal in der Postfiliale vor Ort den QR-Code auf ihrem Smartphone vorzeigen und diese drucken dann das Retourenlabel und bringen es auf dem Paket an. Deine Kund:innen benötigen also keinen Drucker mehr und du musst das Retourenlabel nicht als PDF-Anhang in der E-Mail versenden.<br>
-Der QR-Code wird in der E-Mail an deine Kund:innen als URL ausgegeben. Nach einem Klick auf die URL erscheint dann in einem separaten Fenster der QR-Code.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 55.5555%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name der Variable</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+<th class="tableblock halign-left valign-top">Twig expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Auftrags-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ID des Hauptauftrags</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des obersten Vorgängerauftrags. Dies ist in der Regel ein normaler Auftrag.<br>
+<strong><em>Beispiel:</em></strong> Bei einer Gutschrift G1 aus einer Retoure R1 aus einem Auftrag A1 gibt die Variable <code>ID des Elternauftrags</code> die ID von R1 und <code>ID des Hauptauftrags</code> die ID von A1 aus.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedOriginOrder.originOrderId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ID des Elternauftrags</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des direkten Vorgängerauftrags<br>
+<strong><em>Beispiel:</em></strong> Bei einer Gutschrift kann es die ID der Retoure oder des Auftrags sein, aus dem die Gutschrift erzeugt wurde.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.parent_order_id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Status</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Auftragsstatus wie im Menü <strong>Einrichtung » Aufträge » Status</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.statusName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Status-ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Auftragsstatus wie im Menü <strong>Einrichtung » Aufträge » Status</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.statusId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Markierung</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Markierung, die im Auftrag gewählt wurde.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedProperties.flag</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Kundenzeichen</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedProperties.customerSign</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Externe Auftrags-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedProperties.externalOrderId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Währungscode</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Währungscode, z.B. <strong>EUR</strong> oder <strong>USD</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedSubtotals.currencyCode</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Währungszeichen</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Währungssymbol, z.B. <strong>€</strong> oder <strong>$</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedSubtotals.currencySymbol</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse USt-IdNr.</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse, wie im Auftrag gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.formattedOptions.VATNumber</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse USt-IdNr.</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Umsatzsteuer-Identifikationsnummer aus der Lieferadresse, wie im Auftrag gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.formattedOptions.VATNumber</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Wert der Artikel</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.valueOfItems</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gesamtrechnungsbetrag</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Beispiel:</em></strong> 1.234,00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.invoiceTotal | number_format(2, ',', '.')</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gesamtrechnungsbetrag, durch Punkt getrennt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Beispiel:</em></strong> 1234.00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.invoiceTotal | number_format(2, '.', '')</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gesamtrechnungsbetrag netto</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.invoiceTotalNet</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gesamtbetrag der Mehrwertsteuer</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.totalVat</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gesamtbetrag des Auftrags netto</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.totalNet</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Datum und Uhrzeit des Auftragseingangs</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedDates.createdOn</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Datum des Zahlungseingangs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datum und Uhrzeit des Zahlungseingangs wie im Auftrag gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedDates.paidOn</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Zahlungsart</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Zahlungsart wie im Menü <strong>Einrichtung » Aufträge » Zahlung » Zahlungsarten</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.methodOfPaymentName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Zahlungsart-ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die ID wird vom System vergeben. Die IDs sind im Menü <strong>Einrichtung » Aufträge » Zahlung » Zahlungsarten</strong> aufgeführt.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedProperties.paymentMethod</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Herkunft</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Auftragsherkunft wie im Menü <strong>Einrichtung » Aufträge » Auftragsherkunft</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedReferrer.name</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Herkunfts-ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Auftragsherkunft wie im Menü <strong>Einrichtung » Aufträge » Auftragsherkunft</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedReferrer.id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Bezahlter Betrag</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.paidAmount</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Offener Betrag</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.openAmount</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Überbezahlter Betrag</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.overpaidAmount</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Auftrag Lager-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedProperties.warehouse</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Plenty ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die ID wird vom System vergeben und kann nicht geändert werden. Du findest die ID im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Einstellungen</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.plentyId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Verkäuferkonto</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedProperties.sellerAccount</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>eBay-Zahlungs-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedProperties.ebayUniquePaymentID</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Barcode-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.barcodeOrderID</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Kundenwunsch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kund:innen können bei der Bestellung über den Webshop einen Wunsch angeben. Dieser Wunsch wird als Auftragsnotiz in den Auftragsdaten gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedComments.customerSpecialWishes</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Auftragstyp</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Typ des Auftrags, z.B. Lieferauftrag, Retoure, Gutschrift oder Reparatur.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.typeId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Auftrag im Webshop aufrufen</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Öffnet die URL des Auftrags in deinem Webshop.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.access_key</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Nachbestellungs-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedReorder.id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutscheinwert</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.couponValue</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsnummer-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedDocuments.invoice</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DHL Retoure Online QR-Code</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sendet deinen Kund:innen einen QR-Code für DHL Retoure Online. Wenn deine Kund:innen einen Artikel zurücksenden möchten, müssen sie dem Personal in der Postfiliale vor Ort den QR-Code auf ihrem Smartphone vorzeigen und diese drucken dann das Retourenlabel und bringen es auf dem Paket an. Deine Kund:innen benötigen also keinen Drucker mehr und du musst das Retourenlabel nicht als PDF-Anhang in der E-Mail versenden.<br>
+Der QR-Code wird in der E-Mail an deine Kund:innen als URL ausgegeben. Nach einem Klick auf die URL erscheint dann in einem separaten Fenster der QR-Code.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.DHLRetoureOnlineQRCodeURL</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div id="variablen-auftrag-lieferadresse" class="openblock collapseBox">
 <div class="title">Variablen in der Unterkategorie <strong>Auftrag / Lieferadresse</strong></div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>Lieferadresse Vorname und Nachname</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Adresszusatz</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Vorname</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Nachname</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Firmenname</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Kontaktperson</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Telefon</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Straße</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Postleitzahl und Ort</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Ort</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Postleitzahl</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Land</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Länder-ID</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Länder-ISO-Code 2</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Länder-ISO-Code 3</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Bundesland</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="variablen-auftrag-rechnungsadresse" class="openblock collapseBox">
-<div class="title">Variablen in der Unterkategorie <strong>Auftrag / Rechnungsadresse</strong></div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>Rechnungsadresse Vorname und Nachname</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Adresszusatz</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Vorname</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Nachname</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Firmenname</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Kontaktperson</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Telefon</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Straße</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Postleitzahl und Ort</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Ort</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Postleitzahl</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Land</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Länder-ID</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Länder-ISO-Code 2</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Länder-ISO-Code 3</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Bundesland</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="variablen-auftrag-auftragspositionen" class="openblock collapseBox">
-<div class="title">Variablen in der Unterkategorie <strong>Auftrag / Auftragspositionen</strong></div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>Artikel-ID</code></p>
-</li>
-<li>
-<p><code>Artikeleigenschaften</code></p>
-</li>
-<li>
-<p><code>Status-ID des retournierten Artikels</code></p>
-</li>
-<li>
-<p><code>Name des retournierten Artikels</code></p>
-</li>
-<li>
-<p><code>Variantennummer</code></p>
-</li>
-<li>
-<p><code>Artikelname</code></p>
-</li>
-<li>
-<p><code>Artikelmenge</code></p>
-</li>
-<li>
-<p><code>Bruttopreis</code></p>
-</li>
-<li>
-<p><code>Nettopreis</code></p>
-</li>
-<li>
-<p><code>Mehrwertsteuersatz</code></p>
-</li>
-<li>
-<p><code>Herkunft</code></p>
-</li>
-<li>
-<p><code>Externe Artikel-ID</code></p>
-</li>
-<li>
-<p><code>Externe Varianten-ID</code></p>
-</li>
-<li>
-<p><code>Externe Token-ID</code></p>
-</li>
-<li>
-<p><code>Inhalt</code></p>
-</li>
-<li>
-<p><code>Einheit</code></p>
-</li>
-<li>
-<p><code>Variantenname</code></p>
-</li>
-<li>
-<p><code>Varianten-ID</code></p>
-</li>
-<li>
-<p><code>Attributwerte</code></p>
-</li>
-<li>
-<p><code>Modell</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Modellbezeichnung des Artikels</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>GTIN</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Global Trade Item Number (GTIN) des Artikels</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>ISBN</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>ISBN-Code des Artikels</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>ASIN</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Amazon Standard Ident Number (ASIN) des Artikels</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Verfügbarkeitstext</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Name der Artikelverfügbarkeit des Nettowarenbestands</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Verfügbarkeits-ID</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>ID der Artikelverfügbarket des Netttowarenbestands</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Verfügbarkeitstext physischer Warenbestand</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Name der Artikelverfügbarkeit des physischen Warenbestands</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Verfügbarkeits-ID physischer Warenbestand</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>ID der Artikelverfügbarkeit des physischen Warenbestands</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Freitextfelder 1 bis 20</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Freitextfelder für die Artikel wie im Menü <strong>Einrichtung » Artikel » Freitextfelder</strong> gespeichert.<br>
-<strong><em>Beispiel:</em></strong> <code>Freitextfeld 3</code> gibt den Text aus, der unter <strong>Feld 3</strong> gespeichert ist.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>URL zum Variantenbild</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Gibt die URL zum Variantenbild aus.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Herstellername</code></p>
-</li>
-<li>
-<p><code>Lager-ID</code></p>
-</li>
-<li>
-<p><code>Retourenkommentar</code></p>
-</li>
-<li>
-<p><code>Wert der Retoure in Prozent</code></p>
-</li>
-<li>
-<p><code>ID des Retourengrunds</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>ID des Retourengrund wie im Menü <strong>Einrichtung » Aufträge » Auftragstypen » Retoure</strong> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Retourengrund</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Name des Retourengrund wie im Menü <strong>Einrichtung » Aufträge » Auftragstypen » Retoure</strong> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Codes eines Gutscheins</code></p>
-</li>
-<li>
-<p><code>Zolltarifnummer</code></p>
-</li>
-<li>
-<p><code>Erscheinungsdatum</code></p>
-</li>
-<li>
-<p><code>Gesamtpreis (Einzelpreis x Menge)</code></p>
-</li>
-<li>
-<p><code>Rabatt pro Auftragsposition</code></p>
-</li>
-<li>
-<p><code>URL zum Artikel</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Gibt die URL zum Artikel im Webshop aus.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="variablen-auftrag-versand" class="openblock collapseBox">
-<div class="title">Variablen in der Unterkategorie <strong>Auftrag / Versand</strong></div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>Mögliches Lieferdatum</code></p>
-</li>
-<li>
-<p><code>Voraussichtliches Versanddatum</code></p>
-</li>
-<li>
-<p><code>Datum des Retoureneingangs</code></p>
-</li>
-<li>
-<p><code>Voraussichtliches Lieferdatum</code></p>
-</li>
-<li>
-<p><code>Retourenpaketnummer</code></p>
-</li>
-<li>
-<p><code>Versandkosten gesamt</code></p>
-</li>
-<li>
-<p><code>Paketnummernliste</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Paketnummern bzw. Tracking-Nummern werden nach erfolgreicher Auftragsanmeldung beim Versanddienstleister im Auftrag im Tab <strong>Einstellungen</strong> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Tracking-URL</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Dient zur Sendungsverfolgung. Die URL wird im Menü <strong>Einrichtung » Aufträge » Versand » Optionen</strong> im Tab <strong>Versanddienstleister</strong> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Versanddienstleister</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Name des Versanddienstleisters wie im Menü <strong>Einrichtung » Aufträge » Versand » Optionen</strong> im Tab <strong>Versanddienstleister</strong> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Versanddienstleister-ID</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Wird automatisch vom System vergeben. Die ID des Versanddienstleisters findest du im Menü <strong>Einrichtung » Aufträge » Versand » Optionen</strong> im Tab <strong>Versanddienstleister</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Versandprofil</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Name des Versandprofils wie im Menü <strong>Einrichtung » Aufträge » Versand » Optionen</strong> im Tab <strong>Versandprofile</strong> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Versandprofil-ID</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Wird automatisch vom System vergeben. Die ID des Versandprofils findest du im Menü <strong>Einrichtung » Aufträge » Versand » Optionen</strong> im Tab <strong>Versandprofile</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Lieferschein-ID</code></p>
-</li>
-<li>
-<p>Nachbestellung Lieferdatum</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="variablen-kontakt" class="openblock collapseBox">
-<div class="title">Variablen in der Kategorie <strong>Kontakt</strong></div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>Kontakt-ID</code></p>
-</li>
-<li>
-<p><code>Vorname</code></p>
-</li>
-<li>
-<p><code>Nachname</code></p>
-</li>
-<li>
-<p><code>Vollständiger Name</code></p>
-</li>
-<li>
-<p><code>Geschlecht</code></p>
-</li>
-<li>
-<p><code>Anrede</code></p>
-</li>
-<li>
-<p><code>Anrede geschäftlich</code></p>
-</li>
-<li>
-<p><code>Anrede privat</code></p>
-</li>
-<li>
-<p><code>Firmenname</code></p>
-</li>
-<li>
-<p><code>Sprache</code></p>
-</li>
-<li>
-<p><code>Klasse</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Klasse, der der Kontakt zugeordnet ist. Klassen erstellst du im Menü <strong>Einrichtung » CRM » Kundenklassen</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Nummer</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Zusätzliche Nummer für den Kontakt</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Titel</code></p>
-</li>
-<li>
-<p><code>Vorname und Nachname des Systembenutzers</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Vorname und Nachname des Systembenutzers, der als Eigner am Kontaktdatensatz gespeichert ist.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Signatur des Systembenutzers</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Signatur des Systembenutzers, der als Eigner am Kontaktdatensatz gespeichert ist, im Textformat.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Signatur des Systembenutzers im HTML-Format</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Signatur des Systembenutzers, der als Eigner im Kontaktdatensatz gespeichert ist, im HTML-Format.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><code>Kontoinhaber (Kontakt)</code></p>
-</li>
-<li>
-<p><code>Bankname des Kontakts</code></p>
-</li>
-<li>
-<p><code>IBAN des Kontakts</code></p>
-</li>
-<li>
-<p><code>BIC des Kontakts</code></p>
-</li>
-<li>
-<p><code>Anzahl der Aufträge</code></p>
-</li>
-<li>
-<p><code>Newsletter-Empfang: Zustimmung durch Kontakt</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Datum, wann der Kontakt dem Newsletter-Empfang zugestimmt hat.<br>
-Datumsformat in der E-Mail: <code>mm-tt-jjjj</code>.<br>
-Im Kontaktdatensatz wird zusätzlich zum Datum im Format <code>tt-mm-jjjj</code> der Zeitstempel im Format <code>00:00:00</code> gespeichert.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="variablen-kontakt-lieferadresse" class="openblock collapseBox">
-<div class="title">Variablen in der Unterkategorie <strong>Kontakt / Lieferadresse</strong></div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>Lieferadresse Vorname und Nachname</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Adresszusatz</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Vorname</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Nachname</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Firmenname</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Telefon</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Straße</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Postleitzahl und Ort</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Ort</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Postleitzahl</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Land</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Länder-ID</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Länder-ISO-Code 2</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Länder-ISO-Code 3</code></p>
-</li>
-<li>
-<p><code>Lieferadresse Bundesland</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="variablen-kontakt-rechnungsadresse" class="openblock collapseBox">
-<div class="title">Variablen in der Unterkategorie <strong>Kontakt / Rechnungsadresse</strong></div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>Rechnungsadresse Vorname und Nachname</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Adresszusatz</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Vorname</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Nachname</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Firmenname</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Telefon</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Straße</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Postleitzahl und Ort</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Ort</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Postleitzahl</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Land</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Länder-ID</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Länder-ISO-Code 2</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Länder-ISO-Code 3</code></p>
-</li>
-<li>
-<p><code>Rechnungsadresse Bundesland</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Variablen in der Unterkategorie <strong>Kontakt / Optionen</strong></div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>E-Mail privat</code></p>
-</li>
-<li>
-<p><code>Telefon privat</code></p>
-</li>
-<li>
-<p><code>Mobiltelefon privat</code></p>
-</li>
-<li>
-<p><code>Fax privat</code></p>
-</li>
-<li>
-<p><code>E-Mail geschäftlich</code></p>
-</li>
-<li>
-<p><code>Telefon geschäftlich</code></p>
-</li>
-<li>
-<p><code>Mobiltelefon geschäftlich</code></p>
-</li>
-<li>
-<p><code>Fax geschäftlich</code></p>
-</li>
-<li>
-<p><code>eBay-Name</code></p>
-</li>
-<li>
-<p><code>E-Mail PayPal</code></p>
-</li>
-<li>
-<p><code>Zusätzlicher Ansprechpartner</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="variablen-global" class="openblock collapseBox">
-<div class="title">Variablen in der Kategorie <strong>Global</strong></div>
 <div class="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2216,110 +1554,1121 @@ Im Kontaktdatensatz wird zusätzlich zum Datum im Format <code>tt-mm-jjjj</code>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Variable in der Kategorie <strong>Global</strong></th>
+<th class="tableblock halign-left valign-top">Name der Variable</th>
+<th class="tableblock halign-left valign-top">Twig expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Vorname und Nachname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.name2 ~ ' ' ~ order.formattedAddresses.deliveryAddress.name3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Adresszusatz</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.address3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Vorname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.name2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Nachname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.name3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Firmenname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.name1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Kontaktperson</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.formattedOptions.contactPerson</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Telefon</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.formattedOptions.telephone</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Straße</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.address1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Postleitzahl und Ort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.postalCode ~ ' ' ~ order.formattedAddresses.deliveryAddress.town</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Ort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.town</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Postleitzahl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.postalCode</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Land</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.country.name</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Länder-ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.country.id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Länder-ISO-Code 2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.country.isoCode2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Länder-ISO-Code 3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.country.isoCode3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Bundesland</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.deliveryAddress.state.name</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="variablen-auftrag-rechnungsadresse" class="openblock collapseBox">
+<div class="title">Variablen in der Unterkategorie <strong>Auftrag / Rechnungsadresse</strong></div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name der Variable</th>
+<th class="tableblock halign-left valign-top">Twig expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Vorname und Nachname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.name2 ~ ' ' ~ order.formattedAddresses.invoiceAddress.name3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Adresszusatz</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.address3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Vorname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.name2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Nachname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.name3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Firmenname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.name1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Kontaktperson</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.formattedOptions.contactPerson</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Telefon</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.formattedOptions.telephone</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Straße</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.address1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Postleitzahl und Ort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.postalCode ~ ' ' ~ order.formattedAddresses.invoiceAddress.town</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Ort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.town</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Postleitzahl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.postalCode</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Land</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.country.name</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Länder-ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.country.id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Länder-ISO-Code 2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.country.isoCode2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Länder-ISO-Code 3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.country.isoCode3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Bundesland</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedAddresses.invoiceAddress.state.name</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="variablen-auftrag-auftragspositionen" class="openblock collapseBox">
+<div class="title">Variablen in der Unterkategorie <strong>Auftrag / Auftragspositionen</strong></div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 55.5555%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name der Variable</th>
 <th class="tableblock halign-left valign-top">Erläuterung</th>
+<th class="tableblock halign-left valign-top">Twig expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Artikel-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.itemId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Artikeleigenschaften</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedProperties.all</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Artikelnummer</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.ArtNo</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Status-ID des retournierten Artikels</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedReturn.statusId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Name des retournierten Artikels</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedReturn.statusLabel</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Variantennummer</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.number</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Artikelname</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.orderItemName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Artikelmenge</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.quantity</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Bruttopreis</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedAmounts.grossPrice</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Nettopreis</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedAmounts.netPrice</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Mehrwertsteuersatz</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.vatRate</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Herkunft</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedReferrer.referrerName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Externe Artikel-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.external_article_id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Externe Varianten-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.externalId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Externe Token-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedExternalTokenId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Inhalt</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedUnit.unitContent</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Einheit</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedUnit.unitName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Variantenname</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.name</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Varianten-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Attributwerte</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.attributeValues</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Modell</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modellbezeichnung des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.model</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>GTIN</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Global Trade Item Number (GTIN) des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedBarcodes.GTIN</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ISBN</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISBN-Code des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedBarcodes.ISBN</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ASIN</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon Standard Ident Number (ASIN) des Artikels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedBarcodes.ASIN</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Verfügbarkeitstext</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Artikelverfügbarkeit des Nettowarenbestands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedAvailability.availabilityName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Verfügbarkeits-ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Artikelverfügbarket des Netttowarenbestands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedAvailability.availabilityId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Verfügbarkeitstext physischer Warenbestand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name der Artikelverfügbarkeit des physischen Warenbestands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedAvailability.availabilityPhysicalStockName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Verfügbarkeits-ID physischer Warenbestand</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID der Artikelverfügbarkeit des physischen Warenbestands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedAvailability.availabilityPhysicalStockId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Freitextfelder für die Artikel wie im Menü <strong>Einrichtung » Artikel » Freitextfelder</strong> gespeichert.<br>
+<strong><em>Beispiel:</em></strong> <code>Freitextfeld 3</code> gibt den Text aus, der unter <strong>Feld 3</strong> gespeichert ist.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 2</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 3</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 4</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free4</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 5</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free5</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 6</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free6</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 7</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free7</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 8</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free8</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 9</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free9</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 10</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free10</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 11</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free11</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 12</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free12</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 13</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free13</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 14</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free14</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 15</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free15</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 16</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free16</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 17</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free17</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 18</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free18</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 19</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free19</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Freitextfeld 20</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.free20</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL zum Variantenbild</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gibt die URL zum Variantenbild aus.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedImageUrl</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Herstellername</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.item.producer</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lager-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.warehouseId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Retourenkommentar</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedReturn.comment</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Wert der Retoure in Prozent</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedReturn.percentage</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ID des Retourengrunds</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID des Retourengrund wie im Menü <strong>Einrichtung » Aufträge » Auftragstypen » Retoure</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedReturn.reasonId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Retourengrund</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Retourengrund wie im Menü <strong>Einrichtung » Aufträge » Auftragstypen » Retoure</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedReturn.reasonLabel</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Codes eines Gutscheins</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedVoucherCodes</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Zolltarifnummer</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.customsTariffNumber</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Erscheinungsdatum</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.variation.releasedAt</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gesamtpreis (Einzelpreis x Menge)</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedAmounts.totalPrice</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rabatt pro Auftragsposition</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedAmounts.discount</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL zum Artikel</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gibt die URL zum Artikel im Webshop aus.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>orderItem.formattedLink</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="variablen-auftrag-versand" class="openblock collapseBox">
+<div class="title">Variablen in der Unterkategorie <strong>Auftrag / Versand</strong></div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 55.5555%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name der Variable</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+<th class="tableblock halign-left valign-top">Twig expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Mögliches Lieferdatum</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedDates.earliestDeliveryDate</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Voraussichtliches Versanddatum</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedDates.estimatedShippingDate</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Datum des Retoureneingangs</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedDates.returnDate</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Voraussichtliches Lieferdatum</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedDates.estimatedDeliveryDate</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Retourenpaketnummer</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.returns_code</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Versandkosten gesamt</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedGeneral.shippingCosts</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Paketnummernliste</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Paketnummern bzw. Tracking-Nummern werden nach erfolgreicher Auftragsanmeldung beim Versanddienstleister im Auftrag im Tab <strong>Einstellungen</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedShipping.packageNumberList</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Tracking-URL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dient zur Sendungsverfolgung. Die URL wird im Menü <strong>Einrichtung » Aufträge » Versand » Optionen</strong> im Tab <strong>Versanddienstleister</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedShipping.trackingURL</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Versanddienstleister</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Versanddienstleisters wie im Menü <strong>Einrichtung » Aufträge » Versand » Optionen</strong> im Tab <strong>Versanddienstleister</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedShipping.providerName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Versanddienstleister-ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wird automatisch vom System vergeben. Die ID des Versanddienstleisters findest du im Menü <strong>Einrichtung » Aufträge » Versand » Optionen</strong> im Tab <strong>Versanddienstleister</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedShipping.providerId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Versandprofil</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des Versandprofils wie im Menü <strong>Einrichtung » Aufträge » Versand » Optionen</strong> im Tab <strong>Versandprofile</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedShipping.profileName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Versandprofil-ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wird automatisch vom System vergeben. Die ID des Versandprofils findest du im Menü <strong>Einrichtung » Aufträge » Versand » Optionen</strong> im Tab <strong>Versandprofile</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedShipping.profileId</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferschein-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedDocuments.deliveryNote</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Nachbestellung Lieferdatum</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>order.formattedReorder.estimatedDeliveryDate</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="variablen-kontakt" class="openblock collapseBox">
+<div class="title">Variablen in der Kategorie <strong>Kontakt</strong></div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 55.5555%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name der Variable</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+<th class="tableblock halign-left valign-top">Twig expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Kontakt-ID</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Vorname</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.firstName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Nachname</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.lastName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Vollständiger Name</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.fullName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Geschlecht</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzeige, wenn männlich: <strong>male</strong><br>
+Anzeige, wenn weiblich: <strong>female</strong><br>
+Anzeigen, wenn divers: leere Option</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.gender is same as ('diverse') ? '' : contact.gender</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Anrede</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedSalutation.label</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Anrede geschäftlich</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.salutationWork</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Anrede privat</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.salutationPrivate</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Firmenname</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAccounts.companyName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Sprache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sprache wie im Kontaktdatensatz gespeichert. Wenn du eine E-Mail-Vorlage in der gewählten Sprache erstellt hast, werden E-Mail-Vorlagen in dieser Sprache an den Kontakt versendet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.lang</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Klasse</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Klasse, der der Kontakt zugeordnet ist. Klassen erstellst du im Menü <strong>Einrichtung » CRM » Kundenklassen</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedClass.name</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Nummer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zusätzliche Nummer für den Kontakt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.number</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Titel</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.title</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Vorname und Nachname des Systembenutzers</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vorname und Nachname des Systembenutzers, der als Eigner am Kontaktdatensatz gespeichert ist.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedUser.realName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Signatur des Systembenutzers</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signatur des Systembenutzers, der als Eigner am Kontaktdatensatz gespeichert ist, im Textformat.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedUser.signatureNoHtml</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Signatur des Systembenutzers im HTML-Format</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signatur des Systembenutzers, der als Eigner im Kontaktdatensatz gespeichert ist, im HTML-Format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedUser.signatureHtml</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Kontoinhaber (Kontakt)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kontoinhaber:in wie im Kontaktdatensatz gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedBanks.accountOwner</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Bankname des Kontakts</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bankname wie im Kontaktdatensatz gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedBanks.bankName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>IBAN des Kontakts</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IBAN wie im Kontaktdatensatz gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedBanks.iban</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>BIC des Kontakts</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BIC wie im Kontaktdatensatz gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedBanks.bic</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Anzahl der Aufträge</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOrdersCount</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Newsletter-Empfang: Zustimmung durch Kontakt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datum, wann der Kontakt dem Newsletter-Empfang zugestimmt hat.<br>
+Datumsformat in der E-Mail: <code>mm-tt-jjjj</code>.<br>
+Im Kontaktdatensatz wird zusätzlich zum Datum im Format <code>tt-mm-jjjj</code> der Zeitstempel im Format <code>00:00:00</code> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.newsletterAllowanceAt</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="variablen-kontakt-lieferadresse" class="openblock collapseBox">
+<div class="title">Variablen in der Unterkategorie <strong>Kontakt / Lieferadresse</strong></div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name der Variable</th>
+<th class="tableblock halign-left valign-top">Twig expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Vorname und Nachname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.name2 ~ ' ' ~ contact.formattedAddresses.deliveryAddress.name3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Adresszusatz</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.address3 ~ ' ' ~ contact.formattedAddresses.deliveryAddress.address4</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Vorname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.name2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Nachname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.name3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Firmenname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.name1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Telefon</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.formattedOptions.telephone</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Straße</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.address1 ~ ' ' ~ contact.formattedAddresses.deliveryAddress.address2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Postleitzahl und Ort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.postalCode ~ ' ' ~ contact.formattedAddresses.deliveryAddress.town</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Ort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.town</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Postleitzahl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.postalCode</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Land</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.country.name</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Länder-ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.country.id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Länder-ISO-Code 2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.country.isoCode2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Länder-ISO-Code 3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.country.isoCode3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Lieferadresse Bundesland</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.deliveryAddress.state.name</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="variablen-kontakt-rechnungsadresse" class="openblock collapseBox">
+<div class="title">Variablen in der Unterkategorie <strong>Kontakt / Rechnungsadresse</strong></div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name der Variable</th>
+<th class="tableblock halign-left valign-top">Twig expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Vorname und Nachname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.name2 ~ ' ' ~ contact.formattedAddresses.invoiceAddress.name3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Adresszusatz</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.address3 ~ ' ' ~ contact.formattedAddresses.invoiceAddress.address4</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Vorname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.name2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Nachname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.name3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Firmenname</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.name1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Telefon</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.formattedOptions.telephone</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Straße</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.address1 ~ ' ' ~ contact.formattedAddresses.invoiceAddress.address2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Postleitzahl und Ort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.postalCode ~ ' ' ~ contact.formattedAddresses.invoiceAddress.town</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Ort</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.town</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Postleitzahl</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.postalCode</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Land</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.country.name</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Länder-ID</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.country.id</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Länder-ISO-Code 2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.country.isoCode2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Länder-ISO-Code 3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.country.isoCode3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Rechnungsadresse Bundesland</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedAddresses.invoiceAddress.state.name</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Variablen in der Unterkategorie <strong>Kontakt / Optionen</strong></div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name der Variable</th>
+<th class="tableblock halign-left valign-top">Twig expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>E-Mail privat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.emailPrivate</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Telefon privat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.telephonePrivate</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Mobiltelefon privat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.telephoneMobilePrivate</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Fax privat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.telefaxPrivate</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>E-Mail geschäftlich</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.emailWork</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Telefon geschäftlich</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.telephoneWork</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Mobiltelefon geschäftlich</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.telephoneMobileWork</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Fax geschäftlich</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.telefaxWork</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>eBay-Name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.marketplaceEbay</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>E-Mail PayPal</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.emailPayPal</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Zusätzlicher Ansprechpartner</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>contact.formattedOptions.additionalContactPerson</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="variablen-global" class="openblock collapseBox">
+<div class="title">Variablen in der Kategorie <strong>Global</strong></div>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 55.5555%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name der Variable</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+<th class="tableblock halign-left valign-top">Twig expression</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL zum Checkout</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gibt die URL zum Checkout-Bereich des Auftrags im Webshop aus.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.links.linkCheckout</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL zum Warenkorb</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gibt die URL zum Warenkorb im Webshop aus.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.links.linkBasket</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL zu den Geschäftsbedingungen</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gibt die URL zu den AGB aus.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.links.linkTermsConditions</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL zum Webshop</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gibt die URL zum Webshop aus.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.links.linkWebstore</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL zum neuen Passwort</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gibt die URL zu einem Formular zum Erstellen eines neuen Passworts aus. Dort geben Kund:innen ihre E-Mail-Adresse ein.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.links.linkNewPassword</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL zum Ändern des Passworts</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gibt die URL zum Bereich <strong>Passwort ändern</strong> im Webshop aus. Dort können Kund:innen ein neues Passwort eingeben.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.links.linkChangePassword</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL zum Bestätigen der E-Mail-Adresse</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gibt die URL zum Bestätigen der E-Mail-Adressänderung des Kontakts aus.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.account.newCustomerEmail</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Widerrufsrecht im HTML-Format</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Text wird im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Webshop » Rechtliches » [Sprache aufklappen]</strong> im Tab <strong>Widerrufsrecht</strong> und dort im Tab <strong>HTML</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.legalInformation.cancellationRights.html</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Widerrufsrecht im reinen Textformat</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Text wird im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Webshop » Rechtliches » [Sprache aufklappen]</strong> im Tab <strong>Widerrufsrecht</strong> und dort im Tab <strong>Text</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.legalInformation.cancellationRights.plain</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Datenschutzerklärung im reinen Textformat</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Text wird im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Webshop » Rechtliches » [Sprache aufklappen]</strong> im Tab <strong>Datenschutzerklärung</strong> und dort im Tab <strong>Text</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.legalInformation.privacyPolicy.plain</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Datenschutzerklärung im HTML-Format</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Text wird im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Webshop » Rechtliches » [Sprache aufklappen]</strong> im Tab <strong>Datenschutzerklärung</strong> und dort im Tab <strong>HTML</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.legalInformation.privacyPolicy.html</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Impressum im reinen Textformat</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Text wird im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Webshop » Rechtliches » [Sprache aufklappen]</strong> im Tab <strong>Impressum</strong> und dort im Tab <strong>Text</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.legalInformation.legalDisclosure.plain</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Impressum im HTML-Format</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Text wird im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Webshop » Rechtliches » [Sprache aufklappen]</strong> im Tab <strong>Impressum</strong> und dort im Tab <strong>HTML</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.legalInformation.withdrawalForm.html</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Widerrufsformular im reinen Textformat</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Text wird im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Webshop » Rechtliches » [Sprache aufklappen]</strong> im Tab <strong>Widerrufsformular</strong> und dort im Tab <strong>Text</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.legalInformation.withdrawalForm.plain</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Widerrufsformular im HTML-Format</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Text wird im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Webshop » Rechtliches » [Sprache aufklappen]</strong> im Tab <strong>Widerrufsformular</strong> und dort im Tab <strong>HTML</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.legalInformation.withdrawalForm.html</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Heutiges Datum</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gibt das heutige Datum im Format <code>tt-mm-jjjj</code> aus.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>"now"|date("d-m-Y")</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Bankname (Stammdaten)</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bankname aus den Stammdaten deines plentymarkets Systems. Wird im <strong>Basics</strong>-Assistenten im Schritt <strong>Bankdaten</strong> gespeichert. Du findest den Assistenten im Menü <strong>Einrichtung » Assistenten » Grundeinstellungen</strong>.<br>
 Alternativ findest du den gespeicherten Banknamen im Menü <strong>Einrichtung » Einstellungen » Bank</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.bank.name</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>IBAN (Stammdaten)</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IBAN aus den Stammdaten deines plentymarkets Systems. Wird im <strong>Basics</strong>-Assistenten im Schritt <strong>Bankdaten</strong> gespeichert. Du findest den Assistenten im Menü <strong>Einrichtung » Assistenten » Grundeinstellungen</strong>.<br>
 Alternativ findest du die gespeicherte IBAN im Menü <strong>Einrichtung » Einstellungen » Bank</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.bank.iban</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>BIC (Stammdaten)</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BIC aus den Stammdaten deines plentymarkets Systems. Wird im <strong>Basics</strong>-Assistenten im Schritt <strong>Bankdaten</strong> gespeichert. Du findest den Assistenten im Menü <strong>Einrichtung » Assistenten » Grundeinstellungen</strong>.<br>
 Alternativ findest du die gespeicherte BIC im Menü <strong>Einrichtung » Einstellungen » Bank</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.bank.bic</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Kontoinhaber (Stammdaten)</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kontoinhaber:in aus den Stammdaten deines plentymarkets Systems. Wird im <strong>Basics</strong>-Assistenten im Schritt <strong>Bankdaten</strong> gespeichert. Du findest den Assistenten im Menü <strong>Einrichtung » Assistenten » Grundeinstellungen</strong>.<br>
 Alternativ findest du den:die Kontoinhaber:in im Menü <strong>Einrichtung » Einstellungen » Bank</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.bank.owner</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Signatur im reinen Textformat</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die Signatur wird im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » E-Mail » Signatur</strong> im Bereich <strong>Reine Textsignatur</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.account.signatureText</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Signatur im HTML-Format</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Die Signatur wird im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » E-Mail » Signatur</strong> im Bereich <strong>HTML-Signatur</strong> gespeichert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.account.signatureHTML</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutschein-Code (1) bis (10)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutschein-Code (1)</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gutschein-Codes werden in der Kampagne im Menü <strong>Aufträge » Gutscheine</strong> generiert. Ein Gutschein-Code kann immer nur jeweils einer Kampagne zugeordnet werden, um diesen Gutschein-Code aus der Kampagne in der E-Mail-Vorlage zu versenden.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.coupons.couponCode1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutschein-Code (2)</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.coupons.couponCode2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutschein-Code (3)</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.coupons.couponCode3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutschein-Code (4)</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.coupons.couponCode4</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutschein-Code (5)</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.coupons.couponCode5</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutschein-Code (6)</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.coupons.couponCode6</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutschein-Code (7)</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.coupons.couponCode7</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutschein-Code (8)</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.coupons.couponCode8</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutschein-Code (9)</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.coupons.couponCode9</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Gutschein-Code (10)</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.coupons.couponCode10</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>EORI-Nummer</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eindeutige Identifizierungsnummer, die für Zollzwecke benötigt wird</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eindeutige Identifizierungsnummer, die für Zollzwecke benötigt wird.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>globals.account.EORINumber</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -2328,20 +2677,27 @@ Alternativ findest du den:die Kontoinhaber:in im Menü <strong>Einrichtung » Ei
 <div id="variablen-newsletter" class="openblock collapseBox">
 <div class="title">Variablen in der Kategorie <strong>Newsletter</strong></div>
 <div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>URL zur Bestätigung des Newsletter-Abonnements</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Gibt die URL zum Bestätigen des Newsletter-Abonnements aus.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 55.5555%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name der Variable</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+<th class="tableblock halign-left valign-top">Twig expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>URL zur Bestätigung des Newsletter-Abonnements</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gibt die URL zum Bestätigen des Newsletter-Abonnements aus.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>newsletter.formattedConfirmUrl</code></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -2403,7 +2759,7 @@ Alternativ findest du den:die Kontoinhaber:in im Menü <strong>Einrichtung » Ei
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Neue Bestellung über den Webshop</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sendet Kund:innen eine E-Mail mit der Auftragsbestätigung, nachdem der Kaufvorgang im Webshop abgeschlossen wurde.<br>
-<strong>Hinweis:_</strong> Wenn du möchtest, dass dein:e Kund:in über diese E-Mail in die Auftragsabwicklung in deinem Webshop gelangen kann, um den Status der Bestellung einzusehen, musst du die Variable <code>URL zum Checkout</code> in die Vorlage, die du für dieses automatische Ereignis wählst, einfügen.</p></td>
+<strong><em>Hinweis:</em></strong> Wenn du möchtest, dass dein:e Kund:in über diese E-Mail in die Auftragsabwicklung in deinem Webshop gelangen kann, um den Status der Bestellung einzusehen, musst du die Variable <code>URL zum Checkout</code> in die Vorlage, die du für dieses automatische Ereignis wählst, einfügen.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sende Kunde E-Mail zur Passwortänderung</strong></p></td>
@@ -2472,6 +2828,99 @@ Alternativ findest du den:die Kontoinhaber:in im Menü <strong>Einrichtung » Ei
 </div>
 <div class="paragraph">
 <p>Du kannst entweder die selbe Vorlage an alle Empfänger:innen senden oder jeweils eine separate Vorlage wählen.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="code-beispiele-code-widget">6. Code-Beispiele für das Code-Wigdet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Setze in deinen E-Mail-Vorlagen Fallunterscheidungen nach den Prinzipien der if-Abfragen ein. Im Folgenden findest du einige if-Abfragen, die du einfach in dein Code-Widget kopieren kannst.</p>
+</div>
+<div class="sect2">
+<h3 id="code-beispiel-versandprofil">6.1. Code-Beispiel: Versandprofil</h3>
+<div class="paragraph">
+<p>Füge einen Code ein, der bewirkt, dass ein Hinweis bezüglich der Spedition und Kontaktaufnahme in der E-Mail an deine Kund:innen nur angezeigt wird, wenn der Versanddienstleister im Versandprofil eine Spedition ist. In unserem Beispiel hat das Versandprofil mit der Spedition die ID <code>6</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; if order.formattedShipping.profileId == 6 &#37;&#125;
+
+&lt;strong&gt;INFORMATIONEN ZU IHRER LIEFERUNG&lt;/strong&gt;
+
+&lt;p&gt;Voraussichtliches Lieferdatum Ihrer Sendung: {{ order.formattedDates.estimatedDeliveryDate ? ( order.formattedDates.estimatedDeliveryDate | date('d.m.Y') ) : '' }}&lt;/p&gt;
+
+&lt;p&gt;Am Tag der Lieferung wird {{ order.formattedShipping.providerName }} Sie telefonisch kontaktieren, um mit Ihnen den Lieferzeitpunkt an Ihrer Haustür zu vereinbaren.&lt;/p&gt;
+&lt;p&gt;
+Ihre Telefonnummer: {{ order.formattedAddresses.invoiceAddress.formattedOptions.telephone }}
+&lt;br&gt;Sollte diese Nummer nicht korrekt sein, setzen Sie sich bitte mit uns in Verbindung.
+&lt;/p&gt;
+
+&lt;p&gt;
+Wenn Sie Ihre Lieferung verfolgen oder den Liefertermin verschieben möchten, klicken Sie auf den folgenden Link:
+&lt;br&gt;{{ order.formattedShipping.trackingURL }}
+&lt;/p&gt;
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-beispiel-bankdaten">6.2. Code-Beispiel: Bankdaten</h3>
+<div class="paragraph">
+<p>Füge einen Code ein, der bewirkt, dass deine Bankdaten in der E-Mail an deine Kund:innen nur angezeigt werden, wenn sie im plentyShop die Zahlungsart <strong>Vorkasse</strong> (ID <code>0</code>) gewählt haben.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; if order.formattedProperties.paymentMethod == 0 &#37;&#125;
+
+&lt;strong&gt;BANKDATEN&lt;/strong&gt;
+
+&lt;p&gt;Verwenden Sie zur Zahlung per Vorkasse bitte die folgenden Bankdaten:&lt;/p&gt;
+&lt;p&gt;
+Bankinstitut: {{ globals.bank.name }}
+&lt;br&gt;BIC: {{ globals.bank.bic }}
+&lt;br&gt;Kontonummer: {{ globals.bank.iban }}
+&lt;br&gt;Kontoinhaber:in: {{ globals.bank.owner }}
+&lt;/p&gt;
+&lt;p&gt;
+Verwenden Sie bitte exakt diesen Verwendungszweck:
+&lt;br&gt;Auftrags-ID: {{ order.id }}, Kund:innen-ID: {{ contact.id }}
+&lt;/p&gt;
+&lt;p&gt;
+Internationale Kontodaten:
+&lt;br&gt;IBAN: {{ globals.bank.iban }}
+&lt;br&gt;Swift: {{ globals.bank.bic }}
+&lt;/p&gt;
+
+&#123;&#37; endif &#37;&#125;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-beispiel-auftragspositionen">6.3. Code-Beispiel: Auftragspositionen</h3>
+<div class="paragraph">
+<p>Füge einen Code ein, der bewirkt, dass die Auftragspositionen mit den Varianten-IDs, den Artikelnamen, der Artikelanzahl und dem Preis in einer Tabelle angezeigt werden.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;p&gt;Artikel des Auftrags mit der ID {{ order.id }}:&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;ID&lt;/th&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Anzahl&lt;/th&gt;
+    &lt;th&gt;Preis&lt;/th&gt;
+  &lt;/tr&gt;
+  &#123;&#37; for orderItem in order.orderItems &#37;&#125;
+  &lt;tr&gt;
+    &lt;td&gt;{{ orderItem.variation.id }}&lt;/td&gt;
+    &lt;td&gt;{{ orderItem.orderItemName }}&lt;/td&gt;
+    &lt;td&gt;{{ orderItem.quantity }}&lt;/td&gt;
+    &lt;td&gt;{{ orderItem.formattedAmounts.grossPrice | number_format(2,'.',',') }}&lt;/td&gt;
+  &lt;/tr&gt;
+  &#123;&#37; endfor &#37;&#125;
+&lt;/table&gt;</code></pre>
+</div>
 </div>
 </div>
 </div>
