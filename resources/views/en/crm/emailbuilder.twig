@@ -2803,18 +2803,18 @@ As an alternative, you can find the account holder in the <strong>Setup » Setti
 
 &lt;strong&gt;INFORMATION REGARDING YOUR DELIVERY&lt;/strong&gt;
 
-&lt;p&gt;Estimated delivery date: &amp;#123;&amp;#8288;&amp;#123;order.formattedDates.estimatedDeliveryDate ? ( order.formattedDates.estimatedDeliveryDate | date('d-m-Y') ) : ''&amp;#125;&amp;#8288;&amp;#125;&lt;/p&gt;
+&lt;p&gt;Estimated delivery date: {⁠{order.formattedDates.estimatedDeliveryDate ? ( order.formattedDates.estimatedDeliveryDate | date('d-m-Y') ) : ''}⁠}&lt;/p&gt;
 
-&lt;p&gt;On the day of the delivery, &amp;#123;&amp;#8288;&amp;#123;order.formattedShipping.providerName&amp;#125;&amp;#8288;&amp;#125; will call
+&lt;p&gt;On the day of the delivery, {⁠{order.formattedShipping.providerName}⁠} will call
 you to arrange the time of delivery at your front door.&lt;/p&gt;
 &lt;p&gt;
-Your phone number: &amp;#123;&amp;#8288;&amp;#123;order.formattedAddresses.invoiceAddress.formattedOptions.telephone&amp;#125;&amp;#8288;&amp;#125;
+Your phone number: {⁠{order.formattedAddresses.invoiceAddress.formattedOptions.telephone}⁠}
 &lt;br&gt;If this number is no longer correct, please contact us.
 &lt;/p&gt;
 
 &lt;p&gt;
 To track or reschedule your delivery, follow this link:
-&lt;br&gt;&amp;#123;&amp;#8288;&amp;#123;order.formattedShipping.trackingURL&amp;#125;&amp;#8288;&amp;#125;
+&lt;br&gt;{⁠{order.formattedShipping.trackingURL}⁠}
 &lt;/p&gt;
 &#123;&#37; endif &#37;&#125;</code></pre>
 </div>
@@ -2833,19 +2833,19 @@ To track or reschedule your delivery, follow this link:
 
 &lt;p&gt;Please use the following bank details when paying with cash in advance:&lt;/p&gt;
 &lt;p&gt;
-Bank: &amp;#123;&amp;#8288;&amp;#123;globals.bank.name&amp;#125;&amp;#8288;&amp;#125;
-&lt;br&gt;BIC: &amp;#123;&amp;#8288;&amp;#123;globals.bank.bic&amp;#125;&amp;#8288;&amp;#125;
-&lt;br&gt;Account number: &amp;#123;&amp;#8288;&amp;#123;globals.bank.iban&amp;#125;&amp;#8288;&amp;#125;
-&lt;br&gt;Account holder: &amp;#123;&amp;#8288;&amp;#123;globals.bank.owner&amp;#125;&amp;#8288;&amp;#125;
+Bank: {⁠{globals.bank.name}⁠}
+&lt;br&gt;BIC: {⁠{globals.bank.bic}⁠}
+&lt;br&gt;Account number: {⁠{globals.bank.iban}⁠}
+&lt;br&gt;Account holder: {⁠{globals.bank.owner}⁠}
 &lt;/p&gt;
 &lt;p&gt;
 Please enter the following information as the designated use:
-&lt;br&gt;Order ID: &amp;#123;&amp;#8288;&amp;#123;order.id&amp;#125;&amp;#8288;&amp;#125;, Customer ID: &amp;#123;&amp;#8288;&amp;#123;contact.id&amp;#125;&amp;#8288;&amp;#125;
+&lt;br&gt;Order ID: {⁠{order.id}⁠}, Customer ID: {⁠{contact.id}⁠}
 &lt;/p&gt;
 &lt;p&gt;
 International account data
-&lt;br&gt;IBAN: &amp;#123;&amp;#8288;&amp;#123;globals.bank.iban&amp;#125;&amp;#8288;&amp;#125;
-&lt;br&gt;Swift: &amp;#123;&amp;#8288;&amp;#123;globals.bank.bic&amp;#125;&amp;#8288;&amp;#125;
+&lt;br&gt;IBAN: {⁠{globals.bank.iban}⁠}
+&lt;br&gt;Swift: {⁠{globals.bank.bic}⁠}
 &lt;/p&gt;
 
 &#123;&#37; endif &#37;&#125;</code></pre>
@@ -2861,7 +2861,7 @@ International account data
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;strong&gt;Order items&lt;/strong&gt;
 
-&lt;p&gt;Items of order ID &amp;#123;&amp;#8288;&amp;#123;order.id&amp;#125;&amp;#8288;&amp;#125;:&lt;/p&gt;
+&lt;p&gt;Items of order ID {⁠{order.id}⁠}:&lt;/p&gt;
 &lt;table&gt;
   &lt;tr&gt;
     &lt;th&gt;ID&lt;/th&gt;
@@ -2871,10 +2871,10 @@ International account data
   &lt;/tr&gt;
   &#123;&#37; for orderItem in order.orderItems &#37;&#125;
   &lt;tr&gt;
-    &lt;td&gt;&amp;#123;&amp;#8288;&amp;#123;orderItem.variation.id&amp;#125;&amp;#8288;&amp;#125;&lt;/td&gt;
-    &lt;td&gt;&amp;#123;&amp;#8288;&amp;#123;orderItem.orderItemName&amp;#125;&amp;#8288;&amp;#125;&lt;/td&gt;
-    &lt;td&gt;&amp;#123;&amp;#8288;&amp;#123;orderItem.quantity&amp;#125;&amp;#8288;&amp;#125;&lt;/td&gt;
-    &lt;td&gt;&amp;#123;&amp;#8288;&amp;#123;orderItem.formattedAmounts.grossPrice | number_format(2,'.',',')&amp;#125;&amp;#8288;&amp;#125;&lt;/td&gt;
+    &lt;td&gt;{⁠{orderItem.variation.id}⁠}&lt;/td&gt;
+    &lt;td&gt;{⁠{orderItem.orderItemName}⁠}&lt;/td&gt;
+    &lt;td&gt;{⁠{orderItem.quantity}⁠}&lt;/td&gt;
+    &lt;td&gt;{⁠{orderItem.formattedAmounts.grossPrice | number_format(2,'.',',')}⁠}&lt;/td&gt;
   &lt;/tr&gt;
   &#123;&#37; endfor &#37;&#125;
 &lt;/table&gt;</code></pre>
