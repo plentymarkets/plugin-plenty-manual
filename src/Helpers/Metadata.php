@@ -28526,6 +28526,22 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
+				"id" => "0bd6758418d03e9085b658be2a66d0d9",
+				"path" => "data/statistics",
+				"position" => 90,
+				"urlName" => "statistics",
+				"url" => "/en/business-decisions/plenty-bi/statistics",
+				"level" => 2,
+				"title" => "Old: Statistics",
+				"keywords" => "Statistic, export statistic, contribution margin 1, contribution margin 2, contribution margin I, contribution margin II, contribution margins, process statistic, orders statistic, item statistic, warehouse statistic, customer statistic, visitor statistic, revenue statistic, return reason statistic, top, tops, flop, flops, analyse statistic, export statistic, manage statistic",
+				"description" => "Learn how to use the statistics module in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Old: Statistics. The following information is available:",
+				"languageID" => "MSLDK1U",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "796d2645730ecbb545e3d0cf3193e276",
 				"path" => "data/api-log",
 				"position" => 10070,
@@ -28538,22 +28554,6 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Old: API log. The following information is available:",
 				"languageID" => "7EM3XRN",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "0bd6758418d03e9085b658be2a66d0d9",
-				"path" => "data/statistics",
-				"position" => 10090,
-				"urlName" => "statistics",
-				"url" => "/en/business-decisions/plenty-bi/statistics",
-				"level" => 2,
-				"title" => "Old: Statistics",
-				"keywords" => "Statistics, customer statistics, visitor statistics, webalizer, raw data",
-				"description" => "Learn how to use the statistics module in plentymarkets.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Old: Statistics. The following information is available:",
-				"languageID" => "MSLDK1U",
 				"children" => [],
 				"hasChildren" => false
 			]
