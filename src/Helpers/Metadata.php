@@ -38175,39 +38175,22 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic OTTO Market. The following information is available:",
 				"languageID" => "X5RRGMS",
-				"children" => 				[
-					[
-						"id" => "ea2d52f70b2a3126a9fbf5d94178b5dd",
-						"path" => "markets/otto/otto-market",
-						"position" => 20,
-						"urlName" => "otto-market",
-						"url" => "/en/markets/otto/otto-market",
-						"level" => 3,
-						"title" => "OTTO Market",
-						"keywords" => "OTTO Market, OTTO Market",
-						"description" => "Multi-Channel in plentymarkets: Set up the interface to OTTO Market in your plentymarkets system.",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic OTTO Market. The following information is available:",
-						"languageID" => "SMKVRT7",
-						"children" => [],
-						"hasChildren" => false
-					]
-				],
-				"hasChildren" => true
+				"children" => [],
+				"hasChildren" => false
 			],
 			[
 				"id" => "86571910399de2e566866048b3f8f878",
 				"path" => "markets/otto-market",
 				"position" => 150,
 				"urlName" => "otto-market",
-				"url" => "/en/markets/otto-market",
+				"url" => "/en/markets/otto/otto-market",
 				"level" => 2,
 				"title" => "OTTO Market",
 				"keywords" => "OTTO Market, OTTO Market",
 				"description" => "Multi-Channel in plentymarkets: Set up the interface to OTTO Market in your plentymarkets system.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic OTTO Market. The following information is available:",
-				"languageID" => "7IXSHU1",
+				"languageID" => "SMKVRT7",
 				"children" => [],
 				"hasChildren" => false
 			],
