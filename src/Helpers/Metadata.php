@@ -4467,6 +4467,22 @@ class Metadata {
 				"hasChildren" => true
 			],
 			[
+				"id" => "f1bd5ee9323f4ce8015d0d13e29da667",
+				"path" => "daten/statistiken",
+				"position" => 90,
+				"urlName" => "statistiken",
+				"url" => "/business-entscheidungen/plenty-bi/statistiken",
+				"level" => 2,
+				"title" => "Alt: Statistiken",
+				"keywords" => "Statistik, Statistik exportieren, Deckungsbeitrag 1, Deckungsbeitrag 2, Deckungsbeitrag I, Deckungsbeitrag II, Deckungsbeiträge, Prozesse Statistik, Aufträge Statistik, Artikel Statistik, Lager Statistik, Kunden Statistik, Besucher Statistik, Umsatz Statistik, Retourengründe Statistik, Renner, Penner, Statistik auswerten, Statistik exportieren, Statistik verwalten",
+				"description" => "Erfahre, wie du das Statistikmodul in plentymarkets verwendest.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Alt: Statistiken. Hier findest du folgende Informationen:",
+				"languageID" => "MSLDK1U",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "ebd5e32cda802bb2d4da2c1ea116c646",
 				"path" => "daten/api-log",
 				"position" => 10070,
@@ -4479,22 +4495,6 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Alt: API-Log. Hier findest du folgende Informationen:",
 				"languageID" => "7EM3XRN",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "f1bd5ee9323f4ce8015d0d13e29da667",
-				"path" => "daten/statistiken",
-				"position" => 10090,
-				"urlName" => "statistiken",
-				"url" => "/business-entscheidungen/plenty-bi/statistiken",
-				"level" => 2,
-				"title" => "Alt: Statistiken",
-				"keywords" => "Statistik, Kundenstatistik, Besucherstatistik, Webalizer, Rohdaten",
-				"description" => "Erfahre, wie du das Statistikmodul in plentymarkets verwendest.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Alt: Statistiken. Hier findest du folgende Informationen:",
-				"languageID" => "MSLDK1U",
 				"children" => [],
 				"hasChildren" => false
 			]
