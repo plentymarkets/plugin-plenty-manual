@@ -25419,6 +25419,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "b7d6d390c9210bbdaa158038a5d1aec8",
+				"path" => "crm/companies",
+				"position" => 300,
+				"urlName" => "companies",
+				"url" => "/en/crm/companies",
+				"level" => 2,
+				"title" => "Companies",
+				"keywords" => "company, companies, manage companies, company ui, company management",
+				"description" => "Learn how to manage companies in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Companies. The following information is available:",
+				"languageID" => "SFYHVN4",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "66b5ca05ed5404ce9ef2963b9657a865",
 				"path" => "crm/messenger",
 				"position" => 500,
