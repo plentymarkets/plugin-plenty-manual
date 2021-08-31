@@ -1255,22 +1255,18 @@ The list contains all <a href="#create-footer">footers</a> that you have already
 <div class="paragraph">
 <p>Do you want to know which variables are available for the individual categories and sub-categories and how the twig expressions are called that you can use in the code widget in the template’s subject line? Simply expand the areas further below by clicking on <span class="icon "><i class="material-expand_more"></i></span>.</p>
 </div>
-<h3 id="twig" class="discrete">Twig expressions for the code widget and the subject line</h3>
+<h3 id="twig-introduction" class="discrete">Twig expressions for the code widget and the subject line</h3>
 <div class="paragraph">
 <p>In the following expandable areas you find besides the variables also the twig expressions that you can use in the code widget and in a template’s subject line.</p>
 </div>
-<div class="paragraph">
-<p><strong>Twig expression in the subject line</strong></p>
-</div>
+<h4 id="twig-subject" class="discrete">Twig expression in the subject line</h4>
 <div class="paragraph">
 <p>If you want to use a twig expression in the template’s subject line, this expression has to be surrounded by double curly brackets.</p>
 </div>
 <div class="paragraph">
 <p><strong><em>Example:</em></strong> If you want to display the shipping service provider in your template’s subject line, open the expandable area <strong>Order / Shipping</strong>, search for the variable <strong>Shipping service provider</strong> and insert the corresponding twig expression in the subject line of your template as follows: <code>{⁠{order.formattedShipping.providerName}⁠}</code>.</p>
 </div>
-<div class="paragraph">
-<p><strong>Twig expression in the code widget</strong></p>
-</div>
+<h4 id="twig-code-widget" class="discrete">Twig expression in the code widget</h4>
 <div class="paragraph">
 <p>If you use <a href="https://twig.symfony.com/doc/3.x/tags/if.html" target="_blank" rel="noopener">if queries</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> in your code widget, for example, there is no need to insert double curly brackets in the if query itself, but in the body text. General information about twig can be found in the <a href="https://twig.symfony.com/doc/3.x/" target="_blank" rel="noopener">Twig Documentation</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
 </div>
@@ -2803,18 +2799,18 @@ As an alternative, you can find the account holder in the <strong>Setup » Setti
 
 &lt;strong&gt;INFORMATION REGARDING YOUR DELIVERY&lt;/strong&gt;
 
-&lt;p&gt;Estimated delivery date: {⁠{order.formattedDates.estimatedDeliveryDate ? ( order.formattedDates.estimatedDeliveryDate | date('d-m-Y') ) : ''}⁠}&lt;/p&gt;
+&lt;p&gt;Estimated delivery date: {{order.formattedDates.estimatedDeliveryDate ? ( order.formattedDates.estimatedDeliveryDate | date('d-m-Y') ) : ''}}&lt;/p&gt;
 
-&lt;p&gt;On the day of the delivery, {⁠{order.formattedShipping.providerName}⁠} will call
+&lt;p&gt;On the day of the delivery, {{order.formattedShipping.providerName}} will call
 you to arrange the time of delivery at your front door.&lt;/p&gt;
 &lt;p&gt;
-Your phone number: {⁠{order.formattedAddresses.invoiceAddress.formattedOptions.telephone}⁠}
+Your phone number: {{order.formattedAddresses.invoiceAddress.formattedOptions.telephone}}
 &lt;br&gt;If this number is no longer correct, please contact us.
 &lt;/p&gt;
 
 &lt;p&gt;
 To track or reschedule your delivery, follow this link:
-&lt;br&gt;{⁠{order.formattedShipping.trackingURL}⁠}
+&lt;br&gt;{{order.formattedShipping.trackingURL}}
 &lt;/p&gt;
 &#123;&#37; endif &#37;&#125;</code></pre>
 </div>
@@ -2833,19 +2829,19 @@ To track or reschedule your delivery, follow this link:
 
 &lt;p&gt;Please use the following bank details when paying with cash in advance:&lt;/p&gt;
 &lt;p&gt;
-Bank: {⁠{globals.bank.name}⁠}
-&lt;br&gt;BIC: {⁠{globals.bank.bic}⁠}
-&lt;br&gt;Account number: {⁠{globals.bank.iban}⁠}
-&lt;br&gt;Account holder: {⁠{globals.bank.owner}⁠}
+Bank: {{globals.bank.name}}
+&lt;br&gt;BIC: {{globals.bank.bic}}
+&lt;br&gt;Account number: {{globals.bank.iban}}
+&lt;br&gt;Account holder: {{globals.bank.owner}}
 &lt;/p&gt;
 &lt;p&gt;
 Please enter the following information as the designated use:
-&lt;br&gt;Order ID: {⁠{order.id}⁠}, Customer ID: {⁠{contact.id}⁠}
+&lt;br&gt;Order ID: {{order.id}}, Customer ID: {{contact.id}}
 &lt;/p&gt;
 &lt;p&gt;
 International account data
-&lt;br&gt;IBAN: {⁠{globals.bank.iban}⁠}
-&lt;br&gt;Swift: {⁠{globals.bank.bic}⁠}
+&lt;br&gt;IBAN: {{globals.bank.iban}}
+&lt;br&gt;Swift: {{globals.bank.bic}}
 &lt;/p&gt;
 
 &#123;&#37; endif &#37;&#125;</code></pre>
@@ -2861,7 +2857,7 @@ International account data
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;strong&gt;Order items&lt;/strong&gt;
 
-&lt;p&gt;Items of order ID {⁠{order.id}⁠}:&lt;/p&gt;
+&lt;p&gt;Items of order ID {{order.id}}:&lt;/p&gt;
 &lt;table&gt;
   &lt;tr&gt;
     &lt;th&gt;ID&lt;/th&gt;
@@ -2871,10 +2867,10 @@ International account data
   &lt;/tr&gt;
   &#123;&#37; for orderItem in order.orderItems &#37;&#125;
   &lt;tr&gt;
-    &lt;td&gt;{⁠{orderItem.variation.id}⁠}&lt;/td&gt;
-    &lt;td&gt;{⁠{orderItem.orderItemName}⁠}&lt;/td&gt;
-    &lt;td&gt;{⁠{orderItem.quantity}⁠}&lt;/td&gt;
-    &lt;td&gt;{⁠{orderItem.formattedAmounts.grossPrice | number_format(2,'.',',')}⁠}&lt;/td&gt;
+    &lt;td&gt;{{orderItem.variation.id}}&lt;/td&gt;
+    &lt;td&gt;{{orderItem.orderItemName}}&lt;/td&gt;
+    &lt;td&gt;{{orderItem.quantity}}&lt;/td&gt;
+    &lt;td&gt;{{orderItem.formattedAmounts.grossPrice | number_format(2,'.',',')}}&lt;/td&gt;
   &lt;/tr&gt;
   &#123;&#37; endfor &#37;&#125;
 &lt;/table&gt;</code></pre>
