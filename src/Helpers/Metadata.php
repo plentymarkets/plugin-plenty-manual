@@ -1303,7 +1303,7 @@ class Metadata {
 				"url" => "/crm/schnellsuche",
 				"level" => 2,
 				"title" => "Schnellsuche",
-				"keywords" => "Schnellsuche, Adresssuche, Adressen suchen, DSGVO, Gastzugang, Gastbestellung, Gast suchen, Kunde anonymisieren, anonymisieren, Kundendaten löschen, Datensatz löschen, Kunde löschen, Kontakt löschen, alle Daten vom Kunden herunterladen, Kundendaten herunterladen",
+				"keywords" => "Schnellsuche, Adresssuche, Adressen suchen, DSGVO, Gastzugang, Gastbestellung, Gast suchen, Kunde anonymisieren, anonymisieren, Kundendaten löschen, Datensatz löschen, Kunde löschen, Kontakt löschen, alle Daten vom Kunden herunterladen, Kundendaten herunterladen, Kontakt verlangt Löschung, Kontakt Löschantrag, Kunde Löschantrag, Kunde verlangt Löschung",
 				"description" => "Erfahre, wie du die Schnellsuche in plentymarkets verwendest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Schnellsuche. Hier findest du folgende Informationen:",
