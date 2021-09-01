@@ -829,6 +829,9 @@ Die Liste enthält alle <a href="#footer-erstellen">Footer</a>, die du bereits e
 </ul>
 </div>
 <div class="paragraph">
+<p>Du kannst weitere Widgets in dieses Widget einfügen, indem du diese per Drag-and-drop in eine der beiden Spalten ziehst.</p>
+</div>
+<div class="paragraph">
 <p>Klicke auf <strong>Einstellungen schließen</strong> (<span class="icon "><i class="fa fa-times  "></i></span>), um die Einstellungen zu schließen. Klicke auf <strong>Widget löschen</strong> (<span class="icon "><i class="material-delete"></i></span>), um das Widget zu entfernen.</p>
 </div></div></td>
 </tr>
@@ -2844,17 +2847,17 @@ Alternativ findest du den:die Kontoinhaber:in im Menü <strong>Einrichtung » Ei
 
 &lt;strong&gt;INFORMATIONEN ZU IHRER LIEFERUNG&lt;/strong&gt;
 
-&lt;p&gt;Voraussichtliches Lieferdatum Ihrer Sendung: {{order.formattedDates.estimatedDeliveryDate ? ( order.formattedDates.estimatedDeliveryDate | date('d.m.Y') ) : ''}}&lt;/p&gt;
+&lt;p&gt;Voraussichtliches Lieferdatum Ihrer Sendung: {\{order.formattedDates.estimatedDeliveryDate ? ( order.formattedDates.estimatedDeliveryDate | date('d.m.Y') ) : ''}}&lt;/p&gt;
 
-&lt;p&gt;Am Tag der Lieferung wird {{order.formattedShipping.providerName}} Sie telefonisch kontaktieren, um mit Ihnen den Lieferzeitpunkt an Ihrer Haustür zu vereinbaren.&lt;/p&gt;
+&lt;p&gt;Am Tag der Lieferung wird {\{order.formattedShipping.providerName}} Sie telefonisch kontaktieren, um mit Ihnen den Lieferzeitpunkt an Ihrer Haustür zu vereinbaren.&lt;/p&gt;
 &lt;p&gt;
-Ihre Telefonnummer: {{order.formattedAddresses.invoiceAddress.formattedOptions.telephone}}
+Ihre Telefonnummer: {\{order.formattedAddresses.invoiceAddress.formattedOptions.telephone}}
 &lt;br&gt;Sollte diese Nummer nicht korrekt sein, setzen Sie sich bitte mit uns in Verbindung.
 &lt;/p&gt;
 
 &lt;p&gt;
 Wenn Sie Ihre Lieferung verfolgen oder den Liefertermin verschieben möchten, klicken Sie auf den folgenden Link:
-&lt;br&gt;{{order.formattedShipping.trackingURL}}
+&lt;br&gt;{\{order.formattedShipping.trackingURL}}
 &lt;/p&gt;
 &#123;&#37; endif &#37;&#125;</code></pre>
 </div>
@@ -2873,19 +2876,19 @@ Wenn Sie Ihre Lieferung verfolgen oder den Liefertermin verschieben möchten, kl
 
 &lt;p&gt;Verwenden Sie zur Zahlung per Vorkasse bitte die folgenden Bankdaten:&lt;/p&gt;
 &lt;p&gt;
-Bankinstitut: {{globals.bank.name}}
-&lt;br&gt;BIC: {{globals.bank.bic}}
-&lt;br&gt;Kontonummer: {{globals.bank.iban}}
-&lt;br&gt;Kontoinhaber:in: {{globals.bank.owner}}
+Bankinstitut: {\{globals.bank.name}}
+&lt;br&gt;BIC: {\{globals.bank.bic}}
+&lt;br&gt;Kontonummer: {\{globals.bank.iban}}
+&lt;br&gt;Kontoinhaber:in: {\{globals.bank.owner}}
 &lt;/p&gt;
 &lt;p&gt;
 Verwenden Sie bitte exakt diesen Verwendungszweck:
-&lt;br&gt;Auftrags-ID: {{order.id}}, Kund:innen-ID: {{contact.id}}
+&lt;br&gt;Auftrags-ID: {\{order.id}}, Kund:innen-ID: {\{contact.id}}
 &lt;/p&gt;
 &lt;p&gt;
 Internationale Kontodaten:
-&lt;br&gt;IBAN: {{globals.bank.iban}}
-&lt;br&gt;Swift: {{globals.bank.bic}}
+&lt;br&gt;IBAN: {\{globals.bank.iban}}
+&lt;br&gt;Swift: {\{globals.bank.bic}}
 &lt;/p&gt;
 
 &#123;&#37; endif &#37;&#125;</code></pre>
@@ -2901,7 +2904,7 @@ Internationale Kontodaten:
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;strong&gt;Auftragspositionen&lt;/strong&gt;
 
-&lt;p&gt;Artikel des Auftrags mit der ID {{order.id}}:&lt;/p&gt;
+&lt;p&gt;Artikel des Auftrags mit der ID {\{order.id}}:&lt;/p&gt;
 &lt;table&gt;
   &lt;tr&gt;
     &lt;th&gt;ID&lt;/th&gt;
@@ -2911,10 +2914,10 @@ Internationale Kontodaten:
   &lt;/tr&gt;
   &#123;&#37; for orderItem in order.orderItems &#37;&#125;
   &lt;tr&gt;
-    &lt;td&gt;{{orderItem.variation.id}}&lt;/td&gt;
-    &lt;td&gt;{{orderItem.orderItemName}}&lt;/td&gt;
-    &lt;td&gt;{{orderItem.quantity}}&lt;/td&gt;
-    &lt;td&gt;{{orderItem.formattedAmounts.grossPrice | number_format(2,'.',',')}}&lt;/td&gt;
+    &lt;td&gt;{\{orderItem.variation.id}}&lt;/td&gt;
+    &lt;td&gt;{\{orderItem.orderItemName}}&lt;/td&gt;
+    &lt;td&gt;{\{orderItem.quantity}}&lt;/td&gt;
+    &lt;td&gt;{\{orderItem.formattedAmounts.grossPrice | number_format(2,'.',',')}}&lt;/td&gt;
   &lt;/tr&gt;
   &#123;&#37; endfor &#37;&#125;
 &lt;/table&gt;</code></pre>
