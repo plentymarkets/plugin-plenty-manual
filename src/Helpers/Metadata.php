@@ -15239,7 +15239,7 @@ class Metadata {
 						"url" => "/business-entscheidungen/plenty-bi/myview-dashboard",
 						"level" => 3,
 						"title" => "Dashboard",
-						"keywords" => "BI Dashboard, Business Intelligence, Kennzahlen anlegen, Kennzahlen darstellen, Kachel, Kacheln, Tortendiagramm, Tortendiagramme, Liniendiagramm, Liniendiagramme, Säulendiagramm, Säulendiagramme, Heatmap, Heatmaps, Tacho-Diagramm, Tacho-Diagramme, Tachodiagramm, Tachodiagramme, Baumstruktur",
+						"keywords" => "BI Dashboard, Business Intelligence, Kennzahlen anlegen, Kennzahlen darstellen, Kachel, Kacheln, Tortendiagramm, Tortendiagramme, Liniendiagramm, Liniendiagramme, Säulendiagramm, Säulendiagramme, Heatmap, Heatmaps, Tacho-Diagramm, Tacho-Diagramme, Tachodiagramm, Tachodiagramme, Baumdiagramm",
 						"description" => "",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Dashboard. Hier findest du folgende Informationen:",
