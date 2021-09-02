@@ -22563,7 +22563,7 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 25. August 2021",
+		"navAlias" => "Changelog 01. September 2021",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
@@ -22582,11 +22582,27 @@ class Metadata {
 				"languageID" => "",
 				"children" => 				[
 					[
+						"id" => "0bd49aab1953dcdff3755695c292044c",
+						"path" => "changelog/august-2021/2021-08-25",
+						"position" => 10120,
+						"urlName" => "2021-08-25",
+						"url" => "/changelog/august-2021/2021-08-25",
+						"level" => 3,
+						"title" => "Changelog 25. August 2021",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Changelog 25. August 2021. Hier findest du folgende Informationen:",
+						"languageID" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "6a040b283602051d4fbe6ee171f33b01",
 						"path" => "changelog/august-2021/2021-08-18",
 						"position" => 10130,
 						"urlName" => "2021-08-18",
-						"url" => "/changelog",
+						"url" => "/changelog/august-2021/2021-08-18",
 						"level" => 3,
 						"title" => "Changelog 18. August 2021",
 						"keywords" => "",
