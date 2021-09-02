@@ -26378,10 +26378,26 @@ class Metadata {
 				"title" => "FAQ",
 				"keywords" => "",
 				"description" => "",
-				"navAlias" => "",
+				"navAlias" => "Overview",
 				"linkListInto" => "Welcome to the topic FAQ. The following information is available:",
 				"languageID" => "DXVK1QA",
 				"children" => 				[
+					[
+						"id" => "85fd24b6a43ea7f1a6f683f6a6b582f9",
+						"path" => "payment/faq/checklist-payment-plugins",
+						"position" => 30,
+						"urlName" => "checklist-payment-plugins",
+						"url" => "/en/payment/faq/payment-plugins",
+						"level" => 3,
+						"title" => "Problems with payment plugins",
+						"keywords" => "payment plugin, payment-plugin",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Problems with payment plugins. The following information is available:",
+						"languageID" => "ME4YMBD",
+						"children" => [],
+						"hasChildren" => false
+					],
 					[
 						"id" => "ade55fbc4166e074f5f40a094f3e155a",
 						"path" => "payment/faq/payment-assistant-missing",
