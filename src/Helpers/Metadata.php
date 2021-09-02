@@ -2206,7 +2206,7 @@ class Metadata {
 				"title" => "FAQ",
 				"keywords" => "",
 				"description" => "",
-				"navAlias" => "",
+				"navAlias" => "Übersicht",
 				"linkListInto" => "Willkommen im Themenbereich FAQ. Hier findest du folgende Informationen:",
 				"languageID" => "MYD5MPX",
 				"children" => 				[
