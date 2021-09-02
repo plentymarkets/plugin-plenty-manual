@@ -31,11 +31,10 @@
 <ul class="sectlevel2">
 <li><a href="#220"><span>7.1.</span><span> How do I use the EBICS plugin?</span></a></li>
 <li><a href="#230"><span>7.2.</span><span> How do I open a new account?</span></a></li>
-<li><a href="#240"><span>7.3.</span><span> I am already using EBICS. Why should I switch to the plugin?</span></a></li>
-<li><a href="#250"><span>7.4.</span><span> Payments are not retrieved. What can I do?</span></a></li>
-<li><a href="#260"><span>7.5.</span><span> The bank provides the transaction file at X o’clock. Why does plentymarkets retrieve the file later?</span></a></li>
-<li><a href="#270"><span>7.6.</span><span> What do the fields daily account statement and interim transaction report mean?</span></a></li>
-<li><a href="#280"><span>7.7.</span><span> What is the difference between CAMT and MT?</span></a></li>
+<li><a href="#250"><span>7.3.</span><span> Payments are not retrieved. What can I do?</span></a></li>
+<li><a href="#260"><span>7.4.</span><span> The bank provides the transaction file at X o’clock. Why does plentymarkets retrieve the file later?</span></a></li>
+<li><a href="#270"><span>7.5.</span><span> What do the fields daily account statement and interim transaction report mean?</span></a></li>
+<li><a href="#280"><span>7.6.</span><span> What is the difference between CAMT and MT?</span></a></li>
 </ul>
 </li>
 </ul>
@@ -769,25 +768,30 @@ You can track the individual steps in the log.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="240">7.3. I am already using EBICS. Why should I switch to the plugin?</h3>
+<h3 id="250">7.3. Payments are not retrieved. What can I do?</h3>
 <div class="paragraph">
-<p>The EBICS-tool for payment retrieval is more stable than in the old EBICS integration.
-Moreover, the tool and the plugin are constantly developed further.
-The old EBICS interface is no longer supported and thus not failure resistant.
-Already existing accounts can be easily <a href="#200">migrated</a> to the plugin.</p>
+<p>Check the following:</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="250">7.4. Payments are not retrieved. What can I do?</h3>
-<div class="paragraph">
-<p>Check whether the interim transaction report and the daily account statements are using the correct formatting. Formatting can be adjusted in the <a href="#130">account settings</a>.<br>
-The bank is providing the transaction file in the format CAMT or MT.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/auftragsabwicklung/Payment/assets/EBICS-geschaeftsvorfall.png" alt="EBICS geschaeftsvorfall">
-</div>
-<div class="title">Figure 1. Activating transactions</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Is the EBICS account set up completely?
+→ Check this with the help of the explanations on the <a href="#70">manual page</a>.</p>
+</li>
+<li>
+<p>Are the access data correct? If the error message <strong>EBICS_AUTHENTICATION_FAILED</strong> is displayed, authentication failed because access data are wrong.</p>
+</li>
+<li>
+<p>Do you work with external programmes that also retrieve payments? In this case, the payments do not get imported int your plentymrkets system because payments are not retrieved several times.</p>
+</li>
+<li>
+<p>Check whether the interim transaction report and the daily account statements are using the correct formatting. Formatting can be adjusted in the <a href="#130">account settings</a>. The bank is providing the transaction file in the format CAMT or MT.</p>
+</li>
+<li>
+<p>Are all required transaction active?
+→ Proceed as follows to activate transactions.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph instruction">
 <p>Activating transactions:</p>
@@ -811,16 +815,22 @@ The bank is providing the transaction file in the format CAMT or MT.</p>
 </li>
 </ol>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/auftragsabwicklung/Payment/assets/EBICS-geschaeftsvorfall.png" alt="EBICS geschaeftsvorfall">
+</div>
+<div class="title">Figure 1. Activating transactions</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="260">7.5. The bank provides the transaction file at X o’clock. Why does plentymarkets retrieve the file later?</h3>
+<h3 id="260">7.4. The bank provides the transaction file at X o’clock. Why does plentymarkets retrieve the file later?</h3>
 <div class="paragraph">
 <p>The retrieval takes place once a day via a cron. The cron inquires hourly whether there is a transaction file. The payment retrieval mostly takes place in the evening or at night. This is connected to the provision of the transaction files by the bank.<br>
 The daily account statement can also be provided several times a day. The transaction file for the daily account statement and the interim transaction report are provided at different times.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="270">7.6. What do the fields daily account statement and interim transaction report mean?</h3>
+<h3 id="270">7.5. What do the fields daily account statement and interim transaction report mean?</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -850,7 +860,7 @@ The daily account statement can also be provided several times a day. The transa
 </div>
 </div>
 <div class="sect2">
-<h3 id="280">7.7. What is the difference between CAMT and MT?</h3>
+<h3 id="280">7.6. What is the difference between CAMT and MT?</h3>
 <div class="paragraph">
 <p>CAMT and MT are data transaction formats that are used in the transaction files. Only one format is used in the transaction file itself.</p>
 </div>
