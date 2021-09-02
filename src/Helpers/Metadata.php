@@ -2195,6 +2195,55 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
+			],
+			[
+				"id" => "337e429191275c2c6b7051bdc76966f2",
+				"path" => "payment/faq",
+				"position" => 100,
+				"urlName" => "faq",
+				"url" => "/payment/faq",
+				"level" => 2,
+				"title" => "FAQ",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich FAQ. Hier findest du folgende Informationen:",
+				"languageID" => "MYD5MPX",
+				"children" => 				[
+					[
+						"id" => "ce3a6d5f77824c67101d94362e11ae55",
+						"path" => "payment/faq/checkliste-payment-plugins",
+						"position" => 30,
+						"urlName" => "checkliste-payment-plugins",
+						"url" => "/payment/faq/payment-plugins",
+						"level" => 3,
+						"title" => "Probleme mit Payment Plugins",
+						"keywords" => "payment plugin, payment-plugin, Zahlungsplugin, Zahlungs-Plugin, Zahlungplugin, Zahlung-Plugin",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Probleme mit Payment Plugins. Hier findest du folgende Informationen:",
+						"languageID" => "PKZQP3Y",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "b165e6c7e03444165f937053cbbfd194",
+						"path" => "payment/faq/payment-assistent-fehlt",
+						"position" => 70,
+						"urlName" => "payment-assistent-fehlt",
+						"url" => "/payment/faq/fehlender-payment-assistent",
+						"level" => 3,
+						"title" => "Payment Assistent wird nicht angezeigt",
+						"keywords" => "payment assistent, payment-assistent, Zahlungsassistent, Zahlung-Assistent",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Payment Assistent wird nicht angezeigt. Hier findest du folgende Informationen:",
+						"languageID" => "P7ZKQZK",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
 			]
 		],
 		"hasChildren" => true

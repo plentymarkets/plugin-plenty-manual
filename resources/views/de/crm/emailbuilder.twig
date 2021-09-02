@@ -2841,26 +2841,8 @@ Alternativ findest du den:die Kontoinhaber:in im Menü <strong>Einrichtung » Ei
 <div class="paragraph">
 <p>Füge einen Code ein, der bewirkt, dass ein Hinweis bezüglich der Spedition und Kontaktaufnahme in der E-Mail an deine Kund:innen nur angezeigt wird, wenn der Versanddienstleister im Versandprofil eine Spedition ist. In unserem Beispiel hat das Versandprofil mit der Spedition die ID <code>6</code>.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; if order.formattedShipping.profileId == 6 &#37;&#125;
-
-&lt;strong&gt;INFORMATIONEN ZU IHRER LIEFERUNG&lt;/strong&gt;
-
-&lt;p&gt;Voraussichtliches Lieferdatum Ihrer Sendung: {\{order.formattedDates.estimatedDeliveryDate ? ( order.formattedDates.estimatedDeliveryDate | date('d.m.Y') ) : ''}}&lt;/p&gt;
-
-&lt;p&gt;Am Tag der Lieferung wird {\{order.formattedShipping.providerName}} Sie telefonisch kontaktieren, um mit Ihnen den Lieferzeitpunkt an Ihrer Haustür zu vereinbaren.&lt;/p&gt;
-&lt;p&gt;
-Ihre Telefonnummer: {\{order.formattedAddresses.invoiceAddress.formattedOptions.telephone}}
-&lt;br&gt;Sollte diese Nummer nicht korrekt sein, setzen Sie sich bitte mit uns in Verbindung.
-&lt;/p&gt;
-
-&lt;p&gt;
-Wenn Sie Ihre Lieferung verfolgen oder den Liefertermin verschieben möchten, klicken Sie auf den folgenden Link:
-&lt;br&gt;{\{order.formattedShipping.trackingURL}}
-&lt;/p&gt;
-&#123;&#37; endif &#37;&#125;</code></pre>
-</div>
+<div class="paragraph">
+<p>Das Code-Beispiel findest du <a href="https://github.com/plentymarkets/manual/blob/master/de/crm/assets/emailbuilder-code-beispiel-versandprofil.txt" target="_blank" rel="noopener">unter diesem Link</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2868,31 +2850,8 @@ Wenn Sie Ihre Lieferung verfolgen oder den Liefertermin verschieben möchten, kl
 <div class="paragraph">
 <p>Füge einen Code ein, der bewirkt, dass deine Bankdaten in der E-Mail an deine Kund:innen nur angezeigt werden, wenn sie im plentyShop die Zahlungsart <strong>Vorkasse</strong> (ID <code>0</code>) gewählt haben.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&#123;&#37; if order.formattedProperties.paymentMethod == 0 &#37;&#125;
-
-&lt;strong&gt;BANKDATEN&lt;/strong&gt;
-
-&lt;p&gt;Verwenden Sie zur Zahlung per Vorkasse bitte die folgenden Bankdaten:&lt;/p&gt;
-&lt;p&gt;
-Bankinstitut: {\{globals.bank.name}}
-&lt;br&gt;BIC: {\{globals.bank.bic}}
-&lt;br&gt;Kontonummer: {\{globals.bank.iban}}
-&lt;br&gt;Kontoinhaber:in: {\{globals.bank.owner}}
-&lt;/p&gt;
-&lt;p&gt;
-Verwenden Sie bitte exakt diesen Verwendungszweck:
-&lt;br&gt;Auftrags-ID: {\{order.id}}, Kund:innen-ID: {\{contact.id}}
-&lt;/p&gt;
-&lt;p&gt;
-Internationale Kontodaten:
-&lt;br&gt;IBAN: {\{globals.bank.iban}}
-&lt;br&gt;Swift: {\{globals.bank.bic}}
-&lt;/p&gt;
-
-&#123;&#37; endif &#37;&#125;</code></pre>
-</div>
+<div class="paragraph">
+<p>Das Code-Beispiel findest du <a href="https://github.com/plentymarkets/manual/blob/master/de/crm/assets/emailbuilder-code-beispiel-bankdaten.txt" target="_blank" rel="noopener">unter diesem Link</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2900,28 +2859,8 @@ Internationale Kontodaten:
 <div class="paragraph">
 <p>Füge einen Code ein, der bewirkt, dass die Auftragspositionen mit den Varianten-IDs, den Artikelnamen, der Artikelanzahl und dem Preis in einer Tabelle angezeigt werden.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;strong&gt;Auftragspositionen&lt;/strong&gt;
-
-&lt;p&gt;Artikel des Auftrags mit der ID {\{order.id}}:&lt;/p&gt;
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;ID&lt;/th&gt;
-    &lt;th&gt;Name&lt;/th&gt;
-    &lt;th&gt;Anzahl&lt;/th&gt;
-    &lt;th&gt;Preis&lt;/th&gt;
-  &lt;/tr&gt;
-  &#123;&#37; for orderItem in order.orderItems &#37;&#125;
-  &lt;tr&gt;
-    &lt;td&gt;{\{orderItem.variation.id}}&lt;/td&gt;
-    &lt;td&gt;{\{orderItem.orderItemName}}&lt;/td&gt;
-    &lt;td&gt;{\{orderItem.quantity}}&lt;/td&gt;
-    &lt;td&gt;{\{orderItem.formattedAmounts.grossPrice | number_format(2,'.',',')}}&lt;/td&gt;
-  &lt;/tr&gt;
-  &#123;&#37; endfor &#37;&#125;
-&lt;/table&gt;</code></pre>
-</div>
+<div class="paragraph">
+<p>Das Code-Beispiel findest du <a href="https://github.com/plentymarkets/manual/blob/master/de/crm/assets/emailbuilder-code-beispiel-auftragspositionen.txt" target="_blank" rel="noopener">unter diesem Link</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
 </div>
 </div>
 </div>

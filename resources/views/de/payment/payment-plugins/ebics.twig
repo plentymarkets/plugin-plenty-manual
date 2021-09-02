@@ -31,11 +31,10 @@
 <ul class="sectlevel2">
 <li><a href="#220"><span>7.1.</span><span> Wie benutze ich das EBICS-Plugin?</span></a></li>
 <li><a href="#230"><span>7.2.</span><span> Wie lege ich ein neues Konto an?</span></a></li>
-<li><a href="#240"><span>7.3.</span><span> Ich benutze EBICS bereits. Wieso soll ich auf das Plugin wechseln?</span></a></li>
-<li><a href="#250"><span>7.4.</span><span> Es werden keine Zahlungen abgerufen. Was kann ich tun?</span></a></li>
-<li><a href="#260"><span>7.5.</span><span> Die Bank stellt das Transaktionsfile um X Uhr bereit. Warum wird die Datei erst später von plentymarkets abgerufen?</span></a></li>
-<li><a href="#270"><span>7.6.</span><span> Was bedeuten die Felder Tagesumsatz und Vormerkposten?</span></a></li>
-<li><a href="#280"><span>7.7.</span><span> Was ist der Unterschied zwischen CAMT und MT?</span></a></li>
+<li><a href="#250"><span>7.3.</span><span> Es werden keine Zahlungen abgerufen. Was kann ich tun?</span></a></li>
+<li><a href="#260"><span>7.4.</span><span> Die Bank stellt das Transaktionsfile um X Uhr bereit. Warum wird die Datei erst später von plentymarkets abgerufen?</span></a></li>
+<li><a href="#270"><span>7.5.</span><span> Was bedeuten die Felder Tagesumsatz und Vormerkposten?</span></a></li>
+<li><a href="#280"><span>7.6.</span><span> Was ist der Unterschied zwischen CAMT und MT?</span></a></li>
 </ul>
 </li>
 </ul>
@@ -722,7 +721,7 @@ Der Button für die Migration wird nur angezeigt, wenn Konten in der alten Integ
 <h2 id="210">7. FAQ zum EBICS-Plugin</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In diesem Abschnitt sind FAQ zum Einrichten des EBICS-Plugins zusammengestellt.</p>
+<p>In diesem Abschnitt sind FAQ rund um EBICS und das EBICS-Plugins zusammengestellt.</p>
 </div>
 <div class="paragraph">
 <p>In diesem <a href="https://www.plentymarkets.eu/blog/plentyCommunity-Projekt-EBICS-Komplett-auf-den-Anwender-ausgerichtet/b-1941/" target="_blank" rel="noopener">Blog-Beitrag</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> findest du allgemeine Informationen zur Entwicklung des Plugins.</p>
@@ -770,26 +769,31 @@ Im Log kannst du die einzelnen Schritte nachvollziehen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="240">7.3. Ich benutze EBICS bereits. Wieso soll ich auf das Plugin wechseln?</h3>
+<h3 id="250">7.3. Es werden keine Zahlungen abgerufen. Was kann ich tun?</h3>
 <div class="paragraph">
-<p>Das EBICS-Tool für den Zahlungsabruf läuft stabiler als in der alten EBICS-Integration.
-Zudem werden das Tool und das Plugin fortlaufend weiterentwickelt.
-Die alte EBICS-Schnittstelle wird nicht mehr unterstützt und ist daher auch nicht ausfallsicher.
-Bereits vorhandene Konten können ganz einfach in das Plugin <a href="#200">migriert</a> werden.</p>
+<p>Überprüfe die folgenden Punkte:</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="250">7.4. Es werden keine Zahlungen abgerufen. Was kann ich tun?</h3>
-<div class="paragraph">
-<p>Überprüfe, ob Vormerkposten und Tagesumsätze das richtige Format nutzen.
-Die Formate können in den <a href="#130">Kontoeinstellungen</a> angepasst werden.<br>
-Die Bank stellt das Transaktionsfile im Format CAMT oder MT bereit.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/auftragsabwicklung/Payment/assets/EBICS-geschaeftsvorfall.png" alt="EBICS geschaeftsvorfall">
-</div>
-<div class="title">Bild 1. Geschäftsvorfälle aktivieren</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ist das EBICS-Konto vollständig eingerichtet?
+→ Überprüfe dies anhand der Erklärungen auf <a href="/70">dieser Handbuchseite</a>.</p>
+</li>
+<li>
+<p>Sind die Zugangsdaten korrekt? Kommt die Fehlermeldung <strong>EBICS_AUTHENTICATION_FAILED</strong>, konnte eine Authentifizierung nicht stattfinden, da die Zugangsdaten fehlerhaft sind.</p>
+</li>
+<li>
+<p>Arbeitest du mit externen Programmen, die ebenfalls Zahlungen abrufen? In diesem Fall kommen die Zahlungen nicht in deinem plentymarkets System an, da die Zahlungen nicht mehrfach abgerufen werden.</p>
+</li>
+<li>
+<p>Nutzen Vormerkposten und Tagesumsätze das richtige Format?<br>
+→ Die Formate können in den <a href="#130">Kontoeinstellungen</a> angepasst werden. Die Bank stellt das Transaktionsfile im Format CAMT oder MT bereit.</p>
+</li>
+<li>
+<p>Sind alle benötigten Geschäftsvorfälle aktiv?
+→ Gehe folgendermaßen vor, um Geschäftsvorfälle zu aktivieren.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph instruction">
 <p>Geschäftsvorfall aktivieren:</p>
@@ -813,16 +817,22 @@ Die Bank stellt das Transaktionsfile im Format CAMT oder MT bereit.</p>
 </li>
 </ol>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/_best-practices/auftragsabwicklung/Payment/assets/EBICS-geschaeftsvorfall.png" alt="EBICS geschaeftsvorfall">
+</div>
+<div class="title">Bild 1. Geschäftsvorfälle aktivieren</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="260">7.5. Die Bank stellt das Transaktionsfile um X Uhr bereit. Warum wird die Datei erst später von plentymarkets abgerufen?</h3>
+<h3 id="260">7.4. Die Bank stellt das Transaktionsfile um X Uhr bereit. Warum wird die Datei erst später von plentymarkets abgerufen?</h3>
 <div class="paragraph">
 <p>Der Abruf erfolgt täglich über einen Cron. Dieser fragt stündlich ab, ob ein Transaktionsfile vorhanden ist. Der Zahlungsabruf erfolgt meistens am Abend oder in der Nacht. Dies hängt mit der Bereitstellung der Transaktionsfiles von der Bank zusammen.<br>
 Der Tagesumsatz kann auch mehrmals am Tag bereitgestellt werden. Das Transaktionsfile für den Tagesumsatz und die Vormerkposten werden zu unterschiedlichen Zeiten bereitgestellt.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="270">7.6. Was bedeuten die Felder Tagesumsatz und Vormerkposten?</h3>
+<h3 id="270">7.5. Was bedeuten die Felder Tagesumsatz und Vormerkposten?</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -852,7 +862,7 @@ Der Tagesumsatz kann auch mehrmals am Tag bereitgestellt werden. Das Transaktion
 </div>
 </div>
 <div class="sect2">
-<h3 id="280">7.7. Was ist der Unterschied zwischen CAMT und MT?</h3>
+<h3 id="280">7.6. Was ist der Unterschied zwischen CAMT und MT?</h3>
 <div class="paragraph">
 <p>CAMT und MT sind Datenübertragungsformate, die in den Transaktionsfiles genutzt werden. Im Transaktionsfile wird jeweils nur ein Format genutzt.</p>
 </div>
