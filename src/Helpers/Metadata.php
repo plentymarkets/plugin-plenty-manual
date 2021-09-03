@@ -26341,7 +26341,7 @@ class Metadata {
 						"url" => "/en/payment/payment-plugins/paypal",
 						"level" => 3,
 						"title" => "PayPal",
-						"keywords" => "payment method, PayPal, PayPal PLUS, PayPal invoice, PayPal Express, express-button, PayPal Express checkout, PayPal Upon Invoice, PayPal Installments, PayPal-account, PayPal address validation, paypal checkout, paypal-checkout, paypal wall, paypal-wall, PayPal-webhook, paypal-integration, paypal-plugin, payment-plugin",
+						"keywords" => "payment method, PayPal, PayPal PLUS, PayPal invoice, PayPal Express, express-button, PayPal Express checkout, PayPal Upon Invoice, PayPal Installments, PayPal-account, PayPal address validation, paypal checkout, paypal-checkout, paypal wall, paypal-wall, PayPal-webhook, paypal-integration, paypal-plugin, payment-plugin, paypal dispute, dispute, dispute plugin, dispute-plugin",
 						"description" => "Integration of the plugin PayPal.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic PayPal. The following information is available:",
