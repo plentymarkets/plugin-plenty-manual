@@ -2568,22 +2568,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "59acf0e6573a5578ebd35cc203650cfe",
-				"path" => "fulfillment/ebay-fulfillment",
-				"position" => 130,
-				"urlName" => "ebay-fulfillment",
-				"url" => "/fulfillment/ebay-fulfillment",
-				"level" => 2,
-				"title" => "eBay Fulfillment Integrationsleitfaden (deprecated)",
-				"keywords" => "Inbound, Outbound, Fiege, EBFSKU, ebay sku, ebay customer support",
-				"description" => "Erfahre, wie du eBay Fulfillment mit Fiege in plentymarkets einrichtest.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich eBay Fulfillment Integrationsleitfaden (deprecated). Hier findest du folgende Informationen:",
-				"languageID" => "688XH7L",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
@@ -3328,7 +3312,7 @@ class Metadata {
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/artikel",
 										"level" => 5,
 										"title" => "Artikel",
-										"keywords" => "Artikel exportieren, Exportieren Artikel, Artikel Export, Artikel-Export, Export Artikel, Artikelexport, Variant exportieren, Variante exportieren, Varianten exportieren, Exportieren Variant, Exportieren Variante, Exportieren Varianten, Variant Export, Variante Export, Varianten Export, Variant-Export, Variante-Export, Varianten-Export, Export Variant, Export Variante, Export Varianten, Variantexport, Varianteexport, Variantenexport, Artikelverknüpfung exportieren, Artikelverknüpfungen exportieren, Produkt exportieren, Produkte exportieren, Ware exportieren, Waren exportieren",
+										"keywords" => "Artikel herunterladen, Artikel runterladen, Artikel exportieren, Exportieren Artikel, Artikel Export, Artikel-Export, Export Artikel, Artikelexport, Variant exportieren, Variante exportieren, Varianten exportieren, Exportieren Variant, Exportieren Variante, Exportieren Varianten, Variant Export, Variante Export, Varianten Export, Variant-Export, Variante-Export, Varianten-Export, Export Variant, Export Variante, Export Varianten, Variantexport, Varianteexport, Variantenexport, Artikelverknüpfung exportieren, Artikelverknüpfungen exportieren, Produkt exportieren, Produkte exportieren, Ware exportieren, Waren exportieren",
 										"description" => "",
 										"navAlias" => "",
 										"linkListInto" => "Willkommen im Themenbereich Artikel. Hier findest du folgende Informationen:",
