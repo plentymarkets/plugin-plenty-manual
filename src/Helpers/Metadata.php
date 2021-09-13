@@ -391,6 +391,39 @@ class Metadata {
 		"languageID" => "TP9OCLS",
 		"children" => 		[
 			[
+				"id" => "8fdfb9f91cd50f100217f661a1aae7a7",
+				"path" => "artikel/neue-ui",
+				"position" => 0,
+				"urlName" => "neue-ui",
+				"url" => "/artikel/neue-ui",
+				"level" => 2,
+				"title" => "Anwendungsfälle",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Anwendungsfälle. Hier findest du folgende Informationen:",
+				"languageID" => "9QFKIGV",
+				"children" => 				[
+					[
+						"id" => "259114f73b368e1d042c8406a7b1b645",
+						"path" => "artikel/neue-ui/artikelsuche",
+						"position" => 0,
+						"urlName" => "artikelsuche",
+						"url" => "/artikel/neue-ui/suchen",
+						"level" => 3,
+						"title" => "Artikel suchen",
+						"keywords" => "Neue Artikel-UI, Artikel » Neue Artikel-UI, Suche, Suchen, Artikel suchen, Artikelsuche, Artikel-Suche, Backend-Suche, Backendsuche, Backend suche, Filter, Filters, Artikelfilter, Artikel-Filter, Artikel Filter, Produktsuche, Produkt-Suche, Produkte suchen, Variantensuche, Varianten-Suche, Varianten suchen, Suchoption, Suchoptionen, Suchfilter, Suchverhalten, Suchergebnis, Suchergebnisse",
+						"description" => "Lerne, nach Artikeln und Varianten im Backend zu suchen. Mach dich mit den erweiterten Suchfiltern vertraut und lerne, wie du deine häufig verwendeten Sucheinstellungen speicherst.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Artikel suchen. Hier findest du folgende Informationen:",
+						"languageID" => "FHP99EP",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
+			],
+			[
 				"id" => "0ff6774e26eca098d491728c7fb8538a",
 				"path" => "artikel/einleitung",
 				"position" => 10,
