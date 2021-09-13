@@ -26757,22 +26757,6 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
-			],
-			[
-				"id" => "6aaaec7562bd4a850c2f4c36d0146acf",
-				"path" => "fulfilment/ebay-fulfillment",
-				"position" => 130,
-				"urlName" => "ebay-fulfillment",
-				"url" => "/en/fulfilment/ebay-fulfillment",
-				"level" => 2,
-				"title" => "eBay Fulfillment integration guide (deprecated)",
-				"keywords" => "Inbound, Outbound, Fiege, EBFSKU, ebay sku, ebay customer support",
-				"description" => "Learn how to set up eBay Fulfillment with Fiege in plentymarkets.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic eBay Fulfillment integration guide (deprecated). The following information is available:",
-				"languageID" => "688XH7L",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
@@ -27517,7 +27501,7 @@ class Metadata {
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/item",
 										"level" => 5,
 										"title" => "Item",
-										"keywords" => "Exporting item, Exporting items, Item exporting, Items exporting, Item export, Items export, Export item, Export items, Item-Export, Items-Export, Export-Item, Export-Items, Exporting variation, Exporting variations, Variation exporting, Variations exporting, Variation export, Variations export, Export variation, Export variations, Variation-Export, Variations-Export, Export-Variation, Export-Variations, Exporting item link, Exporting item links, Exporting product, Exporting products, Exporting goods",
+										"keywords" => "Downloading item, Downloading items, Download item, Download items, Exporting item, Exporting items, Item exporting, Items exporting, Item export, Items export, Export item, Export items, Item-Export, Items-Export, Export-Item, Export-Items, Exporting variation, Exporting variations, Variation exporting, Variations exporting, Variation export, Variations export, Export variation, Export variations, Variation-Export, Variations-Export, Export-Variation, Export-Variations, Exporting item link, Exporting item links, Exporting product, Exporting products, Exporting goods",
 										"description" => "",
 										"navAlias" => "",
 										"linkListInto" => "Welcome to the topic Item. The following information is available:",
