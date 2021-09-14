@@ -39200,6 +39200,22 @@ class Metadata {
 		"languageID" => "YS9J4YY",
 		"children" => 		[
 			[
+				"id" => "fa7a4a3dfd0e4aaa1e0b34f277981ec5",
+				"path" => "business-decisions/prohandel",
+				"position" => 0,
+				"urlName" => "prohandel",
+				"url" => "/en/business-decisions/prohandel",
+				"level" => 2,
+				"title" => "Prohandel connector",
+				"keywords" => "Prohandel, Prohandel connector, Prohandel-Connector, Prohandel add-on",
+				"description" => "Learn how to connect your Prohandel system with plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Prohandel connector. The following information is available:",
+				"languageID" => "NCUBFL8",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "4d92ac24855c5d16af4d012b15de6b5a",
 				"path" => "business-decisions/your-contract",
 				"position" => 10,
