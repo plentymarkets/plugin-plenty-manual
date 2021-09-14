@@ -15252,6 +15252,22 @@ class Metadata {
 		"languageID" => "YS9J4YY",
 		"children" => 		[
 			[
+				"id" => "cdae6af413bef4da5cd75bdde996a513",
+				"path" => "business-entscheidungen/prohandel",
+				"position" => 0,
+				"urlName" => "prohandel",
+				"url" => "/business-entscheidungen/prohandel",
+				"level" => 2,
+				"title" => "Prohandel-Anbindung",
+				"keywords" => "Prohandel, Prohandel-Anbindung, Prohandel-Connector, Prohandel-Erweiterung",
+				"description" => "Lerne, wie du dein Prohandel-System mit plentymarkets verbindest.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Prohandel-Anbindung. Hier findest du folgende Informationen:",
+				"languageID" => "NCUBFL8",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "7f40ad7b93238e0459cc1f4632d52aa4",
 				"path" => "business-entscheidungen/dein-vertrag",
 				"position" => 10,
