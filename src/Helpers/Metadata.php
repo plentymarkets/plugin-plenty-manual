@@ -3676,8 +3676,25 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Kataloge verwalten. Hier findest du folgende Informationen:",
 						"languageID" => "FHQHFWO",
-						"children" => [],
-						"hasChildren" => false
+						"children" => 						[
+							[
+								"id" => "13a68e1db2afccff1612f62fcc011ef2",
+								"path" => "daten/daten-exportieren/kataloge-verwalten/praxisbeispiel-auftraege",
+								"position" => 100,
+								"urlName" => "praxisbeispiel-auftraege",
+								"url" => "/daten/daten-exportieren/katalog-auftraege",
+								"level" => 4,
+								"title" => "Praxisbeipiele Kataloge für Aufträge und Auftragspositionen",
+								"keywords" => "",
+								"description" => "Erfahre anhand von Praxisbeispielen, wie du dir einen Katalog für den Export von Aufträgen und Auftragspositionen erstellst.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Praxisbeipiele Kataloge für Aufträge und Auftragspositionen. Hier findest du folgende Informationen:",
+								"languageID" => "OXKY6KE",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					]
 				],
 				"hasChildren" => true
