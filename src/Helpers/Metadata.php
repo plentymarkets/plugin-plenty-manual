@@ -27895,11 +27895,28 @@ class Metadata {
 						"title" => "Managing catalogues",
 						"keywords" => "Catalogue, Catalog, Catalogues, Catalogs, catalog templates, catalogue templates, templates, market, markets, transfer data, export, data export, export data, data field, link data fields, map data fields",
 						"description" => "The *Data » Catalogues* menu allows you to configure the export of variation data to markets.",
-						"navAlias" => "",
+						"navAlias" => "Managing catalogues",
 						"linkListInto" => "Welcome to the topic Managing catalogues. The following information is available:",
 						"languageID" => "FHQHFWO",
-						"children" => [],
-						"hasChildren" => false
+						"children" => 						[
+							[
+								"id" => "33abaa3b3ba9f3ea3a283171c402dc7e",
+								"path" => "data/exporting-data/Managing-catalogues/practical-examples-order",
+								"position" => 100,
+								"urlName" => "practical-examples-order",
+								"url" => "/en/data/exporting-data/catalogues-orders",
+								"level" => 4,
+								"title" => "Practical examples for order and order item catalogues",
+								"keywords" => "",
+								"description" => "Use the practical examples to learn more about how to create your own catalogue for the export of orders and order items.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Practical examples for order and order item catalogues. The following information is available:",
+								"languageID" => "OXKY6KE",
+								"children" => [],
+								"hasChildren" => false
+							]
+						],
+						"hasChildren" => true
 					]
 				],
 				"hasChildren" => true
