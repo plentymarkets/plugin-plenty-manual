@@ -397,11 +397,11 @@ class Metadata {
 				"urlName" => "neue-ui",
 				"url" => "/artikel/neue-ui",
 				"level" => 2,
-				"title" => "Anwendungsfälle",
+				"title" => "Neue Artikel-UI (closed beta)",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Anwendungsfälle. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Neue Artikel-UI (closed beta). Hier findest du folgende Informationen:",
 				"languageID" => "9QFKIGV",
 				"children" => 				[
 					[
@@ -417,6 +417,22 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Artikel suchen. Hier findest du folgende Informationen:",
 						"languageID" => "FHP99EP",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "e2a6b17000cb809ab00f649c06aa64bd",
+						"path" => "artikel/neue-ui/detailansicht",
+						"position" => 0,
+						"urlName" => "detailansicht",
+						"url" => "/artikel/neue-ui/detailansicht",
+						"level" => 3,
+						"title" => "Detailansicht: Bedienkonzept",
+						"keywords" => "Neue Artikel-UI, Artikel » Neue Artikel-UI, Artikel bearbeiten, Artikelbearbeitung, Bearbeitungsmodus, MyView, Navigation, Navigationsleiste, Portlet, Portlets, Eigenes Portlet, Ansicht, Ansichten, Ansicht erstellen, Detailansicht, Detailansichten, Artikelansicht, Artikelansichten, Variantenansicht, Variantenansichten, Element, Elemente",
+						"description" => "Grundsätzliches Bedienkonzept für die neue Artikel-UI. Navigiere durch Artikeldatensätze, passe die Ansicht an deine Bedürfnisse an und lerne, wie die Speicherlogik funktioniert.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Detailansicht: Bedienkonzept. Hier findest du folgende Informationen:",
+						"languageID" => "0YO0UJ5",
 						"children" => [],
 						"hasChildren" => false
 					]
