@@ -39189,7 +39189,7 @@ class Metadata {
 						"url" => "/en/automation/processes/procedures",
 						"level" => 3,
 						"title" => "Procedures/control elements",
-						"keywords" => "Procedure, process procdure, control element, process control element, SEPA Pain001, SEPA Pain008",
+						"keywords" => "Procedure, process procdure, control element, process control element, SEPA Pain SEPA Pain",
 						"description" => "Overview of the procedures and control elements that you can configure for processes.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Procedures/control elements. The following information is available:",
