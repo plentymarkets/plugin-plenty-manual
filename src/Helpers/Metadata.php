@@ -15192,7 +15192,7 @@ class Metadata {
 						"url" => "/automatisierung/prozesse/aktionen",
 						"level" => 3,
 						"title" => "Aktionen/Steuerelemente",
-						"keywords" => "Aktion, Prozess-Aktion, Steuerelement, Prozess-Steuerelement, SEPA Pain001, SEPA Pain008",
+						"keywords" => "Aktion, Prozess-Aktion, Steuerelement, Prozess-Steuerelement, SEPA Pain, SEPA Pain",
 						"description" => "Übersicht der Aktionen und Steuerelemente, die du für Prozesse einrichten kannst.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Aktionen/Steuerelemente. Hier findest du folgende Informationen:",
