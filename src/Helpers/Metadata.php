@@ -26586,7 +26586,7 @@ class Metadata {
 				"path" => "fulfilment/shipping-centre-2.0",
 				"position" => 0,
 				"urlName" => "shipping-centre-2.0",
-				"url" => "/en/fulfilment/shipping-centre-2.0-closed-beta-phase",
+				"url" => "/en/fulfilment/shipping-centre-2-0-closed-beta-phase",
 				"level" => 2,
 				"title" => "Shipping centre 2.0 (closed beta)",
 				"keywords" => "shipping centre, register order, register return, polling, shipping package, shipping label, summary, order summary, return label, cancel order, reset order",
