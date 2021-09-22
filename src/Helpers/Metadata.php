@@ -26582,6 +26582,22 @@ class Metadata {
 		"languageID" => "BELRROP",
 		"children" => 		[
 			[
+				"id" => "5bf4f19b2456f374c8d96f5047c76d22",
+				"path" => "fulfilment/shipping-centre-2.0",
+				"position" => 0,
+				"urlName" => "shipping-centre-2.0",
+				"url" => "/en/fulfilment/shipping-centre-2.0-closed-beta-phase",
+				"level" => 2,
+				"title" => "Shipping centre 2.0 (closed beta)",
+				"keywords" => "shipping centre, register order, register return, polling, shipping package, shipping label, summary, order summary, return label, cancel order, reset order",
+				"description" => "Learn how to work with the new shipping centre 2.0 in plentymarkets.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Shipping centre 2.0 (closed beta). The following information is available:",
+				"languageID" => "JVNZPRL",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "394adfe363c6f6eaffac362273501f33",
 				"path" => "fulfilment/preparing-the-shipment",
 				"position" => 10,
