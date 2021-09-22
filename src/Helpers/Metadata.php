@@ -2316,7 +2316,7 @@ class Metadata {
 				"path" => "fulfillment/versand-center-2.0",
 				"position" => 0,
 				"urlName" => "versand-center-2.0",
-				"url" => "/fulfillment/versand-center-2.0-closed-beta-phase",
+				"url" => "/fulfillment/versand-center-2-0-closed-beta-phase",
 				"level" => 2,
 				"title" => "Versand-Center 2.0 (closed beta)",
 				"keywords" => "Versand-Center, Auftrag anmelden, Retoure anmelden, Polling, Versandpaket, Versandlabel, Tagesabschlussliste, Auftragszusammenfassung, Retourenlabel, Auftrag stornieren, Auftrag zurücksetzen",
