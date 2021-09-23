@@ -26582,10 +26582,10 @@ class Metadata {
 		"languageID" => "BELRROP",
 		"children" => 		[
 			[
-				"id" => "5bf4f19b2456f374c8d96f5047c76d22",
-				"path" => "fulfilment/shipping-centre-2.0",
+				"id" => "03a8e9cf61568eb8069d27019c825371",
+				"path" => "fulfilment/shipping-centre-2-0",
 				"position" => 0,
-				"urlName" => "shipping-centre-2.0",
+				"urlName" => "shipping-centre-2-0",
 				"url" => "/en/fulfilment/shipping-centre-2-0-closed-beta-phase",
 				"level" => 2,
 				"title" => "Shipping centre 2.0 (closed beta)",
