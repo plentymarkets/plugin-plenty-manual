@@ -38472,6 +38472,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "a6370288fa284b98ca60942435db0c7e",
+				"path" => "markets/metro",
+				"position" => 135,
+				"urlName" => "metro",
+				"url" => "/en/markets/metro",
+				"level" => 2,
+				"title" => "Metro",
+				"keywords" => "Metro, Metro.de, set up Metro, setting up Metro.de, metro setup, metro.de setup",
+				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Metro in your plentymarkets system.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Metro. The following information is available:",
+				"languageID" => "BYFCMFT",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "4e088afe6c8bc991e6b45317d74a774b",
 				"path" => "markets/neckermann",
 				"position" => 140,
