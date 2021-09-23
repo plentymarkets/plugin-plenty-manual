@@ -13021,22 +13021,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "125bc34e71e21d41c81fe1399b03bf3c",
-				"path" => "maerkte/spielwiese",
-				"position" => 0,
-				"urlName" => "spielwiese",
-				"url" => "/maerkte/spielwiese",
-				"level" => 2,
-				"title" => "Spielwiese",
-				"keywords" => "spielwiese",
-				"description" => "Testseite für Formatierungen",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Spielwiese. Hier findest du folgende Informationen:",
-				"languageID" => "IAGOJV9",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "88e41714e368342d91f3aa33b585950f",
 				"path" => "maerkte/mytoys",
 				"position" => 0,
@@ -13049,6 +13033,22 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich myToys. Hier findest du folgende Informationen:",
 				"languageID" => "CQERJR4",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "125bc34e71e21d41c81fe1399b03bf3c",
+				"path" => "maerkte/spielwiese",
+				"position" => 0,
+				"urlName" => "spielwiese",
+				"url" => "/maerkte/spielwiese",
+				"level" => 2,
+				"title" => "Spielwiese",
+				"keywords" => "spielwiese",
+				"description" => "Testseite für Formatierungen",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Spielwiese. Hier findest du folgende Informationen:",
+				"languageID" => "IAGOJV9",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -14423,6 +14423,22 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Mercateo. Hier findest du folgende Informationen:",
 				"languageID" => "D9WLEYW",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "cee83530aa0dff14e439c00b6681a147",
+				"path" => "maerkte/metro",
+				"position" => 135,
+				"urlName" => "metro",
+				"url" => "/maerkte/metro",
+				"level" => 2,
+				"title" => "Metro",
+				"keywords" => "Metro, Metro.de, Metro einrichten, Metro.de einrichten",
+				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Metro in deinem plentymarkets System ein.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Metro. Hier findest du folgende Informationen:",
+				"languageID" => "BYFCMFT",
 				"children" => [],
 				"hasChildren" => false
 			],
