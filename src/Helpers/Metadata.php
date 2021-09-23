@@ -2312,10 +2312,10 @@ class Metadata {
 		"languageID" => "BELRROP",
 		"children" => 		[
 			[
-				"id" => "c878b49a520ad0197d5322dcda87344c",
-				"path" => "fulfillment/versand-center-2.0",
+				"id" => "f4db284ecb7aa1d0324392035dd9c25c",
+				"path" => "fulfillment/versand-center-2-0",
 				"position" => 0,
-				"urlName" => "versand-center-2.0",
+				"urlName" => "versand-center-2-0",
 				"url" => "/fulfillment/versand-center-2-0-closed-beta-phase",
 				"level" => 2,
 				"title" => "Versand-Center 2.0 (closed beta)",
