@@ -2060,7 +2060,7 @@ class Metadata {
 				"url" => "/payment/payment-plugins",
 				"level" => 2,
 				"title" => "Payment Plugins",
-				"keywords" => "Payment, Payment-Plugin, Payment Plugin, Plugin-Zahlungsart, Zahlungsart, Zahlart, Zahlarten",
+				"keywords" => "Payment, Payment-Plugin, Payment Plugin, Plugin-Zahlungsart, Zahlungsart, Zahlart, Zahlarten, Zahlmittel, Zahlungsmittel",
 				"description" => "",
 				"navAlias" => "Übersicht",
 				"linkListInto" => "Willkommen im Themenbereich Payment Plugins. Hier findest du folgende Informationen:",
