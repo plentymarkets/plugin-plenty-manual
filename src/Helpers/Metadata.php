@@ -38124,7 +38124,7 @@ class Metadata {
 				"url" => "/en/markets/bol-com",
 				"level" => 2,
 				"title" => "bol.com",
-				"keywords" => "bol.com, bol.com, bol, bol, bol.nl, netherland, holland",
+				"keywords" => "bol.com, bol.com, bol, bol, BolItemExport, setting up bol.com, bol.com, bol, Netherlands, Holland, bol.nl, bol.com setup, set up bol.com",
 				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market bol.com in your plentymarkets system.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic bol.com. The following information is available:",
