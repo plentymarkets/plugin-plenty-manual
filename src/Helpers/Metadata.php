@@ -24758,6 +24758,55 @@ class Metadata {
 		"languageID" => "TP9OCLS",
 		"children" => 		[
 			[
+				"id" => "aefff9ff250c96d275941d0e2d99b451",
+				"path" => "item/new-ui",
+				"position" => 0,
+				"urlName" => "new-ui",
+				"url" => "/en/item/new-ui",
+				"level" => 2,
+				"title" => "New item UI (closed beta)",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic New item UI (closed beta). The following information is available:",
+				"languageID" => "9QFKIGV",
+				"children" => 				[
+					[
+						"id" => "00c9fa7152aa51699aa32e6d394f5465",
+						"path" => "item/new-ui/detail-view",
+						"position" => 0,
+						"urlName" => "detail-view",
+						"url" => "/en/item/new-ui/detail-view",
+						"level" => 3,
+						"title" => "Detail view: Concept and use",
+						"keywords" => "New item UI, Item » New item UI, Edit item, Editing items, Editing mode, MyView, Navigation, Navigation bar, Portlet, Portlets, Custom portlet, View, Views, Create view, Detail view, Detail views, Item view, Item views, Variation view, Variation views, Element, Elements",
+						"description" => "Learn to use the new item UI. Navigate through item data records, customise the layout to meet your needs and recognise any unsaved changes.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Detail view: Concept and use. The following information is available:",
+						"languageID" => "0YO0UJ5",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "0fee6ee24120bd0a33fb589bd8d98c93",
+						"path" => "item/new-ui/item-search",
+						"position" => 0,
+						"urlName" => "item-search",
+						"url" => "/en/item/new-ui/search",
+						"level" => 3,
+						"title" => "Searching for items",
+						"keywords" => "New item UI, Item » New item UI, Search, Searching, Search for items, Searching for items, Item search, Backend search, Back end search, Filter, Filters, Item filter, Item filters, Product search, Search for products, Searching for products, Variation search, Variant search, Search for variations, Searching for variations, Search option, Search options, Search filter, Search filters, Search behaviour, Search behavior, Search result, Search results",
+						"description" => "Learn how to search for items and variations in the back end. See the advanced search filters and learn how to save your frequently used search settings.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Searching for items. The following information is available:",
+						"languageID" => "FHP99EP",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
+			],
+			[
 				"id" => "6dc23dd651f69945f4ae4b569c2903b0",
 				"path" => "item/introduction",
 				"position" => 10,
