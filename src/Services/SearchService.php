@@ -203,7 +203,7 @@ class SearchService
         {
             if(!isset($hit["_source"]["position"]) || trim($hit["_source"]["position"]) === '0' || trim($hit["_source"]["position"]) >= '10000')
             {
-                unset($resultData["_source"]["position"]);
+                $totalHits--;
                 continue;
             }
 
