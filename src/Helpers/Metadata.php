@@ -28068,11 +28068,27 @@ class Metadata {
 								"url" => "/en/data/exporting-data/catalogues-orders",
 								"level" => 4,
 								"title" => "Practical examples for order and order item catalogues",
-								"keywords" => "",
+								"keywords" => "order export, exporting orders, order catalogue, order item catalogue, order catalog, order item catalog, order item export, catalog order",
 								"description" => "Use the practical examples to learn more about how to create your own catalogue for the export of orders and order items.",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Practical examples for order and order item catalogues. The following information is available:",
 								"languageID" => "OXKY6KE",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "003b38f83f68eb4c0b7b665c073fdc24",
+								"path" => "data/exporting-data/Managing-catalogues/practical-examples-purchase-order",
+								"position" => 200,
+								"urlName" => "practical-examples-purchase-order",
+								"url" => "/en/data/exporting-data/catalogues-purchase-orders",
+								"level" => 4,
+								"title" => "Practical examples for purchase order catalogues",
+								"keywords" => "purchase order catlaogue, catalogue purchase orders, reorder catalogue, redistribution catalogue, purchase order item catalogue",
+								"description" => "Use the practical examples to learn more about how to create your own catalogue for the export of purchase orders and their order items.",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Practical examples for purchase order catalogues. The following information is available:",
+								"languageID" => "VEG94X9",
 								"children" => [],
 								"hasChildren" => false
 							]
