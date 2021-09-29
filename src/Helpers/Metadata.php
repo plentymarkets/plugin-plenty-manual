@@ -3717,11 +3717,27 @@ class Metadata {
 								"url" => "/daten/daten-exportieren/katalog-auftraege",
 								"level" => 4,
 								"title" => "Praxisbeipiele Kataloge für Aufträge und Auftragspositionen",
-								"keywords" => "",
+								"keywords" => "Auftragsexport, Auftragspositionsexport, Auftragskatalog, Auftrag-Katalog, Auftrags-Katalog",
 								"description" => "Erfahre anhand von Praxisbeispielen, wie du dir einen Katalog für den Export von Aufträgen und Auftragspositionen erstellst.",
 								"navAlias" => "",
 								"linkListInto" => "Willkommen im Themenbereich Praxisbeipiele Kataloge für Aufträge und Auftragspositionen. Hier findest du folgende Informationen:",
 								"languageID" => "OXKY6KE",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "2e15e24de636bffffed2b7b96fd7147d",
+								"path" => "daten/daten-exportieren/kataloge-verwalten/praxisbeispiel-bestellungen",
+								"position" => 200,
+								"urlName" => "praxisbeispiel-bestellungen",
+								"url" => "/daten/daten-exportieren/katalog-bestellungen",
+								"level" => 4,
+								"title" => "Praxisbeipiele Kataloge für Bestellungen",
+								"keywords" => "Bestellung-Katalog, Nachbestellungskatalog, Nachbestellungs-Katalog, Umbuchungs-Katalog, Umbuchungskatalog",
+								"description" => "Erfahre anhand von Praxisbeispielen, wie du dir einen Katalog für den Export von Nachbestellungen und Umbuchungen sowie deren Auftragspositionen erstellst.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Praxisbeipiele Kataloge für Bestellungen. Hier findest du folgende Informationen:",
+								"languageID" => "VEG94X9",
 								"children" => [],
 								"hasChildren" => false
 							]
