@@ -13009,7 +13009,7 @@ class Metadata {
 				"path" => "maerkte/katalog-bootcamp",
 				"position" => 0,
 				"urlName" => "katalog-bootcamp",
-				"url" => "/maerkte/katalog-bootcamp",
+				"url" => "/maerkte/kataloge",
 				"level" => 2,
 				"title" => "Einführung in Kataloge für Marktplätze",
 				"keywords" => "Katalog, Marktplatzformate, Marktplatzexport",
