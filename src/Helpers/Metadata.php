@@ -13005,6 +13005,22 @@ class Metadata {
 		"languageID" => "MFX1Q1C",
 		"children" => 		[
 			[
+				"id" => "a8dfd49846f247f1d31c0197873f764e",
+				"path" => "maerkte/katalog-bootcamp",
+				"position" => 0,
+				"urlName" => "katalog-bootcamp",
+				"url" => "/maerkte/katalog-bootcamp",
+				"level" => 2,
+				"title" => "Einführung in Kataloge für Marktplätze",
+				"keywords" => "Katalog, Marktplatzformate, Marktplatzexport",
+				"description" => "Mache dich mit dem Prinzip der Kataloge vertraut, um Variantendaten optimal an Marktplätze exportieren zu können.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Einführung in Kataloge für Marktplätze. Hier findest du folgende Informationen:",
+				"languageID" => "JD40PF4",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "654bfffa21d7672d700bc3c2ae139acf",
 				"path" => "maerkte/otto",
 				"position" => 0,
