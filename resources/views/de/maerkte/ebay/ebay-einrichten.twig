@@ -5,7 +5,7 @@
 <div id="toctitle">Inhalt</div>
 <ul class="sectlevel1">
 <li><a href="#100"><span>1.</span><span> Bei eBay registrieren</span></a></li>
-<li><a href="#200"><span>2.</span><span> eBay in plentymarkets einrichten</span></a>
+<li><a href="#200"><span>2.</span><span> eBay-Basiseinstellungen in plentymarkets vornehmen</span></a>
 <ul class="sectlevel2">
 <li><a href="#300"><span>2.1.</span><span> Konten freischalten und bearbeiten</span></a></li>
 <li><a href="#105"><span>2.2.</span><span> Plugin eBay OAuth2 installieren</span></a></li>
@@ -240,13 +240,11 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="200">2. eBay in plentymarkets einrichten</h2>
+<h2 id="200">2. eBay-Basiseinstellungen in plentymarkets vornehmen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In diesem Kapitel findest du Informationen zu Einstellungen und Funktionen für den Marktplatz eBay. Du erfährst hier, wie du eBay in plentymarkets einrichtest, <a href="#300">eBay-Konten</a> und <a href="#1600">Fahrzeugverwendungslisten</a> verwaltest und wie du automatisch <a href="#1300">Bewertungen</a> abgibst.</p>
-</div>
-<div class="paragraph">
-<p>Einen Überblick über die Basiseinstellungen für eBay erhältst du außerdem in diesem Video-Tutorial:</p>
+<p>In diesem Kapitel findest du Informationen zu Einstellungen und Funktionen für den Marktplatz eBay.
+Dieses Video-Tutorial bietet dir einen ersten Überblick über die Basiseinstellungen für eBay.</p>
 </div>
 <div class="videoblock">
 <div class="title">eBay-Basiseinstellungen</div>
@@ -2816,7 +2814,7 @@ Darauf achten, dass verwendete Bilder per URL erreichbar sind. Dazu die Bilder z
 <div class="sect3">
 <h4 id="2950">4.5.2. Beispiel-Code für eine Layout-Vorlage</h4>
 <div class="paragraph">
-<p>Unten findest du einen Beispiel-Code für eine mögliche Layout-Vorlage. Bild 1 zeigt die Vorschau eines Listings, das mit einer Layout-Vorlage verknüpft ist, das auf diesem Beispiel-Code beruht. Im Tab <strong>Einstellungen</strong> wurde in diesem Beispiel für <strong>plentymarkets-Signatur</strong> die Option <strong>plentymarkets-Logo und Schlagwort</strong> gewählt.</p>
+<p>In diesem Kapitel findest du Beispiel-Code für eine mögliche Layout-Vorlage. Bild 1 zeigt die Vorschau eines Listings, das mit einer Layout-Vorlage verknüpft ist, das auf diesem Beispiel-Code beruht. Im Tab <strong>Einstellungen</strong> wurde in diesem Beispiel für <strong>plentymarkets Signatur</strong> die Option <strong>plentymarkets Logo und Schlagwort</strong> gewählt.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2826,253 +2824,18 @@ Darauf achten, dass verwendete Bilder per URL erreichbar sind. Dazu die Bilder z
 <div class="paragraph">
 <p><em>Bild 1: Verknüpfung von Listings mit verschiedenen Layout-Vorlagen</em></p>
 </div>
-<h5 id="_mainframe_2" class="discrete">Mainframe</h5>
-<div class="paragraph">
-<p>Beispiel-Code Tab: Mainframe</p>
-</div>
-<div class="paragraph">
-<p>Beispiel-Code für eine mögliche Darstellung der sichtbaren Listing-Inhalte:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;div class="wrapper clearfix"&gt;
-	&lt;div class="menu"&gt;
-		&#123;&#37; $_categories = GetListingStoreCategories('tree') &#37;&#125;
-
-		&lt;ul class="left_menu"&gt;
-		&#123;&#37; for $_levelOneCategory in $_categories &#37;&#125;
-			&lt;li&gt;
-			&#123;&#37; $_name  = $_levelOneCategory['name'] &#37;&#125;
-			&#123;&#37; $_url = $_levelOneCategory['url'] &#37;&#125;
-
-			&lt;a href="$_url"&gt;$_name&lt;/a&gt;
-
-			&#123;&#37; if count($_levelOneCategory['children']) &#37;&#125;
-				&lt;ul class="children"&gt;
-					&#123;&#37; for $_levelTwoCategory in $_levelOneCategory['children'] &#37;&#125;
-						&lt;li class="child-level"&gt;
-							&#123;&#37; $_name = $_levelTwoCategory['name'] &#37;&#125;
-							&#123;&#37; $_url = $_levelTwoCategory['url'] &#37;&#125;
-							&lt;a href="$_url"&gt;$_name&lt;/a&gt;
-						&lt;/li&gt;
-					&#123;&#37; endfor &#37;&#125;
-				&lt;/ul&gt;
-			&#123;&#37; endif &#37;&#125;
-			&lt;/li&gt;
-		&#123;&#37; endfor &#37;&#125;
-		&lt;/ul&gt;
-	&lt;/div&gt;
-
-	&lt;div style="width: $_listingWidth; float: left;" class="listing-content"&gt;
-		&lt;h1&gt;&#123;&#37; GetItemName(1) &#37;&#125;&lt;/h1&gt;
-		&lt;span class="item-data"&gt;Art.-Nr. $ItemId&lt;/span&gt;
-		&lt;figure&gt;$MiddleSize$$$$$$$$Image[1]&lt;/figure&gt;
-		&lt;div class="price-block"&gt;
-			&#123;&#37; if $ListingType == $LISTING_TYPE_FIXED &#37;&#125;
-				Jetzt kaufen: $BuyItNowPrice Euro
-			&#123;&#37; else &#37;&#125;
-				Startpreis: $MinimumBid Euro
-			&#123;&#37; endif &#37;&#125;
-		&lt;/div&gt;
-
-		&lt;hr&gt;
-		&#123;&#37; GetItemDescription() &#37;&#125;
-
-		$PROPERTY_UNIT ","
-        $PROPERTY_VALUE
-		&lt;hr&gt;
-
-		&#123;&#37; if $Free[3] &#37;&#125;
-			&lt;span class="info"&gt;Artikel umfasst: $Free[3]&lt;/span&gt;
-		&#123;&#37; else &#37;&#125;
-			&lt;span class="info"&gt;Artikel ohne Zubehör&lt;/span&gt;
-		&#123;&#37; endif &#37;&#125;
-
-		&lt;div class="item-properties"&gt;
-			&lt;b&gt;Merkmale:&lt;/b&gt;
-			&#123;&#37; $_propertyList = ["Farbe", "Material"] &#37;&#125;
-			&#123;&#37; for $_key,$_property in $_propertyList &#37;&#125;
-				&#123;&#37; GetItemPropertyByName($_property, $PROPERTY_VALUE) &#37;&#125;
-				&#123;&#37; if ($_key + 1) &lt; count($_propertyList) &#37;&#125;,&#123;&#37; endif &#37;&#125;
-			&#123;&#37; endfor &#37;&#125;
-		&lt;/div&gt;
-
-		&lt;div class="properties-list"&gt;
-			&#123;&#37; PropertyList() &#37;&#125;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-</div>
-</div>
-<h5 id="_mainframe_3" class="discrete">Mainframe</h5>
-<div class="paragraph">
-<p>Beispiel-Code Tab: HTML-Struktur</p>
-</div>
-<div class="paragraph">
-<p>Beispiel-Code für eine mögliche HTML-Struktur:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;$ListingTitle&lt;/title&gt;
-    &#123;&#37; GetCSSFile() &#37;&#125;
-&lt;/head&gt;
-&lt;body&gt;
-    $MainFrame
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-</div>
-</div>
-<h5 id="_mainframe_4" class="discrete">Mainframe</h5>
-<div class="paragraph">
-<p>Beispiel-Code Tab: CSS</p>
-</div>
-<div class="paragraph">
-<p>Beispiel-Code für eine mögliche CSS-Struktur:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-plenty hljs" data-lang="plenty">/* General styling */
-* {
-   margin: 0px;
-   padding: 0px;
-}
-
-body {
-    font-family: Arial;
-    font-size: 12px;
-}
-
-ul
-{
-    margin: 10px 0;
-    list-style-type: none;
-}
-
-hr {
-    border: medium none;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-
-.wrapper {
-    width: 640px;
-    margin: 10px auto;
-}
-
-
-/* Menu */
-.menu {
-    float: left;
-    width: 200px;
-}
-
-.left_menu {
-    margin: 0;
-}
-    .left_menu li {
-        border-bottom: 1px solid #ccc;
-    }
-        .left_menu li:last-child {
-            border-bottom: medium none;
-        }
-
-        .left_menu &gt; li &gt; ul,
-        .left_menu &gt; li &gt; ul &gt; li &gt; ul {
-            margin: 0 0 0 30px;
-            display:none;
-        }
-
-        .left_menu li a {
-            color: #222;
-            text-decoration: none;
-            display: block;
-            padding: 5px;
-        }
-            .left_menu li a:hover {
-                background: #222;
-                color: #fff;
-            }
-
-
-/* Listing Content */
-.listing-content {
-    float: left;
-    padding: 20px;
-}
-    .listing-content .item-data {
-        color: #999;
-        font-size: 11px;
-    }
-
-    .listing-content figure {
-        text-align: center;
-    }
-
-    .listing-content .price-block {
-        font-size: 22px;
-        font-weight: bold;
-        text-align: right;
-    }
-
-    .listing-content p {
-        line-height: 16px;
-    }
-
-/* Info element block */
-.info {
-    font-weight: bold;
-    margin: 10px 0;
-    display: block;
-}
-
-    .info::before {
-        content: 'i';
-        padding: 5px 0;
-        font-size: 15px;
-        border: 1px solid lightblue;
-        border-radius: 65px;
-        width: 23px;
-        height: 12px;
-        display: inline-block;
-        text-align: center;
-        font-family: initial;
-        background: lightblue;
-        color: white;
-        margin-right: 6px;
-    }
-
-
-/* Auto-Generated Character List */
-.PlentyArticleCharacterList {
-    margin: 0 10;
-}
-    .PlentyArticleCharacter &gt; div {
-        float: left;
-    }
-
-    .PlentyArticleCharacterName {
-        font-weight: bold;
-        margin-right: 5px;
-    }
-
-
-/* Clearfix */
-.clearfix:before,
-.clearfix:after,
-.PlentyArticleCharacter {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-
-.clearfix:after, .PlentyArticleCharacter:after {
-    clear: both;
-}</code></pre>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/ebay/assets/Main.html" target="_blank" rel="noopener">Beispiel-Code für das Tab <strong>Mainframe</strong> öffnen</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+<li>
+<p><a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/ebay/assets/html.html" target="_blank" rel="noopener">Beispiel-Code für das Tab HTML-Struktur öffnen</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+<li>
+<p><a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/ebay/assets/C.html" target="_blank" rel="noopener">Beispiel-Code für das Tab CSS öffnen</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -6702,7 +6465,7 @@ In der Template-Funktion <strong>GetCrossSellingData</strong> sind folgende Date
 </div>
 <div class="title">Bild 1. Beispielanzeige von Cross-Selling-Artikeln</div>
 </div>
-<h5 id="_mainframe_5" class="discrete">Mainframe</h5>
+<h5 id="_mainframe_2" class="discrete">Mainframe</h5>
 <div class="paragraph">
 <p>Beispiel-Code Tab: Mainframe</p>
 </div>
