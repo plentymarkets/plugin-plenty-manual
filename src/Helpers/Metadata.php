@@ -25212,7 +25212,7 @@ class Metadata {
 								"url" => "/en/item/managing-items",
 								"level" => 4,
 								"title" => "Directory of data fields",
-								"keywords" => "Item data, Item data record, Item data records, Item data field, Item data fields, Item management, Item editing, Manage items, Edit items, Manage items manually, Edit items manually, Product management, Item » Edit item",
+								"keywords" => "Item data, Item data record, Item data records, Item data field, Item data fields, Item management, Manage items, Managing items, Item editing, Edit items, Editing items, Item processing, Process items, Processing items, Manually edit items, Manually process items, Item » Edit item",
 								"description" => "Explanations of the tabs and data fields within an item data record.",
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Directory of data fields. The following information is available:",
