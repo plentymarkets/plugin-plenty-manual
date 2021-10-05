@@ -1563,7 +1563,7 @@ class Metadata {
 				"title" => "Auftragsdokumente",
 				"keywords" => "Dokument, Vorlage, Dokumentvorlage, Dokumentenvorlage, Dokument-Vorlage, Document, Template, Auftragsdokument, Auftragsdokumente, Auftrags-Dokument, pdf-Vorlage, Nummerkreise, Nummernkreise, Nummernkreis, Rechnung, Sammelrechnung, Sammel-Rechnung, Lieferschein, Gutschrift, Korrekturbeleg, Korrektur-Beleg, Mahnung, Rücksendeschein, Gelangensbestätigung, Gelangens-Bestätigung, SEPA-Lastschriftmandat, standortbezogen, Fulfillment-Dokument, Fullfilment-Dokument, Fulfilment-Dokument, Fullfillment-Dokument, Adressetikett, Pickliste, Pick-Liste, Packliste, Pack-Liste, Lager-Pickliste, Standard-Dokumentvorlage, Dokument einrichten, Proformarechnung, Angebot, Abhollieferung, Reparaturschein, Abhol-Lieferung, Reperaturschein, Reparatur-Schein, Sammelgutschrift, Dokumenteneinstellungen, Zahlungsbedingungen, Vorlage einrichten",
 				"description" => "",
-				"navAlias" => "Übersicht",
+				"navAlias" => "Dokumente einrichten",
 				"linkListInto" => "Willkommen im Themenbereich Auftragsdokumente. Hier findest du folgende Informationen:",
 				"languageID" => "SVWTISV",
 				"children" => 				[
