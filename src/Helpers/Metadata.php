@@ -25962,7 +25962,7 @@ class Metadata {
 				"title" => "Order documents",
 				"keywords" => "document, template, order document, location-based, fulfillment documents, PDF template, numbering, number range, invoice, multi-invoice, delivery note, credit note, adjustment form, dunning letter, return slip, entry certificate, SEPA direct debit mandate, address label, pick list, warehouse pick list, packing list, multi credit note, payment terms, template setup, reversal dunning letter, document settings",
 				"description" => "",
-				"navAlias" => "Overview",
+				"navAlias" => "Setting up documents",
 				"linkListInto" => "Welcome to the topic Order documents. The following information is available:",
 				"languageID" => "SVWTISV",
 				"children" => 				[
