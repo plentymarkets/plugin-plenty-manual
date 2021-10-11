@@ -880,11 +880,11 @@ class Metadata {
 						"urlName" => "personalisierte-artikel",
 						"url" => "/artikel/anwendungsfaelle/personalisierte-artikel",
 						"level" => 3,
-						"title" => "Personalisierte Artikel",
+						"title" => "Bestelleigenschaften (personalisierte Artikel)",
 						"keywords" => "Personalisiert, Personalisierung, Individualisiert, Individualisierung, Personalisierte Artikel, Individualisierte Artikel, Personalisierte Produkte, Individualisierte Produkte, Bestellmerkmal, Bestellmerkmal, Bestellmerkmal, Bestell-Merkmal, Bestellmerkmale, Bestell-Merkmale, Bestelleigenschaft, Bestelleigenschaft, Bestelleigenschaft, Bestell-Eigenschaft, Bestelleigenschaften, Bestell-Eigenschaften, Auftragseigenschaft, Auftrags-Eigenschaft, Auftragseigenschaften, Auftrags-Eigenschaften, Aufpreis, Aufpreise, Aufschlag, Aufschläge, Zuschlag, Zuschläge, Zusatzkost, Zusatzkosten",
 						"description" => "Mit Hilfe von Bestelleigenschaften kannst du personalisierte Artikel in deinem plentyShop verkaufen. Auf dieser Seite findest du einige Praxisbeispiele.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Personalisierte Artikel. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Bestelleigenschaften (personalisierte Artikel). Hier findest du folgende Informationen:",
 						"languageID" => "34VX1BK",
 						"children" => [],
 						"hasChildren" => false
