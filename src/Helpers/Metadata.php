@@ -14531,7 +14531,7 @@ class Metadata {
 				"url" => "/maerkte/plus-gartenxxl",
 				"level" => 2,
 				"title" => "Netto Marken-Discount",
-				"keywords" => "Netto, Netto, netto.de, netto.de, Netto einrichten, gartenxxl, plus.de",
+				"keywords" => "Netto, Netto, netto.de, netto.de, Netto einrichten, gartenxxl, plus.de, Netto Marken-Discount, Netto Markendiscount",
 				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz Netto Marken-Discount in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Netto Marken-Discount. Hier findest du folgende Informationen:",
