@@ -22742,10 +22742,43 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 06. Oktober 2021",
+		"navAlias" => "Changelog 13. Oktober 2021",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
+			[
+				"id" => "e5d8e1c4b0439a1e0b2145e773b7fb5f",
+				"path" => "changelog/oktober-2021",
+				"position" => 10800,
+				"urlName" => "oktober-2021",
+				"url" => "/changelog/oktober-2021",
+				"level" => 2,
+				"title" => "Changelogs Oktober 2021",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelogs Oktober 2021. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => 				[
+					[
+						"id" => "01857368197d3dde472ed618e24f9f34",
+						"path" => "changelog/oktober-2021/2021-10-06",
+						"position" => 10710,
+						"urlName" => "2021-10-06",
+						"url" => "/changelog/oktober-2021/2021-10-06",
+						"level" => 3,
+						"title" => "Changelog 06. Oktober 2021",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Changelog 06. Oktober 2021. Hier findest du folgende Informationen:",
+						"languageID" => "",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
+			],
 			[
 				"id" => "69c72d0e9d40daa67c304a7c9a50e53a",
 				"path" => "changelog/september-2021",
