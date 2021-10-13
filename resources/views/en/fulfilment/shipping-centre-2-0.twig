@@ -8,22 +8,22 @@
 <li><a href="#group-function"><span>2.</span><span> Carrying out the group function</span></a></li>
 <li><a href="#edit-single-order"><span>3.</span><span> Editing a single order</span></a>
 <ul class="sectlevel2">
-<li><a href="#register-order"><span>3.1.</span><span> Registering a single order</span></a></li>
-<li><a href="#display-registered-order"><span>3.2.</span><span> Displaying a registered order</span></a>
+<li><a href="#display-order"><span>3.1.</span><span> Displaying an order</span></a>
 <ul class="sectlevel3">
-<li><a href="#overview"><span>3.2.1.</span><span> Overview</span></a></li>
-<li><a href="#recipient"><span>3.2.2.</span><span> Recipient</span></a></li>
-<li><a href="#packages"><span>3.2.3.</span><span> Packages</span></a></li>
-<li><a href="#returns"><span>3.2.4.</span><span> Returns</span></a></li>
+<li><a href="#overview"><span>3.1.1.</span><span> Overview</span></a></li>
+<li><a href="#recipient"><span>3.1.2.</span><span> Recipient</span></a></li>
+<li><a href="#packages"><span>3.1.3.</span><span> Packages</span></a></li>
+<li><a href="#returns"><span>3.1.4.</span><span> Returns</span></a></li>
 </ul>
 </li>
-<li><a href="#retrieve-shipping-label"><span>3.3.</span><span> Retrieving a shipping label</span></a></li>
+<li><a href="#register-order"><span>3.2.</span><span> Registering a single order</span></a></li>
+<li><a href="#download-shipping-labels"><span>3.3.</span><span> Downloading the shipping labels</span></a></li>
 <li><a href="#reset-order"><span>3.4.</span><span> Resetting a single order</span></a></li>
 <li><a href="#cancel-order"><span>3.5.</span><span> Cancelling a single order</span></a></li>
-<li><a href="#polling"><span>3.6.</span><span> Creating a polling file for a single order</span></a></li>
+<li><a href="#polling-single-order"><span>3.6.</span><span> Creating a polling file for a single order</span></a></li>
 <li><a href="#register-return"><span>3.7.</span><span> Registering a return for a single order</span></a></li>
 <li><a href="#retrieve-return-label"><span>3.8.</span><span> Retrieving the return label</span></a></li>
-<li><a href="#download-export-label"><span>3.9.</span><span> Downloading the export label</span></a></li>
+<li><a href="#download-export-labels"><span>3.9.</span><span> Downloading the export labels</span></a></li>
 </ul>
 </li>
 <li><a href="#edit-shipping-package"><span>4.</span><span> Editing a shipping package</span></a>
@@ -108,7 +108,7 @@
 <h2 id="search-order">1. Searching for an order in the shipping centre</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Open all orders in a list or select filters to narrow down the search results in the overview of the shipping centre 2.0. By default, the date range of the last 4 weeks is set.</p>
+<p>Open all orders in a list or select filters (<span class="icon "><i class="fa fa-filter  "></i></span>) to narrow down the search results in the overview of the shipping centre 2.0. By default, the date range of the last 4 weeks is set.</p>
 </div>
 <div class="paragraph instruction">
 <p>Searching for an order in the shipping centre:</p>
@@ -124,7 +124,7 @@
 <p><strong><em>Option 1:</em></strong> Click on <span class="icon "><i class="material-search"></i></span> to see a list of all orders.</p>
 </li>
 <li>
-<p><strong><em>Option 2:</em></strong> Click on <span class="icon "><i class="material-more_vert"></i></span> to narrow down the search results with filters.</p>
+<p><strong><em>Option 2:</em></strong> Click on <span class="icon "><i class="fa fa-filter  "></i></span> to narrow down the search results with filters.</p>
 </li>
 </ul>
 </div>
@@ -135,7 +135,7 @@
 </ol>
 </div>
 <table id="table-search-shipping-order" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Filter options for searching in the shipping centre</caption>
+<caption class="title">Table 1. Filter options in the shipping centre</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -152,12 +152,19 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enter an ID to search for the order with this exact ID.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Registered with</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a shipping service provider to only search for orders that have been registered with this shipping service provider.<br>
+<strong><em>Note:</em></strong> Select the option <strong>All</strong> to search for all orders.<br>
+Select the option <strong>Open</strong> to only search for orders that have not been registered yet.<br>
+Select the option <strong>Registered</strong> to search for all registered orders – regardless of the shipping service provider.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping service provider</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select a shipping service provider to only search for orders that use this shipping service provider.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping profile</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select one or more shipping profiles (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) to search for orders with this shipping profile.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a shipping profile to search for orders with this shipping profile.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order status</strong></p></td>
@@ -169,11 +176,11 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Client (store)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select one or more clients (shops) (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) to search for orders with this client (shop).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a client to search for orders with this client.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select one or more warehouses (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) to search for orders with this warehouse.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a warehouse to search for orders with this warehouse.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order date from / to</strong></p></td>
@@ -220,14 +227,14 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Click on the button <strong>Configure columns</strong> (<span class="icon "><i class="material-settings"></i></span>) to deactivate the columns that are already shown.</p>
+<p>Click on the button <strong>Configure columns</strong> (<span class="icon "><i class="material-settings"></i></span>) on the top right to deactivate the columns that are already shown in the overview.</p>
 </div>
 </div>
 </div><div class="sect1">
 <h2 id="group-function">2. Carrying out the group function</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once you have selected an order (<span class="icon blue"><i class="fa fa-check-square  "></i></span>), the different buttons of the group function become visible (see <a href="#image-group-function-overview">Figure 1</a>). Select at least 2 orders from the list to be able to use the group functions. <a href="#table-group-functions">Table 2</a> lists the elements from the group functions as well as their explanations.</p>
+<p>Once you have selected an order (<span class="icon blue"><i class="fa fa-check-square  "></i></span>), the different buttons become visible (see <a href="#image-group-function-overview">Figure 1</a>). Select at least 2 orders from the list to be able to use the group functions. <a href="#table-group-functions">Table 2</a> lists the elements from the group functions as well as their explanations.</p>
 </div>
 <div id="image-group-function-overview" class="imageblock">
 <div class="content">
@@ -304,6 +311,7 @@ The number of PDF files corresponds to the number of return service providers. T
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reset orders</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="psicon-reset"></i></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Resets all selected orders.<br>
+After clicking on <strong>Reset orders</strong>, a window opens.
 <strong><em>Note:</em></strong> Cancelling an order is only possible in the detail view of an order, <em>not</em> in the group function of the overview.<br>
 <strong><em>Tip:</em></strong> You can find a detailed <a href="#step-by-step">step-by-step guide</a> on how to reset orders below this table.</p></td>
 </tr>
@@ -629,7 +637,7 @@ The number of PDF files corresponds to the number of return service providers. T
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-<div class="title">Cancelling an order vs. resetting an order</div>
+<div class="title">Difference between cancelling and resetting an order</div>
 <div class="paragraph">
 <p>If you cancel an order in the shipping centre, the registration is cancelled in plentymarkets and also with the shipping service provider. This means that the order will <em>not</em> be picked up.</p>
 </div>
@@ -654,13 +662,13 @@ The number of PDF files corresponds to the number of return service providers. T
 <div class="ulist">
 <ul>
 <li>
+<p><a href="#display-order">Displaying an order</a></p>
+</li>
+<li>
 <p><a href="#register-order">Registering a single order</a></p>
 </li>
 <li>
-<p><a href="#show-registered-order">Showing the registered order</a></p>
-</li>
-<li>
-<p><a href="#retrieve-shipping-label">Retrieving a shipping label</a></p>
+<p><a href="#download-shipping-labels">Downloading the shipping labels</a></p>
 </li>
 <li>
 <p><a href="#reset-order">Resetting a single order</a></p>
@@ -669,73 +677,23 @@ The number of PDF files corresponds to the number of return service providers. T
 <p><a href="#cancel-order">Cancelling a single order</a></p>
 </li>
 <li>
-<p><a href="#polling">Creating a polling file for a single order</a></p>
+<p><a href="#polling-single-order">Creating a polling file for a single order</a></p>
 </li>
 <li>
-<p><a href="#register-return">Registering a return</a></p>
+<p><a href="#register-return">Registering a return for a single order</a></p>
 </li>
 <li>
 <p><a href="#retrieve-return-label">Retrieving the return label</a></p>
 </li>
 <li>
-<p><a href="#download-export-label">Downloading the export label</a></p>
+<p><a href="#download-export-labels">Downloading the export labels</a></p>
 </li>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="register-order">3.1. Registering a single order</h3>
+<h3 id="display-order">3.1. Displaying an order</h3>
 <div class="paragraph">
-<p>When you register your orders with a shipping service provider in the shipping centre, the orders are directly transmitted to the shipping service provider.</p>
-</div>
-<div class="paragraph">
-<p>For example, use the <a href="#search-order">filter settings</a> in the search of the shipping centre to only show orders of a certain shipping service provider in a certain order status. During the registration process, you receive messages from the shipping service provider informing you of both success and errors.</p>
-</div>
-<div class="paragraph">
-<p>Proceed as described below to register a single order.</p>
-</div>
-<div class="paragraph instruction">
-<p>Registering a single order:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to <strong>Orders » Shipping centre 2.0</strong>.</p>
-</li>
-<li>
-<p>Search for the order that you want to register by using the filter settings as described in the <a href="#search-order">Searching for an order in the shipping centre</a> chapter.<br>
-→ The orders that correspond to the search criteria entered are shown in the overview.</p>
-</li>
-<li>
-<p>Search for the order that you would like to register.</p>
-</li>
-<li>
-<p>Click on <strong>Register order</strong> (<span class="icon "><i class="psicon-outgoing_items"></i></span>) in the toolbar on the top.<br>
-→ The <strong>Register order</strong> window opens.</p>
-</li>
-<li>
-<p>Select the shipping service provider which you want to register the order with from the drop-down list.<br>
-<strong><em>Note:</em></strong> Depending on the selected shipping service provider, further drop-down lists with additional options are available. The additional options allow you to change the shipping profile for selected orders after they have been registered. They also allow you to change the shipping date so it is predated or postdated.</p>
-</li>
-<li>
-<p>Select the order status from the drop-down list which the order should switch to after having it successfully registered with the shipping service provider.<br>
-<strong><em>Note:</em></strong> You can link the switch to this order status with an <a href="/en/automation/event-procedures">event procedure</a> which, for example, automatically books outgoing items.</p>
-</li>
-<li>
-<p>Select the order status from the drop-down list which the order should switch to when the registration with the shipping service provider failed.<br>
-<strong><em>Note:</em></strong> You can link the switch to this order status with an <a href="/en/automation/event-procedures">event procedure</a>.</p>
-</li>
-<li>
-<p>Click on <strong>Register</strong>.<br>
-→ The order is registered with the shipping service provider.<br>
-→ The registered order receives a package number in the <strong>Packages</strong> area.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="display-registered-order">3.2. Displaying a registered order</h3>
-<div class="paragraph">
-<p>If you open an order that has already been registered, you will see the following 4 areas in the detail view:</p>
+<p>When you open an order, you will see the following 4 areas in the detail view:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -754,10 +712,76 @@ The number of PDF files corresponds to the number of return service providers. T
 </ul>
 </div>
 <div class="paragraph">
-<p>The different areas are described below.</p>
+<p>These areas are described in the following sub-chapters.</p>
 </div>
+<div class="paragraph">
+<p>Furthermore, the following functions in the order are available in the toolbar on the top:</p>
+</div>
+<div id="image-return-label" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/fulfilment/assets/shipping-centre-functions-single-order.png" alt="shipping centre functions single order" width="640" height="360">
+</div>
+<div class="title">Figure 2. Available functions in a single order</div>
+</div>
+<div class="paragraph">
+<p><a href="#table-functions-single-order">Table 3</a> lists the elements from the single order as well as their explanations.</p>
+</div>
+<table id="table-functions-single-order" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Available functions in a single order</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 11.1111%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element</th>
+<th class="tableblock halign-left valign-top">Symbol</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Register order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="psicon-outgoing_items"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registers the order.<br>
+After clicking on <strong>Register order</strong>, a window opens. Select the shipping service provider which you want to register the order with from the drop-down list.<br>
+Two further drop-down lists are available from which you can select the order statuses that the order should switch to in case of successful and failed registration.<br>
+<strong><em>Tip:</em></strong> You can find a detailed step-by-step-guide on how to register an order in the <a href="#register-order">Registering a single order</a> chapter.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Polling</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="psicon-file_extension_csv"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creates a polling file in CSV format.<br>
+After clicking on <strong>Polling</strong>, a window opens. Select the service provider and the order status from the drop-down lists.<br>
+<strong><em>Tip:</em></strong> You can find a detailed step-by-step-guide on how to create a polling file for a single order in the <a href="#polling-single-order">Creating a polling file for a single order</a> chapter.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Register return</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="psicon-order_return"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registers a return.<br>
+After clicking on <strong>Register return</strong>, a window opens. Select the return service provider from the drop-down list.<br>
+<strong><em>Note:</em></strong> If you installed and deployed the <strong>DHL Retoure Online</strong> plugin, different settings for generating the labels are visible: one label per order (one file), one label per package, one label per package (multiple files).<br>
+<strong><em>Tip:</em></strong> You can find a detailed step-by-step guide on how to register a return in the <a href="#register-return">Registering a return for a single order</a> chapter.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reset order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="psicon-reset"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resets the order.<br>
+After clicking on <strong>Reset order</strong>, a window opens to confirm your decision.<br>
+<strong><em>Tip:</em></strong> You can find a detailed step-by-step guide on how to reset an order in the <a href="#reset-order">Resetting a single order</a> chapter.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cancel order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="fa fa-times-circle  "></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cancels the order.<br>
+After clicking on <strong>Cancel order</strong>, a window opens to confirm your decision.<br>
+<strong><em>Tip:</em></strong> You can find a detailed step-by-step guide on how to cancel an order in the <a href="#cancel-order">Cancelling a single order</a> chapter.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect3">
-<h4 id="overview">3.2.1. Overview</h4>
+<h4 id="overview">3.1.1. Overview</h4>
 <div class="paragraph">
 <p>In the <strong>Overview</strong> area, you can see general information regarding the order’s registration status:</p>
 </div>
@@ -801,13 +825,13 @@ The number of PDF files corresponds to the number of return service providers. T
 </div>
 </div>
 <div class="sect3">
-<h4 id="recipient">3.2.2. Recipient</h4>
+<h4 id="recipient">3.1.2. Recipient</h4>
 <div class="paragraph">
 <p>In the <strong>Recipient</strong> area, you can see some delivery details such as the shipping region and the recipient’s address. Click on the contact ID to open the contact data record in the <strong>CRM » Contacts</strong> menu.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="packages">3.2.3. Packages</h4>
+<h4 id="packages">3.1.3. Packages</h4>
 <div class="paragraph">
 <p>The <strong>Packages</strong> area shows the following columns by default:</p>
 </div>
@@ -868,7 +892,7 @@ The number of PDF files corresponds to the number of return service providers. T
 </div>
 </div>
 <div class="sect3">
-<h4 id="returns">3.2.4. Returns</h4>
+<h4 id="returns">3.1.4. Returns</h4>
 <div class="paragraph">
 <p>The <strong>Returns</strong> area shows the following columns by default:</p>
 </div>
@@ -928,14 +952,65 @@ The number of PDF files corresponds to the number of return service providers. T
 </div>
 </div>
 <div class="sect2">
-<h3 id="retrieve-shipping-label">3.3. Retrieving a shipping label</h3>
+<h3 id="register-order">3.2. Registering a single order</h3>
 <div class="paragraph">
-<p>If the order has been successfully registered, the shipping label is visible in the <strong>Packages</strong> area. Click on <strong>Shipping label</strong> (<span class="icon "><i class="psicon-order_open"></i></span>) to save the label to your computer and print it.</p>
+<p>When you register your orders with a shipping service provider in the shipping centre, the orders are directly transmitted to the shipping service provider.</p>
+</div>
+<div class="paragraph">
+<p>For example, use the <a href="#search-order">filter settings</a> in the search of the shipping centre to only show orders of a certain shipping service provider in a certain order status. During the registration process, you receive messages from the shipping service provider informing you of both success and errors.</p>
+</div>
+<div class="paragraph">
+<p>Proceed as described below to register a single order.</p>
+</div>
+<div class="paragraph instruction">
+<p>Registering a single order:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Orders » Shipping centre 2.0</strong>.</p>
+</li>
+<li>
+<p>Search for the order that you want to register by using the filter settings as described in the <a href="#search-order">Searching for an order in the shipping centre</a> chapter.<br>
+→ The orders that correspond to the search criteria entered are shown in the overview.</p>
+</li>
+<li>
+<p>Search for the order that you would like to register.</p>
+</li>
+<li>
+<p>Click on <strong>Register order</strong> (<span class="icon "><i class="psicon-outgoing_items"></i></span>) in the toolbar on the top.<br>
+→ The <strong>Register order</strong> window opens.</p>
+</li>
+<li>
+<p>Select the shipping service provider which you want to register the order with from the drop-down list.<br>
+<strong><em>Note:</em></strong> Depending on the selected shipping service provider, further drop-down lists with additional options are available. The additional options allow you to change the shipping profile for selected orders after they have been registered. They also allow you to change the shipping date so it is predated or postdated.</p>
+</li>
+<li>
+<p>Select the order status from the drop-down list which the order should switch to after having it successfully registered with the shipping service provider.<br>
+<strong><em>Note:</em></strong> You can link the switch to this order status with an <a href="/en/automation/event-procedures">event procedure</a> which, for example, automatically books outgoing items.</p>
+</li>
+<li>
+<p>Select the order status from the drop-down list which the order should switch to when the registration with the shipping service provider failed.<br>
+<strong><em>Note:</em></strong> You can link the switch to this order status with an <a href="/en/automation/event-procedures">event procedure</a>.</p>
+</li>
+<li>
+<p>Click on <strong>Register</strong>.<br>
+→ The order is registered with the shipping service provider.<br>
+→ The registered order receives a package number in the <a href="#packages">Packages</a> area.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="download-shipping-labels">3.3. Downloading the shipping labels</h3>
+<div class="paragraph">
+<p>If the order has been successfully registered, the shipping label is visible in the <strong>Packages</strong> area. Click on <strong>Download shipping labels</strong> (<span class="icon "><i class="psicon-order_open"></i></span>) to save the label(s) to your computer and print them.</p>
 </div>
 <h4 id="_automatically_sending_shipping_labels_via_email" class="discrete">Automatically sending shipping labels via email</h4>
 <div class="paragraph">
-<p>You can automatically generate the shipping labels via an event procedure and send them via email. For this procedure, 2 event procedures are required.</p>
+<p>You can automatically generate the shipping labels via an event procedure and send them via email. For this procedure, 2 event procedures are required. These are listed below:</p>
 </div>
+<h5 id="_event_procedure_to_register_the_order" class="discrete">Event procedure to register the order</h5>
 <div class="paragraph">
 <p>First, set up an <a href="/en/automation/event-procedures">event procedure</a> that registers the order and returns the package number.</p>
 </div>
@@ -955,13 +1030,13 @@ The number of PDF files corresponds to the number of return service providers. T
 <p>Enter a name.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> as listed in <a href="#table-event-procedure-register-order">Table 3</a>.</p>
+<p>Select the <strong>event</strong> as listed in <a href="#table-event-procedure-register-order">Table 4</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings as listed in <a href="#table-event-procedure-register-order">Table 3</a>.</p>
+<p>Carry out the settings as listed in <a href="#table-event-procedure-register-order">Table 4</a>.</p>
 </li>
 <li>
 <p>Select the option <strong>Active</strong>.</p>
@@ -972,7 +1047,7 @@ The number of PDF files corresponds to the number of return service providers. T
 </ol>
 </div>
 <table id="table-event-procedure-register-order" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Event procedure for automatically registering orders</caption>
+<caption class="title">Table 4. Event procedure for automatically registering orders</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1005,6 +1080,7 @@ The number of PDF files corresponds to the number of return service providers. T
 </table>
 </div>
 </div>
+<h5 id="_event_procedure_for_the_email_despatch" class="discrete">Event procedure for the email despatch</h5>
 <div class="paragraph">
 <p>Now, set up another <a href="/en/automation/event-procedures">event procedure</a> that reacts to the successfully registered order and send the email with the shipping label to your customers.</p>
 </div>
@@ -1024,13 +1100,13 @@ The number of PDF files corresponds to the number of return service providers. T
 <p>Enter a name.</p>
 </li>
 <li>
-<p>Select the <strong>event</strong> as listed in <a href="#table-event-procedure-send-email-with-shipping-label">Table 4</a>.</p>
+<p>Select the <strong>event</strong> as listed in <a href="#table-event-procedure-send-email-with-shipping-label">Table 5</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the settings as listed in <a href="#table-event-procedure-send-email-with-shipping-label">Table 4</a>.</p>
+<p>Carry out the settings as listed in <a href="#table-event-procedure-send-email-with-shipping-label">Table 5</a>.</p>
 </li>
 <li>
 <p>Select the option <strong>Active</strong>.</p>
@@ -1041,7 +1117,7 @@ The number of PDF files corresponds to the number of return service providers. T
 </ol>
 </div>
 <table id="table-event-procedure-send-email-with-shipping-label" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Event procedure for automatically generating return labels</caption>
+<caption class="title">Table 5. Event procedure for automatically generating return labels</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -1087,7 +1163,7 @@ The number of PDF files corresponds to the number of return service providers. T
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-<div class="title">Cancelling an order vs. resetting an order</div>
+<div class="title">Difference between cancelling and resetting an order</div>
 <div class="paragraph">
 <p>If you cancel an order in the shipping centre, the registration is cancelled in plentymarkets and also with the shipping service provider. This means that the order will <em>not</em> be picked up.</p>
 </div>
@@ -1118,7 +1194,7 @@ The number of PDF files corresponds to the number of return service providers. T
 </li>
 <li>
 <p>Click on <strong>Reset order</strong> (<span class="icon "><i class="psicon-reset"></i></span>) in the toolbar on the top.<br>
-→ A window opens and you need to confirm your decision. Note the reference in the box <a href="#difference-reset-cancel">Cancelling an order vs.  resetting an order</a> at the beginning of this chapter.</p>
+→ A window opens and you need to confirm your decision. Note the reference in the box <a href="#difference-reset-cancel">Difference between cancelling and resetting an order</a> at the beginning of this chapter.</p>
 </li>
 <li>
 <p>Confirm your decision by clicking on <strong>Reset order</strong>.<br>
@@ -1139,7 +1215,7 @@ The number of PDF files corresponds to the number of return service providers. T
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-<div class="title">Cancelling an order vs. resetting an order</div>
+<div class="title">Difference between cancelling and resetting an order</div>
 <div class="paragraph">
 <p>If you cancel an order in the shipping centre, the registration is cancelled in plentymarkets and also with the shipping service provider. This means that the order will <em>not</em> be picked up.</p>
 </div>
@@ -1181,8 +1257,8 @@ Note that you can only cancel an order in the detail view of a single order, but
 <p>Open the order.</p>
 </li>
 <li>
-<p>Click on <strong>Cancel order</strong> (<span class="icon "><i class="fa fa-times  "></i></span>) in the toolbar on the top.<br>
-→ A window opens and you need to confirm your decision. Note the reference in the box <a href="#difference-reset-cancel">Cancelling an order vs.  resetting an order</a> at the beginning of this chapter.</p>
+<p>Click on <strong>Cancel order</strong> (<span class="icon "><i class="fa fa-times-circle  "></i></span>) in the toolbar on the top.<br>
+→ A window opens and you need to confirm your decision. Note the reference in the box <a href="#difference-cancel-reset">Difference between cancelling and resetting an order</a> at the beginning of this chapter.</p>
 </li>
 <li>
 <p>Confirm your decision by clicking on <strong>Reset order</strong>.<br>
@@ -1192,7 +1268,7 @@ Note that you can only cancel an order in the detail view of a single order, but
 </div>
 </div>
 <div class="sect2">
-<h3 id="polling">3.6. Creating a polling file for a single order</h3>
+<h3 id="polling-single-order">3.6. Creating a polling file for a single order</h3>
 <div class="paragraph">
 <p>Create a polling file for the shipping service provider’s software. A polling file is necessary if no direct interface to the shipping service provider’s software exists, i.e. if shipping orders cannot be registered in the shipping centre 2.0. The polling file generated in plentymarkets is usually a CSV file.</p>
 </div>
@@ -1277,7 +1353,7 @@ Note that you can only cancel an order in the detail view of a single order, but
 <div class="content">
 <img src="{{plugin_path('PlentyManual')}}/images/fulfilment/assets/shipping-centre-return-label.png" alt="shipping centre return label" width="640" height="360">
 </div>
-<div class="title">Figure 2. Printing the return label</div>
+<div class="title">Figure 3. Printing the return label</div>
 </div>
 <div class="paragraph">
 <p>Besides the manual option, you can, for example, use DHL Retoure Online to automatically generate the return labels via an event procedure or a process:</p>
@@ -1344,7 +1420,7 @@ Note that you can only cancel an order in the detail view of a single order, but
 </div>
 </div>
 <div class="sect2">
-<h3 id="download-export-label">3.9. Downloading the export label</h3>
+<h3 id="download-export-labels">3.9. Downloading the export labels</h3>
 <div class="paragraph">
 <p>You need a customs declaration for shipments that you send to countries outside the European Union, the so-called <em>CN23 form</em>. Once you successfully registered an order where the country of delivery is outside the European Union, the export label is automatically available in the <strong>Packages</strong> area.</p>
 </div>
@@ -1364,7 +1440,7 @@ Note that you can only cancel an order in the detail view of a single order, but
 <p>Open the order.</p>
 </li>
 <li>
-<p>In the <strong>Packages</strong> area, click on <strong>Download export label</strong> (<span class="icon "><i class="psicon-data_export"></i></span>).<br>
+<p>In the <strong>Packages</strong> area, click on <strong>Download export labels</strong> (<span class="icon "><i class="psicon-data_export"></i></span>).<br>
 → The PDF file is generated and you can save it to your computer.</p>
 </li>
 </ol>
@@ -1404,7 +1480,7 @@ Note that you can only cancel an order in the detail view of a single order, but
 → The <strong>Edit package</strong> window opens.</p>
 </li>
 <li>
-<p>Carry out the desired changes. Note <a href="#table-edit-shipping-package">Table 5</a>.<br>
+<p>Carry out the desired changes. Note <a href="#table-edit-shipping-package">Table 6</a>.<br>
 <strong><em>Note:</em></strong> Select the option at the bottom if you want that the settings are transferred to all packages in the pallet.</p>
 </li>
 <li>
@@ -1413,16 +1489,18 @@ Note that you can only cancel an order in the detail view of a single order, but
 </ol>
 </div>
 <table id="table-edit-shipping-package" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Editing the shipping package in the package content list</caption>
+<caption class="title">Table 6. Editing the shipping package in the package content list</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Setting</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Explanation</p></td>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping package</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select the shipping package to assign a package size to the order.<br>
@@ -1481,7 +1559,7 @@ If you saved the length, width and height for the item, the volume is calculated
 → The <strong>Edit package</strong> window opens.</p>
 </li>
 <li>
-<p>Carry out the desired changes. Note <a href="#table-edit-shipping-package">Table 5</a>.<br>
+<p>Carry out the desired changes. Note <a href="#table-edit-shipping-package">Table 6</a>.<br>
 <strong><em>Note:</em></strong> Select the option at the bottom if you want that the settings are transferred to all packages in the pallet.</p>
 </li>
 <li>
