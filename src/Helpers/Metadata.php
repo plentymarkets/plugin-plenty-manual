@@ -2744,6 +2744,22 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "8050766045753360fc8d66bf0d9f88a4",
+								"path" => "daten/daten-importieren/import-typen/elasticSync-bankbuchungen",
+								"position" => 35,
+								"urlName" => "elasticSync-bankbuchungen",
+								"url" => "/daten/daten-importieren/sync-typen/elasticSync-bankbuchungen",
+								"level" => 4,
+								"title" => "Bankbuchungen",
+								"keywords" => "Zahlungsimport, Zahlungimport, Zahlungs-Import",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Bankbuchungen. Hier findest du folgende Informationen:",
+								"languageID" => "09WTKN1",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "be2376a9b35e0257c7c21da6a0d41796",
 								"path" => "daten/daten-importieren/import-typen/elasticSync-eigenschaften",
 								"position" => 40,
