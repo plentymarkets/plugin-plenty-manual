@@ -27192,6 +27192,22 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "1160709e3cb4c93dcdba00919141c538",
+								"path" => "data/importing-data/import-types/elasticSync-bank-postings",
+								"position" => 35,
+								"urlName" => "elasticSync-bank-postings",
+								"url" => "/en/data/importing-data/sync-types/elasticSync-bank-postings",
+								"level" => 4,
+								"title" => "Bank postings",
+								"keywords" => "import bank posting, banking import, posting import, bank posting",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Bank postings. The following information is available:",
+								"languageID" => "09WTKN1",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "a1d43ed5352a5a6d557457d5fe5ffc4d",
 								"path" => "data/importing-data/import-types/elasticSync-properties",
 								"position" => 40,
