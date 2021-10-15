@@ -1989,22 +1989,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "ac5e533b84727ce0dea7165fc0dde54b",
-				"path" => "payment/zahlungen-verwalten",
-				"position" => 20,
-				"urlName" => "zahlungen-verwalten",
-				"url" => "/payment/zahlungen-verwalten",
-				"level" => 2,
-				"title" => "Veraltet: Zahlungen verwalten",
-				"keywords" => "Zahlung, Zahlungen, Zahlungseingang, Zahlungseingänge, Zahlungszuordnung, Bankbuchung, Auftragszuordnung, Zahlung zuordnen, Zahlungsübersicht, Zahlung aufteilen, Teilzahlung",
-				"description" => "Payment in plentymarkets: Erfahre alles über Zahlungseingänge und Zahlungsausgänge.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Veraltet: Zahlungen verwalten. Hier findest du folgende Informationen:",
-				"languageID" => "JJC5DHB",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "d16658fbd486b1f1c5d35dc77e19bd42",
 				"path" => "payment/beta-zahlungen-verwalten-neu",
 				"position" => 25,
@@ -2293,6 +2277,22 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
+			],
+			[
+				"id" => "ac5e533b84727ce0dea7165fc0dde54b",
+				"path" => "payment/zahlungen-verwalten",
+				"position" => 150,
+				"urlName" => "zahlungen-verwalten",
+				"url" => "/payment/zahlungen-verwalten",
+				"level" => 2,
+				"title" => "Veraltet: Zahlungen verwalten",
+				"keywords" => "Zahlung, Zahlungen, Zahlungseingang, Zahlungseingänge, Zahlungszuordnung, Bankbuchung, Auftragszuordnung, Zahlung zuordnen, Zahlungsübersicht, Zahlung aufteilen, Teilzahlung",
+				"description" => "Payment in plentymarkets: Erfahre alles über Zahlungseingänge und Zahlungsausgänge.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Veraltet: Zahlungen verwalten. Hier findest du folgende Informationen:",
+				"languageID" => "JJC5DHB",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
