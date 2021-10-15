@@ -4,14 +4,21 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#10"><span>1.</span><span> New payments in the system</span></a></li>
-<li><a href="#20"><span>2.</span><span> Searching for payments</span></a></li>
-<li><a href="#30"><span>3.</span><span> Assigning payments</span></a></li>
-<li><a href="#40"><span>4.</span><span> Detaching payments</span></a></li>
-<li><a href="#50"><span>5.</span><span> Splitting payments</span></a></li>
-<li><a href="#60"><span>6.</span><span> Deleting payments</span></a></li>
-<li><a href="#70"><span>7.</span><span> Carrying out the group function</span></a></li>
-<li><a href="#80"><span>8.</span><span> Further information in the detail view</span></a></li>
+<li><a href="#basic-settings"><span>1.</span><span> Carrying out basic settings for incoming payments</span></a></li>
+<li><a href="#10"><span>2.</span><span> New payments in the system</span></a>
+<ul class="sectlevel2">
+<li><a href="#15"><span>2.1.</span><span> Manually booking payments</span></a></li>
+<li><a href="#_importing_bank_postings"><span>Importing bank postings</span></a></li>
+</ul>
+</li>
+<li><a href="#20"><span>3.</span><span> Searching for payments</span></a></li>
+<li><a href="#30"><span>4.</span><span> Assigning payments</span></a></li>
+<li><a href="#40"><span>5.</span><span> Detaching payments</span></a></li>
+<li><a href="#50"><span>6.</span><span> Splitting payments</span></a></li>
+<li><a href="#60"><span>7.</span><span> Deleting payments</span></a></li>
+<li><a href="#70"><span>8.</span><span> Carrying out the group function</span></a></li>
+<li><a href="#80"><span>9.</span><span> Further information in the detail view</span></a></li>
+<li><a href="#100"><span>10.</span><span> Displaying incoming payments on the dashboard</span></a></li>
 </ul>
 </div>
         </div>
@@ -19,17 +26,88 @@
 </aside>
 
 <main id="main">
-    <h1>Test phase: Managing payments</h1><div id="preamble">
+    <h1>Managing payments</h1><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This page of the manual describes and explains how to manage payments working with the new user interface. The functions explained here are currently in a test phase, but the old user interface is also still available at the same time. Note that the information in chapter <a href="/en/payment/managing-payments#10">Carrying out basic settings for incoming payments</a> as well as those in chapter <a href="/en/payment/managing-payments#20">Booking payments</a> also apply when you work with the new user interface.</p>
+<p>This page of the manual describes and explains how to manage payments. You receive payments in your system from different sources. Independent of the payment source, you can manage all incoming payments in the <strong>Orders » Payments</strong> menu.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="10">1. New payments in the system</h2>
+<h2 id="basic-settings">1. Carrying out basic settings for incoming payments</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>After payments are booked in plentymarkets, they are automatically assigned to orders with a fuzzy search. If the payment cannot be assigned to the order automatically, then you can still manually assign the payment to an order. Payments are edited in the <strong>Orders » Payments</strong> menu. Unassigned payments are marked with a <strong>green arrow</strong> (<span class="icon green"><i class="psicon-payment_assign"></i></span>).
+<p>First, carry out basic settings for automatically assigning payments to orders and for giving goodwill on payments. Default settings are already saved in the system. These default values are generally recommended. To change these settings, proceed as follows.</p>
+</div>
+<div class="paragraph instruction">
+<p>Changing the basic settings:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Payment » Incoming</strong>.</p>
+</li>
+<li>
+<p>Carry out the settings as described in <a href="#table-settings-incoming-payments">Table 1</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<table id="table-settings-incoming-payments" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Basic settings for incoming payments</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Match for automatic assignment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Choose between <strong>0.7</strong> (no exact match required for assignment) and <strong>1.0</strong> (exact match required). If you enter a relatively high value, then it may not be possible to assign some payments. Therefore, the value <strong>0.75</strong> is set by <strong>default</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Goodwill on payment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can ensure that, e.g. internal decimal amounts (starting with the third decimal place) do not lead to incorrect bookings by entering a <strong>minimum amount</strong> of <strong>0.01</strong> (default setting). If you set <strong>0.05</strong>, then amounts that are incorrect by 5 cents or less will still be treated as correct bookings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-import-customer-bank-data">Import customer bank data</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select whether or not the customer’s <strong>bank data</strong> should be <strong>imported</strong> and saved in the <strong>customer data</strong> when incoming payments are received.<br>
+<strong><em>Important:</em></strong> The customer has to agree to having their bank data imported and saved. Therefore, this function is set to <strong>No</strong> by default. Before activating the function, contact a legal adviser to discuss the legality of doing so. You may need to consider the laws that relate to several different countries of delivery.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Only assign incoming PayPal payment to corresponding eBay listing if attached to the payment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Note:</em></strong> This functionality only applies to the old PayPal interface for Callisto online shops in plentymarkets, <strong>not</strong> for the PayPal plugin!<br>
+If you use eBay listings in combination with the payment method PayPal, we recommend to set this option to <strong>Yes</strong>. This way, it is made sure that incoming payments effected via PayPal are correctly assigned to the corresponding eBay order. If an eBay listing ID is attached to a PayPal payment and the option is activated, the payment is only assigned to the order with a corresponding eBay listing ID.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ignore WooCommerce PayPal transactions</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Note:</em></strong> This functionality only applies to the old PayPal interface for Callisto online shops in plentymarkets, <strong>not</strong> for the PayPal plugin!<br>
+Select the option <strong>Yes</strong> to deactivate the automatic import of payments belonging to orders imported from WooCommerce with the payment method PayPal.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exclude orders with the following payment methods from automatic assignment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select those payment methods for which no payments are incoming. They are then ignored for payment assignment.<br>
+Use the keyboard to select multiple payment methods.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exclude orders with the following referrers from automatic assignment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select those referrers for which no payments are incoming. They are then ignored for payment assignment.<br>
+Use the keyboard to select multiple referrers.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="10">2. New payments in the system</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Payments can either come into your system automatically or they can be booked manually. After payments are booked in plentymarkets, they are automatically assigned to orders with a fuzzy search. If the payment cannot be assigned to the order automatically, then you can still manually assign the payment to an order. Edit and manage payments in the <strong>Orders » Payments</strong> menu. Unassigned payments are marked with a <strong>green arrow</strong> (<span class="icon green"><i class="psicon-payment_assign"></i></span>).<br>
 In this overview, payments are displayed in your <a href="/en/payment/currencies#30">system currency</a>. If the payment is in a different currency, this amount is displayed in brackets next to the system currency.</p>
 </div>
 <div class="admonitionblock tip">
@@ -47,9 +125,93 @@ In this overview, payments are displayed in your <a href="/en/payment/currencies
 </tr>
 </tbody></table>
 </div>
+<div class="sect2">
+<h3 id="15">2.1. Manually booking payments</h3>
+<div class="paragraph">
+<p>In order to manually book a payment or partial payment in the order, e.g. because the customer picked up the item and paid the item in cash or because a payment cannot be found in the overview, proceed as follows.</p>
+</div>
+<div class="paragraph instruction">
+<p>Booking a payment:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Orders » Edit orders</strong>.</p>
+</li>
+<li>
+<p>Open the order for which you want to book a payment.<br>
+→ The <strong>Overview</strong> tab opens.</p>
+</li>
+<li>
+<p>Open the <strong>Payment</strong> tab.</p>
+</li>
+<li>
+<p>Click on <strong>Book payment</strong>.<br>
+→ The <strong>Book payment</strong> window opens.</p>
+</li>
+<li>
+<p>Carry out the settings according to the information given in <a href="#table-manually-booking-payments">Table 2</a>.</p>
+</li>
+<li>
+<p>Click on <strong>Book payment</strong>.<br>
+→ The payment is booked and displayed in the payment overview.</p>
+</li>
+</ol>
+</div>
+<table id="table-manually-booking-payments" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Manually booking payments</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Amount</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enter the full or partial amount that you want to book.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Credit/Debit</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select <strong>Credit</strong> or <strong>Debit</strong>. The selection depends on the pending amount. <strong>Credit</strong> is selected by default. <strong>Debit</strong> is selected for negative pending amounts, e.g. overpaid payments. This selection can be changed if needed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Currency</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the currency in which the payment should be made.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exchange rate</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If needed, enter a different exchange rate than what is currently configured in the system.<br>
+<strong><em>Important</em></strong>: In some cases, you may want to book a payment in a different currency than is currently selected for the payment (default currency), e.g. in US dollars. In this case, select the option <strong>USD</strong> under <strong>Currency</strong> and enter the amount received under <strong>Amount</strong>.<br>
+If you calculated the <a href="/en/payment/currencies#20">exchange rate</a> in the <strong>Setup » Orders » Payment » Currencies</strong> menu and you want to use this exchange rate, then you do not have to enter anything under <strong>Exchange rate</strong>, because the exchange rate is automatically used. You will need to make an entry under <strong>Exchange rate</strong> if you want to use a different exchange rate for this payment, e.g. the exchange rate at the exact moment when the payment is received. In this case, enter the exchange rate that is applicable at this moment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Designated use</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The order ID is entered by default. The entry can be changed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Incoming payment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a date for the incoming payment. The current date is selected by default.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can recognise manually booked payments by the <strong>Manual booking</strong> icon.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_importing_bank_postings">Importing bank postings</h3>
+<div class="paragraph">
+<p>The payment method cash in advance and other transfers take the form of bank postings. With these payment methods, the payments that were booked into your bank account have to be reported to the system and then they need to be assigned to the orders. Use the import type <a href="#data/importing-data/sync-types/elasticSync-bank-postings">Bank postings</a> to import your bank postings into your plentymarkets system. After the import, the bank postings are treated as other payments and are automatically assigned to orders. Accordingly, editing and managing of these payments is also done in the <strong>Orders » Payments</strong> menu.</p>
+</div>
+</div>
 </div>
 </div><div class="sect1">
-<h2 id="20">2. Searching for payments</h2>
+<h2 id="20">3. Searching for payments</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can search for payments in the <strong>Orders » Payments</strong> menu. This table is customisable. This means that you can decide which information is displayed in the table columns. To do so, proceed as follows:</p>
@@ -89,7 +251,7 @@ In this overview, payments are displayed in your <a href="/en/payment/currencies
 <p>Open the search (<span class="icon "><i class="fa fa-filter  "></i></span>).</p>
 </li>
 <li>
-<p>Select the <strong>Filters</strong> and take note of the explanations given in <a href="#table-searching-payments">Table 1</a>.</p>
+<p>Select the <strong>Filters</strong> and take note of the explanations given in <a href="#table-searching-payments">Table 3</a>.</p>
 </li>
 <li>
 <p>Click on <strong>Search</strong> to execute the search.</p>
@@ -100,7 +262,7 @@ In this overview, payments are displayed in your <a href="/en/payment/currencies
 <p>Additionally, you can use the filter bookmarks (<span class="icon "><i class="material-bookmarks"></i></span>) to save selected filters in the UI. These filters are then preselected every time you open the menu. Every user can decide individually which filters to save.</p>
 </div>
 <table id="table-searching-payments" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Searching for payments</caption>
+<caption class="title">Table 3. Searching for payments</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -193,7 +355,7 @@ In this overview, payments are displayed in your <a href="/en/payment/currencies
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="30">3. Assigning payments</h2>
+<h2 id="30">4. Assigning payments</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>There are two ways to assign unassigned payments to an order. In the <strong>Orders » Payments</strong> menu you can either assign payments directly in the overview or you open the detail view of a payment and assign it from there.
@@ -278,7 +440,7 @@ As soon as you assigned the payment only the selected match will be displayed in
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="40">4. Detaching payments</h2>
+<h2 id="40">5. Detaching payments</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>There are two ways to detach a payment from an order. In the <strong>Orders » Payments</strong> menu you can either detach payments directly in the overview or you open the detail view of a payment and detach it from there.
@@ -346,7 +508,7 @@ Proceed as follows to detach a payment in the overview.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="50">5. Splitting payments</h2>
+<h2 id="50">6. Splitting payments</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Manually booked incoming payments, imported bank postings as well as EBICS payments can be split. This means that the amount of a payment can be split and assigned to several orders. This is done in the <strong>Orders » Payments</strong> menu. Note that Provisional postings cannot be split. To split payments, proceed as follows.</p>
@@ -454,7 +616,7 @@ Proceed as follows to detach a payment in the overview.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="60">6. Deleting payments</h2>
+<h2 id="60">7. Deleting payments</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can only delete payments when they are not assigned to an order. Deleting a payment can be carried out either directly in the overview table or in the detail view of an opened payment. Proceed as follows to delete a payment in the overview.</p>
@@ -503,7 +665,7 @@ Proceed as follows to detach a payment in the overview.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="70">7. Carrying out the group function</h2>
+<h2 id="70">8. Carrying out the group function</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can edit several payments at the same time by using the group function. In order to use the group function, at least one payment has to be selected. Use the search to filter for the required payments. After selecting the payments you can either auto-assign them all at the same time or delete them all at the same time. Remember that only unassigned payments can be deleted.</p>
@@ -539,7 +701,7 @@ Proceed as follows to detach a payment in the overview.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="80">8. Further information in the detail view</h2>
+<h2 id="80">9. Further information in the detail view</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Besides the functions <a href="/en/payment/beta-managing-payments#30">assigning payments</a>, <a href="/en/payment/beta-managing-payments#40">detaching payments</a> and <a href="/en/payment/beta-managing-payments#69">deleting payments</a>, the detail view offers you an overview of all information connected to a payment. Info boxes provide a quick overview of the most important information. The <strong>Amount</strong> info box is displayed in green when the amount is above zero, otherwise it is grey. The status is also expressed by the infobox colour:</p>
@@ -565,6 +727,34 @@ Proceed as follows to detach a payment in the overview.</p>
 </div>
 <div class="paragraph">
 <p>The <strong>Properties</strong> in the lower area show all information regarding the payment. These information usually exceed the information given in the details. Which information are shown in the Properties depends on the payment itself, for example which payment method was used or which information a payment provider transfers.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="100">10. Displaying incoming payments on the dashboard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can add the element <strong>Payments</strong> to the <a href="/en/welcome/customise-system#110">dashboard</a> of your plentymarkets back end. This element displays information about unassigned payments as well as about all incoming payments from yesterday and today. If you don’t want to use this element on your dashboard, you can get the same results by going to <strong>Orders » payments</strong> and using the search filters.</p>
+</div>
+<div class="paragraph">
+<p>It is recommended that you take a look at the unassigned payments before editing orders. You should see whether incoming <strong>cash in advance</strong> payments are among them, which can usually be assigned to an order without a doubt thanks to the amount and the booking text. This saves your customers long waiting times and it saves you unpleasant complaints.</p>
+</div>
+<div class="paragraph">
+<p>At least once a week, you should edit and sort out the unassigned payments so that you don’t lose track of them in your day-to-day business. For further information about assigning unassigned payments and bookings to orders, refer to <a href="/en/payment/beta-managing-payments#30">Assigning payments</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Tip</div>
+<div class="paragraph">
+<p>Sofortbanking payments will be confirmed via an interface immediately after the payment process. They will then appear again in the system as bank postings. You can delete these bank postings from the list of unassigned payments without concern because the orders in question have already been assigned to the payment.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div>
