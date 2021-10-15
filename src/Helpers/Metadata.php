@@ -26469,22 +26469,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "6e8e0d11be63ede72208487dfd1e71c1",
-				"path" => "payment/managing-payments",
-				"position" => 20,
-				"urlName" => "managing-payments",
-				"url" => "/en/payment/managing-payments",
-				"level" => 2,
-				"title" => "Old: Managing payments",
-				"keywords" => "payments, incoming payments, assigning payments, bank postings, split payment, splitting payments, partial payments",
-				"description" => "Payment in plentymarkets: Learn more about incoming and outgoing payments.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Old: Managing payments. The following information is available:",
-				"languageID" => "JJC5DHB",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "51aa9a2e9026c28bc125d161b8fd0860",
 				"path" => "payment/beta-managing-payments-new",
 				"position" => 25,
@@ -26773,6 +26757,22 @@ class Metadata {
 					]
 				],
 				"hasChildren" => true
+			],
+			[
+				"id" => "6e8e0d11be63ede72208487dfd1e71c1",
+				"path" => "payment/managing-payments",
+				"position" => 150,
+				"urlName" => "managing-payments",
+				"url" => "/en/payment/managing-payments",
+				"level" => 2,
+				"title" => "Old: Managing payments",
+				"keywords" => "payments, incoming payments, assigning payments, bank postings, split payment, splitting payments, partial payments",
+				"description" => "Payment in plentymarkets: Learn more about incoming and outgoing payments.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic Old: Managing payments. The following information is available:",
+				"languageID" => "JJC5DHB",
+				"children" => [],
+				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
