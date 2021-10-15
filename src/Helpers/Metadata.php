@@ -3756,6 +3756,38 @@ class Metadata {
 								"languageID" => "VEG94X9",
 								"children" => [],
 								"hasChildren" => false
+							],
+							[
+								"id" => "b791e75ee0f2180e282a70e7bdf993a4",
+								"path" => "daten/daten-exportieren/kataloge-verwalten/warenbestand-exportieren",
+								"position" => 300,
+								"urlName" => "warenbestand-exportieren",
+								"url" => "/daten/daten-exportieren/warenbestand-exportieren",
+								"level" => 4,
+								"title" => "Warenbestände exportieren",
+								"keywords" => "Warenbestand exportieren, Export-Format Warenbestand",
+								"description" => "Erfahre, wie du mithilfe von Katalogen Warenbestände aus deinem plentymarkets System exportierst.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Warenbestände exportieren. Hier findest du folgende Informationen:",
+								"languageID" => "2HVY25P",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "1aa618e60eb3a95d695e422b29658a83",
+								"path" => "daten/daten-exportieren/kataloge-verwalten/warenbewegung-exportieren",
+								"position" => 400,
+								"urlName" => "warenbewegung-exportieren",
+								"url" => "/daten/daten-exportieren/warenbewegung-exportieren",
+								"level" => 4,
+								"title" => "Warenbewegungen exportieren",
+								"keywords" => "Warenbewegung exportieren, Export-Format Warenbewegung",
+								"description" => "Erfahre, wie du mithilfe von Katalogen Warenbewegungen aus deinem plentymarkets System exportierst.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Warenbewegungen exportieren. Hier findest du folgende Informationen:",
+								"languageID" => "JJUAVGJ",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
