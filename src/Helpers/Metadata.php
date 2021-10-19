@@ -13251,7 +13251,7 @@ class Metadata {
 						"url" => "/maerkte/preisportale/basic-price-search-engine",
 						"level" => 3,
 						"title" => "Basic Price Search Engine",
-						"keywords" => "Preissuchmaschine, Preise vergleichen, Exportformat Preissuchmaschine",
+						"keywords" => "Preissuchmaschine, Preise vergleichen, Preissuchmaschine, Export zu Preissuchmaschinen, Preissuchmaschinen, Export zu Preissuchmaschinen, Export für Preissuchmaschinen",
 						"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung mit dem Plugin Basic Price Search Engine in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Basic Price Search Engine. Hier findest du folgende Informationen:",
