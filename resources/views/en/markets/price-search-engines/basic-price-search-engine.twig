@@ -4,9 +4,23 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#100"><span>1.</span><span> Setting up the data format BasicPriceSearchEngine-Plugin in plentymarkets</span></a></li>
-<li><a href="#200"><span>2.</span><span> Available columns for the export file</span></a></li>
-<li><a href="#300"><span>3.</span><span> License</span></a></li>
+<li><a href="#100-0"><span>1.</span><span> Alternative 1 (deprecated): Setting up the export with the export format BasicPriceSearchEngine-Plugin</span></a>
+<ul class="sectlevel2">
+<li><a href="#100-1"><span>1.1.</span><span> Installing the BasicPriceSearchEngine plugin</span></a></li>
+<li><a href="#100-1"><span>1.2.</span><span> Setting up the format BasicPriceSearchEngine-Plugin in plentymarkets</span></a></li>
+<li><a href="#200"><span>1.3.</span><span> Available columns for the export format</span></a></li>
+</ul>
+</li>
+<li><a href="#100-0"><span>2.</span><span> Alternative 2 (recommended): Export with catalogue format</span></a>
+<ul class="sectlevel2">
+<li><a href="#902"><span>2.1.</span><span> Creating a catalogue</span></a></li>
+<li><a href="#file-format"><span>2.2.</span><span> Carrying out the format settings</span></a></li>
+<li><a href="#filter-export"><span>2.3.</span><span> Setting filters for export</span></a></li>
+<li><a href="#data-field-mappings"><span>2.4.</span><span> Mapping data fields in the catalogue</span></a></li>
+<li><a href="#recommended-mappings"><span>2.5.</span><span> Recommendations for data field mappings</span></a></li>
+<li><a href="#catalogue-url"><span>2.6.</span><span> Transferring the catalogue data to the price search engine</span></a></li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -16,25 +30,193 @@
 <main id="main">
     <h1>Basic Price Search Engine</h1><div id="preamble">
 <div class="sectionbody">
-<div class="admonitionblock important">
+<div class="paragraph">
+<p>Use the format <strong>Basic Price Search Engine</strong> to export item data for any price search engine. You can use it to map the item data expected by most price search engines.</p>
+</div>
+<div class="admonitionblock tip">
 <table>
 <tbody><tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="title">Download the Basic Price Search Engine plugin</div>
-<div class="paragraph">
-<p>In order to be able to export item data with the Basic Price Search Engine plugin, the plugins <a href="https://marketplace.plentymarkets.com/en/plugins/channels/price-comparisons/elasticexportbasicpricesearchengine_4777" target="_blank" rel="noopener">Basic Price Search Engine</a> and <a href="https://marketplace.plentymarkets.com/en/plugins/sales/marktplaetze/elasticexport_4763" target="_blank" rel="noopener">Elastic export</a> are required. You can download the plugins in the <a href="https://marketplace.plentymarkets.com/en" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
-</div>
+Before setting up the export, you might want to check if plentymarkets or a third party provides a direct interface to the price search engine on which you want to sell your products. You can find additional integrations in the link::https://marketplace.plentymarkets.com/plugins/sales/preisportale[plentyMarketplace].
 </td>
 </tr>
 </tbody></table>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="100">1. Setting up the data format BasicPriceSearchEngine-Plugin in plentymarkets</h2>
+<h2 id="100-0">1. <em>Alternative 1 (deprecated):</em> Setting up the export with the export format BasicPriceSearchEngine-Plugin</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+No new features are planned for the Elastic Export and the export formats. As such, we recommend that you <a href="#900">create catalogues instead</a>.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>In the past, the export format BasicPriceSearchEngine for the Elastic Export was used to export item data to price search engines. This export method is deprecated and has been replaced with the catalogue export. At the moment, you can still use the export format BasicPriceSearchEngine. However, this technology is no longer maintained and will not be supported for much longer.</p>
+</div>
+<div class="sect2">
+<h3 id="100-1">1.1. Installing the BasicPriceSearchEngine plugin</h3>
+<div class="paragraph">
+<p>To export item data to price search engines, you need the following plugins:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://marketplace.plentymarkets.com/en/plugins/sales/marktplaetze/elasticexport_4763" target="_blank" rel="noopener">Elastic export</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+<li>
+<p><a href="https://marketplace.plentymarkets.com/en/plugins/channels/preisportale/elasticexportbasicpricesearchengine_4777" target="_blank" rel="noopener">Basic Price Search Engine</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can download these plugins in the <a href="https://marketplace.plentymarkets.com/en" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Adding and installing the plugin <strong>Elastic Export</strong> in your plentymarkets system</div>
+<div class="content">
+<div class="paragraph instruction">
+<p>Adding plugin to the system:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » plentyMarketplace</strong>.<br>
+→ The marketplace opens in a new tab.</p>
+</li>
+<li>
+<p>Navigate to the plugin <strong>Elastic Export</strong>.<br>
+<strong><em>Tip:</em></strong> Either use the search function or open the category <strong>Plugins » Sales » Marketplaces</strong>.</p>
+</li>
+<li>
+<p>Open the detail view of the plugin.</p>
+</li>
+<li>
+<p>In the column to the right, click on <strong>Go to checkout</strong>.<br>
+→ The <strong>Checkout</strong> window opens.</p>
+</li>
+<li>
+<p>Read and accept the General Terms and Conditions.</p>
+</li>
+<li>
+<p>Click on <strong>Order now</strong>.<br>
+→ Wait a few minutes before installing the plugin.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Installing plugins:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » Plugin set overview</strong>.</p>
+</li>
+<li>
+<p>Click on the plugin set in which you want to install the plugin.<br>
+→ The plugin set opens.</p>
+</li>
+<li>
+<p>Click on <span class="icon green"><i class="fa fa-plus-square  "></i></span> <strong>Add new plugin</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Elastic Export</strong> from the plugin list.</p>
+</li>
+<li>
+<p>Click on <span class="icon purple"><i class="fa fa-download  "></i></span> <strong>Install</strong>.<br>
+→ The plugin is installed.<br>
+→ The plugin set is shown.</p>
+</li>
+<li>
+<p>Switch the plugin active (<span class="icon blue"><i class="fa fa-toggle-on  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the plugin set.<br>
+<strong><em>Tip:</em></strong> Problems saving the plugin set? Click on <strong>Open details</strong> to show additional information.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Adding and installing the plugin <strong>Basic Price Search Engine</strong> in your plentymarkets system</div>
+<div class="content">
+<div class="paragraph instruction">
+<p>Adding plugin to the system:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » plentyMarketplace</strong>.<br>
+→ The marketplace opens in a new tab.</p>
+</li>
+<li>
+<p>Navigate to the plugin <strong>Basic Price Search Engine</strong>.<br>
+<strong><em>Tip:</em></strong> Either use the search function or open the category <strong>Plugins » Sales » Marketplaces</strong>.</p>
+</li>
+<li>
+<p>Open the detail view of the plugin.</p>
+</li>
+<li>
+<p>In the column to the right, click on <strong>Go to checkout</strong>.<br>
+→ The <strong>Checkout</strong> window opens.</p>
+</li>
+<li>
+<p>Read and accept the General Terms and Conditions.</p>
+</li>
+<li>
+<p>Click on <strong>Order now</strong>.<br>
+→ Wait a few minutes before installing the plugin.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Installing plugins:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » Plugin set overview</strong>.</p>
+</li>
+<li>
+<p>Click on the plugin set in which you want to install the plugin.<br>
+→ The plugin set opens.</p>
+</li>
+<li>
+<p>Click on <span class="icon green"><i class="fa fa-plus-square  "></i></span> <strong>Add new plugin</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Basic Price Search Engine</strong> from the plugin list.</p>
+</li>
+<li>
+<p>Click on <span class="icon purple"><i class="fa fa-download  "></i></span> <strong>Install</strong>.<br>
+→ The plugin is installed.<br>
+→ The plugin set is shown.</p>
+</li>
+<li>
+<p>Switch the plugin active (<span class="icon blue"><i class="fa fa-toggle-on  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the plugin set.<br>
+<strong><em>Tip:</em></strong> Problems saving the plugin set? Click on <strong>Open details</strong> to show additional information.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="100-1">1.2. Setting up the format BasicPriceSearchEngine-Plugin in plentymarkets</h3>
 <div class="paragraph">
 <p>By installing this plugin, you will receive the export format <strong>BasicPriceSearchEngine-Plugin</strong>. Use this export format to transfer item data to price search engines via the elastic export. You also need to install the plugin <strong>Elastic export</strong> from the plentyMarketplace first before you can use the format in plentymarkets.</p>
 </div>
@@ -100,7 +282,7 @@
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Item filters</strong></p></td>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Item filter</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Add item filters</strong></p></td>
@@ -136,14 +318,10 @@
 </tbody>
 </table>
 </div>
-</div><div class="sect1">
-<h2 id="200">2. Available columns for the export file</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="200">1.3. Available columns for the export format</h3>
 <div class="paragraph">
-<p>Open the export format <strong>BasicPriceSearchEngine-Plugin</strong> in the <strong>Data » Elastic export</strong> menu to download and edit the export file.</p>
-</div>
-<div class="paragraph">
-<p>Open the export format <strong>BasicPriceSearchEngine-Plugin</strong> in the <strong>Data » Elastic export</strong> menu to download and edit the export file.</p>
+<p>Open the export format <strong>BasicPriceSearchEngine plugin</strong> in the <strong>Data » Elastic export</strong> menu to download and edit the export file.</p>
 </div>
 <div class="paragraph instruction">
 <p>Downloading the export file:</p>
@@ -154,7 +332,7 @@
 <p>Go to <strong>Data » Elastic export</strong>.</p>
 </li>
 <li>
-<p>In the line of the format <strong>BasicPriceSearchEngine-Plugin</strong>, click on <strong>Download</strong> (<span class="icon purple"><i class="fa fa-download  "></i></span>).<br>
+<p>In the line of the format <strong>BasicPriceSearchEngine plugin</strong>, click on <strong>Download</strong> (<span class="icon purple"><i class="fa fa-download  "></i></span>).<br>
 → The file is downloaded and saved on your computer.</p>
 </li>
 <li>
@@ -170,8 +348,8 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong>Column header</strong></th>
-<th class="tableblock halign-left valign-top">*Explanation*</th>
+<th class="tableblock halign-left valign-top">Column header</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
 </thead>
 <tbody>
@@ -220,7 +398,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">model</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The <strong>model</strong> within <strong>Item » Edit item » [Open item] » [Open variation] » Settings » Basic settings</strong>.</p>
+<p>The model as per <strong>Item » Edit item » [Open item] » [Open variation] » Settings » Basic settings</strong>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -352,11 +530,90 @@
 </tbody>
 </table>
 </div>
+</div>
 </div><div class="sect1">
-<h2 id="300">3. License</h2>
+<h2 id="100-0">2. <em>Alternative 2 (recommended):</em> Export with catalogue format</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This project is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE. Find further information in the file <a href="https://github.com/plentymarkets/plugin-elastic-export-basic-price-search-engine/blob/master/LICENSE.md" target="_blank" rel="noopener">LICENSE.md</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+<p>Exporting using catalogue formats provides you with a long-term and flexible way to export your items for price search engines. You create one catalogue for each price search engine. You can create export files in CSV or in TXT formats. To export your item data to a price search engine, send the URL of the catalogue download to the price search engine.</p>
+</div>
+<div class="sect2">
+<h3 id="902">2.1. Creating a catalogue</h3>
+<div class="paragraph">
+<p>Item data is exported using a marketplace format. To export your items to a price search engine, create a catalogue in the <strong>Data » Catalogue</strong> menu. Link the data fields in the catalogue with item data saved in plentymarkets in the marketplace format afterwards.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Is this your first time working with catalogues? Then read up on the <a href="#en/data/exporting-data/managing-catalogues">basic concept of the plentymarkets catalogues first</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::../_textblocks/instructions/creating-catalogues.adoc[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="file-format">2.2. Carrying out the format settings</h3>
+<div class="paragraph">
+<p>Now carry out the format settings. This marketplace format allows you to export item data either as a CSV file or a TXT file. Select other format settings, such as field separators or text delimiters, based on the requirements of the price search engine.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Check the page <a href="/en/data/exporting-data/managing-catalogues#140">Managing catalogues</a> to find out more about the format settings.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filter-export">2.3. Setting filters for export</h3>
+<div class="paragraph">
+<p>Now, set filters to only export specific items for the price search engine.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Check the page <a href="/en/data/exporting-data/managing-catalogues#257">Managing catalogues</a> to find out how to set filters.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="data-field-mappings">2.4. Mapping data fields in the catalogue</h3>
+<div class="paragraph">
+<p>Now, map the data fields in the catalogue to the item data saved in plentymarkets.</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::../_textblocks/instructions/catalogue-map-data-fields.adoc[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="recommended-mappings">2.5. Recommendations for data field mappings</h3>
+<div class="paragraph">
+<p>To help you with mapping your data fields for the catalogue, we have created a list of recommended data field mappings. Note that these mappings are recommendations only. Depending on how you manage your item data, other mappings may be more appropriate than the recommendation given here.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">List of recommended data field mappings</div>
+<div class="content">
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::_../textblocks/catalogue-mappings/basicpricesearchengine-recommended-mappings.adoc[]</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="catalogue-url">2.6. Transferring the catalogue data to the price search engine</h3>
+<div class="paragraph">
+<p>Unlike with other marketplace formats, you cannot just activate the catalogue to start the export to a price search engine. Instead, you need to make the URL of the catalogue export available to the price search engine.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Check the page <a href="/en/data/exporting-data/managing-catalogues#290">Managing catalogues</a> to find out how to generate the URL for the download.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
