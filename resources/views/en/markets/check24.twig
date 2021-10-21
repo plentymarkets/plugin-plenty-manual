@@ -5,31 +5,29 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#100"><span>1.</span><span> Registering with Check24</span></a></li>
-<li><a href="#200"><span>2.</span><span> Setting up Check24 in plentymarkets</span></a></li>
-<li><a href="#250"><span>3.</span><span> Activating the order referrer</span></a></li>
-<li><a href="#300"><span>4.</span><span> Setting the variation availability</span></a></li>
-<li><a href="#400"><span>5.</span><span> Defining SKUs</span></a></li>
-<li><a href="#600"><span>6.</span><span> Defining a sales price</span></a></li>
-<li><a href="#700"><span>7.</span><span> Activating the payment method</span></a></li>
-<li><a href="#500"><span>8.</span><span> Setting up the item export</span></a>
+<li><a href="#200"><span>2.</span><span> Overview of automatic data exchange</span></a></li>
+<li><a href="#200"><span>3.</span><span> Setting up the interface to Check24</span></a></li>
+<li><a href="#250"><span>4.</span><span> Activating the order referrer</span></a></li>
+<li><a href="#300"><span>5.</span><span> Setting the variation availability</span></a></li>
+<li><a href="#400"><span>6.</span><span> Optional: Defining SKUs</span></a></li>
+<li><a href="#600"><span>7.</span><span> Defining a sales price</span></a></li>
+<li><a href="#700"><span>8.</span><span> Activating the payment method</span></a></li>
+<li><a href="#500"><span>9.</span><span> Alternative 1: Item export with the Elastic Export (deprecated)</span></a></li>
+<li><a href="#900"><span>10.</span><span> Alternative 2: Item export with catalogue formats (test phase)</span></a>
 <ul class="sectlevel2">
-<li><a href="#500-1"><span>8.1.</span><span> Export format Check24DE</span></a>
+<li><a href="#170"><span>10.1.</span><span> Installing the catalogue format plugin</span></a></li>
+<li><a href="#902"><span>10.2.</span><span> Creating a catalogue</span></a></li>
+<li><a href="#903"><span>10.3.</span><span> Mapping data fields in the catalogue</span></a>
 <ul class="sectlevel3">
-<li><a href="#500-3"><span>8.1.1.</span><span> Creating the export format Check24DE</span></a></li>
-<li><a href="#500-2"><span>8.1.2.</span><span> Available columns of the export file for the export format Check24DE</span></a></li>
+<li><a href="#906"><span>10.3.1.</span><span> Recommendations for data field mappings</span></a></li>
 </ul>
 </li>
-<li><a href="#650"><span>8.2.</span><span> Export format Check24DE Fashion</span></a>
-<ul class="sectlevel3">
-<li><a href="#650-1"><span>8.2.1.</span><span> Creating the export format Check24DE Fashion</span></a></li>
-<li><a href="#650-2"><span>8.2.2.</span><span> Available columns of the data format Check24DE Fashion</span></a></li>
+<li><a href="#904"><span>10.4.</span><span> Activating the catalogue</span></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#950"><span>9.</span><span> Order import</span></a></li>
-<li><a href="#975"><span>10.</span><span> Sending shipping confirmations</span></a></li>
-<li><a href="#1000"><span>11.</span><span> Viewing the log</span></a></li>
+<li><a href="#950"><span>11.</span><span> Order import</span></a></li>
+<li><a href="#975"><span>12.</span><span> Sending shipping confirmations</span></a></li>
+<li><a href="#1000"><span>13.</span><span> Viewing the log</span></a></li>
 </ul>
 </div>
         </div>
@@ -54,13 +52,65 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="200">2. Setting up Check24 in plentymarkets</h2>
+<h2 id="200">2. Overview of automatic data exchange</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After installing and setting up the plugin, the automatic processes described in <a href="#data-exchange-check24">Table 1</a> become available:</p>
+</div>
+<table id="data-exchange-check24" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Frequency of data exchange</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Data</th>
+<th class="tableblock halign-left valign-top">Interval</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Item data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item export</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>once a day</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stock synchronisation</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>xxx</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Price synchronisation</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>xxx</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Order data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order import</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Hourly</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="200">3. Setting up the interface to Check24</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Carry out the following settings in plentymarkets in order to set up the interface to Check24.</p>
 </div>
 <div class="paragraph instruction">
-<p>Setting up Check24:</p>
+<p>Setting up the interface to Check24:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -93,7 +143,7 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="250">3. Activating the order referrer</h2>
+<h2 id="250">4. Activating the order referrer</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>An order referrer tags an order with the sales channel on which the order was generated. You also need to activate the order referrer in order to link items, characteristics etc. with Check24. Go to <strong>Setup » Orders » Order referrer</strong> to activate the order referrer.</p>
@@ -116,7 +166,7 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="300">4. Setting the variation availability</h2>
+<h2 id="300">5. Setting the variation availability</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You need to activate the variations that you want to sell on Check24. This is done in the <strong>Availability</strong> tab of a variation within the <strong>Item » Edit item » [Open item] » [Open variation]</strong> menu.</p>
@@ -268,7 +318,7 @@
 </div></div>
 </div>
 </div><div class="sect1">
-<h2 id="400">5. Defining SKUs</h2>
+<h2 id="400">6. <em>Optional:</em> Defining SKUs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>SKU are generated automatically when your variations are exported. However, you can also save market specific SKU for variations that you want to sell on this market instead.</p>
@@ -318,7 +368,7 @@ Only the most important settings for the import are described here. Is this your
 <div class="ulist">
 <ul>
 <li>
-<p>Create a CSV file with at least the columns described in <a href="#table-sku-import">Table 1</a>.</p>
+<p>Create a CSV file with at least the columns described in <a href="#table-sku-import">Table 2</a>.</p>
 </li>
 <li>
 <p>Create an import with the following settings:</p>
@@ -331,7 +381,7 @@ Only the most important settings for the import are described here. Is this your
 <p>Select the matching field <strong>Variation ID</strong>.</p>
 </li>
 <li>
-<p>Map the plentymarkets data fields as described in <a href="#table-sku-import">Table 1</a>.</p>
+<p>Map the plentymarkets data fields as described in <a href="#table-sku-import">Table 2</a>.</p>
 </li>
 </ul>
 </div>
@@ -339,7 +389,7 @@ Only the most important settings for the import are described here. Is this your
 </ul>
 </div>
 <table id="table-sku-import" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Recommended columns of the import file</caption>
+<caption class="title">Table 2. Recommended columns of the import file</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 50%;">
@@ -402,7 +452,7 @@ Only the most important settings for the import are described here. Is this your
 </div></div>
 </div>
 </div><div class="sect1">
-<h2 id="600">6. Defining a sales price</h2>
+<h2 id="600">7. Defining a sales price</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Sales prices define the conditions under which a variation is sold at a specific price and on a specific sales channel. That means that to sell variations on Check24, you need a sales price in which the order referrer Check24 is activated. The price that you save for this sales price is the price that will be shown on Check24.</p>
@@ -429,10 +479,10 @@ Only the most important settings for the import are described here. Is this your
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="700">7. Activating the payment method</h2>
+<h2 id="700">8. Activating the payment method</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As soon as an active account for check 24 exists, the payment method <strong>check 24</strong> is automatically available in your plentymarkets system. No separate configurations are needed for this. You just need to permit the payment method in one or more customer classes.</p>
+<p>As soon as an active account for Check24 exists, the payment method <strong>check24</strong> is automatically available in your plentymarkets system. No separate configurations are needed for this. You just need to permit the payment method in one or more customer classes.</p>
 </div>
 <div class="paragraph instruction">
 <p>Permitting the payment method in a customer class:</p>
@@ -446,7 +496,7 @@ Only the most important settings for the import are described here. Is this your
 <p>Open the customer class for which you want to permit the payment method.</p>
 </li>
 <li>
-<p>For the setting <strong>Permitted payment methods</strong>, activate the option check 24.</p>
+<p>For the setting <strong>Permitted payment methods</strong>, activate the option check24.</p>
 </li>
 <li>
 <p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.</p>
@@ -455,19 +505,59 @@ Only the most important settings for the import are described here. Is this your
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="500">8. Setting up the item export</h2>
+<h2 id="500">9. <em>Alternative 1:</em> Item export with the Elastic Export (deprecated)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section explains how to transfer your items to Check24. The item export for Check24DE is carried out by the elastic export. The data formats Check24DE and Check24DE Fashion are used for this. You need to install the plugins <strong>ElasticExport</strong> and <strong>ElasticExportCheck24DE</strong> to use these data formats. First, create the data format Check24DE. Then transfer the URL to Check24.</p>
+<p>This section explains how to transfer your items to Check24. In the old plugin, the item export for Check24DE is carried out by the elastic export. The data formats Check24DE and Check24DE Fashion are used for this.</p>
 </div>
-<div class="sect2">
-<h3 id="500-1">8.1. Export format Check24DE</h3>
-<div class="sect3">
-<h4 id="500-3">8.1.1. Creating the export format Check24DE</h4>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+No new features are planned for the Elastic Export and the export formats Check24 and Check24 Fashion. As such, we recommend that you <a href="#900">create catalogues for Check24 instead</a>.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Item export with the Elastic Export (deprecated)</div>
+<div class="content">
 <div class="paragraph">
-<p>Creating an export format:</p>
+<p>=== Installing plugins for the Elastic Export</p>
 </div>
-<div class="olist arabic">
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::../_textblocks/explanations/plugin-download.adoc[]</p>
+</div>
+<div class="paragraph">
+<p>First, create the export format Check24DE. Then transfer the URL to Check24.</p>
+</div>
+<div id="500-1" class="paragraph">
+<p>=== Export format Check24DE</p>
+</div>
+<div class="paragraph">
+<p>Create the export format <strong>Check24DE</strong> as described below. Note the following points:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you change one or more settings, then you will have to transfer the new link to Check24.</p>
+</li>
+<li>
+<p>A maximum of 4000 items is exported at once. If you export more items, then a second export is automatically carried out. To display the second export process, set the parameter <strong>&amp;Page</strong> = in the export link to <strong>2</strong>.</p>
+</li>
+<li>
+<p>Technical data is transferred to Check24 in the last column of the export file.</p>
+</li>
+</ul>
+</div>
+<div id="500-3" class="paragraph">
+<p>==== Creating the export format Check24DE</p>
+</div>
+<div class="olist arabic instruction">
+<div class="title">Creating the export format Check24DE:</div>
 <ol class="arabic">
 <li>
 <p>Go to <strong>Data » Elastic export</strong>.</p>
@@ -476,20 +566,18 @@ Only the most important settings for the import are described here. Is this your
 <p>Click on <strong>New export</strong>.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the explanations given in <a href="#settings-item-export-check24">Table 2</a>.</p>
+<p>Carry out the settings. Pay attention to the explanations given in <a href="#settings-item-export-check24">Table 3</a>.<br>
+<strong><em>Important:</em></strong> If you change one or more settings, then you will have to transfer the new link to Check24.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
-→ An ID is created for the export format <strong>Check24DE-Plugin</strong>.<br>
+→ The export format is given an ID.<br>
 → The export format is shown in the <strong>Exports</strong> overview.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>The following table lists details for settings, format settings and recommended item filters for the format <strong>Check24DE plugin</strong>.</p>
-</div>
 <table id="settings-item-export-check24" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Settings for the data format <strong>Check24DE-Plugin</strong></caption>
+<caption class="title">Table 3. Settings for the data format <strong>Check24DE-Plugin</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -748,30 +836,9 @@ Only the most important settings for the import are described here. Is this your
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock important">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="title">Export information</div>
-<div class="paragraph">
-<p>If you change one or more settings, then you will have to transfer the new link to Check24.</p>
+<div id="500-2" class="paragraph">
+<p>==== Check24DE: Available columns for the export file</p>
 </div>
-<div class="paragraph">
-<p>A maximum of 4000 items is exported at once. If you export more items, then a second export is automatically carried out. To display the second export process, set the parameter <strong>&amp;Page</strong> = in the export link to <strong>2</strong>.</p>
-</div>
-<div class="paragraph">
-<p>Technical data is transferred to Check24 in the last column of the export file.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="500-2">8.1.2. Available columns of the export file for the export format Check24DE</h4>
 <div class="paragraph">
 <p>Open the export format <strong>Check24DE-Plugin</strong> in the <strong>Data » Elastic export</strong> menu to download and edit the export file.</p>
 </div>
@@ -793,7 +860,7 @@ Only the most important settings for the import are described here. Is this your
 </ol>
 </div>
 <table id="columns-export-file-check24" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Available columns of the export file for the export format <strong>Check24DE-Plugin</strong></caption>
+<caption class="title">Table 4. Check24DE: Available columns for the export file</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -879,22 +946,30 @@ the client selected in the format settings.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="650">8.2. Export format Check24DE Fashion</h3>
-<div class="paragraph">
-<p>By installing this plugin you will receive the export format <strong>Check24DE Fashion</strong>. Use this format to exchange data between plentymarkets and Check24.de using the elastic export. You also need to install the plugin <strong>Elastic export</strong> from the plentyMarketplace first before you can use the format in plentymarkets.</p>
+<div id="650" class="paragraph">
+<p>=== Export format Check24DE Fashion</p>
 </div>
 <div class="paragraph">
-<p>Once both plugins are installed, you can create the <a href="/en/data/exporting-data/elastic-export">export format</a> <strong>Check24DE Fashion</strong>.</p>
+<p>Create the export format <strong>Check24DE Fashion</strong> as described below. Note the following points:</p>
 </div>
-<div class="sect3">
-<h4 id="650-1">8.2.1. Creating the export format Check24DE Fashion</h4>
-<div class="paragraph">
-<p>Creating an export format:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you change one or more settings, then you will have to transfer the new link to Check24.</p>
+</li>
+<li>
+<p>A maximum of 4000 items is exported at once. If you export more items, then a second export is automatically carried out. To display the second export process, set the parameter <strong>&amp;Page</strong> = in the export link to <strong>2</strong>.</p>
+</li>
+<li>
+<p>Technical data is transferred to Check24 in the last column of the export file.</p>
+</li>
+</ul>
 </div>
-<div class="olist arabic">
+<div id="650-1" class="paragraph">
+<p>==== Creating the export format Check24DE Fashion</p>
+</div>
+<div class="olist arabic instruction">
+<div class="title">Creating the export format Check24DE Fashion:</div>
 <ol class="arabic">
 <li>
 <p>Go to <strong>Data » Elastic export</strong>.</p>
@@ -903,20 +978,18 @@ the client selected in the format settings.</p></td>
 <p>Click on <strong>New export</strong>.</p>
 </li>
 <li>
-<p>Carry out the settings. Pay attention to the explanations given in <a href="#settings-item-export-check24-fashion">Table 4</a>.</p>
+<p>Carry out the settings. Pay attention to the explanations given in <a href="#settings-item-export-check24-fashion">Table 5</a>.<br>
+<strong><em>Important:</em></strong> If you change one or more settings, then you will have to transfer the new link to Check24.</p>
 </li>
 <li>
 <p><strong>Save</strong> the settings.<br>
-→ An ID is created for the export format <strong>Check24DE-Plugin</strong>.<br>
+→ The export format is given an ID.<br>
 → The export format is shown in the <strong>Exports</strong> overview.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>The following table lists details for settings, format settings and recommended item filters for the format <strong>Check24DE Fashion</strong>.</p>
-</div>
 <table id="settings-item-export-check24-fashion" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Settings for the data format <strong>Check24DE Fashion</strong></caption>
+<caption class="title">Table 5. Settings for the data format <strong>Check24DE Fashion</strong></caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 66.6667%;">
@@ -1175,11 +1248,11 @@ the client selected in the format settings.</p></td>
 </tr>
 </tbody>
 </table>
+<div id="650-2" class="paragraph">
+<p>==== Check24DE Fashion: Available columns for the export file</p>
 </div>
-<div class="sect3">
-<h4 id="650-2">8.2.2. Available columns of the data format Check24DE Fashion</h4>
 <div class="paragraph">
-<p>Open the export format <strong>Check24DE-Plugin</strong> in the <strong>Data » Elastic export</strong> menu to download and edit the export file.</p>
+<p>Open the export format <strong>Check24DE Fashion</strong> in the <strong>Data » Elastic export</strong> menu to download and edit the export file.</p>
 </div>
 <div class="paragraph instruction">
 <p>Downloading the export file:</p>
@@ -1190,7 +1263,7 @@ the client selected in the format settings.</p></td>
 <p>Go to <strong>Data » Elastic export</strong>.</p>
 </li>
 <li>
-<p>In the line of the format <strong>Check24DE-Plugin</strong>, click on <strong>Download</strong> (<span class="icon purple"><i class="fa fa-download  "></i></span>).<br>
+<p>In the line of the format <strong>Check24DE Fashion</strong>, click on <strong>Download</strong> (<span class="icon purple"><i class="fa fa-download  "></i></span>).<br>
 → The file is downloaded and saved on your computer.</p>
 </li>
 <li>
@@ -1199,7 +1272,7 @@ the client selected in the format settings.</p></td>
 </ol>
 </div>
 <table id="columns-export-file-check24-fashion" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Available columns of the data format <strong>Check24DE Fashion</strong></caption>
+<caption class="title">Table 6. Check24DE Fashion: Available columns for the export file</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1212,8 +1285,7 @@ the client selected in the format settings.</p></td>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Produktname<br>
-(product name)
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product name<br>
 (mandatory)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">According to the format setting <strong>Item name</strong> or from a characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Produktname</strong>.</p></td>
 </tr>
@@ -1229,18 +1301,15 @@ the client selected in the format settings.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Kategorie-Pfad<br>
-(category path)<br>
 (mandatory)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Category path of the default category of the client chosen in the settings above or from a characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion Property</strong> link: <strong>Kategorie-Pfad</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kurzbeschreibung<br>
-(short description)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Short description</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">According to the format setting <strong>Preview text</strong> or from a characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Kurzbeschreibung</strong>. Characteristics will be prioritised.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ausführliche Beschreibung<br>
-(detailed description)<br>
 (mandatory)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">According to the format setting <strong>Description</strong> or from a characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Ausführliche Beschreibung</strong>. Characteristics will be prioritised.</p></td>
 </tr>
@@ -1249,8 +1318,7 @@ the client selected in the format settings.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Amazon Sales Rank</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unverbindliche Preisempfehlung<br>
-(recommended retail price)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unverbindliche Preisempfehlung</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>Sales Price</strong> of type <strong>RRP</strong>.</p></td>
 </tr>
 <tr>
@@ -1276,47 +1344,39 @@ the client selected in the format settings.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bild-URL #1 - #20<br>
-(image url #1 - #20)<br>
 (mandatory)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>URL path</strong> of the item images according to the format setting <strong>Image</strong>. If colour variations exist, only images linked to the variation will be exported. Otherwise all images will be exported.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Absatzform<br>
-(heel form)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Absatzform</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Absatzform</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Schuhspitze<br>
-(shoe toe)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schuhspitze</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Schuhspitze</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Geschlecht<br>
-(gender)<br>
 (mandatory)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Geschlecht</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Altersgruppe<br>
-(age group)<br>
 (mandatory)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Altersgruppe</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Größe<br>
-(size)<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size<br>
 (mandatory)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute with the attribute link <strong>Size</strong> for Google Shopping or from a characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Größe</strong>. Attributes will be prioritised.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Größensystem<br>
-(size system)<br>
 (mandatory)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Größensystem</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Marke<br>
-(brand)<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brand<br>
 (mandatory)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>name of the manufacturer</strong> of the item or from a characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Marke</strong>. Characteristics will be prioritised. The <strong>external name</strong> saved in the <strong>Setup » Item » Manufacturers</strong> menu is preferred if existing.</p></td>
 </tr>
@@ -1326,85 +1386,69 @@ the client selected in the format settings.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute with the attribute link <strong>Material</strong> for Google Shopping or from a characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Material</strong>. Attributes will be prioritised.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Innenfutter<br>
-(lining)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Innenfutter</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Innenfutter</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Absatzhöhe<br>
-(heel hight)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Heel height</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Absatzhöhe</strong>. Save the measurement as well as the unit of measurement as the characteristics value for the item. <strong><em>Example:</em></strong> <code>2 cm</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sohlenmaterial<br>
-(sole material)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sohlenmaterial</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Sohlenmaterial</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Passform<br>
-(fit)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Passform</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Passform</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Verschluss<br>
-(fastening)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verschluss</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Verschluss</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Schafthöhe<br>
-(leg hight)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Leg height</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Schafthöhe</strong>. Save the measurement as well as the unit of measurement as the characteristics value for the item. <strong><em>Example:</em></strong> <code>5 cm</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Schaftweite<br>
-(leg girth)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Schaftweite</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Schaftweite</strong>. Save the measurement as well as the unit of measurement as the characteristics value for the item. <strong><em>Example:</em></strong> <code>5 cm</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Weite<br>
-(width)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weite</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Weite</strong>. Save the measurement as well as the unit of measurement as the characteristics value for the item.<br>
 <strong><em>Example:</em></strong> <strong>5 cm</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Muster<br>
-(pattern)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Muster</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute with the attribute link <strong>Muster</strong> for Google Shopping or from a characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Muster</strong>. Attributes will be prioritised.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Herstellerfarbe<br>
-(manufacturer colour)<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Herstellerfarbe (manufacturer colour)<br>
 (mandatory)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Attribute with the attribute link <strong>Farbe</strong> for Google Shopping or from a characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Herstellerfarbe</strong>. Attributes will be prioritised.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Innensohlenmaterial<br>
-(insole material)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Innensohlenmaterial</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Innensohlenmaterial</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Anlass<br>
-(occasion)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Occasion</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Anlass</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Saison<br>
-(season)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Season</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Saison</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sonstige<br>
-(other)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sonstige</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Sonstige</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Applikationen<br>
-(applications)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applikationen</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Applikationen</strong>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Modestil<br>
-(style)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modestil</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Characteristic of the type <strong>text</strong> or <strong>selection</strong> with the <strong>Check24 Fashion property</strong> link <strong>Modestil</strong>.</p></td>
 </tr>
 </tbody>
@@ -1413,21 +1457,941 @@ the client selected in the format settings.</p></td>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="950">9. Order import</h2>
+<h2 id="900">10. <em>Alternative 2:</em> Item export with catalogue formats (test phase)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With the <a href="xxxx" target="_blank" rel="noopener">new Check24 plugin</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>, item data is exported to Check24 in catalogue formats. Go to <strong>Data » Catalogues</strong> to create catalogues.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Is this your first time working with catalogues? Then read up on the <a href="#en/data/exporting-data/managing-catalogues">basic concept of the plentymarkets catalogues first</a>.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="170">10.1. Installing the catalogue format plugin</h3>
+<div class="paragraph">
+<p>To export item data to Check24 with catalogue formats, first install the <a href="xxxx" target="_blank" rel="noopener">new Check24 plugin</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> in your plentymarkets system. You can download the plugin in the <a href="https://marketplace.plentymarkets.com/en" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Adding and installing the plugin <strong>Check24</strong> in your plentymarkets system</div>
+<div class="content">
+<div class="paragraph instruction">
+<p>Adding plugin to the system:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » plentyMarketplace</strong>.<br>
+→ The marketplace opens in a new tab.</p>
+</li>
+<li>
+<p>Navigate to the plugin <strong>Check24</strong>.<br>
+<strong><em>Tip:</em></strong> Either use the search function or open the category <strong>Plugins » Sales » Marketplaces</strong>.</p>
+</li>
+<li>
+<p>Open the detail view of the plugin.</p>
+</li>
+<li>
+<p>In the column to the right, click on <strong>Go to checkout</strong>.<br>
+→ The <strong>Checkout</strong> window opens.</p>
+</li>
+<li>
+<p>Read and accept the General Terms and Conditions.</p>
+</li>
+<li>
+<p>Click on <strong>Order now</strong>.<br>
+→ Wait a few minutes before installing the plugin.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Installing plugins:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Plugins » Plugin set overview</strong>.</p>
+</li>
+<li>
+<p>Click on the plugin set in which you want to install the plugin.<br>
+→ The plugin set opens.</p>
+</li>
+<li>
+<p>Click on <span class="icon green"><i class="fa fa-plus-square  "></i></span> <strong>Add new plugin</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Check24</strong> from the plugin list.</p>
+</li>
+<li>
+<p>Click on <span class="icon purple"><i class="fa fa-download  "></i></span> <strong>Install</strong>.<br>
+→ The plugin is installed.<br>
+→ The plugin set is shown.</p>
+</li>
+<li>
+<p>Switch the plugin active (<span class="icon blue"><i class="fa fa-toggle-on  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the plugin set.<br>
+<strong><em>Tip:</em></strong> Problems saving the plugin set? Click on <strong>Open details</strong> to show additional information.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="902">10.2. Creating a catalogue</h3>
+<div class="paragraph">
+<p>Item data is exported with the marketplace formats <strong>Check24</strong> und <strong>Check24 Fashion</strong>. To export your items to Check24, create catalogues in the <strong>Data » Catalogue</strong> menu. Link the Check24 data fields with item data saved in plentymarkets in the marketplace format afterwards. After you activate the catalogue, the catalogue data is automatically exported to Check24 in regular intervals.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Is this your first time working with catalogues? Then read up on the <a href="#en/data/exporting-data/managing-catalogues">basic concept of the plentymarkets catalogues first</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::_textblocks/instructions/creating-catalogues.adoc[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="903">10.3. Mapping data fields in the catalogue</h3>
+<div class="paragraph">
+<p>Now, map the Check24 data fields to the item data saved in plentymarkets.</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::_textblocks/instructions/catalogue-map-data-fields.adoc[]</p>
+</div>
+<div class="sect3">
+<h4 id="906">10.3.1. Recommendations for data field mappings</h4>
+<div class="paragraph">
+<p>To help you with mapping your data fields for the catalogue, we have created a list of recommended data field mappings. Note that these mappings are recommendations only. Depending on how you manage your item data, other mappings may be more appropriate than the recommendation given here.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">List of recommended data field mappings for Check24</div>
+<div class="content">
+<table id="recommended-mappings" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Marketplace field</th>
+<th class="tableblock halign-left valign-top">Mandatory?</th>
+<th class="tableblock halign-left valign-top">Recommended plentymarkets mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>SKU</strong> of the variation for Check24.de</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Item » Manufacturer name</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MPNR<br>
+(Master Part Number Registry)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Variation</strong> » <strong>Model</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EAN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Barcode</strong> » [Select barcode of the type <strong>EAN</strong>]</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Item text » Name 1</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Item text » Name 2</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Item text » Name 3</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Item text » Item text</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Default category » Category ID</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Sales price</strong> » Sales price for Check24</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unit price: Price per unit of measure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Unit price information in the format "price / unit".<br>
+<strong><em>Example:</em></strong> 10.00 EUR / kilogram</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>URL path</strong> of the item depending on
+the selected client</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>URL path</strong> of the first image<br>
+* <strong>Image » Image</strong><br>
+<em>*Allowed file types:*</em> jpg, gif, bmp, png</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delivery time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Variation » Availability</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Own value with numerical value</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property linked to variation</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping costs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Variation » Default shipping costs</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PZN<br>
+(Pharmazentralnummer/pharmaceutical central number)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property linked to variation</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>One or more warehouses</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weight</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Variation » Net weight g</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">List of recommended data field mappings for Check24 Fashion</div>
+<div class="content">
+<table id="recommended-mappings" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Check24 field</th>
+<th class="tableblock halign-left valign-top">Mandatory?</th>
+<th class="tableblock halign-left valign-top">Recommended mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Item text » Name 1</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Item text » Name 2</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Item text » Name 3</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>SKU » Parent-SKU</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>SKU » Parent-SKU</strong> + Separator <strong>-</strong> + <strong>Attribute » [Select attribute] » Value ID</strong> if a colour attribute is saved for variations.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>SKU » Parent-SKU</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Default category » Category ID</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Short description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Item text » Preview text</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Long description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Item text » Item text</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon Sales Rank</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Character string</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RRP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Sales price</strong> of the type <strong>RRP</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EAN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Barcode</strong> » [Select barcode of the type <strong>GTIN</strong>]</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ASIN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>ASIN » [Select specific platform or All]</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MPNR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Variation » Model</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SKU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>SKU » SKU</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UPC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Barcode</strong> » [Select barcode of the type <strong>UPC</strong>]</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image URL #1 - #20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of heel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Toe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gender</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Age group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Attribute with the attribute link <strong>Size</strong> for Google Shopping</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size system</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brand</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Item » Manufacturer name</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Material</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Attribute with the attribute link <strong>Material</strong> for Google Shopping</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lining</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Heel height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong><br>
+Save the measurement as well as the unit of measurement as the property value for the variation. + <strong><em>Example:</em></strong> <code>2 cm</code></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sole material</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fastener</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Leg height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong><br>
+Save the measurement as well as the unit of measurement as the property value for the variation.<br>
+ <strong><em>Example:</em></strong> <strong>5 cm</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Leg width</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong><br>
+Save the measurement as well as the unit of measurement as the property value for the variation.<br>
+ <strong><em>Example:</em></strong> <code>5 cm</code></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shoe width</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong><br>
+Save the measurement as well as the unit of measurement as the property value for the variation.<br>
+ <strong><em>Example:</em></strong> <code>5 cm</code></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pattern</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Attribute with the attribute link <strong>Pattern</strong> for Google Shopping</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer colour</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Attribute with the attribute link <strong>Colour</strong> for Google Shopping</p>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insole</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Occasion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Season</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Other</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Appliques</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fashion style</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property of the type <strong>Text</strong> or <strong>Selection</strong>, language <strong>German</strong></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="904">10.4. Activating the catalogue</h3>
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::_textblocks/instructions/catalogue-activation.adoc[]</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="950">11. Order import</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>After the order import the order is set to status <strong>[5] cleared for shipping</strong>. The invoice address is always Check24. The customer’s address is the delivery address.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="975">10. Sending shipping confirmations</h2>
+<h2 id="975">12. Sending shipping confirmations</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>At the moment it is not possible to automatically send shipping confirmations via the interface. Contact Check24 to set up automatic shipping confirmations.</p>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1000">11. Viewing the log</h2>
+<h2 id="1000">13. Viewing the log</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <strong>Data » Log</strong> menu contains a history of processes that run via the check24 interface. Note that integrations and identifiers are only shown in the drop-down lists as filters after the process has run at least once.</p>
