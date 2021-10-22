@@ -29,7 +29,29 @@
 <li><a href="#data-field-mappings"><span>4.2.1.</span><span> Mapping data fields in the catalogue</span></a></li>
 </ul>
 </li>
-<li><a href="#special-mappings"><span>4.3.</span><span> Besonderheiten bei der Zuordnung von Datenfeldern</span></a></li>
+</ul>
+</li>
+<li><a href="#prepare-variations"><span>5.</span><span> Preparing variations</span></a>
+<ul class="sectlevel2">
+<li><a href="#mandatory-info"><span>5.1.</span><span> Saving mandatory item information</span></a></li>
+<li><a href="#link-category-property"><span>5.2.</span><span> Linking variations to the property value of the bol.com category</span></a></li>
+<li><a href="#300"><span>5.3.</span><span> Activating variations for the market</span></a></li>
+<li><a href="#211"><span>5.4.</span><span> Optional: Activating variations for Fulfillment by bol.com (FBB/LVB)</span></a></li>
+</ul>
+</li>
+<li><a href="#automate-orders"><span>6.</span><span> Automating order processing</span></a>
+<ul class="sectlevel2">
+<li><a href="#700"><span>6.1.</span><span> Automatically sending shipping confirmations</span></a></li>
+<li><a href="#900"><span>6.2.</span><span> Automatically sending cancellations</span></a></li>
+<li><a href="#800"><span>6.3.</span><span> Automatically sending the return status</span></a></li>
+<li><a href="#810"><span>6.4.</span><span> Sending information on direct returns to bol.com</span></a></li>
+</ul>
+</li>
+<li><a href="#activate-catalogue"><span>7.</span><span> Starting the item export: Activating catalogue export</span></a></li>
+<li><a href="#_troubleshooting"><span>8.</span><span> Troubleshooting</span></a>
+<ul class="sectlevel2">
+<li><a href="#1200"><span>8.1.</span><span> Check list: Why is my variation not exported?</span></a></li>
+<li><a href="#1000"><span>8.2.</span><span> Viewing log entries</span></a></li>
 </ul>
 </li>
 </ul>
@@ -865,52 +887,1173 @@ You can choose from the following mappings which are described in the info boxes
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="special-mappings">4.3. Besonderheiten bei der Zuordnung von Datenfeldern</h3>
-<div class="paragraph">
-<p>Every market structures item data differently. As such, there are some particularities for each market when mapping data fields. <a href="#special-mappings">Section 4.3</a> contains mapping information for important data fields for this market.</p>
 </div>
-<table id="special-mappings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Notes on mapping data fields</caption>
+</div><div class="sect1">
+<h2 id="prepare-variations">5. Preparing variations</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="mandatory-info">5.1. Saving mandatory item information</h3>
+<div class="paragraph">
+<p>In order to list a variation as an offer on bol.com, you need to save at least the settings described in <a href="#table-bol-variation-checklist">Table 3</a> for this variation.</p>
+</div>
+<table id="table-bol-variation-checklist" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Mandatory fields for the variation</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Marketplace data field</th>
-<th class="tableblock halign-left valign-top">plentymarkets data field</th>
+<th class="tableblock halign-left valign-top">Mandatory data</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bol_used</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EAN or ISBN</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If you want to sell used products on bol.com, you have to indicate the used condition of your properties by using the property <strong>bol_used</strong>.</p>
+<p>An EAN or an ISBN must be saved for the variation.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><em>Property is not linked to the variation</em> = The variation is new.</p>
+<p>In the <strong>Setup » Item » Barcode</strong> menu, an EAN or ISBN must be created and linked to the referrer bol.com.</p>
 </li>
 <li>
-<p><em>Property is linked to the variation</em> = The variation is used.</p>
+<p>The EAN/ISBN must be added to the <strong>Settings</strong> tab of the variation in the <strong>Barcode</strong> area and a barcode code must be entered.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Price</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A price must be saved for the variation.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The sales price must be activated for the referrer bol.com in the <strong>Setup » Item » Sales prices</strong>.</p>
+</li>
+<li>
+<p>The sales price must be added in the <strong>Settings</strong> tab in the <strong>Sales price</strong> area of the variation.</p>
+</li>
+<li>
+<p>A price must be saved for the sales price in the <strong>Settings</strong> tab in the <strong>Sales price</strong> area of the variation.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A name in the language <strong>Dutch</strong> must be saved for the variation.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A name must be saved in the plentymarkets data field that you mapped to the marketplace data field for the name.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item description</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A description in the language <strong>Dutch</strong> must be saved for the variation.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A description must be saved in the plentymarkets data field that you mapped to the marketplace data field for the description.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A manufacturer must be saved for the variation.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A manufacturer must be saved in the plentymarkets data field that you mapped to the marketplace data field for the manufacturer.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The variation must have at least one image.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At least one image must be linked in the <strong>Image</strong> tab of the variation.</p>
+</li>
+<li>
+<p>in the <strong>Images</strong> tab of the item, the option <strong>bol.com</strong> must be selected from the drop-down list <strong>Availability</strong>.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property value for bol.com category</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The variation must be linked to the property value for the bol.com category. The property <strong>bol.com category</strong> is created automatically when you complete the assistant.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the <strong>Properties</strong> tab of the variation, the property for the bol.com category must be linked in the <strong>Variation properties</strong> area. The property value has the same name as the bol.com category and the catalogue.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Availability</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The variation must be available for the market.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the <strong>Availability</strong> tab of the variation in the <strong>Markets</strong> area, the marketplace availabilities <strong>bol.com</strong> or <strong>bol.com FBB</strong> must be activated.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Referrer <strong>bol.com</strong> = You ship orders yourself.<br></p>
+</li>
+<li>
+<p>Referrer <strong>bol.com FBB</strong> = bol.com ships the order.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="link-category-property">5.2. Linking variations to the property value of the bol.com category</h3>
+<div class="paragraph">
+<p>After you created the first marketplace format for bol.com with the assistant, the property <strong>bol.com category</strong> is created in your plentymarkets system. For each bol.com category that you create a catalogue for, a new selection value is added to this property <strong>bol.com category</strong>. This property value has the same name as the bol.com category and the catalogue.</p>
+</div>
+<div class="paragraph">
+<p>In order for your variations to be exported in the appropriate catalogue, they have to be linked to the <strong>bol.com category</strong> property in the <strong>Properties</strong> tab of a variation.</p>
+</div>
+<div class="paragraph instruction">
+<p>Linking variation to bol.com category:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item]</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>Variations</strong> tab.</p>
+</li>
+<li>
+<p>Open the variation that should be linked.</p>
+</li>
+<li>
+<p>Open the <strong>Properties</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Variation properties</strong> area, select the property <strong>bol.com category</strong> from the <strong>Properties</strong> drop-down list and click on <strong>Add</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The property is added.</p>
+</li>
+<li>
+<p>Select a category from the drop-down list <strong>Value</strong> for the property <strong>bol.com category</strong>.<br>
+→ The variation will be exported in this catalogue.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="300">5.3. Activating variations for the market</h3>
+<div class="paragraph">
+<p>You need to activate the variations that you want to sell on bol.com. This is done in the <strong>Availability</strong> tab of a variation within the <strong>Item » Edit item » [Open item] » [Open variation]</strong> menu.</p>
+</div>
+<ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
+                                <a class="nav-link active" id="for-one-variation-tab" data-toggle="tab" href="#for-one-variation" role="tab" aria-controls="for-one-variation" aria-selected="true">For one variation</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="using-variation-group-function-tab" data-toggle="tab" href="#using-variation-group-function" role="tab" aria-controls="using-variation-group-function" aria-selected="false">Using variation group function</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="using-batch-processing-tab" data-toggle="tab" href="#using-batch-processing" role="tab" aria-controls="using-batch-processing" aria-selected="false">Using batch processing</a>
+                            </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="for-one-variation" role="tabpanel" aria-labelledby="for-one-variation-tab">
+<div class="paragraph instruction">
+<p>Making a variation available for bol.com:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.<br>
+→ The tab <strong>Settings</strong> of the variation is shown.<br>
+<strong><em>Tip:</em></strong> To sell all variations of an item on bol.com, carry out the settings for the item’s main variation. This activates the availability of all variations of the item.</p>
+</li>
+<li>
+<p>In the <strong>Availability</strong> area, activate the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>Availability</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Markets</strong> area, click in the selection field.<br>
+→ A list of all available markets is displayed.</p>
+</li>
+<li>
+<p>Activate the option <strong>bol.com</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The market is added.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.<br>
+→ The variation is available for bol.com.</p>
+</li>
+</ol>
+</div>
+</div><div class="tab-pane fade" id="using-variation-group-function" role="tabpanel" aria-labelledby="using-variation-group-function-tab">
+<div class="paragraph">
+<p>The <a href="/en/item/import-export-create/create/mass-processing#100">variation group function</a> allows you to edit several variations at once. You select the variations that you want to edit.</p>
+</div>
+<div class="paragraph instruction">
+<p>Making several variations available for bol.com using the variation group function:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item</strong>.</p>
+</li>
+<li>
+<p>Set the filter <strong>Table type</strong> to <strong>Variations</strong>.</p>
+</li>
+<li>
+<p>Choose additional <a href="/en/item/introduction/search#100">filters on the left</a> if needed and click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).</p>
+</li>
+<li>
+<p>Select (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) the variations to be edited from the overview on the right.</p>
+</li>
+<li>
+<p>Click on <strong>Variation group function</strong>.<br>
+→ The <strong>Variation group function</strong> window opens.</p>
+</li>
+<li>
+<p>Navigate to the area <strong>Market availability</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the left of the option <strong>bol.com</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the right of the option <strong>bol.com</strong>.</p>
+</li>
+<li>
+<p>Navigate to the area <strong>Availability</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the left of the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the right of the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="psicon-execute"></i></span> <strong>Execute</strong> to apply the settings.</p>
+</li>
+</ol>
+</div>
+</div><div class="tab-pane fade" id="using-batch-processing" role="tabpanel" aria-labelledby="using-batch-processing-tab">
+<div class="paragraph">
+<p><a href="/en/item/import-export-create/create/mass-processing#400">Batch processing</a> allows you to edit several variations at once. You use filters to limit which variations are edited.</p>
+</div>
+<div class="paragraph instruction">
+<p>Making several variations available for bol.com using batch processing:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Batch processing</strong>.</p>
+</li>
+<li>
+<p>Click on the tab <strong>Variations</strong> in the upper left corner.</p>
+</li>
+<li>
+<p>Use the <em>filters on the left</em> to specify which variations should be processed.</p>
+</li>
+<li>
+<p>Navigate to the area <strong>Market availability</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the left of the option <strong>bol.com</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the right of the option <strong>bol.com</strong>.</p>
+</li>
+<li>
+<p>Navigate to the area <strong>Availability</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the left of the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the right of the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="psicon-execute"></i></span> <strong>Apply</strong> to apply the settings to the variations.</p>
+</li>
+</ol>
+</div>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="211">5.4. <em>Optional:</em> Activating variations for Fulfillment by bol.com (FBB/LVB)</h3>
+<div class="paragraph">
+<p>bol.com orders can be fulfilled in two different ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fulfilment by Retailer (FBR) = You ship the order yourself.</p>
+</li>
+<li>
+<p>Fullfilment by bol.com (FBB/LVB) = bol.com ships your products.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong><em>Tip:</em></strong> Do you only offer used products or only new products? Then you can also specify the condition as an own value. To do so, instead of mapping the property <strong>bol_used</strong>, map the field <strong>Own value</strong> and enter a value in the field that opens.</p>
+<p>Note that plentymarkets does not fully support Fulfilment by bol.com. You can flag your item data for Fulfilment by bol.com when you export item data to the market. However, FBB orders and returns are not imported into plentymarkets. In addition, stock information cannot be retrieved from the bol.com fulfilment warehouse.</p>
+</div>
+<div class="paragraph">
+<p>To sell a variation with Fulfilment by bol.com (FBB or LVB), you need to activate the market availability <strong>bol.com FBB</strong>.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Activate the market availability <strong>bol.com FBB</strong> for the variation</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.<br>
+→ The <strong>Settings</strong> tab of the variation opens.</p>
+</li>
+<li>
+<p>Click on the <strong>Availability</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Markets</strong> area, click in the selection field.<br>
+→ A list of all available markets is displayed.</p>
+</li>
+<li>
+<p>Activate the option <strong>bol.com FBB</strong>.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="automate-orders">6. Automating order processing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up <a href="/en/automation/event-procedures">event procedures</a> to automatically inform bol.com about order status changes. The following event procedures can be set up for bol.com:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Own value <code>0</code> or <code>false</code> or <code>n</code> = All variations are new.</p>
+<p>Send shipping confirmation to bol.com (<a href="#700">How?</a>)</p>
 </li>
 <li>
-<p>Own value <code>1</code> or <code>true</code> or <code>y</code> = All variations are used.</p>
+<p>Send order cancellation to bol.com (<a href="#900">How?</a>)</p>
+</li>
+<li>
+<p>Send return status to bol.com (<a href="#800">How?</a>)</p>
+</li>
+<li>
+<p>Create a return at bol.com (<a href="#810">How?</a>)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="700">6.1. Automatically sending shipping confirmations</h3>
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically send shipping confirmations to bol.com when the outgoing items have been booked.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#event-procedure-shipping-confirmation-bol">Table 4</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the further settings according to <a href="#event-procedure-shipping-confirmation-bol">Table 4</a>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-shipping-confirmation-bol" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Event procedure for automatically sending shipping confirmations to bol.com</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change: Outgoing items booked</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bol.com</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping &gt; Send shipping confirmation to bol.com</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="900">6.2. Automatically sending cancellations</h3>
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform bol.com of cancellations. Whenever you are dealing with cancellations, you need to send bol.com a reason for the cancellation. Open the <strong>Setup » Orders » Status</strong> menu and create additional order statuses as needed. The following cancellation reasons can be transferred to bol.com:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Out of stock</strong></p>
+</li>
+<li>
+<p><strong>Cancellation requested by customer</strong></p>
+</li>
+<li>
+<p><strong>Item is in a bad condition</strong></p>
+</li>
+<li>
+<p><strong>Higher shipping costs</strong></p>
+</li>
+<li>
+<p><strong>Incorrect price</strong></p>
+</li>
+<li>
+<p><strong>Item not available in time</strong></p>
+</li>
+<li>
+<p><strong>No bol.com warranty</strong></p>
+</li>
+<li>
+<p><strong>Item ordered twice</strong></p>
+</li>
+<li>
+<p><strong>Item retained</strong></p>
+</li>
+<li>
+<p><strong>Technical issue</strong></p>
+</li>
+<li>
+<p><strong>Item untraceable</strong></p>
+</li>
+<li>
+<p><strong>Other</strong></p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#event-procedure-cancellations-bol">Table 5</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the further settings according to <a href="#event-procedure-cancellations-bol">Table 5</a>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-cancellations-bol" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Event procedure for automatically sending cancellations to bol.com</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change: [8.1] Cancelled by customer</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bol.com</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Send cancellation to bol.com</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Customer cancellation</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="800">6.3. Automatically sending the return status</h3>
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform bol.com of the status of a return. bol.com requests the status of returns. The following return statuses can be sent to bol.com:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Return received</strong></p>
+</li>
+<li>
+<p><strong>Item will be exchanged</strong></p>
+</li>
+<li>
+<p><strong>Return does not meet conditions</strong></p>
+</li>
+<li>
+<p><strong>Item must be repaired</strong></p>
+</li>
+<li>
+<p><strong>Customer keeps item</strong></p>
+</li>
+<li>
+<p><strong>Return accepted after consultation with customer</strong></p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#event-procedure-return-status-bol">Table 6</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the further settings according to <a href="#event-procedure-return-status-bol">Table 6</a>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
+<strong><em>Note:</em></strong> The data is not transferred in real time when the event procedure is triggered. Instead, the data is registered in a queue. As such, transferring the data can take up to several minutes if a large number of jobs need to be processed. On the plus side, this means that several retries will be performed if the target server is throttled or not responding.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-return-status-bol" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Event procedure for automatically sending return statuses to bol.com</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New return</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Return</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bol.com</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Send return status to bol.com</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a status.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="810">6.4. Sending information on direct returns to bol.com</h3>
+<div class="paragraph">
+<p>In addition, set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform bol.com about returns that customers sent back to you directly without registering the return with bol.com first. bol.com requests the status of returns. The following return statuses can be sent to bol.com:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Return received</p>
+</li>
+<li>
+<p>Item will be exchanged</p>
+</li>
+<li>
+<p>Return does not meet conditions</p>
+</li>
+<li>
+<p>Item must be repaired</p>
+</li>
+<li>
+<p>Customer keeps item</p>
+</li>
+<li>
+<p>Return accepted after consultation with customer</p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#event-procedure-return-bol">Table 7</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the further settings according to <a href="#event-procedure-return-bol">Table 7</a>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-return-bol" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Event procedure to inform bol.com about returns</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change: [9.5] Credit note created</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Return</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>bol.com</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Create a return at bol.com</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select a status.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="activate-catalogue">7. Starting the item export: Activating catalogue export</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You have set up bol.com and created a catalogue for exporting your item data? Then start the export of your item data.</p>
+</div>
+<div class="paragraph instruction">
+<p>Activating the catalogue export to bol.com:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogues are listed.</p>
+</li>
+<li>
+<p>Scroll to the bol.com catalogue.</p>
+</li>
+<li>
+<p>In the <strong>Active/Inactive</strong> column, move the toggle button to the right (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>).<br>
+→ The catalogue is active.<br>
+→ The catalogue data is exported to bol.com once a day during the night{if-active}.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="_troubleshooting">8. Troubleshooting</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="1200">8.1. <em>Check list:</em> Why is my variation not exported?</h3>
+<div class="paragraph">
+<p>To export a variation to bol.com, this variation has to meet the following requirements:</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Have you activated the variation?</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.<br>
+→ The <strong>Settings</strong> tab of the variation opens.</p>
+</li>
+<li>
+<p>In the <strong>Availability</strong> area, activate the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Is the market availability active?</div>
+<div class="content">
+<div class="paragraph">
+<p>The variation must be available for the market.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.<br>
+→ The <strong>Settings</strong> tab of the variation opens.</p>
+</li>
+<li>
+<p>Click on the <strong>Availability</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Markets</strong> area, click in the selection field.<br>
+→ A list of all available markets is displayed.</p>
+</li>
+<li>
+<p>Activate the option <strong>bol.com</strong>.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Does the variation have positive net stock?</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.<br>
+→ The <strong>Settings</strong> tab of the variation opens.</p>
+</li>
+<li>
+<p>Click on the <strong>Stock</strong> tab.<br>
+→ The net stock of each warehouse is listed in the <strong>Net</strong> column.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Are the sales price and price settings correct?</div>
+<div class="content">
+<div class="paragraph instruction">
+<p>Check the sales price:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Item » Sales prices</strong>.</p>
+</li>
+<li>
+<p>For the filter <strong>Referrer</strong>, select <strong>bol.com</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).<br>
+→ The sales price that is active for the referrer is shown.</p>
+</li>
+<li>
+<p>Check the settings of the sales price.</p>
+</li>
+<li>
+<p>Make any necessary corrections.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Check the price:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.<br>
+→ The sales prices are listed in the tab <strong>Settings</strong>.</p>
+</li>
+<li>
+<p>Check the following settings:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Is the sales price for the referrer linked?</p>
+</li>
+<li>
+<p>Does the price for the referrer have the correct price?</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Make any necessary corrections.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Did you map all mandatory fields of the market in the catalogue?</div>
+<div class="content">
+<div class="paragraph">
+<p>As a minimum, plentymarkets data fields must be mapped to all mandatory fields of the market. These mandatory fields are different for different market categories. In the catalogue, mandatory fields are marked with an asterisk.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#map-data-fields">How to map one or more plentymarkets data fields to the market data field.</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Is the variation linked to the property of the bol.com category?</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.<br>
+→ The <strong>Settings</strong> tab of the variation opens.</p>
+</li>
+<li>
+<p>Open the <strong>Properties</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Variation properties</strong> area, select the property <strong>BOL category group</strong> from the <strong>Properties</strong> drop-down list and click on <strong>Add</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The property is added.</p>
+</li>
+<li>
+<p>Select the desired category from the drop-down list <strong>Value</strong> for the <strong>BOL category group</strong> property.<br>
+→ The variation will be exported in this catalogue.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Is the catalogue active?</div>
+<div class="content">
+<div class="paragraph">
+<p>The catalogue that the variation is associated with must be activated.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogues are listed.</p>
+</li>
+<li>
+<p>Scroll to the bol.com catalogue.</p>
+</li>
+<li>
+<p>In the <strong>Active/Inactive</strong> column, move the toggle button (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>) to the right.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><em>Couldn’t find any errors?</em></div>
+<div class="content">
+<div class="paragraph">
+<p>You have confirmed that the above settings are correct but the variation is still not exported? Then check the data log.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Log</strong>.</p>
+</li>
+<li>
+<p>Use the following filters:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>bol.com</strong><br>
+**</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).</p>
+</li>
+<li>
+<p>Check all entries for the levels <strong>warning</strong> and <strong>error</strong>.</p>
+</li>
+<li>
+<p>Open the logs containing the message <strong>Variation invalid</strong>.<br>
+→ The the variation ID and the reason for the rejection or the missing characteristic are shown.</p>
+</li>
+<li>
+<p>Correct the variation data.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1000">8.2. Viewing log entries</h3>
+<div class="paragraph">
+<p>The <strong>Data » Log</strong> menu contains a history of processes that run via the bol.com interface. Note that integrations and identifiers are only shown in the drop-down lists as filters after the process has run at least once.</p>
+</div>
+<div class="paragraph">
+<p>For bol.com, the following filters are recommended:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Identifier</strong> » <strong>bol.com</strong></p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Filtering and checking log entries</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Log</strong>.</p>
+</li>
+<li>
+<p>In the column to the left, select appropriate filters from the drop-down lists.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Select filters for dates and/or times to only show entries from a specific period.<br>
+<strong><em>Tip:</em></strong> For further information about the filters, refer to the <a href="/en/data/datalog">Data log</a> page of the manual.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).<br>
+→ The results are shown.</p>
+</li>
+<li>
+<p>Check all entries for the levels <strong>warning</strong> and <strong>error</strong>.<br>
+<strong><em>Tip:</em></strong> Click on the entry to see details.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Use the reference types and reference values listed in <a href="#table-reference-types">Table 8</a> to limit the search results:</p>
+</div>
+<table id="table-reference-types" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. Reference types and reference values for bol.com</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Reference type</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+<th class="tableblock halign-left valign-top">Reference value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>action</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters by events.</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select a reference type to filter for specific events.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>orderImport</strong> = Order import<br></p>
+</li>
+<li>
+<p><strong>CreateOffer</strong> = Creation of offers<br></p>
+</li>
+<li>
+<p><strong>CheckOfferStatus</strong> = Checking the successful creation of offers<br></p>
+</li>
+<li>
+<p><strong>DeleteOffer</strong> = Deletion of offers<br></p>
+</li>
+<li>
+<p><strong>UpdateOffer</strong> = Updating delivery time, delivery type (FBB, FBR), SKU and activity state of offers<br></p>
+</li>
+<li>
+<p><strong>UpdateOfferPrices</strong> = Updating prices of offers<br></p>
+</li>
+<li>
+<p><strong>UpdateOfferStock</strong> = Updating stock of offers<br></p>
+</li>
+<li>
+<p><strong>CancelOrder</strong> = Cancellation of the order<br></p>
+</li>
+<li>
+<p><strong>ShipOrder</strong> = Shipping of the order<br></p>
+</li>
+<li>
+<p><strong>HandleReturn</strong> = Confirmation of receipt of a return announced on bol.com<br></p>
+</li>
+<li>
+<p><strong>CreateReturn</strong> = Report receipt of a return not announced on bol.com</p>
 </li>
 </ul>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>orderId</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters by the order ID of the order in plentymarkets.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>externalOrderId</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters by the bol.com order number of the order.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>externalOrderItemId</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters by the ID of the bol.com order item.</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>

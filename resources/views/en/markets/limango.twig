@@ -19,11 +19,35 @@
 <li><a href="#903"><span>9.3.</span><span> Mapping catalogue fields</span></a>
 <ul class="sectlevel3">
 <li><a href="#907"><span>9.3.1.</span><span> Mapping data fields in the catalogue</span></a></li>
+<li><a href="#905"><span>9.3.2.</span><span> Notes on mapping data fields</span></a></li>
+<li><a href="#906"><span>9.3.3.</span><span> Recommendations for limango data field mapping</span></a></li>
 </ul>
 </li>
+<li><a href="#904"><span>9.4.</span><span> Activating the catalogue</span></a></li>
 </ul>
 </li>
-<li><a href="#XXXX"><span>10.</span><span> Activating the catalogue export to XXXX</span></a></li>
+<li><a href="#750"><span>10.</span><span> Setting the variation availability</span></a></li>
+<li><a href="#_automatically_notify_limango_about_cancellations"><span>11.</span><span> Automatically notify limango about cancellations</span></a></li>
+<li><a href="#1300"><span>12.</span><span> Setting up automatic shipping confirmations</span></a>
+<ul class="sectlevel2">
+<li><a href="#13001"><span>12.1.</span><span> Workflow for automatic order confirmations</span></a></li>
+<li><a href="#13002"><span>12.2.</span><span> Automatically sending shipping confirmations to limango</span></a></li>
+</ul>
+</li>
+<li><a href="#1000"><span>13.</span><span> Setting up return management</span></a>
+<ul class="sectlevel2">
+<li><a href="#1010"><span>13.1.</span><span> Workflow for returns</span></a></li>
+<li><a href="#1030"><span>13.2.</span><span> Automatically notify limango about completed returns</span></a></li>
+</ul>
+</li>
+<li><a href="#1600"><span>14.</span><span> Preparing delivery notes for limango</span></a>
+<ul class="sectlevel2">
+<li><a href="#16001"><span>14.1.</span><span> Uploading a PDF template for delivery notes</span></a></li>
+<li><a href="#16003"><span>14.2.</span><span> Showing the limango customer number on delivery notes</span></a></li>
+<li><a href="#16002"><span>14.3.</span><span> Entering return information for limango delivery notes</span></a></li>
+</ul>
+</li>
+<li><a href="#1100"><span>15.</span><span> Troubleshooting: Viewing log entries</span></a></li>
 </ul>
 </div>
         </div>
@@ -874,16 +898,1967 @@ You can choose from the following mappings which are described in the info boxes
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="905">9.3.2. Notes on mapping data fields</h4>
+<div class="paragraph">
+<p>Every market structures item data differently. As such, there are some particularities for each market when mapping data fields. <a href="#catalogue-limango-mappings">Table 3</a> contains mapping information for important data fields for limango.</p>
+</div>
+<table id="catalogue-limango-mappings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Notes on mapping data fields</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Marketplace data field</th>
+<th class="tableblock halign-left valign-top">plentymarkets data field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="openblock collapseBox">
+<div class="title">Special case: Selling shoes</div>
+<div class="content">
+<div class="paragraph">
+<p>If you want to sell shoes on the market, all information regarding the material of your products must be exported to limango using the data field <strong>Description</strong>. To do this, you combine two plentymarkets data fields and export them as one filed to limango.</p>
+</div>
+<div class="paragraph">
+<p>First, decide how you want to manage material information for your items. There are two ways to manage material information for limango:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter the material information in the data field <strong>Technical data</strong> of the item.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a property of the type <strong>Text</strong>. Link this property to the main variation of the item and manage the material information in this property.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Now, map the plentymarkets data field that you want in the catalogue:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Map the plentymarkets data field that contains the item description to the marketplace data field <strong>Description</strong>.</p>
+</li>
+<li>
+<p>To the right of this data field, click on <strong>Add data field</strong> (<span class="icon "><i class="fa fa-link fa-rotate-90 "></i></span>).</p>
+</li>
+<li>
+<p>Map the plentymarkets data field that contains the material information.<br>
+<strong><em>Tip:</em></strong> This is either the field <strong>Technical data</strong> or the property that you created for the material information.</p>
+</li>
+<li>
+<p>To the right of the column, click on <strong>Settings</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>).</p>
+</li>
+<li>
+<p>From the drop-down list <strong>Separator</strong>, select the option <strong>Space</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Measurements<br>
+(<strong>Length</strong>;<br>
+<strong>Width</strong>;<br>
+<strong>Height</strong>;<br>
+<strong>Volume</strong>;<br>
+<strong>Diameter</strong>;<br>
+<strong>Weight</strong><br>
+etc.)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Measurements must be exported to limango with the format <strong>[numeric value];[unit]</strong>. Due to the limango product structure, the normal plentymarkets data fields for measurements cannot be mapped. Instead, create two properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>One property of the type <strong>Decimal number</strong> for the numerical value.</p>
+</li>
+<li>
+<p>One property of the type <strong>Selection</strong> for the unit.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Combine these two properties, separated by a semicolon.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example:</em></strong> Exporting the length to limango</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a property of the type <strong>Decimal number</strong> with the name <strong>Length</strong>.</p>
+</li>
+<li>
+<p>Create a property of the type <strong>Selection</strong> with the name <strong>Length unit</strong>.</p>
+</li>
+<li>
+<p>Add the units you need to the property <strong>Length unit</strong> as property values.</p>
+</li>
+<li>
+<p>Open the limango catalogue.</p>
+</li>
+<li>
+<p>Map the marketplace data field <strong>Length</strong> to the plentymarkets property <strong>Length</strong>.</p>
+</li>
+<li>
+<p>To the right of this data field, click on <strong>Add data field</strong> (<span class="icon "><i class="fa fa-link fa-rotate-90 "></i></span>).</p>
+</li>
+<li>
+<p>Map the property <strong>Length unit</strong>.<br>
+<strong><em>Tip:</em></strong> If you are sure that you only need one unit for all your variations, you can also export the unit by entering it as an own value. To do so, instead of mapping the property <strong>Length unit</strong>, map the field <strong>Own value</strong> and enter the unit in the field that opens.</p>
+</li>
+<li>
+<p>To the right of the column, click on <strong>Settings</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>).</p>
+</li>
+<li>
+<p>From the drop-down list <strong>Separator</strong>, select the option <strong>Semicolon</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example:</em></strong> Exporting the volume to limango</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a property of the type <strong>Decimal number</strong> with the name <strong>Volume</strong>.</p>
+</li>
+<li>
+<p>Create a property of the type <strong>Selection</strong> with the name <strong>Volume unit</strong>.</p>
+</li>
+<li>
+<p>Add the units you need to the property <strong>Volume unit</strong> as property values.<br>
+<strong><em>Note:</em></strong> Only the units l (for litres) and ml (for millilitres) can be exported.</p>
+</li>
+<li>
+<p>Open the limango catalogue.</p>
+</li>
+<li>
+<p>Map the marketplace data field <strong>Volume</strong> to the plentymarkets property <strong>Volume</strong>.</p>
+</li>
+<li>
+<p>To the right of this data field, click on <strong>Add data field</strong> (<span class="icon "><i class="fa fa-link fa-rotate-90 "></i></span>).</p>
+</li>
+<li>
+<p>Map the property <strong>Volume unit</strong>.<br>
+<strong><em>Tip:</em></strong> If you are sure that you only need one unit for all your variations, you can also export the unit by entering it as an own value. To do so, instead of mapping the property <strong>Volume unit</strong>, map the field <strong>Own value</strong> and enter the unit in the field that opens.</p>
+</li>
+<li>
+<p>To the right of the column, click on <strong>Settings</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>).</p>
+</li>
+<li>
+<p>From the drop-down list <strong>Separator</strong>, select the option <strong>Semicolon</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data fields under Material composition</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Material information is exported to limango using a property of the type <strong>Text</strong>. You need one property for each marketplace data field. Link the properties to the main variation of the item and save all components of a material mix in this property.
+Enter the material composition in the following format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>{"material1": "percentage","material2": "percentage","material3": "percentage"}</strong><br>
+<strong><em>Example:</em></strong> <strong>{"baumwolle": "90","elasthan": "10"}</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Specify the individual materials in descending order based on the percentage value. As such, the first material is the one with the highest percentage value, the last one that with the lowest percentage value. The sum of all percentages must be 100. You can specify as many materials as you need.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Exception:</em></strong> Variations of the same items have different material mixes? Then deactivate the inheritance function for properties and save the material mixes separately for each variation. However, note that this deactivates the inheritance for all properties for the item. As such, you also need to manually manage all other properties for this item.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example:</em></strong> Exporting material information for a blazer to limango</div>
+<div class="content">
+<div class="paragraph">
+<p>The following example shows you how to save material information for a blazer for the limango export.</p>
+</div>
+<div class="paragraph instruction">
+<p>Mapping outer fabric and saving material mix for a variation:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a property of the type <strong>Text</strong> with the name <strong>Material 1</strong>.</p>
+</li>
+<li>
+<p>Map the marketplace data field <strong>Material 1</strong> to the plentymarkets property <strong>Material 1</strong>.</p>
+</li>
+<li>
+<p>Link the property <strong>Material 1</strong> to the main variation of the item.</p>
+</li>
+<li>
+<p>Our blazer is made of 65% polyester, 32% rayon and 3% elastane. Enter the following into the text field of the property:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>{"polyester": "65","viskose": "32","elasthan": "3"}</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Save the settings.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph instruction">
+<p>Mapping lining and saving material mix for a variation:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a property of the type <strong>Text</strong> with the name <strong>Lining 1</strong>.</p>
+</li>
+<li>
+<p>Map the marketplace data field <strong>Lining 1</strong> to the plentymarkets property <strong>Lining 1</strong>.</p>
+</li>
+<li>
+<p>Link the property <strong>Lining 1</strong> to the main variation of the item.</p>
+</li>
+<li>
+<p>The lining of the blazer is made of 100% rayon. Enter the following into the text field of the property:
+*</p>
+</li>
+<li>
+<p>Save the settings.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="content">
+
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Colour value</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>limango distinguishes by colours but not by shades. For example, if you offer a dress in both light and dark green, both are presented if customers search for green dresses on the market.</p>
+</div>
+<div class="paragraph">
+<p>To ensure that different products are created for variations in different shades of the same colour, the colour value saved in plentymarkets is exported as part of the merchant product ID and the product name instead of the limango colour value.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong><em>Example:</em></strong> Mapping different shades of green to the colour value <strong>green</strong></div>
+<div class="content">
+<div class="paragraph">
+<p>This example shows you how to map different shades of green to the colour value <strong>green</strong>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Assumed scenario:</p>
+</div>
+<div class="paragraph">
+<p>You want to map all your shades of green to the limango colour value <strong>green</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The following shades of green are saved as values of the attribute <strong>Colour</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Light green</p>
+</li>
+<li>
+<p>Dark green</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following shades of green are saved as property values:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lime green</p>
+</li>
+<li>
+<p>Coriander</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Mapping different shades of green to the colour value "green":</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the limango catalogue.</p>
+</li>
+<li>
+<p>Navigate to the area <strong>Colour</strong>.</p>
+</li>
+<li>
+<p>Map the marketplace data field <strong>Colour</strong> to the following plentymarkets data fields:<br>
+<strong><em>Data field:</em></strong> Field <strong>Value name</strong> of the attribute for <strong>Colour</strong><br>
+<strong><em>Fallback data fields:</em></strong> Property for <strong>Colour</strong></p>
+</li>
+<li>
+<p>Navigate to the area <strong>Colour value</strong>.</p>
+</li>
+<li>
+<p>Map the marketplace data field <strong>Colour value: green</strong> to the plentymarkets attribute value <strong>Light green</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add fallback data field</strong>.</p>
+</li>
+<li>
+<p>As the first fallback data field, map the plentymarkets attribute value <strong>Dark green</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add fallback data field</strong>.</p>
+</li>
+<li>
+<p>As the second fallback data field, map the plentymarkets property value <strong>Lime green</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add fallback data field</strong>.</p>
+</li>
+<li>
+<p>As the third fallback data field, map the plentymarkets property value <strong>Coriander</strong>.<br>
+→ The shade of green that is saved for the variation is exported as part of the merchant product ID and the product name.<br>
+→ On limango, all products are listed with the colour Green.<br>
+<strong><em>Tip:</em></strong> The order for mapping the different shades described here is random. You can map the values in any order.</p>
+</li>
+</ol>
+</div>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="906">9.3.3. Recommendations for limango data field mapping</h4>
+<div class="paragraph">
+<p>To help you with mapping your data fields for the limango catalogue, we have created a list of recommended data field mappings for limango. Note that these mappings are recommendations only. Depending on how you manage your item data, other mappings may be more appropriate than the recommendation given here.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">List of recommended data field mappings for limango</div>
+<div class="content">
+<table id="recommended-mappings" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 50%;">
+<col style="width: 12.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">limango field</th>
+<th class="tableblock halign-left valign-top">Mandatory?</th>
+<th class="tableblock halign-left valign-top">Recommended mapping / notes</th>
+<th class="tableblock halign-left valign-top">limango product level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Products</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product group ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property linked to main variation</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product group</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product group name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Manufacturer name + Item name</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product group</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Name 1</strong> + Own value <code>in</code> + Values of the attribute <strong>Colour</strong> + Separator <strong>Space</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name 1</strong> + Own value <code>in</code> + Values of a property <strong>Colour</strong> for variations + Separator <strong>Space</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> To select the separator, click on <strong>Settings</strong> (<span class="icon "><i class="fa fa-gear  "></i></span>)) at the right end of the row.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Short description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Preview text</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Item text</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Exception for selling shoes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Item text</strong> + Material description<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer item number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property linked to main variation</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Energy label URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property linked to main variation</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Energy data sheet URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property linked to main variation</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bild-URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>All available images</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first 10 images activated for the referrer <strong>limango</strong> are exported that are linked to the colour variation with the highest position. Images are sorted by position. Any images with identical positions are sorted by ID.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Colour</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Value name of the attribute <strong>Colour</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Values of a variation property <strong>Colour</strong><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> This field tells limango which attribute or property you use for colours. However, the export contains the value names that you mapped for the field <strong>Colour value</strong>.
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Product variations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturer variation number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>External variation ID</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Active</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation stock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>One or more warehouses</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EAN / GTIN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Barcode GTIN</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Min. delivery time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Minimum delivery time in working days</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Own value with numerical value</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property linked to variation</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Max. delivery time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Maximum delivery time in working days</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Own value with numerical value</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property linked to variation</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Measurements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Length</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Width</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weight</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Depth</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Volume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Note:</em></strong> Only the units ml (for millilitres) and l (for litres) can be exported.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Leg height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hight of bootleg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Heel height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Width of bootleg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property for value + Separator <strong>;</strong> + Property for unit<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Sales prices</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RRP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>RRP for referrer <strong>limango</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Add a fallback data field if necessary.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gross sales price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Sales price for referrer <strong>limango</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Add a fallback data field if necessary.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Category</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Category</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Only one category is exported per product. However, due to technical reasons, the default category of a variation cannot be determined during the export. If more than one category is linked to a main variation, a check is run to determine which of these categories is mapped to a limango data field in the catalogue. If more than one category is mapped in the catalogue, the first mapped category in the catalogue’s category list is exported. If you want to export a different category, change the order of the mappings in the catalogue.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product group</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Care instructions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Care instructions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property linked to main variation</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Marke</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Marke</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Manufacturer</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product group</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Geschlecht</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geschlecht</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property linked to main variation</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Age group</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Altersgruppe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property linked to main variation</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Season</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Season</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property linked to main variation</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Energy efficiency class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Energy efficiency class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property linked to main variation</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Colour value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Colour value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Values of the attribute <strong>Colour</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Values of a variation property <strong>Colour</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If necessary, add different shades of the same colour as fallback data fields.<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Material composition</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Material</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If at least 80% textiles</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Property linked to main variation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="paragraph">
+<p>For variations with different material mixes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Property linked to variation<br>
+<strong><em>Important:</em></strong> Deactivate the inheritance function for variation properties!</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>(see <a href="#905">Notes on mapping data fields</a>)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Size</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Values of the attribute <strong>Size</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Values of a variation property <strong>Size</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Note:</em></strong> The value <strong>onesize</strong> must be exported for products without a specific size.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">VAT class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VAT class normal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Select the VAT rate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Add a fallback data field if necessary.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VAT class reduced</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Select the VAT rate</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Add a fallback data field if necessary.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Fields that are exported without a mapping</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merchant product ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Parent-SKU</strong> - plentymarkets value for <strong>Colour value</strong> is exported<br>
+(see <a href="#905">Notes on mapping data fields</a>)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image alternative text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative text</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Based on the status of the variations</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The SKU is exported</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unit price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The unit price is calculated based on the content</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variation</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="904">9.4. Activating the catalogue</h3>
+<div class="paragraph">
+<p>You have set up limango and created a catalogue for exporting your item data? Then start the export of your item data.</p>
+</div>
+<div class="paragraph instruction">
+<p>Activating the catalogue export to limango:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogues are listed.</p>
+</li>
+<li>
+<p>Scroll to the limango catalogue.</p>
+</li>
+<li>
+<p>In the <strong>Active/Inactive</strong> column, move the toggle button to the right (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>).<br>
+→ The catalogue is active.<br>
+→ The catalogue data is exported to limango once a day during the night{if-active}.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="XXXX">10. Activating the catalogue export to XXXX</h2>
+<h2 id="750">10. Setting the variation availability</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Unresolved directive in _textblocks/catalogues/instructions/catalogue-activation.adoc - include::../_textblocks/catalogues/instructions/catalogue-activation.adoc[]</p>
+<p>You need to activate the variations that you want to sell on limango. This is done in the <strong>Availability</strong> tab of a variation within the <strong>Item » Edit item » [Open item] » [Open variation]</strong> menu.</p>
+</div>
+<ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
+                                <a class="nav-link active" id="for-one-variation-tab" data-toggle="tab" href="#for-one-variation" role="tab" aria-controls="for-one-variation" aria-selected="true">For one variation</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="using-variation-group-function-tab" data-toggle="tab" href="#using-variation-group-function" role="tab" aria-controls="using-variation-group-function" aria-selected="false">Using variation group function</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="using-batch-processing-tab" data-toggle="tab" href="#using-batch-processing" role="tab" aria-controls="using-batch-processing" aria-selected="false">Using batch processing</a>
+                            </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="for-one-variation" role="tabpanel" aria-labelledby="for-one-variation-tab">
+<div class="paragraph instruction">
+<p>Making a variation available for limango:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.<br>
+→ The tab <strong>Settings</strong> of the variation is shown.<br>
+<strong><em>Tip:</em></strong> To sell all variations of an item on limango, carry out the settings for the item’s main variation. This activates the availability of all variations of the item.</p>
+</li>
+<li>
+<p>In the <strong>Availability</strong> area, activate the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Click on the <strong>Availability</strong> tab.</p>
+</li>
+<li>
+<p>In the <strong>Markets</strong> area, click in the selection field.<br>
+→ A list of all available markets is displayed.</p>
+</li>
+<li>
+<p>Activate the option <strong>limango</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The market is added.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.<br>
+→ The variation is available for limango.</p>
+</li>
+</ol>
+</div>
+</div><div class="tab-pane fade" id="using-variation-group-function" role="tabpanel" aria-labelledby="using-variation-group-function-tab">
+<div class="paragraph">
+<p>The <a href="/en/item/import-export-create/create/mass-processing#100">variation group function</a> allows you to edit several variations at once. You select the variations that you want to edit.</p>
+</div>
+<div class="paragraph instruction">
+<p>Making several variations available for limango using the variation group function:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item</strong>.</p>
+</li>
+<li>
+<p>Set the filter <strong>Table type</strong> to <strong>Variations</strong>.</p>
+</li>
+<li>
+<p>Choose additional <a href="/en/item/introduction/search#100">filters on the left</a> if needed and click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).</p>
+</li>
+<li>
+<p>Select (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) the variations to be edited from the overview on the right.</p>
+</li>
+<li>
+<p>Click on <strong>Variation group function</strong>.<br>
+→ The <strong>Variation group function</strong> window opens.</p>
+</li>
+<li>
+<p>Navigate to the area <strong>Market availability</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the left of the option <strong>limango</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the right of the option <strong>limango</strong>.</p>
+</li>
+<li>
+<p>Navigate to the area <strong>Availability</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the left of the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the right of the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="psicon-execute"></i></span> <strong>Execute</strong> to apply the settings.</p>
+</li>
+</ol>
+</div>
+</div><div class="tab-pane fade" id="using-batch-processing" role="tabpanel" aria-labelledby="using-batch-processing-tab">
+<div class="paragraph">
+<p><a href="/en/item/import-export-create/create/mass-processing#400">Batch processing</a> allows you to edit several variations at once. You use filters to limit which variations are edited.</p>
+</div>
+<div class="paragraph instruction">
+<p>Making several variations available for limango using batch processing:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Batch processing</strong>.</p>
+</li>
+<li>
+<p>Click on the tab <strong>Variations</strong> in the upper left corner.</p>
+</li>
+<li>
+<p>Use the <em>filters on the left</em> to specify which variations should be processed.</p>
+</li>
+<li>
+<p>Navigate to the area <strong>Market availability</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the left of the option <strong>limango</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the right of the option <strong>limango</strong>.</p>
+</li>
+<li>
+<p>Navigate to the area <strong>Availability</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the left of the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Activate the checkbox to the right of the option <strong>Active</strong>.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="psicon-execute"></i></span> <strong>Apply</strong> to apply the settings to the variations.</p>
+</li>
+</ol>
+</div>
+</div></div>
+</div>
+</div><div class="sect1">
+<h2 id="_automatically_notify_limango_about_cancellations">11. Automatically notify limango about cancellations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically notify limango of cancellations.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#event-procedure-cancellation-limango">[event-procedure-cancellation-limango]</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the further settings according to <a href="#event-procedure-cancellation-limango">[event-procedure-cancellation-limango]</a>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-cancellations-limango" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Event procedure to notify limango of cancellations</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Setting</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Option</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selection</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select an event, for example [8] <strong>Waiting for payment</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>limango</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; limango: Send order cancellation to limango</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="1300">12. Setting up automatic shipping confirmations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Shipping confirmations for limango must contain a tracking number. In addition, the shipping service provider of the order must be linked to the limango shipping service provider correctly in the plugin settings.</p>
 </div>
 <div class="paragraph">
-<p>Unresolved directive in _textblocks/instructions/variation-availability.adoc - include::_textblocks/instructions/variation-availability.adoc[]</p>
+<p>You need two event procedures to automatically confirm the shipping to limango:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Event procedure 1: Send shipping confirmation to limango</p>
+</li>
+<li>
+<p>Event procedure 2: Book outgoing items</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="13001">12.1. Workflow for automatic order confirmations</h3>
+<div class="paragraph">
+<p>The workflow for automated shipping confirmations depends on whether or not the order’s shipping service provider is correctly linked to the limango shipping service provider in the plugin settings.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Case</th>
+<th class="tableblock halign-left valign-top">Procedure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping service provider linked</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>A package number is saved for the order.</p>
+</li>
+<li>
+<p>The event procedure <strong>Send shipping confirmation to limango</strong> checks if the shipping service provider is linked correctly.</p>
+</li>
+<li>
+<p>The procedure <strong>Send shipping confirmation to limango</strong> is triggered: A shipping confirmation is sent to limango.</p>
+</li>
+<li>
+<p>The order is moved to the status for <strong>Order status for orders with shipping carrier mapping (&gt; 5 - &lt; 7)</strong>.</p>
+</li>
+<li>
+<p>Only procedure 1 of the event procedure <strong>Book outgoing items</strong> is triggered.<br>
+→ The outgoing items are booked.<br>
+→ <em>No</em> second shipping confirmation is sent to limango.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shipping service provider linked correctly</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>A package number is saved for the order.</p>
+</li>
+<li>
+<p>The event procedure <strong>Send shipping confirmation to limango</strong> checks if the shipping service provider is linked correctly.</p>
+</li>
+<li>
+<p>The order is moved to the status for <strong>Order status for orders without shipping carrier mapping (&gt; 5 - &lt; 7)</strong>.</p>
+</li>
+<li>
+<p>You check and correct the mapping for the shipping service provider in the plugin settings.<br>
+<strong><em>Tip:</em></strong> Go to <strong>Plugins » Plugin set overview » [Open plugin set] » Open limango plugin » Shipping service provider</strong> to correct the mapping.</p>
+</li>
+<li>
+<p>You move the order into the status for <strong>Order status for orders with shipping carrier mapping (&gt; 5 - &lt; 7)</strong>.</p>
+</li>
+<li>
+<p>Procedure 1 of the event procedure <strong>Book outgoing items</strong> is triggered.<br>
+→ The outgoing items are booked.</p>
+</li>
+<li>
+<p>Procedure 2 of the event procedure <strong>Book outgoing items</strong> is triggered.<br>
+→ A shipping confirmation is sent to limango.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="13002">12.2. Automatically sending shipping confirmations to limango</h3>
+<div class="paragraph">
+<p>For event procedure 1 for shipping confirmations, set up the <a href="/en/automation/event-procedures">event procedure</a> described in <a href="#event-procedure-shipping-info-limango">Table 5</a>.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#event-procedure-shipping-info-limango">Table 5</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the further settings according to <a href="#event-procedure-shipping-info-limango">Table 5</a>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-shipping-info-limango" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Event procedure 1 for shipping confirmations</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order change &gt; Package number</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong><br>
+* Delivery order*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>limango</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send shipping confirmation to limango</strong></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For event procedure 2 for shipping confirmations, set up the <a href="/en/automation/event-procedures">event procedure</a> described in <a href="#event-procedure-booking-items-limango">Table 6</a>.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#event-procedure-booking-items-limango">Table 6</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the further settings according to <a href="#event-procedure-booking-items-limango">Table 6</a>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-booking-items-limango" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Event procedure 2 for shipping confirmations</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status change</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the status for <strong>Order status for orders with shipping carrier mapping (&gt; 5 - &lt; 7)</strong><br>
+Go to <strong>Plugins » Plugin set overview » [Open plugin set] » Open limango plugin » Order status</strong> to set this status.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong><br>
+* Delivery order*</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>limango</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Book outgoing items</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Send shipping confirmation to limango</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1000">13. Setting up return management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now set up the processing of returns for limango.</p>
+</div>
+<div class="sect2">
+<h3 id="1010">13.1. Workflow for returns</h3>
+<div class="paragraph">
+<p>The delivery note also functions as the return form. The workflow of limango returns is as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Customers return the items to you.</p>
+</li>
+<li>
+<p>You process the return in plentymarkets.</p>
+</li>
+<li>
+<p>You notify limango when you have received the items.</p>
+</li>
+<li>
+<p>limango reimburses the customer.<br>
+<strong><em>Note:</em></strong> When you notify limango that the return is completed, limango triggers a credit note and the buyer receives a refund. As such, only notify limango about completing the return after you have received and checked the returned items.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1030">13.2. Automatically notify limango about completed returns</h3>
+<div class="paragraph">
+<p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically inform limango when you have completed processing a return.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#event-procedure-returns-limango">[event-procedure-returns-limango]</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the further settings according to <a href="#event-procedure-returns-limango">[event-procedure-returns-limango]</a>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="event-procedure-return-limango" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Event procedure for automatically sending returns to limango</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>New return</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Order type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Return</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Referrer</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>limango</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Send return notification to limango</strong><br>
+<strong><em>Note:</em></strong> The procedure <strong>Send return notification to limango</strong> triggers a credit note. As such, a refund will be issued to the buyer. As such, make sure the event procedure is only triggered after you have received and checked the returned items.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1600">14. Preparing delivery notes for limango</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The limango letterhead return instructions provided by limango must be shown on every delivery note for limango orders. Creating layout templates for order documents in plentymarkets is described in the <a href="/en/auftraege/auftragsdokumente#170">Orders</a> area of the manual. On this page, we only describe how to upload the PDF template and set up the document for the specific requirements of the market.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#16001">How to upload a PDF template for delivery notes</a></p>
+</li>
+<li>
+<p><a href="#16003">How to show the limango customer number on delivery notes</a></p>
+</li>
+<li>
+<p><a href="#16002">How to enter return instructions for limango delivery notes</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="16001">14.1. Uploading a PDF template for delivery notes</h3>
+<div class="paragraph">
+<p>limango delivery notes must contain the limango logo. Proceed as describes below to upload a <a href="/en/orders/order-documents#170">PDF template</a> for delivery notes for limango to plentymarkets.</p>
+</div>
+<div class="paragraph instruction">
+<p>Uploading a PDF template for delivery notes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download the PDF template for limango delivery notes and save it on your computer:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/Lieferschein_Vorlage_limango_Marktplatz.pdf">Download PDF template</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Go to <strong>Setup » Client » Select client » Locations » Location: Germany » Documents » Delivery note</strong>.</p>
+</li>
+<li>
+<p>Click on the tab <strong>PDF template</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add template</strong>.<br>
+→ The editing window <strong>Upload new PDF template</strong> opens.</p>
+</li>
+<li>
+<p>From the drop-down list <strong>Payment method</strong>, select the option <strong>Plugin: limango Payment</strong>.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Can’t find the payment method <strong>Plugin: limango Payment</strong> in the drop-down list?</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Go to <strong>Setup » Orders » Settings</strong>.</p>
+</li>
+<li>
+<p>For the setting <strong>Show inactive plugin payment methods</strong>, select the option <strong>Yes</strong>.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the setting.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>In the drop-down list <strong>Language</strong>, select the option <strong>de</strong>.</p>
+</li>
+<li>
+<p>In the line <strong>Template</strong>, click on <strong>Choose template file</strong>.</p>
+</li>
+<li>
+<p>Select the PDF template for limango delivery notes.</p>
+</li>
+<li>
+<p>Click on <strong>Upload template</strong> (<span class="icon "><i class="psicon-save"></i></span>).<br>
+→ The template is uploaded.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="16003">14.2. Showing the limango customer number on delivery notes</h3>
+<div class="paragraph">
+<p>The limango customer number must be shown on all limango delivery notes. To achieve this, adjust the template for delivery notes.</p>
+</div>
+<div class="paragraph instruction">
+<p>Showing the limango customer number on delivery notes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Client » Standard » Locations » Germany » Documents » Invoice » Tab: Template</strong>.</p>
+</li>
+<li>
+<p>Scroll down to the area <strong>Optional elements below stock unit table</strong>.</p>
+</li>
+<li>
+<p>For the setting <strong>External customer number</strong>, select the option <strong>Yes</strong> from the drop-down list.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.<br>
+→ The external costumer number is shown underneath the order items.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="16002">14.3. Entering return information for limango delivery notes</h3>
+<div class="paragraph">
+<p>limango specifies a text containing return instructions that needs to be shown on all limango delivery notes. Proceed as described below to enter these return instructions for limango delivery notes.</p>
+</div>
+<div class="paragraph instruction">
+<p>Entering return information for limango delivery notes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Expand the info box "Text: Return instructions for limango delivery notes" below this description.</p>
+</li>
+<li>
+<p>Copy the text to the clipboard.</p>
+</li>
+<li>
+<p>Go to <strong>Setup » Client » Standard » Locations » Germany » Documents » Invoice » Tab: Template</strong>.</p>
+</li>
+<li>
+<p>Scroll down to the area <strong>Optional elements below stock unit table</strong>, to the setting <strong>Payment instruction</strong>.</p>
+</li>
+<li>
+<p>Find a field that does not contain any payment instructions.</p>
+</li>
+<li>
+<p>From the drop-down list <strong>Payment method</strong> of this field, select the option <strong>Plugin: limango Payment</strong>.</p>
+</li>
+<li>
+<p>Copy the limango return instructions to the field.</p>
+</li>
+<li>
+<p>Replace the two placeholders "xxx" with the name of your company.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<div id="16003" class="openblock collapseBox">
+<div class="title">Text: return instructions for limango delivery notes</div>
+<div class="content">
+<div class="paragraph">
+<p>Bitte wähle den Rücksendegrund aus:
+1 = Artikel gefällt nicht | 2 = Artikel zu groß (weit / lang)* | 3 = Artikel zu klein (eng / kurz)* | 4 = zu spät geliefert | 5 = falscher Artikel geliefert | 6 = Artikel anders als beschrieben / abgebildet | 7 = Auswahlbestellung | 8 = Artikel beschädigt | 9 = sonstige</p>
+</div>
+<div class="paragraph">
+<p>*Wir können leider keinen Größenumtausch vornehmen. Bitte sende den Artikel zurück und bestelle die korrekte Größe noch einmal neu.</p>
+</div>
+<div class="paragraph">
+<p><strong>Du willst etwas zurücksenden?</strong></p>
+</div>
+<div class="paragraph">
+<p>Du hast die Möglichkeit, Artikel ohne Angabe von Gründen, innerhalb von 14 Tagen kostenlos an unseren Marktplatzpartner xxx zurückzusenden. Der Versand Deiner Bestellung erfolgte nicht durch limango, sondern durch unseren Marktplatzpartner xxx. Aus diesem Grund kannst Du deine Rücksendung leider nicht über Dein Kundenkonto anmelden.</p>
+</div>
+<div class="paragraph">
+<p><strong>Bitte sende den Partnerartikel <span class="underline">nicht an limango</span>, sondern immer direkt an den jeweiligen Partner zurück. Befolge dazu folgende Schritte:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Lege den Partnerartikel in das Versandpaket.</p>
+</li>
+<li>
+<p>Teile mit, welche(n) Artikel Du zurücksendest und trage die Menge(n) und die Nummer(n) des Rücksendegrundes ein.</p>
+</li>
+<li>
+<p>Lege den Lieferschein (oder eine Kopie) der Rücksendung bei.</p>
+</li>
+<li>
+<p>Verschließe das Paket sicher und klebe das beigelegte, bereits vorfrankierte Retouren-Etikett auf das Paket.</p>
+</li>
+<li>
+<p>Gib das Paket bei dem auf dem Etikett genannten Versandpartner ab, lass dir die Einlieferung der Rücksendung quittieren und bewahre diesen Beleg für Rückfragen gut auf.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Sobald die Rücksendung bei unserem Marktplatzpartner eingetroffen ist, werden wir Dir den entsprechenden Zahlungsbetrag auf das von Dir angegebene Zahlungsmittel zurückerstatten. Bei einer fälschlichen Rücksendung an limango kann es zu starken Verzögerungen bei der Erstattung des Kaufpreises kommen.</p>
+</div>
+<div class="paragraph">
+<p>Bei Verlust des Retouren-Etiketts kontaktiere bitte: <a href="mailto:marktplatz_service@limango.de">marktplatz_service@limango.de</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1100">15. Troubleshooting: Viewing log entries</h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Your variations were not exported to limango? No variation data is exported if one or more variations do not meet the requirements of limango. As such, none of your variations will be exported to limango if one of your variations is invalid. To find the error, check the entries in the data log.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>The <strong>Data » Log</strong> menu contains a history of processes that run via the limango interface. Note that integrations and identifiers are only shown in the drop-down lists as filters after the process has run at least once.</p>
+</div>
+<div class="paragraph">
+<p>For limango, the following filters are recommended:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Integration</strong> » <strong>limango</strong></p>
+</li>
+<li>
+<p><strong>Reference type</strong> » <strong>variationId</strong></p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Filtering and checking log entries</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Log</strong>.</p>
+</li>
+<li>
+<p>In the column to the left, select appropriate filters from the drop-down lists.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Select filters for dates and/or times to only show entries from a specific period.<br>
+<strong><em>Tip:</em></strong> For further information about the filters, refer to the <a href="/en/data/datalog">Data log</a> page of the manual.</p>
+</li>
+<li>
+<p>Click on <strong>Search</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>).<br>
+→ The results are shown.</p>
+</li>
+<li>
+<p>Check all entries for the levels <strong>warning</strong> and <strong>error</strong>.<br>
+<strong><em>Tip:</em></strong> Click on the entry to see details.</p>
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 </div>
