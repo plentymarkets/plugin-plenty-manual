@@ -27,7 +27,7 @@ class Metadata {
 				"url" => "/willkommen/login-rundgang",
 				"level" => 2,
 				"title" => "Erster Login und Rundgang",
-				"keywords" => "Login, Einloggen, Log in, Anmelden, Anmeldung, Logout, Log out, Ausloggen, Abmelden",
+				"keywords" => "Login, Einloggen, Log in, Anmelden, Anmeldung, Logout, Log out, Ausloggen, Abmelden, Passwort, Passwort ändern, Notification, Notifications, Notification-Center, Abgesicherter Modus, Safe Mode, Safemode",
 				"description" => "Diese Seite richtet sich an neue plentymarkets Nutzer. Lerne, wie du dich im System einloggst und sich durch die Menüstruktur navigiert.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Erster Login und Rundgang. Hier findest du folgende Informationen:",
