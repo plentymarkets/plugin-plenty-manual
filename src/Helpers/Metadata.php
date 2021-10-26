@@ -13363,7 +13363,7 @@ class Metadata {
 						"url" => "/maerkte/preisportale/geizhals-de",
 						"level" => 3,
 						"title" => "Geizhals.de",
-						"keywords" => "Geizhals, Geizhals, Geizhals.de, Geiz Hals",
+						"keywords" => "Geizhals, Geizhals, Geizhals.de, Geiz Hals, Geizhalz",
 						"description" => "Multi-Channel in plentymarkets: Richte die Artikeldatenübertragung zum Preisportal Geizhals.de in deinem plentymarkets System ein.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Geizhals.de. Hier findest du folgende Informationen:",
