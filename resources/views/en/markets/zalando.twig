@@ -4,7 +4,7 @@
             <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#200"><span>1.</span><span> Overview of automatic data exchange</span></a></li>
+<li><a href="#200"><span>1.</span><span> About automatic data exchange</span></a></li>
 <li><a href="#100"><span>2.</span><span> Registering with Zalando</span></a></li>
 <li><a href="#150"><span>3.</span><span> After registration</span></a></li>
 <li><a href="#200"><span>4.</span><span> Setting up Zalando in plentymarkets</span></a></li>
@@ -24,14 +24,13 @@
 <li><a href="#1200"><span>16.1.</span><span> Automatically sending shipping confirmations (zDirect)</span></a></li>
 <li><a href="#1300"><span>16.2.</span><span> Automatically sending cancellations (zDirect)</span></a></li>
 <li><a href="#1600"><span>16.3.</span><span> Automatically sending returns (zDirect)</span></a></li>
-<li><a href="#850"><span>16.4.</span><span> Order status changes (old API)</span></a></li>
 </ul>
 </li>
 <li><a href="#1500"><span>17.</span><span> Activating the Zalando account</span></a></li>
 <li><a href="#900"><span>18.</span><span> Download reports</span></a>
 <ul class="sectlevel2">
 <li><a href="#905"><span>18.1.</span><span> Downloading the export log</span></a></li>
-<li><a href="#910"><span>18.2.</span><span> Downloading a product status report</span></a></li>
+<li><a href="#910"><span>18.2.</span><span> Downloading product status reports</span></a></li>
 <li><a href="#915"><span>18.3.</span><span> Downloading price reports</span></a></li>
 </ul>
 </li>
@@ -51,12 +50,12 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="200">1. Overview of automatic data exchange</h2>
+<h2 id="200">1. About automatic data exchange</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Connecting to this market allows for the automatic functions listed below to take place.</p>
+<p>Connecting to this market allows for the following automatic functions to take place:</p>
 </div>
-<table id="data-exchange-zalando" class="tableblock frame-all grid-all stretch">
+<table id="data-exchange" class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -74,15 +73,16 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stock synchronisation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Zalando retrieves the stock information (i.e. the XML file stock.xml) every 10 minutes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Every 15 minutes, asynchronous<br>
+Stock for 1,000 variations is updated per minute. If the API limit set by Zalando is reached, the remaining stock details are sent once the API is unlocked after one minute.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Price synchronisation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Every 15 minutes via API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Every 15 minutes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order import</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Every 5 minutes via the API interface zDirect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Every 5 minutes</p></td>
 </tr>
 </tbody>
 </table>
@@ -197,20 +197,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse selection</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Select a warehouse logic. A warehouse is assigned to each Zalando order based on this logic.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Transfer stock quantity of distribution warehouse that currently has largest stock</strong> = Select the distribution warehouse that currently has the largest stock of the variation.<br></p>
-</li>
-<li>
-<p><strong>Use the item’s main warehouse</strong> = Select the main warehouse of the item.<br></p>
-</li>
-<li>
-<p><strong>Transfer sum of stock quantities from all distribution warehouses</strong> = The stock of all distribution warehouses is added up and the sum total is exported to Zalando.</p>
-</li>
-</ul>
+<p>This setting is no longer in use since the switch to the zDirect API (27/10/2021). Instead, select the sales warehouses in the assistant <strong>Account settings - Zalando</strong>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -219,20 +206,19 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stock buffer</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Enter the stock buffer in units. The stock exported to Zalando is reduced by the value entered.</p>
+<p>This setting is no longer in use since the switch to the zDirect API (27/10/2021). Instead, set a stock buffer in the assistant <strong>Account settings - Zalando</strong>.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Quantity for items that are not limited to the stock</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Enter a stock quantity for variations that are not limited to stock. The quantity you enter will be exported to Zalando for all variations that are not limited to stock. As such, the actual quantity in stock is ignored.</p>
+<p>This setting is no longer in use since the switch to the zDirect API (27/10/2021). Instead, set the quantity in the assistant <strong>Account settings - Zalando</strong>.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Maximum for item upload</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Enter a number to set a limit for exporting variations. This number represents units per variation. The limit defines the maximum stock that will be exported to Zalando per Variation.<br>
-<strong><em>Example:</em></strong> The variation has a stock of 20\. You have entered a limit of 10\. As such, plentymarkets exports a stock of 10 to Zalando.</p>
+<p>This setting is no longer in use since the switch to the zDirect API (27/10/2021). Instead, set the maximum stock in the assistant <strong>Account settings - Zalando</strong>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -279,129 +265,6 @@
 → The settings are saved.<br></p>
 </li>
 </ol>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Step <strong>Product Status Report</strong></div>
-<div class="content">
-<div class="paragraph">
-<p><strong>Do you want status reports to be generated for your items on Zalando?</strong></p>
-</div>
-<div class="paragraph">
-<p>After you activate the option <strong>Generate product status reports</strong>, the following product status reports in CVS format are available in the <strong>Setup » Markets » Zalando » Settings » Tab: Processing reports</strong>:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>ProductErrorReport</em></strong>: Contains variations that can currently not be sold on Zalando. The report also contains the first five error codes and an error description.</p>
-</li>
-<li>
-<p><strong><em>ProductLiveReport</em></strong>: Contains variations that can currently be sold on Zalando. The report also contains information on the stock and price of the variations on the different Zalando channels (DE, FR, etc.) at the time the file was generated.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The product status reports are generated by Zalando. As such, these reports only contain information regarding variations that were successfully exported to Zalando. Both files are updated automatically once every night. However, you can also update the files manually.</p>
-</div>
-<div class="paragraph">
-<p><a href="#910">How to get product status reports</a></p>
-</div>
-</div>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Step <strong>Prices</strong></div>
-<div class="content">
-<table id="assistant-zalando-prices" class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Setting</th>
-<th class="tableblock halign-left valign-top">Explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Do you want to export prices to Zalando?</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Activate price update</strong> = Activate option to export your prices to Zalando every 15 minutes.<br>
-<strong><em>Tip:</em></strong> The price reports contain information on the status of price updates.</p>
-</div>
-<div class="paragraph">
-<p><a href="#915">How to download price reports</a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>To which interface environment should prices be exported?</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Select if real or test data is to be exported.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Sandbox</strong> = Test data is exported to Zalando.</p>
-</li>
-<li>
-<p><strong>Productive</strong> = Real price data is exported to Zalando.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Should warnings by Zalando for price updates be ignored?</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>During price updates, Zalando checks the plausibility of your prices based on specific criteria. For example, Zalando compares the prices of the same variations on different platforms and compares the regular price with the reduced price. If any significant differences are detected, Zalando triggers a warning. Select if such warnings should be ignored when prices are updated.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="icon green"><i class="fa fa-toggle-on  "></i></span> = The new prices are published even if Zalando sends a warning.</p>
-</li>
-<li>
-<p><span class="icon darkGrey"><i class="fa fa-toggle-off  "></i></span> (default setting) = Zalando rejects new prices if they do not pass the plausibility checks.<br>
-<strong><em>Tip:</em></strong> Check the <strong>Data » Log</strong> menu and the price reports for warnings.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Which sales price should be exported as the regular price for Zalando?</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Select the sales price from the drop-down list that you want to export to Zalando as the <strong>Regular price</strong>. You can select from sales prices of the types <strong>Default</strong> or <strong>RRP</strong> for which the referrer Zalando, the country and the currency of the country are activated.<br>
-<strong><em>Note:</em></strong> If you specify a <strong>reduced price</strong> for a variation, the <strong>regular price</strong> is exported to Zalando as the strikethrough price.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Which sales price should be exported as the reduced price for Zalando?</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Select the sales price from the drop-down list that you want to export to Zalando as the <strong>Reduced price</strong>. You can select from sales prices of the types <strong>Offer price</strong> or <strong>Default</strong> for which the referrer Zalando, the country and the currency of the country are activated.<br>
-<strong><em>Note:</em></strong> If you specify a <strong>reduced price</strong> for a variation, the <strong>regular price</strong> is exported to Zalando as the strikethrough price.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use scheduled prices to announce any temporary or permanent price changes to Zalando ahead of time.</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Define up to three scheduled prices. Scheduled prices ensure that Zalando really changes your prices at the specified time. To export scheduled prices to Zalando, you need at least a sales price for the regular price and a property that contains the start date and time for the new price. The start date for scheduled prices must be in the future. You can also select a property for an end date for a scheduled price.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Property for start date</strong> = Select the property from the drop-down list that you use to manage the start time for your variations. Only properties of the types <strong>Date</strong> or <strong>Text</strong> can be selected.<br>
-<strong><em>Note:</em></strong> The start times of more than one scheduled prices must be separated by at least 60 minutes.</p>
-</li>
-<li>
-<p><strong>Property for end date</strong> (optional) = Select the property from the drop-down list that you use to manage the end time for your variations. Only properties of the types <strong>Date</strong> or <strong>Text</strong> can be selected.</p>
-</li>
-<li>
-<p><strong>Select price</strong> = Select the sales price from the drop-down list that you want to export to Zalando as the <strong>Scheduled price</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Step <strong>Orders</strong></div>
@@ -501,6 +364,174 @@
 </div>
 <div class="paragraph">
 <p><strong><em>Note:</em></strong> Sending reasons of return to Zalando is optional. However, Zalando recommends that you send a reason.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Step <strong>Stock</strong></div>
+<div class="content">
+<table id="assistant-zalando-stock" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Do you want to export stock information to Zalando?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Activate stock export</strong> = Activate option to export your stock to Zalando every 15 minutes.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>To which Zalando interface environment do you want to export stock information?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select if real or test data is to be exported.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Sandbox</strong> = Test data is exported to Zalando.</p>
+</li>
+<li>
+<p><strong>Productive</strong> = Real stock data is exported to Zalando.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>From which sales warehouses do you want to export stock information to Zalando?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select one or more sales warehouses. The totalled net stock of these sales warehouses is exported.<br>
+<strong><em>Tip:</em></strong> You can also select a <strong>Stock buffer</strong> in this step of the assistant. The totalled net stock of the sales warehouses you selected is then reduced by the quantity you entered as the stock buffer.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>How much stock should be exported at maximum?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If a variation has a higher stock, the value you entered in the <strong>Maximum stock</strong> field will be exported instead.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Which stock buffer should be deducted from the exported stock?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The quantity you enter in the * Stock buffer*field is deducted from the net stock of each variation before export.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>How much stock should be exported for variations without limitation to net stock that have no positive net stock?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>In the field <strong>Stock without stock limitation</strong>, enter the stock to be exported for variations that have no positive net stock. Variations that have no positive net stock are variations with the setting <strong>Tab: Settings, Setting: Limitation, Option: None</strong> that have no positive net stock.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>How much stock should be exported for variations without stock administration?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>In the field <strong>Stock without stock administration</strong>, enter the stock to be exported for variations for which no stock is administered. Variations for which no stock is administered are variations with the setting <strong>Tab: Settings, Dropdown list: Limitation, Option: Do not administer stock for this variation</strong>. The entered value is exported for these variations.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Step <strong>Prices</strong></div>
+<div class="content">
+<table id="assistant-zalando-prices" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Do you want to export prices to Zalando?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Activate price update</strong> = Activate option to export your prices to Zalando every 15 minutes.<br>
+<strong><em>Tip:</em></strong> The price reports contain information on the status of price updates.</p>
+</div>
+<div class="paragraph">
+<p><a href="#915">How to download price reports</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>To which interface environment should prices be exported?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select if real or test data is to be exported.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Sandbox</strong> = Test data is exported to Zalando.</p>
+</li>
+<li>
+<p><strong>Productive</strong> = Real price data is exported to Zalando.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Should warnings by Zalando for price updates be ignored?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>During price updates, Zalando checks the plausibility of your prices based on specific criteria. For example, Zalando compares the prices of the same variations on different platforms and compares the regular price with the reduced price. If any significant differences are detected, Zalando triggers a warning. Select if such warnings should be ignored when prices are updated.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="icon green"><i class="fa fa-toggle-on  "></i></span> = The new prices are published even if Zalando sends a warning.</p>
+</li>
+<li>
+<p><span class="icon darkGrey"><i class="fa fa-toggle-off  "></i></span> (default setting) = Zalando rejects new prices if they do not pass the plausibility checks.<br>
+<strong><em>Tip:</em></strong> Check the <strong>Data » Log</strong> menu and the price reports for warnings.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Which sales price should be exported as the regular price for Zalando?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select the sales price from the drop-down list that you want to export to Zalando as the <strong>Regular price</strong>. You can select from sales prices of the types <strong>Default</strong> or <strong>RRP</strong> for which the referrer Zalando, the country and the currency of the country are activated.<br>
+<strong><em>Note:</em></strong> If you specify a <strong>reduced price</strong> for a variation, the <strong>regular price</strong> is exported to Zalando as the strikethrough price.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Which sales price should be exported as the reduced price for Zalando?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select the sales price from the drop-down list that you want to export to Zalando as the <strong>Reduced price</strong>. You can select from sales prices of the types <strong>Offer price</strong> or <strong>Default</strong> for which the referrer Zalando, the country and the currency of the country are activated.<br>
+<strong><em>Note:</em></strong> If you specify a <strong>reduced price</strong> for a variation, the <strong>regular price</strong> is exported to Zalando as the strikethrough price.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Use scheduled prices to announce any temporary or permanent price changes to Zalando ahead of time.</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Define up to three scheduled prices. Scheduled prices ensure that Zalando really changes your prices at the specified time. To export scheduled prices to Zalando, you need at least a sales price for the regular price and a property that contains the start date and time for the new price. The start date for scheduled prices must be in the future. You can also select a property for an end date for a scheduled price.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Property for start date</strong> = Select the property from the drop-down list that you use to manage the start time for your variations. You can only select properties of the types <strong>Date</strong> or <strong>Text</strong>.<br>
+<strong><em>Note:</em></strong> The start times of more than one scheduled prices must be separated by at least 60 minutes.</p>
+</li>
+<li>
+<p><strong>Property for end date</strong> (optional) = Select the property from the drop-down list that you use to manage the end time for your variations. You can only select properties of the types <strong>Date</strong> or <strong>Text</strong>.</p>
+</li>
+<li>
+<p><strong>Select price</strong> = Select the sales price from the drop-down list that you want to export to Zalando as the <strong>Scheduled price</strong>.</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -953,7 +984,7 @@ Only the most important settings for the import are described here. Is this your
 <p>Altersgruppe(n) (age group(s))</p>
 </li>
 <li>
-<p>Form of address</p>
+<p>Form of address (Geschlecht)</p>
 </li>
 <li>
 <p>Größenregister (size list)</p>
@@ -962,7 +993,7 @@ Only the most important settings for the import are described here. Is this your
 <p>Hersteller-Code (manufacturer code)</p>
 </li>
 <li>
-<p>Herstellerfarbe (manufacturer colour)</p>
+<p>Manufacturer colour</p>
 </li>
 <li>
 <p>Jahreszeiten-Code (Seasonal code)</p>
@@ -1143,7 +1174,7 @@ Only the most important settings for the import are described here. Is this your
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You can only link one size register and one length register to each attribute.
+You can only link one size register or one length register to each attribute.
 </td>
 </tr>
 </tbody></table>
@@ -1309,7 +1340,7 @@ You can only link one size register and one length register to each attribute.
 <p>Altersgruppe(n) (age group(s))</p>
 </li>
 <li>
-<p>Form of address</p>
+<p>Form of address (Geschlecht)</p>
 </li>
 <li>
 <p>Größenregister (size list)</p>
@@ -1318,7 +1349,7 @@ You can only link one size register and one length register to each attribute.
 <p>Hersteller-Code (manufacturer code)</p>
 </li>
 <li>
-<p>Herstellerfarbe (manufacturer colour)</p>
+<p>Manufacturer colour</p>
 </li>
 <li>
 <p>Jahreszeiten-Code (Seasonal code)</p>
@@ -1395,9 +1426,6 @@ You can only link one size register or one length register to each attribute.
 <p>Automatically sending returns (zDirect) (<a href="#1600">How?</a>)</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>If you still use the old API, changes to the order status are not communicated to Zalando with event procedures. (<a href="#850">How else?</a>)</p>
 </div>
 <div class="sect2">
 <h3 id="1200">16.1. Automatically sending shipping confirmations (zDirect)</h3>
@@ -1686,45 +1714,6 @@ Return reasons will only be transmitted if the event procedure is used in combin
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="850">16.4. Order status changes (old API)</h3>
-<div class="paragraph">
-<p>If you still use the old API, changes to the order status are not communicated to Zalando with event procedures. Instead, Zalando automatically retrieves the order status via the interface. The order statuses <strong>shipping confirmation</strong>, <strong>cancellation</strong>, and <strong>return</strong> are sent to Zalando if the criteria listed in <a href="#table-zalando-order-status">Table 8</a> are met:</p>
-</div>
-<table id="table-zalando-order-status" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. Criteria for order statuses</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Order status</th>
-<th class="tableblock halign-left valign-top">Criteria</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Shipping confirmation</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The outgoing items have been booked. In addition, a return label was created and package numbers were added.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cancellation</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The order moved to <strong>status [8.X]</strong> or the quantity of an order item is <strong>0</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Return</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A return was created in plentymarkets.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div><div class="sect1">
 <h2 id="1500">17. Activating the Zalando account</h2>
@@ -1884,7 +1873,7 @@ Return reasons will only be transmitted if the event procedure is used in combin
 </ol>
 </div>
 <table id="zalando-errors" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. Error messages in the export log (zalandoArticleExportLog.txt)</caption>
+<caption class="title">Table 8. Error messages in the export log (zalandoArticleExportLog.txt)</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1973,7 +1962,7 @@ Return reasons will only be transmitted if the event procedure is used in combin
 </table>
 </div>
 <div class="sect2">
-<h3 id="910">18.2. Downloading a product status report</h3>
+<h3 id="910">18.2. Downloading product status reports</h3>
 <div class="paragraph">
 <p>Product status reports contain information regarding the items that were exported to Zalando. These reports are generated by Zalando. As such, these reports only contain information regarding variations that were successfully exported to Zalando. The following reports are available:</p>
 </div>
@@ -1986,34 +1975,6 @@ Return reasons will only be transmitted if the event procedure is used in combin
 <p><strong><em>ProductLiveReport.csv</em></strong>: Contains variations that can be sold on Zalando since the last export. The report also contains information on the stock and price of the variations on the different Zalando channels (DE, FR, etc.) at the time the file was generated. The report is generated once every night. Click on <strong>Update file</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>) before downloading the file to get current data from Zalando.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Product status reports are only available if the option <strong>Generate product status reports</strong> is activated in the <strong>Account settings - Zalando</strong> assistant.</p>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Activating product status reports</div>
-<div class="content">
-<div class="paragraph">
-<p>How to activate product status reports:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Go to <strong>Setup » Assistants » Omni-Channel</strong>.</p>
-</li>
-<li>
-<p>Click on the assistant <strong>Account settings - Zalando</strong>.</p>
-</li>
-<li>
-<p>Go to the step <strong>Product status report</strong> and activate the option <strong>Generate product status reports</strong>.</p>
-</li>
-<li>
-<p>Complete the assistant.<br>
-→ The first reports are generated during the night.</p>
-</li>
-</ol>
-</div>
-</div>
 </div>
 <div class="paragraph instruction">
 <p>Downloading a product status report:</p>
@@ -2304,10 +2265,10 @@ Return reasons will only be transmitted if the event procedure is used in combin
 </div>
 </div>
 <div class="paragraph">
-<p>Use any filters listed in <a href="#table-reference-types">Table 10</a> to limit the search results.</p>
+<p>Use any filters listed in <a href="#table-reference-types">Table 9</a> to limit the search results.</p>
 </div>
 <table id="table-reference-types" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. Filters</caption>
+<caption class="title">Table 9. Filters</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -2378,6 +2339,47 @@ Reference value » PriceReporting</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Log entries for errors during generation of price reports</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Stock synchronisation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Identifier » Zalando</p>
+</li>
+<li>
+<p>References:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Reference type » action<br>
+Reference value » StockUpdate</p>
+</li>
+<li>
+<p>Reference type » variationId</p>
+</li>
+<li>
+<p>Reference type » ean</p>
+</li>
+<li>
+<p>Reference type » accountId</p>
+</li>
+<li>
+<p>Reference type » salesChannel</p>
+</li>
+<li>
+<p>Reference type » jobUniqueId</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Log entries for errors during stock updates</p>
 </div></div></td>
 </tr>
 </tbody>
