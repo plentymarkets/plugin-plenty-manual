@@ -4,7 +4,7 @@
             <div id="toc" class="toc">
 <div id="toctitle">Inhalt</div>
 <ul class="sectlevel1">
-<li><a href="#200"><span>1.</span><span> Übersicht des automatischen Datenaustauschs</span></a></li>
+<li><a href="#200"><span>1.</span><span> Informationen zum automatischen Datenaustausch</span></a></li>
 <li><a href="#100"><span>2.</span><span> Bei Zalando registrieren</span></a></li>
 <li><a href="#150"><span>3.</span><span> Ablauf nach der Registrierung</span></a></li>
 <li><a href="#200"><span>4.</span><span> Zalando in plentymarkets einrichten</span></a></li>
@@ -24,14 +24,13 @@
 <li><a href="#1200"><span>16.1.</span><span> Versandbestätigungen automatisch senden (zDirect)</span></a></li>
 <li><a href="#1300"><span>16.2.</span><span> Stornierungen automatisch senden (zDirect)</span></a></li>
 <li><a href="#1600"><span>16.3.</span><span> Retouren automatisch senden (zDirect)</span></a></li>
-<li><a href="#850"><span>16.4.</span><span> Änderungen am Auftragsstatus (alte API)</span></a></li>
 </ul>
 </li>
 <li><a href="#1500"><span>17.</span><span> Zalando-Konto aktivieren</span></a></li>
 <li><a href="#900"><span>18.</span><span> Berichte herunterladen</span></a>
 <ul class="sectlevel2">
 <li><a href="#905"><span>18.1.</span><span> Export-Log herunterladen</span></a></li>
-<li><a href="#910"><span>18.2.</span><span> Produkt-Status-Bericht herunterladen</span></a></li>
+<li><a href="#910"><span>18.2.</span><span> Produkt-Status-Berichte herunterladen</span></a></li>
 <li><a href="#915"><span>18.3.</span><span> Preis-Berichte herunterladen</span></a></li>
 </ul>
 </li>
@@ -51,7 +50,7 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="200">1. Übersicht des automatischen Datenaustauschs</h2>
+<h2 id="200">1. Informationen zum automatischen Datenaustausch</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Die Anbindung des Marktplatzes stellt die folgenden automatisierten Funktionen bereit:</p>
@@ -74,15 +73,16 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bestandsabgleich</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Zalando ruft die Bestandsdaten alle 10 Minuten ab (über die XML-Datei stock.xml).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle 15 Minuten, asynchron<br>
+Im Normalfall werden pro Minute 1.000 Bestände aktualisiert. Wird die von Zalando vorgegebene API-Limitierung erreicht, werden die übrigen Bestände gesendet, sobald die API nach spätestens einer Minute wieder entsperrt ist.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preisabgleich</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alle 15 Minuten über API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle 15 Minuten</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Auftragsimport</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alle 5 Minuten über die API-Schnittstelle zDirect</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alle 5 Minuten</p></td>
 </tr>
 </tbody>
 </table>
@@ -197,20 +197,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lagerauswahl</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Nach welcher Logik soll Zalando-Aufträgen ein Lager zugewiesen werden?</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Übertrage die Bestandsmenge des Vertriebslagers mit dem aktuell größten Bestand</strong> = Das Vertriebslager mit dem aktuell größtem Bestand der Variante als Lager wählen.<br></p>
-</li>
-<li>
-<p><strong>Verwende Hauptlager des Artikels</strong> = Das Hauptlager des Artikels als Lager wählen.<br></p>
-</li>
-<li>
-<p><strong>Übertrage die Summe der Bestandsmenge aller Vertriebslager</strong> = Die Bestände aller Vertriebslager werden addiert und die Summe an Zalando exportiert.</p>
-</li>
-</ul>
+<p>Diese Einstellung ist seit der Umstellung auf die zDirect-API (27.10.2021) ohne Funktion. Wähle stattdessen die Vertriebslager im Assistenten <strong>Kontoeinstellungen - Zalando</strong>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -219,20 +206,19 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bestandspuffer</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Bestandspuffer in Stück eingeben. Der Bestand, der an Zalando exportiert wird, wird um den eingegebenen Wert reduziert.</p>
+<p>Diese Einstellung ist seit der Umstellung auf die zDirect-API (27.10.2021) ohne Funktion. Lege stattdessen einen Bestandspuffer im Assistenten <strong>Kontoeinstellungen - Zalando</strong> fest.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Menge für Artikel ohne Bestandsbindung</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Menge eingeben, die für Varianten ohne Bestandsbindung bei Zalando als Bestand geführt werden soll. Die eingegebene Menge wird für alle Varianten ohne Bestandsbindung an Zalando exportiert. Der tatsächliche Bestand wird also nicht berücksichtigt.</p>
+<p>Diese Einstellung ist seit der Umstellung auf die zDirect-API (27.10.2021) ohne Funktion. Lege stattdessen die Menge im Assistenten <strong>Kontoeinstellungen - Zalando</strong> fest.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Grenzwert für Artikel-Upload</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Zahl eingeben, um einen Grenzwert für den Export in Stück pro Variante festzulegen. Der Grenzwert definiert den maximalen Bestand, der pro Variante übermittelt wird.<br>
-<strong><em>Beispiel:</em></strong> Die Variante hat einen Bestand von 20, aber du hast den Grenzwert 10 festgelegt. plentymarkets übermittelt dann einen Bestand von 10 an Zalando.</p>
+<p>Diese Einstellung ist seit der Umstellung auf die zDirect-API (27.10.2021) ohne Funktion. Lege stattdessen den maximalen Bestand im Assistenten <strong>Kontoeinstellungen - Zalando</strong> fest.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -279,129 +265,6 @@
 → Die Einstellungen werden gespeichert.<br></p>
 </li>
 </ol>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Schritt <strong>Artikelstatusbericht</strong></div>
-<div class="content">
-<div class="paragraph">
-<p><strong>Sollen für deine Artikel auf Zalando Statusberichte generiert werden?</strong></p>
-</div>
-<div class="paragraph">
-<p>Wenn du die Option <strong>Artikelstatusberichte generieren</strong> aktivierst, stehen im Menü <strong>Einrichtung » Märkte » Zalando » Einstellungen » Tab: Verarbeitungsberichte</strong> die folgenden Artikelstatusberichte im CSV-Format zur Verfügung:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>ProductErrorReport</em></strong>: Enthält Varianten, die aktuell nicht auf Zalando verkauft werden können. Der Bericht enthält außerdem die ersten fünf Fehlercodes und eine Fehlerbeschreibung.</p>
-</li>
-<li>
-<p><strong><em>ProductLiveReport</em></strong>: Enthält Varianten, die aktuell auf Zalando verkauft werden können. Der Bericht enthält außerdem Informationen zum Bestand und Preis jeder Variante auf den Zalando-Channels (DE, FR usw.) zu dem Zeitpunkt, zu dem die Datei generiert wurde.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Die Produkt-Status-Berichte werden von Zalando generiert. Die Berichte enthalten deshalb nur Informationen zu Varianten, die erfolgreich zu Zalando exportiert wurden. Beide Dateien werden automatisch einmal pro Nacht aktualisiert. Du kannst die Dateien aber auch manuell aktualisieren.</p>
-</div>
-<div class="paragraph">
-<p><a href="#910">So rufst du Produkt-Status-Berichte ab</a></p>
-</div>
-</div>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Schritt <strong>Preise</strong></div>
-<div class="content">
-<table id="assistant-zalando-prices" class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Einstellung</th>
-<th class="tableblock halign-left valign-top">Erläuterung</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Möchtest du Preise zu Zalando exportieren?</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Preisexport aktivieren</strong> = Option aktivieren, um alle 15 Minuten deine Preise zu Zalando zu exportieren.<br>
-<strong><em>Tipp:</em></strong> Informationen zu den Preis-Updates findest du in den Preis-Berichten.</p>
-</div>
-<div class="paragraph">
-<p><a href="#915">So lädst du Preis-Berichte herunter</a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>In welche Schnittstellenumgebung sollen die Preise exportiert werden?</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Wählen, ob echte Daten oder Testdaten exportiert werden sollen.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Sandbox</strong> = Testdaten werden an Zalando exportiert.</p>
-</li>
-<li>
-<p><strong>Productive</strong> = Echte Preisdaten werden an Zalando exportiert.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sollen Warnungen zu Preisaktualisierungen von Zalando ignoriert werden?</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Bei Preisaktualisierungen prüft Zalando die Plausibilität deiner Preise anhand von bestimmten Kriterien. Zalando vergleicht zum Beispiel die Preise der Varianten auf den verschiedenen Plattformen miteinander und gleicht den normalen Preis mit dem reduzierten Preis ab. Bei Auffälligkeiten gibt Zalando eine Warnung aus. Wähle, ob solche Warnungen bei Preisaktualisierungen ignoriert werden sollen.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="icon green"><i class="fa fa-toggle-on  "></i></span> = Die neuen Preise gehen trotz Warnung live.</p>
-</li>
-<li>
-<p><span class="icon darkGrey"><i class="fa fa-toggle-off  "></i></span> (Standardeinstellung) = Zalando lehnt neue Preise ab, wenn sie die Plausibilitätsprüfung nicht bestehen.<br>
-<strong><em>Tipp:</em></strong> Warnungen findest du im Menü <strong>Daten » Log</strong> und in den Preis-Berichten.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Welcher Verkaufspreis soll als normaler Preis zu Zalando exportiert werden?</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Verkaufspreis aus der Dropdown-Liste wählen, der als <strong>Normaler Preis</strong> zu Zalando exportiert werden soll. Es stehen nur Verkaufspreise des Typs <strong>Standard</strong> oder <strong>UVP</strong> zur Auswahl, für die die Herkunft Zalando, das Land und die Währung des Landes aktiviert sind.<br>
-<strong><em>Hinweis:</em></strong> Wenn du für eine Variante einen <strong>reduzierten Preis</strong> angibst, wird der <strong>normale Preis</strong> als Streichpreis zu Zalando übertragen.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Welcher Verkaufspreis soll als reduzierter Preis zu Zalando exportiert werden?</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Verkaufspreis aus der Dropdown-Liste wählen, der als <strong>Reduzierter Preis</strong> zu Zalando exportiert werden soll. Es stehen nur Verkaufspreise des Typs <strong>Aktionspreis</strong> oder <strong>Standard</strong> zur Auswahl, für die die Herkunft Zalando, das Land und die Währung des Landes aktiviert sind.<br>
-<strong><em>Hinweis:</em></strong> Wenn du für eine Variante einen <strong>reduzierten Preis</strong> angibst, wird der <strong>normale Preis</strong> als Streichpreis zu Zalando übertragen.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mit geplanten Preisen kannst du zeitlich begrenzte oder auch dauerhafte Preisänderungen bei Zalando vorab ankündigen.</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Definiere bis zu drei geplante Preise. Geplante Preise geben dir mehr Sicherheit, dass deine Preise zum gewünschten Zeitpunkt auf Zalando geändert werden. Um geplante Preise an Zalando zu übertragen, benötigst du mindestens einen Verkaufspreis für den normalen Preis und eine Eigenschaft, die Startdatum und Startzeit für den neuen Preis enthält. Das Startdatum für geplante Preise muss in der Zukunft liegen. Optional kannst du auch eine Eigenschaft für ein Enddatum für den geplanten Preis wählen.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Eigenschaft für Startdatum</strong> = Eigenschaft aus der Dropdown-Liste wählen, mit der der Startzeitpunkt des geplanten Preises an der Variante gepflegt wird. Nur Eigenschaften vom Typ <strong>Datum</strong> oder <strong>Text</strong> können gewählt werden.<br>
-<strong><em>Hinweis:</em></strong> Die Startzeitpunkte mehrerer geplanter Preise müssen mindestens 60 Minuten auseinanderliegen.</p>
-</li>
-<li>
-<p><strong>Eigenschaft für Enddatum</strong> (optional) = Eigenschaft aus der Dropdown-Liste wählen, mit der der Endzeitpunkt des geplanten Preises an der Variante gepflegt wird. Nur Eigenschaften vom Typ <strong>Datum</strong> oder <strong>Text</strong> können gewählt werden.</p>
-</li>
-<li>
-<p><strong>Preis wählen</strong> = Verkaufspreis aus der Dropdown-Liste wählen, der als <strong>Geplanter Preis</strong> zu Zalando exportiert werden soll.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Schritt <strong>Aufträge</strong></div>
@@ -501,6 +364,174 @@
 </div>
 <div class="paragraph">
 <p><strong><em>Hinweis:</em></strong> Das Übermitteln von Retourengründen an Zalando ist optional, wird aber von Zalando empfohlen.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Schritt <strong>Bestände</strong></div>
+<div class="content">
+<table id="assistant-zalando-stock" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Möchtest du Bestandsdaten zu Zalando exportieren?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Bestandsexport aktivieren</strong> = Option aktivieren, um alle 15 Minuten deinen Bestand zu Zalando zu exportieren.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>In welche Schnittstellenumgebung sollen die Bestandsdaten exportiert werden?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wählen, ob echte Daten oder Testdaten exportiert werden sollen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Sandbox</strong> = Testdaten werden an Zalando exportiert.</p>
+</li>
+<li>
+<p><strong>Productive</strong> = Echte Bestandsdaten werden an Zalando exportiert.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aus welchen Vertriebslagern sollen Bestandsdaten exportiert werden?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ein oder mehrere Vertriebslager wählen. Die Summe des Nettobestands dieser Vertriebslager wird exportiert.<br>
+<strong><em>Tipp:</em></strong> Du kannst in diesem Schritt des Assistenten einen <strong>Bestandspuffer</strong> festlegen. Die Summe des Nettobestands der gewählten Vertriebslager wird dann um die als Bestandspuffer eingegebenen Stückzahl reduziert.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Wie viel Bestand soll maximal exportiert werden?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wenn eine Variante einen höheren Bestand hat, wird stattdessen der im Feld <strong>Maximaler Bestand</strong> eingegebene Wert exportiert.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Welcher Bestandspuffer soll vom exportierten Bestand abgezogen werden?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die im Feld <strong>Bestandspuffer</strong> eingegebene Stückzahl wird vor dem Export vom Nettowarenbestand jeder Variante abgezogen.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Wie viel Bestand soll für Varianten ohne Beschränkung auf den Nettowarenbestand exportiert werden, wenn diese Varianten keinen positiven Nettowarenbestand haben?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>In das Feld <strong>Bestand ohne Bestandsbeschränkung</strong> den Bestand eingeben, der für Varianten ohne Beschränkung auf den Nettowarenbestand exportiert werden soll. Varianten ohne Bestandsbeschränkung sind Varianten, bei denen im Tab <strong>Einstellungen</strong> der Variante für die Einstellung <strong>Beschränkung</strong> die Option <strong>Keine</strong> gewählt ist und der Nettowarenbestand nicht positiv ist.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Wie viel Bestand soll für Varianten ohne Warenbestandsführung exportiert werden?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>In das Feld <strong>Bestand ohne Bestandsführung</strong> den Bestand eingeben, der für Varianten ohne Warenbestandsführung exportiert werden soll. Varianten ohne Warenbestandsführung sind Varianten, bei denen im Tab <strong>Einstellungen</strong> für die Einstellung <strong>Beschränkung</strong> die Option <strong>Keinen WB für diese Variante führen</strong> gewählt wurde. Für diese Varianten wird der eingetragene Wert exportiert.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Schritt <strong>Preise</strong></div>
+<div class="content">
+<table id="assistant-zalando-prices" class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Möchtest du Preise zu Zalando exportieren?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Preisexport aktivieren</strong> = Option aktivieren, um alle 15 Minuten deine Preise zu Zalando zu exportieren.<br>
+<strong><em>Tipp:</em></strong> Informationen zu den Preis-Updates findest du in den Preis-Berichten.</p>
+</div>
+<div class="paragraph">
+<p><a href="#915">So lädst du Preis-Berichte herunter</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>In welche Schnittstellenumgebung sollen die Preise exportiert werden?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wählen, ob echte Daten oder Testdaten exportiert werden sollen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Sandbox</strong> = Testdaten werden an Zalando exportiert.</p>
+</li>
+<li>
+<p><strong>Productive</strong> = Echte Preisdaten werden an Zalando exportiert.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sollen Warnungen zu Preisaktualisierungen von Zalando ignoriert werden?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Bei Preisaktualisierungen prüft Zalando die Plausibilität deiner Preise anhand von bestimmten Kriterien. Zalando vergleicht zum Beispiel die Preise der Varianten auf den verschiedenen Plattformen miteinander und gleicht den normalen Preis mit dem reduzierten Preis ab. Bei Auffälligkeiten gibt Zalando eine Warnung aus. Wähle, ob solche Warnungen bei Preisaktualisierungen ignoriert werden sollen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="icon green"><i class="fa fa-toggle-on  "></i></span> = Die neuen Preise gehen trotz Warnung live.</p>
+</li>
+<li>
+<p><span class="icon darkGrey"><i class="fa fa-toggle-off  "></i></span> (Standardeinstellung) = Zalando lehnt neue Preise ab, wenn sie die Plausibilitätsprüfung nicht bestehen.<br>
+<strong><em>Tipp:</em></strong> Warnungen findest du im Menü <strong>Daten » Log</strong> und in den Preis-Berichten.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Welcher Verkaufspreis soll als normaler Preis zu Zalando exportiert werden?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Verkaufspreis aus der Dropdown-Liste wählen, der als <strong>Normaler Preis</strong> zu Zalando exportiert werden soll. Es stehen nur Verkaufspreise des Typs <strong>Standard</strong> oder <strong>UVP</strong> zur Auswahl, für die die Herkunft Zalando, das Land und die Währung des Landes aktiviert sind.<br>
+<strong><em>Hinweis:</em></strong> Wenn du für eine Variante einen <strong>reduzierten Preis</strong> angibst, wird der <strong>normale Preis</strong> als Streichpreis zu Zalando übertragen.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Welcher Verkaufspreis soll als reduzierter Preis zu Zalando exportiert werden?</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Verkaufspreis aus der Dropdown-Liste wählen, der als <strong>Reduzierter Preis</strong> zu Zalando exportiert werden soll. Es stehen nur Verkaufspreise des Typs <strong>Aktionspreis</strong> oder <strong>Standard</strong> zur Auswahl, für die die Herkunft Zalando, das Land und die Währung des Landes aktiviert sind.<br>
+<strong><em>Hinweis:</em></strong> Wenn du für eine Variante einen <strong>reduzierten Preis</strong> angibst, wird der <strong>normale Preis</strong> als Streichpreis zu Zalando übertragen.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mit geplanten Preisen kannst du zeitlich begrenzte oder auch dauerhafte Preisänderungen bei Zalando vorab ankündigen.</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Definiere bis zu drei geplante Preise. Geplante Preise geben dir mehr Sicherheit, dass deine Preise zum gewünschten Zeitpunkt auf Zalando geändert werden. Um geplante Preise an Zalando zu übertragen, benötigst du mindestens einen Verkaufspreis für den normalen Preis und eine Eigenschaft, die Startdatum und Startzeit für den neuen Preis enthält. Das Startdatum für geplante Preise muss in der Zukunft liegen. Optional kannst du auch eine Eigenschaft für ein Enddatum für den geplanten Preis wählen.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Eigenschaft für Startdatum</strong> = Eigenschaft aus der Dropdown-Liste wählen, mit der der Startzeitpunkt des geplanten Preises an der Variante gepflegt wird. Nur Eigenschaften vom Typ <strong>Datum</strong> oder <strong>Text</strong> können gewählt werden.<br>
+<strong><em>Hinweis:</em></strong> Die Startzeitpunkte mehrerer geplanter Preise müssen mindestens 60 Minuten auseinanderliegen.</p>
+</li>
+<li>
+<p><strong>Eigenschaft für Enddatum</strong> (optional) = Eigenschaft aus der Dropdown-Liste wählen, mit der der Endzeitpunkt des geplanten Preises an der Variante gepflegt wird. Nur Eigenschaften vom Typ <strong>Datum</strong> oder <strong>Text</strong> können gewählt werden.</p>
+</li>
+<li>
+<p><strong>Preis wählen</strong> = Verkaufspreis aus der Dropdown-Liste wählen, der als <strong>Geplanter Preis</strong> zu Zalando exportiert werden soll.</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 </tbody>
@@ -973,7 +1004,7 @@ Hier werden nur die wichtigsten Einstellungen für den Import beschrieben. Du ar
 </ul>
 </div>
 <div class="openblock collapseBox">
-<div class="title"><strong><em>Tipp:</em></strong> Referenzdatei mit Zalando-Artikelmerkmale exportieren</div>
+<div class="title"><strong><em>Tipp:</em></strong> Referenzdatei mit Zalando-Artikelmerkmalen exportieren</div>
 <div class="content">
 <div class="paragraph">
 <p>Wenn du die Zalando-Silhouetten in Merkmale konvertierst, werden mehrere hundert Merkmale in plentymarkets erstellt. Um dir die Arbeit mit diesen Merkmalen zu erleichtern, kannst du die Merkmale exportieren. So hast du schnellen Zugriff auf die IDs der Zalando-Merkmale. Zum Beispiel kannst du dann einfacher die Merkmale <a href="/daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-merkmalverknuepfung#import_merkmalverknüpfungen">per Import</a> mit deinen Artikeln verknüpfen.</p>
@@ -1396,9 +1427,6 @@ Pro Attribut kann nur ein Größenregister oder ein Längenregister verknüpft w
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Wenn du noch die alte API nutzt, werden Änderungen am Auftragsstatus Zalando nicht mit Ereignisaktionen mitgeteilt. (<a href="#850">Wie sonst?</a>)</p>
-</div>
 <div class="sect2">
 <h3 id="1200">16.1. Versandbestätigungen automatisch senden (zDirect)</h3>
 <div class="paragraph">
@@ -1686,45 +1714,6 @@ Retourengründe werden nur übermittelt, wenn die Ereignisaktion in Kombination 
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="850">16.4. Änderungen am Auftragsstatus (alte API)</h3>
-<div class="paragraph">
-<p>Wenn du noch die alte API nutzt, werden Änderungen am Auftragsstatus Zalando nicht mit Ereignisaktionen mitgeteilt. Stattdessen ruft Zalando den Auftragsstatus automatisch per Schnittstelle ab. Die Auftragsstatus <strong>Versandbestätigung</strong>, <strong>Stornierung</strong> und <strong>Retoure</strong> werden an Zalando gesendet, wenn die in <a href="#tabelle-zalando-auftragsstatus">Tabelle 8</a> gezeigten Kriterien erfüllt sind:</p>
-</div>
-<table id="tabelle-zalando-auftragsstatus" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 8. Kriterien für Auftragsstatus</caption>
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Auftragsstatus</th>
-<th class="tableblock halign-left valign-top">Kriterien</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Versandbestätigung</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Der Warenausgang wurde gebucht. Außerdem wurde ein Retourenlabel erzeugt und Paketnummern wurden hinzugefügt.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stornierung</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Der Auftrag wurde in <strong>Status [8.X]</strong> verschoben oder die Menge der Auftragsposition wurde auf <strong>0</strong> geändert.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retoure</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>In plentymarkets wurde eine Retoure erstellt.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div><div class="sect1">
 <h2 id="1500">17. Zalando-Konto aktivieren</h2>
@@ -1884,7 +1873,7 @@ Retourengründe werden nur übermittelt, wenn die Ereignisaktion in Kombination 
 </ol>
 </div>
 <table id="zalando-errors" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 9. Fehlermeldungen aus dem Export-Log (zalandoArticleExportLog.txt)</caption>
+<caption class="title">Tabelle 8. Fehlermeldungen aus dem Export-Log (zalandoArticleExportLog.txt)</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1973,7 +1962,7 @@ Retourengründe werden nur übermittelt, wenn die Ereignisaktion in Kombination 
 </table>
 </div>
 <div class="sect2">
-<h3 id="910">18.2. Produkt-Status-Bericht herunterladen</h3>
+<h3 id="910">18.2. Produkt-Status-Berichte herunterladen</h3>
 <div class="paragraph">
 <p>Produkt-Status-Berichte enthalten Informationen zu den Artikeln, die zu Zalando exportiert wurden. Diese Berichte werden von Zalando generiert. Deshalb enthalten die Berichte nur Informationen zu Varianten, die erfolgreich zu Zalando exportiert wurden. Folgende Berichte sind verfügbar:</p>
 </div>
@@ -1986,34 +1975,6 @@ Retourengründe werden nur übermittelt, wenn die Ereignisaktion in Kombination 
 <p><strong><em>ProductLiveReport.csv</em></strong>: Enthält Varianten, die seit dem letzten Export auf Zalando verkauft werden können. Der Bericht enthält außerdem Informationen zum Bestand und Preis jeder Variante auf den Zalando-Channels (DE, FR usw.) zu dem Zeitpunkt, zu dem die Datei generiert wurde. Der Bericht wird einmal pro Nacht automatisch generiert. Wenn du neuere Daten benötigst, klicke vor dem Herunterladen auf <strong>Datei aktualisieren</strong> (<span class="icon "><i class="fa fa-cog  "></i></span>), um aktuelle Daten bei Zalando abzurufen.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Produkt-Status-Berichte sind nur verfügbar, wenn im Assistenten <strong>Kontoeinstellungen - Zalando</strong> die Option <strong>Artikelstatusberichte generieren</strong> aktiviert wurde.</p>
-</div>
-<div class="openblock collapseBox">
-<div class="title">Artikelstatusberichte aktivieren</div>
-<div class="content">
-<div class="paragraph">
-<p>So aktivierst du die Artikelstatusberichte:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Öffne das Menü <strong>Einrichtung » Assistenten » Omni-Channel</strong>.</p>
-</li>
-<li>
-<p>Klicke auf den Assistenten <strong>Kontoeinstellungen - Zalando</strong>.</p>
-</li>
-<li>
-<p>Aktiviere im Schritt <strong>Artikelstatusbericht</strong> die Option <strong>Artikelstatusberichte generieren</strong>.</p>
-</li>
-<li>
-<p>Schließe den Assistenten wie gewohnt ab.<br>
-→ Die ersten Berichte werden in der folgenden Nacht generiert.</p>
-</li>
-</ol>
-</div>
-</div>
 </div>
 <div class="paragraph instruction">
 <p>Produkt-Status-Bericht herunterladen:</p>
@@ -2304,10 +2265,10 @@ Retourengründe werden nur übermittelt, wenn die Ereignisaktion in Kombination 
 </div>
 </div>
 <div class="paragraph">
-<p>Nutze optional die in <a href="#tabelle-referenztypen">Tabelle 10</a> aufgeführten Filter, um die Suchergebnisse weiter einzugrenzen:</p>
+<p>Nutze optional die in <a href="#tabelle-referenztypen">Tabelle 9</a> aufgeführten Filter, um die Suchergebnisse weiter einzugrenzen:</p>
 </div>
 <table id="tabelle-referenztypen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 10. Filter</caption>
+<caption class="title">Tabelle 9. Filter</caption>
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 40%;">
@@ -2378,6 +2339,47 @@ Referenzwert » PriceReporting</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Log-Einträge zu Fehlern beim Generieren der Preis-Berichte</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Bestandsabgleich</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Identifikator » Zalando</p>
+</li>
+<li>
+<p>Referenzen:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Referenztyp » action<br>
+Referenzwert » StockUpdate</p>
+</li>
+<li>
+<p>Referenztyp » variationId</p>
+</li>
+<li>
+<p>Referenztyp » ean</p>
+</li>
+<li>
+<p>Referenztyp » accountId</p>
+</li>
+<li>
+<p>Referenztyp » salesChannel</p>
+</li>
+<li>
+<p>Referenztyp » jobUniqueId</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Log-Einträge zu Fehlern beim Bestandsabgleich</p>
 </div></div></td>
 </tr>
 </tbody>
