@@ -42,9 +42,10 @@
 </li>
 <li><a href="#1600"><span>14.</span><span> Lieferscheine für limango vorbereiten</span></a>
 <ul class="sectlevel2">
-<li><a href="#16001"><span>14.1.</span><span> PDF-Vorlage für Lieferscheine hochladen</span></a></li>
-<li><a href="#16003"><span>14.2.</span><span> limango-Kundennummer auf Lieferscheinen anzeigen</span></a></li>
-<li><a href="#16002"><span>14.3.</span><span> Retourenhinweis für limango-Lieferscheine eingeben</span></a></li>
+<li><a href="#160011"><span>14.1.</span><span> PDF-Vorlage für Lieferscheine personalisieren</span></a></li>
+<li><a href="#16001"><span>14.2.</span><span> Personalisierte PDF-Vorlage für Lieferscheine hochladen</span></a></li>
+<li><a href="#16003"><span>14.3.</span><span> limango-Kundennummer auf Lieferscheinen anzeigen</span></a></li>
+<li><a href="#16002"><span>14.4.</span><span> Retourenhinweis für limango-Lieferscheine eingeben</span></a></li>
 </ul>
 </li>
 <li><a href="#1100"><span>15.</span><span> Fehlersuche: Log-Einträge abrufen</span></a></li>
@@ -944,8 +945,8 @@ Für jedes Marktplatz-Datenfeld hast die folgenden Zuordnungsmöglichkeiten, die
 <table id="catalogue-limango-mappings" class="tableblock frame-all grid-all stretch">
 <caption class="title">Tabelle 3. Besonderheiten bei der Katalogzuordnung</caption>
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
+<col style="width: 20%;">
+<col style="width: 80%;">
 </colgroup>
 <thead>
 <tr>
@@ -1018,7 +1019,7 @@ Für jedes Marktplatz-Datenfeld hast die folgenden Zuordnungsmöglichkeiten, die
 <strong>Gewicht</strong><br>
 etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Maßangaben müssen im Format <strong>[Zahlenwert];[Einheit]</strong> zu limango exportiert werden. Aufgrund der limango Produktstruktur können aber die normalen plentymarkets Datenfelder Für Maße nicht zugeordnet werden. Stattdessen erstellst du zwei Eigenschaften:</p>
+<p>Maßangaben müssen im Format <strong>[Zahlenwert];[Einheit]</strong> zu limango exportiert werden. Wegen der limango Produktstruktur können aber die normalen plentymarkets Datenfelder für Maße nicht zugeordnet werden. Stattdessen erstellst du zwei Eigenschaften:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1110,26 +1111,29 @@ etc.)</p></td>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Datenfelder im Bereich Materialzusammensetzung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Materialzusammensetzung<br>
+(<strong>Ärmelfutter</strong>;<br>
+<strong>Obermaterial 3</strong>;<br>
+<strong>Obermaterial 2</strong>;<br>
+<strong>Obermaterial 1</strong>;<br>
+<strong>Membran</strong>;<br>
+<strong>Material 3</strong><br>
+etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Materialangaben werden mit Eigenschaften des Typs <strong>Text</strong> zu limango exportiert. Für jedes Marktplatz-Datenfeld benötigst du eine eigene Eigenschaft.</p>
+<p>Materialangaben werden mit Eigenschaften des Typs <strong>Text</strong> zu limango exportiert. Erstelle für jedes Marktplatz-Datenfeld eine eigene Eigenschaft.</p>
 </div>
 <div class="paragraph">
-<p>Der Name der Eigenschaften muss mit den von limango erlaubten Werten für die Materialkomponenten übereinstimmen:</p>
+<p>Der Name dieser Eigenschaften muss mit den von limango erlaubten Werten für die Materialkomponenten übereinstimmen:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Gültige Werte für
-<a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-composite-types.txt" target="_blank" rel="noopener">Materialkomponenten</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+<p><a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-composite-types.txt" target="_blank" rel="noopener">Gültige Werte für Materialkomponenten</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Die Eigenschaften verknüpfst du mit der Hauptvariante des Artikels und speicherst alle Bestandteile eines Materialmix in dieser Eigenschaft.</p>
-</div>
-<div class="paragraph">
-<p><strong><em>Ausnahme:</em></strong> Wenn die Varianten desselben Artikels unterschiedliche Materialzusammensetzungen haben, deaktiviere die Vererbung für Eigenschaften und pflege die Materialzusammensetzungen pro Variante. Beachte jedoch, dass dadurch die Vererbung für alle Eigenschaften des Artikels deaktiviert werden. Du musst also auch alle anderen Eigenschaften pro Variante pflegen.</p>
+<p>Die Eigenschaften verknüpfst du mit der Hauptvariante des Artikels und speicherst alle Bestandteile eines Materialmix in dieser Eigenschaft. Wenn die Varianten desselben Artikels unterschiedliche Materialzusammensetzungen haben, deaktiviere die Vererbung für Eigenschaften und pflege die Materialzusammensetzungen pro Variante. Beachte jedoch, dass dadurch die Vererbung für alle Eigenschaften des Artikels deaktiviert werden. Du musst also auch alle anderen Eigenschaften pro Variante pflegen.</p>
 </div>
 <div class="paragraph">
 <p>Die einzelnen Materialien werden mit absteigender Prozentangabe eingetragen. An erster Stelle steht also das Material mit dem höchsten Prozentanteil, an letzter Stelle das Material mit dem niedrigsten Prozentanteil. Die Summe aller Prozentangaben muss 100 ergeben. Du kannst beliebig viele Materialien angeben.
@@ -1139,7 +1143,7 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <ul>
 <li>
 <p><strong>{"materialtyp1": "prozentwert","materialtyp2": "prozentwert","materialtyp3": "prozentwert"}</strong><br>
-<strong><em>Beispiel:</em></strong> <code>{"baumwolle": "90","elasthan": "10"}`</code></p>
+<strong><em>Beispiel:</em></strong> <code>{"baumwolle": "90","elasthan": "10"}</code></p>
 </li>
 </ul>
 </div>
@@ -1149,8 +1153,7 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Gültige Werte für
-<a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-types.txt" target="_blank" rel="noopener">Materialtypen</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+<p><a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-types.txt" target="_blank" rel="noopener">Gültige Werte für Materialtypen</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
 </li>
 </ul>
 </div>
@@ -1954,12 +1957,10 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Gültige Werte für
-<a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-composite-types.txt" target="_blank" rel="noopener">Materialkomponenten</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+<p><a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-composite-types.txt" target="_blank" rel="noopener">Gültige Werte für Materialkomponenten</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
 </div>
 <div class="paragraph">
-<p>Gültige Werte für
-<a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-types.txt" target="_blank" rel="noopener">Materialtypen</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+<p><a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-types.txt" target="_blank" rel="noopener">Gültige Werte für Materialtypen</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
 </div>
 <div class="paragraph">
 <p>(siehe <a href="#905">Besonderheiten</a>)</p>
@@ -2681,10 +2682,13 @@ Diesen Status legst du im Menü <strong>Plugins » Plugin-Set-Übersicht » [Plu
 <h2 id="1600">14. Lieferscheine für limango vorbereiten</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Auf Lieferscheinen für limango-Aufträge müssen der limango-Briefkopf und ein von limango vorgegebener Retourenhinweis erscheinen. Wie du Layout-Vorlagen für Auftragsdokumente in plentymarkets erstellst, wird im Handbuchbereich <a href="/auftraege/auftragsdokumente#170">Aufträge</a> beschrieben. Hier auf dieser Seite erfährst du, wie du die PDF-Vorlage hochlädst und die Besonderheiten für den Marktplatz auf deinen Lieferscheinen anzeigst.</p>
+<p>Auf Lieferscheinen für limango-Aufträge müssen der limango-Briefkopf, deine Firmendaten und ein von limango vorgegebener Retourenhinweis erscheinen. Wie du Layout-Vorlagen für Auftragsdokumente in plentymarkets erstellst, wird im Handbuchbereich <a href="/auftraege/auftragsdokumente#170">Aufträge</a> beschrieben. Hier auf dieser Seite erfährst du, wie du die PDF-Vorlage hochlädst und die Besonderheiten für den Marktplatz auf deinen Lieferscheinen anzeigst.</p>
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p><a href="#16011">So personalisierst du die PDF-Vorlage für Lieferscheine</a></p>
+</li>
 <li>
 <p><a href="#16001">So lädst du eine PDF-Vorlage für Lieferscheine hoch</a></p>
 </li>
@@ -2697,12 +2701,12 @@ Diesen Status legst du im Menü <strong>Plugins » Plugin-Set-Übersicht » [Plu
 </ul>
 </div>
 <div class="sect2">
-<h3 id="16001">14.1. PDF-Vorlage für Lieferscheine hochladen</h3>
+<h3 id="160011">14.1. PDF-Vorlage für Lieferscheine personalisieren</h3>
 <div class="paragraph">
-<p>limango-Lieferscheine müssen das Logo von limango verwenden. Gehe wie unten beschrieben vor, um eine <a href="/auftraege/auftragsdokumente#170">PDF-Vorlage</a> für Lieferscheine für limango in plentymarkets hochzuladen.</p>
+<p>limango-Lieferscheine müssen das Logo von limango verwenden. limango stellt eine PDF-Vorlage zur Verfügung. Auf dieser PDF-Vorlage ergänzt du noch deine Firmendaten in der Fußzeile, bevor du die Datei in plentymarkets hochlädst.</p>
 </div>
 <div class="paragraph instruction">
-<p>PDF-Vorlage für Lieferscheine hochladen:</p>
+<p>PDF-Vorlage für Lieferscheine personalisieren:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2717,6 +2721,36 @@ Diesen Status legst du im Menü <strong>Plugins » Plugin-Set-Übersicht » [Plu
 </div>
 </li>
 <li>
+<p>Öffne die PDF-Vorlage in einem Programm, mit dem du PDF-Dateien bearbeiten kannst.</p>
+</li>
+<li>
+<p>Füge links unten in der Fußzeile die folgenden Firmendaten ein:<br>
+<strong>[dein Firmenname]</strong><br>
+Amtsgericht [dein Amtsgericht] HRB [deine HRB]<br>
+Ust.-ID-Nr. [deine Ust.-ID-Nr.]<br></p>
+</li>
+<li>
+<p>Speichere die PDF-Vorlage.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/assets/limango-footer.png" alt="limango footer">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="16001">14.2. Personalisierte PDF-Vorlage für Lieferscheine hochladen</h3>
+<div class="paragraph">
+<p>Gehe wie unten beschrieben vor, um die personalisierte <a href="/auftraege/auftragsdokumente#170">PDF-Vorlage</a> für Lieferscheine in plentymarkets hochzuladen.</p>
+</div>
+<div class="paragraph instruction">
+<p>Personalisierte PDF-Vorlage für Lieferscheine hochladen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p>Öffne das Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Standorte » Standort: Deutschland » Dokumente » Lieferschein</strong>.</p>
 </li>
 <li>
@@ -2730,7 +2764,7 @@ Diesen Status legst du im Menü <strong>Plugins » Plugin-Set-Übersicht » [Plu
 <p>Wähle aus der Dropdown-Liste <strong>Zahlungsart</strong> die Option <strong>Plugin: limango Payment</strong>.</p>
 </li>
 <li>
-<p><strong><em>Optional:</em></strong> Die Zahlungsart <strong>Plugin: limango Payment</strong> wird nicht in der Dropdown-Liste angezeigt?</p>
+<p><strong><em>Tipp:</em></strong> Die Zahlungsart <strong>Plugin: limango Payment</strong> wird nicht in der Dropdown-Liste angezeigt?</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -2756,13 +2790,13 @@ Diesen Status legst du im Menü <strong>Plugins » Plugin-Set-Übersicht » [Plu
 </li>
 <li>
 <p>Klicke auf <strong>Vorlage hochladen</strong> (<span class="icon "><i class="psicon-save"></i></span>).<br>
-→ Die Vorlage wird hochgeladen.</p>
+→ Die Vorlage wird hochgeladen</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="16003">14.2. limango-Kundennummer auf Lieferscheinen anzeigen</h3>
+<h3 id="16003">14.3. limango-Kundennummer auf Lieferscheinen anzeigen</h3>
 <div class="paragraph">
 <p>Auf allen limango-Lieferscheinen muss die limango-Kundennummer erscheinen. Dazu passt du die Vorlage für Lieferscheine an.</p>
 </div>
@@ -2788,7 +2822,7 @@ Diesen Status legst du im Menü <strong>Plugins » Plugin-Set-Übersicht » [Plu
 </div>
 </div>
 <div class="sect2">
-<h3 id="16002">14.3. Retourenhinweis für limango-Lieferscheine eingeben</h3>
+<h3 id="16002">14.4. Retourenhinweis für limango-Lieferscheine eingeben</h3>
 <div class="paragraph">
 <p>Auf allen limango-Lieferscheinen muss ein von limango vorgegebener Retourenhinweis erscheinen. Gehe wie unten beschrieben vor, um diesen Retourenhinweis auf Lieferscheinen für limango einzugeben.</p>
 </div>

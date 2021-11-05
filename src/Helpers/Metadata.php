@@ -2449,7 +2449,7 @@ class Metadata {
 				"url" => "/fulfillment/versand-vorbereiten",
 				"level" => 2,
 				"title" => "Versand vorbereiten",
-				"keywords" => "Versanddienstleister, Fulfillment-Dienstleister, Fulfillment, Lieferländer, Regionen, Region, Versandprofil, Versandprofile, Portotabelle, Versandpaket, Versandkosten, Tracking-URL, Tracking URL, cbc logistics, PARCEL.ONE, DHL Easylog, DHL Freight, DHL Versenden, DHL plentymarkets Import, DHL Retoure Beilegeretiketten, DHL Retoure Online, DHL Supply Chain, DHL UK, DPD Cloud Webservice, My DPD Business, DPD Print, EasyPak, GLS Germany, Hermes 2-Mann-Handling, Hermes ProfiPaketService, Iloxx, UK Mail, NetDespatch, Swiss Post, UPS, DHL Fulfillment, IDS Logistik, iLOPACK",
+				"keywords" => "Versanddienstleister, Fulfillment-Dienstleister, Fulfillment, Lieferländer, Regionen, Region, Versandprofil, Versandprofile, Portotabelle, Versandpaket, Versandkosten, Tracking-URL, Tracking URL, cbc logistics, PARCEL.ONE, DHL Easylog, DHL Freight, DHL Versenden, DHL plentymarkets Import, DHL Retoure Beilegeretiketten, DHL Retoure Online, DHL Supply Chain, DHL UK, DPD Cloud Webservice, My DPD Business, DPD Print, EasyPak, GLS Germany, Hermes 2-Mann-Handling, Hermes ProfiPaketService, Iloxx, UK Mail, NetDespatch, Swiss Post, UPS, DHL Fulfillment, IDS Logistik, iLOPACK, Länderauswahl",
 				"description" => "Erfahre, wie du Versandprofile, Versandpakete und Versanddienstleister in plentymarkets einrichtest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Versand vorbereiten. Hier findest du folgende Informationen:",
