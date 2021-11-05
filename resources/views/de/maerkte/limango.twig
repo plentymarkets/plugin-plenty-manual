@@ -43,7 +43,7 @@
 <li><a href="#1600"><span>14.</span><span> Lieferscheine für limango vorbereiten</span></a>
 <ul class="sectlevel2">
 <li><a href="#16001"><span>14.1.</span><span> PDF-Vorlage für Lieferscheine hochladen</span></a></li>
-<li><a href="#16003"><span>14.2.</span><span> limango-Kundennummer auf Lieferscheinen ausgeben</span></a></li>
+<li><a href="#16003"><span>14.2.</span><span> limango-Kundennummer auf Lieferscheinen anzeigen</span></a></li>
 <li><a href="#16002"><span>14.3.</span><span> Retourenhinweis für limango-Lieferscheine eingeben</span></a></li>
 </ul>
 </li>
@@ -1112,22 +1112,47 @@ etc.)</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Datenfelder im Bereich Materialzusammensetzung</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Materialangaben werden mit Eigenschaften des Typs <strong>Text</strong> zu limango exportiert. Pro Marktplatz-Datenfeld benötigst du eine Eigenschaft. Die Eigenschaften verknüpfst du mit der Hauptvariante des Artikels und speicherst alle Bestandteile eines Materialmix in dieser Eigenschaft.
-Die Materialzusammensetzung gibst du im folgenden Format ein:</p>
+<p>Materialangaben werden mit Eigenschaften des Typs <strong>Text</strong> zu limango exportiert. Für jedes Marktplatz-Datenfeld benötigst du eine eigene Eigenschaft.</p>
+</div>
+<div class="paragraph">
+<p>Der Name der Eigenschaften muss mit den von limango erlaubten Werten für die Materialkomponenten übereinstimmen:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>{"material1": "prozentwert","material2": "prozentwert","material3": "prozentwert"}</strong><br>
-<strong><em>Beispiel:</em></strong> <strong>{"baumwolle": "90","elasthan": "10"}</strong></p>
+<p>Gültige Werte für
+<a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-composite-types.txt" target="_blank" rel="noopener">Materialkomponenten</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Die einzelnen Materialien müssen mit absteigender Prozentangabe eingetragen werden. An erster Stelle steht also das Material mit dem höchsten Prozentanteil, an letzter Stelle das Material mit dem niedrigsten Prozentanteil. Die Summe aller Prozentangaben muss 100 ergeben. Du kannst beliebig viele Materialien angeben.</p>
+<p>Die Eigenschaften verknüpfst du mit der Hauptvariante des Artikels und speicherst alle Bestandteile eines Materialmix in dieser Eigenschaft.</p>
 </div>
 <div class="paragraph">
-<p><strong><em>Ausnahme:</em></strong> Die Varianten desselben Artikels haben unterschiedliche Materialzusammensetzungen? Dann deaktiviere die Vererbung für Eigenschaften und pflege die Materialzusammensetzungen pro Variante. Beachte jedoch, dass dadurch die Vererbung für sämtliche Eigenschaften des Artikels deaktiviert werden. Du musst also auch alle anderen Eigenschaften pro Variante pflegen.</p>
+<p><strong><em>Ausnahme:</em></strong> Wenn die Varianten desselben Artikels unterschiedliche Materialzusammensetzungen haben, deaktiviere die Vererbung für Eigenschaften und pflege die Materialzusammensetzungen pro Variante. Beachte jedoch, dass dadurch die Vererbung für alle Eigenschaften des Artikels deaktiviert werden. Du musst also auch alle anderen Eigenschaften pro Variante pflegen.</p>
+</div>
+<div class="paragraph">
+<p>Die einzelnen Materialien werden mit absteigender Prozentangabe eingetragen. An erster Stelle steht also das Material mit dem höchsten Prozentanteil, an letzter Stelle das Material mit dem niedrigsten Prozentanteil. Die Summe aller Prozentangaben muss 100 ergeben. Du kannst beliebig viele Materialien angeben.
+Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>{"materialtyp1": "prozentwert","materialtyp2": "prozentwert","materialtyp3": "prozentwert"}</strong><br>
+<strong><em>Beispiel:</em></strong> <code>{"baumwolle": "90","elasthan": "10"}`</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Die Werte für die Materialtypen müssen mit den von limango erlaubten Werten übereinstimmen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Gültige Werte für
+<a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-types.txt" target="_blank" rel="noopener">Materialtypen</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+</ul>
 </div>
 <div class="openblock collapseBox">
 <div class="title"><strong><em>Beispiel:</em></strong> Materialangaben für einen Damenblazer an limango exportieren</div>
@@ -1141,20 +1166,20 @@ Die Materialzusammensetzung gibst du im folgenden Format ein:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Erstelle eine Eigenschaft des Typs <strong>Text</strong> mit dem Namen <strong>Material 1</strong>.</p>
+<p>Erstelle eine Eigenschaft des Typs <strong>Text</strong> mit dem Namen <strong>obermaterial</strong>.</p>
 </li>
 <li>
-<p>Ordne dem Marktplatz-Datenfeld <strong>Material 1</strong> die plentymarkets Eigenschaft <strong>Material 1</strong> zu.</p>
+<p>Ordne dem Marktplatz-Datenfeld <strong>Obermaterial</strong> die plentymarkets Eigenschaft <strong>obermaterial</strong> zu.</p>
 </li>
 <li>
-<p>Verknüpfe die Eigenschaft <strong>Material 1</strong> mit der Hauptvariante des Artikels.</p>
+<p>Verknüpfe die Eigenschaft <strong>obermaterial</strong> mit der Hauptvariante des Artikels.</p>
 </li>
 <li>
 <p>Unser Beispielblazer besteht aus 65% Polyester, 32% Viskose und 3% Elastan. In das Eingabefeld der Eigenschaft gibst du also ein:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>{"polyester": "65","viskose": "32","elasthan": "3"}</p>
+<p><code>{"polyester": "65","viskose": "32","elasthan": "3"}</code></p>
 </li>
 </ul>
 </div>
@@ -1170,20 +1195,20 @@ Die Materialzusammensetzung gibst du im folgenden Format ein:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Erstelle eine Eigenschaft des Typs <strong>Text</strong> mit dem Namen <strong>Futter 1</strong>.</p>
+<p>Erstelle eine Eigenschaft des Typs <strong>Text</strong> mit dem Namen <strong>futter</strong>.</p>
 </li>
 <li>
-<p>Ordne dem Marktplatz-Datenfeld <strong>Futter 1</strong> die plentymarkets Eigenschaft <strong>Futter 1</strong> zu.</p>
+<p>Ordne dem Marktplatz-Datenfeld <strong>Futter</strong> die plentymarkets Eigenschaft <strong>futter</strong> zu.</p>
 </li>
 <li>
-<p>Verknüpfe die Eigenschaft <strong>Futter 1</strong> mit der Hauptvariante des Artikels.</p>
+<p>Verknüpfe die Eigenschaft <strong>futter</strong> mit der Hauptvariante des Artikels.</p>
 </li>
 <li>
 <p>Das Futter unseres Beispielblazers besteht aus 100% Viskose. In das Eingabefeld der Eigenschaft gibst du also ein:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>{"viskose": "100"}</p>
+<p><code>{"viskose": "100"}</code></p>
 </li>
 </ul>
 </div>
@@ -1193,11 +1218,6 @@ Die Materialzusammensetzung gibst du im folgenden Format ein:</p>
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="openblock">
-<div class="content">
-
 </div>
 </div></div></td>
 </tr>
@@ -1929,9 +1949,17 @@ Die Materialzusammensetzung gibst du im folgenden Format ein:</p>
 <ul>
 <li>
 <p>Eigenschaft an Variante<br>
-<strong><em>Wichtig:</em></strong> Vererbung für Varianteneigenschaften deaktivieren!</p>
+<strong><em>Wichtig:</em></strong> Wenn die Varianten desselben Artikels unterschiedliche Materialzusammensetzungen haben, deaktiviere die Vererbung für Eigenschaften und pflege die Materialzusammensetzungen pro Variante. Beachte jedoch, dass dadurch die Vererbung für alle Eigenschaften des Artikels deaktiviert werden. Du musst also auch alle anderen Eigenschaften pro Variante pflegen.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Gültige Werte für
+<a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-composite-types.txt" target="_blank" rel="noopener">Materialkomponenten</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</div>
+<div class="paragraph">
+<p>Gültige Werte für
+<a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/limango-material-types.txt" target="_blank" rel="noopener">Materialtypen</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
 </div>
 <div class="paragraph">
 <p>(siehe <a href="#905">Besonderheiten</a>)</p>
@@ -2653,7 +2681,7 @@ Diesen Status legst du im Menü <strong>Plugins » Plugin-Set-Übersicht » [Plu
 <h2 id="1600">14. Lieferscheine für limango vorbereiten</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Auf Lieferscheinen für limango-Aufträge müssen der limango-Briefkopf und ein von limango vorgegebener Retourenhinweis erscheinen. Wie du Layout-Vorlagen für Auftragsdokumente in plentymarkets erstellst, wird im Handbuchbereich <a href="/auftraege/auftragsdokumente#170">Aufträge</a> beschrieben. Hier auf dieser Seite erfährst du, wie du die PDF-Vorlage hochlädst und die Besonderheiten für den Marktplatz ausgibst.</p>
+<p>Auf Lieferscheinen für limango-Aufträge müssen der limango-Briefkopf und ein von limango vorgegebener Retourenhinweis erscheinen. Wie du Layout-Vorlagen für Auftragsdokumente in plentymarkets erstellst, wird im Handbuchbereich <a href="/auftraege/auftragsdokumente#170">Aufträge</a> beschrieben. Hier auf dieser Seite erfährst du, wie du die PDF-Vorlage hochlädst und die Besonderheiten für den Marktplatz auf deinen Lieferscheinen anzeigst.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2734,12 +2762,12 @@ Diesen Status legst du im Menü <strong>Plugins » Plugin-Set-Übersicht » [Plu
 </div>
 </div>
 <div class="sect2">
-<h3 id="16003">14.2. limango-Kundennummer auf Lieferscheinen ausgeben</h3>
+<h3 id="16003">14.2. limango-Kundennummer auf Lieferscheinen anzeigen</h3>
 <div class="paragraph">
 <p>Auf allen limango-Lieferscheinen muss die limango-Kundennummer erscheinen. Dazu passt du die Vorlage für Lieferscheine an.</p>
 </div>
 <div class="paragraph instruction">
-<p>limango-Kundennummer auf Lieferscheinen ausgeben:</p>
+<p>limango-Kundennummer auf Lieferscheinen anzeigen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
