@@ -15534,7 +15534,7 @@ class Metadata {
 				"url" => "/business-entscheidungen/dein-vertrag",
 				"level" => 2,
 				"title" => "Dein Vertrag mit plentymarkets",
-				"keywords" => "Konto, Mein Konto, Vertrag, Verträge, plentymarkets Vertrag, plentymarkets-Vertrag, Mein Vertrag, Service-Center, Service-Centre, Service Center, Service Centre, Tarif, Tarifwechsel, Tarif wechseln, Edition, Editionwechsel, Edition wechseln, Mandant, Mandant buchen, Webshop buchen, Konfigurator, kündigen, plentymarkets kündigen, Vertrag kündigen, Vertrag beenden, Vertragsende, Kündigung, DSGVO, Agentur, Agenturen, Zugang, Zugriff, Verrechnungskonto, Verrechnungskonto Guthaben, Verrechnungskonto einsehen",
+				"keywords" => "Konto, Mein Konto, Vertrag, Verträge, plentymarkets Vertrag, plentymarkets-Vertrag, Mein Vertrag, Service-Center, Service-Centre, Service Center, Service Centre, Tarif, Tarifwechsel, Tarif wechseln, Edition, Editionwechsel, Edition wechseln, Mandant, Mandant buchen, Webshop buchen, Konfigurator, kündigen, plentymarkets kündigen, Vertrag kündigen, Vertrag beenden, Vertragsende, Kündigung, DSGVO, Agentur, Agenturen, Zugang, Zugriff, Verrechnungskonto, Verrechnungskonto Guthaben, Verrechnungskonto einsehen, Support-Hotline, Support Hotline, Hotline, Support-PIN, Support PIN, PIN",
 				"description" => "Lerne, wie du auf den Mein Konto-Bereich zugreifst und Änderungen an deinem plentymarkets-Vertrag vornimmst.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Dein Vertrag mit plentymarkets. Hier findest du folgende Informationen:",
