@@ -242,22 +242,6 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "7c5b68bd8e0121fcbd899e82d9e07f87",
-						"path" => "willkommen/schnelleinstieg/schnelleinstieg-ebay",
-						"position" => 140,
-						"urlName" => "schnelleinstieg-ebay",
-						"url" => "/willkommen/schnelleinstieg/schnelleinstieg-ebay",
-						"level" => 3,
-						"title" => "Schnelleinstieg eBay",
-						"keywords" => "",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Schnelleinstieg eBay. Hier findest du folgende Informationen:",
-						"languageID" => "HBY8NX5",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "11d58b710a46a171c221723d1698439c",
 						"path" => "willkommen/schnelleinstieg/schnelleinstieg-automatisierung",
 						"position" => 150,
