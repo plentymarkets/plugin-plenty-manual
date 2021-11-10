@@ -2078,7 +2078,7 @@ class Metadata {
 				"url" => "/payment/bankdaten-verwalten",
 				"level" => 2,
 				"title" => "Bankdaten verwalten",
-				"keywords" => "Bank, Bankdaten, EBICS, SEPA, SEPA-Lastschriftmandat, Bankinformationen, Konto, Bankkonto, Kontoinhaber, Kontonummer, Konto-Nr., Konto-Nummer, BLZ, Bankleitzahl, Account, IBAN, Bankverbindung, BIC, Mandat, Einzugsermächtigung, Abbuchungsauftrag, Bankdaten migrieren, Zahlungsverkehrsdaten, EBICS-Konto, Vormerkposten, Geschäftskonto, Geschäftskonten, Auszugsbereitstellung, buchungstagsorientiert, Buchungstag, auszugsorientiert, Auszugsnummer, Auszusgserstellung, technischer Teilnehmer, Buchung, Buchungen, STA, VMK, EU Typ, EU TYP T, Typ T, Kontoeinstellungen, Tagesumsatz, Tagesumsätze, Geschäftsvorfall, Geschäftsvorfälle, Zahlungsabruf, manueller Zahlungsabruf, INI, INI-Brief, Initialisierung, HIA, CAMT, Abrufintervall, Transaktion, Kreditinstitut, Überweisung, Lastschrift, Firmenlastschrift, Zahlungsempfänger, Gläubiger-Identifikationssnummer, Mandatsreferenz",
+				"keywords" => "Bank, Bankdaten, EBICS, SEPA, SEPA-Lastschriftmandat, Lastschrift, Bankinformationen, Konto, Bankkonto, Kontoinhaber, Kontonummer, Konto-Nr., Konto-Nummer, BLZ, Bankleitzahl, Account, IBAN, Bankverbindung, BIC, Mandat, Einzugsermächtigung, Abbuchungsauftrag, Bankdaten migrieren, Zahlungsverkehrsdaten, EBICS-Konto, Vormerkposten, Geschäftskonto, Geschäftskonten, Auszugsbereitstellung, buchungstagsorientiert, Buchungstag, auszugsorientiert, Auszugsnummer, Auszusgserstellung, technischer Teilnehmer, Buchung, Buchungen, STA, VMK, EU Typ, EU TYP T, Typ T, Kontoeinstellungen, Tagesumsatz, Tagesumsätze, Geschäftsvorfall, Geschäftsvorfälle, Zahlungsabruf, manueller Zahlungsabruf, INI, INI-Brief, Initialisierung, HIA, CAMT, Abrufintervall, Transaktion, Kreditinstitut, Überweisung, Lastschrift, Firmenlastschrift, Zahlungsempfänger, Gläubiger-Identifikationssnummer, Mandatsreferenz",
 				"description" => "Payment in plentymarkets: Verwalte deine Bankdaten und die Bankdaten einer Kunden. Richte EBICS und SEPA in deinem plentymarkets System ein.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Bankdaten verwalten. Hier findest du folgende Informationen:",
@@ -22753,11 +22753,11 @@ class Metadata {
 				"urlName" => "november-2021",
 				"url" => "/changelog/november-2021",
 				"level" => 2,
-				"title" => "Changelogs Oktober 2021",
+				"title" => "Changelogs November 2021",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Changelogs Oktober 2021. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Changelogs November 2021. Hier findest du folgende Informationen:",
 				"languageID" => "",
 				"children" => 				[
 					[
