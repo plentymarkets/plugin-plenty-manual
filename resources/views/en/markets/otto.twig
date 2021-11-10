@@ -573,7 +573,7 @@ If new stock is booked for such a variation, the variation is reactivated during
 <div class="ulist">
 <ul>
 <li>
-<p>Is this your first time working with catalogues? Then <a href="#en/data/exporting-data/managing-catalogues">read up on the catalogue basics first</a>. For further information about the plentymarkets data fields that can be linked, refer to the <a href="/en/data/exporting-data/managing-catalogues#_mapping_data_sources">Mapping data fields</a> chapter.</p>
+<p>Is this your first time working with catalogues? Then read up on the <a href="#en/data/exporting-data/managing-catalogues">basic concept of the plentymarkets catalogues first</a>. For information about the plentymarkets data fields that can be linked, refer to the <a href="/en/data/exporting-data/managing-catalogues#_mapping_data_sources">Mapping data fields</a> chapter.</p>
 </li>
 </ul>
 </div>
@@ -1194,7 +1194,7 @@ During the export, the values are converted to the delivery statements that cust
 <div class="ulist">
 <ul>
 <li>
-<p>The marketplace data field <strong>"My Otto" Identification Number</strong> is automatically mapped to the plentymarkets data field <strong>MOIN</strong>.</p>
+<p>In the catalogue, the marketplace data field <strong>"My Otto" Identification Number</strong> is automatically mapped to the plentymarkets data field <strong>MOIN</strong>.</p>
 </li>
 <li>
 <p>Your variations are automatically given a MOIN: When your variations are exported, OTTO Market assigns a MOIN to each variation.</p>
@@ -1228,7 +1228,7 @@ During the export, the values are converted to the delivery statements that cust
 <p>15 minutes later, OTTO assigns a MOIN to the variation.</p>
 </li>
 <li>
-<p>This MOIN is imported to your plentymarkets system and saved to the variation data. Go to <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Settings » Area: ASIN/ePID</strong> to find it.</p>
+<p>The MOIN is imported to your plentymarkets system and saved to the variation data. You can find the MOIN in the menu <strong>Item » Edit item » [Open variation] » Tab: Settings » Area: ASIN/ePID/MOIN</strong>.</p>
 </li>
 <li>
 <p>For all subsequent exports, the MOIN is exported to OTTO Market with your other item data.<br>
@@ -1621,7 +1621,8 @@ During the export, the values are converted to the delivery statements that cust
 If customers paid an OTTO Market order per bank transfer, it might take longer to confirm the order than for other payment methods. In plentymarkets, the payment method is always <strong>OTTO Payment</strong>.<br></p>
 </li>
 <li>
-<p>If customers do not pay for an order, the order will be cancelled by OTTO Market after some time. A cancellation will be sent to plentymarkets. In plentymarkets, the unpaid order automatically changes to the status <strong>[8] Cancelled</strong>.</p>
+<p>If customers do not pay for an order, the order will be cancelled by OTTO Market after some time. A cancellation will be sent to plentymarkets. In plentymarkets, the unpaid order automatically changes to the status <strong>[8] Cancelled</strong>.<br>
+<strong><em>Important:</em></strong> You cannot cancel orders in status <strong>[1] Incomplete data</strong> or <strong>[3] Waiting for payment</strong>.</p>
 </li>
 </ul>
 </div>
@@ -2762,6 +2763,33 @@ When adding another data field, it is mandatory to use the <strong>Add fallback 
 </div>
 </div>
 </div>
+<div id="incomplete-order-cancellation" class="openblock collapseBox">
+<div class="title">Why are some incomplete orders still processed and shipped even though they were cancelled?</div>
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Problem:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>An incomplete order in <strong>[1] Incomplete data</strong> is cancelled because the customer requests the cancellation. However, the customer still pays the order after a few days. The order is completed, processed and automatically shipped.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Reason and solution:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OTTO Market orders in status <strong>[1] Incomplete data</strong> or <strong>[3] Waiting for payment</strong> cannot be cancelled by the seller.</p>
+</li>
+<li>
+<p>You can only cancel OTTO Market orders once the orders have reached status <strong>[5] Cleared for shipping</strong>.</p>
+</li>
+<li>
+<p>OTTO Market automatically cancels incomplete orders after a few days if no payment is received.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div id="1304" class="openblock collapseBox">
 <div class="title">How do I find OTTO Market orders in my plentymarkets system?</div>
 <div class="content">
@@ -2795,7 +2823,7 @@ When adding another data field, it is mandatory to use the <strong>Add fallback 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/markets/assets/otto-market_search_external-order-number.png" alt="Search external order number">
+<img src="{{plugin_path('PlentyManual')}}/images/markets/assets/otto-market_order-number.png" alt="external order number in plentymarkets">
 </div>
 </div>
 <div class="paragraph">
