@@ -23,13 +23,13 @@
 </ul>
 </li>
 <li><a href="#register-order"><span>4.2.</span><span> Registering a single order</span></a></li>
-<li><a href="#download-shipping-labels"><span>4.3.</span><span> Downloading the shipping labels</span></a></li>
+<li><a href="#download-shipping-label"><span>4.3.</span><span> Downloading the shipping label</span></a></li>
 <li><a href="#reset-order"><span>4.4.</span><span> Resetting a single order</span></a></li>
 <li><a href="#cancel-order"><span>4.5.</span><span> Cancelling a single order</span></a></li>
 <li><a href="#polling-single-order"><span>4.6.</span><span> Creating a polling file for a single order</span></a></li>
 <li><a href="#register-return"><span>4.7.</span><span> Registering a return for a single order</span></a></li>
 <li><a href="#retrieve-return-label"><span>4.8.</span><span> Retrieving the return label</span></a></li>
-<li><a href="#download-export-labels"><span>4.9.</span><span> Downloading the export labels</span></a></li>
+<li><a href="#download-export-label"><span>4.9.</span><span> Downloading the export label</span></a></li>
 </ul>
 </li>
 <li><a href="#edit-shipping-package"><span>5.</span><span> Editing a shipping package</span></a>
@@ -103,7 +103,16 @@
 <p>Group function to reset orders</p>
 </li>
 <li>
-<p>Group function to group return labels</p>
+<p>Group function to download return labels</p>
+</li>
+<li>
+<p>Checkbox to automatically download the shipping labels when registering the orders</p>
+</li>
+<li>
+<p>A column with registered returns can be displayed in the overview</p>
+</li>
+<li>
+<p>New filters: <strong>Order date from / to</strong>, <strong>Order type</strong>, <strong>Country</strong></p>
 </li>
 </ul>
 </div>
@@ -189,7 +198,7 @@ Select the option <strong>Registered</strong> to search for all registered order
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment method</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Select a payment method or the option <strong>All</strong> to search for orders with this payment method.<br>
-<strong><em>Note:</em></strong> The drop-down list shows all payment methods that are active in your system. Go to <strong>Setup » Orders » Payment » Methods</strong> to see whether a payment method is activated.</p></td>
+<strong><em>Note:</em></strong> The drop-down list shows all payment methods that are activated in your system. Go to <strong>Setup » Orders » Payment » Methods</strong> to see whether a payment method is activated.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Owner</strong></p></td>
@@ -402,6 +411,7 @@ Click in the line of the order <span class="icon blue"><i class="fa fa-shopping-
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="psicon-outgoing_items"></i></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Registers all selected orders.<br>
 After clicking on <strong>Register orders</strong>, a window opens. Select the shipping service provider that you want to register the selected orders with from the drop-down list. Two further drop-down lists are available from which you can select the order statuses that the orders should switch to in case of successful and failed registration.<br>
+The option <strong>Automatically download shipping labels in PDF format after registration</strong> is activated by default and automatically downloads the shipping labels to your computer after the orders have been registered.<br>
 <strong><em>Tip:</em></strong> You can find a detailed <a href="#step-by-step">step-by-step guide</a> on how to register orders below this table.</p></td>
 </tr>
 <tr>
@@ -427,18 +437,19 @@ After clicking on <strong>Summary</strong>, a window opens. Select the service p
 <strong><em>Tip:</em></strong> You can find a detailed <a href="#step-by-step">step-by-step guide</a> on how to create the order summary below this table.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Group shipping labels</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Download shipping labels</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="psicon-order_open"></i></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Groups the shipping labels of orders that have already been registered in PDF format.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Downloads the shipping labels of orders that have already been registered in PDF format.<br>
 The number of PDF files corresponds to the number of shipping service providers. This means: One PDF file is generated for each shipping service provider.<br>
-<strong><em>Tip:</em></strong> You can find a detailed <a href="#step-by-step">step-by-step guide</a> on how to group shipping labels below this table.</p></td>
+<strong><em>Note:</em></strong> If an export document is available, these are also downloaded in a separate file.<br>
+<strong><em>Tip:</em></strong> You can find a detailed <a href="#step-by-step">step-by-step guide</a> on how to download shipping labels below this table.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Group return labels</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Download return labels</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="psicon-order_return_slip"></i></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Groups the return labels of orders that have already been registered as returns in PDF format.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Downloads the return labels of orders that have already been registered as returns in PDF format.<br>
 The number of PDF files corresponds to the number of return service providers. This means: One PDF file is generated for each return service provider.<br>
-<strong><em>Tip:</em></strong> You can find a detailed <a href="#step-by-step">step-by-step guide</a> on how to group return labels below this table.</p></td>
+<strong><em>Tip:</em></strong> You can find a detailed <a href="#step-by-step">step-by-step guide</a> on how to download return labels below this table.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Reset orders</strong></p></td>
@@ -465,9 +476,9 @@ After clicking on <strong>Reset orders</strong>, a window opens.
                             </li><li class="nav-item">
                                 <a class="nav-link" id="creating-a-summary-tab" data-toggle="tab" href="#creating-a-summary" role="tab" aria-controls="creating-a-summary" aria-selected="false">Creating a summary</a>
                             </li><li class="nav-item">
-                                <a class="nav-link" id="grouping-shipping-labels-tab" data-toggle="tab" href="#grouping-shipping-labels" role="tab" aria-controls="grouping-shipping-labels" aria-selected="false">Grouping shipping labels</a>
+                                <a class="nav-link" id="downloading-the-shipping-labels-tab" data-toggle="tab" href="#downloading-the-shipping-labels" role="tab" aria-controls="downloading-the-shipping-labels" aria-selected="false">Downloading the shipping labels</a>
                             </li><li class="nav-item">
-                                <a class="nav-link" id="grouping-return-labels-tab" data-toggle="tab" href="#grouping-return-labels" role="tab" aria-controls="grouping-return-labels" aria-selected="false">Grouping return labels</a>
+                                <a class="nav-link" id="downloading-return-labels-tab" data-toggle="tab" href="#downloading-return-labels" role="tab" aria-controls="downloading-return-labels" aria-selected="false">Downloading return labels</a>
                             </li><li class="nav-item">
                                 <a class="nav-link" id="resetting-orders-tab" data-toggle="tab" href="#resetting-orders" role="tab" aria-controls="resetting-orders" aria-selected="false">Resetting orders</a>
                             </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="editing-orders" role="tabpanel" aria-labelledby="editing-orders-tab">
@@ -546,6 +557,10 @@ After clicking on <strong>Reset orders</strong>, a window opens.
 <li>
 <p>Select the order status from the drop-down list which the order should switch to when the registration with the shipping service provider failed.<br>
 <strong><em>Note:</em></strong> You can link the switch to this order status with an <a href="/en/automation/event-procedures">event procedure</a>.</p>
+</li>
+<li>
+<p>If you do <em>not</em> want that the shipping labels are automatically downloaded after registration, deactivate (<span class="icon "><i class="fa fa-square-o  "></i></span>) the option <strong>Automatically download shipping labels in PDF format after registration</strong>.<br>
+<strong><em>Note:</em></strong> This option is activated by default.</p>
 </li>
 <li>
 <p>Click on <strong>Register orders</strong>.<br>
@@ -679,12 +694,12 @@ After clicking on <strong>Reset orders</strong>, a window opens.
 </tr>
 </tbody></table>
 </div>
-</div><div class="tab-pane fade" id="grouping-shipping-labels" role="tabpanel" aria-labelledby="grouping-shipping-labels-tab">
+</div><div class="tab-pane fade" id="downloading-the-shipping-labels" role="tabpanel" aria-labelledby="downloading-the-shipping-labels-tab">
 <div class="paragraph">
-<p>Proceed as described below to group shipping labels for multiple orders using the group function.</p>
+<p>Proceed as described below to download shipping labels for multiple orders using the group function.</p>
 </div>
 <div class="paragraph instruction">
-<p>Grouping shipping labels using the group function:</p>
+<p>Downloading shipping labels using the group function:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -696,21 +711,22 @@ After clicking on <strong>Reset orders</strong>, a window opens.
 → The orders that correspond to the search criteria entered are shown in the overview.</p>
 </li>
 <li>
-<p>Select (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) the orders that you want to create shipping labels for.</p>
+<p>Select (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) the orders whose shipping labels you want to download.</p>
 </li>
 <li>
-<p>Click on <strong>Group shipping labels</strong> (<span class="icon "><i class="psicon-order_open"></i></span>) in the toolbar on the top.<br>
+<p>Click on <strong>Download shipping labels</strong> (<span class="icon "><i class="psicon-order_open"></i></span>) in the toolbar on the top.<br>
 → The PDF file is generated and you can save it to your computer.<br>
-<strong><em>Note:</em></strong> The number of PDF files corresponds to the number of shipping service providers. This means: One PDF file is generated for each shipping service provider.</p>
+<strong><em>Note:</em></strong> The number of PDF files corresponds to the number of shipping service providers. This means: One PDF file is generated for each shipping service provider.<br>
+<strong><em>Note:</em></strong> If an export document is available, these are also downloaded in a separate file.</p>
 </li>
 </ol>
 </div>
-</div><div class="tab-pane fade" id="grouping-return-labels" role="tabpanel" aria-labelledby="grouping-return-labels-tab">
+</div><div class="tab-pane fade" id="downloading-return-labels" role="tabpanel" aria-labelledby="downloading-return-labels-tab">
 <div class="paragraph">
-<p>Proceed as described below to group return labels for multiple orders using the group function.</p>
+<p>Proceed as described below to download return labels for multiple orders using the group function.</p>
 </div>
 <div class="paragraph instruction">
-<p>Grouping return labels using the group function:</p>
+<p>Downloading return labels using the group function:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -722,10 +738,10 @@ After clicking on <strong>Reset orders</strong>, a window opens.
 → The orders that correspond to the search criteria entered are shown in the overview.</p>
 </li>
 <li>
-<p>Select (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) the orders that you want to create return labels for.</p>
+<p>Select (<span class="icon blue"><i class="fa fa-check-square  "></i></span>) the orders whose return labels you want to download.</p>
 </li>
 <li>
-<p>Click on <strong>Group return labels</strong> (<span class="icon "><i class="psicon-order_return_slip"></i></span>) in the toolbar on the top.<br>
+<p>Click on <strong>Download return labels</strong> (<span class="icon "><i class="psicon-order_return_slip"></i></span>) in the toolbar on the top.<br>
 → The PDF file is generated and you can save it to your computer.<br>
 <strong><em>Note:</em></strong> The number of PDF files corresponds to the number of return service providers. This means: One PDF file is generated for each return service provider.</p>
 </li>
@@ -801,7 +817,7 @@ After clicking on <strong>Reset orders</strong>, a window opens.
 <p><a href="#register-order">Registering a single order</a></p>
 </li>
 <li>
-<p><a href="#download-shipping-labels">Downloading the shipping labels</a></p>
+<p><a href="#download-shipping-label">Downloading the shipping label</a></p>
 </li>
 <li>
 <p><a href="#reset-order">Resetting a single order</a></p>
@@ -819,7 +835,7 @@ After clicking on <strong>Reset orders</strong>, a window opens.
 <p><a href="#retrieve-return-label">Retrieving the return label</a></p>
 </li>
 <li>
-<p><a href="#download-export-labels">Downloading the export labels</a></p>
+<p><a href="#download-export-label">Downloading the export label</a></p>
 </li>
 </ul>
 </div>
@@ -880,6 +896,7 @@ After clicking on <strong>Reset orders</strong>, a window opens.
 <td class="tableblock halign-left valign-top"><p class="tableblock">Registers the order.<br>
 After clicking on <strong>Register order</strong>, a window opens. Select the shipping service provider which you want to register the order with from the drop-down list.<br>
 Two further drop-down lists are available from which you can select the order statuses that the order should switch to in case of successful and failed registration.<br>
+Furthermore, the shipping label is automatically downloaded in PDF format after the order has been registered. This option is activated by default.<br>
 <strong><em>Tip:</em></strong> You can find a detailed step-by-step-guide on how to register an order in the <a href="#register-order">Registering a single order</a> chapter.</p></td>
 </tr>
 <tr>
@@ -1127,6 +1144,10 @@ After clicking on <strong>Cancel order</strong>, a window opens to confirm your 
 <strong><em>Note:</em></strong> You can link the switch to this order status with an <a href="/en/automation/event-procedures">event procedure</a>.</p>
 </li>
 <li>
+<p>If you do <em>not</em> want that the shipping label is automatically downloaded after registration, deactivate (<span class="icon "><i class="fa fa-square-o  "></i></span>) the option <strong>Automatically download shipping labels in PDF format after registration</strong>.<br>
+<strong><em>Note:</em></strong> This option is activated by default.</p>
+</li>
+<li>
 <p>Click on <strong>Register</strong>.<br>
 → The order is registered with the shipping service provider.<br>
 → The registered order receives a package number in the <a href="#packages">Packages</a> area.</p>
@@ -1135,9 +1156,21 @@ After clicking on <strong>Cancel order</strong>, a window opens to confirm your 
 </div>
 </div>
 <div class="sect2">
-<h3 id="download-shipping-labels">4.3. Downloading the shipping labels</h3>
+<h3 id="download-shipping-label">4.3. Downloading the shipping label</h3>
 <div class="paragraph">
-<p>If the order has been successfully registered, the shipping label is visible in the <strong>Packages</strong> area. Click on <strong>Download shipping labels</strong> (<span class="icon "><i class="psicon-order_open"></i></span>) to save the label(s) to your computer and print them.</p>
+<p>If the order has been successfully registered, the shipping label is visible in the <strong>Packages</strong> area. Click on <strong>Download shipping labels</strong> (<span class="icon "><i class="psicon-order_open"></i></span>) in the <strong>Packages</strong> area of the order to save the label to your computer and print it afterwards.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Another option to download the shipping label is the <a href="#group-function">group function</a> in the overview. For further information, refer to the chapter <a href="#step-by-step">Step-by-step guide for the group functions</a> in the tab <strong>Downloading shipping labels</strong>.
+</td>
+</tr>
+</tbody></table>
 </div>
 <h4 id="_automatically_sending_shipping_labels_via_email" class="discrete">Automatically sending shipping labels via email</h4>
 <div class="paragraph">
@@ -1443,7 +1476,7 @@ Note that you can only cancel an order in the detail view of a single order, but
 <div class="sect2">
 <h3 id="register-return">4.7. Registering a return for a single order</h3>
 <div class="paragraph">
-<p>After you have registered the return, the return label is available for download as a PDF file. You can register a return via the main order or via the order type <strong>Return</strong>. For further information about the order type <strong>Return</strong>, refer to the <a href="/en/orders/managing-orders#400">Managing orders</a> page.</p>
+<p>After you have registered the return, the return label is available for download as a PDF file in the <strong>Returns</strong> are of the order. You can register a return via the main order or via the order type <strong>Return</strong>. For further information about the order type <strong>Return</strong>, refer to the <a href="/en/orders/managing-orders#400">Managing orders</a> page.</p>
 </div>
 <div class="paragraph instruction">
 <p>Registering a return for a single order:</p>
@@ -1477,7 +1510,7 @@ Note that you can only cancel an order in the detail view of a single order, but
 <div class="sect2">
 <h3 id="retrieve-return-label">4.8. Retrieving the return label</h3>
 <div class="paragraph">
-<p>Once the return was successfully registered, the return label is available in the <strong>Returns</strong> area. Click on <strong>Return label</strong> (<span class="icon "><i class="psicon-order_open"></i></span>) to save the label on your computer and print it afterwards.</p>
+<p>Once the return has been successfully registered, the return label is available in the <strong>Returns</strong> area of the order. Click on <strong>Return label</strong> (<span class="icon "><i class="psicon-order_open"></i></span>) to save the label on your computer and print it afterwards.</p>
 </div>
 <div class="paragraph">
 <p><a href="#image-return-label">Figure 3</a> shows as an example a return that was registered with DHL Retoure Online with the setting that one label is generated per package. If multiple packages are available, one PDF file per return label is generated.</p>
@@ -1553,9 +1586,9 @@ Note that you can only cancel an order in the detail view of a single order, but
 </div>
 </div>
 <div class="sect2">
-<h3 id="download-export-labels">4.9. Downloading the export labels</h3>
+<h3 id="download-export-label">4.9. Downloading the export label</h3>
 <div class="paragraph">
-<p>You need a customs declaration for shipments that you send to countries outside the European Union, the so-called <em>CN23 form</em>. Once you successfully registered an order where the country of delivery is outside the European Union, the export label is automatically available in the <strong>Packages</strong> area.</p>
+<p>You need a customs declaration for shipments that you send to countries outside the European Union, the so-called <em>CN23 form</em>. Once you successfully registered an order where the country of delivery is outside of the European Union, the export label is automatically available in the <strong>Packages</strong> area of the order.</p>
 </div>
 <div class="paragraph instruction">
 <p>Downloading the export label:</p>
@@ -1577,6 +1610,18 @@ Note that you can only cancel an order in the detail view of a single order, but
 → The PDF file is generated and you can save it to your computer.</p>
 </li>
 </ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Another option to download the export label is the <a href="#group-function">group function</a> in the overview. For further information, refer to the chapter <a href="#step-by-step">Step-by-step guide for the group functions</a> in the tab <strong>Downloading shipping labels</strong>.
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div>
