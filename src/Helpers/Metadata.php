@@ -1389,22 +1389,6 @@ class Metadata {
 						"languageID" => "A5QKZYV",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "ab9226a1084689d638cc771ca314397a",
-						"path" => "warenwirtschaft/plentywarehouse/artikeletiketten-drucken",
-						"position" => 60,
-						"urlName" => "artikeletiketten-drucken",
-						"url" => "/warenwirtschaft/plentywarehouse/artikeletiketten-drucken",
-						"level" => 3,
-						"title" => "Artikeletiketten drucken",
-						"keywords" => "plentyWarehouse Etiketten, Artikeletiketten plentyWarehouse",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Artikeletiketten drucken. Hier findest du folgende Informationen:",
-						"languageID" => "A8QKZYX",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
