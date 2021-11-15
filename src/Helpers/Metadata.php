@@ -36,6 +36,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "cff7b31a3c67a586a428a7f739efa367",
+				"path" => "willkommen/hilfe",
+				"position" => 15,
+				"urlName" => "hilfe",
+				"url" => "/willkommen/hilfe",
+				"level" => 2,
+				"title" => "Wo finde ich Hilfe?",
+				"keywords" => "",
+				"description" => "Auf dieser Handbuchseite findest du alle Hilfeoptionen, die dir bei plentymarkets zur Verfügung stehen.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Wo finde ich Hilfe?. Hier findest du folgende Informationen:",
+				"languageID" => "EQWV5MR",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "1c6d1d6c5621588a7ab024fa6f067aea",
 				"path" => "willkommen/assistenten",
 				"position" => 20,
