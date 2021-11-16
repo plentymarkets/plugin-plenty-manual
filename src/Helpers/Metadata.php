@@ -242,6 +242,22 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
+						"id" => "f69d6712856c870fa7d94faff7d25597",
+						"path" => "willkommen/schnelleinstieg/schnelleinstieg-maerkte",
+						"position" => 115,
+						"urlName" => "schnelleinstieg-maerkte",
+						"url" => "/willkommen/schnelleinstieg/schnelleinstieg-maerkte",
+						"level" => 3,
+						"title" => "Märkte anbinden",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Märkte anbinden. Hier findest du folgende Informationen:",
+						"languageID" => "C0B258D",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
 						"id" => "cea7e9835687d21a74cba34cf70f88ad",
 						"path" => "willkommen/schnelleinstieg/schnelleinstieg-plugins",
 						"position" => 120,
