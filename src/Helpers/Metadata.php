@@ -4873,6 +4873,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "19762fa039af96fb0550ac6529d2862a",
+				"path" => "webshop/shopbuilder-content-widgets",
+				"position" => 35,
+				"urlName" => "shopbuilder-content-widgets",
+				"url" => "/webshop/shopbuilder-content-widgets",
+				"level" => 2,
+				"title" => "ShopBuilder Content-Widgets",
+				"keywords" => "Webshop, Ceres, IO, Drag and Drop, Baukasten, ShopBuilder, Widget, plentyShop, WYSIWIG",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich ShopBuilder Content-Widgets. Hier findest du folgende Informationen:",
+				"languageID" => "M8Z8E1L",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "7fe40aa0207b5a71848e190067efb9f5",
 				"path" => "webshop/feedbacks-verwalten",
 				"position" => 40,
