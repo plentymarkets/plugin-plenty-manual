@@ -4,10 +4,11 @@
             <div id="toc" class="toc">
 <div id="toctitle">Inhalt</div>
 <ul class="sectlevel1">
-<li><a href="#100"><span>1.</span><span> Grobkommissionierung über Mobile Pickliste inkl. Label, Rechnung, Lieferschein und Warenausgang</span></a></li>
+<li><a href="#100"><span>1.</span><span> Grobkommissionierung über mobile Pickliste inkl. Label, Rechnung, Lieferschein und Warenausgang</span></a></li>
 <li><a href="#200"><span>2.</span><span> Grobkommissionierung über Papier, Feinkommissionierung über Box-Regal inkl. Label, Rechnung, Lieferschein und Warenausgang</span></a></li>
 <li><a href="#300"><span>3.</span><span> Grob- &amp; Fein-Kommissionierung über Papier, dann Auftragssuche und Versand</span></a></li>
 <li><a href="#400"><span>4.</span><span> Verschiedene Versanddienstleister, Seriennummern erfassen, Fein-Kommissionierung über Box-Regal</span></a></li>
+<li><a href="#500"><span>5.</span><span> SEPA-Lastschriften automatisiert erfassen</span></a></li>
 </ul>
 </div>
         </div>
@@ -37,10 +38,10 @@
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="100">1. Grobkommissionierung über Mobile Pickliste inkl. Label, Rechnung, Lieferschein und Warenausgang</h2>
+<h2 id="100">1. Grobkommissionierung über mobile Pickliste inkl. Label, Rechnung, Lieferschein und Warenausgang</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Das folgende Video erklärt, wie du mithilfe der Prozesse für bestimmte Aufträge automatisch eine Mobile Pickliste erzeugst. Die Grob-Kommissionierung erfolgt mithilfe der plentymarkets App. Das Beispiel liefert aktuell nur Aufträge, die aus einer Auftragsposition mit der Artikelmenge 1 bestehen. Wenn du also zuerst solche Aufträge bearbeiten möchtest und danach die komplexeren Aufträge, dann lege einfach zwei unterschiedliche Prozesse an. Importiere dieses Beispiel einfach noch einmal und passe die Filter entsprechend an.</p>
+<p>Das folgende Video erklärt, wie du mithilfe der Prozesse für bestimmte Aufträge automatisch eine mobile Pickliste erzeugst. Die Grob-Kommissionierung erfolgt mithilfe der <a href="#app">plentymarkets App</a>. Das Beispiel liefert aktuell nur Aufträge, die aus einer Auftragsposition mit der Artikelmenge 1 bestehen. Wenn du also zuerst solche Aufträge bearbeiten möchtest und danach die komplexeren Aufträge, dann lege einfach zwei unterschiedliche Prozesse an. Importiere dieses Beispiel einfach noch einmal und passe die Filter entsprechend an.</p>
 </div>
 <div class="paragraph">
 <p>Schau dir das folgende Video an, um die einzelnen Einstellungen genauer nachzuvollziehen.
@@ -208,11 +209,21 @@
 <div class="paragraph">
 <p>Im Beispiel wird der Vorgang in nur einem zusammenhängenden Prozess bestehend aus zwei Arbeitsschritten dargestellt. Denkbar ist natürlich auch, dass du daraus zwei Prozesse erstellst: Der erste Prozess beinhaltet dann nur den ersten Arbeitsschritt, also den Druck der Pick- und Packliste. Der zweite Prozesse umfasst die Auftragssuche und die weitere Abwicklung. Durch eine Aufteilung kann erreicht werden, dass beispielsweise im Büro ein Stapel Pick- und Packlisten erstellt und dann an die Kolleg:innen im Lager verteilt wird. Im Lager wird die Ware gesammelt und am Packtisch wird nur der zweite Prozess, also Auftragssuche etc., ausgeführt.</p>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warnung"></i>
+</td>
+<td class="content">
+<div class="title">Polling für DHL-Easylog nicht mehr verwenden</div>
 <div class="paragraph">
-<p>Das Beispiel enthält auch die Aktion <strong>Polling</strong> für das Format DHL-Easylog. Dies bedeutet, dass dabei lediglich für den aktuellen Auftrag eine Exportdatei mit den Lieferinformationen im definierten Ordner auf deinem Rechner gespeichert wird. Dieser Ordner sollte von der Software des Packetdienstleisters (z.B. Easylog) überwacht werden, damit neue Dateien direkt importiert (Polling) werden und ein Label erstellt werden kann.</p>
+<p>Der Beispielprozess enthält die Aktion <strong>Polling</strong> für das mittlerweile veraltete Format DHL-Easylog.
+Da die Schnittstelle mittlerweile veraltet und nicht mehr nutzbar ist, solltest du diese Aktion unbedingt entfernen. Füge stattdessen eine oder mehrere Versand-Center-Aktionen ein, um direkt Versandlabel erstellen und drucken lassen zu können.</p>
 </div>
-<div class="paragraph">
-<p>Wenn eine solche Software nicht zum Einsatz kommt, entferne einfach diese Aktion. Füge eine oder mehrere Versand-Center-Aktionen ein, um direkt Label erstellen und drucken lassen zu können.</p>
+</td>
+</tr>
+</tbody></table>
 </div>
 <div class="paragraph">
 <p>Ebenfalls besonders an diesem Prozess ist, dass erst nach der Auftragssuche eine Änderung des <strong>Auftragsstatus</strong> vorgenommen wird. Dadurch kannst du immer live sehen, welche Aufträge sich gerade im Versand befinden.</p>
@@ -316,6 +327,92 @@
 <div class="videoblock">
 <div class="content">
 <iframe src="https://player.vimeo.com/video/87317994" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong>Wie importiere ich einen Prozess?</strong></div>
+<div class="content">
+<div class="paragraph">
+<p>Gehe wie unten beschrieben vor, um Prozesse in dein plentymarkets System zu importieren.</p>
+</div>
+<div class="paragraph instruction">
+<p>Prozess importieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Prozesse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Import</strong>.</p>
+</li>
+<li>
+<p>Gib einen Namen für den Prozess ein und klicke auf <strong>Dateien wählen</strong>.</p>
+</li>
+<li>
+<p>Wähle die Prozessdatei auf deinem Computer aus und klicke auf <strong>Öffnen</strong>.<br>
+→ Der Prozess wird importiert und zur Bearbeitung geöffnet.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Einstellungen prüfen</div>
+<div class="paragraph">
+<p>Prüfe nach dem Import des Prozesses die folgenden Einstellungen und passe sie auf deine Abläufe an:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Auswahl des Auftragsstatus</p>
+</li>
+<li>
+<p>Speicherort</p>
+</li>
+<li>
+<p>Lager</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Tipp:</em></strong> Achte auf das Käfer-Symbol. Dieses wird automatisch an den Prozesselementen angezeigt, die zu Problemen führen können und somit vor der Nutzung des Prozesses angepasst werden müssen.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="500">5. SEPA-Lastschriften automatisiert erfassen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dieser Prozess erlaubt es dir, von Kund:innen, die ein Lastschriftmandat zur Bezahlung erteilt haben, Zahlungen automatisch per Lastschrift einzuziehen.</p>
+</div>
+<div class="paragraph">
+<p>Zuerst muss dazu sichergestellt sein, dass auch tatsächlich ein Mandat der jeweiligen Kund:innen vorliegt, damit du berechtigt bist, den Betrag von ihrem Bankkonto einzuziehen. Stelle vor dem Einrichten dieses Prozesses also sicher, dass am jeweiligen Kontaktdatensatz im Menü <strong>CRM » Kontakte</strong> die Bankdaten hinterlegt sind und die Option <strong>SEPA-Lastschriftmandat</strong> aktiviert ist. Alle Informationen zum Speichern dieser Daten findest du auf der Handbuchseite <a href="/crm/kontakte-verwalten#1890">Kontakte verwalten</a>. Die Handbuchseite <a href="/payment/bankdaten-verwalten#220">Bankdaten verwalten</a> beschreibt, wie du im Vorfeld Lastschriftmandate von Kund:innen einholst.</p>
+</div>
+<div class="paragraph">
+<p>Am Beginn dieses Beispielprozesses findet eine Auftragssuche statt, die nach Aufträgen vom Typ <strong>Auftrag</strong> mit der Zahlungsart <strong>Lastschrift</strong> und dem Status <strong>[7] Warenausgang gebucht</strong> sucht. Zusätzlich wird eingestellt, dass nach dem Durchlaufen des Prozesses für die betroffenen Aufträge ein Wechsel auf den Status <strong>[7.1] Lastschrift eingereicht</strong> durchgeführt wird. Anschließend wird die Aktion <strong>SEPA Pain008</strong> verwendet, um die notwendigen Transaktionsdateien für die Lastschriften an die Bank zu exportieren. Berate dich vorab mit deiner Bank, welche Dateiformate bei der Übermittlung erwartet werden.
+Mit der Subaktion <strong>Speichern</strong> wird dann die Exportdatei lokal gespeichert. Die darauf folgende Aktion <strong>Zahlungseingang anlegen</strong> legt den Zahlungseingang für den entsprechenden Auftrag an. Zum Schluss wird die Aktion <strong>E-Mail</strong> in Kombination mit der Subaktion <strong>Versenden</strong> eingefügt, um Kund:innen per E-Mail auf den bevorstehenden Einzug der Lastschrift zu informieren.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/plentyprocess/SepaPain008_2021_11.plentyprocess" target="_blank" rel="noopener">Lade zusätzlich den passenden Beispielprozess herunter</a>, um ihn anschließend in dein plentymarkets System zu importieren.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong>Video-Tutorial</strong></div>
+<div class="content">
+<div class="videoblock">
+<div class="content">
+<iframe src="https://player.vimeo.com/video/86161770" frameborder="0" allowfullscreen=""></iframe>
 </div>
 </div>
 </div>
