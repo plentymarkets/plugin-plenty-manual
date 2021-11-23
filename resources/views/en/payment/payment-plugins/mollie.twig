@@ -13,6 +13,9 @@
 <li><a href="#70"><span>5.1.</span><span> Registering shipment with Mollie</span></a></li>
 <li><a href="#80"><span>5.2.</span><span> Registering cancellations with Mollie</span></a></li>
 <li><a href="#90"><span>5.3.</span><span> Registering refunds with Mollie</span></a></li>
+<li><a href="#92"><span>5.4.</span><span> Refund failed or successful</span></a></li>
+<li><a href="#95"><span>5.5.</span><span> Shipment failed or successful</span></a></li>
+<li><a href="#97"><span>5.6.</span><span> Payment failed</span></a></li>
 </ul>
 </li>
 <li><a href="#100"><span>6.</span><span> Editing text elements</span></a></li>
@@ -27,7 +30,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>With the Mollie plugin, you integrate the Mollie payment methods in your online shop and make them available to your customers. To do so, download the Mollie plugin from the <a href="https://marketplace.plentymarkets.com/en/mollie_6272" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>. Setup of the payment method is done with an assistant. You also have to carry out a few basic settings in your plentymarkets system so that the payment method is activated in your system.<br>
-The explanations in this section apply after adding the plugin. You can find more information on adding and installing plugins in the <a href="/en/plugins">Plugins</a> section of the manual.</p>
+The explanations in this section apply after adding the plugin. You can find more information on adding and installing plugins in the <a href="/en/plugins# Plugins">/en/plugins</a> section of the manual.</p>
 </div>
 </div>
 </div><div class="sect1">
@@ -35,6 +38,21 @@ The explanations in this section apply after adding the plugin. You can find mor
 <div class="sectionbody">
 <div class="paragraph">
 <p>To use Mollie, you need a Mollie account and the login data. Without these, the plugin cannot be set up and is not usable. If you don’t have a Mollie account yet, <a href="https://www.mollie.com/dashboard/signup/5543454?lang=de" target="_blank" rel="noopener">register first</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> .</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Currencies supported by Mollie</div>
+<div class="paragraph">
+<p>There are some parameters set by payment providers, among them usually also supported currencies. Which currencies are supported by Mollie can be found in the Mollie documentation on the page <a href="https://docs.mollie.com/payments/multicurrency" target="_blank" rel="noopener">Multicurrency</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div><div class="sect1">
@@ -60,7 +78,7 @@ The explanations in this section apply after adding the plugin. You can find mor
 </ol>
 </div>
 <div class="paragraph">
-<p>The payment method Mollie is available in your online shop.</p>
+<p>The payment method {name-payment-method} is available in your online shop.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -82,7 +100,7 @@ The explanations in this section apply after adding the plugin. You can find mor
 <div class="content">
 <div class="paragraph">
 <p>With the function Single-click payments, your customers can save their credit card details directly with Mollie by creating a Mollie customer account. This way, they don’t have to enter their payment details every time they buy something and payment processing is faster. If you want to make this function available to your customers, you have to activate it in the assistant.<br>
-If you have activated Single-click payments, you can see which of your customers use this function. In this case, a unique ID assigned by Mollie is saved in the corresponding contact data set in plentymarkets. In addition, the customers who use Single-click payments are also listed in your Mollie account.</p>
+If you have activated Single-click payments, you can see which of your customers use this function. In this case, a unique ID assigned by Mollie is saved in the corresponding contact data record in plentymarkets. In addition, the customers who use Single-click payments are also listed in your Mollie account.</p>
 </div>
 </div>
 </div>
@@ -90,7 +108,7 @@ If you have activated Single-click payments, you can see which of your customers
 <div class="title"><strong>Only when using a payment method for several clients: Complete assistant several times</strong></div>
 <div class="content">
 <div class="paragraph">
-<p>Depending on the configuration of your plugin sets and clients, the Mollie assistant has to be completed more than once. Only this ensures that the Mollie payment methods are configured correctly and all functions such as event procedures and crons run smoothly in the background.</p>
+<p>Depending on the configuration of your plugin sets and clients, the Mollie assistant has to be completed more than once. Only this ensures that the {name-payment-method} payment methods are configured correctly and all functions such as event procedures and crons run smoothly in the background.</p>
 </div>
 <div class="paragraph">
 <p>The following tables show you which assistants you have to complete in which plugin set. The upper row displays the configuration of the plugin sets and clients. The second row lists correspondingly, in which set the Mollie assistant has to be completed for which client.</p>
@@ -192,8 +210,11 @@ If you have activated Single-click payments, you can see which of your customers
 </div><div class="sect1">
 <h2 id="30">3. Linking template containers</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The containers needed by default on your online shop are automatically linked during setup with the Mollie assistant. In case you want to link containers manually, proceed as follows.</p>
+</div>
 <div class="paragraph instruction">
-<p>Proceed as follows to set up container links:</p>
+<p>Setting up container links:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -211,7 +232,7 @@ If you have activated Single-click payments, you can see which of your customers
 </li>
 <li>
 <p>Select one or more containers in which the previously selected content is to be displayed.<br>
-→ Pay attention to the information provided in <a href="#table-mollie-template-container">Table 1</a>.</p>
+Pay attention to the explanations given in <a href="#table-mollie-template-container">Table 1</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br>
@@ -300,13 +321,21 @@ If you have activated Single-click payments, you can see which of your customers
 <h2 id="60">5. Setting up event procedures</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To send all the necessary data to Mollie, 3 separate event procedures are needed. These events are the shipping of the order items, cancellations of orders and the creation of refunds. Mollie needs to be informed if any of these are initiated. Proceed as described in the next chapters to set up the event procedures.</p>
+<p>Event procedures are part of automations you can set up in plentymarkets. When you use event procedures, a specific event triggers an action for a selection of orders. For further information, refer to the <a href="/en/automation/event-procedures">Event procedures</a> page of the manual.</p>
 </div>
 <div class="paragraph">
-<p>Additionally to the three necessary event procedures <strong>Registering shipment</strong>, <strong>Registering cancellation</strong> and <strong>Registering refund</strong>, which are used to send important data to Mollie, the event <strong>Mollie | Payment failed</strong> is also available for use. It is an optional event, though. You could use it to determine how orders for which payments are failed are to be handled.</p>
+<p>In connection to payment providers such as Mollie, event procedures are also used to transmit important information to the payment provider. Regarding Mollie, there are three necessary and a few optional event procedures. The necessary event procedures should be set up in any case. These are registering the shipment of the order items of an order, registering the cancellation of an order and when a refund is created. Mollie needs to be informed if these are initiated. If a set up event procedure is triggered, the corresponding call is directly executed in the background so that Mollie is informed within a very short time.<br>
+Optional event procedures are available to you next to these three necessary ones. You can use these if they fit into your individual workflow.</p>
+</div>
+<div class="paragraph">
+<p>In the following chapters, an example configuration and an explanation to each event procedure are given. But it is important to configure every event procedure so that it meets your individual requirements.</p>
 </div>
 <div class="sect2">
 <h3 id="70">5.1. Registering shipment with Mollie</h3>
+<div class="paragraph">
+<p>Use this event procedure to inform Mollie when you shipped an order that was paid with a Mollie payment method. This is a necessary event procedure.<br>
+This event procedure can also be used for delivery orders. The delivery order is then registered with Mollie as a partial shipment.</p>
+</div>
 <div class="openblock collapseBox">
 <div class="title">Setting up an event procedure</div>
 <div class="content">
@@ -323,13 +352,13 @@ If you have activated Single-click payments, you can see which of your customers
 <p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>Event</strong> according to <a href="#table-procedure-mollie-shipment">Table 2</a>.</p>
+<p>Select the <strong>Event</strong> according to <a href="#table-procedure-mollie-transmit-shipment">Table 2</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the further settings according to <a href="#table-procedure-mollie-shipment">Table 2</a>.</p>
+<p>Carry out the further settings according to <a href="#table-procedure-mollie-transmit-shipment">Table 2</a>.</p>
 </li>
 <li>
 <p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -341,8 +370,8 @@ If you have activated Single-click payments, you can see which of your customers
 </div>
 </div>
 </div>
-<table id="table-procedure-mollie-shipment" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Event procedure “Mollie | Register shipment”</caption>
+<table id="table-procedure-mollie-transmit-shipment" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Event procedure: “Mollie | Register shipment”</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -358,27 +387,28 @@ If you have activated Single-click payments, you can see which of your customers
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select the event to trigger a shipment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the event that is to trigger informing Mollie about the shipment, e.g. <strong>Outgoing items booked</strong>.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Order &gt; Payment method</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin: Mollie:*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the Mollie payment methods you are using from the list.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin &gt; Mollie:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Register shipment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin &gt; Mollie - Register shipment</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>This event procedure can also be used for delivery orders. The delivery order is then registered with Mollie as a partial shipment.</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="80">5.2. Registering cancellations with Mollie</h3>
+<div class="paragraph">
+<p>Use this event procedure to inform Mollie about the cancellation of an order. This is a necessary event procedure.<br>
+<em>Note</em> that an order cannot be cancelled as long as a payment is pending. The expiry times for the different payment methods are determined by Mollie and can be found <a href="https://docs.mollie.com/payments/status-changes#expiry-times-per-payment-method" target="_blank" rel="noopener">on this page</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
 <div class="openblock collapseBox">
 <div class="title">Setting up an event procedure</div>
 <div class="content">
@@ -414,7 +444,7 @@ If you have activated Single-click payments, you can see which of your customers
 </div>
 </div>
 <table id="table-procedure-mollie-cancellation" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. Event procedure: *Mollie | Register cancellation”</caption>
+<caption class="title">Table 3. Event procedure: “Mollie | Register cancellation”</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -430,44 +460,27 @@ If you have activated Single-click payments, you can see which of your customers
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select the event to trigger a shipment.</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the event that is to trigger informing Mollie about the cancellation, e.g. <strong>Status change</strong>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you selected <strong>Status change</strong>, then select the <a href="/en/orders/managing-orders#1200">order status</a> you are using for cancelled orders from the drop-down list. By default, these are <strong>8 - Cancelled</strong> and <strong>8.1 - Cancelled by customer</strong>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Order &gt; Payment method</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin: Mollie:*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the Mollie payment methods you are using from the list.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin &gt; Mollie</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Register cancellation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin &gt; Mollie - Register cancellation</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>Note</em> that an order cannot be cancelled as long as a payment is pending. The expiry times for the different payment methods are determined by Mollie and can be found <a href="https://docs.mollie.com/payments/status-changes#expiry-times-per-payment-method" target="_blank" rel="noopener">on this page</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="90">5.3. Registering refunds with Mollie</h3>
 <div class="paragraph">
-<p>If you create a credit note order for an order which was paid with Mollie, Mollie has to be informed about this. Make sure that the order items which are to be refunded are contained in the credit note order. You can find more information about credit note orders in general in the chapter <a href="/en/orders/managing-orders#500">Working with credit note orders</a> of the manual.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tbody><tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="title">E-Mail-Versand</div>
-<div class="paragraph">
-<p>We recommend to connect the registration of a refund with the status change of an order as an event.</p>
-</div>
-</td>
-</tr>
-</tbody></table>
+<p>Use this event procedure to inform Mollie about the creation of a credit note. This is a necessary event procedure. The procedure <strong>Mollie | Register refund</strong> can be executed based on an order or a credit note order.<br>
+Make sure that the order items which are to be refunded are contained in the credit note order. You can find more information about credit note orders in general in the chapter <a href="/en/orders/managing-orders#500">Working with credit note orders</a> of the manual.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Setting up an event procedure</div>
@@ -485,13 +498,13 @@ If you have activated Single-click payments, you can see which of your customers
 <p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>Event</strong> according to <a href="#table-procedure-mollie-refunds">Table 4</a>.</p>
+<p>Select the <strong>Event</strong> according to <a href="#table-procedure-mollie-transmit-refunds">Table 4</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the further settings according to <a href="#table-procedure-mollie-refunds">Table 4</a>.</p>
+<p>Carry out the further settings according to <a href="#table-procedure-mollie-transmit-refunds">Table 4</a>.</p>
 </li>
 <li>
 <p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
@@ -503,8 +516,8 @@ If you have activated Single-click payments, you can see which of your customers
 </div>
 </div>
 </div>
-<table id="table-procedure-mollie-refunds" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. Event procedure “Mollie | Register refund”</caption>
+<table id="table-procedure-mollie-transmit-refunds" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Event procedure: "Mollie | Register refund”</caption>
 <colgroup>
 <col style="width: 14.2857%;">
 <col style="width: 42.8571%;">
@@ -520,24 +533,267 @@ If you have activated Single-click payments, you can see which of your customers
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Select the event to trigger a shipment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the event that is to trigger informing Mollie about the refund, e.g. <strong>New credit note</strong>.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Order &gt; Payment method</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin: Mollie:*</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the Mollie payment methods you are using from the list.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin &gt; Mollie</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Register refund</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin &gt; Mollie - Register refund</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Following the procedure <strong>Mollie | Register refund</strong>, two additional events are available to illustrate the further process of the order: <strong>Mollie refund failed</strong> and <strong>Mollie refund successful</strong>.   You can optionally set up event procedures with these events in the same way as described above.</p>
 </div>
+<div class="sect2">
+<h3 id="92">5.4. Refund failed or successful</h3>
+<div class="paragraph">
+<p>Following the procedure <strong>Mollie | Register refund</strong>, two additional events are available to illustrate the further process of the order: <strong>Mollie refund failed</strong> and <strong>Mollie refund successful</strong>. These are two optional event procedures that can help you with the further order processing.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Mollie | Refund failed</strong> = Determine what should happen with those orders for which a refund could not be executed.</p>
+</li>
+<li>
+<p><strong>Mollie | Refund successful</strong> = Determine what should happen with those orders for which a refund could be executed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can optionally create event procedures with these events to define how to proceed with these orders. The following event procedure is an example. You decide which process fits best into your workflow of order processing.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#table-events-mollie-refunds">Table 5</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the further settings according to <a href="#table-events-mollie-refunds">Table 5</a>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="table-events-mollie-refunds" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Event procedures “Mollie | Refund failed” and “Mollie | Refund successful”</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mollie - Refund failed</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the Mollie payment methods you are using from the list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Change status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the order status from the drop-down list that should be assigned to orders with Mollie payment methods for which an error occurred in the refund process. For example, you could create an own <a href="/en/orders/managing-orders#1200">order status</a> for this. This way, you detect the orders which require further processing faster.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="95">5.5. Shipment failed or successful</h3>
+<div class="paragraph">
+<p>Following the procedure <strong>Mollie | Register shipment</strong>, two additional events are available to illustrate the further process of the order: <strong>Mollie | Shipment failed</strong> and <strong>Mollie | Shipment successful</strong>. These are two optional event procedures that can help you with the further order processing.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Mollie | Shipment failed</strong> = Determine what should happen with those orders for which the shipment could not be registered with Mollie.</p>
+</li>
+<li>
+<p><strong>Mollie | Shipment successful</strong> = Determine what should happen with those orders for which the shipment could be registered with Mollie.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can optionally create event procedures with these events to define how to proceed with these orders. The following event procedure is an example. You decide which process fits best into your workflow of order processing.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#table-events-mollie-shipments">Table 6</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the further settings according to <a href="#table-events-mollie-shipments">Table 6</a>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="table-events-mollie-shipments" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Event procedures “Mollie | Shipment failed” and “Mollie | Shipment successful”</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mollie - Shipment failed</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the Mollie payment methods you are using from the list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Change status</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the order status from the drop-down list that should be assigned to orders with Mollie payment methods for which the shipment could not be registered with Mollie. For example, you could create an own <a href="/en/orders/managing-orders#1200">order status</a> for this. This way, you detect the orders which require further processing faster.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="97">5.6. Payment failed</h3>
+<div class="paragraph">
+<p>In addition, the event <strong>Mollie | Payment failed</strong> is also available. Using this event is optional. You can use it to determine what should happen with those orders for which the payment has failed.<br>
+This event takes effect if a payment fails directly after order creation. This could happen, for example, when an order cannot be retrieved from Mollie, the session was deleted or Mollie has a global problem. So, whenever a payment failed, was cancelled or is expired.</p>
+</div>
+<div class="paragraph">
+<p>You can optionally create event procedures with this event to define how to proceed with these orders. The following event procedure is an example. You decide which process fits best into your workflow of order processing.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Setting up an event procedure</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Orders » Events</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Add event procedure</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ The <strong>Create new event procedure</strong> window opens.</p>
+</li>
+<li>
+<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+</li>
+<li>
+<p>Select the <strong>Event</strong> according to <a href="#table-event-mollie-failed-payment">Table 7</a>.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>Carry out the further settings according to <a href="#table-event-mollie-failed-payment">Table 7</a>.</p>
+</li>
+<li>
+<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="table-event-mollie-failed-payment" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Event procedure “Mollie | Payment failed”</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Selection</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Event</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mollie - Payment failed</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Payment method</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the Mollie payment methods you are using from the list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order &gt; Change flag</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select the flag from the drop-down list that should be assigned to the orders with Mollie payment methods, for which a payment failed. This way, you detect the orders which require further processing faster.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div><div class="sect1">
@@ -569,7 +825,13 @@ If you have activated Single-click payments, you can see which of your customers
 <li>
 <p>Save (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
+<li>
+<p>Deploy the plugin set again to apply these changes.</p>
+</li>
 </ol>
+</div>
+<div class="paragraph">
+<p>By selecting <strong>German</strong> as the <strong>Target language</strong>, you can adapt the German labels for your online shop. The selected labels are then also applied in the back end, only the addition <em>Plugin: Mollie</em> remains. This way, it remains traceable where a payment method comes from. Reload the back end to see the changes.</p>
 </div>
 <div class="paragraph">
 <p>Find more information on how to edit online shop texts on the manual page <a href="/en/online-store/setting-up-ceres#231">Editing online store texts</a>.</p>
