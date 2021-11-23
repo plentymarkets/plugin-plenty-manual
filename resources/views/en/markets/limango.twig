@@ -123,7 +123,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order import</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Every 15 minutes<br>
-<strong><em>Note:</em></strong> Customers make their payments to limango. As such, all orders are imported with the status <strong>[5] Paid</strong>.</p>
+<strong><em>Note:</em></strong> Customers make their payments to limango. Nevertheless, all orders are imported with the status <strong>[3] Waiting for payment</strong>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -145,7 +145,7 @@
 </li>
 <li>
 <p>→ The order is imported to plentymarkets.<br>
-<strong><em>Note:</em></strong> Because customers make their payments to limango, orders are imported with the status <strong>[5] Paid</strong>.</p>
+<strong><em>Note:</em></strong> Customers make their payments to limango. Nevertheless, orders are imported with the status <strong>[3] Waiting for payment</strong>.</p>
 </li>
 <li>
 <p>When you receive the order, you ship the products (drop shipping).</p>
@@ -334,12 +334,6 @@
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Order status</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order status for orders with items that cannot be linked to items in plentymarkets (&gt;= 5)</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Enter an order status of 5 or higher. This status is assigned to orders that contain one or more items that no longer exist in plentymarkets. For example, this can happen if a customer orders an item on limango that was deleted in plentymarkets after the last item export to limango.</p>
-</div></div></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Order status for orders without shipping carrier mapping (&gt; 5 - &lt; 7)</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Which status is assigned to orders if the shipping service provider in the order is not linked to a shipping service provider in plentymarkets?</p>
@@ -407,8 +401,18 @@ etc.</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Enter the plenty ID of a client. limango orders are imported for this client.<br>
 → The order documents for this client are used during order processing.<br>
-If you do not enter a client, the default client is used for importing orders.
+If you do not enter a client, the default client is used for importing orders.<br>
 <strong><em>Tip:</em></strong> The plenty ID of your clients is saved in the <strong>Setup » Client » [Select client] » Settings » Option: Plenty ID</strong> menu.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Image source</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Export item images when no variation images are linked</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><em>Option activated:</em> If no images are linked to the variations, the first 10 images activated for the referrer limango of the item are exported.<br>
+<strong><em>Tip:</em></strong> Use this setting if your variations are not created using an attribute for <strong>colours</strong>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1539,6 +1543,11 @@ Enter the material composition in the following format:</p>
 </li>
 </ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/markets/assets/limango-product-name.png" alt="limango product name">
+</div>
+</div>
 <div class="paragraph">
 <p><strong><em>Tip:</em></strong> To select the separator, click on <strong>Settings</strong> (<span class="icon "><i class="fa fa-gear  "></i></span>)) at the right end of the row.</p>
 </div></div></td>
@@ -1651,7 +1660,7 @@ Enter the material composition in the following format:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong><em>Tip:</em></strong> This field tells limango which attribute or property you use for colours. However, the export contains the value names that you mapped for the field <strong>Colour value</strong>.
+<p><strong><em>Tip:</em></strong> This field tells limango which attribute or property you use for colours. However, the export contains the value names that you mapped for the field <strong>Colour value</strong>.<br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
@@ -1999,6 +2008,22 @@ Enter the material composition in the following format:</p>
 <p>Property linked to main variation</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Valid values:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mann (men)</p>
+</li>
+<li>
+<p>Frau (women)</p>
+</li>
+<li>
+<p>Unisex</p>
+</li>
+</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
 </tr>
@@ -2012,6 +2037,22 @@ Enter the material composition in the following format:</p>
 <ul>
 <li>
 <p>Property linked to main variation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Valid values:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Babys (babies)</p>
+</li>
+<li>
+<p>Kinder (children)</p>
+</li>
+<li>
+<p>Erwachsene (adults)</p>
 </li>
 </ul>
 </div></div></td>
@@ -2837,7 +2878,7 @@ Go to <strong>Plugins » Plugin set overview » [Open plugin set] » Open limang
 <p><a href="#16011">How to personalise the PDF template for delivery notes</a></p>
 </li>
 <li>
-<p><a href="#16001">How to upload a PDF template for delivery notes</a></p>
+<p><a href="#16001">How to upload the PDF template for delivery notes</a></p>
 </li>
 <li>
 <p><a href="#16003">How to show the limango customer number on delivery notes</a></p>
