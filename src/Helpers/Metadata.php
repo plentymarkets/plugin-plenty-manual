@@ -14250,11 +14250,11 @@ class Metadata {
 								"urlName" => "eBay-OAuth2",
 								"url" => "/maerkte/ebay/ebay-plugins/ebay-OAuth2",
 								"level" => 4,
-								"title" => "eBay OAuth2",
+								"title" => "eBay OAuth2 _(veraltet)_",
 								"keywords" => "eBay OAuth2 Account Management, eBay OAuth2",
 								"description" => "Multi-Channel in plentymarkets: Schalte neue Konten für eBay in deinem plentymarkets System frei.",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich eBay OAuth2. Hier findest du folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich eBay OAuth2 _(veraltet)_. Hier findest du folgende Informationen:",
 								"languageID" => "BMY4DQO",
 								"children" => [],
 								"hasChildren" => false
