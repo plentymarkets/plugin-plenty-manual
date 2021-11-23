@@ -2410,22 +2410,6 @@ class Metadata {
 		"languageID" => "BELRROP",
 		"children" => 		[
 			[
-				"id" => "f4db284ecb7aa1d0324392035dd9c25c",
-				"path" => "fulfillment/versand-center-2-0",
-				"position" => 0,
-				"urlName" => "versand-center-2-0",
-				"url" => "/fulfillment/versand-center-2-0-closed-beta-phase",
-				"level" => 2,
-				"title" => "Versand-Center 2.0 (closed beta)",
-				"keywords" => "Versand-Center, Auftrag anmelden, Retoure anmelden, Polling, Versandpaket, Versandlabel, Tagesabschlussliste, Auftragszusammenfassung, Retourenlabel, Auftrag stornieren, Auftrag zurücksetzen",
-				"description" => "Erfahre, wie du das neue Versand-Center 2.0 in plentymarkets nutzt.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Versand-Center 2.0 (closed beta). Hier findest du folgende Informationen:",
-				"languageID" => "JVNZPRL",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "c16ecf83869b0b2f08c85a4a0697f8bb",
 				"path" => "fulfillment/versand-vorbereiten",
 				"position" => 10,
@@ -2438,6 +2422,22 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Versand vorbereiten. Hier findest du folgende Informationen:",
 				"languageID" => "KQ2V6EE",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "f4db284ecb7aa1d0324392035dd9c25c",
+				"path" => "fulfillment/versand-center-2-0",
+				"position" => 15,
+				"urlName" => "versand-center-2-0",
+				"url" => "/fulfillment/versand-center-2-0",
+				"level" => 2,
+				"title" => "Versand-Center 2.0 (Testphase)",
+				"keywords" => "Versand-Center, Auftrag anmelden, Retoure anmelden, Polling, Versandpaket, Versandlabel, Tagesabschlussliste, Auftragszusammenfassung, Retourenlabel, Auftrag stornieren, Auftrag zurücksetzen",
+				"description" => "Erfahre, wie du das neue Versand-Center 2.0 in plentymarkets nutzt.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Versand-Center 2.0 (Testphase). Hier findest du folgende Informationen:",
+				"languageID" => "JVNZPRL",
 				"children" => [],
 				"hasChildren" => false
 			],
