@@ -6,7 +6,8 @@
 <ul class="sectlevel1">
 <li><a href="#100"><span>1.</span><span> Wichtige Vorbedingungen beachten</span></a></li>
 <li><a href="#200"><span>2.</span><span> Grundeinstellungen vornehmen</span></a></li>
-<li><a href="#300"><span>3.</span><span> Auftragsbearbeitung durch Backend-Benutzer:innen</span></a></li>
+<li><a href="#250"><span>3.</span><span> Eigenschaftskopie</span></a></li>
+<li><a href="#300"><span>4.</span><span> Auftragsbearbeitung durch Backend-Benutzer:innen</span></a></li>
 </ul>
 </div>
         </div>
@@ -217,8 +218,8 @@ Standardeinstellung: von <strong>[4] In Versandvorbereitung</strong> bis <strong
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-behaviour-after-splitting">Verhalten des Originalauftrags nach dem Teilen</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Wähle aus der Dropdown-Liste aus, was mit dem Originalauftrag nach der <a href="/auftraege/auftraege-verwalten#intable-splitting-orders">Teilung</a> in zwei neue Aufträge passieren soll.<br>
-<strong>Originalauftrag löschen (Standardverhalten)</strong> = Standardverhalten ist, dass 2 neue Aufträge entstehen und Originalaufträge nach dem Teilen gelöscht werden. Zudem können nur Aufträge geteilt werden, die nicht gesperrt sind, für die kein Warenausgang gebucht wurde, für die keine Kindaufträge existieren (z.B. Retoure), für die keine steuerrelevanten Dokumente erstellt wurden und denen noch keine Zahlung zugeordnet wurde.<br>
-<strong>Statuswechsel</strong> = In dieser Option entstehen ebenfalls 2 neue Aufträge, aber der Originalauftrag bleibt erhalten und wird in einen von dir definierten Auftragsstatus verschoben. Wähle diesen Auftragsstatus aus der zweiten Dropdown-Liste aus. Wir empfehlen dafür einen Auftragsstatus im Bereich Stornierung zu verwenden, damit reservierter Bestand nicht weiterhin reserviert bleibt. Aber abhängig von deinen Prozessen in der Auftragsabwicklung kann auch ein anderer Auftragsstatus passender sein.<br>
+<strong>Originalauftrag löschen (Standardverhalten)</strong> = Standardverhalten ist, dass zwei neue Aufträge entstehen und Originalaufträge nach dem Teilen gelöscht werden. Zudem können nur Aufträge geteilt werden, die nicht gesperrt sind, für die kein Warenausgang gebucht wurde, für die keine Kindaufträge existieren (z.B. Retoure), für die keine steuerrelevanten Dokumente erstellt wurden und denen noch keine Zahlung zugeordnet wurde.<br>
+<strong>Statuswechsel</strong> = In dieser Option entstehen ebenfalls zwei neue Aufträge, aber der Originalauftrag bleibt erhalten und wird in einen von dir definierten Auftragsstatus verschoben. Wähle diesen Auftragsstatus aus der zweiten Dropdown-Liste aus. Wir empfehlen dafür einen Auftragsstatus im Bereich Stornierung zu verwenden, damit reservierter Bestand nicht weiterhin reserviert bleibt. Aber abhängig von deinen Prozessen in der Auftragsabwicklung kann auch ein anderer Auftragsstatus passender sein.<br>
 Mit dieser Einstellung dürfen auch Aufträge geteilt werden, denen bereits eine Zahlung zugeordnet wurde oder für die steuerrelevante Dokumente (Wichtig: Rechnung und Stornobeleg) erstellt wurden. Sowohl die zugeordnete Zahlung als auch die Dokumente bleiben für den Originalauftrag erhalten und werden nicht in die aufgeteilten Aufträge übernommen.</p></td>
 </tr>
 <tr>
@@ -247,7 +248,80 @@ Beachte, dass du zur Nutzung dieser Einstellung mindestens plentyShop LTS/IO in 
 </table>
 </div>
 </div><div class="sect1">
-<h2 id="300">3. Auftragsbearbeitung durch Backend-Benutzer:innen</h2>
+<h2 id="250">3. Eigenschaftskopie</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Du kannst festlegen, welche Auftragsinformationen (Eigenschaften eines Auftrags) in einen anderen Auftrag übernommen werden sollen. Zum Beispiel werden Eigenschaften beim Erstellen von Lieferaufträgen oder Retouren vom Hauptauftrag kopiert. Es sind Informationen, die an einem Auftrag hängen, z.B. das Versandprofil, der Zahlungsstatus oder die Dokumentensprache. Eigenschaften können am Auftrag oder an einer Auftragsposition hängen.<br>
+<strong><em>Beachte</em></strong>: Gemeint sind hier nicht selbst erstellte <a href="/artikel/einstellungen/eigenschaften#500">Eigenschaften</a>, wie z.B. Bestellmerkmale.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Standard für kopierte Eigenschaften</div>
+<div class="paragraph">
+<p>Standardmäßig werden alle benötigten Eigenschaften vom einen in den jeweils anderen Auftragstyp übernommen. Du musst in diesem Menü nichts dafür einstellen. Ändere daher nur nach sorgfältiger Überlegung etwas an den kopierten Eigenschaften.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Bestimme im Menü <strong>Einrichtung » Aufträge » Eigenschaftskopie</strong>, welche Eigenschaften kopiert werden sollen. Du kannst dies individuell für verschiedene Kombinationen, z.B. von Auftrag (Quelle) zu Lieferauftrag (Ziel), festlegen. Beachte, dass nicht alle Eigenschaften zum Kopieren freigeschaltet sind. Die Tabellenspalte <strong>Quelle</strong> gibt wieder, woher die Eigenschaft kommt. <strong>Intern</strong> bedeutet, die Eigenschaft kommt vom System. <strong>Interface</strong> bedeutet, die Eigenschaft wurde über eine Schnittstelle wie ein Plugin oder per REST erstellt.<br>
+Beim Öffnen des Menüs sind bereits einige Filter vorausgewählt. Passe diese an wie folgt beschrieben an, falls die Einstellungen nicht den gewünschten entspricht.</p>
+</div>
+<div class="paragraph instruction">
+<p>Eigenschaften fürs Kopieren aktivieren:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Eigenschaftskopie</strong>.</p>
+</li>
+<li>
+<p>Öffne die Suchfilter (<span class="icon "><i class="material-filter_alt"></i></span>).</p>
+</li>
+<li>
+<p>Wähle für den Filter <strong>Auftragstyp Quelle</strong> den Auftragstyp aus, von dem die Eigenschaften kopiert werden sollen.</p>
+</li>
+<li>
+<p>Wähle für den Filter <strong>Auftragstyp Ziel</strong> den Auftragstyp, in den die Eigenschaften kopiert werden sollen.</p>
+</li>
+<li>
+<p>Führe die Suche aus.<br>
+→ Die Eigenschaften werden in der Tabelle angezeigt.</p>
+</li>
+<li>
+<p>Aktiviere oder deaktiviere in der Tabellenspalte <strong>Auftragseigenschaft kopieren</strong> die Eigenschaften, die kopiert werden sollen.</p>
+</li>
+<li>
+<p>Aktiviere oder deaktiviere in der Tabellenspalte <strong>Auftragspositionseigenschaft kopieren</strong> die Eigenschaften, die kopiert werden sollen.<br>
+→ Die aktivierten Eigenschaften werden fortan kopiert.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Darüber hinaus stehen dir in der Suche (<span class="icon "><i class="material-filter_alt"></i></span>) noch folgende Filter zur Verfügung:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Nur kopierbare Eigenschaften anzeigen</strong> = Wähle <strong>Ja</strong>, wenn dir in der Tabelle nur die Eigenschaften angezeigt werden sollen, die von einem Auftragstyp zum anderen übertragen werden können. Wähle <strong>Nein</strong>, wenn dir in der Tabelle alle Eigenschaften, auch die nicht kopierbaren, angezeigt werden sollen.</p>
+</li>
+<li>
+<p><strong>Eigenschafts-ID</strong> = Gib eine konkrete Eigenschafts-ID ein, nach der du suchen möchtest. Es kann nur eine ID eingegeben werden.</p>
+</li>
+<li>
+<p><strong>Quelle</strong> = Wählst du nichts aus, werden die Eigenschaften aller Quellen angezeigt. Wählst du <strong>Intern</strong> oder <strong>Interface</strong> aus, werden dir jeweils nur die Eigenschaften dieser Quellen angezeigt.</p>
+</li>
+</ul>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="300">4. Auftragsbearbeitung durch Backend-Benutzer:innen</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Damit Benutzer:innen vom Typ <strong>Backend</strong> Aufträge öffnen können, müssen hier Standardstatus für <strong>Retouren</strong> und <strong>Gutschriften</strong> gespeichert sein. In der Grundeinstellung ist kein Status voreingestellt.<br>
