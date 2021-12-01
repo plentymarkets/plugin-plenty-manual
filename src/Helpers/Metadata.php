@@ -3816,11 +3816,11 @@ class Metadata {
 						"urlName" => "kataloge-verwalten",
 						"url" => "/daten/daten-exportieren/kataloge-verwalten",
 						"level" => 3,
-						"title" => "Kataloge verwalten",
+						"title" => "Kataloge",
 						"keywords" => "Katalog, Kataloge, Katalog erstellen, Katalog verwalten, Katalog-Templates, Marktplatz, Marktplätze, Märkte, Verkaufskanal, Templates, Datenquellen, Datenquellen kombinieren, Katalog kopieren, Katalog löschen, Daten übertragen, Marktplatzformat, Standardformat, Export, Datenexport, Daten exportieren, Katalog wiederherstellen, Kataloge exportieren, Datenfeld, Datenfelder verknüpfen, Datenfelder zuordnen, Zuordnung, Katalog herunterladen, Version wiederherstellen, Datenfelder löschen, Datenspalten",
 						"description" => "Im Menü *Daten » Kataloge* konfigurierst du den Export von Variantendaten an Marktplätze.",
 						"navAlias" => "Kataloge verwalten",
-						"linkListInto" => "Willkommen im Themenbereich Kataloge verwalten. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Kataloge. Hier findest du folgende Informationen:",
 						"languageID" => "FHQHFWO",
 						"children" => 						[
 							[
