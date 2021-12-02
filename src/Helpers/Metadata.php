@@ -3838,6 +3838,22 @@ class Metadata {
 								"languageID" => "UKCR0F9",
 								"children" => 								[
 									[
+										"id" => "0f1d89da051ef93ac3cd8f946da67a95",
+										"path" => "daten/daten-exportieren/kataloge-verwalten/katalog-formate/artikel",
+										"position" => 0,
+										"urlName" => "artikel",
+										"url" => "/daten/daten-exportieren/katalog-artikel",
+										"level" => 5,
+										"title" => "Artikel (Neu)",
+										"keywords" => "Artikel herunterladen, Artikel runterladen, Artikel exportieren, Exportieren Artikel, Artikel Export, Artikel-Export, Export Artikel, Artikelexport, Variant exportieren, Variante exportieren, Varianten exportieren, Exportieren Variant, Exportieren Variante, Exportieren Varianten, Variant Export, Variante Export, Varianten Export, Variant-Export, Variante-Export, Varianten-Export, Export Variant, Export Variante, Export Varianten, Variantexport, Varianteexport, Variantenexport, Artikelverknüpfung exportieren, Artikelverknüpfungen exportieren, Produkt exportieren, Produkte exportieren, Ware exportieren, Waren exportieren",
+										"description" => "Diese Seite beschreibt die Datenfelder und Filter, die dir beim Export von Artikel- und Variantendaten über das Katalog-Tool zur Verfügung stehen.",
+										"navAlias" => "",
+										"linkListInto" => "Willkommen im Themenbereich Artikel (Neu). Hier findest du folgende Informationen:",
+										"languageID" => "0S1G3SE",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
 										"id" => "bddfaaa31582450196ecc38faa6c2281",
 										"path" => "daten/daten-exportieren/kataloge-verwalten/katalog-formate/hersteller",
 										"position" => 50,
