@@ -3463,7 +3463,7 @@ class Metadata {
 						"url" => "/daten/daten-exportieren/FormatDesigner",
 						"level" => 3,
 						"title" => "FormatDesigner",
-						"keywords" => "Format, FormatDesigner, Datenfeld, Format erstellen, Format bearbeiten, Daten exportieren, Datenexport, Datenformat",
+						"keywords" => "Format, FormatDesigner, Datenfeld, Format erstellen, Format bearbeiten, Daten exportieren, Datenexport, Datenformat, FormatDesigner+(New)",
 						"description" => "",
 						"navAlias" => "Datenformate mit FormatDesigner erstellen",
 						"linkListInto" => "Willkommen im Themenbereich FormatDesigner. Hier findest du folgende Informationen:",
