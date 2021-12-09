@@ -1450,7 +1450,7 @@ class Metadata {
 				"url" => "/crm/schnellsuche",
 				"level" => 2,
 				"title" => "Schnellsuche",
-				"keywords" => "Schnellsuche, Adresssuche, Adressen suchen, DSGVO, Gastzugang, Gastbestellung, Gast suchen, Kunde anonymisieren, anonymisieren, Kundendaten löschen, Datensatz löschen, Kunde löschen, Kontakt löschen, alle Daten vom Kunden herunterladen, Kundendaten herunterladen, Kontakt verlangt Löschung, Kontakt Löschantrag, Kunde Löschantrag, Kunde verlangt Löschung",
+				"keywords" => "Schnellsuche, Adresssuche, Adressen suchen, DSGVO, Gastzugang, Gastbestellung, als Gast bestellen, Gast suchen, Kunde anonymisieren, anonymisieren, Kundendaten löschen, Datensatz löschen, Kunde löschen, Kontakt löschen, alle Daten vom Kunden herunterladen, Kundendaten herunterladen, Kontakt verlangt Löschung, Kontakt Löschantrag, Kunde Löschantrag, Kunde verlangt Löschung",
 				"description" => "Erfahre, wie du die Schnellsuche in plentymarkets verwendest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Schnellsuche. Hier findest du folgende Informationen:",
@@ -22856,10 +22856,43 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 01. Dezember 2021",
+		"navAlias" => "Changelog 08. Dezember 2021",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
+			[
+				"id" => "b9aaac5ae4cba15fb09e10d10f2deed4",
+				"path" => "changelog/dezember-2021",
+				"position" => 10780,
+				"urlName" => "dezember-2021",
+				"url" => "/changelog/dezember-2021",
+				"level" => 2,
+				"title" => "Changelogs Dezember 2021",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelogs Dezember 2021. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => 				[
+					[
+						"id" => "f92210452f5573fdf39afc7fb701a33e",
+						"path" => "changelog/dezember-2021/2021-12-01",
+						"position" => 10840,
+						"urlName" => "2021-12-01",
+						"url" => "/changelog/dezember-2021/2021-12-01",
+						"level" => 3,
+						"title" => "plentymarkets Changelog",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
+						"languageID" => "",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
+			],
 			[
 				"id" => "c0eec585c6b8911630c761cec773a2a0",
 				"path" => "changelog/november-2021",
