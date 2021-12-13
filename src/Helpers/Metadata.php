@@ -3840,7 +3840,7 @@ class Metadata {
 									[
 										"id" => "0f1d89da051ef93ac3cd8f946da67a95",
 										"path" => "daten/daten-exportieren/kataloge-verwalten/katalog-formate/artikel",
-										"position" => 0,
+										"position" => 10,
 										"urlName" => "artikel",
 										"url" => "/daten/daten-exportieren/katalog-artikel",
 										"level" => 5,
