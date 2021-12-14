@@ -3411,11 +3411,11 @@ class Metadata {
 								"urlName" => "einrichtung-verwendung",
 								"url" => "/daten/daten-exportieren/elastischer-export",
 								"level" => 4,
-								"title" => "Elastischer Export: Einrichtung und Verwendung",
+								"title" => "Elastischer Export nutzen",
 								"keywords" => "Export, elastisch, Elastic Export, FormatDesigner, Format Designer, Exportformat, Exportformate, Elastic Export Plugin, Elastischer Export Plugin, Daten-Export, Datenexport, Daten exportieren",
 								"description" => "",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Elastischer Export: Einrichtung und Verwendung. Hier findest du folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Elastischer Export nutzen. Hier findest du folgende Informationen:",
 								"languageID" => "COEO41G",
 								"children" => [],
 								"hasChildren" => false
@@ -3465,7 +3465,7 @@ class Metadata {
 						"title" => "FormatDesigner",
 						"keywords" => "Format, FormatDesigner, Datenfeld, Format erstellen, Format bearbeiten, Daten exportieren, Datenexport, Datenformat, FormatDesigner+(New)",
 						"description" => "",
-						"navAlias" => "Datenformate mit FormatDesigner erstellen",
+						"navAlias" => "FormatDesigner nutzen",
 						"linkListInto" => "Willkommen im Themenbereich FormatDesigner. Hier findest du folgende Informationen:",
 						"languageID" => "J8CFXWD",
 						"children" => 						[
@@ -3819,7 +3819,7 @@ class Metadata {
 						"title" => "Kataloge",
 						"keywords" => "Katalog, Kataloge, Katalog erstellen, Katalog verwalten, Katalog-Templates, Marktplatz, Marktplätze, Märkte, Verkaufskanal, Templates, Datenquellen, Datenquellen kombinieren, Katalog kopieren, Katalog löschen, Daten übertragen, Marktplatzformat, Standardformat, Export, Datenexport, Daten exportieren, Katalog wiederherstellen, Kataloge exportieren, Datenfeld, Datenfelder verknüpfen, Datenfelder zuordnen, Zuordnung, Katalog herunterladen, Version wiederherstellen, Datenfelder löschen, Datenspalten",
 						"description" => "Im Menü *Daten » Kataloge* konfigurierst du den Export von Variantendaten an Marktplätze.",
-						"navAlias" => "Kataloge verwalten",
+						"navAlias" => "Kataloge nutzen",
 						"linkListInto" => "Willkommen im Themenbereich Kataloge. Hier findest du folgende Informationen:",
 						"languageID" => "FHQHFWO",
 						"children" => 						[
