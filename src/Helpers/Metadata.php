@@ -1094,7 +1094,7 @@ class Metadata {
 				"url" => "/warenwirtschaft/lager-einrichten",
 				"level" => 2,
 				"title" => "Lager einrichten",
-				"keywords" => "Lager planen, Lager einrichten, Lagereinstellungen, Dimensionen, Dimension, Lagerort, Lagerorte, Ebene, Ebenen, Bestandsreservierung, automatische Bestandsreservierung, Lager anlegen, Regal, Box-Regal, Box Regal, Boden, Böden, Halle, Lagerhalle, Pickliste, Laufweg, Lagerort generieren, Lagerdaten, Standort, Logistiktyp, Lagertyp, Vertriebslager, Reparaturlager, Lagerstruktur, Lageraufbau, Limit, Limitierung, Bestand löschen, Lager löschen, Lagerort labeln, Lagerorte labeln, Eigenschaften, Lager-ID, Lager ID, Lagerort-ID, Lagerort ID",
+				"keywords" => "Lager planen, Lager einrichten, Lagereinstellungen, Dimensionen, Dimension, Lagerort, Lagerorte, Ebene, Ebenen, Bestandsreservierung, automatische Bestandsreservierung, Lager anlegen, Regal, Box-Regal, Box Regal, Boden, Böden, Halle, Lagerhalle, Pickliste, Laufweg, Lagerort generieren, Lagerdaten, Standort, Logistiktyp, Lagertyp, Vertriebslager, Reparaturlager, Lagerstruktur, Lageraufbau, Limit, Limitierung, Bestand löschen, Lager löschen, Lagerort labeln, Lagerorte labeln, Eigenschaften, Lager-ID, Lager ID, Lagerort-ID, Lagerort ID, Warenbestand sperren",
 				"description" => "Erfahre, wie du ein Lager erstellst und den Aufbau gestaltest.",
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Lager einrichten. Hier findest du folgende Informationen:",
