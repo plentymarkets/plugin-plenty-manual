@@ -1399,18 +1399,60 @@ myToys kann keine HTML-Tags verarbeiten. Deshalb werden HTML-Tags beim Export en
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Materialzusammensetzung</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Materialzusammensetzung</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>In bestimmten Kategorien muss die Materialzusammensetzung von Varianten angegeben werden. Das betrifft vor allem Textilien und Schuhe.</p>
 </div>
 <div class="paragraph">
-<p>Von den fünf zur Verfügung stehenden Feldern muss mindestens ein Feld verknüpft werden. Hierbei handelt es sich um ein mehrdimensionales Mapping:<br>
-- Im 1. Schritt muss der Materialtyp (complex mapping) verknüpft werden, z.B. "Obermaterial".<br>
-- Im 2. Schritt muss die Materialzusammensetzung von “Obermaterial” in folgendem Format eingegeben werden:<br>
-{"material1": "prozentwert","material2": "prozentwert","material3": "prozentwert"}<br>
-<strong><em>Beispiel:</em></strong> {"WO": "90","EL": "10"}<br>
-<strong><em>Hinweis:</em></strong> Eine vollständige Liste aller von myToys erlaubten Materialtypen findest du <a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/myToys/myToys_Materialien_sortiert.pdf">in diesem Dokument</a>.</p>
-</div></div></td>
+<p>Um die Materialzusammensetzung zu exportiert, werden zwei Marktplatz-Datenfelder kombiniert:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>General Components &gt; Textilzusammensetzung - 1. Materialzusammensetzung Textil</strong> enthält die Zusammensetzung in Prozentwerten.</p>
+</li>
+<li>
+<p><strong>Textilkomponente 1</strong> Enthält die Information, auf welchen Teil der Variante sich die Prozentwerte beziehen. Das kann zum Beispiel das Futter oder das Bündchen sein.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Du musst mindestens <strong>1. Materialzusammensetzung Textil</strong> und <strong>Textilkomponente 1</strong> zuordnen. Die Datenfelder für Materialangaben 2 bis 5 sind optional.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>General Components &gt;</strong><br></p>
+<p class="tableblock"><strong>Textilzusammensetzung - 1. Materialzusammensetzung Textil</strong><br></p>
+<p class="tableblock">bis<br></p>
+<p class="tableblock"><strong>Textilzusammensetzung - 5. Materialzusammensetzung Textil</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mit diesen Marktplatz-Datenfeldern gibst du die Materialzusammensetzung in Prozentwerten an.</p>
+<p class="tableblock">Um die Materialzusammensetzung in Prozentwerten anzugeben, verwendest du eine Eigenschaft:</p>
+<p class="tableblock">. Erstelle eine Eigenschaft des Typs <strong>Text</strong>.
+. Verknüpfe die Eigenschaft mit der Variante.
+. Gib als Text für die Eigenschaft die Materialzusammensetzung ein. Verwende das folgende Format:</p>
+<p class="tableblock">  * <strong>{"material1": "prozentwert","material2": "prozentwert","material3": "prozentwert"}</strong><br>
+  <strong><em>Wichtig:</em></strong> Die Werte für die Materialtypen müssen mit den
+  <a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/myToys/myToys_Materialien_sortiert.pdf" target="_blank" rel="noopener">von myToys erlaubten Werten</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> übereinstimmen.
+  * <strong><em>Beispiel:</em></strong> <code>{"WO": "90","EL": "10"}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Textilkomponente 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wie oben beschrieben gibst du mit dem Marktplatz-Datenfeld <strong>General Components &gt; Textilzusammensetzung - 1. Materialzusammensetzung Textil</strong> die Materialzusammensetzung einer Variante in Prozentwerten an. Allerdings weiß myToys damit noch nicht, auf welchen Teil der Variante sich diese Prozentangaben beziehen. Mit dem Marktplatz-Datenfeld <strong>Textilkomponente 1</strong> teilst du myToys deshalb mit, auf welche Komponente einer Variante sich die Prozentwerte beziehen.</p>
+<p class="tableblock">Textilkomponenten sind zum Beispiel Obermaterial, Außenjacke, Beinfutter oder Bündchen. Eine vollständige Liste der Textilkomponenten von myToys findest du <a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/mytoys-textilkomponenten.txt" target="_blank" rel="noopener">hier</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+<p class="tableblock">Um die Textilkomponenten anzugeben, verwendest du eine Eigenschaft:</p>
+<p class="tableblock">. Erstelle eine Eigenschaft des Typs <strong>Auswahl</strong>.
+. Speichere alle Komponenten als Auswahlwerte, die du für deine Varianten benötigst.
+. Ordne im Katalog den einzelnen Textilkomponenten des Marktplatzes die Auswahlwerte der Eigenschaft zu.
+. Verknüpfe die Eigenschaft mit der Variante.
+. Wähle einen passenden Eigenschaftswert.</p></td>
+</tr>
+</tbody>
+</table></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Artikelgewicht</strong></p></td>
