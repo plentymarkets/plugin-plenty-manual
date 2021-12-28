@@ -46,7 +46,7 @@
 </li>
 <li><a href="#order-processing"><span>9.</span><span> Automating order processing</span></a>
 <ul class="sectlevel2">
-<li><a href="#cancellations"><span>9.1.</span><span> Automatically notify limango about cancellations</span></a></li>
+<li><a href="#cancellations"><span>9.1.</span><span> Automatically sending cancellations</span></a></li>
 <li><a href="#1300"><span>9.2.</span><span> Setting up automatic shipping confirmations</span></a>
 <ul class="sectlevel3">
 <li><a href="#13001"><span>9.2.1.</span><span> Workflow for automatic order confirmations</span></a></li>
@@ -85,7 +85,7 @@
 <p>Alternatively, you can also contact our team of partner managers by sending an email to <a href="mailto:marketplace@limango.de">marketplace@limango.de</a>. A partner manager will get in touch with you soon and will work with you to evaluate the potential on <a href="https://www.limango.de" target="_blank" rel="noopener">limango.de</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span> and talk about your next steps.</p>
 </div>
 <div class="paragraph">
-<p>After registering, you will receive login details from limango. You need these login details to set up the limango plugin in plentymarkets.</p>
+<p>After registering, you will receive login details from limango. You need these login details to set up limango in plentymarkets.</p>
 </div>
 </div>
 </div><div class="sect1">
@@ -718,11 +718,11 @@ Special case for selling shoes: field <strong>Item text</strong> + Material desc
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create a property of the type <strong>Selection</strong> and save the necessary sizes as
-property values.</p>
+<p>Create a property of the type <strong>Selection</strong> and save the necessary sizes as property values.</p>
 </li>
 <li>
-<p>Link the properties to a variation and select a value.</p>
+<p>Link the properties to a variation and select a value.<br>
+<strong><em>Tip:</em></strong> A property of the type <strong>Selection</strong> is a good idea if you work with recurring size names.</p>
 </li>
 </ol>
 </div>
@@ -902,22 +902,41 @@ property values.</p>
 <div class="paragraph">
 <p>The structure of limango item data differs from the structure in plentymarkets. The limango item data is categorised into three levels:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>Product group:</strong> A product in all its different versions</p>
-</li>
-<li>
-<p><strong>Product:</strong> A colour version of the product</p>
-</li>
-<li>
-<p><strong>Variation:</strong> The size / EAN / SKU</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>If the product is only available in a single version, then the product group is equivalent to the variant.</p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Level</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Product group</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>All products of the same model that are available in different colours.<br>
+<strong><em>Tip:</em></strong> If a product is only available in a single style, then the product group and the variation are identical.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Product</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A colour version of the product. As such, each product group has as many products as there are colours.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Variation</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Variation at the size/EAN/SKU level<br>
+<strong><em>Important:</em></strong> Each product must have at least one variation.<br>
+<strong><em>Tip:</em></strong> If a product is only available in a single size, the size <strong>Onesize</strong> must be specified.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock important">
 <table>
 <tbody><tr>
@@ -2959,7 +2978,7 @@ Enter the material composition in the following format:</p>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="cancellations">9.1. Automatically notify limango about cancellations</h3>
+<h3 id="cancellations">9.1. Automatically sending cancellations</h3>
 <div class="paragraph">
 <p>Set up an <a href="/en/automation/event-procedures">event procedure</a> to automatically notify limango of cancellations.</p>
 </div>
@@ -3381,7 +3400,7 @@ Go to <strong>Plugins » Plugin set overview » [Open plugin set] » Open limang
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Procedure</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugins &gt; Send return notification to limango</strong><br>
-<strong><em>Note:</em></strong> The procedure <strong>Send return notification to limango</strong> triggers a credit note. As such, a refund will be issued to the buyer. As such, make sure the event procedure is only triggered after you have received and checked the returned items.</p></td>
+<strong><em>Note:</em></strong> The procedure <strong>Send return notification to limango</strong> triggers a credit note. This means that customers will receive a refund. Thus, make sure the event procedure is only triggered after you have received and checked the returned items.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
