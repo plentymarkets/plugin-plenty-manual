@@ -814,7 +814,7 @@
 → The <strong>Mapping</strong> tab opens.<br>
 → In the left-hand column, the market’s data fields are listed.<br>
 <strong><em>Tip:</em></strong> Mandatory fields are flagged with an asterisk (*).<br>
-→ In the right column, you map the plentymarkets data fields. Any plentymarkets data fields that are already assigned are also shown in the right column.</p>
+→ In the right column, you map the plentymarkets data fields. Any plentymarkets data fields that are already assigned are also shown in the right column.<br></p>
 </li>
 <li>
 <p>Now, map suitable plentymarkets data fields to the market data fields.<br>
@@ -1259,7 +1259,7 @@ Do not map own values or properties of the type <strong>None</strong> for comple
 <p>There is no character limit for product names. However, do not use too many characters because myToys will automatically cut off products name that are too long. Thus, keep the product name as short as possible.</p>
 </li>
 <li>
-<p>Manufacturers or brand names do not have to be included in the product name, This information is displayed separately above the product name on myToys.</p>
+<p>You do not need to mention the manufacturer or any own brands in the product name. This information is shown separately above the item name on myToys.</p>
 </li>
 <li>
 <p>Colours, sizes, gender information or repetitions are not allowed as part of product names.</p>
@@ -1397,18 +1397,102 @@ myToys cannot process HTML tags. As such, HTML tags are removed during the expor
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Material composition</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Material composition</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>You need to specify the material composition to list products in some categories. This is particularly relevant for textiles and shoes.</p>
 </div>
 <div class="paragraph">
-<p>Of the five fields available, at least one field has to be linked. This is a multi-dimensional mapping:<br>
-In step 1, link the material type (complex mapping), such as "upper material".<br>
-In step 2, Enter the material composition of “upper material” in the following format:<br>
-{"material1": "percentage","material2": "percentage","material3": "percentage"}<br>
-<strong><em>Example:</em></strong> {"WO": "90","EL": "10"}<br>
-<strong><em>Note:</em></strong> Refer to <a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/myToys/myToys_Materialien_sortiert.pdf">this document</a> to access a full list of all material types accepted my myToys.</p>
+<p>Two marketplace data fields are combined to export material composition information:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>General Components &gt; Textile composition - 1. material composition textile</strong> is used to export the composition in percent.</p>
+</li>
+<li>
+<p><strong>Textile component 1</strong> specifies the part of the variation to which the percentages relate. For example, this could be the lining or the cuffs.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As a minimum, you need to map <strong>1\. material composition textile</strong> and <strong>Textile component 1</strong>. The data fields for materials 2 to 5 are optional.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>General Components &gt;</strong><br></p>
+<p class="tableblock"><strong>Textile composition - 1. Material composition textile</strong><br></p>
+<p class="tableblock">to<br></p>
+<p class="tableblock"><strong>Textile composition - 5. Material composition textile</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>These marketplace data fields are used to specify the material composition in percent.</p>
+</div>
+<div class="paragraph">
+<p>Use a property to specify material compositions in percent:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a property of the type <strong>Text</strong>.</p>
+</li>
+<li>
+<p>Links the property with the variation.</p>
+</li>
+<li>
+<p>Enter the material composition in the text field of the property. Use the following format:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>{"material1": "percentage","material2": "percentage","material3": "percentage"}</strong><br>
+<strong><em>Important:</em></strong> The values for material types you enter must be identical to the
+<a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/myToys/myToys_Materialien_sortiert.pdf" target="_blank" rel="noopener">values that myToys uses</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</li>
+<li>
+<p><strong><em>Example:</em></strong> <code>{"WO": "90","EL": "10"}</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Textile component 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>As described above, the marketplace data field <strong>General Components &gt; Textile composition - 1. Material composition textile</strong> is used to specify the material composition of a variation in percent. However, myToys does not know which part of the variation these percentages relate to. As such, the marketplace data field <strong>Textile component 1</strong> specifies to myToys which component of a variation the percentages relate to.</p>
+</div>
+<div class="paragraph">
+<p>Examples of textile components are Obermaterial (upper), Außenjacke (outer jacket), Beinfutter (leg lining), or Bündchen (cuffs). You can find a complete list of the textile components myToys uses <a href="https://raw.githubusercontent.com/plentymarkets/manual/master/de/maerkte/assets/mytoys-textilkomponenten.txt" target="_blank" rel="noopener">here</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+</div>
+<div class="paragraph">
+<p>Use a property to specify the textile components:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a property of the type <strong>Selection</strong>.</p>
+</li>
+<li>
+<p>Save all components that you need for your variation as selection values.</p>
+</li>
+<li>
+<p>In the catalogue, map the selection values of the property to the different myToys textile components.</p>
+</li>
+<li>
+<p>Links the property with the variation.</p>
+</li>
+<li>
+<p>Select a suitable property value.</p>
+</li>
+</ol>
+</div></div></td>
+</tr>
+</tbody>
+</table></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Item weight</strong></p></td>
@@ -1747,7 +1831,7 @@ Proceed as described below to upload a <a href="/en/orders/order-documents#170">
 <p>In the line <strong>Template</strong>, click on <strong>Choose template file</strong>.</p>
 </li>
 <li>
-<p>Select the PDF template for myToys delivery notes.</p>
+<p>Select the PDF template for myToys return slips.</p>
 </li>
 <li>
 <p>Click on <strong>Upload template</strong> (<span class="icon "><i class="psicon-save"></i></span>).<br>
@@ -2208,7 +2292,7 @@ Your variations were not exported to myToys? No variation data is exported if on
 </li>
 <li>
 <p>Click on the entry to see details.<br>
-→ Under <strong>requiredFields: Object</strong>, the missing mandatory fields are listed.</p>
+→ The missing mandatory fields are listed in the section <strong>requiredFields: Object</strong>.</p>
 </li>
 </ol>
 </div>
