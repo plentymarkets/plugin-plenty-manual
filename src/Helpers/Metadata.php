@@ -1421,6 +1421,22 @@ class Metadata {
 						"languageID" => "A5QKZYV",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "365114e9a8926e23c37ee9ce4d2c5765",
+						"path" => "warenwirtschaft/plentywarehouse/etiketten-drucken",
+						"position" => 60,
+						"urlName" => "etiketten-drucken",
+						"url" => "/warenwirtschaft/plentywarehouse/etiketten-drucken",
+						"level" => 3,
+						"title" => "Etiketten drucken",
+						"keywords" => "plentyWarehouse Artikeletiketten, plentyWarehouse Artikel Etiketten, plentyWarehouse Lagerorte labeln, Lagerort Etiketten",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Etiketten drucken. Hier findest du folgende Informationen:",
+						"languageID" => "A5QKZMB",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -3897,11 +3913,11 @@ class Metadata {
 						"urlName" => "kataloge-verwalten",
 						"url" => "/daten/daten-exportieren/kataloge-verwalten",
 						"level" => 3,
-						"title" => "Kataloge",
+						"title" => "Kataloge verwalten",
 						"keywords" => "Katalog, Kataloge, Katalog erstellen, Katalog verwalten, Katalog-Templates, Marktplatz, Marktplätze, Märkte, Verkaufskanal, Templates, Datenquellen, Datenquellen kombinieren, Katalog kopieren, Katalog löschen, Daten übertragen, Marktplatzformat, Standardformat, Export, Datenexport, Daten exportieren, Katalog wiederherstellen, Kataloge exportieren, Datenfeld, Datenfelder verknüpfen, Datenfelder zuordnen, Zuordnung, Katalog herunterladen, Version wiederherstellen, Datenfelder löschen, Datenspalten",
-						"description" => "Im Menü *Daten » Kataloge* konfigurierst du den Export von Variantendaten an Marktplätze.",
-						"navAlias" => "Kataloge nutzen",
-						"linkListInto" => "Willkommen im Themenbereich Kataloge. Hier findest du folgende Informationen:",
+						"description" => "Im Menü *Daten » Kataloge* erstellst du Kataloge für den Export von Daten.",
+						"navAlias" => "Kataloge verwalten",
+						"linkListInto" => "Willkommen im Themenbereich Kataloge verwalten. Hier findest du folgende Informationen:",
 						"languageID" => "FHQHFWO",
 						"children" => 						[
 							[
@@ -3909,7 +3925,7 @@ class Metadata {
 								"path" => "daten/daten-exportieren/kataloge-verwalten/katalog-formate",
 								"position" => 20,
 								"urlName" => "katalog-formate",
-								"url" => "/daten/katalogformate",
+								"url" => "/daten/daten-exportieren/katalog-standardformate",
 								"level" => 4,
 								"title" => "Standardformate",
 								"keywords" => "",
@@ -4019,6 +4035,38 @@ class Metadata {
 							]
 						],
 						"hasChildren" => true
+					],
+					[
+						"id" => "4e51cad2c98878885c709ea419e96452",
+						"path" => "daten/daten-exportieren/standardformate-exportieren",
+						"position" => 60,
+						"urlName" => "standardformate-exportieren",
+						"url" => "/daten/daten-exportieren/dateiexport",
+						"level" => 3,
+						"title" => "Kataloge: Dateienexport",
+						"keywords" => "",
+						"description" => "Standardformate für den Export von plentymarkets Daten erstellen",
+						"navAlias" => "Standardformate",
+						"linkListInto" => "Willkommen im Themenbereich Kataloge: Dateienexport. Hier findest du folgende Informationen:",
+						"languageID" => "Z14A1MY",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "08192d60fdc685c5242640ec8a649364",
+						"path" => "daten/daten-exportieren/marktplatz-formate-exportieren",
+						"position" => 100,
+						"urlName" => "marktplatz-formate-exportieren",
+						"url" => "/daten/daten-exportieren/kataloge-marktplatzexport",
+						"level" => 3,
+						"title" => "Kataloge: Marktplatzexport",
+						"keywords" => "Katalog, Marktplatzformate, Marktplatzexport",
+						"description" => "Mache dich mit dem Prinzip der Kataloge vertraut, um Variantendaten optimal an Marktplätze zu exportieren.",
+						"navAlias" => "Marktplatzformate",
+						"linkListInto" => "Willkommen im Themenbereich Kataloge: Marktplatzexport. Hier findest du folgende Informationen:",
+						"languageID" => "JD40PF4",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -13313,22 +13361,6 @@ class Metadata {
 		"linkListInto" => "Willkommen im Themenbereich Märkte und Preisportale. Hier findest du folgende Informationen:",
 		"languageID" => "MFX1Q1C",
 		"children" => 		[
-			[
-				"id" => "a8dfd49846f247f1d31c0197873f764e",
-				"path" => "maerkte/katalog-bootcamp",
-				"position" => 0,
-				"urlName" => "katalog-bootcamp",
-				"url" => "/maerkte/kataloge",
-				"level" => 2,
-				"title" => "Einführung in Kataloge für Marktplätze",
-				"keywords" => "Katalog, Marktplatzformate, Marktplatzexport",
-				"description" => "Mache dich mit dem Prinzip der Kataloge vertraut, um Variantendaten optimal an Marktplätze exportieren zu können.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Einführung in Kataloge für Marktplätze. Hier findest du folgende Informationen:",
-				"languageID" => "JD40PF4",
-				"children" => [],
-				"hasChildren" => false
-			],
 			[
 				"id" => "8c6e077aaa0e230992e5d6fe31d22805",
 				"path" => "maerkte/limango",
@@ -27364,7 +27396,7 @@ class Metadata {
 						"url" => "/en/fulfilment/shipping-service-provider-plugins/plugin-dhl-shipping-versenden",
 						"level" => 3,
 						"title" => "DHL Shipping (Versenden)",
-						"keywords" => "DHL Shipping, DHL Versenden, DHL Shipping Versenden, DHL plugin, DHL business customer portal, DHL BCP, DHL assistant",
+						"keywords" => "DHL Shipping, DHL Versenden, DHL Shipping Versenden, DHL plugin, DHL business customer portal, DHL bcp, DHL assistant, Packstation, Postfiliale, post office",
 						"description" => "Learn how to set up the “DHL Shipping (Versenden)” plugin in plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic DHL Shipping (Versenden). The following information is available:",
@@ -27380,7 +27412,7 @@ class Metadata {
 						"url" => "/en/fulfilment/shipping-service-provider-plugins/plugin-dhl-preferred-delivery",
 						"level" => 3,
 						"title" => "DHL Preferred Delivery",
-						"keywords" => "DHL Preferred Delivery, preferred delivery, DHL preferred delivery plugin, Wunschpaket, DHL Wunschpaket Plugin, preferred location, preferred neighbour, preferred day, Packstation, post office, delivery day, preferred location, preferred delivery service, Wunschpaket Services",
+						"keywords" => "DHL Preferred Delivery, preferred delivery, prefered delivery, Wunschpaket, DHL Wunschpaket, packstation, post office, preferred day, preferred location, preferred neighbour, preferred neighbor, Wunschpaket services",
 						"description" => "Learn how to set up the “DHL Preferred Delivery” plugin in plentymarkets.",
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic DHL Preferred Delivery. The following information is available:",
