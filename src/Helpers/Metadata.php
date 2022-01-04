@@ -3907,33 +3907,17 @@ class Metadata {
 						"hasChildren" => true
 					],
 					[
-						"id" => "08192d60fdc685c5242640ec8a649364",
-						"path" => "daten/daten-exportieren/marktplatz-formate-exportieren",
-						"position" => 45,
-						"urlName" => "marktplatz-formate-exportieren",
-						"url" => "/daten/daten-exportieren/marktplatzexport",
-						"level" => 3,
-						"title" => "Kataloge: Marktplatzexport",
-						"keywords" => "Katalog, Marktplatzformate, Marktplatzexport",
-						"description" => "Mache dich mit dem Prinzip der Kataloge vertraut, um Variantendaten optimal an Marktplätze zu exportieren.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Kataloge: Marktplatzexport. Hier findest du folgende Informationen:",
-						"languageID" => "JD40PF4",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
 						"id" => "4a1b876004753d2414814546cc702afc",
 						"path" => "daten/daten-exportieren/kataloge-verwalten",
 						"position" => 50,
 						"urlName" => "kataloge-verwalten",
 						"url" => "/daten/daten-exportieren/kataloge-verwalten",
 						"level" => 3,
-						"title" => "Kataloge verwalten",
+						"title" => "Kataloge",
 						"keywords" => "Katalog, Kataloge, Katalog erstellen, Katalog verwalten, Katalog-Templates, Marktplatz, Marktplätze, Märkte, Verkaufskanal, Templates, Datenquellen, Datenquellen kombinieren, Katalog kopieren, Katalog löschen, Daten übertragen, Marktplatzformat, Standardformat, Export, Datenexport, Daten exportieren, Katalog wiederherstellen, Kataloge exportieren, Datenfeld, Datenfelder verknüpfen, Datenfelder zuordnen, Zuordnung, Katalog herunterladen, Version wiederherstellen, Datenfelder löschen, Datenspalten",
 						"description" => "Im Menü *Daten » Kataloge* erstellst du Kataloge für den Export von Daten.",
 						"navAlias" => "Kataloge verwalten",
-						"linkListInto" => "Willkommen im Themenbereich Kataloge verwalten. Hier findest du folgende Informationen:",
+						"linkListInto" => "Willkommen im Themenbereich Kataloge. Hier findest du folgende Informationen:",
 						"languageID" => "FHQHFWO",
 						"children" => 						[
 							[
@@ -4064,25 +4048,41 @@ class Metadata {
 									]
 								],
 								"hasChildren" => true
+							],
+							[
+								"id" => "86b2cc2ce2b0b4aa837709ed50dc6b18",
+								"path" => "daten/daten-exportieren/kataloge-verwalten/marktplatz-formate-exportieren",
+								"position" => 45,
+								"urlName" => "marktplatz-formate-exportieren",
+								"url" => "/daten/daten-exportieren/marktplatzexport",
+								"level" => 4,
+								"title" => "Kataloge: Marktplatzexport",
+								"keywords" => "Katalog, Marktplatzformate, Marktplatzexport",
+								"description" => "Mache dich mit dem Prinzip der Kataloge vertraut, um Variantendaten optimal an Marktplätze zu exportieren.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Kataloge: Marktplatzexport. Hier findest du folgende Informationen:",
+								"languageID" => "JD40PF4",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "946850786856595132a087064a8262c0",
+								"path" => "daten/daten-exportieren/kataloge-verwalten/standardformate-exportieren",
+								"position" => 60,
+								"urlName" => "standardformate-exportieren",
+								"url" => "/daten/daten-exportieren/dateiexport",
+								"level" => 4,
+								"title" => "Kataloge: Dateiexport",
+								"keywords" => "",
+								"description" => "Standardformate für den Export von plentymarkets Daten erstellen",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Kataloge: Dateiexport. Hier findest du folgende Informationen:",
+								"languageID" => "Z14A1MY",
+								"children" => [],
+								"hasChildren" => false
 							]
 						],
 						"hasChildren" => true
-					],
-					[
-						"id" => "4e51cad2c98878885c709ea419e96452",
-						"path" => "daten/daten-exportieren/standardformate-exportieren",
-						"position" => 60,
-						"urlName" => "standardformate-exportieren",
-						"url" => "/daten/daten-exportieren/dateiexport",
-						"level" => 3,
-						"title" => "Kataloge: Dateienexport",
-						"keywords" => "",
-						"description" => "Standardformate für den Export von plentymarkets Daten erstellen",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Kataloge: Dateienexport. Hier findest du folgende Informationen:",
-						"languageID" => "Z14A1MY",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
