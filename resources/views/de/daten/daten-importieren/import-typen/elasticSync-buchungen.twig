@@ -1,0 +1,204 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Inhalt</div>
+<ul class="sectlevel1">
+<li><a href="#10"><span>1.</span><span> Felder für den Abgleich</span></a></li>
+<li><a href="#20"><span>2.</span><span> Felder für die Zuordnung</span></a>
+<ul class="sectlevel2">
+<li><a href="#30"><span>2.1.</span><span> Zahlung</span></a>
+<ul class="sectlevel3">
+<li><a href="#40"><span>2.1.1.</span><span> Buchungsbetrag</span></a></li>
+<li><a href="#50"><span>2.1.2.</span><span> Währung</span></a></li>
+<li><a href="#60"><span>2.1.3.</span><span> Buchungstag</span></a></li>
+<li><a href="#70"><span>2.1.4.</span><span> Kontakt-ID</span></a></li>
+<li><a href="#90"><span>2.1.5.</span><span> Typ (Soll/Haben)</span></a></li>
+</ul>
+</li>
+<li><a href="#80"><span>2.2.</span><span> Zahlungseigenschaft</span></a>
+<ul class="sectlevel3">
+<li><a href="#90"><span>2.2.1.</span><span> Wert</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Buchungen</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Diese Seite erläutert die Abgleich- und Zuordnungsfelder, die dir beim Importieren von Buchungen zur Verfügung stehen.
+
+Diese Seite dient lediglich als Referenz und setzt voraus, dass du bereits Grundkenntnisse über das <a href="/daten/daten-importieren/ElasticSync">Import-Tool</a> hast.</p>
+</div>
+<div class="paragraph">
+<p>Mit diesem Import-Typ kannst du Bankbuchungen und manuelle Buchungen in dein System importieren. Nach dem Import können die importierten Buchungen wie andere Zahlungen auch bearbeitet werden. Sobald du z.B. Buchungen in dein System importiert hast, findet automatisch eine <a href="/payment/beta-zahlungen-verwalten#10">Zuordnung</a> der Zahlungen zu Aufträgen statt.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10">1. Felder für den Abgleich</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In <a href="#table-mapping-postings">Tabelle 1</a> werden Felder erläutert, die für den Abgleich von Buchungen zur Verfügung stehen.
+Anhand des gewählten Abgleichfelds wird geprüft, ob der importierte Datensatz in plentymarkets vorhanden ist.</p>
+</div>
+<table id="table-mapping-postings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 1. Abgleichfelder für Buchungsimport</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zahlungs-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">In welcher Spalte deiner CSV-Datei wird das Datenfeld aufgelistet, anhand dessen die Daten der Buchungen abgeglichen werden sollen? Wähle diese Spalte hier. Wenn zugehörige Daten bereits im System existieren, werden sie aktualisiert.<br>
+Existieren die Daten noch nicht, wird die Buchung mit den importierten Daten neu angelegt. Importierst du nur neue Buchungen, die noch nicht im System existieren, musst du für den Abgleich keine Auswahl treffen. Die Buchungen werden auch so importiert.<br>
+<strong><em>Beachte</em></strong>, dass bei diesem Import nur Zahlungen importiert werden, bei denen es sich um <strong>Bankbuchungen</strong> oder <strong>manuelle Buchungen</strong> handelt. Zahlungen über Zahlungsanbieter wie z.B. PayPal oder Klarna werden nicht importiert.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="20">2. Felder für die Zuordnung</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In diesem Kapitel werden Felder erläutert, die für die Zuordnung von Buchungsdaten zur Verfügung stehen.
+Mithilfe dieser Felder legst du fest, welche <em>Spalte deiner Datei</em> welchem <em>Datenfeld in deinem System</em> entspricht.</p>
+</div>
+<div class="paragraph instruction">
+<p>Grundlegende Vorgehensweise:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>In deiner CSV-Datei</em></strong>: Gib einen zulässigen Importwert in eine Spalte ein.</p>
+</li>
+<li>
+<p><strong><em>In plentymarkets</em></strong>: Ordne diese Spalte dem passenden Zuordnungsfeld zu.</p>
+</li>
+<li>
+<p><strong><em>Nach dem Import</em></strong>: Prüfe das Ergebnis im Backend.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">Kein Zuordnungsfeld? Standardwert greift!</div>
+<div class="paragraph">
+<p>Wenn du eine bestimmte Information nicht in deine CSV-Datei aufnimmst, d.h. wenn du ein bestimmtes Zuordnungsfeld <em>nicht verwendest</em>, dann erhält die Buchung den Standardwert.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="30">2.1. Zahlung</h3>
+<div class="sect3">
+<h4 id="40">2.1.1. Buchungsbetrag</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Pflichtwert</span></p>
+</div>
+<div class="paragraph">
+<p>Welcher Buchungsbetrag soll der Zahlung zugewiesen werden? Gib den Buchungsbetrag der Zahlung in deine CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Numerisch</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="50">2.1.2. Währung</h4>
+<div class="paragraph">
+<p>Welche Währung soll der Zahlung zugewiesen werden? Gib die <a href="/daten/interne-IDs#60">Währung der Zahlung als ISO-Code</a> in deine CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: EUR (Euro)</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Alphanumerisch</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="60">2.1.3. Buchungstag</h4>
+<div class="paragraph">
+<p>Welches Buchungsdatum soll der Zahlung zugewiesen werden? Gib den Buchungstag in deine CSV-Datei ein. Gib das Datum in dem Format ein, das du in den Einstellungen im Bereich Abgleich in den <strong>Import Optionen</strong> für das Feld <strong>Datumsformat</strong> ausgewählt hast.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Der Tag des Imports</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Numerisch</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="70">2.1.4. Kontakt-ID</h4>
+<div class="paragraph">
+<p>Welcher Kontakt soll der Zahlung zugewiesen werden? Gib die ID dieses Kontakts in deine CSV-Datei ein.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Numerisch</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="90">2.1.5. Typ (Soll/Haben)</h4>
+<div class="paragraph">
+<p>Ist die Bankbuchung eine Soll- oder Haben-Buchung? Gib entsprechend <em>Soll</em> oder <em>Haben</em> in deine CSV-Datei ein. Importierst du nur Haben-Buchungen, musst du diese Zuordnung nicht treffen. Dann werden alle Buchungsbeträge als Haben-Buchungen importiert.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Alphanumerisch</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="80">2.2. Zahlungseigenschaft</h3>
+<div class="sect3">
+<h4 id="90">2.2.1. Wert</h4>
+<div class="paragraph">
+<p>Welche Zahlungseigenschaft soll der Zahlung zugewiesen werden? Gib den Wert der ausgewählten Zahlungseigenschaft in deine CSV-Datei ein.<br>
+Die folgenden Eigenschaften können ausgewählt werden:<br>
+* Verwendungszweck<br>
+* Name des Senders<br>
+* E-Mail des Senders<br>
+* BLZ des Senders<br>
+* Kontonummer des Senders<br>
+* IBAN des Senders<br>
+* BIC des Senders<br>
+* Name des Empfängers<br>
+Du kannst das Zuordnungsfeld <strong>Zahlungseigenschaft / Wert</strong> mehrmals hinzufügen und jeweils eine andere Eigenschaft auswählen. Welche Felder du hinzufügst, hängt von den Informationen in deiner CSV-Datei ab.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Standardwert</em></strong>: Kein Standardwert</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Zulässige Importwerte</em></strong>: Alphanumerisch</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>

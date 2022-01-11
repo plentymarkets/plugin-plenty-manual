@@ -1,0 +1,204 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#10"><span>1.</span><span> Matching fields</span></a></li>
+<li><a href="#20"><span>2.</span><span> Mapping fields</span></a>
+<ul class="sectlevel2">
+<li><a href="#30"><span>2.1.</span><span> Payment</span></a>
+<ul class="sectlevel3">
+<li><a href="#40"><span>2.1.1.</span><span> Amount posted</span></a></li>
+<li><a href="#50"><span>2.1.2.</span><span> Currency</span></a></li>
+<li><a href="#60"><span>2.1.3.</span><span> Posting date</span></a></li>
+<li><a href="#70"><span>2.1.4.</span><span> Contact ID</span></a></li>
+<li><a href="#90"><span>2.1.5.</span><span> Type (Credit/Debit)</span></a></li>
+</ul>
+</li>
+<li><a href="#80"><span>2.2.</span><span> Payment property</span></a>
+<ul class="sectlevel3">
+<li><a href="#90"><span>2.2.1.</span><span> Value</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Postings</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page explains the matching and mapping fields that you can use while importing postings.
+
+This page serves purely as a reference and it assumes that you already have a basic understanding of the <a href="/en/data/importing-data/ElasticSync">import tool</a>.</p>
+</div>
+<div class="paragraph">
+<p>Use this import type to import bank postings and manual postings into your system. After importing them, the postings can be processed like other payments as well. For example, as soon as you have imported the postings into your system, the are automatically <a href="/en/payment/beta-managing-payments#10">assigned</a> to orders.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10">1. Matching fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="#table-mapping-postings">Table 1</a> explains the fields that are available for matching posting data.
+During the import, plentymarkets checks if the imported data record already exists based on the matching field.</p>
+</div>
+<table id="table-mapping-postings" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. .Matching fields for importing postings</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Payment ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which column of your CSV file lists the data which is to be used to match the postings? Choose this column here. If the corresponding data already exist in the system, they are updated.<br>
+If the data don’t exist yet, the posting is created with the new import data. If you are importing new postings that do not yet exist in the system, you don’t have to select anything for the matching. The postings are then imported without.<br>
+<strong><em>Note</em></strong> that with this import, only <strong>bank postings</strong> and <strong>manual postings</strong> are imported. Payments of payment providers, as e.g. PayPal or Klarna, are not imported.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="20">2. Mapping fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter explains the fields that are available for mapping postings.
+Use these fields to specify which <em>column of your file</em> corresponds to which <em>data field in your system</em>.</p>
+</div>
+<div class="paragraph instruction">
+<p>Basic procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong><em>In your CSV file</em></strong>: Enter a valid import value into a column.</p>
+</li>
+<li>
+<p><strong><em>In plentymarkets</em></strong>: Assign this column to the appropriate mapping field.</p>
+</li>
+<li>
+<p><strong><em>After the import</em></strong>: Check the result in the back end.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">No mapping field? Default value applies!</div>
+<div class="paragraph">
+<p>If you don’t include a certain piece of information in your CSV file, i.e. if you <em>don’t use</em> a certain mapping field, then the posting will be given the default value.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="30">2.1. Payment</h3>
+<div class="sect3">
+<h4 id="40">2.1.1. Amount posted</h4>
+<div class="paragraph">
+<p><span class="icon red"><i class="fa fa-warning  "></i></span> <span class="red">Required field</span></p>
+</div>
+<div class="paragraph">
+<p>Which posting amount is to be assigned to the payment? Enter this amount into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="50">2.1.2. Currency</h4>
+<div class="paragraph">
+<p>Which currency is to be assigned to the payment? Enter the <a href="/en/data/internal-IDs#60">currency as ISO code</a> into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: EUR (Euro)</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="60">2.1.3. Posting date</h4>
+<div class="paragraph">
+<p>Which posting date is to be assigned to the payment? Enter the posting date into your CSV file. Enter the date in the format you selected in the matching settings for the field <strong>Date format</strong> in the <strong>Import options</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: Day of the import</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="70">2.1.4. Contact ID</h4>
+<div class="paragraph">
+<p>Which contact is to be assigned to the payment? Enter the ID of the contact into your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Numeric</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="90">2.1.5. Type (Credit/Debit)</h4>
+<div class="paragraph">
+<p>Is the posting a credit or debit posting? Enter <em>credit</em> or <em>debit</em> into your CSV file. If you are only importing credit postings, you don’t have to select this matching field. In this case, all amounts are imported as credit postings.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="80">2.2. Payment property</h3>
+<div class="sect3">
+<h4 id="90">2.2.1. Value</h4>
+<div class="paragraph">
+<p>Which payment property is to be assigned to the payment? Enter the value of the selected property into your CSV file.<br>
+The following properties are available:<br>
+* booking text<br>
+* name of sender<br>
+* email of sender<br>
+* bank code of sender<br>
+* account number of sender<br>
+* IBAN of sender<br>
+* BIC of sender<br>
+* name of receiver<br>
+You can add the matching field <strong>Payment property / Value</strong> more than once and then select different properties. Which fields you should add depends on the data in your CSV file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Default value</em></strong>: No default value</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Permitted import values</em></strong>: Alpha-numeric</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
