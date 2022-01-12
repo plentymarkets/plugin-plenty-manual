@@ -2349,7 +2349,7 @@ class Metadata {
 						"url" => "/payment/payment-plugins/nachnahme",
 						"level" => 3,
 						"title" => "Nachnahme",
-						"keywords" => "Zahlungsarten, Nachnahme, Nachnahme-Plugin, Nachnahmeplugin, cash on delivery, Nahnahme-Konfiguration, Nachnahme-Einstellung, Nachnahme-Schnittstelle, Nachnahmeeinstellung, Nachnahmekonfiguration, Nachnahmeschnittstelle, Zahlungsplugin, Zahlungs-Plugin, Payment-Plugin, Paymentplugin, Payment-Integration, Paymentintegration, Paymentschnittstelle, Payment-Schnittstelle, Zahlart, Zahlarten",
+						"keywords" => "Zahlungsarten, Nachnahme, Nachnahme-Plugin, Nachnahmeplugin, cash on delivery, Nahnahme-Konfiguration, Nachnahme-Einstellung, Nachnahme-Schnittstelle, Nachnahmeeinstellung, Nachnahmekonfiguration, Nachnahmeschnittstelle, Zahlungsplugin, Zahlungs-Plugin, Payment-Plugin, Paymentplugin, Payment-Integration, Paymentintegration, Paymentschnittstelle, Payment-Schnittstelle, Zahlart, Zahlarten, Nachname, Nachname-Plugin, Nachname-Zahlungsart",
 						"description" => "Integration des Plugins Nachnahme.",
 						"navAlias" => "",
 						"linkListInto" => "Willkommen im Themenbereich Nachnahme. Hier findest du folgende Informationen:",
