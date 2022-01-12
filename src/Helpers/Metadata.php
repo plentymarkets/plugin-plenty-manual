@@ -3276,6 +3276,22 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "dd0072b970ff7047146d6c7f1734e531",
+								"path" => "daten/daten-importieren/elasticsync-praxisbeispiele/praxisbeispiel-elasticsync-buchungen",
+								"position" => 25,
+								"urlName" => "praxisbeispiel-elasticsync-buchungen",
+								"url" => "/daten/daten-importieren/elasticsync-best-practices/best-practices-elasticsync-buchungen",
+								"level" => 4,
+								"title" => "Neue Buchungen importieren",
+								"keywords" => "Buchungsimport, Bankbuchungsimport, Zahlungsimport, Bankbuchung",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Neue Buchungen importieren. Hier findest du folgende Informationen:",
+								"languageID" => "8X2XPH8",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "15d6f23b05946e09bd30f728068c5b42",
 								"path" => "daten/daten-importieren/elasticsync-praxisbeispiele/praxisbeispiel-elasticsync-cross-selling-verknuepfungen",
 								"position" => 30,
@@ -28238,6 +28254,22 @@ class Metadata {
 								"navAlias" => "",
 								"linkListInto" => "Welcome to the topic Order items. The following information is available:",
 								"languageID" => "X6TW7XN",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
+								"id" => "ff8e164cb351d52a8b92dd401c592b1f",
+								"path" => "data/importing-data/elasticsync-practical-examples/practical-example-elasticsync-postings",
+								"position" => 25,
+								"urlName" => "practical-example-elasticsync-postings",
+								"url" => "/en/data/importing-data/elasticsync-best-practices/best-practices-elasticsync-postings",
+								"level" => 4,
+								"title" => "Importing new postings",
+								"keywords" => "postings import, bank postings import, bank postings, payment import, postings",
+								"description" => "",
+								"navAlias" => "",
+								"linkListInto" => "Welcome to the topic Importing new postings. The following information is available:",
+								"languageID" => "8X2XPH8",
 								"children" => [],
 								"hasChildren" => false
 							],
