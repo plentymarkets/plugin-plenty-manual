@@ -23206,11 +23206,11 @@ class Metadata {
 				"urlName" => "januar-2022",
 				"url" => "/changelog/januar-2022",
 				"level" => 2,
-				"title" => "Changelogs Dezember 2021",
+				"title" => "Changelogs Januar 2022",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Changelogs Dezember 2021. Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Changelogs Januar 2022. Hier findest du folgende Informationen:",
 				"languageID" => "",
 				"children" => 				[
 					[
