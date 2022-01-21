@@ -760,85 +760,52 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "5190a6a1e8a5d8ac4189cf609d6129e6",
-						"path" => "artikel/import-export-anlage/anlage",
+						"id" => "7f6b92ba3238ad2190b9913830a0d641",
+						"path" => "artikel/import-export-anlage/neue-artikel",
 						"position" => 30,
-						"urlName" => "anlage",
-						"url" => "/artikel/import-export-anlage/anlage",
+						"urlName" => "neue-artikel",
+						"url" => "/artikel/import-export-anlage/anlage/neue-artikel",
 						"level" => 3,
-						"title" => "Manuelle Bearbeitung",
-						"keywords" => "",
-						"description" => "Erfahre, wie du deine Artikeldaten in plentymarkets manuell verwaltest.",
+						"title" => "Artikel manuell anlegen",
+						"keywords" => "Artikel erstellen, Artikeldaten erstellen, Artikel anlegen, Artikeldaten anlegen, Variante erstellen, Variantendaten erstellen, Variante anlegen, Variantendaten anlegen, Artikelanlage, Artikel manuell anlegen, Artikel manuell erstellen, Neuer Artikel, Neue Artikel, Neue Variante, Neue Varianten, Neues Produkt, Neue Produkte, Variantenanlage, Artikelerstellung",
+						"description" => "Erfahre, wie du Artikel und Varianten manuell erstellst.",
 						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Manuelle Bearbeitung. Hier findest du folgende Informationen:",
-						"languageID" => "0PUDF05",
-						"children" => 						[
-							[
-								"id" => "01d6376b106e786bbee59a3b188a1d41",
-								"path" => "artikel/import-export-anlage/anlage/neue-artikel",
-								"position" => 10,
-								"urlName" => "neue-artikel",
-								"url" => "/artikel/import-export-anlage/anlage/neue-artikel",
-								"level" => 4,
-								"title" => "Neue Artikel anlegen",
-								"keywords" => "Artikel erstellen, Artikeldaten erstellen, Artikel anlegen, Artikeldaten anlegen, Variante erstellen, Variantendaten erstellen, Variante anlegen, Variantendaten anlegen, Artikelanlage, Artikel manuell anlegen, Artikel manuell erstellen, Neuer Artikel, Neue Artikel, Neue Variante, Neue Varianten, Neues Produkt, Neue Produkte, Variantenanlage, Artikelerstellung",
-								"description" => "Erfahre, wie du Artikel und Varianten manuell erstellst.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Neue Artikel anlegen. Hier findest du folgende Informationen:",
-								"languageID" => "MNYRNTL",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "548cedc11d7b70fe9ce774a7b684b819",
-								"path" => "artikel/import-export-anlage/anlage/verzeichnis",
-								"position" => 30,
-								"urlName" => "verzeichnis",
-								"url" => "/artikel/artikel-verwalten",
-								"level" => 4,
-								"title" => "Verzeichnis der Datenfelder",
-								"keywords" => "Artikeldaten, Artikeldatensatz, Artikeldatensätze, Artikeldatenfeld, Artikeldatenfelder, Artikel-Datenfeld, Artikel-Datenfelder, Artikelverwaltung, Artikelbearbeitung, Artikel verwalten, Artikel bearbeiten, Artikel manuell verwalten, Artikel manuell bearbeiten, Artikel » Artikel bearbeiten",
-								"description" => "Erläuterungen zu den Tabs und Datenfeldern eines Artikeldatensatzes.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Verzeichnis der Datenfelder. Hier findest du folgende Informationen:",
-								"languageID" => "ZVYHQWL",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "7c7dd21d38607619846619cf5dc36b03",
-								"path" => "artikel/import-export-anlage/anlage/massenbearbeitung",
-								"position" => 40,
-								"urlName" => "massenbearbeitung",
-								"url" => "/artikel/import-export-anlage/anlage/massenbearbeitung",
-								"level" => 4,
-								"title" => "Massenbearbeitung",
-								"keywords" => "Massenbearbeitung, Massenverarbeitung, Stapelbearbeitung, Stapelverarbeitung, Gruppen-Funktion, Gruppen-Funktionen, Gruppenfunktion, Gruppenfunktionen, Group function, Batch process, Batch processing, Artikel gleichzeitig bearbeiten, Artikel gleichzeitig verarbeiten, Batch-Verarbeitung, Batchverarbeitung, Suchen &amp; Ersetzen, Suchen und ersetzen, Kopieren, Artikel kopieren",
-								"description" => "plentymarkets beinhaltet verschiedene Funktionen zur Massenverarbeitung. Lerne, wie du mehrere Artikel oder Varianten gleichzeitig bearbeitest.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Massenbearbeitung. Hier findest du folgende Informationen:",
-								"languageID" => "S71L7WQ",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "17186cf279878d5e135bd4b8a2c962bc",
-								"path" => "artikel/import-export-anlage/anlage/bearbeitungsfenster-gestalten",
-								"position" => 50,
-								"urlName" => "bearbeitungsfenster-gestalten",
-								"url" => "/artikel/import-export-anlage/anlage/bearbeitungsfenster-gestalten",
-								"level" => 4,
-								"title" => "Tab-Namen anpassen",
-								"keywords" => "",
-								"description" => "Auf dieser Seite lernst du, wie du die Namen von Tabs individuell anpassen kannst.",
-								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Tab-Namen anpassen. Hier findest du folgende Informationen:",
-								"languageID" => "864QUOC",
-								"children" => [],
-								"hasChildren" => false
-							]
-						],
-						"hasChildren" => true
+						"linkListInto" => "Willkommen im Themenbereich Artikel manuell anlegen. Hier findest du folgende Informationen:",
+						"languageID" => "MNYRNTL",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "e38b392b1060bdd8bbafb3b9626504cf",
+						"path" => "artikel/import-export-anlage/import-export-anlage-verzeichnis",
+						"position" => 40,
+						"urlName" => "import-export-anlage-verzeichnis",
+						"url" => "/artikel/artikel-verwalten",
+						"level" => 3,
+						"title" => "Verzeichnis der Datenfelder",
+						"keywords" => "Artikeldaten, Artikeldatensatz, Artikeldatensätze, Artikeldatenfeld, Artikeldatenfelder, Artikel-Datenfeld, Artikel-Datenfelder, Artikelverwaltung, Artikelbearbeitung, Artikel verwalten, Artikel bearbeiten, Artikel manuell verwalten, Artikel manuell bearbeiten, Artikel » Artikel bearbeiten",
+						"description" => "Erläuterungen zu den Tabs und Datenfeldern eines Artikeldatensatzes.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Verzeichnis der Datenfelder. Hier findest du folgende Informationen:",
+						"languageID" => "ZVYHQWL",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "f8ae2a8481f31a6c99a221eac115a36d",
+						"path" => "artikel/import-export-anlage/massenbearbeitung",
+						"position" => 50,
+						"urlName" => "massenbearbeitung",
+						"url" => "/artikel/import-export-anlage/anlage/massenbearbeitung",
+						"level" => 3,
+						"title" => "Massenbearbeitung",
+						"keywords" => "Massenbearbeitung, Massenverarbeitung, Stapelbearbeitung, Stapelverarbeitung, Gruppen-Funktion, Gruppen-Funktionen, Gruppenfunktion, Gruppenfunktionen, Group function, Batch process, Batch processing, Artikel gleichzeitig bearbeiten, Artikel gleichzeitig verarbeiten, Batch-Verarbeitung, Batchverarbeitung, Suchen &amp; Ersetzen, Suchen und ersetzen, Kopieren, Artikel kopieren",
+						"description" => "plentymarkets beinhaltet verschiedene Funktionen zur Massenverarbeitung. Lerne, wie du mehrere Artikel oder Varianten gleichzeitig bearbeitest.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Massenbearbeitung. Hier findest du folgende Informationen:",
+						"languageID" => "S71L7WQ",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -3556,11 +3523,11 @@ class Metadata {
 								"urlName" => "standardformate-exportieren",
 								"url" => "/daten/daten-exportieren/dateiexport",
 								"level" => 4,
-								"title" => "Kataloge: Standarformate",
+								"title" => "Kataloge: Standardformate",
 								"keywords" => "",
 								"description" => "Standardformate für den Export von plentymarkets Daten erstellen",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Kataloge: Standarformate. Hier findest du folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Kataloge: Standardformate. Hier findest du folgende Informationen:",
 								"languageID" => "Z14A1MY",
 								"children" => [],
 								"hasChildren" => false
@@ -3791,10 +3758,10 @@ class Metadata {
 								"languageID" => "",
 								"children" => 								[
 									[
-										"id" => "fd83415b1b64dd37d4b51253995e5c3b",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/artikel",
+										"id" => "037149c1805c210c2073a51db433c3b0",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-artikel",
 										"position" => 10,
-										"urlName" => "artikel",
+										"urlName" => "formatdesigner-artikel",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/artikel",
 										"level" => 5,
 										"title" => "Artikel",
@@ -3807,10 +3774,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "104f851ac1b2066b8595a456273b95d7",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/artikelbilder",
+										"id" => "4c2b6795f62d3d0f67334069b5ef601a",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-artikelbilder",
 										"position" => 20,
-										"urlName" => "artikelbilder",
+										"urlName" => "formatdesigner-artikelbilder",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/artikelbilder",
 										"level" => 5,
 										"title" => "Artikelbilder",
@@ -3823,10 +3790,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "39599260c2abb5176b08abd916271ee3",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/attribute",
+										"id" => "90e85d2df4e5bd53d64a21777bf9640c",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-attribute",
 										"position" => 30,
-										"urlName" => "attribute",
+										"urlName" => "formatdesigner-attribute",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/attribute",
 										"level" => 5,
 										"title" => "Attribute",
@@ -3839,10 +3806,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "79cebb8e10810ba8940aeaecd2545aec",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/auftraege",
+										"id" => "caa47716bb9e8b20741bfd98efa41310",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-auftraege",
 										"position" => 40,
-										"urlName" => "auftraege",
+										"urlName" => "formatdesigner-auftraege",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/auftraege",
 										"level" => 5,
 										"title" => "Aufträge",
@@ -3855,10 +3822,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "08797cd081a74815bd79235742a1afd8",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/auftragspositionen",
+										"id" => "164ba02cfafc0fc8c5c3bddc6dd4d356",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-auftragspositionen",
 										"position" => 50,
-										"urlName" => "auftragspositionen",
+										"urlName" => "formatdesigner-auftragspositionen",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/auftragspositionen",
 										"level" => 5,
 										"title" => "Auftragspositionen",
@@ -3871,10 +3838,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "3cca72dd6a80612c29175b3a00eedbb9",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/auftragspositionen-bestellungen",
+										"id" => "6403f351250442be06f4d305bafcea0b",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-auftragspositionen-bestellungen",
 										"position" => 55,
-										"urlName" => "auftragspositionen-bestellungen",
+										"urlName" => "formatdesigner-auftragspositionen-bestellungen",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/auftragspositionen-bestellungen",
 										"level" => 5,
 										"title" => "Auftragspositionen Bestellungen",
@@ -3887,10 +3854,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "8a79be14906e4b2162024d3232278c9d",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/bestellwesen",
+										"id" => "c57876e9eea0c1cfd34be3147ee624d0",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-bestellwesen",
 										"position" => 60,
-										"urlName" => "bestellwesen",
+										"urlName" => "formatdesigner-bestellwesen",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/bestellwesen",
 										"level" => 5,
 										"title" => "Bestellwesen",
@@ -3903,10 +3870,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "b5bbcecf83336b10f860a78d3837cb5e",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/newsletter-empfaenger",
+										"id" => "e94b726324e411a414aacede4c24c7dd",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-newsletter-empfaenger",
 										"position" => 60,
-										"urlName" => "newsletter-empfaenger",
+										"urlName" => "formatdesigner-newsletter-empfaenger",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/newsletter-empfaenger",
 										"level" => 5,
 										"title" => "contactNewsletter",
@@ -3919,10 +3886,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "089497c38a9a4cb8ab9324478a8c76cd",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/eigenschaften",
+										"id" => "81ee16a5f5c506aac3ffaab236c49ea1",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-eigenschaften",
 										"position" => 70,
-										"urlName" => "eigenschaften",
+										"urlName" => "formatdesigner-eigenschaften",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/eigenschaften",
 										"level" => 5,
 										"title" => "Eigenschaften",
@@ -3935,10 +3902,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "22fe8b7c7aefda2c737a9f117cc1a067",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/facette",
+										"id" => "99e658cca4581ad4a6de20bbcbe83596",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-facette",
 										"position" => 80,
-										"urlName" => "facette",
+										"urlName" => "formatdesigner-facette",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/facette",
 										"level" => 5,
 										"title" => "facet",
@@ -3951,10 +3918,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "8efd9ac3b426fe290329ceb97855f5f9",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/facettenwert",
+										"id" => "bb0275e52f499967a9db07a569718977",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-facettenwert",
 										"position" => 90,
-										"urlName" => "facettenwert",
+										"urlName" => "formatdesigner-facettenwert",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/facettenwert",
 										"level" => 5,
 										"title" => "facetValue",
@@ -3967,10 +3934,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "b2f5597f5a7e1323d41345de4ea14839",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/facettenwert-verknuepfung",
+										"id" => "8ff03628ab9be28f947604cff0877e43",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-facettenwert-verknuepfung",
 										"position" => 100,
-										"urlName" => "facettenwert-verknuepfung",
+										"urlName" => "formatdesigner-facettenwert-verknuepfung",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/facettenwert-verknuepfung",
 										"level" => 5,
 										"title" => "facetValueReference",
@@ -3983,10 +3950,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "be60ad11e944561968c2601625be6dd6",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/hersteller",
+										"id" => "c04d15ef5b3dcf00c2cf0dce4a124649",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-hersteller",
 										"position" => 110,
-										"urlName" => "hersteller",
+										"urlName" => "formatdesigner-hersteller",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/hersteller",
 										"level" => 5,
 										"title" => "Hersteller",
@@ -3999,10 +3966,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "bb18d3a6a60c7bf89e5c21e23bdafa24",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/kategorien",
+										"id" => "6a2c78a1329ffed76ed151789aeb50f6",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-kategorien",
 										"position" => 120,
-										"urlName" => "kategorien",
+										"urlName" => "formatdesigner-kategorien",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/kategorien",
 										"level" => 5,
 										"title" => "Kategorien",
@@ -4015,10 +3982,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "e76a7dc4868e64602da2ab5a77470645",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/kontakte",
+										"id" => "888d85f4c565dbfd948d736a4bd1dce8",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-kontakte",
 										"position" => 130,
-										"urlName" => "kontakte",
+										"urlName" => "formatdesigner-kontakte",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/kontakte",
 										"level" => 5,
 										"title" => "Kontakte",
@@ -4031,10 +3998,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "60cfccd1d094fbad4aee236be071186c",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/lager",
+										"id" => "b0bbc352e0b0e5668b80f8ce1f260ca8",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-lager",
 										"position" => 130,
-										"urlName" => "lager",
+										"urlName" => "formatdesigner-lager",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/lager",
 										"level" => 5,
 										"title" => "warehouse",
@@ -4047,10 +4014,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "8aada4495832e8f51c42d98133ee3618",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/listing",
+										"id" => "ed59a15c41e14bfd371e78d7a9941610",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-listing",
 										"position" => 140,
-										"urlName" => "listing",
+										"urlName" => "formatdesigner-listing",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/listing",
 										"level" => 5,
 										"title" => "Listing",
@@ -4063,10 +4030,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "a5fc1a63abab499ff59e82516a3aa6bc",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/aktive-listings",
+										"id" => "ecb57f38cef6d34dc807693b2034a81b",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-aktive-listings",
 										"position" => 150,
-										"urlName" => "aktive-listings",
+										"urlName" => "formatdesigner-aktive-listings",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/aktive-listings",
 										"level" => 5,
 										"title" => "Aktive Listings",
@@ -4079,10 +4046,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "9817f94d4e899de974d05b255efd3301",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/warenbestand",
+										"id" => "734826bb0861448b53ef1e4a1a80569b",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-warenbestand",
 										"position" => 160,
-										"urlName" => "warenbestand",
+										"urlName" => "formatdesigner-warenbestand",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/warenbestand",
 										"level" => 5,
 										"title" => "stock",
@@ -4095,10 +4062,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "58af101d2987a12e40a39b08c58ada8f",
-										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/warenbewegung",
+										"id" => "13223c4f3d1d774783cc9655dd08f6d9",
+										"path" => "daten/daten-exportieren/FormatDesigner/format-typen/formatdesigner-warenbewegung",
 										"position" => 170,
-										"urlName" => "warenbewegung",
+										"urlName" => "formatdesigner-warenbewegung",
 										"url" => "/daten/daten-exportieren/FormatDesigner/format-typen/warenbewegungen",
 										"level" => 5,
 										"title" => "stockMovement",
@@ -4153,11 +4120,11 @@ class Metadata {
 								"urlName" => "standardformate-exportieren",
 								"url" => "/daten/daten-exportieren/dateiexport",
 								"level" => 4,
-								"title" => "Kataloge: Standarformate",
+								"title" => "Kataloge: Standardformate",
 								"keywords" => "",
 								"description" => "Standardformate für den Export von plentymarkets Daten erstellen",
 								"navAlias" => "",
-								"linkListInto" => "Willkommen im Themenbereich Kataloge: Standarformate. Hier findest du folgende Informationen:",
+								"linkListInto" => "Willkommen im Themenbereich Kataloge: Standardformate. Hier findest du folgende Informationen:",
 								"languageID" => "Z14A1MY",
 								"children" => [],
 								"hasChildren" => false
@@ -4438,10 +4405,10 @@ class Metadata {
 						"languageID" => "090WP3K",
 						"children" => 						[
 							[
-								"id" => "b5683af611cc9e39286ffce41c9df8c8",
-								"path" => "daten/alte-tools/export-import/daten-exportieren",
+								"id" => "e1e4a4d44392ebc9dd1c12c861ad99e9",
+								"path" => "daten/alte-tools/export-import/alte-tools-daten-exportieren",
 								"position" => 10,
-								"urlName" => "daten-exportieren",
+								"urlName" => "alte-tools-daten-exportieren",
 								"url" => "/daten/export-import/daten-exportieren",
 								"level" => 4,
 								"title" => "Daten über dynamischen Export exportieren",
@@ -6603,22 +6570,6 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "0f698dad51134066ab63adbc9ad7e7f3",
-												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/categorycontentbody",
-												"position" => 10029,
-												"urlName" => "categorycontentbody",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/categorycontentbody",
-												"level" => 6,
-												"title" => "CategoryContentBody",
-												"keywords" => "CategoryContentBody",
-												"description" => "",
-												"navAlias" => "",
-												"linkListInto" => "",
-												"languageID" => "",
-												"children" => [],
-												"hasChildren" => false
-											],
-											[
 												"id" => "9336019e77b944c37f29062d334cf107",
 												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/catoptionlist-level2",
 												"position" => 10029,
@@ -6627,6 +6578,22 @@ class Metadata {
 												"level" => 6,
 												"title" => "CatOptionList_Level2",
 												"keywords" => "CatOptionList_Level2",
+												"description" => "",
+												"navAlias" => "",
+												"linkListInto" => "",
+												"languageID" => "",
+												"children" => [],
+												"hasChildren" => false
+											],
+											[
+												"id" => "7966e1245e5816c0b686ca098fec1848",
+												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-categorycontentbody",
+												"position" => 10029,
+												"urlName" => "pagedesign-categorycontentbody",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-categorycontentbody",
+												"level" => 6,
+												"title" => "CategoryContentBody",
+												"keywords" => "CategoryContentBody",
 												"description" => "",
 												"navAlias" => "",
 												"linkListInto" => "",
@@ -6843,11 +6810,11 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "812d07c690412480fb158ea0d9f0609f",
-												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/link-basket",
+												"id" => "36e2d9d0a3010428269959b1937cc656",
+												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-link-basket",
 												"position" => 10136,
-												"urlName" => "link-basket",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/link-basket",
+												"urlName" => "pagedesign-link-basket",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-link-basket",
 												"level" => 6,
 												"title" => "Link_Basket",
 												"keywords" => "Link_Basket",
@@ -6907,11 +6874,11 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "4df7785aa8bc674b3a7d37b7394c1dc1",
-												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/link-checkout",
+												"id" => "5e7a15a766a9ed7c10a39f78d2b0afaf",
+												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-link-checkout",
 												"position" => 10140,
-												"urlName" => "link-checkout",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/link-checkout",
+												"urlName" => "pagedesign-link-checkout",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-link-checkout",
 												"level" => 6,
 												"title" => "Link_Checkout",
 												"keywords" => "Link_Checkout",
@@ -7131,11 +7098,11 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "5c02d9e0bccef54964d5fa545a2378a2",
-												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/link-item",
+												"id" => "c1ec6c886e75780032a6aa2b499cac30",
+												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-link-item",
 												"position" => 10154,
-												"urlName" => "link-item",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/link-item",
+												"urlName" => "pagedesign-link-item",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-link-item",
 												"level" => 6,
 												"title" => "Link_Item",
 												"keywords" => "Link_Item",
@@ -7387,11 +7354,11 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "c7d0aa771407c69902d14b34919c4227",
-												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/link-termsconditions",
+												"id" => "51ca8cf585cec61d3e6ab595f182c143",
+												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-link-termsconditions",
 												"position" => 10171,
-												"urlName" => "link-termsconditions",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/link-termsconditions",
+												"urlName" => "pagedesign-link-termsconditions",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-link-termsconditions",
 												"level" => 6,
 												"title" => "Link_TermsConditions",
 												"keywords" => "Link_TermsConditions",
@@ -7435,11 +7402,11 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "c599aa4211faba0d8dddd8984f463035",
-												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/link-webstore",
+												"id" => "ab0973421cdf5daf3682c141d29745ef",
+												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-link-webstore",
 												"position" => 10174,
-												"urlName" => "link-webstore",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/link-webstore",
+												"urlName" => "pagedesign-link-webstore",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/pagedesign/pagedesign-link-webstore",
 												"level" => 6,
 												"title" => "Link_Webstore",
 												"keywords" => "Link_Webstore",
@@ -9645,11 +9612,11 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "e6f8984837256cddd0941decec872181",
-												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/itemview/getitemviewitemparamslist",
+												"id" => "5c1f00e42916088f5a0cd57753f57761",
+												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/itemview/itemview-getitemviewitemparamslist",
 												"position" => 10163,
-												"urlName" => "getitemviewitemparamslist",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/itemview/getitemviewitemparamslist",
+												"urlName" => "itemview-getitemviewitemparamslist",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/itemview/itemview-getitemviewitemparamslist",
 												"level" => 6,
 												"title" => "GetItemViewItemParamsList",
 												"keywords" => "GetItemViewItemParamsList",
@@ -10158,11 +10125,11 @@ class Metadata {
 										"languageID" => "",
 										"children" => 										[
 											[
-												"id" => "19e9cc92e6c5b2e8c5802a21cf3f511b",
-												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/categoryview/categorycontentbody",
+												"id" => "8ca509d1a167c8f44b64e8f14c1c5062",
+												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/categoryview/categoryview-categorycontentbody",
 												"position" => 10004,
-												"urlName" => "categorycontentbody",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/categoryview/categorycontentbody",
+												"urlName" => "categoryview-categorycontentbody",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/categoryview/categoryview-categorycontentbody",
 												"level" => 6,
 												"title" => "CategoryContentBody",
 												"keywords" => "CategoryContentBody",
@@ -10222,11 +10189,11 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "221688fb87460b736aa38a1f2bd55c88",
-												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/category/getitemviewitemparamslist",
+												"id" => "3e5df5a1f0c7b138ef4f2eabde3d7673",
+												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/category/category-getitemviewitemparamslist",
 												"position" => 10076,
-												"urlName" => "getitemviewitemparamslist",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/category/getitemviewitemparamslist",
+												"urlName" => "category-getitemviewitemparamslist",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/category/category-getitemviewitemparamslist",
 												"level" => 6,
 												"title" => "GetItemViewItemParamsList",
 												"keywords" => "GetItemViewItemParamsList",
@@ -12864,11 +12831,11 @@ class Metadata {
 										"languageID" => "",
 										"children" => 										[
 											[
-												"id" => "19e9cc92e6c5b2e8c5802a21cf3f511b",
-												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/categoryview/categorycontentbody",
+												"id" => "8ca509d1a167c8f44b64e8f14c1c5062",
+												"path" => "webshop/webshop-einrichten/cms-syntax/webdesign/categoryview/categoryview-categorycontentbody",
 												"position" => 10004,
-												"urlName" => "categorycontentbody",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/categoryview/categorycontentbody",
+												"urlName" => "categoryview-categorycontentbody",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/webdesign/categoryview/categoryview-categorycontentbody",
 												"level" => 6,
 												"title" => "CategoryContentBody",
 												"keywords" => "CategoryContentBody",
@@ -13317,11 +13284,11 @@ class Metadata {
 										"languageID" => "",
 										"children" => 										[
 											[
-												"id" => "96ec965b1343429cde137ddb496a9b1f",
-												"path" => "webshop/webshop-einrichten/cms-syntax/e-mail/email/link-basket",
+												"id" => "27cf55d302d21d16efb0bed05f9eca2f",
+												"path" => "webshop/webshop-einrichten/cms-syntax/e-mail/email/email-link-basket",
 												"position" => 10117,
-												"urlName" => "link-basket",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/e-mail/email/link-basket",
+												"urlName" => "email-link-basket",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/e-mail/email/email-link-basket",
 												"level" => 6,
 												"title" => "Link_Basket",
 												"keywords" => "Link_Basket",
@@ -13333,11 +13300,11 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "b615e83704ed630b74a5a31bb79280df",
-												"path" => "webshop/webshop-einrichten/cms-syntax/e-mail/email/link-item",
+												"id" => "b889b8a9798d8c1dbfd3338f5698fe48",
+												"path" => "webshop/webshop-einrichten/cms-syntax/e-mail/email/email-link-item",
 												"position" => 10119,
-												"urlName" => "link-item",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/e-mail/email/link-item",
+												"urlName" => "email-link-item",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/e-mail/email/email-link-item",
 												"level" => 6,
 												"title" => "Link_Item",
 												"keywords" => "Link_Item",
@@ -13365,11 +13332,11 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "73ef7b087ee2d1889d5011b402bdd32c",
-												"path" => "webshop/webshop-einrichten/cms-syntax/e-mail/email/link-termsconditions",
+												"id" => "c52980281557e86911bb0f5b49bc6006",
+												"path" => "webshop/webshop-einrichten/cms-syntax/e-mail/email/email-link-termsconditions",
 												"position" => 10121,
-												"urlName" => "link-termsconditions",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/e-mail/email/link-termsconditions",
+												"urlName" => "email-link-termsconditions",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/e-mail/email/email-link-termsconditions",
 												"level" => 6,
 												"title" => "Link_TermsConditions",
 												"keywords" => "Link_TermsConditions",
@@ -13381,11 +13348,11 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "d2f97f9a2b8d5822c7077e7a9a174775",
-												"path" => "webshop/webshop-einrichten/cms-syntax/e-mail/email/link-webstore",
+												"id" => "568b9b25b77830f990fce0c49fc2fc6e",
+												"path" => "webshop/webshop-einrichten/cms-syntax/e-mail/email/email-link-webstore",
 												"position" => 10122,
-												"urlName" => "link-webstore",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/e-mail/email/link-webstore",
+												"urlName" => "email-link-webstore",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/e-mail/email/email-link-webstore",
 												"level" => 6,
 												"title" => "Link_Webstore",
 												"keywords" => "Link_Webstore",
@@ -13397,11 +13364,11 @@ class Metadata {
 												"hasChildren" => false
 											],
 											[
-												"id" => "ed972e0ea88056dae70ab0a00cf785ec",
-												"path" => "webshop/webshop-einrichten/cms-syntax/e-mail/email/link-checkout",
+												"id" => "73e9371b50f1885bcc383c7a6707b526",
+												"path" => "webshop/webshop-einrichten/cms-syntax/e-mail/email/email-link-checkout",
 												"position" => 10125,
-												"urlName" => "link-checkout",
-												"url" => "/webshop/webshop-einrichten/cms-syntax/e-mail/email/link-checkout",
+												"urlName" => "email-link-checkout",
+												"url" => "/webshop/webshop-einrichten/cms-syntax/e-mail/email/email-link-checkout",
 												"level" => 6,
 												"title" => "Link_Checkout",
 												"keywords" => "Link_Checkout",
@@ -13433,11 +13400,11 @@ class Metadata {
 								"languageID" => "",
 								"children" => 								[
 									[
-										"id" => "199f42b52ee9ff737ec220f4e5c076c8",
-										"path" => "webshop/webshop-einrichten/cms-syntax/listing/listing",
+										"id" => "fd549c1d5da0b4cea4a031f5878f92a6",
+										"path" => "webshop/webshop-einrichten/cms-syntax/listing/syntax-listing",
 										"position" => 10001,
-										"urlName" => "listing",
-										"url" => "/webshop/webshop-einrichten/cms-syntax/listing/listing",
+										"urlName" => "syntax-listing",
+										"url" => "/webshop/webshop-einrichten/cms-syntax/listing/syntax-listing",
 										"level" => 5,
 										"title" => "Listing",
 										"keywords" => "Listing",
@@ -18564,10 +18531,10 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "3ecb5b54cdee4d765c1a54139cf2f8b7",
-								"path" => "videos/auftragsabwicklung/auftraege-abwickeln/erste-schritte",
+								"id" => "35a87c4fd5212359dbe78ffa8976c9fb",
+								"path" => "videos/auftragsabwicklung/auftraege-abwickeln/auftragsabwicklung-erste-schritte",
 								"position" => 10010,
-								"urlName" => "erste-schritte",
+								"urlName" => "auftragsabwicklung-erste-schritte",
 								"url" => "/videos/auftragsabwicklung/auftraege-abwickeln/erste-schritte",
 								"level" => 4,
 								"title" => "Deine ersten Schritte, um Aufträge abzuwickeln",
@@ -19322,10 +19289,10 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "f964c2857bff70ed487e3ff3aa5c144d",
-						"path" => "videos/webshop/erste-schritte",
+						"id" => "e423a2182c70f4796a916be714a15498",
+						"path" => "videos/webshop/webshop-erste-schritte",
 						"position" => 10010,
-						"urlName" => "erste-schritte",
+						"urlName" => "webshop-erste-schritte",
 						"url" => "/videos/webshop/erste-schritte",
 						"level" => 3,
 						"title" => "Erste Schritte mit deinem Online-Shop",
@@ -20463,11 +20430,11 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "f5d1fa83eae7074c904dfeb8e7398aa4",
-						"path" => "videos/amazon/artikel",
+						"id" => "92a3d4057333af1b5bb6092a1545440b",
+						"path" => "videos/amazon/amazon-artikel",
 						"position" => 10030,
-						"urlName" => "artikel",
-						"url" => "/videos/amazon/artikel",
+						"urlName" => "amazon-artikel",
+						"url" => "/videos/amazon/amazon-artikel",
 						"level" => 3,
 						"title" => "Artikel",
 						"keywords" => "",
@@ -20477,8 +20444,8 @@ class Metadata {
 						"languageID" => "TFZITWM",
 						"children" => 						[
 							[
-								"id" => "aed45e9a7f3631ddbc1a5cebfaaddbe8",
-								"path" => "videos/amazon/artikel/artikelexport-automatismen",
+								"id" => "bac795cd79533f01bf2614b002a6ce5f",
+								"path" => "videos/amazon/amazon-artikel/artikelexport-automatismen",
 								"position" => 0,
 								"urlName" => "artikelexport-automatismen",
 								"url" => "/videos/amazon/artikel/artikelexport-automatismen",
@@ -20493,8 +20460,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "fadac76b76a9effa5f7d3bee2bde99f8",
-								"path" => "videos/amazon/artikel/artikelexport-exporteinstellungen",
+								"id" => "f60cb46082201b7de5c5c8e1dea17cb5",
+								"path" => "videos/amazon/amazon-artikel/artikelexport-exporteinstellungen",
 								"position" => 0,
 								"urlName" => "artikelexport-exporteinstellungen",
 								"url" => "/videos/amazon/artikel/artikelexport-exporteinstellungen",
@@ -20509,8 +20476,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "adb6523d584b891160301310d798b85c",
-								"path" => "videos/amazon/artikel/artikelexport-exportfilter",
+								"id" => "994035241df5fe5c66ee0003e393a9ac",
+								"path" => "videos/amazon/amazon-artikel/artikelexport-exportfilter",
 								"position" => 0,
 								"urlName" => "artikelexport-exportfilter",
 								"url" => "/videos/amazon/artikel/artikelexport-exportfilter",
@@ -20525,8 +20492,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "9a75c87827bf8ebed6507d09c451922d",
-								"path" => "videos/amazon/artikel/eigenschaften-artikelinfos-hinterlegen",
+								"id" => "fd92c526bff0ad5749a38966d49d7baa",
+								"path" => "videos/amazon/amazon-artikel/eigenschaften-artikelinfos-hinterlegen",
 								"position" => 0,
 								"urlName" => "eigenschaften-artikelinfos-hinterlegen",
 								"url" => "/videos/amazon/artikel/eigenschaften-artikelinfos-hinterlegen",
@@ -20541,8 +20508,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "f7f5cd533bf2f124b3307fdec4e4c2c5",
-								"path" => "videos/amazon/artikel/eigenschaften-erstellen",
+								"id" => "1baa1dd01178f51ce39be93ae2e14315",
+								"path" => "videos/amazon/amazon-artikel/eigenschaften-erstellen",
 								"position" => 0,
 								"urlName" => "eigenschaften-erstellen",
 								"url" => "/videos/amazon/artikel/eigenschaften-erstellen",
@@ -20557,8 +20524,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "319380122dbeb02d7f06ef8add6fc15d",
-								"path" => "videos/amazon/artikel/eigenschaften-verknuepfen",
+								"id" => "de999d691d6dc6520d536c19f88b757d",
+								"path" => "videos/amazon/amazon-artikel/eigenschaften-verknuepfen",
 								"position" => 0,
 								"urlName" => "eigenschaften-verknuepfen",
 								"url" => "/videos/amazon/artikel/eigenschaften-verknuepfen",
@@ -20573,8 +20540,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "6fb7fd5c143b254564a83cc46d376fe3",
-								"path" => "videos/amazon/artikel/flat-files-fehlerbehebung",
+								"id" => "245780c923d326a965654d73cf6d2aa7",
+								"path" => "videos/amazon/amazon-artikel/flat-files-fehlerbehebung",
 								"position" => 0,
 								"urlName" => "flat-files-fehlerbehebung",
 								"url" => "/videos/amazon/artikel/flat-files-fehlerbehebung",
@@ -20589,8 +20556,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "cf5c551d14fe2a1368b0ed92ffcdda35",
-								"path" => "videos/amazon/artikel/flat-files-lagerbestandsdateivorlagen",
+								"id" => "28e61d5df2f8770bc15aae9ebfeda8af",
+								"path" => "videos/amazon/amazon-artikel/flat-files-lagerbestandsdateivorlagen",
 								"position" => 0,
 								"urlName" => "flat-files-lagerbestandsdateivorlagen",
 								"url" => "/videos/amazon/artikel/flat-files-lagerbestandsdateivorlagen",
@@ -20605,8 +20572,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "c7bd8f81b89474c2f2209243641d1766",
-								"path" => "videos/amazon/artikel/flat-files-struktur",
+								"id" => "82396d42bc4640e680f1fab6ad60c69a",
+								"path" => "videos/amazon/amazon-artikel/flat-files-struktur",
 								"position" => 0,
 								"urlName" => "flat-files-struktur",
 								"url" => "/videos/amazon/artikel/flat-files-struktur",
@@ -20621,8 +20588,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "6753df2f597b62138f20338dcc196645",
-								"path" => "videos/amazon/artikel/verkauf-attribute",
+								"id" => "2c104b393c949ffb358739ad8247df9d",
+								"path" => "videos/amazon/amazon-artikel/verkauf-attribute",
 								"position" => 0,
 								"urlName" => "verkauf-attribute",
 								"url" => "/videos/amazon/artikel/verkauf-attribute",
@@ -20637,8 +20604,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "067a5cc3a1148b2d258f5bb0f5c364e4",
-								"path" => "videos/amazon/artikel/verkauf-kategorie-verknuepfen",
+								"id" => "b251f46cec7507edb8ba11a0dcbaf6e8",
+								"path" => "videos/amazon/amazon-artikel/verkauf-kategorie-verknuepfen",
 								"position" => 0,
 								"urlName" => "verkauf-kategorie-verknuepfen",
 								"url" => "/videos/amazon/artikel/verkauf-kategorie-verknuepfen",
@@ -20653,8 +20620,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "cdb252c6ecd1367b46c5d1eecab1c2d0",
-								"path" => "videos/amazon/artikel/verkauf-lagerbestand-lieferzeit",
+								"id" => "4eb67d103ddfcf0eeb5f38c4e5d30e86",
+								"path" => "videos/amazon/amazon-artikel/verkauf-lagerbestand-lieferzeit",
 								"position" => 0,
 								"urlName" => "verkauf-lagerbestand-lieferzeit",
 								"url" => "/videos/amazon/artikel/verkauf-lagerbestand-lieferzeit",
@@ -20669,8 +20636,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "456131384a1dd69423490050494d19e3",
-								"path" => "videos/amazon/artikel/verkauf-name-beschreibung",
+								"id" => "92ab6da3125555cda5f669f983addc8e",
+								"path" => "videos/amazon/amazon-artikel/verkauf-name-beschreibung",
 								"position" => 0,
 								"urlName" => "verkauf-name-beschreibung",
 								"url" => "/videos/amazon/artikel/verkauf-name-beschreibung",
@@ -20685,8 +20652,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "991c72fd23f6adfb18e4a8b02600313e",
-								"path" => "videos/amazon/artikel/verkauf-verkaufspreis",
+								"id" => "644a18cfb1522fff292ea63f7724059a",
+								"path" => "videos/amazon/amazon-artikel/verkauf-verkaufspreis",
 								"position" => 0,
 								"urlName" => "verkauf-verkaufspreis",
 								"url" => "/videos/amazon/artikel/verkauf-verkaufspreis",
@@ -20701,8 +20668,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "7191042d775d8a651ed3dbfa40d0480f",
-								"path" => "videos/amazon/artikel/verkauf",
+								"id" => "060c36c1cd8d1acde60c99376aa388fc",
+								"path" => "videos/amazon/amazon-artikel/verkauf",
 								"position" => 10010,
 								"urlName" => "verkauf",
 								"url" => "/videos/amazon/artikel/verkauf",
@@ -20717,8 +20684,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "10fb2e0c8fdd617311fff66bc6edd7dc",
-								"path" => "videos/amazon/artikel/eigenschaften",
+								"id" => "a3e44f58ddfe4097887a22b399b9e7d7",
+								"path" => "videos/amazon/amazon-artikel/eigenschaften",
 								"position" => 10020,
 								"urlName" => "eigenschaften",
 								"url" => "/videos/amazon/artikel/eigenschaften",
@@ -20733,8 +20700,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "5a2b6bd8a45a1068a6169e5cfd91d2dc",
-								"path" => "videos/amazon/artikel/artikelexport",
+								"id" => "ae7d45922b83689655a54fec00776cd8",
+								"path" => "videos/amazon/amazon-artikel/artikelexport",
 								"position" => 10030,
 								"urlName" => "artikelexport",
 								"url" => "/videos/amazon/artikel/artikelexport",
@@ -20749,8 +20716,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "6a3b35a178f1754894c7eaf01116c703",
-								"path" => "videos/amazon/artikel/flat-files",
+								"id" => "eb6a8383a6dadd0404c414a1ada8b4b6",
+								"path" => "videos/amazon/amazon-artikel/flat-files",
 								"position" => 10040,
 								"urlName" => "flat-files",
 								"url" => "/videos/amazon/artikel/flat-files",
@@ -21186,10 +21153,10 @@ class Metadata {
 				"languageID" => "XFVWCDG",
 				"children" => 				[
 					[
-						"id" => "c88b0141b27f144b815364e2228960b4",
-						"path" => "videos/automatisierung/einstieg",
+						"id" => "16553bb20d9adfe413fce246d45d67bd",
+						"path" => "videos/automatisierung/automatisierung-einstieg",
 						"position" => 10010,
-						"urlName" => "einstieg",
+						"urlName" => "automatisierung-einstieg",
 						"url" => "/videos/automatisierung/einstieg",
 						"level" => 3,
 						"title" => "Einstieg",
@@ -21264,10 +21231,10 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "a96ce5d0f80d1b9ce605280e3ddb3f18",
-								"path" => "videos/automatisierung/ereignisaktionen/grundlagen",
+								"id" => "77e537d95fdc9e36c87c25a9e698cf0c",
+								"path" => "videos/automatisierung/ereignisaktionen/ereignisaktionen-grundlagen",
 								"position" => 10010,
-								"urlName" => "grundlagen",
+								"urlName" => "ereignisaktionen-grundlagen",
 								"url" => "/videos/automatisierung/ereignisaktionen/grundlagen",
 								"level" => 4,
 								"title" => "Grundlagen der Ereignisaktionen",
@@ -21729,10 +21696,10 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "b3d580e1b46c4c9e8843c3d7f6439f11",
-								"path" => "videos/automatisierung/prozesse/import-export",
+								"id" => "c57b9ea927bf38a30f0a78378e67264b",
+								"path" => "videos/automatisierung/prozesse/prozesse-import-export",
 								"position" => 10060,
-								"urlName" => "import-export",
+								"urlName" => "prozesse-import-export",
 								"url" => "/videos/automatisierung/prozesse/import-export",
 								"level" => 4,
 								"title" => "Import und Export von Prozessen",
@@ -21893,11 +21860,11 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "1cb0d7df7d64e86c0a399594d4da0110",
-						"path" => "videos/datenuebernahme/grundlagen",
+						"id" => "b7d20798136ac4d762b062b637972c51",
+						"path" => "videos/datenuebernahme/datenuebernahme-grundlagen",
 						"position" => 10020,
-						"urlName" => "grundlagen",
-						"url" => "/videos/datenuebernahme/grundlagen",
+						"urlName" => "datenuebernahme-grundlagen",
+						"url" => "/videos/datenuebernahme/datenuebernahme-grundlagen",
 						"level" => 3,
 						"title" => "Grundlagen",
 						"keywords" => "",
@@ -21907,8 +21874,8 @@ class Metadata {
 						"languageID" => "",
 						"children" => 						[
 							[
-								"id" => "79698821bf20f6c2377b96fef36669f7",
-								"path" => "videos/datenuebernahme/grundlagen/artikel-manuell-importieren-bestand-abgleichen",
+								"id" => "4b90fef52569a6dad4167dd7a04fdf0a",
+								"path" => "videos/datenuebernahme/datenuebernahme-grundlagen/artikel-manuell-importieren-bestand-abgleichen",
 								"position" => 0,
 								"urlName" => "artikel-manuell-importieren-bestand-abgleichen",
 								"url" => "/videos/datenuebernahme/grundlagen/artikel-manuell-importieren-bestand-abgleichen",
@@ -21923,8 +21890,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "e31cab532614d8c5b954015ed258ad29",
-								"path" => "videos/datenuebernahme/grundlagen/artikel-manuell-importieren-filter-einstellen",
+								"id" => "b419c3f5f759d7bc39b6d3acb08280a6",
+								"path" => "videos/datenuebernahme/datenuebernahme-grundlagen/artikel-manuell-importieren-filter-einstellen",
 								"position" => 0,
 								"urlName" => "artikel-manuell-importieren-filter-einstellen",
 								"url" => "/videos/datenuebernahme/grundlagen/artikel-manuell-importieren-filter-einstellen",
@@ -21939,8 +21906,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "8f70fdadf674990bab6394b749b913b0",
-								"path" => "videos/datenuebernahme/grundlagen/artikel-manuell-importieren-preis-aktualisieren",
+								"id" => "2664411dd2615e9fd4622699448a1c76",
+								"path" => "videos/datenuebernahme/datenuebernahme-grundlagen/artikel-manuell-importieren-preis-aktualisieren",
 								"position" => 0,
 								"urlName" => "artikel-manuell-importieren-preis-aktualisieren",
 								"url" => "/videos/datenuebernahme/grundlagen/artikel-manuell-importieren-preis-aktualisieren",
@@ -21955,8 +21922,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "b8114a38f32fb7947b170f672e622ba4",
-								"path" => "videos/datenuebernahme/grundlagen/datenimport-mit-elasticsync-csv-datei-hochladen",
+								"id" => "7040c516871912e23d52e8586ffe31df",
+								"path" => "videos/datenuebernahme/datenuebernahme-grundlagen/datenimport-mit-elasticsync-csv-datei-hochladen",
 								"position" => 0,
 								"urlName" => "datenimport-mit-elasticsync-csv-datei-hochladen",
 								"url" => "/videos/datenuebernahme/grundlagen/datenimport-mit-elasticsync-csv-datei-hochladen",
@@ -21971,8 +21938,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "778f712e4a26ad825fa6958b9f10a702",
-								"path" => "videos/datenuebernahme/grundlagen/datenimport-mit-elasticsync-daten-abgleichen-und-zuordnen",
+								"id" => "55d317dc33da32717ca053dc410070a2",
+								"path" => "videos/datenuebernahme/datenuebernahme-grundlagen/datenimport-mit-elasticsync-daten-abgleichen-und-zuordnen",
 								"position" => 0,
 								"urlName" => "datenimport-mit-elasticsync-daten-abgleichen-und-zuordnen",
 								"url" => "/videos/datenuebernahme/grundlagen/datenimport-mit-elasticsync-daten-abgleichen-und-zuordnen",
@@ -21987,8 +21954,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "2f26a1ab56a43a3818bd850d0fa86689",
-								"path" => "videos/datenuebernahme/grundlagen/datenimport-mit-elasticsync-import-starten",
+								"id" => "043a1877d6cbd39aa2ffaa5f411e8615",
+								"path" => "videos/datenuebernahme/datenuebernahme-grundlagen/datenimport-mit-elasticsync-import-starten",
 								"position" => 0,
 								"urlName" => "datenimport-mit-elasticsync-import-starten",
 								"url" => "/videos/datenuebernahme/grundlagen/datenimport-mit-elasticsync-import-starten",
@@ -22003,8 +21970,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "5a0ab6424fb87cab7e81aff54cd48408",
-								"path" => "videos/datenuebernahme/grundlagen/datenimport-mit-elasticsync",
+								"id" => "dc54027f48c66044595834d5c74d8521",
+								"path" => "videos/datenuebernahme/datenuebernahme-grundlagen/datenimport-mit-elasticsync",
 								"position" => 10010,
 								"urlName" => "datenimport-mit-elasticsync",
 								"url" => "/videos/datenuebernahme/grundlagen/datenimport-mit-elasticsync",
@@ -22019,8 +21986,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "6bc77176973b314f8ca0e38c76c569bf",
-								"path" => "videos/datenuebernahme/grundlagen/artikel-manuell-importieren",
+								"id" => "afc66ba8579f7b0a20edd92ae88c7d56",
+								"path" => "videos/datenuebernahme/datenuebernahme-grundlagen/artikel-manuell-importieren",
 								"position" => 10020,
 								"urlName" => "artikel-manuell-importieren",
 								"url" => "/videos/datenuebernahme/grundlagen/artikel-manuell-importieren",
@@ -22035,8 +22002,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "79f34423963eb304338a742071f2dd18",
-								"path" => "videos/datenuebernahme/grundlagen/daten-automatisch-importieren",
+								"id" => "9d9d781154d4e08a366932194a99371a",
+								"path" => "videos/datenuebernahme/datenuebernahme-grundlagen/daten-automatisch-importieren",
 								"position" => 10030,
 								"urlName" => "daten-automatisch-importieren",
 								"url" => "/videos/datenuebernahme/grundlagen/daten-automatisch-importieren",
@@ -22293,10 +22260,10 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "67278f9f02f9ddf9c674a1ef88049495",
-								"path" => "videos/datenuebernahme/praxisbeispiele/import-export",
+								"id" => "edd2dbbb08cd3ca463086b86e6947ab0",
+								"path" => "videos/datenuebernahme/praxisbeispiele/praxisbeispiele-import-export",
 								"position" => 10010,
-								"urlName" => "import-export",
+								"urlName" => "praxisbeispiele-import-export",
 								"url" => "/videos/datenuebernahme/praxisbeispiele/import-export",
 								"level" => 4,
 								"title" => "Syncs importieren und exportieren",
@@ -22361,10 +22328,10 @@ class Metadata {
 				"languageID" => "DPEZCKT",
 				"children" => 				[
 					[
-						"id" => "1b2ff405b9b216272110e239883cc216",
-						"path" => "videos/pos/einstieg",
+						"id" => "024da9e690498d691b34e79bb0a9632d",
+						"path" => "videos/pos/pos-einstieg",
 						"position" => 10010,
-						"urlName" => "einstieg",
+						"urlName" => "pos-einstieg",
 						"url" => "/videos/pos/einstieg",
 						"level" => 3,
 						"title" => "Einstieg",
@@ -23195,7 +23162,7 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 12. Januar 2022",
+		"navAlias" => "Changelog 19. Januar 2022",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
@@ -23213,6 +23180,22 @@ class Metadata {
 				"linkListInto" => "Willkommen im Themenbereich Changelogs Januar 2022. Hier findest du folgende Informationen:",
 				"languageID" => "",
 				"children" => 				[
+					[
+						"id" => "14e8f83bb2cd6ada2cb39d97f7dd4489",
+						"path" => "changelog/januar-2022/2022-01-12",
+						"position" => 10820,
+						"urlName" => "2022-01-12",
+						"url" => "/changelog/januar-2022/2022-01-12",
+						"level" => 3,
+						"title" => "Changelog 12. Januar 2022",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Changelog 12. Januar 2022. Hier findest du folgende Informationen:",
+						"languageID" => "",
+						"children" => [],
+						"hasChildren" => false
+					],
 					[
 						"id" => "4bdd849b1473dd2278d4ea7f901c8969",
 						"path" => "changelog/januar-2022/2022-01-05",
@@ -25920,85 +25903,52 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "9cde0410aa704e8f90aff93b935764b7",
-						"path" => "item/import-export-create/create",
+						"id" => "f94bd171c30d14223cd7616733334f7a",
+						"path" => "item/import-export-create/new-item",
 						"position" => 30,
-						"urlName" => "create",
-						"url" => "/en/item/import-export-create/create",
+						"urlName" => "new-item",
+						"url" => "/en/item/import-export-create/create/new-item",
 						"level" => 3,
-						"title" => "Manual processing",
-						"keywords" => "",
-						"description" => "Learn how to manually create item data in plentymarkets.",
+						"title" => "Manually creating items",
+						"keywords" => "Create item, Create items, Creating items, Create item data, Add item, Add items, Adding items, Add item data, Create variation, Create variations, Create variation data, Item creation, Manually create items, New item, New items, New variation, New variations, New product, New products, Variation creation, Item creation",
+						"description" => "Learn how to manually create items and variations.",
 						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Manual processing. The following information is available:",
-						"languageID" => "0PUDF05",
-						"children" => 						[
-							[
-								"id" => "9fe155b5ad43a621c22bc71db1bfba8d",
-								"path" => "item/import-export-create/create/new-item",
-								"position" => 10,
-								"urlName" => "new-item",
-								"url" => "/en/item/import-export-create/create/new-item",
-								"level" => 4,
-								"title" => "Creating new items",
-								"keywords" => "Create item, Create items, Creating items, Create item data, Add item, Add items, Adding items, Add item data, Create variation, Create variations, Create variation data, Item creation, Manually create items, New item, New items, New variation, New variations, New product, New products, Variation creation, Item creation",
-								"description" => "Learn how to manually create items and variations.",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Creating new items. The following information is available:",
-								"languageID" => "MNYRNTL",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "2be19789394243e967d364592e671b8c",
-								"path" => "item/import-export-create/create/directory",
-								"position" => 30,
-								"urlName" => "directory",
-								"url" => "/en/item/managing-items",
-								"level" => 4,
-								"title" => "Directory of data fields",
-								"keywords" => "Item data, Item data record, Item data records, Item data field, Item data fields, Item management, Manage items, Managing items, Item editing, Edit items, Editing items, Item processing, Process items, Processing items, Manually edit items, Manually process items, Item » Edit item",
-								"description" => "Explanations of the tabs and data fields within an item data record.",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Directory of data fields. The following information is available:",
-								"languageID" => "ZVYHQWL",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "8e2d9c657cbdbd323cef27e357cec337",
-								"path" => "item/import-export-create/create/mass-processing",
-								"position" => 40,
-								"urlName" => "mass-processing",
-								"url" => "/en/item/import-export-create/create/mass-processing",
-								"level" => 4,
-								"title" => "Mass processing",
-								"keywords" => "Mass production, Mass processing, Mass editing, Batch processing, Batch process, Batch editing, Group function, Group functions, Editing multiple items at once, Editing multiple items simultaneously, Simultaneous editing, Search &amp; replace, Search and replace, Copy item, Copy items, Copying item, Copying items",
-								"description" => "plentymarkets includes various mass processing functions. Learn how to edit several items or variations at once.",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Mass processing. The following information is available:",
-								"languageID" => "S71L7WQ",
-								"children" => [],
-								"hasChildren" => false
-							],
-							[
-								"id" => "12b426a7496e00aa96c723443f9452fb",
-								"path" => "item/import-export-create/create/design-editing-window",
-								"position" => 50,
-								"urlName" => "design-editing-window",
-								"url" => "/en/item/import-export-create/create/design-editing-window",
-								"level" => 4,
-								"title" => "Customising the tab names",
-								"keywords" => "",
-								"description" => "This page teaches you how to customise the names of tabs.",
-								"navAlias" => "",
-								"linkListInto" => "Welcome to the topic Customising the tab names. The following information is available:",
-								"languageID" => "864QUOC",
-								"children" => [],
-								"hasChildren" => false
-							]
-						],
-						"hasChildren" => true
+						"linkListInto" => "Welcome to the topic Manually creating items. The following information is available:",
+						"languageID" => "MNYRNTL",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "3aefd327bcf482d9c7f3dd5485c1a2e5",
+						"path" => "item/import-export-create/import-export-create-directory",
+						"position" => 40,
+						"urlName" => "import-export-create-directory",
+						"url" => "/en/item/managing-items",
+						"level" => 3,
+						"title" => "Directory of data fields",
+						"keywords" => "Item data, Item data record, Item data records, Item data field, Item data fields, Item management, Manage items, Managing items, Item editing, Edit items, Editing items, Item processing, Process items, Processing items, Manually edit items, Manually process items, Item » Edit item",
+						"description" => "Explanations of the tabs and data fields within an item data record.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Directory of data fields. The following information is available:",
+						"languageID" => "ZVYHQWL",
+						"children" => [],
+						"hasChildren" => false
+					],
+					[
+						"id" => "394178eeb08e06e77993622fb719640a",
+						"path" => "item/import-export-create/mass-processing",
+						"position" => 50,
+						"urlName" => "mass-processing",
+						"url" => "/en/item/import-export-create/create/mass-processing",
+						"level" => 3,
+						"title" => "Mass processing",
+						"keywords" => "Mass production, Mass processing, Mass editing, Batch processing, Batch process, Batch editing, Group function, Group functions, Editing multiple items at once, Editing multiple items simultaneously, Simultaneous editing, Search &amp; replace, Search and replace, Copy item, Copy items, Copying item, Copying items",
+						"description" => "plentymarkets includes various mass processing functions. Learn how to edit several items or variations at once.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Mass processing. The following information is available:",
+						"languageID" => "S71L7WQ",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -28628,10 +28578,10 @@ class Metadata {
 								"languageID" => "",
 								"children" => 								[
 									[
-										"id" => "98a4cc1e68f2b8442a3e50bba972d823",
-										"path" => "data/exporting-data/FormatDesigner/format-types/item",
+										"id" => "4f808898b760c7a313a680c141f87866",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-item",
 										"position" => 10,
-										"urlName" => "item",
+										"urlName" => "formatdesigner-item",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/item",
 										"level" => 5,
 										"title" => "Item",
@@ -28644,10 +28594,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "16848c6b6e752bae4dfa019ff434eb5f",
-										"path" => "data/exporting-data/FormatDesigner/format-types/item-images",
+										"id" => "aa362802a0c046c110788f9bef435766",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-item-images",
 										"position" => 20,
-										"urlName" => "item-images",
+										"urlName" => "formatdesigner-item-images",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/item-images",
 										"level" => 5,
 										"title" => "Item images",
@@ -28660,10 +28610,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "435c08901f7dacba072d5133d62db13f",
-										"path" => "data/exporting-data/FormatDesigner/format-types/attributes",
+										"id" => "94843d3fc6581a54b516f26e99b098a0",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-attributes",
 										"position" => 30,
-										"urlName" => "attributes",
+										"urlName" => "formatdesigner-attributes",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/attributes",
 										"level" => 5,
 										"title" => "Attribute",
@@ -28676,10 +28626,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "32369e4ac37896bf41d3e5fec253547a",
-										"path" => "data/exporting-data/FormatDesigner/format-types/orders",
+										"id" => "d3f5a046a65592dbd3b1cb0e97448491",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-orders",
 										"position" => 40,
-										"urlName" => "orders",
+										"urlName" => "formatdesigner-orders",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/orders",
 										"level" => 5,
 										"title" => "Orders",
@@ -28692,10 +28642,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "44f983cf83915eab48d948ab0ae28a89",
-										"path" => "data/exporting-data/FormatDesigner/format-types/order-items",
+										"id" => "f1c128fae58da8cf0817dc565db44d5a",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-order-items",
 										"position" => 50,
-										"urlName" => "order-items",
+										"urlName" => "formatdesigner-order-items",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/order-items",
 										"level" => 5,
 										"title" => "Order items",
@@ -28708,10 +28658,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "afd5104d4f1a6902856feba7993fcb67",
-										"path" => "data/exporting-data/FormatDesigner/format-types/purchase-order-item",
+										"id" => "c0a455af3d3ca5e26e48a4db7462a402",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-purchase-order-item",
 										"position" => 55,
-										"urlName" => "purchase-order-item",
+										"urlName" => "formatdesigner-purchase-order-item",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/purchase-order-items",
 										"level" => 5,
 										"title" => "Purchase order items",
@@ -28724,10 +28674,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "995d44fe1a7234032637bccf1f386775",
-										"path" => "data/exporting-data/FormatDesigner/format-types/newsletter-recipient",
+										"id" => "4a8023878e014012e86222c9c2dd31c5",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-newsletter-recipient",
 										"position" => 60,
-										"urlName" => "newsletter-recipient",
+										"urlName" => "formatdesigner-newsletter-recipient",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/newsletter-recipient",
 										"level" => 5,
 										"title" => "Newsletter Recipient",
@@ -28740,10 +28690,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "a5c69eea4a197cb9e73520b598e5eda4",
-										"path" => "data/exporting-data/FormatDesigner/format-types/purchase-order",
+										"id" => "bb543d284c727687b688e5f84f3d9b0f",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-purchase-order",
 										"position" => 60,
-										"urlName" => "purchase-order",
+										"urlName" => "formatdesigner-purchase-order",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/purchase-order",
 										"level" => 5,
 										"title" => "PurchaseOrder",
@@ -28756,10 +28706,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "992aa0155a7c648d0e654e57c4618741",
-										"path" => "data/exporting-data/FormatDesigner/format-types/properties",
+										"id" => "d4a296eafac76a6e0a607ddb24458f53",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-properties",
 										"position" => 70,
-										"urlName" => "properties",
+										"urlName" => "formatdesigner-properties",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/properties",
 										"level" => 5,
 										"title" => "Properties",
@@ -28772,10 +28722,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "abefd740daf1c39a43621c32bed3411d",
-										"path" => "data/exporting-data/FormatDesigner/format-types/facet",
+										"id" => "aaec540c03b172970d7274f5cf99d926",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-facet",
 										"position" => 80,
-										"urlName" => "facet",
+										"urlName" => "formatdesigner-facet",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/facet",
 										"level" => 5,
 										"title" => "facet",
@@ -28788,10 +28738,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "a58bf87d2930fc4a52c3e542af9e8f1b",
-										"path" => "data/exporting-data/FormatDesigner/format-types/facetvalue",
+										"id" => "95bd4362b4c67f981513069216f9de78",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-facetvalue",
 										"position" => 90,
-										"urlName" => "facetvalue",
+										"urlName" => "formatdesigner-facetvalue",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/facetvalue",
 										"level" => 5,
 										"title" => "facetValue",
@@ -28804,10 +28754,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "f1db911e518e5925da794c0bbf6402a4",
-										"path" => "data/exporting-data/FormatDesigner/format-types/facetvalue-link",
+										"id" => "04585e7f7e6a08558399dd209de1d6eb",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-facetvalue-link",
 										"position" => 100,
-										"urlName" => "facetvalue-link",
+										"urlName" => "formatdesigner-facetvalue-link",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/facetvalue-link",
 										"level" => 5,
 										"title" => "facetValueReference",
@@ -28820,10 +28770,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "40cceae4b740d4f5ea641a1cbe05a3c1",
-										"path" => "data/exporting-data/FormatDesigner/format-types/manufacturers",
+										"id" => "3899f88044bf1eb0131fdd373741b7f0",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-manufacturers",
 										"position" => 110,
-										"urlName" => "manufacturers",
+										"urlName" => "formatdesigner-manufacturers",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/manufacturers",
 										"level" => 5,
 										"title" => "Manufacturers",
@@ -28836,10 +28786,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "91ed18efed083d21404586d39165c8c7",
-										"path" => "data/exporting-data/FormatDesigner/format-types/categories",
+										"id" => "67bb2c4e3ac45a89bc17100c9abb3ae1",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-categories",
 										"position" => 120,
-										"urlName" => "categories",
+										"urlName" => "formatdesigner-categories",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/categories",
 										"level" => 5,
 										"title" => "Categories",
@@ -28852,10 +28802,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "9e0a6a3692c2e2b850134d4bcd7127c7",
-										"path" => "data/exporting-data/FormatDesigner/format-types/contacts",
+										"id" => "c93a0bd561b707011fe945ef45fc3fc8",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-contacts",
 										"position" => 130,
-										"urlName" => "contacts",
+										"urlName" => "formatdesigner-contacts",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/contacts",
 										"level" => 5,
 										"title" => "Contacts",
@@ -28868,10 +28818,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "030dc962a0ef6e31d72713dfb7dbad72",
-										"path" => "data/exporting-data/FormatDesigner/format-types/warehouses",
+										"id" => "2aefbd035f4a8548a35a8a85636af99d",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-warehouses",
 										"position" => 130,
-										"urlName" => "warehouses",
+										"urlName" => "formatdesigner-warehouses",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/warehouses",
 										"level" => 5,
 										"title" => "Warehouses",
@@ -28884,10 +28834,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "a6a5ecd2fe58797320d026f68c3dc00f",
-										"path" => "data/exporting-data/FormatDesigner/format-types/listing",
+										"id" => "33cf3803c2a2c30d313cce2f713c535f",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-listing",
 										"position" => 140,
-										"urlName" => "listing",
+										"urlName" => "formatdesigner-listing",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/listing",
 										"level" => 5,
 										"title" => "Listing",
@@ -28900,10 +28850,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "8d38c59b644af01789ae13c0762d8831",
-										"path" => "data/exporting-data/FormatDesigner/format-types/active-listings",
+										"id" => "8dc3199b45bc34e91240f444d6a3e095",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-active-listings",
 										"position" => 150,
-										"urlName" => "active-listings",
+										"urlName" => "formatdesigner-active-listings",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/active-listings",
 										"level" => 5,
 										"title" => "Active listings",
@@ -28916,10 +28866,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "e568785e69e64e5ed8e662b077edcd8c",
-										"path" => "data/exporting-data/FormatDesigner/format-types/stock",
+										"id" => "0cbe20547082e8edc711eb07bfd61117",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-stock",
 										"position" => 160,
-										"urlName" => "stock",
+										"urlName" => "formatdesigner-stock",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/stock",
 										"level" => 5,
 										"title" => "stock",
@@ -28932,10 +28882,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "22b587efda17e968012c1d7d11b0aa1d",
-										"path" => "data/exporting-data/FormatDesigner/format-types/stock-movement",
+										"id" => "a389cb1f8319527a53e12f5938e4e458",
+										"path" => "data/exporting-data/FormatDesigner/format-types/formatdesigner-stock-movement",
 										"position" => 170,
-										"urlName" => "stock-movement",
+										"urlName" => "formatdesigner-stock-movement",
 										"url" => "/en/data/exporting-data/FormatDesigner/format-types/stock-movement",
 										"level" => 5,
 										"title" => "stockMovement",
@@ -29243,10 +29193,10 @@ class Metadata {
 						"languageID" => "090WP3K",
 						"children" => 						[
 							[
-								"id" => "d2b193b533043d6046d35eb7504d3bf4",
-								"path" => "data/deprecated-tools/export-import/exporting-data",
+								"id" => "597466dc05600de6273bd41ac2a418d9",
+								"path" => "data/deprecated-tools/export-import/deprecated-tools-exporting-data",
 								"position" => 10,
-								"urlName" => "exporting-data",
+								"urlName" => "deprecated-tools-exporting-data",
 								"url" => "/en/data/export-import/exporting-data",
 								"level" => 4,
 								"title" => "Exporting data with the dynamic export",
@@ -29529,10 +29479,10 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
-										"id" => "b18fa27b0c152ca231539efa7d1fa886",
-										"path" => "data/deprecated-tools/export-import/data-formats/item",
+										"id" => "2c6bdf1d56807aadcee2c47f3cd714e9",
+										"path" => "data/deprecated-tools/export-import/data-formats/deprecated-tools-item",
 										"position" => 10110,
-										"urlName" => "item",
+										"urlName" => "deprecated-tools-item",
 										"url" => "/en/data/export-import/data-formats/item",
 										"level" => 5,
 										"title" => "Item",
@@ -45075,10 +45025,10 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "5b6b98a1a949e663b98614c1b3dcc3f5",
-						"path" => "videos/amazon/introduction",
+						"id" => "8de678672b28b3e3676bc942d3a60c52",
+						"path" => "videos/amazon/amazon-introduction",
 						"position" => 10010,
-						"urlName" => "introduction",
+						"urlName" => "amazon-introduction",
 						"url" => "/en/videos/amazon/introduction",
 						"level" => 3,
 						"title" => "Introduction to the Amazon module",
@@ -45107,11 +45057,11 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "e245f48cbd11258f9535353cf8e3a8cd",
-						"path" => "videos/amazon/items",
+						"id" => "e4897982d13e58148971fcb7f8113f7c",
+						"path" => "videos/amazon/amazon-items",
 						"position" => 10030,
-						"urlName" => "items",
-						"url" => "/en/videos/amazon/items",
+						"urlName" => "amazon-items",
+						"url" => "/en/videos/amazon/amazon-items",
 						"level" => 3,
 						"title" => "Items",
 						"keywords" => "",
@@ -45121,8 +45071,8 @@ class Metadata {
 						"languageID" => "TFZITWM",
 						"children" => 						[
 							[
-								"id" => "382c027b8345f3cc6e49deeda9026ff0",
-								"path" => "videos/amazon/items/export-items",
+								"id" => "e689bd641d6ad1b14ebbdedba5e342e2",
+								"path" => "videos/amazon/amazon-items/export-items",
 								"position" => 0,
 								"urlName" => "export-items",
 								"url" => "/en/videos/amazon/items/export-items",
@@ -45137,8 +45087,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "bbaac3003208640d979a07855115a98d",
-								"path" => "videos/amazon/items/export-sku",
+								"id" => "3f3df9ab61d18bc0814d53de00b0d2e7",
+								"path" => "videos/amazon/amazon-items/export-sku",
 								"position" => 0,
 								"urlName" => "export-sku",
 								"url" => "/en/videos/amazon/items/export-sku",
@@ -45153,8 +45103,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "9c76c830ac4a87c7d80f585ac50cc202",
-								"path" => "videos/amazon/items/export-transmit-items",
+								"id" => "2af3b1aa5045e95407947aafd5ec3f39",
+								"path" => "videos/amazon/amazon-items/export-transmit-items",
 								"position" => 0,
 								"urlName" => "export-transmit-items",
 								"url" => "/en/videos/amazon/items/export-transmit-items",
@@ -45169,8 +45119,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "a660b5d3047bd6222e9de21d7791023a",
-								"path" => "videos/amazon/items/export-update-prices-stock",
+								"id" => "2ef9e547f7d5c718e5234508d7891f9a",
+								"path" => "videos/amazon/amazon-items/export-update-prices-stock",
 								"position" => 0,
 								"urlName" => "export-update-prices-stock",
 								"url" => "/en/videos/amazon/items/export-update-prices-stock",
@@ -45185,8 +45135,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "f992d508fc9d2af962cfce04ab9b746d",
-								"path" => "videos/amazon/items/flat-files-structure",
+								"id" => "020e5f6200620f61f13c89fc640f3a05",
+								"path" => "videos/amazon/amazon-items/flat-files-structure",
 								"position" => 0,
 								"urlName" => "flat-files-structure",
 								"url" => "/en/videos/amazon/items/flat-files-structure",
@@ -45201,8 +45151,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "f9e3312955e848af326bbe3d3b2e2b76",
-								"path" => "videos/amazon/items/flat-files-troubleshooting",
+								"id" => "607df3e6e26666e9dd01f768cccc3713",
+								"path" => "videos/amazon/amazon-items/flat-files-troubleshooting",
 								"position" => 0,
 								"urlName" => "flat-files-troubleshooting",
 								"url" => "/en/videos/amazon/items/flat-files-troubleshooting",
@@ -45217,8 +45167,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "b134d62d54f85d229cbb85c05a28afb4",
-								"path" => "videos/amazon/items/properties-add",
+								"id" => "037457948042fda729afe91926fc8410",
+								"path" => "videos/amazon/amazon-items/properties-add",
 								"position" => 0,
 								"urlName" => "properties-add",
 								"url" => "/en/videos/amazon/items/properties-add",
@@ -45233,8 +45183,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "088f7dfa60fe83deeaae71f5b09850ba",
-								"path" => "videos/amazon/items/properties-create",
+								"id" => "b8375609e5317dacb331b190283b1152",
+								"path" => "videos/amazon/amazon-items/properties-create",
 								"position" => 0,
 								"urlName" => "properties-create",
 								"url" => "/en/videos/amazon/items/properties-create",
@@ -45249,8 +45199,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "2185ae18c3d5787b015e96145d523069",
-								"path" => "videos/amazon/items/properties-link",
+								"id" => "d57c9d92d8289e41e4a9d0ab97e83345",
+								"path" => "videos/amazon/amazon-items/properties-link",
 								"position" => 0,
 								"urlName" => "properties-link",
 								"url" => "/en/videos/amazon/items/properties-link",
@@ -45265,8 +45215,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "bf48de35662464b4e3d597cef0c62f25",
-								"path" => "videos/amazon/items/sale-display-items-with-sales-price",
+								"id" => "f497e01bf5c981f51383845b42322a4c",
+								"path" => "videos/amazon/amazon-items/sale-display-items-with-sales-price",
 								"position" => 0,
 								"urlName" => "sale-display-items-with-sales-price",
 								"url" => "/en/videos/amazon/items/sale-display-items-with-sales-price",
@@ -45281,8 +45231,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "ed4daef438897e68afe4f7035ca9af69",
-								"path" => "videos/amazon/items/sale-item-name-description",
+								"id" => "803bf1b6cff8ae9453d5fb09b7e52c87",
+								"path" => "videos/amazon/amazon-items/sale-item-name-description",
 								"position" => 0,
 								"urlName" => "sale-item-name-description",
 								"url" => "/en/videos/amazon/items/sale-item-name-description",
@@ -45297,8 +45247,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "9e2417a20467257b84c76797f6587dce",
-								"path" => "videos/amazon/items/sale-match-attributes",
+								"id" => "df024a0ae7321dea221a3f223fef4d3a",
+								"path" => "videos/amazon/amazon-items/sale-match-attributes",
 								"position" => 0,
 								"urlName" => "sale-match-attributes",
 								"url" => "/en/videos/amazon/items/sale-match-attributes",
@@ -45313,8 +45263,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "65c106ef8527c5c134f0a8df9875681a",
-								"path" => "videos/amazon/items/sale-sort-items-into-categories",
+								"id" => "66d7058fa0bd540fc58e51fb767efdec",
+								"path" => "videos/amazon/amazon-items/sale-sort-items-into-categories",
 								"position" => 0,
 								"urlName" => "sale-sort-items-into-categories",
 								"url" => "/en/videos/amazon/items/sale-sort-items-into-categories",
@@ -45329,8 +45279,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "3caa01378c087abc46b5c4f927e1226b",
-								"path" => "videos/amazon/items/sale-stock-level-delivery-time",
+								"id" => "d2117f8cc2896076fd338682d96d2db0",
+								"path" => "videos/amazon/amazon-items/sale-stock-level-delivery-time",
 								"position" => 0,
 								"urlName" => "sale-stock-level-delivery-time",
 								"url" => "/en/videos/amazon/items/sale-stock-level-delivery-time",
@@ -45345,8 +45295,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "3c1a7efbf0457db2877fe983fd6b2939",
-								"path" => "videos/amazon/items/sale",
+								"id" => "3c3ba5b5da2f8828cd84f53d3f558cb8",
+								"path" => "videos/amazon/amazon-items/sale",
 								"position" => 10010,
 								"urlName" => "sale",
 								"url" => "/en/videos/amazon/items/sale",
@@ -45361,8 +45311,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "52b1a449bd2ce759473c914a393caffa",
-								"path" => "videos/amazon/items/properties",
+								"id" => "67dca013219c3571d3d3872ee59a30e8",
+								"path" => "videos/amazon/amazon-items/properties",
 								"position" => 10020,
 								"urlName" => "properties",
 								"url" => "/en/videos/amazon/items/properties",
@@ -45377,8 +45327,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "8538d77630656b484f3c68d9747a0a34",
-								"path" => "videos/amazon/items/export",
+								"id" => "72d02e66d7391b48364fef7fecb236e7",
+								"path" => "videos/amazon/amazon-items/export",
 								"position" => 10030,
 								"urlName" => "export",
 								"url" => "/en/videos/amazon/items/export",
@@ -45393,8 +45343,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "2e4ce7ecd067be650254c1b567faf1fa",
-								"path" => "videos/amazon/items/flat-files",
+								"id" => "da709986035406a8b3473ef49d3fa310",
+								"path" => "videos/amazon/amazon-items/flat-files",
 								"position" => 10040,
 								"urlName" => "flat-files",
 								"url" => "/en/videos/amazon/items/flat-files",
@@ -45830,10 +45780,10 @@ class Metadata {
 				"languageID" => "XFVWCDG",
 				"children" => 				[
 					[
-						"id" => "c52a7380a99d2351ff359edfead1e7dd",
-						"path" => "videos/automation/introduction",
+						"id" => "c2b4a0ea830214ceaad9f8c264828239",
+						"path" => "videos/automation/automation-introduction",
 						"position" => 10010,
-						"urlName" => "introduction",
+						"urlName" => "automation-introduction",
 						"url" => "/en/videos/automation/introduction",
 						"level" => 3,
 						"title" => "Introduction",
@@ -45908,10 +45858,10 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "8637dcc54b34b84dd192366107889932",
-								"path" => "videos/automation/event-procedures/introduction",
+								"id" => "b2d11e4b327f7ddabeaf5c19c151896f",
+								"path" => "videos/automation/event-procedures/event-procedures-introduction",
 								"position" => 10010,
-								"urlName" => "introduction",
+								"urlName" => "event-procedures-introduction",
 								"url" => "/en/videos/automation/event-procedures/introduction",
 								"level" => 4,
 								"title" => "Introduction to event procedures",
@@ -46373,10 +46323,10 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "87d216287556fbe83c29589cccf8ed24",
-								"path" => "videos/automation/processes/import-export",
+								"id" => "93a056a0e70da71f2f77ffe7973d2403",
+								"path" => "videos/automation/processes/processes-import-export",
 								"position" => 10060,
-								"urlName" => "import-export",
+								"urlName" => "processes-import-export",
 								"url" => "/en/videos/automation/processes/import-export",
 								"level" => 4,
 								"title" => "Importing and exporting processes",
@@ -46537,11 +46487,11 @@ class Metadata {
 						"hasChildren" => false
 					],
 					[
-						"id" => "38b71b931bbd3a3fadc8a4d32c9daa6f",
-						"path" => "videos/data-transfer/basics",
+						"id" => "4a6cc22566b2811e083095da49957203",
+						"path" => "videos/data-transfer/data-transfer-basics",
 						"position" => 10020,
-						"urlName" => "basics",
-						"url" => "/en/videos/data-transfer/basics",
+						"urlName" => "data-transfer-basics",
+						"url" => "/en/videos/data-transfer/data-transfer-basics",
 						"level" => 3,
 						"title" => "Basics",
 						"keywords" => "",
@@ -46551,8 +46501,8 @@ class Metadata {
 						"languageID" => "",
 						"children" => 						[
 							[
-								"id" => "09a21270f830240cd0ec0d77c33247b3",
-								"path" => "videos/data-transfer/basics/importing-data-with-elasticsync-match-and-map-data",
+								"id" => "b7a9406045a593e35d7cd8da9e68c219",
+								"path" => "videos/data-transfer/data-transfer-basics/importing-data-with-elasticsync-match-and-map-data",
 								"position" => 0,
 								"urlName" => "importing-data-with-elasticsync-match-and-map-data",
 								"url" => "/en/videos/data-transfer/basics/importing-data-with-elasticsync-match-and-map-data",
@@ -46567,8 +46517,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "0135457156a9c6a0ad118380a3f85a49",
-								"path" => "videos/data-transfer/basics/importing-data-with-elasticsync-start-import",
+								"id" => "a406b7cd1791822333a0b11c8100b975",
+								"path" => "videos/data-transfer/data-transfer-basics/importing-data-with-elasticsync-start-import",
 								"position" => 0,
 								"urlName" => "importing-data-with-elasticsync-start-import",
 								"url" => "/en/videos/data-transfer/basics/importing-data-with-elasticsync-start-import",
@@ -46583,8 +46533,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "60c7e066d0ef0006b287b4c01345d52d",
-								"path" => "videos/data-transfer/basics/importing-data-with-elasticsync-upload-csv-file",
+								"id" => "e076dba388e7c7d225e253badf4ec528",
+								"path" => "videos/data-transfer/data-transfer-basics/importing-data-with-elasticsync-upload-csv-file",
 								"position" => 0,
 								"urlName" => "importing-data-with-elasticsync-upload-csv-file",
 								"url" => "/en/videos/data-transfer/basics/importing-data-with-elasticsync-upload-csv-file",
@@ -46599,8 +46549,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "4954c0dc81bb115363a58f42d53981f7",
-								"path" => "videos/data-transfer/basics/importing-data-with-elasticsync",
+								"id" => "fc967c5b34824643629d8a9d8663ed82",
+								"path" => "videos/data-transfer/data-transfer-basics/importing-data-with-elasticsync",
 								"position" => 10010,
 								"urlName" => "importing-data-with-elasticsync",
 								"url" => "/en/videos/data-transfer/basics/importing-data-with-elasticsync",
@@ -46615,8 +46565,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "b64459ef21fa0bae984b0acc57180e63",
-								"path" => "videos/data-transfer/basics/manually-importing-files",
+								"id" => "88ac65681462c558c22f56958e326d05",
+								"path" => "videos/data-transfer/data-transfer-basics/manually-importing-files",
 								"position" => 10020,
 								"urlName" => "manually-importing-files",
 								"url" => "/en/videos/data-transfer/basics/manually-importing-files",
@@ -46631,8 +46581,8 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "fcf863ebfeed387632352f201b89f07e",
-								"path" => "videos/data-transfer/basics/automatically-importing-files",
+								"id" => "9f4cf20b44f71e50a161776aec215997",
+								"path" => "videos/data-transfer/data-transfer-basics/automatically-importing-files",
 								"position" => 10030,
 								"urlName" => "automatically-importing-files",
 								"url" => "/en/videos/data-transfer/basics/automatically-importing-files",
@@ -46889,10 +46839,10 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
-								"id" => "9df936074f9485387fbb440d196e24f8",
-								"path" => "videos/data-transfer/case-examples/import-export",
+								"id" => "8e9699020e0184f405e2453cdb597ddf",
+								"path" => "videos/data-transfer/case-examples/case-examples-import-export",
 								"position" => 10010,
-								"urlName" => "import-export",
+								"urlName" => "case-examples-import-export",
 								"url" => "/en/videos/data-transfer/case-examples/import-export",
 								"level" => 4,
 								"title" => "Importing and exporting syncs",
@@ -46957,10 +46907,10 @@ class Metadata {
 				"languageID" => "DPEZCKT",
 				"children" => 				[
 					[
-						"id" => "90a067acd246a900039ba0d88d6f4722",
-						"path" => "videos/pos/introduction",
+						"id" => "00926d000b26c7214ac1a087e98ae9d4",
+						"path" => "videos/pos/pos-introduction",
 						"position" => 10010,
-						"urlName" => "introduction",
+						"urlName" => "pos-introduction",
 						"url" => "/en/videos/pos/introduction",
 						"level" => 3,
 						"title" => "Introduction",

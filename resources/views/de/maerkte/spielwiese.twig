@@ -240,7 +240,7 @@ Listing-Vorlagen können bei der Erstellung eines neuen Listings über <strong>A
 <i class="fa icon-important" title="Wichtig"></i>
 </td>
 <td class="content">
-<div class="title">Andere Benutzer:innen werden automatisch ausgeloggt</div>
+<div class="title">Andere Personen werden automatisch ausgeloggt</div>
 <div class="paragraph">
 <p>Wenn du im Menü <strong>Einrichtung » Listings » Einstellungen</strong> Änderungen speicherst, werden andere Benutzer:innen automatisch ausgeloggt und müssen sich neu einloggen. So wird sichergestellt, dass die Änderungen für alle Benutzer:innenprofile greifen.</p>
 </div>
@@ -1056,7 +1056,7 @@ Darauf achten, dass verwendete Bilder per URL erreichbar sind. Dazu die Bilder z
 <p>Wähle die <strong>Layout-Vorlage</strong> aus der Dropdown-Liste, die du mit dem Listing verknüpfen möchtest.</p>
 </li>
 <li>
-<p>Beachte die Erläuterungen zu den Variablen in <a href="#table-template-variables">[table-template-variables]</a>.</p>
+<p>Beachte die Erläuterungen zu den Variablen in <a href="#table-template-variables">Tabelle 6</a>.</p>
 </li>
 <li>
 <p>Speichere (<span class="icon "><i class="psicon-save"></i></span>) die Einstellungen.<br>
@@ -1080,7 +1080,557 @@ Mehre Listings verknüpfst du bequem in einer Listing-Vorlage.
 <div class="sect3">
 <h4 id="listings-variables">4.6.5. Template-Variablen und -Funktionen</h4>
 <div class="paragraph">
-<p>Unresolved directive in _textblocks/listings/manage-listings.adoc - include::../_textblocks/listings/template-variables.adoc[]</p>
+<p>Fülle deine HTML-Vorlage mit den benötigten Template-Variablen und -Funktionen und lasse so die Inhalte des Listings in das Layout laden. Achte bei der Schreibweise der Template-Variablen und -Funktionen auf Groß- und Kleinschreibung.</p>
+</div>
+<div class="paragraph">
+<p>Lasse die Artikelbeschreibung <strong>&#123;&#37; GetItemDescription() &#37;&#125;</strong> und nicht die bei dem Listing gespeicherte Beschreibung einfügen. Auf diese Weise musst du für deinen plentyShop und für deine Listings nur einen Beschreibungstext pflegen.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Option Platzhalter in Layout-Vorlage (ricardo) für Merkmale aktivieren</div>
+<div class="paragraph">
+<p>Wenn du Template-Variablen verwendest, die Merkmale enthalten, wie zum Beispiel <strong>&#123;&#37; GetItemPropertyById() &#37;&#125;</strong> und <strong>&#123;&#37; GetItemPropertyByName() &#37;&#125;</strong>, muss an dem gewählten Merkmal die Option <strong>Platzhalter in Layout-Vorlage (ricardo)</strong> im Menü <strong>Einrichtung » Artikel » Merkmale</strong> aktiviert sein, damit das Merkmal in der Layout-Vorlage angezeigt wird.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Die folgende Tabelle erläutert die Template-Variablen und -Funktionen für den Bereich <strong>Layout-Vorlagen</strong> in alphabetischer Reihenfolge:</p>
+</div>
+<table id="table-template-variables" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 6. Template-Variablen und -Funktionen für Layout-Vorlagen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Variable/Funktion</th>
+<th class="tableblock halign-left valign-top">Erläuterung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Funktion</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetCSSFile() &#37;&#125;</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Generiert das &lt;link&gt;-Tag für die CSS-Datei.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetItemDescription() &#37;&#125;</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikelbeschreibung<br>
+Optionaler Parameter:<br>
+lang = Sprache, die ausgegeben werden soll. Folgende Sprachen sind möglich: DE, EN, FR, IT, ES, TR, NL, PL, NN, DA, SE, CZ, ZH, VI<br>
+<strong><em>Beispiele:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>GetItemDescription()</strong> = Artikeltext in Sprache des Listings<br></p>
+</li>
+<li>
+<p><strong>GetItemDescription('en')</strong> = Artikeltext in Englisch</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetItemName() &#37;&#125;</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikelname<br>
+Optionale Parameter:<br>
+nameId = Name, der ausgegeben werden soll (1–3)<br>
+lang = Sprache, die ausgegeben werden soll. Folgende Sprachen sind möglich: DE, EN, FR, IT, ES, TR, NL, PL, NN, DA, SE, CZ<br>
+<strong><em>Beispiele:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>GetItemName()</strong> = Name 1 in Sprache des Listings<br></p>
+</li>
+<li>
+<p><strong>GetItemName(2, 'en')</strong> = Name 2 in Englisch</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetItemPropertyById() &#37;&#125;</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikelmerkmale<br>
+Folgende Parameter sind erforderlich:<br>
+characterID = ID des Merkmals<br>
+type = <strong>unit</strong> oder <strong>value</strong><br>
+<strong><em>Beispiele:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>GetItemPropertyById(2, 'unit')</strong> = Einheitstyp des Merkmals mit ID 2<br></p>
+</li>
+<li>
+<p><strong>GetItemPropertyById(3, 'value')</strong> = Wert des Merkmals mit ID 3</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetItemPropertyByName() &#37;&#125;</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikelmerkmale<br>
+Folgende Parameter sind erforderlich:<br>
+characterName = Backend-Name des Merkmals<br>
+type = <strong>unit</strong> oder <strong>value</strong><br>
+<strong><em>Beispiele:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>GetItemPropertyByName('abstrakte_motive', 'unit')</strong> = Einheitstyp des Merkmals mit Backend-Name "abstrakte_motive"<br></p>
+</li>
+<li>
+<p><strong>GetItemPropertyByName('abstrakte_motive', 'value')</strong> = Wert des Merkmals mit Backend-Name "abstrakte_motive"</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetItemShortDescription() &#37;&#125;</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikel-Vorschautext<br>
+Optionaler Parameter:<br>
+lang = Sprache, die ausgegeben werden soll. Folgende Sprachen sind möglich: DE, EN, FR, IT, ES, TR, NL, PL, NN, DA, SE, CZ, ZH, VI<br>
+<strong><em>Beispiele:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>GetItemShortDescription()</strong> = Vorschautext in Sprache des Listings<br></p>
+</li>
+<li>
+<p><strong>GetItemShortDescription('en')</strong> = Vorschautext in Englisch</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; GetItemTechnicalData() &#37;&#125;</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Technische Daten<br>
+Optionaler Parameter:<br>
+lang = Sprache, die ausgegeben werden soll. Folgende Sprachen sind möglich: DE, EN, FR, IT, ES, TR, NL, PL, NN, DA, SE, CZ, ZH, VI<br>
+<strong><em>Beispiele:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>GetItemTechnicalData()</strong> = Technische Daten in Sprache des Listings<br></p>
+</li>
+<li>
+<p><strong>GetItemTechnicalData('en')</strong> = Technische Daten in Englisch</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>{GetPlentymarketsBranding() &#37;&#125;</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Zeigt die plentymarkets-Signatur an.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>&#123;&#37; PropertyList() &#37;&#125;</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Merkmalliste</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Variable</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$AgeRating</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>FSK</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$BasePrice</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Grundpreis</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$BasePriceLot</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Inhalt Grundpreis</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$BasePriceUnit</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Einheit des Grundpreises<br>
+Nach §2 Abschnitt 3 der PAngV (Preisangabenverordnung) muss bei bestimmten Artikeln, zum Beispiel Lebensmitteln, der Grundpreis sowie die Einheit oder eine Bezugsgröße angegeben werden. Für Details die PAngV beachten.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$BestOffer</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Preisvorschlag</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$BuyItNowPrice</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Festpreis (Sofort kaufen)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$EbayStoreNavigation</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>eBay-Shop-Kategorie-Linkliste</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ExternalMarketListingId</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Externe Market-Listing-ID</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$Free[1]</strong> …​ <strong>$Free[20]</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Freie Artikelvariablen</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$Gallery[1], $Gallery[2], $Gallery[3]</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Listing-Galerie Fügt den Inhalt des Datenfeldes Listing-Galerie (siehe oben) ein.<br>
+<strong><em>Beispiele:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.sellerfox.de/" target="_new">http://www.sellerfox.de</a></p>
+</li>
+<li>
+<p><a href="http://www.ayee.net/" target="_new">http://www.ayee.net</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$GalleryImage</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Galeriebild</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$GalleryImageURL</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Galeriebild-URL</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$HtmlStructure</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>HTML-Code-Struktur</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$Image[1], $Image[2], …​</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikelbilder</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ImageURL[1], $ImageURL[2], …​</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikelbilder URL</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemAvailabilityDetails</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Übersicht Warenbestand als Grafik</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemAvailabilityIcon</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Verfügbarkeitssymbol</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemAvailabilityId</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>ID der Artikelverfügbarkeit</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemAvailabilityString</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Verfügbarkeitstext</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemConditionId</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikelzustand<br>
+0: Neu<br>
+1: Gebraucht<br>
+2: NEU &amp; OVP<br>
+3: NEU mit Etikett</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemEAN</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>EAN</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemHeight</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Höhe</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemId</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikel-ID</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemISBN</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>ISBN</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemLength</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Länge</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemMedia</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikel-Media</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemModel</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Modell</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemNo</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikelnummer</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemProducer</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Hersteller</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemRRP</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>UVP</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemShipping[1], $ItemShipping[2]</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Portoaufschlag 1 / 2</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemWeight</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Gewicht</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ItemWidth</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Breite</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ListingConditionDescription</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Zustandsbeschreibung des Listings</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ListingDescription</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Listingbeschreibung</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ListingSubtitle</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Untertitel des Listings</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ListingTitle</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Titel des Listings</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ListingType</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Listing-Typ</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$LISTING_TYPE_AUCTION</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Listing-Typ Auktion</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$LISTING_TYPE_FIXED</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Listing-Typ Festpreis</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$Lot</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Inhalt</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$MainFrame</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Eigentlicher Inhalt des Listings</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$MiddleSizeImage[1], $MiddleSizeImage[2], …​</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikelbild in mittlerer Bildgröße</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$MiddleSizeImageURL[1], $MiddleSizeImageURL[2], …​</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikelbild in mittlerer Bildgröße URL</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$MinimumBid</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Listing-Startpreis</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$PersonalListingsPage</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Link zu Listings des Kontos</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$PreviewImage[1], $PreviewImage[2], …​</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Vorschaubilder</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$PreviewImageURL[1], $PreviewImageURL[2], …​</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Vorschaubilder-URL</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ProducerLogo</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Hersteller-Logo</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ProducerURL</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Hersteller-URL</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$PROPERTY_UNIT</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Einheit des Merkmals</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$PROPERTY_VALUE</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wert des Merkmals</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ReferrerID</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>ID der Auftragsherkunft</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$ReleaseDate</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>ReleaseDate; Erscheinungsdatum</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$Unit</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Einheit (Gramm, Liter, Stück)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$UnitString[1], $UnitString[2]</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Artikel Einheit 1 / 2</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$VAT</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>MwSt</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="title">if-Logik verwenden</div>
+<div class="paragraph">
+<p>In Layout-Vorlagen kann <a href="/videos/grundeinstellungen/e-mail-verkehr/template-variablen-if-konstrukte">if-Logik</a> verwendet werden.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
 </div>
 </div>
 </div>
@@ -1138,7 +1688,7 @@ Du kannst nur Listings für vollständig angelegte Artikel erstellen.
 → Das Fenster <strong>Neues Market-Listing</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#einstellungen-neues-market-listing">Tabelle 6</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#einstellungen-neues-market-listing">Tabelle 7</a> vor.</p>
 </li>
 <li>
 <p>Speichere (<span class="icon "><i class="psicon-save"></i></span>) die Einstellungen.<br>
@@ -1147,7 +1697,7 @@ Du kannst nur Listings für vollständig angelegte Artikel erstellen.
 </ol>
 </div>
 <table id="einstellungen-neues-market-listing" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 6. Einstellungen im Fenster <strong>Neues Market-Listing</strong></caption>
+<caption class="title">Tabelle 7. Einstellungen im Fenster <strong>Neues Market-Listing</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1379,7 +1929,7 @@ Entweder hier eine Listing-Vorlage wählen, in der ein Marktplatz festgelegt ist
 <p>Im Menü <strong>Listings » Listings bearbeiten</strong> werden Listings in einer Übersicht aufgelistet. Die Listing-Übersicht zeigt die wichtigsten Einstellungen auf einen Blick. Über die Funktion <strong>Ansicht einrichten</strong> wählst du, welche Einstellungen angezeigt werden. In der Übersicht nimmst du Änderungen an einzelnen Listings vor. Außerdem bearbeitest du mehrere Listings per <strong>Gruppenfunktion</strong> oder per <strong>Stapelverarbeitung</strong>.</p>
 </div>
 <table id="listing-übersicht" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 7. Listing-Übersicht</caption>
+<caption class="title">Tabelle 8. Listing-Übersicht</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1525,7 +2075,7 @@ Entweder hier eine Listing-Vorlage wählen, in der ein Marktplatz festgelegt ist
 → Das Market-Listing wird geöffnet.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#market-listing-bearbeiten">Tabelle 8</a>, <a href="#base-tab-marketlisting">Tabelle 9</a>, <a href="#beschreibung-layout-marketlisting">Tabelle 10</a> und <a href="#tab-marktplatz">Tabelle 11</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#market-listing-bearbeiten">Tabelle 9</a>, <a href="#base-tab-marketlisting">Tabelle 10</a>, <a href="#beschreibung-layout-marketlisting">Tabelle 11</a> und <a href="#tab-marktplatz">Tabelle 12</a> vor.</p>
 </li>
 <li>
 <p>Speichere (<span class="icon "><i class="psicon-save"></i></span>) die Einstellungen.</p>
@@ -1541,7 +2091,7 @@ Entweder hier eine Listing-Vorlage wählen, in der ein Marktplatz festgelegt ist
 <p><em>Bild 1: Symbolleiste eines Market-Listings</em></p>
 </div>
 <table id="market-listing-bearbeiten" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 8. Market-Listing bearbeiten</caption>
+<caption class="title">Tabelle 9. Market-Listing bearbeiten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1627,7 +2177,7 @@ Entweder hier eine Listing-Vorlage wählen, in der ein Marktplatz festgelegt ist
 <p>Im Tab <strong>Base</strong> des Market-Listings nimmst du marktplatz- und plattformunabhängige Einstellungen vor. Die Optionen in diesem Tab weichen je nach Listing-Typ leicht voneinander ab. Ein Festpreis-Listing verfügt zum Beispiel nicht über die Optionen <strong>Startpreis</strong> und <strong>Mindestpreis</strong>.</p>
 </div>
 <table id="base-tab-marketlisting" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 9. Tab <strong>Base</strong> eines Market-Listings</caption>
+<caption class="title">Tabelle 10. Tab <strong>Base</strong> eines Market-Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1775,7 +2325,7 @@ Das Starten von Listings mit Varianten ist nur auf bestimmten Plattformen mögli
 <p>Im Tab <strong>Beschreibung und Layout</strong> trägst du Texte für das Listing ein und wählst ein Layout.</p>
 </div>
 <table id="beschreibung-layout-marketlisting" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 10. Tab <strong>Beschreibung und Layout</strong> eines Market-Listings</caption>
+<caption class="title">Tabelle 11. Tab <strong>Beschreibung und Layout</strong> eines Market-Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1834,7 +2384,7 @@ Für die Bearbeitung der Beschreibung im Syntax-Editor ist die Einstellung <stro
 <p>Im Tab <strong>Marktplatz</strong> nimmst du Einstellungen für den Marktplatz eBay vor.</p>
 </div>
 <table id="tab-marktplatz" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 11. Tab <strong>Marktplatz</strong> eines Market-Listings</caption>
+<caption class="title">Tabelle 12. Tab <strong>Marktplatz</strong> eines Market-Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2037,7 +2587,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 → Das Fenster <strong>Gruppenfunktion</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 12</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 13</a> vor.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Einstellungen an den Listings vorzunehmen.</p>
@@ -2045,7 +2595,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 </ol>
 </div>
 <table id="gruppenfunktion-stapelverarbeitung" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 12. Listings per <strong>Gruppenfunktion</strong> oder per <strong>Stapelverarbeitung</strong> bearbeiten</caption>
+<caption class="title">Tabelle 13. Listings per <strong>Gruppenfunktion</strong> oder per <strong>Stapelverarbeitung</strong> bearbeiten</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2425,10 +2975,10 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <p>Öffne das Menü <strong>Listings » Stapelverarbeitung » Listings</strong>.</p>
 </li>
 <li>
-<p>Wähle die Filter gemäß <a href="#filteroptionen-stapelverarbeitung">Tabelle 13</a>.</p>
+<p>Wähle die Filter gemäß <a href="#filteroptionen-stapelverarbeitung">Tabelle 14</a>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 12</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 13</a> vor.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Einstellungen an den Listings vorzunehmen.</p>
@@ -2436,7 +2986,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 </ol>
 </div>
 <table id="filteroptionen-stapelverarbeitung" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 13. Filteroptionen für die <strong>Stapelverarbeitung</strong></caption>
+<caption class="title">Tabelle 14. Filteroptionen für die <strong>Stapelverarbeitung</strong></caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2677,7 +3227,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <p>Folgende Filterelemente und -funktionen sind im Menü <strong>Listings » Listings bearbeiten</strong> verfügbar:</p>
 </div>
 <table id="filteroptionen-listings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 14. Filteroptionen für Listings</caption>
+<caption class="title">Tabelle 15. Filteroptionen für Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -2904,7 +3454,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <p>Wähle <strong>Listings starten</strong> als Aktion.</p>
 </li>
 <li>
-<p>Wähle einen Startzeitpunkt gemäß <a href="#zeitliche-optionen">Tabelle 15</a>.</p>
+<p>Wähle einen Startzeitpunkt gemäß <a href="#zeitliche-optionen">Tabelle 16</a>.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Market-Listings zu starten.</p>
@@ -2930,7 +3480,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <p>Wähle <strong>Starten</strong> unter <strong>Aktionen</strong>.</p>
 </li>
 <li>
-<p>Wähle einen Startzeitpunkt gemäß <a href="#zeitliche-optionen">Tabelle 15</a>.</p>
+<p>Wähle einen Startzeitpunkt gemäß <a href="#zeitliche-optionen">Tabelle 16</a>.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Market-Listings zu starten.</p>
@@ -2938,7 +3488,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 </ol>
 </div>
 <table id="zeitliche-optionen" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 15. Zeitliche Optionen für den Start</caption>
+<caption class="title">Tabelle 16. Zeitliche Optionen für den Start</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3079,7 +3629,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 → Das Fenster <strong>Gruppenfunktion</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 12</a> im Kapitel <a href="#listings-edit">Listings bearbeiten</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 13</a> im Kapitel <a href="#listings-edit">Listings bearbeiten</a> vor.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Neue Vorlage speichern</strong>.<br>
@@ -3103,7 +3653,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <p>Öffne das Menü <strong>Listings » Stapelverarbeitung » Listings</strong>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 12</a> im Kapitel <a href="#listings-edit">Listings bearbeiten</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#gruppenfunktion-stapelverarbeitung">Tabelle 13</a> im Kapitel <a href="#listings-edit">Listings bearbeiten</a> vor.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Neue Vorlage speichern</strong>.<br>
@@ -3131,10 +3681,10 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 <div class="sect2">
 <h3 id="5700">11.1. Aktive Listings suchen</h3>
 <div class="paragraph">
-<p>In der Übersicht des Menüs <strong>Listings » Aktive Listings</strong> siehst du alle aktiven Listings. Diese Listings kannst du über Filter für <a href="#4800">Einstellungen</a>, <a href="#4900">Kategorien</a> oder <a href="#5000">Verzeichnisse</a> weiter eingrenzen. Zusätzlich zu den Filtermöglichkeiten aus <a href="#filteroptionen-listings">Tabelle 14</a> findest du hier folgende Optionen:</p>
+<p>In der Übersicht des Menüs <strong>Listings » Aktive Listings</strong> siehst du alle aktiven Listings. Diese Listings kannst du über Filter für <a href="#4800">Einstellungen</a>, <a href="#4900">Kategorien</a> oder <a href="#5000">Verzeichnisse</a> weiter eingrenzen. Zusätzlich zu den Filtermöglichkeiten aus <a href="#filteroptionen-listings">Tabelle 15</a> findest du hier folgende Optionen:</p>
 </div>
 <table id="filteroptionen-aktive-listings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 16. Filteroptionen für aktive Listings</caption>
+<caption class="title">Tabelle 17. Filteroptionen für aktive Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3242,7 +3792,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 → Das Fenster <strong>Gruppenfunktion</strong> wird geöffnet.</p>
 </li>
 <li>
-<p>Wähle eine Aktion gemäß <a href="#aktionen-gruppenfunktion">Tabelle 17</a>.</p>
+<p>Wähle eine Aktion gemäß <a href="#aktionen-gruppenfunktion">Tabelle 18</a>.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Aktion für die gewählten Listings auszuführen.</p>
@@ -3250,7 +3800,7 @@ Weitere Informationen zu dieser Einstellung findest du bei eBay unter <a href="h
 </ol>
 </div>
 <table id="aktionen-gruppenfunktion" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 17. Aktionen der Gruppenfunktion</caption>
+<caption class="title">Tabelle 18. Aktionen der Gruppenfunktion</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3331,7 +3881,7 @@ Unter <strong>Aktionen</strong> muss die Option <strong>Keine</strong> eingestel
 <div class="sect2">
 <h3 id="5900">11.3. Aktive Listings per Stapelverarbeitung bearbeiten</h3>
 <div class="paragraph">
-<p>Die Stapelverarbeitung bietet die gleichen Optionen wie die Gruppenfunktion. Bei der Stapelverarbeitung werden jedoch zuvor gefilterte Listings bearbeitet. Die Filter zur Eingrenzung der Listings stimmen mit den Filtern in <a href="#filteroptionen-listings">Tabelle 14</a> und <a href="#filteroptionen-aktive-listings">Tabelle 16</a> überein. Die Aktionen stimmen wiederum mit denen der Gruppenfunktion in <a href="#aktionen-gruppenfunktion">Tabelle 17</a> überein.</p>
+<p>Die Stapelverarbeitung bietet die gleichen Optionen wie die Gruppenfunktion. Bei der Stapelverarbeitung werden jedoch zuvor gefilterte Listings bearbeitet. Die Filter zur Eingrenzung der Listings stimmen mit den Filtern in <a href="#filteroptionen-listings">Tabelle 15</a> und <a href="#filteroptionen-aktive-listings">Tabelle 17</a> überein. Die Aktionen stimmen wiederum mit denen der Gruppenfunktion in <a href="#aktionen-gruppenfunktion">Tabelle 18</a> überein.</p>
 </div>
 <div class="paragraph instruction">
 <p>Aktive Listings per Stapelverarbeitung bearbeiten:</p>
@@ -3342,10 +3892,10 @@ Unter <strong>Aktionen</strong> muss die Option <strong>Keine</strong> eingestel
 <p>Öffne das Menü <strong>Listings » Stapelverarbeitung » Aktive Listings</strong>.</p>
 </li>
 <li>
-<p>Wähle die Filter gemäß <a href="#filteroptionen-listings">Tabelle 14</a> und <a href="#filteroptionen-aktive-listings">Tabelle 16</a>.</p>
+<p>Wähle die Filter gemäß <a href="#filteroptionen-listings">Tabelle 15</a> und <a href="#filteroptionen-aktive-listings">Tabelle 17</a>.</p>
 </li>
 <li>
-<p>Nimm die Einstellungen gemäß <a href="#aktionen-gruppenfunktion">Tabelle 17</a> vor.</p>
+<p>Nimm die Einstellungen gemäß <a href="#aktionen-gruppenfunktion">Tabelle 18</a> vor.</p>
 </li>
 <li>
 <p>Klicke auf <strong>Ausführen</strong>, um die Einstellungen auszuführen.<br>
@@ -3383,7 +3933,7 @@ Unter <strong>Aktionen</strong> muss die Option <strong>Keine</strong> eingestel
 <p>Aus der Übersicht kannst du den Artikel und das Market-Listing öffnen, um diese zu bearbeiten oder zu prüfen. Außerdem hast du in diesem Menü die Möglichkeit, geplante Listing-Prozesse per Gruppenfunktion zu löschen und so den Start des Prozesses abzubrechen.</p>
 </div>
 <table id="uebersicht-listing-prozesse" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 18. Übersicht zu Listing-Prozessen</caption>
+<caption class="title">Tabelle 19. Übersicht zu Listing-Prozessen</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -3460,10 +4010,10 @@ Unter <strong>Aktionen</strong> muss die Option <strong>Keine</strong> eingestel
 <div class="sect2">
 <h3 id="5955">12.1. Listing-Prozesse suchen</h3>
 <div class="paragraph">
-<p>Mit den Filtern auf der linken Seite des Menüs <strong>Listings » Listing-Prozesse</strong> kannst du die Suchergebnisse weiter eingrenzen, um dir nur bestimmte Prozesse anzeigen zu lassen. In <a href="#filter-zukuenftige-listings">Tabelle 19</a> erhältst du eine Übersicht über alle verfügbaren Filter. Wähle einen oder mehrere Filter und klicke auf <strong>Suchen</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>), um die Suchergebnisse anzuzeigen.</p>
+<p>Mit den Filtern auf der linken Seite des Menüs <strong>Listings » Listing-Prozesse</strong> kannst du die Suchergebnisse weiter eingrenzen, um dir nur bestimmte Prozesse anzeigen zu lassen. In <a href="#filter-zukuenftige-listings">Tabelle 20</a> erhältst du eine Übersicht über alle verfügbaren Filter. Wähle einen oder mehrere Filter und klicke auf <strong>Suchen</strong> (<span class="icon blue"><i class="fa fa-search  "></i></span>), um die Suchergebnisse anzuzeigen.</p>
 </div>
 <table id="filter-zukuenftige-listings" class="tableblock frame-all grid-all stretch">
-<caption class="title">Tabelle 19. Filter für zukünftige Listings</caption>
+<caption class="title">Tabelle 20. Filter für zukünftige Listings</caption>
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
