@@ -39611,7 +39611,7 @@ class Metadata {
 				"url" => "/en/markets/mercateo",
 				"level" => 2,
 				"title" => "Mercateo",
-				"keywords" => "Mercateo, Mercateo, Merkateo, Merkanteo",
+				"keywords" => "Mercateo, Merkateo",
 				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market Mercateo in your plentymarkets system.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Mercateo. The following information is available:",
