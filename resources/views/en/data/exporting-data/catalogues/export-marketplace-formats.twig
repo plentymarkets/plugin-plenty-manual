@@ -1,0 +1,1831 @@
+<aside class="plenty-anchor-navbar">
+    <div class="sticky-wrapper">
+        <div class="sticky-container" data-fn="sticky-container" data-fn-options="{ onLoadHashScrollToLink: true }">
+            <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#menu-screenshot"><span>1.</span><span> First introduction: menu structure</span></a></li>
+<li><a href="#market-formats"><span>2.</span><span> What is a catalogue with marketplace format?</span></a></li>
+<li><a href="#properties"><span>3.</span><span> Properties instead of characteristics</span></a>
+<ul class="sectlevel2">
+<li><a href="#example-1"><span>3.1.</span><span> Example 1: Diameter information</span></a></li>
+<li><a href="#example-2"><span>3.2.</span><span> Example 2: Brand names</span></a></li>
+</ul>
+</li>
+<li><a href="#data-fields"><span>4.</span><span> Which data fields are available?</span></a>
+<ul class="sectlevel2">
+<li><a href="#marketplace-fields"><span>4.1.</span><span> Marketplace data field</span></a></li>
+<li><a href="#plentymarkets-fields"><span>4.2.</span><span> plentymarkets data fields</span></a></li>
+</ul>
+</li>
+<li><a href="#mappings"><span>5.</span><span> Which mappings are available?</span></a>
+<ul class="sectlevel2">
+<li><a href="#mappings-what-is"><span>5.1.</span><span> What does “mapping” mean?</span></a></li>
+<li><a href="#one-to-one"><span>5.2.</span><span> Simple 1:1 mappings</span></a></li>
+<li><a href="#one-to-one-complex"><span>5.3.</span><span> Complex 1:1 mappings</span></a></li>
+<li><a href="#one-to-one-fallback"><span>5.4.</span><span> 1:1 mappings with fallback data fields</span></a></li>
+<li><a href="#one-to-n"><span>5.5.</span><span> 1:n mappings</span></a></li>
+<li><a href="#own-value"><span>5.6.</span><span> Own value mappings</span></a></li>
+</ul>
+</li>
+<li><a href="#file-export"><span>6.</span><span> Optional: File export (no market export)</span></a></li>
+<li><a href="#switch-to-catalogues"><span>7.</span><span> Switching from the old export to catalogue export</span></a></li>
+<li><a href="#faq"><span>8.</span><span> FAQ</span></a></li>
+<li><a href="#manage-catalogues"><span>9.</span><span> Managing catalogues: how to delete, copy, etc.</span></a>
+<ul class="sectlevel2">
+<li><a href="#catalogue-rights"><span>9.1.</span><span> Assigning rights for back end users</span></a></li>
+<li><a href="#15"><span>9.2.</span><span> Customizing catalogue overview columns</span></a></li>
+<li><a href="#190"><span>9.3.</span><span> Copying catalogues</span></a></li>
+<li><a href="#210"><span>9.4.</span><span> Deleting catalogues</span></a></li>
+<li><a href="#240"><span>9.5.</span><span> Restoring a deleted catalogue</span></a></li>
+<li><a href="#250"><span>9.6.</span><span> Restoring another catalogue version</span></a></li>
+<li><a href="#270"><span>9.7.</span><span> Exporting catalogues</span></a></li>
+<li><a href="#280"><span>9.8.</span><span> Importing catalogues</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+</aside>
+
+<main id="main">
+    <h1>Using market exports</h1><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Catalogues are used to prepare data for export. For exporting variation data to markets and price search engines, you use catalogues with marketplace formats.</p>
+</div>
+<div class="paragraph">
+<p>On this page, find out how to use catalogues to export variation data to markets. Only the general workflow is explained.
+More detailed information about how you create an structure a catalogue can be found on the manual pages of the individual markets.</p>
+</div>
+<div class="paragraph">
+<p>plentymarkets is working on moving all markets to catalogue formats. At the moment, you can export item data to the following markets using catalogues:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OTTO Market</p>
+</li>
+<li>
+<p>Etsy</p>
+</li>
+<li>
+<p>Voelkner</p>
+</li>
+<li>
+<p>Conrad</p>
+</li>
+<li>
+<p>Some Amazon flatfiles</p>
+</li>
+<li>
+<p>Plugins by third parties</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This page is new and we always want to improve. Couldn’t find what you are looking for or do you think something could be explained better? Then let us know by using the feedback function. The more details you provide, the more we can improve this page.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="menu-screenshot">1. First introduction: menu structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The catalogue menu is the same for all marketplace formats:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/markets/assets/catalogue-menu-colours.png" alt="catalogue menu colours">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Menu structure of a catalogue with marketplace format</em></p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Navigation</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>When you open a catalogue, the view <strong>Mapping</strong> is shown by default. Use the navigation to switch to other views of the catalogue.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon darkGrey"><i class="fa fa-search  "></i></span> <strong>Overview</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Go back to the catalogue overview, that is to the list of catalogues.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><span class="icon darkGrey"><i class="fa fa-plus  "></i></span> Create catalogue</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create a new catalogue.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>List of opened catalogues</em></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The navigation shows all catalogues that you accessed during your current session. This allows you to quickly switch between the catalogues you are currently working on. The catalogue that is currently on view is shown in blue. The names of the other catalogues are shown in grey.<br>
+<strong><em>Tip:</em></strong> If the list gets too long or you find it distracting, point your cursor to a catalogue in the list. An X is shown. Click on that X to close the catalogue.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon darkGrey"><i class="fa fa-cog  "></i></span> Settings</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Open the catalogue settings.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Basic settings = Name and format type of the catalogue. You enter this information to create a catalogue.</p>
+</li>
+<li>
+<p>Format settings = Settings for the export file structure</p>
+</li>
+<li>
+<p>Export settings = Settings for automatic export</p>
+</li>
+<li>
+<p>Download settings = Settings for the URL that is used to access the export file</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Important:</em></strong> You do not need these settings for most markets. These settings are only relevant if you want to export data to a file.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="psicon-order_return_create_edit"></i></span> <strong>Mapping</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Shown when you open the catalogue. Here, you map suitable plentymarkets data fields to the marketplace data fields.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="material-filter_alt"></i></span> Filter</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Add filters to only export specific records.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="psicon-order_return_create_edit"></i></span> <strong>Own data fields</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Own data fields are currently not available for most exports.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Toolbar</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The toolbar provides actions for the catalogue.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon darkGrey"><i class="fa fa-save  "></i></span></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Saves the catalogue settings.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="material-preview"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Creates a preview of the export data. The preview contains the first 5 data rows of the export file.<br>
+<strong><em>Important:</em></strong> The preview function is not available for all marketplace formats.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon darkGrey"><i class="psicon-download"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Starts the manual download of the catalogue data.<br>
+<strong><em>Important:</em></strong> This option starts a manual export. The data is <em>not</em> exported to the market.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon "><i class="material-more_vert"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Show additional actions.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><span class="icon darkGrey"><i class="fa fa-toggle-off  "></i></span> = Activate to only view mandatory fields.</p>
+</li>
+<li>
+<p><span class="icon darkGrey"><i class="fa fa-restore  "></i></span> = Restores an earlier version of the catalogue.</p>
+</li>
+<li>
+<p><span class="icon "><i class="material-delete"></i></span> = Deletes the catalogue.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Marketplace data field</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>To the right of the navigation, all data fields available for the market are listed. Mandatory fields are marked with an asterisk (✱).<br>
+<strong><em>Tip:</em></strong> In the toolbar, click on the further actions (<span class="icon "><i class="material-more_vert"></i></span>) to show or hide optional data fields.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>plentymarkets data fields</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The right side of the catalogue is where you map the marketplace data fields with suitable plentymarkets data fields.
+Before you map the first data field, all you can see here is a whole lot of <span class="icon darkGrey"><i class="fa fa-plus  "></i></span> <strong>Add data field</strong> buttons. That’s normal and as it should be.<br>
+<strong><em>Tip:</em></strong> In the screenshot, a few the fields are already mapped.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="market-formats">2. What is a catalogue with marketplace format?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every market structures product data differently. Often, different product information is even exported to the same market for different product categories (pet food, household items, food, etc.).</p>
+</div>
+<div class="paragraph">
+<p>Catalogues with marketplace formats allow you to tailor your item information exactly to the needs of the market. Because here, you assign a suitable plentymarkets data field to each of the data fields of the market. When your variation data is exported to the market, the market’s data fields are then filled with the correct plentymarkets data.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A marketplace format contains a matrix of the data fields that a market can process. As such, marketplace formats tell you what data can be exported to the market. The asterisks also help you to see straight away which data is obligatory and which is option.</p>
+</li>
+<li>
+<p>One market can offer several marketplace formats. For example, there might be different formats for different product categories (pet food, food, non-food, etc.) or for different languages. However, for some market you export all item data in a single catalogue. An example for this is Etsy.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>What are the advantages of these catalogues?</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Every format is based on the data structure of a specific market. As such, you know exactly which variation data is necessary to sell your products on the market.</p>
+</li>
+<li>
+<p>You choose for each market and sometimes even for each market category which variation data is going to be published on the market. For example, you can use properties to export different variation names and descriptions to different markets.</p>
+</li>
+<li>
+<p>You can easily copy and adjust well configured catalogues.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Let’s talk straight: Aren#t there any disadvantages?</em></strong></p>
+</div>
+<div class="paragraph">
+<p>It really depends. The catalogues give you maximum flexibility. You can map data fields any way you like. However, that also means that mappings are not checked on whether or not they make any sense. As an example, the system will not prevent you from mapping the variation ID as the price. You might only notice such a mistake when your variations are either not exported to the market or when your t-shirts suddenly cost a few thousand bucks. However, this is only a disadvantage if you don’t work carefully. The more familiar you are with the catalogues, the easier it will be for you to map the data fields. You can always copy and adjust well configured catalogues. That also makes your work easier.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="properties">3. Properties instead of characteristics</h2>
+<div class="sectionbody">
+<h5 id="_properties_are_the_new_characteristics" class="discrete">Properties are the new characteristics!</h5>
+<div class="paragraph">
+<p>You cannot map characteristics or free text fields in the catalogues. Instead, you use properties to export data to the markets.</p>
+</div>
+<div class="paragraph">
+<p>The properties are similar to the old characteristics and free text fields. As such, you use properties to save data for which there is no setting and no input field in the plentymarkets back end. In our context, the main difference is that you saved characteristics and free text fields for items. Instead, properties are saved for each variation separately. This gives you a lot of flexibility.</p>
+</div>
+<div class="paragraph">
+<p>Below are two examples on how to use properties.</p>
+</div>
+<div class="paragraph">
+<p><a href="#example-1">Example 1: Diameter information</a>
+<a href="#example-2">Example 2: Brand names</a></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Is this your first time working with properties? For further information, refer to the item <a href="/en/item/settings/properties#500">Properties</a> page.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="example-1">3.1. Example 1: Diameter information</h3>
+<div class="paragraph">
+<p><strong><em>Use case</em></strong>:<br>
+A sales channel allows you to send the <strong>diameter</strong> and the <strong>diameter unit</strong> of your products. However, there is no field in the plentymarkets item menu where you can save diameter information for a variation.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Recommended:</em></strong><br>
+To still export information about the diameter of a variation to the market, we recommend the following workflow:</p>
+</div>
+<div class="paragraph">
+<p>First, create the properties:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Settings » Properties » Configuration</strong>.</p>
+</li>
+<li>
+<p>Create a property <strong>Diameter unit</strong> with the following values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Section: <strong>Item</strong><br></p>
+</li>
+<li>
+<p>Property type: <strong>Selection</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Save the necessary units as property values, for example <code>cm</code> and <code>mm</code>.</p>
+</li>
+<li>
+<p>Create a property <strong>Diameter</strong> with the following values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Section: <strong>Item</strong><br></p>
+</li>
+<li>
+<p>Property type: <strong>Decimal number</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now, link the properties with the variation and save values:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.</p>
+</li>
+<li>
+<p>Open the <strong>Properties</strong> tab.</p>
+</li>
+<li>
+<p>Add the property <strong>Diameter unit</strong>.</p>
+</li>
+<li>
+<p>Select the unit from the drop-down list.</p>
+</li>
+<li>
+<p>Add the property <strong>Diameter</strong>.</p>
+</li>
+<li>
+<p>Enter the diameter in the unit you selected for the property <strong>Diameter unit</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>To export the diameter of your variations to the market:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues » [Open catalogue]</strong>.</p>
+</li>
+<li>
+<p>Navigate to the marketplace data field <strong>Diameter unit</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add data field</strong>.</p>
+</li>
+<li>
+<p>In the list of plentymarkets data fields shown, expand the folder <strong>Property</strong>.</p>
+</li>
+<li>
+<p>Click on the Plus icon to the right of the plentymarkets data field <strong>Diameter unit</strong>.</p>
+</li>
+<li>
+<p>Navigate to the marketplace data field <strong>Diameter</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add data field</strong>.</p>
+</li>
+<li>
+<p>In the list of plentymarkets data fields shown, expand the folder <strong>Property</strong>.</p>
+</li>
+<li>
+<p>Click on the Plus icon to the right of the plentymarkets data field <strong>Diameter</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="example-2">3.2. Example 2: Brand names</h3>
+<div class="paragraph">
+<p><strong><em>Use case</em></strong>:<br>
+The sales channel allows you to transfer the brand name of products. In plentymarkets, you can save manufacturers but there is no default data field for saving brand names. Manufacturer and brand name are identical in many cases. If not, properties are your friends once more.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Recommended:</em></strong><br>
+If the manufacturer names saved in your system are not identical to the products’ brand names, you can save brand names using properties. We recommend the following workflow for exporting brands in properties:</p>
+</div>
+<div class="paragraph">
+<p>First, create the property:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Settings » Properties » Configuration</strong>.</p>
+</li>
+<li>
+<p>Create a property <strong>Brand</strong> with the following settings:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Section: <strong>Item</strong></p>
+</li>
+<li>
+<p>Property type: <strong>Text</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Now, link the properties with the variation and save a value:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Item » Edit item » [Open item] » [Open variation]</strong>.</p>
+</li>
+<li>
+<p>Switch to the tab <strong>Texts</strong>.</p>
+</li>
+<li>
+<p>Add the property <strong>Brand</strong>.</p>
+</li>
+<li>
+<p>Save the brand name as the value of the property.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>To export the brand of your variations to the market:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues » [Open catalogue]</strong>.</p>
+</li>
+<li>
+<p>Navigate to the marketplace data field <strong>Brand</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>+ Add data field</strong>.</p>
+</li>
+<li>
+<p>In the list of plentymarkets data fields shown, expand the folder <strong>Property</strong>.</p>
+</li>
+<li>
+<p>Click on the Plus icon to the right of the plentymarkets data field <strong>Brand</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="data-fields">4. Which data fields are available?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Great question!</p>
+</div>
+<div class="paragraph">
+<p>The following applies:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#marketplace-fields">Marketplace data field</a></p>
+</li>
+<li>
+<p><a href="#plentymarkets-fields">plentymarkets data fields</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="marketplace-fields">4.1. Marketplace data field</h3>
+<h5 id="_marketplace_data_fields_i_barely_know_you" class="discrete">Marketplace data fields, I barely know you</h5>
+<div class="paragraph">
+<p>Marketplace data fields are the fields for which you can export data to the market. Because every market structures and processes item data differently, each market also has different marketplace data fields.</p>
+</div>
+<div id="marketplace-data-fields" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/markets/assets/marketplace-data-fields.png" alt="marketplace data fields">
+</div>
+<div class="title">Figure 1. Marketplace data fields in the OTTO Market catalogue</div>
+</div>
+<div class="paragraph">
+<p><strong><em>What you should know about marketplace data fields:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The marketplace data fields are shown on the left side of the catalogue.</p>
+</li>
+<li>
+<p>In the catalogue, mandatory fields are flagged with an asterisk. You definitely need to map plentymarkets data fields for these mandatory fields. In addition, values must be saved for these data fields for each variation. Otherwise, the variation will not be exported to the market.</p>
+</li>
+<li>
+<p>All other data fields are optional but will likely increase your sales performance. If no data is saved for one or more of these optional fields is saved for a variation, the variation is still exported to the market.</p>
+</li>
+<li>
+<p>The best information about marketplace data fields is provided by the market itself. Read the market’s documentation to find out exactly what data is expected. When in doubt, ask your contact person at the market. If everything else fails, you might want to lean on aunt G**gle: Try searching for the name of the marketplace in combination with “data feed”, “data specification” or just enter the name of the marketplace data field and see what happens.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="plentymarkets-fields">4.2. plentymarkets data fields</h3>
+<div class="paragraph">
+<p>The plentymarkets data fields in the catalogue are the same settings as the ones you can select for your items and variations in the <strong>Item » Edit item » [Open item] » [Open variation]</strong>. In addition to these settings, you can also select the properties that are saved in your plentymarkets system.</p>
+</div>
+<div id="plentymarkets-data-fields" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/markets/plentymarkets-data-fields.png" alt="plentymarkets data fields">
+</div>
+<div class="title">Figure 2. List of plentymarkets data field after clicking on <strong>+ Add data field</strong></div>
+</div>
+<div class="paragraph">
+<p><strong><em>What you should know about plentymarkets data fields:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A market expects product data that cannot be saved for a variation directly? Create a property. Then, link this property with your variations. Save product data as the values for this property.</p>
+</li>
+<li>
+<p>You can map a fallback data field in addition to a plentymarkets data field. All plentymarkets data field are again available as fallback data fields. The difference is that the content of the fallback data field is only exported if the first mapped plentymarkets data field does not exist or is empty.</p>
+</li>
+<li>
+<p>Check out the manual page for the standard format <a href="/en/data/exporting-data/catalogues-item">Item (new)</a> to find out which data is exported with which plentymarkets data fields.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="mappings">5. Which mappings are available?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this chapter, we give you the lowdown of the available mappings.</p>
+</div>
+<div class="paragraph">
+<p>This information is structured like this:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#mappings-what-is">What does “mapping” mean?</a></p>
+</li>
+<li>
+<p><a href="#one-to-one">Simple 1:1 mappings</a></p>
+</li>
+<li>
+<p><a href="#one-to-one-complex">Complex 1:1 mappings</a></p>
+</li>
+<li>
+<p><a href="#one-to-one-fallback">1:1 mappings with fallback data fields</a></p>
+</li>
+<li>
+<p><a href="#one-to-n">1:n mappings</a></p>
+</li>
+<li>
+<p><a href="#own-value">Own value mappings</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="mappings-what-is">5.1. What does “mapping” mean?</h3>
+<div class="paragraph">
+<p>Mapping means that the link a marketplace data field with a plentymarkets data field.
+Slightly simplified and just to get you started: You do that by clicking on <strong>Add data field</strong> next to the marketplace data field.</p>
+</div>
+<div class="paragraph">
+<p>However, what happens when you map these fields?</p>
+</div>
+<div class="paragraph">
+<p><strong>For this one marketplace data field, I want to export the data to the market that is saved in this plentymarkets data field for the variation.</strong></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Example:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>You map the plentymarkets data field <strong>Item text » Name 1</strong> to the marketplace data field <strong>Name</strong>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/exporting-data/assets/productname-example-1.png" alt="productname example 1">
+</div>
+</div>
+<div class="paragraph">
+<p>As such, the name that is saved in the menu <strong>Item » Edit item » [Open item] » [Open variation] » Tab: Settings</strong> for the setting <strong>Name 1</strong> is exported to the market for all variations.</p>
+</div>
+<div class="paragraph">
+<p>For the variation you can see in the screenshot below, that means that the name <strong>Design chair Black&amp;White</strong> is exported to the market.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/exporting-data/assets/productname-example-2.png" alt="productname example 2">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="one-to-one">5.2. Simple 1:1 mappings</h3>
+<h5 id="_map_1_marketplace_data_field_to_the_plentymarkets_data_field" class="discrete">Map 1 marketplace data field to the plentymarkets data field</h5>
+<div class="paragraph">
+<p>In a 1:1 mapping, you map a plentymarkets data field to the marketplace data field. If no suitable setting exists in plentymarkets, you can map a property instead.</p>
+</div>
+<div class="paragraph">
+<p>So this mapping specifies:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I want to fill this marketplace data field with the data from this plentymarkets setting.</p>
+</li>
+<li>
+<p>If the data field is empty for a variation, no value is exported for this variation.</p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Creating a simple 1:1 mapping</div>
+<div class="content">
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::_textblocks/catalogues/instructions/catalogue-mapping.adoc[tag=simple-mappings-config]</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="one-to-one-complex">5.3. Complex 1:1 mappings</h3>
+<h5 id="_map_the_value_of_one_marketplace_data_field_to_the_value_of_1_plentymarkets_data_field" class="discrete">Map the value of one marketplace data field to the value of 1 plentymarkets data field</h5>
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::../../../markets/_textblocks/catalogues/instructions/catalogue-mappings.adoc[tag=complex-mappings]</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Creating a complex 1:1:n mapping</div>
+<div class="content">
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::../../../markets/_textblocks/catalogues/instructions/catalogue-mappings.adoc[tag=complex-mappings-config]</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="one-to-one-fallback">5.4. 1:1 mappings with fallback data fields</h3>
+<h5 id="_map_1_marketplace_data_field_to_the_plentymarkets_data_field_and_specify_an_alternative" class="discrete">Map 1 marketplace data field to the plentymarkets data field and specify an alternative</h5>
+<div class="paragraph">
+<p>You specify:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I want to fill this marketplace data field with the data from this plentymarkets setting.</p>
+</li>
+<li>
+<p>If the data field is empty for a variation, the fallback data field is checked and the value of that fallback data field is exported instead.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All plentymarkets data field are available as fallback data fields. However, the content of the fallback data field is only exported if the first mapped data field does not exist or is empty for a variation.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Workflow for fallback data fields:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>During the export, the mapped plentymarkets data field of each variation is checked for content.</p>
+</li>
+<li>
+<p>If data is saved for a variation for that plentymarkets data field, then this data is exported.</p>
+</li>
+<li>
+<p>If the data field does not exist or is empty for a variation, the system jumps to the first fallback data field and checks if that field contains any data.</p>
+</li>
+<li>
+<p>If the fallback data field also does not contain data for the variation, the second fallback data field is checked and so on.</p>
+</li>
+<li>
+<p>If the system cannot find any data at all for a marketplace data field for a variation, what happens next depends on whether or not the data field is mandatory or not. If so, the variation is not exported. If not, the variation is exported but the marketplace data field is not filled on the market.</p>
+</li>
+</ul>
+</div>
+<div id="fallback-data-fields" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/assets/fallback-data-fields.png" alt="fallback data fields">
+</div>
+<div class="title">Figure 3. <em>Example “Colour” in the REWE fashion catalogue:</em> An attribute for colour as the main data field, a property for colour as the fallback data field</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Creating a 1:1 mapping with fallback data fields</div>
+<div class="content">
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::../../../maerkte/_textblocks/catalogues/instructions/catalogue-mapping.adoc[tag=fallback-mappings-config]</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="one-to-n">5.5. 1:n mappings</h3>
+<h5 id="_map_several_plentymarkets_data_fields_to_the_marketplace_data_field" class="discrete">Map SEVERAL plentymarkets data fields to the marketplace data field</h5>
+<div class="paragraph">
+<p>In a 1:n mapping, you map several plentymarkets data fields to the marketplace data field. You can link these settings with a separator.</p>
+</div>
+<div class="paragraph">
+<p>So this mapping specifies:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I want to combine these plentymarkets data fields during export so that the marketplace data field is filled with the data of these two or more plentymarkets settings.</p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Creating a 1:n mapping</div>
+<div class="content">
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::../../../maerkte/_textblocks/catalogues/instructions/catalogue-mapping.adoc[tag=1-to-n-mappings-config]</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="own-value">5.6. Own value mappings</h3>
+<h5 id="_map_the_same_value_for_all_variations_to_the_marketplace_data_field" class="discrete">Map the same value for all variations to the marketplace data field</h5>
+<div class="paragraph">
+<p>You are sure that you want to export the same value for all variations of a catalogue for a marketplace data field? Then specify an own value. This own value is then exported for all variations.</p>
+</div>
+<div class="paragraph">
+<p>So this mapping specifies:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I want to export the value that I entered in the field <strong>Own value</strong> for <em>all</em> variations of this catalogue.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Example:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>You want to export diameter information for some of your variations. The diameter is saved in centimetres for all your variations. Instead of creating a property for the unit and linking this property to every variations, you can enter the own value <code>cm</code>.</p>
+</div>
+<div id="catalogue-own-value" class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/data/assets/catalogue-diameter.png" alt="catalogue diameter">
+</div>
+<div class="title">Figure 4. Own value for the diameter unit</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Creating an own value mapping</div>
+<div class="content">
+<div class="paragraph">
+<p>Unresolved directive in &lt;stdin&gt; - include::../../../maerkte/_textblocks/catalogues/instructions/catalogue-mapping.adoc[tag=own-mappings-config]</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="file-export">6. <em>Optional:</em> File export (no market export)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Catalogues with marketplace formats are automatically exported to markets if all your settings are correct. That means you can ignore the catalogue settings for <strong>Format settings</strong>, <strong>Export settings</strong> and <strong>Download settings</strong>.</p>
+</div>
+<div class="paragraph">
+<p>However, you can also export a file that contains the data that is also exported to the market.</p>
+</div>
+<ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
+                                <a class="nav-link active" id="one-time-file-export-tab" data-toggle="tab" href="#one-time-file-export" role="tab" aria-controls="one-time-file-export" aria-selected="true">One-time file export</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="regular-file-export-tab" data-toggle="tab" href="#regular-file-export" role="tab" aria-controls="regular-file-export" aria-selected="false">Regular file export</a>
+                            </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="one-time-file-export" role="tabpanel" aria-labelledby="one-time-file-export-tab">
+<div class="paragraph">
+<p>Use these instructions to create a one-time export of the catalogue data. The catalogue data is <strong><em>not</em></strong> exported to the market.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The export process is started when you click on <strong>Download data</strong>. However, note that there will be <em>no</em> window for downloading the file straight away. When the export is completed, you can download the export file from the Notifications.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Exporting catalogue data to a file once:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>Click on the catalogue.<br>
+→ The catalogue opens.</p>
+</li>
+<li>
+<p>Click on the <strong>Settings</strong> tab on the left.<br>
+→ The different settings options are shown.</p>
+</li>
+<li>
+<p>Check the settings and change them as needed.<br>
+<strong><em>Tip:</em></strong> Make sure that the option <strong>Receive notifications</strong> is active in the <strong>Download settings</strong>.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.<br></p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="material-file_download"></i></span> in the toolbar up top.<br>
+→ The export will start and it runs in the background.
+You can continue working during the export process.<br>
+<strong><em>Important:</em></strong> The export runs in the background. Note that there will be <em>no</em> window for downloading the file straight away. Even exporting small amounts of data will take around 30 minutes.</p>
+</li>
+<li>
+<p>Once the export is finished, you will be notified (<span class="icon "><i class="material-notifications_none"></i></span>) that the export file can be downloaded.</p>
+</li>
+<li>
+<p>Click on <span class="icon "><i class="material-link"></i></span> <strong>Download</strong> within the notification.</p>
+</li>
+<li>
+<p>Save the file on your computer.</p>
+</li>
+</ol>
+</div>
+</div><div class="tab-pane fade" id="regular-file-export" role="tabpanel" aria-labelledby="regular-file-export-tab">
+<div class="ulist">
+<ul>
+<li>
+<p>Use these instructions to save the variation data of the catalogue regularly to a specified storage location. It is also up to you to decide what “regularly” means. The catalogue data is <strong><em>not</em></strong> exported to the market.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph instruction">
+<p>Setting up regular file exports:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>Click on the catalogue.<br>
+→ The catalogue opens.</p>
+</li>
+<li>
+<p>Click on the <strong>Settings</strong> tab on the left.<br>
+→ The different settings options are shown.</p>
+</li>
+<li>
+<p>Carry out the settings. Note <a href="#table-file-export">Table 1</a>.</p>
+</li>
+<li>
+<p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.<br>
+→ The catalogue data is exported to a file in the specified intervals.<br>
+→ The file is saved at the specified storage location.</p>
+</li>
+</ol>
+</div>
+</div></div>
+<table id="table-file-export" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Settings for optional file export</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Setting</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Format settings</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>File name</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enter a file name. The exported file is saved with this name.<br>
+<strong><em>Tip:</em></strong> The file extension is automatically added during the export.
+As such, enter the file name without a file extension.
+File extensions are for example <code>.csv</code> and <code>.txt</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> Use placeholders to automatically add further information to the file name during the export.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">List of available placeholders</div>
+<div class="content">
+<div class="paragraph">
+<p>The following placeholders are available:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$$name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The catalogue name is added to the file name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$type</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The export type is added to the file name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$format</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The format type is added to the file name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$timestamp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The time stamp of the export is added to the file name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$datetime</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date and time of the export is added to the file name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$year</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The year of the export is added to the file name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$month</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The month of the export is added to the file name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$day</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The day of the export is added to the file name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$hour</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The hour of the export is added to the file name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$minute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The minute of the export is added to the file name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>$second</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The second of the export is added to the file name.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="paragraph">
+<p><strong><em>Examples for using placeholders:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Input 1: <code>item-export_$year_$month_$day</code></p>
+</li>
+<li>
+<p>Result 1: <code>item-export_2022_01_02.csv</code></p>
+</li>
+</ul>
+</div>
+<hr>
+<div class="ulist">
+<ul>
+<li>
+<p>Input 2: <code>$type_$format_$year_$month_$day</code></p>
+</li>
+<li>
+<p>Result 2:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>order_order_2022_01_02.csv</code><br></p>
+</li>
+<li>
+<p><code>rewe_fashion_2020_10_25.csv</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Format</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select the file format for the export.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Possible values:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CSV</p>
+</li>
+<li>
+<p>TXT</p>
+</li>
+<li>
+<p>JSON</p>
+</li>
+<li>
+<p>XML</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Field separator</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Which field delimiter should separate the individual records from each other?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Possible values:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Comma = ,</p>
+</li>
+<li>
+<p>Semicolon = ;</p>
+</li>
+<li>
+<p>Pipe =</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Tabulator = →</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Text delimiter</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Which text delimiter should separate the individual records from each other?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Possible values:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"</p>
+</li>
+<li>
+<p>'</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Decimal separator</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Select the character that is used for decimal values.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Possible values:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Comma = Default in German speaking countries, for example <code>20,00 Euro</code></p>
+</li>
+<li>
+<p>Dot = Default in English speaking countries, for example <code>20.00 Euro</code></p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Line break</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>How do you want to handle line brakes in the export file?</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Possible values:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Carriage return</p>
+</li>
+<li>
+<p>Line feed</p>
+</li>
+<li>
+<p>Carriage return an line feed</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Header is included</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Activate the option if you want the export file to contain a header line.
+The export keys are used as headings for the columns.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
+<p>Export settings</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Limit</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Do you want to limit the number of records that is exported?</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Provisioning</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Where do you want to save the export?<br>
+<strong><em>Important:</em></strong> This setting does not export data to markets.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>None</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The export is not saved.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>FTP</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The export is saved on an FTP server.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SFTP</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The export is saved on an SFTP server.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>FTPS</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The export is saved on an FTPS server.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Admin area</strong><br>
+(coming soon)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Remains to be seen.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Server</strong><br>
+(for FTP, SFTP, FTPS)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enter the server where you want to save the export.<br>
+<strong><em>Recommendation:</em></strong> Do not enter al protocol prefix.
+Some examples for protocol prefixes are <code>ftp://</code> and <code>ftps://</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Port</strong><br>
+(for FTP, SFTP, FTPS)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enter a port or use the default setting.<br></p>
+</div>
+<div class="paragraph">
+<p><strong><em>Recommended port settings:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For FTP and FTPS = Port 21</p>
+</li>
+<li>
+<p>For SFTP = Port 22</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>User name</strong><br>
+(for FTP, SFTP, FTPS)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enter the user name for the server.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Password</strong><br>
+(for FTP, SFTP, FTPS)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enter the password for the server.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Path</strong><br>
+(for FTP, SFTP, FTPS)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Where should the export be saved? Enter the path to a storage location.<br>
+<strong><em>Note</em></strong>: If you use SFTP, enter the complete path.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Transfer</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>When do you want to start the export?</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Never</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No data is exported.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Every 20 minutes</strong>;<br>
+<strong>Hourly</strong>;<br>
+<strong>Daily</strong><br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Current data is exported in the selected interval.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schedule</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The option <strong>Schedule</strong> is shown.</p></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Schedule</strong><br>
+(for option <strong>Schedule</strong>)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Click into the field. In the drop-down list shown, select one or more points in time. The export starts at these times.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="sect1">
+<h2 id="switch-to-catalogues">7. Switching from the old export to catalogue export</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For some markets, you can either use an old export or a catalogue format. Find out how to switch here.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Analyse which characteristics and free text fields you currently use for the data export to this market. Characteristics and free text fields cannot be used for the catalogue export. So create properties for all data that you still need.<br>
+<strong><em>Important:</em></strong> The values of the new properties must be identical to the values of the old characteristics. Otherwise, new items may be created during the export to the market.</p>
+</li>
+<li>
+<p>Create a catalogue. For some markets, you have to install a new plugin first. Check the manual page of the individual markets to find out if this is the case.</p>
+</li>
+<li>
+<p>Open the catalogue and check which data fields can be exported to the market.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Map suitable plentymarkets data fields to the marketplace data fields.<br>
+<strong><em>Important:</em></strong> Map the same plentymarkets data fields to the marketplace data fields that are currently exported with the elastic export. Otherwise, new items may be created during the export to the market.</p>
+</li>
+<li>
+<p>If necessary, create more properties.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Prepare your variations:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you have created new properties, then link these properties with the variations.</p>
+</li>
+<li>
+<p>For some markets, you also need a property to link the variation to the correct category of the marketplace. This property is created automatically. Check the manual page of the individual markets for this information.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Ready? Then activate the catalogue to start the data export.</p>
+</li>
+</ol>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="faq">8. FAQ</h2>
+<div class="sectionbody">
+<div class="openblock collapseBox">
+<div class="title"><strong>Why can I not see the catalogues?</strong></div>
+<div class="content">
+<div class="paragraph">
+<p>People with <a href="/en/business-decisions/user-accounts-access#10">back end access rights</a> can only see catalogues if an admin gave them access.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Find someone who has administrator rights for the plentymarkets system.</p>
+</li>
+<li>
+<p>This person will open the menu <strong>Setup » Settings » User » Rights » User</strong>.</p>
+</li>
+<li>
+<p>Then they will open your user account and activate the necessary rights:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Data &gt; Data exchange &gt; Export &gt; Catalogue &gt; Show</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Save (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+<li>
+<p>If the problem persists, <a href="https://forum.plentymarkets.com/c/importexport/multichannel/445" target="_blank" rel="noopener">ask our support team for help in the forum</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="manage-catalogues">9. Managing catalogues: how to delete, copy, etc.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In these chapters, you learn how to manage existing catalogues. This information applies to both marketplace and default formats.</p>
+</div>
+<div class="sect2">
+<h3 id="catalogue-rights">9.1. Assigning rights for back end users</h3>
+<div class="paragraph">
+<p>People with <strong>Back end</strong> access rights can <a href="/en/business-decisions/user-accounts-access#105">only see certain areas and menus</a> in plentymarkets. This means they only have limited access to the system. If you want <strong>back end</strong> type users to see catalogues, you have to grant them the following rights:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Data &gt; Data exchange &gt; Export &gt; Catalogue &gt; Show</strong></p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong>Tip: How to grant rights</strong></div>
+<div class="content">
+<div class="paragraph">
+<p>Note that only <strong>Admins</strong> can grant rights.</p>
+</div>
+<div class="paragraph instruction">
+<p>Assigning rights:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Setup » Settings » User » Rights » User</strong>.<br>
+→ The user accounts are displayed in an overview.</p>
+</li>
+<li>
+<p>Click on a user account.<br>
+→ The <strong>Rights</strong> menu item containing the visibilities opens.</p>
+</li>
+<li>
+<p>Assign the rights for the respective area by ticking the check boxes indicated above.<br>
+<strong><em>Note</em></strong>: You can either grant rights for complete areas or limit the rights you grant the user. To only grant limited rights in a certain area, expand the area.</p>
+</li>
+<li>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <strong>Rights</strong> and <strong>Menu visibilities</strong> are linked. This means that if you grant a right in one of the two areas, plentymarkets automatically grants the corresponding rights in the other area.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="15">9.2. Customizing catalogue overview columns</h3>
+<div class="paragraph">
+<p>You can customize the information that is displayed in the table columns. To do so, proceed as follows:</p>
+</div>
+<div class="paragraph instruction">
+<p>Customizing catalogue overview columns:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>At the top right, click on <strong>Configure columns</strong> (<span class="icon "><i class="material-settings"></i></span>).<br>
+→ The window <strong>Configure columns</strong> opens.</p>
+</li>
+<li>
+<p>Select which columns you want to be displayed.</p>
+</li>
+<li>
+<p>Move (<span class="icon "><i class="material-sort"></i></span>) the columns so they are displayed in the desired order.</p>
+</li>
+<li>
+<p>Click on <strong>Confirm</strong> to save your settings.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="190">9.3. Copying catalogues</h3>
+<div class="paragraph">
+<p>Do you want to quickly create new catalogues based on well configures ones that you already use? No problem!
+Any data fields that you have already mapped are copied, even if you select a different format. You can also select a different language for the copy.</p>
+</div>
+<ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
+                                <a class="nav-link active" id="coping-one-catalogue-tab" data-toggle="tab" href="#coping-one-catalogue" role="tab" aria-controls="coping-one-catalogue" aria-selected="true">Coping one catalogue</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="copying-multiple-catalogues-tab" data-toggle="tab" href="#copying-multiple-catalogues" role="tab" aria-controls="copying-multiple-catalogues" aria-selected="false">Copying multiple catalogues</a>
+                            </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="coping-one-catalogue" role="tabpanel" aria-labelledby="coping-one-catalogue-tab">
+<div class="paragraph instruction">
+<p>Coping a catalogue:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>In the row of the catalogue, click on the further actions (<span class="icon "><i class="material-more_vert"></i></span>).</p>
+</li>
+<li>
+<p>Click on <strong>Copy</strong> (<span class="icon "><i class="material-content_copy"></i></span>).<br>
+<strong><em>Or</em></strong>: Tick the box of the catalogue that you want to copy.</p>
+</li>
+<li>
+<p>At the top in the catalogue overview click on <strong>Copy catalogue</strong> (<span class="icon "><i class="material-content_copy"></i></span>).<br>
+→ A window opens.</p>
+</li>
+<li>
+<p>If desired, adjust the automatically created name for the copy.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Select another format from the drop-down list. Data fields that have already been mapped will be transferred.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Select another language from the drop-down list.</p>
+</li>
+<li>
+<p>Click on <strong>Copy</strong>.<br>
+→ The catalogue is copied and displayed in the catalogue overview.</p>
+</li>
+</ol>
+</div>
+<hr>
+</div><div class="tab-pane fade" id="copying-multiple-catalogues" role="tabpanel" aria-labelledby="copying-multiple-catalogues-tab">
+<div class="paragraph">
+<p>You can also copy several catalogues at once. However, in this case you cannot change the format or language of the catalogues.</p>
+</div>
+<div class="paragraph instruction">
+<p>Copying several catalogues:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>Select the catalogues that you want to copy.</p>
+</li>
+<li>
+<p>Click on <strong>Copy catalogue</strong> (<span class="icon "><i class="material-content_copy"></i></span>).<br>
+→ All selected catalogues are copied and displayed in the catalogue overview.<br></p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> If you want to edit the automatically created names of the copied catalogues, open the catalogues individually and adjust the name in the basic settings.</p>
+</li>
+</ol>
+</div>
+<hr>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="210">9.4. Deleting catalogues</h3>
+<div class="paragraph">
+<p>You can delete one catalogue or multiple catalogues at the same time.</p>
+</div>
+<ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
+                                <a class="nav-link active" id="deleting-one-catalogue-tab" data-toggle="tab" href="#deleting-one-catalogue" role="tab" aria-controls="deleting-one-catalogue" aria-selected="true">Deleting one catalogue</a>
+                            </li><li class="nav-item">
+                                <a class="nav-link" id="deleting-multiple-catalogues-tab" data-toggle="tab" href="#deleting-multiple-catalogues" role="tab" aria-controls="deleting-multiple-catalogues" aria-selected="false">Deleting multiple catalogues</a>
+                            </li></ul><div class="tab-content" id="tabContent"><div class="tab-pane fade show active" id="deleting-one-catalogue" role="tabpanel" aria-labelledby="deleting-one-catalogue-tab">
+<div class="paragraph instruction">
+<p>Deleting catalogues:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>In the row of the catalogue that you want to delete, click on the further actions (<span class="icon "><i class="material-more_vert"></i></span>).</p>
+</li>
+<li>
+<p>Click on <strong>Delete</strong> (<span class="icon "><i class="material-delete"></i></span>).<br>
+→ You are asked to confirm your decision.</p>
+</li>
+<li>
+<p>Confirm the deletion.<br>
+→ The catalogue is deleted.<br>
+<strong><em>Or</em></strong>: Open a catalogue.</p>
+</li>
+<li>
+<p>Click on the further actions (<span class="icon "><i class="material-more_vert"></i></span>) at the top.</p>
+</li>
+<li>
+<p>Click on <strong>Delete catalogue</strong> (<span class="icon "><i class="material-delete"></i></span>).<br>
+→ You are asked to confirm your decision.</p>
+</li>
+<li>
+<p>Confirm the deletion.<br>
+→ The catalogue is deleted.</p>
+</li>
+</ol>
+</div>
+<hr>
+</div><div class="tab-pane fade" id="deleting-multiple-catalogues" role="tabpanel" aria-labelledby="deleting-multiple-catalogues-tab">
+<div class="paragraph">
+<p>Proceed as follows in order to delete several catalogues at once.</p>
+</div>
+<div class="paragraph instruction">
+<p>Deleting several catalogues:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>Select the catalogues that you want to delete.</p>
+</li>
+<li>
+<p>At the top right, click on <strong>Delete selected catalogues</strong> (<span class="icon "><i class="material-delete"></i></span>).<br>
+→ You are asked to confirm your decision.</p>
+</li>
+<li>
+<p>Confirm the deletion.<br>
+→ The catalogues are deleted.</p>
+</li>
+</ol>
+</div>
+<hr>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="240">9.5. Restoring a deleted catalogue</h3>
+<div class="paragraph">
+<p>In the catalogue overview, you can restore the last version of a deleted catalogue.</p>
+</div>
+<div class="paragraph instruction">
+<p>Restoring a deleted catalogue:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>Click on <strong>Restore deleted catalogue</strong> (<span class="icon "><i class="material-undo"></i></span>).<br>
+→ A window opens.</p>
+</li>
+<li>
+<p>Select a catalogue from the drop-down list.</p>
+</li>
+<li>
+<p>Click on <strong>Restore</strong>.<br>
+→ The catalogue is restored and displayed in the catalogue overview.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="250">9.6. Restoring another catalogue version</h3>
+<div class="paragraph">
+<p>You can restore a previous catalogue version via the further actions or in the view of a catalogue.</p>
+</div>
+<div class="paragraph instruction">
+<p>Restoring a catalogue version:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>In the row of the catalogue, open the further actions (<span class="icon "><i class="material-more_vert"></i></span>).</p>
+</li>
+<li>
+<p>Click on <strong>Restore catalogue version</strong> (<span class="icon "><i class="fa fa-undo  "></i></span>).<br>
+<strong><em>Or</em></strong>: Open a catalogue and click on the further actions (<span class="icon "><i class="fa fa-ellipsis-v  "></i></span>) at the top.</p>
+</li>
+<li>
+<p>Click on <strong>Restore catalogue version</strong> (<span class="icon "><i class="fa fa-undo  "></i></span>).<br>
+→ A window opens.</p>
+</li>
+<li>
+<p>Select the version that you want to restore.</p>
+</li>
+<li>
+<p>Click on <strong>Restore</strong>.<br>
+→ The catalogue version is restored and displayed in the catalogue overview.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="270">9.7. Exporting catalogues</h3>
+<div class="paragraph">
+<p>Export catalogues to import them into other plentymarkets systems afterwards. At the same time, an export also serves as a backup.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+These settings export the catalogue itself. As such, the import contains information on the settings and data fields the catalogue contains. The import cannot be used to import data for plentymarkets data fields.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Exporting catalogues:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>Place a check mark for the catalogue that you want to export. You can also select several catalogues at once.</p>
+</li>
+<li>
+<p>At the top, click on <strong>Export catalogue</strong> (<span class="icon "><i class="material-file_download"></i></span>).<br>
+→ A window opens.</p>
+</li>
+<li>
+<p>Select a storage location.<br>
+→ The selected catalogues are exported and saved at the desired location.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="280">9.8. Importing catalogues</h3>
+<div class="paragraph">
+<p>Use the import function to import catalogues from other plentymarkets systems or catalogues that have been saved as backup beforehand.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+These settings import the catalogue itself. As such, the import contains information on the settings and data fields the catalogue contains and not the data that is saved for these data fields in plentymarkets.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph instruction">
+<p>Importing catalogues:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <strong>Data » Catalogues</strong>.<br>
+→ The catalogue overview opens.</p>
+</li>
+<li>
+<p>At the top, click on <strong>Import catalogue</strong> (<span class="icon "><i class="material-file_upload"></i></span>).<br>
+→ A window opens.</p>
+</li>
+<li>
+<p>Select the catalogue file that you want to import.<br>
+<strong><em>Important:</em></strong> You can only import one catalogue at a time.<br>
+→ The catalogue is imported and displayed in the overview.<br>
+→ The name of the imported catalogue contains the addition (1).<br>
+If the catalogue originates from another system, the name stays the same.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</main>
