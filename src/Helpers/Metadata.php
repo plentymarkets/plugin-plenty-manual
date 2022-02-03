@@ -3307,6 +3307,22 @@ class Metadata {
 								"hasChildren" => false
 							],
 							[
+								"id" => "e00a216d235590673a1a8a7869eb6477",
+								"path" => "daten/daten-importieren/elasticsync-praxisbeispiele/praxisbeispiel-elasticsync-eigenschaften",
+								"position" => 42,
+								"urlName" => "praxisbeispiel-elasticsync-eigenschaften",
+								"url" => "/daten/daten-importieren/elasticsync-best-practices/eigenschaften",
+								"level" => 4,
+								"title" => "Eigenschaften importieren",
+								"keywords" => "Eigenschaft importieren, Eigenschaften importieren, Importieren Eigenschaft, Importieren Eigenschaften, Eigenschaft Import, Eigenschaften Import, Eigenschaft-Import, Eigenschaften-Import, Import Eigenschaft, Import Eigenschaften, Eigenschaftimport, Eigenschaftenimport, Charakteristik importieren, Charakteristiken importieren, Importieren Charakteristik, Importieren Charakteristiken, Charakteristik Import, Charakteristiken Import, Charakteristik-Import, Charakteristiken-Import, Import Charakteristik, Import Charakteristiken, Charakteristikimport, Charakteristikenimport, Artikeleigenschaften importieren, Auswahleigenschaften importieren, Mehrfachauswahleigenschaften importieren",
+								"description" => "Diese Handbuchseite führt dich Schritt für Schritt durch den Import von Eigenschaften, Eigenschaftsgruppen und Auswahlwerte.",
+								"navAlias" => "",
+								"linkListInto" => "Willkommen im Themenbereich Eigenschaften importieren. Hier findest du folgende Informationen:",
+								"languageID" => "BPPCB08",
+								"children" => [],
+								"hasChildren" => false
+							],
+							[
 								"id" => "db219423795882e1fb47c58b0fa50d6b",
 								"path" => "daten/daten-importieren/elasticsync-praxisbeispiele/praxisbeispiel-elasticsync-facetten",
 								"position" => 45,
@@ -40157,7 +40173,7 @@ class Metadata {
 				"path" => "automation/processes",
 				"position" => 40,
 				"urlName" => "processes",
-				"url" => "/en/automation/processes/procedures",
+				"url" => "/en/automation/processes",
 				"level" => 2,
 				"title" => "Processes",
 				"keywords" => "Processes overview",
