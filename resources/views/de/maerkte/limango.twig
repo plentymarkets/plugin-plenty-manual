@@ -40,7 +40,7 @@
 <ul class="sectlevel2">
 <li><a href="#160011"><span>8.1.</span><span> PDF-Vorlage für Lieferscheine personalisieren</span></a></li>
 <li><a href="#16001"><span>8.2.</span><span> Personalisierte PDF-Vorlage für Lieferscheine hochladen</span></a></li>
-<li><a href="#16003"><span>8.3.</span><span> limango-Kundennummer auf Lieferscheinen anzeigen</span></a></li>
+<li><a href="#16003"><span>8.3.</span><span> Kundennummer und Bestellnummer von limango auf Lieferscheinen anzeigen</span></a></li>
 <li><a href="#16002"><span>8.4.</span><span> Retourenhinweis für limango-Lieferscheine eingeben</span></a></li>
 </ul>
 </li>
@@ -61,7 +61,8 @@
 </li>
 </ul>
 </li>
-<li><a href="#1100"><span>10.</span><span> Fehlersuche: Log-Einträge abrufen</span></a></li>
+<li><a href="#_versandkosten"><span>10.</span><span> Versandkosten</span></a></li>
+<li><a href="#1100"><span>11.</span><span> Fehlersuche: Log-Einträge abrufen</span></a></li>
 </ul>
 </div>
         </div>
@@ -117,7 +118,8 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Bestandsabgleich</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>stündlich<br>
-<strong><em>Tipp:</em></strong> Aus technischen Gründen sind kürzere Abstände beim Bestandsabgleich nicht möglich. Lege bei Bedarf einen <a href="#300">Bestandspuffer</a> fest, um Überverkäufe zu verhindern.</p>
+<strong><em>Tipp:</em></strong> Kürzere Abstände sind aus technischen Gründen nicht möglich. Lege wenn nötig einen <a href="#300">Bestandspuffer</a> fest, um Überverkäufe zu verhindern.<br>
+<strong><em>Hinweis:</em></strong> Nur ganze Zahlen können exportiert werden. Bestände mit Dezimalstellen (zum Beispiel <code>0,5</code>) sind ungültig.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -298,7 +300,7 @@
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Benutzername</strong><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Benutzername</strong>;<br>
 <strong>Passwort</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Diese Zugangsdaten erhältst du von limango.</p>
@@ -315,6 +317,20 @@
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zeitpunkt des letzten erfolgreichen Bestandsexports</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Der Zeitstempel des letzten erfolgreichen Bestandsexports.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lager-IDs (kommasepariert)</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>ID der Lager eingeben, aus denen Bestandsdaten an limango exportiert werden sollen. Mehrere ID können kommagetrennt eingegeben werden.<br>
+<strong><em>Hinweis:</em></strong> Das virtuelle Gesamtlager hat die ID <code>-1</code>. Wenn du diese ID eingibst, wird die Summe der Bestände aller Vertriebslager exportiert.
+<strong><em>Tipp:</em></strong> Die ID eines Lagers findest du im Menü <strong>Einrichtung » Waren » Lager » [Lager öffnen] » Einstellungen</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Informationen</strong></p></td>
 </tr>
 <tr>
@@ -328,10 +344,10 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>1</strong> = Die Preise wurden erfolgreich zu limango exportiert. Der Zeitpunkt des Exports wird unter <strong>Zeitpunkt des letzten erfolgreichen Preisexports</strong> angezeigt.</p>
+<p><strong>1</strong>/<strong>success</strong> = Die Preise wurden erfolgreich zu limango exportiert. Der Zeitpunkt des Exports wird unter <strong>Zeitpunkt des letzten erfolgreichen Preisexports</strong> angezeigt.</p>
 </li>
 <li>
-<p><strong>2</strong> = Der letzte Preisexport ist fehlgeschlagen.</p>
+<p><strong>2</strong>/<strong>failed</strong> = Der letzte Preisexport ist fehlgeschlagen.</p>
 </li>
 </ul>
 </div></div></td>
@@ -401,8 +417,9 @@
 <strong>UPS</strong><br>
 etc.</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Für jeden Versanddienstleister, den du für limango-Aufträge anbieten möchtest, die ID des Versanddienstleisters in plentymarkets eingeben.<br>
-<strong><em>Tipp:</em></strong> Die ID der Versanddienstleister findest du im Menü <strong>Einrichtung » Aufträge » Versand » Optionen » Tab: Versanddienstleister</strong> in der Spalte <strong>ID</strong>.</p>
+<p>Für jeden Versanddienstleister, den du für limango-Aufträge anbieten möchtest, die plentymarkets-ID des Versanddienstleisters eingeben.<br>
+<strong><em>Tipp:</em></strong> Die ID der Versanddienstleister findest du im Menü <strong>Einrichtung » Aufträge » Versand » Optionen » Tab: Versanddienstleister</strong> in der Spalte <strong>ID</strong>.<br>
+<strong><em>Hinweis:</em></strong> Die Versandkosten werden in deinem Vertrag mit limango festgelegt und von limango gespeichert. Deshalb gibst du hier die ID des Versanddienstleisters und <em>nicht</em> die ID eines Versandprofils.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -539,13 +556,51 @@ Wenn du keinen Mandanten eingibst, werden limango-Aufträge für den Standard-Ma
 <td class="tableblock halign-left valign-top"><p class="tableblock">Produktname</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Feld <strong>Name 1</strong>, <strong>Name 2</strong> oder <strong>Name 3</strong> und entweder ein Attribut für Farben oder eine Eigenschaft für Farben</p>
+</div>
+<div class="paragraph">
+<p>Für Produktnamen gelten die folgenden Regeln:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Gib den Produktnamen auf Deutsch an.</p>
+</li>
+<li>
+<p>Produktnamen dürfen maximal 80 Zeichen haben und sollten so kurz wie möglich sein.</p>
+</li>
+<li>
+<p>Hersteller oder Eigenmarken dürfen nicht im Produktnamen erwähnt werden. Diese Informationen werden bei limango separat angezeigt.</p>
+</li>
+<li>
+<p>Größen, Geschlechterangaben und Wiederholungen dürfen nicht im Produktnamen genannt werden.</p>
+</li>
+<li>
+<p>Die Farbe muss im Produktnamen angegeben werden nach dem Schema <strong>Produktbezeichnung + in + Farbe</strong>.</p>
+</li>
+<li>
+<p><strong>_Beispiel:</strong> <code>T-Shirt in Blau</code></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Beschreibung</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Feld <strong>Artikeltext</strong>
+<p>Feld <strong>Artikeltext</strong><br>
 Besonderheit bei Schuhen: Feld <strong>Artikeltext</strong> + Materialbeschreibung</p>
+</div>
+<div class="paragraph">
+<p>Für Beschreibungen gelten die folgenden Regeln:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Artikelbeschreibung darf maximal 10.000 Zeichen lang sein. Längerer Text wird nach 10.000 Zeichen auf der Produktdetailseite abgeschnitten.</p>
+</li>
+<li>
+<p>limango kann keine HTML-Tags verarbeiten. Deshalb werden HTML-Tags beim Export entfernt. Prüfe also deine Artikeltexte. Wenn du viele HTML-Tags verwendest, kann es sinnvoll sein, eine Eigenschaft zu verwenden, in der du die Artikelbeschreibungen ohne HTML-Formatierung speicherst.</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -604,6 +659,9 @@ Besonderheit bei Schuhen: Feld <strong>Artikeltext</strong> + Materialbeschreibu
 <p>Herstellername an den Varianten wählen.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Tipp:</em></strong> Wende dich an das limango-Partnermanagement, wenn du neue Marken listen möchtest.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -615,13 +673,13 @@ Besonderheit bei Schuhen: Feld <strong>Artikeltext</strong> + Materialbeschreibu
 <div class="ulist">
 <ul>
 <li>
-<p>Mann</p>
+<p><code>Mann</code></p>
 </li>
 <li>
-<p>Frau</p>
+<p><code>Frau</code></p>
 </li>
 <li>
-<p>Unisex</p>
+<p><code>Unisex</code></p>
 </li>
 </ul>
 </div>
@@ -651,15 +709,19 @@ Besonderheit bei Schuhen: Feld <strong>Artikeltext</strong> + Materialbeschreibu
 </li>
 <li>
 <p>Auswahlwerte:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Babys</code> = Kinder ≤ 1 Jahr</p>
 </li>
 <li>
-<p>Babys</p>
+<p><code>Kinder</code> = Kinder &gt; 1 Jahr</p>
 </li>
 <li>
-<p>Kinder</p>
+<p><code>Erwachsene</code></p>
 </li>
-<li>
-<p>Erwachsene</p>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -676,15 +738,18 @@ Besonderheit bei Schuhen: Feld <strong>Artikeltext</strong> + Materialbeschreibu
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Farbe</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Wenn die Varianten ohne Attribute für Farben erstellt wurden:</p>
+<p>Die Farbe wird für die eindeutige Produktbildung herangezogen. Es muss sich also um eindeutige Werte handeln, zum Beispiel um die Herstellerfarbe. Zum Bilden der Artikelnummer wird die Farbe an die SKU gehängt.</p>
+</div>
+<div class="paragraph">
+<p>Wenn die Varianten ohne Attribute für Farben erstellt wurden, benötigst du eine Eigenschaft:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Eigenschaft des Typs <strong>Auswahl</strong> mit den benötigten Farben als Werte erstellen.</p>
+<p>Erstelle eine Eigenschaft des Typs <strong>Auswahl</strong> mit den benötigten Farben als Werte.</p>
 </li>
 <li>
-<p>Varianten mit der Eigenschaft verknüpfen und einen der Werte wählen.<br>
+<p>Verknüpfe die Varianten mit der Eigenschaft und wähle einen der Werte.<br>
 <strong><em>Tipp:</em></strong> Eine Eigenschaft des Typs <strong>Auswahl</strong> bietet sich an, wenn du häufig wiederkehrende Farbnamen hast.</p>
 </li>
 </ol>
@@ -695,11 +760,11 @@ Besonderheit bei Schuhen: Feld <strong>Artikeltext</strong> + Materialbeschreibu
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Eigenschaft des Typs <strong>Text</strong> erstellen.</p>
+<p>Erstelle eine Eigenschaft des Typs <strong>Text</strong>.</p>
 </li>
 <li>
-<p>Varianten mit der Eigenschaft verknüpfen und als Wert die Farbe eingeben.<br>
-<strong><em>Tipp:</em></strong> Eine Eigenschaft des Typs <strong>Text</strong> bietet sich an, wenn die Namen der Farben sehr individuell sind. Allerdings besteht hier das Risiko, dass sich beim Eingeben des Farbwerts Tippfehler einschleichen.</p>
+<p>Verknüpfe die Varianten mit der Eigenschaft und gib als Wert die Farbe ein.<br>
+<strong><em>Tipp:</em></strong> Eine Eigenschaft des Typs <strong>Text</strong> bietet sich an, wenn die Namen der Farben sehr individuell sind. Hier besteht aber das Risiko, dass sich beim Eingeben des Farbwerts Tippfehler einschleichen.</p>
 </li>
 </ol>
 </div></div></td>
@@ -707,29 +772,20 @@ Besonderheit bei Schuhen: Feld <strong>Artikeltext</strong> + Materialbeschreibu
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Größe</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Wenn die Varianten ohne Attribute für Größen erstellt wurden:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Eigenschaft des Typs <strong>Auswahl</strong> mit den benötigten Größen als Werte erstellen.</p>
-</li>
-<li>
-<p>Varianten mit der Eigenschaft verknüpfen und einen der Werte wählen.<br>
-<strong><em>Tipp:</em></strong> Eine Eigenschaft des Typs <strong>Auswahl</strong> bietet sich an, wenn du häufig wiederkehrende Größen hast.</p>
-</li>
-</ol>
+<p>Wenn die Varianten ohne Attribute für Größen erstellt wurden, benötigst du eine Eigenschaft.</p>
 </div>
 <div class="paragraph">
-<p><em>oder</em></p>
+<p><strong><em>Hinweis:</em></strong> Produkte ohne Größe haben bei limango den Größenwert <code>onesize</code>. Produkte ohne Größe sind Single-Size-Produkte. Das sind Produkte, die es nur in einer Größe gibt und bei denen die Größenangabe nicht variantenbildend ist.<br>
+<strong><em>Beispiel Möbel:</em></strong> Einen Sessel gibt es in verschiedenen Farben, aber nicht in verschiedenen Größen. Der Größenwert <code>onesize</code> muss exportiert werden.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Eigenschaft des Typs <strong>Text</strong> erstellen.</p>
+<p>Erstelle eine Eigenschaft des Typs <strong>Auswahl</strong> mit den benötigten Größen als Werte.<br>
+<strong><em>Tipp:</em></strong> Vergiss nicht, den Eigenschaftswert <code>onesize</code> für Produkte ohne Größe zu speichern.</p>
 </li>
 <li>
-<p>Varianten mit der Eigenschaft verknüpfen und als Wert die Größe eingeben.</p>
+<p>Verknüpfe die Varianten mit der Eigenschaft und wähle einen der Werte.</p>
 </li>
 </ol>
 </div></div></td>
@@ -741,6 +797,9 @@ Besonderheit bei Schuhen: Feld <strong>Artikeltext</strong> + Materialbeschreibu
 <h3 id="750">6.2. Variantenverfügbarkeit einstellen</h3>
 <div class="paragraph">
 <p>Varianten, die du auf limango verkaufen möchtest, müssen im Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen]</strong> im Tab <strong>Verfügbarkeit</strong> aktiviert werden.</p>
+</div>
+<div class="paragraph">
+<p>Beim ersten Export werden auch Varianten mit Bestand 0 zu limango exportiert. Aktiviere deshalb die Variantenverfügbarkeit nur bei den Varianten, die tatsächlich exportiert werden sollen.</p>
 </div>
 <ul class="nav nav-tabs mb-3" id="tabCollection" role="tablist"><li class="nav-item">
                                 <a class="nav-link active" id="f-r-eine-variante-tab" data-toggle="tab" href="#f-r-eine-variante" role="tab" aria-controls="f-r-eine-variante" aria-selected="true">Für eine Variante</a>
@@ -1119,9 +1178,9 @@ Wenn eine solche Datei nicht benötigst, kannst du die Einstellungen ignorieren.
 <p>Klicke auf den Katalog.<br>
 → Das Tab <strong>Zuordnung</strong> wird geöffnet.<br>
 → In der linken Spalte werden die Datenfelder des Marktplatzes angezeigt.<br>
-<strong><em>Tipp:</em></strong> Pflichtfelder sind mit Sternchen (<strong>) gekennzeichnet.<br>
+<strong><em>Tipp:</em></strong> Pflichtfelder sind mit Sternchen (∗) gekennzeichnet.<br>
 → In der rechten Spalte ordnest du die plentymarkets Datenfelder zu. Bereits zugeordnete plentymarkets Datenfelder werden ebenfalls in der rechten Spalte angezeigt.<br>
-*<em>Tipp:</em></strong> Du brauchst mehr Informationen zu den plentymarkets Datenfeldern? Alle Datenfelder sind auf der Handbuchseite für das Standardformat <a href="/daten/daten-exportieren/katalog-artikel">Artikel (neu)</a> beschrieben.</p>
+<strong><em>Tipp:</em></strong> Du brauchst mehr Informationen zu den plentymarkets Datenfeldern? Alle Datenfelder sind auf der Handbuchseite für das Standardformat <a href="/daten/daten-exportieren/katalog-artikel">Artikel (neu)</a> beschrieben.</p>
 </li>
 <li>
 <p>Nun ordnest du den Marktplatz-Datenfeldern passende plentymarkets Datenfelder zu.<br>
@@ -1572,10 +1631,38 @@ Ordne bei komplexen Zuordnungen keine eigenen Werte und keine Eigenschaften des 
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Händler-Produkt-ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Die Händler-Produkt-ID wird automatisch aus <strong>Parent-SKU</strong> + <strong>Farbe</strong> erzeugt.</p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Beschreibung</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="openblock collapseBox">
 <div class="title">Sonderfall Schuhverkauf</div>
 <div class="content">
+<div class="paragraph">
+<p>Die Schuhmaterialien müssen für alle Schuhe in der folgenden Reihenfolge angegeben werden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Obermaterial</p>
+</li>
+<li>
+<p>Futter</p>
+</li>
+<li>
+<p>Decksohle</p>
+</li>
+<li>
+<p>Laufsohle</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Dabei dürfen nur die folgenden Materialwerte verwendet werden: <code>Leder</code>, <code>beschichtetes Leder</code>, <code>Textil</code> und <code>sonstiges Material</code></p>
+</div>
 <div class="paragraph">
 <p>Wenn du Schuhe auf dem limango-Marktplatz verkaufen möchtest, müssen Informationen zum Material über das Feld <strong>Beschreibung</strong> an limango exportiert werden. Dazu kombinierst du zwei plentymarkets Datenfelder und exportierst sie als ein Feld an limango.</p>
 </div>
@@ -1635,6 +1722,9 @@ Ordne bei komplexen Zuordnungen keine eigenen Werte und keine Eigenschaften des 
 <strong>Gewicht</strong><br>
 etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Maße dürfen nur für Produkte ohne Größenvarianten angegeben werden, also für Single-Size-Produkte wie zum Beispiel Möbel. Grund: Die Maße können im limango-Shop nur auf Produktebene, nicht aber auf Variantenebene (= Größenebene) ausgespielt werden können.</p>
+</div>
+<div class="paragraph">
 <p>Maßangaben müssen im Format <strong>[Zahlenwert];[Einheit]</strong> zu limango exportiert werden. Wegen der limango Produktstruktur können aber die normalen plentymarkets Datenfelder für Maße nicht zugeordnet werden. Stattdessen erstellst du zwei Eigenschaften:</p>
 </div>
 <div class="ulist">
@@ -1715,6 +1805,9 @@ etc.)</p></td>
 <div class="openblock collapseBox">
 <div class="title"><strong><em>Beispiel:</em></strong> Volumen an limango exportieren</div>
 <div class="content">
+<div class="paragraph">
+<p>Stell dir vor, du möchtest Angaben zum Volumen von Varianten an limango exportieren. Dazu gehst du so vor:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1752,6 +1845,25 @@ etc.)</p></td>
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UVP</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Für die Angabe des UVP gelten die folgenden Regeln:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der UVP darf nicht niedriger sein als der Brutto-Verkaufspreis.</p>
+</li>
+<li>
+<p>Ist der UVP höher als der Verkaufspreis, wird im limango-Shop ein Streichpreis ausgespielt.</p>
+</li>
+<li>
+<p>Du hast keinen UVP, zum Beispiel weil du selbst Hersteller:in bist? Dann ordne denselben Verkaufspreis wie für das Marktplatz-Datenfeld <strong>Brutto-Verkaufspreis</strong> zu. Bei limango wird dann kein durchgestrichener Preis angezeigt.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Materialzusammensetzung<br>
 (<strong>Ärmelfutter</strong>;<br>
 <strong>Obermaterial 3</strong>;<br>
@@ -1761,6 +1873,9 @@ etc.)</p></td>
 <strong>Material 3</strong><br>
 etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Für alle Textilerzeugnisse mit einem Gewichtsanteil an Textilfasern von mindestens 80 % ist die Materialangabe in Prozent rechtlich verpflichtend.</p>
+</div>
+<div class="paragraph">
 <p>Materialangaben werden mit Eigenschaften des Typs <strong>Text</strong> zu limango exportiert. Erstelle für jedes Marktplatz-Datenfeld eine eigene Eigenschaft.</p>
 </div>
 <div class="paragraph">
@@ -1783,8 +1898,8 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>{"materialtyp1": "prozentwert","materialtyp2": "prozentwert","materialtyp3": "prozentwert"}</strong><br>
-<strong><em>Beispiel:</em></strong> <code>{"baumwolle": "90","elasthan": "10"}</code></p>
+<p><strong>{"materialtyp1": "prozentwert","materialtyp2":"prozentwert","materialtyp3":"prozentwert"}</strong><br>
+<strong><em>Beispiel:</em></strong> <code>{"baumwolle":"90","elasthan":"10"}</code></p>
 </li>
 </ul>
 </div>
@@ -1823,7 +1938,7 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>{"polyester": "65","viskose": "32","elasthan": "3"}</code></p>
+<p><code>{"polyester":"65","viskose":"32","elasthan":"3"}</code></p>
 </li>
 </ul>
 </div>
@@ -1868,25 +1983,25 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Farbwert</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>limango unterscheidet nur nach Farben, nicht nach Farbabstufungen. Wenn du also zum Beispiel ein Kleid in den Farben Hellgrün und Dunkelgrün anbietest, werden beide Varianten angezeigt, wenn Kund:innen auf dem Marktplatz nach grünen Kleidern suchen.</p>
+<p>Der Farbwert entspricht dem Farbfilter im limango-Shop. limango unterscheidet dabei nur nach Farben, nicht nach Farbabstufungen. Wenn du also zum Beispiel ein Kleid in den Farben Hellgrün und Dunkelgrün anbietest, werden beide Varianten angezeigt, wenn Kund:innen auf dem Marktplatz nach grünen Kleidern suchen.</p>
 </div>
 <div class="paragraph">
 <p>Damit für Varianten mit verschiedenen Farbabstufungen verschiedene Produkte auf limango erstellt werden, wird für Händler-Produkt-ID und Produktname nicht der limango-Farbwert exportiert, sondern der in plentymarkets gespeicherte Wert.</p>
 </div>
 <div class="openblock collapseBox">
-<div class="title"><strong><em>Beispiel:</em></strong> Verschiedene Grüntöne dem Farbwert <strong>green</strong> zuordnen</div>
+<div class="title"><strong><em>Beispiel:</em></strong> Dem limango-Farbwert <strong>grün</strong> verschiedene Grüntöne zuordnen</div>
 <div class="content">
 <div class="paragraph">
-<p>Als Beispiel wird hier beschrieben, wie du verschiedene Grüntöne dem Farbwert <strong>green</strong> zuordnest.</p>
+<p>Stell dir vor du möchtest dem limango-Farbwert <strong>grün</strong> verschiedene deiner eigenen Grüntöne zuordnen.</p>
 </div>
 <div class="paragraph instruction">
-<p>Angenommene Ausgangssituation:</p>
+<p><strong><em>Angenommene Ausgangssituation:</em></strong></p>
 </div>
 <div class="paragraph">
-<p>Du möchtest alle deine Grüntöne mit dem limango-Farbwert <strong>green</strong> verknüpfen.</p>
+<p>Du möchtest alle deine Grüntöne mit dem limango-Farbwert <strong>grün</strong> verknüpfen.</p>
 </div>
 <div class="paragraph">
-<p>Diese Grüntöne pflegst du als Werte des Attributs <strong>Farbe</strong>:</p>
+<p>Einige Grüntöne pflegst du als Werte des Attributs <strong>Farbe</strong>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1899,7 +2014,7 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Diese Grüntöne pflegst du als Eigenschaftswerte:</p>
+<p>Andere Grüntöne pflegst du als Eigenschaftswerte:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1912,7 +2027,7 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 </ul>
 </div>
 <div class="paragraph instruction">
-<p>Verschiedene Grüntöne dem Farbwert "green" zuordnen:</p>
+<p>Verschiedene Grüntöne dem Farbwert "grün" zuordnen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1923,15 +2038,23 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <p>Navigiere zum Bereich <strong>Farbe</strong>.</p>
 </li>
 <li>
-<p>Ordne dem Marktplatz-Datenfeld <strong>Farbe</strong> folgende plentymarkets Datenfelder zu:<br>
-<strong><em>Datenfeld:</em></strong> Feld <strong>Wertname</strong> des Attributs für <strong>Farbe</strong><br>
-<strong><em>Ausweich-Datenfeld:</em></strong> Eigenschaft für <strong>Farbe</strong></p>
+<p>Ordne dem Marktplatz-Datenfeld <strong>Farbe</strong> folgende plentymarkets Datenfelder zu:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Datenfeld:</em></strong> Feld <strong>Wertname</strong> des Attributs für <strong>Farbe</strong><br></p>
+</li>
+<li>
+<p><strong><em>Ausweich-Datenfeld:</em></strong> Eigenschaft für <strong>Farbe</strong></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Navigiere zum Bereich <strong>Farbwert</strong>.</p>
 </li>
 <li>
-<p>Ordne dem Marktplatz-Datenfeld <strong>Farbwert: green</strong> den plentymarkets Attributwert <strong>Hellgrün</strong> zu.</p>
+<p>Ordne dem Marktplatz-Datenfeld <strong>Farbwert: grün</strong> den plentymarkets Attributwert <strong>Hellgrün</strong> zu.</p>
 </li>
 <li>
 <p>Klicke auf <strong>+ Ausweich-Datenfeld hinzufügen</strong>.</p>
@@ -1959,6 +2082,15 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 </div>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Energielabel-URL</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lampen und Leuchten mit nicht zerstörungsfrei herausnehmbarem Leuchtmittel sind kennzeichnungspflichtig. Deshalb muss für diese Produkte die URL zum Energielabel exportiert werden.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Empfehlung:</em></strong> Erstelle eine Eigenschaft des Typs <strong>Text</strong>, in der du die URL des Energielabels an der Variante speicherst.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1979,10 +2111,10 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <div class="content">
 <table id="recommended-mappings" class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 12.5%;">
-<col style="width: 50%;">
-<col style="width: 12.5%;">
+<col style="width: 22.2222%;">
+<col style="width: 11.1111%;">
+<col style="width: 55.5555%;">
+<col style="width: 11.1112%;">
 </colgroup>
 <thead>
 <tr>
@@ -1997,6 +2129,14 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Produkte</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Händler-Produkt-ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wird automatisch aus <strong>Parent-SKU</strong> + <strong>Farbe</strong> erzeugt.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Produktgruppe</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Produktgruppen-ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
@@ -2007,7 +2147,7 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong><em>Hinweis:</em></strong> Die Produktgruppen-ID ist frei wählbar. Die ID wird nicht im limango Shop angezeigt.</p>
+<p><strong><em>Hinweis:</em></strong> Die Produktgruppen-ID ist frei wählbar. Die ID wird nicht im limango-Shop angezeigt.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Produktgruppe</p></td>
 </tr>
@@ -2022,7 +2162,7 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong><em>Hinweis:</em></strong> Der Produktgruppen-Name ist frei wählbar. Der Name wird nicht im limango Shop angezeigt.</p>
+<p><strong><em>Hinweis:</em></strong> Der Produktgruppen-Name ist frei wählbar. Der Name wird nicht im limango-Shop angezeigt.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Produktgruppe</p></td>
 </tr>
@@ -2032,7 +2172,7 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Artikeltext » Name 1</strong> + Eigener Wert <code>in</code> + Werte des Attributs <strong>Farbe</strong> + Trennzeichen <strong>Leerzeichen</strong></p>
+<p><strong>Artikeltext » Name 1</strong> + Eigener Wert <code>in</code> + Werte des Attributs <strong>Farbe</strong>; Trennzeichen <strong>Leerzeichen</strong></p>
 </li>
 </ul>
 </div>
@@ -2042,13 +2182,13 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Artikeltext » Name 1</strong> + Eigener Wert <code>in</code> + Werte einer Eigenschaft <strong>Farbe</strong> an Variante + Trennzeichen <strong>Leerzeichen</strong></p>
+<p><strong>Artikeltext » Name 1</strong> + Eigener Wert <code>in</code> + Werte einer Eigenschaft <strong>Farbe</strong> an Variante; Trennzeichen <strong>Leerzeichen</strong></p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="{{plugin_path('PlentyManual')}}/images/maerkte/assets/limango-produktname.png" alt="limango produktname">
+<img src="../assets/limango-produktname.png" alt="limango produktname">
 </div>
 </div>
 <div class="paragraph">
@@ -2138,7 +2278,20 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Exportiert werden die ersten 10 Bilder mit Herkunft <strong>limango</strong>, die an der Farbvariante mit der höchsten Position verknüpft sind. Bilder werden nach Position sortiert. Bei gleicher Position wird nach ID sortiert.</p>
+<p>Für den Bilderexport gelten die folgenden Regeln:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Exportiert werden die ersten 10 Bilder mit Herkunft <strong>limango</strong>, die an der Farbvariante mit der höchsten Position verknüpft sind.</p>
+</li>
+<li>
+<p>Als erstes Bild erwartet limango ein freigestelltes Produktbild.</p>
+</li>
+<li>
+<p>Bilder werden nach Position sortiert. Bei gleicher Position wird nach ID sortiert.</p>
+</li>
+</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Produkt</p></td>
 </tr>
@@ -2163,13 +2316,21 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong><em>Tipp:</em></strong> Über dieses Feld teilst du limango mit, mit welchem Attribut bzw. welcher Eigenschaft du Farben pflegst. Exportiert werden aber die Wertnamen, die du dem Feld <strong>Farbwert</strong> zugeordnest.<br>
+<p><strong><em>Tipp:</em></strong> Über dieses Feld teilst du limango mit, mit welchem Attribut oder mit welcher Eigenschaft du Farben pflegst. Zur Bildung der Artikelnummer wird die Farbe an die SKU gehängt. Deshalb muss die Farbe ein eindeutiger Wert sein, zum Beispiel die Herstellerfarbe.<br>
 (siehe <a href="#905">Besonderheiten</a>)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Produkt</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Produktvarianten</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Varianten-ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Wird automatisch zugeordnet.</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Variante</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Hersteller-Variantennummer</p></td>
@@ -2190,19 +2351,6 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <ul>
 <li>
 <p><strong>Aktiv</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Variante</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Variantenbestand</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nein</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Bestand » [1 oder mehrere Lager wählen]</strong><br>
-<strong><em>Tipp:</em></strong> Mit den Datenfeldern unter <strong>Virtuelles Gesamtlager</strong> wird die Summe der Bestände aller Vertriebslager exportiert.</p>
 </li>
 </ul>
 </div></div></td>
@@ -2242,6 +2390,9 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <p>Eigenschaft an Variante</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Tipp:</em></strong> Die Lieferzeit gibt an, wann die Bestellung bei Kund:innen ankommt.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variante</p></td>
 </tr>
@@ -2267,6 +2418,9 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <p>Eigenschaft an Variante</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Tipp:</em></strong> Die Lieferzeit gibt an, wann die Bestellung bei Kund:innen ankommt.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variante</p></td>
 </tr>
@@ -2428,12 +2582,19 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>UVP für Herkunft <strong>limango</strong></p>
+<p><strong>Verkaufspreis » [Verkaufspreis des Typs UVP für Herkunft limango wählen]</strong></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Wenn nötig Ausweichdatenfeld hinzufügen.</p>
+<p><strong><em>Empfohlenes Ausweich-Datenfeld:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Verkaufspreis » [Denselben Verkaufspreis wie für Datenfeld "Brutto-Verkaufspreis" wählen]</strong></p>
+</li>
+</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variante</p></td>
 </tr>
@@ -2443,7 +2604,7 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Verkaufspreis für Herkunft <strong>limango</strong></p>
+<p><strong>Verkaufspreis » [Verkaufspreis für Herkunft limango wählen]</strong></p>
 </li>
 </ul>
 </div>
@@ -2497,6 +2658,9 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <p><strong>Hersteller</strong></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><strong><em>Tipp:</em></strong> Du möchtest eine Marke verkaufen, die noch nicht in der Markenliste enthalten ist? Wende dich an das limango-Partnermanagement. Die Marke wird dann zur Liste hinzugefügt.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Produktgruppe</p></td>
 </tr>
@@ -2550,13 +2714,13 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Babys</p>
+<p><code>Babys</code> = Kinder ≤ 1 Jahr</p>
 </li>
 <li>
-<p>Kinder</p>
+<p><code>Kinder</code> = Kinder &gt; 1 Jahr</p>
 </li>
 <li>
-<p>Erwachsene</p>
+<p><code>Erwachsene</code></p>
 </li>
 </ul>
 </div></div></td>
@@ -2683,7 +2847,7 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong><em>Hinweis:</em></strong> Für Produkte ohne Größenangabe muss der Wert <strong>onesize</strong> exportiert werden.</p>
+<p><strong><em>Hinweis:</em></strong> Für Produkte ohne Größenangabe muss der Wert <strong>onesize</strong> exportiert werden. Ordne deshalb auch dem limango-Wert <strong>onesize</strong> einen Wert zu.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variante</p></td>
 </tr>
@@ -2696,9 +2860,14 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Mehrwertsteuersatz wählen</p>
+<p><strong>Mehrwertsteuersatz » [Steuersatz für 19 % wählen]</strong></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../assets/limango-steuerklasse-1.png" alt="limango steuerklasse 1">
+</div>
 </div>
 <div class="paragraph">
 <p>Wenn nötig Ausweichdatenfeld hinzufügen.</p>
@@ -2711,9 +2880,14 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Mehrwertsteuersatz wählen</p>
+<p><strong>Mehrwertsteuersatz » [Steuersatz für 7 % wählen]</strong></p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../assets/limango-steuerklasse-2.png" alt="limango steuerklasse 2">
+</div>
 </div>
 <div class="paragraph">
 <p>Wenn nötig Ausweichdatenfeld hinzufügen.</p>
@@ -2721,13 +2895,13 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Variante</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Felder, die ohne Mapping übertragen werden</p></td>
+<td class="tableblock halign-left valign-top" colspan="4"><p class="tableblock">Felder, die ohne Zuordnung übertragen werden</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Händler-Produkt-ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ja</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Parent-SKU</strong> - plentymarkets Wert für <strong>Farbwert</strong> wird exportiert<br>
+<p>Wird automatisch aus <strong>Parent-SKU</strong> + plentymarkets Wert für <strong>Farbwert</strong> gebildet.<br>
 (siehe <a href="#905">Besonderheiten</a>)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Produkt</p></td>
@@ -2804,21 +2978,43 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <h2 id="1600">8. Lieferscheine für limango vorbereiten</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Auf Lieferscheinen für limango-Aufträge müssen der limango-Briefkopf, deine Firmendaten und ein von limango vorgegebener Retourenhinweis erscheinen. Wie du Layout-Vorlagen für Auftragsdokumente in plentymarkets erstellst, wird im Handbuchbereich <a href="/auftraege/auftragsdokumente#170">Aufträge</a> beschrieben. Hier auf dieser Seite erfährst du, wie du die PDF-Vorlage hochlädst und die Besonderheiten für den Marktplatz auf deinen Lieferscheinen anzeigst.</p>
+<p>Lieferscheine sind bei limango gleichzeitig Retourenscheine. Lieferscheine für limango-Aufträge müssen die folgenden Angaben enthalten:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#16011">So personalisierst du die PDF-Vorlage für Lieferscheine</a></p>
+<p>limango-Briefkopf</p>
 </li>
 <li>
-<p><a href="#16001">So lädst du die PDF-Vorlage für Lieferscheine hoch</a></p>
+<p>Deine Firmendaten</p>
 </li>
 <li>
-<p><a href="#16003">So gibst du die limango-Kundennummer auf Lieferscheinen aus</a></p>
+<p>Von limango vorgegebener Retourenhinweis</p>
 </li>
 <li>
-<p><a href="#16002">So gibst du den Retourenhinweis für limango-Lieferscheine ein</a></p>
+<p>limango-Kundennummer</p>
+</li>
+<li>
+<p>limango-Bestellnummer</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wie du Layout-Vorlagen für Auftragsdokumente in plentymarkets erstellst, wird im Handbuchbereich <a href="/auftraege/auftragsdokumente#170">Aufträge</a> beschrieben. Hier auf dieser Seite erfährst du, wie du die PDF-Vorlage hochlädst und die Besonderheiten für den Marktplatz auf deinen Lieferscheinen anzeigst:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#160011">PDF-Vorlage für Lieferscheine personalisieren</a></p>
+</li>
+<li>
+<p><a href="#16001">PDF-Vorlage für Lieferscheine hochladen</a></p>
+</li>
+<li>
+<p><a href="#16003">Kundennummer und Bestellnummer von limango auf Lieferscheinen ausgeben</a></p>
+</li>
+<li>
+<p><a href="#16002">Retourenhinweis für limango-Lieferscheine eingeben</a></p>
 </li>
 </ul>
 </div>
@@ -2918,12 +3114,12 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="16003">8.3. limango-Kundennummer auf Lieferscheinen anzeigen</h3>
+<h3 id="16003">8.3. Kundennummer und Bestellnummer von limango auf Lieferscheinen anzeigen</h3>
 <div class="paragraph">
-<p>Auf allen limango-Lieferscheinen muss die limango-Kundennummer erscheinen. Dazu passt du die Vorlage für Lieferscheine an.</p>
+<p>Auf allen limango-Lieferscheinen müssen die limango-Kundennummer und die limango-Bestellnummer erscheinen. Dazu passt du die Vorlage für Lieferscheine an.</p>
 </div>
 <div class="paragraph instruction">
-<p>limango-Kundennummer auf Lieferscheinen anzeigen:</p>
+<p>Kundennummer und Bestellnummer von limango auf Lieferscheinen anzeigen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2934,11 +3130,15 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <p>Scrolle zum Bereich <strong>Optionale Elemente unter Artikelpositionstabelle</strong>.</p>
 </li>
 <li>
+<p>Wähle für die Einstellung <strong>Externe Auftragsnummer</strong> aus der Dropdown-Liste die Option Ja.</p>
+</li>
+<li>
 <p>Wähle für die Einstellung <strong>Externe Kundennummer</strong> aus der Dropdown-Liste die Option <strong>Ja</strong>.</p>
 </li>
 <li>
 <p>Speichere (<span class="icon "><i class="psicon-save"></i></span>) die Einstellungen.<br>
-→ Die externe Kundennummer wird unterhalb der Artikelpositionen positioniert.</p>
+→ Die externe Kundennummer wird unterhalb der Artikelpositionen positioniert.<br>
+<strong><em>Tipp:</em></strong> Füge in diesem Menü gleich auch den <a href="#16002">Retourenhinweis</a> hinzu.</p>
 </li>
 </ol>
 </div>
@@ -3125,22 +3325,22 @@ Die Materialzusammensetzung gibst du also im folgenden Format ein:</p>
 <p>Versandbestätigungen an limango müssen eine Sendungsverfolgungsnummer enthalten. Außerdem muss der Versanddienstleister im Auftrag in den Plugin-Einstellungen korrekt mit dem limango-Versanddienstleister verknüpft sein.</p>
 </div>
 <div class="paragraph">
-<p>Um limango automatisch über den Versand zu informieren, benötigst du zwei Ereignisaktionen:</p>
+<p>Um limango automatisch über den Versand zu informieren, erstellst du zwei Ereignisaktionen:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Ereignisaktion 1: Versandinformation an limango melden</p>
+<p>Ereignisaktion 1: Versandinformation an limango melden <a href="#13002">Wie?</a></p>
 </li>
 <li>
-<p>Ereignisaktion 2: Warenausgang buchen</p>
+<p>Ereignisaktion 2: Warenausgang buchen  <a href="#13002">Wie?</a></p>
 </li>
 </ul>
 </div>
 <div class="sect3">
 <h4 id="13001">9.2.1. Ablauf von automatischen Versandbestätigungen</h4>
 <div class="paragraph">
-<p>Der Ablauf von automatischen Versandbestätigungen ist abhängig davon, ob in den Plugin-Einstellungen der Versanddienstleister am Auftrag korrekt mit dem Versanddienstleister von limango verknüpft ist.</p>
+<p>Der Ablauf von automatischen Versandbestätigungen ist abhängig davon, ob der plentymarkets-Versanddienstleister in den Plugin-Einstellungen korrekt mit dem Versanddienstleister von limango verknüpft ist.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3481,7 +3681,14 @@ Diesen Status legst du im Menü <strong>Plugins » Plugin-Set-Übersicht » [Plu
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1100">10. Fehlersuche: Log-Einträge abrufen</h2>
+<h2 id="_versandkosten">10. Versandkosten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die Versandkosten werden in deinem Vertrag mit limango festgelegt und von limango gespeichert. Versandkosten können deshalb nur in Absprache mit dem limango Partnermanagement angepasst werden. In plentymarkets gibt es deshalb für die Versandkosten keine Einstellung.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1100">11. Fehlersuche: Log-Einträge abrufen</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
