@@ -23016,10 +23016,26 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 02. Februar 2022",
+		"navAlias" => "Changelog 09. Februar 2022",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
+			[
+				"id" => "b227097035f08997bf14ce6f1655fec9",
+				"path" => "changelog/2022-02-02",
+				"position" => 10760,
+				"urlName" => "2022-02-02",
+				"url" => "/changelog/2022-02-02",
+				"level" => 2,
+				"title" => "Changelog 02. Februar 2022",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelog 02. Februar 2022. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => [],
+				"hasChildren" => false
+			],
 			[
 				"id" => "34ff3e629811d8ef7436bb217c99053d",
 				"path" => "changelog/januar-2022",
