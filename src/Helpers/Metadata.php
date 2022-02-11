@@ -4014,6 +4014,22 @@ class Metadata {
 										"hasChildren" => false
 									],
 									[
+										"id" => "69aa6220014d46ca6d025dfaab0a59ef",
+										"path" => "daten/daten-exportieren/kataloge/katalog-formate/auftraege",
+										"position" => 30,
+										"urlName" => "auftraege",
+										"url" => "/daten/daten-exportieren/katalog-datenfelder-auftraege",
+										"level" => 5,
+										"title" => "Aufträge",
+										"keywords" => "Auftragsexport, Aufträge exportieren, order export, Auftragspositionen exportieren, Auftragspositionsexport, orderItem, Auftragsdatenfelder, Datenfelder Auftrag, Auftrag exportieren, Auftragsposition, Auftragsposition exportieren, Auftragskatalog, Katalog Auftrag",
+										"description" => "Diese Seite beschreibt die Datenfelder und Filter, die dir beim Export von Auftrags- und Auftragspositionsdaten über das Katalog-Tool zur Verfügung stehen.",
+										"navAlias" => "",
+										"linkListInto" => "Willkommen im Themenbereich Aufträge. Hier findest du folgende Informationen:",
+										"languageID" => "9KBC1RQ",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
 										"id" => "6e0be83ab274cc715000c34c16f2f9c2",
 										"path" => "daten/daten-exportieren/kataloge/katalog-formate/hersteller",
 										"position" => 50,
@@ -29007,6 +29023,22 @@ class Metadata {
 										"navAlias" => "",
 										"linkListInto" => "Welcome to the topic Item (new). The following information is available:",
 										"languageID" => "0S1G3SE",
+										"children" => [],
+										"hasChildren" => false
+									],
+									[
+										"id" => "09ffd7a0636b4f4cdc25a747dd2c987c",
+										"path" => "data/exporting-data/catalogues/catalogue-formats/order",
+										"position" => 30,
+										"urlName" => "order",
+										"url" => "/en/data/exporting-data/catalogues-data-fields-orders",
+										"level" => 5,
+										"title" => "Orders",
+										"keywords" => "order export, export orders, exporting orders, exporting order items, order item export, orderItem, order catalogue, order data fields",
+										"description" => "This page describes the data fields and filters that are available when exporting order and order item data with the catalogue tool.",
+										"navAlias" => "",
+										"linkListInto" => "Welcome to the topic Orders. The following information is available:",
+										"languageID" => "9KBC1RQ",
 										"children" => [],
 										"hasChildren" => false
 									],
