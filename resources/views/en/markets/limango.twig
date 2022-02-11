@@ -40,7 +40,7 @@
 <ul class="sectlevel2">
 <li><a href="#160011"><span>8.1.</span><span> Personalising the PDF template for delivery notes</span></a></li>
 <li><a href="#16001"><span>8.2.</span><span> Uploading personalised PDF template for delivery notes</span></a></li>
-<li><a href="#16003"><span>8.3.</span><span> Showing limango customer numbers on delivery notes</span></a></li>
+<li><a href="#16003"><span>8.3.</span><span> Showing limango customer number and order number on delivery notes</span></a></li>
 <li><a href="#16002"><span>8.4.</span><span> Entering return information for limango delivery notes</span></a></li>
 </ul>
 </li>
@@ -61,7 +61,8 @@
 </li>
 </ul>
 </li>
-<li><a href="#1100"><span>10.</span><span> Troubleshooting: Viewing log entries</span></a></li>
+<li><a href="#_shipping_costs"><span>10.</span><span> Shipping costs</span></a></li>
+<li><a href="#1100"><span>11.</span><span> Troubleshooting: Viewing log entries</span></a></li>
 </ul>
 </div>
         </div>
@@ -108,9 +109,6 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Item data</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Item export</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>once a day</p>
@@ -120,7 +118,8 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Stock synchronisation</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Hourly<br>
-<strong><em>Tip:</em></strong> For technical reasons, shorter stock update intervals are not possible. Set a <a href="#300">stock buffer</a> to prevent overselling.</p>
+<strong><em>Tip:</em></strong> Shorter stock update intervals are not possible due to technical reasons. If necessary, set a <a href="#300">stock buffer</a> to prevent overselling.<br>
+<strong><em>Note:</em></strong> Only whole numbers can be exported. Stock with decimal numbers (for example <code>0,5</code>) are invalid.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -128,9 +127,6 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Hourly</p>
 </div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Order data</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Order import</p></td>
@@ -170,7 +166,7 @@
 <h2 id="170">4. Installing the plugin</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To connect to limango in plentymarkets, install the <a href="https://marketplace.plentymarkets.com/en/limango_7023" target="_blank" rel="noopener">limango plugin</a> in your plentymarkets system. You can download this and other plugins in the <a href="https://marketplace.plentymarkets.com/en" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
+<p>To connect to limango in plentymarkets, first install the <a href="https://marketplace.plentymarkets.com/en/limango_7023" target="_blank" rel="noopener">limango plugin</a> in your plentymarkets system. You can download this and other plugins in the <a href="https://marketplace.plentymarkets.com/en" target="_blank" rel="noopener">plentyMarketplace</a>&nbsp;<span class="icon "><i class="fa fa-external-link  "></i></span>.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">Adding and installing the plugin <strong>limango</strong> in your plentymarkets system</div>
@@ -304,7 +300,7 @@
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User name</strong><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>User name</strong>;<br>
 <strong>Password</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>You will receive these credentials from limango.</p>
@@ -316,8 +312,22 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stock buffer</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The stock of all warehouses is exported to limango. Enter a whole number to reduce the exported stock information by the entered amount.<br>
+<p>By default, the stock of all warehouses for which you entered for the option <strong>Warehouse IDs (comma separated)</strong> is added up and exported to limango. Enter a whole number to reduce the exported stock quantity by the entered amount.<br>
 <strong><em>Note:</em></strong> Stock information is exported to limango once per hour. For technical reasons, shorter stock update intervals are not possible. Use the stock buffer to prevent overselling.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Time of last successful stock export</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The timestamp of the last successful stock export</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Warehouse IDs (separated by commas)</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Enter the ID of the warehouses from which you want to export stock details to limango. Enter several ID separated by commas.<br>
+<strong><em>Note:</em></strong> The virtual warehouse has the ID <code>-1</code>. If you enter this ID, the stock of all sales warehouses is added up. This total is exported.
+<strong><em>Tip:</em></strong> You can find the ID of a warehouse in the menu <strong>Setup » Stock » Warehouse » [Open warehouse] » Settings</strong>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -334,10 +344,10 @@
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>1</strong> = The prices were exported to limango. You can check the last time the export was successful <strong>Timestamp of last successful price export</strong>.</p>
+<p><strong>1</strong>/<strong>success</strong> = The prices were exported to limango. You can check the last time the export was successful <strong>Timestamp of last successful price export</strong>.</p>
 </li>
 <li>
-<p><strong>2</strong> = The last price export failed.</p>
+<p><strong>2</strong>/<strong>failed</strong> = The last price export failed.</p>
 </li>
 </ul>
 </div></div></td>
@@ -407,8 +417,9 @@
 <strong>UPS</strong><br>
 etc.</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>For each shipping service provider that you want to offer for limango orders, enter the ID of the shipping service provider in plentymarkets.<br>
-<strong><em>Tip:</em></strong> Go to <strong>Setup » Orders » Shipping » Settings » Tab: Shipping service provider</strong> to find the ID of your shipping service providers in the column <strong>ID</strong>.</p>
+<p>For each shipping service provider that you want to offer for limango orders, enter the plentymarkets ID of the shipping service provider in plentymarkets.<br>
+<strong><em>Tip:</em></strong> Go to <strong>Setup » Orders » Shipping » Settings » Tab: Shipping service provider</strong> to find the ID of your shipping service providers in the column <strong>ID</strong>.<br>
+<strong><em>Note:</em></strong> The shipping costs are defined in your contract with limango. limango then saves it in the limango backend. This is why you enter the ID of the shipping service provider, <em>not</em> the ID of a shipping profile.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -545,25 +556,65 @@ If you do not enter a client, the default client is used for importing orders.<b
 <td class="tableblock halign-left valign-top"><p class="tableblock">Product name</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Field <strong>Name 1</strong>, <strong>Name 2</strong>, or <strong>Name 3</strong> and either an attribute for colours or a property for colours</p>
+</div>
+<div class="paragraph">
+<p>The following rules apply to product names:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter the item name in German.</p>
+</li>
+<li>
+<p>Product names can have a maximum of 80 character but should be as short as possible.</p>
+</li>
+<li>
+<p>Do not mention the manufacturer or any own brands in the product name. This information is shown separately on limango.</p>
+</li>
+<li>
+<p>Sizes, gender information or repetitions are not allowed as part of product names.</p>
+</li>
+<li>
+<p>The colour must be part of the product name based on the pattern <strong>Product name \+ in + Colour</strong>.</p>
+</li>
+<li>
+<p><strong><em>Example:</em></strong> <code>T-Shirt in Blau</code></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Field <strong>Item text</strong>
+<p>Field <strong>Item text</strong><br>
 Special case for selling shoes: field <strong>Item text</strong> + Material description</p>
+</div>
+<div class="paragraph">
+<p>The following rules apply to descriptions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The item description can be up to 10,000 characters long. Longer text is truncated after 10,000 characters.</p>
+</li>
+<li>
+<p>limango cannot process HTML tags. As such, HTML tags are removed during the export. As such, check your item texts. If you use a lot of HTML tags, you might want to create a property in which you save item descriptions without HTML tags.</p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Image URL<br></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image URL</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Pictures can only be processed in jpg format</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Material<br>
-(only mandatory for products consisting of at least 80 % textiles)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Material</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If textile fibres make up at least 80% of the weight of a product, you need to specify the material composition.</p>
+</div>
+<div class="paragraph">
 <p>Properties of the type <strong>Text</strong></p>
 </div></div></td>
 </tr>
@@ -610,6 +661,9 @@ Special case for selling shoes: field <strong>Item text</strong> + Material desc
 <p>Select the manufacturer name for each variation.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p><strong><em>Tip:</em></strong> Contact the limango partner management if you wan to list a new brand.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -621,13 +675,13 @@ Special case for selling shoes: field <strong>Item text</strong> + Material desc
 <div class="ulist">
 <ul>
 <li>
-<p>Mann (men)</p>
+<p><code>Mann</code></p>
 </li>
 <li>
-<p>Frau (women)</p>
+<p><code>Frau</code> (woman)</p>
 </li>
 <li>
-<p>Unisex</p>
+<p><code>Unisex</code></p>
 </li>
 </ul>
 </div>
@@ -639,7 +693,7 @@ Special case for selling shoes: field <strong>Item text</strong> + Material desc
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Age group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Altersgruppe</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -657,15 +711,19 @@ Special case for selling shoes: field <strong>Item text</strong> + Material desc
 </li>
 <li>
 <p>Selection values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Babys</code> (babies) = Children ≤ 1 year old</p>
 </li>
 <li>
-<p>Babys (babies)</p>
+<p><code>Kinder</code> (children) = Children &gt; 1 year old</p>
 </li>
 <li>
-<p>Kinder (children)</p>
+<p><code>Erwachsene</code> (adults)</p>
 </li>
-<li>
-<p>Erwachsene (adults)</p>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -682,7 +740,10 @@ Special case for selling shoes: field <strong>Item text</strong> + Material desc
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Colour</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If your variations were created without an attribute for colours:</p>
+<p>The colour is used to create a unique product. As such, the colour must be a unique value, for example the manufacturer colour. To create the item number, the colour is added to the SKU.</p>
+</div>
+<div class="paragraph">
+<p>If your variations were created without an attribute for colours, you need a property:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -690,7 +751,7 @@ Special case for selling shoes: field <strong>Item text</strong> + Material desc
 <p>Create a property of the type <strong>Selection</strong> and save the necessary colours as property values.</p>
 </li>
 <li>
-<p>Link the properties to a variation and select a value.<br>
+<p>Link the property to a variation and select one of the values.<br>
 <strong><em>Tip:</em></strong> A property of the type <strong>Selection</strong> is a good idea if you work with recurring colour names.</p>
 </li>
 </ol>
@@ -704,7 +765,7 @@ Special case for selling shoes: field <strong>Item text</strong> + Material desc
 <p>Create a property of the type <strong>Text</strong>.</p>
 </li>
 <li>
-<p>Link the properties to the variation and enter the colour.<br>
+<p>Link the property to a variation and enter the colour as the value.<br>
 <strong><em>Tip:</em></strong> A property of the type <strong>Text</strong> may be more suitable if your colour range changes frequently. However, this increases the risk of typos.</p>
 </li>
 </ol>
@@ -713,29 +774,20 @@ Special case for selling shoes: field <strong>Item text</strong> + Material desc
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Size</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>If your variations were created without an attribute for sizes:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Create a property of the type <strong>Selection</strong> and save the necessary sizes as property values.</p>
-</li>
-<li>
-<p>Link the properties to a variation and select a value.<br>
-<strong><em>Tip:</em></strong> A property of the type <strong>Selection</strong> is a good idea if you work with recurring size names.</p>
-</li>
-</ol>
+<p>If your variations were created without an attribute for sizes, you need a property.</p>
 </div>
 <div class="paragraph">
-<p><em>or</em></p>
+<p><strong><em>Note:</em></strong> Products without a size have the size value <code>onesize</code> on limango. Products without a size are single size products. These are products that are only available in one size. The size is not used to create variations.<br>
+<strong><em>Example furniture:</em></strong> A chair is available in several colours but only in one colour. The size value <code>onesize</code> must be exported.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create a property of the type <strong>Text</strong>.</p>
+<p>Create a property of the type <strong>Selection</strong> and save the necessary sizes as property values.<br>
+<strong><em>Tip:</em></strong> Do not forget to save the property value <code>onesize</code> for products that do not have a size.</p>
 </li>
 <li>
-<p>Link the properties to a variation and enter the size.</p>
+<p>Link the property to a variation and select one of the values.</p>
 </li>
 </ol>
 </div></div></td>
@@ -1574,10 +1626,38 @@ For complex mappings, do not map own values or properties of the type <strong>No
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Merchant product ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The merchant product ID is automatically created from <strong>Parent SKU</strong> + <strong>Colour</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="openblock collapseBox">
 <div class="title">Special case: Selling shoes</div>
 <div class="content">
+<div class="paragraph">
+<p>The materials for shoes must be specified in the following order:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>upper material</p>
+</li>
+<li>
+<p>lining</p>
+</li>
+<li>
+<p>insole</p>
+</li>
+<li>
+<p>outer sole</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Only the following material values are allowed: <code>Leder</code> (leather), <code>beschichtetes Leder</code> (coated leather), <code>Textil</code> (textile) and <code>sonstiges Material</code> (other material)</p>
+</div>
 <div class="paragraph">
 <p>If you want to sell shoes on the market, all information regarding the material of your products must be exported to limango using the data field <strong>Description</strong>. To do this, you combine two plentymarkets data fields and export them as one filed to limango.</p>
 </div>
@@ -1637,6 +1717,9 @@ For complex mappings, do not map own values or properties of the type <strong>No
 <strong>Weight</strong><br>
 etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Only specify measurements for products with no size variations, i.e. for single size products such as furniture. Why? The measurements can only be shown in the limango shop on the product level, not on the variation/size level.</p>
+</div>
+<div class="paragraph">
 <p>Measurements must be exported to limango with the format <strong>[numeric value];[unit]</strong>. Due to the limango product structure, the normal plentymarkets data fields for measurements cannot be mapped. Instead, create two properties:</p>
 </div>
 <div class="ulist">
@@ -1717,6 +1800,9 @@ etc.)</p></td>
 <div class="openblock collapseBox">
 <div class="title"><strong><em>Example:</em></strong> Exporting the volume to limango</div>
 <div class="content">
+<div class="paragraph">
+<p>Imagine that you want to export the volume of variations to limango. To do so, proceed like this:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1754,6 +1840,25 @@ etc.)</p></td>
 </div></div></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RRP</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The following rules apply for specifying the RRP:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The RRP cannot be lower than the gross sales price.</p>
+</li>
+<li>
+<p>If the RRP is higher than the sales price, a strikethrough price is shown on limango.</p>
+</li>
+<li>
+<p>You do not have any RRP, for example because you are the manufacturer? Then assign the same sales price as for the marketplace data field <strong>Net sales price</strong>. This way, no strikethrough price will be displayed on limango.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Material composition<br>
 (<strong>Sleeve lining</strong>;<br>
 <strong>Upper 3</strong>;<br>
@@ -1763,6 +1868,9 @@ etc.)</p></td>
 <strong>Material 3</strong><br>
 etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>If textile fibres make up at least 80% of the weight of a product, you need to specify the material composition.</p>
+</div>
+<div class="paragraph">
 <p>Material information is exported to limango using a property of the type <strong>Text</strong>. Create a separate property for each marketplace data field.</p>
 </div>
 <div class="paragraph">
@@ -1776,7 +1884,7 @@ etc.)</p></td>
 </ul>
 </div>
 <div class="paragraph">
-<p>Link the properties to the main variation of the item and save all components of a material mix in this property. If the variations of the same item have different material mixes, deactivate the inheritance function for properties and save the material mixes separately for each variation. However, note that this deactivates the inheritance for all properties for the item. As such, you also need to manually manage all other properties for this item.</p>
+<p>Link the properties to the main variation of the item and save all components of a material mix in this property. If the variations of the same item have different material mixes, deactivate the inheritance function for properties and save the material mixes separately for each variation. However, note that this deactivates the inheritance for all properties for the item. As such, you also need to manually manage all other properties for each variation.</p>
 </div>
 <div class="paragraph">
 <p>Specify the individual materials in descending order based on the percentage value. As such, the first material is the one with the highest percentage value, the last one that with the lowest percentage value. The sum of all percentages must be 100. You can specify as many materials as you need.
@@ -1785,8 +1893,8 @@ Enter the material composition in the following format:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>{"materialtype1": "percentage","materialtype2": "percentage","materialtype3": "percentage"}</strong><br>
-<strong><em>Example:</em></strong> <code>{"baumwolle": "90","elasthan": "10"}</code></p>
+<p><strong>{"materialtype1":"percentage","materialtype2":"percentage","materialtype3":"percentage"}</strong><br>
+<strong>`Example:_</strong> {"baumwolle":"90","elasthan": "10"}_</p>
 </li>
 </ul>
 </div>
@@ -1825,7 +1933,7 @@ Enter the material composition in the following format:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>{"polyester": "65","viskose": "32","elasthan": "3"}</code></p>
+<p><code>{"polyester":"65","viskose":"32","elasthan":"3"}</code></p>
 </li>
 </ul>
 </div>
@@ -1870,7 +1978,7 @@ Enter the material composition in the following format:</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Colour value</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>limango distinguishes by colours but not by shades. For example, if you offer a dress in both light and dark green, both are presented if customers search for green dresses on the market.</p>
+<p>The colour value is equivalent to the colour filter of the limango shop. However, limango only distinguishes by colour, not by colour shades. For example, if you offer a dress in both light and dark green, both are presented if customers search for green dresses on the market.</p>
 </div>
 <div class="paragraph">
 <p>To ensure that different products are created for variations in different shades of the same colour, the colour value saved in plentymarkets is exported as part of the merchant product ID and the product name instead of the limango colour value.</p>
@@ -1879,16 +1987,16 @@ Enter the material composition in the following format:</p>
 <div class="title"><strong><em>Example:</em></strong> Mapping different shades of green to the colour value <strong>green</strong></div>
 <div class="content">
 <div class="paragraph">
-<p>This example shows you how to map different shades of green to the colour value <strong>green</strong>.</p>
+<p>Imagine that you want to map your own shades of green to the limango colour <strong>green</strong>.</p>
 </div>
 <div class="paragraph instruction">
-<p>Assumed scenario:</p>
+<p><strong><em>Assumed scenario:</em></strong></p>
 </div>
 <div class="paragraph">
 <p>You want to map all your shades of green to the limango colour value <strong>green</strong>.</p>
 </div>
 <div class="paragraph">
-<p>The following shades of green are saved as values of the attribute <strong>Colour</strong>:</p>
+<p>Some shades of green are saved as values of the attribute <strong>Colour</strong>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1901,7 +2009,7 @@ Enter the material composition in the following format:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The following shades of green are saved as property values:</p>
+<p>Other shades of green are saved as property values:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1925,9 +2033,17 @@ Enter the material composition in the following format:</p>
 <p>Navigate to the area <strong>Colour</strong>.</p>
 </li>
 <li>
-<p>Map the marketplace data field <strong>Colour</strong> to the following plentymarkets data fields:<br>
-<strong><em>Data field:</em></strong> Field <strong>Value name</strong> of the attribute for <strong>Colour</strong><br>
-<strong><em>Fallback data fields:</em></strong> Property for <strong>Colour</strong></p>
+<p>Map the marketplace data field <strong>Colour</strong> to the following plentymarkets data fields:<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Data field:</em></strong> Field <strong>Value name</strong> of the attribute for <strong>Colour</strong><br></p>
+</li>
+<li>
+<p><strong><em>Fallback data field:</em></strong> Property for <strong>Colour</strong></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Navigate to the area <strong>Colour value</strong>.</p>
@@ -1961,13 +2077,22 @@ Enter the material composition in the following format:</p>
 </div>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Energy label URL</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lamps and luminaires with light sources not intended to be removed by the end-user must be labelled. As such, a URL of the energy label must be exported for these products.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Recommendation:</em></strong> Create a property of the type <strong>Text</strong> in which you save the URL to the energy label of a variation.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
 <h4 id="906">7.3.3. Recommendations for limango data field mapping</h4>
 <div class="paragraph">
-<p>To help you with mapping your data fields for the limango catalogue, we have created a list of recommended data field mappings for limango. Note that these mappings are recommendations only. Depending on how you manage your item data, other mappings may be more appropriate than the recommendation given here.</p>
+<p>To help you with mapping your data fields for the catalogue, we have created a list of recommended data field mappings. Note that these mappings are recommendations only. Depending on how you manage your item data, other mappings may be more appropriate than the recommendation given here.</p>
 </div>
 <div class="openblock collapseBox">
 <div class="title">List of recommended data field mappings for limango</div>
@@ -2841,21 +2966,43 @@ Enter the material composition in the following format:</p>
 <h2 id="1600">8. Preparing delivery notes for limango</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The limango letterhead, your company data and specific return instructions must be shown on every delivery note for limango orders. Creating layout templates for order documents in plentymarkets is described in the <a href="/en/auftraege/auftragsdokumente#170">Orders</a> area of the manual. On this page, we only describe how to upload the PDF template and set up the delivery note document for the specific requirements of the market.</p>
+<p>Delivery notes for limango orders also serve as return slips. Delivery notes for limango orders must contain the following information:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#16011">How to personalise the PDF template for delivery notes</a></p>
+<p>limango letterhead</p>
 </li>
 <li>
-<p><a href="#16001">How to upload the PDF template for delivery notes</a></p>
+<p>Your company details</p>
 </li>
 <li>
-<p><a href="#16003">How to show the limango customer number on delivery notes</a></p>
+<p>Return note required by limango</p>
 </li>
 <li>
-<p><a href="#16002">How to enter return instructions for limango delivery notes</a></p>
+<p>limango customer number</p>
+</li>
+<li>
+<p>limango order number</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Creating layout templates for order documents in plentymarkets is described in the <a href="/en/auftraege/auftragsdokumente#170">Orders</a> area of the manual. On this page, we only describe how to upload the PDF template and set up the delivery note document for the specific requirements of the market:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#160011">Personalise the PDF template for delivery notes</a></p>
+</li>
+<li>
+<p><a href="#16001">Upload a PDF template for delivery notes</a></p>
+</li>
+<li>
+<p>&lt;#16003, Show limango customer number and order number on delivery notes&gt;&gt;</p>
+</li>
+<li>
+<p><a href="#16002">Entering return information for limango delivery notes</a></p>
 </li>
 </ul>
 </div>
@@ -2902,7 +3049,7 @@ Enter the material composition in the following format:</p>
 <div class="sect2">
 <h3 id="16001">8.2. Uploading personalised PDF template for delivery notes</h3>
 <div class="paragraph">
-<p>Proceed as described below to upload the personalised <a href="/en/orders/order-documents#170">PDF template</a> for delivery notes to plentymarkets.</p>
+<p>Proceed as described below to upload the personalised PDF template for delivery notes to plentymarkets.</p>
 </div>
 <div class="paragraph instruction">
 <p>Uploading personalised PDF template for delivery notes:</p>
@@ -2955,12 +3102,12 @@ Enter the material composition in the following format:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="16003">8.3. Showing limango customer numbers on delivery notes</h3>
+<h3 id="16003">8.3. Showing limango customer number and order number on delivery notes</h3>
 <div class="paragraph">
-<p>The limango customer number must be shown on all limango delivery notes. To achieve this, adjust the template for delivery notes.</p>
+<p>The limango customer number and the limango order number must be shown on all limango delivery notes. To achieve this, adjust the template for delivery notes.</p>
 </div>
 <div class="paragraph instruction">
-<p>Showing limango customer numbers on delivery notes:</p>
+<p>Show limango customer number and order number on delivery notes:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2974,8 +3121,12 @@ Enter the material composition in the following format:</p>
 <p>For the setting <strong>External customer number</strong>, select the option <strong>Yes</strong> from the drop-down list.</p>
 </li>
 <li>
+<p>For the setting <strong>External customer number</strong>, select the option <strong>Yes</strong> from the drop-down list.</p>
+</li>
+<li>
 <p>Save (<span class="icon "><i class="psicon-save"></i></span>) the settings.<br>
-→ The external customer number is positioned below the order items.</p>
+→ The external customer number is positioned below the order items.<br>
+<strong><em>Tip:</em></strong> Also add the <a href="#16002">return note</a> in this menu now.</p>
 </li>
 </ol>
 </div>
@@ -3019,7 +3170,7 @@ Enter the material composition in the following format:</p>
 </li>
 </ol>
 </div>
-<div id="16003" class="openblock collapseBox">
+<div id="16003-1" class="openblock collapseBox">
 <div class="title">Text: return instructions for limango delivery notes</div>
 <div class="content">
 <div class="paragraph">
@@ -3162,15 +3313,15 @@ Enter the material composition in the following format:</p>
 <p>Shipping confirmations for limango must contain a tracking number. In addition, the shipping service provider of the order must be linked to the limango shipping service provider correctly in the plugin settings.</p>
 </div>
 <div class="paragraph">
-<p>You need two event procedures to automatically confirm the shipping to limango:</p>
+<p>Create two event procedures to automatically confirm the shipping to limango:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Event procedure 1: Send shipping confirmation to limango</p>
+<p>Event procedure 1: Send shipping confirmation to limango <a href="#13002">How?</a></p>
 </li>
 <li>
-<p>Event procedure 2: Book outgoing items</p>
+<p>Event procedure 2: Book outgoing items <a href="#13002">How?</a></p>
 </li>
 </ul>
 </div>
@@ -3518,7 +3669,14 @@ Go to <strong>Plugins » Plugin set overview » [Open plugin set] » Open limang
 </div>
 </div>
 </div><div class="sect1">
-<h2 id="1100">10. Troubleshooting: Viewing log entries</h2>
+<h2 id="_shipping_costs">10. Shipping costs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The shipping costs are defined in your contract with limango and then saved by limango. As such, you need to contact your limango partner manager if you want to change the shipping costs. As such, there are no settings for the shipping costs in plentymarkets.</p>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1100">11. Troubleshooting: Viewing log entries</h2>
 <div class="sectionbody">
 <div class="admonitionblock note">
 <table>
