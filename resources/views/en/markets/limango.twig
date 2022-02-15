@@ -586,8 +586,8 @@ If you do not enter a client, the default client is used for importing orders.<b
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Field <strong>Item text</strong><br>
-Special case for selling shoes: field <strong>Item text</strong> + Material description</p>
+<p>Feld <strong>Item text</strong> + additional product information in a property of the type <strong>Text</strong> for some categories.<br>
+<strong><em>Example:</em></strong> For shoes, you need the field <strong>Item text</strong> + a material description.</p>
 </div>
 <div class="paragraph">
 <p>The following rules apply to descriptions:</p>
@@ -600,13 +600,17 @@ Special case for selling shoes: field <strong>Item text</strong> + Material desc
 <li>
 <p>limango cannot process HTML tags. As such, HTML tags are removed during the export. As such, check your item texts. If you use a lot of HTML tags, you might want to create a property in which you save item descriptions without HTML tags.</p>
 </li>
+<li>
+<p>For some categories, limango expects additional product information. Depending on the category, this could for example be technical data or the scope of delivery. There is no default variation input field for this information. As such, we recommend that you save this product information in a property of the type <strong>Text</strong>. You could name this property <code>Additional product information limango</code>.<br>
+<strong><em>Tip:</em></strong> Before your integration starts, limango will provide you with category-specific guidelines. Use these guidelines to make sure your descriptions comply with the legal and market-specific requirements.</p>
+</li>
 </ul>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Image URL</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Pictures can only be processed in jpg format</p>
+<p>Pictures can only be processed in jpg format.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -930,7 +934,6 @@ Special case for selling shoes: field <strong>Item text</strong> + Material desc
 </ol>
 </div>
 </div></div>
-<hr>
 </div>
 </div>
 </div><div class="sect1">
@@ -1626,14 +1629,18 @@ For complex mappings, do not map own values or properties of the type <strong>No
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Merchant product ID</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-product-id">Merchant product ID</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The merchant product ID is automatically created from <strong>Parent SKU</strong> + <strong>Colour</strong>.</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="openblock collapseBox">
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-description">Description</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>For some categories, limango expects additional product information. Depending on the category, this could for example be technical data or the scope of delivery. There is no default variation input field for this information. As such, we recommend that you save this product information in a property of the type <strong>Text</strong>. You could name this property <code>Additional product information limango</code>. In the catalogue, map the plentymarkets data field <strong>Item text</strong> combined with the property for the additional product information to the marketplace data field <strong>Description</strong>.<br>
+<strong><em>Tip:</em></strong> Before your integration starts, limango will provide you with category-specific guidelines. Use these guidelines to make sure your descriptions comply with the legal and market-specific requirements.</p>
+</div>
+<div class="openblock collapseBox">
 <div class="title">Special case: Selling shoes</div>
 <div class="content">
 <div class="paragraph">
@@ -1708,7 +1715,7 @@ For complex mappings, do not map own values or properties of the type <strong>No
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Measurements<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[#intable-measurements]Measurements<br>
 (<strong>Length</strong>;<br>
 <strong>Width</strong>;<br>
 <strong>Height</strong>;<br>
@@ -1717,7 +1724,8 @@ For complex mappings, do not map own values or properties of the type <strong>No
 <strong>Weight</strong><br>
 etc.)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Only specify measurements for products with no size variations, i.e. for single size products such as furniture. Why? The measurements can only be shown in the limango shop on the product level, not on the variation/size level.</p>
+<p>Only specify measurements for products with no size variations, i.e. for single size products such as furniture.<br>
+<strong><em>Background:</em></strong> In the limango shop, the measurements can only be shown at the product level. No measurements are shown at the variation level.</p>
 </div>
 <div class="paragraph">
 <p>Measurements must be exported to limango with the format <strong>[numeric value];[unit]</strong>. Due to the limango product structure, the normal plentymarkets data fields for measurements cannot be mapped. Instead, create two properties:</p>
@@ -1840,7 +1848,7 @@ etc.)</p></td>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RRP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[#intable-rrp]RRP</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The following rules apply for specifying the RRP:</p>
 </div>
@@ -1976,7 +1984,7 @@ Enter the material composition in the following format:</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Colour value</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-colour">Colour value</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The colour value is equivalent to the colour filter of the limango shop. However, limango only distinguishes by colour, not by colour shades. For example, if you offer a dress in both light and dark green, both are presented if customers search for green dresses on the market.</p>
 </div>
@@ -2078,7 +2086,7 @@ Enter the material composition in the following format:</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Energy label URL</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong id="intable-energy-label">Energy label URL</strong></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>Lamps and luminaires with light sources not intended to be removed by the end-user must be labelled. As such, a URL of the energy label must be exported for these products.</p>
 </div>
@@ -2202,7 +2210,7 @@ Enter the material composition in the following format:</p>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p><strong>Item text » Item text</strong></p>
+<p><strong>Item text » Item text</strong> + a property of the type <strong>Text</strong> for additional product information for some categories</p>
 </li>
 </ul>
 </div>
@@ -2213,9 +2221,14 @@ Enter the material composition in the following format:</p>
 <ul>
 <li>
 <p><strong>Item text</strong> + Material description<br>
-(see <a href="#905">Notes on mapping data fields</a>)</p>
+(see <a href="#intable-description">Notes on mapping data fields</a>)</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/maerkte/assets/limango-description.png" alt="limango description">
+</div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
 </tr>
@@ -2256,7 +2269,7 @@ Enter the material composition in the following format:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Image URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bild-URL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
@@ -2889,7 +2902,7 @@ Enter the material composition in the following format:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Merchant product ID</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Is automatically created from <strong>Parent SKU</strong> + plentymarkets value for <strong>Colour value</strong>.<br>
+<p>Is automatically created from <strong>Parent SKU</strong> \+ plentymarkets value for <strong>Colour value</strong>.<br>
 (see <a href="#905">Notes on mapping data fields</a>)</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Product</p></td>
@@ -3255,22 +3268,22 @@ Enter the material composition in the following format:</p>
 → The <strong>Create new event procedure</strong> window opens.</p>
 </li>
 <li>
-<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+<p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>Event</strong> according to <a href="#event-procedure-cancellation-limango">[event-procedure-cancellation-limango]</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-cancellation-limango">[event-procedure-cancellation-limango]</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the further settings according to <a href="#event-procedure-cancellation-limango">[event-procedure-cancellation-limango]</a>.</p>
+<p>Carry out the additional settings according to <a href="#event-procedure-cancellation-limango">[event-procedure-cancellation-limango]</a>.</p>
 </li>
 <li>
-<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+<p>Select the setting <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
 </li>
 <li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 </ol>
 </div>
@@ -3418,22 +3431,22 @@ Enter the material composition in the following format:</p>
 → The <strong>Create new event procedure</strong> window opens.</p>
 </li>
 <li>
-<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+<p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>Event</strong> according to <a href="#event-procedure-shipping-info-limango">Table 5</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-shipping-info-limango">Table 5</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the further settings according to <a href="#event-procedure-shipping-info-limango">Table 5</a>.</p>
+<p>Carry out the additional settings according to <a href="#event-procedure-shipping-info-limango">Table 5</a>.</p>
 </li>
 <li>
-<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+<p>Select the setting <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
 </li>
 <li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 </ol>
 </div>
@@ -3493,22 +3506,22 @@ Enter the material composition in the following format:</p>
 → The <strong>Create new event procedure</strong> window opens.</p>
 </li>
 <li>
-<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+<p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>Event</strong> according to <a href="#event-procedure-booking-items-limango">Table 6</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-booking-items-limango">Table 6</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the further settings according to <a href="#event-procedure-booking-items-limango">Table 6</a>.</p>
+<p>Carry out the additional settings according to <a href="#event-procedure-booking-items-limango">Table 6</a>.</p>
 </li>
 <li>
-<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+<p>Select the setting <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
 </li>
 <li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 </ol>
 </div>
@@ -3606,22 +3619,22 @@ Go to <strong>Plugins » Plugin set overview » [Open plugin set] » Open limang
 → The <strong>Create new event procedure</strong> window opens.</p>
 </li>
 <li>
-<p>Enter a distinct <strong>Name</strong> for the event procedure.</p>
+<p>Enter a distinct name for the event procedure.</p>
 </li>
 <li>
-<p>Select the <strong>Event</strong> according to <a href="#event-procedure-returns-limango">[event-procedure-returns-limango]</a>.</p>
+<p>Select the <strong>event</strong> according to <a href="#event-procedure-returns-limango">[event-procedure-returns-limango]</a>.</p>
 </li>
 <li>
 <p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 <li>
-<p>Carry out the further settings according to <a href="#event-procedure-returns-limango">[event-procedure-returns-limango]</a>.</p>
+<p>Carry out the additional settings according to <a href="#event-procedure-returns-limango">[event-procedure-returns-limango]</a>.</p>
 </li>
 <li>
-<p>Activate the option <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+<p>Select the setting <strong>Active</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
 </li>
 <li>
-<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.<br></p>
+<p><strong>Save</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) the settings.</p>
 </li>
 </ol>
 </div>
@@ -3672,7 +3685,7 @@ Go to <strong>Plugins » Plugin set overview » [Open plugin set] » Open limang
 <h2 id="_shipping_costs">10. Shipping costs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The shipping costs are defined in your contract with limango and then saved by limango. As such, you need to contact your limango partner manager if you want to change the shipping costs. As such, there are no settings for the shipping costs in plentymarkets.</p>
+<p>The shipping costs are defined in your contract with limango. limango then saves it in the limango backend. As such, you need to contact your limango partner manager if you want to change the shipping costs. As such, there are no settings for the shipping costs in plentymarkets.</p>
 </div>
 </div>
 </div><div class="sect1">
