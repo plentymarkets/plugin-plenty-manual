@@ -26171,7 +26171,7 @@ class Metadata {
 				"url" => "/en/stock-management/setting-up-a-warehouse",
 				"level" => 2,
 				"title" => "Setting up a warehouse",
-				"keywords" => "Planning a warehouse, plan a warehouse, Setting up a warehouse, set up a warehouse, warehouse settings, create a warehouse, creating a warehouse, warehouse structure, warehouse setup, block stock",
+				"keywords" => "planning a warehouse, plan a warehouse, setting up a warehouse, set up a warehouse, warehouse settings, create a warehouse, creating a warehouse, warehouse structure, warehouse setup, block stock",
 				"description" => "Learn how to create and structure a warehouse.",
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Setting up a warehouse. The following information is available:",
