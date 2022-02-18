@@ -23032,7 +23032,7 @@ class Metadata {
 		"title" => "plentymarkets Changelog",
 		"keywords" => "",
 		"description" => "",
-		"navAlias" => "Changelog 09. Februar 2022",
+		"navAlias" => "Changelog 16. Februar 2022",
 		"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
 		"languageID" => "",
 		"children" => 		[
@@ -23051,6 +23051,39 @@ class Metadata {
 				"languageID" => "",
 				"children" => [],
 				"hasChildren" => false
+			],
+			[
+				"id" => "c2ec143e0efefd7a22633d2ca332e48b",
+				"path" => "changelog/february-2022",
+				"position" => 10760,
+				"urlName" => "february-2022",
+				"url" => "/changelog/february-2022",
+				"level" => 2,
+				"title" => "Changelogs Februar 2022",
+				"keywords" => "",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Changelogs Februar 2022. Hier findest du folgende Informationen:",
+				"languageID" => "",
+				"children" => 				[
+					[
+						"id" => "7a820204661cb7b221bcf6421ed75fd4",
+						"path" => "changelog/february-2022/2022-02-09",
+						"position" => 10150,
+						"urlName" => "2022-02-09",
+						"url" => "/changelog/february-2022/2022-02-09",
+						"level" => 3,
+						"title" => "plentymarkets Changelog",
+						"keywords" => "",
+						"description" => "",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich plentymarkets Changelog. Hier findest du folgende Informationen:",
+						"languageID" => "",
+						"children" => [],
+						"hasChildren" => false
+					]
+				],
+				"hasChildren" => true
 			],
 			[
 				"id" => "34ff3e629811d8ef7436bb217c99053d",
