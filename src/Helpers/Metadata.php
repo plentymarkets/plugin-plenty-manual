@@ -323,22 +323,6 @@ class Metadata {
 				"languageID" => "49S4GON",
 				"children" => [],
 				"hasChildren" => false
-			],
-			[
-				"id" => "d6fa8572d8544225952c9d118c36cbec",
-				"path" => "willkommen/allgemeine-funktionen",
-				"position" => 50,
-				"urlName" => "allgemeine-funktionen",
-				"url" => "/willkommen/allgemeine-funktionen",
-				"level" => 2,
-				"title" => "Allgemeine Funktionen",
-				"keywords" => "",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Allgemeine Funktionen. Hier findest du folgende Informationen:",
-				"languageID" => "FY8U5SO",
-				"children" => [],
-				"hasChildren" => false
 			]
 		],
 		"hasChildren" => true
@@ -25430,22 +25414,6 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Customising your system. The following information is available:",
 				"languageID" => "49S4GON",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
-				"id" => "7cdf510f055345c3118df0414db82586",
-				"path" => "welcome/general-functions",
-				"position" => 50,
-				"urlName" => "general-functions",
-				"url" => "/en/welcome/general-functions",
-				"level" => 2,
-				"title" => "General functions",
-				"keywords" => "Property, Properties, Tag, Tags, Board, Boards, Task, Tasks, Calendar, Calendars",
-				"description" => "",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic General functions. The following information is available:",
-				"languageID" => "FY8U5SO",
 				"children" => [],
 				"hasChildren" => false
 			]
