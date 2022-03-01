@@ -348,11 +348,11 @@ class Metadata {
 				"urlName" => "neue-ui",
 				"url" => "/artikel/neue-ui",
 				"level" => 2,
-				"title" => "Neue Artikel-UI (closed beta)",
+				"title" => "Neue Artikel-UI (open beta)",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich Neue Artikel-UI (closed beta). Hier findest du folgende Informationen:",
+				"linkListInto" => "Willkommen im Themenbereich Neue Artikel-UI (open beta). Hier findest du folgende Informationen:",
 				"languageID" => "9QFKIGV",
 				"children" => 				[
 					[
@@ -25376,11 +25376,11 @@ class Metadata {
 				"urlName" => "new-ui",
 				"url" => "/en/item/new-ui",
 				"level" => 2,
-				"title" => "New item UI (closed beta)",
+				"title" => "New item UI (open beta)",
 				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic New item UI (closed beta). The following information is available:",
+				"linkListInto" => "Welcome to the topic New item UI (open beta). The following information is available:",
 				"languageID" => "9QFKIGV",
 				"children" => 				[
 					[
