@@ -89,7 +89,7 @@
 <p>Klicke <a href="https://partnerprogramaccess.mytoys.de/Registrierung/" target="_blank" rel="noopener">hier</a>, um mehr über den myToys Marktplatz und das Partnerprogramm zu erfahren und deine Registrierungsanfrage zu senden.</p>
 </div>
 <div class="paragraph">
-<p>Wende dich zur Registrierung alternativ gern auch direkt an das Team des Partnermanagements unter mailto:partnerteam@mytoys.de. Ein Mitglied des Partnermanagements wird sich bald mit dir in Verbindung setzen und mit dir gemeinsam das Potenzial auf <a href="https://www.mytoys.de/" target="_blank" rel="noopener">mytoys.de</a> evaluieren und die nächsten Schritte besprechen.</p>
+<p>Wende dich zur Registrierung alternativ gern auch direkt an das Team des Partnermanagements unter <a href="mailto:partnerteam@mytoys.de">partnerteam@mytoys.de</a>. Ein Mitglied des Partnermanagements wird sich bald mit dir in Verbindung setzen und mit dir gemeinsam das Potenzial auf <a href="https://www.mytoys.de/" target="_blank" rel="noopener">mytoys.de</a> evaluieren und die nächsten Schritte besprechen.</p>
 </div>
 <div class="paragraph">
 <p>Nach der Registrierung erhältst du Zugangsdaten für myToys. Diese Zugangsdaten benötigst du, um das myToys-Plugin in plentymarkets einzurichten.</p>
@@ -1255,7 +1255,7 @@ Ordne bei komplexen Zuordnungen keine eigenen Werte und keine Eigenschaften des 
 <div class="sect3">
 <h4 id="800">7.3.2. Besonderheiten bei der Zuordnung</h4>
 <div class="paragraph">
-<p>Jeder Marktplatz strukturiert Artikeldaten anders. In <a href="#catalogue-mappings">Tabelle 2</a> findest du Hinweise dazu, was du beim Zuordnen von Datenfeldern für myToys beachten solltest.</p>
+<p>Jeder Marktplatz strukturiert Artikeldaten anders. In <a href="#catalogue-mappings">Tabelle 2</a> findest du Hinweise dazu, was du beim Zuordnen von Datenfeldern für myToys beachten musst.</p>
 </div>
 <div class="paragraph">
 <p>Beachte außerdem die folgenden allgemeinen Hinweise:</p>
@@ -1263,13 +1263,16 @@ Ordne bei komplexen Zuordnungen keine eigenen Werte und keine Eigenschaften des 
 <div class="ulist">
 <ul>
 <li>
-<p>Ordne mindestens die <strong>Pflichtfelder</strong> zu. Über die Umschaltfläche (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>) <strong>Nur Pflichtfelder anzeigen</strong> kannst du dir auch nur die Pflichtfelder des Marktplatzes anzeigen lassen.</p>
+<p>Ordne mindestens die <strong>Pflichtfelder</strong> zu. Um nur die Marktplatz-Datenfelder anzuzeigen, die Pflicht sind, klicke in der Symbolleiste auf <span class="icon "><i class="material-more_vert"></i></span>. Aktiviere dann die Umschaltfläche (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>) <strong>Nur Pflichtfelder anzeigen</strong>.</p>
 </li>
 <li>
 <p>Für einige Zuordnungen ist es sinnvoll, vorher <a href="/artikel/einstellungen/eigenschaften#500">Eigenschaften</a> zu erstellen. Diese Eigenschaften kannst du erst im Katalog zuordnen, nachdem du sie erstellt und gespeichert hast. Stelle daher sicher, dass du alle nötigen Eigenschaften erstellt hast.</p>
 </li>
 <li>
-<p>myToys kann keine HTML-Tags verarbeiten. Deshalb werden HTML-Tags beim Export entfernt. Achte darauf, besonders für <a href="#option-itemtext">Artikelbeschreibungen</a> und <a href="#option-bulletpoints">Aufzählungszeichen</a>.</p>
+<p>myToys kann keine HTML-Tags verarbeiten. Deshalb werden HTML-Tags beim Export entfernt. Das betrifft vor allem die Marktplatz-Datenfelder <strong>Artikelbeschreibungen</strong> und <strong>Aufzählungszeichen</strong>.</p>
+</li>
+<li>
+<p>Dir fehlen Marktplatz-Datenfelder für die korrekte Zuordnung deiner Variantendaten? Dann kontaktiere myToys, um bei Bedarf Marktplatz-Datenfelder hinzufügen zu lassen.</p>
 </li>
 </ul>
 </div>
@@ -1656,11 +1659,27 @@ myToys kann keine HTML-Tags verarbeiten. Deshalb werden HTML-Tags beim Export en
 </div>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock">Felder, die ohne Zuordnung übertragen werden</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A_TRADESTAT_NR</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Entspricht der Intrastatnummer. Dieses Feld kann im Katalog nicht zugeordnet werden. Stattdessen wird automatisch der Wert aus dem Feld <strong>Zolltarifnummer</strong> an der Variante verwendet.<br>
+<strong><em>Tipp:</em></strong> Die Zolltarifnummer speicherst du im Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » [Variante öffnen] » Tab: Einstellungen » Bereich: Kosten » Eingabefeld: Zolltarifnummer</strong>.<br>
+<strong><em>Hinweis:</em></strong> Wenn das Feld <strong>Zolltarifnummer</strong> leer ist, wird automatisch der Wert <code>12345678</code> übertragen. MyToys interpretiert diesen Wert als "keine Intrastatnummer".</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A_ORG_COUNTRY<br>
+(<em>Pflichtangabe</em>)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Entspricht dem Herkunftsland (Country of Origin, COO) der Variante. Dieses Feld kann im Katalog nicht zugeordnet werden. Stattdessen wird automatisch das Land übertragen, das in der Dropdown-Liste <strong>Herstellungsland</strong> des Artikels gewählt wurde. Für alle Varianten eines Artikels wird also dasselbe Herstellungsland exportiert.<br>
+<strong><em>Tipp:</em></strong> Das Herstellungsland speicherst du im Menü <strong>Artikel » Artikel bearbeiten » [Artikel öffnen] » Tab: Global » Bereich: Grundeinstellungen » Dropdown-Liste: Herstellungsland</strong>.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Dir fehlen Marktplatz-Datenfelder für die korrekte Zuordnung deiner Artikel? Dann kontaktiere myToys, um bei Bedarf Marktplatz-Datenfelder hinzufügen zu lassen.</p>
-</div>
 </div>
 </div>
 <div class="sect2">
