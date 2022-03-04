@@ -39,6 +39,16 @@
 <li><a href="#904"><span>8.3.</span><span> Katalog aktivieren</span></a></li>
 </ul>
 </li>
+<li><a href="#10001"><span>9.</span><span> Auftragsabwicklung automatisieren</span></a>
+<ul class="sectlevel2">
+<li><a href="#1000"><span>9.1.</span><span> Zahlungsbestätigungen automatisch senden</span></a></li>
+<li><a href="#1100"><span>9.2.</span><span> Versandbestätigungen automatisch senden</span></a></li>
+<li><a href="#returns"><span>9.3.</span><span> Retouren, Gutschriften, Stornierungen</span></a></li>
+</ul>
+</li>
+<li><a href="#1200"><span>10.</span><span> Rechte für Backend-Benutzer:innen vergeben</span></a></li>
+<li><a href="#faq"><span>11.</span><span> Fehlermeldungen</span></a></li>
+<li><a href="#1300"><span>12.</span><span> Marken- und Lizenzhinweise</span></a></li>
 </ul>
 </div>
         </div>
@@ -2558,10 +2568,320 @@ Auf Etsy werden die Informationen wie folgt angezeigt:<br></p>
 </li>
 <li>
 <p>Schiebe in der Spalte <strong>Aktiv/Inaktiv</strong> die Umschaltfläche nach rechts (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>).<br>
-→ Der Katalog wird aktiviert.<br></p>
+→ Der Katalog wird aktiviert.<br>
+→ Die Daten des Katalogs werden einmal täglich nachts an Etsy exportiert.<br></p>
 </li>
 </ol>
 </div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="10001">9. Auftragsabwicklung automatisieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Für die automatische Auftragsabwicklung stehen die folgenden Ereignisaktionen zur Verfügung:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Zahlungsbestätigungen automatisch senden (<a href="#1000">Wie?</a>)</p>
+</li>
+<li>
+<p>Versandbestätigungen automatisch senden (<a href="#1100">Wie?</a>)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Anmerkung"></i>
+</td>
+<td class="content">
+Retouren, Gutschriften und Stornierungen können nicht über plentymarkets abgewickelt werden.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="1000">9.1. Zahlungsbestätigungen automatisch senden</h3>
+<div class="paragraph">
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um Zahlungsbestätigungen automatisch an Etsy zu senden, nachdem ein Zahlungseingang gebucht wurde.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#etsy-zahlungsbestaetigung">Tabelle 3</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die weiteren Einstellungen gemäß <a href="#etsy-zahlungsbestaetigung">Tabelle 3</a> vor.</p>
+</li>
+<li>
+<p>Aktiviere die Einstellung <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="etsy-zahlungsbestaetigung" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Zahlungsbestätigungen automatisch an Etsy senden</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zahlung: Vollständig</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Etsy</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin &gt; Zahlungsbestätigung an Etsy senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1100">9.2. Versandbestätigungen automatisch senden</h3>
+<div class="paragraph">
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um Versandbestätigungen automatisch an Etsy zu senden, nachdem ein Warenausgang gebucht wurde.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#etsy-versandbestaetigung">Tabelle 4</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die weiteren Einstellungen gemäß <a href="#etsy-versandbestaetigung">Tabelle 4</a> vor.</p>
+</li>
+<li>
+<p>Aktiviere die Einstellung <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="etsy-versandbestaetigung" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Versandbestätigungen automatisch an Etsy senden</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Warenausgang gebucht</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Etsy</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Plugin &gt; Versandbestätigung an Etsy senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="returns">9.3. Retouren, Gutschriften, Stornierungen</h3>
+<div class="paragraph">
+<p>Retouren, Gutschriften und Stornierungen für Etsy-Aufträge können nicht über plentymarkets abgewickelt werden. Wickele diese Vorgänge in deinem Kontobereich bei Etsy ab.</p>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1200">10. Rechte für Backend-Benutzer:innen vergeben</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Personen mit <strong>Backend</strong>-Zugriffsrechten können <a href="/business-entscheidungen/benutzerkonten-zugaenge#105">nur bestimmte Bereiche und Menüs</a> in plentymarkets sehen. Sie können also nur eingeschränkt im System arbeiten. Sollen Mitarbeiter:innen mit dem Zugang <strong>Backend</strong> das Etsy-Plugin nutzen können, benötigen sie mindestens die folgenden Rechte:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Berechtigungen &gt; Märkte &gt; Zugangsdaten</strong></p>
+</li>
+</ul>
+</div>
+<div class="openblock collapseBox">
+<div class="title"><strong>Tipp: So vergibst du Rechte</strong></div>
+<div class="content">
+<div class="paragraph">
+<p>Beachte, dass nur <strong>Admins</strong> Rechte vergeben können.</p>
+</div>
+<div class="paragraph instruction">
+<p>Rechte vergeben:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Einstellungen » Benutzer » Rechte » Benutzer</strong>.<br>
+→ Die Benutzerkonten werden in einer Übersicht angezeigt.</p>
+</li>
+<li>
+<p>Klicke auf ein Benutzerkonto.<br>
+→ Der Menüpunkt <strong>Rechte</strong> mit den Sichtbarkeiten wird geöffnet.</p>
+</li>
+<li>
+<p>Vergib die Rechte für den jeweiligen Bereich durch Anklicken der Checkboxen, die oben angegeben sind.<br>
+<strong><em>Hinweis</em></strong>: Du kannst entweder Rechte für einen kompletten Bereich vergeben oder dem Konto nur eingeschränkt Rechte gewähren. Klappe für diese Option den Bereich auf.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Hinweis"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Die Bereiche <strong>Berechtigungen</strong> und <strong>Menü-Sichtbarkeiten</strong> sind verknüpft. Wenn du also Rechte in einem der beiden Bereiche aktivierst, sind sie automatisch auch für den anderen Bereich aktiv.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="faq">11. Fehlermeldungen</h2>
+<div class="sectionbody">
+<div class="openblock collapseBox">
+<div class="title">Cannot set is_customizable flag for shops that do not accept custom orders</div>
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Grund für die Fehlermeldung:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Du hast auf Etsy die Option <strong>Anfragen für Spezialanfertigungen</strong> nicht aktiviert. Im Katalog hast du aber dem Marktplatz-Datenfeld <strong>Personalisierbar</strong> ein plentymarkets Datenfeld zugeordnet.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Lösung:</em></strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Aktiviere auf Etsy die Option <strong>Anfragen für Spezialanfertigungen</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>oder</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Entferne im Katalog die Zuordnung für das Marktplatz-Datenfeld <strong>Personalisierbar</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock collapseBox">
+<div class="title">shipping template does not exist</div>
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Grund für die Fehlermeldung:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Im Katalog sind Versandprofile nicht oder falsch zugeordnet.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Lösung:</em></strong></p>
+</div>
+<div class="paragraph">
+<p>Ordne die Versandprofile korrekt zu.</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1300">12. Marken- und Lizenzhinweise</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der Begriff "Etsy" ist ein Markenzeichen von Etsy, Inc. Das Etsy-Plugin von plentymarkets verwendet die Etsy-API. Das Plugin wurde jedoch von Etsy weder befürwortet noch zertifiziert.</p>
+</div>
+<div class="paragraph">
+<p>Das gesamte Projekt unterliegt der GNU AFFERO GENERAL PUBLIC LICENSE. Weitere Informationen findest du in der Datei <a href="https://github.com/plentymarkets/plugin-etsy/blob/master/LICENSE.md" target="_blank" rel="noopener">LICENSE.md</a>.</p>
 </div>
 </div>
 </div>

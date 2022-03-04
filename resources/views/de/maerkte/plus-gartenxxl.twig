@@ -43,6 +43,23 @@
 </li>
 </ul>
 </li>
+<li><a href="#event-procedures"><span>5.</span><span> Auftragsabwicklung automatisieren</span></a>
+<ul class="sectlevel2">
+<li><a href="#1000"><span>5.1.</span><span> Versandbestätigungen automatisch senden</span></a></li>
+<li><a href="#1100"><span>5.2.</span><span> Stornierungen automatisch senden</span></a></li>
+<li><a href="#1200"><span>5.3.</span><span> Retouren automatisch senden</span></a></li>
+<li><a href="#1250"><span>5.4.</span><span> Unbezahlte Aufträge nach 30 Tagen automatisch stornieren</span></a></li>
+</ul>
+</li>
+<li><a href="#1350"><span>6.</span><span> Auftragsdokumente einrichten</span></a>
+<ul class="sectlevel2">
+<li><a href="#1500"><span>6.1.</span><span> Lieferscheine vorbereiten</span></a></li>
+<li><a href="#15001"><span>6.2.</span><span> PDF-Vorlage für Lieferscheine hochladen</span></a></li>
+<li><a href="#1600"><span>6.3.</span><span> Rücksendescheine vorbereiten</span></a></li>
+<li><a href="#16001"><span>6.4.</span><span> PDF-Vorlage für Rücksendescheine hochladen</span></a></li>
+<li><a href="#16002"><span>6.5.</span><span> Retourenhinweis für Rücksendescheine eingeben</span></a></li>
+</ul>
+</li>
 </ul>
 </div>
         </div>
@@ -2483,9 +2500,721 @@ Skala Energieeffizienzklasse</p></td>
 </li>
 <li>
 <p>Schiebe in der Spalte <strong>Aktiv/Inaktiv</strong> die Umschaltfläche nach rechts (<span class="icon green"><i class="fa fa-toggle-on  "></i></span>).<br>
-→ Der Katalog wird aktiviert.<br></p>
+→ Der Katalog wird aktiviert.<br>
+→ Die Daten des Katalogs werden einmal täglich nachts an Netto Marken-Discount exportiert.<br></p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="event-procedures">5. Auftragsabwicklung automatisieren</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Für die automatische Auftragsabwicklung stehen die folgenden Ereignisaktionen zur Verfügung:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Versandbestätigung an Netto eStores senden (<a href="#1000">Wie?</a>)</p>
+</li>
+<li>
+<p>Stornierung an Netto eStores senden (<a href="#1100">Wie?</a>)</p>
+</li>
+<li>
+<p>Retoure an Netto eStores senden (<a href="#1200">Wie?</a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Über den Aktionsmanager kannst du außerdem unbezahlte Aufträge nach 30 Tagen automatisch stornieren. (<a href="#1250">Wie?</a>)</p>
+</div>
+<div class="sect2">
+<h3 id="1000">5.1. Versandbestätigungen automatisch senden</h3>
+<div class="paragraph">
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um Versandbestätigungen automatisch an Netto eStores zu senden, nachdem ein Warenausgang gebucht wurde. Die Versandbestätigung wird automatisch an Netto eStores gesendet, wenn der Auftrag in Status <strong>[7] Warenausgang gebucht</strong> wechselt. Käufer:innen werden durch Netto eStores über den Versand benachrichtigt.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Ereignisaktionen für GartenXXL</div>
+<div class="paragraph">
+<p>Die Marktplätze GartenXXL.de und GartenXXL.at sind seit 28. November 2019 geschlossen, es können aber weiterhin Ereignisaktionen mit den Auftragsherkünften <strong>GartenXXL.de</strong> und <strong>GartenXXL.at</strong> eingerichtet werden, um Änderungen am Auftragsstatus zu übermitteln.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-versandbestaetigung">Tabelle 3</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die weiteren Einstellungen gemäß <a href="#ereignisaktion-versandbestaetigung">Tabelle 3</a> vor.</p>
+</li>
+<li>
+<p>Aktiviere die Einstellung <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="ereignisaktion-versandbestaetigung" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 3. Ereignisaktion zum automatischen Senden von Versandbestätigungen an Netto eStores</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Warenausgang gebucht</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Netto</strong>, <strong>GartenXXL.de</strong> und <strong>GartenXXL.at</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Versand &gt; Versandbestätigung an Netto eStores senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1100">5.2. Stornierungen automatisch senden</h3>
+<div class="paragraph">
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um Stornierungen automatisch an Netto eStores zu senden.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Ereignisaktionen für GartenXXL</div>
+<div class="paragraph">
+<p>Die Marktplätze GartenXXL.de und GartenXXL.at sind seit 28. November 2019 geschlossen, es können aber weiterhin Ereignisaktionen mit den Auftragsherkünften <strong>GartenXXL.de</strong> und <strong>GartenXXL.at</strong> eingerichtet werden, um Änderungen am Auftragsstatus zu übermitteln.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-stornierung">Tabelle 4</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die weiteren Einstellungen gemäß <a href="#ereignisaktion-stornierung">Tabelle 4</a> vor.</p>
+</li>
+<li>
+<p>Aktiviere die Einstellung <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="ereignisaktion-stornierung" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 4. Ereignisaktion zum automatischen Senden von Stornierungen an Netto eStores</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsänderung: Statuswechsel &gt; [8] Storniert</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Netto</strong>, <strong>GartenXXL.de</strong> und <strong>GartenXXL.at</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Zahlungsarten &gt; Stornierung an Netto eStores senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1200">5.3. Retouren automatisch senden</h3>
+<div class="paragraph">
+<p>Richte eine <a href="/automatisierung/ereignisaktionen">Ereignisaktion</a> ein, um Retouren automatisch an Netto eStores zu senden.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Wichtig"></i>
+</td>
+<td class="content">
+<div class="title">Ereignisaktionen für GartenXXL</div>
+<div class="paragraph">
+<p>Die Marktplätze GartenXXL.de und GartenXXL.at sind seit 28. November 2019 geschlossen, es können aber weiterhin Ereignisaktionen mit den Auftragsherkünften <strong>GartenXXL.de</strong> und <strong>GartenXXL.at</strong> eingerichtet werden, um Änderungen am Auftragsstatus zu übermitteln.</p>
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Ereignisaktion einrichten</div>
+<div class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Ereignisse</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Ereignisaktion hinzufügen</strong> (<span class="icon green"><i class="fa fa-plus-square  "></i></span>).<br>
+→ Das Fenster <strong>Neue Ereignisaktion erstellen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Gib einen eindeutigen Namen für die Ereignisaktion ein.</p>
+</li>
+<li>
+<p>Wähle das <strong>Ereignis</strong> gemäß <a href="#ereignisaktion-retouren">Tabelle 5</a>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+<li>
+<p>Nimm die weiteren Einstellungen gemäß <a href="#ereignisaktion-retouren">Tabelle 5</a> vor.</p>
+</li>
+<li>
+<p>Aktiviere die Einstellung <strong>Aktiv</strong> (<span class="icon blue"><i class="fa fa-check-square  "></i></span>).</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<table id="ereignisaktion-retouren" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 5. Ereignisaktion zum automatischen Senden von Retouren an Netto eStores</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Einstellung</th>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ereignis</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsanlage: Neue Retoure</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 1</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retoure</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Filter 2</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftrag &gt; Herkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Netto</strong>, <strong>GartenXXL.de</strong> und <strong>GartenXXL.at</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktion</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Retoure &gt; Retoure an Netto eStores senden</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1250">5.4. Unbezahlte Aufträge nach 30 Tagen automatisch stornieren</h3>
+<div class="paragraph">
+<p>Aufträge, die nicht bezahlt wurden, werden bei Netto Marken-Discount automatisch nach 30 Tagen storniert. Richte eine Aktion im <a href="/automatisierung/aktionsmanager">Aktionsmanager</a> ein, um unbezahlte Aufträge von Netto Marken-Discount in deinem plentymarkets System nach 30 Tagen automatisch zu stornieren, damit die reservierten Bestände wieder freigegeben werden.</p>
+</div>
+<div class="paragraph instruction">
+<p>Aktion einrichten</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Aktionen » Tab: Neue Aktion</strong>.</p>
+</li>
+<li>
+<p>Öffne das Tab <strong>Einstellungen</strong>.</p>
+</li>
+<li>
+<p>Setze ein Häkchen bei <strong>Aktiv</strong>.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Täglich ausführen um</strong> eine Uhrzeit, zu der die Aktion ausgeführt werden soll.<br>
+<strong><em>Tipp:</em></strong> Wir empfehlen, für diese Aktion die Uhrzeit <strong>24:00 Uhr</strong> zu wählen.</p>
+</li>
+<li>
+<p>Gib einen Namen ein.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>Filter</strong>.</p>
+</li>
+<li>
+<p>Wähle die Filter gemäß <a href="#unbezahlte-aufträge">Tabelle 6</a>.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>Aktion</strong>.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Ändere Auftragsstatus</strong> einen Status, zum Beispiel <strong>[8.1] Storniert durch Kunden</strong>.<br>
+<strong><em>Tipp:</em></strong> Wähle für die Aktion <strong>Ändere Auftragsstatus</strong> einen Status, den du unter <strong>Einrichtung » Aufträge » Einstellungen</strong> für die Option <strong>Status stornierter Aufträge (Keine Reservierung von Beständen)</strong> gespeichert hast, um Reservierungen aufzuheben. Wähle hier außerdem keinen Status, der eine Ereignisaktion auslöst, die eine Stornierung an Netto eStores meldet.</p>
+</li>
+<li>
+<p>Speichere (<span class="icon "><i class="psicon-save"></i></span>) die Einstellungen.<br>
+→ Die Aktion wird erstellt und im Tab <strong>Aktionen</strong> angezeigt.</p>
+</li>
+</ol>
+</div>
+<table id="unbezahlte-aufträge" class="tableblock frame-all grid-all stretch">
+<caption class="title">Tabelle 6. Filter für die Aktion zum automatischen Stornieren von unbezahlten Aufträgen nach 30 Tagen</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Filter</th>
+<th class="tableblock halign-left valign-top">Auswahl</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Status</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>[3] Warten auf Zahlung</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragstyp</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Auftrag</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragseingang</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>vor 30 Tagen</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Auftragsherkunft</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>Netto</strong></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div><div class="sect1">
+<h2 id="1350">6. Auftragsdokumente einrichten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Die folgenden Informationen gelten nur für Lieferscheine und Rücksendescheine bei Netto Marken-Discount. Sie sind für andere Marktplätze nicht gültig.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Rechnungen werden von Netto versendet:</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Netto Marken-Discount versendet die Rechnung an die Kund:innen. Deshalb erhältst du von Netto die Lieferadresse, aber nicht die Rechnungsadresse von Kund:innen. Die von Netto Marken-Discount übertragene Lieferadresse wird in plentymarkets als Liefer- und Rechnungsadresse gespeichert. Du schickst die Ware an diese Adresse.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong><em>Externe Auftragsnummer und externe Kundennummer werden immer angezeigt:</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Die externe Auftragsnummer und die externe Kundennummer sind Pflichtangaben auf Dokumenten, die zu einem Auftrag der Herkunft Netto gehören. Normalerweise kannst du diese Angaben im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Standorte » Germany (Standard) » Dokumente » Lieferschein</strong> bzw. <strong>Rücksendeschein</strong> im Tab <strong>Vorlage</strong> im Bereich <strong>Optionale Elemente unter Artikelpositionstabelle</strong> ausblenden, indem du die Option <strong>NEIN</strong> wählst.<br>
+Bei Netto Marken-Discount werden die externe Auftragsnummer und die externe Kundennummer jedoch auch eingeblendet, wenn hier die Option <strong>NEIN</strong> gewählt wurde.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong><em>Hinweistext wird ausgeblendet:</em></strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Den Hinweistext, den du im Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Standorte » Germany (Standard) » Dokumente » Lieferschein</strong> bzw. <strong>Rücksendeschein</strong> im Tab <strong>Vorlage</strong> im Bereich <strong>Optionale Elemente unter Artikelpositionstabelle</strong> im Feld <strong>Hinweis</strong> eingeben kannst, wird auf Dokumenten mit der Auftragsherkunft <strong>Netto</strong> ausgeblendet. Das Ausblenden des Hinweistextes ist von Netto eStores so gewünscht.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Für Netto Marken-Discount benötigst du eigene Lieferscheine und Rücksendescheine. In diesem Kapitel wird beschrieben, wie du die <a href="/auftraege/auftragsdokumente#170">PDF-Vorlagen</a> für Lieferscheine und Rücksendescheine einrichtest. Die Informationen sind wie folgt aufgebaut:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#1500">So bereitest du die Lieferscheine vor</a></p>
+</li>
+<li>
+<p><a href="#1600">So bereitest du die Rücksendescheine vor</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="1500">6.1. Lieferscheine vorbereiten</h3>
+<div class="paragraph">
+<p>Für Lieferscheine für Netto Marken-Discount-Aufträge muss die PFD-Vorlage von Netto Marken-Discount verwendet werden. Wie du die Layout-Vorlagen in plentymarkets nachbaust, wird im Handbuchbereich <a href="/auftraege/auftragsdokumente#170">Aufträge</a> beschrieben. Hier auf dieser Seite erfährst du, wie du die PDF-Vorlage hochlädst. Klappe den Screenshot aus um zu sehen, wie Lieferscheine für Netto Marken-Discount aussehen müssen.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Screenshot des Layouts für Lieferscheine</div>
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/maerkte/assets/netto-lieferschein.png" alt="Lieferschein">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="15001">6.2. PDF-Vorlage für Lieferscheine hochladen</h3>
+<div class="paragraph">
+<p>Für Lieferscheine für Netto Marken-Discount-Aufträge muss die PFD-Vorlage von Netto Marken-Discount verwendet werden. Gehe wie unten beschrieben vor, um eine <a href="/auftraege/auftragsdokumente#170">PDF-Vorlage</a> für Lieferscheine in plentymarkets hochzuladen.</p>
+</div>
+<div class="paragraph instruction">
+<p>PDF-Vorlage für Lieferscheine hochladen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Lade die PDF-Vorlage für Lieferscheine von Netto Marken-Discount herunter und speichere sie auf deinem Rechner:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><em>Möglichkeit 1:</em></strong> <a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/netto-order-documents/netto_pdf_Lieferscheinrohling.pdf">PDF-Vorlage ohne Absenderadresszeile herunterladen</a></p>
+</li>
+<li>
+<p><strong><em>Möglichkeit 2:</em></strong> <a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/netto-order-documents/netto_pdf_Lieferscheinrohling_mit_Absenderadresszeile.pdf">PDF-Vorlage mit Absenderadresszeile herunterladen</a><br>
+<strong><em>Tipp:</em></strong> Der Briefkopf dieser PDF-Vorlage enthält bereits die von Netto vorgegebene Absenderzeile <code>Netto Digital - NeS GmbH, Wissollstrasse 5-43, 45478 Mülheim a.d. Ruhr</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Standorte » Standort: Deutschland » Dokumente » Lieferschein</strong>.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>PDF-Vorlage</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Vorlage hinzufügen</strong>.<br>
+→ Das Bearbeitungsfenster <strong>Neue PDF-Vorlage hochladen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Zahlungsart</strong> die Option <strong>Netto.de</strong>.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Die Zahlungsart <strong>Netto.de</strong> wird nicht in der Dropdown-Liste angezeigt?</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Einstellungen</strong>.</p>
+</li>
+<li>
+<p>Wähle für die Einstellung <strong>Inaktive Plugin-Zahlungsarten anzeigen</strong> die Option <strong>Ja</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellung.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Wähle in der Dropdown-Liste <strong>Sprache</strong> die Option <strong>de</strong>.</p>
+</li>
+<li>
+<p>Klicke in der Zeile <strong>Vorlage</strong> auf <strong>Vorlage auswählen</strong>.</p>
+</li>
+<li>
+<p>Wähle die PDF-Vorlage für Lieferscheine von Netto Marken-Discount.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Vorlage hochladen</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>).<br>
+→ Die Vorlage wird hochgeladen.</p>
+</li>
+<li>
+<p>Passe das Layout der Lieferscheine gemäß den Vorgaben von Netto Marken-Discount an. Wie das geht, erfährst du im Handbuchbereich <a href="/auftraege/auftragsdokumente#170">Aufträge</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1600">6.3. Rücksendescheine vorbereiten</h3>
+<div class="paragraph">
+<p>Für Rücksendescheine für Netto Marken-Discount-Aufträge muss die PFD-Vorlage von Netto Marken-Discount verwendet werden. Außerdem muss ein von Netto Marken-Discount vorgegebener Retourenhinweis auf dem Dokument erscheinen.</p>
+</div>
+<div class="paragraph">
+<p>Wie du die Layout-Vorlagen in plentymarkets nachbaust, ist im Handbuchbereich <a href="/auftraege/auftragsdokumente#170">Aufträge</a> beschrieben. Hier auf dieser Seite erfährst du, wie du die PDF-Vorlage hochlädst und den Retourenhinweis einfügst. Klappe den Screenshot aus um zu sehen, wie Rücksendescheine für Netto Marken-Discount aussehen müssen.</p>
+</div>
+<div class="openblock collapseBox">
+<div class="title">Screenshot des Layouts für Rücksendescheine</div>
+<div class="content">
+<div class="imageblock">
+<div class="content">
+<img src="{{plugin_path('PlentyManual')}}/images/maerkte/assets/netto-ruecksendeschein.png" alt="Rücksendeschein">
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Rücksendescheine bereitest du in zwei Schritten vor:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#16001">Du lädst eine PDF-Vorlage für Rücksendescheine hoch.</a></p>
+</li>
+<li>
+<p><a href="#16001">Du fügst den Retourenhinweis für Rücksendescheine ein.</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Der Ablauf ist unten genauer beschrieben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="16001">6.4. PDF-Vorlage für Rücksendescheine hochladen</h3>
+<div class="paragraph">
+<p>Für Rücksendescheine für Netto Marken-Discount-Aufträge muss die PFD-Vorlage von Netto Marken-Discount verwendet werden. Gehe wie unten beschrieben vor, um eine <a href="/auftraege/auftragsdokumente#170">PDF-Vorlage</a> für Rücksendescheine in plentymarkets hochzuladen.</p>
+</div>
+<div class="paragraph instruction">
+<p>PDF-Vorlage für Rücksendescheine hochladen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Lade die PDF-Vorlage für Rücksendescheine von Netto Marken-Discount herunter und speichere sie auf deinem Rechner.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://cdn02.plentymarkets.com/pmsbpnokwu6a/frontend/netto-order-documents/netto_pdf_Lieferscheinrohling.pdf">PDF-Vorlage herunterladen</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Mandant » [Mandant wählen] » Standorte » Standort: Deutschland » Dokumente » Rücksendeschein</strong>.</p>
+</li>
+<li>
+<p>Wechsele in das Tab <strong>PDF-Vorlage</strong>.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Vorlage hinzufügen</strong>.<br>
+→ Das Bearbeitungsfenster <strong>Neue PDF-Vorlage hochladen</strong> wird geöffnet.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Zahlungsart</strong> die Option <strong>Netto.de</strong>.</p>
+</li>
+<li>
+<p><strong><em>Optional:</em></strong> Die Zahlungsart <strong>Netto.de</strong> wird nicht in der Dropdown-Liste angezeigt?</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Aufträge » Einstellungen</strong>.</p>
+</li>
+<li>
+<p>Wähle für die Einstellung <strong>Inaktive Plugin-Zahlungsarten anzeigen</strong> die Option <strong>Ja</strong>.</p>
+</li>
+<li>
+<p><strong>Speichere</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>) die Einstellung.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Wähle in der Dropdown-Liste <strong>Sprache</strong> die Option <strong>de</strong>.</p>
+</li>
+<li>
+<p>Klicke in der Zeile <strong>Vorlage</strong> auf <strong>Vorlage auswählen</strong>.</p>
+</li>
+<li>
+<p>Wähle die PDF-Vorlage für Rücksendescheine von Netto Marken-Discount.</p>
+</li>
+<li>
+<p>Klicke auf <strong>Vorlage hochladen</strong> (<span class="icon green"><i class="fa fa-save  "></i></span>).<br>
+→ Die Vorlage wird hochgeladen.</p>
+</li>
+<li>
+<p>Passe das Layout der Rücksendescheine gemäß den Vorgaben von Netto Marken-Discount an. Wie das geht, erfährst du im Handbuchbereich <a href="/auftraege/auftragsdokumente#170">Aufträge</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="16002">6.5. Retourenhinweis für Rücksendescheine eingeben</h3>
+<div class="paragraph">
+<p>Auf allen Rücksendescheine von Netto Marken-Discount muss ein von Netto vorgegebener Retourenhinweis erscheinen. Gehe wie unten beschrieben vor, um diesen Retourenhinweis auf Rücksendescheine einzugeben.</p>
+</div>
+<div class="paragraph instruction">
+<p>Hinweis für Rücksendescheine eingeben:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Klappe die Info-Box "Textvorlage: Retourenhinweis für Rücksendescheine" unten auf.</p>
+</li>
+<li>
+<p>Kopiere den Text in die Zwischenablage.</p>
+</li>
+<li>
+<p>Öffne das Menü <strong>Einrichtung » Mandant » Standard » Standorte » Deutschland » Dokumente » Rücksendeschein » Tab: Vorlage</strong>.</p>
+</li>
+<li>
+<p>Scrolle im Bereich <strong>Optionale Elemente unter Artikelpositionstabelle</strong> zur Einstellung <strong>Zahlungshinweis</strong>.</p>
+</li>
+<li>
+<p>Gehe zu einem Eingabefeld, das noch keine Zahlungshinweise enthält.</p>
+</li>
+<li>
+<p>Wähle aus der Dropdown-Liste <strong>Zahlungsart: bitte wählen</strong> dieses Eingabefelds die Option <strong>Netto.de</strong>.</p>
+</li>
+<li>
+<p>Kopiere den Retourenhinweis in das Eingabefeld.</p>
+</li>
+<li>
+<p>Ersetze bei <strong>Rücksendeadresse</strong> die Beispieldaten durch deine Unternehmensdaten.</p>
+</li>
+<li>
+<p>Nimm ggf. erforderliche Layout-Anpassungen vor.</p>
+</li>
+<li>
+<p>Speichere (<span class="icon "><i class="psicon-save"></i></span>) die Einstellungen.</p>
+</li>
+</ol>
+</div>
+<div id="16003" class="openblock collapseBox">
+<div class="title">Textvorlage: Retourenhinweis für Rücksendescheine</div>
+<div class="content">
+<div class="paragraph">
+<p>Wenn Sie Ware an uns zurücksenden möchten, füllen Sie bitte diesen Rücksendeschein aus und legen ihn dem Paket bei. Senden Sie Ihre Retoure an die angegebene Rücksende-Adresse.</p>
+</div>
+<div class="paragraph">
+<p><strong>Retourengrund:</strong></p>
+</div>
+<div class="paragraph">
+<p>Sonstiges         …​.09<br>
+Gefällt nicht     …​.10<br>
+Falscher Artikel  …​.11<br>
+Falsche Größe     …​.12<br>
+Falsche Farbe     …​.13<br>
+Zu spät geliefert …​.14<br>
+Artikel defekt    …​.20<br>
+Qualitätsmangel   …​.21<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Kundenwunsch:</strong></p>
+</div>
+<div class="paragraph">
+<p>Neulieferung des Artikels       …​.A<br>
+Widerruf: Ausgleich Kundenkonto …​.B<br>
+Reparatur erwünscht             …​.C<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Rücksende-Adresse:</strong></p>
+</div>
+<div class="paragraph">
+<p>NeS GmbH - Netto Digital Retouren<br>
+c/o Testlieferant für Testzwecke<br>
+Straße Hnr.<br>
+PLZ Ort<br></p>
+</div>
 </div>
 </div>
 </div>
