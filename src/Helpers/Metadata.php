@@ -38249,11 +38249,11 @@ class Metadata {
 				"urlName" => "mediamarkt",
 				"url" => "/en/markets/mediamarkt",
 				"level" => 2,
-				"title" => "Mediamarkt",
-				"keywords" => "Mediamarkt, Mediamarkt",
+				"title" => "MediaMarkt",
+				"keywords" => "",
 				"description" => "",
 				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic Mediamarkt. The following information is available:",
+				"linkListInto" => "Welcome to the topic MediaMarkt. The following information is available:",
 				"languageID" => "VWRH3XA",
 				"children" => 				[
 					[
