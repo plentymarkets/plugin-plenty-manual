@@ -1198,6 +1198,22 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
+				"id" => "c4c7324d7117a2659d4cc96739a8cd99",
+				"path" => "warenwirtschaft/leitfaden-inventur",
+				"position" => 75,
+				"urlName" => "leitfaden-inventur",
+				"url" => "/warenwirtschaft/leitfaden-inventur",
+				"level" => 2,
+				"title" => "Leitfaden zur Inventur",
+				"keywords" => "Inventur, plentyWarehouse App, plenty warehouse app, plenty-warehouse App, Zählprotokoll, Warenbewegungen exportieren, Warenbestände exportieren, Inventur vornehmen, Inventur durchführen, Tipps Inventur",
+				"description" => "",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich Leitfaden zur Inventur. Hier findest du folgende Informationen:",
+				"languageID" => "1SHGYNJ",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
 				"id" => "0bdeda38d639888a8ddb6c91e432b85f",
 				"path" => "warenwirtschaft/waren-ausbuchen",
 				"position" => 80,
