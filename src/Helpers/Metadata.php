@@ -1015,6 +1015,22 @@ class Metadata {
 						"languageID" => "0YO0UJ5",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "299d8174c99d0cd97cd5f9457e33f9db",
+						"path" => "artikel/neue-ui/artikel-manuell-anlegen",
+						"position" => 30,
+						"urlName" => "artikel-manuell-anlegen",
+						"url" => "/artikel/neue-ui/artikel-manuell-anlegen",
+						"level" => 3,
+						"title" => "Artikel und Varianten manuell anlegen",
+						"keywords" => "Neue Artikel-UI, Artikel » Artikel-UI, Artikel erstellen, Artikeldaten erstellen, Artikel anlegen, Artikeldaten anlegen, Variante erstellen, Variantendaten erstellen, Variante anlegen, Variantendaten anlegen, Artikelanlage, Artikel anlage, Artikel manuell anlegen, Artikel manuell erstellen, Neuer Artikel, Neue Artikel, Neue Variante, Neue Varianten, Neues Produkt, Neue Produkte, Variantenanlage, Varianten anlage, Variante anlage, Artikelerstellung",
+						"description" => "Erfahre, wie du Artikel und Varianten manuell erstellst.",
+						"navAlias" => "",
+						"linkListInto" => "Willkommen im Themenbereich Artikel und Varianten manuell anlegen. Hier findest du folgende Informationen:",
+						"languageID" => "KTXPUX4",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
