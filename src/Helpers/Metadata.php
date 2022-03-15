@@ -26156,6 +26156,22 @@ class Metadata {
 						"languageID" => "0YO0UJ5",
 						"children" => [],
 						"hasChildren" => false
+					],
+					[
+						"id" => "f28cf5b61f8dfbb25c523327b9225df1",
+						"path" => "item/new-ui/manually-create-item",
+						"position" => 30,
+						"urlName" => "manually-create-item",
+						"url" => "/en/item/new-ui/manually-create-item",
+						"level" => 3,
+						"title" => "Manually creating items and variations",
+						"keywords" => "New item UI, Item » Item UI, Create items, Creating items, Create item data, Add item, Adding items, Add item data, Create variation, Create variations, Create variation data, Item creation, Manually create items, New item, New items, New variation, New variations, New product, New products, Variation creation",
+						"description" => "Learn how to manually create items and variations.",
+						"navAlias" => "",
+						"linkListInto" => "Welcome to the topic Manually creating items and variations. The following information is available:",
+						"languageID" => "KTXPUX4",
+						"children" => [],
+						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
