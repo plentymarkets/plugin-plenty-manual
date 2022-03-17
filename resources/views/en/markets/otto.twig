@@ -65,11 +65,8 @@
 <li><a href="#13016"><span>9.2.1.</span><span> Item export: Error messages in the log</span></a></li>
 </ul>
 </li>
-<li><a href="#13026"><span>9.3.</span><span> FAQ: Order processing</span></a>
-<ul class="sectlevel3">
-<li><a href="#1305"><span>9.3.1.</span><span> Order processing: Error messages in the log</span></a></li>
-</ul>
-</li>
+<li><a href="#13026"><span>9.3.</span><span> FAQ: Order processing</span></a></li>
+<li><a href="#1305"><span>9.4.</span><span> Order processing: Error messages in the log</span></a></li>
 </ul>
 </li>
 </ul>
@@ -697,9 +694,9 @@ Map at least the marketplace data fields <strong>Brand</strong>, <strong>Deliver
 <p>Click on the catalogue.<br>
 → The <strong>Mapping</strong> tab opens.<br>
 → In the left-hand column, the market’s data fields are listed.<br>
-<strong><em>Tip:</em></strong> Mandatory fields are flagged with an asterisk (<strong>).<br>
+<strong><em>Tip:</em></strong> Mandatory fields are flagged with an asterisk (*).<br>
 → In the right column, you map the plentymarkets data fields. Any plentymarkets data fields that are already assigned are also shown in the right column.<br>
-*<em>Tip:</em></strong> Need more information about the plentymarkets data fields? All data fields are described on the manual page for the standard format <a href="/en/data/exporting-data/catalogues-item">Item (new)</a>.</p>
+<strong><em>Tip:</em></strong> Need more information about the plentymarkets data fields? All data fields are described on the manual page for the standard format <a href="/en/data/exporting-data/catalogues-item">Item (new)</a>.</p>
 </li>
 <li>
 <p>Now, map suitable plentymarkets data fields to the market data fields.<br>
@@ -773,12 +770,12 @@ You can choose from the following mappings which are described in the info boxes
 <p>In a simple 1:1 mapping, you map a plentymarkets data field to the marketplace data field. If no suitable setting exists in plentymarkets, you can map a property instead.</p>
 </div>
 <div class="paragraph">
-<p>As such, simple 1:1 mappings allow you to:</p>
+<p>As such, with a simple 1:1 mapping you specify:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>I want to fill this marketplace data field with the data from this plentymarkets setting.</p>
+<p>You want to fill this marketplace data field with the data from this plentymarkets setting.</p>
 </li>
 <li>
 <p>If the data field is empty for a variation, no value is exported for this variation.</p>
@@ -963,12 +960,12 @@ For complex mappings, do not map own values or properties of the type <strong>No
 <p>In a 1:1 mapping with one or more fallback data fields, you map a plentymarkets data field to the marketplace data field. In addition, you specify one or more fallback data fields. This ensures that the system keeps looking if the first plentymarkets data field is empty or contains an invalid value.</p>
 </div>
 <div class="paragraph">
-<p>So this mapping specifies:</p>
+<p>So with this mapping, you specify the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>I want to fill this marketplace data field with the data from this plentymarkets setting.</p>
+<p>You want to fill this marketplace data field with the data from this plentymarkets setting.</p>
 </li>
 <li>
 <p>If that data field is empty or invalid for a variation, the first fallback data field is checked and the value of that fallback data field is exported instead.</p>
@@ -1022,12 +1019,12 @@ For complex mappings, do not map own values or properties of the type <strong>No
 <p>In a 1:n mapping, you map several plentymarkets data fields to the marketplace data field. You can link these data fields with a separator.</p>
 </div>
 <div class="paragraph">
-<p>So this mapping specifies:</p>
+<p>So with this mapping, you specify the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>I want to combine these plentymarkets data fields during export so that the marketplace data field is filled with the data of these two or more plentymarkets settings.</p>
+<p>You want to combine these plentymarkets data fields during export so that the marketplace data field is filled with the data of these two or more plentymarkets settings.</p>
 </li>
 </ul>
 </div>
@@ -1086,12 +1083,12 @@ For complex mappings, do not map own values or properties of the type <strong>No
 <p>You are sure that you want to export the same value for all variations of a catalogue for a marketplace data field? Then specify an own value. This own value is then exported for all variations.</p>
 </div>
 <div class="paragraph">
-<p>So this mapping specifies:</p>
+<p>So with this mapping, you specify the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>For this marketplace data field, I want to export the value that I entered in the field <strong>Own value</strong> for <em>all</em> variations of this catalogue.</p>
+<p>For this marketplace data field, you want to export the value that you entered in the field <strong>Own value</strong> for <em>all</em> variations of this catalogue.</p>
 </li>
 </ul>
 </div>
@@ -1422,6 +1419,14 @@ During the export, the values are converted to the delivery statements that cust
 </div>
 <div class="paragraph">
 <p><strong><em>Note:</em></strong> If you map no warehouse and no property to the marketplace data field <strong>Stock</strong>, the sum of the net stock of all sales warehouses is exported to OTTO Market. This is the same as mapping the plentymarkets data field <strong>Stock » Virtual warehouse</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sales price currency</strong>;<br>
+<strong>RRP currency</strong>;<br>
+<strong>Offer price currency</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>OTTO Market can only process the currency EURO. For this reason, these data fields are filled with the value EUR automatically.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1865,8 +1870,10 @@ During the export, the values are converted to the delivery statements that cust
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Otto itemexport</strong><br>
-**</p>
+<p><strong>Otto itemexport</strong><br></p>
+</li>
+<li>
+<p><strong>Plenty\\Modules\\Otto\\Item\\Services\\ItemExportService</strong></p>
 </li>
 </ul>
 </div>
@@ -1965,7 +1972,7 @@ If customers paid an OTTO Market order per bank transfer, it might take longer t
 <strong><em>Important:</em></strong> If the option <strong>Import purchase receipts as external invoices</strong> is not activated, the order number is not shown in the order overview and is also not exported as part of the financial accounting export. The invoice number is then only shown shown in the <strong>Receipts</strong> tab of the order.</p>
 </li>
 <li>
-<p>OTTO Market creates invoices as soon as an item was shipped. Therefore, invoices are also created for partial deliveries.</p>
+<p>OTTO Market creates invoices when shipping of an item is confirmed. Therefore, invoices are also created for partial deliveries.</p>
 </li>
 </ul>
 </div>
@@ -1987,7 +1994,7 @@ If customers paid an OTTO Market order per bank transfer, it might take longer t
 <p>When you notify OTTO of a return, the components of the individual order items of the refund/return are sent to OTTO. This means that OTTO will refund the complete sales price of any order item. You cannot notify OTTO Market of a partial refund for a particular order item. As such, even if you adjust the price of an order item, this does not affect the refund document that OTTO creates.</p>
 </li>
 <li>
-<p>Because OTTO Markets creates credit notes when the return of an item is confirmed, credit notes are also generated for partial returns.</p>
+<p>OTTO Market creates credit notes when the return of an item is confirmed. Therefore, credit notes are also generated for partial returns.</p>
 </li>
 </ul>
 </div>
@@ -2625,7 +2632,7 @@ If customers paid an OTTO Market order per bank transfer, it might take longer t
 <div class="sectionbody">
 <div class="paragraph">
 <p>This chapter contains answers to frequently asked questions.
-As of: 21/12/2020)</p>
+The information was last updated on 21/12/2020.</p>
 </div>
 <div class="sect2">
 <h3 id="13013">9.1. FAQ: General questions and answers</h3>
@@ -3205,8 +3212,9 @@ When adding another data field, it is mandatory to use the <strong>Add fallback 
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="1305">9.3.1. Order processing: Error messages in the log</h4>
+</div>
+<div class="sect2">
+<h3 id="1305">9.4. Order processing: Error messages in the log</h3>
 <div class="paragraph">
 <p>We have listed possible error messages in relation to the order processing below.</p>
 </div>
@@ -3246,7 +3254,6 @@ An item <em>cannot be deleted</em> at OTTO Market, neither by plentymarkets nor 
 <div class="content">
 <div class="paragraph">
 <p>Check whether shipping service providers were linked to OTTO Market. This is done in the <strong>Shipping service provider</strong> step of the <strong>OTTO Market Basic settings</strong> assistant in the <strong>Setup » Assistants » Omni-Channel</strong> menu.</p>
-</div>
 </div>
 </div>
 </div>
