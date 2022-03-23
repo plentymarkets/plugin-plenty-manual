@@ -13472,22 +13472,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "88e41714e368342d91f3aa33b585950f",
-				"path" => "maerkte/mytoys",
-				"position" => 0,
-				"urlName" => "mytoys",
-				"url" => "/maerkte/mytoys",
-				"level" => 2,
-				"title" => "myToys",
-				"keywords" => "myToys, myToys, mytoys, my toys, mytois, mirapodo, yomonda",
-				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz myToys in deinem plentymarkets System ein.",
-				"navAlias" => "",
-				"linkListInto" => "Willkommen im Themenbereich myToys. Hier findest du folgende Informationen:",
-				"languageID" => "CQERJR4",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "125bc34e71e21d41c81fe1399b03bf3c",
 				"path" => "maerkte/spielwiese",
 				"position" => 0,
@@ -14760,6 +14744,22 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Willkommen im Themenbereich Metro. Hier findest du folgende Informationen:",
 				"languageID" => "BYFCMFT",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "88e41714e368342d91f3aa33b585950f",
+				"path" => "maerkte/mytoys",
+				"position" => 137,
+				"urlName" => "mytoys",
+				"url" => "/maerkte/mytoys",
+				"level" => 2,
+				"title" => "myToys",
+				"keywords" => "myToys, myToys, mytoys, my toys, mytois, mirapodo, yomonda",
+				"description" => "Multi-Channel in plentymarkets: Richte die Schnittstelle zum Marktplatz myToys in deinem plentymarkets System ein.",
+				"navAlias" => "",
+				"linkListInto" => "Willkommen im Themenbereich myToys. Hier findest du folgende Informationen:",
+				"languageID" => "CQERJR4",
 				"children" => [],
 				"hasChildren" => false
 			],
@@ -38340,22 +38340,6 @@ class Metadata {
 				"hasChildren" => false
 			],
 			[
-				"id" => "fbed040eff008be10e21d4bd1f10533b",
-				"path" => "markets/mytoys",
-				"position" => 0,
-				"urlName" => "mytoys",
-				"url" => "/en/markets/mytoys",
-				"level" => 2,
-				"title" => "myToys",
-				"keywords" => "myToys, myToys, mytoys, my toys, mytois, mirapodo, yomonda",
-				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market myToys in your plentymarkets system.",
-				"navAlias" => "",
-				"linkListInto" => "Welcome to the topic myToys. The following information is available:",
-				"languageID" => "CQERJR4",
-				"children" => [],
-				"hasChildren" => false
-			],
-			[
 				"id" => "3d244a95ba526491ea907005efbfd899",
 				"path" => "markets/scalerion",
 				"position" => 0,
@@ -39693,6 +39677,22 @@ class Metadata {
 				"navAlias" => "",
 				"linkListInto" => "Welcome to the topic Metro. The following information is available:",
 				"languageID" => "BYFCMFT",
+				"children" => [],
+				"hasChildren" => false
+			],
+			[
+				"id" => "fbed040eff008be10e21d4bd1f10533b",
+				"path" => "markets/mytoys",
+				"position" => 137,
+				"urlName" => "mytoys",
+				"url" => "/en/markets/mytoys",
+				"level" => 2,
+				"title" => "myToys",
+				"keywords" => "myToys, myToys, mytoys, my toys, mytois, mirapodo, yomonda",
+				"description" => "Multi-Channel in plentymarkets: Set up the interface to the market myToys in your plentymarkets system.",
+				"navAlias" => "",
+				"linkListInto" => "Welcome to the topic myToys. The following information is available:",
+				"languageID" => "CQERJR4",
 				"children" => [],
 				"hasChildren" => false
 			],
