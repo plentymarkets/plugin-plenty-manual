@@ -5028,22 +5028,6 @@ class Metadata {
 						"languageID" => "MSLDK1U",
 						"children" => [],
 						"hasChildren" => false
-					],
-					[
-						"id" => "a79962a915a07f75ced400b254d67252",
-						"path" => "daten/alte-tools/api-log",
-						"position" => 10070,
-						"urlName" => "api-log",
-						"url" => "/daten/api-log",
-						"level" => 3,
-						"title" => "Veraltet: API-Log",
-						"keywords" => "API-Log, API, Log-Eintrag, Schnittstellen",
-						"description" => "Im API Log findest du eine Historie über interne Vorgänge und Vorgänge, die über Schnittstellen ausgeführt wurden.",
-						"navAlias" => "",
-						"linkListInto" => "Willkommen im Themenbereich Veraltet: API-Log. Hier findest du folgende Informationen:",
-						"languageID" => "7EM3XRN",
-						"children" => [],
-						"hasChildren" => false
 					]
 				],
 				"hasChildren" => true
@@ -30152,22 +30136,6 @@ class Metadata {
 						"navAlias" => "",
 						"linkListInto" => "Welcome to the topic Statistics (old function). The following information is available:",
 						"languageID" => "MSLDK1U",
-						"children" => [],
-						"hasChildren" => false
-					],
-					[
-						"id" => "c525839b285ec213ea78e788f5d65760",
-						"path" => "data/deprecated-tools/api-log",
-						"position" => 10070,
-						"urlName" => "api-log",
-						"url" => "/en/data/api-log",
-						"level" => 3,
-						"title" => "Deprecated: API log",
-						"keywords" => "plentymarkets API, API Log, API, log entry, interfaces",
-						"description" => "",
-						"navAlias" => "",
-						"linkListInto" => "Welcome to the topic Deprecated: API log. The following information is available:",
-						"languageID" => "7EM3XRN",
 						"children" => [],
 						"hasChildren" => false
 					]
